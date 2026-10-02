@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build && node scripts/package.mjs",
     "test": "vitest run",
-    "preview": "vite preview --host 0.0.0.0 --port 4173",
+    "preview": "python3 -m http.server 4173 --bind 0.0.0.0 --directory preview",
     "assets": "node scripts/optimize-assets.mjs"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.14",
+    "@types/node": "^24.19.1",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.4",

@@ -22,7 +22,7 @@ final class JR_Domain {
         if ($days < 1 || $days > 30) throw new InvalidArgumentException('Некоректний термін.');
         return self::parse_date($date)->modify('+' . $days . ' days')->format('Y-m-d');
     }
-    public static function validate(array $payload, ?string $today = null): array {
+    public static function validate(array $payload, ?string $today = null, ?array $inventory = null): array {
         $console = is_string($payload['console'] ?? null) ? $payload['console'] : '';
         $days = filter_var($payload['days'] ?? null, FILTER_VALIDATE_INT);
         if ($days === false || $days === null) throw new InvalidArgumentException('Оберіть термін оренди.');
@@ -45,10 +45,11 @@ final class JR_Domain {
         if (!in_array($controllers, [1,2], true)) throw new InvalidArgumentException('Оберіть один або два геймпади.');
         $game_ids = $payload['gameIds'] ?? [];
         if (!is_array($game_ids) || count($game_ids) > 12) throw new InvalidArgumentException('Некоректний список ігор.');
-        $known = array_column(self::catalog()['games'], 'id');
+        $inventory = $inventory ?? self::catalog()['games'];
+        $known = array_column($inventory, 'id');
         foreach ($game_ids as $game) {
             if (!is_string($game) || !in_array($game,$known,true)) throw new InvalidArgumentException('Оберіть гру з каталогу.');
-            $record = self::catalog()['games'][array_search($game,$known,true)];
+            $record = $inventory[array_search($game,$known,true)];
             if (!in_array($console,$record['platforms'],true)) throw new InvalidArgumentException('Обрана гра не підтримує цю консоль.');
         }
         return ['console'=>$console,'days'=>$days,'tariff'=>$tariff,'startDate'=>$start,'returnDate'=>self::return_date($start,$days),'name'=>$name,'phone'=>$phone,'method'=>$method,'address'=>$address,'controllers'=>$controllers,'gameIds'=>array_values(array_unique($game_ids))];

@@ -33,10 +33,10 @@ Files: wordpress/joyrent-rentals/data/catalog.json; src/lib/rental.ts; src/lib/r
 
 Interfaces: ConsoleId = ps5 | ps4; quote(console, days) returns the configured tariff; addRentalDays(date, days) returns an ISO calendar date. PHP JR_Domain validates the same payload and tariffs.
 
-- [ ] Write tests for all seven totals, unsupported PS4 one-day requests, invalid dates, leap day and October DST boundary.
-- [ ] Run npm test and PHP domain tests; confirm failure before implementation.
-- [ ] Implement shared catalog and matching TS/PHP validation.
-- [ ] Run both suites and commit the working domain.
+- [x] Write tests for all seven totals, unsupported PS4 one-day requests, invalid dates, leap day and October DST boundary.
+- [x] Run npm test and PHP domain tests; confirm failure before implementation.
+- [x] Implement shared catalog and matching TS/PHP validation.
+- [x] Run both suites and commit the working domain.
 
 ## Task 2: Frontend and selected visual target
 
@@ -44,11 +44,11 @@ Files: src/App.tsx; src/sections/*; src/styles.css; components/ui/scroll-reveal-
 
 Interfaces: Frontend uses Catalog and JR_Domain-equivalent calculations. window.JOYRENT supplies API endpoint, asset base, contact and delivery settings. POST request payload contains customer details, console, term, dates, controllers, requested game IDs, method, address and consent.
 
-- [ ] Build hero, tariff switch, game carousel/detail dialog, rental form, contents, steps, delivery, FAQ and final CTA.
-- [ ] Adapt ScrollRevealImage to a normal responsive image; honor reduced motion.
-- [ ] Install self-hosted fonts and actual generated assets; keep cards free of made-up official branding.
-- [ ] Verify mobile navigation, tariffs, dates, filters, dialog and consent in Chromium. No fake success if backend is absent.
-- [ ] Run TypeScript/build checks and commit.
+- [x] Build hero, tariff switch, game carousel/detail dialog, rental form, contents, steps, delivery, FAQ and final CTA.
+- [x] Adapt ScrollRevealImage to a normal responsive image; honor reduced motion.
+- [x] Install self-hosted fonts and actual generated assets; keep cards free of made-up official branding.
+- [x] Verify mobile navigation, tariffs, dates, filters, dialog and consent in Chromium. No fake success if backend is absent.
+- [x] Run TypeScript/build checks and commit.
 
 ## Task 3: WordPress and WooCommerce integration
 
@@ -56,20 +56,20 @@ Files: wordpress/joyrent/*.php; wordpress/joyrent/style.css; wordpress/joyrent-r
 
 Interfaces: GET /joyrent/v1/catalog exposes public catalog/config; POST /joyrent/v1/requests creates a WooCommerce order in jr-request status; response contains only request reference and server rental amount.
 
-- [ ] Install WordPress and WooCommerce in local Docker containers; keep credentials in ignored work files.
-- [ ] Write integration tests for valid requests, price tampering, invalid dates, missing consent and missing delivery address; observe red.
-- [ ] Add theme enqueue/boot settings, plugin settings/importer, game CPT/meta, server validation, rate limit, honeypot and idempotency.
-- [ ] Use WooCommerce CRUD for HPOS compatibility; never auto-confirm availability or mark payments paid.
-- [ ] Run real HTTP request tests and verify resulting WooCommerce order fields and status; commit.
+- [x] Install WordPress and WooCommerce in local Docker containers; keep credentials in ignored work files.
+- [x] Write integration tests for valid requests, price tampering, invalid dates, missing consent and missing delivery address; observe red.
+- [x] Add theme enqueue/boot settings, plugin settings/importer, game CPT/meta, server validation, rate limit, honeypot and idempotency.
+- [x] Use WooCommerce CRUD for HPOS compatibility; never auto-confirm availability or mark payments paid.
+- [x] Run real HTTP request tests and verify resulting WooCommerce order fields and status; commit.
 
 ## Task 4: Verification, packages and handoff
 
 Files: scripts/{optimize-assets,package}.mjs; README.md; docs/INSTALL.md; design-qa.md; releases/*.
 
-- [ ] Review selected reference against browser screenshots at matching desktop viewport; repair meaningful visual issues.
-- [ ] Check 360/390/430/768/1280/1440 widths, keyboard focus, reduced motion, forms and console errors.
-- [ ] Obtain independent whole-branch code review; fix important findings with regression tests.
-- [ ] Build theme/plugin ZIPs and static visual preview; confirm archives contain compiled code and assets.
+- [x] Review selected reference against browser screenshots at matching desktop viewport; repair meaningful visual issues.
+- [x] Check 360/390/430/768/1280/1440 widths, keyboard focus, reduced motion, forms and console errors.
+- [x] Obtain independent whole-branch code review; fix important findings with regression tests.
+- [x] Build theme/plugin ZIPs and static visual preview; confirm archives contain compiled code and assets.
 - [ ] Push feature branch and create a reviewable GitHub PR with verification and configuration limits.
 
 Execution authorized by the user's instruction to choose the better mockup and build it. Proceed continuously without another design/plan approval request.
