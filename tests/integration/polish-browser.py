@@ -2,7 +2,7 @@
 from pathlib import Path
 from playwright.sync_api import sync_playwright,expect
 import json
-OUT=Path('docs/refinement-1.2');OUT.mkdir(exist_ok=True)
+OUT=Path('docs/refinement-1.3');OUT.mkdir(exist_ok=True)
 BASE='http://localhost:8080'
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])

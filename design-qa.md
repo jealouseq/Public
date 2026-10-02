@@ -1,39 +1,38 @@
-# JOYRENT 1.2 — design QA
+# JOYRENT 1.3 — design QA
 
-Source truth: the user's new PS5, DualSense, rental-process and game-dialog screenshots; exact existing implementation captured before this iteration in `docs/refinement-1.2/before-*.png`. New product source: `wordpress/joyrent/assets/images/ps5-hero-cutout.png` (1024×1536, transparent, amber lighting). Intended changes explicitly requested: new hero composition and readable type, soft controller movement/light, simpler process, centered full-image dialogs and separate bilingual FAQ. This is a scoped redesign, not pixel-identical cloning.
+Source visual truth: latest user hero screenshot; matched existing1.2 captures `docs/refinement-1.3/before-hero-1440.png` and `before-hero-390.png`; selected studio art direction `wordpress/joyrent/assets/images/ps5-studio.webp`. Generated targets: opaque `ps5-hero-desktop.png`1672×941 and `ps5-hero-mobile.png`1254×1254. This scoped redesign intentionally restores the studio floor/amber atmosphere and replaces ordinary Onest with expressive Unbounded.
 
-Implementation: actual Chromium-rendered WordPress at localhost:8080, anonymous UA/RU. Source and final screenshots were opened and compared, including combined inputs; build success is not the visual evidence.
+Implementation: actual anonymous WordPress in Chromium at localhost:8080, UA/RU. Source images, browser renders and combined comparisons were opened before review.
 
 ## Evidence and normalization
 
-- Full-view comparisons: `docs/refinement-1.2/comparison-hero.jpg`, `comparison-rental.jpg`, `comparison-dialog.jpg`. Left is before, right final. Originals both 1440×1000 pixels/CSS viewport, deviceScaleFactor1; combined inputs use identical 1200×834 normalization for each side. Hero/dialog states match. Process captures include different neighboring content because the requested section simplification changes height; judge the process itself.
-- Focused typography/framing: `hero-1440-uk.png`, `hero-390-uk.png`, `hero-390-ru.png`, `hero-320-uk.png`, `hero-3355-uk.png`. Portrait source asset composited on exact site background was also inspected in `work/refinement/hero-alpha-inspection.png` before use.
-- Dialog detail: `dialog-1440.png`, `dialog-390.png`, `dialog-320.png`, plus 768/3355 and short landscape844. Source and opened artwork widths are measured, with <1.5px tolerance for rounding.
-- Controller/process: `kit-1440-uk.png`, `how-it-works-1440-uk.png` and both language390px captures. Browser-rendered 12-second `hero-motion.webm` / `dualsense-motion.webm` show actual loops.
-- Native FAQ/menu: `faq-1440-uk.png`, `faq-320-uk.png`, `faq-open-390-ru.png`, `menu-390-uk.png`. New FAQ is intentionally a separate route, not the previous landing-page section.
+- Desktop full-view: `docs/refinement-1.3/comparison-hero-desktop.jpg`. Before/after originals1440×1000 image pixels and CSS viewport, DPR1; each normalized identically to1200×833.
+- Mobile full-view: `comparison-hero-mobile.jpg`. Before/after390×844 image pixels and CSS viewport, DPR1, no resize. The final hero is intentionally taller to accommodate word wrapping and the real studio scene. Complete section captured in `hero-full-390-uk.png` / `hero-full-390-ru.png`.
+- Asset art direction: `comparison-studio-assets.jpg`. Original/new opaque targets both1672×941, identically normalized to1003×565. Both retain full white PS5/DualSense, black studio, warm amber light and reflective charcoal floor. New square mobile source was also opened and compared with the rendered whole section.
+- Focused typography: `headline-detail.png`, unscaled760×195 crop of final1440px render. Heading also readable in the combined desktop input. Accents/punctuation remain visible, letters do not merge.
+- Responsive: `hero-320-uk.png`, `hero-390-ru.png`, `hero-700-uk.png`, `hero-701-uk.png`, `hero-768-uk.png`, `hero-3355-uk.png`;28 UA/RU measurements in `hero-viewport-results.json` including short844×390.
+- Real12-second browser recordings: `hero-motion-desktop.webm` / `hero-motion-mobile.webm`. Runtime samples and independent reviewer confirmed the light loop and letter stagger; dynamic reduced motion stops effects.
 
 ## Findings and comparison history
 
-1. P1: hero photo felt bounded/cropped and dense display lettering merged. Replaced by padded transparent product photo in an independent column; Onest570, moderate tracking, two readable lines. Post-fix hero screenshots show complete products and no image rectangle; 390px product is visible without an overlaid rental bar.
-2. P2: static controller loop in the first new runtime check. Explicit initial transform now starts the12-second loop; identity first/last frames eliminate jumps. Actual transforms change, image layout width stays fixed, and reduced motion stops both motion and light immediately.
-3. P1: Tailwind preflight removed native dialog centering. Restored fixed inset0/marginauto, constrained to viewport; before x/y0, final centered at all six tested dimensions.
-4. P2: square covers were forced into tall frames with empty black bands and enlarged on open. Natural image height, captured card width, separate natural artwork/text frames and no hover zoom preserve the complete image. Final focused desktop/mobile captures have no internal bars.
-5. P2: live-resize700→701 initially produced a55px text column with the captured large art. Runtime viewport listener now uses a stacked composition whenever source width plus a readable text column cannot fit. The same open dialog remains readable through701/768/390/1440, with no overflow.
-6. P2: rental process and delivery competed in one dense strip. Shortened three meaningful actions with one sentence each; delivery has one dedicated panel and free-delivery condition.
-7. P2: FAQ mobile native header wrapped its long CTA and had double dividers. Short label and compact small-screen language header fix the wrapping; dividers use one line. UA/RU FAQ pages and matching-language booking return verified.
+1. P1, user-reported: isolated transparent product lost the liked atmosphere; Onest heading lacked character. Two opaque studio compositions and Unbounded550 restore the photographic floor/light and readable display style. Final combined full-view and source-asset comparisons show complete products.
+2. P2, iteration1: inherited `.hero-line > span {display:block}` broke word wrappers into four desktop lines. Evidence: `iteration-1-hero-1440-uk.png` / `iteration-1-hero-390-uk.png`. Explicit inline word groups remove the inherited block rule, and the supplied letter-stagger component preserves whole-word boundaries. Post-fix `hero-1440-uk.png` and all28 measurements confirm two desktop lines from701px. Mobile word wrapping is intentional.
+3. No actionable P0/P1/P2 remains. Independent read-only review inspected original/new assets, renders,700/701, UA/RU, accessible heading, actual stagger/reduced motion and image requests.
 
 ## Required fidelity surfaces
 
-- Fonts/typography: Onest local Cyrillic/Latin for hero, process labels and modal/native FAQ headings; Unbounded brand/section hierarchy and Manrope body retained. No truncation, merged hero letters or hidden heading; UA/RU wrapping inspected from320 through3355.
-- Spacing/layout: whole product remains within its allocated frame, generous content/image spacing, phone stacks, non-overlapping header controls, natural image dimensions and centered dialogs. Section changes are intentional, requested reductions.
-- Colors/tokens: nearly black, off-white and amber preserved. Lighting uses the real image pixels with masks/opacity; no unrelated neon, drawn product replacements or artificial decorative counters. Focus contrast remains visible.
-- Images: transparent1024×1536 product WebP≈83KB, full PS5/controller with clean edges; supplied successful DualSense cutout reused. All12 official game covers remain; no cropping/zoom on open. Icons use Phosphor; FAQ uses native disclosure markers.
-- Copy/content: clear selection→confirmation/transfer→play/return sequence. Real city/deposit/short delivery remain owner-controlled and never invented. FAQ exists only on separate native UA/RU pages; price data and booking logic retained.
+- Fonts/typography: self-hosted Unbounded550, existing OFL license; desktop−.035em tracking/1.19 line height, mobile−.03em/1.2. One semantic H1 exposes the complete phrase; decorative animated letters are hidden from assistive technology. UA/RU fit. Final letters reach opacity1/blur0.
+- Spacing/layout: text occupies the quiet left side with a visible gap before PS5. `contain` preserves the full photograph; desktop stage bounded to1536px with blended edges. Mobile uses a square image below text, showing the whole console/stand/controller. No persistent CTA overlaps the hero. 320–3355px,700/701 and landscape have no horizontal overflow.
+- Colors/tokens: nearly black studio, off-white text and existing amber accent. Animation softly brightens actual photo pixels at low opacity without neon additions or loss of headline contrast.
+- Images: opaque ImageGen masters inspected/retained; high-quality WebP107086/158920bytes. Full products/floor, no transparency halos or substitute CSS artwork. Appropriate responsive source downloads once despite the light overlay.
+- Copy/content: original Ukrainian/Russian rental phrase, price, links and primary action remain readable; no counters/invented terms. Existing1.2 controller, FAQ, dialogs and booking retained.
 
-## Verification
+## Interaction and technical verification
 
-16 unit tests pass. Full main browser suite passes11 widths320–3355 plus actual local request, dates/filter/carousel/dialog/consent/focus/mobile menu. Dialog regression suite passes centering, image ratio and source size, short-height action reachability and live resizing. Bilingual FAQ pages and static preview return to the correct-language booking page; existing owner pages are preserved by insert-only migration. Bilingual form and network errors, actual light opacity0.030→0.043→0.079, moving fixed-width controller and dynamic reduced motion pass. TypeScript/Vite, all PHP lint and three ZIP integrity checks pass. Independent read-only review approved final resize correction; no blocking findings.
+`npm test`16/16; TypeScript/Vite build passed. `polish-browser.py` verifies UA/RU form/game/consent state, localized failure/retry and all12 artworks. Running light opacity0.030→0.045→0.084; fixed controller layout width with changing transform; dynamic reduced motion makes both effects static. Reviewer checked immediate reduced-motion letters and one accessible H1. Focused browser page errors and failed assets: none. All PHP files linted and three ZIPs passed integrity/content checks. Existing dependency metadata unchanged. No external-host deployment occurred.
 
-No actionable P0/P1/P2 findings remain. Browser QA is local; this iteration does not claim the external WordPress host has been updated. Existing owner-customized FAQ text may need editing by the owner. Follow-up polish is subjective preference after viewing the new composition.
+Implementation checklist: source/generated images inspected; combined desktop/mobile/asset comparisons opened; focused type crop opened; responsive and motion states verified; review completed; no blocking fixes outstanding.
+
+Follow-up polish: none required for this scope.
 
 final result: passed

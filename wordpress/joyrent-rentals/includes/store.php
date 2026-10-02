@@ -41,9 +41,9 @@ final class JR_Store {
         self::legal_pages(); self::faq_pages(); update_option('joyrent_seeded',true,false);
     }
     public static function upgrade(): void {
-        if (get_option('joyrent_version')==='1.2.0'||!class_exists('WooCommerce')) return;
+        if (get_option('joyrent_version')==='1.3.0'||!class_exists('WooCommerce')) return;
         self::legal_pages(); self::faq_pages(); // Add missing translations without rewriting owner pages or settings.
-        update_option('joyrent_version','1.2.0',false);
+        update_option('joyrent_version','1.3.0',false);
     }
     private static function faq_pages(): void {
         $data=json_decode((string)file_get_contents(__DIR__.'/../data/faq.json'),true);
