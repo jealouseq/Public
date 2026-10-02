@@ -1,0 +1,288 @@
+{
+  "tariffs": {
+    "ps5": [
+      {
+        "days": 1,
+        "price": 600,
+        "name": "Тест-драйв",
+        "description": "Один вечір. Нові враження."
+      },
+      {
+        "days": 3,
+        "price": 1400,
+        "name": "Ігровий вікенд",
+        "description": "Вихідні за твоїми правилами."
+      },
+      {
+        "days": 7,
+        "price": 2500,
+        "name": "Тиждень фану",
+        "description": "Час пройти ще один рівень."
+      },
+      {
+        "days": 30,
+        "price": 6000,
+        "name": "Максимум",
+        "description": "Твій власний місяць гри."
+      }
+    ],
+    "ps4": [
+      {
+        "days": 3,
+        "price": 750,
+        "name": "Ігровий вікенд",
+        "description": "Класика для чудових вихідних."
+      },
+      {
+        "days": 7,
+        "price": 1200,
+        "name": "Тиждень фану",
+        "description": "Улюблені ігри, більше часу."
+      },
+      {
+        "days": 30,
+        "price": 2500,
+        "name": "Максимум",
+        "description": "Місяць у світі PlayStation."
+      }
+    ]
+  },
+  "games": [
+    {
+      "id": "fc25",
+      "title": "EA SPORTS FC 25",
+      "shortTitle": "FC 25",
+      "eyebrow": "EA SPORTS",
+      "genre": "Спорт",
+      "filters": [
+        "two",
+        "party",
+        "sport",
+        "kids"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 4,
+      "rating": "3+",
+      "image": "game-fc",
+      "description": "Матч із друзями, улюблений клуб і той самий вирішальний гол.",
+      "available": false
+    },
+    {
+      "id": "it-takes-two",
+      "title": "It Takes Two",
+      "shortTitle": "It Takes Two",
+      "eyebrow": "КРАЩЕ РАЗОМ",
+      "genre": "Кооператив",
+      "filters": [
+        "two",
+        "story"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 2,
+      "rating": "12+",
+      "image": "game-coop",
+      "description": "Пригода, створена для двох. Розв’язуйте головоломки та відкривайте фантастичні світи разом.",
+      "available": false
+    },
+    {
+      "id": "spider-man-2",
+      "title": "Marvel’s Spider-Man 2",
+      "shortTitle": "Spider-Man 2",
+      "eyebrow": "MARVEL",
+      "genre": "Пригоди",
+      "filters": [
+        "story"
+      ],
+      "platforms": [
+        "ps5"
+      ],
+      "players": 1,
+      "rating": "16+",
+      "image": "game-city",
+      "description": "Місто, що ніколи не спить, і нова історія двох героїв.",
+      "available": false
+    },
+    {
+      "id": "gt7",
+      "title": "Gran Turismo 7",
+      "shortTitle": "Gran Turismo 7",
+      "eyebrow": "THE REAL DRIVING SIMULATOR",
+      "genre": "Перегони",
+      "filters": [
+        "two",
+        "racing",
+        "kids"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 2,
+      "rating": "3+",
+      "image": "game-racing",
+      "description": "Від першого кола до ідеальної траєкторії. Культові автомобілі та траси.",
+      "available": false
+    },
+    {
+      "id": "gta-v",
+      "title": "Grand Theft Auto V",
+      "shortTitle": "GTA V",
+      "eyebrow": "LOS SANTOS",
+      "genre": "Відкритий світ",
+      "filters": [
+        "story"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 1,
+      "rating": "18+",
+      "image": "game-openworld",
+      "description": "Три історії, велике місто та свобода пригод.",
+      "available": false
+    },
+    {
+      "id": "mk11",
+      "title": "Mortal Kombat 11",
+      "shortTitle": "Mortal Kombat 11",
+      "eyebrow": "FIGHTING CLASSIC",
+      "genre": "Файтинг",
+      "filters": [
+        "two",
+        "party"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 2,
+      "rating": "18+",
+      "image": "game-fighting",
+      "description": "Улюблені бійці та поєдинки на одному екрані.",
+      "available": false
+    },
+    {
+      "id": "tekken8",
+      "title": "Tekken 8",
+      "shortTitle": "TEKKEN 8",
+      "eyebrow": "THE NEXT BATTLE",
+      "genre": "Файтинг",
+      "filters": [
+        "two",
+        "party"
+      ],
+      "platforms": [
+        "ps5"
+      ],
+      "players": 2,
+      "rating": "16+",
+      "image": "game-fighting",
+      "description": "Нове покоління легендарної серії. Влаштовуй поєдинки з друзями.",
+      "available": false
+    },
+    {
+      "id": "hogwarts",
+      "title": "Hogwarts Legacy",
+      "shortTitle": "Hogwarts Legacy",
+      "eyebrow": "ЧАС ДЛЯ МАГІЇ",
+      "genre": "Пригоди",
+      "filters": [
+        "story"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 1,
+      "rating": "12+",
+      "image": "game-magic",
+      "description": "Досліджуй школу магії, вивчай закляття та створюй власну історію.",
+      "available": false
+    },
+    {
+      "id": "ufc5",
+      "title": "EA SPORTS UFC 5",
+      "shortTitle": "UFC 5",
+      "eyebrow": "EA SPORTS",
+      "genre": "Спорт",
+      "filters": [
+        "two",
+        "sport"
+      ],
+      "platforms": [
+        "ps5"
+      ],
+      "players": 2,
+      "rating": "16+",
+      "image": "game-fighting",
+      "description": "Спортивні поєдинки та уважний розрахунок кожного руху.",
+      "available": false
+    },
+    {
+      "id": "cod-bo6",
+      "title": "Call of Duty: Black Ops 6",
+      "shortTitle": "Black Ops 6",
+      "eyebrow": "CALL OF DUTY",
+      "genre": "Екшн",
+      "filters": [
+        "story"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 1,
+      "rating": "18+",
+      "image": "game-action",
+      "description": "Кінематографічна кампанія та динамічні режими. Онлайн-функції залежать від підписки.",
+      "available": false
+    },
+    {
+      "id": "sackboy",
+      "title": "Sackboy: A Big Adventure",
+      "shortTitle": "Sackboy",
+      "eyebrow": "A BIG ADVENTURE",
+      "genre": "Сімейні",
+      "filters": [
+        "two",
+        "party",
+        "kids"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 4,
+      "rating": "7+",
+      "image": "game-family",
+      "description": "Яскрава пригода для всієї компанії. Досліджуйте рівні разом.",
+      "available": false
+    },
+    {
+      "id": "mk1",
+      "title": "Mortal Kombat 1",
+      "shortTitle": "Mortal Kombat 1",
+      "eyebrow": "НОВА ЕРА",
+      "genre": "Файтинг",
+      "filters": [
+        "two",
+        "party"
+      ],
+      "platforms": [
+        "ps5"
+      ],
+      "players": 2,
+      "rating": "18+",
+      "image": "game-fighting",
+      "description": "Нова історія знайомих бійців на PlayStation 5.",
+      "available": false
+    }
+  ]
+}
