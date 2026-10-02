@@ -1,5 +1,7 @@
 # JOYRENT
 
+[Код, скриншоты и материалы — PR #1](https://github.com/jealouseq/Public/pull/1)
+
 Украинский сайт аренды PlayStation 5 / PlayStation 4 на **WordPress + WooCommerce**. Реализован первый макет: почти чёрный фон, крупный Unbounded, Manrope для текста, студийные фотографии, спокойные анимации и мобильная версия.
 
 [Тема WordPress — ZIP](releases/joyrent-1.0.0.zip) · [Плагин аренды — ZIP](releases/joyrent-rentals-1.0.0.zip) · [Визуальный просмотр — ZIP](releases/joyrent-preview-1.0.0.zip) · [Инструкция установки](docs/INSTALL.md)

@@ -70,6 +70,8 @@ Files: scripts/{optimize-assets,package}.mjs; README.md; docs/INSTALL.md; design
 - [x] Check 360/390/430/768/1280/1440 widths, keyboard focus, reduced motion, forms and console errors.
 - [x] Obtain independent whole-branch code review; fix important findings with regression tests.
 - [x] Build theme/plugin ZIPs and static visual preview; confirm archives contain compiled code and assets.
-- [ ] Push feature branch and create a reviewable GitHub PR with verification and configuration limits.
+- [x] Push feature branch and create a reviewable GitHub PR with verification and configuration limits.
 
 Execution authorized by the user's instruction to choose the better mockup and build it. Proceed continuously without another design/plan approval request.
+
+Handoff: https://github.com/jealouseq/Public/pull/1 — theme/plugin/preview ZIPs, screenshots, installation and verification reports. Public WordPress deployment awaits hosting and actual store settings.
