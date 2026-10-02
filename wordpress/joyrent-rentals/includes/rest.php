@@ -2,11 +2,12 @@
 if (!defined('ABSPATH')) exit;
 
 final class JR_REST {
+    private static string $language = 'uk';
     public static function register(): void {
         register_rest_route('joyrent/v1','/catalog',['methods'=>'GET','callback'=>fn()=>rest_ensure_response(JR_Store::catalog()),'permission_callback'=>'__return_true']);
         register_rest_route('joyrent/v1','/requests',['methods'=>'POST','callback'=>[self::class,'create'],'permission_callback'=>'__return_true']);
     }
-    private static function error(string $code, string $message, int $status): WP_Error { return new WP_Error($code,$message,['status'=>$status]); }
+    private static function error(string $code, string $message, int $status): WP_Error { return new WP_Error($code,JR_Locale::message($message,self::$language),['status'=>$status]); }
     private static function acquire(string $lock, int $ttl): string|false {
         global $wpdb;
         $old=get_option($lock);
@@ -37,6 +38,7 @@ final class JR_REST {
     }
     public static function create(WP_REST_Request $request): WP_REST_Response|WP_Error {
         $payload=$request->get_json_params();
+        self::$language=is_array($payload)&&($payload['language']??null)==='ru'?'ru':'uk';
         if (!is_array($payload)) return self::error('jr_payload','Надішли коректну заявку.',400);
         if (!empty($payload['website'])) return self::error('jr_invalid','Не вдалося надіслати заявку.',400);
         $id=$payload['requestId']??'';
@@ -68,6 +70,7 @@ final class JR_REST {
             $existing=JR_Orders::existing($key,$fingerprint);
             if ($existing) return new WP_REST_Response($existing,200);
             if (!self::reserve($rate_key)) return self::error('jr_limit','Забагато заявок за короткий час. Спробуй через 15 хвилин.',429);
+            $data['language']=self::$language; // UI language is deliberately outside the canonical fingerprint.
             $receipt=JR_Orders::create($data,$key,$fingerprint);
             // The WooCommerce key remains authoritative if this cache write fails.
             add_option($result_key,['fingerprint'=>$fingerprint,'receipt'=>$receipt],'','no');

@@ -22,11 +22,18 @@ final class JR_Domain {
         if ($days < 1 || $days > 30) throw new InvalidArgumentException('Некоректний термін.');
         return self::parse_date($date)->modify('+' . $days . ' days')->format('Y-m-d');
     }
+    public static function language(array $payload): string {
+        $language = $payload['language'] ?? 'uk';
+        if (!is_string($language) || !in_array($language, ['uk','ru'], true)) throw new InvalidArgumentException('Оберіть мову uk або ru.');
+        return $language;
+    }
     public static function validate(array $payload, ?string $today = null, ?array $inventory = null): array {
+        self::language($payload);
         $console = is_string($payload['console'] ?? null) ? $payload['console'] : '';
         $days = filter_var($payload['days'] ?? null, FILTER_VALIDATE_INT);
         if ($days === false || $days === null) throw new InvalidArgumentException('Оберіть термін оренди.');
         $tariff = self::tariff($console, $days);
+        unset($tariff['nameRu'], $tariff['descriptionRu']); // Preserve pre-1.1 canonical request fingerprints.
         $start = is_string($payload['startDate'] ?? null) ? $payload['startDate'] : '';
         self::parse_date($start);
         $today = $today ?? (new DateTimeImmutable('now', new DateTimeZone('Europe/Kyiv')))->format('Y-m-d');

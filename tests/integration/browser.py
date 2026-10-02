@@ -16,7 +16,7 @@ with sync_playwright() as p:
  expect(page.locator('html')).to_have_attribute('lang','uk')
  assert page.evaluate('!!window.JOYRENT')
  assert page.evaluate('document.fonts.check(\'600 40px "Unbounded Variable"\')')
- for width in [360,390,430,768,1003,1280,1440]:
+ for width in [320,360,390,430,768,1003,1280,1440,1920,2560,3355]:
   page.set_viewport_size({'width':width,'height':1000})
   page.evaluate('() => new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)))')
   assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),f'Overflow at {width}'
@@ -24,9 +24,9 @@ with sync_playwright() as p:
  page.set_viewport_size({'width':1440,'height':1000})
  # One-day selection safely changes to 3 days on PS4.
  page.locator('#rates .tariff').first.get_by_role('button',name='Обрати',exact=True).click()
- expect(page.locator('.summary-term')).to_contain_text('1 день')
+ expect(page.locator('.summary-price')).to_contain_text('1 день')
  page.locator('#rates').get_by_role('button',name='PS4',exact=True).click()
- expect(page.locator('.summary-term')).to_contain_text('3 дні')
+ expect(page.locator('.summary-price')).to_contain_text('3 дні')
  expect(page.locator('.summary-price strong')).to_have_text('750')
  date=(datetime.now(ZoneInfo('Europe/Kyiv'))+timedelta(days=2)).date()
  page.get_by_label('Дата отримання',exact=True).fill(date.isoformat())
@@ -67,7 +67,7 @@ with sync_playwright() as p:
  page.set_viewport_size({'width':1440,'height':1000});page.screenshot(path=str(OUT/'desktop.png'))
  # Scroll through the entire page to load lazy photos and exercise reduced motion.
  for offset in range(0,9000,700):page.evaluate('(y)=>{window.scrollTo(0,y);}',offset);page.wait_for_timeout(70)
- assert page.locator('.scroll-photo').evaluate('(e)=>e.getBoundingClientRect().width')==page.viewport_size['width']
+ assert page.locator('.controller-stage img').evaluate('(e)=>e.getBoundingClientRect().width')>0
  assert page.evaluate('[...document.images].filter(i=>i.complete&&!i.naturalWidth).length')==0
  page.evaluate('()=>{window.scrollTo(0,0);}');page.screenshot(path=str(OUT/'desktop-full.png'),full_page=True)
  page.set_viewport_size({'width':390,'height':930});page.evaluate('()=>{window.scrollTo(0,0);}');page.screenshot(path=str(OUT/'mobile-hero.png'))

@@ -1,12 +1,12 @@
 import catalog from '../../wordpress/joyrent-rentals/data/catalog.json';
 
 export type ConsoleId = 'ps5' | 'ps4';
-export type Tariff = { days: number; price: number; name: string; description: string };
+export type Tariff = { days: number; price: number; name: string; description: string; nameRu?: string; descriptionRu?: string };
 export type Game = typeof catalog.games[number];
 export const defaultCatalog = catalog;
 export const money = (value: number) => new Intl.NumberFormat('uk-UA', { maximumFractionDigits: 2 }).format(value);
-export const dayLabel = (days: number) => days === 1 ? '1 день' : days === 3 ? '3 дні' : `${days} днів`;
-export function quote(consoleId: ConsoleId, days: number, tariffs = catalog.tariffs): Tariff {
+export const dayLabel = (days: number, language: 'uk' | 'ru' = 'uk') => language === 'ru' ? (days === 1 ? '1 день' : days === 3 ? '3 дня' : `${days} дней`) : days === 1 ? '1 день' : days === 3 ? '3 дні' : `${days} днів`;
+export function quote(consoleId: ConsoleId, days: number, tariffs: Record<ConsoleId, Tariff[]> = catalog.tariffs): Tariff {
   const tariff = tariffs[consoleId]?.find(item => item.days === days);
   if (!tariff) throw new Error('Цей тариф недоступний.');
   return tariff;

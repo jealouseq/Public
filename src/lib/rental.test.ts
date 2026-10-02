@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { addRentalDays, quote, safeDays, validateStartDate } from './rental';
+import { addRentalDays, dayLabel, quote, safeDays, validateStartDate } from './rental';
 
 describe('approved rental prices', () => {
   it.each([['ps5', 1, 600], ['ps5', 3, 1400], ['ps5', 7, 2500], ['ps5', 30, 6000], ['ps4', 3, 750], ['ps4', 7, 1200], ['ps4', 30, 2500]] as const)('%s for %i days costs %i UAH', (consoleId, days, amount) => expect(quote(consoleId, days).price).toBe(amount));
@@ -14,4 +14,10 @@ describe('calendar dates', () => {
   it('rejects impossible dates', () => expect(() => addRentalDays('2026-02-30', 3)).toThrow());
   it('rejects past start dates', () => expect(validateStartDate('2026-10-01', '2026-10-02')).toBe(false));
   it('accepts today', () => expect(validateStartDate('2026-10-02', '2026-10-02')).toBe(true));
+});
+
+describe('Russian duration labels', () => {
+  it('uses Russian inflection for all offered periods', () => {
+    expect([1, 3, 7, 30].map(days => dayLabel(days, 'ru'))).toEqual(['1 день', '3 дня', '7 дней', '30 дней']);
+  });
 });

@@ -1,42 +1,37 @@
-# JOYRENT — Product Design QA
+# JOYRENT 1.1 — design QA
 
-**Source visual truth:** `assets/design/homepage-01.png` (Studio Editorial), selected by the implementer under the user's explicit instruction to choose the stronger direction and build. Typography was refined under the later request for distinctive fonts.
+Date: 2026-10-03. Source truth: the user's three annotated screenshots and fresh browser captures of https://flowers-luxury.shop/ in `docs/audit-2026-10-03/live-*.png`. Implementation: browser-rendered local WordPress at http://localhost:8080, `new-*.png` in the same directory. This is an authorized refinement of the existing design, with deliberate changes to crop, structure, artwork and bilingual content.
 
-**Implementation:** actual installed WordPress theme at `http://localhost:8080`; `docs/images/desktop-comparison.png`.
+## Evidence
 
-**Viewport and normalization:** source 1003 × 1568 pixels; implementation 1003 × 1568 CSS/pixel viewport, deviceScaleFactor 1. No browser frame, resizing or density mismatch. State: Ukrainian, PS5, initial 3-day form, full catalog, near-black theme, reduced motion for stable comparison.
+- Desktop source and result: 3355×1274 pixels, CSS viewport 3355×1274, deviceScaleFactor 1, anonymous Ukrainian homepage, reduced motion. [Combined full view](docs/audit-2026-10-03/comparison-hero-wide.jpg): left source, right updated. Each original was downsampled identically to 1500×570 for comparison.
+- Mobile source and result: 390×844 pixels/CSS viewport, density 1, same UA homepage/reduced-motion state. [Combined full view](docs/audit-2026-10-03/comparison-hero-mobile.jpg), original density preserved.
+- [Controller comparison](docs/audit-2026-10-03/comparison-controller.jpg) and [FAQ comparison](docs/audit-2026-10-03/comparison-faq.jpg): both source/result 3355×1274, same section scroll-into-view operation. Adjacent sections intentionally differ because the controller/kit merge and shorter final CTA alter heights and reading order.
+- Focused readable evidence: `new-hero-1440-uk.png`, `new-kit-1440-uk.png`, `new-faq-1440-uk.png`; both UA/RU mobile captures for all sections. Exact-game MK11 and Tekken 8 artwork was opened and visually checked against named official source pages.
 
-**Full-view comparison:** `docs/images/design-comparison.png` contains both images at the same scale: source left, implementation right. **Focused comparison:** `docs/images/hero-comparison.png` compares the first 720px at 1:1 scale. Font, image crop and CTA hierarchy are readable there. Additional browser evidence: `docs/images/desktop.png`, `desktop-full.png`, `mobile-hero.png`, `mobile-games.png`, `mobile-booking.png`.
+## Findings and comparison history
 
-## Findings and iteration history
+- P1: ultrawide and mobile hero cropped the console/controller. Fixed with a bounded image scene and contained artwork; post-fix matched hero captures show whole objects.
+- P1: MK11, Tekken 8, UFC 5 and MK1 shared invented artwork. Fixed with twelve distinct official exact-game covers. Original embedded logos remain in the images; redundant UI poster titles removed.
+- P2: controller width/zoom scroll motion and huge close-up. Replaced by full transparent cutout with a fixed layout and restrained eight-second transform loop; contents merged into this section.
+- P2: repeated kit/process/delivery copy and field counters. Reduced to one kit section, three process phases and concise delivery conditions before the form. Numbered form labels and repeated rental-price line removed.
+- P2: FAQ and huge final CTA merged visually. Concrete FAQ title and seven useful questions; separate compact amber panel.
+- P2: bilingual error and native legal navigation gaps found in review. Corrected transport/delayed errors, cleared stale-language errors on switching, translated native templates and preserved RU in return links.
+- P2: first runtime motion test found an idle loop caused by blocked initial motion. Explicit starting states now run both loops. Final browser samples show hero opacity changing 0.040→0.088→0.220, controller transforms changing while layout width stays fixed. Reduced motion now responds immediately to a preference change and stops both loops.
+- A first 320-pixel resize test reported overflow; repeated isolated/batch checks and the final full viewport suite no longer reproduce it. No content/control is outside the document width in final checks, including 320 pixels.
 
-1. **[P2, fixed] Display text and prices too small at desktop 1003px.** First comparison `docs/images/design-comparison-before.png` showed the heading losing the source's dominant hierarchy. Increased desktop hero scale from 5.65vw to 7.2vw (cap 92px), section heading scale to 4.4vw and tariff prices to 4.4vw. Reduced excess tariff spacing. The revised full/focused comparison restores large type beside the console while retaining readable body copy.
-2. **[P2, fixed] Horizontal overflow from off-screen carousel descriptions.** Initial rendered HTML measured 3395px on a 1440px viewport. Positioned `.game-card` as the containing block for its screen-reader text. Final browser measurements match viewport width at 360/390/430/768/1003/1280/1440px.
-3. **[P1, fixed] WordPress assets/boot configuration missing after the first production build.** Preserved the inline WordPress configuration when marking the entry script as a module, and normalized package file permissions. Revised WordPress evidence has the hero, posters and fonts loaded; no failed HTTP assets or JS exceptions.
-4. **[P2, fixed] Mobile bottom CTA overlapped the form in the section capture.** Hide the persistent CTA while the booking section intersects the viewport. Form controls and summary use the same clear column; the primary form button remains available.
+## Required surfaces
 
-## Required fidelity surfaces
+- Typography: self-hosted Unbounded/Manrope preserved; Cyrillic works in both languages. Hero lines, prices, mobile wrapping and native legal headings reviewed. No basic-font substitution.
+- Spacing/layout: bounded desktop composition, full mobile product, merged controller/kit, three process columns and stacked mobile layout, readable FAQ and visibly separate CTA. Changes from source are intentional.
+- Colors: existing nearly black/white/amber tokens retained. Warm lighting is an animated pass over the actual photograph. Controls retain visible focus indicators and muted text remains readable.
+- Images: whole products, clean alpha composited on site background, twelve actual named game covers contained without logo cropping. Game brands/images are raster artwork, icons use Phosphor. Owner thumbnails have priority.
+- Copy: generic repetitive slogans/counters removed; concrete rental journey, no invented deposit/city/availability. UA/RU menus, form, dialogs, game descriptions, errors, receipts, legal pages and footer reviewed. Untranslated custom owner delivery text remains visible with an explicit language label; owner can supply RU in settings.
 
-- **Fonts/typography:** self-hosted Unbounded Variable for display/price and Manrope Variable for text; Ukrainian Cyrillic font loaded and checked in Chromium. The selected image's conventional grotesk has intentionally been replaced by the more distinctive type requested by the user. Three-line hero hierarchy, large prices and compact labels remain. No headline truncation at tested widths.
-- **Spacing/layout rhythm:** near-black full-width hero, left type/right product, open four-column tariffs and horizontal poster rail retained. Tariffs become two columns on phones; booking becomes one column. The implemented rail begins lower than the concept because real delivery conditions, descriptions and category controls are now present. This is an intentional information addition, not an attempt at identical screenshot cloning. Generous section spacing remains; no overlap or page overflow.
-- **Colors/tokens:** #08090b background, #f4f4f1 foreground, restrained #eab56e accent, muted greys and subtle dividers. No neon gradients or decorative blobs. Active controls and focus rings remain distinct.
-- **Image quality/fidelity:** real generated PS5/DualSense studio photo follows the source's black/amber direction. Product and game images are sharp optimized WebP. Original generated raster artwork is preserved; no CSS/SVG substitutes for imagery. Game posters are original themed illustrations with honest UI titles, rather than invented official packaging. Owners can replace them with verified edition assets.
-- **Copy/content:** Ukrainian navigation, source hero copy, exact seven supplied prices and clear rental terms. No invented same-day delivery, city, deposit, stock or payment claims. Request and confirmation wording agree with the actual WooCommerce pending-request state. Developer instructions do not leak into product copy.
+## Interaction verification
 
-## Interaction/accessibility evidence
+Chromium tested 320/360/390/430/768/1003/1280/1440/1920/2560/3355 widths. Console/date changes, game filters/carousel/dialog/focus, legal dialog, consent, actual local WooCommerce request, immutable receipt, mobile navigation, hidden sticky CTA around booking, language/form persistence, network-error retry key, normal motion and dynamic reduced motion pass. Browser error checks pass; all official covers decode. Live hosting was inspected read-only; no live order or payment was sent.
 
-Automated Chromium checks exercised tariff selection, PS5→PS4 one-day fallback, calendar return date, game filter, horizontal arrow scrolling, game dialog/selection, Escape/focus restoration, legal dialog, required consent, real request creation and immutable success details. Mobile navigation closes after selection. Page language is `uk`; named native dialogs provide focus trapping. All seven viewport widths pass without document overflow. Reduced-motion photo is static; normal scroll expands the reveal image from 1094px to 1418px at a 1440px viewport. Final run reports zero JS errors, failed image requests or missing loaded images.
+No actionable P0/P1/P2 visual findings remain. The revised frontend is verified on the local WordPress fixture; the live host still needs the 1.1 theme/plugin update.
 
-## Accepted differences and remaining context
-
-The concept is an art-direction source. Additional functional information and original game illustrations are expected differences. No mobile reference was supplied; mobile is reviewed for layout and task completion against the same brand direction. Real service conditions, inventory and contact details still need the owner's configuration before public launch. Automatic inventory reservation and payment are outside this version's request workflow.
-
-## Implementation checklist
-
-- [x] Large expressive type, local Cyrillic fonts and correct wrapping.
-- [x] Original studio assets, optimized formats and loaded imagery.
-- [x] Repaired overflow, production boot and mobile CTA overlap.
-- [x] Checked desktop/mobile interactions, keyboard dialogs and reduced motion.
-- [x] Compared revised full-view and focused visual evidence.
-
-**final result: passed**
+final result: passed

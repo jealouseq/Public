@@ -2,11 +2,19 @@
 
 [Код, скриншоты и материалы — PR #1](https://github.com/jealouseq/Public/pull/1)
 
-Украинский сайт аренды PlayStation 5 / PlayStation 4 на **WordPress + WooCommerce**. Реализован первый макет: почти чёрный фон, крупный Unbounded, Manrope для текста, студийные фотографии, спокойные анимации и мобильная версия.
+Украинская и русская версии сайта аренды PlayStation 5 / PlayStation 4 на **WordPress + WooCommerce**. Обновление 1.1: почти чёрный фон, крупный Unbounded, Manrope для текста, студийные фотографии, спокойные анимации и мобильная версия.
 
-[Тема WordPress — ZIP](releases/joyrent-1.0.0.zip) · [Плагин аренды — ZIP](releases/joyrent-rentals-1.0.0.zip) · [Визуальный просмотр — ZIP](releases/joyrent-preview-1.0.0.zip) · [Инструкция установки](docs/INSTALL.md)
+[Тема WordPress — ZIP](releases/joyrent-1.1.0.zip) · [Плагин аренды — ZIP](releases/joyrent-rentals-1.1.0.zip) · [Визуальный просмотр — ZIP](releases/joyrent-preview-1.1.0.zip) · [Инструкция установки](docs/INSTALL.md)
 
 ![JOYRENT — работающая тема WordPress](docs/images/desktop.png)
+
+## Что изменилось в 1.1
+
+- Целые PS5 и DualSense на главном экране, плавная тёплая подсветка.
+- UA/RU без сброса формы, русские юридические страницы и ошибки.
+- 12 настоящих обложек вместо изображений жанров.
+- DualSense на прозрачном фоне, три этапа аренды и короткий финальный призыв.
+- [Проверка живого сайта](docs/audit-2026-10-03/README.md).
 
 ## Что работает
 
@@ -25,7 +33,7 @@
 | PS5 | 600 грн | 1 400 грн | 2 500 грн | 6 000 грн |
 | PS4 | — | 750 грн | 1 200 грн | 2 500 грн |
 
-Город, контакты и суммы залога/короткой доставки не выдуманы: до настройки форма показывает согласование. Доставка и подключение от семи дней бесплатны в зоне сервиса. Игровые иллюстрации сгенерированы для доборки; это не официальные обложки и не подтверждение наличия конкретного издания.
+Город, контакты и суммы залога/короткой доставки не выдуманы: до настройки форма показывает согласование. Доставка и подключение от семи дней бесплатны в зоне сервиса. Карточки показывают официальные материалы конкретных игр. [Источники изображений](docs/game-artwork-sources.json); наличие и издание подтверждает магазин.
 
 ## Разработка
 
@@ -39,7 +47,7 @@ npm run preview
 
 Dev-сервер использует локальный WordPress `http://localhost:8080` для REST. `npm run build` компилирует фронтенд и собирает три архива в `releases/`. `npm run preview` открывает статическую версию на `http://localhost:4173`; отправка заявок в ней отключена, поскольку требуется WordPress.
 
-Исходники: `src/` и `components/ui/`; тема: `wordpress/joyrent/`; плагин: `wordpress/joyrent-rentals/`. React встроен в тему, Next.js не требуется. [Scroll Reveal Image](https://21st.dev/@unlumen/components/scroll-reveal-image) адаптирован из переданного пользователем промпта.
+Исходники: `src/` и `components/ui/`; тема: `wordpress/joyrent/`; плагин: `wordpress/joyrent-rentals/`. React встроен в тему, Next.js не требуется. Ранее применённый Scroll Reveal заменён на плавную анимацию целого DualSense без изменения ширины. Для заголовка использован спокойный приём появления строк, как в [Reveal Text](https://21st.dev/@educalvolpz/components/reveal-text).
 
 [Дизайн и архитектура](docs/superpowers/specs/2026-10-02-joyrent-design.md) · [План реализации](docs/superpowers/plans/2026-10-02-joyrent-build.md) · [Проверка дизайна](design-qa.md) · [Результаты проверок](docs/VERIFICATION.md)
 

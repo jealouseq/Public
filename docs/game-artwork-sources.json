@@ -1,0 +1,98 @@
+[
+  {
+    "id": "fc25",
+    "source": "https://www.playstation.com/en-us/games/ea-sports-fc-25/",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202409/2712/1e1c42b14d92280e17bda697b8c4ae13ff9f91bdb10fca89.png",
+    "file": "cover-fc25.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+  },
+  {
+    "id": "it-takes-two",
+    "source": "https://www.playstation.com/en-us/games/it-takes-two/",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202012/0815/0Xqi1LgRoEtJ5zlFprpd54Vu.png",
+    "file": "cover-it-takes-two.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+  },
+  {
+    "id": "spider-man-2",
+    "source": "https://www.playstation.com/en-us/games/marvels-spider-man-2/",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202306/1219/1c7b75d8ed9271516546560d219ad0b22ee0a263b4537bd8.png",
+    "file": "cover-spider-man-2.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+  },
+  {
+    "id": "gt7",
+    "source": "https://www.playstation.com/en-us/games/gran-turismo-7/",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202109/1321/yZ7dpmjtHr1olhutHT57IFRh.png",
+    "file": "cover-gt7.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+  },
+  {
+    "id": "gta-v",
+    "source": "https://www.playstation.com/en-us/games/grand-theft-auto-v/",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202202/2816/K6mmm89oNII1iI1aqaClO0wh.png",
+    "file": "cover-gta-v.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+  },
+  {
+    "id": "hogwarts",
+    "source": "https://www.playstation.com/en-us/games/hogwarts-legacy/",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202208/0921/dR9KJAKDW2izPbptHQbh3rnj.png",
+    "file": "cover-hogwarts.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+  },
+  {
+    "id": "ufc5",
+    "source": "https://www.playstation.com/en-us/games/ea-sports-ufc-5/",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202309/0421/418704276d35ce02e8cb532c6ca3826cf866ad2ec66c0b17.png",
+    "file": "cover-ufc5.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+  },
+  {
+    "id": "cod-bo6",
+    "source": "https://www.playstation.com/en-us/games/call-of-duty-black-ops-6/",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202405/2921/4b45cf4b319a65e05f6e4f87a22c7b91d2e7e8aeb247b61f.png",
+    "file": "cover-cod-bo6.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+  },
+  {
+    "id": "sackboy",
+    "source": "https://www.playstation.com/en-us/games/sackboy-a-big-adventure/",
+    "url": "https://image.api.playstation.com/vulcan/img/rnd/202010/1614/TJiBEQMJ9qa93lWBu4sKScY9.png",
+    "file": "cover-sackboy.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+  },
+  {
+    "id": "mk1",
+    "source": "https://www.playstation.com/en-us/games/mortal-kombat-1/",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202305/1515/1cc63f4f4b2c9a9852fabefba4ca7eea936b1ef7867811a5.png",
+    "file": "cover-mk1.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+  },
+  {
+    "id": "mk11",
+    "source": "https://www.playstation.com/en-us/games/mortal-kombat-11/",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202009/0123/bF1qmEL5RM6aMfL0oLcxRe8B.png",
+    "file": "cover-mk11.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+  },
+  {
+    "id": "tekken8",
+    "source": "https://www.playstation.com/en-us/games/tekken-8/",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202212/1621/rCvLik1PKDSoCaEvTIx42H3Q.png",
+    "file": "cover-tekken8.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+  }
+]

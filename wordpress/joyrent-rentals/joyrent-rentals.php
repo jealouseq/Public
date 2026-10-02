@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: JOYRENT Rentals
- * Description: Ukrainian PlayStation rental catalog, guest requests and WooCommerce order integration.
- * Version: 1.0.0
+ * Description: Ukrainian and Russian PlayStation rental catalog, guest requests and WooCommerce order integration.
+ * Version: 1.1.0
  * Requires at least: 6.6
  * Requires PHP: 8.2
  * Requires Plugins: woocommerce
@@ -12,10 +12,11 @@
  */
 if (!defined('ABSPATH')) exit;
 define('JR_PLUGIN_FILE', __FILE__);
-foreach (['domain','settings','games','store','orders','rest'] as $file) require_once __DIR__.'/includes/'.$file.'.php';
+foreach (['locale','domain','settings','games','store','orders','rest'] as $file) require_once __DIR__.'/includes/'.$file.'.php';
 
 add_action('init', ['JR_Games','register']);
 add_action('init', ['JR_Orders','register_status']);
+add_action('init', ['JR_Store','upgrade'], 20);
 add_action('rest_api_init', ['JR_REST','register']);
 add_action('admin_menu', ['JR_Settings','menu']);
 add_action('admin_init', ['JR_Settings','register']);

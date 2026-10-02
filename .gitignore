@@ -7,3 +7,6 @@ work/
 wordpress/joyrent/assets/dist/
 preview/
 *.log
+
+__pycache__/
+*.pyc

@@ -38,7 +38,8 @@ final class JR_Orders {
                 $fee=new WC_Order_Item_Fee(); $fee->set_name($title); $fee->set_amount($value); $fee->set_total($value); $fee->set_tax_status('none'); $order->add_item($fee);
             }
             $deposit=$data['console']==='ps5'?$settings['depositPs5']:$settings['depositPs4'];
-            foreach (['console'=>$data['console'],'days'=>$data['days'],'start_date'=>$data['startDate'],'return_date'=>$data['returnDate'],'controllers'=>$data['controllers'],'game_ids'=>$data['gameIds'],'method'=>$data['method'],'deposit'=>$deposit===null?'pending':$deposit,'delivery'=>$delivery===null?'pending':$delivery,'extra_controller'=>$extra===null?'pending':$extra,'consent'=>'yes','consent_version'=>'1.0'] as $key=>$value) $order->update_meta_data('_joyrent_'.$key,$value);
+            foreach (['console'=>$data['console'],'days'=>$data['days'],'start_date'=>$data['startDate'],'return_date'=>$data['returnDate'],'controllers'=>$data['controllers'],'game_ids'=>$data['gameIds'],'method'=>$data['method'],'deposit'=>$deposit===null?'pending':$deposit,'delivery'=>$delivery===null?'pending':$delivery,'extra_controller'=>$extra===null?'pending':$extra,'consent'=>'yes','consent_version'=>'1.0','language'=>$data['language']??'uk'] as $key=>$value) $order->update_meta_data('_joyrent_'.$key,$value);
+            $order->add_order_note('Мова клієнта: '.(($data['language']??'uk')==='ru'?'Російська':'Українська'));
             $order->add_order_note('Заявка JOYRENT: доступність консолі, ігор, адреса доставки та умови застави потребують підтвердження. Оплату не отримано. Бажані ігри: '.implode(', ',$data['gameIds']));
             $order->set_customer_note('Дата отримання: '.$data['startDate'].'. Повернення: '.$data['returnDate'].'. Геймпадів: '.$data['controllers'].'. Спосіб отримання: '.$data['method']);
             $order->update_meta_data('_joyrent_rental_amount',$amount);

@@ -12,4 +12,8 @@ try { JR_Domain::tariff('ps4',1); check(false,'unsupported tariff'); } catch (In
 check(JR_Domain::return_date('2026-10-24',3) === '2026-10-27','DST calendar boundary');
 check(JR_Domain::return_date('2028-02-28',1) === '2028-02-29','leap day');
 try { JR_Domain::return_date('2026-02-30',3); check(false,'invalid date'); } catch (InvalidArgumentException $e) { check(true,'invalid date rejected'); }
+check(JR_Domain::language([]) === 'uk','default UI language');
+check(JR_Domain::language(['language'=>'ru']) === 'ru','Russian UI language');
+try { JR_Domain::language(['language'=>['ru']]); check(false,'array language'); } catch (InvalidArgumentException $e) { check(true,'array language rejected'); }
+try { JR_Domain::language(['language'=>'en']); check(false,'unsupported language'); } catch (InvalidArgumentException $e) { check(true,'unsupported language rejected'); }
 echo "PASS: $checks PHP domain assertions\n";
