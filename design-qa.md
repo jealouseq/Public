@@ -1,37 +1,39 @@
-# JOYRENT 1.1 — design QA
+# JOYRENT 1.2 — design QA
 
-Date: 2026-10-03. Source truth: the user's three annotated screenshots and fresh browser captures of https://flowers-luxury.shop/ in `docs/audit-2026-10-03/live-*.png`. Implementation: browser-rendered local WordPress at http://localhost:8080, `new-*.png` in the same directory. This is an authorized refinement of the existing design, with deliberate changes to crop, structure, artwork and bilingual content.
+Source truth: the user's new PS5, DualSense, rental-process and game-dialog screenshots; exact existing implementation captured before this iteration in `docs/refinement-1.2/before-*.png`. New product source: `wordpress/joyrent/assets/images/ps5-hero-cutout.png` (1024×1536, transparent, amber lighting). Intended changes explicitly requested: new hero composition and readable type, soft controller movement/light, simpler process, centered full-image dialogs and separate bilingual FAQ. This is a scoped redesign, not pixel-identical cloning.
 
-## Evidence
+Implementation: actual Chromium-rendered WordPress at localhost:8080, anonymous UA/RU. Source and final screenshots were opened and compared, including combined inputs; build success is not the visual evidence.
 
-- Desktop source and result: 3355×1274 pixels, CSS viewport 3355×1274, deviceScaleFactor 1, anonymous Ukrainian homepage, reduced motion. [Combined full view](docs/audit-2026-10-03/comparison-hero-wide.jpg): left source, right updated. Each original was downsampled identically to 1500×570 for comparison.
-- Mobile source and result: 390×844 pixels/CSS viewport, density 1, same UA homepage/reduced-motion state. [Combined full view](docs/audit-2026-10-03/comparison-hero-mobile.jpg), original density preserved.
-- [Controller comparison](docs/audit-2026-10-03/comparison-controller.jpg) and [FAQ comparison](docs/audit-2026-10-03/comparison-faq.jpg): both source/result 3355×1274, same section scroll-into-view operation. Adjacent sections intentionally differ because the controller/kit merge and shorter final CTA alter heights and reading order.
-- Focused readable evidence: `new-hero-1440-uk.png`, `new-kit-1440-uk.png`, `new-faq-1440-uk.png`; both UA/RU mobile captures for all sections. Exact-game MK11 and Tekken 8 artwork was opened and visually checked against named official source pages.
+## Evidence and normalization
+
+- Full-view comparisons: `docs/refinement-1.2/comparison-hero.jpg`, `comparison-rental.jpg`, `comparison-dialog.jpg`. Left is before, right final. Originals both 1440×1000 pixels/CSS viewport, deviceScaleFactor1; combined inputs use identical 1200×834 normalization for each side. Hero/dialog states match. Process captures include different neighboring content because the requested section simplification changes height; judge the process itself.
+- Focused typography/framing: `hero-1440-uk.png`, `hero-390-uk.png`, `hero-390-ru.png`, `hero-320-uk.png`, `hero-3355-uk.png`. Portrait source asset composited on exact site background was also inspected in `work/refinement/hero-alpha-inspection.png` before use.
+- Dialog detail: `dialog-1440.png`, `dialog-390.png`, `dialog-320.png`, plus 768/3355 and short landscape844. Source and opened artwork widths are measured, with <1.5px tolerance for rounding.
+- Controller/process: `kit-1440-uk.png`, `how-it-works-1440-uk.png` and both language390px captures. Browser-rendered 12-second `hero-motion.webm` / `dualsense-motion.webm` show actual loops.
+- Native FAQ/menu: `faq-1440-uk.png`, `faq-320-uk.png`, `faq-open-390-ru.png`, `menu-390-uk.png`. New FAQ is intentionally a separate route, not the previous landing-page section.
 
 ## Findings and comparison history
 
-- P1: ultrawide and mobile hero cropped the console/controller. Fixed with a bounded image scene and contained artwork; post-fix matched hero captures show whole objects.
-- P1: MK11, Tekken 8, UFC 5 and MK1 shared invented artwork. Fixed with twelve distinct official exact-game covers. Original embedded logos remain in the images; redundant UI poster titles removed.
-- P2: controller width/zoom scroll motion and huge close-up. Replaced by full transparent cutout with a fixed layout and restrained eight-second transform loop; contents merged into this section.
-- P2: repeated kit/process/delivery copy and field counters. Reduced to one kit section, three process phases and concise delivery conditions before the form. Numbered form labels and repeated rental-price line removed.
-- P2: FAQ and huge final CTA merged visually. Concrete FAQ title and seven useful questions; separate compact amber panel.
-- P2: bilingual error and native legal navigation gaps found in review. Corrected transport/delayed errors, cleared stale-language errors on switching, translated native templates and preserved RU in return links.
-- P2: first runtime motion test found an idle loop caused by blocked initial motion. Explicit starting states now run both loops. Final browser samples show hero opacity changing 0.040→0.088→0.220, controller transforms changing while layout width stays fixed. Reduced motion now responds immediately to a preference change and stops both loops.
-- A first 320-pixel resize test reported overflow; repeated isolated/batch checks and the final full viewport suite no longer reproduce it. No content/control is outside the document width in final checks, including 320 pixels.
+1. P1: hero photo felt bounded/cropped and dense display lettering merged. Replaced by padded transparent product photo in an independent column; Onest570, moderate tracking, two readable lines. Post-fix hero screenshots show complete products and no image rectangle; 390px product is visible without an overlaid rental bar.
+2. P2: static controller loop in the first new runtime check. Explicit initial transform now starts the12-second loop; identity first/last frames eliminate jumps. Actual transforms change, image layout width stays fixed, and reduced motion stops both motion and light immediately.
+3. P1: Tailwind preflight removed native dialog centering. Restored fixed inset0/marginauto, constrained to viewport; before x/y0, final centered at all six tested dimensions.
+4. P2: square covers were forced into tall frames with empty black bands and enlarged on open. Natural image height, captured card width, separate natural artwork/text frames and no hover zoom preserve the complete image. Final focused desktop/mobile captures have no internal bars.
+5. P2: live-resize700→701 initially produced a55px text column with the captured large art. Runtime viewport listener now uses a stacked composition whenever source width plus a readable text column cannot fit. The same open dialog remains readable through701/768/390/1440, with no overflow.
+6. P2: rental process and delivery competed in one dense strip. Shortened three meaningful actions with one sentence each; delivery has one dedicated panel and free-delivery condition.
+7. P2: FAQ mobile native header wrapped its long CTA and had double dividers. Short label and compact small-screen language header fix the wrapping; dividers use one line. UA/RU FAQ pages and matching-language booking return verified.
 
-## Required surfaces
+## Required fidelity surfaces
 
-- Typography: self-hosted Unbounded/Manrope preserved; Cyrillic works in both languages. Hero lines, prices, mobile wrapping and native legal headings reviewed. No basic-font substitution.
-- Spacing/layout: bounded desktop composition, full mobile product, merged controller/kit, three process columns and stacked mobile layout, readable FAQ and visibly separate CTA. Changes from source are intentional.
-- Colors: existing nearly black/white/amber tokens retained. Warm lighting is an animated pass over the actual photograph. Controls retain visible focus indicators and muted text remains readable.
-- Images: whole products, clean alpha composited on site background, twelve actual named game covers contained without logo cropping. Game brands/images are raster artwork, icons use Phosphor. Owner thumbnails have priority.
-- Copy: generic repetitive slogans/counters removed; concrete rental journey, no invented deposit/city/availability. UA/RU menus, form, dialogs, game descriptions, errors, receipts, legal pages and footer reviewed. Untranslated custom owner delivery text remains visible with an explicit language label; owner can supply RU in settings.
+- Fonts/typography: Onest local Cyrillic/Latin for hero, process labels and modal/native FAQ headings; Unbounded brand/section hierarchy and Manrope body retained. No truncation, merged hero letters or hidden heading; UA/RU wrapping inspected from320 through3355.
+- Spacing/layout: whole product remains within its allocated frame, generous content/image spacing, phone stacks, non-overlapping header controls, natural image dimensions and centered dialogs. Section changes are intentional, requested reductions.
+- Colors/tokens: nearly black, off-white and amber preserved. Lighting uses the real image pixels with masks/opacity; no unrelated neon, drawn product replacements or artificial decorative counters. Focus contrast remains visible.
+- Images: transparent1024×1536 product WebP≈83KB, full PS5/controller with clean edges; supplied successful DualSense cutout reused. All12 official game covers remain; no cropping/zoom on open. Icons use Phosphor; FAQ uses native disclosure markers.
+- Copy/content: clear selection→confirmation/transfer→play/return sequence. Real city/deposit/short delivery remain owner-controlled and never invented. FAQ exists only on separate native UA/RU pages; price data and booking logic retained.
 
-## Interaction verification
+## Verification
 
-Chromium tested 320/360/390/430/768/1003/1280/1440/1920/2560/3355 widths. Console/date changes, game filters/carousel/dialog/focus, legal dialog, consent, actual local WooCommerce request, immutable receipt, mobile navigation, hidden sticky CTA around booking, language/form persistence, network-error retry key, normal motion and dynamic reduced motion pass. Browser error checks pass; all official covers decode. Live hosting was inspected read-only; no live order or payment was sent.
+16 unit tests pass. Full main browser suite passes11 widths320–3355 plus actual local request, dates/filter/carousel/dialog/consent/focus/mobile menu. Dialog regression suite passes centering, image ratio and source size, short-height action reachability and live resizing. Bilingual FAQ pages and static preview return to the correct-language booking page; existing owner pages are preserved by insert-only migration. Bilingual form and network errors, actual light opacity0.030→0.043→0.079, moving fixed-width controller and dynamic reduced motion pass. TypeScript/Vite, all PHP lint and three ZIP integrity checks pass. Independent read-only review approved final resize correction; no blocking findings.
 
-No actionable P0/P1/P2 visual findings remain. The revised frontend is verified on the local WordPress fixture; the live host still needs the 1.1 theme/plugin update.
+No actionable P0/P1/P2 findings remain. Browser QA is local; this iteration does not claim the external WordPress host has been updated. Existing owner-customized FAQ text may need editing by the owner. Follow-up polish is subjective preference after viewing the new composition.
 
 final result: passed

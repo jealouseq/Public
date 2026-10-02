@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import '@fontsource-variable/unbounded/index.css';
 import '@fontsource-variable/manrope/index.css';
+import '@fontsource-variable/onest/index.css';
 import './styles.css';
 import App from './App';
 import { LanguageProvider } from './lib/i18n';

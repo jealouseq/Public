@@ -67,12 +67,16 @@ with sync_playwright() as p:
  page.set_viewport_size({'width':1440,'height':1000});page.screenshot(path=str(OUT/'desktop.png'))
  # Scroll through the entire page to load lazy photos and exercise reduced motion.
  for offset in range(0,9000,700):page.evaluate('(y)=>{window.scrollTo(0,y);}',offset);page.wait_for_timeout(70)
- assert page.locator('.controller-stage img').evaluate('(e)=>e.getBoundingClientRect().width')>0
+ assert page.locator('.controller-photo').evaluate('(e)=>e.getBoundingClientRect().width')>0
  assert page.evaluate('[...document.images].filter(i=>i.complete&&!i.naturalWidth).length')==0
  page.evaluate('()=>{window.scrollTo(0,0);}');page.screenshot(path=str(OUT/'desktop-full.png'),full_page=True)
  page.set_viewport_size({'width':390,'height':930});page.evaluate('()=>{window.scrollTo(0,0);}');page.screenshot(path=str(OUT/'mobile-hero.png'))
  page.get_by_role('button',name='Відкрити меню',exact=True).click()
  expect(page.locator('.mobile-nav')).to_be_visible()
+ page.keyboard.press('Escape')
+ expect(page.locator('.mobile-nav')).to_have_count(0)
+ expect(page.get_by_role('button',name='Відкрити меню',exact=True)).to_be_focused()
+ page.get_by_role('button',name='Відкрити меню',exact=True).click()
  page.locator('.mobile-nav').get_by_role('link',name='Ігри',exact=False).click()
  expect(page.locator('.mobile-nav')).to_have_count(0)
  page.locator('#games').screenshot(path=str(OUT/'mobile-games.png'))

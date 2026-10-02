@@ -4,5 +4,5 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <?php if (!is_front_page()): ?>
-<header class="site-header"><div class="shell header-inner"><a class="wordmark" href="<?php echo esc_url(joyrent_home()); ?>">JOYRENT<span class="brand-dot">.</span></a><a class="button button-outline" href="<?php echo esc_url(joyrent_home('booking')); ?>"><?php echo joyrent_language()==='ru'?'Выбрать консоль и даты':'Обрати консоль і дати'; ?></a></div></header>
+<header class="site-header"><div class="shell header-inner"><a class="wordmark" href="<?php echo esc_url(joyrent_home()); ?>">JOYRENT<span class="brand-dot">.</span></a><div class="native-header-actions"><?php if (is_page(['faq','faq-ru'])): ?><nav class="native-language-switch" aria-label="<?php echo joyrent_language()==='ru'?'Язык сайта':'Мова сайту'; ?>"><a lang="uk" href="<?php echo esc_url(joyrent_faq_url('uk')); ?>" <?php if (joyrent_language()==='uk') echo 'aria-current="page"'; ?>>UA</a><a lang="ru" href="<?php echo esc_url(joyrent_faq_url('ru')); ?>" <?php if (joyrent_language()==='ru') echo 'aria-current="page"'; ?>>RU</a></nav><?php endif; ?><a class="button button-outline" href="<?php echo esc_url(joyrent_home('booking')); ?>"><?php echo joyrent_language()==='ru'?'Выбрать даты':'Обрати дати'; ?></a></div></div></header>
 <?php endif; ?>

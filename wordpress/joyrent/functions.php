@@ -1,14 +1,20 @@
 <?php
 if (!defined('ABSPATH')) exit;
 function joyrent_language(): string {
-    return (isset($_GET['lang']) && $_GET['lang']==='ru') || is_page(['usloviya-arendy','konfidentsialnost']) ? 'ru' : 'uk';
+    if (is_page('faq')) return 'uk';
+    if (is_page('faq-ru')) return 'ru';
+    return (isset($_GET['lang']) && $_GET['lang']==='ru') || is_page(['usloviya-arendy','konfidentsialnost','faq-ru']) ? 'ru' : 'uk';
 }
 function joyrent_home(string $anchor = ''): string {
     $url = joyrent_language()==='ru' ? add_query_arg('lang','ru',home_url('/')) : home_url('/');
     return $anchor ? $url.'#'.$anchor : $url;
 }
+function joyrent_faq_url(string $language): string {
+    $page=get_page_by_path($language==='ru'?'faq-ru':'faq');
+    return $page ? get_permalink($page) : home_url($language==='ru'?'/faq-ru/':'/faq/');
+}
 add_filter('language_attributes', function (string $attributes): string {
-    return is_front_page() || is_page(['usloviya-arendy','konfidentsialnost']) ? 'lang="'.joyrent_language().'" dir="ltr"' : $attributes;
+    return is_front_page() || is_page(['usloviya-arendy','konfidentsialnost','faq','faq-ru']) ? 'lang="'.joyrent_language().'" dir="ltr"' : $attributes;
 });
 
 add_action('after_setup_theme', function (): void {
@@ -24,10 +30,10 @@ add_action('wp_enqueue_scripts', function (): void {
     $entry = $manifest['src/main.tsx'] ?? null;
     if (!$entry) return;
     $base = get_template_directory_uri() . '/assets/dist/';
-    foreach ($entry['css'] ?? [] as $index => $css) wp_enqueue_style('joyrent-' . $index, $base . $css, [], '1.1.0');
+    foreach ($entry['css'] ?? [] as $index => $css) wp_enqueue_style('joyrent-' . $index, $base . $css, [], '1.2.0');
     if (!is_front_page()) return;
-    wp_enqueue_script('joyrent-app', $base . $entry['file'], [], '1.1.0', true);
-    $config = ['apiBase'=>rest_url('joyrent/v1'),'assetBase'=>get_template_directory_uri().'/assets','nonce'=>is_user_logged_in() ? wp_create_nonce('wp_rest') : '', 'privacyUrl'=>get_privacy_policy_url(), 'termsUrl'=>home_url('/umovy-orendy/'), 'privacyRuUrl'=>home_url('/konfidentsialnost/'), 'termsRuUrl'=>home_url('/usloviya-arendy/')];
+    wp_enqueue_script('joyrent-app', $base . $entry['file'], [], '1.2.0', true);
+    $config = ['apiBase'=>rest_url('joyrent/v1'),'assetBase'=>get_template_directory_uri().'/assets','nonce'=>is_user_logged_in() ? wp_create_nonce('wp_rest') : '', 'privacyUrl'=>get_privacy_policy_url(), 'termsUrl'=>home_url('/umovy-orendy/'), 'privacyRuUrl'=>home_url('/konfidentsialnost/'), 'termsRuUrl'=>home_url('/usloviya-arendy/'), 'faqUrl'=>joyrent_faq_url('uk'), 'faqRuUrl'=>joyrent_faq_url('ru')];
     wp_add_inline_script('joyrent-app', 'window.JOYRENT = ' . wp_json_encode($config, JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT) . ';', 'before');
 });
 add_filter('script_loader_tag', function (string $tag, string $handle, string $src): string {
@@ -38,6 +44,7 @@ add_filter('script_loader_tag', function (string $tag, string $handle, string $s
 add_action('wp_head', function (): void {
     $description=joyrent_language()==='ru'?'JOYRENT — аренда PlayStation 5 и PlayStation 4. Выбирай консоль, даты и любимые игры.':'JOYRENT — оренда PlayStation 5 та PlayStation 4. Обирай консоль, дати та улюблені ігри.';
     echo '<meta name="theme-color" content="#08090b"><meta name="description" content="'.esc_attr($description).'">';
+    if (is_page(['faq','faq-ru'])) echo '<link rel="alternate" hreflang="uk" href="'.esc_url(joyrent_faq_url('uk')).'"><link rel="alternate" hreflang="ru" href="'.esc_url(joyrent_faq_url('ru')).'">';
     if (is_front_page()) {
         echo '<link rel="alternate" hreflang="uk" href="'.esc_url(home_url('/')).'"><link rel="alternate" hreflang="ru" href="'.esc_url(add_query_arg('lang','ru',home_url('/'))).'"><link rel="alternate" hreflang="x-default" href="'.esc_url(home_url('/')).'">';
     }

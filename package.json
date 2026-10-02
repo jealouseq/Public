@@ -1,6 +1,6 @@
 {
   "name": "joyrent-wordpress",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@fontsource-variable/manrope": "^5.2.8",
+    "@fontsource-variable/onest": "^5.3.1",
     "@fontsource-variable/unbounded": "^5.2.8",
     "@phosphor-icons/react": "^2.1.10",
     "framer-motion": "^12.23.24",

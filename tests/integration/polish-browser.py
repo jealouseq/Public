@@ -2,7 +2,7 @@
 from pathlib import Path
 from playwright.sync_api import sync_playwright,expect
 import json
-OUT=Path('docs/audit-2026-10-03');OUT.mkdir(exist_ok=True)
+OUT=Path('docs/refinement-1.2');OUT.mkdir(exist_ok=True)
 BASE='http://localhost:8080'
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
@@ -44,7 +44,7 @@ with sync_playwright() as p:
   page.goto(BASE+('/?lang=ru' if lang=='ru' else ''));page.wait_for_selector('h1');page.evaluate('document.fonts.ready')
   assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
   page.screenshot(path=str(OUT/f'new-hero-{width}-{lang}.png'))
-  for selector,label in [('#games','games'),('#kit','kit'),('#how-it-works','process'),('#booking','booking'),('#faq','faq')]:
+  for selector,label in [('#games','games'),('#kit','kit'),('#how-it-works','process'),('#booking','booking')]:
    page.locator(selector).scroll_into_view_if_needed();page.wait_for_timeout(100);page.screenshot(path=str(OUT/f'new-{label}-{width}-{lang}.png'))
   # All artwork resolves and remains uncropped in square cards.
 
@@ -62,12 +62,13 @@ with sync_playwright() as p:
  page.locator('#kit').scroll_into_view_if_needed()
  widths=[];transforms=[]
  for _ in range(3):
-  widths.append(page.locator('.controller-stage img').evaluate('(e)=>e.offsetWidth'))
-  transforms.append(page.locator('.controller-stage img').evaluate('(e)=>getComputedStyle(e).transform'));page.wait_for_timeout(1500)
+  widths.append(page.locator('.controller-photo').evaluate('(e)=>e.offsetWidth'))
+  transforms.append(page.locator('.controller-float').evaluate('(e)=>getComputedStyle(e).transform'));page.wait_for_timeout(1500)
  assert len(set(widths))==1 and len(set(transforms))>1,(widths,transforms)
  page.emulate_media(reduced_motion='reduce');page.wait_for_timeout(300)
- expect(page.locator('.hero-light-pass')).to_have_css('opacity','0.12')
- expect(page.locator('.controller-stage img')).to_have_css('transform','none')
+ expect(page.locator('.hero-light-pass')).to_have_css('opacity','0.07')
+ expect(page.locator('.controller-float')).to_have_css('transform','none')
+ expect(page.locator('.controller-light-pass')).to_have_css('opacity','0.05')
  print('PASS: animated hero light, fixed-width smooth controller, static reduced motion',hero)
  assert not errors,errors
  page.close();b.close()

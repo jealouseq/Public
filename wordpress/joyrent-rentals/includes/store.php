@@ -38,12 +38,21 @@ final class JR_Store {
             $id=wp_insert_post(['post_type'=>'joyrent_game','post_status'=>'publish','post_title'=>$game['title'],'post_content'=>$game['description'],'post_name'=>$game['id']],true);
             if (!is_wp_error($id)) { update_post_meta($id,'_jr_game_id',$game['id']); update_post_meta($id,'_jr_game',$game); }
         }
-        self::legal_pages(); update_option('joyrent_seeded',true,false);
+        self::legal_pages(); self::faq_pages(); update_option('joyrent_seeded',true,false);
     }
     public static function upgrade(): void {
-        if (get_option('joyrent_version')==='1.1.0'||!class_exists('WooCommerce')) return;
-        self::legal_pages(); // Add missing translations without rewriting owner pages or settings.
-        update_option('joyrent_version','1.1.0',false);
+        if (get_option('joyrent_version')==='1.2.0'||!class_exists('WooCommerce')) return;
+        self::legal_pages(); self::faq_pages(); // Add missing translations without rewriting owner pages or settings.
+        update_option('joyrent_version','1.2.0',false);
+    }
+    private static function faq_pages(): void {
+        $data=json_decode((string)file_get_contents(__DIR__.'/../data/faq.json'),true);
+        foreach (['uk'=>['faq','Питання про оренду'], 'ru'=>['faq-ru','Вопросы об аренде']] as $language=>[$slug,$title]) {
+            if (get_page_by_path($slug)) continue; // Preserve any owner-authored page.
+            $content='';
+            foreach ($data[$language] ?? [] as $entry) $content.='<details><summary>'.esc_html($entry['question']).'</summary><p>'.esc_html($entry['answer']).'</p></details>';
+            wp_insert_post(['post_type'=>'page','post_status'=>'publish','post_title'=>$title,'post_name'=>$slug,'post_content'=>$content]);
+        }
     }
     private static function legal_pages(): void {
         $pages=[

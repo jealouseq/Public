@@ -7,7 +7,7 @@ export interface StoreSettings {
   freeDeliveryFrom: number; deliveryText: string; deliveryTextRu?: string;
 }
 export interface BootConfig {
-  apiBase: string; assetBase: string; nonce?: string; privacyUrl?: string; termsUrl?: string; preview?: boolean; privacyRuUrl?: string; termsRuUrl?: string;
+  apiBase: string; assetBase: string; nonce?: string; privacyUrl?: string; termsUrl?: string; preview?: boolean; privacyRuUrl?: string; termsRuUrl?: string; faqUrl?: string; faqRuUrl?: string;
 }
 declare global { interface Window { JOYRENT?: BootConfig } }
 export const boot: BootConfig = window.JOYRENT ?? { apiBase: '/wp-api/joyrent/v1', assetBase: '' };
@@ -40,3 +40,5 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
 }
 export const getCatalog = () => boot.preview ? Promise.resolve(fallbackCatalog) : request<StoreCatalog>('/catalog');
 export const submitRequest = (payload: RentalPayload) => request<RequestReceipt>('/requests', { method: 'POST', body: JSON.stringify(payload) });
+
+export const faqUrl = (language: 'uk' | 'ru') => boot.preview ? language === 'ru' ? './faq-ru.html' : './faq.html' : (language === 'ru' ? boot.faqRuUrl : boot.faqUrl) || (language === 'ru' ? '/faq-ru/' : '/faq/');
