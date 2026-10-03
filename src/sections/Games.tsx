@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Plus, X, Users, GameController } from '@phosphor-icons/react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Plus, X, Users } from '@phosphor-icons/react';
+import { PlayStationController } from '../../components/ui/playstation-controller';
 import { Reveal } from '../../components/ui/reveal';
 import { imageUrl } from '../lib/api';
 import type { ConsoleId, Game } from '../lib/rental';
@@ -17,7 +18,7 @@ export function Games({ games, consoleId, selected, onToggle }: { games: Game[];
   const opener = useRef<HTMLElement | null>(null);
   const visible = games.filter(game => game.platforms.includes(consoleId) && (filter === 'all' || game.filters.includes(filter)));
   const close = () => { dialog.current?.close(); setDetail(null); opener.current?.focus(); };
-  function Cover({ game, dialog = false }: { game: Game; dialog?: boolean }) { return cover(game) ? <img className={dialog ? 'dialog-cover' : undefined} src={cover(game)} alt={`${t('Обкладинка', 'Обложка')} ${game.title}`} width={720} height={720} loading={dialog ? 'eager' : 'lazy'} decoding="async" /> : <div className="missing-cover"><GameController size={42} weight="light" /><span>{t('Обкладинку додамо', 'Обложку добавим')}</span></div>; }
+  function Cover({ game, dialog = false }: { game: Game; dialog?: boolean }) { return cover(game) ? <img className={dialog ? 'dialog-cover' : undefined} src={cover(game)} alt={`${t('Обкладинка', 'Обложка')} ${game.title}`} width={720} height={720} loading={dialog ? 'eager' : 'lazy'} decoding="async" /> : <div className="missing-cover"><PlayStationController size={42} weight="light" /><span>{t('Обкладинку додамо', 'Обложку добавим')}</span></div>; }
   const genre = (game: Game) => language === 'ru' ? game.genreRu || 'Игра для PlayStation' : game.genre;
   const cover = (game: Game) => (game as Game & { imageUrl?: string }).imageUrl || (game.image ? imageUrl(game.image) : '');
   useEffect(() => { if (detail) dialog.current?.showModal(); }, [detail]);

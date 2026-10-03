@@ -701,17 +701,14 @@ dialog { position: fixed; inset: 0; margin: auto; max-width: calc(100vw - 32px);
 @media (max-width: 900px) {
   .hero-inner { min-height: 0; grid-template-columns: minmax(0, 1fr); gap: 12px; padding-block: 32px 22px; }
   .hero-content { width: 100%; max-width: 640px; }
-  .hero h1 { font-size: clamp(32px, 8.4vw, 50px); font-weight: 550; line-height: 1.2; letter-spacing: -.03em; min-height: 2.4em; }
+  .hero h1 { font-size: clamp(26px, 8vw, 50px); font-weight: 550; line-height: 1.2; letter-spacing: -.03em; min-height: 2.4em; }
+  .hero-line { white-space: nowrap; }
   .hero-eyebrow { margin-bottom: 20px; }
   .hero-description { font-size: 13px; max-width: 390px; margin-top: 22px; }
-  .hero-actions { flex-direction: row; align-items: center; gap: 20px; margin-top: 24px; }
-  .hero-price { margin-top: 25px; }
+  .hero-actions { flex-direction: row; align-items: center; justify-content: center; gap: 20px; margin-top: 24px; }
+  .hero-price { justify-content: center; margin-top: 25px; }
   .hero-visual { --hero-floor-fade: 90%; width: min(100%, 440px); margin: 0 auto; }
   .hero-visual picture { left: -6%; width: 112%; }
-}
-@media (max-width: 480px) {
-  .hero h1 { min-height: 3.6em; }
-  .hero-line:last-child .hero-word-group:first-child { display: block; }
 }
 @media (max-width: 375px) {
   .hero-actions { gap: 16px; }
@@ -720,4 +717,49 @@ dialog { position: fixed; inset: 0; margin: auto; max-width: calc(100vw - 32px);
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-letter { animation: none; opacity: 1; transform: none; filter: none; }
+}
+
+/* Mobile rental flow: balanced tariffs and spacious, intrinsic-safe date fields. */
+.date-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.date-fields > label { min-width: 0; }
+.date-fields input { display: block; min-width: 0; max-width: 100%; }
+.controller-options svg { flex-shrink: 0; }
+@media (700px < width <= 980px) {
+  .date-fields { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 700px) {
+  .hero-content { margin-inline: auto; }
+  .tariff-section .section-heading { align-items: center; text-align: center; gap: 26px; margin-bottom: 34px; }
+  .tariff-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 30px; }
+  .tariff-grid .tariff { text-align: center; padding-inline: 12px; }
+  .tariff-top { justify-content: center; }
+  .tariff h3 { font-size: 14px; line-height: 1.5; min-height: 3em; display: flex; align-items: center; justify-content: center; }
+  .tariff-days { margin-top: 8px; }
+  .tariff-price { justify-content: center; gap: 6px; margin-top: 18px; }
+  .tariff-price strong { font-size: clamp(28px, 8vw, 40px); }
+  .tariff-link { min-height: 44px; min-width: 104px; justify-content: center; margin-top: 16px; padding-block: 9px; }
+  .tariff-grid-3 .tariff:last-child { width: 50%; justify-self: center; border-left: 0; }
+  .tariff-note { display: grid; grid-template-columns: 19px minmax(0, 1fr); column-gap: 12px; row-gap: 14px; font-size: 11px; }
+  .tariff-note > a { grid-column: 2; margin-left: 0; justify-self: start; min-height: 44px; }
+  .booking-section .section-heading { margin-bottom: 34px; gap: 18px; }
+  .booking-fields .row-top { padding-bottom: 26px; }
+  .term-field { margin-top: 28px; }
+  .term-options { gap: 10px; }
+  .term-options button { min-height: 48px; }
+  .date-fields { grid-template-columns: minmax(0, 1fr); gap: 24px; margin-top: 30px; }
+  .date-fields input { margin-top: 10px; min-height: 52px; padding-inline: 14px !important; font-size: 16px !important; appearance: none; -webkit-appearance: none; }
+  .date-fields input::-webkit-date-and-time-value { text-align: left; }
+  .date-fields .input-help { margin-top: 8px; font-size: 11px; }
+  .controller-row { padding-block: 28px; margin-top: 6px; gap: 16px; }
+  .controller-options { gap: 12px; }
+  .controller-options button { min-width: 72px; min-height: 48px; gap: 10px; }
+  .booking-games { padding-top: 28px; }
+  .booking-games .text-link { min-height: 44px; align-items: center; }
+  .booking-games .muted { margin-top: 18px; line-height: 1.8; }
+  .booking-layout { gap: 36px; }
+}
+@media (max-width: 375px) {
+  .term-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .controller-row { flex-wrap: wrap; }
+  .controller-options { margin-left: auto; }
 }

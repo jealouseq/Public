@@ -1,5 +1,6 @@
 import { useMotionPreference } from '../lib/motion';
-import { Check, Truck, CalendarBlank, ArrowUpRight, MapPin, GameController } from '@phosphor-icons/react';
+import { Check, Truck, CalendarBlank, ArrowUpRight, MapPin } from '@phosphor-icons/react';
+import { PlayStationController } from '../../components/ui/playstation-controller';
 import { motion } from 'framer-motion';
 import { Reveal } from '../../components/ui/reveal';
 import { imageUrl, type StoreSettings } from '../lib/api';
@@ -19,7 +20,7 @@ export function HowItWorks({ settings }: { settings: StoreSettings }) {
   const steps = [
     [CalendarBlank, t('Обери', 'Выбери'), t('Консоль, термін і дату. Залиш контакти — оплата на цьому кроці не потрібна.', 'Консоль, срок и дату. Оставь контакты — оплата на этом шаге не нужна.')],
     [Truck, t('Отримай', 'Получи'), t('Підтвердимо наявність і вартість. Узгодимо доставку, комплектацію та заставу.', 'Подтвердим наличие и стоимость. Согласуем доставку, комплектацию и залог.')],
-    [GameController, t('Грай', 'Играй'), t('Підключай і грай. Час повернення погодимо під час підтвердження оренди.', 'Подключай и играй. Время возврата согласуем при подтверждении аренды.')],
+    [PlayStationController, t('Грай', 'Играй'), t('Підключай і грай. Час повернення погодимо під час підтвердження оренди.', 'Подключай и играй. Время возврата согласуем при подтверждении аренды.')],
   ] as const;
   const delivery = language === 'ru' ? settings.deliveryTextRu : settings.deliveryText;
   return <section className="section how-section" id="how-it-works"><div className="shell">
