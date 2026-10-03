@@ -1,0 +1,2510 @@
+{
+  "run": "20261003T104416Z",
+  "base": "http://localhost:8080",
+  "group": "final",
+  "expectedBuild": {
+    "main": "main-CNh65H_Y.js",
+    "css": "main-hpKQBRcV.css"
+  },
+  "servedAssets": {
+    "main-CNh65H_Y.js": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+      "status": 200,
+      "bytes": 485194,
+      "sha256": "99b37d873bfc96b85b555b7255a2aca4d7e755d46f4137756d1c94d9eac25b08",
+      "matchesLocal": true
+    },
+    "main-hpKQBRcV.css": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+      "status": 200,
+      "bytes": 92276,
+      "sha256": "3a577b6042e4db7b60caebb9ebed5e1a53d222d18eff2a27e42967fa86ac5fdd",
+      "matchesLocal": true
+    }
+  },
+  "pass": 8,
+  "fail": 6,
+  "caseCount": 14,
+  "selectedScreens": [],
+  "cases": [
+    {
+      "case": "motion-uk-390",
+      "status": "PASS",
+      "seconds": 4.85,
+      "failure": null,
+      "evidence": {
+        "name": "motion-uk-390",
+        "language": "uk",
+        "width": 390,
+        "motion": "no-preference",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-preview.svg",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "motion": {
+            "runningTransformsDiffer": true,
+            "offscreenPaused": true,
+            "documentHiddenPaused": true,
+            "hiddenTransition": "synthetic document.hidden + visibilitychange; native getter restored",
+            "reducedPreferenceToggledLive": true,
+            "resume": true
+          }
+        }
+      }
+    },
+    {
+      "case": "motion-uk-1440",
+      "status": "PASS",
+      "seconds": 4.94,
+      "failure": null,
+      "evidence": {
+        "name": "motion-uk-1440",
+        "language": "uk",
+        "width": 1440,
+        "motion": "no-preference",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-preview.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-mk1-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-stalker2-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-ufc6-360.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "motion": {
+            "runningTransformsDiffer": true,
+            "offscreenPaused": true,
+            "documentHiddenPaused": true,
+            "hiddenTransition": "synthetic document.hidden + visibilitychange; native getter restored",
+            "reducedPreferenceToggledLive": true,
+            "resume": true
+          }
+        }
+      }
+    },
+    {
+      "case": "motion-ru-390",
+      "status": "PASS",
+      "seconds": 4.72,
+      "failure": null,
+      "evidence": {
+        "name": "motion-ru-390",
+        "language": "ru",
+        "width": 390,
+        "motion": "no-preference",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-preview.svg",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "motion": {
+            "runningTransformsDiffer": true,
+            "offscreenPaused": true,
+            "documentHiddenPaused": true,
+            "hiddenTransition": "synthetic document.hidden + visibilitychange; native getter restored",
+            "reducedPreferenceToggledLive": true,
+            "resume": true
+          }
+        }
+      }
+    },
+    {
+      "case": "motion-ru-1440",
+      "status": "PASS",
+      "seconds": 4.82,
+      "failure": null,
+      "evidence": {
+        "name": "motion-ru-1440",
+        "language": "ru",
+        "width": 1440,
+        "motion": "no-preference",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-preview.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-mk1-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-stalker2-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-ufc6-360.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "motion": {
+            "runningTransformsDiffer": true,
+            "offscreenPaused": true,
+            "documentHiddenPaused": true,
+            "hiddenTransition": "synthetic document.hidden + visibilitychange; native getter restored",
+            "reducedPreferenceToggledLive": true,
+            "resume": true
+          }
+        }
+      }
+    },
+    {
+      "case": "art-uk-390",
+      "status": "PASS",
+      "seconds": 5.63,
+      "failure": null,
+      "evidence": {
+        "name": "art-uk-390",
+        "language": "uk",
+        "width": 390,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-preview.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-mk1-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gt7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-preview.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gt7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "art": {
+            "hoverUnchanged": true,
+            "details": [
+              {
+                "title": "EA SPORTS FC 27",
+                "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27.webp",
+                "natural": [
+                  720,
+                  720
+                ],
+                "width": 287,
+                "height": 287,
+                "fit": "contain",
+                "transform": "none",
+                "sha256": "f07c4ee7dafefe76f70bae28a3755ba33972a6d8b18ae433c5d0cd86914d57cc"
+              },
+              {
+                "title": "Grand Theft Auto V",
+                "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v.webp",
+                "natural": [
+                  720,
+                  720
+                ],
+                "width": 287,
+                "height": 287,
+                "fit": "contain",
+                "transform": "none",
+                "sha256": "8eb000508ebbe336198658b0318b0a65c4f0f2459efc1f66f9c4f71836c868a7"
+              },
+              {
+                "title": "Call of Duty: Black Ops 7",
+                "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7.webp",
+                "natural": [
+                  720,
+                  720
+                ],
+                "width": 287,
+                "height": 287,
+                "fit": "contain",
+                "transform": "none",
+                "description": "Кампанія Black Ops, зомбі та мережеві поєдинки. Доступні режими й вимоги до мережі уточнимо перед орендою.",
+                "separateInternetNoteExpected": true,
+                "sha256": "9e20f5df3867600bdb41c591ef54b291ce4403e54232a89ea6d0897adf24ed4d"
+              }
+            ],
+            "knownSentenceGETFixtureSuppressedDuplicate": true,
+            "fixtureMutation": "Browser catalog GET only; no server write"
+          }
+        }
+      }
+    },
+    {
+      "case": "art-uk-1440",
+      "status": "PASS",
+      "seconds": 5.92,
+      "failure": null,
+      "evidence": {
+        "name": "art-uk-1440",
+        "language": "uk",
+        "width": 1440,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-preview.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-mk1-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-stalker2-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-ufc6-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-split-fiction-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-it-takes-two-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gt7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-god-of-war-ragnarok-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-preview.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-mk1-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-stalker2-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-ufc6-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-split-fiction-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-it-takes-two-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gt7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-god-of-war-ragnarok-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "art": {
+            "hoverUnchanged": true,
+            "details": [
+              {
+                "title": "EA SPORTS FC 27",
+                "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27.webp",
+                "natural": [
+                  720,
+                  720
+                ],
+                "width": 284,
+                "height": 284,
+                "fit": "contain",
+                "transform": "none",
+                "sha256": "f07c4ee7dafefe76f70bae28a3755ba33972a6d8b18ae433c5d0cd86914d57cc"
+              },
+              {
+                "title": "Grand Theft Auto V",
+                "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v.webp",
+                "natural": [
+                  720,
+                  720
+                ],
+                "width": 284,
+                "height": 284,
+                "fit": "contain",
+                "transform": "none",
+                "sha256": "8eb000508ebbe336198658b0318b0a65c4f0f2459efc1f66f9c4f71836c868a7"
+              },
+              {
+                "title": "Call of Duty: Black Ops 7",
+                "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7.webp",
+                "natural": [
+                  720,
+                  720
+                ],
+                "width": 284,
+                "height": 284,
+                "fit": "contain",
+                "transform": "none",
+                "description": "Кампанія Black Ops, зомбі та мережеві поєдинки. Доступні режими й вимоги до мережі уточнимо перед орендою.",
+                "separateInternetNoteExpected": true,
+                "sha256": "9e20f5df3867600bdb41c591ef54b291ce4403e54232a89ea6d0897adf24ed4d"
+              }
+            ],
+            "knownSentenceGETFixtureSuppressedDuplicate": true,
+            "fixtureMutation": "Browser catalog GET only; no server write"
+          }
+        }
+      }
+    },
+    {
+      "case": "art-ru-390",
+      "status": "PASS",
+      "seconds": 5.61,
+      "failure": null,
+      "evidence": {
+        "name": "art-ru-390",
+        "language": "ru",
+        "width": 390,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-preview.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-mk1-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gt7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-preview.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gt7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "art": {
+            "hoverUnchanged": true,
+            "details": [
+              {
+                "title": "EA SPORTS FC 27",
+                "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27.webp",
+                "natural": [
+                  720,
+                  720
+                ],
+                "width": 287,
+                "height": 287,
+                "fit": "contain",
+                "transform": "none",
+                "sha256": "f07c4ee7dafefe76f70bae28a3755ba33972a6d8b18ae433c5d0cd86914d57cc"
+              },
+              {
+                "title": "Grand Theft Auto V",
+                "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v.webp",
+                "natural": [
+                  720,
+                  720
+                ],
+                "width": 287,
+                "height": 287,
+                "fit": "contain",
+                "transform": "none",
+                "sha256": "8eb000508ebbe336198658b0318b0a65c4f0f2459efc1f66f9c4f71836c868a7"
+              },
+              {
+                "title": "Call of Duty: Black Ops 7",
+                "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7.webp",
+                "natural": [
+                  720,
+                  720
+                ],
+                "width": 287,
+                "height": 287,
+                "fit": "contain",
+                "transform": "none",
+                "description": "Кампания Black Ops, зомби и сетевые поединки. Доступные режимы и требования к сети уточним перед арендой.",
+                "separateInternetNoteExpected": true,
+                "sha256": "9e20f5df3867600bdb41c591ef54b291ce4403e54232a89ea6d0897adf24ed4d"
+              }
+            ],
+            "knownSentenceGETFixtureSuppressedDuplicate": true,
+            "fixtureMutation": "Browser catalog GET only; no server write"
+          }
+        }
+      }
+    },
+    {
+      "case": "art-ru-1440",
+      "status": "PASS",
+      "seconds": 5.82,
+      "failure": null,
+      "evidence": {
+        "name": "art-ru-1440",
+        "language": "ru",
+        "width": 1440,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-preview.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-mk1-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-stalker2-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-ufc6-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-split-fiction-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-it-takes-two-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gt7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-god-of-war-ragnarok-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-preview.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-mk1-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-stalker2-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-ufc6-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-split-fiction-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-it-takes-two-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gt7-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-god-of-war-ragnarok-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "art": {
+            "hoverUnchanged": true,
+            "details": [
+              {
+                "title": "EA SPORTS FC 27",
+                "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27.webp",
+                "natural": [
+                  720,
+                  720
+                ],
+                "width": 284,
+                "height": 284,
+                "fit": "contain",
+                "transform": "none",
+                "sha256": "f07c4ee7dafefe76f70bae28a3755ba33972a6d8b18ae433c5d0cd86914d57cc"
+              },
+              {
+                "title": "Grand Theft Auto V",
+                "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v.webp",
+                "natural": [
+                  720,
+                  720
+                ],
+                "width": 284,
+                "height": 284,
+                "fit": "contain",
+                "transform": "none",
+                "sha256": "8eb000508ebbe336198658b0318b0a65c4f0f2459efc1f66f9c4f71836c868a7"
+              },
+              {
+                "title": "Call of Duty: Black Ops 7",
+                "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-cod-bo7.webp",
+                "natural": [
+                  720,
+                  720
+                ],
+                "width": 284,
+                "height": 284,
+                "fit": "contain",
+                "transform": "none",
+                "description": "Кампания Black Ops, зомби и сетевые поединки. Доступные режимы и требования к сети уточним перед арендой.",
+                "separateInternetNoteExpected": true,
+                "sha256": "9e20f5df3867600bdb41c591ef54b291ce4403e54232a89ea6d0897adf24ed4d"
+              }
+            ],
+            "knownSentenceGETFixtureSuppressedDuplicate": true,
+            "fixtureMutation": "Browser catalog GET only; no server write"
+          }
+        }
+      }
+    },
+    {
+      "case": "native-faq-uk",
+      "status": "FAIL",
+      "seconds": 3.53,
+      "failure": "Traceback (most recent call last):\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 351, in run_case\n    fn(s);s.validate()\n    ^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 389, in <lambda>\n    for kind in ['faq','privacy','terms']:run_case(browser,f'native-{kind}-{lang}',lang,390 if lang=='uk' else 1440,lambda s,k=kind:native(s,k))\n                                                                                                                                    ^^^^^^^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 344, in native\n    check(p.locator('a[href=\"tel:+380996669946\"]').count()>0 and p.locator('a[href=\"https://t.me/joyrent_od\"]').count()>0,'Native public contacts missing')\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 40, in check\n    if not condition:raise AssertionError(message)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Native public contacts missing\n",
+      "evidence": {
+        "name": "native-faq-uk",
+        "language": "uk",
+        "width": 390,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/faq/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {}
+      }
+    },
+    {
+      "case": "native-privacy-uk",
+      "status": "FAIL",
+      "seconds": 3.46,
+      "failure": "Traceback (most recent call last):\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 351, in run_case\n    fn(s);s.validate()\n    ^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 389, in <lambda>\n    for kind in ['faq','privacy','terms']:run_case(browser,f'native-{kind}-{lang}',lang,390 if lang=='uk' else 1440,lambda s,k=kind:native(s,k))\n                                                                                                                                    ^^^^^^^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 344, in native\n    check(p.locator('a[href=\"tel:+380996669946\"]').count()>0 and p.locator('a[href=\"https://t.me/joyrent_od\"]').count()>0,'Native public contacts missing')\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 40, in check\n    if not condition:raise AssertionError(message)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Native public contacts missing\n",
+      "evidence": {
+        "name": "native-privacy-uk",
+        "language": "uk",
+        "width": 390,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/konfidentsiinist/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {}
+      }
+    },
+    {
+      "case": "native-terms-uk",
+      "status": "FAIL",
+      "seconds": 3.47,
+      "failure": "Traceback (most recent call last):\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 351, in run_case\n    fn(s);s.validate()\n    ^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 389, in <lambda>\n    for kind in ['faq','privacy','terms']:run_case(browser,f'native-{kind}-{lang}',lang,390 if lang=='uk' else 1440,lambda s,k=kind:native(s,k))\n                                                                                                                                    ^^^^^^^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 344, in native\n    check(p.locator('a[href=\"tel:+380996669946\"]').count()>0 and p.locator('a[href=\"https://t.me/joyrent_od\"]').count()>0,'Native public contacts missing')\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 40, in check\n    if not condition:raise AssertionError(message)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Native public contacts missing\n",
+      "evidence": {
+        "name": "native-terms-uk",
+        "language": "uk",
+        "width": 390,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/umovy-orendy/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {}
+      }
+    },
+    {
+      "case": "native-faq-ru",
+      "status": "FAIL",
+      "seconds": 3.63,
+      "failure": "Traceback (most recent call last):\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 351, in run_case\n    fn(s);s.validate()\n    ^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 389, in <lambda>\n    for kind in ['faq','privacy','terms']:run_case(browser,f'native-{kind}-{lang}',lang,390 if lang=='uk' else 1440,lambda s,k=kind:native(s,k))\n                                                                                                                                    ^^^^^^^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 344, in native\n    check(p.locator('a[href=\"tel:+380996669946\"]').count()>0 and p.locator('a[href=\"https://t.me/joyrent_od\"]').count()>0,'Native public contacts missing')\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 40, in check\n    if not condition:raise AssertionError(message)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Native public contacts missing\n",
+      "evidence": {
+        "name": "native-faq-ru",
+        "language": "ru",
+        "width": 1440,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/faq-ru/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {}
+      }
+    },
+    {
+      "case": "native-privacy-ru",
+      "status": "FAIL",
+      "seconds": 3.49,
+      "failure": "Traceback (most recent call last):\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 351, in run_case\n    fn(s);s.validate()\n    ^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 389, in <lambda>\n    for kind in ['faq','privacy','terms']:run_case(browser,f'native-{kind}-{lang}',lang,390 if lang=='uk' else 1440,lambda s,k=kind:native(s,k))\n                                                                                                                                    ^^^^^^^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 344, in native\n    check(p.locator('a[href=\"tel:+380996669946\"]').count()>0 and p.locator('a[href=\"https://t.me/joyrent_od\"]').count()>0,'Native public contacts missing')\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 40, in check\n    if not condition:raise AssertionError(message)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Native public contacts missing\n",
+      "evidence": {
+        "name": "native-privacy-ru",
+        "language": "ru",
+        "width": 1440,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/konfidentsialnost/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {}
+      }
+    },
+    {
+      "case": "native-terms-ru",
+      "status": "FAIL",
+      "seconds": 3.52,
+      "failure": "Traceback (most recent call last):\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 351, in run_case\n    fn(s);s.validate()\n    ^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 389, in <lambda>\n    for kind in ['faq','privacy','terms']:run_case(browser,f'native-{kind}-{lang}',lang,390 if lang=='uk' else 1440,lambda s,k=kind:native(s,k))\n                                                                                                                                    ^^^^^^^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 344, in native\n    check(p.locator('a[href=\"tel:+380996669946\"]').count()>0 and p.locator('a[href=\"https://t.me/joyrent_od\"]').count()>0,'Native public contacts missing')\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 40, in check\n    if not condition:raise AssertionError(message)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Native public contacts missing\n",
+      "evidence": {
+        "name": "native-terms-ru",
+        "language": "ru",
+        "width": 1440,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/usloviya-arendy/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {}
+      }
+    }
+  ],
+  "safety": "All POST/non-GET/HEAD intercepted before any allowlist/continue; only localhost GET/HEAD allowed; no contacts entered, no order/email sent.",
+  "limits": [
+    "UI focus scope; no old test totals copied",
+    "document.hidden transition simulated in headless Chromium; CSS motion measured",
+    "OSM raster GET blocked, local vector fallback used",
+    "Native WP FAQ/terms/privacy copy awaits backend completion"
+  ]
+}

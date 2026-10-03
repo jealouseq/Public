@@ -38,7 +38,7 @@ final class JR_Store {
             $product->set_name(strtoupper($console).' — '.$tariff['name'].' ('.$tariff['days'].' дн.)');
             $product->set_sku(self::sku($console,$tariff['days']));
             $product->set_regular_price((string)$tariff['price']);
-            $product->set_description($tariff['description'].' Дати, доставка, комплектація та застава узгоджуються перед підтвердженням оренди.');
+            $product->set_description($tariff['description'].' Дати, зона доставки, комплектація та спосіб внесення й повернення застави узгоджуються до оренди.');
             $product->set_status('publish'); $product->set_virtual(true); $product->set_catalog_visibility('hidden'); $product->set_sold_individually(true); $product->set_tax_status('none');
             $product->update_meta_data('_joyrent_console',$console); $product->update_meta_data('_joyrent_days',$tariff['days']); $product->save();
         }
@@ -55,41 +55,42 @@ final class JR_Store {
         }
     }
     public static function upgrade(): void {
-        if (version_compare((string)get_option('joyrent_version','0'),'1.6.0','>=')||!class_exists('WooCommerce')) return;
+        if (version_compare((string)get_option('joyrent_version','0'),'1.7.0','>=')||!class_exists('WooCommerce')) return;
         $lock=JR_Lock::acquire('joyrent_catalog_lock');
         if (!$lock) return;
         try {
-            if (version_compare((string)get_option('joyrent_version','0'),'1.6.0','>=') ) return;
+            if (version_compare((string)get_option('joyrent_version','0'),'1.7.0','>=') ) return;
             $previous=(string)get_option('joyrent_version','0');
-            self::seed_games(); // Add missing games without republishing drafts or replacing owner content.
-            foreach (JR_Domain::catalog()['games'] as $position=>$game) {
-                $posts=get_posts(['post_type'=>'joyrent_game','post_status'=>array_values(get_post_stati()),'numberposts'=>-1,'meta_key'=>'_jr_game_id','meta_value'=>$game['id']]);
-                if (!$posts) continue;
-                foreach ($posts as $managed) {
-                    $facts=(array)get_post_meta($managed->ID,'_jr_game',true);
-                    foreach (['playersByPlatform','requiresInternet'] as $key) if (isset($game[$key])) $facts[$key]=$game[$key];
-                    update_post_meta($managed->ID,'_jr_game',$facts);
-                }
-                // Only factual managed metadata changes in 1.6; owner text/artwork remain authoritative.
-                $meta=(array)get_post_meta($posts[0]->ID,'_jr_game',true);
-                // Keep the latest Mortal Kombat supported by each console. Preserve owner platform edits.
-                if ($game['id']==='mk11'&&version_compare($previous,'1.5.0','<')) {
-                    if (($meta['platforms']??[])===['ps5','ps4']) { $meta['platforms']=['ps4']; update_post_meta($posts[0]->ID,'_jr_game',$meta); }
-                }
-            }
-            if (version_compare($previous,'1.5.0','<')) {
-                $legacy=array_column(json_decode((string)file_get_contents(__DIR__.'/../data/legacy-games.json'),true),null,'id');
-                foreach ($legacy as $retired=>$source) {
-                    $posts=get_posts(['post_type'=>'joyrent_game','post_status'=>array_values(get_post_stati()),'numberposts'=>-1,'meta_key'=>'_jr_game_id','meta_value'=>$retired]);
-                    foreach ($posts as $post) {
-                        if (self::untouched_legacy($post,$source)) wp_delete_post($post->ID,true);
+            if (version_compare($previous,'1.6.0','<')) {
+                self::seed_games(); // Add missing games without republishing drafts or replacing owner content.
+                foreach (JR_Domain::catalog()['games'] as $position=>$game) {
+                    $posts=get_posts(['post_type'=>'joyrent_game','post_status'=>array_values(get_post_stati()),'numberposts'=>-1,'meta_key'=>'_jr_game_id','meta_value'=>$game['id']]);
+                    if (!$posts) continue;
+                    foreach ($posts as $managed) {
+                        $facts=(array)get_post_meta($managed->ID,'_jr_game',true);
+                        foreach (['playersByPlatform','requiresInternet'] as $key) if (isset($game[$key])) $facts[$key]=$game[$key];
+                        update_post_meta($managed->ID,'_jr_game',$facts);
+                    }
+                    // Only factual managed metadata changes in 1.6; owner text/artwork remain authoritative.
+                    $meta=(array)get_post_meta($posts[0]->ID,'_jr_game',true);
+                    // Keep the latest Mortal Kombat supported by each console. Preserve owner platform edits.
+                    if ($game['id']==='mk11'&&version_compare($previous,'1.5.0','<')) {
+                        if (($meta['platforms']??[])===['ps5','ps4']) { $meta['platforms']=['ps4']; update_post_meta($posts[0]->ID,'_jr_game',$meta); }
                     }
                 }
+                if (version_compare($previous,'1.5.0','<')) {
+                    $legacy=array_column(json_decode((string)file_get_contents(__DIR__.'/../data/legacy-games.json'),true),null,'id');
+                    foreach ($legacy as $retired=>$source) {
+                        $posts=get_posts(['post_type'=>'joyrent_game','post_status'=>array_values(get_post_stati()),'numberposts'=>-1,'meta_key'=>'_jr_game_id','meta_value'=>$retired]);
+                        foreach ($posts as $post) {
+                            if (self::untouched_legacy($post,$source)) wp_delete_post($post->ID,true);
+                        }
+                    }
+                }
+                self::reconcile_games(); self::upgrade_settings();
             }
-            self::legal_pages(); self::faq_pages(); // Add missing translations without rewriting owner pages or settings.
-            self::reconcile_games();
-            self::upgrade_settings();
-            update_option('joyrent_version','1.6.0',false);
+            self::legal_pages(); self::faq_pages(); // Migrate exact previous defaults while preserving owner pages/settings.
+            update_option('joyrent_version','1.7.0',false);
         } finally { JR_Lock::release('joyrent_catalog_lock',$lock); }
     }
     private static function untouched_legacy(WP_Post $post, array $source): bool {
@@ -135,25 +136,39 @@ final class JR_Store {
         }
     }
     private static function faq_pages(): void {
-        $data=json_decode((string)file_get_contents(__DIR__.'/../data/faq.json'),true);
+        $data=json_decode((string)file_get_contents(__DIR__.'/../data/faq.json'),true,512,JSON_THROW_ON_ERROR);
         foreach (['uk'=>['faq','Питання про оренду'], 'ru'=>['faq-ru','Вопросы об аренде']] as $language=>[$slug,$title]) {
-            if (get_page_by_path($slug)) continue; // Preserve any owner-authored page.
             $content='';
             foreach ($data[$language] ?? [] as $entry) $content.='<details><summary>'.esc_html($entry['question']).'</summary><p>'.esc_html($entry['answer']).'</p></details>';
-            wp_insert_post(['post_type'=>'page','post_status'=>'publish','post_title'=>$title,'post_name'=>$slug,'post_content'=>$content]);
+            self::seed_page($slug,$title,$content);
         }
     }
     private static function legal_pages(): void {
-        $pages=[
-            'usloviya-arendy'=>['Условия аренды','<p>Отправка заявки не подтверждает бронирование и не требует оплаты. JOYRENT проверяет доступность консоли и игр и связывается с клиентом.</p><p>До подтверждения стороны согласуют комплектацию, даты и время получения и возврата, доставку, залог и ответственность за оборудование. Все условия согласуются до передачи консоли.</p><p>Продление требует проверки доступности. Не разбирайте оборудование и сразу сообщайте о неисправностях или повреждениях.</p>'],
-            'konfidentsialnost'=>['Конфиденциальность','<p>JOYRENT получает имя, телефон, город, адрес и параметры аренды для обработки заявки и согласования передачи оборудования. Эти данные хранятся в магазине, доступ имеют уполномоченные сотрудники.</p><p>Форма не собирает пароли PSN, документы или платёжные данные и не подписывает на рекламные рассылки. Для уточнения или удаления данных обратитесь через контактный канал магазина.</p>'],
-            'umovy-orendy'=>['Умови оренди','<p>Надсилання заявки не є підтвердженням бронювання та не потребує оплати. Після заявки JOYRENT перевіряє доступність консолі та ігор і зв’язується з клієнтом.</p><p>До підтвердження сторони узгоджують комплектацію, дати й час отримання та повернення, вартість доставки, заставу та відповідальність за обладнання. Усі умови мають бути погоджені до передачі консолі.</p><p>Продовження оренди потребує перевірки доступності. Не розбирайте обладнання; повідомляйте про пошкодження або несправності одразу.</p>'],
-            'konfidentsiinist'=>['Конфіденційність','<p>JOYRENT отримує ім’я, телефон, місто, адресу й параметри оренди для обробки заявки та узгодження передачі обладнання. Ці дані зберігаються у магазині, доступ до них мають уповноважені працівники.</p><p>Форма не збирає паролі PSN, документи або платіжні дані та не підписує на рекламні розсилки. Для уточнення або видалення даних зверніться через контактний канал магазину.</p>']
-        ];
-        foreach ($pages as $slug=>[$title,$content]) {
-            if (get_page_by_path($slug)) continue;
-            $id=wp_insert_post(['post_type'=>'page','post_status'=>'publish','post_title'=>$title,'post_name'=>$slug,'post_content'=>$content],true);
-            if ($slug==='konfidentsiinist'&&!is_wp_error($id)&&!get_option('wp_page_for_privacy_policy')) update_option('wp_page_for_privacy_policy',$id);
+        $pages=json_decode((string)file_get_contents(__DIR__.'/../data/legal-pages.json'),true,512,JSON_THROW_ON_ERROR);
+        foreach ($pages as $slug=>$page) self::seed_page($slug,$page['title'],$page['content'],$slug==='konfidentsiinist');
+    }
+    private static function seed_page(string $slug,string $title,string $content,bool $privacy=false): void {
+        static $previous=null;
+        if ($previous===null) $previous=json_decode((string)file_get_contents(__DIR__.'/../data/page-seeds-1.6.json'),true,512,JSON_THROW_ON_ERROR);
+        $seed=$previous[$slug]??null;
+        if (in_array($slug,['faq','faq-ru','umovy-orendy','usloviya-arendy'],true)&&!self::approved_page_conditions()) {
+            // Earlier neutral copy does not invent prices or included equipment for a custom-configured shop.
+            if (!$seed) return;
+            $title=$seed['title'];$content=$seed['content'];
         }
+        $page=get_page_by_path($slug);
+        if (!$page) {
+            $id=wp_insert_post(['post_type'=>'page','post_status'=>'publish','post_title'=>$title,'post_name'=>$slug,'post_content'=>$content],true);
+            if ($privacy&&!is_wp_error($id)&&!get_option('wp_page_for_privacy_policy')) update_option('wp_page_for_privacy_policy',$id);
+            return;
+        }
+        // Only exact, published previous defaults migrate. Author text, titles, excerpts and drafts stay intact.
+        if ($seed&&$page->post_status==='publish'&&$page->post_excerpt===''&&$page->post_title===$seed['title']&&$page->post_content===$seed['content']&&$page->post_content!==$content) wp_update_post(['ID'=>$page->ID,'post_title'=>$title,'post_content'=>$content]);
+    }
+    private static function approved_page_conditions(): bool {
+        $settings=JR_Settings::public();
+        $approved=['city'=>'Одеса','cityRu'=>'Одесса','depositPs4'=>7500.0,'depositPs5'=>25000.0,'baseControllers'=>2,'extraControllerFee'=>0.0,'deliveryFee'=>null,'deliveryGreenFee'=>200.0,'deliveryYellowFee'=>300.0,'freeDeliveryFrom'=>7];
+        foreach ($approved as $key=>$value) if (($settings[$key]??null)!==$value) return false;
+        return true;
     }
 }

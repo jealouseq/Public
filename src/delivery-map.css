@@ -1,5 +1,5 @@
-.delivery-map-open { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; margin-top: 17px; padding: 9px 0; color: #eee7dd; font-size: 14px; line-height: 1.4; border-bottom: 1px solid #777167; }
-.delivery-map-open:hover { color: #d5b577; border-color: #d5b577; }
+.delivery-map-open { display: inline-flex; justify-content: center; align-items: center; gap: 11px; min-height: 50px; min-width: 186px; margin-top: 22px; padding: 12px 21px; color: #eee7dd; font-size: 15px; font-weight: 550; line-height: 1.4; border: 1px solid #78684f; border-radius: 999px; background: #cfac7710; transition: background .2s, border-color .2s; }
+.delivery-map-open:hover { background: #cfac7720; color: #e9cf9e; border-color: #bca17a; }
 .delivery-map-open:focus-visible, .delivery-map-dialog button:focus-visible, .delivery-map-canvas:focus-visible, .delivery-map-dialog a:focus-visible, .delivery-map-fallback path:focus-visible { outline: 2px solid #e9cf9e; outline-offset: 3px; }
 dialog.delivery-map-dialog { width: min(1080px, calc(100vw - 32px)); max-height: calc(100svh - 32px); padding: 24px; border-radius: 12px; background: #111315; color: #eeeae4; overflow-y: auto; }
 .delivery-map-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
@@ -45,6 +45,7 @@ dialog.delivery-map-dialog { width: min(1080px, calc(100vw - 32px)); max-height:
 .zone-map-place { width: max-content; background: #171d21d9; color: #d9dbd8; font-size: 12px; font-weight: 550; text-align: center; border-radius: 3px; line-height: 24px; pointer-events: none; white-space: nowrap; }
 body:has(.delivery-map-dialog[open]) { overflow: hidden; }
 @media (max-width: 700px) {
+  .delivery-map-open { display: flex; width: max-content; max-width: 100%; min-width: 196px; min-height: 52px; margin: 23px auto 0; font-size: 15px; }
   dialog.delivery-map-dialog { width: calc(100vw - 24px); max-width: calc(100vw - 24px); max-height: calc(100svh - 24px); padding: 18px; }
   .delivery-map-heading { gap: 12px; }
   .delivery-map-layout { grid-template-columns: minmax(0, 1fr); gap: 17px; }

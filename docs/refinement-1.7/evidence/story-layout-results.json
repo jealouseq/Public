@@ -1,0 +1,58 @@
+[
+  {
+    "language": "uk",
+    "width": 320,
+    "controller_width": 280,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "ru",
+    "width": 320,
+    "controller_width": 280,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "controller_width": 342,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "controller_width": 342,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "uk",
+    "width": 980,
+    "controller_width": 482.375,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "ru",
+    "width": 980,
+    "controller_width": 482.375,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "controller_width": 650,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "uk",
+    "width": 1920,
+    "controller_width": 650,
+    "pass": true,
+    "page_errors": []
+  }
+]

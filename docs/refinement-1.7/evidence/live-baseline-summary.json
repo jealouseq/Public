@@ -1,0 +1,15 @@
+{
+  "run": "2026-10-03T10:08:24.157575+00:00",
+  "base": "https://flowers-luxury.shop/",
+  "contexts": 4,
+  "screenshots": 26,
+  "liveAssetsMatchFinalLocal16": true,
+  "catalogUniqueGames": 20,
+  "freshPS5Cards": 19,
+  "repeatFiltersNoDuplicates": true,
+  "horizontalOverflow": 0,
+  "jsPageExceptions": 0,
+  "firstPartyHTTPFailures": 0,
+  "mutationRequests": 0,
+  "externalEmbedGETBlockedPerContext": 1
+}

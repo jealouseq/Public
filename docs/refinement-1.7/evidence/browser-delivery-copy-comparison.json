@@ -1,0 +1,17 @@
+{
+  "live": {
+    "url": "https://flowers-luxury.shop/wp-json/joyrent/v1/catalog",
+    "status": 200,
+    "observedAt": "2026-10-03T10:40:07.657943+00:00",
+    "transport": "authorized remote Desktop Commander urllib GET; no-cache header",
+    "deliveryText": "Доставляємо Одесою. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.",
+    "deliveryTextRu": "Доставляем по Одессе. Привезём, подключим и заберём после аренды. Зону и время подтвердим по адресу."
+  },
+  "local": {
+    "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+    "status": 200,
+    "deliveryText": "Доставляємо Одесою. Зелена зона — 200 грн, жовта — 300 грн за доставку та повернення. Червона — за тарифом таксі в обидва боки. Від 7 днів зелена й жовта зони безкоштовні. Зону підтвердимо за адресою.",
+    "deliveryTextRu": "Доставляем по Одессе. Зелёная зона — 200 грн, жёлтая — 300 грн за доставку и возврат. Красная — по тарифу такси в обе стороны. От 7 дней зелёная и жёлтая зоны бесплатны. Зону подтвердим по адресу."
+  },
+  "difference": "Local saved copy repeats fee table; current live copy is concise service text. Neither setting modified by QA."
+}
