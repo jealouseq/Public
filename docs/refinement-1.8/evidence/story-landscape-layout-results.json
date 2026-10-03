@@ -1,0 +1,470 @@
+[
+  {
+    "lang": "uk",
+    "width": 320,
+    "stage": {
+      "x": 41,
+      "y": 312.234375,
+      "width": 238,
+      "height": 164.25
+    },
+    "zone_image": {
+      "x": 42,
+      "y": 313.234375,
+      "width": 236,
+      "height": 162.25
+    },
+    "basemap_image": {
+      "x": 42,
+      "y": 313.234375,
+      "width": 236,
+      "height": 162.25
+    },
+    "fees": {
+      "x": 41,
+      "y": 500.484375,
+      "width": 238,
+      "height": 359.78125
+    },
+    "map_action": {
+      "x": 62,
+      "y": 883.265625,
+      "width": 196,
+      "height": 52
+    },
+    "page_errors": [],
+    "http_failures": []
+  },
+  {
+    "lang": "ru",
+    "width": 320,
+    "stage": {
+      "x": 41,
+      "y": 285.84375,
+      "width": 238,
+      "height": 164.25
+    },
+    "zone_image": {
+      "x": 42,
+      "y": 286.84375,
+      "width": 236,
+      "height": 162.25
+    },
+    "basemap_image": {
+      "x": 42,
+      "y": 286.84375,
+      "width": 236,
+      "height": 162.25
+    },
+    "fees": {
+      "x": 41,
+      "y": 474.09375,
+      "width": 238,
+      "height": 359.78125
+    },
+    "map_action": {
+      "x": 62,
+      "y": 856.875,
+      "width": 196,
+      "height": 52
+    },
+    "page_errors": [],
+    "http_failures": []
+  },
+  {
+    "lang": "uk",
+    "width": 390,
+    "stage": {
+      "x": 49,
+      "y": 287.546875,
+      "width": 292,
+      "height": 201.375
+    },
+    "zone_image": {
+      "x": 50,
+      "y": 288.546875,
+      "width": 290,
+      "height": 199.375
+    },
+    "basemap_image": {
+      "x": 50,
+      "y": 288.546875,
+      "width": 290,
+      "height": 199.375
+    },
+    "fees": {
+      "x": 49,
+      "y": 512.921875,
+      "width": 292,
+      "height": 322.1875
+    },
+    "map_action": {
+      "x": 97,
+      "y": 858.109375,
+      "width": 196,
+      "height": 52
+    },
+    "page_errors": [],
+    "http_failures": []
+  },
+  {
+    "lang": "ru",
+    "width": 390,
+    "stage": {
+      "x": 49,
+      "y": 278.546875,
+      "width": 292,
+      "height": 201.375
+    },
+    "zone_image": {
+      "x": 50,
+      "y": 279.546875,
+      "width": 290,
+      "height": 199.375
+    },
+    "basemap_image": {
+      "x": 50,
+      "y": 279.546875,
+      "width": 290,
+      "height": 199.375
+    },
+    "fees": {
+      "x": 49,
+      "y": 503.921875,
+      "width": 292,
+      "height": 340.1875
+    },
+    "map_action": {
+      "x": 97,
+      "y": 867.109375,
+      "width": 196,
+      "height": 52
+    },
+    "page_errors": [],
+    "http_failures": []
+  },
+  {
+    "lang": "uk",
+    "width": 700,
+    "stage": {
+      "x": 49,
+      "y": 187.125,
+      "width": 602,
+      "height": 414.5
+    },
+    "zone_image": {
+      "x": 50,
+      "y": 188.125,
+      "width": 600,
+      "height": 412.5
+    },
+    "basemap_image": {
+      "x": 50,
+      "y": 188.125,
+      "width": 600,
+      "height": 412.5
+    },
+    "fees": {
+      "x": 49,
+      "y": 625.625,
+      "width": 602,
+      "height": 284.59375
+    },
+    "map_action": {
+      "x": 252,
+      "y": 933.21875,
+      "width": 196,
+      "height": 52
+    },
+    "page_errors": [],
+    "http_failures": []
+  },
+  {
+    "lang": "ru",
+    "width": 700,
+    "stage": {
+      "x": 49,
+      "y": 187.125,
+      "width": 602,
+      "height": 414.5
+    },
+    "zone_image": {
+      "x": 50,
+      "y": 188.125,
+      "width": 600,
+      "height": 412.5
+    },
+    "basemap_image": {
+      "x": 50,
+      "y": 188.125,
+      "width": 600,
+      "height": 412.5
+    },
+    "fees": {
+      "x": 49,
+      "y": 625.625,
+      "width": 602,
+      "height": 284.59375
+    },
+    "map_action": {
+      "x": 252,
+      "y": 933.21875,
+      "width": 196,
+      "height": 52
+    },
+    "page_errors": [],
+    "http_failures": []
+  },
+  {
+    "lang": "uk",
+    "width": 701,
+    "stage": {
+      "x": 65.4375,
+      "y": 288.171875,
+      "width": 570.125,
+      "height": 392.578125
+    },
+    "zone_image": {
+      "x": 66.4375,
+      "y": 289.171875,
+      "width": 568.125,
+      "height": 390.578125
+    },
+    "basemap_image": {
+      "x": 66.4375,
+      "y": 289.171875,
+      "width": 568.125,
+      "height": 390.578125
+    },
+    "fees": {
+      "x": 65.4375,
+      "y": 704.75,
+      "width": 570.125,
+      "height": 293.59375
+    },
+    "map_action": {
+      "x": 449.5625,
+      "y": 131.984375,
+      "width": 186,
+      "height": 50
+    },
+    "page_errors": [],
+    "http_failures": []
+  },
+  {
+    "lang": "ru",
+    "width": 701,
+    "stage": {
+      "x": 65.4375,
+      "y": 276.515625,
+      "width": 570.125,
+      "height": 392.578125
+    },
+    "zone_image": {
+      "x": 66.4375,
+      "y": 277.515625,
+      "width": 568.125,
+      "height": 390.578125
+    },
+    "basemap_image": {
+      "x": 66.4375,
+      "y": 277.515625,
+      "width": 568.125,
+      "height": 390.578125
+    },
+    "fees": {
+      "x": 65.4375,
+      "y": 693.09375,
+      "width": 570.125,
+      "height": 293.59375
+    },
+    "map_action": {
+      "x": 449.5625,
+      "y": 144.375,
+      "width": 186,
+      "height": 50
+    },
+    "page_errors": [],
+    "http_failures": []
+  },
+  {
+    "lang": "uk",
+    "width": 980,
+    "stage": {
+      "x": 81.34375,
+      "y": 470.390625,
+      "width": 467.140625,
+      "height": 321.78125
+    },
+    "zone_image": {
+      "x": 82.34375,
+      "y": 471.390625,
+      "width": 465.140625,
+      "height": 319.78125
+    },
+    "basemap_image": {
+      "x": 82.34375,
+      "y": 471.390625,
+      "width": 465.140625,
+      "height": 319.78125
+    },
+    "fees": {
+      "x": 576.484375,
+      "y": 465.6875,
+      "width": 322.171875,
+      "height": 331.1875
+    },
+    "map_action": {
+      "x": 712.65625,
+      "y": 333.546875,
+      "width": 186,
+      "height": 50
+    },
+    "page_errors": [],
+    "http_failures": []
+  },
+  {
+    "lang": "ru",
+    "width": 980,
+    "stage": {
+      "x": 81.34375,
+      "y": 470.390625,
+      "width": 467.140625,
+      "height": 321.78125
+    },
+    "zone_image": {
+      "x": 82.34375,
+      "y": 471.390625,
+      "width": 465.140625,
+      "height": 319.78125
+    },
+    "basemap_image": {
+      "x": 82.34375,
+      "y": 471.390625,
+      "width": 465.140625,
+      "height": 319.78125
+    },
+    "fees": {
+      "x": 576.484375,
+      "y": 465.6875,
+      "width": 322.171875,
+      "height": 331.1875
+    },
+    "map_action": {
+      "x": 712.65625,
+      "y": 333.546875,
+      "width": 186,
+      "height": 50
+    },
+    "page_errors": [],
+    "http_failures": []
+  },
+  {
+    "lang": "uk",
+    "width": 1440,
+    "stage": {
+      "x": 119.0625,
+      "y": 401.015625,
+      "width": 682.890625,
+      "height": 470.109375
+    },
+    "zone_image": {
+      "x": 120.0625,
+      "y": 402.015625,
+      "width": 680.890625,
+      "height": 468.109375
+    },
+    "basemap_image": {
+      "x": 120.0625,
+      "y": 402.015625,
+      "width": 680.890625,
+      "height": 468.109375
+    },
+    "fees": {
+      "x": 849.953125,
+      "y": 489.265625,
+      "width": 470.984375,
+      "height": 293.59375
+    },
+    "map_action": {
+      "x": 1134.9375,
+      "y": 260.078125,
+      "width": 186,
+      "height": 50
+    },
+    "page_errors": [],
+    "http_failures": []
+  },
+  {
+    "lang": "ru",
+    "width": 1440,
+    "stage": {
+      "x": 119.0625,
+      "y": 401.015625,
+      "width": 682.890625,
+      "height": 470.109375
+    },
+    "zone_image": {
+      "x": 120.0625,
+      "y": 402.015625,
+      "width": 680.890625,
+      "height": 468.109375
+    },
+    "basemap_image": {
+      "x": 120.0625,
+      "y": 402.015625,
+      "width": 680.890625,
+      "height": 468.109375
+    },
+    "fees": {
+      "x": 849.953125,
+      "y": 480.265625,
+      "width": 470.984375,
+      "height": 311.59375
+    },
+    "map_action": {
+      "x": 1134.9375,
+      "y": 260.078125,
+      "width": 186,
+      "height": 50
+    },
+    "page_errors": [],
+    "http_failures": []
+  },
+  {
+    "lang": "uk",
+    "width": 1920,
+    "stage": {
+      "x": 317,
+      "y": 384.484375,
+      "width": 732.6875,
+      "height": 504.34375
+    },
+    "zone_image": {
+      "x": 318,
+      "y": 385.484375,
+      "width": 730.6875,
+      "height": 502.34375
+    },
+    "basemap_image": {
+      "x": 318,
+      "y": 385.484375,
+      "width": 730.6875,
+      "height": 502.34375
+    },
+    "fees": {
+      "x": 1097.6875,
+      "y": 489.859375,
+      "width": 505.3125,
+      "height": 293.59375
+    },
+    "map_action": {
+      "x": 1417,
+      "y": 242.890625,
+      "width": 186,
+      "height": 50
+    },
+    "page_errors": [],
+    "http_failures": []
+  }
+]

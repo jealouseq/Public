@@ -1,0 +1,86 @@
+{
+  "archivedAt": "2026-10-03T12:08:20.087469+00:00",
+  "reason": "Latest explicit user steering compact icon/title process composition; second iteration passed prior centered-stack specification",
+  "files": [
+    {
+      "name": "browser-selected-screens.json",
+      "sha256": "103ea3410c1283d8914c35ceb96e93514da05594b62ea1294808ca3170ba998b"
+    },
+    {
+      "name": "browser-report.md",
+      "sha256": "73cd112a3cbfdcb9d499e59a57744e82c855da1e92ab8afbdd6c6c87c76ed87c"
+    },
+    {
+      "name": "browser-receipt.json",
+      "sha256": "f8e33718a592c2824d54ed3880fd27782040367eed1936908f2875613c36a861"
+    },
+    {
+      "name": "browser-report.json",
+      "sha256": "1070049fefdbb29f97b78d256f8487223669ca34dfbf7c77a0e2528d33bebd7a"
+    },
+    {
+      "name": "docs-screens/ru-mobile-process.png",
+      "sha256": "41433debe414ec12b0acfe36e1f271bec3e80f33ea202e6ca92327789affa86d"
+    },
+    {
+      "name": "docs-screens/ru-mobile-delivery-map.png",
+      "sha256": "65b61527995bdf2ae868972054f5c241129871f7da8c79280472e97aea6be63c"
+    },
+    {
+      "name": "docs-screens/ua-mobile-booking-controller.png",
+      "sha256": "28f8cf09f9af645546f12c741a2a61f82f5d9950ccf5f60b8b2e236b6477ed59"
+    },
+    {
+      "name": "docs-screens/ru-desktop-delivery-map.png",
+      "sha256": "d9e6e4ea70c341278a0651361d0e1f877b0f5df3ae4260db9681f1a6564236da"
+    },
+    {
+      "name": "docs-screens/ua-desktop-delivery.png",
+      "sha256": "6d1ed348a6c15edc44d5632fbe07b2cd52e19078a226055739ecafb5fae29d1f"
+    },
+    {
+      "name": "docs-screens/ru-desktop-delivery.png",
+      "sha256": "d47b7ba4aa6f5c601f89756fea114b5f1d8ae412fe06a2469e422817f6ce0b33"
+    },
+    {
+      "name": "docs-screens/ua-mobile-process.png",
+      "sha256": "21ad079ec7eb494b668fcdf7e19ee06af5a5fe6f893c0b454db62a0ad9e3f3f7"
+    },
+    {
+      "name": "docs-screens/ua-desktop-delivery-map.png",
+      "sha256": "7e1f284c5dcf7b9fd6172c1708946773c34d4c87bb28a391ea61bfb86117c84e"
+    },
+    {
+      "name": "docs-screens/ua-mobile-delivery-map.png",
+      "sha256": "822adc1b35d9972873e61dea1d613e8fa30fa76da3da9dce7f8b07948657e702"
+    },
+    {
+      "name": "docs-screens/ru-desktop-booking-controller.png",
+      "sha256": "dba6e941c16e56e12341b8f812de9ddb6033f79f39fcbf6cf740e8e541fc3518"
+    },
+    {
+      "name": "docs-screens/ru-desktop-process.png",
+      "sha256": "c00a52cb450c5ce99cca69d9db348ff8ed50f1abd05a81af83e268504c339773"
+    },
+    {
+      "name": "docs-screens/ru-mobile-delivery.png",
+      "sha256": "9a7400a8d2eb41848e3d62cf72d8da29de2b43a018d81ac9cfe0e1be871c513a"
+    },
+    {
+      "name": "docs-screens/ua-desktop-process.png",
+      "sha256": "9069bb6289f25fa6d7dc870318b1ee167063c7a413e679f9d91b68ce022c4ea4"
+    },
+    {
+      "name": "docs-screens/ru-mobile-booking-controller.png",
+      "sha256": "d2f93826a38dde7ebfe324bed904ef259b5b05f0514c1294ca0eaa0f78514481"
+    },
+    {
+      "name": "docs-screens/ua-mobile-delivery.png",
+      "sha256": "6e6efdb517f00c6ae8dcab80e1e73811cf03356b0fd04fa974df572abd7ea955"
+    },
+    {
+      "name": "docs-screens/ua-desktop-booking-controller.png",
+      "sha256": "e9e9a758f402523bc29fcacf79d397de9dab1eec7020ddd72a96fd60206cb47d"
+    }
+  ]
+}

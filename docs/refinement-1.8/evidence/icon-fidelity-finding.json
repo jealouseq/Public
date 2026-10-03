@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-10-03T11:54:37.693029+00:00",
+  "observer": "root independent visual reference comparison",
+  "severity": "P2",
+  "classification": "real product icon fidelity",
+  "build": "main-i_aDCQ0R.js / main-Dr9ihFq-.css",
+  "evidence": "root512px source/vector side-by-side comparison",
+  "finding": "stroke2 roughly3x heavier than selected photo; dense controller details look solid. Prior geometry/currentColor/containment tests did not assess reference fidelity.",
+  "resolutionPlanned": "standalone64 SVG stroke0.8; shared UI optical stroke1.25 when size<=32 otherwise0.8; Story/Booking icon21→28px; geometry unchanged; new packaged build +12 fresh acceptance cases",
+  "status": "awaiting new build verification"
+}

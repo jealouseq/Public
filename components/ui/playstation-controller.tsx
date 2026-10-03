@@ -1,13 +1,17 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-// JOYRENT's original DualSense silhouette, matching the site's light outline icons.
+// Vector adaptation of the user's final image selection: detailed generated contour.
+// Geometry keeps the DualSense handles, broad touchpad and paired circular sticks.
 export function PlayStationController({ size = 24, weight: _weight, className, ...props }: ComponentPropsWithoutRef<'svg'> & { size?: number; weight?: 'light' }) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" strokeWidth="1.3" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className={className} {...props}>
-    <path d="M6.1 6.4C3.8 6.4 2.5 8.4 1.9 11.6l-.6 4.6c-.2 1.9.3 3.4 1.6 3.4 1.5 0 2.5-2 3.7-3.5.6-.8 1.5-1.2 2.5-1.2h5.8c1 0 1.9.4 2.5 1.2 1.2 1.5 2.2 3.5 3.7 3.5 1.3 0 1.8-1.5 1.6-3.4l-.6-4.6c-.6-3.2-1.9-5.2-4.2-5.2H6.1Z" />
-    <path d="M7.8 6.5h8.4l-.5 3.3c-.1.6-.5 1-1.1 1H9.4c-.6 0-1-.4-1.1-1l-.5-3.3Z" />
-    <path d="M4.9 8.7v3.1M3.4 10.2h3" />
-    <circle cx="9.1" cy="13.5" r="1.35" /><circle cx="14.9" cy="13.5" r="1.35" />
-    <path d="M19.1 8.6h.01m0 3.1h.01m-1.6-1.55h.01m3.1 0h.01" strokeWidth="1.9" />
-    <path d="m4.6 6.6.4-1h2.1m9.8 0H19l.4 1" />
+  return <svg width={size} height={size} viewBox="0 0 64 64" strokeWidth={size <= 32 ? 1.25 : .8} stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" className={className} {...props}>
+    <path d="M20 14.2c-3.4-1.5-9.9-1.1-12.2 1.6C4.4 20.1 1.6 31.5 1.6 42.1c0 6.5 2.2 10.8 5.9 11.1 3.2.4 5.2-4 7-7.6l2.3-3.9c1.1-2 2.5-2.6 4.9-2h19c2.4-.6 3.8 0 4.9 2l2.4 3.9c1.8 3.6 3.8 8 7 7.6 3.7-.3 5.9-4.6 5.9-11.1 0-10.6-2.8-22-6.2-26.3-2.3-2.7-8.8-3.1-12.2-1.6C40.5 13 35 13 31.25 13S22 13 20 14.2Z" />
+    <path d="M20 14.2c-1.2.7-.8 2.6-.5 4.3l1.5 5.9c.5 1.7 1.7 2.3 3.9 2.3h12.7c2.2 0 3.4-.6 3.9-2.3l1.5-5.9c.3-1.7.7-3.6-.5-4.3" />
+    <path d="M20.6 23.8c.1 3.1-2.3 4.9-4.6 7.5-3.6 4.3-6.5 12.9-9.7 21.4m35.6-28.9c-.1 3.1 2.3 4.9 4.6 7.5 3.6 4.3 6.5 12.9 9.7 21.4" />
+    <path d="M10.4 14.1v-1c0-1.3 1.1-1.9 2.8-2.1l3-.3c1.3-.1 1.9.5 1.9 1.8v.8m34 0v-.9c0-1.3-1.1-1.9-2.8-2.1l-3-.3c-1.3-.1-1.9.5-1.9 1.8v.8" />
+    <rect x="16.8" y="15.3" width="1.6" height="3" rx=".8" /><rect x="44.1" y="15.3" width="1.6" height="3" rx=".8" />
+    <path d="M11.1 20.6c0-.7.5-1.1 1.2-1.1h1.1c.7 0 1.2.4 1.2 1.1v.9c0 .4-.2.6-.5.9l-1.2 1.1-1.3-1.1c-.3-.3-.5-.5-.5-.9v-.9Zm0 7.5c0 .7.5 1.1 1.2 1.1h1.1c.7 0 1.2-.4 1.2-1.1v-.9c0-.4-.2-.6-.5-.9l-1.2-1.1-1.3 1.1c-.3.3-.5.5-.5.9v.9Zm-2.5-5.5c-.7 0-1.1.5-1.1 1.2v1.1c0 .7.4 1.2 1.1 1.2h.9c.4 0 .6-.2.9-.5l1.1-1.2-1.1-1.3c-.3-.3-.5-.5-.9-.5h-.9Zm8.4 0c.7 0 1.1.5 1.1 1.2v1.1c0 .7-.4 1.2-1.1 1.2h-.9c-.4 0-.6-.2-.9-.5l-1.1-1.2 1.1-1.3c.3-.3.5-.5.9-.5h.9Z" />
+    <circle cx="22.5" cy="32.8" r="4.8" /><circle cx="22.5" cy="32.8" r="3.4" /><circle cx="40" cy="32.8" r="4.8" /><circle cx="40" cy="32.8" r="3.4" />
+    <circle cx="49.8" cy="20.2" r="2.1" /><circle cx="45.7" cy="24.4" r="2.1" /><circle cx="53.9" cy="24.4" r="2.1" /><circle cx="49.8" cy="28.6" r="2.1" />
+    <rect x="29.1" y="35.5" width="4.3" height="1.6" rx=".8" />
   </svg>;
 }

@@ -1,0 +1,16 @@
+{
+  "observedAt": "2026-10-03T12:48:33.548372+00:00",
+  "severity": "P2",
+  "status": "pending correction",
+  "source": "root independent actual UA/RU320 visual review",
+  "build": {
+    "main": "main-CYezEY1c.js",
+    "css": "main-DTp9pLQ1.css"
+  },
+  "observation": "Absolute copyright credit covers southern red tip at narrow width:22 logical map padding scales to about8px, while creditheight14+bottom7 consumes about21px.",
+  "browserAssertionFailure": false,
+  "missedCoverage": "Existing map ratio/frame/credit presence assertions did not check credit against projected zone extent.",
+  "requiredCorrection": "At≤900px render attribution below .delivery-preview-map; desktop>900 absolute credit may remain outside zone extent.",
+  "rawRun": "browser-results-20261003T124511Z.json",
+  "archivedIteration": "fourth-iteration"
+}

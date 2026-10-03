@@ -1,0 +1,534 @@
+{
+  "finalizedAt": "2026-10-03T11:52:22.949087+00:00",
+  "build": {
+    "main": "main-i_aDCQ0R.js",
+    "css": "main-Dr9ihFq-.css"
+  },
+  "servedAssets": {
+    "main-Dr9ihFq-.css": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css",
+      "status": 200,
+      "bytes": 92547,
+      "sha256": "4e209770f1580b248f512f731a7bfa3ac4b36332a7acd310bbc57b79da69564f",
+      "matchesLocal": true,
+      "freshVerifiedAt": "2026-10-03T11:52:22.945640+00:00"
+    },
+    "main-i_aDCQ0R.js": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+      "status": 200,
+      "bytes": 484907,
+      "sha256": "d5acf753c75b9cd83cfe4716dec7c2a1001592af72f86efc6802bc654b5db1aa",
+      "matchesLocal": true,
+      "freshVerifiedAt": "2026-10-03T11:52:22.947987+00:00"
+    }
+  },
+  "staticPreview": {
+    "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-preview.svg",
+    "status": 200,
+    "bytes": 6685,
+    "sha256": "a43b380b692acaa537be108ffac71523a004ce81572b1def122b41cfb2ab8e81",
+    "matchesLocal": true,
+    "zonePathIds": [
+      "green-1",
+      "yellow-1",
+      "yellow-2",
+      "red-1",
+      "red-2",
+      "red-3"
+    ],
+    "viewBox": "0 0 240 360"
+  },
+  "mapTilePolicy": "All external OSM raster GET deliberately blocked; actual Leaflet rendered six local vector zone paths and fallback notice. Static preview loaded locally before dialog; Leaflet/GeoJSON assets only after open.",
+  "selected": [
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114503Z/ua-mobile-process.png",
+      "name": "ua-mobile-process.png",
+      "case": "viewport-uk-390",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "150ddffb1099691ddbc2ec5f7d28ada04c2fa3af8579f8b5d435f76c0d36bc13",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.8/screens/ua-mobile-process.png",
+      "captureRun": "20261003T114503Z"
+    },
+    {
+      "file": "work/refinement-1.8/browser-extra-screens-20261003T114952Z/ua-mobile-delivery.png",
+      "name": "ua-mobile-delivery.png",
+      "case": "supplement-uk",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "6e6efdb517f00c6ae8dcab80e1e73811cf03356b0fd04fa974df572abd7ea955",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": null,
+      "compositionViewport": "preview + all fee conditions + preserved pill visible",
+      "documentationCopy": "docs/refinement-1.8/screens/ua-mobile-delivery.png",
+      "captureRun": "20261003T114952Z"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114503Z/ua-mobile-delivery-map.png",
+      "name": "ua-mobile-delivery-map.png",
+      "case": "viewport-uk-390",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "822adc1b35d9972873e61dea1d613e8fa30fa76da3da9dce7f8b07948657e702",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": "blocked OSM raster; six local vectors",
+      "documentationCopy": "docs/refinement-1.8/screens/ua-mobile-delivery-map.png",
+      "captureRun": "20261003T114503Z"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114503Z/ua-desktop-process.png",
+      "name": "ua-desktop-process.png",
+      "case": "viewport-uk-1440",
+      "language": "uk",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "d561fc58ff91506909e6ec6af30d60882ec51e14e38fb794568af1c81dd5dee5",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.8/screens/ua-desktop-process.png",
+      "captureRun": "20261003T114503Z"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114503Z/ua-desktop-delivery.png",
+      "name": "ua-desktop-delivery.png",
+      "case": "viewport-uk-1440",
+      "language": "uk",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "6d1ed348a6c15edc44d5632fbe07b2cd52e19078a226055739ecafb5fae29d1f",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.8/screens/ua-desktop-delivery.png",
+      "captureRun": "20261003T114503Z"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114503Z/ua-desktop-delivery-map.png",
+      "name": "ua-desktop-delivery-map.png",
+      "case": "viewport-uk-1440",
+      "language": "uk",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "7e1f284c5dcf7b9fd6172c1708946773c34d4c87bb28a391ea61bfb86117c84e",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": "blocked OSM raster; six local vectors",
+      "documentationCopy": "docs/refinement-1.8/screens/ua-desktop-delivery-map.png",
+      "captureRun": "20261003T114503Z"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114757Z/ru-mobile-process.png",
+      "name": "ru-mobile-process.png",
+      "case": "viewport-ru-390",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "535fdbcf341e03c31a6e6775bd71d66d493b1d8fced6dde498069fc854f6153a",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.8/screens/ru-mobile-process.png",
+      "captureRun": "20261003T114757Z"
+    },
+    {
+      "file": "work/refinement-1.8/browser-extra-screens-20261003T114952Z/ru-mobile-delivery.png",
+      "name": "ru-mobile-delivery.png",
+      "case": "supplement-ru",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "9a7400a8d2eb41848e3d62cf72d8da29de2b43a018d81ac9cfe0e1be871c513a",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": null,
+      "compositionViewport": "preview + all fee conditions + preserved pill visible",
+      "documentationCopy": "docs/refinement-1.8/screens/ru-mobile-delivery.png",
+      "captureRun": "20261003T114952Z"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114757Z/ru-mobile-delivery-map.png",
+      "name": "ru-mobile-delivery-map.png",
+      "case": "viewport-ru-390",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "65b61527995bdf2ae868972054f5c241129871f7da8c79280472e97aea6be63c",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": "blocked OSM raster; six local vectors",
+      "documentationCopy": "docs/refinement-1.8/screens/ru-mobile-delivery-map.png",
+      "captureRun": "20261003T114757Z"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114503Z/ru-desktop-process.png",
+      "name": "ru-desktop-process.png",
+      "case": "viewport-ru-1440",
+      "language": "ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "00e1ffd27cf6fb88c672b7e61d75dfcc9f1b5e7070ebd40b379438a340dcd077",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.8/screens/ru-desktop-process.png",
+      "captureRun": "20261003T114503Z"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114503Z/ru-desktop-delivery.png",
+      "name": "ru-desktop-delivery.png",
+      "case": "viewport-ru-1440",
+      "language": "ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "d47b7ba4aa6f5c601f89756fea114b5f1d8ae412fe06a2469e422817f6ce0b33",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.8/screens/ru-desktop-delivery.png",
+      "captureRun": "20261003T114503Z"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114503Z/ru-desktop-delivery-map.png",
+      "name": "ru-desktop-delivery-map.png",
+      "case": "viewport-ru-1440",
+      "language": "ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "d9e6e4ea70c341278a0651361d0e1f877b0f5df3ae4260db9681f1a6564236da",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": "blocked OSM raster; six local vectors",
+      "documentationCopy": "docs/refinement-1.8/screens/ru-desktop-delivery-map.png",
+      "captureRun": "20261003T114503Z"
+    }
+  ],
+  "additional": [
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114503Z/ua-mobile-booking-controller.png",
+      "name": "ua-mobile-booking-controller.png",
+      "case": "viewport-uk-390",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "8b4605a602f0b7aee3bf048f9f34239b5b82e1b07cc50ed05543b672d16bc4fc",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": false,
+      "externalTiles": null,
+      "captureRun": "20261003T114503Z",
+      "documentationCopy": "docs/refinement-1.8/screens/ua-mobile-booking-controller.png"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114503Z/ua-desktop-booking-controller.png",
+      "name": "ua-desktop-booking-controller.png",
+      "case": "viewport-uk-1440",
+      "language": "uk",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "9868ac5ce03402cd72267af82069b3e43ab42585f0e9e9ae2f1c0cf4f8cc98db",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": false,
+      "externalTiles": null,
+      "captureRun": "20261003T114503Z",
+      "documentationCopy": "docs/refinement-1.8/screens/ua-desktop-booking-controller.png"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114503Z/ru-desktop-booking-controller.png",
+      "name": "ru-desktop-booking-controller.png",
+      "case": "viewport-ru-1440",
+      "language": "ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "7d555acb76b96a6d3355740892d0366c24629bc3c02c842308d791f49d2e8703",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": false,
+      "externalTiles": null,
+      "captureRun": "20261003T114503Z",
+      "documentationCopy": "docs/refinement-1.8/screens/ru-desktop-booking-controller.png"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114757Z/ru-mobile-booking-controller.png",
+      "name": "ru-mobile-booking-controller.png",
+      "case": "viewport-ru-390",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "0d358e58c3aca722c30f9389fe7c5491b723742f633dcc2330ffbdfb81542dd3",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": false,
+      "externalTiles": null,
+      "captureRun": "20261003T114757Z",
+      "documentationCopy": "docs/refinement-1.8/screens/ru-mobile-booking-controller.png"
+    },
+    {
+      "file": "work/refinement-1.8/browser-extra-screens-20261003T114952Z/ua-mobile-missing-cover-fixture.png",
+      "name": "ua-mobile-missing-cover-fixture.png",
+      "case": "supplement-uk",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "1d641d02cce39630da58f928a551d4bb1788434be0e7abfa262746771ee99323",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": false,
+      "externalTiles": null,
+      "browserOnlyFixture": "first game image/imageUrl empty in local intercepted catalog GET; server untouched",
+      "captureRun": "20261003T114952Z"
+    },
+    {
+      "file": "work/refinement-1.8/browser-extra-screens-20261003T114952Z/ru-mobile-missing-cover-fixture.png",
+      "name": "ru-mobile-missing-cover-fixture.png",
+      "case": "supplement-ru",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "a580a37c514e2c88b9ba56aa6c2031cd4dd3e8699ca79aacc7f7745d24d571c9",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": false,
+      "externalTiles": null,
+      "browserOnlyFixture": "first game image/imageUrl empty in local intercepted catalog GET; server untouched",
+      "captureRun": "20261003T114952Z"
+    }
+  ]
+}

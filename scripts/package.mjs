@@ -36,10 +36,11 @@ await rm(preview, { recursive: true, force: true });
 await mkdir(preview, { recursive: true });
 await cp(join(theme,'assets/dist/assets'),join(preview,'assets'),{recursive:true});
 await cp(join(theme,'assets/images'),join(preview,'images'),{recursive:true,filter:path=>!path.endsWith('.png')});
+await cp(join(theme,'assets/data'),join(preview,'data'),{recursive:true});
 const manifest=JSON.parse(await readFile(join(theme,'assets/dist/.vite/manifest.json'),'utf8'))['src/main.tsx'];
 const styles=manifest.css.map(file=>`<link rel="stylesheet" href="./${file}">`).join('\n');
 await writeFile(join(preview,'index.html'),`<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#08090b"><title>JOYRENT — візуальний перегляд</title>${styles}</head><body><div id="joyrent-root"></div><script>window.JOYRENT={apiBase:'./api-preview',assetBase:'.',preview:true};</script><script type="module" src="./${manifest.file}"></script></body></html>`);
-await writeFile(join(preview,'README.txt'),'Visual preview only. Requests require WordPress + WooCommerce. Run: python3 -m http.server 4173 inside this folder, then open http://localhost:4173.\n');
+await writeFile(join(preview,'README.txt'),'Visual preview only. Requests require WordPress + WooCommerce. Run: python3 -m http.server 4173 inside this folder, then open http://localhost:4173.\nMap attribution and reusable ODbL source: data/delivery-basemap-LICENSE.md.\n');
 const faq=JSON.parse(await readFile(join(root,'wordpress/joyrent-rentals/data/faq.json'),'utf8'));
 const escapeHTML=value=>value.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 for (const language of ['uk','ru']) {

@@ -1,0 +1,225 @@
+{
+  "base": "http://localhost:5173",
+  "phase": "before-local",
+  "cases": [
+    {
+      "language": "uk",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "initial": {
+        "url": "http://localhost:5173/",
+        "scrollY": 1111,
+        "linkHref": "#delivery",
+        "linkText": "Як отримати консоль"
+      },
+      "afterClick": {
+        "url": "http://localhost:5173/#delivery",
+        "hash": "#delivery",
+        "scrollY": 3500,
+        "scrollPaddingTop": "25px",
+        "headerPosition": "relative",
+        "header": {
+          "top": -3500,
+          "bottom": -3426,
+          "height": 74
+        },
+        "processSection": {
+          "top": -571.078125,
+          "bottom": 830.328125,
+          "height": 1401.40625
+        },
+        "processHeading": {
+          "top": -478.78125,
+          "bottom": -441.09375,
+          "height": 37.6875
+        },
+        "processHeadingVisible": false,
+        "deliveryPanel": {
+          "top": 25.03125,
+          "bottom": 770.328125,
+          "height": 745.296875
+        },
+        "visibleStepTitles": [],
+        "entryScripts": [
+          "http://localhost:5173/@vite/client",
+          "http://localhost:5173/src/main.tsx?t=1791025098827"
+        ],
+        "overflow": false
+      },
+      "expectedTarget": "#how-it-works",
+      "pass": false,
+      "screenshot": "before-local-ua-mobile.png",
+      "postAttempts": [],
+      "pageErrors": [],
+      "externalGetsBlocked": 0
+    },
+    {
+      "language": "uk",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "initial": {
+        "url": "http://localhost:5173/",
+        "scrollY": 722,
+        "linkHref": "#delivery",
+        "linkText": "Як отримати консоль"
+      },
+      "afterClick": {
+        "url": "http://localhost:5173/#delivery",
+        "hash": "#delivery",
+        "scrollY": 3041,
+        "scrollPaddingTop": "105px",
+        "headerPosition": "relative",
+        "header": {
+          "top": -3041,
+          "bottom": -2949,
+          "height": 92
+        },
+        "processSection": {
+          "top": -339.4375,
+          "bottom": 672.78125,
+          "height": 1012.21875
+        },
+        "processHeading": {
+          "top": -198.75,
+          "bottom": -130.4375,
+          "height": 68.3125
+        },
+        "processHeadingVisible": false,
+        "deliveryPanel": {
+          "top": 105.4375,
+          "bottom": 567.78125,
+          "height": 462.34375
+        },
+        "visibleStepTitles": [],
+        "entryScripts": [
+          "http://localhost:5173/@vite/client",
+          "http://localhost:5173/src/main.tsx?t=1791025098827"
+        ],
+        "overflow": false
+      },
+      "expectedTarget": "#how-it-works",
+      "pass": false,
+      "screenshot": "before-local-ua-desktop.png",
+      "postAttempts": [],
+      "pageErrors": [],
+      "externalGetsBlocked": 0
+    },
+    {
+      "language": "ru",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "initial": {
+        "url": "http://localhost:5173/?lang=ru",
+        "scrollY": 1147,
+        "linkHref": "#delivery",
+        "linkText": "Как получить консоль"
+      },
+      "afterClick": {
+        "url": "http://localhost:5173/?lang=ru#delivery",
+        "hash": "#delivery",
+        "scrollY": 3536,
+        "scrollPaddingTop": "25px",
+        "headerPosition": "relative",
+        "header": {
+          "top": -3536,
+          "bottom": -3462,
+          "height": 74
+        },
+        "processSection": {
+          "top": -570.6875,
+          "bottom": 830.71875,
+          "height": 1401.40625
+        },
+        "processHeading": {
+          "top": -478.390625,
+          "bottom": -440.703125,
+          "height": 37.6875
+        },
+        "processHeadingVisible": false,
+        "deliveryPanel": {
+          "top": 25.421875,
+          "bottom": 770.71875,
+          "height": 745.296875
+        },
+        "visibleStepTitles": [],
+        "entryScripts": [
+          "http://localhost:5173/@vite/client",
+          "http://localhost:5173/src/main.tsx?t=1791025098827"
+        ],
+        "overflow": false
+      },
+      "expectedTarget": "#how-it-works",
+      "pass": false,
+      "screenshot": "before-local-ru-mobile.png",
+      "postAttempts": [],
+      "pageErrors": [],
+      "externalGetsBlocked": 0
+    },
+    {
+      "language": "ru",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "initial": {
+        "url": "http://localhost:5173/?lang=ru",
+        "scrollY": 722,
+        "linkHref": "#delivery",
+        "linkText": "Как получить консоль"
+      },
+      "afterClick": {
+        "url": "http://localhost:5173/?lang=ru#delivery",
+        "hash": "#delivery",
+        "scrollY": 3041,
+        "scrollPaddingTop": "105px",
+        "headerPosition": "relative",
+        "header": {
+          "top": -3041,
+          "bottom": -2949,
+          "height": 92
+        },
+        "processSection": {
+          "top": -339.4375,
+          "bottom": 672.78125,
+          "height": 1012.21875
+        },
+        "processHeading": {
+          "top": -198.75,
+          "bottom": -130.4375,
+          "height": 68.3125
+        },
+        "processHeadingVisible": false,
+        "deliveryPanel": {
+          "top": 105.4375,
+          "bottom": 567.78125,
+          "height": 462.34375
+        },
+        "visibleStepTitles": [],
+        "entryScripts": [
+          "http://localhost:5173/@vite/client",
+          "http://localhost:5173/src/main.tsx?t=1791025098827"
+        ],
+        "overflow": false
+      },
+      "expectedTarget": "#how-it-works",
+      "pass": false,
+      "screenshot": "before-local-ru-desktop.png",
+      "postAttempts": [],
+      "pageErrors": [],
+      "externalGetsBlocked": 0
+    }
+  ],
+  "pass": 0,
+  "fail": 4,
+  "safety": "Non-GET/HEAD blocked before transmission; only audited host GET/HEAD allowed. Form untouched."
+}
