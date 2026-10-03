@@ -1,0 +1,488 @@
+[
+  {
+    "width": 390,
+    "controls": [
+      {
+        "selector": ".console-switch button",
+        "text": "PS5",
+        "width": 68,
+        "height": 35,
+        "fontSize": "12px",
+        "fg": "rgb(17, 18, 20)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(17, 18, 20)"
+      },
+      {
+        "selector": ".console-switch button",
+        "text": "PS4",
+        "width": 68,
+        "height": 35,
+        "fontSize": "12px",
+        "fg": "rgb(163, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(163, 165, 168)"
+      },
+      {
+        "selector": ".console-switch button",
+        "text": "PS5",
+        "width": 68,
+        "height": 35,
+        "fontSize": "12px",
+        "fg": "rgb(17, 18, 20)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(17, 18, 20)"
+      },
+      {
+        "selector": ".console-switch button",
+        "text": "PS4",
+        "width": 68,
+        "height": 35,
+        "fontSize": "12px",
+        "fg": "rgb(163, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(163, 165, 168)"
+      },
+      {
+        "selector": ".game-filters button",
+        "text": "Усі",
+        "width": 15.78125,
+        "height": 28,
+        "fontSize": "12px",
+        "fg": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(244, 244, 241)"
+      },
+      {
+        "selector": ".game-filters button",
+        "text": "На двох",
+        "width": 44.203125,
+        "height": 28,
+        "fontSize": "12px",
+        "fg": "rgb(164, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(164, 165, 168) rgb(164, 165, 168) rgba(0, 0, 0, 0)"
+      },
+      {
+        "selector": ".game-filters button",
+        "text": "Для компанії",
+        "width": 72.21875,
+        "height": 28,
+        "fontSize": "12px",
+        "fg": "rgb(164, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(164, 165, 168) rgb(164, 165, 168) rgba(0, 0, 0, 0)"
+      },
+      {
+        "selector": ".game-filters button",
+        "text": "Перегони",
+        "width": 55.921875,
+        "height": 28,
+        "fontSize": "12px",
+        "fg": "rgb(164, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(164, 165, 168) rgb(164, 165, 168) rgba(0, 0, 0, 0)"
+      },
+      {
+        "selector": ".game-filters button",
+        "text": "Спорт",
+        "width": 35.703125,
+        "height": 28,
+        "fontSize": "12px",
+        "fg": "rgb(164, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(164, 165, 168) rgb(164, 165, 168) rgba(0, 0, 0, 0)"
+      },
+      {
+        "selector": ".game-filters button",
+        "text": "Сюжетні",
+        "width": 49.015625,
+        "height": 28,
+        "fontSize": "12px",
+        "fg": "rgb(164, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(164, 165, 168) rgb(164, 165, 168) rgba(0, 0, 0, 0)"
+      },
+      {
+        "selector": ".game-filters button",
+        "text": "Дітям",
+        "width": 32.421875,
+        "height": 28,
+        "fontSize": "12px",
+        "fg": "rgb(164, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(164, 165, 168) rgb(164, 165, 168) rgba(0, 0, 0, 0)"
+      },
+      {
+        "selector": ".carousel-controls button",
+        "text": "",
+        "width": 33,
+        "height": 33,
+        "fontSize": "16px",
+        "fg": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(75, 76, 78)"
+      },
+      {
+        "selector": ".carousel-controls button",
+        "text": "",
+        "width": 33,
+        "height": 33,
+        "fontSize": "16px",
+        "fg": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(75, 76, 78)"
+      },
+      {
+        "selector": ".language-switch button",
+        "text": "UA",
+        "width": 38,
+        "height": 44,
+        "fontSize": "10px",
+        "fg": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(244, 244, 241)"
+      },
+      {
+        "selector": ".language-switch button",
+        "text": "RU",
+        "width": 38,
+        "height": 44,
+        "fontSize": "10px",
+        "fg": "rgb(163, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(163, 165, 168)"
+      },
+      {
+        "selector": ".booking-games .text-link",
+        "text": "Обрати ігри",
+        "width": 80.90625,
+        "height": 44,
+        "fontSize": "10px",
+        "fg": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(244, 244, 241) rgb(244, 244, 241) rgb(104, 105, 107)"
+      },
+      {
+        "selector": ".term-options button",
+        "text": "1 день",
+        "width": 78,
+        "height": 48,
+        "fontSize": "12px",
+        "fg": "rgb(163, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(60, 61, 64)"
+      },
+      {
+        "selector": ".term-options button",
+        "text": "3 дні",
+        "width": 78,
+        "height": 48,
+        "fontSize": "12px",
+        "fg": "rgb(244, 244, 241)",
+        "bg": "rgb(27, 29, 32)",
+        "border": "rgb(239, 239, 237)"
+      },
+      {
+        "selector": ".term-options button",
+        "text": "7 днів",
+        "width": 78,
+        "height": 48,
+        "fontSize": "12px",
+        "fg": "rgb(163, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(60, 61, 64)"
+      },
+      {
+        "selector": ".term-options button",
+        "text": "30 днів",
+        "width": 78,
+        "height": 48,
+        "fontSize": "12px",
+        "fg": "rgb(163, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(60, 61, 64)"
+      },
+      {
+        "selector": ".controller-options button",
+        "text": "1",
+        "width": 72,
+        "height": 48,
+        "fontSize": "14px",
+        "fg": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(244, 244, 241)"
+      },
+      {
+        "selector": ".controller-options button",
+        "text": "2",
+        "width": 72,
+        "height": 48,
+        "fontSize": "14px",
+        "fg": "rgb(163, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(59, 60, 63)"
+      },
+      {
+        "selector": ".summary-button",
+        "text": "Продовжити",
+        "width": 294,
+        "height": 56.5,
+        "fontSize": "15px",
+        "fg": "rgb(16, 17, 19)",
+        "bg": "rgb(244, 244, 241)",
+        "border": "rgba(0, 0, 0, 0)"
+      }
+    ],
+    "dateBorderContrast": 1.61,
+    "dateOuterContrast": 1.06,
+    "skip": {
+      "focus": false,
+      "top": -70,
+      "cssTop": "-70px",
+      "position": "fixed"
+    }
+  },
+  {
+    "width": 1440,
+    "controls": [
+      {
+        "selector": ".console-switch button",
+        "text": "PS5",
+        "width": 82,
+        "height": 41,
+        "fontSize": "14px",
+        "fg": "rgb(17, 18, 20)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(17, 18, 20)"
+      },
+      {
+        "selector": ".console-switch button",
+        "text": "PS4",
+        "width": 82,
+        "height": 41,
+        "fontSize": "14px",
+        "fg": "rgb(163, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(163, 165, 168)"
+      },
+      {
+        "selector": ".console-switch button",
+        "text": "PS5",
+        "width": 82,
+        "height": 41,
+        "fontSize": "14px",
+        "fg": "rgb(17, 18, 20)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(17, 18, 20)"
+      },
+      {
+        "selector": ".console-switch button",
+        "text": "PS4",
+        "width": 82,
+        "height": 41,
+        "fontSize": "14px",
+        "fg": "rgb(163, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(163, 165, 168)"
+      },
+      {
+        "selector": ".game-filters button",
+        "text": "Усі",
+        "width": 18.421875,
+        "height": 33,
+        "fontSize": "14px",
+        "fg": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(244, 244, 241)"
+      },
+      {
+        "selector": ".game-filters button",
+        "text": "На двох",
+        "width": 51.5625,
+        "height": 33,
+        "fontSize": "14px",
+        "fg": "rgb(164, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(164, 165, 168) rgb(164, 165, 168) rgba(0, 0, 0, 0)"
+      },
+      {
+        "selector": ".game-filters button",
+        "text": "Для компанії",
+        "width": 84.25,
+        "height": 33,
+        "fontSize": "14px",
+        "fg": "rgb(164, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(164, 165, 168) rgb(164, 165, 168) rgba(0, 0, 0, 0)"
+      },
+      {
+        "selector": ".game-filters button",
+        "text": "Перегони",
+        "width": 65.234375,
+        "height": 33,
+        "fontSize": "14px",
+        "fg": "rgb(164, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(164, 165, 168) rgb(164, 165, 168) rgba(0, 0, 0, 0)"
+      },
+      {
+        "selector": ".game-filters button",
+        "text": "Спорт",
+        "width": 41.65625,
+        "height": 33,
+        "fontSize": "14px",
+        "fg": "rgb(164, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(164, 165, 168) rgb(164, 165, 168) rgba(0, 0, 0, 0)"
+      },
+      {
+        "selector": ".game-filters button",
+        "text": "Сюжетні",
+        "width": 57.1875,
+        "height": 33,
+        "fontSize": "14px",
+        "fg": "rgb(164, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(164, 165, 168) rgb(164, 165, 168) rgba(0, 0, 0, 0)"
+      },
+      {
+        "selector": ".game-filters button",
+        "text": "Дітям",
+        "width": 37.828125,
+        "height": 33,
+        "fontSize": "14px",
+        "fg": "rgb(164, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(164, 165, 168) rgb(164, 165, 168) rgba(0, 0, 0, 0)"
+      },
+      {
+        "selector": ".carousel-controls button",
+        "text": "",
+        "width": 46,
+        "height": 46,
+        "fontSize": "16px",
+        "fg": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(75, 76, 78)"
+      },
+      {
+        "selector": ".carousel-controls button",
+        "text": "",
+        "width": 46,
+        "height": 46,
+        "fontSize": "16px",
+        "fg": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(75, 76, 78)"
+      },
+      {
+        "selector": ".language-switch button",
+        "text": "UA",
+        "width": 38,
+        "height": 44,
+        "fontSize": "11px",
+        "fg": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(244, 244, 241)"
+      },
+      {
+        "selector": ".language-switch button",
+        "text": "RU",
+        "width": 38,
+        "height": 44,
+        "fontSize": "11px",
+        "fg": "rgb(163, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(163, 165, 168)"
+      },
+      {
+        "selector": ".booking-games .text-link",
+        "text": "Обрати ігри",
+        "width": 92.078125,
+        "height": 24,
+        "fontSize": "12px",
+        "fg": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(244, 244, 241) rgb(244, 244, 241) rgb(104, 105, 107)"
+      },
+      {
+        "selector": ".term-options button",
+        "text": "1 день",
+        "width": 180.75,
+        "height": 46,
+        "fontSize": "14px",
+        "fg": "rgb(163, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(60, 61, 64)"
+      },
+      {
+        "selector": ".term-options button",
+        "text": "3 дні",
+        "width": 180.765625,
+        "height": 46,
+        "fontSize": "14px",
+        "fg": "rgb(244, 244, 241)",
+        "bg": "rgb(27, 29, 32)",
+        "border": "rgb(239, 239, 237)"
+      },
+      {
+        "selector": ".term-options button",
+        "text": "7 днів",
+        "width": 180.75,
+        "height": 46,
+        "fontSize": "14px",
+        "fg": "rgb(163, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(60, 61, 64)"
+      },
+      {
+        "selector": ".term-options button",
+        "text": "30 днів",
+        "width": 180.765625,
+        "height": 46,
+        "fontSize": "14px",
+        "fg": "rgb(163, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(60, 61, 64)"
+      },
+      {
+        "selector": ".controller-options button",
+        "text": "1",
+        "width": 78,
+        "height": 44,
+        "fontSize": "14px",
+        "fg": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(244, 244, 241)"
+      },
+      {
+        "selector": ".controller-options button",
+        "text": "2",
+        "width": 78,
+        "height": 44,
+        "fontSize": "14px",
+        "fg": "rgb(163, 165, 168)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "border": "rgb(59, 60, 63)"
+      },
+      {
+        "selector": ".summary-button",
+        "text": "Продовжити",
+        "width": 387.21875,
+        "height": 56.5,
+        "fontSize": "15px",
+        "fg": "rgb(16, 17, 19)",
+        "bg": "rgb(244, 244, 241)",
+        "border": "rgba(0, 0, 0, 0)"
+      }
+    ],
+    "dateBorderContrast": 1.61,
+    "dateOuterContrast": 1.06,
+    "skip": {
+      "focus": false,
+      "top": -70,
+      "cssTop": "-70px",
+      "position": "fixed"
+    }
+  }
+]

@@ -1,0 +1,474 @@
+[
+  {
+    "case": "matrix",
+    "language": "uk",
+    "width": 320,
+    "height": 568,
+    "overflow": false,
+    "errors": [],
+    "badResponses": [],
+    "sections": [
+      {
+        "id": "top",
+        "height": 609.921875
+      },
+      {
+        "id": "rates",
+        "height": 831.265625
+      },
+      {
+        "id": "games",
+        "height": 610.859375
+      },
+      {
+        "id": "kit",
+        "height": 691.5
+      },
+      {
+        "id": "how-it-works",
+        "height": 1305.890625
+      },
+      {
+        "id": "booking",
+        "height": 1611.28125
+      }
+    ]
+  },
+  {
+    "case": "matrix",
+    "language": "uk",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "errors": [],
+    "badResponses": [],
+    "sections": [
+      {
+        "id": "top",
+        "height": 644.859375
+      },
+      {
+        "id": "rates",
+        "height": 802.5625
+      },
+      {
+        "id": "games",
+        "height": 636.953125
+      },
+      {
+        "id": "kit",
+        "height": 732.84375
+      },
+      {
+        "id": "how-it-works",
+        "height": 1124.90625
+      },
+      {
+        "id": "booking",
+        "height": 1515.59375
+      }
+    ]
+  },
+  {
+    "case": "matrix",
+    "language": "uk",
+    "width": 768,
+    "height": 1024,
+    "overflow": false,
+    "errors": [],
+    "badResponses": [],
+    "sections": [
+      {
+        "id": "top",
+        "height": 781.484375
+      },
+      {
+        "id": "rates",
+        "height": 820.5
+      },
+      {
+        "id": "games",
+        "height": 657.078125
+      },
+      {
+        "id": "kit",
+        "height": 499.6875
+      },
+      {
+        "id": "how-it-works",
+        "height": 691.234375
+      },
+      {
+        "id": "booking",
+        "height": 902.875
+      }
+    ]
+  },
+  {
+    "case": "matrix",
+    "language": "uk",
+    "width": 1440,
+    "height": 1000,
+    "overflow": false,
+    "errors": [],
+    "badResponses": [],
+    "sections": [
+      {
+        "id": "top",
+        "height": 680
+      },
+      {
+        "id": "rates",
+        "height": 556.5
+      },
+      {
+        "id": "games",
+        "height": 712.84375
+      },
+      {
+        "id": "kit",
+        "height": 752.4375
+      },
+      {
+        "id": "how-it-works",
+        "height": 786.625
+      },
+      {
+        "id": "booking",
+        "height": 962.65625
+      }
+    ]
+  },
+  {
+    "case": "matrix",
+    "language": "uk",
+    "width": 1920,
+    "height": 1080,
+    "overflow": false,
+    "errors": [],
+    "badResponses": [],
+    "sections": [
+      {
+        "id": "top",
+        "height": 680
+      },
+      {
+        "id": "rates",
+        "height": 556.5
+      },
+      {
+        "id": "games",
+        "height": 733.015625
+      },
+      {
+        "id": "kit",
+        "height": 784.203125
+      },
+      {
+        "id": "how-it-works",
+        "height": 788.25
+      },
+      {
+        "id": "booking",
+        "height": 962.65625
+      }
+    ]
+  },
+  {
+    "case": "matrix",
+    "language": "ru",
+    "width": 320,
+    "height": 568,
+    "overflow": false,
+    "errors": [],
+    "badResponses": [],
+    "sections": [
+      {
+        "id": "top",
+        "height": 609.921875
+      },
+      {
+        "id": "rates",
+        "height": 831.265625
+      },
+      {
+        "id": "games",
+        "height": 610.859375
+      },
+      {
+        "id": "kit",
+        "height": 691.5
+      },
+      {
+        "id": "how-it-works",
+        "height": 1277.546875
+      },
+      {
+        "id": "booking",
+        "height": 1653.578125
+      }
+    ]
+  },
+  {
+    "case": "matrix",
+    "language": "ru",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "errors": [],
+    "badResponses": [],
+    "sections": [
+      {
+        "id": "top",
+        "height": 644.859375
+      },
+      {
+        "id": "rates",
+        "height": 838.953125
+      },
+      {
+        "id": "games",
+        "height": 636.953125
+      },
+      {
+        "id": "kit",
+        "height": 732.84375
+      },
+      {
+        "id": "how-it-works",
+        "height": 1124.90625
+      },
+      {
+        "id": "booking",
+        "height": 1515.59375
+      }
+    ]
+  },
+  {
+    "case": "matrix",
+    "language": "ru",
+    "width": 768,
+    "height": 1024,
+    "overflow": false,
+    "errors": [],
+    "badResponses": [],
+    "sections": [
+      {
+        "id": "top",
+        "height": 781.484375
+      },
+      {
+        "id": "rates",
+        "height": 820.5
+      },
+      {
+        "id": "games",
+        "height": 657.078125
+      },
+      {
+        "id": "kit",
+        "height": 499.6875
+      },
+      {
+        "id": "how-it-works",
+        "height": 712.828125
+      },
+      {
+        "id": "booking",
+        "height": 944.09375
+      }
+    ]
+  },
+  {
+    "case": "matrix",
+    "language": "ru",
+    "width": 1440,
+    "height": 1000,
+    "overflow": false,
+    "errors": [],
+    "badResponses": [],
+    "sections": [
+      {
+        "id": "top",
+        "height": 680
+      },
+      {
+        "id": "rates",
+        "height": 556.5
+      },
+      {
+        "id": "games",
+        "height": 712.84375
+      },
+      {
+        "id": "kit",
+        "height": 752.4375
+      },
+      {
+        "id": "how-it-works",
+        "height": 786.625
+      },
+      {
+        "id": "booking",
+        "height": 962.65625
+      }
+    ]
+  },
+  {
+    "case": "matrix",
+    "language": "ru",
+    "width": 1920,
+    "height": 1080,
+    "overflow": false,
+    "errors": [],
+    "badResponses": [],
+    "sections": [
+      {
+        "id": "top",
+        "height": 680
+      },
+      {
+        "id": "rates",
+        "height": 556.5
+      },
+      {
+        "id": "games",
+        "height": 733.015625
+      },
+      {
+        "id": "kit",
+        "height": 784.203125
+      },
+      {
+        "id": "how-it-works",
+        "height": 788.25
+      },
+      {
+        "id": "booking",
+        "height": 962.65625
+      }
+    ]
+  },
+  {
+    "case": "console-compatibility",
+    "summary": "750\nгрн / 3 дні",
+    "selected": [
+      "It Takes Two"
+    ]
+  },
+  {
+    "case": "past-date",
+    "disabled": true,
+    "message": "Оберіть сьогоднішню або майбутню дату."
+  },
+  {
+    "case": "language-switch-preserves-draft",
+    "selected": [
+      "It Takes Two"
+    ],
+    "name": "Аудит локальний",
+    "date": "2026-10-06",
+    "consent": true
+  },
+  {
+    "case": "form-back-retains-contacts",
+    "name": "Аудит локальний"
+  },
+  {
+    "case": "native-validation",
+    "valid": false
+  },
+  {
+    "case": "legal-escape-focus",
+    "focus": true
+  },
+  {
+    "case": "faq-return-resets-order",
+    "console": "PlayStation 5",
+    "summary": "1 400\nгрн / 3 дня",
+    "selected": [],
+    "step": 0,
+    "url": "http://localhost:8080/?lang=ru#booking"
+  },
+  {
+    "case": "ui-allows-over-server-game-limit",
+    "selectedCount": 13,
+    "status": 400,
+    "response": {
+      "code": "jr_validation",
+      "message": "Некоректний список ігор.",
+      "data": {
+        "status": 400
+      }
+    },
+    "error": "Некоректний список ігор."
+  },
+  {
+    "case": "catalog-failure-entry",
+    "ctaDisabled": false,
+    "earlyError": 0
+  },
+  {
+    "case": "catalog-failure-late-error",
+    "error": "Зараз магазин не приймає заявки. Спробуй ще раз трохи пізніше.",
+    "visibleRecovery": 0
+  },
+  {
+    "case": "owner-empty-catalog-stale-selection",
+    "cards": 0,
+    "selected": [
+      ""
+    ],
+    "emptyState": "Для цієї консолі немає ігор у вибраній категорії. Спробуй інший фільтр."
+  },
+  {
+    "case": "mobile-menu-focus",
+    "focused": "Консолі",
+    "expanded": "true"
+  },
+  {
+    "case": "modal-keyboard-cycle",
+    "focus": [
+      {
+        "tag": "BUTTON",
+        "text": "Додати до заявки",
+        "inside": true
+      },
+      {
+        "tag": "BODY",
+        "text": "Перейти до вмістуJOYRENT.КонсоліІгриЯк орендуватиFAQUARUОбрати дати Оренда PlayStationТвій вечір.Твоя PlayStation.PS5 аб",
+        "inside": false
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "inside": true
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Додати до заявки",
+        "inside": true
+      },
+      {
+        "tag": "BODY",
+        "text": "Перейти до вмістуJOYRENT.КонсоліІгриЯк орендуватиFAQUARUОбрати дати Оренда PlayStationТвій вечір.Твоя PlayStation.PS5 аб",
+        "inside": false
+      },
+      {
+        "tag": "BUTTON",
+        "text": "",
+        "inside": true
+      },
+      {
+        "tag": "BUTTON",
+        "text": "Додати до заявки",
+        "inside": true
+      },
+      {
+        "tag": "BODY",
+        "text": "Перейти до вмістуJOYRENT.КонсоліІгриЯк орендуватиFAQUARUОбрати дати Оренда PlayStationТвій вечір.Твоя PlayStation.PS5 аб",
+        "inside": false
+      }
+    ]
+  }
+]
