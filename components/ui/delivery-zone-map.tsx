@@ -170,7 +170,7 @@ export function DeliveryZoneMap({ freeDeliveryFrom, greenFee, yellowFee }: Deliv
           <div ref={mapElement} className={`delivery-map-canvas${mapState === 'fallback' || mapState === 'error' ? ' is-hidden' : ''}`} role="region" aria-label={t('Інтерактивна мапа зон доставки в Одесі', 'Интерактивная карта зон доставки в Одессе')} aria-describedby={helpId} />
           {mapState === 'loading' && <p className="delivery-map-loading" role="status">{t('Завантажуємо мапу…', 'Загружаем карту…')}</p>}
           {mapState === 'fallback' && data && <GeometryFallback data={data} selectZone={selectZone} zoneName={zoneName} />}
-          {mapState === 'error' && <p className="delivery-map-load-error" role="status">{t('Не вдалося завантажити межі зон. Онови сторінку або уточни доставку під час підтвердження заявки.', 'Не удалось загрузить границы зон. Обнови страницу или уточни доставку при подтверждении заявки.')}</p>}
+          {mapState === 'error' && <p className="delivery-map-load-error" role="status">{t('Не вдалося завантажити межі зон. Онови сторінку або уточни доставку під час підтвердження бронювання.', 'Не удалось загрузить границы зон. Обнови страницу или уточни доставку при подтверждении брони.')}</p>}
           {mapState === 'ready' && <button className="delivery-map-reset" type="button" onClick={resetMap}><ArrowCounterClockwise size={17} />{t('Усі зони', 'Все зоны')}</button>}
         </div>
         <div className="delivery-map-legend" aria-label={t('Умови доставки за зонами', 'Условия доставки по зонам')}>

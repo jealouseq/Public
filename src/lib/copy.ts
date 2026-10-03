@@ -13,7 +13,7 @@ export function localPlayerLabel(count: number, language: Language): string {
 }
 export function gameLimitLabel(count: number, language: Language): string {
   const singular = count % 10 === 1 && count % 100 !== 11;
-  return language === 'ru' ? `До ${count} ${singular ? 'игры' : 'игр'} в заявке.` : `До ${count} ${singular ? 'гри' : 'ігор'} у заявці.`;
+  return language === 'ru' ? `До ${count} ${singular ? 'игры' : 'игр'} в брони.` : `До ${count} ${singular ? 'гри' : 'ігор'} у бронюванні.`;
 }
 export function hasKnownInternetRequirement(description: string, language: Language): boolean {
   return description.includes(language === 'ru' ? 'Требуется подключение к интернету.' : 'Потрібне підключення до інтернету.');

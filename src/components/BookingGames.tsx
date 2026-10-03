@@ -1,6 +1,6 @@
 import { useId, type Ref } from 'react';
 import { Plus, X } from '@phosphor-icons/react';
-import { PlayStationController } from '../../components/ui/playstation-controller';
+import { PlayStationMark } from './PlayStationMark';
 import type { Game } from '../lib/rental';
 import { useI18n } from '../lib/i18n';
 import './booking-games.css';
@@ -15,7 +15,7 @@ export function BookingGames({ games, requestedGame, ready, openerRef, onOpen, o
   return <section className="booking-games" aria-labelledby={titleId}>
     <div className="booking-games-heading">
       <div className="booking-games-intro">
-        <span className="booking-games-icon" aria-hidden="true"><PlayStationController size={28} /></span>
+        <span className="booking-games-icon" aria-hidden="true"><PlayStationMark size={28} /></span>
         <div><h3 id={titleId}>{t('Ігри за бажанням', 'Игры по желанию')}</h3><p>{t('Обери з каталогу або вкажи назву своєї гри.', 'Выбери из каталога или укажи название своей игры.')}</p></div>
       </div>
       <button ref={openerRef} type="button" className="game-picker-button" aria-haspopup="dialog" disabled={!ready} onClick={onOpen}>

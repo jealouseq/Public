@@ -3,14 +3,14 @@ if (!defined('ABSPATH')) exit;
 
 final class JR_Orders {
     public static function register_status(): void {
-        register_post_status('wc-jr-request',['label'=>'Заявка на оренду','public'=>true,'exclude_from_search'=>false,'show_in_admin_all_list'=>true,'show_in_admin_status_list'=>true,'label_count'=>_n_noop('Заявка на оренду <span class="count">(%s)</span>','Заявки на оренду <span class="count">(%s)</span>','joyrent-rentals')]);
+        register_post_status('wc-jr-request',['label'=>'Бронювання','public'=>true,'exclude_from_search'=>false,'show_in_admin_all_list'=>true,'show_in_admin_status_list'=>true,'label_count'=>_n_noop('Бронювання <span class="count">(%s)</span>','Бронювання <span class="count">(%s)</span>','joyrent-rentals')]);
     }
-    public static function statuses(array $statuses): array { $statuses['wc-jr-request']='Заявка на оренду'; return $statuses; }
+    public static function statuses(array $statuses): array { $statuses['wc-jr-request']='Бронювання'; return $statuses; }
     public static function existing(string $key, string $fingerprint): ?array {
         $orders=wc_get_orders(['limit'=>1,'joyrent_request_key'=>$key,'meta_query'=>[['key'=>'_joyrent_request_key','value'=>$key]]]);
         if (!$orders) return null;
         $order=$orders[0];
-        if (!hash_equals((string)$order->get_meta('_joyrent_fingerprint'),$fingerprint)) throw new InvalidArgumentException('Параметри заявки змінилися. Онови сторінку та спробуй ще раз.');
+        if (!hash_equals((string)$order->get_meta('_joyrent_fingerprint'),$fingerprint)) throw new InvalidArgumentException('Параметри бронювання змінилися. Онови сторінку та спробуй ще раз.');
         if ($order->get_meta('_joyrent_completed')!=='yes') throw new RuntimeException('Заявка потребує перевірки магазином.');
         return ['reference'=>'JR-'.$order->get_order_number(),'rentalAmount'=>(float)$order->get_meta('_joyrent_rental_amount'),'status'=>'awaiting_confirmation'];
     }

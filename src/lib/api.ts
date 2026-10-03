@@ -29,7 +29,7 @@ export interface RentalPayload {
   consent: boolean; website: string; requestId: string;
 }
 export type RequestReceipt = { reference: string; rentalAmount: number; status: 'awaiting_confirmation' };
-const requestFailure = () => new URLSearchParams(window.location.search).get('lang') === 'ru' ? 'Не удалось отправить заявку. Проверь подключение и попробуй ещё раз.' : 'Не вдалося надіслати заявку. Перевір з’єднання та спробуй ще раз.';
+const requestFailure = () => new URLSearchParams(window.location.search).get('lang') === 'ru' ? 'Не удалось оформить бронь. Проверь подключение и попробуй ещё раз.' : 'Не вдалося оформити бронювання. Перевір з’єднання та спробуй ще раз.';
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
   const response = await fetch(`${boot.apiBase}${path}`, {
     ...options, headers: { 'Content-Type': 'application/json', ...(boot.nonce ? { 'X-WP-Nonce': boot.nonce } : {}), ...options?.headers },

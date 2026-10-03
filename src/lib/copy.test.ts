@@ -11,8 +11,8 @@ describe('visitor count labels', () => {
     expect([1, 2, 4, 5].map(count => localPlayerLabel(count, 'ru'))).toEqual(['1 локальный игрок', '2 локальных игрока', '4 локальных игрока', '5 локальных игроков']);
   });
   it('uses the genitive game noun after a configured maximum', () => {
-    expect([1, 2, 11, 21, 100].map(count => gameLimitLabel(count, 'uk'))).toEqual(['До 1 гри у заявці.', 'До 2 ігор у заявці.', 'До 11 ігор у заявці.', 'До 21 гри у заявці.', 'До 100 ігор у заявці.']);
-    expect([1, 2, 11, 21, 100].map(count => gameLimitLabel(count, 'ru'))).toEqual(['До 1 игры в заявке.', 'До 2 игр в заявке.', 'До 11 игр в заявке.', 'До 21 игры в заявке.', 'До 100 игр в заявке.']);
+    expect([1, 2, 11, 21, 100].map(count => gameLimitLabel(count, 'uk'))).toEqual(['До 1 гри у бронюванні.', 'До 2 ігор у бронюванні.', 'До 11 ігор у бронюванні.', 'До 21 гри у бронюванні.', 'До 100 ігор у бронюванні.']);
+    expect([1, 2, 11, 21, 100].map(count => gameLimitLabel(count, 'ru'))).toEqual(['До 1 игры в брони.', 'До 2 игр в брони.', 'До 11 игр в брони.', 'До 21 игры в брони.', 'До 100 игр в брони.']);
   });
 });
 

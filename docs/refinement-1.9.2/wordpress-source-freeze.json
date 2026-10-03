@@ -1,0 +1,73 @@
+{
+  "baseline": "ad63767309a69bcf8a6bb8bc4992a46a292fae98",
+  "frozen": true,
+  "pluginVersion": "1.8.1",
+  "modifiedOrAddedFiles": [
+    "wordpress/joyrent/footer.php",
+    "wordpress/joyrent-rentals/includes/locale.php",
+    "wordpress/joyrent-rentals/includes/rest.php",
+    "wordpress/joyrent-rentals/includes/orders.php",
+    "wordpress/joyrent-rentals/joyrent-rentals.php",
+    "wordpress/joyrent-rentals/includes/store.php",
+    "wordpress/joyrent-rentals/data/faq.json",
+    "wordpress/joyrent-rentals/data/legal-pages.json",
+    "wordpress/joyrent-rentals/data/page-seeds-1.8.json",
+    "wordpress/joyrent-rentals/data/page-defaults-neutral.json",
+    "tests/php/booking-copy-migration.php",
+    "tests/php/copy-migration.php",
+    "tests/php/request-options-migration.php"
+  ],
+  "sha256": {
+    "wordpress/joyrent/footer.php": "1f3a43f99d5edff90177fd7bfa5a1bbd0c59d56376820572a3853e4e3c604a52",
+    "wordpress/joyrent-rentals/includes/locale.php": "b2c3838d74a0eae2f5ed4dc15e54e489272ac1d0575b404874c732b2f4f51dd7",
+    "wordpress/joyrent-rentals/includes/rest.php": "fd8d1c09a99aa76285688bc1f9cb662f7636bcd2518bd5cbd645ce86d6935903",
+    "wordpress/joyrent-rentals/includes/orders.php": "bd7e8c213657d2b94b63886870e8596db9b3ead356c20716269d7bb858c6bc95",
+    "wordpress/joyrent-rentals/joyrent-rentals.php": "cb01d343b8ad5002ae02e8dac7e1fad08017f08e91b86503a166ba621beafa5b",
+    "wordpress/joyrent-rentals/includes/store.php": "499f74b2535a9c2c728123beef5c40d8e2f695600b97563b9430f0fa83027b26",
+    "wordpress/joyrent-rentals/data/faq.json": "c09e9f03d4320d1d3b6ccb8beac31792ad40e341bf9fdc18bf4668ff2547c4b9",
+    "wordpress/joyrent-rentals/data/legal-pages.json": "ee5093a77a35058f7e51aeb95487ad07eb1f7420f1b2f16ca6c77a42ea0b4182",
+    "wordpress/joyrent-rentals/data/page-seeds-1.8.json": "de9a61efd9e7185a00086b7d83f542acfd475cc4e2c9e54968783062f8444606",
+    "wordpress/joyrent-rentals/data/page-defaults-neutral.json": "ec0ce7e118119b87d46690b0eb9dee9fcf2ebf51c3f08f674aad9979cbb5fa99",
+    "tests/php/booking-copy-migration.php": "a10366941fdca7638c8b85915d407f6e75631abc03777cd9ca3804019fc4e665",
+    "tests/php/copy-migration.php": "1eed38e5a6a2319daf42d12ec5e479be0ec425b90045a00f7cb02fde9bec526b",
+    "tests/php/request-options-migration.php": "15471d2afd2069645e5df18420b0ddd9f9b906d167c978b39a5cf7519395c7cc"
+  },
+  "copyTokenProof": {
+    "wordpress/joyrent/footer.php": {
+      "onlyReadableStringsOrCommentsChanged": true,
+      "tokenCount": 441
+    },
+    "wordpress/joyrent-rentals/includes/locale.php": {
+      "onlyReadableStringsOrCommentsChanged": true,
+      "tokenCount": 165
+    },
+    "wordpress/joyrent-rentals/includes/rest.php": {
+      "onlyReadableStringsOrCommentsChanged": true,
+      "tokenCount": 977
+    },
+    "wordpress/joyrent-rentals/includes/orders.php": {
+      "onlyReadableStringsOrCommentsChanged": true,
+      "tokenCount": 1967
+    },
+    "wordpress/joyrent-rentals/joyrent-rentals.php": {
+      "onlyReadableStringsOrCommentsChanged": true,
+      "tokenCount": 436
+    }
+  },
+  "migrationValidation": {
+    "checks": 81,
+    "failures": [],
+    "mailAttempts": 0,
+    "orderAccess": 0,
+    "databaseAccess": 0,
+    "exitCode": 0,
+    "stderr": "",
+    "runtime": "PHP 8.3.35 in joyrent-wp; isolated stubs; no wp-load"
+  },
+  "immutableArchivesVerified": [
+    "page-seeds-1.6.json",
+    "page-seeds-1.7.json",
+    "exact HEAD 1.8 standard page HTML in page-seeds-1.8.json"
+  ],
+  "sourceScope": "No orders/emails/wp-load/build/theme version/commits/deploy; native footer only theme source edit"
+}

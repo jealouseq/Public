@@ -1,0 +1,58 @@
+{
+  "scope": "independent focused review microcheck against Vite source; captured catalog fixture for isolated consent/icon checks, not WordPress integration acceptance",
+  "catalog_fixture": "work/audit-1.5/live-fetch/catalog.json",
+  "physical_safari_tested": false,
+  "voiceover_tested": false,
+  "source_sha256": {
+    "src/components/BookingConsent.tsx": "861d32e1fc4fc09406edb53396b7217032ec7913912a1d7d5045fd97ff1e4fc6",
+    "src/sections/Booking.tsx": "1104ca7fe74d6cd187853da8292784b25af5a1602ce77e50cbc6b8d99a72c234",
+    "src/booking.css": "57ebfc34e1490d57e09dbe7aaacf72aa8c63323609f4ead82b5728a319e7241a",
+    "src/components/PlayStationMark.tsx": "7e165dc3a7f73b6fedb40cc601b882e9590bb211f6068f0cc42248f37c6437bf",
+    "src/components/BookingGames.tsx": "573327025e3a8a256301033e9a14bd502b84138301cda588c3e6ad306a4d15e2",
+    "src/components/GamePicker.tsx": "4859ecb9fea582380e0b3d302954867c527351d3a93e730c795bc086bce1c4d9",
+    "src/game-picker.css": "d4e2abdaeff00663803bc62d7ea408841da9d994a5405363ef85d366d84cf4fc"
+  },
+  "passed_cases": 2,
+  "cases": [
+    {
+      "lang": "uk",
+      "width": 390,
+      "computed_accessible_name": "Погоджуюся з умовами оренди та обробкою персональних даних .",
+      "native_required_validity": true,
+      "unchecked_submit_blocked": true,
+      "checkbox_enter_no_submit": true,
+      "checkbox_space_and_touch_or_mouse_toggle": true,
+      "legal_enter_touch_or_mouse_escape_focus": true,
+      "legal_does_not_toggle": true,
+      "decorative_scaled_icon": {
+        "width": 28,
+        "height": 28,
+        "viewBox": "0 0 24 24",
+        "ariaHidden": "true",
+        "focusable": "false"
+      },
+      "blocked_write_attempts": [],
+      "page_errors": []
+    },
+    {
+      "lang": "ru",
+      "width": 1440,
+      "computed_accessible_name": "Соглашаюсь с условиями аренды и обработкой персональных данных .",
+      "native_required_validity": true,
+      "unchecked_submit_blocked": true,
+      "checkbox_enter_no_submit": true,
+      "checkbox_space_and_touch_or_mouse_toggle": true,
+      "legal_enter_touch_or_mouse_escape_focus": true,
+      "legal_does_not_toggle": true,
+      "decorative_scaled_icon": {
+        "width": 28,
+        "height": 28,
+        "viewBox": "0 0 24 24",
+        "ariaHidden": "true",
+        "focusable": "false"
+      },
+      "blocked_write_attempts": [],
+      "page_errors": []
+    }
+  ]
+}

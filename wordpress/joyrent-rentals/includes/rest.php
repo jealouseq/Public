@@ -39,11 +39,11 @@ final class JR_REST {
     public static function create(WP_REST_Request $request): WP_REST_Response|WP_Error {
         $payload=$request->get_json_params();
         self::$language=is_array($payload)&&($payload['language']??null)==='ru'?'ru':'uk';
-        if (!is_array($payload)) return self::error('jr_payload','Надішли коректну заявку.',400);
-        if (!empty($payload['website'])) return self::error('jr_invalid','Не вдалося надіслати заявку.',400);
+        if (!is_array($payload)) return self::error('jr_payload','Перевір дані бронювання.',400);
+        if (!empty($payload['website'])) return self::error('jr_invalid','Не вдалося надіслати бронювання.',400);
         $id=$payload['requestId']??'';
         if (!is_string($id)||!preg_match('/^[a-f0-9-]{32,40}$/i',$id)) return self::error('jr_request_id','Онови сторінку та спробуй ще раз.',400);
-        if (!class_exists('WooCommerce')||get_woocommerce_currency()!=='UAH') return self::error('jr_unavailable','Зараз заявки недоступні. Спробуй пізніше.',503);
+        if (!class_exists('WooCommerce')||get_woocommerce_currency()!=='UAH') return self::error('jr_unavailable','Зараз бронювання недоступне. Спробуй пізніше.',503);
         try { $data=JR_Domain::validate($payload,null,JR_Games::records()); } catch (InvalidArgumentException $e) { return self::error('jr_validation',$e->getMessage(),400); }
         $settings=JR_Settings::public();
         if ($data['method']==='pickup'&&!$settings['pickup']) return self::error('jr_pickup','Самовивіз зараз не підтверджений. Обери доставку.',400);
@@ -53,30 +53,30 @@ final class JR_REST {
         // after a day or after WordPress clears transient caches.
         $cached=get_option($result_key);
         if (is_array($cached)) {
-            if (!hash_equals($cached['fingerprint'],$fingerprint)) return self::error('jr_conflict','Параметри заявки змінилися. Онови сторінку та спробуй ще раз.',409);
+            if (!hash_equals($cached['fingerprint'],$fingerprint)) return self::error('jr_conflict','Параметри бронювання змінилися. Онови сторінку та спробуй ще раз.',409);
             return new WP_REST_Response($cached['receipt'],200);
         }
         $rate_key='jr_rate_'.hash_hmac('sha256',(string)($_SERVER['REMOTE_ADDR']??''),wp_salt('auth'));
         $lock='jr_lock_'.$key;
         $owner=self::acquire($lock,5*MINUTE_IN_SECONDS);
-        if (!$owner) return self::error('jr_busy','Ця заявка вже надсилається. Зачекай і спробуй ще раз.',409);
+        if (!$owner) return self::error('jr_busy','Це бронювання вже надсилається. Зачекай і спробуй ще раз.',409);
         try {
             // Another worker may have completed between the first lookup and lock.
             $cached=get_option($result_key);
             if (is_array($cached)) {
-                if (!hash_equals($cached['fingerprint'],$fingerprint)) return self::error('jr_conflict','Параметри заявки змінилися. Онови сторінку та спробуй ще раз.',409);
+                if (!hash_equals($cached['fingerprint'],$fingerprint)) return self::error('jr_conflict','Параметри бронювання змінилися. Онови сторінку та спробуй ще раз.',409);
                 return new WP_REST_Response($cached['receipt'],200);
             }
             $existing=JR_Orders::existing($key,$fingerprint);
             if ($existing) return new WP_REST_Response($existing,200);
-            if (!self::reserve($rate_key)) return self::error('jr_limit','Забагато заявок за короткий час. Спробуй через 15 хвилин.',429);
+            if (!self::reserve($rate_key)) return self::error('jr_limit','Забагато бронювань за короткий час. Спробуй через 15 хвилин.',429);
             $data['language']=self::$language; // UI language is deliberately outside the canonical fingerprint.
             $receipt=JR_Orders::create($data,$key,$fingerprint);
             // The WooCommerce key remains authoritative if this cache write fails.
             add_option($result_key,['fingerprint'=>$fingerprint,'receipt'=>$receipt],'','no');
             return new WP_REST_Response($receipt,201);
         } catch (InvalidArgumentException $e) { return self::error('jr_conflict',$e->getMessage(),409);
-        } catch (Throwable $e) { return self::error('jr_create','Не вдалося прийняти заявку. Спробуй ще раз трохи пізніше.',503); }
+        } catch (Throwable $e) { return self::error('jr_create','Не вдалося прийняти бронювання. Спробуй ще раз трохи пізніше.',503); }
         finally { self::release($lock,$owner); }
     }
 }

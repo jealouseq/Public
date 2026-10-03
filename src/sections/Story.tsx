@@ -50,7 +50,7 @@ export function HowItWorks({ settings }: { settings: StoreSettings }) {
     <div className="delivery-panel story-delivery" id="delivery">
       <div className="delivery-copy">
         <div className="delivery-copy-heading"><p className="delivery-label"><MapPin size={18} weight="light" />{city ? `${t('Доставка', 'Доставка')}: ${city}` : t('ДОСТАВКА ТА ПОВЕРНЕННЯ', 'ДОСТАВКА И ВОЗВРАТ')}</p><h3>{t('Привеземо до тебе.', 'Привезём к тебе.')}</h3></div>
-        <div className="delivery-details"><p>{delivery || t('Вкажи місто та адресу в заявці. Перевіримо можливість доставки й узгодимо час отримання та повернення.', 'Укажи город и адрес в заявке. Проверим возможность доставки и согласуем время получения и возврата.')}</p>{language === 'ru' && !settings.deliveryTextRu && settings.deliveryText && <p className="delivery-original">Условия магазина на украинском: <span lang="uk">{settings.deliveryText}</span></p>}{settings.pickup && <p>{t('Також доступний самовивіз.', 'Также доступен самовывоз.')}</p>}</div>
+        <div className="delivery-details"><p>{delivery || t('Вкажи адресу доставки під час бронювання. Перевіримо можливість доставки й узгодимо час отримання та повернення.', 'Укажи адрес доставки при бронировании. Проверим возможность доставки и согласуем время получения и возврата.')}</p>{language === 'ru' && !settings.deliveryTextRu && settings.deliveryText && <p className="delivery-original">Условия магазина на украинском: <span lang="uk">{settings.deliveryText}</span></p>}{settings.pickup && <p>{t('Також доступний самовивіз.', 'Также доступен самовывоз.')}</p>}</div>
       </div>
       <div className="delivery-layout">
         <figure className="delivery-preview">

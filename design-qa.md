@@ -1,3 +1,24 @@
+# JOYRENT 1.9.2 — booking alignment and reservation wording
+
+Source visual truth: the owner's chat screenshots identify the optional-games icon, uneven catalog actions, tall consent text and left-heavy missing-game panel. The later explicit instruction asks for the mobile PS5 button to match desktop. These are bounded responsive refinements of the existing site, not a pixel-perfect clone of a new mockup. Actual local 1.9.1 baseline captures are retained beside the new captures in [the release report](docs/refinement-1.9.2/README.md); the original user screenshots remain in chat.
+
+Required surfaces and result:
+
+- Typography: existing Unbounded, Manrope and Onest remain. Full catalog titles determine row height instead of being cropped; Add actions share the bottom edge. Consent uses 13px text with 1.7 line-height, while the native checkbox retains a 44px target. Search and requested-game inputs remain 16px.
+- Layout: the optional-games card retains its place after controllers and before rental security. Its decorative controller is replaced by a 28px warm PlayStation mark without a tile. The collapsed missing-game heading/action are centered; expanded editing remains left-aligned. The mobile hero action now matches desktop: content-sized UA173/RU181×54px, 15px text, 32px caret, centered above the tariff link. Desktop geometry is unchanged.
+- Style/assets: existing near-black, ivory and amber palette, PS5 responsive photography and controller glyphs elsewhere are preserved. The new mark is a crisp currentColor SVG based on Simple Icons' CC0 geometry, with source/license packaged. No new animation or dependency is introduced; reduced motion still disables the CTA press movement.
+- Content: tariff badges simply read “Доставка включена”. Delivery fees and exceptions remain in the delivery section. Visitor text, ARIA, default FAQ/legal pages and public errors use reservation wording in UA/RU. Manual confirmation, separate refundable deposit, contract verification and no payment before confirmation remain explicit. Technical request identifiers and private historical records are unchanged.
+
+Validation: [packaged receipt](docs/refinement-1.9.2/browser-check.json) covers six UA/RU320/390/1440 cases, two short-height cases and six native-page GETs. Row action edges, missing-game alignment, native consent/legal interaction, selection/persistence and price/security behavior pass. Two narrowly intercepted success fixtures, one per language, check the existing payload and pending-confirmation result; real orders/emails are zero. Root inspected eight fresh final screenshots across mobile and desktop. Agent QA inspected and accepted all34 captures. Root independently verified48 source hashes,17 installed PHP files, both served assets and34 screenshot hashes. Source, ZIP and served bundle proofs accompany the receipt.
+
+No confirmed P1/P2 remains in this bounded refinement review. The initial packaged harness looked for a nonexistent icon CSS class; inspection of canonical SVG geometry corrected that assertion without a product edit. A local catalog HTTP500 came from unreadable new JSON files (0600); source permissions were corrected to0644 and the real catalog returned200 before the final browser pass. ZIP packaging already normalizes permissions. Physical iPhone Safari, iOS keyboard, VoiceOver, production installation and SMTP remain outside this verification.
+
+Implementation checklist: minimalist optional-games mark, aligned catalog actions, compact consent, centered missing-game panel, desktop-sized mobile CTA, short tariff badges and reservation wording are implemented. Both theme1.9.2 and plugin1.8.1 are required. Historical QA below is retained as history.
+
+final result: passed
+
+---
+
 # JOYRENT 1.9.1 — mobile hero and booking refinement
 
 Source visual truth: the user's latest 1280×1132 chat attachment, viewed by root, and the explicit request to refine the mobile PS5 button size. The attachment has no available local source path or file ID; its display density is unknown. This is a responsive adaptation of the selected composition, not a pixel-perfect raster reproduction. The reference ends after the price; the existing console photograph continues below in the implementation.

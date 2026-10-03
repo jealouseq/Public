@@ -9,9 +9,13 @@
 .booking-section .summary-deposit dd .muted { font-size: 12px; font-style: italic; }
 .booking-section .text-link, .booking-section .selected-game { min-height: 44px; }
 .booking-section .text-link { border: 0; background: transparent; padding-block: 10px; }
-.booking-section .consent { align-items: start; font-size: 13px; line-height: 1.65; }
-.booking-section .consent input { margin-top: 6px; flex-shrink: 0; }
-.booking-section .consent button { min-height: 44px; padding-block: 8px; line-height: 1.65; vertical-align: baseline; }
+.booking-section .consent { display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: start; gap: 8px; margin-top: 22px; font-size: 13px; line-height: 1.7; color: #c3c4c5; }
+.booking-section .consent-check { display: grid; place-items: center; width: 44px; height: 44px; cursor: pointer; }
+.booking-section .consent input { width: 20px; height: 20px; margin: 0; }
+.booking-section .consent-copy { min-width: 0; padding-top: 10px; }
+.booking-section .consent-copy label { cursor: pointer; }
+.booking-section .consent button { display: inline; min-width: 0; min-height: 0; padding: 0; border: 0; border-radius: 0; line-height: inherit; vertical-align: baseline; color: #f0e6d6; text-align: inherit; text-decoration: underline; text-decoration-color: #8a7c66; text-underline-offset: 3px; }
+.booking-section .consent button:hover { color: var(--accent); text-decoration-color: currentColor; }
 .booking-section .customer-heading { scroll-margin-top: 25px; }
 .catalog-status:empty { display: none; }
 .catalog-status { margin-bottom: 28px; color: #bfc1c5; font-size: 14px; line-height: 1.7; }

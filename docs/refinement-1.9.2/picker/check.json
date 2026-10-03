@@ -1,0 +1,3079 @@
+{
+  "run": "2026-10-03T17:55:34.331199+00:00",
+  "base": "http://localhost:5173",
+  "baseline": "baseline.json",
+  "pass": 9,
+  "fail": 0,
+  "sourceHashes": {
+    "src/components/GamePicker.tsx": "4859ecb9fea582380e0b3d302954867c527351d3a93e730c795bc086bce1c4d9",
+    "src/game-picker.css": "d4e2abdaeff00663803bc62d7ea408841da9d994a5405363ef85d366d84cf4fc"
+  },
+  "cases": [
+    {
+      "language": "uk",
+      "width": 320,
+      "height": 844,
+      "status": "PASS",
+      "rows": [
+        {
+          "top": 253.296875,
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "buttonTop": 416.09375,
+              "buttonBottom": 460.09375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "buttonTop": 416.09375,
+              "buttonBottom": 460.09375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 484.09375,
+          "cards": [
+            {
+              "title": "Mortal Kombat 1",
+              "buttonTop": 667.6875,
+              "buttonBottom": 711.6875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "buttonTop": 667.6875,
+              "buttonBottom": 711.6875,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 735.6875,
+          "cards": [
+            {
+              "title": "EA SPORTS UFC 6",
+              "buttonTop": 898.484375,
+              "buttonBottom": 942.484375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "Tekken 8",
+              "buttonTop": 898.484375,
+              "buttonBottom": 942.484375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 966.484375,
+          "cards": [
+            {
+              "title": "Split Fiction",
+              "buttonTop": 1129.28125,
+              "buttonBottom": 1173.28125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "It Takes Two",
+              "buttonTop": 1129.28125,
+              "buttonBottom": 1173.28125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 1197.28125,
+          "cards": [
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "buttonTop": 1380.875,
+              "buttonBottom": 1424.875,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "Gran Turismo 7",
+              "buttonTop": 1380.875,
+              "buttonBottom": 1424.875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 1448.875,
+          "cards": [
+            {
+              "title": "God of War Ragnarök",
+              "buttonTop": 1632.46875,
+              "buttonBottom": 1676.46875,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "buttonTop": 1632.46875,
+              "buttonBottom": 1676.46875,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 1700.46875,
+          "cards": [
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "buttonTop": 1884.0625,
+              "buttonBottom": 1928.0625,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "buttonTop": 1884.0625,
+              "buttonBottom": 1928.0625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 1952.0625,
+          "cards": [
+            {
+              "title": "ELDEN RING",
+              "buttonTop": 2135.65625,
+              "buttonBottom": 2179.65625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "buttonTop": 2135.65625,
+              "buttonBottom": 2179.65625,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 2203.65625,
+          "cards": [
+            {
+              "title": "ASTRO BOT",
+              "buttonTop": 2387.25,
+              "buttonBottom": 2431.25,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "buttonTop": 2387.25,
+              "buttonBottom": 2431.25,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 2455.25,
+          "cards": [
+            {
+              "title": "Horizon Forbidden West",
+              "buttonTop": 2638.84375,
+              "buttonBottom": 2682.84375,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        }
+      ],
+      "missingCenter": {
+        "panelCenter": 160,
+        "titleTextCenter": 160,
+        "titleAlign": "center",
+        "buttonCenter": 160,
+        "buttonH": 44
+      },
+      "retainedWishCenter": {
+        "panelCenter": 160,
+        "titleTextCenter": 160,
+        "titleAlign": "center",
+        "buttonCenter": 160,
+        "buttonH": 44
+      },
+      "expandedInputAlignment": "start",
+      "bookingCopy": {
+        "region": "Ігри та побажання до бронювання",
+        "add": "Додати до бронювання ",
+        "remove": "Прибрати з бронювання ",
+        "helper": "Наявність і можливість додати гру підтвердимо після бронювання."
+      },
+      "screens": [
+        "uk-320-after-cards.png",
+        "uk-320-after-missing.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": []
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "status": "PASS",
+      "rows": [
+        {
+          "top": 227.296875,
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "buttonTop": 425.09375,
+              "buttonBottom": 469.09375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "buttonTop": 425.09375,
+              "buttonBottom": 469.09375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 493.09375,
+          "cards": [
+            {
+              "title": "Mortal Kombat 1",
+              "buttonTop": 711.6875,
+              "buttonBottom": 755.6875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "buttonTop": 711.6875,
+              "buttonBottom": 755.6875,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 779.6875,
+          "cards": [
+            {
+              "title": "EA SPORTS UFC 6",
+              "buttonTop": 977.484375,
+              "buttonBottom": 1021.484375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Tekken 8",
+              "buttonTop": 977.484375,
+              "buttonBottom": 1021.484375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 1045.484375,
+          "cards": [
+            {
+              "title": "Split Fiction",
+              "buttonTop": 1243.28125,
+              "buttonBottom": 1287.28125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "It Takes Two",
+              "buttonTop": 1243.28125,
+              "buttonBottom": 1287.28125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 1311.28125,
+          "cards": [
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "buttonTop": 1509.078125,
+              "buttonBottom": 1553.078125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Gran Turismo 7",
+              "buttonTop": 1509.078125,
+              "buttonBottom": 1553.078125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 1577.078125,
+          "cards": [
+            {
+              "title": "God of War Ragnarök",
+              "buttonTop": 1774.875,
+              "buttonBottom": 1818.875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "buttonTop": 1774.875,
+              "buttonBottom": 1818.875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 1842.875,
+          "cards": [
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "buttonTop": 2040.671875,
+              "buttonBottom": 2084.671875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "buttonTop": 2040.671875,
+              "buttonBottom": 2084.671875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 2108.671875,
+          "cards": [
+            {
+              "title": "ELDEN RING",
+              "buttonTop": 2306.46875,
+              "buttonBottom": 2350.46875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "buttonTop": 2306.46875,
+              "buttonBottom": 2350.46875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 2374.46875,
+          "cards": [
+            {
+              "title": "ASTRO BOT",
+              "buttonTop": 2572.265625,
+              "buttonBottom": 2616.265625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "buttonTop": 2572.265625,
+              "buttonBottom": 2616.265625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 2640.265625,
+          "cards": [
+            {
+              "title": "Horizon Forbidden West",
+              "buttonTop": 2838.0625,
+              "buttonBottom": 2882.0625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        }
+      ],
+      "missingCenter": {
+        "panelCenter": 195,
+        "titleTextCenter": 195,
+        "titleAlign": "center",
+        "buttonCenter": 195,
+        "buttonH": 44
+      },
+      "retainedWishCenter": {
+        "panelCenter": 195,
+        "titleTextCenter": 195,
+        "titleAlign": "center",
+        "buttonCenter": 195,
+        "buttonH": 44
+      },
+      "expandedInputAlignment": "start",
+      "bookingCopy": {
+        "region": "Ігри та побажання до бронювання",
+        "add": "Додати до бронювання ",
+        "remove": "Прибрати з бронювання ",
+        "helper": "Наявність і можливість додати гру підтвердимо після бронювання."
+      },
+      "screens": [
+        "uk-390-after-cards.png",
+        "uk-390-after-missing.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": []
+    },
+    {
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "status": "PASS",
+      "rows": [
+        {
+          "top": 314.1875,
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "buttonTop": 572.984375,
+              "buttonBottom": 616.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "buttonTop": 572.984375,
+              "buttonBottom": 616.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Mortal Kombat 1",
+              "buttonTop": 572.984375,
+              "buttonBottom": 616.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "buttonTop": 572.984375,
+              "buttonBottom": 616.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            }
+          ]
+        },
+        {
+          "top": 641.984375,
+          "cards": [
+            {
+              "title": "EA SPORTS UFC 6",
+              "buttonTop": 900.78125,
+              "buttonBottom": 944.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Tekken 8",
+              "buttonTop": 900.78125,
+              "buttonBottom": 944.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Split Fiction",
+              "buttonTop": 900.78125,
+              "buttonBottom": 944.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "It Takes Two",
+              "buttonTop": 900.78125,
+              "buttonBottom": 944.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            }
+          ]
+        },
+        {
+          "top": 969.78125,
+          "cards": [
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "buttonTop": 1228.578125,
+              "buttonBottom": 1272.578125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Gran Turismo 7",
+              "buttonTop": 1228.578125,
+              "buttonBottom": 1272.578125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "God of War Ragnarök",
+              "buttonTop": 1228.578125,
+              "buttonBottom": 1272.578125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "buttonTop": 1228.578125,
+              "buttonBottom": 1272.578125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            }
+          ]
+        },
+        {
+          "top": 1297.578125,
+          "cards": [
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "buttonTop": 1556.375,
+              "buttonBottom": 1600.375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "buttonTop": 1556.375,
+              "buttonBottom": 1600.375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "ELDEN RING",
+              "buttonTop": 1556.375,
+              "buttonBottom": 1600.375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "buttonTop": 1556.375,
+              "buttonBottom": 1600.375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            }
+          ]
+        },
+        {
+          "top": 1625.375,
+          "cards": [
+            {
+              "title": "ASTRO BOT",
+              "buttonTop": 1884.171875,
+              "buttonBottom": 1928.171875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "buttonTop": 1884.171875,
+              "buttonBottom": 1928.171875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Horizon Forbidden West",
+              "buttonTop": 1884.171875,
+              "buttonBottom": 1928.171875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            }
+          ]
+        }
+      ],
+      "missingCenter": {
+        "panelCenter": 720,
+        "titleTextCenter": 719.9921875,
+        "titleAlign": "center",
+        "buttonCenter": 720,
+        "buttonH": 44
+      },
+      "retainedWishCenter": {
+        "panelCenter": 720,
+        "titleTextCenter": 719.9921875,
+        "titleAlign": "center",
+        "buttonCenter": 720,
+        "buttonH": 44
+      },
+      "expandedInputAlignment": "start",
+      "bookingCopy": {
+        "region": "Ігри та побажання до бронювання",
+        "add": "Додати до бронювання ",
+        "remove": "Прибрати з бронювання ",
+        "helper": "Наявність і можливість додати гру підтвердимо після бронювання."
+      },
+      "screens": [
+        "uk-1440-after-cards.png",
+        "uk-1440-after-missing.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": []
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "status": "PASS",
+      "rows": [
+        {
+          "top": 253.296875,
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "buttonTop": 416.09375,
+              "buttonBottom": 460.09375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "buttonTop": 416.09375,
+              "buttonBottom": 460.09375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 484.09375,
+          "cards": [
+            {
+              "title": "Mortal Kombat 1",
+              "buttonTop": 667.6875,
+              "buttonBottom": 711.6875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "buttonTop": 667.6875,
+              "buttonBottom": 711.6875,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 735.6875,
+          "cards": [
+            {
+              "title": "EA SPORTS UFC 6",
+              "buttonTop": 898.484375,
+              "buttonBottom": 942.484375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "Tekken 8",
+              "buttonTop": 898.484375,
+              "buttonBottom": 942.484375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 966.484375,
+          "cards": [
+            {
+              "title": "Split Fiction",
+              "buttonTop": 1129.28125,
+              "buttonBottom": 1173.28125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "It Takes Two",
+              "buttonTop": 1129.28125,
+              "buttonBottom": 1173.28125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 1197.28125,
+          "cards": [
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "buttonTop": 1380.875,
+              "buttonBottom": 1424.875,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "Gran Turismo 7",
+              "buttonTop": 1380.875,
+              "buttonBottom": 1424.875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 1448.875,
+          "cards": [
+            {
+              "title": "God of War Ragnarök",
+              "buttonTop": 1632.46875,
+              "buttonBottom": 1676.46875,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "buttonTop": 1632.46875,
+              "buttonBottom": 1676.46875,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 1700.46875,
+          "cards": [
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "buttonTop": 1884.0625,
+              "buttonBottom": 1928.0625,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "buttonTop": 1884.0625,
+              "buttonBottom": 1928.0625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 1952.0625,
+          "cards": [
+            {
+              "title": "ELDEN RING",
+              "buttonTop": 2135.65625,
+              "buttonBottom": 2179.65625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "buttonTop": 2135.65625,
+              "buttonBottom": 2179.65625,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 2203.65625,
+          "cards": [
+            {
+              "title": "ASTRO BOT",
+              "buttonTop": 2387.25,
+              "buttonBottom": 2431.25,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 121,
+              "artH": 121
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "buttonTop": 2387.25,
+              "buttonBottom": 2431.25,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        },
+        {
+          "top": 2455.25,
+          "cards": [
+            {
+              "title": "Horizon Forbidden West",
+              "buttonTop": 2638.84375,
+              "buttonBottom": 2682.84375,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 121,
+              "artH": 121
+            }
+          ]
+        }
+      ],
+      "missingCenter": {
+        "panelCenter": 160,
+        "titleTextCenter": 160,
+        "titleAlign": "center",
+        "buttonCenter": 160,
+        "buttonH": 44
+      },
+      "retainedWishCenter": {
+        "panelCenter": 160,
+        "titleTextCenter": 160,
+        "titleAlign": "center",
+        "buttonCenter": 159.9921875,
+        "buttonH": 44
+      },
+      "expandedInputAlignment": "start",
+      "bookingCopy": {
+        "region": "Игры и пожелания к брони",
+        "add": "Добавить в бронь ",
+        "remove": "Убрать из брони ",
+        "helper": "Наличие и возможность добавить игру подтвердим после оформления брони."
+      },
+      "screens": [
+        "ru-320-after-cards.png",
+        "ru-320-after-missing.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": []
+    },
+    {
+      "language": "ru",
+      "width": 390,
+      "height": 844,
+      "status": "PASS",
+      "rows": [
+        {
+          "top": 253.296875,
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "buttonTop": 451.09375,
+              "buttonBottom": 495.09375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "buttonTop": 451.09375,
+              "buttonBottom": 495.09375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 519.09375,
+          "cards": [
+            {
+              "title": "Mortal Kombat 1",
+              "buttonTop": 737.6875,
+              "buttonBottom": 781.6875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "buttonTop": 737.6875,
+              "buttonBottom": 781.6875,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 805.6875,
+          "cards": [
+            {
+              "title": "EA SPORTS UFC 6",
+              "buttonTop": 1003.484375,
+              "buttonBottom": 1047.484375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Tekken 8",
+              "buttonTop": 1003.484375,
+              "buttonBottom": 1047.484375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 1071.484375,
+          "cards": [
+            {
+              "title": "Split Fiction",
+              "buttonTop": 1269.28125,
+              "buttonBottom": 1313.28125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "It Takes Two",
+              "buttonTop": 1269.28125,
+              "buttonBottom": 1313.28125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 1337.28125,
+          "cards": [
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "buttonTop": 1535.078125,
+              "buttonBottom": 1579.078125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Gran Turismo 7",
+              "buttonTop": 1535.078125,
+              "buttonBottom": 1579.078125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 1603.078125,
+          "cards": [
+            {
+              "title": "God of War Ragnarök",
+              "buttonTop": 1800.875,
+              "buttonBottom": 1844.875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "buttonTop": 1800.875,
+              "buttonBottom": 1844.875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 1868.875,
+          "cards": [
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "buttonTop": 2066.671875,
+              "buttonBottom": 2110.671875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "buttonTop": 2066.671875,
+              "buttonBottom": 2110.671875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 2134.671875,
+          "cards": [
+            {
+              "title": "ELDEN RING",
+              "buttonTop": 2332.46875,
+              "buttonBottom": 2376.46875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "buttonTop": 2332.46875,
+              "buttonBottom": 2376.46875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 2400.46875,
+          "cards": [
+            {
+              "title": "ASTRO BOT",
+              "buttonTop": 2598.265625,
+              "buttonBottom": 2642.265625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "buttonTop": 2598.265625,
+              "buttonBottom": 2642.265625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 2666.265625,
+          "cards": [
+            {
+              "title": "Horizon Forbidden West",
+              "buttonTop": 2864.0625,
+              "buttonBottom": 2908.0625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        }
+      ],
+      "missingCenter": {
+        "panelCenter": 195,
+        "titleTextCenter": 195,
+        "titleAlign": "center",
+        "buttonCenter": 195,
+        "buttonH": 44
+      },
+      "retainedWishCenter": {
+        "panelCenter": 195,
+        "titleTextCenter": 195,
+        "titleAlign": "center",
+        "buttonCenter": 194.9921875,
+        "buttonH": 44
+      },
+      "expandedInputAlignment": "start",
+      "bookingCopy": {
+        "region": "Игры и пожелания к брони",
+        "add": "Добавить в бронь ",
+        "remove": "Убрать из брони ",
+        "helper": "Наличие и возможность добавить игру подтвердим после оформления брони."
+      },
+      "screens": [
+        "ru-390-after-cards.png",
+        "ru-390-after-missing.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": []
+    },
+    {
+      "language": "ru",
+      "width": 1440,
+      "height": 1000,
+      "status": "PASS",
+      "rows": [
+        {
+          "top": 314.1875,
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "buttonTop": 572.984375,
+              "buttonBottom": 616.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "buttonTop": 572.984375,
+              "buttonBottom": 616.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Mortal Kombat 1",
+              "buttonTop": 572.984375,
+              "buttonBottom": 616.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "buttonTop": 572.984375,
+              "buttonBottom": 616.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            }
+          ]
+        },
+        {
+          "top": 641.984375,
+          "cards": [
+            {
+              "title": "EA SPORTS UFC 6",
+              "buttonTop": 900.78125,
+              "buttonBottom": 944.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Tekken 8",
+              "buttonTop": 900.78125,
+              "buttonBottom": 944.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Split Fiction",
+              "buttonTop": 900.78125,
+              "buttonBottom": 944.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "It Takes Two",
+              "buttonTop": 900.78125,
+              "buttonBottom": 944.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            }
+          ]
+        },
+        {
+          "top": 969.78125,
+          "cards": [
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "buttonTop": 1228.578125,
+              "buttonBottom": 1272.578125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Gran Turismo 7",
+              "buttonTop": 1228.578125,
+              "buttonBottom": 1272.578125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "God of War Ragnarök",
+              "buttonTop": 1228.578125,
+              "buttonBottom": 1272.578125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "buttonTop": 1228.578125,
+              "buttonBottom": 1272.578125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            }
+          ]
+        },
+        {
+          "top": 1297.578125,
+          "cards": [
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "buttonTop": 1556.375,
+              "buttonBottom": 1600.375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "buttonTop": 1556.375,
+              "buttonBottom": 1600.375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "ELDEN RING",
+              "buttonTop": 1556.375,
+              "buttonBottom": 1600.375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "buttonTop": 1556.375,
+              "buttonBottom": 1600.375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            }
+          ]
+        },
+        {
+          "top": 1625.375,
+          "cards": [
+            {
+              "title": "ASTRO BOT",
+              "buttonTop": 1884.171875,
+              "buttonBottom": 1928.171875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "buttonTop": 1884.171875,
+              "buttonBottom": 1928.171875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            },
+            {
+              "title": "Horizon Forbidden West",
+              "buttonTop": 1884.171875,
+              "buttonBottom": 1928.171875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 217,
+              "artH": 217
+            }
+          ]
+        }
+      ],
+      "missingCenter": {
+        "panelCenter": 720,
+        "titleTextCenter": 719.9921875,
+        "titleAlign": "center",
+        "buttonCenter": 720,
+        "buttonH": 44
+      },
+      "retainedWishCenter": {
+        "panelCenter": 720,
+        "titleTextCenter": 719.9921875,
+        "titleAlign": "center",
+        "buttonCenter": 719.9921875,
+        "buttonH": 44
+      },
+      "expandedInputAlignment": "start",
+      "bookingCopy": {
+        "region": "Игры и пожелания к брони",
+        "add": "Добавить в бронь ",
+        "remove": "Убрать из брони ",
+        "helper": "Наличие и возможность добавить игру подтвердим после оформления брони."
+      },
+      "screens": [
+        "ru-1440-after-cards.png",
+        "ru-1440-after-missing.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": []
+    },
+    {
+      "language": "uk",
+      "width": 844,
+      "height": 220,
+      "status": "PASS",
+      "rows": [
+        {
+          "top": 204,
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "buttonTop": 441.59375,
+              "buttonBottom": 485.59375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "buttonTop": 441.59375,
+              "buttonBottom": 485.59375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Mortal Kombat 1",
+              "buttonTop": 441.59375,
+              "buttonBottom": 485.59375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "buttonTop": 441.59375,
+              "buttonBottom": 485.59375,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 175,
+              "artH": 175
+            }
+          ]
+        },
+        {
+          "top": 510.59375,
+          "cards": [
+            {
+              "title": "EA SPORTS UFC 6",
+              "buttonTop": 727.390625,
+              "buttonBottom": 771.390625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Tekken 8",
+              "buttonTop": 727.390625,
+              "buttonBottom": 771.390625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Split Fiction",
+              "buttonTop": 727.390625,
+              "buttonBottom": 771.390625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "It Takes Two",
+              "buttonTop": 727.390625,
+              "buttonBottom": 771.390625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            }
+          ]
+        },
+        {
+          "top": 796.390625,
+          "cards": [
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "buttonTop": 1013.1875,
+              "buttonBottom": 1057.1875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Gran Turismo 7",
+              "buttonTop": 1013.1875,
+              "buttonBottom": 1057.1875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "God of War Ragnarök",
+              "buttonTop": 1013.1875,
+              "buttonBottom": 1057.1875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "buttonTop": 1013.1875,
+              "buttonBottom": 1057.1875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            }
+          ]
+        },
+        {
+          "top": 1082.1875,
+          "cards": [
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "buttonTop": 1298.984375,
+              "buttonBottom": 1342.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "buttonTop": 1298.984375,
+              "buttonBottom": 1342.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "ELDEN RING",
+              "buttonTop": 1298.984375,
+              "buttonBottom": 1342.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "buttonTop": 1298.984375,
+              "buttonBottom": 1342.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            }
+          ]
+        },
+        {
+          "top": 1367.984375,
+          "cards": [
+            {
+              "title": "ASTRO BOT",
+              "buttonTop": 1584.78125,
+              "buttonBottom": 1628.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "buttonTop": 1584.78125,
+              "buttonBottom": 1628.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Horizon Forbidden West",
+              "buttonTop": 1584.78125,
+              "buttonBottom": 1628.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            }
+          ]
+        }
+      ],
+      "missingCenter": {
+        "panelCenter": 422,
+        "titleTextCenter": 421.9921875,
+        "titleAlign": "center",
+        "buttonCenter": 422,
+        "buttonH": 44
+      },
+      "retainedWishCenter": {
+        "panelCenter": 422,
+        "titleTextCenter": 421.9921875,
+        "titleAlign": "center",
+        "buttonCenter": 422,
+        "buttonH": 44
+      },
+      "expandedInputAlignment": "start",
+      "bookingCopy": {
+        "region": "Ігри та побажання до бронювання",
+        "add": "Додати до бронювання ",
+        "remove": "Прибрати з бронювання ",
+        "helper": "Наявність і можливість додати гру підтвердимо після бронювання."
+      },
+      "screens": [
+        "uk-844x220-after-request.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": []
+    },
+    {
+      "language": "ru",
+      "width": 844,
+      "height": 260,
+      "status": "PASS",
+      "rows": [
+        {
+          "top": 204,
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "buttonTop": 441.59375,
+              "buttonBottom": 485.59375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "buttonTop": 441.59375,
+              "buttonBottom": 485.59375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Mortal Kombat 1",
+              "buttonTop": 441.59375,
+              "buttonBottom": 485.59375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "buttonTop": 441.59375,
+              "buttonBottom": 485.59375,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 175,
+              "artH": 175
+            }
+          ]
+        },
+        {
+          "top": 510.59375,
+          "cards": [
+            {
+              "title": "EA SPORTS UFC 6",
+              "buttonTop": 727.390625,
+              "buttonBottom": 771.390625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Tekken 8",
+              "buttonTop": 727.390625,
+              "buttonBottom": 771.390625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Split Fiction",
+              "buttonTop": 727.390625,
+              "buttonBottom": 771.390625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "It Takes Two",
+              "buttonTop": 727.390625,
+              "buttonBottom": 771.390625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            }
+          ]
+        },
+        {
+          "top": 796.390625,
+          "cards": [
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "buttonTop": 1013.1875,
+              "buttonBottom": 1057.1875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Gran Turismo 7",
+              "buttonTop": 1013.1875,
+              "buttonBottom": 1057.1875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "God of War Ragnarök",
+              "buttonTop": 1013.1875,
+              "buttonBottom": 1057.1875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "buttonTop": 1013.1875,
+              "buttonBottom": 1057.1875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            }
+          ]
+        },
+        {
+          "top": 1082.1875,
+          "cards": [
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "buttonTop": 1298.984375,
+              "buttonBottom": 1342.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "buttonTop": 1298.984375,
+              "buttonBottom": 1342.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "ELDEN RING",
+              "buttonTop": 1298.984375,
+              "buttonBottom": 1342.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "buttonTop": 1298.984375,
+              "buttonBottom": 1342.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            }
+          ]
+        },
+        {
+          "top": 1367.984375,
+          "cards": [
+            {
+              "title": "ASTRO BOT",
+              "buttonTop": 1584.78125,
+              "buttonBottom": 1628.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "buttonTop": 1584.78125,
+              "buttonBottom": 1628.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            },
+            {
+              "title": "Horizon Forbidden West",
+              "buttonTop": 1584.78125,
+              "buttonBottom": 1628.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 175,
+              "artH": 175
+            }
+          ]
+        }
+      ],
+      "missingCenter": {
+        "panelCenter": 422,
+        "titleTextCenter": 421.9921875,
+        "titleAlign": "center",
+        "buttonCenter": 422,
+        "buttonH": 44
+      },
+      "retainedWishCenter": {
+        "panelCenter": 422,
+        "titleTextCenter": 421.9921875,
+        "titleAlign": "center",
+        "buttonCenter": 421.9921875,
+        "buttonH": 44
+      },
+      "expandedInputAlignment": "start",
+      "bookingCopy": {
+        "region": "Игры и пожелания к брони",
+        "add": "Добавить в бронь ",
+        "remove": "Убрать из брони ",
+        "helper": "Наличие и возможность добавить игру подтвердим после оформления брони."
+      },
+      "screens": [
+        "ru-844x260-after-request.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": []
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "height": 220,
+      "status": "PASS",
+      "rows": [
+        {
+          "top": 204,
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "buttonTop": 401.796875,
+              "buttonBottom": 445.796875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "buttonTop": 401.796875,
+              "buttonBottom": 445.796875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 469.796875,
+          "cards": [
+            {
+              "title": "Mortal Kombat 1",
+              "buttonTop": 688.390625,
+              "buttonBottom": 732.390625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "buttonTop": 688.390625,
+              "buttonBottom": 732.390625,
+              "buttonH": 44,
+              "titleHeight": 41.59375,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 42,
+              "titleClient": 42,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 756.390625,
+          "cards": [
+            {
+              "title": "EA SPORTS UFC 6",
+              "buttonTop": 954.1875,
+              "buttonBottom": 998.1875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Tekken 8",
+              "buttonTop": 954.1875,
+              "buttonBottom": 998.1875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 1022.1875,
+          "cards": [
+            {
+              "title": "Split Fiction",
+              "buttonTop": 1219.984375,
+              "buttonBottom": 1263.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "It Takes Two",
+              "buttonTop": 1219.984375,
+              "buttonBottom": 1263.984375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 1287.984375,
+          "cards": [
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "buttonTop": 1485.78125,
+              "buttonBottom": 1529.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Gran Turismo 7",
+              "buttonTop": 1485.78125,
+              "buttonBottom": 1529.78125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 1553.78125,
+          "cards": [
+            {
+              "title": "God of War Ragnarök",
+              "buttonTop": 1751.578125,
+              "buttonBottom": 1795.578125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "buttonTop": 1751.578125,
+              "buttonBottom": 1795.578125,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 1819.578125,
+          "cards": [
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "buttonTop": 2017.375,
+              "buttonBottom": 2061.375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "buttonTop": 2017.375,
+              "buttonBottom": 2061.375,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 2085.375,
+          "cards": [
+            {
+              "title": "ELDEN RING",
+              "buttonTop": 2283.171875,
+              "buttonBottom": 2327.171875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "buttonTop": 2283.171875,
+              "buttonBottom": 2327.171875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 2351.171875,
+          "cards": [
+            {
+              "title": "ASTRO BOT",
+              "buttonTop": 2548.96875,
+              "buttonBottom": 2592.96875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "buttonTop": 2548.96875,
+              "buttonBottom": 2592.96875,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        },
+        {
+          "top": 2616.96875,
+          "cards": [
+            {
+              "title": "Horizon Forbidden West",
+              "buttonTop": 2814.765625,
+              "buttonBottom": 2858.765625,
+              "buttonH": 44,
+              "titleHeight": 20.796875,
+              "titleLineHeight": "20.8px",
+              "titleOverflow": "visible",
+              "titleClamp": "none",
+              "titleScroll": 21,
+              "titleClient": 21,
+              "artW": 156,
+              "artH": 156
+            }
+          ]
+        }
+      ],
+      "missingCenter": {
+        "panelCenter": 195,
+        "titleTextCenter": 195,
+        "titleAlign": "center",
+        "buttonCenter": 195,
+        "buttonH": 44
+      },
+      "retainedWishCenter": {
+        "panelCenter": 195,
+        "titleTextCenter": 195,
+        "titleAlign": "center",
+        "buttonCenter": 195,
+        "buttonH": 44
+      },
+      "expandedInputAlignment": "start",
+      "bookingCopy": {
+        "region": "Ігри та побажання до бронювання",
+        "add": "Додати до бронювання ",
+        "remove": "Прибрати з бронювання ",
+        "helper": "Наявність і можливість додати гру підтвердимо після бронювання."
+      },
+      "screens": [
+        "uk-390x220-after-request.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": []
+    }
+  ],
+  "changes": [
+    "Flex column cards push selection buttons to equal row bottom, without title clamp/truncation or fixed title height",
+    "Only collapsed missing-game heading/action centered using explicit open-state attribute; expanded input/label keep left alignment",
+    "Picker visitor copy uses бронювання/бронь in both languages, including screen-reader labels"
+  ],
+  "limits": [
+    "Native Chromium viewport checks; physical mobile Safari keyboard not used",
+    "Vite development source, packaged release validation belongs to root"
+  ],
+  "safety": "Only localhost/127.0.0.1 GET/HEAD allowed; all non-read requests blocked before transmission. No order/email sent."
+}

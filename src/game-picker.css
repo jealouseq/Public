@@ -14,6 +14,11 @@ dialog.game-picker-dialog.game-picker-structured { --game-picker-max-height: 840
 .game-picker-structured .game-picker-footer { position: static; min-width: 0; margin: 0; padding: 16px 28px; border-top: 1px solid #55504a; background: #15171a; gap: 16px; }
 .game-picker-structured .game-picker-footer p { color: #c4c5c5; overflow-wrap: anywhere; }
 .game-picker-structured .game-picker-footer .button { min-width: 150px; min-height: 48px; }
+/* Let full titles determine row height; sibling actions share the bottom edge. */
+.game-picker-structured .picker-game { display: flex; flex-direction: column; }
+.game-picker-structured .picker-game .game-art { flex: 0 0 auto; }
+.game-picker-structured .picker-game h3 { margin-bottom: 9px; overflow-wrap: anywhere; }
+.game-picker-structured .picker-game .picker-game-toggle { flex: 0 0 auto; margin-top: auto; }
 .game-picker-structured .game-picker-result { color: #c4c5c5; margin-bottom: 18px; }
 .game-picker-structured .game-picker-empty { padding: 26px 20px; border: 1px solid #3e4044; border-radius: 10px; text-align: center; background: #ffffff02; }
 .game-picker-structured .game-picker-empty p { color: #c4c5c5; font-size: 14px; line-height: 1.6; }
@@ -27,6 +32,9 @@ dialog.game-picker-dialog.game-picker-structured { --game-picker-max-height: 840
 .game-picker-structured .missing-game-toggle { width: auto; flex-shrink: 0; min-height: 44px; padding: 10px 14px; border: 1px solid #8a7557; border-radius: 7px; background: #c79b5d0a; color: #e0c79e; justify-content: center; gap: 10px; font-size: 13px; }
 .game-picker-structured .missing-game-toggle:hover { border-color: #c4aa81; background: #c79b5d18; }
 .game-picker-structured .missing-game-toggle svg { flex-shrink: 0; }
+.game-picker-structured .game-picker-request[data-request-open='false'] .missing-game-heading { flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; }
+.game-picker-structured .game-picker-request[data-request-open='false'] .missing-game-heading > div { flex: none; min-width: 0; width: 100%; }
+.game-picker-structured .game-picker-request[data-request-open='false'] .missing-game-toggle { align-self: center; }
 .game-picker-structured .missing-game-saved { margin-top: 6px; color: #c4c5c5; font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
 .game-picker-structured .missing-game-saved strong { color: #eeeae4; font-weight: 500; }
 .game-picker-structured .missing-game-fields { padding: 18px 0 0; }

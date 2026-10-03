@@ -1,0 +1,38 @@
+
+> joyrent-wordpress@1.9.2 build
+> tsc --noEmit && vite build && node scripts/package.mjs
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 5017 modules transformed.
+rendering chunks...
+computing gzip size...
+wordpress/joyrent/assets/dist/.vite/manifest.json                                       5.91 kB │ gzip:   0.79 kB
+wordpress/joyrent/assets/dist/assets/manrope-vietnamese-wght-normal-usUDDRr7.woff2      8.52 kB
+wordpress/joyrent/assets/dist/assets/manrope-greek-wght-normal-DL7QRZyv.woff2           9.44 kB
+wordpress/joyrent/assets/dist/assets/onest-cyrillic-ext-wght-normal-DOFToQv1.woff2     10.54 kB
+wordpress/joyrent/assets/dist/assets/onest-vietnamese-wght-normal-BBxOatbv.woff2       12.40 kB
+wordpress/joyrent/assets/dist/assets/unbounded-vietnamese-wght-normal-rat7GD3o.woff2   13.88 kB
+wordpress/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2       14.50 kB
+wordpress/joyrent/assets/dist/assets/manrope-latin-ext-wght-normal-Ch3YOpNY.woff2      15.12 kB
+wordpress/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2         15.86 kB
+wordpress/joyrent/assets/dist/assets/onest-symbols-wght-normal-DxQzqQfC.woff2          18.17 kB
+wordpress/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2          24.84 kB
+wordpress/joyrent/assets/dist/assets/onest-math-wght-normal-Bl4ZGkZl.woff2             25.48 kB
+wordpress/joyrent/assets/dist/assets/onest-latin-ext-wght-normal-QAhDxQuo.woff2        28.45 kB
+wordpress/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2     31.42 kB
+wordpress/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2            33.76 kB
+wordpress/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2        50.90 kB
+wordpress/joyrent/assets/dist/assets/unbounded-latin-ext-wght-normal-D6H-S6MW.woff2   118.35 kB
+wordpress/joyrent/assets/dist/assets/leaflet-CIGW-MKW.css                              15.61 kB │ gzip:   6.46 kB
+wordpress/joyrent/assets/dist/assets/main-CAUCxMPb.css                                113.13 kB │ gzip:  27.18 kB
+wordpress/joyrent/assets/dist/assets/delivery-zones-CaK9S-Hx.js                         6.03 kB │ gzip:   1.93 kB
+wordpress/joyrent/assets/dist/assets/leaflet-src-Bd1C1PtC.js                          149.90 kB │ gzip:  43.48 kB
+wordpress/joyrent/assets/dist/assets/main-2YiB-VTt.js                                 514.56 kB │ gzip: 159.70 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 5.04s
+Packaged WordPress theme, rental plugin and static visual preview.
