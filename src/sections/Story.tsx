@@ -28,18 +28,18 @@ export function Kit() {
     sizes: '(min-width: 1280px) 650px, (min-width: 701px) calc(55vw - 56px), (min-width: 478px) 430px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)',
     decoding: 'async' as const,
   };
-  const items = [t('PS5 або PS4 та 1–2 геймпади', 'PS5 или PS4 и 1–2 геймпада'), t('HDMI, живлення та зарядний кабель', 'HDMI, питание и зарядный кабель'), t('Інструкція з підключення', 'Инструкция по подключению')];
+  const items = [t('PS5 або PS4 + 1–2 геймпади', 'PS5 или PS4 + 1–2 геймпада'), t('HDMI-кабель, кабель живлення та заряджання', 'HDMI-кабель, кабель питания и зарядки'), t('Коротка інструкція з підключення', 'Краткая инструкция по подключению')];
   return <section className="section kit-section story-kit" id="kit"><div className="shell kit-layout">
-    <Reveal className="kit-copy"><p className="eyebrow">{t('У КОМПЛЕКТІ', 'В КОМПЛЕКТЕ')}</p><h2>{t('Усе для', 'Всё для')}<br />{t('першої гри.', 'первой игры.')}</h2><ul className="kit-checklist">{items.map(item => <li key={item}><Check size={18} />{item}</li>)}</ul><p className="kit-note">{t('Другий геймпад — без доплати. Перевіримо комплект і підтвердимо обрані ігри перед орендою.', 'Второй геймпад — без доплаты. Проверим комплект и подтвердим выбранные игры перед арендой.')}</p></Reveal>
+    <Reveal className="kit-copy"><p className="eyebrow">{t('У КОМПЛЕКТІ', 'В КОМПЛЕКТЕ')}</p><h2>{t('Усе готово до гри.', 'Всё готово к игре.')}</h2><ul className="kit-checklist">{items.map(item => <li key={item}><Check size={18} />{item}</li>)}</ul><p className="kit-note">{t('Другий геймпад — без доплати. Кожен комплект перевіряємо перед видачею.', 'Второй геймпад — без доплаты. Каждый комплект проверяем перед выдачей.')}</p></Reveal>
     <div ref={stage} className="controller-stage" data-motion={!reduced && inView && documentVisible ? 'running' : 'paused'}><div className="controller-float"><img className="controller-photo" src={imageUrl('dualsense-cutout')} {...controllerMedia} alt={t('Білий DualSense із м’якою теплою підсвіткою', 'Белый DualSense с мягкой тёплой подсветкой')} width={1536} height={1024} loading="lazy" /><img className="controller-light-pass" aria-hidden="true" src={imageUrl('dualsense-cutout')} {...controllerMedia} alt="" width={1536} height={1024} loading="lazy" /></div></div>
   </div></section>;
 }
 export function HowItWorks({ settings }: { settings: StoreSettings }) {
   const { t, language } = useI18n();
   const steps = [
-    [CalendarBlank, t('Обери комплект', 'Выбери комплект'), t('Обери консоль, термін і дату. Додай ігри та залиш контакти.', 'Выбери консоль, срок и дату. Добавь игры и оставь контакты.')],
-    [Truck, t('Отримай консоль', 'Получи консоль'), t('Підтвердимо наявність і вартість. Узгодимо доставку, комплектацію та заставу.', 'Подтвердим наличие и стоимость. Согласуем доставку, комплектацию и залог.')],
-    [PlayStationController, t('Грай', 'Играй'), t('Насолоджуйся грою. Заберемо комплект у погоджений час.', 'Наслаждайся игрой. Заберём комплект в согласованное время.')],
+    [CalendarBlank, t('Обери комплект', 'Выбери комплект'), t('Обери консоль, термін і дати. Додай ігри та залиш контакти.', 'Выбери консоль, срок и даты. Добавь игры и оставь контакты.')],
+    [Truck, t('Отримай консоль', 'Получи консоль'), t('Підтвердимо наявність і підсумкову вартість. Узгодимо доставку та заставу.', 'Подтвердим наличие и итоговую стоимость. Согласуем доставку и залог.')],
+    [PlayStationController, t('Грай', 'Играй'), t('Грай у своє задоволення. Заберемо комплект у погоджений час.', 'Наслаждайся игрой. Заберём комплект в согласованное время.')],
   ] as const;
   const delivery = language === 'ru' ? settings.deliveryTextRu : settings.deliveryText;
   const city = language === 'ru' ? settings.cityRu || settings.city : settings.city;
@@ -59,8 +59,8 @@ export function HowItWorks({ settings }: { settings: StoreSettings }) {
         </figure>
         <div className="delivery-service delivery-zones"><div>
           <h4>{t('Доставка та повернення', 'Доставка и возврат')}</h4>
-          <dl className="delivery-zone-prices"><div><dt><span className="zone-dot zone-green" />{t('Зелена зона', 'Зелёная зона')}</dt><dd>{zonePrice(settings.deliveryGreenFee)}</dd></div><div><dt><span className="zone-dot zone-yellow" />{t('Жовта зона', 'Жёлтая зона')}</dt><dd>{zonePrice(settings.deliveryYellowFee)}</dd></div><div><dt><span className="zone-dot zone-red" />{t('Червона зона', 'Красная зона')}</dt><dd>{t('Тариф таксі', 'Тариф такси')}</dd></div></dl>
-          <p className="delivery-included"><CalendarBlank size={24} weight="light" aria-hidden="true" /><span><strong>{t('Від', 'От')} {settings.freeDeliveryFrom} {t('днів — зелена та жовта зони безкоштовні.', 'дней — зелёная и жёлтая зоны бесплатно.')}</strong><span className="delivery-service-note">{t('Доставка й повернення у ціні. Поза зонами — за погодженням.', 'Доставка и возврат включены в стоимость. Вне зон — по согласованию.')}</span></span></p>
+          <dl className="delivery-zone-prices"><div><dt><span className="zone-dot zone-green" />{t('Зелена зона', 'Зелёная зона')}</dt><dd>{zonePrice(settings.deliveryGreenFee)}</dd></div><div><dt><span className="zone-dot zone-yellow" />{t('Жовта зона', 'Жёлтая зона')}</dt><dd>{zonePrice(settings.deliveryYellowFee)}</dd></div><div><dt><span className="zone-dot zone-red" />{t('Червона зона', 'Красная зона')}</dt><dd>{t('за тарифом таксі', 'по тарифу такси')}</dd></div></dl>
+          <p className="delivery-included"><CalendarBlank size={24} weight="light" aria-hidden="true" /><span><strong>{t('При оренді від', 'При аренде от')} {settings.freeDeliveryFrom} {t('днів доставка в зелену та жовту зони — безкоштовна.', 'дней доставка в зелёную и жёлтую зоны — бесплатно.')}</strong><span className="delivery-service-note">{t('У вартість зони входять доставка та повернення консолі. Поза зонами — за погодженням.', 'В стоимость зоны входят доставка и обратный забор. Вне зон — по согласованию.')}</span></span></p>
         </div></div>
       </div>
       <div className="delivery-map-action"><DeliveryZoneMap freeDeliveryFrom={settings.freeDeliveryFrom} greenFee={settings.deliveryGreenFee ?? null} yellowFee={settings.deliveryYellowFee ?? null} /></div>

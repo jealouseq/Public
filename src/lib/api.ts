@@ -15,7 +15,7 @@ export const imageUrl = (name: string) => `${boot.assetBase}/images/${name}.webp
 export const fallbackSettings: StoreSettings = {
   city: 'Одеса', cityRu: 'Одесса', phone: '+380996669946', email: '', telegram: 'https://t.me/joyrent_od', deliveryFee: null, deliveryGreenFee: 200, deliveryYellowFee: 300, depositPs5: 25000, depositPs4: 7500,
   baseControllers: 2, extraControllerFee: 0, pickup: false, freeDeliveryFrom: 7, maxGames: 100,
-  deliveryText: 'Доставляємо Одесою. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.',
+  deliveryText: 'Доставляємо по Одесі. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.',
   deliveryTextRu: 'Доставляем по Одессе. Привезём, подключим и заберём после аренды. Зону и время подтвердим по адресу.',
 };
 export type StoreCatalog = { tariffs: Record<ConsoleId, Tariff[]>; games: Game[]; settings: StoreSettings; currency: string; acceptingRequests: boolean };

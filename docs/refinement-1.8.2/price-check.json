@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "catalogOverridesOnly": true,
+  "knownDeliveryFee": 200,
+  "rentalSubtotal": 1400,
+  "ps4FallbackDailyAmount": 250,
+  "ps4MinimumDays": 3,
+  "postAttempts": 0,
+  "errors": []
+}

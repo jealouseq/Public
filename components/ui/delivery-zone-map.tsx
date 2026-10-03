@@ -30,7 +30,7 @@ export function DeliveryZoneMap({ freeDeliveryFrom, greenFee, yellowFee }: Deliv
   const zoneName = (zone: DeliveryPointZone) => zone === 'green' ? t('Зелена зона', 'Зелёная зона') : zone === 'yellow' ? t('Жовта зона', 'Жёлтая зона') : zone === 'red' ? t('Червона зона', 'Красная зона') : zone === 'boundary' ? t('На межі зон', 'На границе зон') : t('Поза зонами', 'Вне зон');
   const price = (zone: DeliveryPointZone) => {
     const terms = deliveryTerms(zone, fees);
-    return terms.kind === 'fixed' ? terms.fee == null ? t('Узгодимо вартість', 'Согласуем стоимость') : `${money(terms.fee)} грн` : terms.kind === 'taxi' ? t('Тариф таксі', 'Тариф такси') : t('За погодженням', 'По согласованию');
+    return terms.kind === 'fixed' ? terms.fee == null ? t('Узгодимо вартість', 'Согласуем стоимость') : `${money(terms.fee)} грн` : terms.kind === 'taxi' ? t('за тарифом таксі', 'по тарифу такси') : t('За погодженням', 'По согласованию');
   };
 
   useEffect(() => {
@@ -164,8 +164,8 @@ export function DeliveryZoneMap({ freeDeliveryFrom, greenFee, yellowFee }: Deliv
         <div className="delivery-map-legend" aria-label={t('Умови доставки за зонами', 'Условия доставки по зонам')}>
           <p className="delivery-map-legend-title">{t('Доставка та повернення', 'Доставка и возврат')}</p>
           {zoneOrder.map(zone => <button key={zone} className={`delivery-map-zone delivery-map-zone-${zone}`} type="button" aria-pressed={selection?.zone === zone} onClick={() => selectZone(zone)}><span className="delivery-map-zone-name"><span aria-hidden="true" className="delivery-map-swatch" />{zoneName(zone)}</span><strong>{price(zone)}</strong></button>)}
-          <p className="delivery-map-fee-note">{t('Доставка й повернення у ціні.', 'Доставка и возврат включены в стоимость.')}</p>
-          <p className="delivery-map-free">{t('Від', 'От')} {freeDeliveryFrom} {t('днів — зелена та жовта зони безкоштовні.', 'дней — зелёная и жёлтая зоны бесплатно.')}</p>
+          <p className="delivery-map-fee-note">{t('У вартість зони входять доставка та повернення консолі. Поза зонами — за погодженням.', 'В стоимость зоны входят доставка и обратный забор. Вне зон — по согласованию.')}</p>
+          <p className="delivery-map-free">{t('При оренді від', 'При аренде от')} {freeDeliveryFrom} {t('днів доставка в зелену та жовту зони — безкоштовна.', 'дней доставка в зелёную и жёлтую зоны — бесплатно.')}</p>
           <p className="delivery-map-point" role="status" aria-live="polite">{selection ? <><strong>{selection.point ? `${t('Обрана точка', 'Выбранная точка')}: ` : ''}{zoneName(selection.zone)}</strong><span>{price(selection.zone)}{selection.zone === 'green' || selection.zone === 'yellow' ? t(' — доставка й повернення.', ' — доставка и возврат.') : ''}</span>{selection.zone === 'boundary' && <span>{t('Точну адресу на межі підтвердимо окремо.', 'Точный адрес на границе подтвердим отдельно.')}</span>}</> : t('Обери зону в списку або точку на мапі.', 'Выбери зону в списке или точку на карте.')}</p>
           <p className="delivery-map-confirm">{t('Поза зонами — за погодженням. Адресу й час підтвердимо перед орендою.', 'Вне зон — по согласованию. Адрес и время подтвердим перед арендой.')}</p>
         </div>

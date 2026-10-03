@@ -55,11 +55,11 @@ final class JR_Store {
         }
     }
     public static function upgrade(): void {
-        if (version_compare((string)get_option('joyrent_version','0'),'1.7.0','>=')||!class_exists('WooCommerce')) return;
+        if (version_compare((string)get_option('joyrent_version','0'),'1.7.1','>=')||!class_exists('WooCommerce')) return;
         $lock=JR_Lock::acquire('joyrent_catalog_lock');
         if (!$lock) return;
         try {
-            if (version_compare((string)get_option('joyrent_version','0'),'1.7.0','>=') ) return;
+            if (version_compare((string)get_option('joyrent_version','0'),'1.7.1','>=') ) return;
             $previous=(string)get_option('joyrent_version','0');
             if (version_compare($previous,'1.6.0','<')) {
                 self::seed_games(); // Add missing games without republishing drafts or replacing owner content.
@@ -89,9 +89,27 @@ final class JR_Store {
                 }
                 self::reconcile_games(); self::upgrade_settings();
             }
+            self::upgrade_copy_settings();
             self::legal_pages(); self::faq_pages(); // Migrate exact previous defaults while preserving owner pages/settings.
-            update_option('joyrent_version','1.7.0',false);
+            update_option('joyrent_version','1.7.1',false);
         } finally { JR_Lock::release('joyrent_catalog_lock',$lock); }
+    }
+    private static function upgrade_copy_settings(): void {
+        $saved=(array)get_option('joyrent_settings',[]);
+        $old=[
+            'delivery_text'=>[
+                'Доставляємо Одесою. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.',
+                'Доставляємо Одесою. Зелена зона — 200 грн, жовта — 300 грн за доставку та повернення. Червона — за тарифом таксі в обидва боки. Від 7 днів зелена й жовта зони безкоштовні. Зону підтвердимо за адресою.',
+            ],
+            'delivery_text_ru'=>[
+                'Доставляем по Одессе. Зелёная зона — 200 грн, жёлтая — 300 грн за доставку и возврат. Красная — по тарифу такси в обе стороны. От 7 дней зелёная и жёлтая зоны бесплатны. Зону подтвердим по адресу.',
+            ],
+        ];
+        $defaults=JR_Settings::defaults();$changed=false;
+        foreach ($old as $key=>$texts) if (in_array($saved[$key]??null,$texts,true)) {
+            $saved[$key]=$defaults[$key];$changed=true;
+        }
+        if ($changed) update_option('joyrent_settings',$saved,false);
     }
     private static function untouched_legacy(WP_Post $post, array $source): bool {
         // Archived pre-1.5 seed positions. Any uncertain author state stays in the store.

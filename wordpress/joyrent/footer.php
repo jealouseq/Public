@@ -7,7 +7,7 @@
     if (preg_match('/^380\d{9}$/',$digits)) {
         $local='0'.substr($digits,3);
         $phone_short=substr($local,0,3).' '.substr($local,3,3).' '.substr($local,6,2).' '.substr($local,8);
-        $phone_full='+38 '.$phone_short;
+        $phone_full='+380 '.substr($digits,3,2).' '.substr($digits,5,3).' '.substr($digits,8,2).' '.substr($digits,10);
     }
 ?>
 <footer class="site-footer" id="contact"><div class="shell">

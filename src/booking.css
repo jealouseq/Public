@@ -3,6 +3,10 @@
 .booking-section input:not([type="checkbox"]):not([type="radio"]) { border-color: #707277; }
 .booking-section .input-help, .booking-section .summary-note, .booking-section .summary-trust, .booking-section .summary-lines, .booking-section .summary-price > span, .booking-section .booking-games .small { font-size: 13px; }
 .booking-section .summary-lines dt .muted { font-size: 12px; }
+.booking-section .summary-lines dd { max-width: 65%; white-space: normal; }
+.booking-section .summary-deposit dd { display: flex; flex-wrap: wrap; justify-content: flex-end; column-gap: 3px; }
+.booking-section .summary-deposit dd span { white-space: nowrap; }
+.booking-section .summary-deposit dd .muted { font-size: 12px; font-style: italic; }
 .booking-section .text-link, .booking-section .selected-game { min-height: 44px; }
 .booking-section .text-link { border: 0; background: transparent; padding-block: 10px; }
 .booking-section .consent { align-items: start; font-size: 13px; line-height: 1.65; }
@@ -57,5 +61,6 @@ body:has(dialog[open]) { overflow: hidden; }
 @media (max-width: 375px) {
   .booking-section .booking-row { flex-wrap: wrap; }
   .booking-section .summary-lines { gap: 16px; }
+  .booking-section .summary-button { padding-inline: 16px; gap: 12px; }
   .contact-recap { padding-inline: 12px; }
 }

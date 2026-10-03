@@ -10,7 +10,7 @@ function displayPhone(phone: string) {
   if (/^380\d{9}$/.test(digits)) {
     const local = `0${digits.slice(3)}`;
     const short = `${local.slice(0, 3)} ${local.slice(3, 6)} ${local.slice(6, 8)} ${local.slice(8)}`;
-    return { full: `+38 ${short}`, short };
+    return { full: `+380 ${digits.slice(3, 5)} ${digits.slice(5, 8)} ${digits.slice(8, 10)} ${digits.slice(10)}`, short };
   }
   return { full: phone, short: phone };
 }
