@@ -1,3 +1,26 @@
+# JOYRENT 1.8.1 — выбранная двухцветная иконка
+
+Source visual truth: [selected displayed variant 3](docs/refinement-1.8.1/icons/selected-source.png), 1254×1254px; user reattached that exact image. The target is the icon, not the generated board's typography or overall page composition. Prior user authorization covers a clean SVG adaptation.
+
+Full-view and focused comparison: [combined input](docs/refinement-1.8.1/icons/source-and-implementation.png), browser rendered at 1352px wide / DPR1. Source board is displayed at 640×640; implementation icon enlarged to comparable 329px painted width. Native process and selector captures are shown at CSS scale 1, viewport390×844/DPR1. Source and implementation were opened together before this review; oversized concept snippets are not claimed to be literal 28px source captures. [Native UI](docs/refinement-1.8.1/screens/uk-390-process.png) / [selector](docs/refinement-1.8.1/screens/uk-390-controller-options.png).
+
+Findings/history: first comparison identified P2, stick rings nearly touched grip fills and central bridge had angular corners. Curved grip inner edges now leave a visible gap; bridge has a smooth inner arch. [Before](docs/refinement-1.8.1/icons/first-comparison.png) and final combined image document the correction. No actionable P0/P1/P2 remains.
+
+Required fidelity surfaces:
+- Fonts/typography: existing Onest/Unbounded, heading and numbers retained; generated board's typography is outside this icon-only target.
+- Spacing/layout: existing 28px SVG boxes, 40px process node, icon/title pairing, connecting lines and controller targets retained; UA/RU320/390/1440 have no horizontal overflow.
+- Colors/tokens: ivory #f4f2e8 grips, muted gold #c8a96b touchpad, dark controls; nonselected opacity0.58 and selected1 match the intended state treatment.
+- Asset quality: symmetric, transparent vector adaptation; no raster crop/stretch or small-size compression. Flat fills intentionally omit the generated reference's slight paper-like texture.
+- Copy/content: site labels and descriptions unchanged; no exploratory board labels inserted into the product.
+
+Actual clicks and keyboard Enter/Space, selected-state changes and free second-controller price were checked in 6 fresh packaged cases on `main-DM1WMT1u.js` / `main-JIqLnITd.css`. Zero console errors/page exceptions/POST attempts. The initial opacity harness race is recorded separately; no claim that it was a product defect. Physical Safari and full unrelated workflows are outside this scope.
+
+Implementation checklist: selected image mapped, shared icon replaced, native states and responsive layouts checked, archives validated.
+
+final result: passed
+
+---
+
 # JOYRENT 1.8 — selected icon and responsive delivery QA
 
 Source visual truth: the user's 1.7 desktop/mobile screenshots and requested changes, the final attached detailed DualSense contour (displayed generated option 1), and the latest landscape-map reference. The final map target is a wide dark geographic stage with illuminated zones beside the fee list and a warm free-delivery callout. The existing left-aligned sequence and small map are intentional redesign targets, not layouts to clone.

@@ -115,6 +115,8 @@ input[readonly] { color: #a7a8ac !important; background: transparent !important;
 .controller-options { display: flex; gap: 10px; }
 .controller-options button { min-width: 78px; min-height: 44px; border: 1px solid #3b3c3f; border-radius: 5px; background: none; display: inline-flex; align-items: center; justify-content: center; gap: 12px; font-size: 14px; color: var(--muted); }
 .controller-options button.selected { color: var(--text); border-color: var(--text); }
+.controller-options .playstation-controller { opacity: .58; }
+.controller-options button.selected .playstation-controller { opacity: 1; }
 .booking-games { padding-top: 25px; }
 .booking-games .muted { margin-top: 16px; }
 .booking-games .text-link { font-size: 12px; }

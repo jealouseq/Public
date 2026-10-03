@@ -1,17 +1,27 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-// Vector adaptation of the user's final image selection: detailed generated contour.
-// Geometry keeps the DualSense handles, broad touchpad and paired circular sticks.
+// Vector adaptation of the selected ImageGen design: ivory grips and gold touchpad.
+// One shared icon keeps the rental steps, controller choices and cover fallback consistent.
 export function PlayStationController({ size = 24, weight: _weight, className, ...props }: ComponentPropsWithoutRef<'svg'> & { size?: number; weight?: 'light' }) {
-  return <svg width={size} height={size} viewBox="0 0 64 64" strokeWidth={size <= 32 ? 1.25 : .8} stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" className={className} {...props}>
-    <path d="M20 14.2c-3.4-1.5-9.9-1.1-12.2 1.6C4.4 20.1 1.6 31.5 1.6 42.1c0 6.5 2.2 10.8 5.9 11.1 3.2.4 5.2-4 7-7.6l2.3-3.9c1.1-2 2.5-2.6 4.9-2h19c2.4-.6 3.8 0 4.9 2l2.4 3.9c1.8 3.6 3.8 8 7 7.6 3.7-.3 5.9-4.6 5.9-11.1 0-10.6-2.8-22-6.2-26.3-2.3-2.7-8.8-3.1-12.2-1.6C40.5 13 35 13 31.25 13S22 13 20 14.2Z" />
-    <path d="M20 14.2c-1.2.7-.8 2.6-.5 4.3l1.5 5.9c.5 1.7 1.7 2.3 3.9 2.3h12.7c2.2 0 3.4-.6 3.9-2.3l1.5-5.9c.3-1.7.7-3.6-.5-4.3" />
-    <path d="M20.6 23.8c.1 3.1-2.3 4.9-4.6 7.5-3.6 4.3-6.5 12.9-9.7 21.4m35.6-28.9c-.1 3.1 2.3 4.9 4.6 7.5 3.6 4.3 6.5 12.9 9.7 21.4" />
-    <path d="M10.4 14.1v-1c0-1.3 1.1-1.9 2.8-2.1l3-.3c1.3-.1 1.9.5 1.9 1.8v.8m34 0v-.9c0-1.3-1.1-1.9-2.8-2.1l-3-.3c-1.3-.1-1.9.5-1.9 1.8v.8" />
-    <rect x="16.8" y="15.3" width="1.6" height="3" rx=".8" /><rect x="44.1" y="15.3" width="1.6" height="3" rx=".8" />
-    <path d="M11.1 20.6c0-.7.5-1.1 1.2-1.1h1.1c.7 0 1.2.4 1.2 1.1v.9c0 .4-.2.6-.5.9l-1.2 1.1-1.3-1.1c-.3-.3-.5-.5-.5-.9v-.9Zm0 7.5c0 .7.5 1.1 1.2 1.1h1.1c.7 0 1.2-.4 1.2-1.1v-.9c0-.4-.2-.6-.5-.9l-1.2-1.1-1.3 1.1c-.3.3-.5.5-.5.9v.9Zm-2.5-5.5c-.7 0-1.1.5-1.1 1.2v1.1c0 .7.4 1.2 1.1 1.2h.9c.4 0 .6-.2.9-.5l1.1-1.2-1.1-1.3c-.3-.3-.5-.5-.9-.5h-.9Zm8.4 0c.7 0 1.1.5 1.1 1.2v1.1c0 .7-.4 1.2-1.1 1.2h-.9c-.4 0-.6-.2-.9-.5l-1.1-1.2 1.1-1.3c.3-.3.5-.5.9-.5h.9Z" />
-    <circle cx="22.5" cy="32.8" r="4.8" /><circle cx="22.5" cy="32.8" r="3.4" /><circle cx="40" cy="32.8" r="4.8" /><circle cx="40" cy="32.8" r="3.4" />
-    <circle cx="49.8" cy="20.2" r="2.1" /><circle cx="45.7" cy="24.4" r="2.1" /><circle cx="53.9" cy="24.4" r="2.1" /><circle cx="49.8" cy="28.6" r="2.1" />
-    <rect x="29.1" y="35.5" width="4.3" height="1.6" rx=".8" />
+  return <svg width={size} height={size} viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" className={['playstation-controller', className].filter(Boolean).join(' ')} {...props}>
+    <path d="M18.5 13.3h27l8.3 35.4c-4-7.7-6.3-11-9.3-11h-25c-3 0-5.3 3.3-9.3 11Z" fill="#141516" />
+    <g fill="#f4f2e8">
+      <path d="M17.6 13c-3.5.3-7.5 1.4-10.2 4.1C4.9 21.6 1 32.9 1 42.2c0 6.2 2.9 8.8 6.6 9.6 1.4.3 1.8-.6 2.3-1.5C13.5 40.8 15.2 33.3 20.6 27.4c.7-1.4.6-2.4.2-4l-2-9.1c-.2-1-.5-1.4-1.2-1.3Z" />
+      <path d="M17.6 13c-3.5.3-7.5 1.4-10.2 4.1C4.9 21.6 1 32.9 1 42.2c0 6.2 2.9 8.8 6.6 9.6 1.4.3 1.8-.6 2.3-1.5C13.5 40.8 15.2 33.3 20.6 27.4c.7-1.4.6-2.4.2-4l-2-9.1c-.2-1-.5-1.4-1.2-1.3Z" transform="translate(64 0) scale(-1 1)" />
+    </g>
+    <path d="M21 13.3h22c1.5 0 2.2.6 1.8 2.2L43 21.2c-.8 2.7-2.3 4-4.6 4H25.6c-2.3 0-3.8-1.3-4.6-4l-1.8-5.7c-.4-1.6.3-2.2 1.8-2.2Z" fill="#c8a96b" />
+    <g fill="#0c0e0f">
+      <rect x="11.3" y="19.2" width="3.2" height="9.8" rx="1.3" />
+      <rect x="8" y="22.5" width="9.8" height="3.2" rx="1.3" />
+      <circle cx="51.2" cy="19.5" r="1.8" />
+      <circle cx="47.5" cy="23.3" r="1.8" />
+      <circle cx="54.9" cy="23.3" r="1.8" />
+      <circle cx="51.2" cy="27.1" r="1.8" />
+    </g>
+    <g fill="#141516" stroke="#f4f2e8" strokeWidth="1.4">
+      <circle cx="22.5" cy="31.8" r="3.3" />
+      <circle cx="41.5" cy="31.8" r="3.3" />
+    </g>
+    <rect x="30.2" y="31.3" width="3.6" height="1" rx=".35" fill="#787a78" />
   </svg>;
 }
