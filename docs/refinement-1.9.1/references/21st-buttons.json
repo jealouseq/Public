@@ -1,0 +1,58 @@
+{
+  "checkedAt": "2026-10-03",
+  "scope": "Read-only public 21st.dev references for compact mobile JOYRENT hero CTA. No source/build/deploy changes, no installation, no paid tools.",
+  "references": [
+    {
+      "title": "Interactive Hover Button",
+      "url": "https://21st.dev/@dillionverma/components/interactive-hover-button",
+      "metadata": "https://21st.dev/@dillionverma/components/interactive-hover-button/metadata.md",
+      "source": "https://magicui.design/docs/components/interactive-hover-button",
+      "previewBundle": "https://cdn.21st.dev/bundled/969.html",
+      "author": "Dillion Verma",
+      "library": "Magic UI",
+      "licenseDeclared": "MIT",
+      "dependencyDeclared": "lucide-react",
+      "observed": "Rounded full button. Hover transitions duration 300ms. Default text translates 48px out and fades; duplicate label with arrow translates in. Decorative dot grows to 1.8x full button as primary background.",
+      "adaptation": "Use compact pill and inset caret interaction only. Keep one stable accessible label, do not swap/duplicate text or expand dot."
+    },
+    {
+      "title": "Shiny Button",
+      "url": "https://21st.dev/@dillionverma/components/shiny-button",
+      "metadata": "https://21st.dev/@dillionverma/components/shiny-button/metadata.md",
+      "source": "https://magicui.design/docs/components/shiny-button",
+      "previewBundle": "https://cdn.21st.dev/bundled/1422.html",
+      "author": "Dillion Verma",
+      "library": "Magic UI",
+      "licenseDeclared": "MIT",
+      "dependencyDeclared": "framer-motion",
+      "observed": "Animate CSS --x 100% to -100% as looping mask/shine with repeat Infinity and repeatDelay 1. Spring entrance scale .8 to 1; tap scale .95. Hover shadow.",
+      "adaptation": "Do not carry looping text mask, bouncing entrance or glow into hero. Subtle pressed feedback alone may be adapted."
+    },
+    {
+      "title": "Shimmer Button",
+      "url": "https://21st.dev/@dillionverma/components/shimmer-button",
+      "metadata": "https://21st.dev/@dillionverma/components/shimmer-button/metadata.md",
+      "source": "https://magicui.design/docs/components/shimmer-button",
+      "previewBundle": "https://cdn.21st.dev/bundled/833.html",
+      "author": "Dillion Verma",
+      "library": "Magic UI",
+      "licenseDeclared": "MIT",
+      "dependencyDeclared": "none in metadata",
+      "observed": "Conic-gradient perimeter light continuously slides and spins. Blur 2px and inset shadow, hover/active inset-shadow changes. Active button translateY 1px.",
+      "adaptation": "Perpetual perimeter animation suits separately requested delivery CTA but adds unnecessary motion to hero. Do not use on hero."
+    }
+  ],
+  "access": {
+    "method": "Direct HTML/metadata/public CDN GET through existing Desktop Commander connector. Cloud proxy blocked 21st.dev CONNECT (403). Public previews and compiled component bundles accessed successfully.",
+    "installation": "Metadata says official shadcn registry requires API_KEY_21ST; free limited installs, paid unlimited. No API key/install requested or used. Public compiled bundles were inspected as references; authored TSX registry not fetched."
+  },
+  "recommendation": {
+    "basis": "Restrained adaptation of Interactive Hover Button interaction and silhouette, using existing JOYRENT design tokens and Phosphor CaretRight; no dependency needed.",
+    "layout": "Single ivory pill, min-height 48px; 14–15px semibold stable text; gap 12px; 26–28px inset circular caret container. Horizontal balance, consistent touch target.",
+    "desktopHover": "Only @media (hover:hover) and (pointer:fine). Caret translates +2px in 160–200ms ease-out. Mild inset-circle background/border shift. No large shadow or layout movement.",
+    "touchPressed": "Scale .98 or translateY 1px, brief and restrained. Keep secondary rates link separate with adequate gap.",
+    "keyboard": "Native anchor/button, visible focus ring, no focus/layout movement, one accessible label.",
+    "reducedMotion": "Disable transforms/transitions/animation; keep static color and focus feedback.",
+    "avoid": "Perpetual hero shimmer, glowing background, spring entrance, duplicate sliding labels, large caret displacement."
+  }
+}

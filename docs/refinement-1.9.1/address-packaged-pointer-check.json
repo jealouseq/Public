@@ -1,0 +1,62 @@
+{
+  "checked_at_utc": "2026-10-03T17:00:09.643291+00:00",
+  "base_url": "http://localhost:8080/",
+  "served_assets": [
+    "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css",
+    "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+  ],
+  "component_sha256": "e32db30e3dec3672a51044d585e16edab8f68bf4acccfc5ed7d0b9b838728910",
+  "engine": "system Chromium / Python Playwright",
+  "physical_safari_tested": false,
+  "post_requests": "All non-GET/HEAD blocked by Playwright route before transmission",
+  "pointer_transaction": {
+    "physical_safari_tested": false,
+    "component_sha256": "e32db30e3dec3672a51044d585e16edab8f68bf4acccfc5ed7d0b9b838728910",
+    "cases": [
+      {
+        "mode": "mouse",
+        "scenario": "native pointer down, simulated input blur before pointer up",
+        "dropdown_retained_through_gesture": true,
+        "value": "Фонтанська дорога, 12Б, кв. 4",
+        "expected": "Фонтанська дорога, 12Б, кв. 4",
+        "expanded": "false",
+        "pass": true
+      },
+      {
+        "mode": "touch",
+        "scenario": "native pointer down, simulated input blur before pointer up",
+        "dropdown_retained_through_gesture": true,
+        "value": "Фонтанська дорога, 12Б, кв. 4",
+        "expected": "Фонтанська дорога, 12Б, кв. 4",
+        "expanded": "false",
+        "pass": true
+      }
+    ],
+    "pass": 2,
+    "fail": 0
+  },
+  "pointer_guards": [
+    {
+      "lang": "uk",
+      "without_synthesized_click": true,
+      "accessible_click": true,
+      "outside_blur_closes": true,
+      "native_touch_cancel": true,
+      "moved_touch_no_select": true,
+      "scroll_during_press_no_select": true,
+      "no_consent_click_through": true,
+      "physical_safari_tested": false
+    },
+    {
+      "lang": "ru",
+      "without_synthesized_click": true,
+      "accessible_click": true,
+      "outside_blur_closes": true,
+      "native_touch_cancel": true,
+      "moved_touch_no_select": true,
+      "scroll_during_press_no_select": true,
+      "no_consent_click_through": true,
+      "physical_safari_tested": false
+    }
+  ]
+}

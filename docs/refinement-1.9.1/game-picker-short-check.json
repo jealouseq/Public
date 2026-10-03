@@ -1,0 +1,163 @@
+{
+  "run": "2026-10-03T16:36:42.632161+00:00",
+  "base": "http://localhost:5173",
+  "pass": 5,
+  "fail": 0,
+  "cases": [
+    {
+      "language": "uk",
+      "width": 844,
+      "height": 220,
+      "visualViewportOverride": null,
+      "status": "PASS",
+      "initialDone": {
+        "x": 649,
+        "y": 138.5,
+        "width": 150,
+        "height": 56.5
+      },
+      "requestInput": {
+        "x": 66,
+        "y": 49.6875,
+        "width": 712,
+        "height": 48
+      },
+      "requestDone": {
+        "x": 649,
+        "y": 138.5,
+        "width": 150,
+        "height": 56.5
+      },
+      "screen": "work/refinement-1.9.1/game-picker-screens/uk-844-220-request.png",
+      "errors": [],
+      "nonReadRequests": []
+    },
+    {
+      "language": "ru",
+      "width": 844,
+      "height": 260,
+      "visualViewportOverride": null,
+      "status": "PASS",
+      "initialDone": {
+        "x": 649,
+        "y": 178.5,
+        "width": 150,
+        "height": 56.5
+      },
+      "requestInput": {
+        "x": 66,
+        "y": 69.6875,
+        "width": 712,
+        "height": 48
+      },
+      "requestDone": {
+        "x": 649,
+        "y": 178.5,
+        "width": 150,
+        "height": 56.5
+      },
+      "screen": "work/refinement-1.9.1/game-picker-screens/ru-844-260-request.png",
+      "errors": [],
+      "nonReadRequests": []
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "height": 220,
+      "visualViewportOverride": null,
+      "status": "PASS",
+      "initialDone": {
+        "x": 240.5,
+        "y": 138.5,
+        "width": 116.5,
+        "height": 56.5
+      },
+      "requestInput": {
+        "x": 50,
+        "y": 49.265625,
+        "width": 290,
+        "height": 48
+      },
+      "requestDone": {
+        "x": 240.5,
+        "y": 138.5,
+        "width": 116.5,
+        "height": 56.5
+      },
+      "screen": "work/refinement-1.9.1/game-picker-screens/uk-390-220-request.png",
+      "errors": [],
+      "nonReadRequests": []
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "height": 280,
+      "visualViewportOverride": null,
+      "status": "PASS",
+      "initialDone": {
+        "x": 170.5,
+        "y": 198.5,
+        "width": 116.5,
+        "height": 56.5
+      },
+      "requestInput": {
+        "x": 50,
+        "y": 79.03125,
+        "width": 220,
+        "height": 48
+      },
+      "requestDone": {
+        "x": 175,
+        "y": 198.5,
+        "width": 112,
+        "height": 56.5
+      },
+      "screen": "work/refinement-1.9.1/game-picker-screens/ru-320-280-request.png",
+      "errors": [],
+      "nonReadRequests": []
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "visualViewportOverride": 220,
+      "status": "PASS",
+      "initialDone": {
+        "x": 240.5,
+        "y": 138.5,
+        "width": 116.5,
+        "height": 56.5
+      },
+      "requestInput": {
+        "x": 50,
+        "y": 49.5625,
+        "width": 290,
+        "height": 48
+      },
+      "requestDone": {
+        "x": 240.5,
+        "y": 138.5,
+        "width": 116.5,
+        "height": 56.5
+      },
+      "screen": "work/refinement-1.9.1/game-picker-screens/uk-390-844-visualviewport220-request.png",
+      "errors": [],
+      "nonReadRequests": []
+    }
+  ],
+  "sources": {
+    "src/components/GamePicker.tsx": "0638800ec0d308d8d118874e82ddbbc81676ac8d9b9c14d975258cd6ec3a4dc2",
+    "src/game-picker.css": "89e7a1f30f9186a27305572ce467baea3a40492dcb13f7552565ef7f6c7fd5c4"
+  },
+  "checks": [
+    "Empty-search request CTA clicks without footer interception",
+    "Focused request and Done fit inside viewport and native dialog",
+    "Search/filter/header close remain reachable by shared scroll on short view",
+    "Collapsed wishlist preserves title; close restores booking opener",
+    "220px VisualViewport fallback works even with844px layout height"
+  ],
+  "limits": [
+    "Physical mobile OS keyboard not used; native Chromium resized viewports and one explicit VisualViewport resize override",
+    "All non-GET/HEAD requests blocked; no order or email sent"
+  ]
+}

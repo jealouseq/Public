@@ -1,0 +1,66 @@
+/* Keep navigation and completion visible while the catalog scrolls independently. */
+dialog.game-picker-dialog.game-picker-structured { --game-picker-max-height: 840px; width: min(980px, calc(100vw - 32px)); height: min(var(--game-picker-max-height), calc(var(--game-picker-viewport-height, 100dvh) - 32px)); max-height: calc(var(--game-picker-viewport-height, 100dvh) - 32px); top: calc(var(--game-picker-viewport-top, 0px) + (var(--game-picker-viewport-height, 100dvh) - min(var(--game-picker-max-height), calc(var(--game-picker-viewport-height, 100dvh) - 32px))) / 2); bottom: auto; margin-block: 0; overflow: hidden; }
+.game-picker-structured .game-picker-inner { display: grid; grid-template-rows: minmax(0, 1fr) auto; height: 100%; min-height: 0; padding: 0; }
+.game-picker-structured .game-picker-content { display: grid; grid-template-rows: auto minmax(0, 1fr); min-height: 0; min-width: 0; }
+.game-picker-structured .game-picker-toolbar { min-width: 0; padding: 24px 28px 0; border-bottom: 1px solid #3e4044; background: #111315; }
+.game-picker-structured .game-picker-heading { margin: 0 0 18px; align-items: center; }
+.game-picker-structured .game-picker-heading h2 { margin-top: 7px; line-height: 1.3; }
+.game-picker-structured .game-picker-search { min-height: 50px; }
+.game-picker-structured .game-picker-search input[type='search'] { height: 48px; }
+.game-picker-structured .game-picker-toolbar .game-filters { margin: 10px 0 0; gap: 22px; }
+.game-picker-structured .game-picker-toolbar .game-filters button { padding-block: 10px; }
+.game-picker-structured .game-picker-scroll { min-height: 0; min-width: 0; overflow-y: auto; overscroll-behavior: contain; scroll-padding-block: 20px; padding: 24px 28px; scrollbar-width: thin; scrollbar-color: #66605a #111315; }
+.game-picker-structured .game-picker-scroll:focus-visible { outline: 2px solid #e0bb7c; outline-offset: -3px; }
+.game-picker-structured .game-picker-footer { position: static; min-width: 0; margin: 0; padding: 16px 28px; border-top: 1px solid #55504a; background: #15171a; gap: 16px; }
+.game-picker-structured .game-picker-footer p { color: #c4c5c5; overflow-wrap: anywhere; }
+.game-picker-structured .game-picker-footer .button { min-width: 150px; min-height: 48px; }
+.game-picker-structured .game-picker-result { color: #c4c5c5; margin-bottom: 18px; }
+.game-picker-structured .game-picker-empty { padding: 26px 20px; border: 1px solid #3e4044; border-radius: 10px; text-align: center; background: #ffffff02; }
+.game-picker-structured .game-picker-empty p { color: #c4c5c5; font-size: 14px; line-height: 1.6; }
+.game-picker-structured .game-picker-empty-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 18px; }
+.game-picker-structured .game-picker-empty-actions .button { min-height: 44px; padding: 10px 16px; font-size: 13px; }
+.game-picker-structured .game-picker-limit { margin-top: 20px; }
+.game-picker-structured .game-picker-request { margin: 26px 0 0; padding: 18px 20px; border: 1px solid #665945; border-radius: 10px; background: #c79b5d08; }
+.game-picker-structured .missing-game-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; }
+.game-picker-structured .missing-game-heading > div { flex: 1; min-width: 150px; }
+.game-picker-structured .missing-game-heading h3 { margin: 0; font-family: var(--service); color: #eeeae4; font-size: 17px; line-height: 1.45; font-weight: 600; }
+.game-picker-structured .missing-game-toggle { width: auto; flex-shrink: 0; min-height: 44px; padding: 10px 14px; border: 1px solid #8a7557; border-radius: 7px; background: #c79b5d0a; color: #e0c79e; justify-content: center; gap: 10px; font-size: 13px; }
+.game-picker-structured .missing-game-toggle:hover { border-color: #c4aa81; background: #c79b5d18; }
+.game-picker-structured .missing-game-toggle svg { flex-shrink: 0; }
+.game-picker-structured .missing-game-saved { margin-top: 6px; color: #c4c5c5; font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
+.game-picker-structured .missing-game-saved strong { color: #eeeae4; font-weight: 500; }
+.game-picker-structured .missing-game-fields { padding: 18px 0 0; }
+.game-picker-structured .missing-game-fields[hidden] { display: none; }
+.game-picker-dialog.game-picker-structured .missing-game-fields input[type='text'] { font-size: 16px; min-height: 48px; scroll-margin-block: 24px; }
+.game-picker-structured input::placeholder { color: #b7b9bc; opacity: 1; }
+.game-picker-structured .missing-game-fields p { color: #c4c5c5; line-height: 1.6; }
+@media (max-width: 700px) {
+  dialog.game-picker-dialog.game-picker-structured { width: calc(100vw - 24px); }
+  .game-picker-structured .game-picker-toolbar { padding: 18px 16px 0; }
+  .game-picker-structured .game-picker-heading { gap: 12px; margin-bottom: 15px; }
+  .game-picker-structured .game-picker-heading h2 { font-size: 20px; }
+  .game-picker-structured .game-picker-toolbar .game-filters { gap: 20px; }
+  .game-picker-structured .game-picker-scroll { padding: 20px 16px; }
+  .game-picker-structured .game-picker-footer { padding: 13px 16px max(13px, env(safe-area-inset-bottom)); gap: 12px; }
+  .game-picker-structured .game-picker-footer .button { min-width: 112px; padding-inline: 15px; }
+  .game-picker-structured .game-picker-request { padding: 16px; }
+  .game-picker-structured .missing-game-heading { align-items: flex-start; gap: 12px; }
+  .game-picker-structured .missing-game-heading > div { flex-basis: 100%; }
+  .game-picker-structured .missing-game-heading h3 { font-size: 16px; }
+  .game-picker-structured .game-picker-empty { padding: 20px 14px; }
+}
+@media (max-height: 520px) {
+  .game-picker-structured .game-picker-toolbar { padding-top: 12px; }
+  .game-picker-structured .game-picker-heading { margin-bottom: 10px; }
+  .game-picker-structured .game-picker-heading .eyebrow { display: none; }
+  .game-picker-structured .game-picker-heading h2 { margin-top: 0; font-size: 19px; }
+  .game-picker-structured .game-picker-toolbar .game-filters { margin-top: 4px; }
+  .game-picker-structured .game-picker-footer { padding-block: 10px; }
+}
+/* At keyboard/landscape heights, navigation scrolls with the catalog; Done keeps its own row. */
+.game-picker-structured[data-compact-viewport='true'] .game-picker-content { display: block; overflow-y: auto; overscroll-behavior: contain; scroll-padding-block: 12px; scrollbar-width: thin; scrollbar-color: #66605a #111315; }
+.game-picker-structured[data-compact-viewport='true'] .game-picker-scroll { overflow: visible; padding-block: 16px; }
+.game-picker-structured[data-compact-viewport='true'] .game-picker-footer { padding-block: 8px; }
+@media (prefers-reduced-motion: reduce) {
+  .game-picker-structured *, .game-picker-structured *::before, .game-picker-structured *::after { scroll-behavior: auto; }
+}

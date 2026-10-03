@@ -1,3 +1,26 @@
+# JOYRENT 1.9.1 — mobile hero and booking refinement
+
+Source visual truth: the user's latest 1280×1132 chat attachment, viewed by root, and the explicit request to refine the mobile PS5 button size. The attachment has no available local source path or file ID; its display density is unknown. This is a responsive adaptation of the selected composition, not a pixel-perfect raster reproduction. The reference ends after the price; the existing console photograph continues below in the implementation.
+
+Full-view comparison: the original chat reference was reviewed against final native 390×844 and 320px Chromium captures at DPR1. [Before/after board](docs/refinement-1.9.1/hero-before-after.png) compares the actual previous 1.9.0 theme and released 1.9.1 at 390×844/DPR1 with loaded fonts; it does not recreate the user's reference. [Final UA390](docs/refinement-1.9.1/screens/uk-390-hero.png), [RU320](docs/refinement-1.9.1/screens/ru-320-hero.png), and [packaged evidence](docs/refinement-1.9.1/browser-check.json) show the released layout.
+
+Required fidelity surfaces:
+- Fonts/typography: existing Unbounded heading and Manrope body retained. Heading stays exactly two lines in UA/RU; body remains centered with separate sentences. Input text remains 16px; placeholders now have measured contrast above 4.5:1.
+- Spacing/layout: centered eyebrow, heading, description, primary action, tariff link and price. The final CTA is248×54px with15px text and a34px caret container, fitting both320px and390px. Header and desktop composition remain unchanged. The booking games card follows controllers and precedes rental security, with a full-width mobile48px action and removable44px game chips.
+- Colors/tokens: existing near-black, ivory, gray and warm focus palette retained. The primary CTA uses a restrained ivory pill and inset caret, with a small press response. Reduced motion disables movement; no perpetual shimmer was added.
+- Image quality/assets: existing PS5 responsive images, scaling, masks and animation retained. This release changes layout and UI; it does not generate, stretch or replace the photograph or approved controller SVG.
+- Copy/content: current approved hero copy and selection behavior retained. Missing-game requests now have a direct action, focused input and confirmation helper. UA/RU privacy and tariff zone wording reflect the actual form and delivery conditions.
+
+Iterations and resolved findings: the first mobile heading formula8.55vw extended a few pixels outside the internal column;8.3vw restored contained two-line text. The first204×52px button was enlarged to248×54px following the further user request. Independent review found a short-height picker overlap; search/catalog now share a scroll region at heights up to360px while the footer stays separate. No confirmed P1/P2 remains in the checked scope. [Detailed audit and limitations](docs/refinement-1.9.1/README.md).
+
+Primary interactions: game selection/removal, empty-search request, request persistence, modal focus/Escape/return, address mouse/touch/keyboard selection and pointer→blur→pointerup transaction, rental price/payload, anchors and contact-field keyboard flow. Final packaged receipt covers6 UA/RU cases at320/390/1440 plus844×220 and320×280, with all40 source hashes and served asset bytes verified. All30 final screenshots were visually inspected; zero JavaScript errors, HTTP failures or unintended write requests. Six local200 submission fixtures were intercepted before transmission, producing zero real orders or emails. Physical iPhone Safari, iOS keyboard, VoiceOver and hosting mail delivery remain unverified.
+
+Implementation checklist: selected mobile composition, final button size, optional games integration, missing-game action, address selection/placement, readable placeholders and bilingual copy consistency are implemented and verified in the packaged theme. Theme1.9.1 installs with the unchanged plugin1.8.0.
+
+final result: passed
+
+---
+
 # JOYRENT 1.8.1 — выбранная двухцветная иконка
 
 Source visual truth: [selected displayed variant 3](docs/refinement-1.8.1/icons/selected-source.png), 1254×1254px; user reattached that exact image. The target is the icon, not the generated board's typography or overall page composition. Prior user authorization covers a clean SVG adaptation.
