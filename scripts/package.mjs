@@ -3,6 +3,9 @@ import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 const root = process.cwd();
 const { version } = JSON.parse(await readFile(join(root,'package.json'),'utf8'));
+const pluginHeader = await readFile(join(root,'wordpress/joyrent-rentals/joyrent-rentals.php'),'utf8');
+const pluginVersion = pluginHeader.match(/^\s*\*?\s*Version:\s*([\d.]+)/m)?.[1];
+if (!pluginVersion) throw new Error('Rental plugin version is missing.');
 const theme = join(root, 'wordpress/joyrent');
 const release = join(root, 'releases');
 const stage = join(root, 'work/package');
@@ -23,7 +26,7 @@ await mkdir(stage, { recursive: true });
 await cp(theme, join(stage, 'joyrent'), { recursive: true, filter: path => !path.endsWith('.png') || path.endsWith('/screenshot.png') });
 await cp(join(root, 'wordpress/joyrent-rentals'), join(stage, 'joyrent-rentals'), { recursive: true });
 for (const name of ['joyrent','joyrent-rentals']) {
-  const file = join(release, `${name}-${version}.zip`);
+  const file = join(release, `${name}-${name==='joyrent-rentals'?pluginVersion:version}.zip`);
   await rm(file, { force: true });
   execFileSync('zip', ['-qr',file,name], { cwd: stage });
 }

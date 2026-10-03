@@ -5,7 +5,7 @@ from datetime import datetime,timedelta
 from zoneinfo import ZoneInfo
 import json
 BASE='http://localhost:8080'
-OUT=Path('docs/images');OUT.mkdir(parents=True,exist_ok=True)
+OUT=Path('work/hero-1.4-functional');OUT.mkdir(parents=True,exist_ok=True)
 with sync_playwright() as p:
  browser=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
  page=browser.new_page(viewport={'width':1440,'height':1000},reduced_motion='reduce',locale='uk-UA')

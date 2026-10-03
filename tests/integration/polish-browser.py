@@ -2,7 +2,7 @@
 from pathlib import Path
 from playwright.sync_api import sync_playwright,expect
 import json
-OUT=Path('docs/refinement-1.3');OUT.mkdir(exist_ok=True)
+OUT=Path('work/hero-1.4-regression');OUT.mkdir(parents=True,exist_ok=True)
 BASE='http://localhost:8080'
 with sync_playwright() as p:
  b=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
@@ -54,11 +54,12 @@ with sync_playwright() as p:
   page.close()
  page=b.new_page(viewport={'width':1440,'height':1000},reduced_motion='no-preference')
  page.goto(BASE);page.wait_for_selector('h1');page.evaluate('document.fonts.ready')
- # Sample actual running animations. Each wait is less than 3 seconds.
- hero=[]
- for _ in range(3):
-  hero.append(float(page.locator('.hero-light-pass').evaluate('(e)=>getComputedStyle(e).opacity')));page.wait_for_timeout(1800)
- assert max(hero)-min(hero)>0.025,hero
+ # Hero product stays grounded; only its short text entrance animates.
+ expect(page.locator('.hero-visual img')).to_have_count(1)
+ expect(page.locator('.hero-light-pass')).to_have_count(0)
+ expect(page.locator('.hero-photo')).to_have_css('transform','none')
+ page.wait_for_timeout(1200)
+ assert page.locator('.hero-letter').evaluate_all('(letters)=>letters.every(e=>getComputedStyle(e).opacity==="1"&&["none","blur(0px)"].includes(getComputedStyle(e).filter))')
  page.locator('#kit').scroll_into_view_if_needed()
  widths=[];transforms=[]
  for _ in range(3):
@@ -66,9 +67,10 @@ with sync_playwright() as p:
   transforms.append(page.locator('.controller-float').evaluate('(e)=>getComputedStyle(e).transform'));page.wait_for_timeout(1500)
  assert len(set(widths))==1 and len(set(transforms))>1,(widths,transforms)
  page.emulate_media(reduced_motion='reduce');page.wait_for_timeout(300)
- expect(page.locator('.hero-light-pass')).to_have_css('opacity','0.07')
+ expect(page.locator('.hero-letter').first).to_have_css('animation-name','none')
+ expect(page.locator('.hero-photo')).to_have_css('transform','none')
  expect(page.locator('.controller-float')).to_have_css('transform','none')
  expect(page.locator('.controller-light-pass')).to_have_css('opacity','0.05')
- print('PASS: animated hero light, fixed-width smooth controller, static reduced motion',hero)
+ print('PASS: static hero product, complete text entrance, fixed-width smooth controller, reduced motion')
  assert not errors,errors
  page.close();b.close()

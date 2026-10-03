@@ -30,9 +30,9 @@ add_action('wp_enqueue_scripts', function (): void {
     $entry = $manifest['src/main.tsx'] ?? null;
     if (!$entry) return;
     $base = get_template_directory_uri() . '/assets/dist/';
-    foreach ($entry['css'] ?? [] as $index => $css) wp_enqueue_style('joyrent-' . $index, $base . $css, [], '1.3.0');
+    foreach ($entry['css'] ?? [] as $index => $css) wp_enqueue_style('joyrent-' . $index, $base . $css, [], '1.4.0');
     if (!is_front_page()) return;
-    wp_enqueue_script('joyrent-app', $base . $entry['file'], [], '1.3.0', true);
+    wp_enqueue_script('joyrent-app', $base . $entry['file'], [], '1.4.0', true);
     $config = ['apiBase'=>rest_url('joyrent/v1'),'assetBase'=>get_template_directory_uri().'/assets','nonce'=>is_user_logged_in() ? wp_create_nonce('wp_rest') : '', 'privacyUrl'=>get_privacy_policy_url(), 'termsUrl'=>home_url('/umovy-orendy/'), 'privacyRuUrl'=>home_url('/konfidentsialnost/'), 'termsRuUrl'=>home_url('/usloviya-arendy/'), 'faqUrl'=>joyrent_faq_url('uk'), 'faqRuUrl'=>joyrent_faq_url('ru')];
     wp_add_inline_script('joyrent-app', 'window.JOYRENT = ' . wp_json_encode($config, JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT) . ';', 'before');
 });
@@ -47,6 +47,23 @@ add_action('wp_head', function (): void {
     if (is_page(['faq','faq-ru'])) echo '<link rel="alternate" hreflang="uk" href="'.esc_url(joyrent_faq_url('uk')).'"><link rel="alternate" hreflang="ru" href="'.esc_url(joyrent_faq_url('ru')).'">';
     if (is_front_page()) {
         echo '<link rel="alternate" hreflang="uk" href="'.esc_url(home_url('/')).'"><link rel="alternate" hreflang="ru" href="'.esc_url(add_query_arg('lang','ru',home_url('/'))).'"><link rel="alternate" hreflang="x-default" href="'.esc_url(home_url('/')).'">';
+        // Match the React picture exactly: preload only the active viewport's image.
+        $media_path=get_template_directory().'/assets/images/hero-media.json';
+        $media=is_readable($media_path)?json_decode((string)file_get_contents($media_path),true):null;
+        $image_base=get_template_directory_uri().'/assets/images/';
+        foreach (['desktop','mobile'] as $mode) {
+            if (empty($media[$mode]['sources'])) continue;
+            $image=$media[$mode];
+            $sources=array_map(fn(array $source): string => $image_base.$source['file'].' '.$source['width'].'w',$image['sources']);
+            echo '<link rel="preload" as="image" href="'.esc_url($image_base.$image['fallback']).'" imagesrcset="'.esc_attr(implode(', ',$sources)).'" imagesizes="'.esc_attr($image['sizes']).'" media="'.esc_attr($media[$mode.'Media']).'" fetchpriority="high">';
+        }
+        // Latin + Cyrillic are both used in the headline; early fonts prevent reflow.
+        $manifest_path=get_template_directory().'/assets/dist/.vite/manifest.json';
+        $manifest=is_readable($manifest_path)?json_decode((string)file_get_contents($manifest_path),true):[];
+        foreach (['latin','cyrillic'] as $script) {
+            $key='node_modules/@fontsource-variable/unbounded/files/unbounded-'.$script.'-wght-normal.woff2';
+            if (!empty($manifest[$key]['file'])) echo '<link rel="preload" as="font" type="font/woff2" crossorigin href="'.esc_url(get_template_directory_uri().'/assets/dist/'.$manifest[$key]['file']).'">';
+        }
     }
     echo '<link rel="icon" type="image/webp" href="'.esc_url(get_template_directory_uri().'/assets/images/favicon.webp').'">';
 });
