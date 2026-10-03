@@ -30,9 +30,9 @@ add_action('wp_enqueue_scripts', function (): void {
     $entry = $manifest['src/main.tsx'] ?? null;
     if (!$entry) return;
     $base = get_template_directory_uri() . '/assets/dist/';
-    foreach ($entry['css'] ?? [] as $index => $css) wp_enqueue_style('joyrent-' . $index, $base . $css, [], '1.4.0');
+    foreach ($entry['css'] ?? [] as $index => $css) wp_enqueue_style('joyrent-' . $index, $base . $css, [], '1.4.1');
     if (!is_front_page()) return;
-    wp_enqueue_script('joyrent-app', $base . $entry['file'], [], '1.4.0', true);
+    wp_enqueue_script('joyrent-app', $base . $entry['file'], [], '1.4.1', true);
     $config = ['apiBase'=>rest_url('joyrent/v1'),'assetBase'=>get_template_directory_uri().'/assets','nonce'=>is_user_logged_in() ? wp_create_nonce('wp_rest') : '', 'privacyUrl'=>get_privacy_policy_url(), 'termsUrl'=>home_url('/umovy-orendy/'), 'privacyRuUrl'=>home_url('/konfidentsialnost/'), 'termsRuUrl'=>home_url('/usloviya-arendy/'), 'faqUrl'=>joyrent_faq_url('uk'), 'faqRuUrl'=>joyrent_faq_url('ru')];
     wp_add_inline_script('joyrent-app', 'window.JOYRENT = ' . wp_json_encode($config, JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT) . ';', 'before');
 });

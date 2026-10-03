@@ -1,53 +1,43 @@
-# JOYRENT 1.4 — design QA
+# JOYRENT1.4.1 — design QA
 
-Source visual truth: user's latest live-site screenshot, matched anonymous 1.3 captures `docs/refinement-1.4/before-hero-1440.png` and `before-hero-390.png`, and approved black/white/amber studio direction. Scope intentionally changes the dominant full-hero photograph into a separate right column. Final generated targets: `wordpress/joyrent/assets/images/ps5-commercial-desktop.png` and `ps5-commercial-mobile.png`, both native1448×1086. Their full products, matte floor and warm light are the asset fidelity targets.
-
-Implementation: actual local WordPress at localhost:8080 in Chromium, UA/RU, anonymous. Source assets and rendered pages were opened; combined comparisons and focused text/scene views were inspected before this report. This is a scoped refinement, not a pixel clone of the superseded layout.
+Source visual truth: user's latest1.4 screenshot and the approved change to increase PS5/DualSense prominence, shift the desktop scene toward copy and apply a smaller mobile increase. Matched source captures: `docs/refinement-1.4.1/before-hero-1440.png` / `before-hero-390.png`. Selected generated desktop target: `wordpress/joyrent/assets/images/ps5-commercial-desktop-close.png`, native1448×1086; mobile target remains the original native studio photograph. Actual implementation captured from anonymous local WordPress in Chromium, UA/RU, reduced motion and DPR2.
 
 ## Findings and comparison history
 
-1. P1, original: `.hero-scene` stretched across the useful hero width, allowing the console to dominate and approach the headline. Evidence: matched before1440 and new desktop full-view comparison. Fix: figure inside the grid, roughly52/48 columns, explicit gap, complete4:3 composition in the right column. The post-fix1440/1366/1920 renders show visible separation, a grounded full PS5 and proportional single controller.
-2. P2, asset iteration: first desktop generation made the controller too large and placed the group too far right. It was regenerated with physical proportions, retained as a native master, then compared with the final scene detail. The old wet-looking floor is now matte, with short subtle reflection and contact shadows.
-3. P2, integration iteration1: near-black source against page `#08090b` exposed a rectangular panel. Evidence: `iteration-1-hero-1440-uk.png` and `iteration-1-hero-390-uk.png`. Fix: luminance blending plus edge-only masks. Post-fix combined comparisons and `scene-detail.png` show no hard rectangular edge; top, base and controller remain complete.
-4. P2, cold-font test: at320UA and360RU, body-font fallback changed description from three lines to two and moved actions24px. Diagnostic before/after font measurements established the cause. Fix: reserve three description lines only at≤375px; existing stable headline reservation retained. Independent delayed-Manrope checks show0px action and figure movement at320UA/360RU, with390RU control. Final phone captures confirm the extra space remains compact.
-5. P2, independent review: `(max-width:900px)` / `(min-width:901px)` left a fractional gap in preload and final tablet styling. Fix: complementary mobile≤900/desktop>900 conditions and `(900px < width <=1200px)` override. Canonical PHP/React media selection stays aligned; normal900/901 cases and browser/source review pass.
+- P2, original: the product group had too little visual weight and too much empty space around it. Fix: one native ImageGen closer-frame edit for desktop plus110% picture geometry/left−10%; mobile uses the unchanged photograph at112%/left−6%. The new desktop console is approximately25–27% larger. Native framing has slight perspective/proportion differences; this is not claimed as an exact uniform transform of the original raster. Controller remains visually natural.
+- P2, iteration1: a97% bottom fade left the illuminated floor ending too abruptly. Evidence: `iteration-1-floor-1440.png` / `iteration-1-floor-390.png`. Fix: desktop fade starts92%, mobile90%; the full console/stand silhouette stays before the fade. Post-fix full-view comparisons and `scene-detail.png` show a soft floor transition.
+- No actionable P0/P1/P2 remains. Independent review confirms full products, clean blending, no overlap, unchanged content/hero geometry and sufficient native DPR2 density.
 
-No actionable P0/P1/P2 remains.
+## Comparison evidence and normalization
 
-## Normalization and visual evidence
-
-- Desktop full-view: `comparison-hero-desktop.jpg`. Both source/implementation1440×1000 image pixels, CSS viewport1440×1000, DPR1, same top/UA/reduced-motion state. Each identically downsampled to1100×764, placed adjacent in one2200×764 comparison input.
-- Mobile full-view: `comparison-hero-mobile.jpg`. Both390×844 image pixels/CSS size, DPR1, same state, no resizing; combined780×844. Final scene fits inside the first section, rather than extending beyond the viewport. Current390 hero height~688px vs~804px before, excluding unchanged header.
-- Asset direction: `comparison-studio-assets.jpg`. Old1672×941 and new1448×1086 source images proportionally contained in equal900×675 panels. Aspect ratio change is intentional; neither source is stretched. Matte floor, contact shadows, physical scale and warm light inspected together. Separate mobile master inspected against its rendered scene.
-- Focused typography: `headline-detail.png`, native690×190 crop from1440 final. Family, accents, punctuation, spacing and whole-word boundaries remain legible. No merged letters or clipping.
-- Focused image/blending: `scene-detail.png`, native610×490 crop from1440 final. Console, stand and controller complete; edge blending, rim light and restrained reflection checked at larger scale.
-- Retina: `hero-1440-retina.png`2880×2000 pixels and `hero-390-retina.png`780×1688 at DPR2, CSS sizes unchanged. Used for sharpness inspection; not treated as density-matched baseline comparisons.
-- Other final renders:320/360/375/414/430/768/900/901/1366/1600/1920/3355, plus1440RU/390RU.46 measured scenarios are recorded in `hero-viewport-results.json`.
+- `comparison-hero-desktop.jpg`: source/final1440×1000 pixels and CSS viewport, DPR1, UA/top/reduced motion; both identically normalized to1100×764 and placed in one2200×764 input.
+- `comparison-hero-mobile.jpg`: source/final390×844 pixels and CSS viewport, DPR1, same state; unscaled combined780×844 input.
+- Both combined comparisons were opened and inspected. Source/current desktop native masters were also inspected. Focused `scene-detail.png`, an unscaled460×560 final crop, checks console top, base, controller anatomy, shadow and edge blending.
+- Typography/control positions remain identical to the baseline and are legible in full comparisons; the user's change does not alter their font or copy. No additional typography-only crop was needed for this scoped size adjustment.
+- `hero-1440-retina.png`2880×2000 and `hero-390-retina.png`780×1688 at DPR2 used for image quality checks, not treated as DPR1 baseline comparisons.
+- Final captures cover320/360/375/390/414/430/768/900/901/1366/1440/1600/1920/3355, with UA/RU examples.41 initial geometry/loading scenarios plus18 independent final UA/RU DPR2 cases; final opacity-only fade does not change the measured geometry. Fresh final captures followed the fade fix.
 
 ## Required fidelity surfaces
 
-- **Fonts/typography:** existing self-hosted Unbounded550, display tracking−.035em/1.19line-height on desktop and−.03em/1.2 on mobile. Two desktop lines, three on small phones. One semantic H1 contains the complete accessible UA/RU phrase; decorative animated letters are hidden from assistive technology. Fonts preloaded without adding a font dependency. The native CSS entrance completes to opacity1/zero blur; reduced motion disables it.
-- **Spacing/layout rhythm:** figure is a grid sibling, not section background. Desktop useful width bounded1536px; content and image have visible gap. Mobile puts actions/price before a centered visual bounded440px. Explicit intrinsic4:3 size and text reservation limit reflow. No overflow across320–3355px, breakpoint edges or short landscape. CTA/link/menu preserved.
-- **Colors/tokens:** original near-black, off-white and JOYRENT amber. Warm light is photographic, quietly concentrated behind PS5 without neon/ring. Masks only fade edges; they do not draw product art. Existing button hover/focus feedback preserved.
-- **Image quality:** two native opaque ImageGen masters, four high-quality WebP sizes, complete products and physical shadows. No placeholder shapes or synthetic SVG/div product. Native1448px desktop covers maximum~638px at DPR2; larger density remains limited by generator resolution. No upscaling misrepresented as native2K. Mobile art is independently composed, not a desktop crop.
-- **Copy/content:** original UA/RU headline, rental description, links, price and primary action retained. No new counters, claims or store terms. Non-hero content and all backend source files unchanged.
+- **Fonts/typography:** existing Unbounded550, tracking/line-height/wrapping unchanged. H1 remains accessible in UA/RU; decorative letter spans hidden from assistive technology. Content positions match1.4; reduced motion displays all letters immediately.
+- **Spacing/layout:** fixed4:3 figure reserves original geometry while the picture becomes larger within it. Desktop hero stays680px at1440/1920; mobile390 stays~688px. Whole product bounds remain inside hero, with positive gap from heading or actions, no horizontal overflow. Text, CTA, price and section boundary match baseline.
+- **Colors/tokens:** original near-black/off-white/amber tokens preserved; light remains part of the matte photograph. Slightly larger amber area follows the product; bottom fade and luminance blend remove the image rectangle.
+- **Images:** complete PS5/stand/one DualSense, real generated product imagery without CSS art substitutes. New desktop master native1448×1086, full and768px WebP; mobile1120/560 retained. Maximum desktop canvas~701CSSpx and mobile~493CSSpx are covered at DPR2 without upscaling PNG. Independent minimum source densities2.065desktop/2.273mobile. Generated close framing changes the controller ratio slightly, but visual anatomy/proportions are natural, not an oversized device.
+- **Copy/content:** original title, description, price, primary action, link and all other sections retained. No changes to rental logic/backend/settings or new marketing claims.
 
-## Interaction and technical verification
+## Verification
 
-Fresh TypeScript/Vite build and16/16 unit tests pass. `browser.py` verifies actual local WooCommerce request, console/date safety, game filter/carousel/dialog/focus, consent, immutable confirmation and mobile menu; no JS or failed HTTP assets. `polish-browser.py` verifies bilingual form/selection/consent, localized failure/retry with stable requestId, all12 artworks, final native text state, static product and unchanged smooth controller/reduced motion.
+`npm test`16/16; TypeScript/Vite build and changed-PHP lint pass.41 responsive/loading cases check full product bounds, no copy overlap/overflow, one applicable image from preload, correct sources and DPR2 coverage; maximum normal local CLS~0.00032. Independent final18 UA/RU cases at360–3355 verify unchanged hero/content rectangles, final masks, full products and zero page errors. CTA switches PS4→PS5 and navigates#rates; reduced motion works. Native image dimension/ZIP/dependency metadata checks pass. Plugin1.3 source and archived content unchanged.
 
-Responsive matrix:38 UA/RU cases, three DPR2 and five artificially delayed-font cases. Every normal case loads one applicable hero image, initiated by the matching head preload. FAQ has no hero preload. Normal local CLS≤0.00032; representative390/1440 LCP~0.33–0.39s. Delayed-all-font global CLS~0.005–0.011 includes unchanged logo/tariff elements, while hero actions remain fixed. These are local unthrottled measures; production Core Web Vitals were not claimed.
-
-All16 PHP files lint. Theme/preview1.4 ZIP integrity and asset contents pass; native PNG masters excluded. Plugin1.3 source and archive contents remain unchanged. Existing dependency metadata unchanged. Independent read-only review rechecked fixes and primary CTA semantics; no P0/P1/P2 remaining.
+Evidence: `docs/refinement-1.4.1/hero-viewport-results.json`, `independent-summary.json`, `independent-cta-results.json`. Production hosting/network metrics were not claimed; the live host was not modified.
 
 ## Implementation checklist
 
-- Source screenshot and new desktop/mobile generated targets inspected.
-- Final full-view comparisons and focused typography/scene regions opened.
-- Earlier P1/P2 findings, fixes and post-fix evidence recorded.
-- Responsive, UA/RU, DPR2, reduced motion, delayed fonts and primary interactions verified in actual WordPress.
-- Releases prepared for theme-only1.3→1.4 update; current local WordPress remains running.
+- Source/final imagery and paired full-view comparisons inspected.
+- Focused product/floor detail checked after fade correction.
+- Responsive, UA/RU, DPR2, preload, CTA and reduced motion verified.
+- New theme/preview1.4.1 ZIP prepared; existing plugin1.3 retained.
 
-Follow-up polish: no blocking polish item. Actual hosting/network CWV and density beyond supported native assets are the remaining environment limits. Host was not modified.
+Follow-up polish: none required for this scope. Native density beyond tested2× remains bounded by supplied assets.
 
 final result: passed

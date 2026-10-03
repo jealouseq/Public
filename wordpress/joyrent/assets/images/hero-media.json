@@ -4,21 +4,33 @@
   "desktop": {
     "width": 1448,
     "height": 1086,
-    "fallback": "ps5-commercial-desktop-768.webp",
-    "sizes": "(min-width: 1536px) 638px, 43vw",
+    "fallback": "ps5-commercial-desktop-close-768.webp",
+    "sizes": "(min-width: 1536px) 702px, 47.3vw",
     "sources": [
-      { "file": "ps5-commercial-desktop-768.webp", "width": 768 },
-      { "file": "ps5-commercial-desktop.webp", "width": 1448 }
+      {
+        "file": "ps5-commercial-desktop-close-768.webp",
+        "width": 768
+      },
+      {
+        "file": "ps5-commercial-desktop-close.webp",
+        "width": 1448
+      }
     ]
   },
   "mobile": {
     "width": 1120,
     "height": 840,
     "fallback": "ps5-commercial-mobile-560.webp",
-    "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+    "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)",
     "sources": [
-      { "file": "ps5-commercial-mobile-560.webp", "width": 560 },
-      { "file": "ps5-commercial-mobile.webp", "width": 1120 }
+      {
+        "file": "ps5-commercial-mobile-560.webp",
+        "width": 560
+      },
+      {
+        "file": "ps5-commercial-mobile.webp",
+        "width": 1120
+      }
     ]
   }
 }

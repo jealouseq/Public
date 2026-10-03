@@ -684,8 +684,8 @@ dialog { position: fixed; inset: 0; margin: auto; max-width: calc(100vw - 32px);
 .hero-letter { display: inline-block; animation: joyrent-hero-letter-in .5s cubic-bezier(.22, 1, .36, 1) both; animation-delay: var(--letter-delay, 0s); }
 .hero-word-space { white-space: normal; }
 .hero-description { max-width: 435px; }
-.hero-visual { position: relative; min-width: 0; width: 100%; margin: 0; mix-blend-mode: lighten; }
-.hero-visual picture { display: block; width: 100%; aspect-ratio: 4 / 3; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 96%, transparent), linear-gradient(180deg, transparent, #000 4%, #000 90%, transparent); mask-composite: intersect; }
+.hero-visual { --hero-floor-fade: 92%; position: relative; min-width: 0; width: 100%; aspect-ratio: 4 / 3; margin: 0; mix-blend-mode: lighten; }
+.hero-visual picture { display: block; position: absolute; top: 50%; left: -10%; width: 110%; aspect-ratio: 4 / 3; transform: translateY(-50%); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 96%, transparent), linear-gradient(180deg, transparent, #000 2%, #000 var(--hero-floor-fade), transparent); mask-composite: intersect; }
 .hero-visual .hero-photo { display: block; position: static; inset: auto; width: 100%; height: auto; max-width: 100%; object-fit: contain; object-position: center; transform: none; filter: none; }
 @keyframes joyrent-hero-letter-in {
   from { opacity: 0; transform: translateY(8px); filter: blur(4px); }
@@ -706,7 +706,8 @@ dialog { position: fixed; inset: 0; margin: auto; max-width: calc(100vw - 32px);
   .hero-description { font-size: 13px; max-width: 390px; margin-top: 22px; }
   .hero-actions { flex-direction: row; align-items: center; gap: 20px; margin-top: 24px; }
   .hero-price { margin-top: 25px; }
-  .hero-visual { width: min(100%, 440px); margin: 0 auto; }
+  .hero-visual { --hero-floor-fade: 90%; width: min(100%, 440px); margin: 0 auto; }
+  .hero-visual picture { left: -6%; width: 112%; }
 }
 @media (max-width: 480px) {
   .hero h1 { min-height: 3.6em; }
