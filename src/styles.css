@@ -72,8 +72,6 @@ h2 { font-family: var(--display); font-size: clamp(30px, 4.4vw, 56px); font-weig
 .tariff-price strong { font-family: var(--display); font-size: clamp(36px, 4.4vw, 55px); line-height: 1.2; font-weight: 500; letter-spacing: -.075em; }
 .tariff-price span { color: var(--muted); font-size: 13px; }
 .tariff-link { margin-top: 23px; }
-.tariff-note { display: flex; align-items: center; gap: 12px; margin-top: 27px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); line-height: 1.7; }
-.tariff-note > a { margin-left: auto; display: inline-flex; align-items: center; gap: 9px; white-space: nowrap; color: #d3d3d4; }
 .games-section { padding-top: 50px; padding-bottom: 80px; }
 .games-section .section-heading { margin-bottom: 26px; }
 .carousel-controls { display: flex; align-items: center; gap: 12px; }
@@ -169,10 +167,6 @@ input[type=checkbox], input[type=radio] { accent-color: #ddbd94; width: 17px; he
 .faq-list summary svg { flex-shrink: 0; transition: transform .25s; color: #aaa; }
 .faq-list details[open] summary svg { transform: rotate(45deg); }
 .faq-list details > p { font-size: 13px; line-height: 1.9; color: var(--muted); padding-bottom: 24px; max-width: 620px; }
-.final-cta { border-top: 1px solid var(--line); padding-block: 110px; }
-.final-cta .shell { display: flex; align-items: end; justify-content: space-between; gap: 40px; }
-.final-cta h2 { font-size: clamp(65px, 9vw, 130px); line-height: 1.12; letter-spacing: -.07em; margin-top: 24px; }
-.final-cta .button { margin-top: 38px; padding: 18px 29px; min-height: 60px; }
 .site-footer { border-top: 1px solid var(--line); padding-block: 43px 25px; }
 .footer-top { display: flex; align-items: center; justify-content: space-between; gap: 35px; }
 .footer-top > p { color: var(--muted); font-size: 13px; }
@@ -293,10 +287,6 @@ dialog::backdrop { background: #000b; backdrop-filter: blur(6px); }
   .tariff-price strong { font-size: clamp(26px, 7.6vw, 35px); }
   .tariff-price span { font-size: 10px; }
   .tariff-link { font-size: 12px; margin-top: 18px; }
-  .tariff-note { align-items: start; flex-wrap: wrap; margin-top: 30px; padding-top: 21px; gap: 10px; font-size: 10px; }
-  .tariff-note > svg { margin-top: 1px; width: 16px; flex-shrink: 0; }
-  .tariff-note > span { flex: 1; }
-  .tariff-note > a { margin-left: 26px; }
   .games-section { padding-block: 46px 48px; }
   .games-section h2 { font-size: 26px; }
   .games-section .section-heading { align-items: end; gap: 12px; margin-bottom: 25px; }
@@ -343,10 +333,6 @@ dialog::backdrop { background: #000b; backdrop-filter: blur(6px); }
   .faq-layout > div > p:last-child { font-size: 13px; }
   .faq-list summary { font-size: 13px; padding-block: 20px; gap: 20px; }
   .faq-list details > p { font-size: 12px; }
-  .final-cta { padding-block: 65px; }
-  .final-cta .shell { display: block; }
-  .final-cta h2 { font-size: 59px; }
-  .final-cta .button { margin-top: 30px; min-height: 54px; font-size: 13px; padding: 15px 23px; }
   .site-footer { padding-block: 35px 101px; }
   .footer-top { flex-direction: column; align-items: start; gap: 20px; }
   .footer-top > p { font-size: 11px; }
@@ -428,12 +414,6 @@ dialog::backdrop { background: #000b; backdrop-filter: blur(6px); }
 .delivery-strip h3 { font-size: 15px; font-weight: 600; line-height: 1.6; }
 .delivery-strip p { color: var(--muted); font-size: 12px; line-height: 1.85; margin-top: 10px; }
 .delivery-strip > a { align-self: start; font-size: 13px; margin-top: 4px; }
-.final-cta { padding-block: 20px 75px; border-top: 0; }
-.final-cta .shell { display: block; }
-.cta-panel { display: flex; justify-content: space-between; align-items: center; gap: 40px; padding: 43px 48px; border: 1px solid #64503a; background: #181511; border-radius: 12px; }
-.final-cta h2 { font-size: clamp(25px, 3vw, 38px); max-width: 730px; line-height: 1.4; }
-.cta-panel p { color: #c2b6a5; margin-top: 13px; font-size: 14px; line-height: 1.7; }
-.final-cta .button { margin: 0; flex-shrink: 0; }
 .faq-section { border-top: 0; padding-block: 85px 70px; }
 @media (min-width: 981px) { .desktop-nav { margin-left: auto; margin-right: 38px; } }
 @media (max-width: 980px) {
@@ -444,8 +424,6 @@ dialog::backdrop { background: #000b; backdrop-filter: blur(6px); }
   .process-item h3 { font-size: 16px; }
   .delivery-strip { grid-template-columns: 1fr 1fr; gap: 30px; }
   .delivery-strip > a { grid-column: 1 / -1; width: fit-content; }
-  .cta-panel { padding: 34px; }
-  .final-cta h2 { font-size: 29px; }
 }
 @media (max-width: 700px) {
   .header-actions { gap: 12px; }
@@ -480,11 +458,6 @@ dialog::backdrop { background: #000b; backdrop-filter: blur(6px); }
   .delivery-strip h3 { font-size: 14px; }
   .delivery-strip p { font-size: 11px; }
   .faq-section { padding-block: 55px 45px; }
-  .final-cta { padding-block: 0 50px; }
-  .cta-panel { flex-direction: column; align-items: start; padding: 29px 25px; gap: 25px; }
-  .final-cta h2 { font-size: 26px; }
-  .cta-panel p { font-size: 12px; }
-  .final-cta .button { min-height: 47px; font-size: 12px; }
   .dialog-cover { height: 260px; }
 }
 @media (max-width: 375px) { .hero { height: auto; } .hero h1 { font-size: 31px; } .hero-scene { height: 295px; } }
@@ -681,7 +654,7 @@ dialog { position: fixed; inset: 0; margin: auto; max-width: calc(100vw - 32px);
 .hero h1 { font-family: var(--display); font-size: clamp(36px, 4.15vw, 62px); font-weight: 550; letter-spacing: -.035em; line-height: 1.19; min-height: 2.38em; }
 .hero-line { display: block; overflow: visible; padding: 0; margin: 0; }
 .hero-line > .hero-word-group { display: inline; white-space: nowrap; }
-.hero-letter { display: inline-block; animation: joyrent-hero-letter-in .5s cubic-bezier(.22, 1, .36, 1) both; animation-delay: var(--letter-delay, 0s); }
+.hero-letter { display: inline-block; }
 .hero-word-space { white-space: normal; }
 .hero-description { max-width: 435px; }
 .hero-visual { --hero-floor-fade: 92%; position: relative; min-width: 0; width: 100%; aspect-ratio: 4 / 3; margin: 0; mix-blend-mode: lighten; }
@@ -739,8 +712,6 @@ dialog { position: fixed; inset: 0; margin: auto; max-width: calc(100vw - 32px);
   .tariff-price strong { font-size: clamp(28px, 8vw, 40px); }
   .tariff-link { min-height: 44px; min-width: 104px; justify-content: center; margin-top: 16px; padding-block: 9px; }
   .tariff-grid-3 .tariff:last-child { width: 50%; justify-self: center; border-left: 0; }
-  .tariff-note { display: grid; grid-template-columns: 19px minmax(0, 1fr); column-gap: 12px; row-gap: 14px; font-size: 11px; }
-  .tariff-note > a { grid-column: 2; margin-left: 0; justify-self: start; min-height: 44px; }
   .booking-section .section-heading { margin-bottom: 34px; gap: 18px; }
   .booking-fields .row-top { padding-bottom: 26px; }
   .term-field { margin-top: 28px; }
@@ -762,4 +733,72 @@ dialog { position: fixed; inset: 0; margin: auto; max-width: calc(100vw - 32px);
   .term-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .controller-row { flex-wrap: wrap; }
   .controller-options { margin-left: auto; }
+}
+
+/* JOYRENT 1.5: clear rental choices and restrained interaction feedback. */
+.hero-line > .hero-word { display: inline; white-space: nowrap; }
+.hero-word-group { display: inline-block; white-space: nowrap; animation: joyrent-hero-word-in .78s cubic-bezier(.22, 1, .36, 1) both; animation-delay: var(--word-delay, 0s); }
+@keyframes joyrent-hero-word-in {
+  from { opacity: 0; transform: translateY(12px); filter: blur(5px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+.tariff-link { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 190px; min-height: 48px; min-width: 0; gap: 10px; margin-top: 26px; padding: 12px 16px; border: 1px solid #494a4c; border-radius: 8px; font-size: 14px; font-weight: 500; transition: background .2s, border-color .2s, color .2s; }
+.tariff-link svg { flex-shrink: 0; transition: transform .2s; }
+.tariff-direction { display: grid; place-items: center; width: 27px; height: 27px; flex-shrink: 0; border-radius: 50%; background: #ffffff0a; transition: background .2s; }
+.tariff-benefit { display: flex; align-items: center; gap: 7px; min-height: 25px; margin-top: 12px; color: #cfb891; font-size: 11px; line-height: 1.5; }
+.tariff-benefit svg { flex-shrink: 0; }
+.tariff-conditions { display: flex; justify-content: flex-end; margin-top: 24px; }
+.tariff-conditions .text-link { color: var(--muted); font-size: 12px; min-height: 44px; align-items: center; }
+.delivery-panel { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); align-items: center; gap: clamp(28px, 4vw, 64px); margin-top: 32px; padding: clamp(28px, 3vw, 44px); background: #151515; border: 1px solid #34302a; border-radius: 14px; }
+.delivery-label { display: flex; align-items: center; gap: 9px; color: #c5b69f; font-size: 10px; letter-spacing: .09em; line-height: 1.6; }
+.delivery-label svg { flex-shrink: 0; }
+.delivery-copy h3 { font-family: var(--display); font-weight: 500; font-size: clamp(22px, 2.1vw, 30px); letter-spacing: -.035em; line-height: 1.35; margin-top: 18px; }
+.delivery-details { margin-top: 18px; max-width: 450px; }
+.delivery-details p { color: #aaa9a7; font-size: 13px; line-height: 1.9; }
+.delivery-details p + p { margin-top: 12px; }
+.delivery-service { display: flex; align-items: flex-start; gap: 18px; border-left: 1px solid #3d3830; padding-left: clamp(24px, 3vw, 44px); }
+.delivery-service > svg { flex-shrink: 0; color: #c5a269; margin-top: 3px; }
+.delivery-service h4 { font-size: 16px; line-height: 1.5; font-weight: 550; }
+.delivery-included { color: #d5ba92; font-size: 14px; line-height: 1.7; margin-top: 8px; }
+.delivery-service-note { color: #aaa9a7; font-size: 12px; line-height: 1.9; max-width: 280px; margin-top: 12px; }
+.game-track { padding-top: 8px; margin-top: -8px; }
+.game-card { transition: transform .35s cubic-bezier(.22, 1, .36, 1); }
+.game-art { transition: box-shadow .3s; }
+.game-open-icon { transition: background .25s, color .25s, border-color .25s; }
+@media (hover: hover) and (pointer: fine) {
+  .tariff-link:hover { background: #1b1b1c; border-color: #c5a269; }
+  .tariff-link:hover svg { transform: translateX(3px); }
+  .tariff-link:hover .tariff-direction { background: #c5a26920; }
+  .game-card:hover { transform: translateY(-5px); }
+  .game-card:hover .game-art { box-shadow: 0 0 0 1px #b09b7b, 0 9px 22px #0004; }
+  .game-card:hover .game-open-icon { color: #101112; background: #f3f3ef; border-color: #f3f3ef; }
+}
+.game-card:focus-within .game-art { box-shadow: 0 0 0 1px #c5a269; }
+@media (max-width: 980px) {
+  .delivery-panel { gap: 28px; }
+  .delivery-service { padding-left: 24px; gap: 12px; }
+  .delivery-service > svg { width: 26px; }
+}
+@media (max-width: 700px) {
+  .tariff-link { margin-top: 20px; margin-inline: auto; max-width: 170px; padding: 11px 12px; font-size: 13px; }
+  .tariff-benefit { justify-content: center; font-size: 10px; gap: 5px; margin-top: 12px; }
+  .tariff-benefit svg { width: 14px; }
+  .tariff-conditions { justify-content: center; margin-top: 22px; }
+  .delivery-panel { grid-template-columns: minmax(0, 1fr); gap: 26px; padding: 28px 24px; margin-top: 26px; }
+  .delivery-copy h3 { font-size: 23px; margin-top: 16px; }
+  .delivery-details { margin-top: 16px; }
+  .delivery-service { border-left: 0; border-top: 1px solid #3d3830; padding: 24px 0 0; gap: 14px; }
+  .delivery-service h4 { font-size: 15px; }
+  .delivery-included { font-size: 13px; }
+  .delivery-service-note { max-width: none; }
+}
+@media (max-width: 375px) {
+  .delivery-panel { padding-inline: 20px; }
+  .delivery-copy h3 { font-size: 21px; }
+  .tariff-benefit { gap: 4px; font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-word-group { animation: none; opacity: 1; transform: none; filter: none; }
+  .game-card, .tariff-link svg { transition: none; }
+  .game-card:hover, .tariff-link:hover svg { transform: none; }
 }

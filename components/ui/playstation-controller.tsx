@@ -1,13 +1,13 @@
 import type { ComponentPropsWithoutRef } from 'react';
 
-// Iconoir's PlayStation Gamepad, MIT © Luca Burgio.
-// Original paths: https://github.com/iconoir-icons/iconoir/blob/main/icons/regular/playstation-gamepad.svg
-// Distributed license: wordpress/joyrent/licenses/iconoir-MIT.txt
+// JOYRENT's original DualSense silhouette, matching the site's light outline icons.
 export function PlayStationController({ size = 24, weight: _weight, className, ...props }: ComponentPropsWithoutRef<'svg'> & { size?: number; weight?: 'light' }) {
-  return <svg width={size} height={size} viewBox="0 0 24 24" strokeWidth="1.5" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className={className} {...props}>
-    <path d="M17.5 17.5C20 21 23.9486 18.4151 23 15C21.5753 9.87113 20.8001 7.01556 20.3969 5.50793C20.1597 4.62136 19.3562 4 18.4384 4L5.56155 4C4.64382 4 3.844 4.62481 3.62085 5.515C2.7815 8.86349 2.0326 11.8016 1.14415 15C0.195501 18.4151 4.14415 21 6.64415 17.5" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M16 4V6C16 7.10457 15.1046 8 14 8H10C8.89543 8 8 7.10457 8 6L8 4" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M8 16C9.10457 16 10 15.1046 10 14C10 12.8954 9.10457 12 8 12C6.89543 12 6 12.8954 6 14C6 15.1046 6.89543 16 8 16Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M16 16C17.1046 16 18 15.1046 18 14C18 12.8954 17.1046 12 16 12C14.8954 12 14 12.8954 14 14C14 15.1046 14.8954 16 16 16Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+  return <svg width={size} height={size} viewBox="0 0 24 24" strokeWidth="1.3" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className={className} {...props}>
+    <path d="M6.1 6.4C3.8 6.4 2.5 8.4 1.9 11.6l-.6 4.6c-.2 1.9.3 3.4 1.6 3.4 1.5 0 2.5-2 3.7-3.5.6-.8 1.5-1.2 2.5-1.2h5.8c1 0 1.9.4 2.5 1.2 1.2 1.5 2.2 3.5 3.7 3.5 1.3 0 1.8-1.5 1.6-3.4l-.6-4.6c-.6-3.2-1.9-5.2-4.2-5.2H6.1Z" />
+    <path d="M7.8 6.5h8.4l-.5 3.3c-.1.6-.5 1-1.1 1H9.4c-.6 0-1-.4-1.1-1l-.5-3.3Z" />
+    <path d="M4.9 8.7v3.1M3.4 10.2h3" />
+    <circle cx="9.1" cy="13.5" r="1.35" /><circle cx="14.9" cy="13.5" r="1.35" />
+    <path d="M19.1 8.6h.01m0 3.1h.01m-1.6-1.55h.01m3.1 0h.01" strokeWidth="1.9" />
+    <path d="m4.6 6.6.4-1h2.1m9.8 0H19l.4 1" />
   </svg>;
 }

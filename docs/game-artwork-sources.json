@@ -5,7 +5,8 @@
     "url": "https://image.api.playstation.com/vulcan/ap/rnd/202409/2712/1e1c42b14d92280e17bda697b8c4ae13ff9f91bdb10fca89.png",
     "file": "cover-fc25.webp",
     "retrieved": "2026-10-03",
-    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners.",
+    "archived": true
   },
   {
     "id": "it-takes-two",
@@ -53,7 +54,8 @@
     "url": "https://image.api.playstation.com/vulcan/ap/rnd/202309/0421/418704276d35ce02e8cb532c6ca3826cf866ad2ec66c0b17.png",
     "file": "cover-ufc5.webp",
     "retrieved": "2026-10-03",
-    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners.",
+    "archived": true
   },
   {
     "id": "cod-bo6",
@@ -61,7 +63,8 @@
     "url": "https://image.api.playstation.com/vulcan/ap/rnd/202405/2921/4b45cf4b319a65e05f6e4f87a22c7b91d2e7e8aeb247b61f.png",
     "file": "cover-cod-bo6.webp",
     "retrieved": "2026-10-03",
-    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+    "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners.",
+    "archived": true
   },
   {
     "id": "sackboy",
@@ -94,5 +97,93 @@
     "file": "cover-tekken8.webp",
     "retrieved": "2026-10-03",
     "use": "Official game artwork; exact edition availability requires store confirmation. All trademarks belong to their owners."
+  },
+  {
+    "id": "cod-bo7",
+    "source": "https://store.playstation.com/en-us/product/UP0002-PPSA01649_00-CODBO7CROSSGEN01",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202508/2119/8c163e488e9e46b842889e773a8d6807b52f9d0e00b05652.png",
+    "file": "cover-cod-bo7.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official standard-edition master artwork; store confirms edition and rental availability before handover."
+  },
+  {
+    "id": "stalker2",
+    "source": "https://store.playstation.com/en-us/product/EB0236-PPSA28336_00-STALKER2UA000000",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202608/0416/de7e107b83a2a6024ea287ee615643edf20429d1104b85cf.png",
+    "file": "cover-stalker2.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official standard-edition master artwork; store confirms edition and rental availability before handover."
+  },
+  {
+    "id": "split-fiction",
+    "source": "https://store.playstation.com/en-us/product/UP0006-PPSA08560_00-SPLITSTANDARDED0",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202502/2109/0c582584b280e3bf8872316fd4626ec084efaeb9ba436c65.png",
+    "file": "cover-split-fiction.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official standard-edition master artwork; store confirms edition and rental availability before handover."
+  },
+  {
+    "id": "astro-bot",
+    "source": "https://store.playstation.com/en-us/product/UP9000-PPSA21564_00-0000000000000000",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/8f15268257b878597757fcc5f2c9545840867bc71fc863b1.png",
+    "file": "cover-astro-bot.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official standard-edition master artwork; store confirms edition and rental availability before handover."
+  },
+  {
+    "id": "god-of-war-ragnarok",
+    "source": "https://store.playstation.com/en-us/product/UP9000-PPSA08329_00-GOWRAGNAROK00000",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202503/2016/b69c06fb108299866057126b0d3a0530bdf96a39d2ce1cb9.png",
+    "file": "cover-god-of-war-ragnarok.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official standard-edition master artwork; store confirms edition and rental availability before handover."
+  },
+  {
+    "id": "elden-ring",
+    "source": "https://store.playstation.com/en-us/product/UP0700-PPSA04610_00-ELDENRING0000000",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202110/2000/phvVT0qZfcRms5qDAk0SI3CM.png",
+    "file": "cover-elden-ring.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official standard-edition master artwork; store confirms edition and rental availability before handover."
+  },
+  {
+    "id": "red-dead-redemption-2",
+    "source": "https://store.playstation.com/en-us/product/UP1004-CUSA03041_00-REDEMPTIONFULL02",
+    "url": "https://image.api.playstation.com/cdn/UP1004/CUSA03041_00/Hpl5MtwQgOVF9vJqlfui6SDB5Jl4oBSq.png",
+    "file": "cover-red-dead-redemption-2.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official standard-edition master artwork; store confirms edition and rental availability before handover."
+  },
+  {
+    "id": "horizon-forbidden-west",
+    "source": "https://store.playstation.com/en-us/product/UP9000-PPSA04072_00-FORBIDDENWESTPS5",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202107/3100/HO8vkO9pfXhwbHi5WHECQJdN.png",
+    "file": "cover-horizon-forbidden-west.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official standard-edition master artwork; store confirms edition and rental availability before handover."
+  },
+  {
+    "id": "resident-evil-requiem",
+    "source": "https://store.playstation.com/en-us/product/UP0102-PPSA30803_00-REREQUIEM0000000",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202512/1205/79661d7a2bdb9784749b4e57e1456ca89f7ac7bed8615aee.png",
+    "file": "cover-resident-evil-requiem.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official standard-edition master artwork; store confirms edition and rental availability before handover."
+  },
+  {
+    "id": "fc27",
+    "source": "https://www.ea.com/games/ea-sports-fc/fc-27",
+    "url": "https://drop-assets.ea.com/images/5K1irdzIk8dr7VqEfe2yRm/993ad991664df96b85b6910197bb5143/fc-27-standard-key-art-1x1.jpg?im=Resize=(1200)&q=80",
+    "file": "cover-fc27.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official standard-edition master artwork; store confirms edition and rental availability before handover."
+  },
+  {
+    "id": "ufc6",
+    "source": "https://store.playstation.com/en-us/product/EP0006-PPSA23566_00-BASEUFC6GAME0000",
+    "url": "https://image.api.playstation.com/vulcan/ap/rnd/202604/2216/83baec5746075ec3e379c096dfe68111095c91cb7139a633.png",
+    "file": "cover-ufc6.webp",
+    "retrieved": "2026-10-03",
+    "use": "Official standard-edition master artwork. Store confirms edition and rental availability."
   }
 ]

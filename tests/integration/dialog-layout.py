@@ -2,8 +2,8 @@
 from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
 
-OUT = Path('docs/refinement-1.2')
-OUT.mkdir(exist_ok=True)
+OUT = Path('work/dialog-regression')
+OUT.mkdir(parents=True,exist_ok=True)
 with sync_playwright() as p:
     browser = p.chromium.launch(executable_path='/usr/bin/chromium', args=['--no-sandbox'])
     for width, height in [(1440, 1000), (3355, 1274), (768, 1024), (390, 844), (320, 568), (844, 390)]:

@@ -14,7 +14,7 @@ def base():
 import urllib.request
 status,catalog=call('/catalog')
 assert catalog['settings']['deliveryTextRu'].startswith('Укажи')
-assert len({g['image'] for g in catalog['games']})==12
+assert len({g['image'] for g in catalog['games']})==20
 assert all(g['image'].startswith('cover-') and g.get('genreRu') and g.get('descriptionRu') for g in catalog['games'])
 assert 'nameRu' in catalog['tariffs']['ps5'][0]
 payload=base();payload['language']='ru';payload['phone']='bad'
@@ -33,7 +33,7 @@ for slug,label in [('usloviya-arendy','Условия аренды'),('konfident
  with urllib.request.urlopen('http://localhost:8080/'+slug+'/') as response:
   content=response.read().decode()
  assert 'lang="ru"' in content and label in content
- assert 'Выбрать консоль и даты' in content and '?lang=ru#booking' in content
- assert 'Обрати консоль і дати' not in content
-print('PASS: 12 official mappings, RU catalog, localized validation, language whitelist, cross-language retry and Russian legal pages')
+ assert 'Выбрать даты' in content and '?lang=ru#booking' in content
+ assert 'Обрати дати' not in content
+print('PASS: 20 official mappings, RU catalog, localized validation, language whitelist, cross-language retry and Russian legal pages')
 print('RUSSIAN_REFERENCE='+receipt['reference'])

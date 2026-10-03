@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) exit;
 
 final class JR_Games {
     public static function register(): void {
-        register_post_type('joyrent_game',['labels'=>['name'=>'Ігри JOYRENT','singular_name'=>'Гра','add_new_item'=>'Додати гру','edit_item'=>'Редагувати гру'],'public'=>false,'show_ui'=>true,'show_in_rest'=>false,'menu_icon'=>'dashicons-games','supports'=>['title','editor','thumbnail'],'capability_type'=>'post','map_meta_cap'=>true]);
+        register_post_type('joyrent_game',['labels'=>['name'=>'Ігри JOYRENT','singular_name'=>'Гра','add_new_item'=>'Додати гру','edit_item'=>'Редагувати гру'],'public'=>false,'show_ui'=>true,'show_in_rest'=>false,'menu_icon'=>'dashicons-games','supports'=>['title','editor','thumbnail','page-attributes'],'capability_type'=>'post','map_meta_cap'=>true]);
     }
     public static function meta_boxes(): void { add_meta_box('joyrent-game','Параметри гри',[self::class,'box'],'joyrent_game','normal'); }
     public static function box(WP_Post $post): void {
@@ -14,7 +14,7 @@ final class JR_Games {
         foreach (['ps5'=>'PlayStation 5','ps4'=>'PlayStation 4'] as $key=>$label) echo '<label style="margin-right:20px"><input type="checkbox" name="jr_game[platforms][]" value="'.esc_attr($key).'" '.checked(in_array($key,$data['platforms']??[],true),true,false).'> '.esc_html($label).'</label>';
         echo '<p>';
         foreach (['two'=>'На двох','party'=>'Для компанії','racing'=>'Перегони','sport'=>'Спорт','story'=>'Сюжетні','kids'=>'Дітям'] as $key=>$label) echo '<label style="margin-right:15px"><input type="checkbox" name="jr_game[filters][]" value="'.esc_attr($key).'" '.checked(in_array($key,$data['filters']??[],true),true,false).'> '.esc_html($label).'</label>';
-        echo '</p><p><label><input type="checkbox" name="jr_game[available]" value="1" '.checked($data['available']??false,true,false).'> Наявність і ліцензію перевірено</label></p><p>Зображення обкладинки можна встановити через «Головне зображення». Початкові обкладинки — офіційні матеріали відповідних ігор. Наявність та видання підтверджує магазин.</p>';
+        echo '</p><p><label><input type="checkbox" name="jr_game[available]" value="1" '.checked($data['available']??false,true,false).'> Наявність і ліцензію перевірено</label></p><p>Зображення обкладинки можна встановити через «Головне зображення». Початкові обкладинки — офіційні матеріали відповідних ігор. Наявність та видання підтверджує магазин.</p><p>Пріоритет у добірці: поле «Порядок» у блоці «Атрибути». Менше число — вище у списку.</p>';
     }
     public static function save(int $id, WP_Post $post): void {
         if (defined('DOING_AUTOSAVE')&&DOING_AUTOSAVE || wp_is_post_revision($id) || !current_user_can('edit_post',$id) || !isset($_POST['joyrent_game_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['joyrent_game_nonce'])),'joyrent_game')) return;
@@ -38,13 +38,16 @@ final class JR_Games {
             $source=$initial[$data['id']]??null;
             if ($source) {
                 // Replace only bundled legacy artwork; owner thumbnails remain authoritative.
-                if (($data['image']??'')===$source['legacyImage']) $data['image']=$source['image'];
+                if (!empty($source['legacyImage'])&&($data['image']??'')===$source['legacyImage']) $data['image']=$source['image'];
                 if (empty($data['genreRu'])&&($data['genre']??'')===$source['genre']) $data['genreRu']=$source['genreRu'];
                 if (empty($data['descriptionRu'])&&$data['description']===$source['description']) $data['descriptionRu']=$source['descriptionRu'];
             }
             $url=get_the_post_thumbnail_url($post,'large'); if ($url) $data['imageUrl']=$url;
             $games[]=$data;
         }
-        return $games ?: JR_Domain::catalog()['games'];
+        if ($games) return $games;
+        // An intentionally hidden catalogue must stay empty, including games in the trash.
+        $managed=get_posts(['post_type'=>'joyrent_game','post_status'=>array_values(get_post_stati()),'numberposts'=>1,'fields'=>'ids']);
+        return $managed ? [] : JR_Domain::catalog()['games'];
     }
 }

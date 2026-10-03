@@ -23,7 +23,7 @@ with sync_playwright() as p:
   print('PASS: viewport',width)
  page.set_viewport_size({'width':1440,'height':1000})
  # One-day selection safely changes to 3 days on PS4.
- page.locator('#rates .tariff').first.get_by_role('button',name='Обрати',exact=True).click()
+ page.locator('#rates .tariff-link').first.click()
  expect(page.locator('.summary-price')).to_contain_text('1 день')
  page.locator('#rates').get_by_role('button',name='PS4',exact=True).click()
  expect(page.locator('.summary-price')).to_contain_text('3 дні')
