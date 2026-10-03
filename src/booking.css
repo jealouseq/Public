@@ -64,3 +64,55 @@ body:has(dialog[open]) { overflow: hidden; }
   .booking-section .summary-button { padding-inline: 16px; gap: 12px; }
   .contact-recap { padding-inline: 12px; }
 }
+
+/* Clear rental choices and keyboard-friendly fields, using JOYRENT's existing palette. */
+.security-field { min-width: 0; margin: 30px 0; padding: 0; border: 0; }
+.security-field legend { margin-bottom: 14px; }
+.security-choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.security-choice { position: relative; display: flex; align-items: flex-start; gap: 11px; min-height: 92px; padding: 17px 16px; border: 1px solid #707277; border-radius: 10px; background: #ffffff02; cursor: pointer; }
+.security-choice input { position: absolute; width: 1px; height: 1px; padding: 0; opacity: 0; }
+.security-choice > svg { flex-shrink: 0; color: #c5af89; margin-top: 1px; }
+.security-choice > span { min-width: 0; }
+.security-choice strong { display: block; font-size: 15px; line-height: 1.4; font-weight: 600; color: #e8e8e4; }
+.security-choice span > span { display: block; margin-top: 6px; font-size: 12px; line-height: 1.6; color: #bab9b5; }
+.security-choice.selected { border-color: #c4aa81; background: #c79b5d0b; }
+.security-choice:has(input:focus-visible) { outline: 2px solid #e0bb7c; outline-offset: 4px; }
+.security-help { color: #bebfbe; margin-top: 12px; font-size: 13px; line-height: 1.7; }
+.summary-security dd .muted { display: block; font-size: 12px; line-height: 1.6; }
+.game-picker-button { display: inline-flex; justify-content: center; align-items: center; gap: 12px; min-height: 48px; padding: 10px 20px; border: 1px solid #9b815b; border-radius: 999px; background: #c79b5d0b; color: #f0e6d6; font-size: 14px; font-weight: 550; }
+.game-picker-button:hover { background: #c79b5d18; border-color: #c4aa81; }
+.game-picker-button:disabled { opacity: .5; cursor: not-allowed; }
+.game-picker-count { display: grid; place-items: center; min-width: 22px; min-height: 22px; padding-inline: 5px; border-radius: 999px; background: #d1b58125; font-size: 12px; }
+.requested-game-note { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0 0; color: #c9b48c; font-size: 13px; line-height: 1.65; }
+.requested-game-note > span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.requested-game-note strong { color: #e8e8e4; font-weight: 500; }
+.requested-game-note button { display: grid; place-items: center; min-width: 44px; min-height: 44px; border: 0; background: transparent; color: #c9c9c5; margin-top: -10px; }
+.booking-address { margin-top: 24px; }
+.booking-section .customer-fields input:not([type="checkbox"]):not([type="radio"]), .game-picker-dialog .game-picker-search input[type="search"], .game-picker-dialog .missing-game-fields input[type="text"] { font-size: 16px; }
+.game-picker-dialog { max-height: calc(100dvh - 32px); overscroll-behavior: contain; scroll-padding-block: 20px 100px; }
+.game-picker-search { position: relative; display: flex; gap: 10px; align-items: center; min-height: 52px; padding-inline: 14px 6px; border: 1px solid #707277; border-radius: 8px; background: #ffffff03; }
+.game-picker-search:focus-within { border-color: #e0bb7c; outline: 2px solid #e0bb7c; outline-offset: 3px; }
+.game-picker-search > svg { color: #c5c4be; flex-shrink: 0; }
+.game-picker-dialog .game-picker-search input[type="search"] { min-width: 0; width: 100%; height: 50px; padding: 0; border: 0; background: transparent; color: #f4f4f1; outline: 0; }
+.game-picker-search input::-webkit-search-cancel-button { display: none; }
+.game-picker-search .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.game-picker-dialog .game-filters { margin-block: 12px; }
+.game-picker-request { border-block: 1px solid #3e4044; margin-bottom: 20px; }
+.missing-game-toggle { display: flex; align-items: center; justify-content: space-between; gap: 14px; width: 100%; min-height: 48px; border: 0; padding: 10px 0; background: transparent; color: #d9c098; text-align: left; font-size: 14px; }
+.missing-game-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.missing-game-fields { padding: 4px 0 18px; }
+.missing-game-fields .field-label { display: block; margin-bottom: 10px; }
+.game-picker-dialog .missing-game-fields input[type="text"] { width: 100%; height: 48px; padding: 12px 14px; border: 1px solid #707277; border-radius: 8px; background: #ffffff03; color: #f4f4f1; }
+.missing-game-fields p { margin-top: 10px; color: #b9b9b4; font-size: 13px; line-height: 1.7; }
+.game-picker-result { color: #b9b9b4; font-size: 13px; margin-bottom: 18px; }
+.game-picker-result:empty { display: none; }
+@media (max-width: 700px) {
+  .security-field { margin-block: 26px; }
+  .security-choices { gap: 10px; }
+  .security-choice { padding: 14px 12px; gap: 8px; }
+  .security-choice > svg { width: 18px; height: 18px; }
+  .security-choice strong { font-size: 14px; }
+  .booking-games .booking-row { align-items: flex-start; flex-direction: column; gap: 14px; }
+  .booking-games .game-picker-button { width: 100%; }
+  .game-picker-footer { border-top-color: #707277; }
+}

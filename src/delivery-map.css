@@ -1,4 +1,15 @@
-.delivery-map-open { display: inline-flex; justify-content: center; align-items: center; gap: 11px; min-height: 50px; min-width: 186px; margin-top: 22px; padding: 12px 21px; color: #eee7dd; font-size: 15px; font-weight: 550; line-height: 1.4; border: 1px solid #78684f; border-radius: 999px; background: #cfac7710; transition: background .2s, border-color .2s; }
+.delivery-map-open { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; justify-content: center; align-items: center; gap: 11px; min-height: 50px; min-width: 186px; margin-top: 22px; padding: 12px 21px; color: #eee7dd; font-size: 15px; font-weight: 550; line-height: 1.4; border: 1px solid #78684f; border-radius: 999px; background: #cfac7710; transition: background .2s, border-color .2s; }
+/* Quiet sweep inspired by Magic UI Shiny Button (MIT), 21st.dev/@dillionverma/components/shiny-button. */
+.delivery-map-open::before { content: ''; position: absolute; z-index: 0; left: -44%; top: -50%; width: 44%; height: 200%; pointer-events: none; background: linear-gradient(90deg, transparent, #e4bb8026, transparent); transform: translateX(0) rotate(18deg); opacity: 0; animation: joyrent-delivery-shine 6.4s ease-in-out infinite; animation-play-state: paused; }
+.delivery-map-open[data-motion='running']::before { animation-play-state: running; }
+.delivery-map-open-content { position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; gap: 11px; }
+.delivery-map-open-content svg { flex-shrink: 0; }
+@keyframes joyrent-delivery-shine {
+  0%, 3% { transform: translateX(0) rotate(18deg); opacity: 0; }
+  7% { opacity: 1; }
+  25% { transform: translateX(440%) rotate(18deg); opacity: 1; }
+  29%, 100% { transform: translateX(440%) rotate(18deg); opacity: 0; }
+}
 .delivery-map-open:hover { background: #cfac7720; color: #e9cf9e; border-color: #bca17a; }
 .delivery-map-open:focus-visible, .delivery-map-dialog button:focus-visible, .delivery-map-canvas:focus-visible, .delivery-map-dialog a:focus-visible, .delivery-map-fallback path:focus-visible { outline: 2px solid #e9cf9e; outline-offset: 3px; }
 dialog.delivery-map-dialog { width: min(1080px, calc(100vw - 32px)); max-height: calc(100svh - 32px); padding: 24px; border-radius: 12px; background: #111315; color: #eeeae4; overflow-y: auto; }
@@ -59,5 +70,7 @@ body:has(.delivery-map-dialog[open]) { overflow: hidden; }
   .delivery-map-point { min-height: 0; margin-top: 12px; padding: 12px 0; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .delivery-map-open { transition: none; }
+  .delivery-map-open::before { display: none; animation: none; }
   .delivery-map-dialog *, .delivery-map-dialog *::before, .delivery-map-dialog *::after { scroll-behavior: auto; transition: none; }
 }

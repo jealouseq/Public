@@ -38,7 +38,7 @@ final class JR_Store {
             $product->set_name(strtoupper($console).' — '.$tariff['name'].' ('.$tariff['days'].' дн.)');
             $product->set_sku(self::sku($console,$tariff['days']));
             $product->set_regular_price((string)$tariff['price']);
-            $product->set_description($tariff['description'].' Дати, зона доставки, комплектація та спосіб внесення й повернення застави узгоджуються до оренди.');
+            $product->set_description($tariff['description'].' Дати, зона доставки, комплектація та оформлення із заставою або за договором узгоджуються до оренди.');
             $product->set_status('publish'); $product->set_virtual(true); $product->set_catalog_visibility('hidden'); $product->set_sold_individually(true); $product->set_tax_status('none');
             $product->update_meta_data('_joyrent_console',$console); $product->update_meta_data('_joyrent_days',$tariff['days']); $product->save();
         }
@@ -55,11 +55,11 @@ final class JR_Store {
         }
     }
     public static function upgrade(): void {
-        if (version_compare((string)get_option('joyrent_version','0'),'1.7.1','>=')||!class_exists('WooCommerce')) return;
+        if (version_compare((string)get_option('joyrent_version','0'),'1.8.0','>=')||!class_exists('WooCommerce')) return;
         $lock=JR_Lock::acquire('joyrent_catalog_lock');
         if (!$lock) return;
         try {
-            if (version_compare((string)get_option('joyrent_version','0'),'1.7.1','>=') ) return;
+            if (version_compare((string)get_option('joyrent_version','0'),'1.8.0','>=') ) return;
             $previous=(string)get_option('joyrent_version','0');
             if (version_compare($previous,'1.6.0','<')) {
                 self::seed_games(); // Add missing games without republishing drafts or replacing owner content.
@@ -91,7 +91,7 @@ final class JR_Store {
             }
             self::upgrade_copy_settings();
             self::legal_pages(); self::faq_pages(); // Migrate exact previous defaults while preserving owner pages/settings.
-            update_option('joyrent_version','1.7.1',false);
+            update_option('joyrent_version','1.8.0',false);
         } finally { JR_Lock::release('joyrent_catalog_lock',$lock); }
     }
     private static function upgrade_copy_settings(): void {
@@ -166,8 +166,11 @@ final class JR_Store {
         foreach ($pages as $slug=>$page) self::seed_page($slug,$page['title'],$page['content'],$slug==='konfidentsiinist');
     }
     private static function seed_page(string $slug,string $title,string $content,bool $privacy=false): void {
-        static $previous=null;
-        if ($previous===null) $previous=json_decode((string)file_get_contents(__DIR__.'/../data/page-seeds-1.6.json'),true,512,JSON_THROW_ON_ERROR);
+        static $previous=null,$previous_recent=null;
+        if ($previous===null) {
+            $previous=json_decode((string)file_get_contents(__DIR__.'/../data/page-seeds-1.6.json'),true,512,JSON_THROW_ON_ERROR);
+            $previous_recent=json_decode((string)file_get_contents(__DIR__.'/../data/page-seeds-1.7.json'),true,512,JSON_THROW_ON_ERROR);
+        }
         $seed=$previous[$slug]??null;
         if (in_array($slug,['faq','faq-ru','umovy-orendy','usloviya-arendy'],true)&&!self::approved_page_conditions()) {
             // Earlier neutral copy does not invent prices or included equipment for a custom-configured shop.
@@ -181,7 +184,12 @@ final class JR_Store {
             return;
         }
         // Only exact, published previous defaults migrate. Author text, titles, excerpts and drafts stay intact.
-        if ($seed&&$page->post_status==='publish'&&$page->post_excerpt===''&&$page->post_title===$seed['title']&&$page->post_content===$seed['content']&&$page->post_content!==$content) wp_update_post(['ID'=>$page->ID,'post_title'=>$title,'post_content'=>$content]);
+        foreach (array_filter([$seed,$previous_recent[$slug]??null]) as $known_seed) {
+            if ($page->post_status==='publish'&&$page->post_excerpt===''&&$page->post_title===$known_seed['title']&&$page->post_content===$known_seed['content']&&$page->post_content!==$content) {
+                wp_update_post(['ID'=>$page->ID,'post_title'=>$title,'post_content'=>$content]);
+                break;
+            }
+        }
     }
     private static function approved_page_conditions(): bool {
         $settings=JR_Settings::public();

@@ -1,4 +1,5 @@
 import { defaultCatalog, uniqueGames, type ConsoleId, type Game, type Tariff } from './rental';
+import type { SecurityMode } from './draft';
 
 export interface StoreSettings {
   city: string; cityRu?: string; phone: string; email: string; telegram: string;
@@ -24,6 +25,7 @@ export const fallbackCatalog: StoreCatalog = { ...defaultCatalog, settings: fall
 export interface RentalPayload {
   language?: 'uk' | 'ru'; console: ConsoleId; days: number; startDate: string; controllers: number; gameIds: string[];
   name: string; phone: string; method: 'delivery' | 'pickup'; address: string;
+  securityMode?: SecurityMode; requestedGame?: string;
   consent: boolean; website: string; requestId: string;
 }
 export type RequestReceipt = { reference: string; rentalAmount: number; status: 'awaiting_confirmation' };

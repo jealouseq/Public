@@ -1,0 +1,38 @@
+{
+  "checked": "2026-10-03",
+  "source": "https://funbox.com.ua/#rec524506397",
+  "sourceMethod": "Opera accessibility tree of live public page",
+  "quotes": [
+    "1. Застава ",
+    "2. БЕЗ ЗАСТАВИ, за договором проката (фото паспорта, ІПН, прописка)",
+    "1. Застава 9000 грн., документи не потрібні.",
+    "2. БЕЗ ЗАСТАВИ, ЗА ДОГОВОРОМ ПРОКАТУ (ФОТО паспорта, ІПН, прописка).",
+    "1. Застава 25000 грн., документи не потрібні.",
+    "2. Застава 15000 грн + договір ПРОКАТУ (ФОТО паспорта, ІПН, прописка).",
+    "1. Застава ",
+    "2. Без застави, за договором проката (фото паспорта, ІПН, прописка)",
+    "1. Застава ",
+    "2. Без застави, за договором проката (фото паспорта, ІПН, прописка)",
+    "1. Застава ",
+    "2. БЕЗ ЗАСТАВИ, за договором проката (фото паспорта, ІПН, прописка)",
+    "Завантажити договір"
+  ],
+  "limitations": [
+    "Network policy blocks direct website HTTP requests.",
+    "Opera screenshot connector reported disconnected.",
+    "Accessibility tree includes multiple possible hidden/legacy model rows; model labels unavailable for direct mapping.",
+    "No verified age threshold or Odesa registration eligibility found."
+  ],
+  "contractUrl": "https://drive.google.com/file/d/1WqGOlHsPDZ8rSd-Uj8nVwpd_AeYTV5LY/view?usp=sharing",
+  "contractQuotes": [
+    "3.2. Орендна плата, зазначена в Заявці, за цим Договором оплачується орендарем шляхом 100% передоплати в момент фактичної передачі предмета оренди.",
+    "3.3. Оплата всіх платежів здійснюється у гривні готівкою.",
+    "4.1. Передача Предмета оренди Орендарю та його повернення Орендодавцю оформляється Актом приймання-передачі."
+  ],
+  "joyrentConstraints": {
+    "depositPs4": 7500,
+    "depositPs5": 25000,
+    "documentsOnWebsite": false,
+    "contractChoice": "requested preference awaiting manual confirmation; not completed agreement"
+  }
+}

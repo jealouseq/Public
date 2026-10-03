@@ -39,13 +39,20 @@ final class JR_Orders {
             foreach (['Доставка'=>$delivery,'Додатковий геймпад'=>$extra] as $title=>$value) if ($value!==null&&$value>0) {
                 $fee=new WC_Order_Item_Fee(); $fee->set_name($title); $fee->set_amount($value); $fee->set_total($value); $fee->set_tax_status('none'); $order->add_item($fee);
             }
-            $deposit=$data['console']==='ps5'?$settings['depositPs5']:$settings['depositPs4'];
+            $security_mode=$data['securityMode']??'deposit';
+            // A contract is a request for manual document verification, never an automatic zero deposit.
+            $deposit=$security_mode==='contract'?null:($data['console']==='ps5'?$settings['depositPs5']:$settings['depositPs4']);
             foreach (['console'=>$data['console'],'days'=>$data['days'],'start_date'=>$data['startDate'],'return_date'=>$data['returnDate'],'controllers'=>$data['controllers'],'game_ids'=>$data['gameIds'],'method'=>$data['method'],'deposit'=>$deposit===null?'pending':$deposit,'delivery'=>$delivery===null?'pending':$delivery,'extra_controller'=>$extra===null?'pending':$extra,'consent'=>'yes','consent_version'=>'1.0','language'=>$data['language']??'uk'] as $key=>$value) $order->update_meta_data('_joyrent_'.$key,$value);
+            $order->update_meta_data('_joyrent_security_mode',$security_mode);
+            $order->update_meta_data('_joyrent_security_status',$security_mode==='contract'?'pending_document_verification':'pending_confirmation');
+            if (($data['requestedGame']??'')!=='') $order->update_meta_data('_joyrent_requested_game',$data['requestedGame']);
             if ($free_delivery_candidate) {
                 $order->update_meta_data('_joyrent_delivery_free_eligibility','pending_zone_confirmation');
                 $order->add_order_note('Від '.$settings['freeDeliveryFrom'].' днів безкоштовна доставка можлива лише у зеленій або жовтій зоні після підтвердження адреси магазином. Червона зона — за тарифом таксі в обидва боки.');
             }
             $order->add_order_note('Мова клієнта: '.(($data['language']??'uk')==='ru'?'Російська':'Українська'));
+            $order->add_order_note('Оформлення: '.self::security_label($security_mode).'.');
+            if (($data['requestedGame']??'')!=='') $order->add_order_note('Запит гри поза каталогом: '.esc_html($data['requestedGame']));
             $order->add_order_note('Заявка JOYRENT: доступність консолі, ігор, адреса доставки та умови застави потребують підтвердження. Оплату не отримано. Бажані ігри: '.implode(', ',$data['gameIds']));
             $order->set_customer_note('Дата отримання: '.$data['startDate'].'. Повернення: '.$data['returnDate'].'. Геймпадів: '.$data['controllers'].'. Спосіб отримання: '.$data['method']);
             $order->update_meta_data('_joyrent_rental_amount',$amount);
@@ -62,6 +69,14 @@ final class JR_Orders {
             if ($emails) return implode(', ',$emails);
         }
         return '';
+    }
+    private static function security_label(string $mode): string {
+        return $mode==='contract'?'За договором — очікує перевірки документів і погодження':'Застава — повертається після перевірки комплекту';
+    }
+    private static function deposit_label(WC_Order $order): string {
+        if ($order->get_meta('_joyrent_security_mode')==='contract') return 'Рішення після перевірки документів; без застави ще не погоджено';
+        $deposit=$order->get_meta('_joyrent_deposit');
+        return $deposit===''||$deposit==='pending'?'Узгодимо до оренди':number_format((float)$deposit,0,',',' ').' грн / повертається';
     }
     public static function notify(int $id, bool $retry_uncertain = false): bool {
         $lock_name='jr_notification_'.$id; $owner=JR_Lock::acquire($lock_name,300);
@@ -80,6 +95,9 @@ final class JR_Orders {
             $subject='JOYRENT: нова заявка JR-'.$order->get_order_number();
             $body="Нова заявка очікує ручного підтвердження. Оплату не отримано.\n\n";
             foreach (['Ім’я'=>$order->get_billing_first_name(),'Телефон'=>$order->get_billing_phone(),'Адреса'=>$order->get_billing_address_1(),'Консоль'=>strtoupper((string)$order->get_meta('_joyrent_console')),'Термін'=>$order->get_meta('_joyrent_days').' дн.','Отримання'=>$order->get_meta('_joyrent_start_date'),'Повернення'=>$order->get_meta('_joyrent_return_date'),'Геймпади'=>$order->get_meta('_joyrent_controllers'),'Бажані ігри'=>implode(', ',(array)$order->get_meta('_joyrent_game_ids')),'Мова'=>$order->get_meta('_joyrent_language')] as $label=>$value) $body.=$label.': '.$value."\n";
+            $body.='Оформлення: '.self::security_label((string)$order->get_meta('_joyrent_security_mode'))."\n";
+            $body.='Грошова застава: '.self::deposit_label($order)."\n";
+            if ($order->get_meta('_joyrent_requested_game')!=='') $body.='Запит гри поза каталогом: '.wp_strip_all_tags((string)$order->get_meta('_joyrent_requested_game'))."\n";
             $body.="\n".$order->get_edit_order_url();
             try { $sent=$recipient!==''&&wp_mail($recipient,$subject,$body,['Content-Type: text/plain; charset=UTF-8']); }
             catch (Throwable $e) { $sent=false; }
@@ -92,6 +110,8 @@ final class JR_Orders {
     }
     public static function notification_admin(WC_Order $order): void {
         if (!$order->get_meta('_joyrent_request_key')||!current_user_can('manage_woocommerce')) return;
+        echo '<p class="form-field form-field-wide"><strong>JOYRENT оформлення:</strong> '.esc_html(self::security_label((string)$order->get_meta('_joyrent_security_mode'))).'<br><strong>Грошова застава:</strong> '.esc_html(self::deposit_label($order)).'</p>';
+        if ($order->get_meta('_joyrent_requested_game')!=='') echo '<p class="form-field form-field-wide"><strong>Запит гри поза каталогом:</strong> '.esc_html((string)$order->get_meta('_joyrent_requested_game')).'</p>';
         $status=(string)$order->get_meta('_joyrent_notification_status');
         $labels=['sent'=>'Передано поштовій службі','failed'=>'Помилка — перевірте поштові налаштування','sending'=>'Результат невідомий — перевірте доставку перед повтором'];
         echo '<p class="form-field form-field-wide"><strong>JOYRENT сповіщення:</strong> '.esc_html($labels[$status]??'Ще не надіслано');

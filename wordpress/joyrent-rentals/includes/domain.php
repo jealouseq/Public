@@ -47,7 +47,7 @@ final class JR_Domain {
         $method = $payload['method'] ?? 'delivery';
         if (!in_array($method, ['delivery','pickup'], true)) throw new InvalidArgumentException('Обери спосіб отримання.');
         $address = trim(is_string($payload['address'] ?? null) ? $payload['address'] : '');
-        if ($method === 'delivery' && (mb_strlen($address) < 5 || mb_strlen($address) > 300)) throw new InvalidArgumentException('Вкажи місто та адресу доставки.');
+        if ($method === 'delivery' && (mb_strlen($address) < 5 || mb_strlen($address) > 300)) throw new InvalidArgumentException('Вкажи адресу доставки в Одесі.');
         $controllers = filter_var($payload['controllers'] ?? 1, FILTER_VALIDATE_INT);
         if (!in_array($controllers, [1,2], true)) throw new InvalidArgumentException('Обери один або два геймпади.');
         $game_ids = $payload['gameIds'] ?? [];
@@ -63,6 +63,16 @@ final class JR_Domain {
         $game_ids = array_values(array_unique($game_ids));
         $configured = class_exists('JR_Settings') ? (int) JR_Settings::public()['maxGames'] : 100;
         if (count($game_ids) > min(100, $configured, count($records))) throw new InvalidArgumentException('Перевищено дозволену кількість ігор.');
-        return ['console'=>$console,'days'=>$days,'tariff'=>$tariff,'startDate'=>$start,'returnDate'=>self::return_date($start,$days),'name'=>$name,'phone'=>$phone,'method'=>$method,'address'=>$address,'controllers'=>$controllers,'gameIds'=>$game_ids];
+        $security_mode = array_key_exists('securityMode',$payload) ? $payload['securityMode'] : 'deposit';
+        if (!is_string($security_mode) || !in_array($security_mode,['deposit','contract'],true)) throw new InvalidArgumentException('Обери оформлення із заставою або за договором.');
+        $requested_game = array_key_exists('requestedGame',$payload) ? $payload['requestedGame'] : '';
+        if (!is_string($requested_game) || preg_match('//u',$requested_game)!==1) throw new InvalidArgumentException('Вкажи назву гри звичайним текстом (до 120 символів).');
+        $requested_game = trim($requested_game);
+        if (mb_strlen($requested_game)>120 || preg_match('/[\x00-\x1F\x7F]/u',$requested_game) || strip_tags($requested_game)!==$requested_game) throw new InvalidArgumentException('Вкажи назву гри звичайним текстом (до 120 символів).');
+        $data = ['console'=>$console,'days'=>$days,'tariff'=>$tariff,'startDate'=>$start,'returnDate'=>self::return_date($start,$days),'name'=>$name,'phone'=>$phone,'method'=>$method,'address'=>$address,'controllers'=>$controllers,'gameIds'=>$game_ids];
+        // Explicit defaults keep the same fingerprint as requests made before these options existed.
+        if ($security_mode!=='deposit') $data['securityMode']=$security_mode;
+        if ($requested_game!=='') $data['requestedGame']=$requested_game;
+        return $data;
     }
 }

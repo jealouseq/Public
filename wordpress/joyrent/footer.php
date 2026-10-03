@@ -19,7 +19,7 @@
         <?php if (!empty($public['email'])): ?><a class="footer-contact footer-email" href="<?php echo esc_url('mailto:'.$public['email']); ?>"><?php echo esc_html($public['email']); ?></a><?php endif; ?>
         </div>
     </div>
-    <div class="footer-bottom"><span>© <?php echo esc_html(wp_date('Y')); ?> JOYRENT</span><div><a href="<?php echo esc_url(joyrent_faq_url(joyrent_language())); ?>">FAQ</a><a href="<?php echo esc_url(joyrent_home('booking')); ?>"><?php echo esc_html($ru ? 'Оставить заявку' : 'Залишити заявку'); ?></a></div><span class="footer-note"><?php echo esc_html($ru ? 'PlayStation — торговая марка Sony.' : 'PlayStation — торгова марка Sony.'); ?></span></div>
+    <div class="footer-bottom"><span>© <?php echo esc_html(wp_date('Y')); ?> JOYRENT</span><div><a href="<?php echo esc_url(joyrent_faq_url(joyrent_language())); ?>">FAQ</a><a href="<?php echo esc_url(joyrent_home('booking')); ?>"><?php echo esc_html($ru ? 'Оставить заявку' : 'Залишити заявку'); ?></a></div><span class="footer-note"><?php echo esc_html($ru ? 'С заботой о твоём вечере.' : 'З турботою про твій вечір.'); ?></span></div>
 </div></footer><?php endif; ?>
 <?php wp_footer(); ?>
 </body></html>

@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { ArrowCounterClockwise, MapTrifold, X } from '@phosphor-icons/react';
 import type * as Leaflet from 'leaflet';
 import { useI18n } from '../../src/lib/i18n';
+import { useMotionPreference } from '../../src/lib/motion';
 import { money } from '../../src/lib/rental';
 import { classifyDeliveryPoint, deliveryTerms, type DeliveryFees, type DeliveryPointZone, type DeliveryZone, type DeliveryZones } from '../../src/lib/delivery-map';
 import '../../src/delivery-map.css';
@@ -26,12 +27,23 @@ export function DeliveryZoneMap({ freeDeliveryFrom, greenFee, yellowFee }: Deliv
   const [basemap, setBasemap] = useState<'loading' | 'ready' | 'unavailable'>('loading');
   const [data, setData] = useState<DeliveryZones | null>(null);
   const [selection, setSelection] = useState<Selection>(null);
+  const reduced = useMotionPreference();
+  const [buttonVisible, setButtonVisible] = useState(false);
+  const [documentVisible, setDocumentVisible] = useState(() => !document.hidden);
   const fees = { freeDeliveryFrom, greenFee, yellowFee };
   const zoneName = (zone: DeliveryPointZone) => zone === 'green' ? t('Зелена зона', 'Зелёная зона') : zone === 'yellow' ? t('Жовта зона', 'Жёлтая зона') : zone === 'red' ? t('Червона зона', 'Красная зона') : zone === 'boundary' ? t('На межі зон', 'На границе зон') : t('Поза зонами', 'Вне зон');
   const price = (zone: DeliveryPointZone) => {
     const terms = deliveryTerms(zone, fees);
     return terms.kind === 'fixed' ? terms.fee == null ? t('Узгодимо вартість', 'Согласуем стоимость') : `${money(terms.fee)} грн` : terms.kind === 'taxi' ? t('за тарифом таксі', 'по тарифу такси') : t('За погодженням', 'По согласованию');
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => setButtonVisible(entry.isIntersecting));
+    if (opener.current) observer.observe(opener.current);
+    const updateVisibility = () => setDocumentVisible(!document.hidden);
+    document.addEventListener('visibilitychange', updateVisibility);
+    return () => { observer.disconnect(); document.removeEventListener('visibilitychange', updateVisibility); };
+  }, []);
 
   useEffect(() => {
     if (!opened || !mapElement.current) return;
@@ -145,7 +157,7 @@ export function DeliveryZoneMap({ freeDeliveryFrom, greenFee, yellowFee }: Deliv
   }
 
   return <>
-    <button ref={opener} type="button" className="delivery-map-open" aria-haspopup="dialog" onClick={() => { dialog.current?.showModal(); setOpened(true); }}><MapTrifold size={19} weight="light" />{t('Зони доставки', 'Зоны доставки')}</button>
+    <button ref={opener} type="button" className="delivery-map-open" data-motion={!reduced && buttonVisible && documentVisible && !opened ? 'running' : 'paused'} aria-haspopup="dialog" aria-expanded={opened} onClick={() => { dialog.current?.showModal(); setOpened(true); }}><span className="delivery-map-open-content"><MapTrifold size={19} weight="light" aria-hidden="true" />{t('Зони доставки', 'Зоны доставки')}</span></button>
     <dialog ref={dialog} className="delivery-map-dialog" aria-labelledby={titleId} aria-describedby={helpId} onClose={() => { setOpened(false); opener.current?.focus({ preventScroll: true }); }} onClick={event => {
       if (event.target !== event.currentTarget) return;
       const rect = event.currentTarget.getBoundingClientRect();

@@ -1,0 +1,260 @@
+[
+  {
+    "language": "uk",
+    "width": 320,
+    "status": "PASS",
+    "realOrders": 0,
+    "realEmails": 0,
+    "entry": {
+      "scripts": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DMOyxYFI.js"
+      ],
+      "styles": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-UAWhCNWL.css"
+      ]
+    },
+    "fixturePosts": [
+      {
+        "fixture": true,
+        "interceptedBeforeTransmit": true,
+        "serverOrderCreated": false,
+        "serverEmailSent": false,
+        "checks": {
+          "securityMode": true,
+          "requestedGame": true,
+          "address": true,
+          "gameIds": true,
+          "cityAbsent": true,
+          "fixtureContact": true,
+          "language": true,
+          "consent": true,
+          "console": true,
+          "rentalDays": true
+        },
+        "securityMode": "contract",
+        "gameIds": [
+          "fc27"
+        ]
+      }
+    ],
+    "unintendedPosts": [],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "externalRequests": []
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "status": "PASS",
+    "realOrders": 0,
+    "realEmails": 0,
+    "entry": {
+      "scripts": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DMOyxYFI.js"
+      ],
+      "styles": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-UAWhCNWL.css"
+      ]
+    },
+    "fixturePosts": [
+      {
+        "fixture": true,
+        "interceptedBeforeTransmit": true,
+        "serverOrderCreated": false,
+        "serverEmailSent": false,
+        "checks": {
+          "securityMode": true,
+          "requestedGame": true,
+          "address": true,
+          "gameIds": true,
+          "cityAbsent": true,
+          "fixtureContact": true,
+          "language": true,
+          "consent": true,
+          "console": true,
+          "rentalDays": true
+        },
+        "securityMode": "contract",
+        "gameIds": [
+          "fc27"
+        ]
+      }
+    ],
+    "unintendedPosts": [],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "externalRequests": []
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "status": "PASS",
+    "realOrders": 0,
+    "realEmails": 0,
+    "entry": {
+      "scripts": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DMOyxYFI.js"
+      ],
+      "styles": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-UAWhCNWL.css"
+      ]
+    },
+    "fixturePosts": [
+      {
+        "fixture": true,
+        "interceptedBeforeTransmit": true,
+        "serverOrderCreated": false,
+        "serverEmailSent": false,
+        "checks": {
+          "securityMode": true,
+          "requestedGame": true,
+          "address": true,
+          "gameIds": true,
+          "cityAbsent": true,
+          "fixtureContact": true,
+          "language": true,
+          "consent": true,
+          "console": true,
+          "rentalDays": true
+        },
+        "securityMode": "contract",
+        "gameIds": [
+          "fc27"
+        ]
+      }
+    ],
+    "unintendedPosts": [],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "externalRequests": []
+  },
+  {
+    "language": "ru",
+    "width": 320,
+    "status": "PASS",
+    "realOrders": 0,
+    "realEmails": 0,
+    "entry": {
+      "scripts": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DMOyxYFI.js"
+      ],
+      "styles": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-UAWhCNWL.css"
+      ]
+    },
+    "fixturePosts": [
+      {
+        "fixture": true,
+        "interceptedBeforeTransmit": true,
+        "serverOrderCreated": false,
+        "serverEmailSent": false,
+        "checks": {
+          "securityMode": true,
+          "requestedGame": true,
+          "address": true,
+          "gameIds": true,
+          "cityAbsent": true,
+          "fixtureContact": true,
+          "language": true,
+          "consent": true,
+          "console": true,
+          "rentalDays": true
+        },
+        "securityMode": "contract",
+        "gameIds": [
+          "fc27"
+        ]
+      }
+    ],
+    "unintendedPosts": [],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "externalRequests": []
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "status": "PASS",
+    "realOrders": 0,
+    "realEmails": 0,
+    "entry": {
+      "scripts": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DMOyxYFI.js"
+      ],
+      "styles": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-UAWhCNWL.css"
+      ]
+    },
+    "fixturePosts": [
+      {
+        "fixture": true,
+        "interceptedBeforeTransmit": true,
+        "serverOrderCreated": false,
+        "serverEmailSent": false,
+        "checks": {
+          "securityMode": true,
+          "requestedGame": true,
+          "address": true,
+          "gameIds": true,
+          "cityAbsent": true,
+          "fixtureContact": true,
+          "language": true,
+          "consent": true,
+          "console": true,
+          "rentalDays": true
+        },
+        "securityMode": "contract",
+        "gameIds": [
+          "fc27"
+        ]
+      }
+    ],
+    "unintendedPosts": [],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "externalRequests": []
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "status": "PASS",
+    "realOrders": 0,
+    "realEmails": 0,
+    "entry": {
+      "scripts": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DMOyxYFI.js"
+      ],
+      "styles": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-UAWhCNWL.css"
+      ]
+    },
+    "fixturePosts": [
+      {
+        "fixture": true,
+        "interceptedBeforeTransmit": true,
+        "serverOrderCreated": false,
+        "serverEmailSent": false,
+        "checks": {
+          "securityMode": true,
+          "requestedGame": true,
+          "address": true,
+          "gameIds": true,
+          "cityAbsent": true,
+          "fixtureContact": true,
+          "language": true,
+          "consent": true,
+          "console": true,
+          "rentalDays": true
+        },
+        "securityMode": "contract",
+        "gameIds": [
+          "fc27"
+        ]
+      }
+    ],
+    "unintendedPosts": [],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "externalRequests": []
+  }
+]
