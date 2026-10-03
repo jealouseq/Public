@@ -16,7 +16,9 @@ function commerce_state(): array {
     $orders=wc_get_orders(['limit'=>-1,'return'=>'ids']);sort($orders);
     return [$prices,get_option('joyrent_settings'),$orders];
 }
-$statuses=[];$originals=[];$attachment=0;$created=0;$version=get_option('joyrent_version');$commerce=commerce_state();
+$statuses=[];$originals=[];$attachment=0;$created=0;$version=get_option('joyrent_version');$saved_settings=get_option('joyrent_settings');
+update_option('joyrent_settings',array_merge(JR_Settings::get(),['city'=>'Owner city','city_ru'=>'Город владельца','deposit_ps5'=>12345,'deposit_ps4'=>2345,'base_controllers'=>1,'extra_controller_fee'=>75,'delivery_text'=>'Owner delivery','delivery_text_ru'=>'Авторская доставка']));
+$commerce=commerce_state();
 foreach (['it-takes-two','fc27','astro-bot','split-fiction','mk11'] as $key) {
     $post=game_post($key);$originals[$key]=['post'=>$post,'meta'=>get_post_meta($post->ID,'_jr_game',true),'key'=>get_post_meta($post->ID,'_jr_game_id',true),'thumbnail'=>get_post_meta($post->ID,'_thumbnail_id',true)];
 }
@@ -31,10 +33,12 @@ try {
     $split=$originals['split-fiction']['post']->ID;
     wp_update_post(['ID'=>$split,'post_status'=>'draft']);update_post_meta($split,'_jr_game_id','migration-hidden-split');
     $mk=$originals['mk11']['meta'];$mk['platforms']=['ps5','ps4'];update_post_meta($originals['mk11']['post']->ID,'_jr_game',$mk);
+    $legacy_games=array_column(json_decode((string)file_get_contents('/var/www/html/wp-content/plugins/joyrent-rentals/data/legacy-games.json'),true),null,'id');
+    $legacy_positions=['fc25'=>10,'ufc5'=>90,'cod-bo6'=>100];
     foreach (['fc25','ufc5','cod-bo6'] as $key) {
         $legacy=get_posts(['post_type'=>'joyrent_game','post_status'=>array_values(get_post_stati()),'numberposts'=>1,'meta_key'=>'_jr_game_id','meta_value'=>$key]);
         if ($legacy) wp_update_post(['ID'=>$legacy[0]->ID,'post_status'=>'publish']);
-        else { $id=wp_insert_post(['post_type'=>'joyrent_game','post_title'=>'Obsolete local fixture '.$key,'post_status'=>'publish']);update_post_meta($id,'_jr_game_id',$key); }
+        else { $game=$legacy_games[$key];$id=wp_insert_post(['post_type'=>'joyrent_game','post_title'=>$game['title'],'post_content'=>$game['description'],'post_status'=>'publish','post_name'=>$key,'menu_order'=>$legacy_positions[$key]]);update_post_meta($id,'_jr_game_id',$key);update_post_meta($id,'_jr_game',$game); }
     }
     update_option('joyrent_version','1.3.0');JR_Store::upgrade();
     $created=game_post('split-fiction')->ID;
@@ -69,6 +73,7 @@ try {
     }
     if ($attachment) wp_delete_attachment($attachment,true);
     update_option('joyrent_version',$version);
+    update_option('joyrent_settings',$saved_settings);
 }
 verify_catalog(count(JR_Games::records())===20,'Clean local fixture restored');
 echo "PASS: $checks catalogue migration checks, fixture restored\n";

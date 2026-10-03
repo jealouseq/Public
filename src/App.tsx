@@ -8,28 +8,64 @@ import { Games } from './sections/Games';
 import { Kit, HowItWorks } from './sections/Story';
 import { Footer } from './sections/Footer';
 import { boot, fallbackCatalog, getCatalog, imageUrl } from './lib/api';
-import { safeDays, type ConsoleId } from './lib/rental';
+import type { CatalogStatus } from './lib/api';
+import { reconcileGameIds, safeDays, type ConsoleId } from './lib/rental';
+import { clearRentalDraft, emptyRentalDraft, readRentalDraft, saveRentalDraft, type RentalDraft } from './lib/draft';
 import { useI18n } from './lib/i18n';
+import './booking.css';
 
 export default function App() {
   const [store, setStore] = useState(fallbackCatalog);
-  const [consoleId, setConsoleId] = useState<ConsoleId>('ps5');
-  const [days, setDays] = useState(3);
-  const [gameIds, setGameIds] = useState<string[]>([]);
+  const [draft, setDraft] = useState<RentalDraft>(() => readRentalDraft() ?? emptyRentalDraft());
+  const { consoleId, days, gameIds } = draft;
+  const draftRef = useRef(draft);
+  const draftSaving = useRef(true);
+  draftRef.current = draft;
+  const [catalogStatus, setCatalogStatus] = useState<CatalogStatus>('loading');
+  const [retry, setRetry] = useState(0);
+  const [selectionChanged, setSelectionChanged] = useState(false);
+  const [gameLimitReached, setGameLimitReached] = useState(false);
   const [legal, setLegal] = useState<'privacy' | 'terms' | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
   const legalOpener = useRef<HTMLElement | null>(null);
   const { t, language } = useI18n();
-  useEffect(() => { let active = true; getCatalog().then(data => { if (active) setStore(data); }).catch(() => {}); return () => { active = false; }; }, []);
+  useEffect(() => {
+    let active = true;
+    setCatalogStatus('loading');
+    getCatalog().then(data => {
+      if (!active) return;
+      const current = draftRef.current;
+      const limit = Math.min(100, data.settings.maxGames ?? 100, data.games.length);
+      const reconciled = reconcileGameIds(current.gameIds, data.games, current.consoleId, limit);
+      const nextDays = safeDays(current.consoleId, current.days, data.tariffs);
+      if (reconciled.length !== current.gameIds.length || (nextDays !== null && nextDays !== current.days)) setSelectionChanged(true);
+      setDraft(value => ({ ...value, days: safeDays(value.consoleId, value.days, data.tariffs) ?? value.days, gameIds: reconcileGameIds(value.gameIds, data.games, value.consoleId, limit), method: data.settings.pickup ? value.method : 'delivery' }));
+      setStore(data); setCatalogStatus('ready');
+    }).catch(() => { if (active) setCatalogStatus('error'); });
+    return () => { active = false; };
+  }, [retry]);
+  useEffect(() => { if (draftSaving.current) saveRentalDraft(draft); }, [draft]);
+  useEffect(() => { const save = () => { if (draftSaving.current) saveRentalDraft(draftRef.current); }; window.addEventListener('pagehide', save); return () => window.removeEventListener('pagehide', save); }, []);
   useEffect(() => { const favicon = document.createElement('link'); favicon.rel = 'icon'; favicon.type = 'image/webp'; favicon.href = imageUrl('favicon'); document.head.append(favicon); return () => { favicon.remove(); }; }, []);
   useEffect(() => { if (legal) dialog.current?.showModal(); }, [legal]);
-  function selectConsole(value: ConsoleId) { setConsoleId(value); setDays(current => safeDays(value, current)); setGameIds(current => current.filter(id => store.games.find(game => game.id === id)?.platforms.includes(value))); }
-  function choose(days: number) { setDays(days); document.getElementById('booking')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }); }
-  function toggleGame(id: string) { setGameIds(current => current.includes(id) ? current.filter(game => game !== id) : [...current, id]); }
+  function updateDraft(patch: Partial<RentalDraft>) { draftSaving.current = true; setDraft(current => ({ ...current, ...patch })); }
+  function submitted() { draftSaving.current = false; clearRentalDraft(); }
+  function selectConsole(value: ConsoleId) { setDraft(current => ({ ...current, consoleId: value, days: safeDays(value, current.days, store.tariffs) ?? current.days, gameIds: catalogStatus === 'ready' ? reconcileGameIds(current.gameIds, store.games, value) : current.gameIds })); setGameLimitReached(false); }
+  function choose(days: number) { updateDraft({ days }); document.getElementById('booking')?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }); }
+  const maxGames = Math.max(0, Math.min(100, store.settings.maxGames ?? 100, store.games.length));
+  function toggleGame(id: string) {
+    if (catalogStatus !== 'ready' || !store.games.some(game => game.id === id && game.platforms.includes(consoleId))) return;
+    if (!gameIds.includes(id) && gameIds.length >= maxGames) { setGameLimitReached(true); return; }
+    setDraft(current => ({ ...current, gameIds: current.gameIds.includes(id) ? current.gameIds.filter(game => game !== id) : [...current.gameIds, id] }));
+    setGameLimitReached(false);
+  }
   function showLegal(page: 'privacy' | 'terms') { legalOpener.current = document.activeElement as HTMLElement; setLegal(page); }
   function closeLegal() { dialog.current?.close(); setLegal(null); legalOpener.current?.focus(); }
   const legalUrl = legal === 'privacy' ? language === 'ru' ? boot.privacyRuUrl : boot.privacyUrl : language === 'ru' ? boot.termsRuUrl : boot.termsUrl;
-  return <><a className="skip-link" href="#main-content">{t('Перейти до вмісту', 'Перейти к содержимому')}</a><Header /><main id="main-content"><Hero onChoosePS5={() => selectConsole('ps5')} price={store.tariffs.ps5.find(item => item.days === 1)!.price} /><Tariffs freeDeliveryFrom={store.settings.freeDeliveryFrom} consoleId={consoleId} tariffs={store.tariffs[consoleId]} onConsole={selectConsole} onChoose={choose} /><Games games={store.games} consoleId={consoleId} selected={gameIds} onToggle={toggleGame} /><Kit /><HowItWorks settings={store.settings} /><Booking store={store} consoleId={consoleId} days={days} gameIds={gameIds} onConsole={selectConsole} onDays={setDays} onToggleGame={toggleGame} onLegal={showLegal} /></main><Footer consoleId={consoleId} minimumDays={store.tariffs[consoleId][0].days} price={store.tariffs[consoleId][0].price} settings={store.settings} onLegal={showLegal} />
+  const heroConsole: ConsoleId = store.tariffs.ps5.length ? 'ps5' : 'ps4';
+  const heroTariff = store.tariffs[heroConsole][0];
+  const selectedTariff = store.tariffs[consoleId].find(item => item.days === days);
+  return <><a className="skip-link" href="#main-content">{t('Перейти до вмісту', 'Перейти к содержимому')}</a><Header /><main id="main-content"><Hero onChoosePS5={() => selectConsole(heroConsole)} consoleId={heroConsole} minimumDays={heroTariff?.days} price={heroTariff?.price ?? null} /><Tariffs freeDeliveryFrom={store.settings.freeDeliveryFrom} consoleId={consoleId} tariffs={store.tariffs[consoleId]} onConsole={selectConsole} onChoose={choose} /><Games maxGames={maxGames} games={store.games} consoleId={consoleId} selected={gameIds} onToggle={toggleGame} catalogStatus={catalogStatus} /><Kit /><HowItWorks settings={store.settings} /><Booking store={store} draft={draft} catalogStatus={catalogStatus} onRetry={() => setRetry(current => current + 1)} selectionChanged={selectionChanged} gameLimitReached={gameLimitReached} onDraftChange={updateDraft} onConsole={selectConsole} onToggleGame={toggleGame} onSubmitted={submitted} onLegal={showLegal} /></main><Footer consoleId={consoleId} days={days} price={selectedTariff?.price ?? null} settings={store.settings} onLegal={showLegal} />
     {legal && <dialog ref={dialog} className="legal-dialog" aria-labelledby="legal-dialog-title" onCancel={event => { event.preventDefault(); closeLegal(); }} onClick={event => { if (event.target === event.currentTarget) closeLegal(); }}><div><button className="icon-button dialog-close" aria-label={t('Закрити', 'Закрыть')} onClick={closeLegal}><X size={22} /></button><p className="eyebrow">JOYRENT</p><h2 id="legal-dialog-title">{legal === 'terms' ? t('Умови оренди', 'Условия аренды') : t('Конфіденційність', 'Конфиденциальность')}</h2>{legal === 'terms' ? <><p>{t('Надсилання заявки не підтверджує бронювання й не потребує оплати. Ми перевіримо доступність консолі та ігор і зв’яжемося з тобою.', 'Отправка заявки не подтверждает бронирование и не требует оплаты. Мы проверим доступность консоли и игр и свяжемся с тобой.')}</p><p>{t('До підтвердження узгодимо комплектацію, дати й час отримання та повернення, доставку, заставу та відповідальність за обладнання.', 'До подтверждения согласуем комплектацию, даты и время получения и возврата, доставку, залог и ответственность за оборудование.')}</p><p>{t('Продовження можливе після перевірки доступності. Не розбирай обладнання та одразу повідомляй про несправності.', 'Продление возможно после проверки доступности. Не разбирай оборудование и сразу сообщай о неисправностях.')}</p></> : <><p>{t('Ім’я, телефон, місто й адреса потрібні для обробки заявки та узгодження доставки. Не надсилай пароль PSN, документи чи платіжні дані.', 'Имя, телефон, город и адрес нужны для обработки заявки и согласования доставки. Не отправляй пароль PSN, документы или платёжные данные.')}</p><p>{t('Заявка зберігається у магазині JOYRENT. Доступ мають уповноважені працівники. Для уточнення або видалення даних звернися через контактний канал магазину.', 'Заявка хранится в магазине JOYRENT. Доступ имеют уполномоченные сотрудники. Для уточнения или удаления данных обратись через контактный канал магазина.')}</p><p>{t('Форма не підписує тебе на рекламну розсилку.', 'Форма не подписывает тебя на рекламную рассылку.')}</p></>}{legalUrl && <a className="text-link" href={legalUrl}>{t('Повна інформація', 'Полная информация')}</a>}<button className="button button-outline" onClick={closeLegal}>{t('Зрозуміло', 'Понятно')}</button></div></dialog>}
   </>;
 }

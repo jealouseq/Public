@@ -11,6 +11,8 @@ final class JR_Games {
         wp_nonce_field('joyrent_game','joyrent_game_nonce');
         foreach (['genre'=>'Жанр','rating'=>'Віковий рейтинг (наприклад 12+)','players'=>'Локальних гравців (1–4)','eyebrow'=>'Короткий підпис','genreRu'=>'Жанр російською'] as $key=>$label) echo '<p><label>'.esc_html($label).'<br><input class="widefat" name="jr_game['.esc_attr($key).']" value="'.esc_attr((string)($data[$key]??'')).'"></label></p>';
         echo '<p><label>Опис російською<br><textarea class="widefat" rows="4" name="jr_game[descriptionRu]">'.esc_textarea((string)($data['descriptionRu']??'')).'</textarea></label></p>';
+        foreach (['ps5'=>'Локальних гравців PS5','ps4'=>'Локальних гравців PS4'] as $platform=>$label) echo '<p><label>'.esc_html($label).' (порожнє поле — загальне значення)<br><input type="number" min="1" max="4" name="jr_game[playersByPlatform]['.esc_attr($platform).']" value="'.esc_attr((string)($data['playersByPlatform'][$platform]??'')).'"></label></p>';
+        echo '<p><label><input type="checkbox" name="jr_game[requiresInternet]" value="1" '.checked($data['requiresInternet']??false,true,false).'> Потрібне підключення до інтернету</label></p>';
         foreach (['ps5'=>'PlayStation 5','ps4'=>'PlayStation 4'] as $key=>$label) echo '<label style="margin-right:20px"><input type="checkbox" name="jr_game[platforms][]" value="'.esc_attr($key).'" '.checked(in_array($key,$data['platforms']??[],true),true,false).'> '.esc_html($label).'</label>';
         echo '<p>';
         foreach (['two'=>'На двох','party'=>'Для компанії','racing'=>'Перегони','sport'=>'Спорт','story'=>'Сюжетні','kids'=>'Дітям'] as $key=>$label) echo '<label style="margin-right:15px"><input type="checkbox" name="jr_game[filters][]" value="'.esc_attr($key).'" '.checked(in_array($key,$data['filters']??[],true),true,false).'> '.esc_html($label).'</label>';
@@ -24,16 +26,20 @@ final class JR_Games {
         foreach (['genre','rating','eyebrow','genreRu'] as $key) $data[$key]=sanitize_text_field(is_scalar($input[$key]??null)?(string)$input[$key]:'');
         $data['descriptionRu']=sanitize_textarea_field(is_string($input['descriptionRu']??null)?$input['descriptionRu']:'');
         $data['players']=max(1,min(4,(int)($input['players']??1)));
+        foreach (['ps5','ps4'] as $platform) if (isset($input['playersByPlatform'][$platform])&&$input['playersByPlatform'][$platform]!=='') $data['playersByPlatform'][$platform]=max(1,min(4,(int)$input['playersByPlatform'][$platform]));
+        $data['requiresInternet']=!empty($input['requiresInternet']);
         $data['platforms']=array_values(array_intersect(['ps5','ps4'],is_array($input['platforms']??null)?$input['platforms']:[]));
         $data['filters']=array_values(array_intersect(['two','party','racing','sport','story','kids'],is_array($input['filters']??null)?$input['filters']:[]));
         update_post_meta($id,'_jr_game',$data);
     }
     public static function records(): array {
-        $posts=get_posts(['post_type'=>'joyrent_game','post_status'=>'publish','numberposts'=>100,'orderby'=>'menu_order ID','order'=>'ASC']);
-        $games=[]; $initial=array_column(JR_Domain::catalog()['games'],null,'id');
+        $posts=get_posts(['post_type'=>'joyrent_game','post_status'=>'publish','numberposts'=>-1,'orderby'=>'menu_order ID','order'=>'ASC']);
+        $games=[]; $seen=[]; $initial=array_column(JR_Domain::catalog()['games'],null,'id');
         foreach ($posts as $post) {
             $data=get_post_meta($post->ID,'_jr_game',true);
             if (!is_array($data)||empty($data['id'])) continue;
+            if (isset($seen[$data['id']])) continue;
+            $seen[$data['id']]=true;
             $data['title']=wp_strip_all_tags($post->post_title); $data['description']=wp_strip_all_tags($post->post_content);
             $source=$initial[$data['id']]??null;
             if ($source) {
@@ -44,6 +50,7 @@ final class JR_Games {
             }
             $url=get_the_post_thumbnail_url($post,'large'); if ($url) $data['imageUrl']=$url;
             $games[]=$data;
+            if (count($games)>=100) break;
         }
         if ($games) return $games;
         // An intentionally hidden catalogue must stay empty, including games in the trash.

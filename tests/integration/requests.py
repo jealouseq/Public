@@ -17,7 +17,11 @@ status,catalog=call('/catalog')
 assert status==200, f'Catalog expected 200, received {status}: {catalog}'
 assert catalog['tariffs']['ps5'][1]['price']==1400
 assert catalog['tariffs']['ps4'][0]['price']==750
-assert catalog['settings']['depositPs5'] is None
+assert catalog['settings']['depositPs5']==25000
+assert catalog['settings']['depositPs4']==7500
+assert catalog['settings']['baseControllers']==2
+assert catalog['settings']['extraControllerFee']==0
+assert 'notification_email' not in catalog['settings']
 assert catalog['settings']['deliveryFee'] is None
 date=(datetime.now(ZoneInfo('Europe/Kyiv'))+timedelta(days=2)).strftime('%Y-%m-%d')
 def base():

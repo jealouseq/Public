@@ -2,7 +2,7 @@
 /**
  * Plugin Name: JOYRENT Rentals
  * Description: Ukrainian and Russian PlayStation rental catalog, guest requests and WooCommerce order integration.
- * Version: 1.5.0
+ * Version: 1.6.0
  * Requires at least: 6.6
  * Requires PHP: 8.2
  * Requires Plugins: woocommerce
@@ -12,7 +12,7 @@
  */
 if (!defined('ABSPATH')) exit;
 define('JR_PLUGIN_FILE', __FILE__);
-foreach (['locale','domain','settings','games','store','orders','rest'] as $file) require_once __DIR__.'/includes/'.$file.'.php';
+foreach (['locale','domain','lock','settings','games','store','orders','rest'] as $file) require_once __DIR__.'/includes/'.$file.'.php';
 
 add_action('init', ['JR_Games','register']);
 add_action('init', ['JR_Orders','register_status']);
@@ -23,6 +23,9 @@ add_action('admin_init', ['JR_Settings','register']);
 add_action('admin_post_joyrent_seed', ['JR_Settings','seed']);
 add_action('add_meta_boxes', ['JR_Games','meta_boxes']);
 add_action('save_post_joyrent_game', ['JR_Games','save'], 10, 2);
+add_action('woocommerce_order_status_jr-request', ['JR_Orders','notify']);
+add_action('woocommerce_admin_order_data_after_order_details', ['JR_Orders','notification_admin']);
+add_action('admin_post_joyrent_notification_retry', ['JR_Orders','notification_retry']);
 add_filter('wc_order_statuses', ['JR_Orders','statuses']);
 add_filter('option_page_capability_joyrent', fn() => 'manage_woocommerce');
 // Support durable-key queries in the legacy order store as well as HPOS.

@@ -1,8 +1,8 @@
 <?php
 if (!defined('ABSPATH')) exit;
 function joyrent_language(): string {
-    if (is_page('faq')) return 'uk';
-    if (is_page('faq-ru')) return 'ru';
+    if (is_page(['faq','umovy-orendy','konfidentsiinist'])) return 'uk';
+    if (is_page(['faq-ru','usloviya-arendy','konfidentsialnost'])) return 'ru';
     return (isset($_GET['lang']) && $_GET['lang']==='ru') || is_page(['usloviya-arendy','konfidentsialnost','faq-ru']) ? 'ru' : 'uk';
 }
 function joyrent_home(string $anchor = ''): string {
@@ -13,8 +13,15 @@ function joyrent_faq_url(string $language): string {
     $page=get_page_by_path($language==='ru'?'faq-ru':'faq');
     return $page ? get_permalink($page) : home_url($language==='ru'?'/faq-ru/':'/faq/');
 }
+function joyrent_privacy_url(): string {
+    $assigned_id=(int)get_option('wp_page_for_privacy_policy');
+    $assigned=$assigned_id>0?get_post($assigned_id):null;
+    if ($assigned&&$assigned->post_type==='page'&&$assigned->post_status==='publish') return get_permalink($assigned);
+    $fallback=get_page_by_path('konfidentsiinist');
+    return $fallback&&$fallback->post_status==='publish'?get_permalink($fallback):'';
+}
 add_filter('language_attributes', function (string $attributes): string {
-    return is_front_page() || is_page(['usloviya-arendy','konfidentsialnost','faq','faq-ru']) ? 'lang="'.joyrent_language().'" dir="ltr"' : $attributes;
+    return is_front_page() || is_page(['usloviya-arendy','konfidentsialnost','umovy-orendy','konfidentsiinist','faq','faq-ru']) ? 'lang="'.joyrent_language().'" dir="ltr"' : $attributes;
 });
 
 add_action('after_setup_theme', function (): void {
@@ -30,10 +37,12 @@ add_action('wp_enqueue_scripts', function (): void {
     $entry = $manifest['src/main.tsx'] ?? null;
     if (!$entry) return;
     $base = get_template_directory_uri() . '/assets/dist/';
-    foreach ($entry['css'] ?? [] as $index => $css) wp_enqueue_style('joyrent-' . $index, $base . $css, [], '1.5.0');
+    foreach ($entry['css'] ?? [] as $index => $css) wp_enqueue_style('joyrent-' . $index, $base . $css, [], null);
     if (!is_front_page()) return;
-    wp_enqueue_script('joyrent-app', $base . $entry['file'], [], '1.5.0', true);
-    $config = ['apiBase'=>rest_url('joyrent/v1'),'assetBase'=>get_template_directory_uri().'/assets','nonce'=>is_user_logged_in() ? wp_create_nonce('wp_rest') : '', 'privacyUrl'=>get_privacy_policy_url(), 'termsUrl'=>home_url('/umovy-orendy/'), 'privacyRuUrl'=>home_url('/konfidentsialnost/'), 'termsRuUrl'=>home_url('/usloviya-arendy/'), 'faqUrl'=>joyrent_faq_url('uk'), 'faqRuUrl'=>joyrent_faq_url('ru')];
+    // Hashed filenames handle cache busting. A query would give lazy chunks a
+    // second URL for the entry module and execute its React bootstrap again.
+    wp_enqueue_script('joyrent-app', $base . $entry['file'], [], null, true);
+    $config = ['apiBase'=>rest_url('joyrent/v1'),'assetBase'=>get_template_directory_uri().'/assets','nonce'=>is_user_logged_in() ? wp_create_nonce('wp_rest') : '', 'privacyUrl'=>joyrent_privacy_url(), 'termsUrl'=>home_url('/umovy-orendy/'), 'privacyRuUrl'=>home_url('/konfidentsialnost/'), 'termsRuUrl'=>home_url('/usloviya-arendy/'), 'faqUrl'=>joyrent_faq_url('uk'), 'faqRuUrl'=>joyrent_faq_url('ru')];
     wp_add_inline_script('joyrent-app', 'window.JOYRENT = ' . wp_json_encode($config, JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT) . ';', 'before');
 });
 add_filter('script_loader_tag', function (string $tag, string $handle, string $src): string {
@@ -72,6 +81,12 @@ add_filter('document_title_parts', function (array $parts): array {
     return $parts;
 });
 add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+// The rental landing uses its own REST flow and has no WooCommerce cart widgets.
+// Keep WooCommerce assets on checkout/account/shop routes and for other consumers.
+add_action('wp_enqueue_scripts', function (): void {
+    if (!class_exists('WooCommerce') || !is_front_page() || is_cart() || is_checkout() || is_account_page()) return;
+    foreach (['wc-add-to-cart', 'woocommerce', 'wc-cart-fragments', 'wc-order-attribution', 'sourcebuster-js', 'wc-jquery-blockui', 'wc-js-cookie'] as $handle) wp_dequeue_script($handle);
+}, 99);
 add_action('admin_notices', function (): void {
     if (!file_exists(get_template_directory().'/assets/dist/.vite/manifest.json') && current_user_can('manage_options')) echo '<div class="notice notice-error"><p>JOYRENT: встановіть готовий ZIP теми або виконайте npm run build у вихідному проєкті.</p></div>';
 });

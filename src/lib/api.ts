@@ -1,10 +1,10 @@
-import { defaultCatalog, type ConsoleId, type Game, type Tariff } from './rental';
+import { defaultCatalog, uniqueGames, type ConsoleId, type Game, type Tariff } from './rental';
 
 export interface StoreSettings {
-  city: string; phone: string; email: string; telegram: string;
-  deliveryFee: number | null; depositPs5: number | null; depositPs4: number | null;
+  city: string; cityRu?: string; phone: string; email: string; telegram: string;
+  deliveryFee: number | null; deliveryGreenFee?: number | null; deliveryYellowFee?: number | null; depositPs5: number | null; depositPs4: number | null;
   baseControllers: number; extraControllerFee: number | null; pickup: boolean;
-  freeDeliveryFrom: number; deliveryText: string; deliveryTextRu?: string;
+  freeDeliveryFrom: number; deliveryText: string; deliveryTextRu?: string; maxGames?: number;
 }
 export interface BootConfig {
   apiBase: string; assetBase: string; nonce?: string; privacyUrl?: string; termsUrl?: string; preview?: boolean; privacyRuUrl?: string; termsRuUrl?: string; faqUrl?: string; faqRuUrl?: string;
@@ -13,11 +13,13 @@ declare global { interface Window { JOYRENT?: BootConfig } }
 export const boot: BootConfig = window.JOYRENT ?? { apiBase: '/wp-api/joyrent/v1', assetBase: '' };
 export const imageUrl = (name: string) => `${boot.assetBase}/images/${name}.webp`;
 export const fallbackSettings: StoreSettings = {
-  city: '', phone: '', email: '', telegram: '', deliveryFee: null, depositPs5: null, depositPs4: null,
-  baseControllers: 1, extraControllerFee: null, pickup: false, freeDeliveryFrom: 7,
-  deliveryText: 'Вкажи місто та адресу у заявці. Ми перевіримо можливість доставки й узгодимо час отримання та повернення.',
+  city: 'Одеса', cityRu: 'Одесса', phone: '+380996669946', email: '', telegram: 'https://t.me/joyrent_od', deliveryFee: null, deliveryGreenFee: 200, deliveryYellowFee: 300, depositPs5: 25000, depositPs4: 7500,
+  baseControllers: 2, extraControllerFee: 0, pickup: false, freeDeliveryFrom: 7, maxGames: 100,
+  deliveryText: 'Доставка в межах Одеси: зелену, жовту та червону зони покажемо нижче. Адресу й час підтвердимо перед орендою.',
+  deliveryTextRu: 'Доставка в пределах Одессы: зелёную, жёлтую и красную зоны покажем ниже. Адрес и время подтвердим перед арендой.',
 };
 export type StoreCatalog = { tariffs: Record<ConsoleId, Tariff[]>; games: Game[]; settings: StoreSettings; currency: string; acceptingRequests: boolean };
+export type CatalogStatus = 'loading' | 'error' | 'ready';
 export const fallbackCatalog: StoreCatalog = { ...defaultCatalog, settings: fallbackSettings, currency: 'UAH', acceptingRequests: false };
 export interface RentalPayload {
   language?: 'uk' | 'ru'; console: ConsoleId; days: number; startDate: string; controllers: number; gameIds: string[];
@@ -38,7 +40,12 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
   }
   return data as T;
 }
-export const getCatalog = () => boot.preview ? Promise.resolve(fallbackCatalog) : request<StoreCatalog>('/catalog');
+export function normalizeCatalog(data: StoreCatalog): StoreCatalog {
+  if (!data || !Array.isArray(data.games) || !data.tariffs || !Array.isArray(data.tariffs.ps5) || !Array.isArray(data.tariffs.ps4)) throw new Error(requestFailure());
+  const tariffs = (items: Tariff[]) => items.filter((item, index) => Number.isInteger(item.days) && item.days > 0 && item.days <= 30 && Number.isFinite(item.price) && item.price >= 0 && items.findIndex(other => other.days === item.days) === index).sort((a, b) => a.days - b.days);
+  return { ...data, games: uniqueGames(data.games), tariffs: { ps5: tariffs(data.tariffs.ps5), ps4: tariffs(data.tariffs.ps4) }, settings: { ...fallbackSettings, ...data.settings } };
+}
+export const getCatalog = async () => normalizeCatalog(boot.preview ? fallbackCatalog : await request<StoreCatalog>('/catalog'));
 export const submitRequest = (payload: RentalPayload) => request<RequestReceipt>('/requests', { method: 'POST', body: JSON.stringify(payload) });
 
 export const faqUrl = (language: 'uk' | 'ru') => boot.preview ? language === 'ru' ? './faq-ru.html' : './faq.html' : (language === 'ru' ? boot.faqRuUrl : boot.faqUrl) || (language === 'ru' ? '/faq-ru/' : '/faq/');

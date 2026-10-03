@@ -29,6 +29,7 @@ for (const name of ['joyrent','joyrent-rentals']) {
   const file = join(release, `${name}-${name==='joyrent-rentals'?pluginVersion:version}.zip`);
   await rm(file, { force: true });
   execFileSync('zip', ['-qr',file,name], { cwd: stage });
+  await chmod(file, 0o644);
 }
 const preview = join(root, 'preview');
 await rm(preview, { recursive: true, force: true });
@@ -52,4 +53,5 @@ for (const language of ['uk','ru']) {
 await permissions(preview);
 await rm(join(release,`joyrent-preview-${version}.zip`),{force:true});
 execFileSync('zip',['-qr',join(release,`joyrent-preview-${version}.zip`),'.'],{cwd:preview});
+await chmod(join(release,`joyrent-preview-${version}.zip`), 0o644);
 console.log('Packaged WordPress theme, rental plugin and static visual preview.');

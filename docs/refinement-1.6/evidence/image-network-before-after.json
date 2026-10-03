@@ -1,0 +1,834 @@
+[
+  {
+    "mode": "before1.5",
+    "width": 390,
+    "dpr": 1,
+    "firstFold": {
+      "files": [
+        {
+          "file": "ps5-commercial-mobile-560.webp",
+          "bytes": 11462,
+          "transferBytes": 11762
+        },
+        {
+          "file": "cover-fc27.webp",
+          "bytes": 122106,
+          "transferBytes": 122406
+        },
+        {
+          "file": "cover-gta-v.webp",
+          "bytes": 139260,
+          "transferBytes": 139560
+        },
+        {
+          "file": "cover-mk1.webp",
+          "bytes": 96888,
+          "transferBytes": 97188
+        },
+        {
+          "file": "cover-stalker2.webp",
+          "bytes": 75206,
+          "transferBytes": 75506
+        }
+      ],
+      "bytes": 444922,
+      "gameImages": [
+        "cover-fc27.webp",
+        "cover-gta-v.webp",
+        "cover-mk1.webp",
+        "cover-stalker2.webp",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "atGames": {
+      "files": [
+        {
+          "file": "ps5-commercial-mobile-560.webp",
+          "bytes": 11462,
+          "transferBytes": 11762
+        },
+        {
+          "file": "cover-fc27.webp",
+          "bytes": 122106,
+          "transferBytes": 122406
+        },
+        {
+          "file": "cover-gta-v.webp",
+          "bytes": 139260,
+          "transferBytes": 139560
+        },
+        {
+          "file": "cover-mk1.webp",
+          "bytes": 96888,
+          "transferBytes": 97188
+        },
+        {
+          "file": "cover-stalker2.webp",
+          "bytes": 75206,
+          "transferBytes": 75506
+        },
+        {
+          "file": "dualsense-cutout.webp",
+          "bytes": 237144,
+          "transferBytes": 237444
+        }
+      ],
+      "bytes": 682066,
+      "gameImages": [
+        "cover-fc27.webp",
+        "cover-gta-v.webp",
+        "cover-mk1.webp",
+        "cover-stalker2.webp",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "mountedGameImages": 19,
+    "allGameCards": 19,
+    "dialog": {
+      "width": 287,
+      "height": 287,
+      "source": "cover-fc27.webp",
+      "objectFit": "fill",
+      "transform": "none"
+    },
+    "cardWidth": 287.265625,
+    "errors": []
+  },
+  {
+    "mode": "after1.6",
+    "width": 390,
+    "dpr": 1,
+    "firstFold": {
+      "files": [
+        {
+          "file": "ps5-commercial-mobile-560.webp",
+          "bytes": 11462,
+          "transferBytes": 11762
+        }
+      ],
+      "bytes": 11462,
+      "gameImages": []
+    },
+    "atGames": {
+      "files": [
+        {
+          "file": "ps5-commercial-mobile-560.webp",
+          "bytes": 11462,
+          "transferBytes": 11762
+        },
+        {
+          "file": "dualsense-cutout-560.webp",
+          "bytes": 40834,
+          "transferBytes": 41134
+        },
+        {
+          "file": "cover-fc27-360.webp",
+          "bytes": 43354,
+          "transferBytes": 43654
+        },
+        {
+          "file": "cover-gta-v-360.webp",
+          "bytes": 45878,
+          "transferBytes": 46178
+        }
+      ],
+      "bytes": 141528,
+      "gameImages": [
+        "cover-fc27-360.webp",
+        "cover-gta-v-360.webp"
+      ]
+    },
+    "mountedGameImages": 2,
+    "allGameCards": 19,
+    "dialog": {
+      "width": 287,
+      "height": 287,
+      "source": "cover-fc27.webp",
+      "objectFit": "contain",
+      "transform": "none"
+    },
+    "cardWidth": 287.265625,
+    "errors": []
+  },
+  {
+    "mode": "before1.5",
+    "width": 390,
+    "dpr": 3,
+    "firstFold": {
+      "files": [
+        {
+          "file": "ps5-commercial-mobile.webp",
+          "bytes": 48246,
+          "transferBytes": 48546
+        },
+        {
+          "file": "cover-fc27.webp",
+          "bytes": 122106,
+          "transferBytes": 122406
+        },
+        {
+          "file": "cover-gta-v.webp",
+          "bytes": 139260,
+          "transferBytes": 139560
+        },
+        {
+          "file": "cover-mk1.webp",
+          "bytes": 96888,
+          "transferBytes": 97188
+        },
+        {
+          "file": "cover-stalker2.webp",
+          "bytes": 75206,
+          "transferBytes": 75506
+        }
+      ],
+      "bytes": 481706,
+      "gameImages": [
+        "cover-fc27.webp",
+        "cover-gta-v.webp",
+        "cover-mk1.webp",
+        "cover-stalker2.webp",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "atGames": {
+      "files": [
+        {
+          "file": "ps5-commercial-mobile.webp",
+          "bytes": 48246,
+          "transferBytes": 48546
+        },
+        {
+          "file": "cover-fc27.webp",
+          "bytes": 122106,
+          "transferBytes": 122406
+        },
+        {
+          "file": "cover-gta-v.webp",
+          "bytes": 139260,
+          "transferBytes": 139560
+        },
+        {
+          "file": "cover-mk1.webp",
+          "bytes": 96888,
+          "transferBytes": 97188
+        },
+        {
+          "file": "cover-stalker2.webp",
+          "bytes": 75206,
+          "transferBytes": 75506
+        },
+        {
+          "file": "dualsense-cutout.webp",
+          "bytes": 237144,
+          "transferBytes": 237444
+        }
+      ],
+      "bytes": 718850,
+      "gameImages": [
+        "cover-fc27.webp",
+        "cover-gta-v.webp",
+        "cover-mk1.webp",
+        "cover-stalker2.webp",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "mountedGameImages": 19,
+    "allGameCards": 19,
+    "dialog": {
+      "width": 287,
+      "height": 287,
+      "source": "cover-fc27.webp",
+      "objectFit": "fill",
+      "transform": "none"
+    },
+    "cardWidth": 287.265625,
+    "errors": []
+  },
+  {
+    "mode": "after1.6",
+    "width": 390,
+    "dpr": 3,
+    "firstFold": {
+      "files": [
+        {
+          "file": "ps5-commercial-mobile-1448.webp",
+          "bytes": 74314,
+          "transferBytes": 74614
+        }
+      ],
+      "bytes": 74314,
+      "gameImages": []
+    },
+    "atGames": {
+      "files": [
+        {
+          "file": "ps5-commercial-mobile-1448.webp",
+          "bytes": 74314,
+          "transferBytes": 74614
+        },
+        {
+          "file": "dualsense-cutout-1120.webp",
+          "bytes": 145280,
+          "transferBytes": 145580
+        },
+        {
+          "file": "cover-fc27-720.webp",
+          "bytes": 122106,
+          "transferBytes": 122406
+        },
+        {
+          "file": "cover-gta-v-720.webp",
+          "bytes": 139260,
+          "transferBytes": 139560
+        }
+      ],
+      "bytes": 480960,
+      "gameImages": [
+        "cover-fc27-720.webp",
+        "cover-gta-v-720.webp"
+      ]
+    },
+    "mountedGameImages": 2,
+    "allGameCards": 19,
+    "dialog": {
+      "width": 287,
+      "height": 287,
+      "source": "cover-fc27.webp",
+      "objectFit": "contain",
+      "transform": "none"
+    },
+    "cardWidth": 287.265625,
+    "errors": []
+  },
+  {
+    "mode": "before1.5",
+    "width": 1440,
+    "dpr": 1,
+    "firstFold": {
+      "files": [
+        {
+          "file": "ps5-commercial-desktop-close-768.webp",
+          "bytes": 23294,
+          "transferBytes": 23594
+        },
+        {
+          "file": "cover-fc27.webp",
+          "bytes": 122106,
+          "transferBytes": 122406
+        },
+        {
+          "file": "cover-gta-v.webp",
+          "bytes": 139260,
+          "transferBytes": 139560
+        },
+        {
+          "file": "cover-mk1.webp",
+          "bytes": 96888,
+          "transferBytes": 97188
+        },
+        {
+          "file": "cover-stalker2.webp",
+          "bytes": 75206,
+          "transferBytes": 75506
+        },
+        {
+          "file": "cover-ufc6.webp",
+          "bytes": 74324,
+          "transferBytes": 74624
+        },
+        {
+          "file": "cover-tekken8.webp",
+          "bytes": 81324,
+          "transferBytes": 81624
+        },
+        {
+          "file": "cover-split-fiction.webp",
+          "bytes": 116116,
+          "transferBytes": 116416
+        },
+        {
+          "file": "dualsense-cutout.webp",
+          "bytes": 237144,
+          "transferBytes": 237444
+        }
+      ],
+      "bytes": 965662,
+      "gameImages": [
+        "cover-fc27.webp",
+        "cover-gta-v.webp",
+        "cover-mk1.webp",
+        "cover-stalker2.webp",
+        "cover-ufc6.webp",
+        "cover-tekken8.webp",
+        "cover-split-fiction.webp",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "atGames": {
+      "files": [
+        {
+          "file": "ps5-commercial-desktop-close-768.webp",
+          "bytes": 23294,
+          "transferBytes": 23594
+        },
+        {
+          "file": "cover-fc27.webp",
+          "bytes": 122106,
+          "transferBytes": 122406
+        },
+        {
+          "file": "cover-gta-v.webp",
+          "bytes": 139260,
+          "transferBytes": 139560
+        },
+        {
+          "file": "cover-mk1.webp",
+          "bytes": 96888,
+          "transferBytes": 97188
+        },
+        {
+          "file": "cover-stalker2.webp",
+          "bytes": 75206,
+          "transferBytes": 75506
+        },
+        {
+          "file": "cover-ufc6.webp",
+          "bytes": 74324,
+          "transferBytes": 74624
+        },
+        {
+          "file": "cover-tekken8.webp",
+          "bytes": 81324,
+          "transferBytes": 81624
+        },
+        {
+          "file": "cover-split-fiction.webp",
+          "bytes": 116116,
+          "transferBytes": 116416
+        },
+        {
+          "file": "dualsense-cutout.webp",
+          "bytes": 237144,
+          "transferBytes": 237444
+        }
+      ],
+      "bytes": 965662,
+      "gameImages": [
+        "cover-fc27.webp",
+        "cover-gta-v.webp",
+        "cover-mk1.webp",
+        "cover-stalker2.webp",
+        "cover-ufc6.webp",
+        "cover-tekken8.webp",
+        "cover-split-fiction.webp",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "mountedGameImages": 19,
+    "allGameCards": 19,
+    "dialog": {
+      "width": 284,
+      "height": 284,
+      "source": "cover-fc27.webp",
+      "objectFit": "fill",
+      "transform": "none"
+    },
+    "cardWidth": 283.8125,
+    "errors": []
+  },
+  {
+    "mode": "after1.6",
+    "width": 1440,
+    "dpr": 1,
+    "firstFold": {
+      "files": [
+        {
+          "file": "ps5-commercial-desktop-detail-768.webp",
+          "bytes": 38966,
+          "transferBytes": 39266
+        },
+        {
+          "file": "dualsense-cutout-1120.webp",
+          "bytes": 145280,
+          "transferBytes": 145580
+        }
+      ],
+      "bytes": 184246,
+      "gameImages": []
+    },
+    "atGames": {
+      "files": [
+        {
+          "file": "ps5-commercial-desktop-detail-768.webp",
+          "bytes": 38966,
+          "transferBytes": 39266
+        },
+        {
+          "file": "dualsense-cutout-1120.webp",
+          "bytes": 145280,
+          "transferBytes": 145580
+        },
+        {
+          "file": "cover-fc27-360.webp",
+          "bytes": 43354,
+          "transferBytes": 43654
+        },
+        {
+          "file": "cover-gta-v-360.webp",
+          "bytes": 45878,
+          "transferBytes": 46178
+        },
+        {
+          "file": "cover-mk1-360.webp",
+          "bytes": 29694,
+          "transferBytes": 29994
+        },
+        {
+          "file": "cover-stalker2-360.webp",
+          "bytes": 32040,
+          "transferBytes": 32340
+        },
+        {
+          "file": "cover-ufc6-360.webp",
+          "bytes": 29200,
+          "transferBytes": 29500
+        }
+      ],
+      "bytes": 364412,
+      "gameImages": [
+        "cover-fc27-360.webp",
+        "cover-gta-v-360.webp",
+        "cover-mk1-360.webp",
+        "cover-stalker2-360.webp",
+        "cover-ufc6-360.webp"
+      ]
+    },
+    "mountedGameImages": 5,
+    "allGameCards": 19,
+    "dialog": {
+      "width": 284,
+      "height": 284,
+      "source": "cover-fc27.webp",
+      "objectFit": "contain",
+      "transform": "none"
+    },
+    "cardWidth": 283.8125,
+    "errors": []
+  },
+  {
+    "mode": "before1.5",
+    "width": 1440,
+    "dpr": 3,
+    "firstFold": {
+      "files": [
+        {
+          "file": "ps5-commercial-desktop-close.webp",
+          "bytes": 83212,
+          "transferBytes": 83512
+        },
+        {
+          "file": "cover-fc27.webp",
+          "bytes": 122106,
+          "transferBytes": 122406
+        },
+        {
+          "file": "cover-gta-v.webp",
+          "bytes": 139260,
+          "transferBytes": 139560
+        },
+        {
+          "file": "cover-stalker2.webp",
+          "bytes": 75206,
+          "transferBytes": 75506
+        },
+        {
+          "file": "cover-mk1.webp",
+          "bytes": 96888,
+          "transferBytes": 97188
+        },
+        {
+          "file": "cover-ufc6.webp",
+          "bytes": 74324,
+          "transferBytes": 74624
+        },
+        {
+          "file": "cover-tekken8.webp",
+          "bytes": 81324,
+          "transferBytes": 81624
+        },
+        {
+          "file": "cover-split-fiction.webp",
+          "bytes": 116116,
+          "transferBytes": 116416
+        },
+        {
+          "file": "dualsense-cutout.webp",
+          "bytes": 237144,
+          "transferBytes": 237444
+        }
+      ],
+      "bytes": 1025580,
+      "gameImages": [
+        "cover-fc27.webp",
+        "cover-gta-v.webp",
+        "cover-mk1.webp",
+        "cover-stalker2.webp",
+        "cover-ufc6.webp",
+        "cover-tekken8.webp",
+        "cover-split-fiction.webp",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "atGames": {
+      "files": [
+        {
+          "file": "ps5-commercial-desktop-close.webp",
+          "bytes": 83212,
+          "transferBytes": 83512
+        },
+        {
+          "file": "cover-fc27.webp",
+          "bytes": 122106,
+          "transferBytes": 122406
+        },
+        {
+          "file": "cover-gta-v.webp",
+          "bytes": 139260,
+          "transferBytes": 139560
+        },
+        {
+          "file": "cover-stalker2.webp",
+          "bytes": 75206,
+          "transferBytes": 75506
+        },
+        {
+          "file": "cover-mk1.webp",
+          "bytes": 96888,
+          "transferBytes": 97188
+        },
+        {
+          "file": "cover-ufc6.webp",
+          "bytes": 74324,
+          "transferBytes": 74624
+        },
+        {
+          "file": "cover-tekken8.webp",
+          "bytes": 81324,
+          "transferBytes": 81624
+        },
+        {
+          "file": "cover-split-fiction.webp",
+          "bytes": 116116,
+          "transferBytes": 116416
+        },
+        {
+          "file": "dualsense-cutout.webp",
+          "bytes": 237144,
+          "transferBytes": 237444
+        }
+      ],
+      "bytes": 1025580,
+      "gameImages": [
+        "cover-fc27.webp",
+        "cover-gta-v.webp",
+        "cover-mk1.webp",
+        "cover-stalker2.webp",
+        "cover-ufc6.webp",
+        "cover-tekken8.webp",
+        "cover-split-fiction.webp",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "mountedGameImages": 19,
+    "allGameCards": 19,
+    "dialog": {
+      "width": 284,
+      "height": 284,
+      "source": "cover-fc27.webp",
+      "objectFit": "fill",
+      "transform": "none"
+    },
+    "cardWidth": 283.8125,
+    "errors": []
+  },
+  {
+    "mode": "after1.6",
+    "width": 1440,
+    "dpr": 3,
+    "firstFold": {
+      "files": [
+        {
+          "file": "ps5-commercial-desktop-detail.webp",
+          "bytes": 157622,
+          "transferBytes": 157922
+        },
+        {
+          "file": "dualsense-cutout.webp",
+          "bytes": 237144,
+          "transferBytes": 237444
+        }
+      ],
+      "bytes": 394766,
+      "gameImages": []
+    },
+    "atGames": {
+      "files": [
+        {
+          "file": "ps5-commercial-desktop-detail.webp",
+          "bytes": 157622,
+          "transferBytes": 157922
+        },
+        {
+          "file": "dualsense-cutout.webp",
+          "bytes": 237144,
+          "transferBytes": 237444
+        },
+        {
+          "file": "cover-fc27-720.webp",
+          "bytes": 122106,
+          "transferBytes": 122406
+        },
+        {
+          "file": "cover-mk1-720.webp",
+          "bytes": 96888,
+          "transferBytes": 97188
+        },
+        {
+          "file": "cover-stalker2-720.webp",
+          "bytes": 75206,
+          "transferBytes": 75506
+        },
+        {
+          "file": "cover-ufc6-720.webp",
+          "bytes": 74324,
+          "transferBytes": 74624
+        },
+        {
+          "file": "cover-gta-v-720.webp",
+          "bytes": 139260,
+          "transferBytes": 139560
+        }
+      ],
+      "bytes": 902550,
+      "gameImages": [
+        "cover-fc27-720.webp",
+        "cover-gta-v-720.webp",
+        "cover-mk1-720.webp",
+        "cover-stalker2-720.webp",
+        "cover-ufc6-720.webp"
+      ]
+    },
+    "mountedGameImages": 5,
+    "allGameCards": 19,
+    "dialog": {
+      "width": 284,
+      "height": 284,
+      "source": "cover-fc27.webp",
+      "objectFit": "contain",
+      "transform": "none"
+    },
+    "cardWidth": 283.8125,
+    "errors": []
+  }
+]

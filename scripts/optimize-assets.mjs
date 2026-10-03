@@ -1,15 +1,50 @@
 import sharp from 'sharp';
-import { readdir, stat } from 'node:fs/promises';
+import { copyFile, readFile, readdir, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const directory = 'wordpress/joyrent/assets/images';
-let total = 0;
-for (const name of await readdir(directory)) {
-  if (!name.endsWith('.png')) continue;
-  const source = join(directory, name);
-  const target = source.replace(/\.png$/, '.webp');
-  const width = name.startsWith('game-') ? 720 : name === 'favicon.png' ? 64 : 1680;
-  await sharp(source).resize({ width, withoutEnlargement: true }).webp({ quality: 86, effort: 5 }).toFile(target);
+const manifest = JSON.parse(await readFile(join(directory, 'hero-media.json'), 'utf8'));
+const names = await readdir(directory);
+let total = 0, count = 0;
+
+async function derivative(master, file, width, quality = 92) {
+  const source = join(directory, master);
+  const metadata = await sharp(source).metadata();
+  if (!metadata.width || metadata.width < width) {
+    throw new Error(`${file}: ${width}px exceeds native ${metadata.width || 0}px master ${master}; provide a real larger source.`);
+  }
+  const target = join(directory, file);
+  await sharp(source).resize({ width, withoutEnlargement: true }).webp({ quality, effort: 6, alphaQuality: 100 }).toFile(target);
   total += (await stat(target)).size;
+  count++;
 }
-console.log(`Optimized local images: ${(total / 1024 / 1024).toFixed(2)} MiB total.`);
+
+// The same recipes drive the React picture and WordPress preload. Preserve the
+// custom hero encoding rather than replacing it with a generic quality setting.
+for (const [mode, fallbackMaster] of [['desktop', 'ps5-commercial-desktop-close.png'], ['mobile', 'ps5-commercial-mobile.png']]) {
+  for (const source of manifest[mode].sources) {
+    await derivative(source.master || manifest[mode].master || fallbackMaster, source.file, source.width, source.quality ?? (source.width < 1000 ? 89 : 92));
+  }
+}
+
+for (const width of [560, 1120]) {
+  await derivative('dualsense-cutout.png', `dualsense-cutout-${width}.webp`, width);
+}
+
+// Original cover files remain the full artwork used by the detail dialog.
+// Copy native 720px WebPs without recompressing them a second time.
+for (const name of names.filter(name => /^(cover-|game-).+\.webp$/.test(name) && !/-(360|720)\.webp$/.test(name))) {
+  const stem = name.replace(/\.webp$/, '');
+  const master = names.includes(`${stem}.png`) ? `${stem}.png` : name;
+  await derivative(master, `${stem}-360.webp`, 360, 90);
+  const metadata = await sharp(join(directory, name)).metadata();
+  if (metadata.width === 720) {
+    const target = join(directory, `${stem}-720.webp`);
+    await copyFile(join(directory, name), target);
+    total += (await stat(target)).size;
+    count++;
+  } else {
+    await derivative(master, `${stem}-720.webp`, 720);
+  }
+}
+console.log(`Prepared ${count} native responsive images: ${(total / 1024 / 1024).toFixed(2)} MiB total. Original artwork preserved.`);

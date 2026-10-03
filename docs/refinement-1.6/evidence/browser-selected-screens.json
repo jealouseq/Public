@@ -1,0 +1,544 @@
+{
+  "run": "20261003T092023Z",
+  "base": "http://localhost:8080",
+  "captureCount": 16,
+  "safety": "All POST intercepted; none generated. Only local GET/HEAD transmitted. Empty contact fields.",
+  "captures": [
+    {
+      "file": "docs/refinement-1.6/screens/ua-mobile-hero.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-mobile-hero.png",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "hero",
+      "externalTiles": null
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ua-mobile-booking-recap.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-mobile-booking-recap.png",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "booking-recap",
+      "externalTiles": null
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ua-mobile-game-picker.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-mobile-game-picker.png",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "game-picker",
+      "externalTiles": null
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ua-mobile-delivery-map.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-mobile-delivery-map.png",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "delivery-map",
+      "externalTiles": "blocked; local vector scheme"
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ua-desktop-hero.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-desktop-hero.png",
+      "language": "uk",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "hero",
+      "externalTiles": null
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ua-desktop-booking-empty-contacts.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-desktop-booking-empty-contacts.png",
+      "language": "uk",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "booking-empty-contacts",
+      "externalTiles": null
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ua-desktop-game-picker.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-desktop-game-picker.png",
+      "language": "uk",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "game-picker",
+      "externalTiles": null
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ua-desktop-delivery-map.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-desktop-delivery-map.png",
+      "language": "uk",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "delivery-map",
+      "externalTiles": "blocked; local vector scheme"
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ru-mobile-hero.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-mobile-hero.png",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "hero",
+      "externalTiles": null
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ru-mobile-booking-recap.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-mobile-booking-recap.png",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "booking-recap",
+      "externalTiles": null
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ru-mobile-game-picker.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-mobile-game-picker.png",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "game-picker",
+      "externalTiles": null
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ru-mobile-delivery-map.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-mobile-delivery-map.png",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "delivery-map",
+      "externalTiles": "blocked; local vector scheme"
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ru-desktop-hero.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-desktop-hero.png",
+      "language": "ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "hero",
+      "externalTiles": null
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ru-desktop-booking-empty-contacts.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-desktop-booking-empty-contacts.png",
+      "language": "ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "booking-empty-contacts",
+      "externalTiles": null
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ru-desktop-game-picker.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-desktop-game-picker.png",
+      "language": "ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "game-picker",
+      "externalTiles": null
+    },
+    {
+      "file": "docs/refinement-1.6/screens/ru-desktop-delivery-map.png",
+      "source": "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-desktop-delivery-map.png",
+      "language": "ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "contacts": "empty",
+      "scenario": "delivery-map",
+      "externalTiles": "blocked; local vector scheme"
+    }
+  ],
+  "contexts": [
+    {
+      "posts": [],
+      "catalogCalls": 0,
+      "pageErrors": [],
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      ],
+      "badHTTP": [],
+      "blockedExternalOrMutations": [
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/599/362.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/599/361.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/598/362.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/600/362.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/599/363.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/598/361.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/600/361.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/598/363.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/600/363.png"
+        }
+      ],
+      "screenshots": [
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-mobile-hero.png",
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-mobile-booking-recap.png",
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-mobile-game-picker.png",
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-mobile-delivery-map.png"
+      ],
+      "buildAssets": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dm7Og9CV.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNG164Kn.css",
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/leaflet-CIGW-MKW.css"
+        ]
+      }
+    },
+    {
+      "posts": [],
+      "catalogCalls": 0,
+      "pageErrors": [],
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      ],
+      "badHTTP": [],
+      "blockedExternalOrMutations": [
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/598/362.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/599/362.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/598/361.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/599/361.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/598/363.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/599/363.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/597/362.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/600/362.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/597/361.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/600/361.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/597/363.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/600/363.png"
+        }
+      ],
+      "screenshots": [
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-desktop-hero.png",
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-desktop-booking-empty-contacts.png",
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-desktop-game-picker.png",
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ua-desktop-delivery-map.png"
+      ],
+      "buildAssets": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dm7Og9CV.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNG164Kn.css",
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/leaflet-CIGW-MKW.css"
+        ]
+      }
+    },
+    {
+      "posts": [],
+      "catalogCalls": 0,
+      "pageErrors": [],
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      ],
+      "badHTTP": [],
+      "blockedExternalOrMutations": [
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/599/362.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/599/361.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/598/362.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/600/362.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/599/363.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/598/361.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/600/361.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/598/363.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/600/363.png"
+        }
+      ],
+      "screenshots": [
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-mobile-hero.png",
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-mobile-booking-recap.png",
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-mobile-game-picker.png",
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-mobile-delivery-map.png"
+      ],
+      "buildAssets": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dm7Og9CV.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNG164Kn.css",
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/leaflet-CIGW-MKW.css"
+        ]
+      }
+    },
+    {
+      "posts": [],
+      "catalogCalls": 0,
+      "pageErrors": [],
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+      ],
+      "badHTTP": [],
+      "blockedExternalOrMutations": [
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/598/362.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/599/362.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/598/361.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/599/361.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/598/363.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/599/363.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/597/362.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/600/362.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/597/361.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/600/361.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/597/363.png"
+        },
+        {
+          "method": "GET",
+          "url": "https://tile.openstreetmap.org/10/600/363.png"
+        }
+      ],
+      "screenshots": [
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-desktop-hero.png",
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-desktop-booking-empty-contacts.png",
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-desktop-game-picker.png",
+        "work/fixes-1.6/browser-screens-20261003T092023Z/selected-ru-desktop-delivery-map.png"
+      ],
+      "buildAssets": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dm7Og9CV.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNG164Kn.css",
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/leaflet-CIGW-MKW.css"
+        ]
+      }
+    }
+  ]
+}

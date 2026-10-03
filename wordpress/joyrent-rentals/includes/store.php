@@ -10,16 +10,26 @@ final class JR_Store {
     }
     public static function catalog(): array {
         $data=JR_Domain::catalog(); $ready=class_exists('WooCommerce')&&get_woocommerce_currency()==='UAH';
-        foreach ($data['tariffs'] as $console=>&$tariffs) foreach ($tariffs as &$tariff) {
-            $product=self::product($console,$tariff['days']);
-            if ($product&&$product->get_status()==='publish'&&$product->get_price()!==''&&(float)$product->get_price()>0) $tariff['price']=(float)$product->get_price();
-            else $ready=false;
+        $offers=0;
+        foreach ($data['tariffs'] as $console=>&$tariffs) {
+            $available=[];
+            foreach ($tariffs as $tariff) {
+                $product=self::product($console,$tariff['days']);
+                if (!$product||$product->get_status()!=='publish'||$product->get_price()===''||(float)$product->get_price()<=0) continue;
+                $tariff['price']=(float)$product->get_price(); $available[]=$tariff; $offers++;
+            }
+            $tariffs=$available;
         }
         unset($tariff,$tariffs);
-        return ['tariffs'=>$data['tariffs'],'games'=>JR_Games::records(),'settings'=>JR_Settings::public(),'currency'=>'UAH','acceptingRequests'=>$ready];
+        return ['tariffs'=>$data['tariffs'],'games'=>JR_Games::records(),'settings'=>JR_Settings::public(),'currency'=>'UAH','acceptingRequests'=>$ready&&$offers>0];
     }
     public static function seed(): void {
         if (!class_exists('WooCommerce')) return;
+        $lock=JR_Lock::acquire('joyrent_catalog_lock');
+        if (!$lock) return;
+        try { self::seed_catalog(); } finally { JR_Lock::release('joyrent_catalog_lock',$lock); }
+    }
+    private static function seed_catalog(): void {
         $empty=wc_get_products(['limit'=>1,'return'=>'ids'])===[];
         if ($empty&&!get_option('joyrent_seeded')) update_option('woocommerce_currency','UAH');
         foreach (JR_Domain::catalog()['tariffs'] as $console=>$tariffs) foreach ($tariffs as $tariff) {
@@ -33,6 +43,7 @@ final class JR_Store {
             $product->update_meta_data('_joyrent_console',$console); $product->update_meta_data('_joyrent_days',$tariff['days']); $product->save();
         }
         self::seed_games();
+        self::reconcile_games();
         self::legal_pages(); self::faq_pages(); update_option('joyrent_seeded',true,false);
     }
     private static function seed_games(): void {
@@ -44,24 +55,84 @@ final class JR_Store {
         }
     }
     public static function upgrade(): void {
-        if (version_compare((string)get_option('joyrent_version','0'),'1.5.0','>=')||!class_exists('WooCommerce')) return;
-        self::seed_games(); // Add missing games without republishing drafts or replacing owner content.
-        foreach (JR_Domain::catalog()['games'] as $position=>$game) {
-            $posts=get_posts(['post_type'=>'joyrent_game','post_status'=>'any','numberposts'=>1,'meta_key'=>'_jr_game_id','meta_value'=>$game['id']]);
-            if (!$posts) continue;
-            wp_update_post(['ID'=>$posts[0]->ID,'menu_order'=>($position+1)*10]);
-            // Keep the latest Mortal Kombat supported by each console. Preserve owner platform edits.
-            if ($game['id']==='mk11') {
+        if (version_compare((string)get_option('joyrent_version','0'),'1.6.0','>=')||!class_exists('WooCommerce')) return;
+        $lock=JR_Lock::acquire('joyrent_catalog_lock');
+        if (!$lock) return;
+        try {
+            if (version_compare((string)get_option('joyrent_version','0'),'1.6.0','>=') ) return;
+            $previous=(string)get_option('joyrent_version','0');
+            self::seed_games(); // Add missing games without republishing drafts or replacing owner content.
+            foreach (JR_Domain::catalog()['games'] as $position=>$game) {
+                $posts=get_posts(['post_type'=>'joyrent_game','post_status'=>array_values(get_post_stati()),'numberposts'=>-1,'meta_key'=>'_jr_game_id','meta_value'=>$game['id']]);
+                if (!$posts) continue;
+                foreach ($posts as $managed) {
+                    $facts=(array)get_post_meta($managed->ID,'_jr_game',true);
+                    foreach (['playersByPlatform','requiresInternet'] as $key) if (isset($game[$key])) $facts[$key]=$game[$key];
+                    update_post_meta($managed->ID,'_jr_game',$facts);
+                }
+                // Only factual managed metadata changes in 1.6; owner text/artwork remain authoritative.
                 $meta=(array)get_post_meta($posts[0]->ID,'_jr_game',true);
-                if (($meta['platforms']??[])===['ps5','ps4']) { $meta['platforms']=['ps4']; update_post_meta($posts[0]->ID,'_jr_game',$meta); }
+                // Keep the latest Mortal Kombat supported by each console. Preserve owner platform edits.
+                if ($game['id']==='mk11'&&version_compare($previous,'1.5.0','<')) {
+                    if (($meta['platforms']??[])===['ps5','ps4']) { $meta['platforms']=['ps4']; update_post_meta($posts[0]->ID,'_jr_game',$meta); }
+                }
             }
+            if (version_compare($previous,'1.5.0','<')) {
+                $legacy=array_column(json_decode((string)file_get_contents(__DIR__.'/../data/legacy-games.json'),true),null,'id');
+                foreach ($legacy as $retired=>$source) {
+                    $posts=get_posts(['post_type'=>'joyrent_game','post_status'=>array_values(get_post_stati()),'numberposts'=>-1,'meta_key'=>'_jr_game_id','meta_value'=>$retired]);
+                    foreach ($posts as $post) {
+                        if (self::untouched_legacy($post,$source)) wp_delete_post($post->ID,true);
+                    }
+                }
+            }
+            self::legal_pages(); self::faq_pages(); // Add missing translations without rewriting owner pages or settings.
+            self::reconcile_games();
+            self::upgrade_settings();
+            update_option('joyrent_version','1.6.0',false);
+        } finally { JR_Lock::release('joyrent_catalog_lock',$lock); }
+    }
+    private static function untouched_legacy(WP_Post $post, array $source): bool {
+        // Archived pre-1.5 seed positions. Any uncertain author state stays in the store.
+        $positions=['fc25'=>10,'ufc5'=>90,'cod-bo6'=>100];$id=$source['id'];
+        if ($post->post_title!==$source['title']||$post->post_content!==$source['description']||$post->post_excerpt!==''||$post->post_status!=='publish'||$post->post_name!==$id||(int)$post->menu_order!==($positions[$id]??-1)||(int)$post->post_parent!==0||$post->post_password!==''||(int)$post->post_author!==0||$post->post_modified_gmt!==$post->post_date_gmt) return false;
+        $all=get_post_meta($post->ID);unset($all['_edit_lock'],$all['_edit_last']);ksort($all);
+        $expected=['_jr_game'=>[maybe_serialize($source)],'_jr_game_id'=>[$id]];ksort($expected);
+        // Includes excerpt, priority and every owner meta field, even outside this plugin.
+        return $all===$expected;
+    }
+    private static function upgrade_settings(): void {
+        $saved=(array)get_option('joyrent_settings',[]);$defaults=JR_Settings::defaults();
+        foreach (['city','phone','telegram','deposit_ps5','deposit_ps4','delivery_green_fee','delivery_yellow_fee'] as $key) if (!array_key_exists($key,$saved)||$saved[$key]==='') $saved[$key]=$defaults[$key];
+        if ($saved['city']===$defaults['city']&&empty($saved['city_ru'])) $saved['city_ru']=$defaults['city_ru'];
+        if (($saved['base_controllers']??1)==1&&(!isset($saved['extra_controller_fee'])||$saved['extra_controller_fee']==='')) { $saved['base_controllers']=2;$saved['extra_controller_fee']=0; }
+        $old=['delivery_text'=>'Вкажи місто та адресу у заявці. Ми перевіримо можливість доставки й узгодимо час отримання та повернення.','delivery_text_ru'=>'Укажи город и адрес в заявке. Мы проверим возможность доставки и согласуем время получения и возврата.'];
+        foreach ($old as $key=>$text) if (!isset($saved[$key])||$saved[$key]===''||$saved[$key]===$text) $saved[$key]=$defaults[$key];
+        update_option('joyrent_settings',$saved,false);
+    }
+    private static function reconcile_games(): void {
+        $posts=get_posts(['post_type'=>'joyrent_game','post_status'=>array_values(get_post_stati()),'numberposts'=>-1,'orderby'=>'ID','order'=>'ASC']);
+        usort($posts,function($left,$right): int {
+            $a=(array)get_post_meta($left->ID,'_jr_game',true);$b=(array)get_post_meta($right->ID,'_jr_game',true);
+            $a_managed=get_post_meta($left->ID,'_jr_game_id',true)===($a['id']??null);$b_managed=get_post_meta($right->ID,'_jr_game_id',true)===($b['id']??null);
+            return ($a_managed===$b_managed)?$left->ID<=>$right->ID:($a_managed?-1:1);
+        });
+        $seen=[]; $bundled=array_column(JR_Domain::catalog()['games'],null,'id');
+        foreach ($posts as $post) {
+            $meta=get_post_meta($post->ID,'_jr_game',true);
+            if (!is_array($meta)||empty($meta['id'])) continue;
+            $id=(string)$meta['id'];
+            // Include all author metadata in the equality check, even fields outside this plugin.
+            $all=get_post_meta($post->ID); unset($all['_edit_lock'],$all['_edit_last'],$all['_wp_old_slug'],$all['_wp_trash_meta_status'],$all['_wp_trash_meta_time']); ksort($all);
+            $signature=wp_json_encode([$post->post_title,$post->post_content,$post->post_excerpt,$post->post_status,(int)$post->menu_order,$all]);
+            if (!isset($seen[$id])) { $seen[$id]=$signature; continue; }
+            if (isset($bundled[$id])&&get_post_meta($post->ID,'_jr_game_id',true)===$id&&$seen[$id]===$signature) {
+                wp_delete_post($post->ID,true); continue;
+            }
+            // A differing record stays editable and published under a distinct stable ID.
+            $meta['id']=$id.'-owner-'.$post->ID;
+            update_post_meta($post->ID,'_jr_game',$meta); update_post_meta($post->ID,'_jr_game_id',$meta['id']);
         }
-        foreach (['fc25','ufc5','cod-bo6'] as $retired) {
-            $posts=get_posts(['post_type'=>'joyrent_game','post_status'=>array_values(get_post_stati()),'numberposts'=>100,'meta_key'=>'_jr_game_id','meta_value'=>$retired]);
-            foreach ($posts as $post) wp_delete_post($post->ID,true); // Test-store catalogue: replace obsolete editions rather than retain drafts.
-        }
-        self::legal_pages(); self::faq_pages(); // Add missing translations without rewriting owner pages or settings.
-        update_option('joyrent_version','1.5.0',false);
     }
     private static function faq_pages(): void {
         $data=json_decode((string)file_get_contents(__DIR__.'/../data/faq.json'),true);

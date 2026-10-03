@@ -31,7 +31,9 @@ final class JR_Orders {
             $item=$order->get_item($item_id);
             foreach (['Консоль'=>strtoupper($data['console']),'Термін'=>$data['days'].' дн.','Отримання'=>$data['startDate'],'Повернення'=>$data['returnDate'],'Геймпади'=>$data['controllers']] as $key=>$value) $item->add_meta_data($key,$value,true);
             $item->save();
-            $delivery=$data['method']==='pickup'?0:($settings['deliveryFee']===null?null:($data['days']>=$settings['freeDeliveryFrom']?0:$settings['deliveryFee']));
+            $free_delivery_candidate=$data['method']==='delivery'&&$data['days']>=$settings['freeDeliveryFrom'];
+            // An address has no confirmed zone at request time; client zone claims are not authoritative.
+            $delivery=$data['method']==='pickup'?0:($free_delivery_candidate?null:$settings['deliveryFee']);
             $extra_count=max(0,$data['controllers']-$settings['baseControllers']);
             $extra=$extra_count?($settings['extraControllerFee']===null?null:$settings['extraControllerFee']*$extra_count):0;
             foreach (['Доставка'=>$delivery,'Додатковий геймпад'=>$extra] as $title=>$value) if ($value!==null&&$value>0) {
@@ -39,6 +41,10 @@ final class JR_Orders {
             }
             $deposit=$data['console']==='ps5'?$settings['depositPs5']:$settings['depositPs4'];
             foreach (['console'=>$data['console'],'days'=>$data['days'],'start_date'=>$data['startDate'],'return_date'=>$data['returnDate'],'controllers'=>$data['controllers'],'game_ids'=>$data['gameIds'],'method'=>$data['method'],'deposit'=>$deposit===null?'pending':$deposit,'delivery'=>$delivery===null?'pending':$delivery,'extra_controller'=>$extra===null?'pending':$extra,'consent'=>'yes','consent_version'=>'1.0','language'=>$data['language']??'uk'] as $key=>$value) $order->update_meta_data('_joyrent_'.$key,$value);
+            if ($free_delivery_candidate) {
+                $order->update_meta_data('_joyrent_delivery_free_eligibility','pending_zone_confirmation');
+                $order->add_order_note('Від '.$settings['freeDeliveryFrom'].' днів безкоштовна доставка можлива лише у зеленій або жовтій зоні після підтвердження адреси магазином. Червона зона — за тарифом таксі в обидва боки.');
+            }
             $order->add_order_note('Мова клієнта: '.(($data['language']??'uk')==='ru'?'Російська':'Українська'));
             $order->add_order_note('Заявка JOYRENT: доступність консолі, ігор, адреса доставки та умови застави потребують підтвердження. Оплату не отримано. Бажані ігри: '.implode(', ',$data['gameIds']));
             $order->set_customer_note('Дата отримання: '.$data['startDate'].'. Повернення: '.$data['returnDate'].'. Геймпадів: '.$data['controllers'].'. Спосіб отримання: '.$data['method']);
@@ -48,5 +54,58 @@ final class JR_Orders {
             $order->calculate_totals(false); $order->save();
             return ['reference'=>'JR-'.$order->get_order_number(),'rentalAmount'=>$amount,'status'=>'awaiting_confirmation'];
         } catch (Throwable $exception) { $order->delete(true); throw $exception; }
+    }
+    public static function notification_recipient(): string {
+        $settings=JR_Settings::get(); $woo=(array)get_option('woocommerce_new_order_settings',[]);
+        foreach ([$settings['notification_email']??'', $settings['email']??'', $woo['recipient']??'', get_option('admin_email','')] as $candidate) {
+            $emails=array_filter(array_map('trim',explode(',',(string)$candidate)),fn($email)=>is_email($email));
+            if ($emails) return implode(', ',$emails);
+        }
+        return '';
+    }
+    public static function notify(int $id, bool $retry_uncertain = false): bool {
+        $lock_name='jr_notification_'.$id; $owner=JR_Lock::acquire($lock_name,300);
+        if (!$owner) return false;
+        try {
+            $order=wc_get_order($id);
+            if (!$order||$order->get_meta('_joyrent_completed')!=='yes') return false;
+            $status=(string)$order->get_meta('_joyrent_notification_status');
+            if ($status==='sent') return true;
+            // An interrupted send has an uncertain result; only a reviewed admin retry may resend.
+            if ($status==='sending'&&!$retry_uncertain) return false;
+            $recipient=self::notification_recipient();
+            $order->update_meta_data('_joyrent_notification_status','sending');
+            $order->update_meta_data('_joyrent_notification_attempts',(int)$order->get_meta('_joyrent_notification_attempts')+1);
+            $order->save();
+            $subject='JOYRENT: нова заявка JR-'.$order->get_order_number();
+            $body="Нова заявка очікує ручного підтвердження. Оплату не отримано.\n\n";
+            foreach (['Ім’я'=>$order->get_billing_first_name(),'Телефон'=>$order->get_billing_phone(),'Адреса'=>$order->get_billing_address_1(),'Консоль'=>strtoupper((string)$order->get_meta('_joyrent_console')),'Термін'=>$order->get_meta('_joyrent_days').' дн.','Отримання'=>$order->get_meta('_joyrent_start_date'),'Повернення'=>$order->get_meta('_joyrent_return_date'),'Геймпади'=>$order->get_meta('_joyrent_controllers'),'Бажані ігри'=>implode(', ',(array)$order->get_meta('_joyrent_game_ids')),'Мова'=>$order->get_meta('_joyrent_language')] as $label=>$value) $body.=$label.': '.$value."\n";
+            $body.="\n".$order->get_edit_order_url();
+            try { $sent=$recipient!==''&&wp_mail($recipient,$subject,$body,['Content-Type: text/plain; charset=UTF-8']); }
+            catch (Throwable $e) { $sent=false; }
+            $order->update_meta_data('_joyrent_notification_status',$sent?'sent':'failed');
+            $order->update_meta_data('_joyrent_notification_updated',gmdate('c'));
+            $order->add_order_note($sent?'JOYRENT: сповіщення передано поштовій службі.':'JOYRENT: не вдалося передати сповіщення. Перевірте одержувача та пошту; повторіть спробу в блоці JOYRENT.');
+            $order->save(); return $sent;
+        } catch (Throwable $e) { return false; }
+        finally { JR_Lock::release($lock_name,$owner); }
+    }
+    public static function notification_admin(WC_Order $order): void {
+        if (!$order->get_meta('_joyrent_request_key')||!current_user_can('manage_woocommerce')) return;
+        $status=(string)$order->get_meta('_joyrent_notification_status');
+        $labels=['sent'=>'Передано поштовій службі','failed'=>'Помилка — перевірте поштові налаштування','sending'=>'Результат невідомий — перевірте доставку перед повтором'];
+        echo '<p class="form-field form-field-wide"><strong>JOYRENT сповіщення:</strong> '.esc_html($labels[$status]??'Ще не надіслано');
+        if ($status!=='sent') {
+            $url=wp_nonce_url(add_query_arg(['action'=>'joyrent_notification_retry','order_id'=>$order->get_id()],admin_url('admin-post.php')),'joyrent_notification_retry_'.$order->get_id());
+            echo '<br><a class="button" href="'.esc_url($url).'">Повторити сповіщення</a>';
+        }
+        echo '</p>';
+    }
+    public static function notification_retry(): void {
+        if (!current_user_can('manage_woocommerce')) wp_die('Недостатньо прав.');
+        $id=absint($_GET['order_id']??0); check_admin_referer('joyrent_notification_retry_'.$id);
+        $order=wc_get_order($id);
+        if (!$order||!$order->get_meta('_joyrent_request_key')) wp_die('Заявку не знайдено.');
+        self::notify($id,true); wp_safe_redirect($order->get_edit_order_url()); exit;
     }
 }

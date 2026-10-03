@@ -13,7 +13,9 @@ def base():
  return dict(console='ps5',days=3,startDate=(datetime.now(ZoneInfo('Europe/Kyiv'))+timedelta(days=2)).strftime('%Y-%m-%d'),controllers=1,gameIds=['it-takes-two'],name='Тест JOYRENT',phone='+380000000001',method='delivery',address='Тестове місто, тестова адреса 1',consent=True,website='',requestId=str(uuid4()))
 import urllib.request
 status,catalog=call('/catalog')
-assert catalog['settings']['deliveryTextRu'].startswith('Укажи')
+assert catalog['settings']['city']=='Одеса'
+assert catalog['settings']['cityRu']=='Одесса'
+assert 'Одессе' in catalog['settings']['deliveryTextRu']
 assert len({g['image'] for g in catalog['games']})==20
 assert all(g['image'].startswith('cover-') and g.get('genreRu') and g.get('descriptionRu') for g in catalog['games'])
 assert 'nameRu' in catalog['tariffs']['ps5'][0]

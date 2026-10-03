@@ -2,24 +2,27 @@
   "mobileMedia": "(max-width: 900px)",
   "desktopMedia": "(width > 900px)",
   "desktop": {
+    "master": "ps5-commercial-desktop-detail.png",
     "width": 1448,
     "height": 1086,
-    "fallback": "ps5-commercial-desktop-close-768.webp",
+    "fallback": "ps5-commercial-desktop-detail-768.webp",
     "sizes": "(min-width: 1536px) 702px, 47.3vw",
     "sources": [
       {
-        "file": "ps5-commercial-desktop-close-768.webp",
-        "width": 768
+        "file": "ps5-commercial-desktop-detail-768.webp",
+        "width": 768,
+        "quality": 92
       },
       {
-        "file": "ps5-commercial-desktop-close.webp",
-        "width": 1448
+        "file": "ps5-commercial-desktop-detail.webp",
+        "width": 1448,
+        "quality": 96
       }
     ]
   },
   "mobile": {
-    "width": 1120,
-    "height": 840,
+    "width": 1448,
+    "height": 1086,
     "fallback": "ps5-commercial-mobile-560.webp",
     "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)",
     "sources": [
@@ -30,6 +33,10 @@
       {
         "file": "ps5-commercial-mobile.webp",
         "width": 1120
+      },
+      {
+        "file": "ps5-commercial-mobile-1448.webp",
+        "width": 1448
       }
     ]
   }
