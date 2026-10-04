@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "language": "uk",
+      "singleRequestEntry": true,
+      "queryPrefillAndFocus": true,
+      "doneVisible": true,
+      "requestPreserved": true
+    },
+    {
+      "language": "ru",
+      "singleRequestEntry": true,
+      "queryPrefillAndFocus": true,
+      "doneVisible": true,
+      "requestPreserved": true
+    }
+  ]
+}

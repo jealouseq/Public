@@ -30,17 +30,40 @@ export interface RentalPayload {
 }
 export type RequestReceipt = { reference: string; rentalAmount: number; status: 'awaiting_confirmation' };
 const requestFailure = () => new URLSearchParams(window.location.search).get('lang') === 'ru' ? 'Не удалось оформить бронь. Проверь подключение и попробуй ещё раз.' : 'Не вдалося оформити бронювання. Перевір з’єднання та спробуй ще раз.';
+const uncertainRequestFailure = () => new URLSearchParams(window.location.search).get('lang') === 'ru' ? 'Не удалось подтвердить бронь. Повтори попытку с теми же данными или свяжись с нами.' : 'Не вдалося підтвердити бронювання. Повтори спробу з тими самими даними або зв’яжися з нами.';
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
-  const response = await fetch(`${boot.apiBase}${path}`, {
-    ...options, headers: { 'Content-Type': 'application/json', ...(boot.nonce ? { 'X-WP-Nonce': boot.nonce } : {}), ...options?.headers },
-  }).catch(() => { throw new Error(requestFailure()); });
-  const data = await response.json().catch(() => null);
-  if (!response.ok) {
-    const submittedLanguage = options?.body && typeof options.body === 'string' ? JSON.parse(options.body).language ?? 'uk' : 'uk';
-    const currentLanguage = new URLSearchParams(window.location.search).get('lang') === 'ru' ? 'ru' : 'uk';
-    throw new Error(submittedLanguage === currentLanguage && data?.code?.startsWith('jr_') ? data.message : requestFailure());
+  const controller = new AbortController();
+  const transportFailure = () => new Error(path === '/requests' ? uncertainRequestFailure() : requestFailure());
+  let timeout: ReturnType<typeof setTimeout> | undefined;
+  // Bound the complete response, including JSON; receiving headers does not reset the deadline.
+  const deadline = new Promise<never>((_, reject) => {
+    timeout = setTimeout(() => {
+      controller.abort();
+      reject(transportFailure());
+    }, 30_000);
+  });
+  try {
+    return await Promise.race([(async () => {
+      let response: Response;
+      let data;
+      try {
+        response = await fetch(`${boot.apiBase}${path}`, {
+          ...options, signal: controller.signal, headers: { 'Content-Type': 'application/json', ...(boot.nonce ? { 'X-WP-Nonce': boot.nonce } : {}), ...options?.headers },
+        });
+        data = await response.json();
+      } catch {
+        throw transportFailure();
+      }
+      if (!response.ok) {
+        const submittedLanguage = options?.body && typeof options.body === 'string' ? JSON.parse(options.body).language ?? 'uk' : 'uk';
+        const currentLanguage = new URLSearchParams(window.location.search).get('lang') === 'ru' ? 'ru' : 'uk';
+        throw new Error(submittedLanguage === currentLanguage && data?.code?.startsWith('jr_') ? data.message : requestFailure());
+      }
+      return data as T;
+    })(), deadline]);
+  } finally {
+    clearTimeout(timeout);
   }
-  return data as T;
 }
 export function normalizeCatalog(data: StoreCatalog): StoreCatalog {
   if (!data || !Array.isArray(data.games) || !data.tariffs || !Array.isArray(data.tariffs.ps5) || !Array.isArray(data.tariffs.ps4)) throw new Error(requestFailure());

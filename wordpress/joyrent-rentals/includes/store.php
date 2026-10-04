@@ -8,6 +8,9 @@ final class JR_Store {
         $id=wc_get_product_id_by_sku(self::sku($console,$days));
         return $id ? wc_get_product($id) : null;
     }
+    public static function requestable(?WC_Product $product): bool {
+        return $product && $product->get_status()==='publish' && $product->get_price()!=='' && (float)$product->get_price()>0 && $product->is_in_stock() && $product->has_enough_stock(1);
+    }
     public static function catalog(): array {
         $data=JR_Domain::catalog(); $ready=class_exists('WooCommerce')&&get_woocommerce_currency()==='UAH';
         $offers=0;
@@ -15,7 +18,7 @@ final class JR_Store {
             $available=[];
             foreach ($tariffs as $tariff) {
                 $product=self::product($console,$tariff['days']);
-                if (!$product||$product->get_status()!=='publish'||$product->get_price()===''||(float)$product->get_price()<=0) continue;
+                if (!self::requestable($product)) continue;
                 $tariff['price']=(float)$product->get_price(); $available[]=$tariff; $offers++;
             }
             $tariffs=$available;
@@ -55,11 +58,11 @@ final class JR_Store {
         }
     }
     public static function upgrade(): void {
-        if (version_compare((string)get_option('joyrent_version','0'),'1.8.1','>=')||!class_exists('WooCommerce')) return;
+        if (version_compare((string)get_option('joyrent_version','0'),'1.8.2','>=')||!class_exists('WooCommerce')) return;
         $lock=JR_Lock::acquire('joyrent_catalog_lock');
         if (!$lock) return;
         try {
-            if (version_compare((string)get_option('joyrent_version','0'),'1.8.1','>=') ) return;
+            if (version_compare((string)get_option('joyrent_version','0'),'1.8.2','>=') ) return;
             $previous=(string)get_option('joyrent_version','0');
             if (version_compare($previous,'1.6.0','<')) {
                 self::seed_games(); // Add missing games without republishing drafts or replacing owner content.
@@ -91,7 +94,7 @@ final class JR_Store {
             }
             self::upgrade_copy_settings();
             self::legal_pages(); self::faq_pages(); // Migrate exact previous defaults while preserving owner pages/settings.
-            update_option('joyrent_version','1.8.1',false);
+            update_option('joyrent_version','1.8.2',false);
         } finally { JR_Lock::release('joyrent_catalog_lock',$lock); }
     }
     private static function upgrade_copy_settings(): void {
@@ -165,7 +168,21 @@ final class JR_Store {
         $pages=json_decode((string)file_get_contents(__DIR__.'/../data/legal-pages.json'),true,512,JSON_THROW_ON_ERROR);
         foreach ($pages as $slug=>$page) self::seed_page($slug,$page['title'],$page['content'],$slug==='konfidentsiinist');
     }
+    public static function settings_changed(mixed $old, mixed $new): void {
+        $defaults=JR_Settings::defaults();
+        $old=array_merge($defaults,is_array($old)?$old:[]); $new=array_merge($defaults,is_array($new)?$new:[]);
+        $changed=false;
+        foreach (['city','city_ru','deposit_ps4','deposit_ps5','base_controllers','extra_controller_fee','delivery_fee','delivery_green_fee','delivery_yellow_fee','free_delivery_from'] as $key) {
+            if ($old[$key]!==$new[$key]) { $changed=true; break; }
+        }
+        if (!$changed) return;
+        self::faq_pages();
+        // Operational settings affect terms, never the owner's privacy pages or assigned policy.
+        $pages=json_decode((string)file_get_contents(__DIR__.'/../data/legal-pages.json'),true,512,JSON_THROW_ON_ERROR);
+        foreach (['umovy-orendy','usloviya-arendy'] as $slug) self::seed_page($slug,$pages[$slug]['title'],$pages[$slug]['content']);
+    }
     private static function seed_page(string $slug,string $title,string $content,bool $privacy=false): void {
+        $current_seed=['title'=>$title,'content'=>$content];
         static $previous=null,$previous_recent=null,$previous_current=null,$neutral=null;
         if ($previous===null) {
             $previous=json_decode((string)file_get_contents(__DIR__.'/../data/page-seeds-1.6.json'),true,512,JSON_THROW_ON_ERROR);
@@ -186,8 +203,8 @@ final class JR_Store {
             if ($privacy&&!is_wp_error($id)&&!get_option('wp_page_for_privacy_policy')) update_option('wp_page_for_privacy_policy',$id);
             return;
         }
-        // Only exact, published previous defaults migrate. Author text, titles, excerpts and drafts stay intact.
-        foreach (array_filter([$seed,$previous_recent[$slug]??null,$previous_current[$slug]??null,$neutral[$slug]??null]) as $known_seed) {
+        // Only exact, published managed defaults migrate. Author text, titles, excerpts and drafts stay intact.
+        foreach (array_filter([$current_seed,$seed,$previous_recent[$slug]??null,$previous_current[$slug]??null,$neutral[$slug]??null]) as $known_seed) {
             if ($page->post_status==='publish'&&$page->post_excerpt===''&&$page->post_title===$known_seed['title']&&$page->post_content===$known_seed['content']&&$page->post_content!==$content) {
                 wp_update_post(['ID'=>$page->ID,'post_title'=>$title,'post_content'=>$content]);
                 break;

@@ -20,6 +20,7 @@ function joyrent_privacy_url(): string {
     $fallback=get_page_by_path('konfidentsiinist');
     return $fallback&&$fallback->post_status==='publish'?get_permalink($fallback):'';
 }
+require_once __DIR__.'/includes/public-pages.php';
 add_filter('language_attributes', function (string $attributes): string {
     return is_front_page() || is_page(['usloviya-arendy','konfidentsialnost','umovy-orendy','konfidentsiinist','faq','faq-ru']) ? 'lang="'.joyrent_language().'" dir="ltr"' : $attributes;
 });
@@ -51,11 +52,8 @@ add_filter('script_loader_tag', function (string $tag, string $handle, string $s
     return preg_replace('/<script\b(?=[^>]*\bsrc=)(?:\s+type=["\'][^"\']*["\'])?/', '<script type="module"', $tag);
 }, 10, 3);
 add_action('wp_head', function (): void {
-    $description=joyrent_language()==='ru'?'JOYRENT — аренда PlayStation 5 и PlayStation 4. Выбирай консоль, даты и любимые игры.':'JOYRENT — оренда PlayStation 5 та PlayStation 4. Обирай консоль, дати та улюблені ігри.';
-    echo '<meta name="theme-color" content="#08090b"><meta name="description" content="'.esc_attr($description).'">';
-    if (is_page(['faq','faq-ru'])) echo '<link rel="alternate" hreflang="uk" href="'.esc_url(joyrent_faq_url('uk')).'"><link rel="alternate" hreflang="ru" href="'.esc_url(joyrent_faq_url('ru')).'">';
+    echo '<meta name="theme-color" content="#08090b">';
     if (is_front_page()) {
-        echo '<link rel="alternate" hreflang="uk" href="'.esc_url(home_url('/')).'"><link rel="alternate" hreflang="ru" href="'.esc_url(add_query_arg('lang','ru',home_url('/'))).'"><link rel="alternate" hreflang="x-default" href="'.esc_url(home_url('/')).'">';
         // Match the React picture exactly: preload only the active viewport's image.
         $media_path=get_template_directory().'/assets/images/hero-media.json';
         $media=is_readable($media_path)?json_decode((string)file_get_contents($media_path),true):null;
@@ -76,17 +74,34 @@ add_action('wp_head', function (): void {
     }
     echo '<link rel="icon" type="image/webp" href="'.esc_url(get_template_directory_uri().'/assets/images/favicon.webp').'">';
 });
-add_filter('document_title_parts', function (array $parts): array {
-    if (is_front_page()) $parts['title'] = joyrent_language()==='ru'?'JOYRENT — аренда PlayStation 5 и PlayStation 4':'JOYRENT — оренда PlayStation 5 та PlayStation 4';
-    return $parts;
-});
-add_filter('woocommerce_enqueue_styles', '__return_empty_array');
-// The rental landing uses its own REST flow and has no WooCommerce cart widgets.
-// Keep WooCommerce assets on checkout/account/shop routes and for other consumers.
+function joyrent_uses_custom_assets(): bool {
+    if (!joyrent_public_page()) return false;
+    return !function_exists('is_cart')||!(is_cart()||is_checkout()||is_account_page()||is_shop()||is_product());
+}
+add_filter('woocommerce_enqueue_styles', fn(array $styles): array => joyrent_uses_custom_assets() ? [] : $styles);
+// Only JOYRENT's landing/reading pages use the REST flow without Woo widgets.
+// Real cart, checkout, account, product and other WordPress routes keep their assets.
 add_action('wp_enqueue_scripts', function (): void {
-    if (!class_exists('WooCommerce') || !is_front_page() || is_cart() || is_checkout() || is_account_page()) return;
+    if (!class_exists('WooCommerce') || !joyrent_uses_custom_assets()) return;
     foreach (['wc-add-to-cart', 'woocommerce', 'wc-cart-fragments', 'wc-order-attribution', 'sourcebuster-js', 'wc-jquery-blockui', 'wc-js-cookie'] as $handle) wp_dequeue_script($handle);
-}, 99);
+    foreach (['woocommerce-inline','wc-blocks-style'] as $handle) wp_dequeue_style($handle);
+    // jQuery may still be required by a host/plugin script. Inspect the remaining
+    // queue's complete dependency graph before removing its three handles.
+    $scripts=wp_scripts();
+    $jquery=['jquery','jquery-core','jquery-migrate'];
+    $visited=[];
+    $needs_jquery=function (string $handle) use (&$needs_jquery,&$visited,$scripts,$jquery): bool {
+        if (in_array($handle,$jquery,true)) return true;
+        if (isset($visited[$handle])) return false;
+        $visited[$handle]=true;
+        foreach ($scripts->registered[$handle]->deps ?? [] as $dependency) if ($needs_jquery($dependency)) return true;
+        return false;
+    };
+    foreach ($scripts->queue as $handle) {
+        if (!in_array($handle,$jquery,true)&&$needs_jquery($handle)) return;
+    }
+    foreach ($jquery as $handle) wp_dequeue_script($handle);
+}, 999);
 add_action('admin_notices', function (): void {
     if (!file_exists(get_template_directory().'/assets/dist/.vite/manifest.json') && current_user_can('manage_options')) echo '<div class="notice notice-error"><p>JOYRENT: встановіть готовий ZIP теми або виконайте npm run build у вихідному проєкті.</p></div>';
 });

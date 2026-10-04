@@ -2,7 +2,7 @@
 /**
  * Plugin Name: JOYRENT Rentals
  * Description: Ukrainian and Russian PlayStation rental catalog, guest requests and WooCommerce order integration.
- * Version: 1.8.1
+ * Version: 1.8.2
  * Requires at least: 6.6
  * Requires PHP: 8.2
  * Requires Plugins: woocommerce
@@ -20,6 +20,8 @@ add_action('init', ['JR_Store','upgrade'], 20);
 add_action('rest_api_init', ['JR_REST','register']);
 add_action('admin_menu', ['JR_Settings','menu']);
 add_action('admin_init', ['JR_Settings','register']);
+add_action('update_option_joyrent_settings', ['JR_Store','settings_changed'], 10, 2);
+add_action('add_option_joyrent_settings', fn($name, $value) => JR_Store::settings_changed([], $value), 10, 2);
 add_action('admin_post_joyrent_seed', ['JR_Settings','seed']);
 add_action('add_meta_boxes', ['JR_Games','meta_boxes']);
 add_action('save_post_joyrent_game', ['JR_Games','save'], 10, 2);

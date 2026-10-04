@@ -9,19 +9,21 @@ import '../delivery.css';
 import { DeliveryZoneMap } from '../../components/ui/delivery-zone-map';
 import { useI18n } from '../lib/i18n';
 import '../story-refinement.css';
+import { useNearbyMedia } from '../lib/use-nearby-media';
 
 export function Kit() {
   const { t } = useI18n();
   const reduced = useMotionPreference();
   const stage = useRef<HTMLDivElement>(null);
+  const nearby = useNearbyMedia(stage);
   const [inView, setInView] = useState(false);
   const [documentVisible, setDocumentVisible] = useState(() => !document.hidden);
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting && entry.intersectionRatio >= 0.12), { threshold: [0, 0.12] });
-    if (stage.current) observer.observe(stage.current);
+    const observer = 'IntersectionObserver' in window ? new IntersectionObserver(([entry]) => setInView(entry.isIntersecting && entry.intersectionRatio >= 0.12), { threshold: [0, 0.12] }) : null;
+    if (stage.current) observer?.observe(stage.current);
     const updateVisibility = () => setDocumentVisible(!document.hidden);
     document.addEventListener('visibilitychange', updateVisibility);
-    return () => { observer.disconnect(); document.removeEventListener('visibilitychange', updateVisibility); };
+    return () => { observer?.disconnect(); document.removeEventListener('visibilitychange', updateVisibility); };
   }, []);
   const controllerMedia = {
     srcSet: `${imageUrl('dualsense-cutout-560')} 560w, ${imageUrl('dualsense-cutout-1120')} 1120w, ${imageUrl('dualsense-cutout')} 1536w`,
@@ -31,14 +33,16 @@ export function Kit() {
   const items = [t('PS5 або PS4 + 1–2 геймпади', 'PS5 или PS4 + 1–2 геймпада'), t('HDMI-кабель, кабель живлення та заряджання', 'HDMI-кабель, кабель питания и зарядки'), t('Коротка інструкція з підключення', 'Краткая инструкция по подключению')];
   return <section className="section kit-section story-kit" id="kit"><div className="shell kit-layout">
     <Reveal className="kit-copy"><p className="eyebrow">{t('У КОМПЛЕКТІ', 'В КОМПЛЕКТЕ')}</p><h2>{t('Усе готово до гри.', 'Всё готово к игре.')}</h2><ul className="kit-checklist">{items.map(item => <li key={item}><Check size={18} />{item}</li>)}</ul><p className="kit-note">{t('Другий геймпад — без доплати. Кожен комплект перевіряємо перед видачею.', 'Второй геймпад — без доплаты. Каждый комплект проверяем перед выдачей.')}</p></Reveal>
-    <div ref={stage} className="controller-stage" data-motion={!reduced && inView && documentVisible ? 'running' : 'paused'}><div className="controller-float"><img className="controller-photo" src={imageUrl('dualsense-cutout')} {...controllerMedia} alt={t('Білий DualSense із м’якою теплою підсвіткою', 'Белый DualSense с мягкой тёплой подсветкой')} width={1536} height={1024} loading="lazy" /><img className="controller-light-pass" aria-hidden="true" src={imageUrl('dualsense-cutout')} {...controllerMedia} alt="" width={1536} height={1024} loading="lazy" /></div></div>
+    <div ref={stage} className="controller-stage" data-motion={!reduced && inView && documentVisible ? 'running' : 'paused'}><div className="controller-float" style={{ aspectRatio: '3 / 2' }}>{nearby && <><img className="controller-photo" style={{ position: 'absolute', inset: 0, height: '100%' }} src={imageUrl('dualsense-cutout')} {...controllerMedia} alt={t('Білий DualSense із м’якою теплою підсвіткою', 'Белый DualSense с мягкой тёплой подсветкой')} width={1536} height={1024} loading="lazy" /><img className="controller-light-pass" aria-hidden="true" src={imageUrl('dualsense-cutout')} {...controllerMedia} alt="" width={1536} height={1024} loading="lazy" /></>}</div></div>
   </div></section>;
 }
 export function HowItWorks({ settings }: { settings: StoreSettings }) {
   const { t, language } = useI18n();
+  const mapPreview = useRef<HTMLDivElement>(null);
+  const mapNearby = useNearbyMedia(mapPreview);
   const steps = [
     [CalendarBlank, t('Обери комплект', 'Выбери комплект'), t('Обери консоль, термін і дати. Додай ігри та залиш контакти.', 'Выбери консоль, срок и даты. Добавь игры и оставь контакты.')],
-    [Truck, t('Отримай консоль', 'Получи консоль'), t('Підтвердимо наявність і підсумкову вартість. Узгодимо доставку та заставу.', 'Подтвердим наличие и итоговую стоимость. Согласуем доставку и залог.')],
+    [Truck, t('Отримай консоль', 'Получи консоль'), t('Підтвердимо наявність і підсумкову вартість. Узгодимо доставку та оформлення оренди.', 'Подтвердим наличие и итоговую стоимость. Согласуем доставку и оформление аренды.')],
     [PlayStationController, t('Грай', 'Играй'), t('Грай у своє задоволення. Заберемо комплект у погоджений час.', 'Наслаждайся игрой. Заберём комплект в согласованное время.')],
   ] as const;
   const delivery = language === 'ru' ? settings.deliveryTextRu : settings.deliveryText;
@@ -54,7 +58,7 @@ export function HowItWorks({ settings }: { settings: StoreSettings }) {
       </div>
       <div className="delivery-layout">
         <figure className="delivery-preview">
-          <div className="delivery-preview-map"><img className="delivery-preview-basemap" src={`${boot.assetBase}/images/delivery-basemap-odessa.webp`} alt="" aria-hidden="true" width={640} height={440} loading="lazy" decoding="async" /><img className="delivery-zone-preview" src={`${boot.assetBase}/images/delivery-zone-map-landscape.svg`} alt={t('Схема шести зон доставки в Одесі', 'Схема шести зон доставки в Одессе')} width={640} height={440} loading="lazy" decoding="async" /><span className="delivery-preview-place">{t('Одеса', 'Одесса')}</span><span className="delivery-preview-sea">{t('Чорне море', 'Чёрное море')}</span></div>
+          <div ref={mapPreview} className="delivery-preview-map">{mapNearby && <><img className="delivery-preview-basemap" src={`${boot.assetBase}/images/delivery-basemap-odessa.webp`} alt="" aria-hidden="true" width={640} height={440} loading="lazy" decoding="async" /><img className="delivery-zone-preview" src={`${boot.assetBase}/images/delivery-zone-map-landscape.svg`} alt={t('Схема шести зон доставки в Одесі', 'Схема шести зон доставки в Одессе')} width={640} height={440} loading="lazy" decoding="async" /><span className="delivery-preview-place">{t('Одеса', 'Одесса')}</span><span className="delivery-preview-sea">{t('Чорне море', 'Чёрное море')}</span></>}</div>
           <figcaption className="delivery-preview-attribution"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">© OpenStreetMap contributors</a></figcaption>
         </figure>
         <div className="delivery-service delivery-zones"><div>

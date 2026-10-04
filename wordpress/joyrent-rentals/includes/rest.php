@@ -36,6 +36,15 @@ final class JR_REST {
             return true;
         } finally { self::release($lock,$owner); }
     }
+    private static function receipt(string $key, string $result_key, string $fingerprint, string $intent_fingerprint): ?array {
+        $cached=get_option($result_key);
+        if (is_array($cached)&&is_string($cached['fingerprint']??null)&&hash_equals($cached['fingerprint'],$fingerprint)) return $cached['receipt'];
+        // Older receipts contain only the original hash. The order can resolve equivalent formatting/sets.
+        $existing=class_exists('WooCommerce')?JR_Orders::existing($key,$fingerprint,$intent_fingerprint):null;
+        if ($existing) return $existing;
+        if (is_array($cached)) throw new InvalidArgumentException('Параметри бронювання змінилися. Онови сторінку та спробуй ще раз.');
+        return null;
+    }
     public static function create(WP_REST_Request $request): WP_REST_Response|WP_Error {
         $payload=$request->get_json_params();
         self::$language=is_array($payload)&&($payload['language']??null)==='ru'?'ru':'uk';
@@ -43,32 +52,29 @@ final class JR_REST {
         if (!empty($payload['website'])) return self::error('jr_invalid','Не вдалося надіслати бронювання.',400);
         $id=$payload['requestId']??'';
         if (!is_string($id)||!preg_match('/^[a-f0-9-]{32,40}$/i',$id)) return self::error('jr_request_id','Онови сторінку та спробуй ще раз.',400);
+        try { $data=JR_Domain::canonical($payload); } catch (InvalidArgumentException $e) { return self::error('jr_validation',$e->getMessage(),400); }
+        $key=hash_hmac('sha256',$id,wp_salt('nonce')); $result_key='jr_result_'.$key;
+        $fingerprint=hash('sha256',wp_json_encode($data));
+        $intent_fingerprint=JR_Domain::intent_fingerprint($data);
+        // Persist receipts without customer details so retries stay idempotent
+        // after a day or after WordPress clears transient caches.
+        try {
+            $receipt=self::receipt($key,$result_key,$fingerprint,$intent_fingerprint);
+            if ($receipt) return new WP_REST_Response($receipt,200);
+        } catch (InvalidArgumentException $e) { return self::error('jr_conflict',$e->getMessage(),409);
+        } catch (Throwable $e) { return self::error('jr_create','Не вдалося прийняти бронювання. Спробуй ще раз трохи пізніше.',503); }
         if (!class_exists('WooCommerce')||get_woocommerce_currency()!=='UAH') return self::error('jr_unavailable','Зараз бронювання недоступне. Спробуй пізніше.',503);
         try { $data=JR_Domain::validate($payload,null,JR_Games::records()); } catch (InvalidArgumentException $e) { return self::error('jr_validation',$e->getMessage(),400); }
         $settings=JR_Settings::public();
         if ($data['method']==='pickup'&&!$settings['pickup']) return self::error('jr_pickup','Самовивіз зараз не підтверджений. Обери доставку.',400);
-        $key=hash_hmac('sha256',$id,wp_salt('nonce')); $result_key='jr_result_'.$key;
-        $fingerprint=hash('sha256',wp_json_encode($data));
-        // Persist receipts without customer details so retries stay idempotent
-        // after a day or after WordPress clears transient caches.
-        $cached=get_option($result_key);
-        if (is_array($cached)) {
-            if (!hash_equals($cached['fingerprint'],$fingerprint)) return self::error('jr_conflict','Параметри бронювання змінилися. Онови сторінку та спробуй ще раз.',409);
-            return new WP_REST_Response($cached['receipt'],200);
-        }
         $rate_key='jr_rate_'.hash_hmac('sha256',(string)($_SERVER['REMOTE_ADDR']??''),wp_salt('auth'));
         $lock='jr_lock_'.$key;
         $owner=self::acquire($lock,5*MINUTE_IN_SECONDS);
         if (!$owner) return self::error('jr_busy','Це бронювання вже надсилається. Зачекай і спробуй ще раз.',409);
         try {
             // Another worker may have completed between the first lookup and lock.
-            $cached=get_option($result_key);
-            if (is_array($cached)) {
-                if (!hash_equals($cached['fingerprint'],$fingerprint)) return self::error('jr_conflict','Параметри бронювання змінилися. Онови сторінку та спробуй ще раз.',409);
-                return new WP_REST_Response($cached['receipt'],200);
-            }
-            $existing=JR_Orders::existing($key,$fingerprint);
-            if ($existing) return new WP_REST_Response($existing,200);
+            $receipt=self::receipt($key,$result_key,$fingerprint,$intent_fingerprint);
+            if ($receipt) return new WP_REST_Response($receipt,200);
             if (!self::reserve($rate_key)) return self::error('jr_limit','Забагато бронювань за короткий час. Спробуй через 15 хвилин.',429);
             $data['language']=self::$language; // UI language is deliberately outside the canonical fingerprint.
             $receipt=JR_Orders::create($data,$key,$fingerprint);

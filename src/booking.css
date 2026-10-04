@@ -2,6 +2,7 @@
 .booking-section [hidden] { display: none !important; }
 .booking-section input:not([type="checkbox"]):not([type="radio"]) { border-color: #707277; }
 .booking-section .input-help, .booking-section .summary-note, .booking-section .summary-trust, .booking-section .summary-lines, .booking-section .summary-price > span, .booking-section .booking-games .small { font-size: 13px; }
+.booking-section .phone-field-error { display: block; margin-top: 8px; }
 .booking-section .summary-lines dt .muted { font-size: 12px; }
 .booking-section .summary-lines dd { max-width: 65%; white-space: normal; }
 .booking-section .summary-deposit dd { display: flex; flex-wrap: wrap; justify-content: flex-end; column-gap: 3px; }

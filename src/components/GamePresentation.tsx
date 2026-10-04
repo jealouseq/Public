@@ -2,16 +2,13 @@ import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Check, Plus, Users, X } from '@phosphor-icons/react';
 import { PlayStationController } from '../../components/ui/playstation-controller';
 import { imageUrl } from '../lib/api';
-import { defaultCatalog, localPlayers, type ConsoleId, type Game } from '../lib/rental';
+import { localPlayers, type ConsoleId, type Game } from '../lib/rental';
+import { resolveGameImageSources } from '../lib/game-presentation';
 import { useI18n } from '../lib/i18n';
 import { hasKnownInternetRequirement, localPlayerLabel } from '../lib/copy';
 
-const bundledImages = new Set(defaultCatalog.games.map(game => game.image));
 export function gameImageSources(game: Game) {
-  const custom = game.imageUrl;
-  if (custom && /^(https?:\/\/|\/(?!\/)|\.\.?\/)/i.test(custom)) return { src: custom };
-  if (!game.image || !/^[a-z0-9-]+$/i.test(game.image)) return { src: '' };
-  return { src: imageUrl(game.image), srcSet: bundledImages.has(game.image) ? `${imageUrl(`${game.image}-360`)} 360w, ${imageUrl(`${game.image}-720`)} 720w` : undefined };
+  return resolveGameImageSources(game,imageUrl);
 }
 
 export function GameCover({ game, full = false, sizes = '(max-width: 700px) 84vw, (max-width: 1200px) 30vw, 320px' }: { game: Game; full?: boolean; sizes?: string }) {

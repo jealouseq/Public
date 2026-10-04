@@ -11,7 +11,7 @@ try {
     $games=get_posts(['post_type'=>'joyrent_game','post_status'=>array_values(get_post_stati()),'numberposts'=>-1,'fields'=>'ids']);$orders=wc_get_orders(['limit'=>-1,'return'=>'ids']);
     update_option('joyrent_version','1.6.0');JR_Store::upgrade();
     foreach($next as $slug=>$seed){$post=get_page_by_path($slug);copy_check($post->ID===$original[$slug]->ID,'Existing page ID preserved '.$slug);copy_check($post->post_content===$seed['content'],'Unchanged seeded page copy updated '.$slug);}
-    copy_check(get_option('joyrent_version')==='1.8.1','Copy migration advances to current version');
+    copy_check(get_option('joyrent_version')==='1.8.2','Copy migration advances to current version');
     copy_check(get_option('joyrent_settings')===$settings,'Owner business/private settings unchanged by copy migration');
     $before=[];
     $custom=['faq'=>['post_content'=>'Owner FAQ content'],'faq-ru'=>['post_excerpt'=>'Owner FAQ excerpt'],'umovy-orendy'=>['post_title'=>'Owner terms title'],'usloviya-arendy'=>['post_content'=>'Owner RU terms content'],'konfidentsiinist'=>['post_status'=>'draft'],'konfidentsialnost'=>['post_content'=>'Owner RU privacy content']];

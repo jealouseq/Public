@@ -1,0 +1,2951 @@
+{
+  "runUTC": "2026-10-04T13:16:04.485010+00:00",
+  "baseURL": "http://localhost:8080/",
+  "build": "Theme 1.9.3 / plugin 1.8.2 compiled installed WordPress",
+  "catalog": "Mocked read-only checked-in catalog for stable QA; all compiled JS/CSS/fonts/images served by installed WordPress. All non-GET/HEAD aborted.",
+  "cases": [
+    {
+      "language": "uk",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "heroCTA": {
+        "rect": {
+          "x": 73.5625,
+          "y": 332.40625,
+          "width": 172.859375,
+          "height": 54,
+          "top": 332.40625,
+          "right": 246.421875,
+          "bottom": 386.40625,
+          "left": 73.5625
+        },
+        "fontFamily": "\"Manrope Variable\", sans-serif",
+        "fontSize": "15px"
+      },
+      "description": "PS5 від 1 дня, PS4 — від 3 днів.\nОбери консоль і дати — решту узгодимо з тобою.",
+      "fontsHTTP": [
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        }
+      ],
+      "fontStates": [
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "booking": {
+          "x": 0,
+          "y": 19.9375,
+          "width": 320,
+          "height": 2148,
+          "top": 19.9375,
+          "right": 320,
+          "bottom": 2167.9375,
+          "left": 0
+        },
+        "termBorders": [
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          }
+        ],
+        "controllerBorder": "rgb(111, 113, 117)",
+        "tariffPrices": [
+          {
+            "column": {
+              "x": 20,
+              "y": -3584.515625,
+              "width": 140,
+              "height": 243.09375,
+              "top": -3584.515625,
+              "right": 160,
+              "bottom": -3341.421875,
+              "left": 20
+            },
+            "amount": {
+              "x": 43.203125,
+              "y": -3497.015625,
+              "width": 71.09375,
+              "height": 33.59375,
+              "top": -3497.015625,
+              "right": 114.296875,
+              "bottom": -3463.421875,
+              "left": 43.203125
+            },
+            "currency": {
+              "x": 120.296875,
+              "y": -3481.015625,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3481.015625,
+              "right": 136.78125,
+              "bottom": -3466.015625,
+              "left": 120.296875
+            }
+          },
+          {
+            "column": {
+              "x": 160,
+              "y": -3584.515625,
+              "width": 140,
+              "height": 243.09375,
+              "top": -3584.515625,
+              "right": 300,
+              "bottom": -3341.421875,
+              "left": 160
+            },
+            "amount": {
+              "x": 174.4375,
+              "y": -3497.015625,
+              "width": 89.640625,
+              "height": 33.59375,
+              "top": -3497.015625,
+              "right": 264.078125,
+              "bottom": -3463.421875,
+              "left": 174.4375
+            },
+            "currency": {
+              "x": 270.078125,
+              "y": -3481.015625,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3481.015625,
+              "right": 286.5625,
+              "bottom": -3466.015625,
+              "left": 270.078125
+            }
+          },
+          {
+            "column": {
+              "x": 20,
+              "y": -3311.421875,
+              "width": 140,
+              "height": 243.09375,
+              "top": -3311.421875,
+              "right": 160,
+              "bottom": -3068.328125,
+              "left": 20
+            },
+            "amount": {
+              "x": 30.078125,
+              "y": -3223.921875,
+              "width": 97.359375,
+              "height": 33.59375,
+              "top": -3223.921875,
+              "right": 127.4375,
+              "bottom": -3190.328125,
+              "left": 30.078125
+            },
+            "currency": {
+              "x": 133.4375,
+              "y": -3207.921875,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3207.921875,
+              "right": 149.921875,
+              "bottom": -3192.921875,
+              "left": 133.4375
+            }
+          },
+          {
+            "column": {
+              "x": 160,
+              "y": -3311.421875,
+              "width": 140,
+              "height": 243.09375,
+              "top": -3311.421875,
+              "right": 300,
+              "bottom": -3068.328125,
+              "left": 160
+            },
+            "amount": {
+              "x": 168.515625,
+              "y": -3223.921875,
+              "width": 101.484375,
+              "height": 33.59375,
+              "top": -3223.921875,
+              "right": 270,
+              "bottom": -3190.328125,
+              "left": 168.515625
+            },
+            "currency": {
+              "x": 276,
+              "y": -3207.921875,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3207.921875,
+              "right": 292.484375,
+              "bottom": -3192.921875,
+              "left": 276
+            }
+          }
+        ]
+      },
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedNonGET": [],
+      "requestFailures": []
+    },
+    {
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "heroCTA": {
+        "rect": {
+          "x": 108.5625,
+          "y": 322.0625,
+          "width": 172.859375,
+          "height": 54,
+          "top": 322.0625,
+          "right": 281.421875,
+          "bottom": 376.0625,
+          "left": 108.5625
+        },
+        "fontFamily": "\"Manrope Variable\", sans-serif",
+        "fontSize": "15px"
+      },
+      "description": "PS5 від 1 дня, PS4 — від 3 днів.\nОбери консоль і дати — решту узгодимо з тобою.",
+      "fontsHTTP": [
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        }
+      ],
+      "fontStates": [
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "booking": {
+          "x": 0,
+          "y": 19.859375,
+          "width": 390,
+          "height": 1851.609375,
+          "top": 19.859375,
+          "right": 390,
+          "bottom": 1871.46875,
+          "left": 0
+        },
+        "termBorders": [
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          }
+        ],
+        "controllerBorder": "rgb(111, 113, 117)",
+        "tariffPrices": [
+          {
+            "column": {
+              "x": 24,
+              "y": -3476.75,
+              "width": 171,
+              "height": 246.9375,
+              "top": -3476.75,
+              "right": 195,
+              "bottom": -3229.8125,
+              "left": 24
+            },
+            "amount": {
+              "x": 58.65625,
+              "y": -3389.25,
+              "width": 79.1875,
+              "height": 37.4375,
+              "top": -3389.25,
+              "right": 137.84375,
+              "bottom": -3351.8125,
+              "left": 58.65625
+            },
+            "currency": {
+              "x": 143.84375,
+              "y": -3370.25,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3370.25,
+              "right": 160.328125,
+              "bottom": -3355.25,
+              "left": 143.84375
+            }
+          },
+          {
+            "column": {
+              "x": 195,
+              "y": -3476.75,
+              "width": 171,
+              "height": 246.9375,
+              "top": -3476.75,
+              "right": 366,
+              "bottom": -3229.8125,
+              "left": 195
+            },
+            "amount": {
+              "x": 219.828125,
+              "y": -3389.25,
+              "width": 99.84375,
+              "height": 37.4375,
+              "top": -3389.25,
+              "right": 319.671875,
+              "bottom": -3351.8125,
+              "left": 219.828125
+            },
+            "currency": {
+              "x": 325.671875,
+              "y": -3370.25,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3370.25,
+              "right": 342.15625,
+              "bottom": -3355.25,
+              "left": 325.671875
+            }
+          },
+          {
+            "column": {
+              "x": 24,
+              "y": -3199.8125,
+              "width": 171,
+              "height": 246.9375,
+              "top": -3199.8125,
+              "right": 195,
+              "bottom": -2952.875,
+              "left": 24
+            },
+            "amount": {
+              "x": 44.03125,
+              "y": -3112.3125,
+              "width": 108.4375,
+              "height": 37.4375,
+              "top": -3112.3125,
+              "right": 152.46875,
+              "bottom": -3074.875,
+              "left": 44.03125
+            },
+            "currency": {
+              "x": 158.46875,
+              "y": -3093.3125,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3093.3125,
+              "right": 174.953125,
+              "bottom": -3078.3125,
+              "left": 158.46875
+            }
+          },
+          {
+            "column": {
+              "x": 195,
+              "y": -3199.8125,
+              "width": 171,
+              "height": 246.9375,
+              "top": -3199.8125,
+              "right": 366,
+              "bottom": -2952.875,
+              "left": 195
+            },
+            "amount": {
+              "x": 213.234375,
+              "y": -3112.3125,
+              "width": 113.03125,
+              "height": 37.4375,
+              "top": -3112.3125,
+              "right": 326.265625,
+              "bottom": -3074.875,
+              "left": 213.234375
+            },
+            "currency": {
+              "x": 332.265625,
+              "y": -3093.3125,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3093.3125,
+              "right": 348.75,
+              "bottom": -3078.3125,
+              "left": 332.265625
+            }
+          }
+        ],
+        "kit": {
+          "reserve": {
+            "x": 24,
+            "y": 358.1875,
+            "width": 342,
+            "height": 228,
+            "top": 358.1875,
+            "right": 366,
+            "bottom": 586.1875,
+            "left": 24
+          },
+          "photo": {
+            "x": 24,
+            "y": 358.1875,
+            "width": 342,
+            "height": 228,
+            "top": 358.1875,
+            "right": 366,
+            "bottom": 586.1875,
+            "left": 24
+          },
+          "naturalWidth": 342
+        },
+        "delivery": {
+          "reserve": {
+            "x": 50,
+            "y": 221.703125,
+            "width": 290,
+            "height": 199.375,
+            "top": 221.703125,
+            "right": 340,
+            "bottom": 421.078125,
+            "left": 50
+          },
+          "images": [
+            {
+              "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+              "naturalWidth": 1280,
+              "rect": {
+                "x": 50,
+                "y": 221.703125,
+                "width": 290,
+                "height": 199.375,
+                "top": 221.703125,
+                "right": 340,
+                "bottom": 421.078125,
+                "left": 50
+              }
+            },
+            {
+              "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+              "naturalWidth": 640,
+              "rect": {
+                "x": 50,
+                "y": 221.703125,
+                "width": 290,
+                "height": 199.375,
+                "top": 221.703125,
+                "right": 340,
+                "bottom": 421.078125,
+                "left": 50
+              }
+            }
+          ]
+        },
+        "picker": {
+          "oneRequestEntry": true,
+          "queryPrefillFocused": true,
+          "doneVisible": true
+        },
+        "phone": {
+          "focusedInvalid": true,
+          "inlineError": "Вкажи український номер телефону.",
+          "errorDisplay": {
+            "display": "block",
+            "marginTop": "8px"
+          },
+          "blockedNonGET": 0
+        }
+      },
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedNonGET": [],
+      "requestFailures": []
+    },
+    {
+      "language": "uk",
+      "viewport": {
+        "width": 768,
+        "height": 844
+      },
+      "heroCTA": {
+        "rect": {
+          "x": 219.515625,
+          "y": 366.484375,
+          "width": 159.140625,
+          "height": 50,
+          "top": 366.484375,
+          "right": 378.65625,
+          "bottom": 416.484375,
+          "left": 219.515625
+        },
+        "fontFamily": "\"Manrope Variable\", sans-serif",
+        "fontSize": "14px"
+      },
+      "description": "PS5 від 1 дня, PS4 — від 3 днів. Обери консоль і дати — решту узгодимо з тобою.",
+      "fontsHTTP": [
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        }
+      ],
+      "fontStates": [
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "booking": {
+          "x": 0,
+          "y": 20.3125,
+          "width": 768,
+          "height": 1327.078125,
+          "top": 20.3125,
+          "right": 768,
+          "bottom": 1347.390625,
+          "left": 0
+        },
+        "termBorders": [
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          }
+        ],
+        "controllerBorder": "rgb(111, 113, 117)",
+        "tariffPrices": [
+          {
+            "column": {
+              "x": 39.921875,
+              "y": -3231.109375,
+              "width": 344.078125,
+              "height": 252.296875,
+              "top": -3231.109375,
+              "right": 384,
+              "bottom": -2978.8125,
+              "left": 39.921875
+            },
+            "amount": {
+              "x": 39.921875,
+              "y": -3147.609375,
+              "width": 111.71875,
+              "height": 52.796875,
+              "top": -3147.609375,
+              "right": 151.640625,
+              "bottom": -3094.8125,
+              "left": 39.921875
+            },
+            "currency": {
+              "x": 159.640625,
+              "y": -3119.609375,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -3119.609375,
+              "right": 181.078125,
+              "bottom": -3100.109375,
+              "left": 159.640625
+            }
+          },
+          {
+            "column": {
+              "x": 384,
+              "y": -3231.109375,
+              "width": 344.078125,
+              "height": 252.296875,
+              "top": -3231.109375,
+              "right": 728.078125,
+              "bottom": -2978.8125,
+              "left": 384
+            },
+            "amount": {
+              "x": 406,
+              "y": -3147.609375,
+              "width": 140.84375,
+              "height": 52.796875,
+              "top": -3147.609375,
+              "right": 546.84375,
+              "bottom": -3094.8125,
+              "left": 406
+            },
+            "currency": {
+              "x": 554.84375,
+              "y": -3119.609375,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -3119.609375,
+              "right": 576.28125,
+              "bottom": -3100.109375,
+              "left": 554.84375
+            }
+          },
+          {
+            "column": {
+              "x": 39.921875,
+              "y": -2936.8125,
+              "width": 344.078125,
+              "height": 252.296875,
+              "top": -2936.8125,
+              "right": 384,
+              "bottom": -2684.515625,
+              "left": 39.921875
+            },
+            "amount": {
+              "x": 39.921875,
+              "y": -2853.3125,
+              "width": 153,
+              "height": 52.796875,
+              "top": -2853.3125,
+              "right": 192.921875,
+              "bottom": -2800.515625,
+              "left": 39.921875
+            },
+            "currency": {
+              "x": 200.921875,
+              "y": -2825.3125,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -2825.3125,
+              "right": 222.359375,
+              "bottom": -2805.8125,
+              "left": 200.921875
+            }
+          },
+          {
+            "column": {
+              "x": 384,
+              "y": -2936.8125,
+              "width": 344.078125,
+              "height": 252.296875,
+              "top": -2936.8125,
+              "right": 728.078125,
+              "bottom": -2684.515625,
+              "left": 384
+            },
+            "amount": {
+              "x": 406,
+              "y": -2853.3125,
+              "width": 159.46875,
+              "height": 52.796875,
+              "top": -2853.3125,
+              "right": 565.46875,
+              "bottom": -2800.515625,
+              "left": 406
+            },
+            "currency": {
+              "x": 573.46875,
+              "y": -2825.3125,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -2825.3125,
+              "right": 594.90625,
+              "bottom": -2805.8125,
+              "left": 573.46875
+            }
+          }
+        ]
+      },
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedNonGET": [],
+      "requestFailures": []
+    },
+    {
+      "language": "uk",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "heroCTA": {
+        "rect": {
+          "x": 74.875,
+          "y": 518.34375,
+          "width": 172.859375,
+          "height": 54,
+          "top": 518.34375,
+          "right": 247.734375,
+          "bottom": 572.34375,
+          "left": 74.875
+        },
+        "fontFamily": "\"Manrope Variable\", sans-serif",
+        "fontSize": "15px"
+      },
+      "description": "PS5 від 1 дня, PS4 — від 3 днів. Обери консоль і дати — решту узгодимо з тобою.",
+      "fontsHTTP": [
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        }
+      ],
+      "fontStates": [
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "booking": {
+          "x": 0,
+          "y": 20.46875,
+          "width": 1440,
+          "height": 1158.5,
+          "top": 20.46875,
+          "right": 1440,
+          "bottom": 1178.96875,
+          "left": 0
+        },
+        "termBorders": [
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          }
+        ],
+        "controllerBorder": "rgb(111, 113, 117)",
+        "tariffPrices": [
+          {
+            "column": {
+              "x": 74.875,
+              "y": -2945,
+              "width": 322.5625,
+              "height": 268.5,
+              "top": -2945,
+              "right": 397.4375,
+              "bottom": -2676.5,
+              "left": 74.875
+            },
+            "amount": {
+              "x": 74.875,
+              "y": -2858.5,
+              "width": 139.65625,
+              "height": 66,
+              "top": -2858.5,
+              "right": 214.53125,
+              "bottom": -2792.5,
+              "left": 74.875
+            },
+            "currency": {
+              "x": 222.53125,
+              "y": -2818.5,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -2818.5,
+              "right": 243.96875,
+              "bottom": -2799,
+              "left": 222.53125
+            }
+          },
+          {
+            "column": {
+              "x": 397.4375,
+              "y": -2945,
+              "width": 322.5625,
+              "height": 268.5,
+              "top": -2945,
+              "right": 720,
+              "bottom": -2676.5,
+              "left": 397.4375
+            },
+            "amount": {
+              "x": 426.4375,
+              "y": -2858.5,
+              "width": 176.0625,
+              "height": 66,
+              "top": -2858.5,
+              "right": 602.5,
+              "bottom": -2792.5,
+              "left": 426.4375
+            },
+            "currency": {
+              "x": 610.5,
+              "y": -2818.5,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -2818.5,
+              "right": 631.9375,
+              "bottom": -2799,
+              "left": 610.5
+            }
+          },
+          {
+            "column": {
+              "x": 720,
+              "y": -2945,
+              "width": 322.5625,
+              "height": 268.5,
+              "top": -2945,
+              "right": 1042.5625,
+              "bottom": -2676.5,
+              "left": 720
+            },
+            "amount": {
+              "x": 749,
+              "y": -2858.5,
+              "width": 191.25,
+              "height": 66,
+              "top": -2858.5,
+              "right": 940.25,
+              "bottom": -2792.5,
+              "left": 749
+            },
+            "currency": {
+              "x": 948.25,
+              "y": -2818.5,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -2818.5,
+              "right": 969.6875,
+              "bottom": -2799,
+              "left": 948.25
+            }
+          },
+          {
+            "column": {
+              "x": 1042.5625,
+              "y": -2945,
+              "width": 322.5625,
+              "height": 268.5,
+              "top": -2945,
+              "right": 1365.125,
+              "bottom": -2676.5,
+              "left": 1042.5625
+            },
+            "amount": {
+              "x": 1071.5625,
+              "y": -2858.5,
+              "width": 199.328125,
+              "height": 66,
+              "top": -2858.5,
+              "right": 1270.890625,
+              "bottom": -2792.5,
+              "left": 1071.5625
+            },
+            "currency": {
+              "x": 1278.890625,
+              "y": -2818.5,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -2818.5,
+              "right": 1300.328125,
+              "bottom": -2799,
+              "left": 1278.890625
+            }
+          }
+        ],
+        "kit": {
+          "reserve": {
+            "x": 685.734375,
+            "y": 126.34375,
+            "width": 650,
+            "height": 433.328125,
+            "top": 126.34375,
+            "right": 1335.734375,
+            "bottom": 559.671875,
+            "left": 685.734375
+          },
+          "photo": {
+            "x": 685.734375,
+            "y": 126.34375,
+            "width": 650,
+            "height": 433.328125,
+            "top": 126.34375,
+            "right": 1335.734375,
+            "bottom": 559.671875,
+            "left": 685.734375
+          },
+          "naturalWidth": 650
+        },
+        "delivery": {
+          "reserve": {
+            "x": 120.0625,
+            "y": 232.171875,
+            "width": 680.890625,
+            "height": 468.109375,
+            "top": 232.171875,
+            "right": 800.953125,
+            "bottom": 700.28125,
+            "left": 120.0625
+          },
+          "images": [
+            {
+              "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+              "naturalWidth": 1280,
+              "rect": {
+                "x": 120.0625,
+                "y": 232.171875,
+                "width": 680.890625,
+                "height": 468.109375,
+                "top": 232.171875,
+                "right": 800.953125,
+                "bottom": 700.28125,
+                "left": 120.0625
+              }
+            },
+            {
+              "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+              "naturalWidth": 640,
+              "rect": {
+                "x": 120.0625,
+                "y": 232.171875,
+                "width": 680.890625,
+                "height": 468.109375,
+                "top": 232.171875,
+                "right": 800.953125,
+                "bottom": 700.28125,
+                "left": 120.0625
+              }
+            }
+          ]
+        }
+      },
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedNonGET": [],
+      "requestFailures": []
+    },
+    {
+      "language": "ru",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "heroCTA": {
+        "rect": {
+          "x": 69.28125,
+          "y": 332.40625,
+          "width": 181.4375,
+          "height": 54,
+          "top": 332.40625,
+          "right": 250.71875,
+          "bottom": 386.40625,
+          "left": 69.28125
+        },
+        "fontFamily": "\"Manrope Variable\", sans-serif",
+        "fontSize": "15px"
+      },
+      "description": "PS5 от 1 дня, PS4 — от 3 дней.\nВыбери консоль и даты — остальное согласуем с тобой.",
+      "fontsHTTP": [
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        }
+      ],
+      "fontStates": [
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "booking": {
+          "x": 0,
+          "y": 20.25,
+          "width": 320,
+          "height": 2148,
+          "top": 20.25,
+          "right": 320,
+          "bottom": 2168.25,
+          "left": 0
+        },
+        "termBorders": [
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          }
+        ],
+        "controllerBorder": "rgb(111, 113, 117)",
+        "tariffPrices": [
+          {
+            "column": {
+              "x": 20,
+              "y": -3476.515625,
+              "width": 140,
+              "height": 243.09375,
+              "top": -3476.515625,
+              "right": 160,
+              "bottom": -3233.421875,
+              "left": 20
+            },
+            "amount": {
+              "x": 43.203125,
+              "y": -3389.015625,
+              "width": 71.09375,
+              "height": 33.59375,
+              "top": -3389.015625,
+              "right": 114.296875,
+              "bottom": -3355.421875,
+              "left": 43.203125
+            },
+            "currency": {
+              "x": 120.296875,
+              "y": -3373.015625,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3373.015625,
+              "right": 136.78125,
+              "bottom": -3358.015625,
+              "left": 120.296875
+            }
+          },
+          {
+            "column": {
+              "x": 160,
+              "y": -3476.515625,
+              "width": 140,
+              "height": 243.09375,
+              "top": -3476.515625,
+              "right": 300,
+              "bottom": -3233.421875,
+              "left": 160
+            },
+            "amount": {
+              "x": 174.4375,
+              "y": -3389.015625,
+              "width": 89.640625,
+              "height": 33.59375,
+              "top": -3389.015625,
+              "right": 264.078125,
+              "bottom": -3355.421875,
+              "left": 174.4375
+            },
+            "currency": {
+              "x": 270.078125,
+              "y": -3373.015625,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3373.015625,
+              "right": 286.5625,
+              "bottom": -3358.015625,
+              "left": 270.078125
+            }
+          },
+          {
+            "column": {
+              "x": 20,
+              "y": -3203.421875,
+              "width": 140,
+              "height": 243.09375,
+              "top": -3203.421875,
+              "right": 160,
+              "bottom": -2960.328125,
+              "left": 20
+            },
+            "amount": {
+              "x": 30.078125,
+              "y": -3115.921875,
+              "width": 97.359375,
+              "height": 33.59375,
+              "top": -3115.921875,
+              "right": 127.4375,
+              "bottom": -3082.328125,
+              "left": 30.078125
+            },
+            "currency": {
+              "x": 133.4375,
+              "y": -3099.921875,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3099.921875,
+              "right": 149.921875,
+              "bottom": -3084.921875,
+              "left": 133.4375
+            }
+          },
+          {
+            "column": {
+              "x": 160,
+              "y": -3203.421875,
+              "width": 140,
+              "height": 243.09375,
+              "top": -3203.421875,
+              "right": 300,
+              "bottom": -2960.328125,
+              "left": 160
+            },
+            "amount": {
+              "x": 168.515625,
+              "y": -3115.921875,
+              "width": 101.484375,
+              "height": 33.59375,
+              "top": -3115.921875,
+              "right": 270,
+              "bottom": -3082.328125,
+              "left": 168.515625
+            },
+            "currency": {
+              "x": 276,
+              "y": -3099.921875,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3099.921875,
+              "right": 292.484375,
+              "bottom": -3084.921875,
+              "left": 276
+            }
+          }
+        ]
+      },
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedNonGET": [],
+      "requestFailures": []
+    },
+    {
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "heroCTA": {
+        "rect": {
+          "x": 104.28125,
+          "y": 346.5625,
+          "width": 181.4375,
+          "height": 54,
+          "top": 346.5625,
+          "right": 285.71875,
+          "bottom": 400.5625,
+          "left": 104.28125
+        },
+        "fontFamily": "\"Manrope Variable\", sans-serif",
+        "fontSize": "15px"
+      },
+      "description": "PS5 от 1 дня, PS4 — от 3 дней.\nВыбери консоль и даты — остальное согласуем с тобой.",
+      "fontsHTTP": [
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        }
+      ],
+      "fontStates": [
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "booking": {
+          "x": 0,
+          "y": 19.75,
+          "width": 390,
+          "height": 1912.453125,
+          "top": 19.75,
+          "right": 390,
+          "bottom": 1932.203125,
+          "left": 0
+        },
+        "termBorders": [
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          }
+        ],
+        "controllerBorder": "rgb(111, 113, 117)",
+        "tariffPrices": [
+          {
+            "column": {
+              "x": 24,
+              "y": -3476.859375,
+              "width": 171,
+              "height": 246.9375,
+              "top": -3476.859375,
+              "right": 195,
+              "bottom": -3229.921875,
+              "left": 24
+            },
+            "amount": {
+              "x": 58.65625,
+              "y": -3389.359375,
+              "width": 79.1875,
+              "height": 37.4375,
+              "top": -3389.359375,
+              "right": 137.84375,
+              "bottom": -3351.921875,
+              "left": 58.65625
+            },
+            "currency": {
+              "x": 143.84375,
+              "y": -3370.359375,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3370.359375,
+              "right": 160.328125,
+              "bottom": -3355.359375,
+              "left": 143.84375
+            }
+          },
+          {
+            "column": {
+              "x": 195,
+              "y": -3476.859375,
+              "width": 171,
+              "height": 246.9375,
+              "top": -3476.859375,
+              "right": 366,
+              "bottom": -3229.921875,
+              "left": 195
+            },
+            "amount": {
+              "x": 219.828125,
+              "y": -3389.359375,
+              "width": 99.84375,
+              "height": 37.4375,
+              "top": -3389.359375,
+              "right": 319.671875,
+              "bottom": -3351.921875,
+              "left": 219.828125
+            },
+            "currency": {
+              "x": 325.671875,
+              "y": -3370.359375,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3370.359375,
+              "right": 342.15625,
+              "bottom": -3355.359375,
+              "left": 325.671875
+            }
+          },
+          {
+            "column": {
+              "x": 24,
+              "y": -3199.921875,
+              "width": 171,
+              "height": 246.9375,
+              "top": -3199.921875,
+              "right": 195,
+              "bottom": -2952.984375,
+              "left": 24
+            },
+            "amount": {
+              "x": 44.03125,
+              "y": -3112.421875,
+              "width": 108.4375,
+              "height": 37.4375,
+              "top": -3112.421875,
+              "right": 152.46875,
+              "bottom": -3074.984375,
+              "left": 44.03125
+            },
+            "currency": {
+              "x": 158.46875,
+              "y": -3093.421875,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3093.421875,
+              "right": 174.953125,
+              "bottom": -3078.421875,
+              "left": 158.46875
+            }
+          },
+          {
+            "column": {
+              "x": 195,
+              "y": -3199.921875,
+              "width": 171,
+              "height": 246.9375,
+              "top": -3199.921875,
+              "right": 366,
+              "bottom": -2952.984375,
+              "left": 195
+            },
+            "amount": {
+              "x": 213.234375,
+              "y": -3112.421875,
+              "width": 113.03125,
+              "height": 37.4375,
+              "top": -3112.421875,
+              "right": 326.265625,
+              "bottom": -3074.984375,
+              "left": 213.234375
+            },
+            "currency": {
+              "x": 332.265625,
+              "y": -3093.421875,
+              "width": 16.484375,
+              "height": 15,
+              "top": -3093.421875,
+              "right": 348.75,
+              "bottom": -3078.421875,
+              "left": 332.265625
+            }
+          }
+        ],
+        "picker": {
+          "oneRequestEntry": true,
+          "queryPrefillFocused": true,
+          "doneVisible": true
+        },
+        "phone": {
+          "focusedInvalid": true,
+          "inlineError": "Укажи украинский номер телефона.",
+          "errorDisplay": {
+            "display": "block",
+            "marginTop": "8px"
+          },
+          "blockedNonGET": 0
+        }
+      },
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedNonGET": [],
+      "requestFailures": []
+    },
+    {
+      "language": "ru",
+      "viewport": {
+        "width": 768,
+        "height": 844
+      },
+      "heroCTA": {
+        "rect": {
+          "x": 214.859375,
+          "y": 366.484375,
+          "width": 167.140625,
+          "height": 50,
+          "top": 366.484375,
+          "right": 382,
+          "bottom": 416.484375,
+          "left": 214.859375
+        },
+        "fontFamily": "\"Manrope Variable\", sans-serif",
+        "fontSize": "14px"
+      },
+      "description": "PS5 от 1 дня, PS4 — от 3 дней. Выбери консоль и даты — остальное согласуем с тобой.",
+      "fontsHTTP": [
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        }
+      ],
+      "fontStates": [
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "booking": {
+          "x": 0,
+          "y": 19.515625,
+          "width": 768,
+          "height": 1326.421875,
+          "top": 19.515625,
+          "right": 768,
+          "bottom": 1345.9375,
+          "left": 0
+        },
+        "termBorders": [
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          }
+        ],
+        "controllerBorder": "rgb(111, 113, 117)",
+        "tariffPrices": [
+          {
+            "column": {
+              "x": 39.921875,
+              "y": -3211.109375,
+              "width": 344.078125,
+              "height": 252.296875,
+              "top": -3211.109375,
+              "right": 384,
+              "bottom": -2958.8125,
+              "left": 39.921875
+            },
+            "amount": {
+              "x": 39.921875,
+              "y": -3127.609375,
+              "width": 111.71875,
+              "height": 52.796875,
+              "top": -3127.609375,
+              "right": 151.640625,
+              "bottom": -3074.8125,
+              "left": 39.921875
+            },
+            "currency": {
+              "x": 159.640625,
+              "y": -3099.609375,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -3099.609375,
+              "right": 181.078125,
+              "bottom": -3080.109375,
+              "left": 159.640625
+            }
+          },
+          {
+            "column": {
+              "x": 384,
+              "y": -3211.109375,
+              "width": 344.078125,
+              "height": 252.296875,
+              "top": -3211.109375,
+              "right": 728.078125,
+              "bottom": -2958.8125,
+              "left": 384
+            },
+            "amount": {
+              "x": 406,
+              "y": -3127.609375,
+              "width": 140.84375,
+              "height": 52.796875,
+              "top": -3127.609375,
+              "right": 546.84375,
+              "bottom": -3074.8125,
+              "left": 406
+            },
+            "currency": {
+              "x": 554.84375,
+              "y": -3099.609375,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -3099.609375,
+              "right": 576.28125,
+              "bottom": -3080.109375,
+              "left": 554.84375
+            }
+          },
+          {
+            "column": {
+              "x": 39.921875,
+              "y": -2916.8125,
+              "width": 344.078125,
+              "height": 252.296875,
+              "top": -2916.8125,
+              "right": 384,
+              "bottom": -2664.515625,
+              "left": 39.921875
+            },
+            "amount": {
+              "x": 39.921875,
+              "y": -2833.3125,
+              "width": 153,
+              "height": 52.796875,
+              "top": -2833.3125,
+              "right": 192.921875,
+              "bottom": -2780.515625,
+              "left": 39.921875
+            },
+            "currency": {
+              "x": 200.921875,
+              "y": -2805.3125,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -2805.3125,
+              "right": 222.359375,
+              "bottom": -2785.8125,
+              "left": 200.921875
+            }
+          },
+          {
+            "column": {
+              "x": 384,
+              "y": -2916.8125,
+              "width": 344.078125,
+              "height": 252.296875,
+              "top": -2916.8125,
+              "right": 728.078125,
+              "bottom": -2664.515625,
+              "left": 384
+            },
+            "amount": {
+              "x": 406,
+              "y": -2833.3125,
+              "width": 159.46875,
+              "height": 52.796875,
+              "top": -2833.3125,
+              "right": 565.46875,
+              "bottom": -2780.515625,
+              "left": 406
+            },
+            "currency": {
+              "x": 573.46875,
+              "y": -2805.3125,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -2805.3125,
+              "right": 594.90625,
+              "bottom": -2785.8125,
+              "left": 573.46875
+            }
+          }
+        ]
+      },
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedNonGET": [],
+      "requestFailures": []
+    },
+    {
+      "language": "ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "heroCTA": {
+        "rect": {
+          "x": 74.875,
+          "y": 518.34375,
+          "width": 181.4375,
+          "height": 54,
+          "top": 518.34375,
+          "right": 256.3125,
+          "bottom": 572.34375,
+          "left": 74.875
+        },
+        "fontFamily": "\"Manrope Variable\", sans-serif",
+        "fontSize": "15px"
+      },
+      "description": "PS5 от 1 дня, PS4 — от 3 дней. Выбери консоль и даты — остальное согласуем с тобой.",
+      "fontsHTTP": [
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+          "status": 200,
+          "contentType": "font/woff2"
+        }
+      ],
+      "fontStates": [
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "unloaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Unbounded Variable",
+          "status": "loaded",
+          "weight": "200 900"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "unloaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Manrope Variable",
+          "status": "loaded",
+          "weight": "200 800"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "unloaded",
+          "weight": "100 900"
+        },
+        {
+          "family": "Onest Variable",
+          "status": "loaded",
+          "weight": "100 900"
+        }
+      ],
+      "layout": {
+        "overflow": false,
+        "booking": {
+          "x": 0,
+          "y": 20.46875,
+          "width": 1440,
+          "height": 1179.9375,
+          "top": 20.46875,
+          "right": 1440,
+          "bottom": 1200.40625,
+          "left": 0
+        },
+        "termBorders": [
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          },
+          {
+            "border": "rgb(111, 113, 117)",
+            "disabled": false,
+            "opacity": "1"
+          }
+        ],
+        "controllerBorder": "rgb(111, 113, 117)",
+        "tariffPrices": [
+          {
+            "column": {
+              "x": 74.875,
+              "y": -2945,
+              "width": 322.5625,
+              "height": 268.5,
+              "top": -2945,
+              "right": 397.4375,
+              "bottom": -2676.5,
+              "left": 74.875
+            },
+            "amount": {
+              "x": 74.875,
+              "y": -2858.5,
+              "width": 139.65625,
+              "height": 66,
+              "top": -2858.5,
+              "right": 214.53125,
+              "bottom": -2792.5,
+              "left": 74.875
+            },
+            "currency": {
+              "x": 222.53125,
+              "y": -2818.5,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -2818.5,
+              "right": 243.96875,
+              "bottom": -2799,
+              "left": 222.53125
+            }
+          },
+          {
+            "column": {
+              "x": 397.4375,
+              "y": -2945,
+              "width": 322.5625,
+              "height": 268.5,
+              "top": -2945,
+              "right": 720,
+              "bottom": -2676.5,
+              "left": 397.4375
+            },
+            "amount": {
+              "x": 426.4375,
+              "y": -2858.5,
+              "width": 176.0625,
+              "height": 66,
+              "top": -2858.5,
+              "right": 602.5,
+              "bottom": -2792.5,
+              "left": 426.4375
+            },
+            "currency": {
+              "x": 610.5,
+              "y": -2818.5,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -2818.5,
+              "right": 631.9375,
+              "bottom": -2799,
+              "left": 610.5
+            }
+          },
+          {
+            "column": {
+              "x": 720,
+              "y": -2945,
+              "width": 322.5625,
+              "height": 268.5,
+              "top": -2945,
+              "right": 1042.5625,
+              "bottom": -2676.5,
+              "left": 720
+            },
+            "amount": {
+              "x": 749,
+              "y": -2858.5,
+              "width": 191.25,
+              "height": 66,
+              "top": -2858.5,
+              "right": 940.25,
+              "bottom": -2792.5,
+              "left": 749
+            },
+            "currency": {
+              "x": 948.25,
+              "y": -2818.5,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -2818.5,
+              "right": 969.6875,
+              "bottom": -2799,
+              "left": 948.25
+            }
+          },
+          {
+            "column": {
+              "x": 1042.5625,
+              "y": -2945,
+              "width": 322.5625,
+              "height": 268.5,
+              "top": -2945,
+              "right": 1365.125,
+              "bottom": -2676.5,
+              "left": 1042.5625
+            },
+            "amount": {
+              "x": 1071.5625,
+              "y": -2858.5,
+              "width": 199.328125,
+              "height": 66,
+              "top": -2858.5,
+              "right": 1270.890625,
+              "bottom": -2792.5,
+              "left": 1071.5625
+            },
+            "currency": {
+              "x": 1278.890625,
+              "y": -2818.5,
+              "width": 21.4375,
+              "height": 19.5,
+              "top": -2818.5,
+              "right": 1300.328125,
+              "bottom": -2799,
+              "left": 1278.890625
+            }
+          }
+        ]
+      },
+      "pageErrors": [],
+      "consoleErrors": [],
+      "blockedNonGET": [],
+      "requestFailures": []
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "screens/uk-320-hero.png",
+      "language": "uk",
+      "viewportWidth": 320,
+      "scope": "hero",
+      "sha256": "28043ace561ba5cc45066d59272dcfed472d6c97534bb366dab6c6e367be8159",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Actual display/body fonts loaded; correct minimum copy; artwork sharp and present; no clipped text. Original content-width CTA matches desktop dimensions."
+    },
+    {
+      "file": "screens/uk-320-calculator.png",
+      "language": "uk",
+      "viewportWidth": 320,
+      "scope": "calculator",
+      "sha256": "d4aebf3462a67f2c72cfb4d4c23463517b6ee6772a241ab01f9ce45132b213ad",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Labels, dates, term choices and controller outlines fit viewport. Two-column mobile term layout at 320; no clipping."
+    },
+    {
+      "file": "screens/uk-390-hero.png",
+      "language": "uk",
+      "viewportWidth": 390,
+      "scope": "hero",
+      "sha256": "781d49b23732e38d8a65a15ccf60579e0b02e4c61efd0e2c19d3fef564c96288",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Actual display/body fonts loaded; correct minimum copy; artwork sharp and present; no clipped text. Original content-width CTA matches desktop dimensions."
+    },
+    {
+      "file": "screens/uk-390-calculator.png",
+      "language": "uk",
+      "viewportWidth": 390,
+      "scope": "calculator",
+      "sha256": "d2ae087627f99a962d105a32b8a6eedd989d456477f454ae71f6fe23f2a86905",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Labels, dates, term choices and controller outlines fit viewport. Four term choices fit; controller glyph and selected state preserved."
+    },
+    {
+      "file": "screens/uk-390-kit.png",
+      "language": "uk",
+      "viewportWidth": 390,
+      "scope": "deferred kit image reserve",
+      "sha256": "33076b6f3e83071a0586d7dcae39c65db505b3502e36e3bc4e5c0b4a1f6d3c5e",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Large controller image present and sharp; image occupies the reserved 3:2 space without collapsing the section; approved scaling preserved."
+    },
+    {
+      "file": "screens/uk-390-process.png",
+      "language": "uk",
+      "viewportWidth": 390,
+      "scope": "process",
+      "sha256": "7167e7d9dd31f3b36e9aad6cd716c954277bd1d5bf99b7ee9099e093e390e3d8",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Icons remain beside centered step titles with connecting lines; corrected step-2 arrangement copy fits; no overlap."
+    },
+    {
+      "file": "screens/uk-390-delivery.png",
+      "language": "uk",
+      "viewportWidth": 390,
+      "scope": "deferred delivery map",
+      "sha256": "be44b4c131a27c0f820e7dfc81d8e0e3f305060b76e75b497db2fa84352dd051",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Both basemap and delivery-zone overlay are present; map retains aspect-ratio reserve, legible surrounding service copy and prices; no blank/loading map accepted."
+    },
+    {
+      "file": "screens/uk-390-empty.png",
+      "language": "uk",
+      "viewportWidth": 390,
+      "scope": "empty picker",
+      "sha256": "6ec5678fdaf487a2f2cfe3a147c086435ecfc844e7b0ba8292b9c4a35e89d59b",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Compact no-results message and one centered existing missing-game action; no duplicate request action; Done visible."
+    },
+    {
+      "file": "screens/uk-390-missing.png",
+      "language": "uk",
+      "viewportWidth": 390,
+      "scope": "missing game prefill",
+      "sha256": "bf69bb4dbbd0c0d59872c84e9febba135ee95bb635ee7bd206cbbe9529082e62",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Single expanded missing-game card; current query prefilled and focused; title/help text fit; Done visible."
+    },
+    {
+      "file": "screens/uk-390-phone.png",
+      "language": "uk",
+      "viewportWidth": 390,
+      "scope": "invalid phone before network submission",
+      "sha256": "6dc608f0f144b7129c012294b4f767e5e33fd47402535e0ee35667d6db52ec03",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Invalid phone field retains focus, with warm outline and visible inline error below; error occupies its own block with 8px top spacing; address/consent fit; no submission request."
+    },
+    {
+      "file": "screens/uk-768-hero.png",
+      "language": "uk",
+      "viewportWidth": 768,
+      "scope": "hero",
+      "sha256": "7784a2dc53ab4b3d790f2e0ea4ef8c3b1ba1eb746886b915e7879cf8c9530486",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Actual display/body fonts loaded; correct minimum copy; artwork sharp and present; no clipped text. Existing tablet CTA is 50px high, separately recorded."
+    },
+    {
+      "file": "screens/uk-768-calculator.png",
+      "language": "uk",
+      "viewportWidth": 768,
+      "scope": "calculator",
+      "sha256": "533fd73cb57eb0fec60a332bf98a8577adb2ba1a71b8a1408dbd50bee8000a42",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Labels, dates, term choices and controller outlines fit viewport. Available inactive outlines distinct from selected choices; visible amount and currency fit."
+    },
+    {
+      "file": "screens/uk-1440-hero.png",
+      "language": "uk",
+      "viewportWidth": 1440,
+      "scope": "hero",
+      "sha256": "d1a7c8d3700c88fc121c6f219e9a519f907a4783d046f2e770aea95d07738dca",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Actual display/body fonts loaded; correct minimum copy; artwork sharp and present; no clipped text. Original content-width CTA matches desktop dimensions."
+    },
+    {
+      "file": "screens/uk-1440-calculator.png",
+      "language": "uk",
+      "viewportWidth": 1440,
+      "scope": "calculator",
+      "sha256": "3e4c89cac7c313e2b51244d3de342175d736a346455e2b9da0050ea8153a3793",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Labels, dates, term choices and controller outlines fit viewport. Available inactive outlines distinct from selected choices; visible amount and currency fit."
+    },
+    {
+      "file": "screens/uk-1440-kit.png",
+      "language": "uk",
+      "viewportWidth": 1440,
+      "scope": "deferred kit image reserve",
+      "sha256": "9b2de3a4c8b259afb72525804e4ad8b9f14f632b48043e1c7fc78bbd9c1c645f",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Large controller image present and sharp; image occupies the reserved 3:2 space without collapsing the section; approved scaling preserved."
+    },
+    {
+      "file": "screens/uk-1440-process.png",
+      "language": "uk",
+      "viewportWidth": 1440,
+      "scope": "process",
+      "sha256": "31f26086a17417b847d208a7ccf833967b9b9fb94d55d4044608fc131d650f9e",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Icons remain beside centered step titles with connecting lines; corrected step-2 arrangement copy fits; no overlap."
+    },
+    {
+      "file": "screens/uk-1440-delivery.png",
+      "language": "uk",
+      "viewportWidth": 1440,
+      "scope": "deferred delivery map",
+      "sha256": "c28d38a83bfa1055abdce34c6a8d437ab33803c5797ab208ea9a797dcfb54862",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Both basemap and delivery-zone overlay are present; map retains aspect-ratio reserve, legible surrounding service copy and prices; no blank/loading map accepted."
+    },
+    {
+      "file": "screens/ru-320-hero.png",
+      "language": "ru",
+      "viewportWidth": 320,
+      "scope": "hero",
+      "sha256": "c6ff9cad7581bd569aa5963d4b35c5c62888de0d7b3b75b3f5f8945e06f3d155",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Actual display/body fonts loaded; correct minimum copy; artwork sharp and present; no clipped text. Original content-width CTA matches desktop dimensions."
+    },
+    {
+      "file": "screens/ru-320-calculator.png",
+      "language": "ru",
+      "viewportWidth": 320,
+      "scope": "calculator",
+      "sha256": "b54d396baf65fe92f722ff9fa6ba407b95f10ae069915f0d5bdb1510af0097e8",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Labels, dates, term choices and controller outlines fit viewport. Two-column mobile term layout at 320; no clipping."
+    },
+    {
+      "file": "screens/ru-390-hero.png",
+      "language": "ru",
+      "viewportWidth": 390,
+      "scope": "hero",
+      "sha256": "ea06d4955072cfcfeefac755a638766603375eac6dbe0778a9a0bf4aabc43adf",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Actual display/body fonts loaded; correct minimum copy; artwork sharp and present; no clipped text. Original content-width CTA matches desktop dimensions."
+    },
+    {
+      "file": "screens/ru-390-calculator.png",
+      "language": "ru",
+      "viewportWidth": 390,
+      "scope": "calculator",
+      "sha256": "444acd2ded5f8c663b196d25525ee64d4b7af2df3fa3eb136f7401e29566bc97",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Labels, dates, term choices and controller outlines fit viewport. Four term choices fit; controller glyph and selected state preserved."
+    },
+    {
+      "file": "screens/ru-390-empty.png",
+      "language": "ru",
+      "viewportWidth": 390,
+      "scope": "empty picker",
+      "sha256": "02f14555538a9d8b4c3be1e7d73cc8c097eaa6ec3242a871275a54b92fb7c6da",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Compact no-results message and one centered existing missing-game action; no duplicate request action; Done visible."
+    },
+    {
+      "file": "screens/ru-390-missing.png",
+      "language": "ru",
+      "viewportWidth": 390,
+      "scope": "missing game prefill",
+      "sha256": "193538ec21a14fc31791c2cf56aed5077eeb1412a725b7b3d48ecfd1620c619f",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Single expanded missing-game card; current query prefilled and focused; title/help text fit; Done visible."
+    },
+    {
+      "file": "screens/ru-390-phone.png",
+      "language": "ru",
+      "viewportWidth": 390,
+      "scope": "invalid phone before network submission",
+      "sha256": "fa86dbb9a9fef1ec2b97c5cd4b473e0a1078ac86342bbb8e0600df852cfe9919",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Invalid phone field retains focus, with warm outline and visible inline error below; error occupies its own block with 8px top spacing; address/consent fit; no submission request."
+    },
+    {
+      "file": "screens/ru-768-hero.png",
+      "language": "ru",
+      "viewportWidth": 768,
+      "scope": "hero",
+      "sha256": "2e19a4c7748764e7cb3df63ad91f3aaa842e807a01b069cb4cfd67cf72955503",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Actual display/body fonts loaded; correct minimum copy; artwork sharp and present; no clipped text. Existing tablet CTA is 50px high, separately recorded."
+    },
+    {
+      "file": "screens/ru-768-calculator.png",
+      "language": "ru",
+      "viewportWidth": 768,
+      "scope": "calculator",
+      "sha256": "afa71cd4565b72fc7ec01cafa4d0bb1b2ab92200450e73df5001c5cefe2f8c1f",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Labels, dates, term choices and controller outlines fit viewport. Available inactive outlines distinct from selected choices; visible amount and currency fit."
+    },
+    {
+      "file": "screens/ru-1440-hero.png",
+      "language": "ru",
+      "viewportWidth": 1440,
+      "scope": "hero",
+      "sha256": "9525d4ff425dbd5b0b6d23ce259f8c377533e3ccf62e5740bace573c091e73fd",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Actual display/body fonts loaded; correct minimum copy; artwork sharp and present; no clipped text. Original content-width CTA matches desktop dimensions."
+    },
+    {
+      "file": "screens/ru-1440-calculator.png",
+      "language": "ru",
+      "viewportWidth": 1440,
+      "scope": "calculator",
+      "sha256": "50922adfa9100e109671f8f1d93a8c3b52a7fa49b6965fd85c3b94be8d85f54a",
+      "accepted": true,
+      "reviewMethod": "Individually inspected using view_image in this installed-build QA run.",
+      "observations": "Labels, dates, term choices and controller outlines fit viewport. Available inactive outlines distinct from selected choices; visible amount and currency fit."
+    }
+  ],
+  "summary": {
+    "cases": 8,
+    "acceptedScreenshots": 28,
+    "viewedIndividually": 28,
+    "fontRequestsHTTP200": 48,
+    "fontRequestsPerCase": 6,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "pageOverflowCases": 0,
+    "requestFailures": 0,
+    "nonGETHEADRequests": 0,
+    "productionEdits": 0,
+    "tabletCTA768": "Existing tablet responsive treatment, 50px high. Small-mobile 320/390 CTA equals 1440 desktop for each language."
+  },
+  "reviewUTC": "2026-10-04T13:19:37.383793+00:00"
+}

@@ -20,9 +20,9 @@ dialog.game-picker-dialog.game-picker-structured { --game-picker-max-height: 840
 .game-picker-structured .picker-game h3 { margin-bottom: 9px; overflow-wrap: anywhere; }
 .game-picker-structured .picker-game .picker-game-toggle { flex: 0 0 auto; margin-top: auto; }
 .game-picker-structured .game-picker-result { color: #c4c5c5; margin-bottom: 18px; }
-.game-picker-structured .game-picker-empty { padding: 26px 20px; border: 1px solid #3e4044; border-radius: 10px; text-align: center; background: #ffffff02; }
+.game-picker-structured .game-picker-empty { padding: 0; text-align: left; }
 .game-picker-structured .game-picker-empty p { color: #c4c5c5; font-size: 14px; line-height: 1.6; }
-.game-picker-structured .game-picker-empty-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 18px; }
+.game-picker-structured .game-picker-empty-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
 .game-picker-structured .game-picker-empty-actions .button { min-height: 44px; padding: 10px 16px; font-size: 13px; }
 .game-picker-structured .game-picker-limit { margin-top: 20px; }
 .game-picker-structured .game-picker-request { margin: 26px 0 0; padding: 18px 20px; border: 1px solid #665945; border-radius: 10px; background: #c79b5d08; }
@@ -55,7 +55,6 @@ dialog.game-picker-dialog.game-picker-structured { --game-picker-max-height: 840
   .game-picker-structured .missing-game-heading { align-items: flex-start; gap: 12px; }
   .game-picker-structured .missing-game-heading > div { flex-basis: 100%; }
   .game-picker-structured .missing-game-heading h3 { font-size: 16px; }
-  .game-picker-structured .game-picker-empty { padding: 20px 14px; }
 }
 @media (max-height: 520px) {
   .game-picker-structured .game-picker-toolbar { padding-top: 12px; }

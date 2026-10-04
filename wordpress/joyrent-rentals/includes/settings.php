@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) exit;
 
 final class JR_Settings {
     public static function defaults(): array {
-        return ['city'=>'Одеса','city_ru'=>'Одесса','phone'=>'+380996669946','email'=>'','notification_email'=>'','telegram'=>'https://t.me/joyrent_od','delivery_fee'=>'','delivery_green_fee'=>200,'delivery_yellow_fee'=>300,'deposit_ps5'=>25000,'deposit_ps4'=>7500,'base_controllers'=>2,'extra_controller_fee'=>0,'pickup'=>false,'free_delivery_from'=>7,'max_games'=>100,'delivery_text_ru'=>'Доставляем по Одессе. Привезём, подключим и заберём после аренды. Зону и время подтвердим по адресу.', 'delivery_text'=>'Доставляємо по Одесі. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.'];
+        return ['city'=>'Одеса','city_ru'=>'Одесса','phone'=>'+380996669946','email'=>'','notification_email'=>'','search_indexing'=>false,'telegram'=>'https://t.me/joyrent_od','delivery_fee'=>'','delivery_green_fee'=>200,'delivery_yellow_fee'=>300,'deposit_ps5'=>25000,'deposit_ps4'=>7500,'base_controllers'=>2,'extra_controller_fee'=>0,'pickup'=>false,'free_delivery_from'=>7,'max_games'=>100,'delivery_text_ru'=>'Доставляем по Одессе. Привезём, подключим и заберём после аренды. Зону и время подтвердим по адресу.', 'delivery_text'=>'Доставляємо по Одесі. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.'];
     }
     public static function get(): array {
         $defaults=self::defaults(); $saved=(array)get_option('joyrent_settings',[]);
@@ -12,6 +12,7 @@ final class JR_Settings {
         return array_merge($defaults,$saved);
     }
     private static function amount(mixed $value): ?float { return $value === '' || $value === null ? null : max(0,(float)$value); }
+    public static function search_indexing(): bool { return in_array(self::get()['search_indexing'],[true,1,'1'],true); }
     public static function public(): array {
         $s=self::get();
         return ['city'=>$s['city'],'cityRu'=>$s['city_ru'],'phone'=>$s['phone'],'email'=>$s['email'],'telegram'=>$s['telegram'],'deliveryFee'=>self::amount($s['delivery_fee']),'deliveryGreenFee'=>self::amount($s['delivery_green_fee']),'deliveryYellowFee'=>self::amount($s['delivery_yellow_fee']),'depositPs5'=>self::amount($s['deposit_ps5']),'depositPs4'=>self::amount($s['deposit_ps4']),'baseControllers'=>(int)$s['base_controllers'],'extraControllerFee'=>self::amount($s['extra_controller_fee']),'pickup'=>(bool)$s['pickup'],'freeDeliveryFrom'=>(int)$s['free_delivery_from'],'maxGames'=>max(1,min(100,(int)$s['max_games'])),'deliveryText'=>$s['delivery_text'],'deliveryTextRu'=>$s['delivery_text_ru']];
@@ -31,6 +32,7 @@ final class JR_Settings {
         $result['free_delivery_from']=max(1,min(30,(int)($input['free_delivery_from']??7)));
         $result['max_games']=max(1,min(100,(int)($input['max_games']??100)));
         $result['pickup']=!empty($input['pickup']);
+        $result['search_indexing']=in_array($input['search_indexing']??false,[true,1,'1'],true);
         return $result;
     }
     public static function menu(): void { add_submenu_page('woocommerce','JOYRENT','JOYRENT','manage_woocommerce','joyrent',[self::class,'page']); }
@@ -46,7 +48,8 @@ final class JR_Settings {
         echo '<div class="wrap"><h1>JOYRENT — налаштування оренди</h1><p>Порожні суми означають «узгодимо», а не нуль. Заявки очікують ручного підтвердження; автоматичного бронювання чи оплати немає.</p><p>Сповіщення заявок: '.esc_html(JR_Orders::notification_recipient() ?: 'одержувач не налаштований').'. Якщо Email магазину порожній, використовується одержувач «Нове замовлення» WooCommerce, потім Email адміністратора. Помилки та повторна спроба доступні в замовленні.</p><form method="post" action="options.php">';
         settings_fields('joyrent'); echo '<table class="form-table">';
         foreach ($fields as $key=>[$label,$type]) echo '<tr><th><label for="jr-'.esc_attr($key).'">'.esc_html($label).'</label></th><td><input class="regular-text" id="jr-'.esc_attr($key).'" name="joyrent_settings['.esc_attr($key).']" type="'.esc_attr($type).'" '.($type==='number'?'min="0" step="0.01" ':'').'value="'.esc_attr((string)$s[$key]).'"></td></tr>';
-        echo '<tr><th>Самовивіз</th><td><label><input type="checkbox" name="joyrent_settings[pickup]" value="1" '.checked($s['pickup'],true,false).'> Дозволити вибір самовивозу</label></td></tr></table>';
+        echo '<tr><th>Самовивіз</th><td><label><input type="checkbox" name="joyrent_settings[pickup]" value="1" '.checked($s['pickup'],true,false).'> Дозволити вибір самовивозу</label></td></tr>';
+        echo '<tr><th>Пошукові системи</th><td><label><input type="checkbox" name="joyrent_settings[search_indexing]" value="1" '.checked(self::search_indexing(),true,false).'> Дозволити індексацію сайту</label><p class="description">Увімкни після перенесення на основний домен.</p></td></tr></table>';
         submit_button('Зберегти умови'); echo '</form><hr><h2>Каталог</h2><p>Створити відсутні тарифи та початкову добірку ігор. Існуючі ціни й тексти не перезаписуються. Наявність ігор редагуйте в меню «Ігри JOYRENT».</p><form method="post" action="'.esc_url(admin_url('admin-post.php')).'"><input type="hidden" name="action" value="joyrent_seed">';
         wp_nonce_field('joyrent_seed'); submit_button('Додати початковий каталог','secondary'); echo '</form></div>';
     }

@@ -14,6 +14,7 @@ final class JR_Domain {
         throw new InvalidArgumentException('Обери доступний тариф.');
     }
     public static function parse_date(string $date): DateTimeImmutable {
+        if (str_contains($date, "\0")) throw new InvalidArgumentException('Вкажи коректну дату.');
         $parsed = DateTimeImmutable::createFromFormat('!Y-m-d', $date, new DateTimeZone('Europe/Kyiv'));
         if (!$parsed || $parsed->format('Y-m-d') !== $date) throw new InvalidArgumentException('Вкажи коректну дату.');
         return $parsed;
@@ -27,7 +28,8 @@ final class JR_Domain {
         if (!is_string($language) || !in_array($language, ['uk','ru'], true)) throw new InvalidArgumentException('Обери мову uk або ru.');
         return $language;
     }
-    public static function validate(array $payload, ?string $today = null, ?array $inventory = null): array {
+    // Normalize syntax independently from today's availability, so an accepted request can replay.
+    public static function canonical(array $payload): array {
         self::language($payload);
         $console = is_string($payload['console'] ?? null) ? $payload['console'] : '';
         $days = filter_var($payload['days'] ?? null, FILTER_VALIDATE_INT);
@@ -36,9 +38,6 @@ final class JR_Domain {
         unset($tariff['nameRu'], $tariff['descriptionRu']); // Preserve pre-1.1 canonical request fingerprints.
         $start = is_string($payload['startDate'] ?? null) ? $payload['startDate'] : '';
         self::parse_date($start);
-        $today = $today ?? (new DateTimeImmutable('now', new DateTimeZone('Europe/Kyiv')))->format('Y-m-d');
-        if ($start < $today) throw new InvalidArgumentException('Дата отримання не може бути в минулому.');
-        if ($start > self::parse_date($today)->modify('+1 year')->format('Y-m-d')) throw new InvalidArgumentException('Обери дату протягом найближчого року.');
         $name = trim(is_string($payload['name'] ?? null) ? $payload['name'] : '');
         if (mb_strlen($name) < 2 || mb_strlen($name) > 100) throw new InvalidArgumentException('Вкажи своє ім’я.');
         $phone = preg_replace('/[\s()\-]/', '', is_string($payload['phone'] ?? null) ? $payload['phone'] : '');
@@ -47,22 +46,15 @@ final class JR_Domain {
         $method = $payload['method'] ?? 'delivery';
         if (!in_array($method, ['delivery','pickup'], true)) throw new InvalidArgumentException('Обери спосіб отримання.');
         $address = trim(is_string($payload['address'] ?? null) ? $payload['address'] : '');
-        if ($method === 'delivery' && (mb_strlen($address) < 5 || mb_strlen($address) > 300)) throw new InvalidArgumentException('Вкажи адресу доставки в Одесі.');
+        if (mb_strlen($address) > 300 || ($method === 'delivery' && mb_strlen($address) < 5)) throw new InvalidArgumentException('Вкажи адресу доставки в Одесі.');
+        if ($method === 'pickup') $address = '';
         $controllers = filter_var($payload['controllers'] ?? 1, FILTER_VALIDATE_INT);
         if (!in_array($controllers, [1,2], true)) throw new InvalidArgumentException('Обери один або два геймпади.');
         $game_ids = $payload['gameIds'] ?? [];
         if (!is_array($game_ids) || count($game_ids) > 1000) throw new InvalidArgumentException('Некоректний список ігор.');
-        $inventory = $inventory ?? self::catalog()['games'];
-        $records = [];
-        foreach ($inventory as $record) if (is_string($record['id'] ?? null) && !isset($records[$record['id']])) $records[$record['id']] = $record;
-        foreach ($game_ids as $game) {
-            if (!is_string($game) || !isset($records[$game])) throw new InvalidArgumentException('Обери гру з каталогу.');
-            $record = $records[$game];
-            if (!in_array($console,$record['platforms'],true)) throw new InvalidArgumentException('Ця гра недоступна для обраної консолі.');
-        }
+        foreach ($game_ids as $game) if (!is_string($game)) throw new InvalidArgumentException('Обери гру з каталогу.');
         $game_ids = array_values(array_unique($game_ids));
-        $configured = class_exists('JR_Settings') ? (int) JR_Settings::public()['maxGames'] : 100;
-        if (count($game_ids) > min(100, $configured, count($records))) throw new InvalidArgumentException('Перевищено дозволену кількість ігор.');
+        if (count($game_ids) > 100) throw new InvalidArgumentException('Перевищено дозволену кількість ігор.');
         $security_mode = array_key_exists('securityMode',$payload) ? $payload['securityMode'] : 'deposit';
         if (!is_string($security_mode) || !in_array($security_mode,['deposit','contract'],true)) throw new InvalidArgumentException('Обери оформлення із заставою або за договором.');
         $requested_game = array_key_exists('requestedGame',$payload) ? $payload['requestedGame'] : '';
@@ -73,6 +65,33 @@ final class JR_Domain {
         // Explicit defaults keep the same fingerprint as requests made before these options existed.
         if ($security_mode!=='deposit') $data['securityMode']=$security_mode;
         if ($requested_game!=='') $data['requestedGame']=$requested_game;
+        return $data;
+    }
+    public static function intent_fingerprint(array $data): string {
+        $games = array_values(array_unique($data['gameIds'])); sort($games, SORT_STRING);
+        $intent = [
+            'console'=>$data['console'],'days'=>$data['days'],'startDate'=>$data['startDate'],
+            'name'=>trim($data['name']),'phone'=>preg_replace('/[\s()\-]/','',$data['phone']),
+            'method'=>$data['method'],'address'=>$data['method']==='pickup'?'':trim($data['address']),
+            'controllers'=>$data['controllers'],'gameIds'=>$games,
+            'securityMode'=>$data['securityMode']??'deposit','requestedGame'=>trim($data['requestedGame']??''),
+        ];
+        return hash('sha256', json_encode($intent, JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR));
+    }
+    public static function validate(array $payload, ?string $today = null, ?array $inventory = null): array {
+        $data = self::canonical($payload);
+        $today = $today ?? (new DateTimeImmutable('now', new DateTimeZone('Europe/Kyiv')))->format('Y-m-d');
+        if ($data['startDate'] < $today) throw new InvalidArgumentException('Дата отримання не може бути в минулому.');
+        if ($data['startDate'] > self::parse_date($today)->modify('+1 year')->format('Y-m-d')) throw new InvalidArgumentException('Обери дату протягом найближчого року.');
+        $inventory = $inventory ?? self::catalog()['games'];
+        $records = [];
+        foreach ($inventory as $record) if (is_string($record['id'] ?? null) && !isset($records[$record['id']])) $records[$record['id']] = $record;
+        foreach ($data['gameIds'] as $game) {
+            if (!isset($records[$game])) throw new InvalidArgumentException('Обери гру з каталогу.');
+            if (!in_array($data['console'],$records[$game]['platforms'],true)) throw new InvalidArgumentException('Ця гра недоступна для обраної консолі.');
+        }
+        $configured = class_exists('JR_Settings') ? (int) JR_Settings::public()['maxGames'] : 100;
+        if (count($data['gameIds']) > min(100, $configured, count($records))) throw new InvalidArgumentException('Перевищено дозволену кількість ігор.');
         return $data;
     }
 }

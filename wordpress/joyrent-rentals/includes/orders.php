@@ -6,17 +6,32 @@ final class JR_Orders {
         register_post_status('wc-jr-request',['label'=>'Бронювання','public'=>true,'exclude_from_search'=>false,'show_in_admin_all_list'=>true,'show_in_admin_status_list'=>true,'label_count'=>_n_noop('Бронювання <span class="count">(%s)</span>','Бронювання <span class="count">(%s)</span>','joyrent-rentals')]);
     }
     public static function statuses(array $statuses): array { $statuses['wc-jr-request']='Бронювання'; return $statuses; }
-    public static function existing(string $key, string $fingerprint): ?array {
+    public static function existing(string $key, string $fingerprint, ?string $intent_fingerprint = null): ?array {
         $orders=wc_get_orders(['limit'=>1,'joyrent_request_key'=>$key,'meta_query'=>[['key'=>'_joyrent_request_key','value'=>$key]]]);
         if (!$orders) return null;
         $order=$orders[0];
-        if (!hash_equals((string)$order->get_meta('_joyrent_fingerprint'),$fingerprint)) throw new InvalidArgumentException('Параметри бронювання змінилися. Онови сторінку та спробуй ще раз.');
+        $matches=hash_equals((string)$order->get_meta('_joyrent_fingerprint'),$fingerprint);
+        if (!$matches&&$intent_fingerprint!==null) {
+            $stored=(string)$order->get_meta('_joyrent_intent_fingerprint');
+            if ($stored==='') {
+                // Recover pre-upgrade intent from the durable order, without current eligibility rules.
+                $stored=JR_Domain::intent_fingerprint([
+                    'console'=>(string)$order->get_meta('_joyrent_console'),'days'=>(int)$order->get_meta('_joyrent_days'),
+                    'startDate'=>(string)$order->get_meta('_joyrent_start_date'),'controllers'=>(int)$order->get_meta('_joyrent_controllers'),
+                    'gameIds'=>(array)$order->get_meta('_joyrent_game_ids'),'method'=>(string)$order->get_meta('_joyrent_method'),
+                    'name'=>$order->get_billing_first_name(),'phone'=>$order->get_billing_phone(),'address'=>$order->get_billing_address_1(),
+                    'securityMode'=>$order->get_meta('_joyrent_security_mode')?:'deposit','requestedGame'=>(string)$order->get_meta('_joyrent_requested_game'),
+                ]);
+            }
+            $matches=hash_equals($stored,$intent_fingerprint);
+        }
+        if (!$matches) throw new InvalidArgumentException('Параметри бронювання змінилися. Онови сторінку та спробуй ще раз.');
         if ($order->get_meta('_joyrent_completed')!=='yes') throw new RuntimeException('Заявка потребує перевірки магазином.');
         return ['reference'=>'JR-'.$order->get_order_number(),'rentalAmount'=>(float)$order->get_meta('_joyrent_rental_amount'),'status'=>'awaiting_confirmation'];
     }
     public static function create(array $data, string $key, string $fingerprint): array {
         $product=JR_Store::product($data['console'],$data['days']);
-        if (!$product||$product->get_status()!=='publish'||$product->get_price()===''||(float)$product->get_price()<=0) throw new RuntimeException('Цей комплект тимчасово недоступний.');
+        if (!JR_Store::requestable($product)) throw new RuntimeException('Цей комплект тимчасово недоступний.');
         $amount=(float)$product->get_price(); $settings=JR_Settings::public();
         $order=new WC_Order();
         $order->set_status('checkout-draft'); $order->set_created_via('joyrent');
@@ -24,6 +39,7 @@ final class JR_Orders {
         // An interrupted worker can never create a second order on retry.
         $order->update_meta_data('_joyrent_request_key',$key);
         $order->update_meta_data('_joyrent_fingerprint',$fingerprint);
+        $order->update_meta_data('_joyrent_intent_fingerprint',JR_Domain::intent_fingerprint($data));
         $order->save();
         try {
             $order->set_currency('UAH'); $order->set_billing_first_name($data['name']); $order->set_billing_phone($data['phone']); $order->set_billing_address_1($data['address']); $order->set_billing_country('UA');

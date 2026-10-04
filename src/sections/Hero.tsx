@@ -17,7 +17,7 @@ export function Hero({ price, minimumDays = 1, consoleId = 'ps5', onChoosePS5 }:
     <div className="hero-content">
       <p className="eyebrow hero-eyebrow">{t('Оренда PlayStation', 'Аренда PlayStation')}</p>
       <h1 aria-label={lines.join(' ')}>{lines.map((line, index) => <BlurredStagger key={line} text={line} delay={index * 0.16} />)}</h1>
-      <p className="hero-description"><span className="hero-description-part">{t('PS5 або PS4 на день, вихідні чи довше.', 'PS5 или PS4 на день, выходные или дольше.')}</span>{' '}<span className="hero-description-part">{t('Обери консоль і дати — решту узгодимо з тобою.', 'Выбери консоль и даты — остальное согласуем с тобой.')}</span></p>
+      <p className="hero-description"><span className="hero-description-part">{t('PS5 від 1 дня, PS4 — від 3 днів.', 'PS5 от 1 дня, PS4 — от 3 дней.')}</span>{' '}<span className="hero-description-part">{t('Обери консоль і дати — решту узгодимо з тобою.', 'Выбери консоль и даты — остальное согласуем с тобой.')}</span></p>
       <div className="hero-actions"><a href="#rates" onClick={price === null ? undefined : onChoosePS5} className="button button-light hero-primary">{price === null ? t('Перевірити тарифи', 'Проверить тарифы') : `${t('Обрати', 'Выбрать')} ${consoleId.toUpperCase()}`} <span className="hero-primary-direction" aria-hidden="true"><CaretRight size={18} weight="light" /></span></a><a href="#rates" className="text-link">{t('Тарифи PS5 / PS4', 'Тарифы PS5 / PS4')}</a></div>
       <p className="hero-price">{price === null ? t('Тарифи тимчасово недоступні', 'Тарифы временно недоступны') : <>{t('від', 'от')} <strong>{money(price / minimumDays)}</strong><span> грн/день</span></>}</p>
     </div>

@@ -14,6 +14,7 @@ export function OdesaAddressInput({ value, onChange, inputRef }: {
   const field = useRef<HTMLInputElement | null>(null);
   const suggestionList = useRef<HTMLUListElement | null>(null);
   const optionPress = useRef<{ pointerId: number; targetId: string; x: number; y: number; scrollTop: number; moved: boolean; blurred: boolean; commit: () => void } | null>(null);
+  const committedTouch = useRef<{ x: number; y: number; time: number } | null>(null);
   const refreshPlacement = useRef<(() => void) | null>(null);
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(-1);
@@ -37,6 +38,9 @@ export function OdesaAddressInput({ value, onChange, inputRef }: {
       const didScroll = Math.abs((suggestionList.current?.scrollTop ?? 0) - press.scrollTop) > 1;
       if (!press.moved && !didScroll && hit?.id === press.targetId) {
         event.preventDefault();
+        // Removing the option before a touch click can retarget that click to
+        // a control below the popup. Consume this gesture's click separately.
+        if (event.pointerType === 'touch') committedTouch.current = { x: event.clientX, y: event.clientY, time: event.timeStamp };
         press.commit();
       } else if (press.blurred) { setOpen(false); setActive(-1); }
       refreshPlacement.current?.();
@@ -52,13 +56,32 @@ export function OdesaAddressInput({ value, onChange, inputRef }: {
       if (press.blurred) { setOpen(false); setActive(-1); }
       refreshPlacement.current?.();
     };
-    const leaveWindow = () => { if (optionPress.current) { optionPress.current = null; setOpen(false); setActive(-1); } };
+    const resetTouchClick = () => { committedTouch.current = null; };
+    const click = (event: MouseEvent) => {
+      const committed = committedTouch.current;
+      // detail:0 covers keyboard, VoiceOver and programmatic activation.
+      if (!committed || event.detail === 0) return;
+      committedTouch.current = null;
+      const elapsed = event.timeStamp - committed.time;
+      if (elapsed >= 0 && elapsed <= 1000 && Math.hypot(event.clientX - committed.x, event.clientY - committed.y) <= 8) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      }
+    };
+    const leaveWindow = () => { resetTouchClick(); if (optionPress.current) { optionPress.current = null; setOpen(false); setActive(-1); } };
+    window.addEventListener('pointerdown', resetTouchClick, true);
+    window.addEventListener('keydown', resetTouchClick, true);
+    window.addEventListener('click', click, true);
     window.addEventListener('pointerup', finish, true);
     window.addEventListener('pointermove', move, true);
     window.addEventListener('pointercancel', cancel, true);
     window.addEventListener('blur', leaveWindow);
     return () => {
       optionPress.current = null;
+      committedTouch.current = null;
+      window.removeEventListener('pointerdown', resetTouchClick, true);
+      window.removeEventListener('keydown', resetTouchClick, true);
+      window.removeEventListener('click', click, true);
       window.removeEventListener('pointerup', finish, true);
       window.removeEventListener('pointermove', move, true);
       window.removeEventListener('pointercancel', cancel, true);

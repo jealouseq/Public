@@ -1,0 +1,164 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "robots": "noindex",
+    "title": "JOYRENT — оренда PlayStation 5 та PlayStation 4 в Одесі",
+    "canonical": [
+      "http://localhost:8080/"
+    ],
+    "ogImage": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-share.jpg"
+    ],
+    "security": {
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+    }
+  },
+  {
+    "path": "/?lang=ru",
+    "status": 200,
+    "robots": "noindex",
+    "title": "JOYRENT — аренда PlayStation 5 и PlayStation 4 в Одессе",
+    "canonical": [
+      "http://localhost:8080/?lang=ru"
+    ],
+    "ogImage": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-share.jpg"
+    ],
+    "security": {
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+    }
+  },
+  {
+    "path": "/faq/",
+    "status": 200,
+    "robots": "noindex",
+    "title": "Питання про оренду PlayStation — JOYRENT",
+    "canonical": [
+      "http://localhost:8080/faq/"
+    ],
+    "ogImage": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-share.jpg"
+    ],
+    "security": {
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+    }
+  },
+  {
+    "path": "/faq-ru/",
+    "status": 200,
+    "robots": "noindex",
+    "title": "Вопросы об аренде PlayStation — JOYRENT",
+    "canonical": [
+      "http://localhost:8080/faq-ru/"
+    ],
+    "ogImage": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-share.jpg"
+    ],
+    "security": {
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+    }
+  },
+  {
+    "path": "/umovy-orendy/",
+    "status": 200,
+    "robots": "noindex",
+    "title": "Умови оренди PlayStation — JOYRENT",
+    "canonical": [
+      "http://localhost:8080/umovy-orendy/"
+    ],
+    "ogImage": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-share.jpg"
+    ],
+    "security": {
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+    }
+  },
+  {
+    "path": "/usloviya-arendy/",
+    "status": 200,
+    "robots": "noindex",
+    "title": "Условия аренды PlayStation — JOYRENT",
+    "canonical": [
+      "http://localhost:8080/usloviya-arendy/"
+    ],
+    "ogImage": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-share.jpg"
+    ],
+    "security": {
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+    }
+  },
+  {
+    "path": "/konfidentsiinist/",
+    "status": 200,
+    "robots": "noindex",
+    "title": "Конфіденційність — JOYRENT",
+    "canonical": [
+      "http://localhost:8080/konfidentsiinist/"
+    ],
+    "ogImage": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-share.jpg"
+    ],
+    "security": {
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+    }
+  },
+  {
+    "path": "/konfidentsialnost/",
+    "status": 200,
+    "robots": "noindex",
+    "title": "Конфиденциальность — JOYRENT",
+    "canonical": [
+      "http://localhost:8080/konfidentsialnost/"
+    ],
+    "ogImage": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-share.jpg"
+    ],
+    "security": {
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+    }
+  },
+  {
+    "path": "/wp-sitemap.xml",
+    "status": 404,
+    "robots": "noindex",
+    "title": "Page not found &#8211; JOYRENT",
+    "canonical": [],
+    "ogImage": [],
+    "security": {
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": "strict-origin-when-cross-origin",
+      "Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+    }
+  },
+  {
+    "path": "/wp-json/joyrent/v1/catalog",
+    "status": 200,
+    "robots": "noindex",
+    "title": null,
+    "canonical": [],
+    "ogImage": [],
+    "security": {
+      "X-Content-Type-Options": "nosniff",
+      "Referrer-Policy": null,
+      "Permissions-Policy": null
+    }
+  }
+]

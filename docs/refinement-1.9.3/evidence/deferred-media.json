@@ -1,0 +1,38 @@
+[
+  {
+    "width": 1440,
+    "initialDecorationRequests": 0,
+    "reservedHeights": [
+      433,
+      468
+    ],
+    "loadedHeights": [
+      433,
+      468
+    ],
+    "loadedDecoration": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg"
+    ],
+    "errors": []
+  },
+  {
+    "width": 390,
+    "initialDecorationRequests": 0,
+    "reservedHeights": [
+      228,
+      199
+    ],
+    "loadedHeights": [
+      228,
+      199
+    ],
+    "loadedDecoration": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-560.webp",
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg"
+    ],
+    "errors": []
+  }
+]
