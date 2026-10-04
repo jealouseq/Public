@@ -1,0 +1,142 @@
+[
+  {
+    "case": "nested-dialog",
+    "trapAll": true,
+    "afterDetailClose": {
+      "tag": "BUTTON",
+      "name": null,
+      "cls": "game-art",
+      "label": "Детальніше про EA SPORTS FC 27"
+    },
+    "afterPickerClose": {
+      "tag": "BUTTON",
+      "name": null,
+      "cls": "game-picker-button",
+      "label": null
+    },
+    "posts": 0,
+    "errors": []
+  },
+  {
+    "case": "valid-local-submit",
+    "selectedStreet": "Фонтанська дорога",
+    "posts": [
+      {
+        "console": "ps5",
+        "days": 3,
+        "startDate": "2026-10-04",
+        "controllers": 1,
+        "gameIds": [],
+        "name": "QA Local",
+        "phone": "+380500000000",
+        "method": "delivery",
+        "address": "Фонтанська дорога, 10, кв. 7",
+        "securityMode": "deposit",
+        "requestedGame": "",
+        "consent": true,
+        "website": "",
+        "language": "uk",
+        "requestId": "00033b79-d91d-4643-b071-0c7d4a1567fe"
+      }
+    ],
+    "storageKeys": [
+      "version",
+      "expiresAt",
+      "consoleId",
+      "days",
+      "gameIds",
+      "start",
+      "controllers",
+      "method",
+      "securityMode",
+      "step"
+    ],
+    "storageAfterSubmit": null,
+    "focusAfterSuccess": {
+      "tag": "BODY",
+      "name": null,
+      "cls": "",
+      "label": null
+    },
+    "nextTabAfterSuccess": {
+      "tag": "BUTTON",
+      "name": null,
+      "cls": "button button-outline",
+      "label": null
+    },
+    "errors": []
+  },
+  {
+    "case": "new-booking",
+    "name": "QA Local",
+    "phone": "+380500000000",
+    "address": "Фонтанська дорога, 10, кв. 7",
+    "consent": false
+  },
+  {
+    "case": "phone-invalid",
+    "htmlValidity": true,
+    "posts": [
+      {
+        "console": "ps5",
+        "days": 3,
+        "startDate": "2026-10-04",
+        "controllers": 1,
+        "gameIds": [],
+        "name": "QA Local",
+        "phone": "abcdefghij",
+        "method": "delivery",
+        "address": "Фонтанська дорога, 10",
+        "securityMode": "deposit",
+        "requestedGame": "",
+        "consent": true,
+        "website": "",
+        "language": "uk",
+        "requestId": "08e7658c-062d-442b-8a45-fb60598809b9"
+      }
+    ],
+    "error": "Вкажи український номер телефону.",
+    "focus": {
+      "tag": "BODY",
+      "name": null,
+      "cls": "",
+      "label": null
+    },
+    "nextTab": {
+      "tag": "A",
+      "name": null,
+      "cls": "wordmark",
+      "label": "JOYRENT — на початок"
+    },
+    "phoneAttributes": {
+      "invalid": null,
+      "describedby": null,
+      "pattern": null
+    }
+  },
+  {
+    "case": "long-rental-outside-city",
+    "summary": "ТВОЯ ОРЕНДА\n\nPlayStation 5\n2 500\nгрн / 7 днів\nДоставка\nу зеленій / жовтій зоні\nВключено\nЗастава\n25 000 грн\n/ повертається\nВартість оренди\n2 500 грн\n\nЗастава сплачується окремо. Доставку та наявність підтвердимо після бронювання.\n\nЗабронювати\n\nБез оплати до підтвердження",
+    "errors": []
+  },
+  {
+    "case": "idempotent-retry-phone-format",
+    "requestIds": [
+      "073395bb-3532-4c1d-aa1c-f12697a20022",
+      "073395bb-3532-4c1d-aa1c-f12697a20022",
+      "5b2b7cfa-b0a3-4205-90cb-03d38b629602"
+    ],
+    "phones": [
+      "+380500000000",
+      "+380500000000",
+      "+380 50 000 00 00"
+    ],
+    "sameUneditedRetryId": true,
+    "formattingChangesId": true,
+    "serverNormalizedPhones": [
+      "+380500000000",
+      "+380500000000",
+      "+380500000000"
+    ]
+  }
+]

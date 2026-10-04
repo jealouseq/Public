@@ -1,0 +1,676 @@
+[
+  {
+    "mode": "touch",
+    "beforeOptionRect": {
+      "x": 30,
+      "y": 440.78125,
+      "width": 330,
+      "height": 48
+    },
+    "consentRects": [
+      {
+        "text": "умовами оренди",
+        "rect": {
+          "x": 166.40625,
+          "y": 439.578125,
+          "width": 102.5625,
+          "height": 22.09375,
+          "top": 439.578125,
+          "right": 268.96875,
+          "bottom": 461.671875,
+          "left": 166.40625
+        }
+      },
+      {
+        "text": "обробкою персональних даних",
+        "rect": {
+          "x": 76,
+          "y": 461.671875,
+          "width": 193.109375,
+          "height": 22.09375,
+          "top": 461.671875,
+          "right": 269.109375,
+          "bottom": 483.765625,
+          "left": 76
+        }
+      }
+    ],
+    "addressAfter": "Середньофонтанська вулиця",
+    "dialogsAfter": [
+      {
+        "cls": "legal-dialog",
+        "text": "JOYRENT\n\nКонфіденційність\n\nІм’я, телефон, адреса доставки, вибір оренди та побажання щодо ігор потрібні для обробки бронювання. Не надсилай через сайт пароль PSN, документи чи платіжні дані.\n\nДані бронювання зберігаються у магазині JOYRENT. Доступ мають уповноважені працівники. Щоб уточнити або видалити дані, звернися за контактами внизу сторінки.\n\nФорма не підписує тебе на рекламну розсилку.\n\nПовна інформація\nЗрозуміло"
+      }
+    ],
+    "events": [
+      {
+        "type": "pointerdown",
+        "time": 741.8999999999069,
+        "target": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "pointerType": "touch",
+        "detail": 0,
+        "defaultPrevented": false,
+        "x": 195,
+        "y": 464.7799987792969,
+        "hit": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "popup": true,
+        "dialogs": []
+      },
+      {
+        "type": "touchstart",
+        "time": 742.8000000000466,
+        "target": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "pointerType": null,
+        "detail": 0,
+        "defaultPrevented": false,
+        "x": 195,
+        "y": 464.77978515625,
+        "hit": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "popup": true,
+        "dialogs": []
+      },
+      {
+        "type": "mutation",
+        "time": 746.5999999998603,
+        "popup": false,
+        "dialogs": []
+      },
+      {
+        "type": "pointerup",
+        "time": 747,
+        "target": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "pointerType": "touch",
+        "detail": 0,
+        "defaultPrevented": true,
+        "x": 195,
+        "y": 464.7799987792969,
+        "hit": {
+          "tag": "BUTTON",
+          "id": "",
+          "cls": "",
+          "text": "обробкою персональних даних",
+          "role": null
+        },
+        "popup": false,
+        "dialogs": []
+      },
+      {
+        "type": "click",
+        "time": 749.3999999999069,
+        "target": {
+          "tag": "BUTTON",
+          "id": "",
+          "cls": "",
+          "text": "обробкою персональних даних",
+          "role": null
+        },
+        "pointerType": "touch",
+        "detail": 1,
+        "defaultPrevented": false,
+        "x": 195,
+        "y": 465,
+        "hit": {
+          "tag": "BUTTON",
+          "id": "",
+          "cls": "",
+          "text": "обробкою персональних даних",
+          "role": null
+        },
+        "popup": false,
+        "dialogs": []
+      },
+      {
+        "type": "focusout",
+        "time": 764.5,
+        "target": {
+          "tag": "INPUT",
+          "id": "_r_6_-address",
+          "cls": "",
+          "text": "",
+          "role": "combobox"
+        },
+        "pointerType": null,
+        "detail": 0,
+        "defaultPrevented": false,
+        "x": null,
+        "y": null,
+        "hit": {
+          "tag": "DIALOG",
+          "id": "",
+          "cls": "legal-dialog",
+          "text": "JOYRENT\n\nКонфіденційність\n\nІм’я, телефон, адреса доставки, вибір оренди та побажання щодо ігор потрі",
+          "role": null
+        },
+        "popup": false,
+        "dialogs": [
+          "legal-dialog"
+        ]
+      },
+      {
+        "type": "focusin",
+        "time": 765.8999999999069,
+        "target": {
+          "tag": "BUTTON",
+          "id": "",
+          "cls": "icon-button dialog-close",
+          "text": "",
+          "role": null
+        },
+        "pointerType": null,
+        "detail": 0,
+        "defaultPrevented": false,
+        "x": null,
+        "y": null,
+        "hit": {
+          "tag": "DIALOG",
+          "id": "",
+          "cls": "legal-dialog",
+          "text": "JOYRENT\n\nКонфіденційність\n\nІм’я, телефон, адреса доставки, вибір оренди та побажання щодо ігор потрі",
+          "role": null
+        },
+        "popup": false,
+        "dialogs": [
+          "legal-dialog"
+        ]
+      }
+    ],
+    "guardResults": [],
+    "blockedNonGET": [],
+    "errors": []
+  },
+  {
+    "mode": "mouse",
+    "beforeOptionRect": {
+      "x": 30,
+      "y": 440.78125,
+      "width": 330,
+      "height": 48
+    },
+    "consentRects": [
+      {
+        "text": "умовами оренди",
+        "rect": {
+          "x": 166.40625,
+          "y": 439.578125,
+          "width": 102.5625,
+          "height": 22.09375,
+          "top": 439.578125,
+          "right": 268.96875,
+          "bottom": 461.671875,
+          "left": 166.40625
+        }
+      },
+      {
+        "text": "обробкою персональних даних",
+        "rect": {
+          "x": 76,
+          "y": 461.671875,
+          "width": 193.109375,
+          "height": 22.09375,
+          "top": 461.671875,
+          "right": 269.109375,
+          "bottom": 483.765625,
+          "left": 76
+        }
+      }
+    ],
+    "addressAfter": "Середньофонтанська вулиця",
+    "dialogsAfter": [],
+    "events": [
+      {
+        "type": "pointerdown",
+        "time": 693.1999999999534,
+        "target": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "pointerType": "mouse",
+        "detail": 0,
+        "defaultPrevented": false,
+        "x": 195,
+        "y": 464.7799987792969,
+        "hit": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "popup": true,
+        "dialogs": []
+      },
+      {
+        "type": "mutation",
+        "time": 697.1999999999534,
+        "popup": false,
+        "dialogs": []
+      },
+      {
+        "type": "pointerup",
+        "time": 697.6999999999534,
+        "target": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "pointerType": "mouse",
+        "detail": 0,
+        "defaultPrevented": true,
+        "x": 195,
+        "y": 464.7799987792969,
+        "hit": {
+          "tag": "BUTTON",
+          "id": "",
+          "cls": "",
+          "text": "обробкою персональних даних",
+          "role": null
+        },
+        "popup": false,
+        "dialogs": []
+      }
+    ],
+    "guardResults": [],
+    "blockedNonGET": [],
+    "errors": []
+  },
+  {
+    "mode": "touch-guard-diagnostic",
+    "beforeOptionRect": {
+      "x": 30,
+      "y": 440.78125,
+      "width": 330,
+      "height": 48
+    },
+    "consentRects": [
+      {
+        "text": "умовами оренди",
+        "rect": {
+          "x": 166.40625,
+          "y": 439.578125,
+          "width": 102.5625,
+          "height": 22.09375,
+          "top": 439.578125,
+          "right": 268.96875,
+          "bottom": 461.671875,
+          "left": 166.40625
+        }
+      },
+      {
+        "text": "обробкою персональних даних",
+        "rect": {
+          "x": 76,
+          "y": 461.671875,
+          "width": 193.109375,
+          "height": 22.09375,
+          "top": 461.671875,
+          "right": 269.109375,
+          "bottom": 483.765625,
+          "left": 76
+        }
+      }
+    ],
+    "addressAfter": "Середньофонтанська вулиця",
+    "dialogsAfter": [],
+    "events": [
+      {
+        "type": "pointerdown",
+        "time": 657,
+        "target": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "pointerType": "touch",
+        "detail": 0,
+        "defaultPrevented": false,
+        "x": 195,
+        "y": 464.7799987792969,
+        "hit": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "popup": true,
+        "dialogs": []
+      },
+      {
+        "type": "touchstart",
+        "time": 657.6000000000931,
+        "target": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "pointerType": null,
+        "detail": 0,
+        "defaultPrevented": false,
+        "x": 195,
+        "y": 464.77978515625,
+        "hit": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "popup": true,
+        "dialogs": []
+      },
+      {
+        "type": "mutation",
+        "time": 661.8999999999069,
+        "popup": false,
+        "dialogs": []
+      },
+      {
+        "type": "pointerup",
+        "time": 662.3999999999069,
+        "target": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "pointerType": "touch",
+        "detail": 0,
+        "defaultPrevented": true,
+        "x": 195,
+        "y": 464.7799987792969,
+        "hit": {
+          "tag": "BUTTON",
+          "id": "",
+          "cls": "",
+          "text": "обробкою персональних даних",
+          "role": null
+        },
+        "popup": false,
+        "dialogs": []
+      },
+      {
+        "type": "click",
+        "time": 664.8999999999069,
+        "target": {
+          "tag": "BUTTON",
+          "id": "",
+          "cls": "",
+          "text": "обробкою персональних даних",
+          "role": null
+        },
+        "pointerType": "touch",
+        "detail": 1,
+        "defaultPrevented": false,
+        "x": 195,
+        "y": 465,
+        "hit": {
+          "tag": "BUTTON",
+          "id": "",
+          "cls": "",
+          "text": "обробкою персональних даних",
+          "role": null
+        },
+        "popup": false,
+        "dialogs": []
+      }
+    ],
+    "guardResults": [
+      {
+        "target": "обробкою персональних даних",
+        "x": 195,
+        "y": 465
+      }
+    ],
+    "blockedNonGET": [],
+    "errors": []
+  },
+  {
+    "mode": "touch-mobile",
+    "beforeOptionRect": {
+      "x": 30,
+      "y": 440.78125,
+      "width": 330,
+      "height": 48
+    },
+    "consentRects": [
+      {
+        "text": "умовами оренди",
+        "rect": {
+          "x": 166.40625,
+          "y": 439.578125,
+          "width": 102.5625,
+          "height": 22.09375,
+          "top": 439.578125,
+          "right": 268.96875,
+          "bottom": 461.671875,
+          "left": 166.40625
+        }
+      },
+      {
+        "text": "обробкою персональних даних",
+        "rect": {
+          "x": 76,
+          "y": 461.671875,
+          "width": 193.109375,
+          "height": 22.09375,
+          "top": 461.671875,
+          "right": 269.109375,
+          "bottom": 483.765625,
+          "left": 76
+        }
+      }
+    ],
+    "addressAfter": "Середньофонтанська вулиця",
+    "dialogsAfter": [
+      {
+        "cls": "legal-dialog",
+        "text": "JOYRENT\n\nКонфіденційність\n\nІм’я, телефон, адреса доставки, вибір оренди та побажання щодо ігор потрібні для обробки бронювання. Не надсилай через сайт пароль PSN, документи чи платіжні дані.\n\nДані бронювання зберігаються у магазині JOYRENT. Доступ мають уповноважені працівники. Щоб уточнити або видалити дані, звернися за контактами внизу сторінки.\n\nФорма не підписує тебе на рекламну розсилку.\n\nПовна інформація\nЗрозуміло"
+      }
+    ],
+    "events": [
+      {
+        "type": "pointerdown",
+        "time": 668.3000000000466,
+        "target": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "pointerType": "touch",
+        "detail": 0,
+        "defaultPrevented": false,
+        "x": 195,
+        "y": 464.7799987792969,
+        "hit": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "popup": true,
+        "dialogs": []
+      },
+      {
+        "type": "touchstart",
+        "time": 668.8000000000466,
+        "target": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "pointerType": null,
+        "detail": 0,
+        "defaultPrevented": false,
+        "x": 195,
+        "y": 464.77978515625,
+        "hit": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "popup": true,
+        "dialogs": []
+      },
+      {
+        "type": "mutation",
+        "time": 672.4000000001397,
+        "popup": false,
+        "dialogs": []
+      },
+      {
+        "type": "pointerup",
+        "time": 672.8000000000466,
+        "target": {
+          "tag": "SPAN",
+          "id": "",
+          "cls": "",
+          "text": "Середньофонтанська вулиця",
+          "role": null
+        },
+        "pointerType": "touch",
+        "detail": 0,
+        "defaultPrevented": true,
+        "x": 195,
+        "y": 464.7799987792969,
+        "hit": {
+          "tag": "BUTTON",
+          "id": "",
+          "cls": "",
+          "text": "обробкою персональних даних",
+          "role": null
+        },
+        "popup": false,
+        "dialogs": []
+      },
+      {
+        "type": "click",
+        "time": 675.1000000000931,
+        "target": {
+          "tag": "BUTTON",
+          "id": "",
+          "cls": "",
+          "text": "обробкою персональних даних",
+          "role": null
+        },
+        "pointerType": "touch",
+        "detail": 1,
+        "defaultPrevented": false,
+        "x": 195,
+        "y": 465,
+        "hit": {
+          "tag": "BUTTON",
+          "id": "",
+          "cls": "",
+          "text": "обробкою персональних даних",
+          "role": null
+        },
+        "popup": false,
+        "dialogs": []
+      },
+      {
+        "type": "focusout",
+        "time": 688.4000000001397,
+        "target": {
+          "tag": "INPUT",
+          "id": "_r_6_-address",
+          "cls": "",
+          "text": "",
+          "role": "combobox"
+        },
+        "pointerType": null,
+        "detail": 0,
+        "defaultPrevented": false,
+        "x": null,
+        "y": null,
+        "hit": {
+          "tag": "DIALOG",
+          "id": "",
+          "cls": "legal-dialog",
+          "text": "JOYRENT\n\nКонфіденційність\n\nІм’я, телефон, адреса доставки, вибір оренди та побажання щодо ігор потрі",
+          "role": null
+        },
+        "popup": false,
+        "dialogs": [
+          "legal-dialog"
+        ]
+      },
+      {
+        "type": "focusin",
+        "time": 689.8000000000466,
+        "target": {
+          "tag": "BUTTON",
+          "id": "",
+          "cls": "icon-button dialog-close",
+          "text": "",
+          "role": null
+        },
+        "pointerType": null,
+        "detail": 0,
+        "defaultPrevented": false,
+        "x": null,
+        "y": null,
+        "hit": {
+          "tag": "DIALOG",
+          "id": "",
+          "cls": "legal-dialog",
+          "text": "JOYRENT\n\nКонфіденційність\n\nІм’я, телефон, адреса доставки, вибір оренди та побажання щодо ігор потрі",
+          "role": null
+        },
+        "popup": false,
+        "dialogs": [
+          "legal-dialog"
+        ]
+      }
+    ],
+    "guardResults": [],
+    "blockedNonGET": [],
+    "errors": []
+  }
+]

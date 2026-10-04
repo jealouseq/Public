@@ -1,0 +1,37 @@
+{
+  "auditDate": "2026-10-04",
+  "sourceHead": "b9b16e83604a605b8052c904c43f1c6635930e53",
+  "tests": {
+    "command": "npm test",
+    "exitCode": 0,
+    "files": 6,
+    "tests": 55,
+    "rootRunUTC": "2026-10-04 12:22:40"
+  },
+  "typescript": {
+    "command": "npx tsc --noEmit",
+    "exitCode": 0
+  },
+  "npmProductionAudit": {
+    "command": "npm audit --omit=dev --json",
+    "exitCode": 0,
+    "knownVulnerabilities": 0,
+    "scope": "npm advisory database only"
+  },
+  "phpSyntaxFiles": 17,
+  "isolatedDomainAndReplay": "Reproduced through real production PHP classes with in-memory boundaries; no WP bootstrap/database/order/mail/network",
+  "localBrowserCases": 8,
+  "languages": [
+    "uk",
+    "ru"
+  ],
+  "widths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "sourceChanged": false,
+  "archivesChanged": false,
+  "liveWrites": 0
+}

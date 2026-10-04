@@ -1,0 +1,62 @@
+[
+  {
+    "path": "/wp-content/themes/joyrent/style.css",
+    "liveBytes": 307,
+    "localBytes": 307,
+    "sha256Match": true
+  },
+  {
+    "path": "/wp-content/themes/joyrent/assets/dist/.vite/manifest.json",
+    "liveBytes": 5912,
+    "localBytes": 5912,
+    "sha256Match": true
+  },
+  {
+    "path": "/wp-content/themes/joyrent/assets/dist/assets/main-2YiB-VTt.js",
+    "liveBytes": 514560,
+    "localBytes": 514560,
+    "sha256Match": true
+  },
+  {
+    "path": "/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+    "liveBytes": 113130,
+    "localBytes": 113130,
+    "sha256Match": true
+  },
+  {
+    "path": "/wp-content/themes/joyrent/assets/images/hero-media.json",
+    "liveBytes": 1054,
+    "localBytes": 1054,
+    "sha256Match": true
+  },
+  {
+    "path": "/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+    "liveBytes": 38966,
+    "localBytes": 38966,
+    "sha256Match": true
+  },
+  {
+    "path": "/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail.webp",
+    "liveBytes": 157622,
+    "localBytes": 157622,
+    "sha256Match": true
+  },
+  {
+    "path": "/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+    "liveBytes": 11462,
+    "localBytes": 11462,
+    "sha256Match": true
+  },
+  {
+    "path": "/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp",
+    "liveBytes": 48246,
+    "localBytes": 48246,
+    "sha256Match": true
+  },
+  {
+    "path": "/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-1448.webp",
+    "liveBytes": 74314,
+    "localBytes": 74314,
+    "sha256Match": true
+  }
+]

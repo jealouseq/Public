@@ -1,0 +1,17 @@
+No syntax errors detected in /repo/wordpress/joyrent/functions.php
+No syntax errors detected in /repo/wordpress/joyrent/footer.php
+No syntax errors detected in /repo/wordpress/joyrent/page-faq.php
+No syntax errors detected in /repo/wordpress/joyrent/index.php
+No syntax errors detected in /repo/wordpress/joyrent/page-faq-ru.php
+No syntax errors detected in /repo/wordpress/joyrent/front-page.php
+No syntax errors detected in /repo/wordpress/joyrent/woocommerce.php
+No syntax errors detected in /repo/wordpress/joyrent/header.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/rest.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/store.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/settings.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/locale.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/games.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/domain.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/orders.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/lock.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/joyrent-rentals.php

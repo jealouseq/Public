@@ -1,0 +1,16 @@
+{
+  "status": "frozen pre-implementation evidence",
+  "target": "https://flowers-luxury.shop/",
+  "date": "2026-10-04",
+  "files": {
+    "receipt.json": "cd3b374b7db1d747ef59b45ef8594479d44e3749cb12fe17981ab03b21125752",
+    "receipt-mobile.json": "28130cc321452897f6696e1272ea84eab962c98e0263a52c0410b4600c8e7c05",
+    "receipt-summary.json": "851d7708487528320054273914430e0998c76abc30c1fe27ca53df937d280f71",
+    "touch-clickthrough.json": "a77390779beedf313a9c193d53ad6c2c4fb47ebb8f2a48f5ba6ce7d567b23e57",
+    "motion.json": "cb929aec418cd4d40526a83c567c8158f658eb38605b86eceb9b72727326620a",
+    "cold-context-1440.json": "850dd718a401cd062f43c991774691ffd84be89d217ec04e85714448802dcde6",
+    "live-audit.md": "ea9783de36f47287f85480121cd9ec128664ec513043d8d5ba4ae555120417a7"
+  },
+  "png_count": 45,
+  "all_png_hashes_verified": true
+}

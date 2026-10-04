@@ -1,0 +1,143 @@
+{
+  "capturedUTC": "2026-10-04T12:08:53.318608+00:00",
+  "resources": [
+    {
+      "path": "/wp-content/themes/joyrent/assets/dist/assets/main-2YiB-VTt.js",
+      "status": 200,
+      "wireBodyBytes": 159460,
+      "decodedBytes": 514560,
+      "encoding": "gzip",
+      "sha256Decoded": "f509d4db3f2afbbbd583a5d655bb71e5de8b0075c8e7982d253fd6ac4cbc2588",
+      "cacheControl": "public, max-age=604800"
+    },
+    {
+      "path": "/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+      "status": 200,
+      "wireBodyBytes": 27042,
+      "decodedBytes": 113130,
+      "encoding": "gzip",
+      "sha256Decoded": "b9ebbadb2893123d4dc628ed59751a134f0ac177af299ee5b31d2c140bbe5da2",
+      "cacheControl": "public, max-age=604800"
+    },
+    {
+      "path": "/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+      "status": 200,
+      "wireBodyBytes": 30364,
+      "decodedBytes": 87553,
+      "encoding": "gzip",
+      "sha256Decoded": "cb6f2d32c49d1c2b25e9ffc9aaafa3f83075346c01bcd4ae6eb187392a4292cf",
+      "cacheControl": "public, max-age=604800"
+    },
+    {
+      "path": "/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+      "status": 200,
+      "wireBodyBytes": 4865,
+      "decodedBytes": 13577,
+      "encoding": "gzip",
+      "sha256Decoded": "5274f11e6fb32ae0cf2dfb9f8043272865c397a7c4223b4cfa7d50ea52fbde89",
+      "cacheControl": "public, max-age=604800"
+    },
+    {
+      "path": "/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+      "status": 200,
+      "wireBodyBytes": 3533,
+      "decodedBytes": 9636,
+      "encoding": "gzip",
+      "sha256Decoded": "d151f8c0b2659cfb63704d68654ad8d9437ae9da4410536f63ddec21689a0620",
+      "cacheControl": "public, max-age=604800"
+    },
+    {
+      "path": "/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+      "status": 200,
+      "wireBodyBytes": 1435,
+      "decodedBytes": 4350,
+      "encoding": "gzip",
+      "sha256Decoded": "fca8dd4ee9c93f33dc3149e2c78aec8a28c54036faaf19c7b0ac9ca32293c070",
+      "cacheControl": "public, max-age=604800"
+    },
+    {
+      "path": "/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+      "status": 200,
+      "wireBodyBytes": 832,
+      "decodedBytes": 1720,
+      "encoding": "gzip",
+      "sha256Decoded": "8b083f64f2e9e8ac445c730dfce7013cc6449ce155fd1c2f42b60edba4ecb4b1",
+      "cacheControl": "public, max-age=604800"
+    },
+    {
+      "path": "/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+      "status": 200,
+      "wireBodyBytes": 1579,
+      "decodedBytes": 4281,
+      "encoding": "gzip",
+      "sha256Decoded": "a83bd8463b628e661482010504cbb69143b13461a0178cb4f7b929aa28efa96f",
+      "cacheControl": "public, max-age=604800"
+    },
+    {
+      "path": "/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+      "status": 200,
+      "wireBodyBytes": 4809,
+      "decodedBytes": 15315,
+      "encoding": "gzip",
+      "sha256Decoded": "c50a0b33030ba0ec063be642c297f48af94359e2222ff140817248d591faf837",
+      "cacheControl": "public, max-age=604800"
+    },
+    {
+      "path": "/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+      "status": 200,
+      "wireBodyBytes": 1142,
+      "decodedBytes": 2439,
+      "encoding": "gzip",
+      "sha256Decoded": "0eb862a5891526d089b727fdfa30222cca4b4d75b5835727bf57df17436256f6",
+      "cacheControl": "public, max-age=604800"
+    },
+    {
+      "path": "/wp-json/joyrent/v1",
+      "status": 200,
+      "wireBodyBytes": 249,
+      "decodedBytes": 815,
+      "encoding": "gzip",
+      "sha256Decoded": "5178c56e1cfee7d789b26f73112ba68e32e08f090c5efe2859b184c4a0a6f71c",
+      "cacheControl": null,
+      "namespace": "joyrent/v1",
+      "routeNames": [
+        "/joyrent/v1",
+        "/joyrent/v1/catalog",
+        "/joyrent/v1/requests"
+      ],
+      "routes": {
+        "/joyrent/v1": {
+          "methods": [
+            "GET"
+          ],
+          "endpointArgs": [
+            {
+              "namespace": {
+                "required": false
+              },
+              "context": {
+                "required": false
+              }
+            }
+          ]
+        },
+        "/joyrent/v1/catalog": {
+          "methods": [
+            "GET"
+          ],
+          "endpointArgs": [
+            []
+          ]
+        },
+        "/joyrent/v1/requests": {
+          "methods": [
+            "POST"
+          ],
+          "endpointArgs": [
+            []
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "auditUTC": "2026-10-04",
+  "scope": {
+    "repository": "/workspace/Public",
+    "head": "b9b16e83604a605b8052c904c43f1c6635930e53",
+    "localTheme": "1.9.2",
+    "localPlugin": "1.8.1",
+    "live": "https://flowers-luxury.shop/",
+    "mode": "Read-only. No build, optimization, source change, deployment, order, email or POST call."
+  },
+  "access": {
+    "selectedExecutor": "First live HTTPS GET failed at configured proxy CONNECT 403. Restricted policy excludes live host; no proxy/network policy was changed.",
+    "freshLiveEvidence": "Installed Desktop Commander connector, separate srv1999219 device. Remote /workspace, /codex/browser and /etc/codex/network-policy.json absent. urllib GETs on that independent authorized device succeeded; no remote file was written by this agent.",
+    "evidenceRetention": "Parsed response bytes/hash/headers and sanitized catalog carried in connector tool results, then saved only in assigned local assets evidence directory."
+  },
+  "releaseComparison": {
+    "proven": "Fresh live style.css declares 1.9.2 and its SHA-256 matches local. Live manifest, entry JS/CSS, hero-media and five active hero variants match local bytes exactly. Three lazy map assets also match local SHA-256.",
+    "notProven": "Installed rental PHP plugin exact version. Public route/catalog/page output matches current 1.8.1 public contract/defaults, but can also reflect migrated or manually authored data.",
+    "publicContract": {
+      "catalogTopKeys": [
+        "tariffs",
+        "games",
+        "settings",
+        "currency",
+        "acceptingRequests"
+      ],
+      "tariffs": "Exact local seed match: 4 PS5 tariffs and 3 PS4 tariffs.",
+      "games": "20 live records and 20 local seeds. Live COD BO7 descriptions retain prior text; requiresInternet:true and platform player metadata agree. Missing legacyImage internal seed fields on older records do not change user-facing output.",
+      "settings": "All retained public noncontact fields match current defaults, including simplified delivery copy. Contact values excluded from artifacts.",
+      "pages": "Both FAQ languages match all 8 question/answer pairs after whitespace normalization. Four legal pages match the current local seed paragraph text.",
+      "acceptingRequests": true,
+      "currency": "UAH"
+    },
+    "evidence": [
+      "live-static-get.json",
+      "live-static-local-match.json",
+      "live-wire-get.json",
+      "live-sitemap-lazy-get.json",
+      "live-public-get.json",
+      "live-plugin-default-comparison.json"
+    ]
+  },
+  "keep": [
+    {
+      "item": "Hero image quality and responsive loading",
+      "evidence": "All five fresh live hero variants match local bytes. Native desktop dimensions are 1448×1086; mobile widths are 560, 1120 and 1448. Art inspection shows clear console/controller edges, ports and control shapes. Fresh local source geometry gives physical pixel ratios of 1.10 at 1440@2, 1.26 at 390@3, and 1.79 at 320@2. No source enlargement occurs in these cases. The live agent separately captures live viewport network and render evidence. Fresh live 1440@1 geometry agrees: 658.42 CSS px wide and exactly one 768 px hero download of 38,966 bytes (physical pixel ratio 1.17).",
+      "caution": "HTMLImageElement.naturalWidth is density corrected under width-descriptor srcset; a value of 681 does not mean the encoded 1448 px asset contains only 681 physical pixels.",
+      "files": [
+        "local-hero-pixel-adequacy.json",
+        "live-static-get.json",
+        "live-cold-context-summary.json"
+      ],
+      "source": "src/sections/Hero.tsx:24; wordpress/joyrent/functions.php:59"
+    },
+    {
+      "item": "One responsive hero preload, self-hosted fonts, hashed cacheable assets and lazy map",
+      "evidence": "Live HTML image media/preload recipes exactly match hero-media. Only the active viewport media should fetch. Live static assets have max-age=604800. Entry JS/CSS gzip bodies are 159,460/27,042 bytes. Map JS is 149,900 decoded / 43,353 gzip bytes, zone data 6,028/1,921 bytes and map CSS 15,607/6,449 bytes; these remain dynamic imports. A fresh cold 1440 browser context downloads exactly six Latin/Cyrillic WOFF2 files, 171,284 encoded bytes; the extra ten subsets do not download in that baseline. Leaflet and delivery-zone JS are absent until the map is opened.",
+      "source": "wordpress/joyrent/functions.php:59; components/ui/delivery-zone-map.tsx:71"
+    },
+    {
+      "item": "Release integrity and permissions",
+      "evidence": "All three archives pass full CRC checks, have zero archive-vs-tree byte differences or missing members, zero unsafe paths or symlinks, and member files 0644 / directories 0755. Archive files are 0644. Current theme/plugin/preview files are 0644 and directories are 0755. PNG masters are excluded from the release except the theme screenshot. Licenses are retained.",
+      "files": [
+        "local-package-assets.json"
+      ],
+      "source": "scripts/package.mjs:12"
+    }
+  ],
+  "improve": [
+    {
+      "priority": "P2",
+      "item": "Remove WooCommerce/jQuery scripts from native JOYRENT FAQ/legal pages",
+      "trigger": "GET either FAQ or one of the four legal pages.",
+      "evidence": "Native page HTML requests jQuery, migrate, blockUI, add-to-cart, cookie, WooCommerce, sourcebuster and order-attribution despite having no cart widgets. Their fresh gzip GET bodies total 48,559 bytes / 138,871 decoded bytes. The landing page references only the entry module and Hostinger embed script.",
+      "consequence": "Unneeded request/download/parse work on lightweight reading pages. Restrict dequeues to actual JOYRENT native pages, retaining assets on real Woo routes.",
+      "source": "wordpress/joyrent/functions.php:86",
+      "files": [
+        "live-public-get.json",
+        "live-wire-get.json"
+      ]
+    },
+    {
+      "priority": "P2",
+      "item": "Use JOYRENT page titles and page-specific existing summaries",
+      "trigger": "Visit, share, bookmark or search any FAQ/legal URL.",
+      "evidence": "Fresh title examples are “Питання про оренду – flowers-luxury.shop” and “Умови оренди – flowers-luxury.shop”. Every native page reuses the homepage description. The title filter customizes only the front page.",
+      "consequence": "Browser/search metadata conflicts with visible JOYRENT brand and does not distinguish existing FAQ/terms/privacy topics.",
+      "source": "wordpress/joyrent/functions.php:54; wordpress/joyrent/functions.php:79",
+      "files": [
+        "live-public-get.json"
+      ]
+    },
+    {
+      "priority": "P2 candidate; awaiting browser duplication proof",
+      "item": "Reuse one 720 px URL for a high-DPR game card and its detail dialog.",
+      "trigger": "Card selects -720.webp then user opens that game's detail",
+      "evidence": "GamePresentation uses -720 in the card srcset but the unsuffixed full image in the detail dialog. Fresh FC27 GET responses for -720 and unsuffixed images are each 122,106 bytes and have the exact same SHA-256. There are 32 locally identical image pairs.",
+      "consequence": "The same image can be requested and cached under two URLs; high-DPR details can fetch another 122,106 bytes for FC27 without added resolution. A DPR 1 card moving from 360 px to a 720 px detail image remains a valid quality gain.",
+      "source": "src/components/GamePresentation.tsx:14; src/components/GamePresentation.tsx:29",
+      "files": [
+        "live-cover-duplicate-get.json",
+        "local-font-and-duplicate-cost.json"
+      ]
+    },
+    {
+      "priority": "P3",
+      "item": "Trim packaged unused font subsets while preserving the three font roles.",
+      "trigger": "Build/package size",
+      "evidence": "16 WOFF2 files total 431,640 bytes. The six Latin and Cyrillic files total 171,284 bytes; the other ten files total 260,356 bytes. main.tsx imports all three complete index.css files. This does not mean all ten extra files download: unicode-range makes requests depend on actual characters. Fresh live cold 1440 confirms only the six Latin/Cyrillic files download; trimming the remaining subsets is a packaging improvement, with no baseline transfer savings claimed.",
+      "consequence": "Package/installcost and CSS declarations can shrink. Browserbaseline savings require actual fontrequest evidence.",
+      "source": "src/main.tsx:3",
+      "files": [
+        "local-font-and-duplicate-cost.json"
+      ]
+    },
+    {
+      "priority": "P3 performance",
+      "item": "Defer distant story photographs and delivery preview media until near the viewport.",
+      "trigger": "Fresh cold 1440×1000 landing load without scrolling.",
+      "evidence": "The kit section begins at document y=2063 and process/delivery at y=2708. Native lazy images still download the 1120 px controller (145,280 encoded bytes), delivery basemap (26,934) and overlay SVG (3,322) at about 2366 ms, totalling 175,536 bytes before any scroll. Game covers already use an explicit near-viewport IntersectionObserver.",
+      "consequence": "Users who stay near the hero pay for below-fold photographs/maps. Gate these distant media similarly while retaining reserved dimensions. No claim that these requests delayed the already fetched hero.",
+      "source": "src/sections/Story.tsx:34; src/sections/Story.tsx:57",
+      "files": [
+        "live-cold-context-summary.json"
+      ],
+      "snapshotLimit": "One unthrottled cold remote Chrome snapshot; native lazy thresholds vary by browser/network."
+    }
+  ],
+  "remove": [
+    {
+      "priority": "P1 release hygiene",
+      "item": "Remove/noindex the default Hello world post and exclude internal tariff/coming-soon shop routes from sitemap",
+      "trigger": "Search-engine crawl of public sitemaps",
+      "evidence": "Fresh post sitemap advertises /hello-world/. It returns 200 with a canonical link and robots=max-image-preview:large, with title “Hello world!”. The product sitemap advertises seven internal tariff URLs. The tested PS5 one-day product and shop both return 200, allow indexing, and display the H1 “Великі справи на горизонті”. Cart/account already specify noindex.",
+      "consequence": "Search entry points can expose setup/default/store coming-soon pages instead of the working rental landing. This is a search/polish issue, not a purchase bypass finding: the plugin disables rental product purchases.",
+      "files": [
+        "live-sitemap-lazy-get.json",
+        "live-aux-public-get.json"
+      ],
+      "source": "wordpress/joyrent-rentals/joyrent-rentals.php:37"
+    },
+    {
+      "priority": "P3 packaging",
+      "item": "Eliminate redundant720px physical copies using one canonical assetURL",
+      "trigger": "Theme/preview packaging",
+      "evidence": "32 byte-identical .webp/-720.webp pairs add 3,649,024 redundant uncompressed bytes to both theme and preview. These comprise 23 cover pairs totalling 2,220,278 bytes and nine legacy generic pairs totalling 1,428,746 bytes. optimize-assets explicitly copies each native 720 px master.",
+      "consequence": "Archives could shrink substantially without changing pixels after references are unified. Preserve backward-compatible artwork paths/owner references before removing files.",
+      "source": "scripts/optimize-assets.mjs:34",
+      "files": [
+        "local-font-and-duplicate-cost.json"
+      ]
+    }
+  ],
+  "limits": [
+    "No performance score, production latency or Core Web Vitals claim is derived from shell GETs or local geometry.",
+    "The live agent owns cold-context browser resource/font/request evidence; use its receipts for downloaded bytes and timing.",
+    "No OpenGraph/Twitter tags occur in the freshly parsed heads, but no separate share-renderer failure was tested.",
+    "Current public data/copy equality does not prove the installed rental plugin version."
+  ]
+}

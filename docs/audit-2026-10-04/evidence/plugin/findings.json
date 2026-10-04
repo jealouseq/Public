@@ -1,0 +1,22 @@
+{
+  "auditDate": "2026-10-04",
+  "source": "/workspace/Public",
+  "head": "b9b16e83604a605b8052c904c43f1c6635930e53",
+  "scope": "JOYRENT Rentals 1.8.1 and native theme PHP boundaries 1.9.2",
+  "readOnly": true,
+  "realOrders": 0,
+  "mailAttempts": 0,
+  "liveWrites": 0,
+  "confirmed": [
+    {"id":"managed-copy-drift","priority":"P2","files":["wordpress/joyrent-rentals/includes/settings.php:19","wordpress/joyrent-rentals/includes/store.php:58","wordpress/joyrent-rentals/includes/store.php:190"],"trigger":"Change business settings after current 1.8.1 managed pages have been installed","result":"PS5 deposit=9000/controller fee=75 are public, while current managed FAQ/terms still claim 25000/free second controller; explicit reconciliation writes zero pages","evidence":"settings-domain-result.json"},
+    {"id":"receipt-replay-validation-order","priority":"P2","files":["wordpress/joyrent-rentals/includes/rest.php:47","wordpress/joyrent-rentals/includes/rest.php:49","wordpress/joyrent-rentals/includes/rest.php:54"],"trigger":"Replay completed identical request after date becomes past, selected game unpublished, or pickup disabled","result":"400 occurs before durable receipt lookup instead of original 200 receipt","evidence":"rest-orders/replay-stubs.json"},
+    {"id":"woocommerce-stock-ignored","priority":"P2","files":["wordpress/joyrent-rentals/includes/store.php:18","wordpress/joyrent-rentals/includes/orders.php:19"],"trigger":"Published positive-price rental products marked outofstock in WooCommerce","result":"Catalog exposes all 7 tariffs and acceptingRequests=true; order gate also omits stock check","evidence":"settings-domain-result.json"},
+    {"id":"date-null-byte-exception","priority":"P3","files":["wordpress/joyrent-rentals/includes/domain.php:17","wordpress/joyrent-rentals/includes/rest.php:47"],"trigger":"Valid JSON startDate contains escaped null byte","result":"PHP ValueError escapes REST validation instead of localized 400","evidence":"rest-orders/replay-stubs.json"},
+    {"id":"pickup-address-unbounded","priority":"P3","files":["wordpress/joyrent-rentals/includes/domain.php:50","wordpress/joyrent-rentals/includes/orders.php:29"],"trigger":"Pickup enabled, method=pickup and 1 MiB address","result":"Domain accepts 1048576 address bytes; pickup disabled by default","evidence":"settings-domain-result.json"}
+  ],
+  "sourceConfirmedDecisions":["available=false game remains selectable; clarify checkbox meaning","WooCommerce CSS disabled globally; native route usability untested","Salt rotation changes durable request key"],
+  "improvements":["Manual confirmation checklist and lifecycle","Phone/reference privacy lookup and custom-status retention/anonymization","Actual policy consent revision/timestamp","Shop-specific game-editing capabilities if required"],
+  "verification":{"isolatedMigrationAssertions":81,"isolatedDomainAssertions":15,"isolatedNotificationChecks":9,"phpSyntaxFiles":17,"phpVersion":"8.3","fullWordPressWooCommerceRuntime":false},
+  "untestedHosting":["CPT/HPOS runtime","Persistent object-cache concurrency","Mail transport/delivery","Cron","Role assignments","Backups","WAF/proxy client IP","PHP error display","Production retention settings"],
+  "report":"plugin-audit.md"
+}

@@ -1,0 +1,35 @@
+{
+  "evidence": "../live/cold-context-1440.json",
+  "resourceCount": 15,
+  "knownEncodedBodyBytes": 573555,
+  "knownTransferBytes": 577755,
+  "zeroSizedResources": [
+    "https://cdn-reach.hostinger.com/js/embed.js"
+  ],
+  "actualFontCount": 6,
+  "actualFontEncodedBytes": 171284,
+  "heroEncodedBytes": 38966,
+  "heroFetchCount": 1,
+  "deferredMapJavaScriptLoadedInitially": false,
+  "belowFoldStoryImageEncodedBytes": 175536,
+  "belowFoldStoryImages": [
+    {
+      "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+      "encodedBytes": 145280,
+      "startTimeMs": 2365.7000000476837
+    },
+    {
+      "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+      "encodedBytes": 26934,
+      "startTimeMs": 2366.2000000476837
+    },
+    {
+      "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+      "encodedBytes": 3322,
+      "startTimeMs": 2366.2000000476837
+    }
+  ],
+  "heroSourcePhysicalPixelRatio": 1.1664254016469304,
+  "note": "One unthrottled remote-device cold browser snapshot, not a performance score or production latency benchmark. Sizes cover subresources; navigation HTML is excluded. Hostinger cross-origin size is not exposed and must not be counted as zero bytes.",
+  "navigationHtmlExcluded": true
+}
