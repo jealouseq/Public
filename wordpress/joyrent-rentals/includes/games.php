@@ -43,6 +43,10 @@ final class JR_Games {
             $data['title']=wp_strip_all_tags($post->post_title); $data['description']=wp_strip_all_tags($post->post_content);
             $source=$initial[$data['id']]??null;
             if ($source) {
+                // Correct exact shipped labels for public output without rewriting owner records.
+                if ($data['id']==='resident-evil-requiem') {
+                    foreach (['genre','eyebrow'] as $field) if (($data[$field]??'')==='Горор') $data[$field]=$source[$field];
+                }
                 // Replace only bundled legacy artwork; owner thumbnails remain authoritative.
                 if (!empty($source['legacyImage'])&&($data['image']??'')===$source['legacyImage']) $data['image']=$source['image'];
                 if (empty($data['genreRu'])&&($data['genre']??'')===$source['genre']) $data['genreRu']=$source['genreRu'];

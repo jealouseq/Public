@@ -109,10 +109,10 @@ function reset_pages(array $seeds): void {
 $copy_hook=array_filter($hooks['update_option_joyrent_settings']??[],fn($entry)=>$entry[1]===[JR_Store::class,'settings_changed']&&$entry[2]===2&&is_callable($entry[1]));
 check((bool)$copy_hook,'Production option update registers settings-copy callback with old/new values');
 check((bool)array_filter($hooks['add_option_joyrent_settings']??[],fn($entry)=>$entry[2]===2&&is_callable($entry[1])),'Production first option save registers settings-copy callback');
-reset_pages($current);unset($options['joyrent_settings']);$options['joyrent_version']='1.8.2';$options['wp_page_for_privacy_policy']=2;
+reset_pages($current);unset($options['joyrent_settings']);$options['joyrent_version']='1.8.4';$options['wp_page_for_privacy_policy']=2;
 update_option('joyrent_settings',array_merge($defaults,['delivery_fee'=>125]));
 foreach (['faq','faq-ru','umovy-orendy','usloviya-arendy'] as $slug) check(get_page_by_path($slug)->post_content===$neutral[$slug]['content'],'First custom settings save reconciles current '.$slug.' even when version is current');
-check(get_option('joyrent_version')==='1.8.2'&&get_option('wp_page_for_privacy_policy')===2,'First settings save leaves version and assigned privacy untouched');
+check(get_option('joyrent_version')==='1.8.4'&&get_option('wp_page_for_privacy_policy')===2,'First settings save leaves version and assigned privacy untouched');
 reset_pages($current);$options['joyrent_settings']=$defaults;$options['wp_page_for_privacy_policy']=2;
 $privacy_before=[];foreach (['konfidentsiinist','konfidentsialnost'] as $slug) $privacy_before[$slug]=get_page_by_path($slug);
 update_option('joyrent_settings',array_merge($defaults,['deposit_ps5'=>30000]));
@@ -164,5 +164,20 @@ try { $valid=JR_Domain::validate($payload,$today,$published);check($valid['gameI
 catch (InvalidArgumentException $e) { check(false,'Unverified license allows an explicit wish'); }
 $posts[900]->post_status='draft';
 check(JR_Store::catalog()['games']===[],'Draft game remains explicitly hidden');
+$resident=array_values(array_filter(JR_Domain::catalog()['games'],fn($game)=>$game['id']==='resident-evil-requiem'))[0];
+check($resident['genre']==='Жахи'&&$resident['eyebrow']==='Жахи','Bundled Resident Evil uses clear Ukrainian horror label');
+$posts=[];$post_meta=[];
+$legacy_resident=$resident;$legacy_resident['genre']='Горор';$legacy_resident['eyebrow']='Горор';
+$legacy_resident['descriptionRu']='Owner Russian description';$legacy_resident['image']='owner-resident-art';$legacy_resident['owner_field']='Preserve unknown field';
+$posts[901]=new WP_Post(901,'resident-evil-requiem','Owner Resident title','Owner Ukrainian description','publish','','joyrent_game');
+$post_meta[901]=['_jr_game'=>$legacy_resident,'_jr_game_id'=>'resident-evil-requiem','owner_note'=>'Preserve post metadata'];
+$before_posts=serialize($posts);$before_meta=serialize($post_meta);$projected=JR_Games::records()[0];
+check($projected['genre']==='Жахи'&&$projected['eyebrow']==='Жахи','Existing exact legacy Resident Evil labels are corrected in the public catalog');
+check($projected['title']==='Owner Resident title'&&$projected['description']==='Owner Ukrainian description'&&$projected['descriptionRu']==='Owner Russian description'&&$projected['image']==='owner-resident-art'&&$projected['owner_field']==='Preserve unknown field','Legacy label projection preserves every other author game field');
+check(serialize($posts)===$before_posts&&serialize($post_meta)===$before_meta,'Reading corrected labels never writes game posts or metadata');
+$post_meta[901]['_jr_game']['genre']='Owner genre';$post_meta[901]['_jr_game']['eyebrow']='Owner eyebrow';$projected=JR_Games::records()[0];
+check($projected['genre']==='Owner genre'&&$projected['eyebrow']==='Owner eyebrow','Author Resident Evil labels are preserved');
+$post_meta[901]['_jr_game']['id']='resident-evil-requiem-owner-901';$post_meta[901]['_jr_game']['genre']='Горор';$post_meta[901]['_jr_game']['eyebrow']='Горор';$projected=JR_Games::records()[0];
+check($projected['genre']==='Горор'&&$projected['eyebrow']==='Горор','Owner duplicate labels are outside the bundled correction');
 echo json_encode(['checks'=>$checks,'failures'=>$failures,'realDatabaseWrites'=>0,'realOrdersCreated'=>0,'realMailCalls'=>0],JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n";
 exit($failures?1:0);

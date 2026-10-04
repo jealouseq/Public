@@ -2,9 +2,9 @@
 
 [Код, скриншоты и материалы — PR #1](https://github.com/jealouseq/Public/pull/1)
 
-Украинская и русская версии сайта аренды PlayStation на **WordPress + WooCommerce**. Тема **1.9.4** и плагин **1.8.3** добавляют Instagram @joyrent_od; включают исправления выбора улицы на телефоне, формы и повторной брони, уточнения игр и метаданных. Условия и наличие подтверждает магазин лично; оплаты на сайте нет.
+Украинская и русская версии сайта аренды PlayStation на **WordPress + WooCommerce**. Тема **1.9.5** и плагин **1.8.4** аккуратно выравнивают открытые карточки на ПК, исправляют тексты UA/RU и описание договора в нейтральных FAQ/условиях; включают Instagram @joyrent_od, исправления выбора улицы на телефоне, формы и повторной брони, уточнения игр и метаданных. Условия и наличие подтверждает магазин лично; оплаты на сайте нет.
 
-[Тема 1.9.4 — ZIP](releases/joyrent-1.9.4.zip) · [Плагин 1.8.3 — ZIP](releases/joyrent-rentals-1.8.3.zip) · [Просмотр — ZIP](releases/joyrent-preview-1.9.4.zip) · [Instagram: снимки и проверки](docs/refinement-1.9.4/README.md) · [Предыдущие исправления](docs/refinement-1.9.3/README.md)
+[Тема 1.9.5 — ZIP](releases/joyrent-1.9.5.zip) · [Плагин 1.8.4 — ZIP](releases/joyrent-rentals-1.8.4.zip) · [Просмотр — ZIP](releases/joyrent-preview-1.9.5.zip) · [Карточки и тексты: снимки и проверки](docs/refinement-1.9.5/README.md) · [Instagram](docs/refinement-1.9.4/README.md)
 
 [Свежий полный аудит](docs/audit-2026-10-04/README.md) · [60 пунктов запуска: сборка и оставшиеся настройки хостинга](docs/refinement-1.9.3/CHECKLIST.md)
 

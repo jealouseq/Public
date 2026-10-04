@@ -64,3 +64,15 @@ describe('Russian duration labels', () => {
     expect([1, 3, 7, 30].map(days => dayLabel(days, 'ru'))).toEqual(['1 день', '3 дня', '7 дней', '30 дней']);
   });
 });
+
+describe('configured duration labels', () => {
+  it.each([
+    [1, '1 день', '1 день'], [2, '2 дні', '2 дня'], [3, '3 дні', '3 дня'],
+    [4, '4 дні', '4 дня'], [5, '5 днів', '5 дней'], [11, '11 днів', '11 дней'],
+    [14, '14 днів', '14 дней'], [21, '21 день', '21 день'], [22, '22 дні', '22 дня'],
+    [30, '30 днів', '30 дней'],
+  ])('declines a %i-day tariff in both languages', (count, uk, ru) => {
+    expect(dayLabel(Number(count), 'uk')).toBe(uk);
+    expect(dayLabel(Number(count), 'ru')).toBe(ru);
+  });
+});

@@ -4,6 +4,7 @@ import type * as Leaflet from 'leaflet';
 import { useI18n } from '../../src/lib/i18n';
 import { useMotionPreference } from '../../src/lib/motion';
 import { money } from '../../src/lib/rental';
+import { dayGenitiveLabel } from '../../src/lib/copy';
 import { classifyDeliveryPoint, deliveryTerms, type DeliveryFees, type DeliveryPointZone, type DeliveryZone, type DeliveryZones } from '../../src/lib/delivery-map';
 import '../../src/delivery-map.css';
 
@@ -177,7 +178,7 @@ export function DeliveryZoneMap({ freeDeliveryFrom, greenFee, yellowFee }: Deliv
           <p className="delivery-map-legend-title">{t('Доставка та повернення', 'Доставка и возврат')}</p>
           {zoneOrder.map(zone => <button key={zone} className={`delivery-map-zone delivery-map-zone-${zone}`} type="button" aria-pressed={selection?.zone === zone} onClick={() => selectZone(zone)}><span className="delivery-map-zone-name"><span aria-hidden="true" className="delivery-map-swatch" />{zoneName(zone)}</span><strong>{price(zone)}</strong></button>)}
           <p className="delivery-map-fee-note">{t('У вартість зони входять доставка та повернення консолі. Поза зонами — за погодженням.', 'В стоимость зоны входят доставка и обратный забор. Вне зон — по согласованию.')}</p>
-          <p className="delivery-map-free">{t('При оренді від', 'При аренде от')} {freeDeliveryFrom} {t('днів доставка в зелену та жовту зони — безкоштовна.', 'дней доставка в зелёную и жёлтую зоны — бесплатно.')}</p>
+          <p className="delivery-map-free">{t('При оренді від', 'При аренде от')} {dayGenitiveLabel(freeDeliveryFrom, language)} {t('доставка в зелену та жовту зони — безкоштовна.', 'доставка в зелёную и жёлтую зоны — бесплатно.')}</p>
           <p className="delivery-map-point" role="status" aria-live="polite">{selection ? <><strong>{selection.point ? `${t('Обрана точка', 'Выбранная точка')}: ` : ''}{zoneName(selection.zone)}</strong><span>{price(selection.zone)}{selection.zone === 'green' || selection.zone === 'yellow' ? t(' — доставка й повернення.', ' — доставка и возврат.') : ''}</span>{selection.zone === 'boundary' && <span>{t('Точну адресу на межі підтвердимо окремо.', 'Точный адрес на границе подтвердим отдельно.')}</span>}</> : t('Обери зону в списку або точку на мапі.', 'Выбери зону в списке или точку на карте.')}</p>
           <p className="delivery-map-confirm">{t('Поза зонами — за погодженням. Адресу й час підтвердимо перед орендою.', 'Вне зон — по согласованию. Адрес и время подтвердим перед арендой.')}</p>
         </div>

@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "archives": [
+    {
+      "file": "joyrent-1.9.5.zip",
+      "bytes": 11706009,
+      "sha256": "8a602687cbcc146504573d2b45822f93f30a3a19475aae9a4ea31b2155cd2010",
+      "files": 161,
+      "crcAndSourceBytes": "PASS",
+      "permissions": "PASS",
+      "privateRecipientAbsent": true
+    },
+    {
+      "file": "joyrent-rentals-1.8.4.zip",
+      "bytes": 52790,
+      "sha256": "59a7a9848862fbe84beb109129bb17de1885a42de81aec1da6cdcce90765aace",
+      "files": 20,
+      "crcAndSourceBytes": "PASS",
+      "permissions": "PASS",
+      "privateRecipientAbsent": true
+    },
+    {
+      "file": "joyrent-preview-1.9.5.zip",
+      "bytes": 11207389,
+      "sha256": "543b939df531fcaa8ecc22170ec6f2154188872a2e2bb0451dd231e116e112ae",
+      "files": 147,
+      "crcAndSourceBytes": "PASS",
+      "permissions": "PASS",
+      "privateRecipientAbsent": true
+    }
+  ],
+  "historicalReleasesUnchanged": 51
+}

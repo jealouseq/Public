@@ -5,6 +5,7 @@ import { PlayStationController } from '../../components/ui/playstation-controlle
 import { Reveal } from '../../components/ui/reveal';
 import { boot, imageUrl, type StoreSettings } from '../lib/api';
 import { money } from '../lib/rental';
+import { dayGenitiveLabel } from '../lib/copy';
 import '../delivery.css';
 import { DeliveryZoneMap } from '../../components/ui/delivery-zone-map';
 import { useI18n } from '../lib/i18n';
@@ -64,7 +65,7 @@ export function HowItWorks({ settings }: { settings: StoreSettings }) {
         <div className="delivery-service delivery-zones"><div>
           <h4>{t('Доставка та повернення', 'Доставка и возврат')}</h4>
           <dl className="delivery-zone-prices"><div><dt><span className="zone-dot zone-green" />{t('Зелена зона', 'Зелёная зона')}</dt><dd>{zonePrice(settings.deliveryGreenFee)}</dd></div><div><dt><span className="zone-dot zone-yellow" />{t('Жовта зона', 'Жёлтая зона')}</dt><dd>{zonePrice(settings.deliveryYellowFee)}</dd></div><div><dt><span className="zone-dot zone-red" />{t('Червона зона', 'Красная зона')}</dt><dd>{t('за тарифом таксі', 'по тарифу такси')}</dd></div></dl>
-          <p className="delivery-included"><CalendarBlank size={24} weight="light" aria-hidden="true" /><span><strong>{t('При оренді від', 'При аренде от')} {settings.freeDeliveryFrom} {t('днів доставка в зелену та жовту зони — безкоштовна.', 'дней доставка в зелёную и жёлтую зоны — бесплатно.')}</strong><span className="delivery-service-note">{t('У вартість зони входять доставка та повернення консолі. Поза зонами — за погодженням.', 'В стоимость зоны входят доставка и обратный забор. Вне зон — по согласованию.')}</span></span></p>
+          <p className="delivery-included"><CalendarBlank size={24} weight="light" aria-hidden="true" /><span><strong>{t('При оренді від', 'При аренде от')} {dayGenitiveLabel(settings.freeDeliveryFrom, language)} {t('доставка в зелену та жовту зони — безкоштовна.', 'доставка в зелёную и жёлтую зоны — бесплатно.')}</strong><span className="delivery-service-note">{t('У вартість зони входять доставка та повернення консолі. Поза зонами — за погодженням.', 'В стоимость зоны входят доставка и обратный забор. Вне зон — по согласованию.')}</span></span></p>
         </div></div>
       </div>
       <div className="delivery-map-action"><DeliveryZoneMap freeDeliveryFrom={settings.freeDeliveryFrom} greenFee={settings.deliveryGreenFee ?? null} yellowFee={settings.deliveryYellowFee ?? null} /></div>

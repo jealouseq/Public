@@ -638,6 +638,14 @@ dialog { position: fixed; inset: 0; margin: auto; max-width: calc(100vw - 32px);
 .game-dialog.is-stacked { width: min(var(--cover-width, 320px), calc(100% - 32px)); }
 .game-dialog.is-stacked .game-dialog-inner { grid-template-columns: minmax(0, 1fr); }
 
+/* Keep ordinary desktop game panels steady; longer copy still grows naturally. */
+@media (min-width: 701px) and (min-height: 560px) {
+  .game-dialog:not(.is-stacked) .dialog-copy { display: flex; flex-direction: column; min-height: max(var(--cover-width, 320px), 440px); }
+  .game-dialog:not(.is-stacked) .dialog-copy > .game-meta:not(:has(+ .game-selection-notice)) { margin-bottom: 26px; }
+  .game-dialog:not(.is-stacked) .dialog-copy > .game-selection-notice { margin-bottom: 26px; }
+  .game-dialog:not(.is-stacked) .dialog-copy > .button { margin-top: auto; }
+}
+
 /* JOYRENT 1.4 — independent product scene; all changes scoped to the hero. */
 .hero { height: auto; display: block; overflow: hidden; background: var(--bg); }
 .hero-inner { height: auto; min-height: clamp(620px, 48vw, 680px); display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr); align-items: center; gap: clamp(32px, 3vw, 48px); padding-block: 60px; }

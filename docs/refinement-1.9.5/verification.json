@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-04",
+  "status": "PASS",
+  "themeVersion": "1.9.5",
+  "pluginVersion": "1.8.4",
+  "build": {
+    "typescript": "PASS",
+    "vite": "PASS",
+    "package": "PASS",
+    "main": "assets/main-Bj5sNqQ9.js",
+    "css": [
+      "assets/main-CGlf7Tec.css"
+    ],
+    "existingChunkSizeWarning": true
+  },
+  "unitTests": 113,
+  "isolatedPhpAssertions": 335,
+  "phpSyntaxFiles": 18,
+  "browser": {
+    "installedWordPress": "http://localhost:8080",
+    "normalGameDetails": 186,
+    "nestedPickerCases": 6,
+    "customLongCopyCases": 2,
+    "gameLimitCases": 2,
+    "widths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "shortScreenHeight": 430,
+    "reviewedScreenshots": 4
+  },
+  "realOrdersCreated": 0,
+  "realMailCalls": 0,
+  "liveSiteChanged": false,
+  "physicalSafariTested": false
+}

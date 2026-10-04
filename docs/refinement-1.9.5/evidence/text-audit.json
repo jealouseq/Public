@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-04",
+  "liveDomain": "joyrent.online",
+  "access": "Read-only GET via authorized Opera browser; shell urllib blocked by proxy and not bypassed.",
+  "routes": [
+    "/",
+    "/?lang=ru",
+    "/faq/",
+    "/faq-ru/",
+    "/umovy-orendy/",
+    "/usloviya-arendy/",
+    "/konfidentsiinist/",
+    "/konfidentsialnost/",
+    "/wp-json/joyrent/v1/catalog",
+    "/wp-json/wp/v2/pages?slug=faq,faq-ru,umovy-orendy,usloviya-arendy,konfidentsiinist,konfidentsialnost&_fields=slug,title,content&per_page=10"
+  ],
+  "liveFindings": {
+    "gameCount": 20,
+    "gameTextMatchesBaseline": true,
+    "legacyLabel": "Resident Evil UK genre/eyebrow=Горор; RU=Хоррор",
+    "nativeFaqTerms": "Both FAQ and terms languages exactly match old neutral defaults after normalized public HTML; FAQ has 7 questions and no contract answer; second controller phrasing implies separately confirmed cost.",
+    "nativePrivacy": "Both languages match current legal-pages defaults; equivalent policy.",
+    "preservedCommercial": {
+      "deliveryGreenFee": 199,
+      "deliveryYellowFee": 299,
+      "pickup": true
+    }
+  },
+  "implementation": {
+    "pluginVersion": "1.8.4",
+    "projection": "Correct exact legacy Resident Evil UK labels at public-read time only; all custom fields and raw records unchanged.",
+    "migration": "Archive the exact previous neutral copy; migrate only exact published managed pages with unchanged title/content and empty excerpt; keep author pages/drafts untouched.",
+    "copy": "Both neutral FAQ languages retain all 8 questions including conditional manual contract approval; no hardcoded amounts, city, or separate controller fee assumption. Terms mention the contract and verification, use consistent informal address."
+  },
+  "verification": {
+    "redBeforeFix": {
+      "neutralSemanticFailures": 12,
+      "legacyGenreFailures": 2
+    },
+    "green": {
+      "requestIsolated": 17,
+      "settingsStockIsolated": 56,
+      "currentMigrationIsolated": 52,
+      "archivedCopyMigration": 81,
+      "domain": 15,
+      "noWoo": 4,
+      "pluginTotal": 225,
+      "themePublicPagesIsolated": 110,
+      "totalIsolated": 335,
+      "syntaxFiles": 18,
+      "diffCheck": true,
+      "oldNeutralSnapshotExact": true
+    },
+    "noLiveWrites": true,
+    "realOrdersCreated": 0,
+    "realMailCalls": 0
+  },
+  "browserCleanup": {
+    "rootAuditTab": "598567471 returned to https://joyrent.online/",
+    "ownTemporaryRestTab": "598567472 closed"
+  }
+}

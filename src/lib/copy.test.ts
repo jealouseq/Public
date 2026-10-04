@@ -1,7 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import { controllerLabel, localPlayerLabel, gameLimitLabel, hasKnownInternetRequirement } from './copy';
+import { controllerLabel, localPlayerLabel, gameLimitLabel, hasKnownInternetRequirement, dayGenitiveLabel } from './copy';
 
 describe('visitor count labels', () => {
+  it.each([
+    [1, '1 дня', '1 дня'], [2, '2 днів', '2 дней'], [7, '7 днів', '7 дней'],
+    [11, '11 днів', '11 дней'], [21, '21 дня', '21 дня'], [30, '30 днів', '30 дней'],
+  ])('uses the genitive day form after a threshold of %i', (count, uk, ru) => {
+    expect(dayGenitiveLabel(Number(count), 'uk')).toBe(uk);
+    expect(dayGenitiveLabel(Number(count), 'ru')).toBe(ru);
+  });
   it('uses complete controller labels in both recap languages', () => {
     expect([1, 2].map(count => controllerLabel(count, 'uk'))).toEqual(['1 геймпад', '2 геймпади']);
     expect([1, 2].map(count => controllerLabel(count, 'ru'))).toEqual(['1 геймпад', '2 геймпада']);

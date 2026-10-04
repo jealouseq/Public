@@ -34,7 +34,7 @@ function migration_fixture(array $seeds,array $settings): void {
 }
 $settings=array_merge(JR_Settings::defaults(),['search_indexing'=>true,'notification_email'=>'synthetic@example.invalid']);
 migration_fixture($current,$settings);$before=serialize($pages);JR_Store::upgrade();
-migration_check(get_option('joyrent_version')==='1.8.2','Installed 1.8.1 advances to1.8.2');
+migration_check(get_option('joyrent_version')==='1.8.4','Installed 1.8.1 advances to1.8.4');
 migration_check(serialize($pages)===$before&&$writes===0,'Approved current pages remain unchanged');
 migration_check(get_option('joyrent_settings')===$settings&&get_option('wp_page_for_privacy_policy')===2,'Upgrade preserves complete private/admin settings and assigned policy');
 $custom=array_merge($settings,['deposit_ps5'=>9000,'base_controllers'=>1,'extra_controller_fee'=>75]);
@@ -46,7 +46,36 @@ $before=serialize($pages);$beforeWrites=$writes;JR_Store::upgrade();migration_ch
 foreach(['post_title'=>'Owner title','post_content'=>'Owner text','post_excerpt'=>'Owner excerpt','post_status'=>'draft'] as $field=>$value){
     migration_fixture($current,$custom);foreach($pages as $page)$page->$field=$value;$before=serialize($pages);JR_Store::upgrade();
     migration_check(serialize($pages)===$before&&$writes===0,'Upgrade preserves owner '.$field);
-    migration_check(get_option('joyrent_version')==='1.8.2','Owner pages do not block version advancement '.$field);
+    migration_check(get_option('joyrent_version')==='1.8.4','Owner pages do not block version advancement '.$field);
+}
+$previous_neutral=json_decode(file_get_contents($plugin.'/data/page-defaults-neutral-1.8.3.json'),true,512,JSON_THROW_ON_ERROR);
+foreach (['uk'=>'faq','ru'=>'faq-ru'] as $language=>$slug) {
+    $content=$neutral[$slug]['content'];
+    migration_check(substr_count($content,'<details>')===8,'Neutral '.$slug.' retains all eight rental questions');
+    migration_check(str_contains($content,$language==='uk'?'Чи можна орендувати без застави?':'Можно арендовать без залога?'),'Neutral '.$slug.' explains the contract option visible in the form');
+    migration_check(str_contains($content,$language==='uk'?'перевірки паспорта':'проверки паспорта')&&str_contains($content,$language==='uk'?'Документи через форму сайту не надсилай':'Документы через форму сайта не отправляй'),'Neutral '.$slug.' explains manual document verification without document uploads');
+    migration_check(!str_contains($content,$language==='uk'?'Вартість додаткового геймпада покажемо окремо':'Стоимость второго геймпада покажем отдельно'),'Neutral '.$slug.' does not imply a separate controller fee');
+}
+foreach (['uk'=>'umovy-orendy','ru'=>'usloviya-arendy'] as $language=>$slug) {
+    $content=$neutral[$slug]['content'];
+    migration_check(str_contains($content,$language==='uk'?'за договором':'по договору')&&str_contains($content,$language==='uk'?'перевірки паспорта':'проверки паспорта'),'Neutral '.$slug.' explains conditional contract arrangement');
+    migration_check(!str_contains($content,$language==='uk'?'Не розбирайте':'Не разбирайте'),'Neutral '.$slug.' keeps the same informal voice as the storefront');
+}
+$live_settings=array_merge($settings,['delivery_green_fee'=>199,'delivery_yellow_fee'=>299,'pickup'=>true]);
+foreach (['1.8.2','1.8.3'] as $installed) {
+    migration_fixture(array_merge($current,$previous_neutral),$live_settings);$options['joyrent_version']=$installed;
+    $ids=array_map(fn($page)=>$page->ID,$pages);$privacy=[$pages['konfidentsiinist'],$pages['konfidentsialnost']];JR_Store::upgrade();
+    foreach (array_keys($previous_neutral) as $slug) migration_check($pages[$slug]->post_content===$neutral[$slug]['content']&&$pages[$slug]->ID===$ids[$slug],'Installed '.$installed.' exact previous neutral '.$slug.' migrates in place');
+    migration_check(get_option('joyrent_settings')===$live_settings,'Installed '.$installed.' preserves custom 199/299 delivery, pickup, and private settings');
+    migration_check($pages['konfidentsiinist']==$privacy[0]&&$pages['konfidentsialnost']==$privacy[1],'Installed '.$installed.' preserves assigned privacy page content');
+    $before=serialize($pages);$beforeWrites=$writes;JR_Store::upgrade();migration_check(serialize($pages)===$before&&$writes===$beforeWrites,'Installed '.$installed.' migrated neutral pages remain idempotent');
+}
+migration_fixture(array_merge($current,$previous_neutral),$settings);$options['joyrent_version']='1.8.3';JR_Store::upgrade();
+foreach (array_keys($previous_neutral) as $slug) migration_check($pages[$slug]->post_content===$current[$slug]['content'],'Previous neutral '.$slug.' returns to approved copy when approved conditions are configured');
+foreach (['post_title'=>'Owner neutral title','post_content'=>'Owner neutral content','post_excerpt'=>'Owner neutral excerpt','post_status'=>'draft'] as $field=>$value) {
+    migration_fixture(array_merge($current,$previous_neutral),$live_settings);$options['joyrent_version']='1.8.3';
+    foreach ($previous_neutral as $slug=>$_) $pages[$slug]->$field=$value;
+    $before=serialize($pages);JR_Store::upgrade();migration_check(serialize($pages)===$before&&$writes===0,'Previous neutral author '.$field.' is preserved');
 }
 echo json_encode(['checks'=>$checks,'failures'=>$failures,'realDatabaseWrites'=>0,'realOrdersCreated'=>0,'realMailCalls'=>0],JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n";
 exit($failures?1:0);
