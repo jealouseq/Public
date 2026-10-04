@@ -2,7 +2,7 @@ import { defaultCatalog, uniqueGames, type ConsoleId, type Game, type Tariff } f
 import type { SecurityMode } from './draft';
 
 export interface StoreSettings {
-  city: string; cityRu?: string; phone: string; email: string; telegram: string;
+  city: string; cityRu?: string; phone: string; email: string; telegram: string; instagram?: string;
   deliveryFee: number | null; deliveryGreenFee?: number | null; deliveryYellowFee?: number | null; depositPs5: number | null; depositPs4: number | null;
   baseControllers: number; extraControllerFee: number | null; pickup: boolean;
   freeDeliveryFrom: number; deliveryText: string; deliveryTextRu?: string; maxGames?: number;
@@ -14,7 +14,7 @@ declare global { interface Window { JOYRENT?: BootConfig } }
 export const boot: BootConfig = window.JOYRENT ?? { apiBase: '/wp-api/joyrent/v1', assetBase: '' };
 export const imageUrl = (name: string) => `${boot.assetBase}/images/${name}.webp`;
 export const fallbackSettings: StoreSettings = {
-  city: 'Одеса', cityRu: 'Одесса', phone: '+380996669946', email: '', telegram: 'https://t.me/joyrent_od', deliveryFee: null, deliveryGreenFee: 200, deliveryYellowFee: 300, depositPs5: 25000, depositPs4: 7500,
+  city: 'Одеса', cityRu: 'Одесса', phone: '+380996669946', email: '', telegram: 'https://t.me/joyrent_od', instagram: 'https://www.instagram.com/joyrent_od/', deliveryFee: null, deliveryGreenFee: 200, deliveryYellowFee: 300, depositPs5: 25000, depositPs4: 7500,
   baseControllers: 2, extraControllerFee: 0, pickup: false, freeDeliveryFrom: 7, maxGames: 100,
   deliveryText: 'Доставляємо по Одесі. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.',
   deliveryTextRu: 'Доставляем по Одессе. Привезём, подключим и заберём после аренды. Зону и время подтвердим по адресу.',

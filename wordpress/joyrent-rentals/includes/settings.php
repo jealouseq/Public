@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) exit;
 
 final class JR_Settings {
     public static function defaults(): array {
-        return ['city'=>'Одеса','city_ru'=>'Одесса','phone'=>'+380996669946','email'=>'','notification_email'=>'','search_indexing'=>false,'telegram'=>'https://t.me/joyrent_od','delivery_fee'=>'','delivery_green_fee'=>200,'delivery_yellow_fee'=>300,'deposit_ps5'=>25000,'deposit_ps4'=>7500,'base_controllers'=>2,'extra_controller_fee'=>0,'pickup'=>false,'free_delivery_from'=>7,'max_games'=>100,'delivery_text_ru'=>'Доставляем по Одессе. Привезём, подключим и заберём после аренды. Зону и время подтвердим по адресу.', 'delivery_text'=>'Доставляємо по Одесі. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.'];
+        return ['city'=>'Одеса','city_ru'=>'Одесса','phone'=>'+380996669946','email'=>'','notification_email'=>'','search_indexing'=>false,'telegram'=>'https://t.me/joyrent_od','instagram'=>'https://www.instagram.com/joyrent_od/','delivery_fee'=>'','delivery_green_fee'=>200,'delivery_yellow_fee'=>300,'deposit_ps5'=>25000,'deposit_ps4'=>7500,'base_controllers'=>2,'extra_controller_fee'=>0,'pickup'=>false,'free_delivery_from'=>7,'max_games'=>100,'delivery_text_ru'=>'Доставляем по Одессе. Привезём, подключим и заберём после аренды. Зону и время подтвердим по адресу.', 'delivery_text'=>'Доставляємо по Одесі. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.'];
     }
     public static function get(): array {
         $defaults=self::defaults(); $saved=(array)get_option('joyrent_settings',[]);
@@ -15,7 +15,7 @@ final class JR_Settings {
     public static function search_indexing(): bool { return in_array(self::get()['search_indexing'],[true,1,'1'],true); }
     public static function public(): array {
         $s=self::get();
-        return ['city'=>$s['city'],'cityRu'=>$s['city_ru'],'phone'=>$s['phone'],'email'=>$s['email'],'telegram'=>$s['telegram'],'deliveryFee'=>self::amount($s['delivery_fee']),'deliveryGreenFee'=>self::amount($s['delivery_green_fee']),'deliveryYellowFee'=>self::amount($s['delivery_yellow_fee']),'depositPs5'=>self::amount($s['deposit_ps5']),'depositPs4'=>self::amount($s['deposit_ps4']),'baseControllers'=>(int)$s['base_controllers'],'extraControllerFee'=>self::amount($s['extra_controller_fee']),'pickup'=>(bool)$s['pickup'],'freeDeliveryFrom'=>(int)$s['free_delivery_from'],'maxGames'=>max(1,min(100,(int)$s['max_games'])),'deliveryText'=>$s['delivery_text'],'deliveryTextRu'=>$s['delivery_text_ru']];
+        return ['city'=>$s['city'],'cityRu'=>$s['city_ru'],'phone'=>$s['phone'],'email'=>$s['email'],'telegram'=>$s['telegram'],'instagram'=>$s['instagram'],'deliveryFee'=>self::amount($s['delivery_fee']),'deliveryGreenFee'=>self::amount($s['delivery_green_fee']),'deliveryYellowFee'=>self::amount($s['delivery_yellow_fee']),'depositPs5'=>self::amount($s['deposit_ps5']),'depositPs4'=>self::amount($s['deposit_ps4']),'baseControllers'=>(int)$s['base_controllers'],'extraControllerFee'=>self::amount($s['extra_controller_fee']),'pickup'=>(bool)$s['pickup'],'freeDeliveryFrom'=>(int)$s['free_delivery_from'],'maxGames'=>max(1,min(100,(int)$s['max_games'])),'deliveryText'=>$s['delivery_text'],'deliveryTextRu'=>$s['delivery_text_ru']];
     }
     public static function register(): void { register_setting('joyrent','joyrent_settings',['type'=>'array','sanitize_callback'=>[self::class,'sanitize'],'default'=>self::defaults()]); }
     public static function sanitize(mixed $input): array {
@@ -23,7 +23,7 @@ final class JR_Settings {
         foreach (['city','city_ru','phone','delivery_text','delivery_text_ru'] as $key) $result[$key]=sanitize_text_field(is_scalar($input[$key]??null)?(string)$input[$key]:'');
         $result['email']=sanitize_email(is_string($input['email']??null)?$input['email']:'');
         $result['notification_email']=sanitize_email(is_string($input['notification_email']??null)?$input['notification_email']:'');
-        $result['telegram']=esc_url_raw(is_string($input['telegram']??null)?$input['telegram']:'',['https']);
+        foreach (['telegram','instagram'] as $key) $result[$key]=esc_url_raw(is_string($input[$key]??null)?$input[$key]:'',['https']);
         foreach (['delivery_fee','delivery_green_fee','delivery_yellow_fee','deposit_ps5','deposit_ps4','extra_controller_fee'] as $key) {
             $value=is_scalar($input[$key]??null)?trim((string)$input[$key]):'';
             $result[$key]=$value!==''&&preg_match('/^\d+(?:\.\d{1,2})?$/',$value)?min(100000,(float)$value):'';
@@ -39,7 +39,7 @@ final class JR_Settings {
     public static function page(): void {
         if (!current_user_can('manage_woocommerce')) return;
         $s=self::get();
-        $fields=['city'=>['Місто доставки','text'],'phone'=>['Телефон магазину','text'],'email'=>['Email магазину','email'],'telegram'=>['Посилання Telegram (https)','url'],'delivery_fee'=>['Доставка для коротких тарифів, грн','number'],'deposit_ps5'=>['Застава PS5, грн','number'],'deposit_ps4'=>['Застава PS4, грн','number'],'base_controllers'=>['Геймпадів у базовому комплекті (1 або 2)','number'],'extra_controller_fee'=>['Додатковий геймпад за весь термін, грн','number'],'free_delivery_from'=>['Безкоштовна доставка від, днів','number'],'delivery_text'=>['Опис доставки (українською)','text'],'delivery_text_ru'=>['Опис доставки (російською)','text']];
+        $fields=['city'=>['Місто доставки','text'],'phone'=>['Телефон магазину','text'],'email'=>['Email магазину','email'],'telegram'=>['Посилання Telegram (https)','url'],'instagram'=>['Посилання Instagram (https)','url'],'delivery_fee'=>['Доставка для коротких тарифів, грн','number'],'deposit_ps5'=>['Застава PS5, грн','number'],'deposit_ps4'=>['Застава PS4, грн','number'],'base_controllers'=>['Геймпадів у базовому комплекті (1 або 2)','number'],'extra_controller_fee'=>['Додатковий геймпад за весь термін, грн','number'],'free_delivery_from'=>['Безкоштовна доставка від, днів','number'],'delivery_text'=>['Опис доставки (українською)','text'],'delivery_text_ru'=>['Опис доставки (російською)','text']];
         $fields['max_games']=['Максимум бажаних ігор (1–100)','number'];
         $fields['notification_email']=['Одержувач сповіщень (лише для адміністратора)','email'];
         $fields['city_ru']=['Місто доставки (російською)','text'];

@@ -1,0 +1,175 @@
+{
+  "results": [
+    {
+      "page": "home",
+      "language": "uk",
+      "width": 320,
+      "status": "PASS",
+      "instagramSize": {
+        "x": 213.203125,
+        "y": 489.25,
+        "width": 44,
+        "height": 44
+      },
+      "screenshot": "home-uk-320.png",
+      "errors": []
+    },
+    {
+      "page": "home",
+      "language": "uk",
+      "width": 390,
+      "status": "PASS",
+      "instagramSize": {
+        "x": 266.046875,
+        "y": 555.28125,
+        "width": 44,
+        "height": 44
+      },
+      "screenshot": "home-uk-390.png",
+      "errors": []
+    },
+    {
+      "page": "home",
+      "language": "uk",
+      "width": 768,
+      "status": "PASS",
+      "instagramSize": {
+        "x": 598.046875,
+        "y": 823.390625,
+        "width": 130.03125,
+        "height": 48
+      },
+      "screenshot": "home-uk-768.png",
+      "errors": []
+    },
+    {
+      "page": "home",
+      "language": "uk",
+      "width": 1440,
+      "status": "PASS",
+      "instagramSize": {
+        "x": 1235.09375,
+        "y": 822.96875,
+        "width": 130.03125,
+        "height": 48
+      },
+      "screenshot": "home-uk-1440.png",
+      "errors": []
+    },
+    {
+      "page": "home",
+      "language": "ru",
+      "width": 320,
+      "status": "PASS",
+      "instagramSize": {
+        "x": 213.203125,
+        "y": 489.0625,
+        "width": 44,
+        "height": 44
+      },
+      "screenshot": "home-ru-320.png",
+      "errors": []
+    },
+    {
+      "page": "home",
+      "language": "ru",
+      "width": 390,
+      "status": "PASS",
+      "instagramSize": {
+        "x": 266.046875,
+        "y": 555.015625,
+        "width": 44,
+        "height": 44
+      },
+      "screenshot": "home-ru-390.png",
+      "errors": []
+    },
+    {
+      "page": "home",
+      "language": "ru",
+      "width": 768,
+      "status": "PASS",
+      "instagramSize": {
+        "x": 598.046875,
+        "y": 822.9375,
+        "width": 130.03125,
+        "height": 48
+      },
+      "screenshot": "home-ru-768.png",
+      "errors": []
+    },
+    {
+      "page": "home",
+      "language": "ru",
+      "width": 1440,
+      "status": "PASS",
+      "instagramSize": {
+        "x": 1235.09375,
+        "y": 823.40625,
+        "width": 130.03125,
+        "height": 48
+      },
+      "screenshot": "home-ru-1440.png",
+      "errors": []
+    },
+    {
+      "page": "faq",
+      "language": "uk",
+      "width": 320,
+      "status": "PASS",
+      "instagramSize": {
+        "x": 213.203125,
+        "y": 555.25,
+        "width": 44,
+        "height": 44
+      },
+      "screenshot": "faq-uk-320.png",
+      "errors": []
+    },
+    {
+      "page": "faq",
+      "language": "uk",
+      "width": 1440,
+      "status": "PASS",
+      "instagramSize": {
+        "x": 1235.09375,
+        "y": 822.5,
+        "width": 130.03125,
+        "height": 48
+      },
+      "screenshot": "faq-uk-1440.png",
+      "errors": []
+    },
+    {
+      "page": "faq",
+      "language": "ru",
+      "width": 320,
+      "status": "PASS",
+      "instagramSize": {
+        "x": 213.203125,
+        "y": 555.25,
+        "width": 44,
+        "height": 44
+      },
+      "screenshot": "faq-ru-320.png",
+      "errors": []
+    },
+    {
+      "page": "faq",
+      "language": "ru",
+      "width": 1440,
+      "status": "PASS",
+      "instagramSize": {
+        "x": 1235.09375,
+        "y": 822.5,
+        "width": 130.03125,
+        "height": 48
+      },
+      "screenshot": "faq-ru-1440.png",
+      "errors": []
+    }
+  ],
+  "newTabNavigation": "PASS for UA/RU 390px with external response intercepted",
+  "noJsContact": "PASS",
+  "liveSiteWrites": 0
+}

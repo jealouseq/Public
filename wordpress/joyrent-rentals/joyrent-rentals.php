@@ -2,7 +2,7 @@
 /**
  * Plugin Name: JOYRENT Rentals
  * Description: Ukrainian and Russian PlayStation rental catalog, guest requests and WooCommerce order integration.
- * Version: 1.8.2
+ * Version: 1.8.3
  * Requires at least: 6.6
  * Requires PHP: 8.2
  * Requires Plugins: woocommerce

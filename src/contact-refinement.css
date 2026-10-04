@@ -6,7 +6,7 @@
 .site-footer .footer-contacts { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-left: 0; }
 .site-footer .footer-contact { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 10px 17px; gap: 9px; border: 1px solid #3f4144; border-radius: 999px; font-size: 14px; line-height: 1.3; color: #e8e8e4; white-space: nowrap; transition: border-color .2s, background .2s, color .2s; }
 .footer-contact svg { flex-shrink: 0; }
-.site-footer .footer-telegram { border-color: #69604f; background: #c79b5d0b; color: #e8d7bd; }
+.site-footer .footer-social { border-color: #69604f; background: #c79b5d0b; color: #e8d7bd; }
 .site-footer .footer-contact:hover { border-color: #b89d76; background: #c79b5d12; color: #f4f4f1; }
 .phone-short { display: none; }
 .tariff-section .tariff-conditions { align-items: center; justify-content: center; gap: 24px; }
@@ -25,8 +25,11 @@
   .site-footer .footer-contact { min-height: 44px; font-size: 12px; padding: 9px 11px; gap: 0; }
   .footer-phone > svg, .phone-short { display: none; }
   .phone-full { display: inline; }
-  .site-footer .footer-telegram { width: 44px; height: 44px; min-width: 44px; padding: 10px; }
-  .footer-telegram > span { display: none; }
+  .site-footer .footer-social { width: 44px; height: 44px; min-width: 44px; padding: 10px; }
+  .footer-social > span { display: none; }
+  .site-footer .footer-top:has(.footer-instagram) { grid-template-columns: 1fr; gap: 18px; }
+  .site-footer .footer-top:has(.footer-instagram) > .wordmark { justify-self: center; }
+  .site-footer .footer-top:has(.footer-instagram) .footer-contacts { flex-wrap: wrap; justify-content: center; }
   .site-footer .footer-email { white-space: normal; overflow-wrap: anywhere; }
   .site-footer .footer-top:has(.footer-email) { grid-template-columns: 1fr; }
   .site-footer .footer-top:has(.footer-email) .footer-contacts { flex-wrap: wrap; justify-content: flex-start; }
@@ -37,7 +40,7 @@
   .site-footer .footer-contact { font-size: 11px; padding-inline: 8px; }
   .phone-full { display: none; }
   .phone-short { display: inline; }
-  .site-footer .footer-telegram { padding: 10px; }
+  .site-footer .footer-social { padding: 10px; }
   .hero-actions .hero-primary { font-size: 13px; padding-left: 18px; gap: 12px; }
   .hero-actions .text-link { font-size: 12px; }
 }
