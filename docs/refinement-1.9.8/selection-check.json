@@ -1,0 +1,122 @@
+[
+  {
+    "case": "carousel-boundaries",
+    "language": "uk",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "case": "selection-review",
+    "language": "uk",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "case": "carousel-boundaries",
+    "language": "uk",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "case": "selection-review",
+    "language": "uk",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "case": "carousel-boundaries",
+    "language": "uk",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "case": "selection-review",
+    "language": "uk",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "case": "carousel-boundaries",
+    "language": "uk",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "case": "selection-review",
+    "language": "uk",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "case": "carousel-boundaries",
+    "language": "ru",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "case": "selection-review",
+    "language": "ru",
+    "width": 320,
+    "pass": true
+  },
+  {
+    "case": "carousel-boundaries",
+    "language": "ru",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "case": "selection-review",
+    "language": "ru",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "case": "carousel-boundaries",
+    "language": "ru",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "case": "selection-review",
+    "language": "ru",
+    "width": 768,
+    "pass": true
+  },
+  {
+    "case": "carousel-boundaries",
+    "language": "ru",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "case": "selection-review",
+    "language": "ru",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "case": "catalog-limit-and-resize",
+    "language": "uk",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "case": "compact-keyboard",
+    "language": "uk",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "case": "catalog-limit-and-resize",
+    "language": "ru",
+    "width": 1440,
+    "pass": true
+  },
+  {
+    "case": "compact-keyboard",
+    "language": "ru",
+    "width": 390,
+    "pass": true
+  }
+]

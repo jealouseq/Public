@@ -1,0 +1,138 @@
+[
+  {
+    "language": "uk",
+    "width": 320,
+    "motion": "reduce",
+    "emptyPs4": false,
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "motion": "reduce",
+    "emptyPs4": false,
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 768,
+    "motion": "reduce",
+    "emptyPs4": false,
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 1024,
+    "motion": "reduce",
+    "emptyPs4": false,
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "motion": "reduce",
+    "emptyPs4": false,
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "motion": "no-preference",
+    "emptyPs4": false,
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "motion": "no-preference",
+    "emptyPs4": false,
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "motion": "reduce",
+    "emptyPs4": true,
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "motion": "reduce",
+    "emptyPs4": true,
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 320,
+    "motion": "reduce",
+    "emptyPs4": false,
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "motion": "reduce",
+    "emptyPs4": false,
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 768,
+    "motion": "reduce",
+    "emptyPs4": false,
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 1024,
+    "motion": "reduce",
+    "emptyPs4": false,
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "motion": "reduce",
+    "emptyPs4": false,
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "motion": "no-preference",
+    "emptyPs4": false,
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "motion": "no-preference",
+    "emptyPs4": false,
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "motion": "reduce",
+    "emptyPs4": true,
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "motion": "reduce",
+    "emptyPs4": true,
+    "pass": true
+  },
+  {
+    "case": "motion-and-rapid-switch",
+    "width": 390,
+    "pass": true
+  },
+  {
+    "case": "motion-and-rapid-switch",
+    "width": 1440,
+    "pass": true
+  }
+]

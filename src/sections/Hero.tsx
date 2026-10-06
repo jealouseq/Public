@@ -1,4 +1,4 @@
-import { CaretRight, Plug, ShieldCheck, Users } from '@phosphor-icons/react';
+import { CaretRight } from '@phosphor-icons/react';
 import { money, type ConsoleId } from '../lib/rental';
 import { boot } from '../lib/api';
 import { useI18n } from '../lib/i18n';
@@ -10,7 +10,7 @@ import '../hero-mobile-refinement.css';
 const asset = (file: string) => `${boot.assetBase}/images/${file}`;
 const sources = (items: { file: string; width: number }[]) => items.map(item => `${asset(item.file)} ${item.width}w`).join(', ');
 
-export function Hero({ price, minimumDays = 1, consoleId = 'ps5', secondFree = false, onChoosePS5 }: { price: number | null; minimumDays?: number; consoleId?: ConsoleId; secondFree?: boolean; onChoosePS5: () => void }) {
+export function Hero({ price, minimumDays = 1, consoleId = 'ps5', onChoosePS5 }: { price: number | null; minimumDays?: number; consoleId?: ConsoleId; onChoosePS5: () => void }) {
   const { t } = useI18n();
   const lines = [t('Твій вечір.', 'Твой вечер.'), t('Твоя PlayStation.', 'Твоя PlayStation.')];
   return <section className="hero" id="top"><div className="shell hero-inner">
@@ -27,11 +27,5 @@ export function Hero({ price, minimumDays = 1, consoleId = 'ps5', secondFree = f
         <img className="hero-photo" src={asset(media.desktop.fallback)} srcSet={sources(media.desktop.sources)} sizes={media.desktop.sizes} alt="" width={media.desktop.width} height={media.desktop.height} loading="eager" fetchPriority="high" decoding="async" />
       </picture>
     </figure>
-  </div><div className="shell hero-benefits">
-      <ul className="hero-highlights" aria-label={t('Що входить в оренду', 'Что входит в аренду')}>
-        {secondFree && <li><Users size={17} weight="light" aria-hidden="true" /><span>{t('Другий геймпад без доплати', 'Второй геймпад без доплаты')}</span></li>}
-        <li><ShieldCheck size={17} weight="light" aria-hidden="true" /><span>{t('Перевірений комплект', 'Проверенный комплект')}</span></li>
-        <li><Plug size={17} weight="light" aria-hidden="true" /><span>{t('Допомога з підключенням', 'Помощь с подключением')}</span></li>
-      </ul>
   </div></section>;
 }

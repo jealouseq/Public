@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useMotionPreference } from '../lib/motion';
-import { Check, Truck, CalendarBlank, ArrowUpRight, MapPin } from '@phosphor-icons/react';
-import { PlayStationController } from '../../components/ui/playstation-controller';
+import { Check, CalendarBlank, MapPin } from '@phosphor-icons/react';
 import { Reveal } from '../../components/ui/reveal';
 import { boot, imageUrl, type StoreSettings } from '../lib/api';
 import { money } from '../lib/rental';
@@ -11,6 +10,7 @@ import { DeliveryZoneMap } from '../../components/ui/delivery-zone-map';
 import { useI18n } from '../lib/i18n';
 import '../story-refinement.css';
 import { useNearbyMedia } from '../lib/use-nearby-media';
+import { RentalSteps } from '../components/RentalSteps';
 
 export function Kit({ secondFree = false }: { secondFree?: boolean }) {
   const { t } = useI18n();
@@ -45,17 +45,11 @@ export function HowItWorks({ settings }: { settings: StoreSettings }) {
   const { t, language } = useI18n();
   const mapPreview = useRef<HTMLDivElement>(null);
   const mapNearby = useNearbyMedia(mapPreview);
-  const steps = [
-    [CalendarBlank, t('Обери комплект', 'Выбери комплект'), t('Обери консоль, термін і дати. Додай ігри та залиш контакти.', 'Выбери консоль, срок и даты. Добавь игры и оставь контакты.')],
-    [Truck, t('Отримай консоль', 'Получи консоль'), t('Підтвердимо наявність і підсумкову вартість. Узгодимо доставку та оформлення оренди.', 'Подтвердим наличие и итоговую стоимость. Согласуем доставку и оформление аренды.')],
-    [PlayStationController, t('Грай', 'Играй'), t('Грай у своє задоволення. Заберемо комплект у погоджений час.', 'Наслаждайся игрой. Заберём комплект в согласованное время.')],
-  ] as const;
   const delivery = language === 'ru' ? settings.deliveryTextRu : settings.deliveryText;
   const city = language === 'ru' ? settings.cityRu || settings.city : settings.city;
   const zonePrice = (value: number | null | undefined) => value == null ? t('Узгодимо', 'Согласуем') : `${money(value)} грн`;
   return <section className="section how-section story-how" id="how-it-works"><div className="shell">
-    <Reveal className="process-heading"><div><p className="eyebrow">{t('ЯК ЦЕ ПРАЦЮЄ', 'КАК ЭТО РАБОТАЕТ')}</p><h2>{t('Від вибору до гри.', 'От выбора до игры.')}</h2></div><a className="text-link" href="#booking">{t('Обрати дати', 'Выбрать даты')}<ArrowUpRight size={18} /></a></Reveal>
-    <ol className="process-grid">{steps.map(([Icon, title, description], index) => <li className="process-item" key={index}><Reveal className="process-step" delay={index * 0.08}><div className="process-body"><div className="process-title-row"><span className="process-node" aria-hidden="true"><Icon size={Icon === PlayStationController ? 28 : 21} weight="light" /></span><h3>{title}</h3></div><p>{description}</p></div></Reveal></li>)}</ol>
+    <RentalSteps />
     <div className="delivery-panel story-delivery" id="delivery">
       <div className="delivery-copy">
         <div className="delivery-copy-heading"><p className="delivery-label"><MapPin size={18} weight="light" />{city ? `${t('Доставка', 'Доставка')}: ${city}` : t('ДОСТАВКА ТА ПОВЕРНЕННЯ', 'ДОСТАВКА И ВОЗВРАТ')}</p><h3>{t('Привеземо до тебе.', 'Привезём к тебе.')}</h3></div>
