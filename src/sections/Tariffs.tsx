@@ -5,19 +5,15 @@ import type { ReactNode } from 'react';
 import { ConsoleSwitch } from '../../components/ui/console-switch';
 import { Reveal } from '../../components/ui/reveal';
 import { DailyPrice } from '../components/DailyPrice';
-import { ConsoleShowcase } from '../components/ConsoleShowcase';
-import type { CatalogStatus } from '../lib/api';
 import { dayLabel, money, type ConsoleId, type Tariff } from '../lib/rental';
 
 import { useI18n } from '../lib/i18n';
 
-export function Tariffs({ consoleId, tariffs, freeDeliveryFrom, secondFree, catalogStatus, onConsole, onChoose }: { freeDeliveryFrom: number; consoleId: ConsoleId; tariffs: Tariff[]; secondFree: boolean; catalogStatus: CatalogStatus; onConsole: (value: ConsoleId) => void; onChoose: (days: number) => void }) {
+export function Tariffs({ consoleId, tariffs, freeDeliveryFrom, onConsole, onChoose }: { freeDeliveryFrom: number; consoleId: ConsoleId; tariffs: Tariff[]; onConsole: (value: ConsoleId) => void; onChoose: (days: number) => void }) {
   const reduced = useMotionPreference();
   const { t, language } = useI18n();
   return <section className="section tariff-section" id="rates"><div className="shell">
-    <Reveal className="section-heading"><div><p className="eyebrow">{t('КОНСОЛІ В ОРЕНДУ', 'КОНСОЛИ В АРЕНДУ')}</p><h2>{t('Обери свою PlayStation.', 'Выбери свою PlayStation.')}</h2></div><ConsoleSwitch value={consoleId} onChange={onConsole} id="tariffs" /></Reveal>
-    <ConsoleShowcase consoleId={consoleId} tariffs={tariffs} secondFree={secondFree} catalogStatus={catalogStatus} onConsole={onConsole} onChoose={onChoose} />
-    <div className="section-heading"><div><p className="eyebrow">{t('ТАРИФИ', 'ТАРИФЫ')}</p><h2>{t('Обери час для гри.', 'Выбери время для игры.')}</h2></div></div>
+    <Reveal className="section-heading"><div><p className="eyebrow">{t('ТАРИФИ', 'ТАРИФЫ')}</p><h2>{t('Обери час для гри.', 'Выбери время для игры.')}</h2></div><ConsoleSwitch value={consoleId} onChange={onConsole} id="tariffs" /></Reveal>
     <p className="tariff-price-hint">{t('Вартість за весь термін оренди', 'Стоимость за весь срок аренды')}</p>
     <AnimatePresence mode="wait" initial={false}><TariffGrid key={consoleId} className={`tariff-grid tariff-grid-${tariffs.length}`} reduced={reduced}>{present => <>
       {tariffs.map((tariff) => <article className="tariff" key={tariff.days}>
