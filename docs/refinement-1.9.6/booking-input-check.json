@@ -1,0 +1,113 @@
+[
+  {
+    "case": "touch-clickthrough",
+    "pass": true,
+    "data": {
+      "address": "Середньофонтанська вулиця",
+      "openDialogs": 0,
+      "posts": 0,
+      "errors": [],
+      "explicitPrivacyTapWorks": true
+    }
+  },
+  {
+    "case": "phone-uk",
+    "pass": true,
+    "data": {
+      "posts": 0,
+      "focused": true,
+      "invalid": "true",
+      "describedby": "_r_4_",
+      "errors": [],
+      "inlineError": "Вкажи український номер телефону."
+    }
+  },
+  {
+    "case": "phone-ru",
+    "pass": true,
+    "data": {
+      "posts": 0,
+      "focused": true,
+      "invalid": "true",
+      "describedby": "_r_4_",
+      "errors": [],
+      "inlineError": "Укажи украинский номер телефона."
+    }
+  },
+  {
+    "case": "canonical-retry",
+    "pass": true,
+    "data": {
+      "requestIds": [
+        "3f497118-6cf0-4874-9826-75ca086159f0",
+        "3f497118-6cf0-4874-9826-75ca086159f0",
+        "3f497118-6cf0-4874-9826-75ca086159f0",
+        "e3ac7973-29cf-4ab3-a718-e6b17ed050ce"
+      ],
+      "phones": [
+        "+380500000000",
+        "+380500000000",
+        "+380500000000",
+        "+380500000001"
+      ],
+      "focusedError": true,
+      "errors": []
+    }
+  },
+  {
+    "case": "address-input-modes",
+    "pass": true,
+    "data": [
+      {
+        "mode": "mouse",
+        "value": "Середньофонтанська вулиця",
+        "dialogs": 0,
+        "errors": [],
+        "posts": 0
+      },
+      {
+        "mode": "keyboard",
+        "value": "Середньофонтанська вулиця",
+        "dialogs": 0,
+        "errors": [],
+        "posts": 0
+      },
+      {
+        "mode": "accessibility-click",
+        "value": "Середньофонтанська вулиця",
+        "dialogs": 0,
+        "errors": [],
+        "posts": 0
+      },
+      {
+        "mode": "blur-during-touch",
+        "value": "Середньофонтанська вулиця",
+        "dialogs": 0,
+        "errors": [],
+        "posts": 0
+      },
+      {
+        "mode": "pan-y-cancel",
+        "value": "ка",
+        "dialogs": 0,
+        "errors": [],
+        "posts": 0,
+        "scrollTop": 15,
+        "touchAction": "pan-y"
+      }
+    ]
+  },
+  {
+    "case": "timeout-retry",
+    "pass": true,
+    "data": {
+      "message": "Не вдалося підтвердити бронювання. Повтори спробу з тими самими даними або зв’яжися з нами.",
+      "requestIds": [
+        "7e915f41-0299-4ce3-9b89-8a826e34b559",
+        "7e915f41-0299-4ce3-9b89-8a826e34b559"
+      ],
+      "focusedError": true,
+      "errors": []
+    }
+  }
+]

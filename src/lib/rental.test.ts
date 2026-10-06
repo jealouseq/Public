@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { addRentalDays, dayLabel, quote, safeDays, validateStartDate, uniqueGames, localPlayers, matchesGameFilter, reconcileGameIds, deliveryCharge, isIntentionalSubmission } from './rental';
+import { addRentalDays, dailyRate, dayLabel, quote, safeDays, validateStartDate, uniqueGames, localPlayers, matchesGameFilter, reconcileGameIds, deliveryCharge, isIntentionalSubmission } from './rental';
 import { defaultCatalog } from './rental';
 
 describe('approved rental prices', () => {
@@ -7,6 +7,21 @@ describe('approved rental prices', () => {
   it('rejects a PS4 one-day tariff', () => expect(() => quote('ps4', 1)).toThrow());
   it('moves one-day PS5 selection to three days when PS4 is selected', () => expect(safeDays('ps4', 1)).toBe(3));
   it('rejects unknown console IDs', () => expect(() => quote('ps6' as 'ps5', 3)).toThrow());
+});
+
+describe('daily price comparison without changing the rental total', () => {
+  it.each([
+    [600, 1, 600, false], [1400, 3, 466.67, true], [2500, 7, 357.14, true],
+    [6000, 30, 200, false], [750, 3, 250, false], [1200, 7, 171.43, true],
+    [2500, 30, 83.33, true], [1499.5, 1, 1499.5, false], [1, 30, 0.03, true],
+  ])('compares a configured %s UAH / %s day tariff', (price, days, amount, approximate) => {
+    expect(dailyRate(Number(price), Number(days))).toEqual({ amount, approximate });
+  });
+  it('does not display a daily price for an unavailable or malformed tariff', () => {
+    for (const [price, days] of [[600, 0], [600, -1], [600, 1.5], [-1, 3], [NaN, 3], [Infinity, 3]]) {
+      expect(dailyRate(price, days)).toBeNull();
+    }
+  });
 });
 
 describe('published catalog and selection', () => {

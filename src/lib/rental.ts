@@ -7,6 +7,13 @@ export type Game = Omit<typeof catalog.games[number], 'playersByPlatform' | 'req
 export const defaultCatalog = catalog;
 export const money = (value: number) => new Intl.NumberFormat('uk-UA', { maximumFractionDigits: 2 }).format(value);
 export const dayLabel = (days: number, language: 'uk' | 'ru' = 'uk') => dayCountLabel(days, language);
+/** A comparison only: the configured period price remains the amount charged. */
+export function dailyRate(price: number, days: number): { amount: number; approximate: boolean } | null {
+  if (!Number.isFinite(price) || price < 0 || !Number.isInteger(days) || days <= 0) return null;
+  const exact = price / days;
+  const amount = Math.round(exact * 100) / 100;
+  return { amount, approximate: Math.abs(amount - exact) > 1e-8 };
+}
 export function quote(consoleId: ConsoleId, days: number, tariffs: Record<ConsoleId, Tariff[]> = catalog.tariffs): Tariff {
   const tariff = tariffs[consoleId]?.find(item => item.days === days);
   if (!tariff) throw new Error('Цей тариф недоступний.');

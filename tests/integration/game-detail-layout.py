@@ -4,7 +4,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
 ROOT=Path(__file__).resolve().parents[2]
 BASE=os.getenv('JOYRENT_TEST_URL','http://localhost:8080')
-OUT=ROOT/'docs/refinement-1.9.5'
+OUT=ROOT/os.getenv('JOYRENT_TEST_OUTPUT','docs/refinement-1.9.5')
 OUT.mkdir(parents=True,exist_ok=True);(OUT/'screens').mkdir(exist_ok=True)
 rows=[];screens=[]
 with sync_playwright() as p:

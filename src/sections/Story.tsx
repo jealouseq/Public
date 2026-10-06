@@ -12,7 +12,7 @@ import { useI18n } from '../lib/i18n';
 import '../story-refinement.css';
 import { useNearbyMedia } from '../lib/use-nearby-media';
 
-export function Kit() {
+export function Kit({ secondFree = false }: { secondFree?: boolean }) {
   const { t } = useI18n();
   const reduced = useMotionPreference();
   const stage = useRef<HTMLDivElement>(null);
@@ -31,9 +31,13 @@ export function Kit() {
     sizes: '(min-width: 1280px) 650px, (min-width: 701px) calc(55vw - 56px), (min-width: 478px) 430px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)',
     decoding: 'async' as const,
   };
-  const items = [t('PS5 або PS4 + 1–2 геймпади', 'PS5 или PS4 + 1–2 геймпада'), t('HDMI-кабель, кабель живлення та заряджання', 'HDMI-кабель, кабель питания и зарядки'), t('Коротка інструкція з підключення', 'Краткая инструкция по подключению')];
+  const items = [
+    [t('Консоль і геймпади', 'Консоль и геймпады'), t('PS5 або PS4 + 1–2 геймпади', 'PS5 или PS4 + 1–2 геймпада')],
+    [t('Усе для підключення', 'Всё для подключения'), t('HDMI-кабель, кабель живлення та заряджання', 'HDMI-кабель, кабель питания и зарядки')],
+    [t('Простий старт', 'Простой старт'), t('Коротка інструкція з підключення', 'Краткая инструкция по подключению')],
+  ];
   return <section className="section kit-section story-kit" id="kit"><div className="shell kit-layout">
-    <Reveal className="kit-copy"><p className="eyebrow">{t('У КОМПЛЕКТІ', 'В КОМПЛЕКТЕ')}</p><h2>{t('Усе готово до гри.', 'Всё готово к игре.')}</h2><ul className="kit-checklist">{items.map(item => <li key={item}><Check size={18} />{item}</li>)}</ul><p className="kit-note">{t('Другий геймпад — без доплати. Кожен комплект перевіряємо перед видачею.', 'Второй геймпад — без доплаты. Каждый комплект проверяем перед выдачей.')}</p></Reveal>
+    <Reveal className="kit-copy"><p className="eyebrow">{t('У КОМПЛЕКТІ', 'В КОМПЛЕКТЕ')}</p><h2>{t('Усе готово до гри.', 'Всё готово к игре.')}</h2><ul className="kit-checklist">{items.map(([title, description]) => <li key={title}><Check size={18} aria-hidden="true" /><span><strong>{title}</strong><span>{description}</span></span></li>)}</ul><p className="kit-note">{secondFree && <>{t('Другий геймпад — без доплати.', 'Второй геймпад — без доплаты.')} </>}{t('Кожен комплект перевіряємо перед видачею.', 'Каждый комплект проверяем перед выдачей.')}</p></Reveal>
     <div ref={stage} className="controller-stage" data-motion={!reduced && inView && documentVisible ? 'running' : 'paused'}><div className="controller-float" style={{ aspectRatio: '3 / 2' }}>{nearby && <><img className="controller-photo" style={{ position: 'absolute', inset: 0, height: '100%' }} src={imageUrl('dualsense-cutout')} {...controllerMedia} alt={t('Білий DualSense із м’якою теплою підсвіткою', 'Белый DualSense с мягкой тёплой подсветкой')} width={1536} height={1024} loading="lazy" /><img className="controller-light-pass" aria-hidden="true" src={imageUrl('dualsense-cutout')} {...controllerMedia} alt="" width={1536} height={1024} loading="lazy" /></>}</div></div>
   </div></section>;
 }
