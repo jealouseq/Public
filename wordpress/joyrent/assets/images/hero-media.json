@@ -2,42 +2,91 @@
   "mobileMedia": "(max-width: 900px)",
   "desktopMedia": "(width > 900px)",
   "desktop": {
-    "master": "ps5-commercial-desktop-detail.png",
-    "width": 1448,
-    "height": 1086,
-    "fallback": "ps5-commercial-desktop-detail-768.webp",
-    "sizes": "(min-width: 1536px) 702px, 47.3vw",
+    "master": "hero-slim-studio.png",
+    "width": 1447,
+    "height": 1087,
+    "fallback": "hero-slim-studio-720.webp",
+    "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
     "sources": [
       {
-        "file": "ps5-commercial-desktop-detail-768.webp",
-        "width": 768,
-        "quality": 92
+        "file": "hero-slim-studio-720.webp",
+        "width": 720,
+        "quality": 96
       },
       {
-        "file": "ps5-commercial-desktop-detail.webp",
-        "width": 1448,
-        "quality": 96
+        "file": "hero-slim-studio-1447.webp",
+        "width": 1447,
+        "quality": 98
       }
     ]
   },
   "mobile": {
-    "width": 1448,
-    "height": 1086,
-    "fallback": "ps5-commercial-mobile-560.webp",
-    "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)",
+    "master": "hero-slim-studio.png",
+    "width": 1447,
+    "height": 1087,
+    "fallback": "hero-slim-studio-480.webp",
+    "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
     "sources": [
       {
-        "file": "ps5-commercial-mobile-560.webp",
-        "width": 560
+        "file": "hero-slim-studio-480.webp",
+        "width": 480,
+        "quality": 94
       },
       {
-        "file": "ps5-commercial-mobile.webp",
-        "width": 1120
+        "file": "hero-slim-studio-960.webp",
+        "width": 960,
+        "quality": 96
       },
       {
-        "file": "ps5-commercial-mobile-1448.webp",
-        "width": 1448
+        "file": "hero-slim-studio-1447.webp",
+        "width": 1447,
+        "quality": 98
       }
     ]
+  },
+  "light": {
+    "desktop": {
+      "master": "hero-slim-light.png",
+      "width": 1447,
+      "height": 1087,
+      "fallback": "hero-slim-light-720.webp",
+      "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+      "sources": [
+        {
+          "file": "hero-slim-light-720.webp",
+          "width": 720,
+          "quality": 94
+        },
+        {
+          "file": "hero-slim-light-1447.webp",
+          "width": 1447,
+          "quality": 94
+        }
+      ]
+    },
+    "mobile": {
+      "master": "hero-slim-light.png",
+      "width": 1447,
+      "height": 1087,
+      "fallback": "hero-slim-light-480.webp",
+      "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+      "sources": [
+        {
+          "file": "hero-slim-light-480.webp",
+          "width": 480,
+          "quality": 94
+        },
+        {
+          "file": "hero-slim-light-960.webp",
+          "width": 960,
+          "quality": 94
+        },
+        {
+          "file": "hero-slim-light-1447.webp",
+          "width": 1447,
+          "quality": 94
+        }
+      ]
+    }
   }
 }

@@ -1,3 +1,25 @@
+# JOYRENT 1.9.14 — selected Slim hero composition
+
+Source visual truth: user's selected fifth variant, [exact source](docs/refinement-1.9.14/selected-source.png),1770×889 px. Existing JOYRENT palette, interface and copy are preserved. The source is uniformly normalized to1440×723; actual local WordPress hero+header is1440×772. Both are shown on the same canvas with bottom padding rather than stretching: [combined reference/render](docs/refinement-1.9.14/comparison/selected-and-rendered.png). Reduced-motion static state, UA, Chromium,DPR2 image selection; screenshot downsampled by browser to CSS pixels.
+
+**Findings and correction history**
+
+- [P2, resolved] First-pass opaque photo visibly ended at rectangular boundaries. A common static edge mask now feathers the base photograph and light together, with light blending into the page. Console top/white panels/controller feet remain intact; no image blur filter. [First/final comparison](docs/refinement-1.9.14/comparison/first-pass-and-final.png).
+- [P2, resolved] First-pass desktop subjects were undersized beside the heading. The right-anchored scene expands from598.58 to718.58px at1440 and caps720px. Its native1447px width coversDPR2 without enlargement. Existing text grid and title wraps remain. The reference's larger full-bleed scale is intentionally adapted to this readable interface and verified source-resolution cap; independent visual review accepts the result.
+- Fonts/typography: original Unbounded/Onest/Manrope families, copy and heading structure retained. UA/RU mobile320/390 and desktop1440 remain readable; compact54px mobile action stays centred.
+- Spacing/layout rhythm: single centred mobile scene follows the price; desktop controller fronts the console without crossing text/actions. 900/901 and1200/1201 boundaries, tablet and3000px desktop checked. Floor fades naturally; no empty framed photo panel remains.
+- Colors/tokens: original near-black and warm gold preserved. Narrow rim/reflection replaces any strong orange halo. Light is a transparent raster layer, not a new CSS-drawn object or background illustration.
+- Image quality/fidelity: new photorealistic Slim+DualSense master1447×1087 follows selected placement, separated panels and USB-C detail. WebP480/720/960/1447 preserve native detail. A shared JSON drives picture and PHP preload. All images decode; main image fetch is single; DPR1/2/3 and fractional1.1 source selection verified. Master artwork is an ImageGen interpretation, not an official Sony photo; minor camera/product differences from the generated reference are P3.
+- Copy/content: no extra headings, subscription cards, repeated pricing or new callouts. UA/RU unchanged. Hero artwork decorative because console choice/service is already in text; lower kit, FAQ and booking sources unchanged.
+
+Motion: scene enters10px in720ms once and settles attransform:none/filter:none; only separate light changes opacity0.18–0.40 over9seconds. Old picture pseudo loops disabled. Ordinary-frame13-case browser test confirms entrance, cycle advancement, offscreen/tab pause, reduced-motion static state and DataSaver exclusion. Two full-cycle recordings contain autonomous playback; separate PNG-frame sampling verifies actual pixel changes.
+
+Primary checks:123 unit tests, TypeScript/Vite/theme build,13 focused packaged WordPress motion cases,14 responsive/DPR captures,8 boundary/CTA tests. No horizontal overflow, JavaScript error or duplicate main-photo fetch; external/write requests blocked. ZIP CRC, source bytes, permissions and native image files verified.67 old release ZIPs and Rentals1.8.4 unchanged. Physical Safari/Windows GPU and live site not tested. Final independent code/visual reviews have no material P0/P1/P2 finding.
+
+final result: passed
+
+---
+
 # JOYRENT 1.9.13 — desktop sharpness and motion correction
 
 Source visual truth: user's desktop report and the approved [selected composition](docs/refinement-1.9.12/selected-source.png),1586×992 px. Baseline render 1.9.12 and final local WordPress/Chromium render at 1920×1080 CSS px,DPR 1, same 855 px product stage: [combined full product view](docs/refinement-1.9.13/comparison/desktop-before-after.png). Baseline is frozen at 5000 ms; final is reduced-motion static, so subpixel object pose differs slightly. Geometry and actual CSS scale remain equal; these small pose differences do not account for sharpness changes.

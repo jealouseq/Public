@@ -1,0 +1,155 @@
+{
+  "version": "1.9.14",
+  "visualSource": "selected-source.png",
+  "sourceKind": "User selected ImageGen hero option5; native photorealistic product asset and separate transparent raster light generated from selected composition. Not official Sony photography.",
+  "photo": {
+    "file": "wordpress/joyrent/assets/images/hero-slim-studio.png",
+    "bytes": 1428153,
+    "sha256": "2f54e1c4103ba111ee3c6bd7cfbc7ac822fa4b1e5fb8a969f2eed452fe9c2b7c"
+  },
+  "light": {
+    "file": "wordpress/joyrent/assets/images/hero-slim-light.png",
+    "bytes": 362151,
+    "sha256": "73772dd007900d56c040802ae064c657cfefc209d7b342698a190da90b27baf9"
+  },
+  "nativeCanvas": {
+    "width": 1447,
+    "height": 1087
+  },
+  "lightNormalization": "One transparent pixel added on the right to align canvas dimensions; product photo not enlarged.",
+  "responsiveRecipes": {
+    "mobileMedia": "(max-width: 900px)",
+    "desktopMedia": "(width > 900px)",
+    "desktop": {
+      "master": "hero-slim-studio.png",
+      "width": 1447,
+      "height": 1087,
+      "fallback": "hero-slim-studio-720.webp",
+      "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+      "sources": [
+        {
+          "file": "hero-slim-studio-720.webp",
+          "width": 720,
+          "quality": 96
+        },
+        {
+          "file": "hero-slim-studio-1447.webp",
+          "width": 1447,
+          "quality": 98
+        }
+      ]
+    },
+    "mobile": {
+      "master": "hero-slim-studio.png",
+      "width": 1447,
+      "height": 1087,
+      "fallback": "hero-slim-studio-480.webp",
+      "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+      "sources": [
+        {
+          "file": "hero-slim-studio-480.webp",
+          "width": 480,
+          "quality": 94
+        },
+        {
+          "file": "hero-slim-studio-960.webp",
+          "width": 960,
+          "quality": 96
+        },
+        {
+          "file": "hero-slim-studio-1447.webp",
+          "width": 1447,
+          "quality": 98
+        }
+      ]
+    },
+    "light": {
+      "desktop": {
+        "master": "hero-slim-light.png",
+        "width": 1447,
+        "height": 1087,
+        "fallback": "hero-slim-light-720.webp",
+        "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+        "sources": [
+          {
+            "file": "hero-slim-light-720.webp",
+            "width": 720,
+            "quality": 94
+          },
+          {
+            "file": "hero-slim-light-1447.webp",
+            "width": 1447,
+            "quality": 94
+          }
+        ]
+      },
+      "mobile": {
+        "master": "hero-slim-light.png",
+        "width": 1447,
+        "height": 1087,
+        "fallback": "hero-slim-light-480.webp",
+        "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+        "sources": [
+          {
+            "file": "hero-slim-light-480.webp",
+            "width": 480,
+            "quality": 94
+          },
+          {
+            "file": "hero-slim-light-960.webp",
+            "width": 960,
+            "quality": 94
+          },
+          {
+            "file": "hero-slim-light-1447.webp",
+            "width": 1447,
+            "quality": 94
+          }
+        ]
+      }
+    }
+  },
+  "runtimeCandidates": [
+    {
+      "file": "wordpress/joyrent/assets/images/hero-slim-light-1447.webp",
+      "bytes": 128604,
+      "sha256": "65a9609d84c7879779cc1120833d3bec0064e0b1f89eba481a04ab1ef49a769b"
+    },
+    {
+      "file": "wordpress/joyrent/assets/images/hero-slim-light-480.webp",
+      "bytes": 21210,
+      "sha256": "25b0a2500f1704a6733c791119628d6d1b94332b85d9e43f82b74e098dba3303"
+    },
+    {
+      "file": "wordpress/joyrent/assets/images/hero-slim-light-720.webp",
+      "bytes": 41382,
+      "sha256": "fe37034d5bfcb3d32d6a4208484c316cf470696fb33f5b8002ce9dc79f0221aa"
+    },
+    {
+      "file": "wordpress/joyrent/assets/images/hero-slim-light-960.webp",
+      "bytes": 72092,
+      "sha256": "e26ec4a0be42272b7d223251205955e5bd999b1f13116b88d8490c4f665625d5"
+    },
+    {
+      "file": "wordpress/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "bytes": 127026,
+      "sha256": "c026534d3f557aa4af7b1d1168d0f954dbe263233fb23c83e929099c658bfb08"
+    },
+    {
+      "file": "wordpress/joyrent/assets/images/hero-slim-studio-480.webp",
+      "bytes": 16360,
+      "sha256": "03abc64fac319e6247dd840cb5ae53d648365a303d849898e630fa0e4a636640"
+    },
+    {
+      "file": "wordpress/joyrent/assets/images/hero-slim-studio-720.webp",
+      "bytes": 34232,
+      "sha256": "b7f42f0bdc8256fad75115adb9ee217b89a227193b5bd19b392a72339e997932"
+    },
+    {
+      "file": "wordpress/joyrent/assets/images/hero-slim-studio-960.webp",
+      "bytes": 54064,
+      "sha256": "74206c2d1c78bffa00a660837589cc5c3d0c9d12486b295ad0592069fe8d788b"
+    }
+  ],
+  "lowerKitUnchanged": true
+}

@@ -1,0 +1,1024 @@
+[
+  {
+    "language": "uk",
+    "width": 320,
+    "height": 568,
+    "dpr": 3,
+    "quality": {
+      "stage": {
+        "x": 20,
+        "y": 506.40625,
+        "width": 280,
+        "height": 210.328125,
+        "top": 506.40625,
+        "right": 300,
+        "bottom": 716.734375,
+        "left": 20
+      },
+      "photo": [
+        {
+          "file": "hero-slim-studio-960.webp",
+          "box": {
+            "x": 20,
+            "y": 506.40625,
+            "width": 280,
+            "height": 210.328125,
+            "top": 506.40625,
+            "right": 300,
+            "bottom": 716.734375,
+            "left": 20
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        },
+        {
+          "file": "hero-slim-light-960.webp",
+          "box": {
+            "x": 20,
+            "y": 506.40625,
+            "width": 280,
+            "height": 210.328125,
+            "top": 506.40625,
+            "right": 300,
+            "bottom": 716.734375,
+            "left": 20
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        }
+      ],
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": false,
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp 720w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": true,
+          "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-480.webp 480w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp 960w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        }
+      ]
+    },
+    "requests": [
+      "hero-slim-studio-960.webp",
+      "hero-slim-light-960.webp"
+    ],
+    "noOverflow": true,
+    "noErrors": true,
+    "nativePixelCoverage": 1.143
+  },
+  {
+    "language": "ru",
+    "width": 320,
+    "height": 568,
+    "dpr": 3,
+    "quality": {
+      "stage": {
+        "x": 20,
+        "y": 506.40625,
+        "width": 280,
+        "height": 210.328125,
+        "top": 506.40625,
+        "right": 300,
+        "bottom": 716.734375,
+        "left": 20
+      },
+      "photo": [
+        {
+          "file": "hero-slim-studio-960.webp",
+          "box": {
+            "x": 20,
+            "y": 506.40625,
+            "width": 280,
+            "height": 210.328125,
+            "top": 506.40625,
+            "right": 300,
+            "bottom": 716.734375,
+            "left": 20
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        },
+        {
+          "file": "hero-slim-light-960.webp",
+          "box": {
+            "x": 20,
+            "y": 506.40625,
+            "width": 280,
+            "height": 210.328125,
+            "top": 506.40625,
+            "right": 300,
+            "bottom": 716.734375,
+            "left": 20
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        }
+      ],
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": false,
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp 720w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": true,
+          "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-480.webp 480w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp 960w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        }
+      ]
+    },
+    "requests": [
+      "hero-slim-studio-960.webp",
+      "hero-slim-light-960.webp"
+    ],
+    "noOverflow": true,
+    "noErrors": true,
+    "nativePixelCoverage": 1.143
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "height": 844,
+    "dpr": 3,
+    "quality": {
+      "stage": {
+        "x": 24,
+        "y": 496.0625,
+        "width": 342,
+        "height": 256.90625,
+        "top": 496.0625,
+        "right": 366,
+        "bottom": 752.96875,
+        "left": 24
+      },
+      "photo": [
+        {
+          "file": "hero-slim-studio-1447.webp",
+          "box": {
+            "x": 24,
+            "y": 496.0625,
+            "width": 342,
+            "height": 256.90625,
+            "top": 496.0625,
+            "right": 366,
+            "bottom": 752.96875,
+            "left": 24
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        },
+        {
+          "file": "hero-slim-light-1447.webp",
+          "box": {
+            "x": 24,
+            "y": 496.0625,
+            "width": 342,
+            "height": 256.90625,
+            "top": 496.0625,
+            "right": 366,
+            "bottom": 752.96875,
+            "left": 24
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        }
+      ],
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": false,
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp 720w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": true,
+          "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-480.webp 480w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp 960w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        }
+      ]
+    },
+    "requests": [
+      "hero-slim-studio-1447.webp",
+      "hero-slim-light-1447.webp"
+    ],
+    "noOverflow": true,
+    "noErrors": true,
+    "nativePixelCoverage": 1.41
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "height": 844,
+    "dpr": 3,
+    "quality": {
+      "stage": {
+        "x": 24,
+        "y": 520.5625,
+        "width": 342,
+        "height": 256.90625,
+        "top": 520.5625,
+        "right": 366,
+        "bottom": 777.46875,
+        "left": 24
+      },
+      "photo": [
+        {
+          "file": "hero-slim-studio-1447.webp",
+          "box": {
+            "x": 24,
+            "y": 520.5625,
+            "width": 342,
+            "height": 256.90625,
+            "top": 520.5625,
+            "right": 366,
+            "bottom": 777.46875,
+            "left": 24
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        },
+        {
+          "file": "hero-slim-light-1447.webp",
+          "box": {
+            "x": 24,
+            "y": 520.5625,
+            "width": 342,
+            "height": 256.90625,
+            "top": 520.5625,
+            "right": 366,
+            "bottom": 777.46875,
+            "left": 24
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        }
+      ],
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": false,
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp 720w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": true,
+          "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-480.webp 480w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp 960w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        }
+      ]
+    },
+    "requests": [
+      "hero-slim-studio-1447.webp",
+      "hero-slim-light-1447.webp"
+    ],
+    "noOverflow": true,
+    "noErrors": true,
+    "nativePixelCoverage": 1.41
+  },
+  {
+    "language": "uk",
+    "width": 430,
+    "height": 932,
+    "dpr": 3,
+    "quality": {
+      "stage": {
+        "x": 24,
+        "y": 504.171875,
+        "width": 382,
+        "height": 286.953125,
+        "top": 504.171875,
+        "right": 406,
+        "bottom": 791.125,
+        "left": 24
+      },
+      "photo": [
+        {
+          "file": "hero-slim-studio-1447.webp",
+          "box": {
+            "x": 24,
+            "y": 504.171875,
+            "width": 382,
+            "height": 286.953125,
+            "top": 504.171875,
+            "right": 406,
+            "bottom": 791.125,
+            "left": 24
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        },
+        {
+          "file": "hero-slim-light-1447.webp",
+          "box": {
+            "x": 24,
+            "y": 504.171875,
+            "width": 382,
+            "height": 286.953125,
+            "top": 504.171875,
+            "right": 406,
+            "bottom": 791.125,
+            "left": 24
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        }
+      ],
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": false,
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp 720w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": true,
+          "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-480.webp 480w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp 960w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        }
+      ]
+    },
+    "requests": [
+      "hero-slim-studio-1447.webp",
+      "hero-slim-light-1447.webp"
+    ],
+    "noOverflow": true,
+    "noErrors": true,
+    "nativePixelCoverage": 1.263
+  },
+  {
+    "language": "uk",
+    "width": 768,
+    "height": 1024,
+    "dpr": 2,
+    "quality": {
+      "stage": {
+        "x": 164,
+        "y": 502.984375,
+        "width": 440,
+        "height": 330.53125,
+        "top": 502.984375,
+        "right": 604,
+        "bottom": 833.515625,
+        "left": 164
+      },
+      "photo": [
+        {
+          "file": "hero-slim-studio-960.webp",
+          "box": {
+            "x": 164,
+            "y": 502.984375,
+            "width": 440,
+            "height": 330.53125,
+            "top": 502.984375,
+            "right": 604,
+            "bottom": 833.515625,
+            "left": 164
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        },
+        {
+          "file": "hero-slim-light-960.webp",
+          "box": {
+            "x": 164,
+            "y": 502.984375,
+            "width": 440,
+            "height": 330.53125,
+            "top": 502.984375,
+            "right": 604,
+            "bottom": 833.515625,
+            "left": 164
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        }
+      ],
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": false,
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp 720w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": true,
+          "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-480.webp 480w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp 960w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        }
+      ]
+    },
+    "requests": [
+      "hero-slim-studio-960.webp",
+      "hero-slim-light-960.webp"
+    ],
+    "noOverflow": true,
+    "noErrors": true,
+    "nativePixelCoverage": 1.091
+  },
+  {
+    "language": "uk",
+    "width": 900,
+    "height": 1000,
+    "dpr": 2,
+    "quality": {
+      "stage": {
+        "x": 230,
+        "y": 502.984375,
+        "width": 440,
+        "height": 330.53125,
+        "top": 502.984375,
+        "right": 670,
+        "bottom": 833.515625,
+        "left": 230
+      },
+      "photo": [
+        {
+          "file": "hero-slim-studio-960.webp",
+          "box": {
+            "x": 230,
+            "y": 502.984375,
+            "width": 440,
+            "height": 330.53125,
+            "top": 502.984375,
+            "right": 670,
+            "bottom": 833.515625,
+            "left": 230
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        },
+        {
+          "file": "hero-slim-light-960.webp",
+          "box": {
+            "x": 230,
+            "y": 502.984375,
+            "width": 440,
+            "height": 330.53125,
+            "top": 502.984375,
+            "right": 670,
+            "bottom": 833.515625,
+            "left": 230
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        }
+      ],
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": false,
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp 720w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": true,
+          "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-480.webp 480w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp 960w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        }
+      ]
+    },
+    "requests": [
+      "hero-slim-studio-960.webp",
+      "hero-slim-light-960.webp"
+    ],
+    "noOverflow": true,
+    "noErrors": true,
+    "nativePixelCoverage": 1.091
+  },
+  {
+    "language": "uk",
+    "width": 901,
+    "height": 900,
+    "dpr": 2,
+    "quality": {
+      "stage": {
+        "x": 482,
+        "y": 245.21875,
+        "width": 372.140625,
+        "height": 279.546875,
+        "top": 245.21875,
+        "right": 854.140625,
+        "bottom": 524.765625,
+        "left": 482
+      },
+      "photo": [
+        {
+          "file": "hero-slim-studio-1447.webp",
+          "box": {
+            "x": 482,
+            "y": 245.21875,
+            "width": 372.140625,
+            "height": 279.546875,
+            "top": 245.21875,
+            "right": 854.140625,
+            "bottom": 524.765625,
+            "left": 482
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        },
+        {
+          "file": "hero-slim-light-1447.webp",
+          "box": {
+            "x": 482,
+            "y": 245.21875,
+            "width": 372.140625,
+            "height": 279.546875,
+            "top": 245.21875,
+            "right": 854.140625,
+            "bottom": 524.765625,
+            "left": 482
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        }
+      ],
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": true,
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp 720w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": false,
+          "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-480.webp 480w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp 960w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        }
+      ]
+    },
+    "requests": [
+      "hero-slim-studio-1447.webp",
+      "hero-slim-light-1447.webp"
+    ],
+    "noOverflow": true,
+    "noErrors": true,
+    "nativePixelCoverage": 1.944
+  },
+  {
+    "language": "uk",
+    "width": 1024,
+    "height": 900,
+    "dpr": 2,
+    "quality": {
+      "stage": {
+        "x": 545.703125,
+        "y": 237.34375,
+        "width": 425.046875,
+        "height": 319.296875,
+        "top": 237.34375,
+        "right": 970.75,
+        "bottom": 556.640625,
+        "left": 545.703125
+      },
+      "photo": [
+        {
+          "file": "hero-slim-studio-1447.webp",
+          "box": {
+            "x": 545.703125,
+            "y": 237.34375,
+            "width": 425.046875,
+            "height": 319.296875,
+            "top": 237.34375,
+            "right": 970.75,
+            "bottom": 556.640625,
+            "left": 545.703125
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        },
+        {
+          "file": "hero-slim-light-1447.webp",
+          "box": {
+            "x": 545.703125,
+            "y": 237.34375,
+            "width": 425.046875,
+            "height": 319.296875,
+            "top": 237.34375,
+            "right": 970.75,
+            "bottom": 556.640625,
+            "left": 545.703125
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        }
+      ],
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": true,
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp 720w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": false,
+          "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-480.webp 480w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp 960w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        }
+      ]
+    },
+    "requests": [
+      "hero-slim-studio-1447.webp",
+      "hero-slim-light-1447.webp"
+    ],
+    "noOverflow": true,
+    "noErrors": true,
+    "nativePixelCoverage": 1.702
+  },
+  {
+    "language": "uk",
+    "width": 1201,
+    "height": 900,
+    "dpr": 2,
+    "quality": {
+      "stage": {
+        "x": 519.296875,
+        "y": 169.40625,
+        "width": 619.265625,
+        "height": 465.1875,
+        "top": 169.40625,
+        "right": 1138.5625,
+        "bottom": 634.59375,
+        "left": 519.296875
+      },
+      "photo": [
+        {
+          "file": "hero-slim-studio-1447.webp",
+          "box": {
+            "x": 519.296875,
+            "y": 169.40625,
+            "width": 619.265625,
+            "height": 465.1875,
+            "top": 169.40625,
+            "right": 1138.5625,
+            "bottom": 634.59375,
+            "left": 519.296875
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        },
+        {
+          "file": "hero-slim-light-1447.webp",
+          "box": {
+            "x": 519.296875,
+            "y": 169.40625,
+            "width": 619.265625,
+            "height": 465.1875,
+            "top": 169.40625,
+            "right": 1138.5625,
+            "bottom": 634.59375,
+            "left": 519.296875
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        }
+      ],
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": true,
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp 720w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": false,
+          "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-480.webp 480w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp 960w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        }
+      ]
+    },
+    "requests": [
+      "hero-slim-studio-1447.webp",
+      "hero-slim-light-1447.webp"
+    ],
+    "noOverflow": true,
+    "noErrors": true,
+    "nativePixelCoverage": 1.168
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "height": 900,
+    "dpr": 2,
+    "quality": {
+      "stage": {
+        "x": 646.53125,
+        "y": 162.09375,
+        "width": 718.578125,
+        "height": 539.796875,
+        "top": 162.09375,
+        "right": 1365.109375,
+        "bottom": 701.890625,
+        "left": 646.53125
+      },
+      "photo": [
+        {
+          "file": "hero-slim-studio-1447.webp",
+          "box": {
+            "x": 646.53125,
+            "y": 162.09375,
+            "width": 718.578125,
+            "height": 539.796875,
+            "top": 162.09375,
+            "right": 1365.109375,
+            "bottom": 701.890625,
+            "left": 646.53125
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        },
+        {
+          "file": "hero-slim-light-1447.webp",
+          "box": {
+            "x": 646.53125,
+            "y": 162.09375,
+            "width": 718.578125,
+            "height": 539.796875,
+            "top": 162.09375,
+            "right": 1365.109375,
+            "bottom": 701.890625,
+            "left": 646.53125
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        }
+      ],
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": true,
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp 720w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": false,
+          "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-480.webp 480w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp 960w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        }
+      ]
+    },
+    "requests": [
+      "hero-slim-studio-1447.webp",
+      "hero-slim-light-1447.webp"
+    ],
+    "noOverflow": true,
+    "noErrors": true,
+    "nativePixelCoverage": 1.007
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "height": 900,
+    "dpr": 2,
+    "quality": {
+      "stage": {
+        "x": 646.53125,
+        "y": 162.09375,
+        "width": 718.578125,
+        "height": 539.796875,
+        "top": 162.09375,
+        "right": 1365.109375,
+        "bottom": 701.890625,
+        "left": 646.53125
+      },
+      "photo": [
+        {
+          "file": "hero-slim-studio-1447.webp",
+          "box": {
+            "x": 646.53125,
+            "y": 162.09375,
+            "width": 718.578125,
+            "height": 539.796875,
+            "top": 162.09375,
+            "right": 1365.109375,
+            "bottom": 701.890625,
+            "left": 646.53125
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        },
+        {
+          "file": "hero-slim-light-1447.webp",
+          "box": {
+            "x": 646.53125,
+            "y": 162.09375,
+            "width": 718.578125,
+            "height": 539.796875,
+            "top": 162.09375,
+            "right": 1365.109375,
+            "bottom": 701.890625,
+            "left": 646.53125
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        }
+      ],
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": true,
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp 720w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": false,
+          "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-480.webp 480w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp 960w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        }
+      ]
+    },
+    "requests": [
+      "hero-slim-studio-1447.webp",
+      "hero-slim-light-1447.webp"
+    ],
+    "noOverflow": true,
+    "noErrors": true,
+    "nativePixelCoverage": 1.007
+  },
+  {
+    "language": "uk",
+    "width": 1920,
+    "height": 1080,
+    "dpr": 2,
+    "quality": {
+      "stage": {
+        "x": 928,
+        "y": 161.5625,
+        "width": 720,
+        "height": 540.859375,
+        "top": 161.5625,
+        "right": 1648,
+        "bottom": 702.421875,
+        "left": 928
+      },
+      "photo": [
+        {
+          "file": "hero-slim-studio-1447.webp",
+          "box": {
+            "x": 928,
+            "y": 161.5625,
+            "width": 720,
+            "height": 540.859375,
+            "top": 161.5625,
+            "right": 1648,
+            "bottom": 702.421875,
+            "left": 928
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        },
+        {
+          "file": "hero-slim-light-1447.webp",
+          "box": {
+            "x": 928,
+            "y": 161.5625,
+            "width": 720,
+            "height": 540.859375,
+            "top": 161.5625,
+            "right": 1648,
+            "bottom": 702.421875,
+            "left": 928
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        }
+      ],
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": true,
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp 720w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": false,
+          "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-480.webp 480w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp 960w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        }
+      ]
+    },
+    "requests": [
+      "hero-slim-studio-1447.webp",
+      "hero-slim-light-1447.webp"
+    ],
+    "noOverflow": true,
+    "noErrors": true,
+    "nativePixelCoverage": 1.005
+  },
+  {
+    "language": "uk",
+    "width": 3000,
+    "height": 1200,
+    "dpr": 1,
+    "quality": {
+      "stage": {
+        "x": 1468,
+        "y": 161.5625,
+        "width": 720,
+        "height": 540.859375,
+        "top": 161.5625,
+        "right": 2188,
+        "bottom": 702.421875,
+        "left": 1468
+      },
+      "photo": [
+        {
+          "file": "hero-slim-studio-720.webp",
+          "box": {
+            "x": 1468,
+            "y": 161.5625,
+            "width": 720,
+            "height": 540.859375,
+            "top": 161.5625,
+            "right": 2188,
+            "bottom": 702.421875,
+            "left": 1468
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        },
+        {
+          "file": "hero-slim-light-720.webp",
+          "box": {
+            "x": 1468,
+            "y": 161.5625,
+            "width": 720,
+            "height": 540.859375,
+            "top": 161.5625,
+            "right": 2188,
+            "bottom": 702.421875,
+            "left": 1468
+          },
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "filter": "none",
+          "transform": "none"
+        }
+      ],
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": true,
+          "sizes": "(min-width: 1443px) 720px, (min-width: 1201px) calc(41.6vw + 120px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp 720w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": false,
+          "sizes": "(min-width: 489px) 440px, (max-width: 375px) calc(100vw - 40px), calc(100vw - 48px)",
+          "set": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-480.webp 480w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp 960w, http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp 1447w"
+        }
+      ]
+    },
+    "requests": [
+      "hero-slim-studio-720.webp",
+      "hero-slim-light-720.webp"
+    ],
+    "noOverflow": true,
+    "noErrors": true,
+    "nativePixelCoverage": 1.0
+  }
+]

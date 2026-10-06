@@ -27,6 +27,17 @@ for (const [mode, fallbackMaster] of [['desktop', 'ps5-commercial-desktop-close.
   }
 }
 
+// Optional transparent studio light uses the same canvas and responsive sizes
+// as the product photo. Encode each shared candidate once, preserving alpha.
+const encodedLights = new Set();
+for (const mode of ['desktop', 'mobile']) {
+  for (const source of manifest.light?.[mode]?.sources ?? []) {
+    if (encodedLights.has(source.file)) continue;
+    await derivative(source.master || manifest.light[mode].master, source.file, source.width, source.quality ?? 94);
+    encodedLights.add(source.file);
+  }
+}
+
 for (const width of [560, 1120]) {
   await derivative('dualsense-cutout.png', `dualsense-cutout-${width}.webp`, width);
 }
@@ -34,7 +45,7 @@ for (const width of [560, 1120]) {
 // Share crawlers get a small JPEG of existing hero artwork, with no composition
 // change. The same recipe preserves this asset when responsive images regenerate.
 const share = join(directory, 'ps5-share.jpg');
-await sharp(join(directory, 'ps5-commercial-desktop-detail.png'))
+await sharp(join(directory, manifest.desktop.master || 'ps5-commercial-desktop-detail.png'))
   .resize({ width: 1200, withoutEnlargement: true })
   .jpeg({ quality: 85, mozjpeg: true }).toFile(share);
 total += (await stat(share)).size;
