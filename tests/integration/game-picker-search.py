@@ -1,8 +1,10 @@
 from pathlib import Path
 from urllib.parse import urlparse
 from playwright.sync_api import sync_playwright,expect
-import json,sys
+import json,sys,os
 root=Path(__file__).resolve().parents[2]
+base=os.getenv('JOYRENT_TEST_URL','http://localhost:5177').rstrip('/')
+assert urlparse(base).hostname in ['localhost','127.0.0.1'], 'Use a local site for this regression.'
 cat=json.loads((root/'wordpress/joyrent-rentals/data/catalog.json').read_text())
 cat.update(currency='UAH',acceptingRequests=True,settings={})
 results=[]
@@ -17,7 +19,7 @@ try:
     elif urlparse(r.request.url).hostname not in ['localhost','127.0.0.1']:r.abort()
     else:r.continue_()
    ctx.route('**/*',route)
-   p=ctx.new_page();p.goto('http://localhost:5177/'+('?lang=ru' if lang=='ru' else ''))
+   p=ctx.new_page();p.goto(base+'/'+('?lang=ru' if lang=='ru' else ''))
    p.wait_for_function('document.querySelectorAll(".tariff").length===4')
    p.evaluate('document.fonts.ready')
    p.locator('.game-picker-button').click()

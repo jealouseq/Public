@@ -13,6 +13,15 @@ dialog.game-picker-dialog.game-picker-structured { --game-picker-max-height: 840
 .game-picker-structured .game-picker-scroll:focus-visible { outline: 2px solid #e0bb7c; outline-offset: -3px; }
 .game-picker-structured .game-picker-footer { position: static; min-width: 0; margin: 0; padding: 16px 28px; border-top: 1px solid #55504a; background: #15171a; gap: 16px; }
 .game-picker-structured .game-picker-footer p { color: #c4c5c5; overflow-wrap: anywhere; }
+.game-picker-structured .game-picker-selection-toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-width: 0; min-height: 48px; max-width: 65%; padding: 8px 12px; border: 1px solid #665945; border-radius: var(--radius-control, 8px); color: var(--text); background: transparent; text-align: start; }
+.game-picker-selection-toggle > span { min-width: 0; }
+.selection-review-count { display: block; overflow-wrap: anywhere; font-size: 13px; line-height: 1.5; }
+.selection-review-action { display: block; margin-top: 2px; font-size: 12px; line-height: 1.5; color: var(--accent); }
+.game-picker-selection-toggle > svg { flex-shrink: 0; color: var(--accent); }
+.game-picker-selection-toggle[aria-pressed='true'] { border-color: var(--accent); background: #c79b5d0b; }
+.game-picker-selection-toggle[aria-pressed='true'] > svg { transform: rotate(180deg); }
+.game-picker-selection-toggle:disabled { border-color: transparent; padding-left: 0; opacity: 1; cursor: default; color: #c4c5c5; }
+.game-picker-selection-toggle:disabled .selection-review-action, .game-picker-selection-toggle:disabled > svg { display: none; }
 .game-picker-structured .game-picker-footer .button { min-width: 150px; min-height: 48px; }
 /* Let full titles determine row height; sibling actions share the bottom edge. */
 .game-picker-structured .picker-game { display: flex; flex-direction: column; }
@@ -36,6 +45,7 @@ dialog.game-picker-dialog.game-picker-structured { --game-picker-max-height: 840
 .game-picker-structured .game-picker-request[data-request-open='false'] .missing-game-heading > div { flex: none; min-width: 0; width: 100%; }
 .game-picker-structured .game-picker-request[data-request-open='false'] .missing-game-toggle { align-self: center; }
 .game-picker-structured .missing-game-saved { margin-top: 6px; color: #c4c5c5; font-size: 13px; line-height: 1.6; overflow-wrap: anywhere; }
+.game-picker-structured .missing-game-description { max-width: 420px; margin: 8px auto 0; color: var(--text-support, #c1c2c4); font-size: 14px; line-height: 1.65; }
 .game-picker-structured .missing-game-saved strong { color: #eeeae4; font-weight: 500; }
 .game-picker-structured .missing-game-fields { padding: 18px 0 0; }
 .game-picker-structured .missing-game-fields[hidden] { display: none; }

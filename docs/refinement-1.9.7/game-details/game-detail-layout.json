@@ -1,0 +1,3180 @@
+{
+  "status": "PASS",
+  "dialogCases": 186,
+  "cases": [
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "EA SPORTS FC 27",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Grand Theft Auto V",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Mortal Kombat 1",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "EA SPORTS UFC 6",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Tekken 8",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Split Fiction",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "It Takes Two",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Call of Duty: Black Ops 7",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Gran Turismo 7",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "God of War Ragnarök",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Red Dead Redemption 2",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Marvel’s Spider-Man 2",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Hogwarts Legacy",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "ELDEN RING",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Resident Evil Requiem",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "ASTRO BOT",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Sackboy: A Big Adventure",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Horizon Forbidden West",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "EA SPORTS FC 27",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Grand Theft Auto V",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "It Takes Two",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Call of Duty: Black Ops 7",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Gran Turismo 7",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "God of War Ragnarök",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Red Dead Redemption 2",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Hogwarts Legacy",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "ELDEN RING",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Sackboy: A Big Adventure",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Horizon Forbidden West",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Mortal Kombat 11",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "EA SPORTS FC 27",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Grand Theft Auto V",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Mortal Kombat 1",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "EA SPORTS UFC 6",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Tekken 8",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Split Fiction",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "It Takes Two",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Call of Duty: Black Ops 7",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Gran Turismo 7",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "God of War Ragnarök",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Red Dead Redemption 2",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Marvel’s Spider-Man 2",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Hogwarts Legacy",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "ELDEN RING",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Resident Evil Requiem",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "ASTRO BOT",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Sackboy: A Big Adventure",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Horizon Forbidden West",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "EA SPORTS FC 27",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Grand Theft Auto V",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "It Takes Two",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Call of Duty: Black Ops 7",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Gran Turismo 7",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "God of War Ragnarök",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Red Dead Redemption 2",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Hogwarts Legacy",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "ELDEN RING",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Sackboy: A Big Adventure",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Horizon Forbidden West",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        1440,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Mortal Kombat 11",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 726,
+      "clientWidth": 726,
+      "coverWidth": 284
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "EA SPORTS FC 27",
+      "height": 309.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "Grand Theft Auto V",
+      "height": 285.78125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "Mortal Kombat 1",
+      "height": 285.78125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "height": 339.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "EA SPORTS UFC 6",
+      "height": 309.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "Tekken 8",
+      "height": 285.78125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "Split Fiction",
+      "height": 309.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "It Takes Two",
+      "height": 309.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "Call of Duty: Black Ops 7",
+      "height": 400.953125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "Gran Turismo 7",
+      "height": 309.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "God of War Ragnarök",
+      "height": 309.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "Red Dead Redemption 2",
+      "height": 339.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "Marvel’s Spider-Man 2",
+      "height": 315.78125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "Hogwarts Legacy",
+      "height": 285.78125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "ELDEN RING",
+      "height": 309.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "Resident Evil Requiem",
+      "height": 339.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "ASTRO BOT",
+      "height": 309.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "Sackboy: A Big Adventure",
+      "height": 315.78125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps5",
+      "title": "Horizon Forbidden West",
+      "height": 339.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps4",
+      "title": "EA SPORTS FC 27",
+      "height": 309.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps4",
+      "title": "Grand Theft Auto V",
+      "height": 285.78125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps4",
+      "title": "It Takes Two",
+      "height": 309.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps4",
+      "title": "Call of Duty: Black Ops 7",
+      "height": 400.953125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps4",
+      "title": "Gran Turismo 7",
+      "height": 309.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps4",
+      "title": "God of War Ragnarök",
+      "height": 309.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps4",
+      "title": "Red Dead Redemption 2",
+      "height": 339.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps4",
+      "title": "Hogwarts Legacy",
+      "height": 285.78125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps4",
+      "title": "ELDEN RING",
+      "height": 309.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps4",
+      "title": "Sackboy: A Big Adventure",
+      "height": 315.78125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps4",
+      "title": "Horizon Forbidden West",
+      "height": 339.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        390,
+        844
+      ],
+      "console": "ps4",
+      "title": "Mortal Kombat 11",
+      "height": 285.78125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 287,
+      "clientWidth": 287,
+      "coverWidth": 287
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "EA SPORTS FC 27",
+      "height": 421.5625,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "Grand Theft Auto V",
+      "height": 335.28125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "Mortal Kombat 1",
+      "height": 344.78125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "height": 412.0625,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "EA SPORTS UFC 6",
+      "height": 421.5625,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "Tekken 8",
+      "height": 368.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "Split Fiction",
+      "height": 391.5625,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "It Takes Two",
+      "height": 391.5625,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "Call of Duty: Black Ops 7",
+      "height": 483.34375,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "Gran Turismo 7",
+      "height": 368.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "God of War Ragnarök",
+      "height": 405.453125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "Red Dead Redemption 2",
+      "height": 405.453125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "Marvel’s Spider-Man 2",
+      "height": 358.671875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "Hogwarts Legacy",
+      "height": 358.671875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "ELDEN RING",
+      "height": 352.0625,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "Resident Evil Requiem",
+      "height": 405.453125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "ASTRO BOT",
+      "height": 352.0625,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "Sackboy: A Big Adventure",
+      "height": 398.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps5",
+      "title": "Horizon Forbidden West",
+      "height": 382.0625,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps4",
+      "title": "EA SPORTS FC 27",
+      "height": 421.5625,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps4",
+      "title": "Grand Theft Auto V",
+      "height": 335.28125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps4",
+      "title": "It Takes Two",
+      "height": 391.5625,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps4",
+      "title": "Call of Duty: Black Ops 7",
+      "height": 443.84375,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps4",
+      "title": "Gran Turismo 7",
+      "height": 368.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps4",
+      "title": "God of War Ragnarök",
+      "height": 405.453125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps4",
+      "title": "Red Dead Redemption 2",
+      "height": 405.453125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps4",
+      "title": "Hogwarts Legacy",
+      "height": 358.671875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps4",
+      "title": "ELDEN RING",
+      "height": 352.0625,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps4",
+      "title": "Sackboy: A Big Adventure",
+      "height": 398.171875,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps4",
+      "title": "Horizon Forbidden West",
+      "height": 382.0625,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        320,
+        740
+      ],
+      "console": "ps4",
+      "title": "Mortal Kombat 11",
+      "height": 344.78125,
+      "buttonBottom": 27,
+      "stacked": true,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 235,
+      "clientWidth": 235,
+      "coverWidth": 235
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "EA SPORTS FC 27",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Grand Theft Auto V",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Mortal Kombat 1",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "EA SPORTS UFC 6",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Tekken 8",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Split Fiction",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "It Takes Two",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Call of Duty: Black Ops 7",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Gran Turismo 7",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "God of War Ragnarök",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Red Dead Redemption 2",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Marvel’s Spider-Man 2",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Hogwarts Legacy",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "ELDEN RING",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Resident Evil Requiem",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "ASTRO BOT",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Sackboy: A Big Adventure",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps5",
+      "title": "Horizon Forbidden West",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps4",
+      "title": "EA SPORTS FC 27",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Grand Theft Auto V",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps4",
+      "title": "It Takes Two",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Call of Duty: Black Ops 7",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Gran Turismo 7",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps4",
+      "title": "God of War Ragnarök",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Red Dead Redemption 2",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Hogwarts Legacy",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps4",
+      "title": "ELDEN RING",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Sackboy: A Big Adventure",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Horizon Forbidden West",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "uk",
+      "viewport": [
+        768,
+        1000
+      ],
+      "console": "ps4",
+      "title": "Mortal Kombat 11",
+      "height": 440,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "flex",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "EA SPORTS FC 27",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "Grand Theft Auto V",
+      "height": 317.875,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "Mortal Kombat 1",
+      "height": 317.875,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "height": 379.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "EA SPORTS UFC 6",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "Tekken 8",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "Split Fiction",
+      "height": 368.25,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "It Takes Two",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "Call of Duty: Black Ops 7",
+      "height": 409.640625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "Gran Turismo 7",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "God of War Ragnarök",
+      "height": 368.25,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "Red Dead Redemption 2",
+      "height": 368.25,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "Marvel’s Spider-Man 2",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "Hogwarts Legacy",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "ELDEN RING",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "Resident Evil Requiem",
+      "height": 368.25,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "ASTRO BOT",
+      "height": 368.25,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "Sackboy: A Big Adventure",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps5",
+      "title": "Horizon Forbidden West",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps4",
+      "title": "EA SPORTS FC 27",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps4",
+      "title": "Grand Theft Auto V",
+      "height": 317.875,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps4",
+      "title": "It Takes Two",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps4",
+      "title": "Call of Duty: Black Ops 7",
+      "height": 409.640625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps4",
+      "title": "Gran Turismo 7",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps4",
+      "title": "God of War Ragnarök",
+      "height": 368.25,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps4",
+      "title": "Red Dead Redemption 2",
+      "height": 368.25,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps4",
+      "title": "Hogwarts Legacy",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps4",
+      "title": "ELDEN RING",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps4",
+      "title": "Sackboy: A Big Adventure",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps4",
+      "title": "Horizon Forbidden West",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    },
+    {
+      "language": "ru",
+      "viewport": [
+        768,
+        430
+      ],
+      "console": "ps4",
+      "title": "Mortal Kombat 11",
+      "height": 343.0625,
+      "buttonBottom": 33,
+      "stacked": false,
+      "copyDisplay": "block",
+      "copyOverflow": "visible",
+      "scrollWidth": 647,
+      "clientWidth": 647,
+      "coverWidth": 205
+    }
+  ],
+  "screenshots": [
+    "uk-1440-0.png",
+    "uk-1440-1.png",
+    "uk-1440-3.png",
+    "uk-390-0.png",
+    "uk-390-1.png",
+    "uk-390-3.png"
+  ],
+  "nestedPickerCases": 6,
+  "customLongCopyCases": 2,
+  "gameLimitCases": 2,
+  "realOrdersOrMail": 0
+}
