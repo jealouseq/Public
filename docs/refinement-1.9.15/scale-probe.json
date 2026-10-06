@@ -1,0 +1,87 @@
+[
+  {
+    "width": 1598,
+    "language": "uk",
+    "before": {
+      "x": 766.984375,
+      "y": 161.5625,
+      "width": 720,
+      "height": 540.859375
+    },
+    "after": {
+      "x": 816.984375,
+      "y": 180.34375,
+      "width": 670,
+      "height": 503.296875
+    },
+    "reductionPercent": 6.94
+  },
+  {
+    "width": 1440,
+    "language": "uk",
+    "before": {
+      "x": 646.53125,
+      "y": 162.09375,
+      "width": 718.578125,
+      "height": 539.796875
+    },
+    "after": {
+      "x": 696.53125,
+      "y": 180.875,
+      "width": 668.578125,
+      "height": 502.234375
+    },
+    "reductionPercent": 6.96
+  },
+  {
+    "width": 1201,
+    "language": "uk",
+    "before": {
+      "x": 519.296875,
+      "y": 169.40625,
+      "width": 619.265625,
+      "height": 465.1875
+    },
+    "after": {
+      "x": 569.296875,
+      "y": 188.1875,
+      "width": 569.265625,
+      "height": 427.625
+    },
+    "reductionPercent": 8.07
+  },
+  {
+    "width": 390,
+    "language": "uk",
+    "before": {
+      "x": 24,
+      "y": 496.0625,
+      "width": 342,
+      "height": 256.90625
+    },
+    "after": {
+      "x": 24,
+      "y": 496.0625,
+      "width": 342,
+      "height": 256.90625
+    },
+    "reductionPercent": 0.0
+  },
+  {
+    "width": 320,
+    "language": "ru",
+    "before": {
+      "x": 20,
+      "y": 506.40625,
+      "width": 280,
+      "height": 210.328125
+    },
+    "after": {
+      "x": 20,
+      "y": 506.40625,
+      "width": 280,
+      "height": 210.328125
+    },
+    "reductionPercent": 0.0
+  }
+]

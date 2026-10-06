@@ -1,3 +1,24 @@
+# JOYRENT 1.9.15 — desktop hero scale refinement
+
+Source visual truth: user's installed1598×774 screenshot in chat and matching1.9.14 local scene. Requested adjustment: console and controller slightly smaller. Target is the same scene at≈7% smaller desktop scale, preserving image/proportions and mobile. [Matched before/final pair](docs/refinement-1.9.15/comparison/matched-before-final-1598.png) uses1598×774 CSSpx,DPR1,reduced-motion,UA. Old desktop geometry is restored on the same built page with inline width720px/+120px for baseline; native assets/copy match1.9.14. Capture waits for layout and paint. Full pair3196×802 includes28px labels. [1440](docs/refinement-1.9.15/comparison/matched-before-final-1440.png) and [1201](docs/refinement-1.9.15/comparison/matched-before-final-1201.png) paired evidence likewise matches densities. Focused crops unnecessary because both subjects and controls are readable at native screenshot scale and no assets/icons/type details changed.
+
+**Findings**
+
+- [P3, addressed] Owner wanted slightly less visual weight from foreground controller and console. Shared desktop scene670px replaces720px, expanded by70px rather than120px above1201px. Actual1440 width668.58px versus718.58px,≈7% reduction. Controller/Slim retain original depth and internal proportions. Independent visual comparison finds balanced spacing and no actionable P0/P1/P2.
+- Fonts/typography: original families, weights, sizes and wraps unchanged. UA/RU controls/header/body remain identical outside scene geometry.
+- Spacing/layout rhythm: right anchor retained, more clear space beside text, complete console/controller/floor visible. 1200px unchanged,1201branch now less expansive; desktop1920/3000 caps670. Mobile390UA/RU compare pixel-for-pixel equal to1.9.14.
+- Colors/tokens: original black/white/gold and edge feather unchanged. No new glow or border; same rasterlightopacity/cycle.
+- Image quality/fidelity: all image bytes unchanged; source1447×1087 now has greater pixel reserve. Same aspect/object arrangement, no new transforms/filters; photo andlight share new sizes with preload.14DPRcaptures verify native coverage and single main fetch.
+- Copy/content: no text changes, new claims or repeat information. Booking and lower sections unchanged.
+
+Comparison history: initial injected baseline captures returned stale frame at1201/1440/1598 and looked identical. Those comparison artifacts were regenerated after setting baseline dimensions and waiting for layout/paint. Corrected pairs now show only scene-region differences;1200 remains identical as expected. This was an evidence-capture issue, not a product-code defect. Final independent review confirms corrected pairs and no P1/P2.
+
+Verification: TypeScript/Vite/theme build;13 existing local WordPress motion cases;14 responsive/DPR captures;5 paired geometry checks1200/1201/1440/1598/1920. No JS errors, overflow, duplicate main fetch or source enlargement. Scene entrance/light/pause behaviour passes. ZIP CRC/source-byte/permissions checks pass;69 oldZIPs and Rentals1.8.4 unchanged. PhysicalSafari/live deployment not tested. Implementation checklist complete: smaller desktop geometry, synchronized photo/light/preload sizing, pixel-identical mobile, reviewed paired evidence, release1.9.15.
+
+final result: passed
+
+---
+
 # JOYRENT 1.9.14 — selected Slim hero composition
 
 Source visual truth: user's selected fifth variant, [exact source](docs/refinement-1.9.14/selected-source.png),1770×889 px. Existing JOYRENT palette, interface and copy are preserved. The source is uniformly normalized to1440×723; actual local WordPress hero+header is1440×772. Both are shown on the same canvas with bottom padding rather than stretching: [combined reference/render](docs/refinement-1.9.14/comparison/selected-and-rendered.png). Reduced-motion static state, UA, Chromium,DPR2 image selection; screenshot downsampled by browser to CSS pixels.

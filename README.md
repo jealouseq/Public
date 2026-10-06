@@ -2,9 +2,9 @@
 
 [Код, скриншоты и материалы — PR #1](https://github.com/jealouseq/Public/pull/1)
 
-Украинская и русская версии сайта аренды PlayStation на **WordPress + WooCommerce**. Тема **1.9.14** переносит выбранную композицию первого экрана: PS5 Slim справа, крупный DualSense впереди, мягкое отражение и золотой свет по краям. Однократное появление заканчивается неподвижным изображением; затем меняется только отдельный слой света. Размеры WebP и preload соответствуют реальной сцене на ПК, телефоне и Retina. Эффекты останавливаются вне экрана, в скрытой вкладке и при уменьшении движения. Палитра, тексты, интерфейс и нижний комплект сохранены. **FAQ остаётся отдельной страницей.** Плагин **1.8.4** не меняется.
+Украинская и русская версии сайта аренды PlayStation на **WordPress + WooCommerce**. Тема **1.9.15** уточняет масштаб выбранного первого экрана: геймпад и PS5 Slim на широком ПК уменьшены вместе примерно на 7%, давая больше места тексту. Фото, его качество, мягкое появление и золотой свет сохранены. Responsive picture и preload соответствуют новому размеру. Мобильный первый экран UA/RU остался прежним. **FAQ остаётся отдельной страницей.** Плагин **1.8.4** не меняется.
 
-[Скачать тему 1.9.14 напрямую — ZIP](https://raw.githubusercontent.com/jealouseq/Public/feat/joyrent-wordpress/releases/joyrent-1.9.14.zip) · [Тема в репозитории](releases/joyrent-1.9.14.zip) · [Плагин 1.8.4 — ZIP](releases/joyrent-rentals-1.8.4.zip) · [Просмотр — ZIP](releases/joyrent-preview-1.9.14.zip) · [Композиция, записи и проверки](docs/refinement-1.9.14/README.md) · [Резкость комплекта 1.9.13](docs/refinement-1.9.13/README.md) · [Выбранный комплект 1.9.12](docs/refinement-1.9.12/README.md)
+[Скачать тему 1.9.15 напрямую — ZIP](https://raw.githubusercontent.com/jealouseq/Public/feat/joyrent-wordpress/releases/joyrent-1.9.15.zip) · [Тема в репозитории](releases/joyrent-1.9.15.zip) · [Плагин 1.8.4 — ZIP](releases/joyrent-rentals-1.8.4.zip) · [Просмотр — ZIP](releases/joyrent-preview-1.9.15.zip) · [Масштаб до/после и проверки](docs/refinement-1.9.15/README.md) · [Изображения и анимация первого экрана 1.9.14](docs/refinement-1.9.14/README.md) · [Резкость комплекта 1.9.13](docs/refinement-1.9.13/README.md)
 
 [Свежий полный аудит](docs/audit-2026-10-04/README.md) · [60 пунктов запуска: сборка и оставшиеся настройки хостинга](docs/refinement-1.9.3/CHECKLIST.md)
 
