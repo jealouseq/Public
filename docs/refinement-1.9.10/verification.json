@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-06",
+  "themeVersion": "1.9.10",
+  "pluginVersion": "1.8.4",
+  "status": "PASS",
+  "checks": {
+    "unitTests": 123,
+    "unitTestFiles": 9,
+    "browserCases": 24,
+    "visualCases": 8,
+    "capturedScreenshots": 24,
+    "languages": [
+      "uk",
+      "ru"
+    ],
+    "widths": [
+      320,
+      390,
+      768,
+      844,
+      1024,
+      1440
+    ],
+    "shortScreens": [
+      [
+        320,
+        568
+      ],
+      [
+        844,
+        390
+      ]
+    ],
+    "build": "PASS",
+    "zipCRCAndSourceBytes": "PASS",
+    "historicalArchivesUnchanged": 59
+  },
+  "scope": {
+    "oldDualSenseRestored": true,
+    "controllerAndExistingCoverBytesUnchanged": true,
+    "subscriptionCards": "ImageGen photorealistic decorative mockups",
+    "discs": "Existing catalog covers with CSS optical-disc materials",
+    "fiveIndependentMotionLayers": true,
+    "reducedMotionRetainsFanArrangement": true,
+    "pluginChanged": false,
+    "liveSiteChecked": false,
+    "liveDeployment": false,
+    "realBookingsOrEmails": 0
+  },
+  "limitations": [
+    "Chromium viewport and touch emulation; physical iPhone Safari not tested.",
+    "Existing Vite main-chunk warning above 500 kB remains."
+  ]
+}

@@ -1,0 +1,314 @@
+[
+  {
+    "language": "uk",
+    "width": 390,
+    "height": 844,
+    "pageOverflow": false,
+    "stage": {
+      "x": 24,
+      "y": 247.484375,
+      "width": 342,
+      "height": 328.84375
+    },
+    "items": [
+      {
+        "class": "kit-item kit-card-plus",
+        "width": 95.75,
+        "height": 143.625
+      },
+      {
+        "class": "kit-item kit-card-ea",
+        "width": 95.75,
+        "height": 143.625
+      },
+      {
+        "class": "kit-item kit-controller",
+        "width": 307.796875,
+        "height": 205
+      },
+      {
+        "class": "kit-item kit-disc-fc",
+        "width": 95.75,
+        "height": 95.75
+      },
+      {
+        "class": "kit-item kit-disc-ufc",
+        "width": 95.75,
+        "height": 95.75
+      }
+    ]
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "height": 900,
+    "pageOverflow": false,
+    "stage": {
+      "x": 690.734375,
+      "y": 195.125,
+      "width": 640,
+      "height": 615.375
+    },
+    "items": [
+      {
+        "class": "kit-item kit-card-plus",
+        "width": 179.1875,
+        "height": 268.78125
+      },
+      {
+        "class": "kit-item kit-card-ea",
+        "width": 179.1875,
+        "height": 268.78125
+      },
+      {
+        "class": "kit-item kit-controller",
+        "width": 576,
+        "height": 384.15625
+      },
+      {
+        "class": "kit-item kit-disc-fc",
+        "width": 179.1875,
+        "height": 179.1875
+      },
+      {
+        "class": "kit-item kit-disc-ufc",
+        "width": 179.1875,
+        "height": 179.1875
+      }
+    ]
+  },
+  {
+    "language": "ru",
+    "width": 320,
+    "height": 568,
+    "pageOverflow": false,
+    "stage": {
+      "x": 20,
+      "y": 162.265625,
+      "width": 280,
+      "height": 269.21875
+    },
+    "items": [
+      {
+        "class": "kit-item kit-card-plus",
+        "width": 78.390625,
+        "height": 117.578125
+      },
+      {
+        "class": "kit-item kit-card-ea",
+        "width": 78.390625,
+        "height": 117.578125
+      },
+      {
+        "class": "kit-item kit-controller",
+        "width": 252,
+        "height": 167.84375
+      },
+      {
+        "class": "kit-item kit-disc-fc",
+        "width": 78.390625,
+        "height": 78.390625
+      },
+      {
+        "class": "kit-item kit-disc-ufc",
+        "width": 78.390625,
+        "height": 78.390625
+      }
+    ]
+  },
+  {
+    "language": "uk",
+    "width": 768,
+    "height": 1024,
+    "pageOverflow": false,
+    "stage": {
+      "x": 364.984375,
+      "y": 389.734375,
+      "width": 363.09375,
+      "height": 349.125
+    },
+    "items": [
+      {
+        "class": "kit-item kit-card-plus",
+        "width": 101.65625,
+        "height": 152.484375
+      },
+      {
+        "class": "kit-item kit-card-ea",
+        "width": 101.65625,
+        "height": 152.484375
+      },
+      {
+        "class": "kit-item kit-controller",
+        "width": 326.78125,
+        "height": 217.65625
+      },
+      {
+        "class": "kit-item kit-disc-fc",
+        "width": 101.65625,
+        "height": 101.65625
+      },
+      {
+        "class": "kit-item kit-disc-ufc",
+        "width": 101.65625,
+        "height": 101.65625
+      }
+    ]
+  },
+  {
+    "language": "uk",
+    "width": 1024,
+    "height": 900,
+    "pageOverflow": false,
+    "stage": {
+      "x": 481.515625,
+      "y": 266.828125,
+      "width": 489.25,
+      "height": 470.421875
+    },
+    "items": [
+      {
+        "class": "kit-item kit-card-plus",
+        "width": 136.984375,
+        "height": 205.46875
+      },
+      {
+        "class": "kit-item kit-card-ea",
+        "width": 136.984375,
+        "height": 205.46875
+      },
+      {
+        "class": "kit-item kit-controller",
+        "width": 440.3125,
+        "height": 293.265625
+      },
+      {
+        "class": "kit-item kit-disc-fc",
+        "width": 136.984375,
+        "height": 136.984375
+      },
+      {
+        "class": "kit-item kit-disc-ufc",
+        "width": 136.984375,
+        "height": 136.984375
+      }
+    ]
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "height": 844,
+    "pageOverflow": false,
+    "stage": {
+      "x": 24,
+      "y": 395.578125,
+      "width": 342,
+      "height": 328.84375
+    },
+    "items": [
+      {
+        "class": "kit-item kit-card-plus",
+        "width": 95.75,
+        "height": 143.625
+      },
+      {
+        "class": "kit-item kit-card-ea",
+        "width": 95.75,
+        "height": 143.625
+      },
+      {
+        "class": "kit-item kit-controller",
+        "width": 307.796875,
+        "height": 205
+      },
+      {
+        "class": "kit-item kit-disc-fc",
+        "width": 95.75,
+        "height": 95.75
+      },
+      {
+        "class": "kit-item kit-disc-ufc",
+        "width": 95.75,
+        "height": 95.75
+      }
+    ]
+  },
+  {
+    "language": "uk",
+    "width": 844,
+    "height": 390,
+    "pageOverflow": false,
+    "stage": {
+      "x": 399.578125,
+      "y": 55.203125,
+      "width": 400.546875,
+      "height": 385.140625
+    },
+    "items": [
+      {
+        "class": "kit-item kit-card-plus",
+        "width": 112.140625,
+        "height": 168.203125
+      },
+      {
+        "class": "kit-item kit-card-ea",
+        "width": 112.140625,
+        "height": 168.203125
+      },
+      {
+        "class": "kit-item kit-controller",
+        "width": 360.484375,
+        "height": 240.09375
+      },
+      {
+        "class": "kit-item kit-disc-fc",
+        "width": 112.140625,
+        "height": 112.140625
+      },
+      {
+        "class": "kit-item kit-disc-ufc",
+        "width": 112.140625,
+        "height": 112.140625
+      }
+    ]
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "height": 900,
+    "pageOverflow": false,
+    "stage": {
+      "x": 690.734375,
+      "y": 195.125,
+      "width": 640,
+      "height": 615.375
+    },
+    "items": [
+      {
+        "class": "kit-item kit-card-plus",
+        "width": 179.1875,
+        "height": 268.78125
+      },
+      {
+        "class": "kit-item kit-card-ea",
+        "width": 179.1875,
+        "height": 268.78125
+      },
+      {
+        "class": "kit-item kit-controller",
+        "width": 576,
+        "height": 384.15625
+      },
+      {
+        "class": "kit-item kit-disc-fc",
+        "width": 179.1875,
+        "height": 179.1875
+      },
+      {
+        "class": "kit-item kit-disc-ufc",
+        "width": 179.1875,
+        "height": 179.1875
+      }
+    ]
+  }
+]

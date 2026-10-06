@@ -8,14 +8,15 @@ ROOT=Path(__file__).resolve().parents[2]
 BASE=os.getenv('JOYRENT_TEST_URL','http://localhost:8080').rstrip('/')
 assert urlparse(BASE).hostname in ['localhost','127.0.0.1']
 PHASE=os.getenv('JOYRENT_TEST_PHASE','green')
-OUT=ROOT/'work/refinement-1.9.9'; OUT.mkdir(parents=True,exist_ok=True)
+OUT=ROOT/'work/refinement-1.9.10'; OUT.mkdir(parents=True,exist_ok=True)
 with urllib.request.urlopen(BASE+'/wp-json/joyrent/v1/catalog') as r: catalog=json.load(r)
 rows=[]
 with sync_playwright() as p:
     browser=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
-    cases=[('uk',390,'no-preference')] if PHASE=='red' else [(lang,w,m) for lang in ['uk','ru'] for w in [320,390,768,1024,1440] for m in ['reduce','no-preference']]
+    cases=[('uk',390,'no-preference')] if PHASE=='red' else [(lang,w,m) for lang in ['uk','ru'] for w in [320,390,768,844,1024,1440] for m in ['reduce','no-preference']]
     for lang,width,motion in cases:
-        context=browser.new_context(viewport={'width':width,'height':844 if width<701 else 1000},
+        height=568 if width==320 else 390 if width==844 else 844 if width<701 else 1000
+        context=browser.new_context(viewport={'width':width,'height':height},
             reduced_motion=motion,is_mobile=width<701,has_touch=width<701)
         errors,writes=[],[]
         def route(r):
@@ -35,18 +36,36 @@ with sync_playwright() as p:
             assert kit.inner_text().count('EA Play')==1 and kit.inner_text().count('PS Plus Deluxe')==1
             stage=kit.locator('.kit-product-stage')
             stage.scroll_into_view_if_needed()
-            expect(stage.locator('img')).to_be_visible()
-            assert stage.locator('img').get_attribute('src')!=page.locator('.hero-photo').get_attribute('src')
-            moving=stage.locator('.kit-product-image')
+            controller=stage.locator('.kit-controller-image')
+            expect(controller).to_be_visible()
+            assert 'dualsense-cutout' in controller.get_attribute('src')
+            expect(stage.locator('.kit-subscription-image')).to_have_count(2)
+            expect(stage.locator('.kit-game-disc')).to_have_count(2)
+            stage.evaluate('e=>Promise.all([...e.querySelectorAll("img")].map(i=>i.decode()))')
+            assert stage.locator('img').evaluate_all('images=>images.every(i=>i.complete&&i.naturalWidth>0)')
+            moving=stage.locator('.kit-element-motion')
+            expect(moving).to_have_count(5)
             expect(stage).to_have_attribute('data-motion','running' if motion=='no-preference' else 'paused')
             if motion=='no-preference':
-                expect(moving).to_have_css('animation-play-state','running')
+                for item in moving.all():expect(item).to_have_css('animation-play-state','running')
+                # Compare actual transforms: every requested object must move independently.
+                before=moving.evaluate_all('els=>els.map(e=>getComputedStyle(e).transform)')
+                page.wait_for_timeout(350)
+                after=moving.evaluate_all('els=>els.map(e=>getComputedStyle(e).transform)')
+                assert all(a!=b for a,b in zip(before,after)), (before,after)
                 page.emulate_media(reduced_motion='reduce')
-            expect(moving).to_have_css('animation-name','none')
+            for item in moving.all():expect(item).to_have_css('animation-name','none')
+            assert moving.evaluate_all('els=>els.every(e=>getComputedStyle(e).transform!=="none")'), 'Reduced motion removed the card/disc fan arrangement'
+            bounds=stage.bounding_box()
+            for item in moving.all():
+                b=item.bounding_box()
+                assert b['x']>=bounds['x']-2 and b['x']+b['width']<=bounds['x']+bounds['width']+2
+                assert b['y']>=bounds['y']-2 and b['y']+b['height']<=bounds['y']+bounds['height']+2
             page.emulate_media(reduced_motion='no-preference')
             expect(stage).to_have_attribute('data-motion','running')
             page.locator('.rental-process').scroll_into_view_if_needed()
             expect(stage).to_have_attribute('data-motion','paused')
+            for item in moving.all():expect(item).to_have_css('animation-play-state','paused')
             process=page.locator('.rental-process')
             expect(process).to_have_attribute('data-motion','running')
             cards=process.locator('.rental-step-surface');expect(cards).to_have_count(4)

@@ -1,9 +1,10 @@
-import { Check, Plus } from '@phosphor-icons/react';
+import { Check } from '@phosphor-icons/react';
 import { Reveal } from '../../components/ui/reveal';
 import { imageUrl } from '../lib/api';
 import { useI18n } from '../lib/i18n';
 import { useNearbyMedia } from '../lib/use-nearby-media';
 import { useVisibleMotion } from '../lib/use-visible-motion';
+import { KitGameDisc } from './KitGameDisc';
 import '../rental-kit.css';
 
 export function RentalKit({ secondFree = false }: { secondFree?: boolean }) {
@@ -22,13 +23,15 @@ export function RentalKit({ secondFree = false }: { secondFree?: boolean }) {
     </Reveal>
     <div className="kit-visual">
       <div ref={ref} className="kit-product-stage" data-motion={active ? 'running' : 'paused'}>
-        <div className="kit-subscription-cards">
-          <div className="kit-subscription kit-deluxe"><Plus size={27} weight="bold" aria-hidden="true" /><span>PS Plus Deluxe</span><span className="kit-card-glyphs" aria-hidden="true">△ ○ × □</span></div>
-          <div className="kit-subscription kit-ea"><span className="kit-ea-monogram" aria-hidden="true">EA</span><span>EA Play</span><span className="kit-ea-ring" aria-hidden="true" /></div>
-        </div>
-        {nearby && <img className="kit-product-image" src={imageUrl('joyrent-console-kit-768')} srcSet={`${imageUrl('joyrent-console-kit-480')} 480w, ${imageUrl('joyrent-console-kit-768')} 768w, ${imageUrl('joyrent-console-kit')} 1536w`} sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 1100px) 52vw, 650px" alt={t('Комплект PlayStation: PS5 або PS4 та геймпади', 'Комплект PlayStation: PS5 или PS4 и геймпады')} width={1536} height={1024} loading="lazy" decoding="async" />}
+        {nearby && <>
+          <div className="kit-item kit-card-plus"><div className="kit-element-motion"><img className="kit-subscription-image" src={imageUrl('kit-ps-plus-card-320')} srcSet={`${imageUrl('kit-ps-plus-card-320')} 320w, ${imageUrl('kit-ps-plus-card-640')} 640w`} sizes="(max-width: 700px) 28vw, (max-width: 1100px) 15vw, 180px" width={1024} height={1536} alt="" loading="lazy" decoding="async" /></div></div>
+          <div className="kit-item kit-card-ea"><div className="kit-element-motion"><img className="kit-subscription-image" src={imageUrl('kit-ea-play-card-320')} srcSet={`${imageUrl('kit-ea-play-card-320')} 320w, ${imageUrl('kit-ea-play-card-640')} 640w`} sizes="(max-width: 700px) 28vw, (max-width: 1100px) 15vw, 180px" width={1024} height={1536} alt="" loading="lazy" decoding="async" /></div></div>
+          <div className="kit-item kit-controller"><div className="kit-element-motion"><img className="kit-controller-image" src={imageUrl('dualsense-cutout')} srcSet={`${imageUrl('dualsense-cutout-560')} 560w, ${imageUrl('dualsense-cutout-1120')} 1120w, ${imageUrl('dualsense-cutout')} 1536w`} sizes="(max-width: 700px) 90vw, (max-width: 1100px) 45vw, 580px" alt={t('Білий геймпад PlayStation DualSense', 'Белый геймпад PlayStation DualSense')} width={1536} height={1024} loading="lazy" decoding="async" /></div></div>
+          <div className="kit-item kit-disc-fc"><div className="kit-element-motion"><KitGameDisc game="fc27" /></div></div>
+          <div className="kit-item kit-disc-ufc"><div className="kit-element-motion"><KitGameDisc game="ufc6" /></div></div>
+        </>}
       </div>
-      <p className="kit-subscription-note">{t('Підписки на нашому акаунті включені в оренду PS5 і PS4.', 'Подписки на нашем аккаунте включены в аренду PS5 и PS4.')}</p>
+      <p className="kit-subscription-note"><strong>PS Plus Deluxe + EA Play</strong><span>{t('На нашому акаунті. Включені в оренду', 'На нашем аккаунте. Включены в аренду')} <span className="kit-console-names">PS5 {t('і', 'и')} PS4.</span></span></p>
     </div>
   </div></section>;
 }
