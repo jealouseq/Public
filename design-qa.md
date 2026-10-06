@@ -1,3 +1,32 @@
+# JOYRENT 1.9.12 — выбранная композиция комплекта
+
+Source visual truth: [selected displayed option 3](docs/refinement-1.9.12/selected-source.png),1586×992 px. User reattached the exact same composition and authorized animation, glow and small scale refinements. Implementation: local WordPress/WooCommerce in Chromium; live site not accessed.
+
+Viewport/state: desktop1440×900 CSSpx,DPR1, Ukrainian near-black theme, kit media and fonts decoded, reduced-motion static screenshot. Source normalized uniformly to1440×901, browser section1440×904; both padded onto equal comparison canvas without stretching. [Combined full view](docs/refinement-1.9.12/comparison/full-final-1440.png). The product region was also cropped from the actual source, uniformly scaled to800 px wide, and compared to the native800 px stage in the same input: [focused comparison](docs/refinement-1.9.12/comparison/products-final-1440.png).
+
+**Findings**
+
+- No actionable P0/P1/P2 findings remain. Large case flanks, centred subscription pair and foreground controller match the selected structure. Logos/game titles are open. Contact light is restrained; no placeholders or CSS-drawn packaging remains.
+- Fonts/typography: existing Unbounded display and Onest service typography retained. Main heading stays two lines on desktop; mobile adapts without overflow. Subscription caption remains readable and unbroken PS5/PS4 terms wrap together at320 px.
+- Spacing/layout rhythm: scene aspect1.65 and ~36/64copy/photo grid retain the target hierarchy. Stage reserves layout before media loads. Wide desktop padding now matches the selected visual rhythm; at900 px and below the section becomes one column so cases remain large. UA390/RU320/tablet768/split1024 captures checked.
+- Colors/tokens: existing #08090b surface and warm gold details preserved. Floor is an actual raster lighting texture with feathered transparency; soft card shadows and bounded case highlights support the scene.
+- Image quality/fidelity: original DualSense and subscription WebPs unchanged. New isolated photorealistic game cases retain alpha, tactile blue spines and readable printed titles. Native640 px images are scaled naturally, no stretching. Packaging is an ImageGen reconstruction of supplied art, not a real retail photograph; catalogue source covers are unchanged. Small differences in case height and controller depth versus the generated target remain coherent and are acceptable under the user's scale-refinement instruction.
+- Copy/content: approved Ukrainian/Russian copy unchanged; no new pricing/CTA or repeat subscription information. Cases/controller carry localized alt; floor/subscription decorative alt is empty because service names appear once in caption.
+
+Comparison history: [first-pass combined view](docs/refinement-1.9.12/comparison/full-first-pass-1440.png) showed a compressed754pxsection against901pxnormalized target (P2 spacing drift). Increasing desktop padding toclamp105 px/12.5vw/200 px corrected it to904 px. Floor intensity and subtle card light were refined. Fresh final capture and independent visual comparison pass; no further P2 finding. Slight photographic/perspective differences are P3 and do not justify another layout pass.
+
+Primary checks:24 local browser scenarios across UA/RU and6widths, both motion preferences. Actual transform changes checked; floor and case highlights correctly run, pause offscreen, pause after controlleddocument visibilitychange, and disable for reducedmotion. PS4 tariff → booking selection and stale outgoing PS5 blocking verified. No JavaScript errors, horizontal overflow, external requests or write requests.123 unit tests and build passed. Physical iPhone Safari is not tested. Full-cycle17.5srecordings for mobile/desktop supplied; native frames inspected separately before final release.
+
+**Implementation checklist**
+
+- Selected arrangement, larger cases, exact legacy controller, real alpha materials and responsive dimensions implemented.
+-16 s coordinated motion,1–2 px rise, subtle yaw, warm reflected light and material highlight pauses verified.
+- Booking/plugin/catalogue unchanged; theme1.9.12 packages with unchanged Rentals1.8.4.
+
+final result: passed
+
+---
+
 # JOYRENT 1.9.2 — booking alignment and reservation wording
 
 Source visual truth: the owner's chat screenshots identify the optional-games icon, uneven catalog actions, tall consent text and left-heavy missing-game panel. The later explicit instruction asks for the mobile PS5 button to match desktop. These are bounded responsive refinements of the existing site, not a pixel-perfect clone of a new mockup. Actual local 1.9.1 baseline captures are retained beside the new captures in [the release report](docs/refinement-1.9.2/README.md); the original user screenshots remain in chat.
