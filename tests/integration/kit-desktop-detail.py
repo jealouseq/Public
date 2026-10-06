@@ -6,7 +6,7 @@ from PIL import Image
 from playwright.sync_api import sync_playwright, expect
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / 'work/refinement-1.9.13'
+OUT = ROOT / os.getenv('JOYRENT_EVIDENCE_DIR', 'work/refinement-1.9.13')
 OUT.mkdir(parents=True, exist_ok=True)
 PHASE = os.getenv('JOYRENT_TEST_PHASE', 'green')
 rows = []

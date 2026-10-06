@@ -5,7 +5,6 @@
 .story-kit .kit-note { margin-top: 20px; font-size: 14px; }
 .kit-visual { min-width: 0; }
 .kit-product-stage { position: relative; width: 100%; max-width: 880px; margin-inline: auto; aspect-ratio: 1.65; isolation: isolate; perspective: 1000px; overflow: hidden; }
-.kit-studio-floor { position: absolute; z-index: 0; left: -6%; bottom: -8%; width: 112%; max-width: none; height: auto; pointer-events: none; opacity: .7; mask-image: linear-gradient(to bottom, #000 60%, transparent 100%); animation: kit-studio-light 16s ease-in-out infinite; animation-delay: -3s; animation-play-state: paused; }
 .kit-item { position: absolute; pointer-events: none; perspective: 900px; --duration: 16s; --phase: -3s; }
 .kit-element-motion { width: 100%; transform-origin: 50% 82%; animation: kit-object-float var(--duration) ease-in-out infinite; animation-delay: var(--phase); animation-play-state: paused; }
 .kit-product-stage picture { display: block; width: 100%; }
@@ -20,8 +19,7 @@
 .kit-box-fc { left: 1.5%; width: 31.5%; --turn: -.25deg; --yaw-start: -.7deg; --yaw-end: .7deg; }
 .kit-box-ufc { right: 1.5%; width: 33.2%; --turn: .25deg; --yaw-start: .7deg; --yaw-end: -.7deg; }
 .kit-product-stage[data-motion='running'] .kit-element-motion,
-.kit-product-stage[data-motion='running'] .kit-game-box,
-.kit-product-stage[data-motion='running'] .kit-studio-floor { animation-play-state: running; }
+.kit-product-stage[data-motion='running'] .kit-game-box { animation-play-state: running; }
 .kit-product-stage[data-motion='running'] .kit-element-motion { will-change: transform; }
 .kit-subscription-note { display: flex; flex-direction: column; gap: 6px; margin: 8px auto 0; max-width: 500px; color: var(--text-support); text-align: center; font-size: 13px; line-height: 1.6; }
 .kit-subscription-note strong { color: var(--text); font-weight: 550; font-size: 14px; }
@@ -30,14 +28,12 @@
   0%, 100% { transform: translateY(0) rotate(var(--tilt)) rotateY(var(--yaw-start, 0deg)); }
   50% { transform: translateY(var(--rise)) rotate(calc(var(--tilt) + var(--turn))) rotateY(var(--yaw-end, 0deg)); }
 }
-@keyframes kit-studio-light { 0%, 100% { opacity: .62; } 50% { opacity: .8; } }
 /* Tiny rotations soften composited bitmaps at desktop scale. Translate the
    sharp images instead, with enough travel to see the shared motion cycle. */
 @keyframes kit-desktop-float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(var(--rise)); }
 }
-@keyframes kit-desktop-light { 0%, 100% { opacity: .62; } 50% { opacity: .9; } }
 @media (min-width: 901px) {
   .kit-item { --duration: 8s; --phase: -1.5s; }
   .kit-element-motion { animation-name: kit-desktop-float; }
@@ -45,7 +41,6 @@
   .kit-card-plus, .kit-card-ea { --rise: -6px; }
   .kit-box-fc, .kit-box-ufc { --rise: -5px; }
   .kit-game-box { animation-duration: 8s; animation-delay: -1.5s; }
-  .kit-studio-floor { animation-name: kit-desktop-light; animation-duration: 8s; animation-delay: -1.5s; }
 }
 @media (min-width: 1101px) {
   .story-kit.section { padding-block: clamp(105px, 12.5vw, 200px); }
@@ -68,7 +63,6 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .kit-element-motion { animation: none; transform: rotate(var(--tilt)) rotateY(var(--yaw-start, 0deg)); }
-  .kit-studio-floor { animation: none; opacity: .7; }
 }
 @media (min-width: 901px) and (prefers-reduced-motion: reduce) {
   .kit-element-motion { transform: translateY(0); }

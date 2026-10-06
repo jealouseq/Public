@@ -1,3 +1,22 @@
+# JOYRENT 1.9.17 — kit composition without a visible floor
+
+Source visual truth: user's screenshot of the lower kit composition with FC27/UFC6 boxes, subscription cards and legacy DualSense. Request: edit the floor or remove it if that looks better. This concerns the kit, not the console hero. Actual local1.9.16 baseline and final1.9.17 are shown together at1440×900 CSSpx/DPR1/UA/reduced-motion after fonts/media decode: [matched full-section comparison](docs/refinement-1.9.17/comparison/before-final-1440.png). [Mobile pair](docs/refinement-1.9.17/comparison/before-final-390.png) uses390×844/DPR3, CSS-scale screenshots. The source screenshot remains in chat. Initial browser-only exploration compares floor0.7/none/0.15 at identical product geometry: [desktop](docs/refinement-1.9.17/comparison/floor-options-1440.png), [mobile](docs/refinement-1.9.17/comparison/floor-options-390.png).
+
+**Findings**
+
+- [P3, addressed] The wide textured gold/brown surface distracted from the objects. Removing it gives a cleaner composition on both sizes. Floor0.15 still leaves a brown patch without useful depth. Existing object shadows, blue case edges and warm product rim retain separation; no material floating/composition issue remains.
+- Fonts/typography: original families, weights, sizes, titles, labels and line wraps preserved in both languages.
+- Spacing/layout rhythm: stage and all five product positions/sizes remain unchanged. Caption spacing remains unchanged. Final built composition matches the no-floor exploration pixel-for-pixel at1440/DPR1 and390/DPR3; this is not a rescaling or re-generation of the artwork.
+- Colors/tokens: original near-black/white/gold preserved. Only the surface beneath products is removed; original drop-shadows and product lighting remain.
+- Image quality/fidelity: all169 tracked image files are byte-identical. Existing responsive sources and native detail reserve retained. Floor img is deleted from the component and its isolated CSS/keyframes removed; zero floor-image requests. Legacy WebPs remain for compatibility but have no runtime reference.
+- Copy/content: no text, pricing, claims, CTA, booking, menu or FAQ changes. Console hero1440 and390 captures are pixel-identical to1.9.16.
+
+Verification: TypeScript/Vite/theme build;24 existing UA/RU motion/booking scenarios on320–1440;4 desktop detail/travel checks on1440/1920/3000 andDPR1/2;10 layout captures;matched before/final review;independent static/code review. Five object motions and material highlights still run and pause correctly; reduced motion retains static placement. No overflow, JavaScript error or write request in checks. ZIP CRC/source bytes/permissions checked;73 historical archives and Rentals1.8.4 unchanged. Physical Safari/live deployment not tested. Implementation checklist complete: decorative surface removed, product depth/motion/geometry preserved, no unused runtime floor request, reviewed responsive evidence, release1.9.17.
+
+final result: passed
+
+---
+
 # JOYRENT 1.9.16 — larger desktop Slim and grounded floor
 
 Source visual truth: user's installed desktop screenshot in chat, requesting a larger console and a slightly better floor. The selected black/white/gold direction and existing interface remain. Actual local 1.9.15 and final 1.9.16 are compared on the same canvas at 1440×900 CSS px/DPR1/UA/reduced-motion, after fonts and both images decode: [matched pair](docs/refinement-1.9.16/comparison/before-final-1440.png). [1920×1080 pair](docs/refinement-1.9.16/comparison/before-final-1920.png) uses the same conditions. Original screenshot source remains in chat; baseline is the exact local installed-version scene. Final Retina detail is retained in [1440 DPR2 capture](docs/refinement-1.9.16/screens/hero-retina-uk-1440.png).

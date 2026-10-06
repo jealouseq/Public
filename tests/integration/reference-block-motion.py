@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[2]
 BASE=os.getenv('JOYRENT_TEST_URL','http://localhost:8080').rstrip('/')
 assert urlparse(BASE).hostname in ['localhost','127.0.0.1']
 PHASE=os.getenv('JOYRENT_TEST_PHASE','green')
-OUT=ROOT/'work/refinement-1.9.12'; OUT.mkdir(parents=True,exist_ok=True)
+OUT=ROOT/os.getenv('JOYRENT_EVIDENCE_DIR','work/refinement-1.9.12'); OUT.mkdir(parents=True,exist_ok=True)
 with urllib.request.urlopen(BASE+'/wp-json/joyrent/v1/catalog') as r: catalog=json.load(r)
 rows=[]
 with sync_playwright() as p:
@@ -42,8 +42,6 @@ with sync_playwright() as p:
             expect(stage.locator('.kit-subscription-image')).to_have_count(2)
             expect(stage.locator('.kit-game-box')).to_have_count(2)
             expect(stage.locator('.kit-game-disc')).to_have_count(0)
-            floor=stage.locator('.kit-studio-floor')
-            expect(floor).to_be_visible()
             for case in stage.locator('.kit-game-box').all():
                 assert case.get_attribute('alt') and 'case-' in case.get_attribute('src')
             stage.evaluate('e=>Promise.all([...e.querySelectorAll("img")].map(i=>i.decode()))')
@@ -53,7 +51,6 @@ with sync_playwright() as p:
             expect(stage).to_have_attribute('data-motion','running' if motion=='no-preference' else 'paused')
             if motion=='no-preference':
                 for item in moving.all():expect(item).to_have_css('animation-play-state','running')
-                expect(floor).to_have_css('animation-play-state','running')
                 for case in stage.locator('.kit-game-box').all():expect(case).to_have_css('animation-play-state','running')
                 # Compare actual transforms: each requested object moves; paired objects share timing.
                 before=moving.evaluate_all('els=>els.map(e=>getComputedStyle(e).transform)')
@@ -62,7 +59,6 @@ with sync_playwright() as p:
                 assert all(a!=b for a,b in zip(before,after)), (before,after)
                 page.emulate_media(reduced_motion='reduce')
             for item in moving.all():expect(item).to_have_css('animation-name','none')
-            expect(floor).to_have_css('animation-name','none')
             for case in stage.locator('.kit-game-box').all():expect(case).to_have_css('animation-name','none')
             assert moving.evaluate_all('els=>els.every(e=>getComputedStyle(e).transform!=="none")'), 'Reduced motion removed the staged kit arrangement'
             bounds=stage.bounding_box()
@@ -75,14 +71,12 @@ with sync_playwright() as p:
             # A hidden document pauses material highlights as well as transforms.
             page.evaluate('Object.defineProperty(document,"hidden",{configurable:true,get:()=>true});document.dispatchEvent(new Event("visibilitychange"))')
             expect(stage).to_have_attribute('data-motion','paused')
-            expect(floor).to_have_css('animation-play-state','paused')
             for case in stage.locator('.kit-game-box').all():expect(case).to_have_css('animation-play-state','paused')
             page.evaluate('delete document.hidden;document.dispatchEvent(new Event("visibilitychange"))')
             expect(stage).to_have_attribute('data-motion','running')
             page.locator('.rental-process').scroll_into_view_if_needed()
             expect(stage).to_have_attribute('data-motion','paused')
             for item in moving.all():expect(item).to_have_css('animation-play-state','paused')
-            expect(floor).to_have_css('animation-play-state','paused')
             for case in stage.locator('.kit-game-box').all():expect(case).to_have_css('animation-play-state','paused')
             process=page.locator('.rental-process')
             expect(process).to_have_attribute('data-motion','running')
