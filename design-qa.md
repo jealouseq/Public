@@ -1,3 +1,27 @@
+# JOYRENT 1.9.13 — desktop sharpness and motion correction
+
+Source visual truth: user's desktop report and the approved [selected composition](docs/refinement-1.9.12/selected-source.png),1586×992 px. Baseline render 1.9.12 and final local WordPress/Chromium render at 1920×1080 CSS px,DPR 1, same 855 px product stage: [combined full product view](docs/refinement-1.9.13/comparison/desktop-before-after.png). Baseline is frozen at 5000 ms; final is reduced-motion static, so subpixel object pose differs slightly. Geometry and actual CSS scale remain equal; these small pose differences do not account for sharpness changes.
+
+The full selected source is uniformly resized to 1440×901 and compared to final 1440×904 section on an equal canvas: [source and rendered section](docs/refinement-1.9.13/comparison/selected-source-after-1440.png). Focused native-scale case comparisons isolate source resolution, 3D rotation, 2D rotation and translation in the same input: [six-way diagnosis](docs/refinement-1.9.13/comparison/rotation-diagnosis.png). UA 390 mobile images are compared in the [same canvas](docs/refinement-1.9.13/comparison/mobile-before-after.png); UA 390/RU 320/768/844 reduced-motion captures match 1.9.12 pixel-for-pixel.
+
+**Findings and comparison history**
+
+- [P2, resolved] Tiny rotation of composited raster layers softened logos, cover detail and controller edges. Larger bitmap alone did not resolve it. Removing all desktop rotation while retaining vertical translation and existing shadows made the same native-scale image visibly sharper. Fractional translation also retained sharpness. Desktop now selects 640 px cases/cards and 1120/1536 px controller; original artwork remains unchanged.
+- [P2, resolved] A technically running 16 s cycle displaced cases less than 1 px, explaining perceived inactivity. Desktop 8 s cycle now displaces cases 5 px, cards 6 px and controller 8 px. Ordinary-frame checks confirm autonomous playback. Shared phase and bounded travel preserve the selected composition.
+- Fonts/typography: existing families, weights, labels and title wraps preserved. UA/RU rendered at 320,390,768,844,1024,1440,1920,3000 where relevant; no hidden or clipped caption.
+- Spacing/layout rhythm: no changes to geometry, stage ratio, section padding or mobile flow. Pure translation remains within stage; no horizontal overflow. Approved physical case layout preserved.
+- Colors/tokens: near-black background and warm gold remain. Floor peak opacity now 0.9 on desktop versus 0.8; material highlight and all movement share 8 s timing. No new visual art or gradients replace the source.
+- Image quality/fidelity: exact existing product images retained; only image selection and compositor transforms change. All images decode. Packaging remains the photorealistic generated mockup described in 1.9.12; official catalogue covers unchanged.
+- Copy/content: Ukrainian/Russian copy, names, localized alt and decorative alt unchanged. No repeated pricing, CTA or subscription text introduced.
+
+Primary checks: 123 unit tests, final build, 24 UA/RU browser scenarios, 4 red/green desktop detail/motion scenarios, 10 viewport captures. Original bug reproduced before source changes. Auto-play, visibility/offscreen pauses and reduced-motion removal checked. PS4 tariff→booking and stale outgoing PS5 controls retain correct behaviour. JavaScript errors and page overflow absent; all external/write requests blocked during checks. CRC/source bytes/permissions verified for both new ZIPs; 65 old releases and Rentals 1.8.4 unchanged.
+
+Residual limits: local Chromium evidence, no physical Safari or Windows GPU test, no live-site deployment. Full desktop/mobile recordings retain real page rendering and are checked at multiple cycle phases.
+
+final result: passed
+
+---
+
 # JOYRENT 1.9.12 — выбранная композиция комплекта
 
 Source visual truth: [selected displayed option 3](docs/refinement-1.9.12/selected-source.png),1586×992 px. User reattached the exact same composition and authorized animation, glow and small scale refinements. Implementation: local WordPress/WooCommerce in Chromium; live site not accessed.

@@ -1,0 +1,214 @@
+[
+  {
+    "width": 1440,
+    "density": 1,
+    "motion": [
+      {
+        "object": "kit-item kit-card-plus",
+        "travel": 6,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-card-ea",
+        "travel": 6,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-controller",
+        "travel": 8,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-box-fc",
+        "travel": 5,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-box-ufc",
+        "travel": 5,
+        "duration": 8000
+      }
+    ],
+    "images": [
+      {
+        "file": "dualsense-cutout-1120.webp",
+        "pixels": 1120,
+        "rendered": 416.078125,
+        "ratio": 2.6918021705659245
+      },
+      {
+        "file": "kit-fc27-case-640.webp",
+        "pixels": 640,
+        "rendered": 252.046875,
+        "ratio": 2.539210216353605
+      },
+      {
+        "file": "kit-ufc6-case-640.webp",
+        "pixels": 640,
+        "rendered": 265.65625,
+        "ratio": 2.4091283378426067
+      }
+    ],
+    "problems": [],
+    "pass": true
+  },
+  {
+    "width": 1920,
+    "density": 1,
+    "motion": [
+      {
+        "object": "kit-item kit-card-plus",
+        "travel": 6,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-card-ea",
+        "travel": 6,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-controller",
+        "travel": 8,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-box-fc",
+        "travel": 5,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-box-ufc",
+        "travel": 5,
+        "duration": 8000
+      }
+    ],
+    "images": [
+      {
+        "file": "dualsense-cutout-1120.webp",
+        "pixels": 1120,
+        "rendered": 444.609375,
+        "ratio": 2.5190651906519066
+      },
+      {
+        "file": "kit-fc27-case-640.webp",
+        "pixels": 640,
+        "rendered": 269.328125,
+        "ratio": 2.376283576028311
+      },
+      {
+        "file": "kit-ufc6-case-640.webp",
+        "pixels": 640,
+        "rendered": 283.875,
+        "ratio": 2.2545134302069574
+      }
+    ],
+    "problems": [],
+    "pass": true
+  },
+  {
+    "width": 3000,
+    "density": 1,
+    "motion": [
+      {
+        "object": "kit-item kit-card-plus",
+        "travel": 6,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-card-ea",
+        "travel": 6,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-controller",
+        "travel": 8,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-box-fc",
+        "travel": 5,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-box-ufc",
+        "travel": 5,
+        "duration": 8000
+      }
+    ],
+    "images": [
+      {
+        "file": "dualsense-cutout-1120.webp",
+        "pixels": 1120,
+        "rendered": 444.609375,
+        "ratio": 2.5190651906519066
+      },
+      {
+        "file": "kit-fc27-case-640.webp",
+        "pixels": 640,
+        "rendered": 269.328125,
+        "ratio": 2.376283576028311
+      },
+      {
+        "file": "kit-ufc6-case-640.webp",
+        "pixels": 640,
+        "rendered": 283.875,
+        "ratio": 2.2545134302069574
+      }
+    ],
+    "problems": [],
+    "pass": true
+  },
+  {
+    "width": 1920,
+    "density": 2,
+    "motion": [
+      {
+        "object": "kit-item kit-card-plus",
+        "travel": 6,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-card-ea",
+        "travel": 6,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-controller",
+        "travel": 8,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-box-fc",
+        "travel": 5,
+        "duration": 8000
+      },
+      {
+        "object": "kit-item kit-box-ufc",
+        "travel": 5,
+        "duration": 8000
+      }
+    ],
+    "images": [
+      {
+        "file": "dualsense-cutout-1120.webp",
+        "pixels": 1120,
+        "rendered": 444.609375,
+        "ratio": 2.5190651906519066
+      },
+      {
+        "file": "kit-fc27-case-640.webp",
+        "pixels": 640,
+        "rendered": 269.328125,
+        "ratio": 2.376283576028311
+      },
+      {
+        "file": "kit-ufc6-case-640.webp",
+        "pixels": 640,
+        "rendered": 283.875,
+        "ratio": 2.2545134302069574
+      }
+    ],
+    "problems": [],
+    "pass": true
+  }
+]

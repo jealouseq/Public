@@ -1,0 +1,58 @@
+[
+  {
+    "language": "uk",
+    "width": 390,
+    "pixels": [
+      390,
+      729
+    ],
+    "difference": null,
+    "mean": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "language": "ru",
+    "width": 320,
+    "pixels": [
+      320,
+      772
+    ],
+    "difference": null,
+    "mean": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "language": "uk",
+    "width": 768,
+    "pixels": [
+      768,
+      922
+    ],
+    "difference": null,
+    "mean": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "language": "uk",
+    "width": 844,
+    "pixels": [
+      844,
+      926
+    ],
+    "difference": null,
+    "mean": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+]
