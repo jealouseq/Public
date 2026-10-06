@@ -4,7 +4,7 @@ import { imageUrl } from '../lib/api';
 import { useI18n } from '../lib/i18n';
 import { useNearbyMedia } from '../lib/use-nearby-media';
 import { useVisibleMotion } from '../lib/use-visible-motion';
-import { KitGameDisc } from './KitGameDisc';
+import { KitGameBox } from './KitGameBox';
 import '../rental-kit.css';
 
 export function RentalKit({ secondFree = false }: { secondFree?: boolean }) {
@@ -24,11 +24,11 @@ export function RentalKit({ secondFree = false }: { secondFree?: boolean }) {
     <div className="kit-visual">
       <div ref={ref} className="kit-product-stage" data-motion={active ? 'running' : 'paused'}>
         {nearby && <>
-          <div className="kit-item kit-card-plus"><div className="kit-element-motion"><img className="kit-subscription-image" src={imageUrl('kit-ps-plus-card-320')} srcSet={`${imageUrl('kit-ps-plus-card-320')} 320w, ${imageUrl('kit-ps-plus-card-640')} 640w`} sizes="(max-width: 700px) 28vw, (max-width: 1100px) 15vw, 180px" width={1024} height={1536} alt="" loading="lazy" decoding="async" /></div></div>
-          <div className="kit-item kit-card-ea"><div className="kit-element-motion"><img className="kit-subscription-image" src={imageUrl('kit-ea-play-card-320')} srcSet={`${imageUrl('kit-ea-play-card-320')} 320w, ${imageUrl('kit-ea-play-card-640')} 640w`} sizes="(max-width: 700px) 28vw, (max-width: 1100px) 15vw, 180px" width={1024} height={1536} alt="" loading="lazy" decoding="async" /></div></div>
-          <div className="kit-item kit-controller"><div className="kit-element-motion"><img className="kit-controller-image" src={imageUrl('dualsense-cutout')} srcSet={`${imageUrl('dualsense-cutout-560')} 560w, ${imageUrl('dualsense-cutout-1120')} 1120w, ${imageUrl('dualsense-cutout')} 1536w`} sizes="(max-width: 700px) 90vw, (max-width: 1100px) 45vw, 580px" alt={t('Білий геймпад PlayStation DualSense', 'Белый геймпад PlayStation DualSense')} width={1536} height={1024} loading="lazy" decoding="async" /></div></div>
-          <div className="kit-item kit-disc-fc"><div className="kit-element-motion"><KitGameDisc game="fc27" /></div></div>
-          <div className="kit-item kit-disc-ufc"><div className="kit-element-motion"><KitGameDisc game="ufc6" /></div></div>
+          <div className="kit-item kit-card-plus"><div className="kit-element-motion"><img className="kit-subscription-image" src={imageUrl('kit-ps-plus-card-320')} srcSet={`${imageUrl('kit-ps-plus-card-320')} 320w, ${imageUrl('kit-ps-plus-card-640')} 640w`} sizes="(max-width: 700px) 20vw, (max-width: 1100px) 10vw, 130px" width={1024} height={1536} alt="" loading="lazy" decoding="async" /></div></div>
+          <div className="kit-item kit-card-ea"><div className="kit-element-motion"><img className="kit-subscription-image" src={imageUrl('kit-ea-play-card-320')} srcSet={`${imageUrl('kit-ea-play-card-320')} 320w, ${imageUrl('kit-ea-play-card-640')} 640w`} sizes="(max-width: 700px) 20vw, (max-width: 1100px) 10vw, 130px" width={1024} height={1536} alt="" loading="lazy" decoding="async" /></div></div>
+          <div className="kit-item kit-controller"><div className="kit-element-motion"><img className="kit-controller-image" src={imageUrl('dualsense-cutout')} srcSet={`${imageUrl('dualsense-cutout-560')} 560w, ${imageUrl('dualsense-cutout-1120')} 1120w, ${imageUrl('dualsense-cutout')} 1536w`} sizes="(max-width: 700px) 86vw, (max-width: 1100px) 43vw, 550px" alt={t('Білий геймпад PlayStation DualSense', 'Белый геймпад PlayStation DualSense')} width={1536} height={1024} loading="lazy" decoding="async" /></div></div>
+          <div className="kit-item kit-box-fc"><div className="kit-element-motion"><KitGameBox game="fc27" /></div></div>
+          <div className="kit-item kit-box-ufc"><div className="kit-element-motion"><KitGameBox game="ufc6" /></div></div>
         </>}
       </div>
       <p className="kit-subscription-note"><strong>PS Plus Deluxe + EA Play</strong><span>{t('На нашому акаунті. Включені в оренду', 'На нашем аккаунте. Включены в аренду')} <span className="kit-console-names">PS5 {t('і', 'и')} PS4.</span></span></p>

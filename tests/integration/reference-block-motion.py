@@ -8,7 +8,7 @@ ROOT=Path(__file__).resolve().parents[2]
 BASE=os.getenv('JOYRENT_TEST_URL','http://localhost:8080').rstrip('/')
 assert urlparse(BASE).hostname in ['localhost','127.0.0.1']
 PHASE=os.getenv('JOYRENT_TEST_PHASE','green')
-OUT=ROOT/'work/refinement-1.9.10'; OUT.mkdir(parents=True,exist_ok=True)
+OUT=ROOT/'work/refinement-1.9.11'; OUT.mkdir(parents=True,exist_ok=True)
 with urllib.request.urlopen(BASE+'/wp-json/joyrent/v1/catalog') as r: catalog=json.load(r)
 rows=[]
 with sync_playwright() as p:
@@ -40,7 +40,8 @@ with sync_playwright() as p:
             expect(controller).to_be_visible()
             assert 'dualsense-cutout' in controller.get_attribute('src')
             expect(stage.locator('.kit-subscription-image')).to_have_count(2)
-            expect(stage.locator('.kit-game-disc')).to_have_count(2)
+            expect(stage.locator('.kit-game-box')).to_have_count(2)
+            expect(stage.locator('.kit-game-disc')).to_have_count(0)
             stage.evaluate('e=>Promise.all([...e.querySelectorAll("img")].map(i=>i.decode()))')
             assert stage.locator('img').evaluate_all('images=>images.every(i=>i.complete&&i.naturalWidth>0)')
             moving=stage.locator('.kit-element-motion')
@@ -48,14 +49,14 @@ with sync_playwright() as p:
             expect(stage).to_have_attribute('data-motion','running' if motion=='no-preference' else 'paused')
             if motion=='no-preference':
                 for item in moving.all():expect(item).to_have_css('animation-play-state','running')
-                # Compare actual transforms: every requested object must move independently.
+                # Compare actual transforms: each requested object moves; paired objects share timing.
                 before=moving.evaluate_all('els=>els.map(e=>getComputedStyle(e).transform)')
                 page.wait_for_timeout(350)
                 after=moving.evaluate_all('els=>els.map(e=>getComputedStyle(e).transform)')
                 assert all(a!=b for a,b in zip(before,after)), (before,after)
                 page.emulate_media(reduced_motion='reduce')
             for item in moving.all():expect(item).to_have_css('animation-name','none')
-            assert moving.evaluate_all('els=>els.every(e=>getComputedStyle(e).transform!=="none")'), 'Reduced motion removed the card/disc fan arrangement'
+            assert moving.evaluate_all('els=>els.every(e=>getComputedStyle(e).transform!=="none")'), 'Reduced motion removed the staged kit arrangement'
             bounds=stage.bounding_box()
             for item in moving.all():
                 b=item.bounding_box()
