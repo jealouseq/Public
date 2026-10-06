@@ -1,0 +1,192 @@
+{
+  "scope": "Selected two-tone controller icon and actual one/two-controller interaction only",
+  "main": "main-DSJ-Rs9K.js",
+  "css": "main-JIqLnITd.css",
+  "cases": [
+    {
+      "language": "uk",
+      "width": 320,
+      "status": "PASS",
+      "posts": 0,
+      "pageExceptions": [],
+      "consoleErrors": [],
+      "buttonSize": [
+        {
+          "x": 144,
+          "y": 122.359375,
+          "w": 72,
+          "h": 48,
+          "right": 216,
+          "bottom": 170.359375,
+          "cx": 180,
+          "cy": 146.359375
+        },
+        {
+          "x": 228,
+          "y": 122.359375,
+          "w": 72,
+          "h": 48,
+          "right": 300,
+          "bottom": 170.359375,
+          "cx": 264,
+          "cy": 146.359375
+        }
+      ],
+      "screens": [
+        "docs/refinement-1.8.1/screens/uk-320-process.png",
+        "docs/refinement-1.8.1/screens/uk-320-controller-options.png"
+      ],
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DSJ-Rs9K.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-JIqLnITd.css"
+        ]
+      }
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "status": "PASS",
+      "posts": 0,
+      "pageExceptions": [],
+      "consoleErrors": [],
+      "buttonSize": [
+        {
+          "x": 210,
+          "y": 57.625,
+          "w": 72,
+          "h": 48,
+          "right": 282,
+          "bottom": 105.625,
+          "cx": 246,
+          "cy": 81.625
+        },
+        {
+          "x": 294,
+          "y": 57.625,
+          "w": 72,
+          "h": 48,
+          "right": 366,
+          "bottom": 105.625,
+          "cx": 330,
+          "cy": 81.625
+        }
+      ],
+      "screens": [
+        "docs/refinement-1.8.1/screens/uk-390-process.png",
+        "docs/refinement-1.8.1/screens/uk-390-controller-options.png"
+      ],
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DSJ-Rs9K.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-JIqLnITd.css"
+        ]
+      }
+    },
+    {
+      "language": "uk",
+      "width": 1440,
+      "status": "PASS",
+      "posts": 0,
+      "pageExceptions": [],
+      "consoleErrors": [],
+      "buttonSize": [
+        {
+          "x": 661.90625,
+          "y": 488.59375,
+          "w": 78,
+          "h": 44,
+          "right": 739.90625,
+          "bottom": 532.59375,
+          "cx": 700.90625,
+          "cy": 510.59375
+        },
+        {
+          "x": 749.90625,
+          "y": 488.59375,
+          "w": 78,
+          "h": 44,
+          "right": 827.90625,
+          "bottom": 532.59375,
+          "cx": 788.90625,
+          "cy": 510.59375
+        }
+      ],
+      "screens": [
+        "docs/refinement-1.8.1/screens/uk-1440-process.png",
+        "docs/refinement-1.8.1/screens/uk-1440-controller-options.png"
+      ],
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DSJ-Rs9K.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-JIqLnITd.css"
+        ]
+      }
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "status": "FAIL",
+      "error": "Selected icon must remain full opacity",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/Public/work/refinement-1.8.1/check-icons.py\", line 41, in <module>\n    qa.check(opacity=='1','Selected icon must remain full opacity')\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 40, in check\n    if not condition:raise AssertionError(message)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Selected icon must remain full opacity\n"
+    },
+    {
+      "language": "ru",
+      "width": 390,
+      "status": "PASS",
+      "posts": 0,
+      "pageExceptions": [],
+      "consoleErrors": [],
+      "buttonSize": [
+        {
+          "x": 210,
+          "y": 58.015625,
+          "w": 72,
+          "h": 48,
+          "right": 282,
+          "bottom": 106.015625,
+          "cx": 246,
+          "cy": 82.015625
+        },
+        {
+          "x": 294,
+          "y": 58.015625,
+          "w": 72,
+          "h": 48,
+          "right": 366,
+          "bottom": 106.015625,
+          "cx": 330,
+          "cy": 82.015625
+        }
+      ],
+      "screens": [
+        "docs/refinement-1.8.1/screens/ru-390-process.png",
+        "docs/refinement-1.8.1/screens/ru-390-controller-options.png"
+      ],
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DSJ-Rs9K.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-JIqLnITd.css"
+        ]
+      }
+    },
+    {
+      "language": "ru",
+      "width": 1440,
+      "status": "FAIL",
+      "error": "Selected icon must remain full opacity",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/Public/work/refinement-1.8.1/check-icons.py\", line 41, in <module>\n    qa.check(opacity=='1','Selected icon must remain full opacity')\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 40, in check\n    if not condition:raise AssertionError(message)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Selected icon must remain full opacity\n"
+    }
+  ],
+  "passed": 4,
+  "failed": 2,
+  "safety": "Only local GET/HEAD allowed; POST intercepted before transmit. No contacts entered or orders/email sent."
+}

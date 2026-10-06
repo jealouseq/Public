@@ -1,0 +1,1650 @@
+{
+  "capturedUTC": "2026-10-04T12:07:07.920970+00:00",
+  "resources": [
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 24113,
+      "sha256": "60a33c791f3f06a750ce24892926b8da6978c794e3a8362eb85ae1d22f48e016",
+      "finalURL": "https://flowers-luxury.shop/",
+      "headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Vary": "Accept-Encoding",
+        "Link": "<https://flowers-luxury.shop/wp-json/>; rel=\"https://api.w.org/\"",
+        "X-LiteSpeed-Cache": "hit"
+      },
+      "title": "JOYRENT — оренда PlayStation 5 та PlayStation 4",
+      "meta": [
+        {
+          "charset": "UTF-8"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "robots",
+          "content": "max-image-preview:large"
+        },
+        {
+          "name": "generator",
+          "content": "WordPress 7.1.2"
+        },
+        {
+          "name": "generator",
+          "content": "WooCommerce 11.1.2"
+        },
+        {
+          "name": "theme-color",
+          "content": "#08090b"
+        },
+        {
+          "name": "description",
+          "content": "JOYRENT — оренда PlayStation 5 та PlayStation 4. Обирай консоль, дати та улюблені ігри."
+        }
+      ],
+      "links": [
+        {
+          "rel": "dns-prefetch",
+          "href": "//cdn-reach.hostinger.com"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "joyrent-0-css",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+          "media": "all"
+        },
+        {
+          "rel": "https://api.w.org/",
+          "href": "https://flowers-luxury.shop/wp-json/"
+        },
+        {
+          "rel": "EditURI",
+          "type": "application/rsd+xml",
+          "title": "RSD",
+          "href": "https://flowers-luxury.shop/xmlrpc.php?rsd"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "uk",
+          "href": "https://flowers-luxury.shop/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "ru",
+          "href": "https://flowers-luxury.shop/?lang=ru"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://flowers-luxury.shop/"
+        },
+        {
+          "rel": "preload",
+          "as": "image",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+          "imagesrcset": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp 768w, https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail.webp 1448w",
+          "imagesizes": "(min-width: 1536px) 702px, 47.3vw",
+          "media": "(width > 900px)",
+          "fetchpriority": "high"
+        },
+        {
+          "rel": "preload",
+          "as": "image",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+          "imagesrcset": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w, https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-1448.webp 1448w",
+          "imagesizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)",
+          "media": "(max-width: 900px)",
+          "fetchpriority": "high"
+        },
+        {
+          "rel": "preload",
+          "as": "font",
+          "type": "font/woff2",
+          "crossorigin": null,
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2"
+        },
+        {
+          "rel": "preload",
+          "as": "font",
+          "type": "font/woff2",
+          "crossorigin": null,
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2"
+        },
+        {
+          "rel": "icon",
+          "type": "image/webp",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/favicon.webp"
+        }
+      ],
+      "scripts": [
+        "https://cdn-reach.hostinger.com/js/embed.js",
+        "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-2YiB-VTt.js"
+      ],
+      "headings": [
+        "JOYRENT — оренда PlayStation"
+      ],
+      "details": [],
+      "paragraphs": [
+        "Увімкни JavaScript, щоб обрати консоль і дати. Або зв’яжися з нами напряму."
+      ],
+      "rootHTML": [
+        "<div id=\"joyrent-root\"></div>"
+      ],
+      "htmlLang": [
+        "uk"
+      ]
+    },
+    {
+      "path": "/?lang=ru",
+      "status": 200,
+      "bytes": 24110,
+      "sha256": "acc05162edc960fa8d0752ff77331f5b39ff9d14cb70267ca5dfe7724d941485",
+      "finalURL": "https://flowers-luxury.shop/?lang=ru",
+      "headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Vary": "Accept-Encoding",
+        "Link": "<https://flowers-luxury.shop/wp-json/>; rel=\"https://api.w.org/\"",
+        "X-Litespeed-Cache": "miss"
+      },
+      "title": "JOYRENT — аренда PlayStation 5 и PlayStation 4",
+      "meta": [
+        {
+          "charset": "UTF-8"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "robots",
+          "content": "max-image-preview:large"
+        },
+        {
+          "name": "generator",
+          "content": "WordPress 7.1.2"
+        },
+        {
+          "name": "generator",
+          "content": "WooCommerce 11.1.2"
+        },
+        {
+          "name": "theme-color",
+          "content": "#08090b"
+        },
+        {
+          "name": "description",
+          "content": "JOYRENT — аренда PlayStation 5 и PlayStation 4. Выбирай консоль, даты и любимые игры."
+        }
+      ],
+      "links": [
+        {
+          "rel": "dns-prefetch",
+          "href": "//cdn-reach.hostinger.com"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "joyrent-0-css",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+          "media": "all"
+        },
+        {
+          "rel": "https://api.w.org/",
+          "href": "https://flowers-luxury.shop/wp-json/"
+        },
+        {
+          "rel": "EditURI",
+          "type": "application/rsd+xml",
+          "title": "RSD",
+          "href": "https://flowers-luxury.shop/xmlrpc.php?rsd"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "uk",
+          "href": "https://flowers-luxury.shop/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "ru",
+          "href": "https://flowers-luxury.shop/?lang=ru"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "x-default",
+          "href": "https://flowers-luxury.shop/"
+        },
+        {
+          "rel": "preload",
+          "as": "image",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+          "imagesrcset": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp 768w, https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail.webp 1448w",
+          "imagesizes": "(min-width: 1536px) 702px, 47.3vw",
+          "media": "(width > 900px)",
+          "fetchpriority": "high"
+        },
+        {
+          "rel": "preload",
+          "as": "image",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+          "imagesrcset": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w, https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-1448.webp 1448w",
+          "imagesizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)",
+          "media": "(max-width: 900px)",
+          "fetchpriority": "high"
+        },
+        {
+          "rel": "preload",
+          "as": "font",
+          "type": "font/woff2",
+          "crossorigin": null,
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2"
+        },
+        {
+          "rel": "preload",
+          "as": "font",
+          "type": "font/woff2",
+          "crossorigin": null,
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2"
+        },
+        {
+          "rel": "icon",
+          "type": "image/webp",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/favicon.webp"
+        }
+      ],
+      "scripts": [
+        "https://cdn-reach.hostinger.com/js/embed.js",
+        "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-2YiB-VTt.js"
+      ],
+      "headings": [
+        "JOYRENT — аренда PlayStation"
+      ],
+      "details": [],
+      "paragraphs": [
+        "Включи JavaScript, чтобы выбрать консоль и даты. Или свяжись с нами напрямую."
+      ],
+      "rootHTML": [
+        "<div id=\"joyrent-root\"></div>"
+      ],
+      "htmlLang": [
+        "ru"
+      ]
+    },
+    {
+      "path": "/faq/",
+      "status": 200,
+      "bytes": 30608,
+      "sha256": "6cf69ff9ef823c24ebdf27a8c6b55a1d74f1ea850b316c28bc23fdc798035a0f",
+      "finalURL": "https://flowers-luxury.shop/faq/",
+      "headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Vary": "Accept-Encoding",
+        "Link": "<https://flowers-luxury.shop/?p=40>; rel=shortlink",
+        "X-LiteSpeed-Cache": "hit"
+      },
+      "title": "Питання про оренду – flowers-luxury.shop",
+      "meta": [
+        {
+          "charset": "UTF-8"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "robots",
+          "content": "max-image-preview:large"
+        },
+        {
+          "name": "generator",
+          "content": "WordPress 7.1.2"
+        },
+        {
+          "name": "generator",
+          "content": "WooCommerce 11.1.2"
+        },
+        {
+          "name": "theme-color",
+          "content": "#08090b"
+        },
+        {
+          "name": "description",
+          "content": "JOYRENT — оренда PlayStation 5 та PlayStation 4. Обирай консоль, дати та улюблені ігри."
+        }
+      ],
+      "links": [
+        {
+          "rel": "dns-prefetch",
+          "href": "//cdn-reach.hostinger.com"
+        },
+        {
+          "rel": "alternate",
+          "title": "oEmbed (JSON)",
+          "type": "application/json+oembed",
+          "href": "https://flowers-luxury.shop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflowers-luxury.shop%2Ffaq%2F"
+        },
+        {
+          "rel": "alternate",
+          "title": "oEmbed (XML)",
+          "type": "text/xml+oembed",
+          "href": "https://flowers-luxury.shop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflowers-luxury.shop%2Ffaq%2F&format=xml"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "joyrent-0-css",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+          "media": "all"
+        },
+        {
+          "rel": "https://api.w.org/",
+          "href": "https://flowers-luxury.shop/wp-json/"
+        },
+        {
+          "rel": "alternate",
+          "title": "JSON",
+          "type": "application/json",
+          "href": "https://flowers-luxury.shop/wp-json/wp/v2/pages/40"
+        },
+        {
+          "rel": "EditURI",
+          "type": "application/rsd+xml",
+          "title": "RSD",
+          "href": "https://flowers-luxury.shop/xmlrpc.php?rsd"
+        },
+        {
+          "rel": "canonical",
+          "href": "https://flowers-luxury.shop/faq/"
+        },
+        {
+          "rel": "shortlink",
+          "href": "https://flowers-luxury.shop/?p=40"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "uk",
+          "href": "https://flowers-luxury.shop/faq/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "ru",
+          "href": "https://flowers-luxury.shop/faq-ru/"
+        },
+        {
+          "rel": "icon",
+          "type": "image/webp",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/favicon.webp"
+        }
+      ],
+      "scripts": [
+        "https://flowers-luxury.shop/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://flowers-luxury.shop/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+        "https://cdn-reach.hostinger.com/js/embed.js",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2"
+      ],
+      "headings": [
+        "Питання про оренду"
+      ],
+      "details": [
+        "\nЩо потрібно для підключення?\nТелевізор або монітор із HDMI-входом і розетка. Усі необхідні кабелі передбачені в комплекті.\n",
+        "\nЧи потрібний інтернет?\nДля онлайн-режимів, оновлень і завантажень потрібен інтернет. Деякі ігри потребують його й для одиночної гри. Вимоги обраної гри уточнимо до оренди.\n",
+        "\nМожна грати на двох?\nТак, у сумісних іграх. Обери два геймпади та гру з категорії «На двох» — другий геймпад без доплати.\n",
+        "\nЧи можна використати свій PSN та ігри?\nУзгодимо це до передачі консолі. Не надсилай пароль PSN через форму бронювання та вийди зі свого профілю перед поверненням.\n",
+        "\nКоли повертається застава?\nЗастава: PS4 — 7 500 грн, PS5 — 25 000 грн. Повертаємо після повернення й перевірки обладнання за погодженими умовами. Спосіб внесення та строк повернення узгодимо до оренди.\n",
+        "\nЧи можна орендувати без застави?\nОбери оформлення за договором прокату. Оренду без застави погоджуємо після перевірки паспорта, РНОКПП (ІПН) та реєстрації місця проживання. Документи через форму сайту не надсилай — порядок перевірки узгодимо особисто.\n",
+        "\nЧи можна продовжити оренду?\nНапиши до запланованого повернення. Перевіримо доступність на нові дати та повідомимо вартість продовження.\n",
+        "\nЩо робити у разі пошкодження?\nОдразу повідом нас. Не розбирай і не ремонтуй обладнання самостійно. Перевіримо стан і вирішимо ситуацію за погодженими умовами оренди.\n"
+      ],
+      "paragraphs": [
+        "FAQ",
+        "Що підготувати, як отримати консоль і що важливо знати перед орендою.",
+        "Телевізор або монітор із HDMI-входом і розетка. Усі необхідні кабелі передбачені в комплекті.",
+        "Для онлайн-режимів, оновлень і завантажень потрібен інтернет. Деякі ігри потребують його й для одиночної гри. Вимоги обраної гри уточнимо до оренди.",
+        "Так, у сумісних іграх. Обери два геймпади та гру з категорії «На двох» — другий геймпад без доплати.",
+        "Узгодимо це до передачі консолі. Не надсилай пароль PSN через форму бронювання та вийди зі свого профілю перед поверненням.",
+        "Застава: PS4 — 7 500 грн, PS5 — 25 000 грн. Повертаємо після повернення й перевірки обладнання за погодженими умовами. Спосіб внесення та строк повернення узгодимо до оренди.",
+        "Обери оформлення за договором прокату. Оренду без застави погоджуємо після перевірки паспорта, РНОКПП (ІПН) та реєстрації місця проживання. Документи через форму сайту не надсилай — порядок перевірки узгодимо особисто.",
+        "Напиши до запланованого повернення. Перевіримо доступність на нові дати та повідомимо вартість продовження.",
+        "Одразу повідом нас. Не розбирай і не ремонтуй обладнання самостійно. Перевіримо стан і вирішимо ситуацію за погодженими умовами оренди."
+      ],
+      "rootHTML": [],
+      "htmlLang": [
+        "uk"
+      ]
+    },
+    {
+      "path": "/faq-ru/",
+      "status": 200,
+      "bytes": 30636,
+      "sha256": "c3fcbf94660acc5204c7545368711e215a8092fed8170e05289b8c8d7724e129",
+      "finalURL": "https://flowers-luxury.shop/faq-ru/",
+      "headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Vary": "Accept-Encoding",
+        "Link": "<https://flowers-luxury.shop/?p=41>; rel=shortlink",
+        "X-Litespeed-Cache": "miss"
+      },
+      "title": "Вопросы об аренде – flowers-luxury.shop",
+      "meta": [
+        {
+          "charset": "UTF-8"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "robots",
+          "content": "max-image-preview:large"
+        },
+        {
+          "name": "generator",
+          "content": "WordPress 7.1.2"
+        },
+        {
+          "name": "generator",
+          "content": "WooCommerce 11.1.2"
+        },
+        {
+          "name": "theme-color",
+          "content": "#08090b"
+        },
+        {
+          "name": "description",
+          "content": "JOYRENT — аренда PlayStation 5 и PlayStation 4. Выбирай консоль, даты и любимые игры."
+        }
+      ],
+      "links": [
+        {
+          "rel": "dns-prefetch",
+          "href": "//cdn-reach.hostinger.com"
+        },
+        {
+          "rel": "alternate",
+          "title": "oEmbed (JSON)",
+          "type": "application/json+oembed",
+          "href": "https://flowers-luxury.shop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflowers-luxury.shop%2Ffaq-ru%2F"
+        },
+        {
+          "rel": "alternate",
+          "title": "oEmbed (XML)",
+          "type": "text/xml+oembed",
+          "href": "https://flowers-luxury.shop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflowers-luxury.shop%2Ffaq-ru%2F&format=xml"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "joyrent-0-css",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+          "media": "all"
+        },
+        {
+          "rel": "https://api.w.org/",
+          "href": "https://flowers-luxury.shop/wp-json/"
+        },
+        {
+          "rel": "alternate",
+          "title": "JSON",
+          "type": "application/json",
+          "href": "https://flowers-luxury.shop/wp-json/wp/v2/pages/41"
+        },
+        {
+          "rel": "EditURI",
+          "type": "application/rsd+xml",
+          "title": "RSD",
+          "href": "https://flowers-luxury.shop/xmlrpc.php?rsd"
+        },
+        {
+          "rel": "canonical",
+          "href": "https://flowers-luxury.shop/faq-ru/"
+        },
+        {
+          "rel": "shortlink",
+          "href": "https://flowers-luxury.shop/?p=41"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "uk",
+          "href": "https://flowers-luxury.shop/faq/"
+        },
+        {
+          "rel": "alternate",
+          "hreflang": "ru",
+          "href": "https://flowers-luxury.shop/faq-ru/"
+        },
+        {
+          "rel": "icon",
+          "type": "image/webp",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/favicon.webp"
+        }
+      ],
+      "scripts": [
+        "https://flowers-luxury.shop/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://flowers-luxury.shop/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+        "https://cdn-reach.hostinger.com/js/embed.js",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2"
+      ],
+      "headings": [
+        "Вопросы об аренде"
+      ],
+      "details": [
+        "\nЧто нужно для подключения?\nТелевизор или монитор с HDMI-входом и розетка. Все необходимые кабели предусмотрены в комплекте.\n",
+        "\nНужен ли интернет?\nДля онлайн-режимов, обновлений и загрузок нужен интернет. Некоторые игры требуют его и для одиночной игры. Требования выбранной игры уточним до аренды.\n",
+        "\nМожно играть вдвоём?\nДа, в совместимых играх. Выбери два геймпада и игру из категории «Вдвоём» — второй геймпад без доплаты.\n",
+        "\nМожно использовать свой PSN и игры?\nСогласуем это до передачи консоли. Не отправляй пароль PSN через форму бронирования и выйди из своего профиля перед возвратом.\n",
+        "\nКогда возвращается залог?\nЗалог: PS4 — 7 500 грн, PS5 — 25 000 грн. Возвращаем после возврата и проверки оборудования по согласованным условиям. Способ внесения и срок возврата согласуем до аренды.\n",
+        "\nМожно арендовать без залога?\nВыбери оформление по договору проката. Аренду без залога согласуем после проверки паспорта, РНОКПП (ИНН) и регистрации места проживания. Документы через форму сайта не отправляй — порядок проверки согласуем лично.\n",
+        "\nМожно продлить аренду?\nНапиши до запланированного возврата. Проверим доступность на новые даты и сообщим стоимость продления.\n",
+        "\nЧто делать при повреждении?\nСразу сообщи нам. Не разбирай и не ремонтируй оборудование самостоятельно. Проверим состояние и решим ситуацию по согласованным условиям аренды.\n"
+      ],
+      "paragraphs": [
+        "FAQ",
+        "Что подготовить, как получить консоль и что важно знать перед арендой.",
+        "Телевизор или монитор с HDMI-входом и розетка. Все необходимые кабели предусмотрены в комплекте.",
+        "Для онлайн-режимов, обновлений и загрузок нужен интернет. Некоторые игры требуют его и для одиночной игры. Требования выбранной игры уточним до аренды.",
+        "Да, в совместимых играх. Выбери два геймпада и игру из категории «Вдвоём» — второй геймпад без доплаты.",
+        "Согласуем это до передачи консоли. Не отправляй пароль PSN через форму бронирования и выйди из своего профиля перед возвратом.",
+        "Залог: PS4 — 7 500 грн, PS5 — 25 000 грн. Возвращаем после возврата и проверки оборудования по согласованным условиям. Способ внесения и срок возврата согласуем до аренды.",
+        "Выбери оформление по договору проката. Аренду без залога согласуем после проверки паспорта, РНОКПП (ИНН) и регистрации места проживания. Документы через форму сайта не отправляй — порядок проверки согласуем лично.",
+        "Напиши до запланированного возврата. Проверим доступность на новые даты и сообщим стоимость продления.",
+        "Сразу сообщи нам. Не разбирай и не ремонтируй оборудование самостоятельно. Проверим состояние и решим ситуацию по согласованным условиям аренды."
+      ],
+      "rootHTML": [],
+      "htmlLang": [
+        "ru"
+      ]
+    },
+    {
+      "path": "/umovy-orendy/",
+      "status": 200,
+      "bytes": 29454,
+      "sha256": "ed36ba606ab958373255cc9aa126c96972db60df2b880eeaff0635e0d4e8abe9",
+      "finalURL": "https://flowers-luxury.shop/umovy-orendy/",
+      "headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Vary": "Accept-Encoding",
+        "Link": "<https://flowers-luxury.shop/?p=32>; rel=shortlink",
+        "X-LiteSpeed-Cache": "hit"
+      },
+      "title": "Умови оренди – flowers-luxury.shop",
+      "meta": [
+        {
+          "charset": "UTF-8"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "robots",
+          "content": "max-image-preview:large"
+        },
+        {
+          "name": "generator",
+          "content": "WordPress 7.1.2"
+        },
+        {
+          "name": "generator",
+          "content": "WooCommerce 11.1.2"
+        },
+        {
+          "name": "theme-color",
+          "content": "#08090b"
+        },
+        {
+          "name": "description",
+          "content": "JOYRENT — оренда PlayStation 5 та PlayStation 4. Обирай консоль, дати та улюблені ігри."
+        }
+      ],
+      "links": [
+        {
+          "rel": "dns-prefetch",
+          "href": "//cdn-reach.hostinger.com"
+        },
+        {
+          "rel": "alternate",
+          "title": "oEmbed (JSON)",
+          "type": "application/json+oembed",
+          "href": "https://flowers-luxury.shop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflowers-luxury.shop%2Fumovy-orendy%2F"
+        },
+        {
+          "rel": "alternate",
+          "title": "oEmbed (XML)",
+          "type": "text/xml+oembed",
+          "href": "https://flowers-luxury.shop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflowers-luxury.shop%2Fumovy-orendy%2F&format=xml"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "joyrent-0-css",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+          "media": "all"
+        },
+        {
+          "rel": "https://api.w.org/",
+          "href": "https://flowers-luxury.shop/wp-json/"
+        },
+        {
+          "rel": "alternate",
+          "title": "JSON",
+          "type": "application/json",
+          "href": "https://flowers-luxury.shop/wp-json/wp/v2/pages/32"
+        },
+        {
+          "rel": "EditURI",
+          "type": "application/rsd+xml",
+          "title": "RSD",
+          "href": "https://flowers-luxury.shop/xmlrpc.php?rsd"
+        },
+        {
+          "rel": "canonical",
+          "href": "https://flowers-luxury.shop/umovy-orendy/"
+        },
+        {
+          "rel": "shortlink",
+          "href": "https://flowers-luxury.shop/?p=32"
+        },
+        {
+          "rel": "icon",
+          "type": "image/webp",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/favicon.webp"
+        }
+      ],
+      "scripts": [
+        "https://flowers-luxury.shop/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://flowers-luxury.shop/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+        "https://cdn-reach.hostinger.com/js/embed.js",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2"
+      ],
+      "headings": [
+        "Умови оренди"
+      ],
+      "details": [],
+      "paragraphs": [
+        "Бронювання на сайті не потребує оплати. Ми перевіримо доступність консолі та ігор і зв’яжемося з тобою для підтвердження.",
+        "У комплекті — консоль і потрібні кабелі. Обери один або два геймпади: другий геймпад без доплати.",
+        "Обери оформлення із заставою або за договором прокату. Оренду без застави погоджуємо після перевірки паспорта, РНОКПП (ІПН) та реєстрації місця проживання. Документи через форму сайту не надсилай — порядок перевірки узгодимо особисто.",
+        "При оформленні із заставою: PS4 — 7 500 грн, PS5 — 25 000 грн. Повертаємо після повернення й перевірки обладнання за погодженими умовами. Спосіб внесення та строк повернення узгодимо до оренди.",
+        "Доставляємо по Одесі. Зелена зона — 200 грн, жовта — 300 грн за доставку та повернення. Від 7 днів доставка у зеленій і жовтій зонах безкоштовна. Червона зона — за тарифом таксі в обидва боки. Зону підтвердимо за адресою.",
+        "До підтвердження узгодимо комплектацію, дати й час отримання та повернення, доставку та відповідальність за обладнання. Усі умови погоджуємо до передачі консолі.",
+        "Для продовження оренди перевіримо доступність на нові дати. Не розбирай обладнання та одразу повідом про несправності чи пошкодження."
+      ],
+      "rootHTML": [],
+      "htmlLang": [
+        "uk"
+      ]
+    },
+    {
+      "path": "/usloviya-arendy/",
+      "status": 200,
+      "bytes": 29453,
+      "sha256": "fd8ed7efc91083df26a8961c1012efb1375e7401a609cb57565a9ee7829b3e90",
+      "finalURL": "https://flowers-luxury.shop/usloviya-arendy/",
+      "headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Vary": "Accept-Encoding",
+        "Link": "<https://flowers-luxury.shop/?p=36>; rel=shortlink",
+        "X-Litespeed-Cache": "miss"
+      },
+      "title": "Условия аренды – flowers-luxury.shop",
+      "meta": [
+        {
+          "charset": "UTF-8"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "robots",
+          "content": "max-image-preview:large"
+        },
+        {
+          "name": "generator",
+          "content": "WordPress 7.1.2"
+        },
+        {
+          "name": "generator",
+          "content": "WooCommerce 11.1.2"
+        },
+        {
+          "name": "theme-color",
+          "content": "#08090b"
+        },
+        {
+          "name": "description",
+          "content": "JOYRENT — аренда PlayStation 5 и PlayStation 4. Выбирай консоль, даты и любимые игры."
+        }
+      ],
+      "links": [
+        {
+          "rel": "dns-prefetch",
+          "href": "//cdn-reach.hostinger.com"
+        },
+        {
+          "rel": "alternate",
+          "title": "oEmbed (JSON)",
+          "type": "application/json+oembed",
+          "href": "https://flowers-luxury.shop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflowers-luxury.shop%2Fusloviya-arendy%2F"
+        },
+        {
+          "rel": "alternate",
+          "title": "oEmbed (XML)",
+          "type": "text/xml+oembed",
+          "href": "https://flowers-luxury.shop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflowers-luxury.shop%2Fusloviya-arendy%2F&format=xml"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "joyrent-0-css",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+          "media": "all"
+        },
+        {
+          "rel": "https://api.w.org/",
+          "href": "https://flowers-luxury.shop/wp-json/"
+        },
+        {
+          "rel": "alternate",
+          "title": "JSON",
+          "type": "application/json",
+          "href": "https://flowers-luxury.shop/wp-json/wp/v2/pages/36"
+        },
+        {
+          "rel": "EditURI",
+          "type": "application/rsd+xml",
+          "title": "RSD",
+          "href": "https://flowers-luxury.shop/xmlrpc.php?rsd"
+        },
+        {
+          "rel": "canonical",
+          "href": "https://flowers-luxury.shop/usloviya-arendy/"
+        },
+        {
+          "rel": "shortlink",
+          "href": "https://flowers-luxury.shop/?p=36"
+        },
+        {
+          "rel": "icon",
+          "type": "image/webp",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/favicon.webp"
+        }
+      ],
+      "scripts": [
+        "https://flowers-luxury.shop/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://flowers-luxury.shop/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+        "https://cdn-reach.hostinger.com/js/embed.js",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2"
+      ],
+      "headings": [
+        "Условия аренды"
+      ],
+      "details": [],
+      "paragraphs": [
+        "Бронирование на сайте не требует оплаты. Мы проверим доступность консоли и игр и свяжемся с тобой для подтверждения.",
+        "В комплекте — консоль и необходимые кабели. Выбери один или два геймпада: второй геймпад без доплаты.",
+        "Выбери оформление с залогом или по договору проката. Аренду без залога согласуем после проверки паспорта, РНОКПП (ИНН) и регистрации места проживания. Документы через форму сайта не отправляй — порядок проверки согласуем лично.",
+        "При оформлении с залогом: PS4 — 7 500 грн, PS5 — 25 000 грн. Возвращаем после возврата и проверки оборудования по согласованным условиям. Способ внесения и срок возврата согласуем до аренды.",
+        "Доставляем по Одессе. Зелёная зона — 200 грн, жёлтая — 300 грн за доставку и возврат. От 7 дней доставка в зелёной и жёлтой зонах бесплатна. Красная зона — по тарифу такси в обе стороны. Зону подтвердим по адресу.",
+        "До подтверждения согласуем комплектацию, даты и время получения и возврата, доставку и ответственность за оборудование. Все условия согласуем до передачи консоли.",
+        "Для продления аренды проверим доступность на новые даты. Не разбирай оборудование и сразу сообщи о неисправностях или повреждениях."
+      ],
+      "rootHTML": [],
+      "htmlLang": [
+        "ru"
+      ]
+    },
+    {
+      "path": "/konfidentsiinist/",
+      "status": 200,
+      "bytes": 28145,
+      "sha256": "b50f5e0d2aef5aba0719d326fbcfa927c687eb62a4e9261ba1f6358a50526102",
+      "finalURL": "https://flowers-luxury.shop/konfidentsiinist/",
+      "headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Vary": "Accept-Encoding",
+        "Link": "<https://flowers-luxury.shop/?p=33>; rel=shortlink",
+        "X-Litespeed-Cache": "miss"
+      },
+      "title": "Конфіденційність – flowers-luxury.shop",
+      "meta": [
+        {
+          "charset": "UTF-8"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "robots",
+          "content": "max-image-preview:large"
+        },
+        {
+          "name": "generator",
+          "content": "WordPress 7.1.2"
+        },
+        {
+          "name": "generator",
+          "content": "WooCommerce 11.1.2"
+        },
+        {
+          "name": "theme-color",
+          "content": "#08090b"
+        },
+        {
+          "name": "description",
+          "content": "JOYRENT — оренда PlayStation 5 та PlayStation 4. Обирай консоль, дати та улюблені ігри."
+        }
+      ],
+      "links": [
+        {
+          "rel": "dns-prefetch",
+          "href": "//cdn-reach.hostinger.com"
+        },
+        {
+          "rel": "alternate",
+          "title": "oEmbed (JSON)",
+          "type": "application/json+oembed",
+          "href": "https://flowers-luxury.shop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflowers-luxury.shop%2Fkonfidentsiinist%2F"
+        },
+        {
+          "rel": "alternate",
+          "title": "oEmbed (XML)",
+          "type": "text/xml+oembed",
+          "href": "https://flowers-luxury.shop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflowers-luxury.shop%2Fkonfidentsiinist%2F&format=xml"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "joyrent-0-css",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+          "media": "all"
+        },
+        {
+          "rel": "https://api.w.org/",
+          "href": "https://flowers-luxury.shop/wp-json/"
+        },
+        {
+          "rel": "alternate",
+          "title": "JSON",
+          "type": "application/json",
+          "href": "https://flowers-luxury.shop/wp-json/wp/v2/pages/33"
+        },
+        {
+          "rel": "EditURI",
+          "type": "application/rsd+xml",
+          "title": "RSD",
+          "href": "https://flowers-luxury.shop/xmlrpc.php?rsd"
+        },
+        {
+          "rel": "canonical",
+          "href": "https://flowers-luxury.shop/konfidentsiinist/"
+        },
+        {
+          "rel": "shortlink",
+          "href": "https://flowers-luxury.shop/?p=33"
+        },
+        {
+          "rel": "icon",
+          "type": "image/webp",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/favicon.webp"
+        }
+      ],
+      "scripts": [
+        "https://flowers-luxury.shop/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://flowers-luxury.shop/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+        "https://cdn-reach.hostinger.com/js/embed.js",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2"
+      ],
+      "headings": [
+        "Конфіденційність"
+      ],
+      "details": [],
+      "paragraphs": [
+        "JOYRENT отримує ім’я, телефон, адресу й параметри оренди, обраний спосіб оформлення та побажання щодо ігор для обробки бронювання та узгодження передачі обладнання. Дані бронювання зберігаються у магазині, доступ до них мають уповноважені працівники.",
+        "Не надсилай через форму бронювання паролі PSN, документи або платіжні дані. Форма бронювання не підписує на рекламну розсилку. Для уточнення або видалення даних напиши нам у Telegram або зателефонуй."
+      ],
+      "rootHTML": [],
+      "htmlLang": [
+        "uk"
+      ]
+    },
+    {
+      "path": "/konfidentsialnost/",
+      "status": 200,
+      "bytes": 28198,
+      "sha256": "926828ff04e4c06a8d3d5c8be268fa6e4cd8c26c2af17c7c2335545f7bc6586a",
+      "finalURL": "https://flowers-luxury.shop/konfidentsialnost/",
+      "headers": {
+        "Content-Type": "text/html; charset=UTF-8",
+        "Vary": "Accept-Encoding",
+        "Link": "<https://flowers-luxury.shop/?p=37>; rel=shortlink",
+        "X-Litespeed-Cache": "miss"
+      },
+      "title": "Конфиденциальность – flowers-luxury.shop",
+      "meta": [
+        {
+          "charset": "UTF-8"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "robots",
+          "content": "max-image-preview:large"
+        },
+        {
+          "name": "generator",
+          "content": "WordPress 7.1.2"
+        },
+        {
+          "name": "generator",
+          "content": "WooCommerce 11.1.2"
+        },
+        {
+          "name": "theme-color",
+          "content": "#08090b"
+        },
+        {
+          "name": "description",
+          "content": "JOYRENT — аренда PlayStation 5 и PlayStation 4. Выбирай консоль, даты и любимые игры."
+        }
+      ],
+      "links": [
+        {
+          "rel": "dns-prefetch",
+          "href": "//cdn-reach.hostinger.com"
+        },
+        {
+          "rel": "alternate",
+          "title": "oEmbed (JSON)",
+          "type": "application/json+oembed",
+          "href": "https://flowers-luxury.shop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflowers-luxury.shop%2Fkonfidentsialnost%2F"
+        },
+        {
+          "rel": "alternate",
+          "title": "oEmbed (XML)",
+          "type": "text/xml+oembed",
+          "href": "https://flowers-luxury.shop/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fflowers-luxury.shop%2Fkonfidentsialnost%2F&format=xml"
+        },
+        {
+          "rel": "stylesheet",
+          "id": "joyrent-0-css",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+          "media": "all"
+        },
+        {
+          "rel": "https://api.w.org/",
+          "href": "https://flowers-luxury.shop/wp-json/"
+        },
+        {
+          "rel": "alternate",
+          "title": "JSON",
+          "type": "application/json",
+          "href": "https://flowers-luxury.shop/wp-json/wp/v2/pages/37"
+        },
+        {
+          "rel": "EditURI",
+          "type": "application/rsd+xml",
+          "title": "RSD",
+          "href": "https://flowers-luxury.shop/xmlrpc.php?rsd"
+        },
+        {
+          "rel": "canonical",
+          "href": "https://flowers-luxury.shop/konfidentsialnost/"
+        },
+        {
+          "rel": "shortlink",
+          "href": "https://flowers-luxury.shop/?p=37"
+        },
+        {
+          "rel": "icon",
+          "type": "image/webp",
+          "href": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/favicon.webp"
+        }
+      ],
+      "scripts": [
+        "https://flowers-luxury.shop/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://flowers-luxury.shop/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+        "https://cdn-reach.hostinger.com/js/embed.js",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+        "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2"
+      ],
+      "headings": [
+        "Конфиденциальность"
+      ],
+      "details": [],
+      "paragraphs": [
+        "JOYRENT получает имя, телефон, адрес и параметры аренды, выбранный способ оформления и пожелания по играм для обработки бронирования и согласования передачи оборудования. Данные бронирования хранятся в магазине, доступ имеют уполномоченные сотрудники.",
+        "Не отправляй через форму бронирования пароли PSN, документы или платёжные данные. Форма бронирования не подписывает на рекламную рассылку. Для уточнения или удаления данных напиши нам в Telegram или позвони."
+      ],
+      "rootHTML": [],
+      "htmlLang": [
+        "ru"
+      ]
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "bytes": 322,
+      "sha256": "299697a155536a92df5fa345314059d3e45b565f3aadad9da3a3944167a53a04",
+      "finalURL": "https://flowers-luxury.shop/robots.txt",
+      "headers": {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Vary": "Accept-Encoding",
+        "Link": "<https://flowers-luxury.shop/wp-json/>; rel=\"https://api.w.org/\"",
+        "X-LiteSpeed-Cache": "hit"
+      },
+      "text": "User-agent: *\nDisallow: /wp-content/uploads/wc-logs/\nDisallow: /wp-content/uploads/woocommerce_transient_files/\nDisallow: /wp-content/uploads/woocommerce_uploads/\nDisallow: /*?add-to-cart=\nDisallow: /*?*add-to-cart=\nDisallow: /wp-admin/\nAllow: /wp-admin/admin-ajax.php\n\nSitemap: https://flowers-luxury.shop/wp-sitemap.xml\n"
+    },
+    {
+      "path": "/wp-sitemap.xml",
+      "status": 200,
+      "bytes": 742,
+      "sha256": "a0fc227030d5c7cbd6d764262d41c78aff9a94b2f0fd3823f656e2240631f6b4",
+      "finalURL": "https://flowers-luxury.shop/wp-sitemap.xml",
+      "headers": {
+        "Content-Type": "application/xml; charset=UTF-8",
+        "Vary": "Accept-Encoding",
+        "X-Litespeed-Cache": "miss"
+      },
+      "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"https://flowers-luxury.shop/wp-sitemap-index.xsl\" ?>\n<sitemapindex xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"><sitemap><loc>https://flowers-luxury.shop/wp-sitemap-posts-post-1.xml</loc></sitemap><sitemap><loc>https://flowers-luxury.shop/wp-sitemap-posts-page-1.xml</loc></sitemap><sitemap><loc>https://flowers-luxury.shop/wp-sitemap-posts-product-1.xml</loc></sitemap><sitemap><loc>https://flowers-luxury.shop/wp-sitemap-taxonomies-category-1.xml</loc></sitemap><sitemap><loc>https://flowers-luxury.shop/wp-sitemap-taxonomies-product_cat-1.xml</loc></sitemap><sitemap><loc>https://flowers-luxury.shop/wp-sitemap-users-1.xml</loc></sitemap></sitemapindex>\n"
+    },
+    {
+      "path": "/wp-json/joyrent/v1/catalog",
+      "status": 200,
+      "bytes": 29308,
+      "sha256": "a66eed8b1462effe8eea8ef7ef9721c27c7ea909f42c58cf61d7da016e327372",
+      "finalURL": "https://flowers-luxury.shop/wp-json/joyrent/v1/catalog",
+      "headers": {
+        "Content-Type": "application/json; charset=UTF-8",
+        "Vary": "Origin",
+        "X-Robots-Tag": "noindex",
+        "Link": "<https://flowers-luxury.shop/wp-json/>; rel=\"https://api.w.org/\"",
+        "X-LiteSpeed-Cache": "hit"
+      },
+      "topKeys": [
+        "tariffs",
+        "games",
+        "settings",
+        "currency",
+        "acceptingRequests"
+      ],
+      "settingsKeys": [
+        "city",
+        "cityRu",
+        "phone",
+        "email",
+        "telegram",
+        "deliveryFee",
+        "deliveryGreenFee",
+        "deliveryYellowFee",
+        "depositPs5",
+        "depositPs4",
+        "baseControllers",
+        "extraControllerFee",
+        "pickup",
+        "freeDeliveryFrom",
+        "maxGames",
+        "deliveryText",
+        "deliveryTextRu"
+      ],
+      "catalogWithoutContactFields": {
+        "tariffs": {
+          "ps5": [
+            {
+              "days": 1,
+              "price": 600,
+              "name": "На день",
+              "description": "Один вечір. Нові враження.",
+              "nameRu": "На день",
+              "descriptionRu": "Аренда на выбранный срок."
+            },
+            {
+              "days": 3,
+              "price": 1400,
+              "name": "На вихідні",
+              "description": "Вихідні за твоїми правилами.",
+              "nameRu": "На выходные",
+              "descriptionRu": "Аренда на выбранный срок."
+            },
+            {
+              "days": 7,
+              "price": 2500,
+              "name": "На тиждень",
+              "description": "Час пройти ще один рівень.",
+              "nameRu": "На неделю",
+              "descriptionRu": "Аренда на выбранный срок."
+            },
+            {
+              "days": 30,
+              "price": 6000,
+              "name": "На місяць",
+              "description": "Твій власний місяць гри.",
+              "nameRu": "На месяц",
+              "descriptionRu": "Аренда на выбранный срок."
+            }
+          ],
+          "ps4": [
+            {
+              "days": 3,
+              "price": 750,
+              "name": "На вихідні",
+              "description": "Класика для чудових вихідних.",
+              "nameRu": "На выходные",
+              "descriptionRu": "Аренда на выбранный срок."
+            },
+            {
+              "days": 7,
+              "price": 1200,
+              "name": "На тиждень",
+              "description": "Улюблені ігри, більше часу.",
+              "nameRu": "На неделю",
+              "descriptionRu": "Аренда на выбранный срок."
+            },
+            {
+              "days": 30,
+              "price": 2500,
+              "name": "На місяць",
+              "description": "Місяць у світі PlayStation.",
+              "nameRu": "На месяц",
+              "descriptionRu": "Аренда на выбранный срок."
+            }
+          ]
+        },
+        "games": [
+          {
+            "id": "fc27",
+            "title": "EA SPORTS FC 27",
+            "shortTitle": "EA SPORTS FC 27",
+            "eyebrow": "EA SPORTS",
+            "genre": "Спорт",
+            "filters": [
+              "two",
+              "party",
+              "sport",
+              "kids"
+            ],
+            "platforms": [
+              "ps5",
+              "ps4"
+            ],
+            "players": 4,
+            "rating": "3+",
+            "image": "cover-fc27",
+            "description": "Футбол для вечора з друзями: обирай улюблену команду й грай локальні матчі на одному екрані.",
+            "available": false,
+            "legacyImage": "",
+            "genreRu": "Спорт",
+            "descriptionRu": "Футбол для вечера с друзьями: выбирай любимую команду и играй локальные матчи на одном экране."
+          },
+          {
+            "id": "gta-v",
+            "title": "Grand Theft Auto V",
+            "shortTitle": "GTA V",
+            "eyebrow": "LOS SANTOS",
+            "genre": "Відкритий світ",
+            "filters": [
+              "story"
+            ],
+            "platforms": [
+              "ps5",
+              "ps4"
+            ],
+            "players": 1,
+            "rating": "18+",
+            "image": "cover-gta-v",
+            "description": "Три історії, велике місто та свобода пригод.",
+            "available": false,
+            "genreRu": "Открытый мир",
+            "descriptionRu": "Три героя, Лос-Сантос и открытый мир приключений."
+          },
+          {
+            "id": "mk1",
+            "title": "Mortal Kombat 1",
+            "shortTitle": "Mortal Kombat 1",
+            "eyebrow": "НОВА ЕРА",
+            "genre": "Файтинг",
+            "filters": [
+              "two",
+              "party"
+            ],
+            "platforms": [
+              "ps5"
+            ],
+            "players": 2,
+            "rating": "18+",
+            "image": "cover-mk1",
+            "description": "Нова історія знайомих бійців на PlayStation 5.",
+            "available": false,
+            "genreRu": "Файтинг",
+            "descriptionRu": "Новая история знакомых бойцов на PlayStation 5."
+          },
+          {
+            "id": "stalker2",
+            "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+            "shortTitle": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+            "eyebrow": "Виживання",
+            "genre": "Виживання",
+            "genreRu": "Выживание",
+            "filters": [
+              "story"
+            ],
+            "platforms": [
+              "ps5"
+            ],
+            "players": 1,
+            "rating": "18+",
+            "image": "cover-stalker2",
+            "description": "Українська пригода в Зоні відчуження. Досліджуй небезпечний світ і вирішуй, кому довіряти.",
+            "descriptionRu": "Украинское приключение в Зоне отчуждения. Исследуй опасный мир и решай, кому доверять.",
+            "available": false,
+            "legacyImage": ""
+          },
+          {
+            "id": "ufc6",
+            "title": "EA SPORTS UFC 6",
+            "shortTitle": "EA SPORTS UFC 6",
+            "eyebrow": "EA SPORTS",
+            "genre": "Спорт",
+            "filters": [
+              "two",
+              "sport"
+            ],
+            "platforms": [
+              "ps5"
+            ],
+            "players": 2,
+            "rating": "16+",
+            "image": "cover-ufc6",
+            "description": "Виходь в октагон і влаштуй поєдинок із другом на одному екрані. Обирай бійця та свій стиль.",
+            "available": false,
+            "legacyImage": "",
+            "genreRu": "Спорт",
+            "descriptionRu": "Выходи в октагон и устрой поединок с другом на одном экране. Выбирай бойца и свой стиль."
+          },
+          {
+            "id": "tekken8",
+            "title": "Tekken 8",
+            "shortTitle": "TEKKEN 8",
+            "eyebrow": "THE NEXT BATTLE",
+            "genre": "Файтинг",
+            "filters": [
+              "two",
+              "party"
+            ],
+            "platforms": [
+              "ps5"
+            ],
+            "players": 2,
+            "rating": "16+",
+            "image": "cover-tekken8",
+            "description": "Нове покоління легендарної серії. Влаштовуй поєдинки з друзями.",
+            "available": false,
+            "genreRu": "Файтинг",
+            "descriptionRu": "Новое поколение серии Tekken. Устраивай поединки с друзьями."
+          },
+          {
+            "id": "split-fiction",
+            "title": "Split Fiction",
+            "shortTitle": "Split Fiction",
+            "eyebrow": "Кооператив",
+            "genre": "Кооператив",
+            "genreRu": "Кооператив",
+            "filters": [
+              "two",
+              "story"
+            ],
+            "platforms": [
+              "ps5"
+            ],
+            "players": 2,
+            "rating": "16+",
+            "image": "cover-split-fiction",
+            "description": "Пригода, створена для двох. Стрибай між фантастичними світами та проходь випробування разом.",
+            "descriptionRu": "Приключение, созданное для двоих. Прыгай между фантастическими мирами и проходи испытания вместе.",
+            "available": false,
+            "legacyImage": ""
+          },
+          {
+            "id": "it-takes-two",
+            "title": "It Takes Two",
+            "shortTitle": "It Takes Two",
+            "eyebrow": "КРАЩЕ РАЗОМ",
+            "genre": "Кооператив",
+            "filters": [
+              "two",
+              "story"
+            ],
+            "platforms": [
+              "ps5",
+              "ps4"
+            ],
+            "players": 2,
+            "rating": "12+",
+            "image": "cover-it-takes-two",
+            "description": "Пригода, створена для двох. Розв’язуйте головоломки та відкривайте фантастичні світи разом.",
+            "available": false,
+            "genreRu": "Кооператив",
+            "descriptionRu": "Приключение для двоих: решайте головоломки и исследуйте фантастические миры вместе."
+          },
+          {
+            "id": "cod-bo7",
+            "title": "Call of Duty: Black Ops 7",
+            "shortTitle": "Call of Duty: Black Ops 7",
+            "eyebrow": "CALL OF DUTY",
+            "genre": "Екшн",
+            "filters": [
+              "story"
+            ],
+            "platforms": [
+              "ps5",
+              "ps4"
+            ],
+            "players": 1,
+            "rating": "18+",
+            "image": "cover-cod-bo7",
+            "description": "Кампанія Black Ops, зомбі та мережеві поєдинки. Доступні режими й вимоги до мережі уточнимо перед орендою.",
+            "available": false,
+            "legacyImage": "",
+            "genreRu": "Экшен",
+            "descriptionRu": "Кампания Black Ops, зомби и сетевые поединки. Доступные режимы и требования к сети уточним перед арендой.",
+            "playersByPlatform": {
+              "ps5": 2,
+              "ps4": 1
+            },
+            "requiresInternet": true
+          },
+          {
+            "id": "gt7",
+            "title": "Gran Turismo 7",
+            "shortTitle": "Gran Turismo 7",
+            "eyebrow": "THE REAL DRIVING SIMULATOR",
+            "genre": "Перегони",
+            "filters": [
+              "two",
+              "racing",
+              "kids"
+            ],
+            "platforms": [
+              "ps5",
+              "ps4"
+            ],
+            "players": 2,
+            "rating": "3+",
+            "image": "cover-gt7",
+            "description": "Від першого кола до ідеальної траєкторії. Культові автомобілі та траси.",
+            "available": false,
+            "playersByPlatform": {
+              "ps5": 4,
+              "ps4": 2
+            },
+            "genreRu": "Гонки",
+            "descriptionRu": "Знаменитые автомобили и трассы. От первого круга до идеальной траектории."
+          },
+          {
+            "id": "god-of-war-ragnarok",
+            "title": "God of War Ragnarök",
+            "shortTitle": "God of War Ragnarök",
+            "eyebrow": "Пригоди",
+            "genre": "Пригоди",
+            "genreRu": "Приключения",
+            "filters": [
+              "story"
+            ],
+            "platforms": [
+              "ps5",
+              "ps4"
+            ],
+            "players": 1,
+            "rating": "18+",
+            "image": "cover-god-of-war-ragnarok",
+            "description": "Подорож Кратоса й Атрея крізь дев’ять світів. Скандинавська міфологія, видовищні битви та сильна історія.",
+            "descriptionRu": "Путешествие Кратоса и Атрея через девять миров. Скандинавская мифология, зрелищные битвы и сильная история.",
+            "available": false,
+            "legacyImage": ""
+          },
+          {
+            "id": "red-dead-redemption-2",
+            "title": "Red Dead Redemption 2",
+            "shortTitle": "Red Dead Redemption 2",
+            "eyebrow": "Відкритий світ",
+            "genre": "Відкритий світ",
+            "genreRu": "Открытый мир",
+            "filters": [
+              "story"
+            ],
+            "platforms": [
+              "ps5",
+              "ps4"
+            ],
+            "players": 1,
+            "rating": "18+",
+            "image": "cover-red-dead-redemption-2",
+            "description": "Історія Артура Моргана на Дикому Заході. Кінематографічна пригода у живому відкритому світі.",
+            "descriptionRu": "История Артура Моргана на Диком Западе. Кинематографическое приключение в живом открытом мире.",
+            "available": false,
+            "legacyImage": ""
+          },
+          {
+            "id": "spider-man-2",
+            "title": "Marvel’s Spider-Man 2",
+            "shortTitle": "Spider-Man 2",
+            "eyebrow": "MARVEL",
+            "genre": "Пригоди",
+            "filters": [
+              "story"
+            ],
+            "platforms": [
+              "ps5"
+            ],
+            "players": 1,
+            "rating": "16+",
+            "image": "cover-spider-man-2",
+            "description": "Місто, що ніколи не спить, і нова історія двох героїв.",
+            "available": false,
+            "genreRu": "Приключения",
+            "descriptionRu": "Питер Паркер и Майлз Моралес в новой истории о Человеке-пауке."
+          },
+          {
+            "id": "hogwarts",
+            "title": "Hogwarts Legacy",
+            "shortTitle": "Hogwarts Legacy",
+            "eyebrow": "ЧАС ДЛЯ МАГІЇ",
+            "genre": "Пригоди",
+            "filters": [
+              "story"
+            ],
+            "platforms": [
+              "ps5",
+              "ps4"
+            ],
+            "players": 1,
+            "rating": "12+",
+            "image": "cover-hogwarts",
+            "description": "Досліджуй школу магії, вивчай закляття та створюй власну історію.",
+            "available": false,
+            "genreRu": "Приключения",
+            "descriptionRu": "Исследуй Хогвартс, изучай заклинания и создавай свою историю."
+          },
+          {
+            "id": "elden-ring",
+            "title": "ELDEN RING",
+            "shortTitle": "ELDEN RING",
+            "eyebrow": "Рольова гра",
+            "genre": "Рольова гра",
+            "genreRu": "Ролевая игра",
+            "filters": [
+              "story"
+            ],
+            "platforms": [
+              "ps5",
+              "ps4"
+            ],
+            "players": 1,
+            "rating": "16+",
+            "image": "cover-elden-ring",
+            "description": "Великий світ для дослідження, складні битви та свобода обрати власний шлях. Для тих, хто любить виклик.",
+            "descriptionRu": "Большой мир для исследования, сложные битвы и свобода выбрать свой путь. Для тех, кто любит вызов.",
+            "available": false,
+            "legacyImage": ""
+          },
+          {
+            "id": "resident-evil-requiem",
+            "title": "Resident Evil Requiem",
+            "shortTitle": "Resident Evil Requiem",
+            "eyebrow": "Горор",
+            "genre": "Горор",
+            "genreRu": "Хоррор",
+            "filters": [
+              "story"
+            ],
+            "platforms": [
+              "ps5"
+            ],
+            "players": 1,
+            "rating": "18+",
+            "image": "cover-resident-evil-requiem",
+            "description": "Напружена історія виживання у всесвіті Resident Evil. Досліджуй, знаходь ресурси й будь готовий до небезпеки.",
+            "descriptionRu": "Напряжённая история выживания во вселенной Resident Evil. Исследуй, находи ресурсы и будь готов к опасности.",
+            "available": false,
+            "legacyImage": ""
+          },
+          {
+            "id": "astro-bot",
+            "title": "ASTRO BOT",
+            "shortTitle": "ASTRO BOT",
+            "eyebrow": "Платформер",
+            "genre": "Платформер",
+            "genreRu": "Платформер",
+            "filters": [
+              "kids"
+            ],
+            "platforms": [
+              "ps5"
+            ],
+            "players": 1,
+            "rating": "7+",
+            "image": "cover-astro-bot",
+            "description": "Барвиста подорож незвичайними планетами. Рятуй друзів ASTRO та відкривай можливості DualSense.",
+            "descriptionRu": "Красочное путешествие по необычным планетам. Спасай друзей ASTRO и открывай возможности DualSense.",
+            "available": false,
+            "legacyImage": ""
+          },
+          {
+            "id": "sackboy",
+            "title": "Sackboy: A Big Adventure",
+            "shortTitle": "Sackboy",
+            "eyebrow": "A BIG ADVENTURE",
+            "genre": "Сімейні",
+            "filters": [
+              "two",
+              "party",
+              "kids"
+            ],
+            "platforms": [
+              "ps5",
+              "ps4"
+            ],
+            "players": 4,
+            "rating": "7+",
+            "image": "cover-sackboy",
+            "description": "Яскрава пригода для всієї компанії. Досліджуйте рівні разом.",
+            "available": false,
+            "genreRu": "Семейные",
+            "descriptionRu": "Платформенное приключение для всей компании. Проходите уровни вместе."
+          },
+          {
+            "id": "horizon-forbidden-west",
+            "title": "Horizon Forbidden West",
+            "shortTitle": "Horizon Forbidden West",
+            "eyebrow": "Пригоди",
+            "genre": "Пригоди",
+            "genreRu": "Приключения",
+            "filters": [
+              "story"
+            ],
+            "platforms": [
+              "ps5",
+              "ps4"
+            ],
+            "players": 1,
+            "rating": "16+",
+            "image": "cover-horizon-forbidden-west",
+            "description": "Відкрий нові землі разом з Елой. Полюй на машини й розкривай таємниці світу майбутнього.",
+            "descriptionRu": "Открывай новые земли вместе с Элой. Охоться на машины и раскрывай тайны мира будущего.",
+            "available": false,
+            "legacyImage": ""
+          },
+          {
+            "id": "mk11",
+            "title": "Mortal Kombat 11",
+            "shortTitle": "Mortal Kombat 11",
+            "eyebrow": "FIGHTING CLASSIC",
+            "genre": "Файтинг",
+            "filters": [
+              "two",
+              "party"
+            ],
+            "platforms": [
+              "ps4"
+            ],
+            "players": 2,
+            "rating": "18+",
+            "image": "cover-mk11",
+            "description": "Улюблені бійці та поєдинки на одному екрані.",
+            "available": false,
+            "genreRu": "Файтинг",
+            "descriptionRu": "Знакомые бойцы и поединки с другом на одном экране."
+          }
+        ],
+        "settings": {
+          "city": "Одеса",
+          "cityRu": "Одесса",
+          "deliveryFee": null,
+          "deliveryGreenFee": 200,
+          "deliveryYellowFee": 300,
+          "depositPs5": 25000,
+          "depositPs4": 7500,
+          "baseControllers": 2,
+          "extraControllerFee": 0,
+          "pickup": false,
+          "freeDeliveryFrom": 7,
+          "maxGames": 100,
+          "deliveryText": "Доставляємо по Одесі. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.",
+          "deliveryTextRu": "Доставляем по Одессе. Привезём, подключим и заберём после аренды. Зону и время подтвердим по адресу."
+        },
+        "currency": "UAH",
+        "acceptingRequests": true
+      }
+    },
+    {
+      "path": "/wp-json/joyrent/v1",
+      "error": "'list' object has no attribute 'items'"
+    }
+  ]
+}

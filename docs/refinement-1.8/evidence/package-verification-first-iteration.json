@@ -1,0 +1,44 @@
+{
+  "archives": [
+    {
+      "archive": "joyrent-1.8.0.zip",
+      "bytes": 11305016,
+      "sha256": "d1712eb8a41a207da36c5384fe7ebbcc9b3780b2b8a22b392504eb1a8ca4d123",
+      "files": 155,
+      "matchesSource": true
+    },
+    {
+      "archive": "joyrent-rentals-1.7.0.zip",
+      "bytes": 36744,
+      "sha256": "8ad30d40784017774e96a4547da7a3c7d18221297be7baa9576addace3b62d06",
+      "files": 15,
+      "matchesSource": true
+    },
+    {
+      "archive": "joyrent-preview-1.8.0.zip",
+      "bytes": 10813162,
+      "sha256": "7d2fbdaaac1df7c33b6c418eef4bd9c8f985dd1b0b1b8316df0d9d022910b6fc",
+      "files": 143,
+      "matchesSource": true
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/main-i_aDCQ0R.js",
+      "bytes": 484907,
+      "sha256": "d5acf753c75b9cd83cfe4716dec7c2a1001592af72f86efc6802bc654b5db1aa",
+      "matchesServed": true,
+      "status": 200
+    },
+    {
+      "file": "assets/main-Dr9ihFq-.css",
+      "bytes": 92547,
+      "sha256": "4e209770f1580b248f512f731a7bfa3ac4b36332a7acd310bbc57b79da69564f",
+      "matchesServed": true,
+      "status": 200
+    }
+  ],
+  "themeVersion": "1.8.0",
+  "pluginVersion": "1.7.0",
+  "pluginSourceUnchanged": true
+}

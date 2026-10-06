@@ -1,0 +1,78 @@
+{
+  "source": "Recorded results from this agent session; raw shell output is in tool history, not a saved raw-log file.",
+  "execution": "Local Docker WordPress joyrent-wp only; regression suites were not rerun to create this report.",
+  "suites": [
+    {
+      "command": "docker exec -i joyrent-wp php < tests/php/request-options-regression.php",
+      "assertions": 63,
+      "failures": [],
+      "exitCode": 0,
+      "interceptedMailAttempts": 5
+    },
+    {
+      "command": "docker exec -i joyrent-wp php < tests/php/request-options-migration.php",
+      "assertions": 26,
+      "failures": [],
+      "exitCode": 0,
+      "interceptedMailAttempts": 0
+    },
+    {
+      "command": "docker exec -i joyrent-wp php < tests/php/copy-migration.php",
+      "assertions": 42,
+      "failures": [],
+      "exitCode": 0,
+      "interceptedMailAttempts": 0
+    },
+    {
+      "command": "docker exec -i joyrent-wp php < tests/php/backend-regression.php",
+      "assertions": 50,
+      "failures": [],
+      "exitCode": 0,
+      "interceptedMailAttempts": 8
+    },
+    {
+      "command": "docker exec -i joyrent-wp php < tests/php/delivery-zone-regression.php",
+      "assertions": 33,
+      "failures": [],
+      "exitCode": 0,
+      "interceptedMailAttempts": 9
+    }
+  ],
+  "totalAssertions": 214,
+  "totalFailures": 0,
+  "interceptedMailAttempts": 22,
+  "mailScope": "22 attempts in the final successful verification suites; earlier red/green development runs also intercepted local mail and are not counted here.",
+  "lint": [
+    {
+      "command": "docker exec joyrent-wp php -l /var/www/html/wp-content/plugins/joyrent-rentals/includes/domain.php",
+      "exitCode": 0,
+      "result": "No syntax errors detected"
+    },
+    {
+      "command": "docker exec joyrent-wp php -l /var/www/html/wp-content/plugins/joyrent-rentals/includes/orders.php",
+      "exitCode": 0,
+      "result": "No syntax errors detected"
+    },
+    {
+      "command": "docker exec joyrent-wp php -l /var/www/html/wp-content/plugins/joyrent-rentals/includes/store.php",
+      "exitCode": 0,
+      "result": "No syntax errors detected"
+    },
+    {
+      "command": "docker exec joyrent-wp php -l /var/www/html/wp-content/plugins/joyrent-rentals/includes/locale.php",
+      "exitCode": 0,
+      "result": "No syntax errors detected"
+    }
+  ],
+  "diffCheck": {
+    "command": "git diff --check",
+    "exitCode": 0
+  },
+  "externalMailSent": false,
+  "externalApplicationWrites": false,
+  "fixtureCleanup": "Tests restored saved local settings/version/user state, deleted test orders and REST receipt/rate caches, and restored managed page fixtures through finally blocks.",
+  "limitations": [
+    "This is a session-result summary, not a raw log archive.",
+    "No live hosting order was created and no real notification delivery was tested."
+  ]
+}

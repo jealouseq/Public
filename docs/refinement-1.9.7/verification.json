@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-06",
+  "status": "PASS",
+  "themeVersion": "1.9.7",
+  "pluginVersion": "1.8.4",
+  "pluginChanged": false,
+  "environment": {
+    "site": "http://localhost:8080",
+    "wordpress": true,
+    "woocommerce": true,
+    "browser": "Chromium",
+    "touchEmulation": true
+  },
+  "checks": {
+    "unitTests": 123,
+    "unitTestFiles": 9,
+    "selectionAndCarouselCases": 20,
+    "languages": [
+      "uk",
+      "ru"
+    ],
+    "viewportWidths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "compactViewport": {
+      "width": 390,
+      "height": 320
+    },
+    "missingGameCases": 2,
+    "gameDetailCases": 186,
+    "nestedPickerCases": 6,
+    "customLongCopyCases": 2,
+    "gameLimitCases": 2,
+    "typeScriptBuild": "PASS",
+    "zipIntegrity": "PASS",
+    "historicalReleaseArchivesUnchanged": 53
+  },
+  "scope": {
+    "existingCoverDimensionsPreserved": true,
+    "gameDetailGeometryPreserved": true,
+    "faqRemainsSeparate": true,
+    "liveSiteChecked": false,
+    "liveDeployment": false,
+    "realBookingsOrMail": 0
+  },
+  "limitations": [
+    "Physical iPhone Safari was not tested; browser checks used Chromium with touch and viewport emulation.",
+    "The existing Vite warning about the main JavaScript chunk exceeding 500 kB remains."
+  ]
+}

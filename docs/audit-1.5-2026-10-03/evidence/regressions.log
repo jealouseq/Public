@@ -1,0 +1,3 @@
+PASS: durable WooCommerce retry recovery, stale lock and changed payload conflict
+PASS: six simultaneous identical submissions create one request
+PASS: concurrent rate admission permits exactly one remaining request

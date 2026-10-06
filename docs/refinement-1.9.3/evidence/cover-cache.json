@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "DPR": 2,
+  "cardAndDetailURL": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27-720.webp",
+  "resourceEntries": [
+    {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27-720.webp",
+      "encoded": 122106,
+      "transfer": 122406
+    }
+  ],
+  "errors": [],
+  "liveWrites": 0
+}

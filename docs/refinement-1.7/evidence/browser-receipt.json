@@ -1,0 +1,176 @@
+{
+  "verifiedAt": "2026-10-03T10:56:33.353885+00:00",
+  "uiPass": 20,
+  "nativePass": 6,
+  "currentPass": 26,
+  "currentFail": 0,
+  "selectedScreens": 12,
+  "expectedBuild": {
+    "main": "main-CNh65H_Y.js",
+    "css": "main-hpKQBRcV.css"
+  },
+  "servedAssets": {
+    "main-CNh65H_Y.js": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+      "status": 200,
+      "bytes": 485194,
+      "sha256": "99b37d873bfc96b85b555b7255a2aca4d7e755d46f4137756d1c94d9eac25b08",
+      "matchesLocal": true
+    },
+    "main-hpKQBRcV.css": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+      "status": 200,
+      "bytes": 92276,
+      "sha256": "3a577b6042e4db7b60caebb9ebed5e1a53d222d18eff2a27e42967fa86ac5fdd",
+      "matchesLocal": true
+    }
+  },
+  "caseProvenance": [
+    {
+      "case": "art-ru-1440",
+      "observedRun": "20261003T104416Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T104416Z.json"
+    },
+    {
+      "case": "art-ru-390",
+      "observedRun": "20261003T104416Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T104416Z.json"
+    },
+    {
+      "case": "art-uk-1440",
+      "observedRun": "20261003T104416Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T104416Z.json"
+    },
+    {
+      "case": "art-uk-390",
+      "observedRun": "20261003T104416Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T104416Z.json"
+    },
+    {
+      "case": "motion-ru-1440",
+      "observedRun": "20261003T104416Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T104416Z.json"
+    },
+    {
+      "case": "motion-ru-390",
+      "observedRun": "20261003T104416Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T104416Z.json"
+    },
+    {
+      "case": "motion-uk-1440",
+      "observedRun": "20261003T104416Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T104416Z.json"
+    },
+    {
+      "case": "motion-uk-390",
+      "observedRun": "20261003T104416Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T104416Z.json"
+    },
+    {
+      "case": "native-faq-ru",
+      "observedRun": "20261003T104841Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T104841Z.json"
+    },
+    {
+      "case": "native-faq-uk",
+      "observedRun": "20261003T104841Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T104841Z.json"
+    },
+    {
+      "case": "native-privacy-ru",
+      "observedRun": "20261003T105301Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T105301Z.json"
+    },
+    {
+      "case": "native-privacy-uk",
+      "observedRun": "20261003T105301Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T105301Z.json"
+    },
+    {
+      "case": "native-terms-ru",
+      "observedRun": "20261003T104841Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T104841Z.json"
+    },
+    {
+      "case": "native-terms-uk",
+      "observedRun": "20261003T104841Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T104841Z.json"
+    },
+    {
+      "case": "viewport-ru-1440",
+      "observedRun": "20261003T103549Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T103549Z.json"
+    },
+    {
+      "case": "viewport-ru-1920",
+      "observedRun": "20261003T103549Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T103549Z.json"
+    },
+    {
+      "case": "viewport-ru-320",
+      "observedRun": "20261003T103549Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T103549Z.json"
+    },
+    {
+      "case": "viewport-ru-390",
+      "observedRun": "20261003T103549Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T103549Z.json"
+    },
+    {
+      "case": "viewport-ru-768",
+      "observedRun": "20261003T103549Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T103549Z.json"
+    },
+    {
+      "case": "viewport-ru-980",
+      "observedRun": "20261003T103549Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T103549Z.json"
+    },
+    {
+      "case": "viewport-uk-1440",
+      "observedRun": "20261003T103549Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T103549Z.json"
+    },
+    {
+      "case": "viewport-uk-1920",
+      "observedRun": "20261003T103549Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T103549Z.json"
+    },
+    {
+      "case": "viewport-uk-320",
+      "observedRun": "20261003T103549Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T103549Z.json"
+    },
+    {
+      "case": "viewport-uk-390",
+      "observedRun": "20261003T103549Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T103549Z.json"
+    },
+    {
+      "case": "viewport-uk-768",
+      "observedRun": "20261003T103549Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T103549Z.json"
+    },
+    {
+      "case": "viewport-uk-980",
+      "observedRun": "20261003T103549Z",
+      "immutableSource": "work/refinement-1.7/browser-results-20261003T103549Z.json"
+    }
+  ],
+  "historicalFailedObservations": {
+    "harness": 18,
+    "trueProduct": 8
+  },
+  "postAttempts": 0,
+  "externalRasterTiles": "blocked; local-vector screenshot scheme",
+  "localNativeTemplateSHA256": {
+    "footer.php": "761b5601dfd0d003a18ddbd00e04b8a8bd5998df851887c33e79e0a04bca748d",
+    "index.php": "880b849466d366061f9bcfef2ca4a25c9ab2be672ece9e7cadb4b053b077d35f"
+  },
+  "reportFiles": {
+    "browser-report.md": "5ac42cb366190639c7fd89303c74434388b2734b0decdf2428a8628a4487e965",
+    "browser-report.json": "c291b03b28a2dc2478eada981281068b043fb7942f1b5e1982c66b609f23958f",
+    "browser-selected-screens.json": "6b5eaba1e5f0b59d19be68665f42d2cb20498e8e309d1520d720cb7efaabb01f",
+    "browser-delivery-copy-comparison.json": "64b4d93609e732266edaae5f2de2980839d3e41a73b087a45254fe016a1fb128"
+  }
+}

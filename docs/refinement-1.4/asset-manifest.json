@@ -1,0 +1,44 @@
+[
+  {
+    "file": "ps5-commercial-desktop-768.webp",
+    "width": 768,
+    "height": 576,
+    "bytes": 16488,
+    "sha256": "b6f5c6d7273fec13afa0ce2946d95974dd73b24cecd11f70f3557cd5e83768a1"
+  },
+  {
+    "file": "ps5-commercial-desktop.png",
+    "width": 1448,
+    "height": 1086,
+    "bytes": 1363753,
+    "sha256": "5eb5bb49e5b3cb1099827ede325d0ca49363d0cd66c6bce1547dbf4b7983e42d"
+  },
+  {
+    "file": "ps5-commercial-desktop.webp",
+    "width": 1448,
+    "height": 1086,
+    "bytes": 61656,
+    "sha256": "74772cc364f83e75ea14dd3ec80c22fd0e03fa503c07141c165170727f74c8c7"
+  },
+  {
+    "file": "ps5-commercial-mobile-560.webp",
+    "width": 560,
+    "height": 420,
+    "bytes": 11462,
+    "sha256": "ea9b32bd167cdeddc444c8c60f8d82906f758f47e82a436bfe08ef646ace605f"
+  },
+  {
+    "file": "ps5-commercial-mobile.png",
+    "width": 1448,
+    "height": 1086,
+    "bytes": 1373759,
+    "sha256": "9a9bd3b9cd8d637dbcc28545c534386d1bfc551787677ca34877a4976dae8cc6"
+  },
+  {
+    "file": "ps5-commercial-mobile.webp",
+    "width": 1120,
+    "height": 840,
+    "bytes": 48246,
+    "sha256": "9bf292408685518bcf487ad5f76d8d9bda0a96fb7d0d7f0259c9b123154d6806"
+  }
+]

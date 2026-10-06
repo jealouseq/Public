@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-06",
+  "status": "PASS",
+  "themeVersion": "1.9.8",
+  "pluginVersion": "1.8.4",
+  "pluginChanged": false,
+  "environment": {
+    "site": "http://localhost:8080",
+    "wordpress": true,
+    "woocommerce": true,
+    "browser": "Chromium",
+    "touchEmulation": true
+  },
+  "checks": {
+    "unitTests": 123,
+    "unitTestFiles": 9,
+    "showcaseAndMotionCases": 20,
+    "selectionAndCarouselCases": 20,
+    "languages": [
+      "uk",
+      "ru"
+    ],
+    "viewportWidths": [
+      320,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "typeScriptBuild": "PASS",
+    "zipIntegrity": "PASS",
+    "historicalReleaseArchivesUnchanged": 55,
+    "capturedScreenshots": 20,
+    "localMotionDemoSeconds": 13
+  },
+  "scope": {
+    "subscriptionInclusionConfirmedByOwner": true,
+    "subscriptions": [
+      "EA Play",
+      "PS Plus Deluxe"
+    ],
+    "subscriptionsAvailableOn": [
+      "ps5",
+      "ps4"
+    ],
+    "faqRemainsSeparate": true,
+    "heroBenefitsRemoved": true,
+    "bookingApiUnchanged": true,
+    "gameCoversUnchanged": true,
+    "liveSiteChecked": false,
+    "liveDeployment": false,
+    "realBookingsOrMail": 0
+  },
+  "limitations": [
+    "Original reference motion was not fully observed: Opera lacked interaction controls, TinyFish had insufficient funds, and the uploaded video exceeded the 32 MiB transfer limit.",
+    "Physical iPhone Safari was not tested; Chromium used touch and viewport emulation.",
+    "The existing Vite warning about the main JavaScript chunk exceeding 500 kB remains."
+  ]
+}

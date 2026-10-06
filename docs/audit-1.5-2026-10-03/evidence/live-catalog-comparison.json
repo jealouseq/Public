@@ -1,0 +1,27 @@
+{
+  "liveTotal": 25,
+  "unique": 20,
+  "duplicates": {
+    "god-of-war-ragnarok": {
+      "count": 2,
+      "identical": true
+    },
+    "elden-ring": {
+      "count": 2,
+      "identical": true
+    },
+    "resident-evil-requiem": {
+      "count": 2,
+      "identical": true
+    },
+    "astro-bot": {
+      "count": 2,
+      "identical": true
+    },
+    "horizon-forbidden-west": {
+      "count": 2,
+      "identical": true
+    }
+  },
+  "missingExpected": []
+}

@@ -1,0 +1,84 @@
+{
+  "base": "http://localhost:8080",
+  "checks": [
+    {
+      "language": "uk",
+      "width": 1440,
+      "motion": "no-preference",
+      "status": "PASS",
+      "tariffCta": {
+        "difference": 0.0078125,
+        "height": 44
+      },
+      "gameNote": {
+        "font": "16px",
+        "align": "center",
+        "lineHeight": "26.4px",
+        "color": "rgb(212, 209, 202)",
+        "width": 680
+      },
+      "deliveryAnimation": {
+        "display": "block",
+        "playState": "running",
+        "animation": "joyrent-delivery-shine",
+        "w": 186,
+        "h": 50
+      },
+      "pageErrors": [],
+      "nonReadRequests": []
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "motion": "reduce",
+      "status": "PASS",
+      "tariffCta": {
+        "difference": 0.0078125,
+        "height": 44
+      },
+      "gameNote": {
+        "font": "15px",
+        "align": "center",
+        "lineHeight": "24.75px",
+        "color": "rgb(212, 209, 202)",
+        "width": 342
+      },
+      "deliveryAnimation": {
+        "display": "none",
+        "playState": "running",
+        "animation": "none",
+        "w": 196,
+        "h": 52
+      },
+      "pageErrors": [],
+      "nonReadRequests": []
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "motion": "reduce",
+      "status": "PASS",
+      "tariffCta": {
+        "difference": 0.0078125,
+        "height": 44
+      },
+      "gameNote": {
+        "font": "15px",
+        "align": "center",
+        "lineHeight": "24.75px",
+        "color": "rgb(212, 209, 202)",
+        "width": 280
+      },
+      "deliveryAnimation": {
+        "display": "none",
+        "playState": "running",
+        "animation": "none",
+        "w": 196,
+        "h": 52
+      },
+      "pageErrors": [],
+      "nonReadRequests": []
+    }
+  ],
+  "scope": "Read-only packaged WordPress theme 1.9.0; copy, CTA centering, readable game note, loop visibility/reduced-motion and document width. No order sent."
+}

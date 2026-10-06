@@ -1,0 +1,55 @@
+{
+  "checked": "2026-10-03",
+  "sources": [
+    {
+      "id": "fc27",
+      "url": "https://www.ea.com/games/ea-sports-fc/fc-27",
+      "file": "game-source-0.txt"
+    },
+    {
+      "id": "fc27-playstation",
+      "url": "https://www.playstation.com/en-us/games/ea-sports-fc/",
+      "file": "game-source-5.txt"
+    },
+    {
+      "id": "ufc6",
+      "url": "https://www.ea.com/games/ufc/ufc-6",
+      "file": "game-source-1.txt"
+    },
+    {
+      "id": "ufc6-playstation",
+      "url": "https://www.playstation.com/en-us/games/ea-sports-ufc/",
+      "file": "game-source-6.txt"
+    },
+    {
+      "id": "cod-bo7",
+      "url": "https://www.playstation.com/en-us/games/call-of-duty-black-ops-7/",
+      "file": "game-source-2.txt"
+    },
+    {
+      "id": "cod-bo7-editions",
+      "url": "https://support.activision.com/black-ops-7/articles/black-ops-7-editions",
+      "file": "game-source-10.txt"
+    },
+    {
+      "id": "stalker2",
+      "url": "https://www.playstation.com/en-us/games/stalker-2-heart-of-chornobyl/",
+      "file": "game-source-3.txt"
+    },
+    {
+      "id": "resident-evil-requiem",
+      "url": "https://www.playstation.com/en-us/games/resident-evil-requiem/",
+      "file": "game-source-4.txt"
+    },
+    {
+      "id": "gt7-spec-ii",
+      "url": "https://blog.playstation.com/2023/11/01/gran-turismo-7-update-with-spec-ii-1-40-arrives-today-new-cars-track-and-features/",
+      "file": "game-gt7-spec-ii.txt"
+    },
+    {
+      "id": "gt7-ps4",
+      "url": "https://store.playstation.com/en-us/product/UP9000-CUSA24769_00-GT7STD0000000PS4",
+      "file": "gt7-ps4-evidence.json"
+    }
+  ]
+}

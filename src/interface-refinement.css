@@ -1,0 +1,84 @@
+/* Shared presentation for the existing rental flow; no new dependencies. */
+:root {
+  --radius-control: 8px;
+  --radius-panel: 12px;
+  --radius-pill: 999px;
+  --text-support: #c1c2c4;
+  --surface-raised: #18191c;
+  --line-selected: #c4aa81;
+  --surface-selected: #c79b5d0b;
+}
+
+.tariff-section .section-heading { margin-bottom: 20px; }
+.tariff-price-hint { margin-bottom: 28px; color: var(--text-support); font-size: 14px; line-height: 1.6; }
+.daily-price { margin-top: 8px; color: var(--text-support); font-size: 14px; line-height: 1.6; font-variant-numeric: tabular-nums; }
+.tariff .tariff-price { margin-top: 20px; }
+.tariff .tariff-link { margin-top: 20px; border-radius: var(--radius-control); }
+.tariff .tariff-benefit { font-size: 13px; }
+.booking-summary .summary-daily { margin-top: 8px; }
+
+.booking-section .field-label { font-size: 14px; }
+.booking-section .input-help, .booking-section .summary-note, .booking-section .summary-lines, .booking-section .summary-price > span { font-size: 14px; line-height: 1.7; }
+.booking-section .input-help, .booking-section .summary-note { color: var(--text-support); }
+.booking-section .summary-lines dt .muted, .booking-section .summary-security dd .muted, .booking-section .summary-deposit dd .muted { font-size: 13px; line-height: 1.6; }
+.booking-summary { border-radius: var(--radius-panel); background: var(--surface-raised); }
+.booking-section .term-options button, .booking-section input:not([type=checkbox]):not([type=radio]) { border-radius: var(--radius-control); }
+.booking-section .booking-games { border-radius: var(--radius-panel); }
+.booking-section .booking-games-intro p { font-size: 14px; color: var(--text-support); }
+
+.security-choices { grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+
+.security-choice { display: block; min-height: 0; padding: 18px; border-radius: var(--radius-panel); border-color: var(--control-line); background: transparent; transition: border-color .18s ease, background .18s ease; }
+.security-choice.selected { border-color: var(--line-selected); background: var(--surface-selected); }
+.security-choice .security-choice-content { display: block; width: 100%; }
+.security-choice .security-choice-heading { display: flex; align-items: center; gap: 10px; margin: 0; color: var(--text); }
+.security-choice-heading > svg { flex-shrink: 0; color: var(--line-selected); }
+.security-choice .security-choice-heading strong { flex: 1; min-width: 0; font-size: 16px; line-height: 1.4; }
+.security-choice .security-choice-heading .security-choice-indicator { display: grid; place-items: center; flex: 0 0 20px; width: 20px; height: 20px; margin: 0; border: 1px solid var(--control-line); border-radius: 50%; color: var(--bg); }
+.security-choice.selected .security-choice-indicator { background: var(--accent); border-color: var(--accent); }
+.security-choice .security-choice-details { display: grid; gap: 12px; margin-top: 18px; }
+.security-choice .security-choice-details > span { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: baseline; gap: 12px; margin: 0; }
+.security-choice .security-detail-label { display: block; margin: 0; font-size: 13px; line-height: 1.6; color: var(--text-support); }
+.security-choice .security-detail-value { display: block; margin: 0; font-size: 14px; line-height: 1.6; text-align: end; color: var(--text); }
+.security-field .security-help { font-size: 14px; line-height: 1.7; color: var(--text-support); }
+
+.booking-reassurance { display: flex; align-items: flex-start; gap: 10px; margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+.booking-reassurance > svg { flex-shrink: 0; margin-top: 2px; color: var(--accent); }
+.booking-reassurance p { min-width: 0; }
+.booking-reassurance strong { display: block; font-size: 14px; line-height: 1.6; font-weight: 600; }
+.booking-reassurance p > span { display: block; margin-top: 4px; color: var(--text-support); font-size: 14px; line-height: 1.65; }
+
+.story-kit .kit-checklist { gap: 0; }
+.story-kit .kit-checklist li { align-items: flex-start; padding-block: 16px; border-bottom: 1px solid var(--line); }
+.story-kit .kit-checklist li:first-child { padding-top: 0; }
+.story-kit .kit-checklist li:last-child { border-bottom: 0; }
+.story-kit .kit-checklist li > svg { flex-shrink: 0; margin-top: 3px; color: var(--accent); }
+.story-kit .kit-checklist li > span { min-width: 0; }
+.story-kit .kit-checklist strong { display: block; font-size: 16px; line-height: 1.5; font-weight: 600; }
+.story-kit .kit-checklist span > span { display: block; margin-top: 4px; color: var(--text-support); font-size: 14px; line-height: 1.7; }
+.story-kit .kit-note, .story-how .process-item p, .story-delivery .delivery-details p { font-size: 14px; line-height: 1.75; color: var(--text-support); }
+
+.term-options button, .controller-options button, .game-picker-button, .picker-game-toggle { transition: background .18s ease, border-color .18s ease, color .18s ease; }
+.button svg { transition: transform .18s ease; }
+.button:active:not(:disabled) { transform: scale(.985); }
+@media (hover: hover) and (pointer: fine) {
+  .security-choice:hover { border-color: var(--line-selected); }
+  .button:hover:not(:disabled) svg { transform: translateX(2px); }
+  .game-picker-button:hover:not(:disabled) { border-color: var(--accent); }
+}
+@media (max-width: 700px) {
+  .tariff-price-hint { text-align: center; margin-bottom: 24px; }
+  .daily-price { font-size: 13px; }
+  .tariff .tariff-benefit { font-size: 12px; }
+  .booking-section .summary-button { font-size: 15px; padding-inline: 18px; }
+}
+@media (max-width: 480px) {
+  .security-choices { grid-template-columns: minmax(0, 1fr); }
+  .security-choice { padding: 16px; }
+  .security-choice .security-choice-details { margin-top: 14px; }
+  .security-choice .security-detail-value { max-width: 200px; justify-self: end; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .security-choice, .term-options button, .controller-options button, .game-picker-button, .picker-game-toggle, .button, .button svg { transition: none; }
+  .button:active:not(:disabled), .button:hover:not(:disabled) svg { transform: none; }
+}

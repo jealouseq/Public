@@ -1,0 +1,1136 @@
+{
+  "main": "main-CYezEY1c.js",
+  "css": "main-DTp9pLQ1.css",
+  "cases": [
+    {
+      "language": "uk",
+      "width": 320,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "metrics": {
+        "grid": {
+          "x": 20,
+          "y": 340.8125,
+          "right": 300,
+          "bottom": 683.15625,
+          "w": 280,
+          "h": 342.34375,
+          "cx": 160
+        },
+        "items": [
+          {
+            "column": {
+              "x": 20,
+              "y": 340.8125,
+              "right": 300,
+              "bottom": 463.59375,
+              "w": 280,
+              "h": 122.78125,
+              "cx": 160
+            },
+            "paragraph": {
+              "x": 20,
+              "y": 390.8125,
+              "right": 300,
+              "bottom": 437.59375,
+              "w": 280,
+              "h": 46.78125,
+              "cx": 160
+            },
+            "titleRow": {
+              "x": 57.21875,
+              "y": 340.8125,
+              "right": 262.765625,
+              "bottom": 380.8125,
+              "w": 205.546875,
+              "h": 40,
+              "cx": 159.9921875
+            },
+            "groupCenter": 159.9921875,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(101, 85, 63)",
+              "w": 1,
+              "h": 18,
+              "left": 159.5,
+              "top": 441.5935,
+              "bottom": 459.5935,
+              "cx": 160
+            }
+          },
+          {
+            "column": {
+              "x": 20,
+              "y": 463.59375,
+              "right": 300,
+              "bottom": 586.375,
+              "w": 280,
+              "h": 122.78125,
+              "cx": 160
+            },
+            "paragraph": {
+              "x": 20,
+              "y": 513.59375,
+              "right": 300,
+              "bottom": 560.375,
+              "w": 280,
+              "h": 46.78125,
+              "cx": 160
+            },
+            "titleRow": {
+              "x": 51.859375,
+              "y": 463.59375,
+              "right": 268.125,
+              "bottom": 503.59375,
+              "w": 216.265625,
+              "h": 40,
+              "cx": 159.9921875
+            },
+            "groupCenter": 159.9921875,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(101, 85, 63)",
+              "w": 1,
+              "h": 18,
+              "left": 159.5,
+              "top": 564.37475,
+              "bottom": 582.37475,
+              "cx": 160
+            }
+          },
+          {
+            "column": {
+              "x": 20,
+              "y": 586.375,
+              "right": 300,
+              "bottom": 683.15625,
+              "w": 280,
+              "h": 96.78125,
+              "cx": 160
+            },
+            "paragraph": {
+              "x": 20,
+              "y": 636.375,
+              "right": 300,
+              "bottom": 683.15625,
+              "w": 280,
+              "h": 46.78125,
+              "cx": 160
+            },
+            "titleRow": {
+              "x": 111.875,
+              "y": 586.375,
+              "right": 208.125,
+              "bottom": 626.375,
+              "w": 96.25,
+              "h": 40,
+              "cx": 160
+            },
+            "groupCenter": 160,
+            "connector": {
+              "content": "none",
+              "color": "rgba(0, 0, 0, 0)",
+              "w": NaN,
+              "h": NaN,
+              "left": NaN,
+              "top": NaN,
+              "bottom": NaN,
+              "cx": NaN
+            }
+          }
+        ]
+      },
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "metrics": {
+        "grid": {
+          "x": 24,
+          "y": 340.90625,
+          "right": 366,
+          "bottom": 683.25,
+          "w": 342,
+          "h": 342.34375,
+          "cx": 195
+        },
+        "items": [
+          {
+            "column": {
+              "x": 24,
+              "y": 340.90625,
+              "right": 366,
+              "bottom": 463.6875,
+              "w": 342,
+              "h": 122.78125,
+              "cx": 195
+            },
+            "paragraph": {
+              "x": 25,
+              "y": 390.90625,
+              "right": 365,
+              "bottom": 437.6875,
+              "w": 340,
+              "h": 46.78125,
+              "cx": 195
+            },
+            "titleRow": {
+              "x": 84.546875,
+              "y": 340.90625,
+              "right": 305.453125,
+              "bottom": 380.90625,
+              "w": 220.90625,
+              "h": 40,
+              "cx": 195
+            },
+            "groupCenter": 195,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(101, 85, 63)",
+              "w": 1,
+              "h": 18,
+              "left": 194.5,
+              "top": 441.68725,
+              "bottom": 459.68725,
+              "cx": 195
+            }
+          },
+          {
+            "column": {
+              "x": 24,
+              "y": 463.6875,
+              "right": 366,
+              "bottom": 586.46875,
+              "w": 342,
+              "h": 122.78125,
+              "cx": 195
+            },
+            "paragraph": {
+              "x": 25,
+              "y": 513.6875,
+              "right": 365,
+              "bottom": 560.46875,
+              "w": 340,
+              "h": 46.78125,
+              "cx": 195
+            },
+            "titleRow": {
+              "x": 78.65625,
+              "y": 463.6875,
+              "right": 311.34375,
+              "bottom": 503.6875,
+              "w": 232.6875,
+              "h": 40,
+              "cx": 195
+            },
+            "groupCenter": 195,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(101, 85, 63)",
+              "w": 1,
+              "h": 18,
+              "left": 194.5,
+              "top": 564.4685,
+              "bottom": 582.4685,
+              "cx": 195
+            }
+          },
+          {
+            "column": {
+              "x": 24,
+              "y": 586.46875,
+              "right": 366,
+              "bottom": 683.25,
+              "w": 342,
+              "h": 96.78125,
+              "cx": 195
+            },
+            "paragraph": {
+              "x": 25,
+              "y": 636.46875,
+              "right": 365,
+              "bottom": 683.25,
+              "w": 340,
+              "h": 46.78125,
+              "cx": 195
+            },
+            "titleRow": {
+              "x": 144.65625,
+              "y": 586.46875,
+              "right": 245.328125,
+              "bottom": 626.46875,
+              "w": 100.671875,
+              "h": 40,
+              "cx": 194.9921875
+            },
+            "groupCenter": 194.9921875,
+            "connector": {
+              "content": "none",
+              "color": "rgba(0, 0, 0, 0)",
+              "w": NaN,
+              "h": NaN,
+              "left": NaN,
+              "top": NaN,
+              "bottom": NaN,
+              "cx": NaN
+            }
+          }
+        ]
+      },
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 700,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "metrics": {
+        "grid": {
+          "x": 24,
+          "y": 341,
+          "right": 676,
+          "bottom": 683.34375,
+          "w": 652,
+          "h": 342.34375,
+          "cx": 350
+        },
+        "items": [
+          {
+            "column": {
+              "x": 24,
+              "y": 341,
+              "right": 676,
+              "bottom": 463.78125,
+              "w": 652,
+              "h": 122.78125,
+              "cx": 350
+            },
+            "paragraph": {
+              "x": 180,
+              "y": 391,
+              "right": 520,
+              "bottom": 437.78125,
+              "w": 340,
+              "h": 46.78125,
+              "cx": 350
+            },
+            "titleRow": {
+              "x": 239.546875,
+              "y": 341,
+              "right": 460.453125,
+              "bottom": 381,
+              "w": 220.90625,
+              "h": 40,
+              "cx": 350
+            },
+            "groupCenter": 350,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(101, 85, 63)",
+              "w": 1,
+              "h": 18,
+              "left": 349.5,
+              "top": 441.781,
+              "bottom": 459.781,
+              "cx": 350
+            }
+          },
+          {
+            "column": {
+              "x": 24,
+              "y": 463.78125,
+              "right": 676,
+              "bottom": 586.5625,
+              "w": 652,
+              "h": 122.78125,
+              "cx": 350
+            },
+            "paragraph": {
+              "x": 180,
+              "y": 513.78125,
+              "right": 520,
+              "bottom": 560.5625,
+              "w": 340,
+              "h": 46.78125,
+              "cx": 350
+            },
+            "titleRow": {
+              "x": 233.65625,
+              "y": 463.78125,
+              "right": 466.34375,
+              "bottom": 503.78125,
+              "w": 232.6875,
+              "h": 40,
+              "cx": 350
+            },
+            "groupCenter": 350,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(101, 85, 63)",
+              "w": 1,
+              "h": 18,
+              "left": 349.5,
+              "top": 564.56225,
+              "bottom": 582.56225,
+              "cx": 350
+            }
+          },
+          {
+            "column": {
+              "x": 24,
+              "y": 586.5625,
+              "right": 676,
+              "bottom": 683.34375,
+              "w": 652,
+              "h": 96.78125,
+              "cx": 350
+            },
+            "paragraph": {
+              "x": 180,
+              "y": 636.5625,
+              "right": 520,
+              "bottom": 683.34375,
+              "w": 340,
+              "h": 46.78125,
+              "cx": 350
+            },
+            "titleRow": {
+              "x": 299.65625,
+              "y": 586.5625,
+              "right": 400.328125,
+              "bottom": 626.5625,
+              "w": 100.671875,
+              "h": 40,
+              "cx": 349.9921875
+            },
+            "groupCenter": 349.9921875,
+            "connector": {
+              "content": "none",
+              "color": "rgba(0, 0, 0, 0)",
+              "w": NaN,
+              "h": NaN,
+              "left": NaN,
+              "top": NaN,
+              "bottom": NaN,
+              "cx": NaN
+            }
+          }
+        ]
+      },
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 701,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "metrics": {
+        "grid": {
+          "x": 36.4375,
+          "y": 492.890625,
+          "right": 664.5625,
+          "bottom": 613.0625,
+          "w": 628.125,
+          "h": 120.171875,
+          "cx": 350.5
+        },
+        "items": [
+          {
+            "column": {
+              "x": 36.4375,
+              "y": 492.890625,
+              "right": 229.8125,
+              "bottom": 613.0625,
+              "w": 193.375,
+              "h": 120.171875,
+              "cx": 133.125
+            },
+            "paragraph": {
+              "x": 36.4375,
+              "y": 542.890625,
+              "right": 229.8125,
+              "bottom": 589.671875,
+              "w": 193.375,
+              "h": 46.78125,
+              "cx": 133.125
+            },
+            "titleRow": {
+              "x": 41.859375,
+              "y": 492.890625,
+              "right": 224.375,
+              "bottom": 532.890625,
+              "w": 182.515625,
+              "h": 40,
+              "cx": 133.1171875
+            },
+            "groupCenter": 133.1171875,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(73, 66, 57)",
+              "w": 8,
+              "h": 1,
+              "left": 237.8125,
+              "top": 512.890625,
+              "bottom": 513.890625,
+              "cx": 241.8125
+            }
+          },
+          {
+            "column": {
+              "x": 253.8125,
+              "y": 492.890625,
+              "right": 447.1875,
+              "bottom": 613.0625,
+              "w": 193.375,
+              "h": 120.171875,
+              "cx": 350.5
+            },
+            "paragraph": {
+              "x": 253.8125,
+              "y": 542.890625,
+              "right": 447.1875,
+              "bottom": 613.0625,
+              "w": 193.375,
+              "h": 70.171875,
+              "cx": 350.5
+            },
+            "titleRow": {
+              "x": 254.6875,
+              "y": 492.890625,
+              "right": 446.3125,
+              "bottom": 532.890625,
+              "w": 191.625,
+              "h": 40,
+              "cx": 350.5
+            },
+            "groupCenter": 350.5,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(73, 66, 57)",
+              "w": 8,
+              "h": 1,
+              "left": 455.1875,
+              "top": 512.890625,
+              "bottom": 513.890625,
+              "cx": 459.1875
+            }
+          },
+          {
+            "column": {
+              "x": 471.1875,
+              "y": 492.890625,
+              "right": 664.5625,
+              "bottom": 613.0625,
+              "w": 193.375,
+              "h": 120.171875,
+              "cx": 567.875
+            },
+            "paragraph": {
+              "x": 471.1875,
+              "y": 542.890625,
+              "right": 664.5625,
+              "bottom": 613.0625,
+              "w": 193.375,
+              "h": 70.171875,
+              "cx": 567.875
+            },
+            "titleRow": {
+              "x": 523.0625,
+              "y": 492.890625,
+              "right": 612.671875,
+              "bottom": 532.890625,
+              "w": 89.609375,
+              "h": 40,
+              "cx": 567.8671875
+            },
+            "groupCenter": 567.8671875,
+            "connector": {
+              "content": "none",
+              "color": "rgba(0, 0, 0, 0)",
+              "w": NaN,
+              "h": NaN,
+              "left": NaN,
+              "top": NaN,
+              "bottom": NaN,
+              "cx": NaN
+            }
+          }
+        ]
+      },
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "metrics": {
+        "grid": {
+          "x": 20,
+          "y": 340.8125,
+          "right": 300,
+          "bottom": 683.15625,
+          "w": 280,
+          "h": 342.34375,
+          "cx": 160
+        },
+        "items": [
+          {
+            "column": {
+              "x": 20,
+              "y": 340.8125,
+              "right": 300,
+              "bottom": 463.59375,
+              "w": 280,
+              "h": 122.78125,
+              "cx": 160
+            },
+            "paragraph": {
+              "x": 20,
+              "y": 390.8125,
+              "right": 300,
+              "bottom": 437.59375,
+              "w": 280,
+              "h": 46.78125,
+              "cx": 160
+            },
+            "titleRow": {
+              "x": 51.46875,
+              "y": 340.8125,
+              "right": 268.53125,
+              "bottom": 380.8125,
+              "w": 217.0625,
+              "h": 40,
+              "cx": 160
+            },
+            "groupCenter": 160,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(101, 85, 63)",
+              "w": 1,
+              "h": 18,
+              "left": 159.5,
+              "top": 441.5935,
+              "bottom": 459.5935,
+              "cx": 160
+            }
+          },
+          {
+            "column": {
+              "x": 20,
+              "y": 463.59375,
+              "right": 300,
+              "bottom": 586.375,
+              "w": 280,
+              "h": 122.78125,
+              "cx": 160
+            },
+            "paragraph": {
+              "x": 20,
+              "y": 513.59375,
+              "right": 300,
+              "bottom": 560.375,
+              "w": 280,
+              "h": 46.78125,
+              "cx": 160
+            },
+            "titleRow": {
+              "x": 59.203125,
+              "y": 463.59375,
+              "right": 260.796875,
+              "bottom": 503.59375,
+              "w": 201.59375,
+              "h": 40,
+              "cx": 160
+            },
+            "groupCenter": 160,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(101, 85, 63)",
+              "w": 1,
+              "h": 18,
+              "left": 159.5,
+              "top": 564.37475,
+              "bottom": 582.37475,
+              "cx": 160
+            }
+          },
+          {
+            "column": {
+              "x": 20,
+              "y": 586.375,
+              "right": 300,
+              "bottom": 683.15625,
+              "w": 280,
+              "h": 96.78125,
+              "cx": 160
+            },
+            "paragraph": {
+              "x": 20,
+              "y": 636.375,
+              "right": 300,
+              "bottom": 683.15625,
+              "w": 280,
+              "h": 46.78125,
+              "cx": 160
+            },
+            "titleRow": {
+              "x": 105.546875,
+              "y": 586.375,
+              "right": 214.4375,
+              "bottom": 626.375,
+              "w": 108.890625,
+              "h": 40,
+              "cx": 159.9921875
+            },
+            "groupCenter": 159.9921875,
+            "connector": {
+              "content": "none",
+              "color": "rgba(0, 0, 0, 0)",
+              "w": NaN,
+              "h": NaN,
+              "left": NaN,
+              "top": NaN,
+              "bottom": NaN,
+              "cx": NaN
+            }
+          }
+        ]
+      },
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 390,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "metrics": {
+        "grid": {
+          "x": 24,
+          "y": 341.296875,
+          "right": 366,
+          "bottom": 683.640625,
+          "w": 342,
+          "h": 342.34375,
+          "cx": 195
+        },
+        "items": [
+          {
+            "column": {
+              "x": 24,
+              "y": 341.296875,
+              "right": 366,
+              "bottom": 464.078125,
+              "w": 342,
+              "h": 122.78125,
+              "cx": 195
+            },
+            "paragraph": {
+              "x": 25,
+              "y": 391.296875,
+              "right": 365,
+              "bottom": 438.078125,
+              "w": 340,
+              "h": 46.78125,
+              "cx": 195
+            },
+            "titleRow": {
+              "x": 78.203125,
+              "y": 341.296875,
+              "right": 311.78125,
+              "bottom": 381.296875,
+              "w": 233.578125,
+              "h": 40,
+              "cx": 194.9921875
+            },
+            "groupCenter": 194.9921875,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(101, 85, 63)",
+              "w": 1,
+              "h": 18,
+              "left": 194.5,
+              "top": 442.077875,
+              "bottom": 460.077875,
+              "cx": 195
+            }
+          },
+          {
+            "column": {
+              "x": 24,
+              "y": 464.078125,
+              "right": 366,
+              "bottom": 586.859375,
+              "w": 342,
+              "h": 122.78125,
+              "cx": 195
+            },
+            "paragraph": {
+              "x": 25,
+              "y": 514.078125,
+              "right": 365,
+              "bottom": 560.859375,
+              "w": 340,
+              "h": 46.78125,
+              "cx": 195
+            },
+            "titleRow": {
+              "x": 86.71875,
+              "y": 464.078125,
+              "right": 303.265625,
+              "bottom": 504.078125,
+              "w": 216.546875,
+              "h": 40,
+              "cx": 194.9921875
+            },
+            "groupCenter": 194.9921875,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(101, 85, 63)",
+              "w": 1,
+              "h": 18,
+              "left": 194.5,
+              "top": 564.859125,
+              "bottom": 582.859125,
+              "cx": 195
+            }
+          },
+          {
+            "column": {
+              "x": 24,
+              "y": 586.859375,
+              "right": 366,
+              "bottom": 683.640625,
+              "w": 342,
+              "h": 96.78125,
+              "cx": 195
+            },
+            "paragraph": {
+              "x": 25,
+              "y": 636.859375,
+              "right": 365,
+              "bottom": 683.640625,
+              "w": 340,
+              "h": 46.78125,
+              "cx": 195
+            },
+            "titleRow": {
+              "x": 137.703125,
+              "y": 586.859375,
+              "right": 252.28125,
+              "bottom": 626.859375,
+              "w": 114.578125,
+              "h": 40,
+              "cx": 194.9921875
+            },
+            "groupCenter": 194.9921875,
+            "connector": {
+              "content": "none",
+              "color": "rgba(0, 0, 0, 0)",
+              "w": NaN,
+              "h": NaN,
+              "left": NaN,
+              "top": NaN,
+              "bottom": NaN,
+              "cx": NaN
+            }
+          }
+        ]
+      },
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 700,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "metrics": {
+        "grid": {
+          "x": 24,
+          "y": 341,
+          "right": 676,
+          "bottom": 683.34375,
+          "w": 652,
+          "h": 342.34375,
+          "cx": 350
+        },
+        "items": [
+          {
+            "column": {
+              "x": 24,
+              "y": 341,
+              "right": 676,
+              "bottom": 463.78125,
+              "w": 652,
+              "h": 122.78125,
+              "cx": 350
+            },
+            "paragraph": {
+              "x": 180,
+              "y": 391,
+              "right": 520,
+              "bottom": 437.78125,
+              "w": 340,
+              "h": 46.78125,
+              "cx": 350
+            },
+            "titleRow": {
+              "x": 233.203125,
+              "y": 341,
+              "right": 466.78125,
+              "bottom": 381,
+              "w": 233.578125,
+              "h": 40,
+              "cx": 349.9921875
+            },
+            "groupCenter": 349.9921875,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(101, 85, 63)",
+              "w": 1,
+              "h": 18,
+              "left": 349.5,
+              "top": 441.781,
+              "bottom": 459.781,
+              "cx": 350
+            }
+          },
+          {
+            "column": {
+              "x": 24,
+              "y": 463.78125,
+              "right": 676,
+              "bottom": 586.5625,
+              "w": 652,
+              "h": 122.78125,
+              "cx": 350
+            },
+            "paragraph": {
+              "x": 180,
+              "y": 513.78125,
+              "right": 520,
+              "bottom": 560.5625,
+              "w": 340,
+              "h": 46.78125,
+              "cx": 350
+            },
+            "titleRow": {
+              "x": 241.71875,
+              "y": 463.78125,
+              "right": 458.265625,
+              "bottom": 503.78125,
+              "w": 216.546875,
+              "h": 40,
+              "cx": 349.9921875
+            },
+            "groupCenter": 349.9921875,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(101, 85, 63)",
+              "w": 1,
+              "h": 18,
+              "left": 349.5,
+              "top": 564.56225,
+              "bottom": 582.56225,
+              "cx": 350
+            }
+          },
+          {
+            "column": {
+              "x": 24,
+              "y": 586.5625,
+              "right": 676,
+              "bottom": 683.34375,
+              "w": 652,
+              "h": 96.78125,
+              "cx": 350
+            },
+            "paragraph": {
+              "x": 180,
+              "y": 636.5625,
+              "right": 520,
+              "bottom": 683.34375,
+              "w": 340,
+              "h": 46.78125,
+              "cx": 350
+            },
+            "titleRow": {
+              "x": 292.703125,
+              "y": 586.5625,
+              "right": 407.28125,
+              "bottom": 626.5625,
+              "w": 114.578125,
+              "h": 40,
+              "cx": 349.9921875
+            },
+            "groupCenter": 349.9921875,
+            "connector": {
+              "content": "none",
+              "color": "rgba(0, 0, 0, 0)",
+              "w": NaN,
+              "h": NaN,
+              "left": NaN,
+              "top": NaN,
+              "bottom": NaN,
+              "cx": NaN
+            }
+          }
+        ]
+      },
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 701,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "metrics": {
+        "grid": {
+          "x": 36.4375,
+          "y": 480.515625,
+          "right": 664.5625,
+          "bottom": 624.078125,
+          "w": 628.125,
+          "h": 143.5625,
+          "cx": 350.5
+        },
+        "items": [
+          {
+            "column": {
+              "x": 36.4375,
+              "y": 480.515625,
+              "right": 229.8125,
+              "bottom": 624.078125,
+              "w": 193.375,
+              "h": 143.5625,
+              "cx": 133.125
+            },
+            "paragraph": {
+              "x": 36.4375,
+              "y": 530.515625,
+              "right": 229.8125,
+              "bottom": 600.6875,
+              "w": 193.375,
+              "h": 70.171875,
+              "cx": 133.125
+            },
+            "titleRow": {
+              "x": 36.96875,
+              "y": 480.515625,
+              "right": 229.28125,
+              "bottom": 520.515625,
+              "w": 192.3125,
+              "h": 40,
+              "cx": 133.125
+            },
+            "groupCenter": 133.125,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(73, 66, 57)",
+              "w": 8,
+              "h": 1,
+              "left": 237.8125,
+              "top": 500.515625,
+              "bottom": 501.515625,
+              "cx": 241.8125
+            }
+          },
+          {
+            "column": {
+              "x": 253.8125,
+              "y": 480.515625,
+              "right": 447.1875,
+              "bottom": 624.078125,
+              "w": 193.375,
+              "h": 143.5625,
+              "cx": 350.5
+            },
+            "paragraph": {
+              "x": 253.8125,
+              "y": 530.515625,
+              "right": 447.1875,
+              "bottom": 624.078125,
+              "w": 193.375,
+              "h": 93.5625,
+              "cx": 350.5
+            },
+            "titleRow": {
+              "x": 260.921875,
+              "y": 480.515625,
+              "right": 440.078125,
+              "bottom": 520.515625,
+              "w": 179.15625,
+              "h": 40,
+              "cx": 350.5
+            },
+            "groupCenter": 350.5,
+            "connector": {
+              "content": "\"\"",
+              "color": "rgb(73, 66, 57)",
+              "w": 8,
+              "h": 1,
+              "left": 455.1875,
+              "top": 500.515625,
+              "bottom": 501.515625,
+              "cx": 459.1875
+            }
+          },
+          {
+            "column": {
+              "x": 471.1875,
+              "y": 480.515625,
+              "right": 664.5625,
+              "bottom": 624.078125,
+              "w": 193.375,
+              "h": 143.5625,
+              "cx": 567.875
+            },
+            "paragraph": {
+              "x": 471.1875,
+              "y": 530.515625,
+              "right": 664.5625,
+              "bottom": 600.6875,
+              "w": 193.375,
+              "h": 70.171875,
+              "cx": 567.875
+            },
+            "titleRow": {
+              "x": 517.6875,
+              "y": 480.515625,
+              "right": 618.046875,
+              "bottom": 520.515625,
+              "w": 100.359375,
+              "h": 40,
+              "cx": 567.8671875
+            },
+            "groupCenter": 567.8671875,
+            "connector": {
+              "content": "none",
+              "color": "rgba(0, 0, 0, 0)",
+              "w": NaN,
+              "h": NaN,
+              "left": NaN,
+              "top": NaN,
+              "bottom": NaN,
+              "cx": NaN
+            }
+          }
+        ]
+      },
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "pass": true
+    }
+  ],
+  "passed": 8,
+  "scope": "Inter-step connector follow-up only; local GET/HEAD."
+}

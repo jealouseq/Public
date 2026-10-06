@@ -1,0 +1,519 @@
+{
+  "tariffs": {
+    "ps5": [
+      {
+        "days": 1,
+        "price": 600,
+        "name": "На день",
+        "description": "Один вечір. Нові враження.",
+        "nameRu": "На день",
+        "descriptionRu": "Аренда на выбранный срок."
+      },
+      {
+        "days": 3,
+        "price": 1400,
+        "name": "На вихідні",
+        "description": "Вихідні за твоїми правилами.",
+        "nameRu": "На выходные",
+        "descriptionRu": "Аренда на выбранный срок."
+      },
+      {
+        "days": 7,
+        "price": 2500,
+        "name": "На тиждень",
+        "description": "Час пройти ще один рівень.",
+        "nameRu": "На неделю",
+        "descriptionRu": "Аренда на выбранный срок."
+      },
+      {
+        "days": 30,
+        "price": 6000,
+        "name": "На місяць",
+        "description": "Твій власний місяць гри.",
+        "nameRu": "На месяц",
+        "descriptionRu": "Аренда на выбранный срок."
+      }
+    ],
+    "ps4": [
+      {
+        "days": 3,
+        "price": 750,
+        "name": "На вихідні",
+        "description": "Класика для чудових вихідних.",
+        "nameRu": "На выходные",
+        "descriptionRu": "Аренда на выбранный срок."
+      },
+      {
+        "days": 7,
+        "price": 1200,
+        "name": "На тиждень",
+        "description": "Улюблені ігри, більше часу.",
+        "nameRu": "На неделю",
+        "descriptionRu": "Аренда на выбранный срок."
+      },
+      {
+        "days": 30,
+        "price": 2500,
+        "name": "На місяць",
+        "description": "Місяць у світі PlayStation.",
+        "nameRu": "На месяц",
+        "descriptionRu": "Аренда на выбранный срок."
+      }
+    ]
+  },
+  "games": [
+    {
+      "id": "fc27",
+      "title": "EA SPORTS FC 27",
+      "shortTitle": "EA SPORTS FC 27",
+      "eyebrow": "EA SPORTS",
+      "genre": "Спорт",
+      "filters": [
+        "two",
+        "party",
+        "sport",
+        "kids"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 4,
+      "rating": "3+",
+      "image": "cover-fc27",
+      "description": "Футбол для вечора з друзями: обирай улюблену команду й грай локальні матчі на одному екрані.",
+      "available": false,
+      "legacyImage": "",
+      "genreRu": "Спорт",
+      "descriptionRu": "Футбол для вечера с друзьями: выбирай любимую команду и играй локальные матчи на одном экране."
+    },
+    {
+      "id": "gta-v",
+      "title": "Grand Theft Auto V",
+      "shortTitle": "GTA V",
+      "eyebrow": "LOS SANTOS",
+      "genre": "Відкритий світ",
+      "filters": [
+        "story"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 1,
+      "rating": "18+",
+      "image": "cover-gta-v",
+      "description": "Три історії, велике місто та свобода пригод.",
+      "available": false,
+      "legacyImage": "game-openworld",
+      "genreRu": "Открытый мир",
+      "descriptionRu": "Три героя, Лос-Сантос и открытый мир приключений."
+    },
+    {
+      "id": "mk1",
+      "title": "Mortal Kombat 1",
+      "shortTitle": "Mortal Kombat 1",
+      "eyebrow": "НОВА ЕРА",
+      "genre": "Файтинг",
+      "filters": [
+        "two",
+        "party"
+      ],
+      "platforms": [
+        "ps5"
+      ],
+      "players": 2,
+      "rating": "18+",
+      "image": "cover-mk1",
+      "description": "Нова історія знайомих бійців на PlayStation 5.",
+      "available": false,
+      "legacyImage": "game-fighting",
+      "genreRu": "Файтинг",
+      "descriptionRu": "Новая история знакомых бойцов на PlayStation 5."
+    },
+    {
+      "id": "stalker2",
+      "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "shortTitle": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "eyebrow": "Виживання",
+      "genre": "Виживання",
+      "genreRu": "Выживание",
+      "filters": [
+        "story"
+      ],
+      "platforms": [
+        "ps5"
+      ],
+      "players": 1,
+      "rating": "18+",
+      "image": "cover-stalker2",
+      "description": "Українська пригода в Зоні відчуження. Досліджуй небезпечний світ і вирішуй, кому довіряти.",
+      "descriptionRu": "Украинское приключение в Зоне отчуждения. Исследуй опасный мир и решай, кому доверять.",
+      "available": false,
+      "legacyImage": ""
+    },
+    {
+      "id": "ufc6",
+      "title": "EA SPORTS UFC 6",
+      "shortTitle": "EA SPORTS UFC 6",
+      "eyebrow": "EA SPORTS",
+      "genre": "Спорт",
+      "filters": [
+        "two",
+        "sport"
+      ],
+      "platforms": [
+        "ps5"
+      ],
+      "players": 2,
+      "rating": "16+",
+      "image": "cover-ufc6",
+      "description": "Виходь в октагон і влаштуй поєдинок із другом на одному екрані. Обирай бійця та свій стиль.",
+      "available": false,
+      "legacyImage": "",
+      "genreRu": "Спорт",
+      "descriptionRu": "Выходи в октагон и устрой поединок с другом на одном экране. Выбирай бойца и свой стиль."
+    },
+    {
+      "id": "tekken8",
+      "title": "Tekken 8",
+      "shortTitle": "TEKKEN 8",
+      "eyebrow": "THE NEXT BATTLE",
+      "genre": "Файтинг",
+      "filters": [
+        "two",
+        "party"
+      ],
+      "platforms": [
+        "ps5"
+      ],
+      "players": 2,
+      "rating": "16+",
+      "image": "cover-tekken8",
+      "description": "Нове покоління легендарної серії. Влаштовуй поєдинки з друзями.",
+      "available": false,
+      "legacyImage": "game-fighting",
+      "genreRu": "Файтинг",
+      "descriptionRu": "Новое поколение серии Tekken. Устраивай поединки с друзьями."
+    },
+    {
+      "id": "split-fiction",
+      "title": "Split Fiction",
+      "shortTitle": "Split Fiction",
+      "eyebrow": "Кооператив",
+      "genre": "Кооператив",
+      "genreRu": "Кооператив",
+      "filters": [
+        "two",
+        "story"
+      ],
+      "platforms": [
+        "ps5"
+      ],
+      "players": 2,
+      "rating": "16+",
+      "image": "cover-split-fiction",
+      "description": "Пригода, створена для двох. Стрибай між фантастичними світами та проходь випробування разом.",
+      "descriptionRu": "Приключение, созданное для двоих. Прыгай между фантастическими мирами и проходи испытания вместе.",
+      "available": false,
+      "legacyImage": ""
+    },
+    {
+      "id": "it-takes-two",
+      "title": "It Takes Two",
+      "shortTitle": "It Takes Two",
+      "eyebrow": "КРАЩЕ РАЗОМ",
+      "genre": "Кооператив",
+      "filters": [
+        "two",
+        "story"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 2,
+      "rating": "12+",
+      "image": "cover-it-takes-two",
+      "description": "Пригода, створена для двох. Розв’язуйте головоломки та відкривайте фантастичні світи разом.",
+      "available": false,
+      "legacyImage": "game-coop",
+      "genreRu": "Кооператив",
+      "descriptionRu": "Приключение для двоих: решайте головоломки и исследуйте фантастические миры вместе."
+    },
+    {
+      "id": "cod-bo7",
+      "title": "Call of Duty: Black Ops 7",
+      "shortTitle": "Call of Duty: Black Ops 7",
+      "eyebrow": "CALL OF DUTY",
+      "genre": "Екшн",
+      "filters": [
+        "story"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 1,
+      "rating": "18+",
+      "image": "cover-cod-bo7",
+      "description": "Кампанія Black Ops, зомбі та мережеві поєдинки. Потрібне підключення до інтернету. Доступні режими та мережевий доступ уточнимо перед орендою.",
+      "available": false,
+      "legacyImage": "",
+      "genreRu": "Экшен",
+      "descriptionRu": "Кампания Black Ops, зомби и сетевые поединки. Требуется подключение к интернету. Доступные режимы и сетевой доступ уточним перед арендой.",
+      "playersByPlatform": {
+        "ps5": 2,
+        "ps4": 1
+      },
+      "requiresInternet": true
+    },
+    {
+      "id": "gt7",
+      "title": "Gran Turismo 7",
+      "shortTitle": "Gran Turismo 7",
+      "eyebrow": "THE REAL DRIVING SIMULATOR",
+      "genre": "Перегони",
+      "filters": [
+        "two",
+        "racing",
+        "kids"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 2,
+      "rating": "3+",
+      "image": "cover-gt7",
+      "description": "Від першого кола до ідеальної траєкторії. Культові автомобілі та траси.",
+      "available": false,
+      "legacyImage": "game-racing",
+      "genreRu": "Гонки",
+      "descriptionRu": "Знаменитые автомобили и трассы. От первого круга до идеальной траектории.",
+      "playersByPlatform": {
+        "ps5": 4,
+        "ps4": 2
+      }
+    },
+    {
+      "id": "god-of-war-ragnarok",
+      "title": "God of War Ragnarök",
+      "shortTitle": "God of War Ragnarök",
+      "eyebrow": "Пригоди",
+      "genre": "Пригоди",
+      "genreRu": "Приключения",
+      "filters": [
+        "story"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 1,
+      "rating": "18+",
+      "image": "cover-god-of-war-ragnarok",
+      "description": "Подорож Кратоса й Атрея крізь дев’ять світів. Скандинавська міфологія, видовищні битви та сильна історія.",
+      "descriptionRu": "Путешествие Кратоса и Атрея через девять миров. Скандинавская мифология, зрелищные битвы и сильная история.",
+      "available": false,
+      "legacyImage": ""
+    },
+    {
+      "id": "red-dead-redemption-2",
+      "title": "Red Dead Redemption 2",
+      "shortTitle": "Red Dead Redemption 2",
+      "eyebrow": "Відкритий світ",
+      "genre": "Відкритий світ",
+      "genreRu": "Открытый мир",
+      "filters": [
+        "story"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 1,
+      "rating": "18+",
+      "image": "cover-red-dead-redemption-2",
+      "description": "Історія Артура Моргана на Дикому Заході. Кінематографічна пригода у живому відкритому світі.",
+      "descriptionRu": "История Артура Моргана на Диком Западе. Кинематографическое приключение в живом открытом мире.",
+      "available": false,
+      "legacyImage": ""
+    },
+    {
+      "id": "spider-man-2",
+      "title": "Marvel’s Spider-Man 2",
+      "shortTitle": "Spider-Man 2",
+      "eyebrow": "MARVEL",
+      "genre": "Пригоди",
+      "filters": [
+        "story"
+      ],
+      "platforms": [
+        "ps5"
+      ],
+      "players": 1,
+      "rating": "16+",
+      "image": "cover-spider-man-2",
+      "description": "Місто, що ніколи не спить, і нова історія двох героїв.",
+      "available": false,
+      "legacyImage": "game-city",
+      "genreRu": "Приключения",
+      "descriptionRu": "Питер Паркер и Майлз Моралес в новой истории о Человеке-пауке."
+    },
+    {
+      "id": "hogwarts",
+      "title": "Hogwarts Legacy",
+      "shortTitle": "Hogwarts Legacy",
+      "eyebrow": "ЧАС ДЛЯ МАГІЇ",
+      "genre": "Пригоди",
+      "filters": [
+        "story"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 1,
+      "rating": "12+",
+      "image": "cover-hogwarts",
+      "description": "Досліджуй школу магії, вивчай закляття та створюй власну історію.",
+      "available": false,
+      "legacyImage": "game-magic",
+      "genreRu": "Приключения",
+      "descriptionRu": "Исследуй Хогвартс, изучай заклинания и создавай свою историю."
+    },
+    {
+      "id": "elden-ring",
+      "title": "ELDEN RING",
+      "shortTitle": "ELDEN RING",
+      "eyebrow": "Рольова гра",
+      "genre": "Рольова гра",
+      "genreRu": "Ролевая игра",
+      "filters": [
+        "story"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 1,
+      "rating": "16+",
+      "image": "cover-elden-ring",
+      "description": "Великий світ для дослідження, складні битви та свобода обрати власний шлях. Для тих, хто любить виклик.",
+      "descriptionRu": "Большой мир для исследования, сложные битвы и свобода выбрать свой путь. Для тех, кто любит вызов.",
+      "available": false,
+      "legacyImage": ""
+    },
+    {
+      "id": "resident-evil-requiem",
+      "title": "Resident Evil Requiem",
+      "shortTitle": "Resident Evil Requiem",
+      "eyebrow": "Жахи",
+      "genre": "Жахи",
+      "genreRu": "Хоррор",
+      "filters": [
+        "story"
+      ],
+      "platforms": [
+        "ps5"
+      ],
+      "players": 1,
+      "rating": "18+",
+      "image": "cover-resident-evil-requiem",
+      "description": "Напружена історія виживання у всесвіті Resident Evil. Досліджуй, знаходь ресурси й будь готовий до небезпеки.",
+      "descriptionRu": "Напряжённая история выживания во вселенной Resident Evil. Исследуй, находи ресурсы и будь готов к опасности.",
+      "available": false,
+      "legacyImage": ""
+    },
+    {
+      "id": "astro-bot",
+      "title": "ASTRO BOT",
+      "shortTitle": "ASTRO BOT",
+      "eyebrow": "Платформер",
+      "genre": "Платформер",
+      "genreRu": "Платформер",
+      "filters": [
+        "kids"
+      ],
+      "platforms": [
+        "ps5"
+      ],
+      "players": 1,
+      "rating": "7+",
+      "image": "cover-astro-bot",
+      "description": "Барвиста подорож незвичайними планетами. Рятуй друзів ASTRO та відкривай можливості DualSense.",
+      "descriptionRu": "Красочное путешествие по необычным планетам. Спасай друзей ASTRO и открывай возможности DualSense.",
+      "available": false,
+      "legacyImage": ""
+    },
+    {
+      "id": "sackboy",
+      "title": "Sackboy: A Big Adventure",
+      "shortTitle": "Sackboy",
+      "eyebrow": "A BIG ADVENTURE",
+      "genre": "Сімейні",
+      "filters": [
+        "two",
+        "party",
+        "kids"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 4,
+      "rating": "7+",
+      "image": "cover-sackboy",
+      "description": "Яскрава пригода для всієї компанії. Досліджуйте рівні разом.",
+      "available": false,
+      "legacyImage": "game-family",
+      "genreRu": "Семейные",
+      "descriptionRu": "Платформенное приключение для всей компании. Проходите уровни вместе."
+    },
+    {
+      "id": "horizon-forbidden-west",
+      "title": "Horizon Forbidden West",
+      "shortTitle": "Horizon Forbidden West",
+      "eyebrow": "Пригоди",
+      "genre": "Пригоди",
+      "genreRu": "Приключения",
+      "filters": [
+        "story"
+      ],
+      "platforms": [
+        "ps5",
+        "ps4"
+      ],
+      "players": 1,
+      "rating": "16+",
+      "image": "cover-horizon-forbidden-west",
+      "description": "Відкрий нові землі разом з Елой. Полюй на машини й розкривай таємниці світу майбутнього.",
+      "descriptionRu": "Открывай новые земли вместе с Элой. Охоться на машины и раскрывай тайны мира будущего.",
+      "available": false,
+      "legacyImage": ""
+    },
+    {
+      "id": "mk11",
+      "title": "Mortal Kombat 11",
+      "shortTitle": "Mortal Kombat 11",
+      "eyebrow": "FIGHTING CLASSIC",
+      "genre": "Файтинг",
+      "filters": [
+        "two",
+        "party"
+      ],
+      "platforms": [
+        "ps4"
+      ],
+      "players": 2,
+      "rating": "18+",
+      "image": "cover-mk11",
+      "description": "Улюблені бійці та поєдинки на одному екрані.",
+      "available": false,
+      "legacyImage": "game-fighting",
+      "genreRu": "Файтинг",
+      "descriptionRu": "Знакомые бойцы и поединки с другом на одном экране."
+    }
+  ]
+}

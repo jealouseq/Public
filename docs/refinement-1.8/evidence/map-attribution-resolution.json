@@ -1,0 +1,35 @@
+{
+  "resolvedAt": "2026-10-03T12:54:12.138471+00:00",
+  "findingFile": "map-attribution-finding.json",
+  "findingPreserved": true,
+  "finalBuild": {
+    "main": "main-DymdWJeq.js",
+    "css": "main-CBL0otFI.css"
+  },
+  "verificationRun": "20261003T125119Z",
+  "status": "fixed and independently verified",
+  "correction": "At≤900px credit sits beneath the640×440 map frame. Exact polygon/credit rectangle clipping verifies no filled zone is obscured at all primary and breakpoint widths.",
+  "checks": {
+    "primaryWidths": [
+      320,
+      390,
+      768,
+      980,
+      1440,
+      1920
+    ],
+    "boundaryWidths": [
+      700,
+      701,
+      900,
+      901
+    ],
+    "languages": [
+      "uk",
+      "ru"
+    ],
+    "exactZonePolygons": 6,
+    "allOverlappingZones": []
+  },
+  "archivedBeforeFix": "fourth-iteration"
+}

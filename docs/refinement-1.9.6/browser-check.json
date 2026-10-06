@@ -1,0 +1,176 @@
+[
+  {
+    "language": "uk",
+    "width": 320,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "uk",
+    "width": 480,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "uk",
+    "width": 481,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "uk",
+    "width": 700,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "uk",
+    "width": 768,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "uk",
+    "width": 1024,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "ru",
+    "width": 320,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "ru",
+    "width": 480,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "ru",
+    "width": 481,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "ru",
+    "width": 700,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "ru",
+    "width": 768,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "ru",
+    "width": 1024,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "tariffChoices": 7,
+    "streetSuggestion": true,
+    "legalFocusReturn": true,
+    "overflow": false,
+    "networkWrites": 0,
+    "errors": []
+  },
+  {
+    "case": "configured-prices-and-controller-fee",
+    "language": "uk",
+    "pass": true
+  },
+  {
+    "case": "configured-prices-and-controller-fee",
+    "language": "ru",
+    "pass": true
+  },
+  {
+    "case": "motion-and-live-reduced-motion",
+    "pass": true
+  }
+]

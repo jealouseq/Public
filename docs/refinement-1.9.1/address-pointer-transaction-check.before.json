@@ -1,0 +1,26 @@
+{
+  "physical_safari_tested": false,
+  "component_sha256": "4630cc811779c58b84632faedccb2022407846e01130cb8b9471418528b7bdd9",
+  "cases": [
+    {
+      "mode": "mouse",
+      "scenario": "native pointer down, simulated input blur before pointer up",
+      "dropdown_retained_through_gesture": false,
+      "value": "Фонтанская 12Б, кв. 4",
+      "expected": "Фонтанська дорога, 12Б, кв. 4",
+      "expanded": "false",
+      "pass": false
+    },
+    {
+      "mode": "touch",
+      "scenario": "native pointer down, simulated input blur before pointer up",
+      "dropdown_retained_through_gesture": false,
+      "value": "Фонтанская 12Б, кв. 4",
+      "expected": "Фонтанська дорога, 12Б, кв. 4",
+      "expanded": "false",
+      "pass": false
+    }
+  ],
+  "pass": 0,
+  "fail": 2
+}

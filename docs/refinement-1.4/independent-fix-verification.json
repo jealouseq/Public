@@ -1,0 +1,369 @@
+[
+  {
+    "width": 320,
+    "lang": "uk",
+    "before": {
+      "bodyWidth": 320,
+      "description": {
+        "y": 283.578125,
+        "h": 72.140625,
+        "bottom": 355.71875,
+        "minHeight": "72.1406px",
+        "lineHeight": "24.05px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "button": {
+        "y": 379.71875,
+        "h": 49,
+        "bottom": 428.71875,
+        "minHeight": "48px",
+        "lineHeight": "19.5px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "price": {
+        "y": 453.71875,
+        "h": 39,
+        "bottom": 492.71875,
+        "minHeight": "0px",
+        "lineHeight": "16.5px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "visual": {
+        "y": 504.71875,
+        "h": 210,
+        "bottom": 714.71875,
+        "minHeight": "auto",
+        "lineHeight": "24px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "cls": []
+    },
+    "after": {
+      "bodyWidth": 320,
+      "description": {
+        "y": 283.578125,
+        "h": 72.140625,
+        "bottom": 355.71875,
+        "minHeight": "72.1406px",
+        "lineHeight": "24.05px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "button": {
+        "y": 379.71875,
+        "h": 49,
+        "bottom": 428.71875,
+        "minHeight": "48px",
+        "lineHeight": "19.5px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "price": {
+        "y": 453.71875,
+        "h": 39,
+        "bottom": 492.71875,
+        "minHeight": "0px",
+        "lineHeight": "16.5px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "visual": {
+        "y": 504.71875,
+        "h": 210,
+        "bottom": 714.71875,
+        "minHeight": "auto",
+        "lineHeight": "24px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "cls": []
+    },
+    "ctaMovement": 0.0,
+    "visualMovement": 0.0
+  },
+  {
+    "width": 360,
+    "lang": "ru",
+    "before": {
+      "bodyWidth": 360,
+      "description": {
+        "y": 283.578125,
+        "h": 72.140625,
+        "bottom": 355.71875,
+        "minHeight": "72.1406px",
+        "lineHeight": "24.05px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "button": {
+        "y": 379.71875,
+        "h": 49,
+        "bottom": 428.71875,
+        "minHeight": "48px",
+        "lineHeight": "19.5px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "price": {
+        "y": 453.71875,
+        "h": 39,
+        "bottom": 492.71875,
+        "minHeight": "0px",
+        "lineHeight": "16.5px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "visual": {
+        "y": 504.71875,
+        "h": 240,
+        "bottom": 744.71875,
+        "minHeight": "auto",
+        "lineHeight": "24px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "cls": []
+    },
+    "after": {
+      "bodyWidth": 360,
+      "description": {
+        "y": 283.578125,
+        "h": 72.140625,
+        "bottom": 355.71875,
+        "minHeight": "72.1406px",
+        "lineHeight": "24.05px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "button": {
+        "y": 379.71875,
+        "h": 49,
+        "bottom": 428.71875,
+        "minHeight": "48px",
+        "lineHeight": "19.5px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "price": {
+        "y": 453.71875,
+        "h": 39,
+        "bottom": 492.71875,
+        "minHeight": "0px",
+        "lineHeight": "16.5px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "visual": {
+        "y": 504.71875,
+        "h": 240,
+        "bottom": 744.71875,
+        "minHeight": "auto",
+        "lineHeight": "24px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "cls": [
+        {
+          "value": 3.699508101851852e-05,
+          "sources": [
+            {
+              "class": "text-link",
+              "old": {
+                "x": 201.234375,
+                "y": 393.71875,
+                "width": 88,
+                "height": 21,
+                "top": 393.71875,
+                "right": 289.234375,
+                "bottom": 414.71875,
+                "left": 201.234375
+              },
+              "new": {
+                "x": 196.84375,
+                "y": 393.71875,
+                "width": 83,
+                "height": 21,
+                "top": 393.71875,
+                "right": 279.84375,
+                "bottom": 414.71875,
+                "left": 196.84375
+              }
+            },
+            {
+              "class": {},
+              "old": {
+                "x": 143.234375,
+                "y": 393.71875,
+                "width": 21,
+                "height": 21,
+                "top": 393.71875,
+                "right": 164.234375,
+                "bottom": 414.71875,
+                "left": 143.234375
+              },
+              "new": {
+                "x": 138.84375,
+                "y": 393.71875,
+                "width": 21,
+                "height": 21,
+                "top": 393.71875,
+                "right": 159.84375,
+                "bottom": 414.71875,
+                "left": 138.84375
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "ctaMovement": 0.0,
+    "visualMovement": 0.0
+  },
+  {
+    "width": 390,
+    "lang": "ru",
+    "before": {
+      "bodyWidth": 390,
+      "description": {
+        "y": 286.328125,
+        "h": 48.09375,
+        "bottom": 334.421875,
+        "minHeight": "0px",
+        "lineHeight": "24.05px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "button": {
+        "y": 358.421875,
+        "h": 49,
+        "bottom": 407.421875,
+        "minHeight": "48px",
+        "lineHeight": "19.5px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "price": {
+        "y": 432.421875,
+        "h": 39,
+        "bottom": 471.421875,
+        "minHeight": "0px",
+        "lineHeight": "16.5px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "visual": {
+        "y": 483.421875,
+        "h": 256.5,
+        "bottom": 739.921875,
+        "minHeight": "auto",
+        "lineHeight": "24px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "cls": []
+    },
+    "after": {
+      "bodyWidth": 390,
+      "description": {
+        "y": 286.328125,
+        "h": 48.09375,
+        "bottom": 334.421875,
+        "minHeight": "0px",
+        "lineHeight": "24.05px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "button": {
+        "y": 358.421875,
+        "h": 49,
+        "bottom": 407.421875,
+        "minHeight": "48px",
+        "lineHeight": "19.5px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "price": {
+        "y": 432.421875,
+        "h": 39,
+        "bottom": 471.421875,
+        "minHeight": "0px",
+        "lineHeight": "16.5px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "visual": {
+        "y": 483.421875,
+        "h": 256.5,
+        "bottom": 739.921875,
+        "minHeight": "auto",
+        "lineHeight": "24px",
+        "font": "\"Manrope Variable\", sans-serif"
+      },
+      "cls": [
+        {
+          "value": 3.787417893320671e-05,
+          "sources": [
+            {
+              "class": "text-link",
+              "old": {
+                "x": 209.234375,
+                "y": 371.671875,
+                "width": 95.375,
+                "height": 22.5,
+                "top": 371.671875,
+                "right": 304.609375,
+                "bottom": 394.171875,
+                "left": 209.234375
+              },
+              "new": {
+                "x": 204.84375,
+                "y": 371.671875,
+                "width": 90.515625,
+                "height": 22.5,
+                "top": 371.671875,
+                "right": 295.359375,
+                "bottom": 394.171875,
+                "left": 204.84375
+              }
+            },
+            {
+              "class": {},
+              "old": {
+                "x": 147.234375,
+                "y": 372.421875,
+                "width": 21,
+                "height": 21,
+                "top": 372.421875,
+                "right": 168.234375,
+                "bottom": 393.421875,
+                "left": 147.234375
+              },
+              "new": {
+                "x": 142.84375,
+                "y": 372.421875,
+                "width": 21,
+                "height": 21,
+                "top": 372.421875,
+                "right": 163.84375,
+                "bottom": 393.421875,
+                "left": 142.84375
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "ctaMovement": 0.0,
+    "visualMovement": 0.0
+  },
+  {
+    "fractionalViewport": {
+      "innerWidth": 901,
+      "htmlWidth": 901,
+      "mobile": false,
+      "oldDesktop": true,
+      "desktop": true,
+      "tablet": true,
+      "actionsDirection": "row",
+      "heroHeight": 610,
+      "preloads": [
+        {
+          "media": "(width > 900px)",
+          "active": true
+        },
+        {
+          "media": "(max-width: 900px)",
+          "active": false
+        }
+      ],
+      "image": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-768.webp",
+      "requests": [
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-768.webp",
+          "initiator": "link"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "findings_p0_p2": [],
+  "cases": 18,
+  "widths": [
+    360,
+    390,
+    430,
+    900,
+    901,
+    1366,
+    1440,
+    1920,
+    3355
+  ],
+  "languages": [
+    "uk",
+    "ru"
+  ],
+  "dpr": 2,
+  "floor_fade": "92% desktop /90% mobile verified computed CSS in all18 cases",
+  "no_horizontal_overflow": true,
+  "no_page_errors": true,
+  "hero_height_max_delta": 0.0,
+  "hero_content_rect_max_delta": 0,
+  "min_desktop_source_pixels_per_css_pixel": 2.0650681878955344,
+  "min_mobile_source_pixels_per_css_pixel": 2.2727416848980626,
+  "single_hero_photo_request": true,
+  "all_hero_photos_preloaded": true,
+  "full_products_visible": true,
+  "copy_product_overlap": false,
+  "visual_floor_edge": "soft transition into background; no P0-P2 rectangular edge issue",
+  "desktop_controller_proportion": "visually natural; source framing differs from1.4 so do not claim exact uniform transform",
+  "cta_from_ps4_selects_ps5": "passed at390/1440",
+  "reduced_motion": "all letters opacity1/animation none at390/1440"
+}

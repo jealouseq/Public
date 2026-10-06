@@ -1,0 +1,123 @@
+[
+  {
+    "text": "1 день",
+    "selector": "",
+    "border": "rgb(60, 61, 64)",
+    "borderWidth": "1px",
+    "color": "rgb(163, 165, 168)",
+    "fontSize": "12px",
+    "fontWeight": "400",
+    "backgrounds": [
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgb(14, 15, 17)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgb(8, 9, 11)"
+    ],
+    "computedBackground": [
+      14.0,
+      15.0,
+      17.0
+    ],
+    "borderContrast": 1.766,
+    "textContrast": 7.766,
+    "requestedSelector": ".term-options button:not(.selected)"
+  },
+  {
+    "text": "2",
+    "selector": "",
+    "border": "rgb(59, 60, 63)",
+    "borderWidth": "1px",
+    "color": "rgb(163, 165, 168)",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "backgrounds": [
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgb(14, 15, 17)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgb(8, 9, 11)"
+    ],
+    "computedBackground": [
+      14.0,
+      15.0,
+      17.0
+    ],
+    "borderContrast": 1.739,
+    "textContrast": 7.766,
+    "requestedSelector": ".controller-options button:not(.selected)"
+  },
+  {
+    "text": "",
+    "selector": "",
+    "border": "rgb(112, 114, 119)",
+    "borderWidth": "1px",
+    "color": "rgb(244, 244, 241)",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "backgrounds": [
+      "rgb(20, 22, 24)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgb(14, 15, 17)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgb(8, 9, 11)"
+    ],
+    "computedBackground": [
+      20.0,
+      22.0,
+      24.0
+    ],
+    "borderContrast": 3.768,
+    "textContrast": 16.461,
+    "requestedSelector": ".date-fields input"
+  },
+  {
+    "text": "PS5",
+    "selector": "",
+    "border": "rgb(17, 18, 20)",
+    "borderWidth": "0px",
+    "color": "rgb(17, 18, 20)",
+    "fontSize": "12px",
+    "fontWeight": "700",
+    "backgrounds": [
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgba(0, 0, 0, 0)",
+      "rgb(8, 9, 11)"
+    ],
+    "computedBackground": [
+      8.0,
+      9.0,
+      11.0
+    ],
+    "borderContrast": 1.063,
+    "textContrast": 1.063,
+    "requestedSelector": ".console-switch button:not(.active)"
+  }
+]

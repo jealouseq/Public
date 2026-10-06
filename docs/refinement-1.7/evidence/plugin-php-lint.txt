@@ -1,0 +1,9 @@
+No syntax errors detected in /var/www/html/wp-content/plugins/joyrent-rentals/joyrent-rentals.php
+No syntax errors detected in /var/www/html/wp-content/plugins/joyrent-rentals/includes/rest.php
+No syntax errors detected in /var/www/html/wp-content/plugins/joyrent-rentals/includes/store.php
+No syntax errors detected in /var/www/html/wp-content/plugins/joyrent-rentals/includes/settings.php
+No syntax errors detected in /var/www/html/wp-content/plugins/joyrent-rentals/includes/locale.php
+No syntax errors detected in /var/www/html/wp-content/plugins/joyrent-rentals/includes/games.php
+No syntax errors detected in /var/www/html/wp-content/plugins/joyrent-rentals/includes/domain.php
+No syntax errors detected in /var/www/html/wp-content/plugins/joyrent-rentals/includes/orders.php
+No syntax errors detected in /var/www/html/wp-content/plugins/joyrent-rentals/includes/lock.php

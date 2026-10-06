@@ -1,0 +1,889 @@
+{
+  "audit": "JOYRENT installed live 1.9 read-only audit",
+  "createdAt": "2026-10-03T16:30:38.834Z",
+  "site": "https://flowers-luxury.shop",
+  "installed": {
+    "js": "main-DMOyxYFI.js",
+    "css": "main-UAWhCNWL.css"
+  },
+  "engine": "HeadlessChrome/153.0.8010.0",
+  "environment": {
+    "freshAnonymousContexts": true,
+    "userProfilesRead": false,
+    "viewportWidths": [
+      1440,
+      390,
+      320
+    ],
+    "languages": [
+      "uk",
+      "ru"
+    ],
+    "mobileEmulation": true,
+    "prefersReducedMotion": "reduce"
+  },
+  "safety": {
+    "nonGetRequestsInterceptedBeforeTransmit": true,
+    "permittedMethods": [
+      "GET",
+      "HEAD"
+    ],
+    "blockedNonGetRequests": 0,
+    "actualFinalSubmissionAttempted": false,
+    "realOrders": 0,
+    "realEmails": 0,
+    "hostFilesOrSettingsModified": false,
+    "browserClosed": true
+  },
+  "cases": [
+    {
+      "lang": "uk",
+      "width": 1440,
+      "checks": {
+        "bundle": true,
+        "css": true,
+        "lang": true,
+        "howAnchor": true,
+        "gameDetailFocus": true,
+        "mapFocus": true,
+        "contract": true,
+        "fifaSearch": true,
+        "pickerFocus": true,
+        "nestedFocus": true,
+        "nestedRestore": true,
+        "pickerRestore": true,
+        "memoryOnly": true,
+        "nameNext": true,
+        "phoneNext": true,
+        "addressExpanded": true,
+        "addressClick": true,
+        "addressClosed": true,
+        "addressHouse": true,
+        "contact16": true,
+        "noCityField": true,
+        "noUnintendedWrites": true
+      },
+      "originalAutoScrollHowAnchor": true,
+      "jsErrors": [],
+      "httpFailures": [],
+      "horizontalOverflowPhases": [],
+      "faqPages": [
+        {
+          "url": "https://flowers-luxury.shop/faq/",
+          "title": "Питання про оренду – flowers-luxury.shop",
+          "lang": "uk",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "lang": "uk",
+      "width": 390,
+      "checks": {
+        "bundle": true,
+        "css": true,
+        "lang": true,
+        "howAnchor": true,
+        "gameDetailFocus": true,
+        "mapFocus": true,
+        "contract": true,
+        "fifaSearch": true,
+        "pickerFocus": true,
+        "nestedFocus": true,
+        "nestedRestore": true,
+        "pickerRestore": true,
+        "memoryOnly": true,
+        "nameNext": true,
+        "phoneNext": true,
+        "addressExpanded": true,
+        "addressClick": true,
+        "addressClosed": true,
+        "addressHouse": true,
+        "contact16": true,
+        "noCityField": true,
+        "noUnintendedWrites": true
+      },
+      "originalAutoScrollHowAnchor": true,
+      "jsErrors": [],
+      "httpFailures": [],
+      "horizontalOverflowPhases": [],
+      "faqPages": [
+        {
+          "url": "https://flowers-luxury.shop/faq/",
+          "title": "Питання про оренду – flowers-luxury.shop",
+          "lang": "uk",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "lang": "uk",
+      "width": 320,
+      "checks": {
+        "bundle": true,
+        "css": true,
+        "lang": true,
+        "howAnchor": true,
+        "gameDetailFocus": true,
+        "mapFocus": true,
+        "contract": true,
+        "fifaSearch": true,
+        "pickerFocus": true,
+        "nestedFocus": true,
+        "nestedRestore": true,
+        "pickerRestore": true,
+        "memoryOnly": true,
+        "nameNext": true,
+        "phoneNext": true,
+        "addressExpanded": true,
+        "addressClick": true,
+        "addressClosed": true,
+        "addressHouse": true,
+        "contact16": true,
+        "noCityField": true,
+        "noUnintendedWrites": true
+      },
+      "originalAutoScrollHowAnchor": false,
+      "jsErrors": [],
+      "httpFailures": [],
+      "horizontalOverflowPhases": [],
+      "faqPages": [
+        {
+          "url": "https://flowers-luxury.shop/faq/",
+          "title": "Питання про оренду – flowers-luxury.shop",
+          "lang": "uk",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "lang": "ru",
+      "width": 1440,
+      "checks": {
+        "bundle": true,
+        "css": true,
+        "lang": true,
+        "howAnchor": true,
+        "gameDetailFocus": true,
+        "mapFocus": true,
+        "contract": true,
+        "fifaSearch": true,
+        "pickerFocus": true,
+        "nestedFocus": true,
+        "nestedRestore": true,
+        "pickerRestore": true,
+        "memoryOnly": true,
+        "nameNext": true,
+        "phoneNext": true,
+        "addressExpanded": true,
+        "addressClick": true,
+        "addressClosed": true,
+        "addressHouse": true,
+        "contact16": true,
+        "noCityField": true,
+        "noUnintendedWrites": true
+      },
+      "originalAutoScrollHowAnchor": true,
+      "jsErrors": [],
+      "httpFailures": [],
+      "horizontalOverflowPhases": [],
+      "faqPages": [
+        {
+          "url": "https://flowers-luxury.shop/faq-ru/",
+          "title": "Вопросы об аренде – flowers-luxury.shop",
+          "lang": "ru",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "lang": "ru",
+      "width": 390,
+      "checks": {
+        "bundle": true,
+        "css": true,
+        "lang": true,
+        "howAnchor": true,
+        "gameDetailFocus": true,
+        "mapFocus": true,
+        "contract": true,
+        "fifaSearch": true,
+        "pickerFocus": true,
+        "nestedFocus": true,
+        "nestedRestore": true,
+        "pickerRestore": true,
+        "memoryOnly": true,
+        "nameNext": true,
+        "phoneNext": true,
+        "addressExpanded": true,
+        "addressClick": true,
+        "addressClosed": true,
+        "addressHouse": true,
+        "contact16": true,
+        "noCityField": true,
+        "noUnintendedWrites": true
+      },
+      "originalAutoScrollHowAnchor": false,
+      "jsErrors": [],
+      "httpFailures": [],
+      "horizontalOverflowPhases": [],
+      "faqPages": [
+        {
+          "url": "https://flowers-luxury.shop/faq-ru/",
+          "title": "Вопросы об аренде – flowers-luxury.shop",
+          "lang": "ru",
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "lang": "ru",
+      "width": 320,
+      "checks": {
+        "bundle": true,
+        "css": true,
+        "lang": true,
+        "howAnchor": true,
+        "gameDetailFocus": true,
+        "mapFocus": true,
+        "contract": true,
+        "fifaSearch": true,
+        "pickerFocus": true,
+        "nestedFocus": true,
+        "nestedRestore": true,
+        "pickerRestore": true,
+        "memoryOnly": true,
+        "nameNext": true,
+        "phoneNext": true,
+        "addressExpanded": true,
+        "addressClick": true,
+        "addressClosed": true,
+        "addressHouse": true,
+        "contact16": true,
+        "noCityField": true,
+        "noUnintendedWrites": true
+      },
+      "originalAutoScrollHowAnchor": false,
+      "jsErrors": [],
+      "httpFailures": [],
+      "horizontalOverflowPhases": [],
+      "faqPages": [
+        {
+          "url": "https://flowers-luxury.shop/faq-ru/",
+          "title": "Вопросы об аренде – flowers-luxury.shop",
+          "lang": "ru",
+          "overflow": false
+        }
+      ]
+    }
+  ],
+  "addressEvidence": [
+    {
+      "lang": "uk",
+      "width": 1440,
+      "pointer": "mouse",
+      "pass": true,
+      "before": {
+        "phase": "address-before-click",
+        "url": "https://flowers-luxury.shop/#how-it-works",
+        "viewport": {
+          "w": 1440,
+          "h": 1000
+        },
+        "scrollY": 4715,
+        "focus": "address",
+        "address": "Фонтанск",
+        "expanded": "true",
+        "suggestions": [
+          {
+            "label": "Фонтанська дорога",
+            "rect": {
+              "x": 80.875,
+              "y": 592.515625,
+              "width": 741.03125,
+              "height": 48,
+              "top": 592.515625,
+              "right": 821.90625,
+              "bottom": 640.515625,
+              "left": 80.875
+            }
+          },
+          {
+            "label": "Середньофонтанська вулиця",
+            "rect": {
+              "x": 80.875,
+              "y": 640.515625,
+              "width": 741.03125,
+              "height": 48,
+              "top": 640.515625,
+              "right": 821.90625,
+              "bottom": 688.515625,
+              "left": 80.875
+            }
+          }
+        ]
+      },
+      "after": {
+        "phase": "address-after-click",
+        "url": "https://flowers-luxury.shop/#how-it-works",
+        "viewport": {
+          "w": 1440,
+          "h": 1000
+        },
+        "scrollY": 4715,
+        "focus": "address",
+        "address": "Фонтанська дорога",
+        "expanded": "false",
+        "suggestions": []
+      }
+    },
+    {
+      "lang": "uk",
+      "width": 390,
+      "pointer": "touch",
+      "pass": true,
+      "before": {
+        "phase": "address-before-click",
+        "url": "https://flowers-luxury.shop/#how-it-works",
+        "viewport": {
+          "w": 390,
+          "h": 844
+        },
+        "scrollY": 4673,
+        "focus": "address",
+        "address": "Фонтанск",
+        "expanded": "true",
+        "suggestions": [
+          {
+            "label": "Фонтанська дорога",
+            "rect": {
+              "x": 30,
+              "y": 474.859375,
+              "width": 330,
+              "height": 48,
+              "top": 474.859375,
+              "right": 360,
+              "bottom": 522.859375,
+              "left": 30
+            }
+          },
+          {
+            "label": "Середньофонтанська вулиця",
+            "rect": {
+              "x": 30,
+              "y": 522.859375,
+              "width": 330,
+              "height": 48,
+              "top": 522.859375,
+              "right": 360,
+              "bottom": 570.859375,
+              "left": 30
+            }
+          }
+        ]
+      },
+      "after": {
+        "phase": "address-after-click",
+        "url": "https://flowers-luxury.shop/#how-it-works",
+        "viewport": {
+          "w": 390,
+          "h": 844
+        },
+        "scrollY": 4673,
+        "focus": "address",
+        "address": "Фонтанська дорога",
+        "expanded": "false",
+        "suggestions": []
+      }
+    },
+    {
+      "lang": "uk",
+      "width": 320,
+      "pointer": "touch",
+      "pass": true,
+      "before": {
+        "phase": "address-before-click",
+        "url": "https://flowers-luxury.shop/#how-it-works",
+        "viewport": {
+          "w": 320,
+          "h": 844
+        },
+        "scrollY": 4843,
+        "focus": "address",
+        "address": "Фонтанск",
+        "expanded": "true",
+        "suggestions": [
+          {
+            "label": "Фонтанська дорога",
+            "rect": {
+              "x": 26,
+              "y": 474,
+              "width": 268,
+              "height": 48,
+              "top": 474,
+              "right": 294,
+              "bottom": 522,
+              "left": 26
+            }
+          },
+          {
+            "label": "Середньофонтанська вулиця",
+            "rect": {
+              "x": 26,
+              "y": 522,
+              "width": 268,
+              "height": 48,
+              "top": 522,
+              "right": 294,
+              "bottom": 570,
+              "left": 26
+            }
+          }
+        ]
+      },
+      "after": {
+        "phase": "address-after-click",
+        "url": "https://flowers-luxury.shop/#how-it-works",
+        "viewport": {
+          "w": 320,
+          "h": 844
+        },
+        "scrollY": 4843,
+        "focus": "address",
+        "address": "Фонтанська дорога",
+        "expanded": "false",
+        "suggestions": []
+      }
+    },
+    {
+      "lang": "ru",
+      "width": 1440,
+      "pointer": "mouse",
+      "pass": true,
+      "before": {
+        "phase": "address-before-click",
+        "url": "https://flowers-luxury.shop/?lang=ru#how-it-works",
+        "viewport": {
+          "w": 1440,
+          "h": 1000
+        },
+        "scrollY": 4715,
+        "focus": "address",
+        "address": "Фонтанск",
+        "expanded": "true",
+        "suggestions": [
+          {
+            "label": "Фонтанская дорога",
+            "rect": {
+              "x": 80.875,
+              "y": 592.515625,
+              "width": 741.03125,
+              "height": 48,
+              "top": 592.515625,
+              "right": 821.90625,
+              "bottom": 640.515625,
+              "left": 80.875
+            }
+          },
+          {
+            "label": "Среднефонтанская улица",
+            "rect": {
+              "x": 80.875,
+              "y": 640.515625,
+              "width": 741.03125,
+              "height": 48,
+              "top": 640.515625,
+              "right": 821.90625,
+              "bottom": 688.515625,
+              "left": 80.875
+            }
+          }
+        ]
+      },
+      "after": {
+        "phase": "address-after-click",
+        "url": "https://flowers-luxury.shop/?lang=ru#how-it-works",
+        "viewport": {
+          "w": 1440,
+          "h": 1000
+        },
+        "scrollY": 4715,
+        "focus": "address",
+        "address": "Фонтанская дорога",
+        "expanded": "false",
+        "suggestions": []
+      }
+    },
+    {
+      "lang": "ru",
+      "width": 390,
+      "pointer": "touch",
+      "pass": true,
+      "before": {
+        "phase": "address-before-click",
+        "url": "https://flowers-luxury.shop/?lang=ru#how-it-works",
+        "viewport": {
+          "w": 390,
+          "h": 844
+        },
+        "scrollY": 4747,
+        "focus": "address",
+        "address": "Фонтанск",
+        "expanded": "true",
+        "suggestions": [
+          {
+            "label": "Фонтанская дорога",
+            "rect": {
+              "x": 30,
+              "y": 474.9375,
+              "width": 330,
+              "height": 48,
+              "top": 474.9375,
+              "right": 360,
+              "bottom": 522.9375,
+              "left": 30
+            }
+          },
+          {
+            "label": "Среднефонтанская улица",
+            "rect": {
+              "x": 30,
+              "y": 522.9375,
+              "width": 330,
+              "height": 48,
+              "top": 522.9375,
+              "right": 360,
+              "bottom": 570.9375,
+              "left": 30
+            }
+          }
+        ]
+      },
+      "after": {
+        "phase": "address-after-click",
+        "url": "https://flowers-luxury.shop/?lang=ru#how-it-works",
+        "viewport": {
+          "w": 390,
+          "h": 844
+        },
+        "scrollY": 4747,
+        "focus": "address",
+        "address": "Фонтанская дорога",
+        "expanded": "false",
+        "suggestions": []
+      }
+    },
+    {
+      "lang": "ru",
+      "width": 320,
+      "pointer": "touch",
+      "pass": true,
+      "before": {
+        "phase": "address-before-click",
+        "url": "https://flowers-luxury.shop/?lang=ru#how-it-works",
+        "viewport": {
+          "w": 320,
+          "h": 844
+        },
+        "scrollY": 4751,
+        "focus": "address",
+        "address": "Фонтанск",
+        "expanded": "true",
+        "suggestions": [
+          {
+            "label": "Фонтанская дорога",
+            "rect": {
+              "x": 26,
+              "y": 474.8125,
+              "width": 268,
+              "height": 48,
+              "top": 474.8125,
+              "right": 294,
+              "bottom": 522.8125,
+              "left": 26
+            }
+          },
+          {
+            "label": "Среднефонтанская улица",
+            "rect": {
+              "x": 26,
+              "y": 522.8125,
+              "width": 268,
+              "height": 48,
+              "top": 522.8125,
+              "right": 294,
+              "bottom": 570.8125,
+              "left": 26
+            }
+          }
+        ]
+      },
+      "after": {
+        "phase": "address-after-click",
+        "url": "https://flowers-luxury.shop/?lang=ru#how-it-works",
+        "viewport": {
+          "w": 320,
+          "h": 844
+        },
+        "scrollY": 4751,
+        "focus": "address",
+        "address": "Фонтанская дорога",
+        "expanded": "false",
+        "suggestions": []
+      }
+    }
+  ],
+  "legalDialogs": [
+    {
+      "lang": "uk",
+      "width": 1440,
+      "dialogs": [
+        {
+          "label": "privacy",
+          "opened": true,
+          "rect": {
+            "x": 385,
+            "y": 252.203125,
+            "width": 670,
+            "height": 495.59375,
+            "top": 252.203125,
+            "right": 1055,
+            "bottom": 747.796875,
+            "left": 385
+          }
+        },
+        {
+          "label": "terms",
+          "opened": true,
+          "rect": {
+            "x": 385,
+            "y": 238.90625,
+            "width": 670,
+            "height": 522.1875,
+            "top": 238.90625,
+            "right": 1055,
+            "bottom": 761.09375,
+            "left": 385
+          }
+        }
+      ]
+    },
+    {
+      "lang": "uk",
+      "width": 390,
+      "dialogs": [
+        {
+          "label": "privacy",
+          "opened": true,
+          "rect": {
+            "x": 16,
+            "y": 141.15625,
+            "width": 358,
+            "height": 561.671875,
+            "top": 141.15625,
+            "right": 374,
+            "bottom": 702.828125,
+            "left": 16
+          }
+        },
+        {
+          "label": "terms",
+          "opened": true,
+          "rect": {
+            "x": 16,
+            "y": 128.8125,
+            "width": 358,
+            "height": 586.359375,
+            "top": 128.8125,
+            "right": 374,
+            "bottom": 715.171875,
+            "left": 16
+          }
+        }
+      ]
+    },
+    {
+      "lang": "uk",
+      "width": 320,
+      "dialogs": [
+        {
+          "label": "privacy",
+          "opened": true,
+          "rect": {
+            "x": 16,
+            "y": 91.78125,
+            "width": 288,
+            "height": 660.421875,
+            "top": 91.78125,
+            "right": 304,
+            "bottom": 752.203125,
+            "left": 16
+          }
+        },
+        {
+          "label": "terms",
+          "opened": true,
+          "rect": {
+            "x": 16,
+            "y": 104.125,
+            "width": 288,
+            "height": 635.734375,
+            "top": 104.125,
+            "right": 304,
+            "bottom": 739.859375,
+            "left": 16
+          }
+        }
+      ]
+    },
+    {
+      "lang": "ru",
+      "width": 1440,
+      "dialogs": [
+        {
+          "label": "privacy",
+          "opened": true,
+          "rect": {
+            "x": 385,
+            "y": 252.203125,
+            "width": 670,
+            "height": 495.59375,
+            "top": 252.203125,
+            "right": 1055,
+            "bottom": 747.796875,
+            "left": 385
+          }
+        },
+        {
+          "label": "terms",
+          "opened": true,
+          "rect": {
+            "x": 385,
+            "y": 238.90625,
+            "width": 670,
+            "height": 522.1875,
+            "top": 238.90625,
+            "right": 1055,
+            "bottom": 761.09375,
+            "left": 385
+          }
+        }
+      ]
+    },
+    {
+      "lang": "ru",
+      "width": 390,
+      "dialogs": [
+        {
+          "label": "privacy",
+          "opened": true,
+          "rect": {
+            "x": 16,
+            "y": 128.8125,
+            "width": 358,
+            "height": 586.359375,
+            "top": 128.8125,
+            "right": 374,
+            "bottom": 715.171875,
+            "left": 16
+          }
+        },
+        {
+          "label": "terms",
+          "opened": true,
+          "rect": {
+            "x": 16,
+            "y": 128.8125,
+            "width": 358,
+            "height": 586.359375,
+            "top": 128.8125,
+            "right": 374,
+            "bottom": 715.171875,
+            "left": 16
+          }
+        }
+      ]
+    },
+    {
+      "lang": "ru",
+      "width": 320,
+      "dialogs": [
+        {
+          "label": "privacy",
+          "opened": true,
+          "rect": {
+            "x": 16,
+            "y": 104.125,
+            "width": 288,
+            "height": 635.734375,
+            "top": 104.125,
+            "right": 304,
+            "bottom": 739.859375,
+            "left": 16
+          }
+        },
+        {
+          "label": "terms",
+          "opened": true,
+          "rect": {
+            "x": 16,
+            "y": 91.78125,
+            "width": 288,
+            "height": 660.421875,
+            "top": 91.78125,
+            "right": 304,
+            "bottom": 752.203125,
+            "left": 16
+          }
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "severity": "P2",
+      "code": "privacy-copy-city",
+      "status": "Confirmed live 1.9; root reports corrected in 1.9.1 source",
+      "evidence": "UA privacy dialog still says «місто й адреса» although contact form now has only address.",
+      "recommendedAction": "Use current address-only privacy copy."
+    },
+    {
+      "severity": "LIMITATION",
+      "code": "sticky-autoscroll-hit",
+      "evidence": "Automated nearest scroll before tapping how-link can leave its center under mobile-rental-bar; RU390 hit-test returned the bar. When target is centered and visible, UA/RU 1440/390/320 all navigate to #how-it-works.",
+      "recommendedAction": "Do not report as wrong href; consider scroll margin for automated or keyboard reveals."
+    },
+    {
+      "severity": "LIMITATION",
+      "code": "reported-iphone-safari-street-selection",
+      "evidence": "Fresh live Chromium mouse/touch suggestion selection passes all 6 cases; original user reports iPhone Safari. Chromium touch emulation cannot prove physical Safari behavior.",
+      "recommendedAction": "Keep Safari-specific issue scoped pending device reproduction; do not claim user issue reproduced or definitively fixed by this audit."
+    }
+  ],
+  "verified": [
+    "Correct installed JS and CSS in all 6 cases.",
+    "Actual mouse/touch partial street choice fills address and closes suggestions in UA/RU.",
+    "Keyboard house-number preservation, Enter name→phone→address and input font size at least16px.",
+    "Contract summary, current-game search alias «фифа», optional unlisted-game memory only.",
+    "Native game picker, nested game details and map dialog focus containment/Escape/return focus.",
+    "No horizontal overflow in captured states; no JS or HTTP failures."
+  ],
+  "notVerified": [
+    "Physical iPhone Safari/WebKit keyboard, visualViewport and touch event sequence.",
+    "Actual email delivery or real order creation; intentionally no final submit.",
+    "Root's newer 1.9.1 source was not deployed or audited as live."
+  ],
+  "screenshots": [
+    "work/refinement-1.9.1/live/uk-390-hero.png",
+    "work/refinement-1.9.1/live/uk-390-delivery.png",
+    "work/refinement-1.9.1/live/uk-1440-delivery.png",
+    "work/refinement-1.9.1/live/uk-390-picker.png",
+    "work/refinement-1.9.1/live/uk-320-contact.png",
+    "work/refinement-1.9.1/live/uk-390-address-suggestions.png",
+    "work/refinement-1.9.1/live/uk-390-address-selected.png",
+    "work/refinement-1.9.1/live/ru-390-address-suggestions.png",
+    "work/refinement-1.9.1/live/ru-390-address-selected.png",
+    "work/refinement-1.9.1/live/uk-1440-address-suggestions.png",
+    "work/refinement-1.9.1/live/uk-1440-address-selected.png"
+  ]
+}

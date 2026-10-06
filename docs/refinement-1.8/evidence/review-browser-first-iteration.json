@@ -1,0 +1,896 @@
+{
+  "main": "main-i_aDCQ0R.js",
+  "css": "main-Dr9ihFq-.css",
+  "cases": [
+    {
+      "language": "uk",
+      "width": 320,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+      "centers": [
+        {
+          "column": 160,
+          "node": 160,
+          "body": 160,
+          "align": "center"
+        },
+        {
+          "column": 160,
+          "node": 160,
+          "body": 160,
+          "align": "center"
+        },
+        {
+          "column": 160,
+          "node": 160,
+          "body": 160,
+          "align": "center"
+        }
+      ],
+      "layout": {
+        "panel": {
+          "x": 20,
+          "y": 25.15625,
+          "w": 280,
+          "h": 1077.53125,
+          "cx": 160,
+          "bottom": 1102.6875
+        },
+        "button": {
+          "x": 62,
+          "y": 1021.6875,
+          "w": 196,
+          "h": 52,
+          "cx": 160,
+          "bottom": 1073.6875
+        },
+        "body": {
+          "x": 41,
+          "y": 324.125,
+          "w": 238,
+          "h": 674.5625,
+          "cx": 160,
+          "bottom": 998.6875
+        },
+        "fees": {
+          "x": 41,
+          "y": 688.625,
+          "w": 238,
+          "h": 310.0625,
+          "cx": 160,
+          "bottom": 998.6875
+        },
+        "preview": {
+          "x": 62,
+          "y": 358.625,
+          "w": 196,
+          "h": 294,
+          "cx": 160,
+          "bottom": 652.625
+        }
+      },
+      "lazyGeometryAndLeaflet": true,
+      "sixPolygons": true,
+      "escapeFocusReturn": true,
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "externalRasterBlocked": 6,
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+      "centers": [
+        {
+          "column": 195,
+          "node": 195,
+          "body": 195,
+          "align": "center"
+        },
+        {
+          "column": 195,
+          "node": 195,
+          "body": 195,
+          "align": "center"
+        },
+        {
+          "column": 195,
+          "node": 195,
+          "body": 195,
+          "align": "center"
+        }
+      ],
+      "layout": {
+        "panel": {
+          "x": 24,
+          "y": 25.03125,
+          "w": 342,
+          "h": 1027.84375,
+          "cx": 195,
+          "bottom": 1052.875
+        },
+        "button": {
+          "x": 97,
+          "y": 971.875,
+          "w": 196,
+          "h": 52,
+          "cx": 195,
+          "bottom": 1023.875
+        },
+        "body": {
+          "x": 49,
+          "y": 274.3125,
+          "w": 292,
+          "h": 674.5625,
+          "cx": 195,
+          "bottom": 948.875
+        },
+        "fees": {
+          "x": 49,
+          "y": 638.8125,
+          "w": 292,
+          "h": 310.0625,
+          "cx": 195,
+          "bottom": 948.875
+        },
+        "preview": {
+          "x": 97,
+          "y": 308.8125,
+          "w": 196,
+          "h": 294,
+          "cx": 195,
+          "bottom": 602.8125
+        }
+      },
+      "lazyGeometryAndLeaflet": true,
+      "sixPolygons": true,
+      "escapeFocusReturn": true,
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "externalRasterBlocked": 9,
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 768,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+      "centers": [
+        {
+          "column": 146.609375,
+          "node": 146.609375,
+          "body": 146.609375,
+          "align": "center"
+        },
+        {
+          "column": 383.9921875,
+          "node": 383.984375,
+          "body": 383.9921875,
+          "align": "center"
+        },
+        {
+          "column": 621.3828125,
+          "node": 621.375,
+          "body": 621.3828125,
+          "align": "center"
+        }
+      ],
+      "layout": {
+        "panel": {
+          "x": 39.921875,
+          "y": 105.03125,
+          "w": 688.15625,
+          "h": 658.734375,
+          "cx": 384,
+          "bottom": 763.765625
+        },
+        "button": {
+          "x": 513.078125,
+          "y": 160.03125,
+          "w": 186,
+          "h": 50,
+          "cx": 606.078125,
+          "bottom": 210.03125
+        },
+        "body": {
+          "x": 68.921875,
+          "y": 340.265625,
+          "w": 630.15625,
+          "h": 394.5,
+          "cx": 384,
+          "bottom": 734.765625
+        },
+        "fees": {
+          "x": 356.921875,
+          "y": 389.53125,
+          "w": 342.15625,
+          "h": 295.96875,
+          "cx": 528,
+          "bottom": 685.5
+        },
+        "preview": {
+          "x": 82.921875,
+          "y": 374.765625,
+          "w": 232,
+          "h": 348,
+          "cx": 198.921875,
+          "bottom": 722.765625
+        }
+      },
+      "lazyGeometryAndLeaflet": true,
+      "sixPolygons": true,
+      "escapeFocusReturn": true,
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "externalRasterBlocked": 9,
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 980,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+      "centers": [
+        {
+          "column": 189.296875,
+          "node": 189.296875,
+          "body": 189.296875,
+          "align": "center"
+        },
+        {
+          "column": 489.9921875,
+          "node": 489.984375,
+          "body": 489.9921875,
+          "align": "center"
+        },
+        {
+          "column": 790.6875,
+          "node": 790.6875,
+          "body": 790.6875,
+          "align": "center"
+        }
+      ],
+      "layout": {
+        "panel": {
+          "x": 50.953125,
+          "y": 104.71875,
+          "w": 878.09375,
+          "h": 637.46875,
+          "cx": 490,
+          "bottom": 742.1875
+        },
+        "button": {
+          "x": 712.65625,
+          "y": 161.109375,
+          "w": 186,
+          "h": 50,
+          "cx": 805.65625,
+          "bottom": 211.109375
+        },
+        "body": {
+          "x": 81.34375,
+          "y": 317.296875,
+          "w": 817.3125,
+          "h": 394.5,
+          "cx": 490,
+          "bottom": 711.796875
+        },
+        "fees": {
+          "x": 369.34375,
+          "y": 377.28125,
+          "w": 529.3125,
+          "h": 274.53125,
+          "cx": 634,
+          "bottom": 651.8125
+        },
+        "preview": {
+          "x": 95.34375,
+          "y": 351.796875,
+          "w": 232,
+          "h": 348,
+          "cx": 211.34375,
+          "bottom": 699.796875
+        }
+      },
+      "lazyGeometryAndLeaflet": true,
+      "sixPolygons": true,
+      "escapeFocusReturn": true,
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "externalRasterBlocked": 9,
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 1440,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+      "centers": [
+        {
+          "column": 270.71875,
+          "node": 270.71875,
+          "body": 270.71875,
+          "align": "center"
+        },
+        {
+          "column": 720,
+          "node": 720,
+          "body": 720,
+          "align": "center"
+        },
+        {
+          "column": 1169.28125,
+          "node": 1169.28125,
+          "body": 1169.28125,
+          "align": "center"
+        }
+      ],
+      "layout": {
+        "panel": {
+          "x": 74.875,
+          "y": 105.4375,
+          "w": 1290.25,
+          "h": 673.859375,
+          "cx": 720,
+          "bottom": 779.296875
+        },
+        "button": {
+          "x": 1134.9375,
+          "y": 175.625,
+          "w": 186,
+          "h": 50,
+          "cx": 1227.9375,
+          "bottom": 225.625
+        },
+        "body": {
+          "x": 270,
+          "y": 340.609375,
+          "w": 900,
+          "h": 394.5,
+          "cx": 720,
+          "bottom": 735.109375
+        },
+        "fees": {
+          "x": 647.59375,
+          "y": 400.59375,
+          "w": 522.40625,
+          "h": 274.53125,
+          "cx": 908.796875,
+          "bottom": 675.125
+        },
+        "preview": {
+          "x": 314,
+          "y": 375.109375,
+          "w": 232,
+          "h": 348,
+          "cx": 430,
+          "bottom": 723.109375
+        }
+      },
+      "lazyGeometryAndLeaflet": true,
+      "sixPolygons": true,
+      "escapeFocusReturn": true,
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "externalRasterBlocked": 12,
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 1920,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+      "centers": [
+        {
+          "column": 480,
+          "node": 480,
+          "body": 480,
+          "align": "center"
+        },
+        {
+          "column": 960,
+          "node": 960,
+          "body": 960,
+          "align": "center"
+        },
+        {
+          "column": 1440,
+          "node": 1440,
+          "body": 1440,
+          "align": "center"
+        }
+      ],
+      "layout": {
+        "panel": {
+          "x": 272,
+          "y": 104.609375,
+          "w": 1376,
+          "h": 676.140625,
+          "cx": 960,
+          "bottom": 780.75
+        },
+        "button": {
+          "x": 1417,
+          "y": 175.609375,
+          "w": 186,
+          "h": 50,
+          "cx": 1510,
+          "bottom": 225.609375
+        },
+        "body": {
+          "x": 510,
+          "y": 341.25,
+          "w": 900,
+          "h": 394.5,
+          "cx": 960,
+          "bottom": 735.75
+        },
+        "fees": {
+          "x": 894,
+          "y": 401.234375,
+          "w": 516,
+          "h": 274.53125,
+          "cx": 1152,
+          "bottom": 675.765625
+        },
+        "preview": {
+          "x": 554,
+          "y": 375.75,
+          "w": 232,
+          "h": 348,
+          "cx": 670,
+          "bottom": 723.75
+        }
+      },
+      "lazyGeometryAndLeaflet": true,
+      "sixPolygons": true,
+      "escapeFocusReturn": true,
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "externalRasterBlocked": 12,
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+      "centers": [
+        {
+          "column": 160,
+          "node": 160,
+          "body": 160,
+          "align": "center"
+        },
+        {
+          "column": 160,
+          "node": 160,
+          "body": 160,
+          "align": "center"
+        },
+        {
+          "column": 160,
+          "node": 160,
+          "body": 160,
+          "align": "center"
+        }
+      ],
+      "layout": {
+        "panel": {
+          "x": 20,
+          "y": 25.15625,
+          "w": 280,
+          "h": 1070.625,
+          "cx": 160,
+          "bottom": 1095.78125
+        },
+        "button": {
+          "x": 62,
+          "y": 1014.78125,
+          "w": 196,
+          "h": 52,
+          "cx": 160,
+          "bottom": 1066.78125
+        },
+        "body": {
+          "x": 41,
+          "y": 295.78125,
+          "w": 238,
+          "h": 696,
+          "cx": 160,
+          "bottom": 991.78125
+        },
+        "fees": {
+          "x": 41,
+          "y": 660.28125,
+          "w": 238,
+          "h": 331.5,
+          "cx": 160,
+          "bottom": 991.78125
+        },
+        "preview": {
+          "x": 62,
+          "y": 330.28125,
+          "w": 196,
+          "h": 294,
+          "cx": 160,
+          "bottom": 624.28125
+        }
+      },
+      "lazyGeometryAndLeaflet": true,
+      "sixPolygons": true,
+      "escapeFocusReturn": true,
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "externalRasterBlocked": 6,
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 390,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+      "centers": [
+        {
+          "column": 195,
+          "node": 195,
+          "body": 195,
+          "align": "center"
+        },
+        {
+          "column": 195,
+          "node": 195,
+          "body": 195,
+          "align": "center"
+        },
+        {
+          "column": 195,
+          "node": 195,
+          "body": 195,
+          "align": "center"
+        }
+      ],
+      "layout": {
+        "panel": {
+          "x": 24,
+          "y": 25.421875,
+          "w": 342,
+          "h": 1027.84375,
+          "cx": 195,
+          "bottom": 1053.265625
+        },
+        "button": {
+          "x": 97,
+          "y": 972.265625,
+          "w": 196,
+          "h": 52,
+          "cx": 195,
+          "bottom": 1024.265625
+        },
+        "body": {
+          "x": 49,
+          "y": 274.703125,
+          "w": 292,
+          "h": 674.5625,
+          "cx": 195,
+          "bottom": 949.265625
+        },
+        "fees": {
+          "x": 49,
+          "y": 639.203125,
+          "w": 292,
+          "h": 310.0625,
+          "cx": 195,
+          "bottom": 949.265625
+        },
+        "preview": {
+          "x": 97,
+          "y": 309.203125,
+          "w": 196,
+          "h": 294,
+          "cx": 195,
+          "bottom": 603.203125
+        }
+      },
+      "lazyGeometryAndLeaflet": true,
+      "sixPolygons": true,
+      "escapeFocusReturn": true,
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "externalRasterBlocked": 9,
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 768,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+      "centers": [
+        {
+          "column": 146.609375,
+          "node": 146.609375,
+          "body": 146.609375,
+          "align": "center"
+        },
+        {
+          "column": 383.9921875,
+          "node": 383.984375,
+          "body": 383.9921875,
+          "align": "center"
+        },
+        {
+          "column": 621.3828125,
+          "node": 621.375,
+          "body": 621.3828125,
+          "align": "center"
+        }
+      ],
+      "layout": {
+        "panel": {
+          "x": 39.921875,
+          "y": 105.03125,
+          "w": 688.15625,
+          "h": 658.734375,
+          "cx": 384,
+          "bottom": 763.765625
+        },
+        "button": {
+          "x": 513.078125,
+          "y": 160.03125,
+          "w": 186,
+          "h": 50,
+          "cx": 606.078125,
+          "bottom": 210.03125
+        },
+        "body": {
+          "x": 68.921875,
+          "y": 340.265625,
+          "w": 630.15625,
+          "h": 394.5,
+          "cx": 384,
+          "bottom": 734.765625
+        },
+        "fees": {
+          "x": 356.921875,
+          "y": 389.53125,
+          "w": 342.15625,
+          "h": 295.96875,
+          "cx": 528,
+          "bottom": 685.5
+        },
+        "preview": {
+          "x": 82.921875,
+          "y": 374.765625,
+          "w": 232,
+          "h": 348,
+          "cx": 198.921875,
+          "bottom": 722.765625
+        }
+      },
+      "lazyGeometryAndLeaflet": true,
+      "sixPolygons": true,
+      "escapeFocusReturn": true,
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "externalRasterBlocked": 9,
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 980,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+      "centers": [
+        {
+          "column": 189.296875,
+          "node": 189.296875,
+          "body": 189.296875,
+          "align": "center"
+        },
+        {
+          "column": 489.9921875,
+          "node": 489.984375,
+          "body": 489.9921875,
+          "align": "center"
+        },
+        {
+          "column": 790.6875,
+          "node": 790.6875,
+          "body": 790.6875,
+          "align": "center"
+        }
+      ],
+      "layout": {
+        "panel": {
+          "x": 50.953125,
+          "y": 104.71875,
+          "w": 878.09375,
+          "h": 637.46875,
+          "cx": 490,
+          "bottom": 742.1875
+        },
+        "button": {
+          "x": 712.65625,
+          "y": 161.109375,
+          "w": 186,
+          "h": 50,
+          "cx": 805.65625,
+          "bottom": 211.109375
+        },
+        "body": {
+          "x": 81.34375,
+          "y": 317.296875,
+          "w": 817.3125,
+          "h": 394.5,
+          "cx": 490,
+          "bottom": 711.796875
+        },
+        "fees": {
+          "x": 369.34375,
+          "y": 377.28125,
+          "w": 529.3125,
+          "h": 274.53125,
+          "cx": 634,
+          "bottom": 651.8125
+        },
+        "preview": {
+          "x": 95.34375,
+          "y": 351.796875,
+          "w": 232,
+          "h": 348,
+          "cx": 211.34375,
+          "bottom": 699.796875
+        }
+      },
+      "lazyGeometryAndLeaflet": true,
+      "sixPolygons": true,
+      "escapeFocusReturn": true,
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "externalRasterBlocked": 9,
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 1440,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+      "centers": [
+        {
+          "column": 270.71875,
+          "node": 270.71875,
+          "body": 270.71875,
+          "align": "center"
+        },
+        {
+          "column": 720,
+          "node": 720,
+          "body": 720,
+          "align": "center"
+        },
+        {
+          "column": 1169.28125,
+          "node": 1169.28125,
+          "body": 1169.28125,
+          "align": "center"
+        }
+      ],
+      "layout": {
+        "panel": {
+          "x": 74.875,
+          "y": 105.4375,
+          "w": 1290.25,
+          "h": 673.859375,
+          "cx": 720,
+          "bottom": 779.296875
+        },
+        "button": {
+          "x": 1134.9375,
+          "y": 175.625,
+          "w": 186,
+          "h": 50,
+          "cx": 1227.9375,
+          "bottom": 225.625
+        },
+        "body": {
+          "x": 270,
+          "y": 340.609375,
+          "w": 900,
+          "h": 394.5,
+          "cx": 720,
+          "bottom": 735.109375
+        },
+        "fees": {
+          "x": 647.59375,
+          "y": 400.59375,
+          "w": 522.40625,
+          "h": 274.53125,
+          "cx": 908.796875,
+          "bottom": 675.125
+        },
+        "preview": {
+          "x": 314,
+          "y": 375.109375,
+          "w": 232,
+          "h": 348,
+          "cx": 430,
+          "bottom": 723.109375
+        }
+      },
+      "lazyGeometryAndLeaflet": true,
+      "sixPolygons": true,
+      "escapeFocusReturn": true,
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "externalRasterBlocked": 12,
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 1920,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+      "centers": [
+        {
+          "column": 480,
+          "node": 480,
+          "body": 480,
+          "align": "center"
+        },
+        {
+          "column": 960,
+          "node": 960,
+          "body": 960,
+          "align": "center"
+        },
+        {
+          "column": 1440,
+          "node": 1440,
+          "body": 1440,
+          "align": "center"
+        }
+      ],
+      "layout": {
+        "panel": {
+          "x": 272,
+          "y": 104.609375,
+          "w": 1376,
+          "h": 676.140625,
+          "cx": 960,
+          "bottom": 780.75
+        },
+        "button": {
+          "x": 1417,
+          "y": 175.609375,
+          "w": 186,
+          "h": 50,
+          "cx": 1510,
+          "bottom": 225.609375
+        },
+        "body": {
+          "x": 510,
+          "y": 341.25,
+          "w": 900,
+          "h": 394.5,
+          "cx": 960,
+          "bottom": 735.75
+        },
+        "fees": {
+          "x": 894,
+          "y": 401.234375,
+          "w": 516,
+          "h": 274.53125,
+          "cx": 1152,
+          "bottom": 675.765625
+        },
+        "preview": {
+          "x": 554,
+          "y": 375.75,
+          "w": 232,
+          "h": 348,
+          "cx": 670,
+          "bottom": 723.75
+        }
+      },
+      "lazyGeometryAndLeaflet": true,
+      "sixPolygons": true,
+      "escapeFocusReturn": true,
+      "pageErrors": [],
+      "nonGetAttempts": [],
+      "externalRasterBlocked": 12,
+      "pass": true
+    }
+  ],
+  "passed": 12,
+  "safety": "Only local GET/HEAD; mutations and external requests blocked before transmission."
+}

@@ -1,0 +1,3040 @@
+{
+  "cases": [
+    {
+      "language": "uk",
+      "width": 320,
+      "status": "PASS",
+      "realOrders": 0,
+      "realEmails": 0,
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-2YiB-VTt.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css"
+        ]
+      },
+      "metrics": {
+        "hero": {
+          "cta": {
+            "x": 73.5625,
+            "y": 332.40625,
+            "w": 172.859375,
+            "h": 54,
+            "right": 246.421875,
+            "bottom": 386.40625,
+            "cx": 159.9921875,
+            "cy": 359.40625
+          },
+          "desktopWidthExpected": 172.859375,
+          "font": "15px",
+          "route": "#rates/PS5",
+          "tariffBadges": [
+            "Доставка включена",
+            "Доставка включена"
+          ]
+        },
+        "booking": {
+          "icon": {
+            "border": "0px solid rgb(207, 181, 135)",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(207, 181, 135)",
+            "ariaHidden": "true",
+            "svgWidth": 28,
+            "svgHeight": 28,
+            "viewBox": "0 0 24 24",
+            "pathStart": "M8.984 2.596v17.547l3.915 ",
+            "fill": "currentColor"
+          },
+          "controllers": 2,
+          "security": "contract",
+          "rentalAmount": 1400,
+          "PS4deposit": 7500,
+          "PS5deposit": 25000
+        },
+        "picker": {
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "rowTop": 253.296875,
+              "bottom": 460.09375,
+              "actionTop": 416.09375,
+              "actionBottom": 460.09375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "rowTop": 253.296875,
+              "bottom": 460.09375,
+              "actionTop": 416.09375,
+              "actionBottom": 460.09375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Mortal Kombat 1",
+              "rowTop": 484.09375,
+              "bottom": 711.6875,
+              "actionTop": 667.6875,
+              "actionBottom": 711.6875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "rowTop": 484.09375,
+              "bottom": 711.6875,
+              "actionTop": 667.6875,
+              "actionBottom": 711.6875,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "EA SPORTS UFC 6",
+              "rowTop": 735.6875,
+              "bottom": 942.484375,
+              "actionTop": 898.484375,
+              "actionBottom": 942.484375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Tekken 8",
+              "rowTop": 735.6875,
+              "bottom": 942.484375,
+              "actionTop": 898.484375,
+              "actionBottom": 942.484375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Split Fiction",
+              "rowTop": 966.484375,
+              "bottom": 1173.28125,
+              "actionTop": 1129.28125,
+              "actionBottom": 1173.28125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "It Takes Two",
+              "rowTop": 966.484375,
+              "bottom": 1173.28125,
+              "actionTop": 1129.28125,
+              "actionBottom": 1173.28125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "rowTop": 1197.28125,
+              "bottom": 1424.875,
+              "actionTop": 1380.875,
+              "actionBottom": 1424.875,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Gran Turismo 7",
+              "rowTop": 1197.28125,
+              "bottom": 1424.875,
+              "actionTop": 1380.875,
+              "actionBottom": 1424.875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "God of War Ragnarök",
+              "rowTop": 1448.875,
+              "bottom": 1676.46875,
+              "actionTop": 1632.46875,
+              "actionBottom": 1676.46875,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "rowTop": 1448.875,
+              "bottom": 1676.46875,
+              "actionTop": 1632.46875,
+              "actionBottom": 1676.46875,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "rowTop": 1700.46875,
+              "bottom": 1928.0625,
+              "actionTop": 1884.0625,
+              "actionBottom": 1928.0625,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "rowTop": 1700.46875,
+              "bottom": 1928.0625,
+              "actionTop": 1884.0625,
+              "actionBottom": 1928.0625,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "ELDEN RING",
+              "rowTop": 1952.0625,
+              "bottom": 2179.65625,
+              "actionTop": 2135.65625,
+              "actionBottom": 2179.65625,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "rowTop": 1952.0625,
+              "bottom": 2179.65625,
+              "actionTop": 2135.65625,
+              "actionBottom": 2179.65625,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "ASTRO BOT",
+              "rowTop": 2203.65625,
+              "bottom": 2431.25,
+              "actionTop": 2387.25,
+              "actionBottom": 2431.25,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "rowTop": 2203.65625,
+              "bottom": 2431.25,
+              "actionTop": 2387.25,
+              "actionBottom": 2431.25,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Horizon Forbidden West",
+              "rowTop": 2455.25,
+              "bottom": 2682.84375,
+              "actionTop": 2638.84375,
+              "actionBottom": 2682.84375,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            }
+          ],
+          "rowsChecked": 10,
+          "alignedEveryRow": true,
+          "closedHeadingCentered": true,
+          "closedActionCentered": true,
+          "openInputLeft16pxFocusedPrefilled": true,
+          "selectionRetained": true
+        },
+        "consent": {
+          "geometry": {
+            "consent": {
+              "w": 280,
+              "h": 54.1875,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "0px",
+              "padding": "0px"
+            },
+            "copy": {
+              "w": 228,
+              "h": 54.1875,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "auto",
+              "padding": "10px 0px 0px"
+            },
+            "checkboxHit": {
+              "w": 44,
+              "h": 44,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "auto",
+              "padding": "0px"
+            },
+            "legal": [
+              {
+                "w": 102.5625,
+                "h": 22.09375,
+                "fontSize": "13px",
+                "lineHeight": "22.1px",
+                "minHeight": "0px",
+                "padding": "0px"
+              },
+              {
+                "w": 193.109375,
+                "h": 22.09375,
+                "fontSize": "13px",
+                "lineHeight": "22.1px",
+                "minHeight": "0px",
+                "padding": "0px"
+              }
+            ],
+            "textTops": [
+              462.27,
+              484.36
+            ]
+          },
+          "interaction": [
+            {
+              "label": "умовами оренди",
+              "EnterClickTapEscapeFocus": "PASS",
+              "consentUnchanged": true
+            },
+            {
+              "label": "обробкою персональних даних",
+              "EnterClickTapEscapeFocus": "PASS",
+              "consentUnchanged": true
+            }
+          ],
+          "hitAreaCornerLabelsSpace": "PASS"
+        }
+      },
+      "fixtures": [],
+      "unintendedPOST": [],
+      "pageErrors": [],
+      "HTTPFailures": []
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "status": "PASS",
+      "realOrders": 0,
+      "realEmails": 0,
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-2YiB-VTt.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css"
+        ]
+      },
+      "metrics": {
+        "hero": {
+          "cta": {
+            "x": 108.5625,
+            "y": 322.0625,
+            "w": 172.859375,
+            "h": 54,
+            "right": 281.421875,
+            "bottom": 376.0625,
+            "cx": 194.9921875,
+            "cy": 349.0625
+          },
+          "desktopWidthExpected": 172.859375,
+          "font": "15px",
+          "route": "#rates/PS5",
+          "tariffBadges": [
+            "Доставка включена",
+            "Доставка включена"
+          ]
+        },
+        "booking": {
+          "icon": {
+            "border": "0px solid rgb(207, 181, 135)",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(207, 181, 135)",
+            "ariaHidden": "true",
+            "svgWidth": 28,
+            "svgHeight": 28,
+            "viewBox": "0 0 24 24",
+            "pathStart": "M8.984 2.596v17.547l3.915 ",
+            "fill": "currentColor"
+          },
+          "controllers": 2,
+          "security": "contract",
+          "rentalAmount": 1400,
+          "PS4deposit": 7500,
+          "PS5deposit": 25000
+        },
+        "picker": {
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "rowTop": 227.296875,
+              "bottom": 469.09375,
+              "actionTop": 425.09375,
+              "actionBottom": 469.09375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "rowTop": 227.296875,
+              "bottom": 469.09375,
+              "actionTop": 425.09375,
+              "actionBottom": 469.09375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Mortal Kombat 1",
+              "rowTop": 493.09375,
+              "bottom": 755.6875,
+              "actionTop": 711.6875,
+              "actionBottom": 755.6875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "rowTop": 493.09375,
+              "bottom": 755.6875,
+              "actionTop": 711.6875,
+              "actionBottom": 755.6875,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "EA SPORTS UFC 6",
+              "rowTop": 779.6875,
+              "bottom": 1021.484375,
+              "actionTop": 977.484375,
+              "actionBottom": 1021.484375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Tekken 8",
+              "rowTop": 779.6875,
+              "bottom": 1021.484375,
+              "actionTop": 977.484375,
+              "actionBottom": 1021.484375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Split Fiction",
+              "rowTop": 1045.484375,
+              "bottom": 1287.28125,
+              "actionTop": 1243.28125,
+              "actionBottom": 1287.28125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "It Takes Two",
+              "rowTop": 1045.484375,
+              "bottom": 1287.28125,
+              "actionTop": 1243.28125,
+              "actionBottom": 1287.28125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "rowTop": 1311.28125,
+              "bottom": 1553.078125,
+              "actionTop": 1509.078125,
+              "actionBottom": 1553.078125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Gran Turismo 7",
+              "rowTop": 1311.28125,
+              "bottom": 1553.078125,
+              "actionTop": 1509.078125,
+              "actionBottom": 1553.078125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "God of War Ragnarök",
+              "rowTop": 1577.078125,
+              "bottom": 1818.875,
+              "actionTop": 1774.875,
+              "actionBottom": 1818.875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "rowTop": 1577.078125,
+              "bottom": 1818.875,
+              "actionTop": 1774.875,
+              "actionBottom": 1818.875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "rowTop": 1842.875,
+              "bottom": 2084.671875,
+              "actionTop": 2040.671875,
+              "actionBottom": 2084.671875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "rowTop": 1842.875,
+              "bottom": 2084.671875,
+              "actionTop": 2040.671875,
+              "actionBottom": 2084.671875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "ELDEN RING",
+              "rowTop": 2108.671875,
+              "bottom": 2350.46875,
+              "actionTop": 2306.46875,
+              "actionBottom": 2350.46875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "rowTop": 2108.671875,
+              "bottom": 2350.46875,
+              "actionTop": 2306.46875,
+              "actionBottom": 2350.46875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "ASTRO BOT",
+              "rowTop": 2374.46875,
+              "bottom": 2616.265625,
+              "actionTop": 2572.265625,
+              "actionBottom": 2616.265625,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "rowTop": 2374.46875,
+              "bottom": 2616.265625,
+              "actionTop": 2572.265625,
+              "actionBottom": 2616.265625,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Horizon Forbidden West",
+              "rowTop": 2640.265625,
+              "bottom": 2882.0625,
+              "actionTop": 2838.0625,
+              "actionBottom": 2882.0625,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            }
+          ],
+          "rowsChecked": 10,
+          "alignedEveryRow": true,
+          "closedHeadingCentered": true,
+          "closedActionCentered": true,
+          "openInputLeft16pxFocusedPrefilled": true,
+          "selectionRetained": true
+        },
+        "consent": {
+          "geometry": {
+            "consent": {
+              "w": 342,
+              "h": 54.1875,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "0px",
+              "padding": "0px"
+            },
+            "copy": {
+              "w": 290,
+              "h": 54.1875,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "auto",
+              "padding": "10px 0px 0px"
+            },
+            "checkboxHit": {
+              "w": 44,
+              "h": 44,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "auto",
+              "padding": "0px"
+            },
+            "legal": [
+              {
+                "w": 102.5625,
+                "h": 22.09375,
+                "fontSize": "13px",
+                "lineHeight": "22.1px",
+                "minHeight": "0px",
+                "padding": "0px"
+              },
+              {
+                "w": 193.109375,
+                "h": 22.09375,
+                "fontSize": "13px",
+                "lineHeight": "22.1px",
+                "minHeight": "0px",
+                "padding": "0px"
+              }
+            ],
+            "textTops": [
+              441.55,
+              463.64
+            ]
+          },
+          "interaction": [
+            {
+              "label": "умовами оренди",
+              "EnterClickTapEscapeFocus": "PASS",
+              "consentUnchanged": true
+            },
+            {
+              "label": "обробкою персональних даних",
+              "EnterClickTapEscapeFocus": "PASS",
+              "consentUnchanged": true
+            }
+          ],
+          "hitAreaCornerLabelsSpace": "PASS"
+        }
+      },
+      "fixtures": [
+        {
+          "interceptedBeforeTransmit": true,
+          "payloadChecks": {
+            "console": true,
+            "days": true,
+            "startDate": true,
+            "controllers": true,
+            "gameIds": true,
+            "name": true,
+            "phone": true,
+            "method": true,
+            "address": true,
+            "securityMode": true,
+            "requestedGame": true,
+            "consent": true,
+            "website": true,
+            "language": true,
+            "noCity": true,
+            "requestId": true,
+            "exactKeys": true
+          },
+          "status": "awaiting_confirmation",
+          "realOrders": 0,
+          "realEmails": 0
+        }
+      ],
+      "unintendedPOST": [],
+      "pageErrors": [],
+      "HTTPFailures": []
+    },
+    {
+      "language": "uk",
+      "width": 1440,
+      "status": "PASS",
+      "realOrders": 0,
+      "realEmails": 0,
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-2YiB-VTt.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css"
+        ]
+      },
+      "metrics": {
+        "hero": {
+          "cta": {
+            "x": 74.875,
+            "y": 518.34375,
+            "w": 172.859375,
+            "h": 54,
+            "right": 247.734375,
+            "bottom": 572.34375,
+            "cx": 161.3046875,
+            "cy": 545.34375
+          },
+          "desktopWidthExpected": 172.859375,
+          "font": "15px",
+          "route": "#rates/PS5",
+          "tariffBadges": [
+            "Доставка включена",
+            "Доставка включена"
+          ]
+        },
+        "booking": {
+          "icon": {
+            "border": "0px solid rgb(207, 181, 135)",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(207, 181, 135)",
+            "ariaHidden": "true",
+            "svgWidth": 28,
+            "svgHeight": 28,
+            "viewBox": "0 0 24 24",
+            "pathStart": "M8.984 2.596v17.547l3.915 ",
+            "fill": "currentColor"
+          },
+          "controllers": 2,
+          "security": "contract",
+          "rentalAmount": 1400,
+          "PS4deposit": 7500,
+          "PS5deposit": 25000
+        },
+        "picker": {
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "rowTop": 314.1875,
+              "bottom": 616.984375,
+              "actionTop": 572.984375,
+              "actionBottom": 616.984375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "rowTop": 314.1875,
+              "bottom": 616.984375,
+              "actionTop": 572.984375,
+              "actionBottom": 616.984375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Mortal Kombat 1",
+              "rowTop": 314.1875,
+              "bottom": 616.984375,
+              "actionTop": 572.984375,
+              "actionBottom": 616.984375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "rowTop": 314.1875,
+              "bottom": 616.984375,
+              "actionTop": 572.984375,
+              "actionBottom": 616.984375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "EA SPORTS UFC 6",
+              "rowTop": 641.984375,
+              "bottom": 944.78125,
+              "actionTop": 900.78125,
+              "actionBottom": 944.78125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Tekken 8",
+              "rowTop": 641.984375,
+              "bottom": 944.78125,
+              "actionTop": 900.78125,
+              "actionBottom": 944.78125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Split Fiction",
+              "rowTop": 641.984375,
+              "bottom": 944.78125,
+              "actionTop": 900.78125,
+              "actionBottom": 944.78125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "It Takes Two",
+              "rowTop": 641.984375,
+              "bottom": 944.78125,
+              "actionTop": 900.78125,
+              "actionBottom": 944.78125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "rowTop": 969.78125,
+              "bottom": 1272.578125,
+              "actionTop": 1228.578125,
+              "actionBottom": 1272.578125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Gran Turismo 7",
+              "rowTop": 969.78125,
+              "bottom": 1272.578125,
+              "actionTop": 1228.578125,
+              "actionBottom": 1272.578125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "God of War Ragnarök",
+              "rowTop": 969.78125,
+              "bottom": 1272.578125,
+              "actionTop": 1228.578125,
+              "actionBottom": 1272.578125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "rowTop": 969.78125,
+              "bottom": 1272.578125,
+              "actionTop": 1228.578125,
+              "actionBottom": 1272.578125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "rowTop": 1297.578125,
+              "bottom": 1600.375,
+              "actionTop": 1556.375,
+              "actionBottom": 1600.375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "rowTop": 1297.578125,
+              "bottom": 1600.375,
+              "actionTop": 1556.375,
+              "actionBottom": 1600.375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "ELDEN RING",
+              "rowTop": 1297.578125,
+              "bottom": 1600.375,
+              "actionTop": 1556.375,
+              "actionBottom": 1600.375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "rowTop": 1297.578125,
+              "bottom": 1600.375,
+              "actionTop": 1556.375,
+              "actionBottom": 1600.375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "ASTRO BOT",
+              "rowTop": 1625.375,
+              "bottom": 1928.171875,
+              "actionTop": 1884.171875,
+              "actionBottom": 1928.171875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "rowTop": 1625.375,
+              "bottom": 1928.171875,
+              "actionTop": 1884.171875,
+              "actionBottom": 1928.171875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Horizon Forbidden West",
+              "rowTop": 1625.375,
+              "bottom": 1928.171875,
+              "actionTop": 1884.171875,
+              "actionBottom": 1928.171875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            }
+          ],
+          "rowsChecked": 5,
+          "alignedEveryRow": true,
+          "closedHeadingCentered": true,
+          "closedActionCentered": true,
+          "openInputLeft16pxFocusedPrefilled": true,
+          "selectionRetained": true
+        },
+        "consent": {
+          "geometry": {
+            "consent": {
+              "w": 753.03125,
+              "h": 44,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "0px",
+              "padding": "0px"
+            },
+            "copy": {
+              "w": 701.03125,
+              "h": 32.09375,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "auto",
+              "padding": "10px 0px 0px"
+            },
+            "checkboxHit": {
+              "w": 44,
+              "h": 44,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "auto",
+              "padding": "0px"
+            },
+            "legal": [
+              {
+                "w": 102.5625,
+                "h": 22.09375,
+                "fontSize": "13px",
+                "lineHeight": "22.1px",
+                "minHeight": "0px",
+                "padding": "0px"
+              },
+              {
+                "w": 193.109375,
+                "h": 22.09375,
+                "fontSize": "13px",
+                "lineHeight": "22.1px",
+                "minHeight": "0px",
+                "padding": "0px"
+              }
+            ],
+            "textTops": [
+              641.53
+            ]
+          },
+          "interaction": [
+            {
+              "label": "умовами оренди",
+              "EnterClickTapEscapeFocus": "PASS",
+              "consentUnchanged": true
+            },
+            {
+              "label": "обробкою персональних даних",
+              "EnterClickTapEscapeFocus": "PASS",
+              "consentUnchanged": true
+            }
+          ],
+          "hitAreaCornerLabelsSpace": "PASS"
+        }
+      },
+      "fixtures": [],
+      "unintendedPOST": [],
+      "pageErrors": [],
+      "HTTPFailures": []
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "status": "PASS",
+      "realOrders": 0,
+      "realEmails": 0,
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-2YiB-VTt.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css"
+        ]
+      },
+      "metrics": {
+        "hero": {
+          "cta": {
+            "x": 69.28125,
+            "y": 356.90625,
+            "w": 181.4375,
+            "h": 54,
+            "right": 250.71875,
+            "bottom": 410.90625,
+            "cx": 160,
+            "cy": 383.90625
+          },
+          "desktopWidthExpected": 181.4375,
+          "font": "15px",
+          "route": "#rates/PS5",
+          "tariffBadges": [
+            "Доставка включена",
+            "Доставка включена"
+          ]
+        },
+        "booking": {
+          "icon": {
+            "border": "0px solid rgb(207, 181, 135)",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(207, 181, 135)",
+            "ariaHidden": "true",
+            "svgWidth": 28,
+            "svgHeight": 28,
+            "viewBox": "0 0 24 24",
+            "pathStart": "M8.984 2.596v17.547l3.915 ",
+            "fill": "currentColor"
+          },
+          "controllers": 2,
+          "security": "contract",
+          "rentalAmount": 1400,
+          "PS4deposit": 7500,
+          "PS5deposit": 25000
+        },
+        "picker": {
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "rowTop": 253.296875,
+              "bottom": 460.09375,
+              "actionTop": 416.09375,
+              "actionBottom": 460.09375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "rowTop": 253.296875,
+              "bottom": 460.09375,
+              "actionTop": 416.09375,
+              "actionBottom": 460.09375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Mortal Kombat 1",
+              "rowTop": 484.09375,
+              "bottom": 711.6875,
+              "actionTop": 667.6875,
+              "actionBottom": 711.6875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "rowTop": 484.09375,
+              "bottom": 711.6875,
+              "actionTop": 667.6875,
+              "actionBottom": 711.6875,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "EA SPORTS UFC 6",
+              "rowTop": 735.6875,
+              "bottom": 942.484375,
+              "actionTop": 898.484375,
+              "actionBottom": 942.484375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Tekken 8",
+              "rowTop": 735.6875,
+              "bottom": 942.484375,
+              "actionTop": 898.484375,
+              "actionBottom": 942.484375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Split Fiction",
+              "rowTop": 966.484375,
+              "bottom": 1173.28125,
+              "actionTop": 1129.28125,
+              "actionBottom": 1173.28125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "It Takes Two",
+              "rowTop": 966.484375,
+              "bottom": 1173.28125,
+              "actionTop": 1129.28125,
+              "actionBottom": 1173.28125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "rowTop": 1197.28125,
+              "bottom": 1424.875,
+              "actionTop": 1380.875,
+              "actionBottom": 1424.875,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Gran Turismo 7",
+              "rowTop": 1197.28125,
+              "bottom": 1424.875,
+              "actionTop": 1380.875,
+              "actionBottom": 1424.875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "God of War Ragnarök",
+              "rowTop": 1448.875,
+              "bottom": 1676.46875,
+              "actionTop": 1632.46875,
+              "actionBottom": 1676.46875,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "rowTop": 1448.875,
+              "bottom": 1676.46875,
+              "actionTop": 1632.46875,
+              "actionBottom": 1676.46875,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "rowTop": 1700.46875,
+              "bottom": 1928.0625,
+              "actionTop": 1884.0625,
+              "actionBottom": 1928.0625,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "rowTop": 1700.46875,
+              "bottom": 1928.0625,
+              "actionTop": 1884.0625,
+              "actionBottom": 1928.0625,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "ELDEN RING",
+              "rowTop": 1952.0625,
+              "bottom": 2179.65625,
+              "actionTop": 2135.65625,
+              "actionBottom": 2179.65625,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "rowTop": 1952.0625,
+              "bottom": 2179.65625,
+              "actionTop": 2135.65625,
+              "actionBottom": 2179.65625,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "ASTRO BOT",
+              "rowTop": 2203.65625,
+              "bottom": 2431.25,
+              "actionTop": 2387.25,
+              "actionBottom": 2431.25,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "rowTop": 2203.65625,
+              "bottom": 2431.25,
+              "actionTop": 2387.25,
+              "actionBottom": 2431.25,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Horizon Forbidden West",
+              "rowTop": 2455.25,
+              "bottom": 2682.84375,
+              "actionTop": 2638.84375,
+              "actionBottom": 2682.84375,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            }
+          ],
+          "rowsChecked": 10,
+          "alignedEveryRow": true,
+          "closedHeadingCentered": true,
+          "closedActionCentered": true,
+          "openInputLeft16pxFocusedPrefilled": true,
+          "selectionRetained": true
+        },
+        "consent": {
+          "geometry": {
+            "consent": {
+              "w": 280,
+              "h": 54.1875,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "0px",
+              "padding": "0px"
+            },
+            "copy": {
+              "w": 228,
+              "h": 54.1875,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "auto",
+              "padding": "10px 0px 0px"
+            },
+            "checkboxHit": {
+              "w": 44,
+              "h": 44,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "auto",
+              "padding": "0px"
+            },
+            "legal": [
+              {
+                "w": 116,
+                "h": 22.09375,
+                "fontSize": "13px",
+                "lineHeight": "22.1px",
+                "minHeight": "0px",
+                "padding": "0px"
+              },
+              {
+                "w": 214.171875,
+                "h": 22.09375,
+                "fontSize": "13px",
+                "lineHeight": "22.1px",
+                "minHeight": "0px",
+                "padding": "0px"
+              }
+            ],
+            "textTops": [
+              462.17,
+              484.27
+            ]
+          },
+          "interaction": [
+            {
+              "label": "условиями аренды",
+              "EnterClickTapEscapeFocus": "PASS",
+              "consentUnchanged": true
+            },
+            {
+              "label": "обработкой персональных данных",
+              "EnterClickTapEscapeFocus": "PASS",
+              "consentUnchanged": true
+            }
+          ],
+          "hitAreaCornerLabelsSpace": "PASS"
+        }
+      },
+      "fixtures": [],
+      "unintendedPOST": [],
+      "pageErrors": [],
+      "HTTPFailures": []
+    },
+    {
+      "language": "ru",
+      "width": 390,
+      "status": "PASS",
+      "realOrders": 0,
+      "realEmails": 0,
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-2YiB-VTt.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css"
+        ]
+      },
+      "metrics": {
+        "hero": {
+          "cta": {
+            "x": 104.28125,
+            "y": 346.5625,
+            "w": 181.4375,
+            "h": 54,
+            "right": 285.71875,
+            "bottom": 400.5625,
+            "cx": 195,
+            "cy": 373.5625
+          },
+          "desktopWidthExpected": 181.4375,
+          "font": "15px",
+          "route": "#rates/PS5",
+          "tariffBadges": [
+            "Доставка включена",
+            "Доставка включена"
+          ]
+        },
+        "booking": {
+          "icon": {
+            "border": "0px solid rgb(207, 181, 135)",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(207, 181, 135)",
+            "ariaHidden": "true",
+            "svgWidth": 28,
+            "svgHeight": 28,
+            "viewBox": "0 0 24 24",
+            "pathStart": "M8.984 2.596v17.547l3.915 ",
+            "fill": "currentColor"
+          },
+          "controllers": 2,
+          "security": "contract",
+          "rentalAmount": 1400,
+          "PS4deposit": 7500,
+          "PS5deposit": 25000
+        },
+        "picker": {
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "rowTop": 253.296875,
+              "bottom": 495.09375,
+              "actionTop": 451.09375,
+              "actionBottom": 495.09375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "rowTop": 253.296875,
+              "bottom": 495.09375,
+              "actionTop": 451.09375,
+              "actionBottom": 495.09375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Mortal Kombat 1",
+              "rowTop": 519.09375,
+              "bottom": 781.6875,
+              "actionTop": 737.6875,
+              "actionBottom": 781.6875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "rowTop": 519.09375,
+              "bottom": 781.6875,
+              "actionTop": 737.6875,
+              "actionBottom": 781.6875,
+              "titleScroll": 42,
+              "titleClient": 42,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "EA SPORTS UFC 6",
+              "rowTop": 805.6875,
+              "bottom": 1047.484375,
+              "actionTop": 1003.484375,
+              "actionBottom": 1047.484375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Tekken 8",
+              "rowTop": 805.6875,
+              "bottom": 1047.484375,
+              "actionTop": 1003.484375,
+              "actionBottom": 1047.484375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Split Fiction",
+              "rowTop": 1071.484375,
+              "bottom": 1313.28125,
+              "actionTop": 1269.28125,
+              "actionBottom": 1313.28125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "It Takes Two",
+              "rowTop": 1071.484375,
+              "bottom": 1313.28125,
+              "actionTop": 1269.28125,
+              "actionBottom": 1313.28125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "rowTop": 1337.28125,
+              "bottom": 1579.078125,
+              "actionTop": 1535.078125,
+              "actionBottom": 1579.078125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Gran Turismo 7",
+              "rowTop": 1337.28125,
+              "bottom": 1579.078125,
+              "actionTop": 1535.078125,
+              "actionBottom": 1579.078125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "God of War Ragnarök",
+              "rowTop": 1603.078125,
+              "bottom": 1844.875,
+              "actionTop": 1800.875,
+              "actionBottom": 1844.875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "rowTop": 1603.078125,
+              "bottom": 1844.875,
+              "actionTop": 1800.875,
+              "actionBottom": 1844.875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "rowTop": 1868.875,
+              "bottom": 2110.671875,
+              "actionTop": 2066.671875,
+              "actionBottom": 2110.671875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "rowTop": 1868.875,
+              "bottom": 2110.671875,
+              "actionTop": 2066.671875,
+              "actionBottom": 2110.671875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "ELDEN RING",
+              "rowTop": 2134.671875,
+              "bottom": 2376.46875,
+              "actionTop": 2332.46875,
+              "actionBottom": 2376.46875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "rowTop": 2134.671875,
+              "bottom": 2376.46875,
+              "actionTop": 2332.46875,
+              "actionBottom": 2376.46875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "ASTRO BOT",
+              "rowTop": 2400.46875,
+              "bottom": 2642.265625,
+              "actionTop": 2598.265625,
+              "actionBottom": 2642.265625,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "rowTop": 2400.46875,
+              "bottom": 2642.265625,
+              "actionTop": 2598.265625,
+              "actionBottom": 2642.265625,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Horizon Forbidden West",
+              "rowTop": 2666.265625,
+              "bottom": 2908.0625,
+              "actionTop": 2864.0625,
+              "actionBottom": 2908.0625,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            }
+          ],
+          "rowsChecked": 10,
+          "alignedEveryRow": true,
+          "closedHeadingCentered": true,
+          "closedActionCentered": true,
+          "openInputLeft16pxFocusedPrefilled": true,
+          "selectionRetained": true
+        },
+        "consent": {
+          "geometry": {
+            "consent": {
+              "w": 342,
+              "h": 54.1875,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "0px",
+              "padding": "0px"
+            },
+            "copy": {
+              "w": 290,
+              "h": 54.1875,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "auto",
+              "padding": "10px 0px 0px"
+            },
+            "checkboxHit": {
+              "w": 44,
+              "h": 44,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "auto",
+              "padding": "0px"
+            },
+            "legal": [
+              {
+                "w": 116,
+                "h": 22.09375,
+                "fontSize": "13px",
+                "lineHeight": "22.1px",
+                "minHeight": "0px",
+                "padding": "0px"
+              },
+              {
+                "w": 214.171875,
+                "h": 22.09375,
+                "fontSize": "13px",
+                "lineHeight": "22.1px",
+                "minHeight": "0px",
+                "padding": "0px"
+              }
+            ],
+            "textTops": [
+              441.22,
+              463.31
+            ]
+          },
+          "interaction": [
+            {
+              "label": "условиями аренды",
+              "EnterClickTapEscapeFocus": "PASS",
+              "consentUnchanged": true
+            },
+            {
+              "label": "обработкой персональных данных",
+              "EnterClickTapEscapeFocus": "PASS",
+              "consentUnchanged": true
+            }
+          ],
+          "hitAreaCornerLabelsSpace": "PASS"
+        }
+      },
+      "fixtures": [
+        {
+          "interceptedBeforeTransmit": true,
+          "payloadChecks": {
+            "console": true,
+            "days": true,
+            "startDate": true,
+            "controllers": true,
+            "gameIds": true,
+            "name": true,
+            "phone": true,
+            "method": true,
+            "address": true,
+            "securityMode": true,
+            "requestedGame": true,
+            "consent": true,
+            "website": true,
+            "language": true,
+            "noCity": true,
+            "requestId": true,
+            "exactKeys": true
+          },
+          "status": "awaiting_confirmation",
+          "realOrders": 0,
+          "realEmails": 0
+        }
+      ],
+      "unintendedPOST": [],
+      "pageErrors": [],
+      "HTTPFailures": []
+    },
+    {
+      "language": "ru",
+      "width": 1440,
+      "status": "PASS",
+      "realOrders": 0,
+      "realEmails": 0,
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-2YiB-VTt.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css"
+        ]
+      },
+      "metrics": {
+        "hero": {
+          "cta": {
+            "x": 74.875,
+            "y": 518.34375,
+            "w": 181.4375,
+            "h": 54,
+            "right": 256.3125,
+            "bottom": 572.34375,
+            "cx": 165.59375,
+            "cy": 545.34375
+          },
+          "desktopWidthExpected": 181.4375,
+          "font": "15px",
+          "route": "#rates/PS5",
+          "tariffBadges": [
+            "Доставка включена",
+            "Доставка включена"
+          ]
+        },
+        "booking": {
+          "icon": {
+            "border": "0px solid rgb(207, 181, 135)",
+            "background": "rgba(0, 0, 0, 0)",
+            "color": "rgb(207, 181, 135)",
+            "ariaHidden": "true",
+            "svgWidth": 28,
+            "svgHeight": 28,
+            "viewBox": "0 0 24 24",
+            "pathStart": "M8.984 2.596v17.547l3.915 ",
+            "fill": "currentColor"
+          },
+          "controllers": 2,
+          "security": "contract",
+          "rentalAmount": 1400,
+          "PS4deposit": 7500,
+          "PS5deposit": 25000
+        },
+        "picker": {
+          "cards": [
+            {
+              "title": "EA SPORTS FC 27",
+              "rowTop": 314.1875,
+              "bottom": 616.984375,
+              "actionTop": 572.984375,
+              "actionBottom": 616.984375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Grand Theft Auto V",
+              "rowTop": 314.1875,
+              "bottom": 616.984375,
+              "actionTop": 572.984375,
+              "actionBottom": 616.984375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Mortal Kombat 1",
+              "rowTop": 314.1875,
+              "bottom": 616.984375,
+              "actionTop": 572.984375,
+              "actionBottom": 616.984375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+              "rowTop": 314.1875,
+              "bottom": 616.984375,
+              "actionTop": 572.984375,
+              "actionBottom": 616.984375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "EA SPORTS UFC 6",
+              "rowTop": 641.984375,
+              "bottom": 944.78125,
+              "actionTop": 900.78125,
+              "actionBottom": 944.78125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Tekken 8",
+              "rowTop": 641.984375,
+              "bottom": 944.78125,
+              "actionTop": 900.78125,
+              "actionBottom": 944.78125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Split Fiction",
+              "rowTop": 641.984375,
+              "bottom": 944.78125,
+              "actionTop": 900.78125,
+              "actionBottom": 944.78125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "It Takes Two",
+              "rowTop": 641.984375,
+              "bottom": 944.78125,
+              "actionTop": 900.78125,
+              "actionBottom": 944.78125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Call of Duty: Black Ops 7",
+              "rowTop": 969.78125,
+              "bottom": 1272.578125,
+              "actionTop": 1228.578125,
+              "actionBottom": 1272.578125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Gran Turismo 7",
+              "rowTop": 969.78125,
+              "bottom": 1272.578125,
+              "actionTop": 1228.578125,
+              "actionBottom": 1272.578125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "God of War Ragnarök",
+              "rowTop": 969.78125,
+              "bottom": 1272.578125,
+              "actionTop": 1228.578125,
+              "actionBottom": 1272.578125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Red Dead Redemption 2",
+              "rowTop": 969.78125,
+              "bottom": 1272.578125,
+              "actionTop": 1228.578125,
+              "actionBottom": 1272.578125,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Marvel’s Spider-Man 2",
+              "rowTop": 1297.578125,
+              "bottom": 1600.375,
+              "actionTop": 1556.375,
+              "actionBottom": 1600.375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Hogwarts Legacy",
+              "rowTop": 1297.578125,
+              "bottom": 1600.375,
+              "actionTop": 1556.375,
+              "actionBottom": 1600.375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "ELDEN RING",
+              "rowTop": 1297.578125,
+              "bottom": 1600.375,
+              "actionTop": 1556.375,
+              "actionBottom": 1600.375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Resident Evil Requiem",
+              "rowTop": 1297.578125,
+              "bottom": 1600.375,
+              "actionTop": 1556.375,
+              "actionBottom": 1600.375,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "ASTRO BOT",
+              "rowTop": 1625.375,
+              "bottom": 1928.171875,
+              "actionTop": 1884.171875,
+              "actionBottom": 1928.171875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Sackboy: A Big Adventure",
+              "rowTop": 1625.375,
+              "bottom": 1928.171875,
+              "actionTop": 1884.171875,
+              "actionBottom": 1928.171875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            },
+            {
+              "title": "Horizon Forbidden West",
+              "rowTop": 1625.375,
+              "bottom": 1928.171875,
+              "actionTop": 1884.171875,
+              "actionBottom": 1928.171875,
+              "titleScroll": 21,
+              "titleClient": 21,
+              "overflow": "visible",
+              "lineClamp": "none",
+              "textOverflow": "clip"
+            }
+          ],
+          "rowsChecked": 5,
+          "alignedEveryRow": true,
+          "closedHeadingCentered": true,
+          "closedActionCentered": true,
+          "openInputLeft16pxFocusedPrefilled": true,
+          "selectionRetained": true
+        },
+        "consent": {
+          "geometry": {
+            "consent": {
+              "w": 753.03125,
+              "h": 44,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "0px",
+              "padding": "0px"
+            },
+            "copy": {
+              "w": 701.03125,
+              "h": 32.09375,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "auto",
+              "padding": "10px 0px 0px"
+            },
+            "checkboxHit": {
+              "w": 44,
+              "h": 44,
+              "fontSize": "13px",
+              "lineHeight": "22.1px",
+              "minHeight": "auto",
+              "padding": "0px"
+            },
+            "legal": [
+              {
+                "w": 116,
+                "h": 22.09375,
+                "fontSize": "13px",
+                "lineHeight": "22.1px",
+                "minHeight": "0px",
+                "padding": "0px"
+              },
+              {
+                "w": 214.171875,
+                "h": 22.09375,
+                "fontSize": "13px",
+                "lineHeight": "22.1px",
+                "minHeight": "0px",
+                "padding": "0px"
+              }
+            ],
+            "textTops": [
+              641.97
+            ]
+          },
+          "interaction": [
+            {
+              "label": "условиями аренды",
+              "EnterClickTapEscapeFocus": "PASS",
+              "consentUnchanged": true
+            },
+            {
+              "label": "обработкой персональных данных",
+              "EnterClickTapEscapeFocus": "PASS",
+              "consentUnchanged": true
+            }
+          ],
+          "hitAreaCornerLabelsSpace": "PASS"
+        }
+      },
+      "fixtures": [],
+      "unintendedPOST": [],
+      "pageErrors": [],
+      "HTTPFailures": []
+    }
+  ],
+  "shortViewportCases": [
+    {
+      "width": 844,
+      "height": 220,
+      "status": "PASS",
+      "input": {
+        "x": 66,
+        "y": 49.6875,
+        "w": 712,
+        "h": 48,
+        "right": 778,
+        "bottom": 97.6875,
+        "cx": 422,
+        "cy": 73.6875
+      },
+      "focusDone": "PASS",
+      "unintendedPOST": [],
+      "pageErrors": []
+    },
+    {
+      "width": 320,
+      "height": 280,
+      "status": "PASS",
+      "input": {
+        "x": 50,
+        "y": 79.640625,
+        "w": 220,
+        "h": 48,
+        "right": 270,
+        "bottom": 127.640625,
+        "cx": 160,
+        "cy": 103.640625
+      },
+      "focusDone": "PASS",
+      "unintendedPOST": [],
+      "pageErrors": []
+    }
+  ],
+  "nativePages": [
+    {
+      "language": "uk",
+      "page": "faq",
+      "url": "http://localhost:8080/faq/",
+      "GETStatus": 200,
+      "status": "PASS",
+      "copy": {
+        "oldApplicationWordMatches": 0,
+        "hasBookingTerminology": true
+      },
+      "documentSHA256": "adc94910ae055d24c4abbe594c00b019c29472ca872c618935e6afdb593a4d8e"
+    },
+    {
+      "language": "uk",
+      "page": "terms",
+      "url": "http://localhost:8080/umovy-orendy/",
+      "GETStatus": 200,
+      "status": "PASS",
+      "copy": {
+        "oldApplicationWordMatches": 0,
+        "hasBookingTerminology": true
+      },
+      "documentSHA256": "3f86597629d17cccc2a3f318a8e7a9ceb44ab5f35aefda0e0fd2a395b3d9e00d"
+    },
+    {
+      "language": "uk",
+      "page": "privacy",
+      "url": "http://localhost:8080/konfidentsiinist/",
+      "GETStatus": 200,
+      "status": "PASS",
+      "copy": {
+        "oldApplicationWordMatches": 0,
+        "hasBookingTerminology": true
+      },
+      "documentSHA256": "e665f58c91ed5aa9cb937afcb7452bf50a72cf5ceed0d3bc41af20e14c6939d7"
+    },
+    {
+      "language": "ru",
+      "page": "faq",
+      "url": "http://localhost:8080/faq-ru/",
+      "GETStatus": 200,
+      "status": "PASS",
+      "copy": {
+        "oldApplicationWordMatches": 0,
+        "hasBookingTerminology": true
+      },
+      "documentSHA256": "61e77f963c5677e5d40d6531115dda6e9a4c55238212e8b3abd82e49b9772442"
+    },
+    {
+      "language": "ru",
+      "page": "terms",
+      "url": "http://localhost:8080/usloviya-arendy/",
+      "GETStatus": 200,
+      "status": "PASS",
+      "copy": {
+        "oldApplicationWordMatches": 0,
+        "hasBookingTerminology": true
+      },
+      "documentSHA256": "d707caf5c8871518316b87757db009fa5112fd0f64f218f31cb2e89bc4bb3548"
+    },
+    {
+      "language": "ru",
+      "page": "privacy",
+      "url": "http://localhost:8080/konfidentsialnost/",
+      "GETStatus": 200,
+      "status": "PASS",
+      "copy": {
+        "oldApplicationWordMatches": 0,
+        "hasBookingTerminology": true
+      },
+      "documentSHA256": "78bc856eb53bbfee99204b7f3a257cd3299971dd668742cb53c160b3d5def304"
+    }
+  ],
+  "screens": [
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-320-hero.png",
+      "phase": "hero",
+      "language": "uk",
+      "width": 320,
+      "height": 844,
+      "sha256": "c7518feeed241fb2f9cf30fcd57db4ea50dc7eadd67b1908ccc46d6045ff59fb",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-320-consent.png",
+      "phase": "consent",
+      "language": "uk",
+      "width": 320,
+      "height": 844,
+      "sha256": "0d3950eebc25884b7602cbdc771d738fa2dbef18d6a6bb15cc64859b33ed8647",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-390-hero.png",
+      "phase": "hero",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "92b26ec98582c0e055f8a363329f7a6bcc83d17c028ac43638d6b156982aac28",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-390-booking-games.png",
+      "phase": "booking-games",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "503eed62a1e1b1e37f91659fe4d9cce267ec6f9b478550eec8cd786da4247fe8",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-390-picker-catalog.png",
+      "phase": "picker-catalog",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "6779a2fc714993fb1524c3437596c0790e47800ee18148e6160a57a3d9adc4e3",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-390-missing-closed.png",
+      "phase": "missing-closed",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "298d0bc2f85c07f91f0f8679c73e332089bff0367af577b563abfdb8da269fb2",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-390-missing-open.png",
+      "phase": "missing-open",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "8736ed5588e2ac8277a597bbb654ba2f60f20d962ffeaa4fa22454c068985d8e",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-390-consent.png",
+      "phase": "consent",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "369566de6bf51af916809ed8fc5db264dee536b8ec0188612495eb9242c949ce",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-390-success.png",
+      "phase": "success",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "dab2c1d0c54da89a3dac3bddf416e4273d45d4de025b5d10b89df6d42d5e0518",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-1440-hero.png",
+      "phase": "hero",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "785fe7a3edda8367d74cbe82b409757c533a54ba428bce0c00ea7e6a07f9ded8",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-1440-booking-games.png",
+      "phase": "booking-games",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "d36a996d65bf4da0203ca031ba95c3cffd6fabfbef9e366c16a5935c69af4375",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-1440-picker-catalog.png",
+      "phase": "picker-catalog",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "93655caa5543c48d869fc834edb22c46649f52bc09e6780b2a968e1d0d533f31",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-1440-missing-closed.png",
+      "phase": "missing-closed",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "0b7b1c870ddb2232d33ccd89a3a2b358a48309366d5cea28cc2b4e1ef69d5c37",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-1440-missing-open.png",
+      "phase": "missing-open",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "2a97e78b682ca5e437555a8737ffb9e0183ebde724821aee5e71b0d76f8e583a",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-1440-consent.png",
+      "phase": "consent",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "b1efecc5cb4d1de7cf3260080d9b6f39eb43455aa10ba157502ec727beb970d5",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/ru-320-hero.png",
+      "phase": "hero",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "99b1c4752f079db2e2cb4c0d7080bb7f40f86fff6443f75daa99bce6e5d76327",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/ru-320-booking-games.png",
+      "phase": "booking-games",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "7285c85b736504bee145c1cebc769c85809029074cee045804642e1de2e4507f",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/ru-320-picker-catalog.png",
+      "phase": "picker-catalog",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "f3aa68df482aa365b2b719f5a06f377057d2218d557541a6a601361f151fdc02",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/ru-320-missing-closed.png",
+      "phase": "missing-closed",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "71ba5ea046729de283263df55de459d2c0c87acbe1d8606c39e9f2299778436a",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/ru-320-missing-open.png",
+      "phase": "missing-open",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "32a1dae4aa27d9b1e65ecba7ad38fb787fdce5324a1c188cad135c1bc6677818",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/ru-320-consent.png",
+      "phase": "consent",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "5e24fbb93a186ef796209933a109f51be374b48cc8ba789cae7ba229167ce64f",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/ru-390-hero.png",
+      "phase": "hero",
+      "language": "ru",
+      "width": 390,
+      "height": 844,
+      "sha256": "d75a4dd95905ab12c27c9d5da4cf4ba04f4861bd402de7e2978b15088f7c2a81",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/ru-390-consent.png",
+      "phase": "consent",
+      "language": "ru",
+      "width": 390,
+      "height": 844,
+      "sha256": "3fc2cbe5afa9fa8d78e67aa8340488c7cfa942b87df6d1248d57b48c615ff4ad",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/ru-390-success.png",
+      "phase": "success",
+      "language": "ru",
+      "width": 390,
+      "height": 844,
+      "sha256": "066e1d92fa89b48229323dbeccec84a51ce356cec1cba15d66c4558ffdcd6ad8",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/ru-1440-hero.png",
+      "phase": "hero",
+      "language": "ru",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "0f12e22940e5ad2d8e3e3b4beb89a8ce19586ddabb70511af6261547d11f3507",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/ru-1440-consent.png",
+      "phase": "consent",
+      "language": "ru",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "b481b9cbb2da98da7e9e62da378a9135155dc1c719fafeab1f611c2ecd52672a",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-844x220-request.png",
+      "phase": "short-request",
+      "language": "uk",
+      "width": 844,
+      "height": 220,
+      "sha256": "4f7b9458808f01eca5727152db1b4aec59da4b7ea8390fe4a79e098445074765",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-320x280-request.png",
+      "phase": "short-request",
+      "language": "uk",
+      "width": 320,
+      "height": 280,
+      "sha256": "44328609a84902bd343446e66daa900f343f7e21d57e0b1ccec355b325e21105",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-1440-native-faq.png",
+      "phase": "native-faq",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "f3b714fbfb2677af0479328b855a042885811b9f90e78c8b5191465d3002ed3c",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-1440-native-terms.png",
+      "phase": "native-terms",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "7131f2d087261f7adfe447647884b4b2981f9b4e08e30d26682e91f5e1839135",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/uk-1440-native-privacy.png",
+      "phase": "native-privacy",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "43cfdd81238b878c372161de85614457cb11c41be5f38c578e124f2c130995f1",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/ru-1440-native-faq.png",
+      "phase": "native-faq",
+      "language": "ru",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "a6fae7f5ce4a417e8400f995f0f5c903f971918fd96b9f846e1acabdbb20c544",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/ru-1440-native-terms.png",
+      "phase": "native-terms",
+      "language": "ru",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "81b7822a4a25cafdf106975eaf6944f86ee1faa85fdb6046c8e080dea285236a",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/final/screens/ru-1440-native-privacy.png",
+      "phase": "native-privacy",
+      "language": "ru",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "934f0a23260dd15745d5af34b7d276cadca568ac2e4d0680546e4daf5889f606",
+      "accepted": true,
+      "acceptance": "Fresh frozen packaged capture personally visually inspected."
+    }
+  ],
+  "physicalSafariVerified": false,
+  "build": {
+    "themeVersion": "1.9.2",
+    "pluginVersion": "1.8.1",
+    "capturedAtUTC": "2026-10-03T18:16:59.165593+00:00",
+    "assets": [
+      {
+        "file": "wordpress/joyrent/assets/dist/assets/main-2YiB-VTt.js",
+        "servedURL": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-2YiB-VTt.js",
+        "sha256": "f509d4db3f2afbbbd583a5d655bb71e5de8b0075c8e7982d253fd6ac4cbc2588",
+        "sourcePackageZIPServedBytesMatch": true
+      },
+      {
+        "file": "wordpress/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+        "servedURL": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+        "sha256": "b9ebbadb2893123d4dc628ed59751a134f0ac177af299ee5b31d2c140bbe5da2",
+        "sourcePackageZIPServedBytesMatch": true
+      }
+    ],
+    "manifestSHA256": "c53c719daf9029231ef24bddf506d14914d0efbd7f4b38caccc525d62b4f550a",
+    "sourceFiles": [
+      {
+        "file": "src/App.tsx",
+        "sha256": "ec79ea9184fd94f0b76ffba0e71f20e3d0c7a3e934a32e3fd1c5f4868b8ee3e7"
+      },
+      {
+        "file": "src/address-input.css",
+        "sha256": "58ad9a9f05179b9a60bdb8320193b3a35d29a7a58294d215053386b2e398983e"
+      },
+      {
+        "file": "src/booking.css",
+        "sha256": "57ebfc34e1490d57e09dbe7aaacf72aa8c63323609f4ead82b5728a319e7241a"
+      },
+      {
+        "file": "src/components/BookingConsent.tsx",
+        "sha256": "861d32e1fc4fc09406edb53396b7217032ec7913912a1d7d5045fd97ff1e4fc6"
+      },
+      {
+        "file": "src/components/BookingGames.tsx",
+        "sha256": "573327025e3a8a256301033e9a14bd502b84138301cda588c3e6ad306a4d15e2"
+      },
+      {
+        "file": "src/components/GamePicker.tsx",
+        "sha256": "4859ecb9fea582380e0b3d302954867c527351d3a93e730c795bc086bce1c4d9"
+      },
+      {
+        "file": "src/components/GamePresentation.tsx",
+        "sha256": "9c506a46c86a5e20f8763abe2e25edb793ffdab216acf863f1c08751893752d3"
+      },
+      {
+        "file": "src/components/OdesaAddressInput.tsx",
+        "sha256": "e32db30e3dec3672a51044d585e16edab8f68bf4acccfc5ed7d0b9b838728910"
+      },
+      {
+        "file": "src/components/PlayStationMark.tsx",
+        "sha256": "7e165dc3a7f73b6fedb40cc601b882e9590bb211f6068f0cc42248f37c6437bf"
+      },
+      {
+        "file": "src/components/SecurityChoice.tsx",
+        "sha256": "54faabce59fdca573955b6af59addb8889b5aadcd14c308559147659f5019720"
+      },
+      {
+        "file": "src/components/booking-games.css",
+        "sha256": "cf0829a28bdfd38727409a065bc4577697013b8ae6a65bb50a99f2ee9b902646"
+      },
+      {
+        "file": "src/contact-refinement.css",
+        "sha256": "6f13c30c06ff0310498e4044f97ebae12476781f2f223ef47f4489fea6b8db8b"
+      },
+      {
+        "file": "src/delivery-map.css",
+        "sha256": "102eb8774e7fc60d5a317d5de3ea85a7a39f33262f143482c6f49eb65ab4cc08"
+      },
+      {
+        "file": "src/delivery.css",
+        "sha256": "08e71e7d73158b9deac03abf64c38439131244d01cb1bea3016d3c34d9a596bb"
+      },
+      {
+        "file": "src/game-picker.css",
+        "sha256": "d4e2abdaeff00663803bc62d7ea408841da9d994a5405363ef85d366d84cf4fc"
+      },
+      {
+        "file": "src/hero-mobile-refinement.css",
+        "sha256": "0588d5008993498dfbb7b87280b9fa966143a6a7529df36217e4c9d9dfe555ce"
+      },
+      {
+        "file": "src/lib/api.ts",
+        "sha256": "b25e17ef7f2c0303386ac725756a1d55cc3d0a7b14516c0b19ba9d432da1ad6d"
+      },
+      {
+        "file": "src/lib/copy.test.ts",
+        "sha256": "f4ff810247ad02385b1372ec2e66565c3254125afa195ce574d30f341ccd3223"
+      },
+      {
+        "file": "src/lib/copy.ts",
+        "sha256": "ee93da95daf324b35db80d764b10f548e6cc711a5ddb4054cb3e4815920ff296"
+      },
+      {
+        "file": "src/lib/delivery-map-css.d.ts",
+        "sha256": "53bfd2201f1a4e750a6a2fcc010c1bff4cf5ff382dca3ef18e1cd13f79a18d9e"
+      },
+      {
+        "file": "src/lib/delivery-map.test.ts",
+        "sha256": "5d99de9e6eff74f92d807a3282bb44383195bd719b6ec7520303f2abec7aa7ee"
+      },
+      {
+        "file": "src/lib/delivery-map.ts",
+        "sha256": "114f9d6f452969cdf5df6afa3947dde23af6888f0da4b011e05b9804915fe4a5"
+      },
+      {
+        "file": "src/lib/draft.test.ts",
+        "sha256": "189df39a98867772aef91a07e7022ef6b08e97c7aadc205c097474e1449dba51"
+      },
+      {
+        "file": "src/lib/draft.ts",
+        "sha256": "7bd033fa22f13defe807bb5983e8124bf2d604215c6ccd54a8d26d9645bdc6bb"
+      },
+      {
+        "file": "src/lib/game-search.test.ts",
+        "sha256": "3641eafcf179cb90d7d6d0b9b124ae245ef39ffaee4dde9d6c4492c8a0854df7"
+      },
+      {
+        "file": "src/lib/game-search.ts",
+        "sha256": "614de86b67b59b7760675505d4de47e2a1e66d2e6cf6c1c660dfccad04f7b513"
+      },
+      {
+        "file": "src/lib/i18n.tsx",
+        "sha256": "d7d5a17182e5697fddd366c87e67b238f6bad1ea5caa20baa96a5a46a6e21005"
+      },
+      {
+        "file": "src/lib/motion.ts",
+        "sha256": "1079852b0cd7e2685048e53d5de45d896fbe906dcc0875c9040268aabd3e3065"
+      },
+      {
+        "file": "src/lib/odesa-streets.test.ts",
+        "sha256": "0663f4990028382633ecce1a87046c98b0e8e549954005e7e417fe0fdf5ed6e5"
+      },
+      {
+        "file": "src/lib/odesa-streets.ts",
+        "sha256": "a890bf298eb5172ca3f8b3a00c1bc3f38ddd70b60b20de4181c2a246a4fd3900"
+      },
+      {
+        "file": "src/lib/rental.test.ts",
+        "sha256": "c6e08a1b08a0eabdc28a307d18f149a5c09c8b08fb3c5a104f5f6d7318caf3fc"
+      },
+      {
+        "file": "src/lib/rental.ts",
+        "sha256": "369bb5993dbdd717afb526ddf937a3ec5e538216af34f4a68c4033304546ddec"
+      },
+      {
+        "file": "src/main.tsx",
+        "sha256": "694f16d29da43ed3a5781bb1b13fe239905ca917ffd343fd0ab91d76716a5c29"
+      },
+      {
+        "file": "src/sections/Booking.tsx",
+        "sha256": "1104ca7fe74d6cd187853da8292784b25af5a1602ce77e50cbc6b8d99a72c234"
+      },
+      {
+        "file": "src/sections/Footer.tsx",
+        "sha256": "7b2e0389d93a37b3e326238aa7af105426f7121f5aa229c1a384f8dabbd8a3bb"
+      },
+      {
+        "file": "src/sections/Games.tsx",
+        "sha256": "1d87833235e640e35b110f36a76752fb9a712162ff8f619ca650aedd81952140"
+      },
+      {
+        "file": "src/sections/Header.tsx",
+        "sha256": "fbe6b34449541b0c5a16fa11ee718e90710c960702f4829b7024342833f57fe1"
+      },
+      {
+        "file": "src/sections/Hero.tsx",
+        "sha256": "244340937c7a11a4ee84ea75e7d9bf776ee11776988d6d2646ec0877eac44590"
+      },
+      {
+        "file": "src/sections/Story.tsx",
+        "sha256": "a753c5d5161c7d44047af7eabf93a934de88cf07b82e03d9c3c81ec0c3fc9d20"
+      },
+      {
+        "file": "src/sections/Tariffs.tsx",
+        "sha256": "65eba7033b62003667a395676f3d801260a7688efcc26cdd645718522a649d32"
+      },
+      {
+        "file": "src/story-refinement.css",
+        "sha256": "486293e541de00e12120b5a228232408246f1e80464b521bf556c0afea7dee55"
+      },
+      {
+        "file": "src/styles.css",
+        "sha256": "a62de8aca61b8d43049ce5a5eaa396efdb45fefcab5f5bafe8cfc7f1cb02d5b4"
+      },
+      {
+        "file": "components/ui/blurred-stagger-text.tsx",
+        "sha256": "195da8c8fd239cc8a516af2e636f8143d1891369ea1a8392c50ec64d360f1f41"
+      },
+      {
+        "file": "components/ui/console-switch.tsx",
+        "sha256": "3a843a4a2aabd4f5932d03e4054dbf2de7a80d0c2aed75b13824084232f07ed3"
+      },
+      {
+        "file": "components/ui/delivery-zone-map.tsx",
+        "sha256": "2794d305c1b3051621d34f7eaed696e8bc2747419d7bf44df0f3cde54df2ea96"
+      },
+      {
+        "file": "components/ui/playstation-controller.tsx",
+        "sha256": "ec86e07df8dd218f3a2d7442ad4b9232b847063835b5a5e5ac7751338556bdb6"
+      },
+      {
+        "file": "components/ui/reveal.tsx",
+        "sha256": "2cb031a94eb830ab388fe6d27601b321782fca02ab8455948a24d324a4e96040"
+      },
+      {
+        "file": "components/ui/scroll-reveal-image.tsx",
+        "sha256": "f993cb2d7ff1248c9178f6f2ee0cd5902592f57d338898669f163f2011523544"
+      }
+    ],
+    "PHPFiles": [
+      {
+        "file": "wordpress/joyrent/footer.php",
+        "sha256": "1f3a43f99d5edff90177fd7bfa5a1bbd0c59d56376820572a3853e4e3c604a52",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/themes/joyrent/footer.php"
+      },
+      {
+        "file": "wordpress/joyrent/front-page.php",
+        "sha256": "e85605605789887a67fbc09c91f1f23fe2731fa88062551c1809b048df424251",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/themes/joyrent/front-page.php"
+      },
+      {
+        "file": "wordpress/joyrent/functions.php",
+        "sha256": "c033c36309adcc8d79fbe160654947d1ef6b0058a082ad0ea342684ecea6320d",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/themes/joyrent/functions.php"
+      },
+      {
+        "file": "wordpress/joyrent/header.php",
+        "sha256": "c804c266636998b782392d453f1d6a893a280f7a68b095486f43c1a1fc89a914",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/themes/joyrent/header.php"
+      },
+      {
+        "file": "wordpress/joyrent/index.php",
+        "sha256": "880b849466d366061f9bcfef2ca4a25c9ab2be672ece9e7cadb4b053b077d35f",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/themes/joyrent/index.php"
+      },
+      {
+        "file": "wordpress/joyrent/page-faq-ru.php",
+        "sha256": "980203a801ab4909caf1ad20b6ce7fdc5c30797fca6c59191eaa0f3f611cf04a",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/themes/joyrent/page-faq-ru.php"
+      },
+      {
+        "file": "wordpress/joyrent/page-faq.php",
+        "sha256": "74d2ba68dd62ebb9909da70cadf638b6b607da9d63436226df2672fa78e51c45",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/themes/joyrent/page-faq.php"
+      },
+      {
+        "file": "wordpress/joyrent/woocommerce.php",
+        "sha256": "c43ff0e31e1453dca87d57e9490199392ce78e596839763d8bb0520d916c9dd7",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/themes/joyrent/woocommerce.php"
+      },
+      {
+        "file": "wordpress/joyrent-rentals/includes/domain.php",
+        "sha256": "55eeb8035584f304f32a19af750d22ae17cc9a0ae0c45f6ecc10adc90b12cfb3",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/plugins/joyrent-rentals/includes/domain.php"
+      },
+      {
+        "file": "wordpress/joyrent-rentals/includes/games.php",
+        "sha256": "7060588dd511dc4ea46534b9befe5d2f5c448069e987ea0126a46b1b4552bd0f",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/plugins/joyrent-rentals/includes/games.php"
+      },
+      {
+        "file": "wordpress/joyrent-rentals/includes/locale.php",
+        "sha256": "b2c3838d74a0eae2f5ed4dc15e54e489272ac1d0575b404874c732b2f4f51dd7",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/plugins/joyrent-rentals/includes/locale.php"
+      },
+      {
+        "file": "wordpress/joyrent-rentals/includes/lock.php",
+        "sha256": "a5b52d791651e045b51686fc3288f968a0173f6d1bf0c0b0b45518fe2a0f0d49",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/plugins/joyrent-rentals/includes/lock.php"
+      },
+      {
+        "file": "wordpress/joyrent-rentals/includes/orders.php",
+        "sha256": "bd7e8c213657d2b94b63886870e8596db9b3ead356c20716269d7bb858c6bc95",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/plugins/joyrent-rentals/includes/orders.php"
+      },
+      {
+        "file": "wordpress/joyrent-rentals/includes/rest.php",
+        "sha256": "fd8d1c09a99aa76285688bc1f9cb662f7636bcd2518bd5cbd645ce86d6935903",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/plugins/joyrent-rentals/includes/rest.php"
+      },
+      {
+        "file": "wordpress/joyrent-rentals/includes/settings.php",
+        "sha256": "cd23a39908833e7da8e4d233b67fc3525d6234f5e8f8b279dc0ccd57b81d8f4c",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/plugins/joyrent-rentals/includes/settings.php"
+      },
+      {
+        "file": "wordpress/joyrent-rentals/includes/store.php",
+        "sha256": "499f74b2535a9c2c728123beef5c40d8e2f695600b97563b9430f0fa83027b26",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/plugins/joyrent-rentals/includes/store.php"
+      },
+      {
+        "file": "wordpress/joyrent-rentals/joyrent-rentals.php",
+        "sha256": "cb01d343b8ad5002ae02e8dac7e1fad08017f08e91b86503a166ba621beafa5b",
+        "sourceZIPInstalledBytesMatch": true,
+        "installedFile": "/var/www/html/wp-content/plugins/joyrent-rentals/joyrent-rentals.php"
+      }
+    ],
+    "releaseArchives": [
+      {
+        "file": "releases/joyrent-1.9.2.zip",
+        "sha256": "a9827496d447bb6289f3cc7760a6be9386a302589b66eae5ad5d782fc0b6314b"
+      },
+      {
+        "file": "releases/joyrent-rentals-1.8.1.zip",
+        "sha256": "58c6a569fd413b0331982d9de6b17640a5d1ca919d20af317f3754e064d23dd0"
+      },
+      {
+        "file": "releases/joyrent-preview-1.9.2.zip",
+        "sha256": "b7dccbcca3b6aba302a8a1bd37dd100ba92d31076ebe65300c40a91b642ad8e5"
+      }
+    ],
+    "installedPHPContainer": "joyrent-wp",
+    "acceptanceScriptSHA256": "79b58c16b98dc16059c80b1f6d81e2866a1d4e65dbb3caf5284fe9afc6606555",
+    "catalogGET": {
+      "URL": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+      "status": 200,
+      "games": 20,
+      "responseSHA256": "a66eed8b1462effe8eea8ef7ef9721c27c7ea909f42c58cf61d7da016e327372"
+    }
+  },
+  "verificationSummary": {
+    "primaryCases": 6,
+    "passedPrimaryCases": 6,
+    "shortViewportCases": 2,
+    "passedShortViewportCases": 2,
+    "nativeFAQTermsPrivacyGETCases": 6,
+    "passedNativeCases": 6,
+    "visuallyInspectedAcceptedScreens": 34,
+    "fixturePosts": 2,
+    "unintendedPOST": 0,
+    "realOrders": 0,
+    "realEmails": 0,
+    "pageErrors": 0,
+    "HTTPFailures": 0,
+    "mobileConsentHeight": 54.1875,
+    "previousMobileConsentHeight": 88,
+    "consentCheckboxHitArea": "44×44px",
+    "legalPhraseTextLinePitch": "22.1px",
+    "mobileAndDesktopCTAWidthUA": 172.859375,
+    "mobileAndDesktopCTAWidthRU": 181.4375,
+    "mobileAndDesktopCTAHeight": 54,
+    "catalogRowsChecked": 50,
+    "oldVisitorApplicationWordMatches": 0,
+    "serverManualConfirmationSourceChecks": {
+      "woocommerceInternalStatus": true,
+      "publicReceiptPendingStatus": true,
+      "contractDocumentVerification": true,
+      "deliveryZoneVerification": true
+    }
+  },
+  "scope": "Six authorized bounded refinements: game-card row alignment, booking vocabulary, compact consent, PS-mark icon, desktop-sized mobile CTA, short tariff delivery badges; plus requested centered missing-game panel and critical selection/fixture safety.",
+  "evidenceLimits": [
+    "Tested final packaged WordPress locally in Chromium, including actual touch tap/click and keyboard. Physical iPhone Safari has not been verified.",
+    "Two narrow success POST fixtures (one per language) were intercepted before transmission. No real order or email was sent; backend confirmation semantics were checked read-only in installed/source/ZIP-identical PHP.",
+    "Screenshot blur removes incidental focus only for visual capture; focus/prefill/keyboard/Escape/return checks execute separately before or after each capture. Native FAQ/legal pages were GET-only.",
+    "This is targeted release acceptance for requested refinements, not a new broad audit of unrelated areas."
+  ]
+}

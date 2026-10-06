@@ -1,0 +1,22 @@
+
+> joyrent-wordpress@1.9.2 test
+> vitest run
+
+
+ RUN  v3.2.7 /workspace/work/joyrent-checklist-20261004
+
+ ✓ src/lib/odesa-streets.test.ts (6 tests) 14ms
+ ✓ src/lib/rental.test.ts (22 tests) 10ms
+ ✓ src/lib/api.test.ts (10 tests) 68ms
+ ✓ src/lib/delivery-map.test.ts (17 tests) 25ms
+ ✓ src/lib/booking-input.test.ts (30 tests) 19ms
+ ✓ src/lib/draft.test.ts (4 tests) 7ms
+ ✓ src/lib/game-presentation.test.ts (2 tests) 7ms
+ ✓ src/lib/copy.test.ts (4 tests) 4ms
+ ✓ src/lib/game-search.test.ts (2 tests) 4ms
+
+ Test Files  9 passed (9)
+      Tests  97 passed (97)
+   Start at  13:05:09
+   Duration  1.20s (transform 383ms, setup 0ms, collect 630ms, tests 158ms, environment 1ms, prepare 728ms)
+

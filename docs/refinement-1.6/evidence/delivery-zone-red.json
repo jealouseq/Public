@@ -1,0 +1,15 @@
+{
+    "checks": 33,
+    "failures": [
+        "Delivery delivery\/7 unknown zone remains pending",
+        "Long rental eligibility awaits confirmed zone 7",
+        "Long rental order note qualifies free delivery 7",
+        "Delivery delivery\/30 unknown zone remains pending",
+        "Long rental eligibility awaits confirmed zone 30",
+        "Long rental order note qualifies free delivery 30",
+        "Delivery delivery\/7 claimed green remains pending",
+        "Delivery delivery\/7 unknown zone remains pending",
+        "Delivery delivery\/30 unknown zone remains pending"
+    ],
+    "interceptedMailAttempts": 9
+}

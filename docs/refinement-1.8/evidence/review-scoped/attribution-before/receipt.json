@@ -1,0 +1,2546 @@
+{
+  "main": "main-CYezEY1c.js",
+  "css": "main-DTp9pLQ1.css",
+  "cases": [
+    {
+      "language": "uk",
+      "width": 320,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 20,
+          "y": -60.84375,
+          "right": 300,
+          "bottom": 890.15625,
+          "w": 280,
+          "h": 951,
+          "cx": 160
+        },
+        "figure": {
+          "x": 41,
+          "y": 238.125,
+          "right": 279,
+          "bottom": 402.375,
+          "w": 238,
+          "h": 164.25,
+          "cx": 160
+        },
+        "map": {
+          "x": 42,
+          "y": 239.125,
+          "right": 278,
+          "bottom": 401.375,
+          "w": 236,
+          "h": 162.25,
+          "cx": 160
+        },
+        "basemap": {
+          "box": {
+            "x": 42,
+            "y": 239.125,
+            "right": 278,
+            "bottom": 401.375,
+            "w": 236,
+            "h": 162.25,
+            "cx": 160
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 42,
+            "y": 239.125,
+            "right": 278,
+            "bottom": 401.375,
+            "w": 236,
+            "h": 162.25,
+            "cx": 160
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 41,
+          "y": 426.375,
+          "right": 279,
+          "bottom": 786.15625,
+          "w": 238,
+          "h": 359.78125,
+          "cx": 160
+        },
+        "opener": {
+          "x": 62,
+          "y": 809.15625,
+          "right": 258,
+          "bottom": 861.15625,
+          "w": 196,
+          "h": 52,
+          "cx": 160
+        },
+        "attribution": {
+          "x": 116.5,
+          "y": 378.375,
+          "right": 268,
+          "bottom": 394.375,
+          "w": 151.5,
+          "h": 16,
+          "cx": 192.25
+        },
+        "callout": {
+          "x": 41,
+          "y": 635.375,
+          "right": 279,
+          "bottom": 786.15625,
+          "w": 238,
+          "h": 150.78125,
+          "cx": 160
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 137.953125,
+              "y": 280.43670654296875,
+              "right": 181.734375,
+              "bottom": 298.73358154296875,
+              "w": 43.78125,
+              "h": 18.296875,
+              "cx": 159.84375
+            },
+            "text": "Одеса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 211.09375,
+              "y": 323.859375,
+              "right": 270.75,
+              "bottom": 337.859375,
+              "w": 59.65625,
+              "h": 14,
+              "cx": 240.921875
+            },
+            "text": "Чорне море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 24,
+          "y": -10.75,
+          "right": 366,
+          "bottom": 890.09375,
+          "w": 342,
+          "h": 900.84375,
+          "cx": 195
+        },
+        "figure": {
+          "x": 49,
+          "y": 238.53125,
+          "right": 341,
+          "bottom": 439.90625,
+          "w": 292,
+          "h": 201.375,
+          "cx": 195
+        },
+        "map": {
+          "x": 50,
+          "y": 239.53125,
+          "right": 340,
+          "bottom": 438.90625,
+          "w": 290,
+          "h": 199.375,
+          "cx": 195
+        },
+        "basemap": {
+          "box": {
+            "x": 50,
+            "y": 239.53125,
+            "right": 340,
+            "bottom": 438.90625,
+            "w": 290,
+            "h": 199.375,
+            "cx": 195
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 50,
+            "y": 239.53125,
+            "right": 340,
+            "bottom": 438.90625,
+            "w": 290,
+            "h": 199.375,
+            "cx": 195
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 49,
+          "y": 463.90625,
+          "right": 341,
+          "bottom": 786.09375,
+          "w": 292,
+          "h": 322.1875,
+          "cx": 195
+        },
+        "opener": {
+          "x": 97,
+          "y": 809.09375,
+          "right": 293,
+          "bottom": 861.09375,
+          "w": 196,
+          "h": 52,
+          "cx": 195
+        },
+        "attribution": {
+          "x": 178.5,
+          "y": 415.90625,
+          "right": 330,
+          "bottom": 431.90625,
+          "w": 151.5,
+          "h": 16,
+          "cx": 254.25
+        },
+        "callout": {
+          "x": 49,
+          "y": 672.90625,
+          "right": 341,
+          "bottom": 786.09375,
+          "w": 292,
+          "h": 113.1875,
+          "cx": 195
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 172.921875,
+              "y": 296.79608154296875,
+              "right": 216.703125,
+              "bottom": 315.09295654296875,
+              "w": 43.78125,
+              "h": 18.296875,
+              "cx": 194.8125
+            },
+            "text": "Одеса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 264.609375,
+              "y": 345.265625,
+              "right": 324.265625,
+              "bottom": 359.265625,
+              "w": 59.65625,
+              "h": 14,
+              "cx": 294.4375
+            },
+            "text": "Чорне море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 700,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 24,
+          "y": -49.65625,
+          "right": 676,
+          "bottom": 978.625,
+          "w": 652,
+          "h": 1028.28125,
+          "cx": 350
+        },
+        "figure": {
+          "x": 49,
+          "y": 151.53125,
+          "right": 651,
+          "bottom": 566.03125,
+          "w": 602,
+          "h": 414.5,
+          "cx": 350
+        },
+        "map": {
+          "x": 50,
+          "y": 152.53125,
+          "right": 650,
+          "bottom": 565.03125,
+          "w": 600,
+          "h": 412.5,
+          "cx": 350
+        },
+        "basemap": {
+          "box": {
+            "x": 50,
+            "y": 152.53125,
+            "right": 650,
+            "bottom": 565.03125,
+            "w": 600,
+            "h": 412.5,
+            "cx": 350
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 50,
+            "y": 152.53125,
+            "right": 650,
+            "bottom": 565.03125,
+            "w": 600,
+            "h": 412.5,
+            "cx": 350
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 49,
+          "y": 590.03125,
+          "right": 651,
+          "bottom": 874.625,
+          "w": 602,
+          "h": 284.59375,
+          "cx": 350
+        },
+        "opener": {
+          "x": 252,
+          "y": 897.625,
+          "right": 448,
+          "bottom": 949.625,
+          "w": 196,
+          "h": 52,
+          "cx": 350
+        },
+        "attribution": {
+          "x": 488.5,
+          "y": 542.03125,
+          "right": 640,
+          "bottom": 558.03125,
+          "w": 151.5,
+          "h": 16,
+          "cx": 564.25
+        },
+        "callout": {
+          "x": 49,
+          "y": 799.03125,
+          "right": 651,
+          "bottom": 874.625,
+          "w": 602,
+          "h": 75.59375,
+          "cx": 350
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 327.734375,
+              "y": 301.32733154296875,
+              "right": 371.515625,
+              "bottom": 319.62420654296875,
+              "w": 43.78125,
+              "h": 18.296875,
+              "cx": 349.625
+            },
+            "text": "Одеса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 525.90625,
+              "y": 378.78125,
+              "right": 585.5625,
+              "bottom": 392.78125,
+              "w": 59.65625,
+              "h": 14,
+              "cx": 555.734375
+            },
+            "text": "Чорне море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 701,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 36.4375,
+          "y": -37.9375,
+          "right": 664.5625,
+          "bottom": 936.46875,
+          "w": 628.125,
+          "h": 974.40625,
+          "cx": 350.5
+        },
+        "figure": {
+          "x": 65.4375,
+          "y": 197.296875,
+          "right": 635.5625,
+          "bottom": 589.875,
+          "w": 570.125,
+          "h": 392.578125,
+          "cx": 350.5
+        },
+        "map": {
+          "x": 66.4375,
+          "y": 198.296875,
+          "right": 634.5625,
+          "bottom": 588.875,
+          "w": 568.125,
+          "h": 390.578125,
+          "cx": 350.5
+        },
+        "basemap": {
+          "box": {
+            "x": 66.4375,
+            "y": 198.296875,
+            "right": 634.5625,
+            "bottom": 588.875,
+            "w": 568.125,
+            "h": 390.578125,
+            "cx": 350.5
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 66.4375,
+            "y": 198.296875,
+            "right": 634.5625,
+            "bottom": 588.875,
+            "w": 568.125,
+            "h": 390.578125,
+            "cx": 350.5
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 65.4375,
+          "y": 613.875,
+          "right": 635.5625,
+          "bottom": 907.46875,
+          "w": 570.125,
+          "h": 293.59375,
+          "cx": 350.5
+        },
+        "opener": {
+          "x": 449.5625,
+          "y": 17.0625,
+          "right": 635.5625,
+          "bottom": 67.0625,
+          "w": 186,
+          "h": 50,
+          "cx": 542.5625
+        },
+        "attribution": {
+          "x": 473.0625,
+          "y": 565.875,
+          "right": 624.5625,
+          "bottom": 581.875,
+          "w": 151.5,
+          "h": 16,
+          "cx": 548.8125
+        },
+        "callout": {
+          "x": 65.4375,
+          "y": 831.875,
+          "right": 635.5625,
+          "bottom": 907.46875,
+          "w": 570.125,
+          "h": 75.59375,
+          "cx": 350.5
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 326.7109375,
+              "y": 335.66094970703125,
+              "right": 373.5703125,
+              "bottom": 355.25469970703125,
+              "w": 46.859375,
+              "h": 19.59375,
+              "cx": 350.140625
+            },
+            "text": "Одеса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 509.5,
+              "y": 410.7578125,
+              "right": 581.09375,
+              "bottom": 427.5546875,
+              "w": 71.59375,
+              "h": 16.796875,
+              "cx": 545.296875
+            },
+            "text": "Чорне море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 768,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 39.921875,
+          "y": -57.96875,
+          "right": 728.078125,
+          "bottom": 957.703125,
+          "w": 688.15625,
+          "h": 1015.671875,
+          "cx": 384
+        },
+        "figure": {
+          "x": 68.921875,
+          "y": 177.265625,
+          "right": 699.078125,
+          "bottom": 611.109375,
+          "w": 630.15625,
+          "h": 433.84375,
+          "cx": 384
+        },
+        "map": {
+          "x": 69.921875,
+          "y": 178.265625,
+          "right": 698.078125,
+          "bottom": 610.109375,
+          "w": 628.15625,
+          "h": 431.84375,
+          "cx": 384
+        },
+        "basemap": {
+          "box": {
+            "x": 69.921875,
+            "y": 178.265625,
+            "right": 698.078125,
+            "bottom": 610.109375,
+            "w": 628.15625,
+            "h": 431.84375,
+            "cx": 384
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 69.921875,
+            "y": 178.265625,
+            "right": 698.078125,
+            "bottom": 610.109375,
+            "w": 628.15625,
+            "h": 431.84375,
+            "cx": 384
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 68.921875,
+          "y": 635.109375,
+          "right": 699.078125,
+          "bottom": 928.703125,
+          "w": 630.15625,
+          "h": 293.59375,
+          "cx": 384
+        },
+        "opener": {
+          "x": 513.078125,
+          "y": -2.96875,
+          "right": 699.078125,
+          "bottom": 47.03125,
+          "w": 186,
+          "h": 50,
+          "cx": 606.078125
+        },
+        "attribution": {
+          "x": 536.578125,
+          "y": 587.109375,
+          "right": 688.078125,
+          "bottom": 603.109375,
+          "w": 151.5,
+          "h": 16,
+          "cx": 612.328125
+        },
+        "callout": {
+          "x": 68.921875,
+          "y": 853.109375,
+          "right": 699.078125,
+          "bottom": 928.703125,
+          "w": 630.15625,
+          "h": 75.59375,
+          "cx": 384
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 360.1796875,
+              "y": 333.36407470703125,
+              "right": 407.0390625,
+              "bottom": 352.95782470703125,
+              "w": 46.859375,
+              "h": 19.59375,
+              "cx": 383.609375
+            },
+            "text": "Одеса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 563.59375,
+              "y": 414.0546875,
+              "right": 635.1875,
+              "bottom": 430.8515625,
+              "w": 71.59375,
+              "h": 16.796875,
+              "cx": 599.390625
+            },
+            "text": "Чорне море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 900,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 46.796875,
+          "y": -75.125,
+          "right": 853.203125,
+          "bottom": 997.796875,
+          "w": 806.40625,
+          "h": 1072.921875,
+          "cx": 450
+        },
+        "figure": {
+          "x": 75.796875,
+          "y": 136.0625,
+          "right": 824.203125,
+          "bottom": 651.203125,
+          "w": 748.40625,
+          "h": 515.140625,
+          "cx": 450
+        },
+        "map": {
+          "x": 76.796875,
+          "y": 137.0625,
+          "right": 823.203125,
+          "bottom": 650.203125,
+          "w": 746.40625,
+          "h": 513.140625,
+          "cx": 450
+        },
+        "basemap": {
+          "box": {
+            "x": 76.796875,
+            "y": 137.0625,
+            "right": 823.203125,
+            "bottom": 650.203125,
+            "w": 746.40625,
+            "h": 513.140625,
+            "cx": 450
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 76.796875,
+            "y": 137.0625,
+            "right": 823.203125,
+            "bottom": 650.203125,
+            "w": 746.40625,
+            "h": 513.140625,
+            "cx": 450
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 75.796875,
+          "y": 675.203125,
+          "right": 824.203125,
+          "bottom": 968.796875,
+          "w": 748.40625,
+          "h": 293.59375,
+          "cx": 450
+        },
+        "opener": {
+          "x": 638.203125,
+          "y": -20.125,
+          "right": 824.203125,
+          "bottom": 29.875,
+          "w": 186,
+          "h": 50,
+          "cx": 731.203125
+        },
+        "attribution": {
+          "x": 661.703125,
+          "y": 627.203125,
+          "right": 813.203125,
+          "bottom": 643.203125,
+          "w": 151.5,
+          "h": 16,
+          "cx": 737.453125
+        },
+        "callout": {
+          "x": 75.796875,
+          "y": 893.203125,
+          "right": 824.203125,
+          "bottom": 968.796875,
+          "w": 748.40625,
+          "h": 75.59375,
+          "cx": 450
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 426.1015625,
+              "y": 327.06719970703125,
+              "right": 472.9609375,
+              "bottom": 346.66094970703125,
+              "w": 46.859375,
+              "h": 19.59375,
+              "cx": 449.53125
+            },
+            "text": "Одеса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 670.140625,
+              "y": 418.8203125,
+              "right": 741.734375,
+              "bottom": 435.6171875,
+              "w": 71.59375,
+              "h": 16.796875,
+              "cx": 705.9375
+            },
+            "text": "Чорне море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 901,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 46.84375,
+          "y": 175.46875,
+          "right": 854.15625,
+          "bottom": 746.84375,
+          "w": 807.3125,
+          "h": 571.375,
+          "cx": 450.5
+        },
+        "figure": {
+          "x": 75.84375,
+          "y": 405.1875,
+          "right": 502.734375,
+          "bottom": 699.296875,
+          "w": 426.890625,
+          "h": 294.109375,
+          "cx": 289.2890625
+        },
+        "map": {
+          "x": 76.84375,
+          "y": 406.1875,
+          "right": 501.734375,
+          "bottom": 698.296875,
+          "w": 424.890625,
+          "h": 292.109375,
+          "cx": 289.2890625
+        },
+        "basemap": {
+          "box": {
+            "x": 76.84375,
+            "y": 406.1875,
+            "right": 501.734375,
+            "bottom": 698.296875,
+            "w": 424.890625,
+            "h": 292.109375,
+            "cx": 289.2890625
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 76.84375,
+            "y": 406.1875,
+            "right": 501.734375,
+            "bottom": 698.296875,
+            "w": 424.890625,
+            "h": 292.109375,
+            "cx": 289.2890625
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 530.734375,
+          "y": 386.65625,
+          "right": 825.15625,
+          "bottom": 717.84375,
+          "w": 294.421875,
+          "h": 331.1875,
+          "cx": 677.9453125
+        },
+        "opener": {
+          "x": 639.15625,
+          "y": 230.46875,
+          "right": 825.15625,
+          "bottom": 280.46875,
+          "w": 186,
+          "h": 50,
+          "cx": 732.15625
+        },
+        "attribution": {
+          "x": 340.234375,
+          "y": 675.296875,
+          "right": 491.734375,
+          "bottom": 691.296875,
+          "w": 151.5,
+          "h": 16,
+          "cx": 415.984375
+        },
+        "callout": {
+          "x": 530.734375,
+          "y": 604.65625,
+          "right": 825.15625,
+          "bottom": 717.84375,
+          "w": 294.421875,
+          "h": 113.1875,
+          "cx": 677.9453125
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 265.5859375,
+              "y": 501.27032470703125,
+              "right": 312.4453125,
+              "bottom": 520.8640747070312,
+              "w": 46.859375,
+              "h": 19.59375,
+              "cx": 289.015625
+            },
+            "text": "Одеса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 399.171875,
+              "y": 562.9609375,
+              "right": 470.765625,
+              "bottom": 579.7578125,
+              "w": 71.59375,
+              "h": 16.796875,
+              "cx": 434.96875
+            },
+            "text": "Чорне море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 980,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 50.953125,
+          "y": 174.71875,
+          "right": 929.046875,
+          "bottom": 748.875,
+          "w": 878.09375,
+          "h": 574.15625,
+          "cx": 490
+        },
+        "figure": {
+          "x": 81.34375,
+          "y": 392,
+          "right": 548.484375,
+          "bottom": 713.78125,
+          "w": 467.140625,
+          "h": 321.78125,
+          "cx": 314.9140625
+        },
+        "map": {
+          "x": 82.34375,
+          "y": 393,
+          "right": 547.484375,
+          "bottom": 712.78125,
+          "w": 465.140625,
+          "h": 319.78125,
+          "cx": 314.9140625
+        },
+        "basemap": {
+          "box": {
+            "x": 82.34375,
+            "y": 393,
+            "right": 547.484375,
+            "bottom": 712.78125,
+            "w": 465.140625,
+            "h": 319.78125,
+            "cx": 314.9140625
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 82.34375,
+            "y": 393,
+            "right": 547.484375,
+            "bottom": 712.78125,
+            "w": 465.140625,
+            "h": 319.78125,
+            "cx": 314.9140625
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 576.484375,
+          "y": 387.296875,
+          "right": 898.65625,
+          "bottom": 718.484375,
+          "w": 322.171875,
+          "h": 331.1875,
+          "cx": 737.5703125
+        },
+        "opener": {
+          "x": 712.65625,
+          "y": 231.109375,
+          "right": 898.65625,
+          "bottom": 281.109375,
+          "w": 186,
+          "h": 50,
+          "cx": 805.65625
+        },
+        "attribution": {
+          "x": 385.984375,
+          "y": 689.78125,
+          "right": 537.484375,
+          "bottom": 705.78125,
+          "w": 151.5,
+          "h": 16,
+          "cx": 461.734375
+        },
+        "callout": {
+          "x": 576.484375,
+          "y": 605.296875,
+          "right": 898.65625,
+          "bottom": 718.484375,
+          "w": 322.171875,
+          "h": 113.1875,
+          "cx": 737.5703125
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 291.1953125,
+              "y": 499.95782470703125,
+              "right": 338.0546875,
+              "bottom": 519.5515747070312,
+              "w": 46.859375,
+              "h": 19.59375,
+              "cx": 314.625
+            },
+            "text": "Одеса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 438.609375,
+              "y": 565.4140625,
+              "right": 510.203125,
+              "bottom": 582.2109375,
+              "w": 71.59375,
+              "h": 16.796875,
+              "cx": 474.40625
+            },
+            "text": "Чорне море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 1440,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 74.875,
+          "y": 81.9375,
+          "right": 1365.125,
+          "bottom": 831.40625,
+          "w": 1290.25,
+          "h": 749.46875,
+          "cx": 720
+        },
+        "figure": {
+          "x": 119.0625,
+          "y": 317.109375,
+          "right": 801.953125,
+          "bottom": 787.21875,
+          "w": 682.890625,
+          "h": 470.109375,
+          "cx": 460.5078125
+        },
+        "map": {
+          "x": 120.0625,
+          "y": 318.109375,
+          "right": 800.953125,
+          "bottom": 786.21875,
+          "w": 680.890625,
+          "h": 468.109375,
+          "cx": 460.5078125
+        },
+        "basemap": {
+          "box": {
+            "x": 120.0625,
+            "y": 318.109375,
+            "right": 800.953125,
+            "bottom": 786.21875,
+            "w": 680.890625,
+            "h": 468.109375,
+            "cx": 460.5078125
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 120.0625,
+            "y": 318.109375,
+            "right": 800.953125,
+            "bottom": 786.21875,
+            "w": 680.890625,
+            "h": 468.109375,
+            "cx": 460.5078125
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 849.953125,
+          "y": 405.359375,
+          "right": 1320.9375,
+          "bottom": 698.953125,
+          "w": 470.984375,
+          "h": 293.59375,
+          "cx": 1085.4453125
+        },
+        "opener": {
+          "x": 1134.9375,
+          "y": 152.125,
+          "right": 1320.9375,
+          "bottom": 202.125,
+          "w": 186,
+          "h": 50,
+          "cx": 1227.9375
+        },
+        "attribution": {
+          "x": 639.453125,
+          "y": 763.21875,
+          "right": 790.953125,
+          "bottom": 779.21875,
+          "w": 151.5,
+          "h": 16,
+          "cx": 715.203125
+        },
+        "callout": {
+          "x": 849.953125,
+          "y": 623.359375,
+          "right": 1320.9375,
+          "bottom": 698.953125,
+          "w": 470.984375,
+          "h": 75.59375,
+          "cx": 1085.4453125
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 436.6484375,
+              "y": 488.78594970703125,
+              "right": 483.5078125,
+              "bottom": 508.37969970703125,
+              "w": 46.859375,
+              "h": 19.59375,
+              "cx": 460.078125
+            },
+            "text": "Одеса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 658.171875,
+              "y": 574.3984375,
+              "right": 729.765625,
+              "bottom": 591.1953125,
+              "w": 71.59375,
+              "h": 16.796875,
+              "cx": 693.96875
+            },
+            "text": "Чорне море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 20,
+          "y": -31.84375,
+          "right": 300,
+          "bottom": 890.8125,
+          "w": 280,
+          "h": 922.65625,
+          "cx": 160
+        },
+        "figure": {
+          "x": 41,
+          "y": 238.78125,
+          "right": 279,
+          "bottom": 403.03125,
+          "w": 238,
+          "h": 164.25,
+          "cx": 160
+        },
+        "map": {
+          "x": 42,
+          "y": 239.78125,
+          "right": 278,
+          "bottom": 402.03125,
+          "w": 236,
+          "h": 162.25,
+          "cx": 160
+        },
+        "basemap": {
+          "box": {
+            "x": 42,
+            "y": 239.78125,
+            "right": 278,
+            "bottom": 402.03125,
+            "w": 236,
+            "h": 162.25,
+            "cx": 160
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 42,
+            "y": 239.78125,
+            "right": 278,
+            "bottom": 402.03125,
+            "w": 236,
+            "h": 162.25,
+            "cx": 160
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 41,
+          "y": 427.03125,
+          "right": 279,
+          "bottom": 786.8125,
+          "w": 238,
+          "h": 359.78125,
+          "cx": 160
+        },
+        "opener": {
+          "x": 62,
+          "y": 809.8125,
+          "right": 258,
+          "bottom": 861.8125,
+          "w": 196,
+          "h": 52,
+          "cx": 160
+        },
+        "attribution": {
+          "x": 116.5,
+          "y": 379.03125,
+          "right": 268,
+          "bottom": 395.03125,
+          "w": 151.5,
+          "h": 16,
+          "cx": 192.25
+        },
+        "callout": {
+          "x": 41,
+          "y": 636.03125,
+          "right": 279,
+          "bottom": 786.8125,
+          "w": 238,
+          "h": 150.78125,
+          "cx": 160
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 134.9296875,
+              "y": 281.09295654296875,
+              "right": 184.7578125,
+              "bottom": 299.38983154296875,
+              "w": 49.828125,
+              "h": 18.296875,
+              "cx": 159.84375
+            },
+            "text": "Одесса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 208.0234375,
+              "y": 324.515625,
+              "right": 273.8203125,
+              "bottom": 338.515625,
+              "w": 65.796875,
+              "h": 14,
+              "cx": 240.921875
+            },
+            "text": "Чёрное море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 390,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 24,
+          "y": -19.359375,
+          "right": 366,
+          "bottom": 899.484375,
+          "w": 342,
+          "h": 918.84375,
+          "cx": 195
+        },
+        "figure": {
+          "x": 49,
+          "y": 229.921875,
+          "right": 341,
+          "bottom": 431.296875,
+          "w": 292,
+          "h": 201.375,
+          "cx": 195
+        },
+        "map": {
+          "x": 50,
+          "y": 230.921875,
+          "right": 340,
+          "bottom": 430.296875,
+          "w": 290,
+          "h": 199.375,
+          "cx": 195
+        },
+        "basemap": {
+          "box": {
+            "x": 50,
+            "y": 230.921875,
+            "right": 340,
+            "bottom": 430.296875,
+            "w": 290,
+            "h": 199.375,
+            "cx": 195
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 50,
+            "y": 230.921875,
+            "right": 340,
+            "bottom": 430.296875,
+            "w": 290,
+            "h": 199.375,
+            "cx": 195
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 49,
+          "y": 455.296875,
+          "right": 341,
+          "bottom": 795.484375,
+          "w": 292,
+          "h": 340.1875,
+          "cx": 195
+        },
+        "opener": {
+          "x": 97,
+          "y": 818.484375,
+          "right": 293,
+          "bottom": 870.484375,
+          "w": 196,
+          "h": 52,
+          "cx": 195
+        },
+        "attribution": {
+          "x": 178.5,
+          "y": 407.296875,
+          "right": 330,
+          "bottom": 423.296875,
+          "w": 151.5,
+          "h": 16,
+          "cx": 254.25
+        },
+        "callout": {
+          "x": 49,
+          "y": 664.296875,
+          "right": 341,
+          "bottom": 795.484375,
+          "w": 292,
+          "h": 131.1875,
+          "cx": 195
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 169.8984375,
+              "y": 288.18670654296875,
+              "right": 219.7265625,
+              "bottom": 306.48358154296875,
+              "w": 49.828125,
+              "h": 18.296875,
+              "cx": 194.8125
+            },
+            "text": "Одесса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 261.5390625,
+              "y": 336.65625,
+              "right": 327.3359375,
+              "bottom": 350.65625,
+              "w": 65.796875,
+              "h": 14,
+              "cx": 294.4375
+            },
+            "text": "Чёрное море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 700,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 24,
+          "y": -49.65625,
+          "right": 676,
+          "bottom": 978.625,
+          "w": 652,
+          "h": 1028.28125,
+          "cx": 350
+        },
+        "figure": {
+          "x": 49,
+          "y": 151.53125,
+          "right": 651,
+          "bottom": 566.03125,
+          "w": 602,
+          "h": 414.5,
+          "cx": 350
+        },
+        "map": {
+          "x": 50,
+          "y": 152.53125,
+          "right": 650,
+          "bottom": 565.03125,
+          "w": 600,
+          "h": 412.5,
+          "cx": 350
+        },
+        "basemap": {
+          "box": {
+            "x": 50,
+            "y": 152.53125,
+            "right": 650,
+            "bottom": 565.03125,
+            "w": 600,
+            "h": 412.5,
+            "cx": 350
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 50,
+            "y": 152.53125,
+            "right": 650,
+            "bottom": 565.03125,
+            "w": 600,
+            "h": 412.5,
+            "cx": 350
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 49,
+          "y": 590.03125,
+          "right": 651,
+          "bottom": 874.625,
+          "w": 602,
+          "h": 284.59375,
+          "cx": 350
+        },
+        "opener": {
+          "x": 252,
+          "y": 897.625,
+          "right": 448,
+          "bottom": 949.625,
+          "w": 196,
+          "h": 52,
+          "cx": 350
+        },
+        "attribution": {
+          "x": 488.5,
+          "y": 542.03125,
+          "right": 640,
+          "bottom": 558.03125,
+          "w": 151.5,
+          "h": 16,
+          "cx": 564.25
+        },
+        "callout": {
+          "x": 49,
+          "y": 799.03125,
+          "right": 651,
+          "bottom": 874.625,
+          "w": 602,
+          "h": 75.59375,
+          "cx": 350
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 324.7109375,
+              "y": 301.32733154296875,
+              "right": 374.5390625,
+              "bottom": 319.62420654296875,
+              "w": 49.828125,
+              "h": 18.296875,
+              "cx": 349.625
+            },
+            "text": "Одесса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 522.8359375,
+              "y": 378.78125,
+              "right": 588.6328125,
+              "bottom": 392.78125,
+              "w": 65.796875,
+              "h": 14,
+              "cx": 555.734375
+            },
+            "text": "Чёрное море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 701,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 36.4375,
+          "y": -37.921875,
+          "right": 664.5625,
+          "bottom": 936.484375,
+          "w": 628.125,
+          "h": 974.40625,
+          "cx": 350.5
+        },
+        "figure": {
+          "x": 65.4375,
+          "y": 197.3125,
+          "right": 635.5625,
+          "bottom": 589.890625,
+          "w": 570.125,
+          "h": 392.578125,
+          "cx": 350.5
+        },
+        "map": {
+          "x": 66.4375,
+          "y": 198.3125,
+          "right": 634.5625,
+          "bottom": 588.890625,
+          "w": 568.125,
+          "h": 390.578125,
+          "cx": 350.5
+        },
+        "basemap": {
+          "box": {
+            "x": 66.4375,
+            "y": 198.3125,
+            "right": 634.5625,
+            "bottom": 588.890625,
+            "w": 568.125,
+            "h": 390.578125,
+            "cx": 350.5
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 66.4375,
+            "y": 198.3125,
+            "right": 634.5625,
+            "bottom": 588.890625,
+            "w": 568.125,
+            "h": 390.578125,
+            "cx": 350.5
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 65.4375,
+          "y": 613.890625,
+          "right": 635.5625,
+          "bottom": 907.484375,
+          "w": 570.125,
+          "h": 293.59375,
+          "cx": 350.5
+        },
+        "opener": {
+          "x": 449.5625,
+          "y": 17.078125,
+          "right": 635.5625,
+          "bottom": 67.078125,
+          "w": 186,
+          "h": 50,
+          "cx": 542.5625
+        },
+        "attribution": {
+          "x": 473.0625,
+          "y": 565.890625,
+          "right": 624.5625,
+          "bottom": 581.890625,
+          "w": 151.5,
+          "h": 16,
+          "cx": 548.8125
+        },
+        "callout": {
+          "x": 65.4375,
+          "y": 831.890625,
+          "right": 635.5625,
+          "bottom": 907.484375,
+          "w": 570.125,
+          "h": 75.59375,
+          "cx": 350.5
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 323.4140625,
+              "y": 335.67657470703125,
+              "right": 376.8671875,
+              "bottom": 355.27032470703125,
+              "w": 53.453125,
+              "h": 19.59375,
+              "cx": 350.140625
+            },
+            "text": "Одесса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 505.8125,
+              "y": 410.7734375,
+              "right": 584.78125,
+              "bottom": 427.5703125,
+              "w": 78.96875,
+              "h": 16.796875,
+              "cx": 545.296875
+            },
+            "text": "Чёрное море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 768,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 39.921875,
+          "y": -57.96875,
+          "right": 728.078125,
+          "bottom": 957.703125,
+          "w": 688.15625,
+          "h": 1015.671875,
+          "cx": 384
+        },
+        "figure": {
+          "x": 68.921875,
+          "y": 177.265625,
+          "right": 699.078125,
+          "bottom": 611.109375,
+          "w": 630.15625,
+          "h": 433.84375,
+          "cx": 384
+        },
+        "map": {
+          "x": 69.921875,
+          "y": 178.265625,
+          "right": 698.078125,
+          "bottom": 610.109375,
+          "w": 628.15625,
+          "h": 431.84375,
+          "cx": 384
+        },
+        "basemap": {
+          "box": {
+            "x": 69.921875,
+            "y": 178.265625,
+            "right": 698.078125,
+            "bottom": 610.109375,
+            "w": 628.15625,
+            "h": 431.84375,
+            "cx": 384
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 69.921875,
+            "y": 178.265625,
+            "right": 698.078125,
+            "bottom": 610.109375,
+            "w": 628.15625,
+            "h": 431.84375,
+            "cx": 384
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 68.921875,
+          "y": 635.109375,
+          "right": 699.078125,
+          "bottom": 928.703125,
+          "w": 630.15625,
+          "h": 293.59375,
+          "cx": 384
+        },
+        "opener": {
+          "x": 513.078125,
+          "y": -2.96875,
+          "right": 699.078125,
+          "bottom": 47.03125,
+          "w": 186,
+          "h": 50,
+          "cx": 606.078125
+        },
+        "attribution": {
+          "x": 536.578125,
+          "y": 587.109375,
+          "right": 688.078125,
+          "bottom": 603.109375,
+          "w": 151.5,
+          "h": 16,
+          "cx": 612.328125
+        },
+        "callout": {
+          "x": 68.921875,
+          "y": 853.109375,
+          "right": 699.078125,
+          "bottom": 928.703125,
+          "w": 630.15625,
+          "h": 75.59375,
+          "cx": 384
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 356.8828125,
+              "y": 333.36407470703125,
+              "right": 410.3359375,
+              "bottom": 352.95782470703125,
+              "w": 53.453125,
+              "h": 19.59375,
+              "cx": 383.609375
+            },
+            "text": "Одесса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 559.90625,
+              "y": 414.0546875,
+              "right": 638.875,
+              "bottom": 430.8515625,
+              "w": 78.96875,
+              "h": 16.796875,
+              "cx": 599.390625
+            },
+            "text": "Чёрное море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 900,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 46.796875,
+          "y": -75.125,
+          "right": 853.203125,
+          "bottom": 997.796875,
+          "w": 806.40625,
+          "h": 1072.921875,
+          "cx": 450
+        },
+        "figure": {
+          "x": 75.796875,
+          "y": 136.0625,
+          "right": 824.203125,
+          "bottom": 651.203125,
+          "w": 748.40625,
+          "h": 515.140625,
+          "cx": 450
+        },
+        "map": {
+          "x": 76.796875,
+          "y": 137.0625,
+          "right": 823.203125,
+          "bottom": 650.203125,
+          "w": 746.40625,
+          "h": 513.140625,
+          "cx": 450
+        },
+        "basemap": {
+          "box": {
+            "x": 76.796875,
+            "y": 137.0625,
+            "right": 823.203125,
+            "bottom": 650.203125,
+            "w": 746.40625,
+            "h": 513.140625,
+            "cx": 450
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 76.796875,
+            "y": 137.0625,
+            "right": 823.203125,
+            "bottom": 650.203125,
+            "w": 746.40625,
+            "h": 513.140625,
+            "cx": 450
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 75.796875,
+          "y": 675.203125,
+          "right": 824.203125,
+          "bottom": 968.796875,
+          "w": 748.40625,
+          "h": 293.59375,
+          "cx": 450
+        },
+        "opener": {
+          "x": 638.203125,
+          "y": -20.125,
+          "right": 824.203125,
+          "bottom": 29.875,
+          "w": 186,
+          "h": 50,
+          "cx": 731.203125
+        },
+        "attribution": {
+          "x": 661.703125,
+          "y": 627.203125,
+          "right": 813.203125,
+          "bottom": 643.203125,
+          "w": 151.5,
+          "h": 16,
+          "cx": 737.453125
+        },
+        "callout": {
+          "x": 75.796875,
+          "y": 893.203125,
+          "right": 824.203125,
+          "bottom": 968.796875,
+          "w": 748.40625,
+          "h": 75.59375,
+          "cx": 450
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 422.8046875,
+              "y": 327.06719970703125,
+              "right": 476.2578125,
+              "bottom": 346.66094970703125,
+              "w": 53.453125,
+              "h": 19.59375,
+              "cx": 449.53125
+            },
+            "text": "Одесса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 666.453125,
+              "y": 418.8203125,
+              "right": 745.421875,
+              "bottom": 435.6171875,
+              "w": 78.96875,
+              "h": 16.796875,
+              "cx": 705.9375
+            },
+            "text": "Чёрное море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 901,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 46.84375,
+          "y": 166.46875,
+          "right": 854.15625,
+          "bottom": 755.84375,
+          "w": 807.3125,
+          "h": 589.375,
+          "cx": 450.5
+        },
+        "figure": {
+          "x": 75.84375,
+          "y": 405.1875,
+          "right": 502.734375,
+          "bottom": 699.296875,
+          "w": 426.890625,
+          "h": 294.109375,
+          "cx": 289.2890625
+        },
+        "map": {
+          "x": 76.84375,
+          "y": 406.1875,
+          "right": 501.734375,
+          "bottom": 698.296875,
+          "w": 424.890625,
+          "h": 292.109375,
+          "cx": 289.2890625
+        },
+        "basemap": {
+          "box": {
+            "x": 76.84375,
+            "y": 406.1875,
+            "right": 501.734375,
+            "bottom": 698.296875,
+            "w": 424.890625,
+            "h": 292.109375,
+            "cx": 289.2890625
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 76.84375,
+            "y": 406.1875,
+            "right": 501.734375,
+            "bottom": 698.296875,
+            "w": 424.890625,
+            "h": 292.109375,
+            "cx": 289.2890625
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 530.734375,
+          "y": 377.65625,
+          "right": 825.15625,
+          "bottom": 726.84375,
+          "w": 294.421875,
+          "h": 349.1875,
+          "cx": 677.9453125
+        },
+        "opener": {
+          "x": 639.15625,
+          "y": 221.46875,
+          "right": 825.15625,
+          "bottom": 271.46875,
+          "w": 186,
+          "h": 50,
+          "cx": 732.15625
+        },
+        "attribution": {
+          "x": 340.234375,
+          "y": 675.296875,
+          "right": 491.734375,
+          "bottom": 691.296875,
+          "w": 151.5,
+          "h": 16,
+          "cx": 415.984375
+        },
+        "callout": {
+          "x": 530.734375,
+          "y": 595.65625,
+          "right": 825.15625,
+          "bottom": 726.84375,
+          "w": 294.421875,
+          "h": 131.1875,
+          "cx": 677.9453125
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 262.2890625,
+              "y": 501.27032470703125,
+              "right": 315.7421875,
+              "bottom": 520.8640747070312,
+              "w": 53.453125,
+              "h": 19.59375,
+              "cx": 289.015625
+            },
+            "text": "Одесса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 395.484375,
+              "y": 562.9609375,
+              "right": 474.453125,
+              "bottom": 579.7578125,
+              "w": 78.96875,
+              "h": 16.796875,
+              "cx": 434.96875
+            },
+            "text": "Чёрное море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 980,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 50.953125,
+          "y": 174.71875,
+          "right": 929.046875,
+          "bottom": 748.875,
+          "w": 878.09375,
+          "h": 574.15625,
+          "cx": 490
+        },
+        "figure": {
+          "x": 81.34375,
+          "y": 392,
+          "right": 548.484375,
+          "bottom": 713.78125,
+          "w": 467.140625,
+          "h": 321.78125,
+          "cx": 314.9140625
+        },
+        "map": {
+          "x": 82.34375,
+          "y": 393,
+          "right": 547.484375,
+          "bottom": 712.78125,
+          "w": 465.140625,
+          "h": 319.78125,
+          "cx": 314.9140625
+        },
+        "basemap": {
+          "box": {
+            "x": 82.34375,
+            "y": 393,
+            "right": 547.484375,
+            "bottom": 712.78125,
+            "w": 465.140625,
+            "h": 319.78125,
+            "cx": 314.9140625
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 82.34375,
+            "y": 393,
+            "right": 547.484375,
+            "bottom": 712.78125,
+            "w": 465.140625,
+            "h": 319.78125,
+            "cx": 314.9140625
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 576.484375,
+          "y": 387.296875,
+          "right": 898.65625,
+          "bottom": 718.484375,
+          "w": 322.171875,
+          "h": 331.1875,
+          "cx": 737.5703125
+        },
+        "opener": {
+          "x": 712.65625,
+          "y": 231.109375,
+          "right": 898.65625,
+          "bottom": 281.109375,
+          "w": 186,
+          "h": 50,
+          "cx": 805.65625
+        },
+        "attribution": {
+          "x": 385.984375,
+          "y": 689.78125,
+          "right": 537.484375,
+          "bottom": 705.78125,
+          "w": 151.5,
+          "h": 16,
+          "cx": 461.734375
+        },
+        "callout": {
+          "x": 576.484375,
+          "y": 605.296875,
+          "right": 898.65625,
+          "bottom": 718.484375,
+          "w": 322.171875,
+          "h": 113.1875,
+          "cx": 737.5703125
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 287.8984375,
+              "y": 499.95782470703125,
+              "right": 341.3515625,
+              "bottom": 519.5515747070312,
+              "w": 53.453125,
+              "h": 19.59375,
+              "cx": 314.625
+            },
+            "text": "Одесса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 434.921875,
+              "y": 565.4140625,
+              "right": 513.890625,
+              "bottom": 582.2109375,
+              "w": 78.96875,
+              "h": 16.796875,
+              "cx": 474.40625
+            },
+            "text": "Чёрное море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 1440,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CYezEY1c.js",
+      "layout": {
+        "panel": {
+          "x": 74.875,
+          "y": 81.9375,
+          "right": 1365.125,
+          "bottom": 831.40625,
+          "w": 1290.25,
+          "h": 749.46875,
+          "cx": 720
+        },
+        "figure": {
+          "x": 119.0625,
+          "y": 317.109375,
+          "right": 801.953125,
+          "bottom": 787.21875,
+          "w": 682.890625,
+          "h": 470.109375,
+          "cx": 460.5078125
+        },
+        "map": {
+          "x": 120.0625,
+          "y": 318.109375,
+          "right": 800.953125,
+          "bottom": 786.21875,
+          "w": 680.890625,
+          "h": 468.109375,
+          "cx": 460.5078125
+        },
+        "basemap": {
+          "box": {
+            "x": 120.0625,
+            "y": 318.109375,
+            "right": 800.953125,
+            "bottom": 786.21875,
+            "w": 680.890625,
+            "h": 468.109375,
+            "cx": 460.5078125
+          },
+          "natural": [
+            1280,
+            880
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+          "loading": "lazy",
+          "fit": "contain"
+        },
+        "zones": {
+          "box": {
+            "x": 120.0625,
+            "y": 318.109375,
+            "right": 800.953125,
+            "bottom": 786.21875,
+            "w": 680.890625,
+            "h": 468.109375,
+            "cx": 460.5078125
+          },
+          "natural": [
+            640,
+            440
+          ],
+          "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+          "loading": "lazy",
+          "fit": "fill"
+        },
+        "service": {
+          "x": 849.953125,
+          "y": 396.359375,
+          "right": 1320.9375,
+          "bottom": 707.953125,
+          "w": 470.984375,
+          "h": 311.59375,
+          "cx": 1085.4453125
+        },
+        "opener": {
+          "x": 1134.9375,
+          "y": 152.125,
+          "right": 1320.9375,
+          "bottom": 202.125,
+          "w": 186,
+          "h": 50,
+          "cx": 1227.9375
+        },
+        "attribution": {
+          "x": 639.453125,
+          "y": 763.21875,
+          "right": 790.953125,
+          "bottom": 779.21875,
+          "w": 151.5,
+          "h": 16,
+          "cx": 715.203125
+        },
+        "callout": {
+          "x": 849.953125,
+          "y": 614.359375,
+          "right": 1320.9375,
+          "bottom": 707.953125,
+          "w": 470.984375,
+          "h": 93.59375,
+          "cx": 1085.4453125
+        },
+        "labels": [
+          {
+            "box": {
+              "x": 433.3515625,
+              "y": 488.78594970703125,
+              "right": 486.8046875,
+              "bottom": 508.37969970703125,
+              "w": 53.453125,
+              "h": 19.59375,
+              "cx": 460.078125
+            },
+            "text": "Одесса",
+            "font": "\"Manrope Variable\", sans-serif"
+          },
+          {
+            "box": {
+              "x": 654.484375,
+              "y": 574.3984375,
+              "right": 733.453125,
+              "bottom": 591.1953125,
+              "w": 78.96875,
+              "h": 16.796875,
+              "cx": 693.96875
+            },
+            "text": "Чёрное море",
+            "font": "\"Manrope Variable\", sans-serif"
+          }
+        ],
+        "titleFont": "\"Unbounded Variable\", sans-serif",
+        "calloutColor": "rgb(202, 176, 132)"
+      },
+      "lazyInteractiveMap": true,
+      "externalRequests": [],
+      "nonGetAttempts": [],
+      "pageErrors": [],
+      "pass": true
+    }
+  ],
+  "passed": 18,
+  "scope": "Landscape local asset/fees, aspect/projection placement, stack breakpoint, loading/privacy/fonts and attributed responsive map. Only local GET/HEAD."
+}

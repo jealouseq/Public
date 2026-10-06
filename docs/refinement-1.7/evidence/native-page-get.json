@@ -1,0 +1,26 @@
+{
+  "faq": {
+    "status": 200,
+    "expectedCopyPresent": true
+  },
+  "faq-ru": {
+    "status": 200,
+    "expectedCopyPresent": true
+  },
+  "umovy-orendy": {
+    "status": 200,
+    "expectedCopyPresent": true
+  },
+  "usloviya-arendy": {
+    "status": 200,
+    "expectedCopyPresent": true
+  },
+  "konfidentsiinist": {
+    "status": 200,
+    "expectedCopyPresent": true
+  },
+  "konfidentsialnost": {
+    "status": 200,
+    "expectedCopyPresent": true
+  }
+}

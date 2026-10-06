@@ -1,0 +1,1043 @@
+{
+  "basePath": "/tmp/joyrent-audit-20261003/artifacts",
+  "missing": [],
+  "excludedObsoleteProbes": [
+    "ru-mobile-failure.png",
+    "ua-mobile-contact-inspect.png",
+    "ua-mobile-failure.png",
+    "ua-mobile-game-modal-inspect.png",
+    "ua-mobile-validation-inspect.png"
+  ],
+  "screenshots": [
+    {
+      "name": "language-desktop-ua-to-ru.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/language-desktop-ua-to-ru.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 87270,
+      "sha256": "9d76a1d03f67d6455736eb6c5285bf78bb71b4a04c31f65384c67f3fa4f39bd5"
+    },
+    {
+      "name": "language-mobile-ua-to-ru.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/language-mobile-ua-to-ru.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 37708,
+      "sha256": "f449cd6fcc97b1f538c2f8365b9f5071399c10a9e674d17cd65204d935af671d"
+    },
+    {
+      "name": "ru-desktop-booking-7days.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-booking-7days.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 79255,
+      "sha256": "f29710997a5e3e6a6f229b2af9d6a89a40de1d368e54471dd50450805b101dbc"
+    },
+    {
+      "name": "ru-desktop-booking-selected.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-booking-selected.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 80985,
+      "sha256": "c35db9f427ac8a2dfc938a888415a62027d8cc9a5d72a8c463e03f679aae3d73"
+    },
+    {
+      "name": "ru-desktop-contacts.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-contacts.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 87486,
+      "sha256": "731bb3539e4336c070a4c322336531464aaa73727a383253241a89d61a0ff6c0"
+    },
+    {
+      "name": "ru-desktop-continue-after-back.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-continue-after-back.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 90023,
+      "sha256": "19ffb8bb183981b24c457f0862d2113a8abd1e5d51a2ec38bcd99c8ab618dc47"
+    },
+    {
+      "name": "ru-desktop-delivery.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-delivery.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 80763,
+      "sha256": "e1dfecbfdded42d6c42ed74410698ba20769971e04b5ee5a92392c0e262deaad"
+    },
+    {
+      "name": "ru-desktop-faq-back.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-faq-back.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 85482,
+      "sha256": "6292815dd82b4556129985b43ea20ae80fdf4bc01c33c1f22784c4c8c8f77f87"
+    },
+    {
+      "name": "ru-desktop-faq-expanded.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-faq-expanded.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 57487,
+      "sha256": "d2beaf0b34a5c76d021baa1d1ddfa74a76952a381db14d38e53562ac41d28ccb"
+    },
+    {
+      "name": "ru-desktop-faq.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-faq.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 55110,
+      "sha256": "c0fdfffc1f0d918d24d22cb41bc290719a0fd013d14c5c6fb5b341ccc107c10c"
+    },
+    {
+      "name": "ru-desktop-footer.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-footer.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 90374,
+      "sha256": "1186a9ba67a662faeab7fbd04d0c70aec43f227c77c4ab5ed6eca323bac57f5b"
+    },
+    {
+      "name": "ru-desktop-game-detail.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-game-detail.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 354424,
+      "sha256": "ea1f4ce7e5fb02df9f40145b1aea42037f24b7f42762fadf1f56e01daf32e0e0"
+    },
+    {
+      "name": "ru-desktop-game-long-title-card.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-game-long-title-card.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 656593,
+      "sha256": "d055e2f2b92a17f9f6c5ae47f9ba0f9df32c97dd92d5c9c86e38b090756571fc"
+    },
+    {
+      "name": "ru-desktop-game-long-title-detail.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-game-long-title-detail.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 354986,
+      "sha256": "31fb5d61264f52be1cf9973403be3df0ebf7c5468f793d243298806c329a4836"
+    },
+    {
+      "name": "ru-desktop-games-all-7days.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-games-all-7days.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 679473,
+      "sha256": "b396468880d53f10f88ce376402f6723968641648f42a62e91a11b38fba41313"
+    },
+    {
+      "name": "ru-desktop-games-duo.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-games-duo.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 653310,
+      "sha256": "5f4dc54b96271899be521aac542eb8a816c39bea031ec193de12ea0462b6caa0"
+    },
+    {
+      "name": "ru-desktop-hero.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-hero.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 215735,
+      "sha256": "31ff91705c82390820e471b1b1407f0a51b304bc444d9796c7d4c7be45efb69b"
+    },
+    {
+      "name": "ru-desktop-how.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-how.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 62736,
+      "sha256": "c9a48506eb596f88074203cee1d296e04f36766fd6ec628648e41f926823ed54"
+    },
+    {
+      "name": "ru-desktop-kit.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-kit.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 292907,
+      "sha256": "6845a60dae79d236357c70b2834ac9f499c04a2a8f800f41692d8a2955346ed0"
+    },
+    {
+      "name": "ru-desktop-privacy.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-privacy.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 113624,
+      "sha256": "0f4d47082b40c61cd969c31208bd3326a11ca3175c855d178fca0de73604dc34"
+    },
+    {
+      "name": "ru-desktop-rates-ps4.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-rates-ps4.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 297459,
+      "sha256": "6122332a68c21665c26a9177cbf224e66b2b84f9d34807c2042b4a355e0cc6a9"
+    },
+    {
+      "name": "ru-desktop-rates-ps5.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-rates-ps5.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 274801,
+      "sha256": "6bbdd7bd2dd9be28c95741b19c24e4fc45b0791a4849981a4585cf03aa04e6a7"
+    },
+    {
+      "name": "ru-desktop-summary-7days.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-summary-7days.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 87220,
+      "sha256": "6b19fc9dcde56eb1ff3b87355a8ded3f5f73c982ef25807baeb568bc27100d1b"
+    },
+    {
+      "name": "ru-desktop-summary-controllers2.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-summary-controllers2.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 86365,
+      "sha256": "5cc3735aefe364de50678edc8da37a27fad81a7ffcf2f5c90d9fc80327697622"
+    },
+    {
+      "name": "ru-desktop-terms.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-terms.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 113266,
+      "sha256": "f7d0c957f0848b6f71fe3b14f33c9064ffc79bb6647d8bafd328de0138049139"
+    },
+    {
+      "name": "ru-desktop-validation-empty.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-desktop-validation-empty.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 87525,
+      "sha256": "9c0926fb3b8a5f04113a345d2598692bf766f62c15253265a3cdea31c5118228"
+    },
+    {
+      "name": "ru-mobile-booking-7days.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-booking-7days.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 33004,
+      "sha256": "eb9e45e7088d1c8d1953a1a068edf75e93e9fca6152950f07b8fc78cdb2f89d2"
+    },
+    {
+      "name": "ru-mobile-booking-selected.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-booking-selected.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 32906,
+      "sha256": "8c050d3b7bead7116f95295bac13cf4fb7addc5b992e3fae26a84e93c51f02e1"
+    },
+    {
+      "name": "ru-mobile-contacts.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-contacts.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 41913,
+      "sha256": "426ca39ae539a80f27bf74a1df31fa52abc7149ab1927a8b0351275551b7f4a6"
+    },
+    {
+      "name": "ru-mobile-continue-after-back.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-continue-after-back.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 34326,
+      "sha256": "53271645a88a112e85c8b5e1f4e0189dbd4158a02bc41c5ca766ad9ea75a5473"
+    },
+    {
+      "name": "ru-mobile-delivery.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-delivery.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 40961,
+      "sha256": "cce8d52d632577645dcbb39b934ea2baf2898cd51c1407dc35af6fbbde6f7f23"
+    },
+    {
+      "name": "ru-mobile-faq-back.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-faq-back.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 33201,
+      "sha256": "e4c9e2cc25d889487b6700c6d8a3c5e38ddeac54aa2fcbd020bc12eefd8c5029"
+    },
+    {
+      "name": "ru-mobile-faq-expanded.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-faq-expanded.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 37188,
+      "sha256": "d04b26d99b9e3fce6c65959e5cd58f38982464722b123bf2033e8958a3060633"
+    },
+    {
+      "name": "ru-mobile-faq.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-faq.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 34793,
+      "sha256": "6569e9ce4e1debccf46750a8ffa1446a1edf1aacec69d697ca45af7414c91cd1"
+    },
+    {
+      "name": "ru-mobile-footer.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-footer.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 36556,
+      "sha256": "62a495ad36e55f57a71d3453a896df6362092715d4892b0e2584481e823e0fe6"
+    },
+    {
+      "name": "ru-mobile-game-detail.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-game-detail.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 201139,
+      "sha256": "f213070f82f1d4e4099409de36200a1d2c414dc17d4de4d169c85cd0fa44040a"
+    },
+    {
+      "name": "ru-mobile-game-long-title-card.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-game-long-title-card.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 196972,
+      "sha256": "5da9e8fc604ab090466bf61d8213a93270f5ddad04e3c13fb875cd5c3ecba40b"
+    },
+    {
+      "name": "ru-mobile-game-long-title-detail.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-game-long-title-detail.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 191199,
+      "sha256": "074fc36f418d03a48105b8f1d278c3a1f2c2114041539a7c9f2fd03d940a7ee5"
+    },
+    {
+      "name": "ru-mobile-games-all-7days.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-games-all-7days.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 214270,
+      "sha256": "332f6def7cc420522867c47e7231ed4a59db19c9fa0dd926e9b8658e1c2f7153"
+    },
+    {
+      "name": "ru-mobile-games-duo.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-games-duo.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 201722,
+      "sha256": "4411f2aab5a88396fb9d066bcf20624e7678ecb7b357a391e0503ee0ca5ceee5"
+    },
+    {
+      "name": "ru-mobile-hero.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-hero.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 85662,
+      "sha256": "08354e09462bc3f9a8115672f0f9ddd09ce07d96774681568be7ca6355b8ac97"
+    },
+    {
+      "name": "ru-mobile-how-lower.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-how-lower.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 38701,
+      "sha256": "cae7605f60b58d9e6ab41f697126f76324b4990b9f123952d9548469bb14d68e"
+    },
+    {
+      "name": "ru-mobile-how.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-how.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 38803,
+      "sha256": "0025febceb23156faf9f90308b558cd54911c63d02ef574f07ac8077a3951d2e"
+    },
+    {
+      "name": "ru-mobile-kit.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-kit.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 102739,
+      "sha256": "8406a510c0edf9405f0cc73048a01e1ebfcfd8c2bb13aa620a53527e17b4da16"
+    },
+    {
+      "name": "ru-mobile-menu-open.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-menu-open.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 75732,
+      "sha256": "b629be5a72727bdc1d908de8ddae211448ed16eddcd39fb3f8c897f3007a0d1d"
+    },
+    {
+      "name": "ru-mobile-privacy.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-privacy.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 42926,
+      "sha256": "5c92c01b1755931fae6920426edbe235108ab07e3ecbcc8d6419081baffb27e1"
+    },
+    {
+      "name": "ru-mobile-rates-ps4.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-rates-ps4.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 59203,
+      "sha256": "0b4fbd3e706c8958df14aba3ceb900a3d8f118c20a0f66e5fbdae25d4a9edb5d"
+    },
+    {
+      "name": "ru-mobile-rates-ps5.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-rates-ps5.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 60496,
+      "sha256": "5df6408541c7db7bb44f934dc09443229ff525baa65ea41290bc0a45aa1bb4f0"
+    },
+    {
+      "name": "ru-mobile-summary-7days.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-summary-7days.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 34816,
+      "sha256": "271d44e407dade3e7319bc897b337a05d0dd064c82de9c8eade576f2ee1ea523"
+    },
+    {
+      "name": "ru-mobile-summary-controllers2.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-summary-controllers2.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 37142,
+      "sha256": "ec0452ebce5763c74768256b25e4838c2beb48205d3db6c524bf9cf2b57c74b5"
+    },
+    {
+      "name": "ru-mobile-terms.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-terms.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 41493,
+      "sha256": "6fe89eec2c8c63e2f9e2c436dc27f054669e562e164810231d454dcdf10686c1"
+    },
+    {
+      "name": "ru-mobile-validation-empty.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ru-mobile-validation-empty.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 33521,
+      "sha256": "3f89802e49c3adff948710146185e474bb4d5fa23b5ade117d8ff61df8de2db5"
+    },
+    {
+      "name": "ua-desktop-booking-7days.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-booking-7days.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 77874,
+      "sha256": "3b02c83a5fe8889929b44ce1afd7fc566a58127c0dc25faddc3a1a1203564136"
+    },
+    {
+      "name": "ua-desktop-booking-selected.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-booking-selected.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 79329,
+      "sha256": "78603b41b48e3475f2ae11e2de8c0bd761c1724b283ec30a64e9a55c64d3fc61"
+    },
+    {
+      "name": "ua-desktop-contacts.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-contacts.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 86300,
+      "sha256": "dac154e3324c62102c64fa3dbd529c09ef2378a90585633520aa3228ba938c17"
+    },
+    {
+      "name": "ua-desktop-continue-after-back.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-continue-after-back.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 87671,
+      "sha256": "3bfd1817a00f546a206d280131a46c00a2de30e98b01af3476548f33eaf60c33"
+    },
+    {
+      "name": "ua-desktop-delivery.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-delivery.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 81570,
+      "sha256": "1810d14380c48584688c2be5fefd8ea7cccdb5b2fa3b7e8d1a526083f43da374"
+    },
+    {
+      "name": "ua-desktop-faq-back.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-faq-back.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 83701,
+      "sha256": "2115290af365ff977c0f79ca91101b4a25fc23263a76d96e40fcae76c3f9bb01"
+    },
+    {
+      "name": "ua-desktop-faq-expanded.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-faq-expanded.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 57331,
+      "sha256": "c2196a8bfbe4104f5144c6fe1bf8ac7b6192cd57ef5d732c31e079e45b4082c1"
+    },
+    {
+      "name": "ua-desktop-faq.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-faq.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 55824,
+      "sha256": "e1d6a30508017982f0bd15cebd0667fe9aee3d2df1eaf03d71cfe854cec50a61"
+    },
+    {
+      "name": "ua-desktop-footer.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-footer.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 87818,
+      "sha256": "cca4af39a8bc653da96e397a49a810d8ea2081625615b8bc3498f161ffc941b6"
+    },
+    {
+      "name": "ua-desktop-game-detail.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-game-detail.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 352968,
+      "sha256": "5aa61d2e6a9ae9bebf376296fe29867dc896a64765158a990d603ec29c42af8d"
+    },
+    {
+      "name": "ua-desktop-game-long-title-card.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-game-long-title-card.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 655950,
+      "sha256": "8071b7e35a759bf723a22176db842f98d0b8209cfe49a74bd5f1667d71814ead"
+    },
+    {
+      "name": "ua-desktop-game-long-title-detail.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-game-long-title-detail.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 354752,
+      "sha256": "252cf78bac27fb51b79ea5ec831ac0bd48b27ae66218619bb1dc12b8bcb5370e"
+    },
+    {
+      "name": "ua-desktop-games-all-7days.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-games-all-7days.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 678994,
+      "sha256": "9bf0ea0634823ab36874c547cb04e685c55e87f0fbd37c082ffd500867480843"
+    },
+    {
+      "name": "ua-desktop-games-duo.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-games-duo.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 652965,
+      "sha256": "94ceda8f5fd15e7415ff93f8a5da046bf2e002ff9715b78c22664938cbe5ce00"
+    },
+    {
+      "name": "ua-desktop-hero.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-hero.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 215613,
+      "sha256": "b405565c27dbdd133ec1e1a12f3f896f37382c7fd2e9d869ed0ce6732a4180f2"
+    },
+    {
+      "name": "ua-desktop-how.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-how.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 62277,
+      "sha256": "1abf359be301a401278f755a98ebba54ee5f1084740bdd6385dc62e1d3c725cc"
+    },
+    {
+      "name": "ua-desktop-kit.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-kit.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 291709,
+      "sha256": "e7cbbb7173d5e4dab87ecc0d39e243e14fd3418fdc53e4588fae1a999b31cbb7"
+    },
+    {
+      "name": "ua-desktop-privacy.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-privacy.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 111202,
+      "sha256": "fbd65a809df0e36a3ab9d078552b4b9831a43f8c8bdb5f3e8eae1fce836adcc4"
+    },
+    {
+      "name": "ua-desktop-rates-ps4.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-rates-ps4.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 317133,
+      "sha256": "bc372db4c694967fbb06d44396b287857a18a6c6550a18212706eb42a1ca143a"
+    },
+    {
+      "name": "ua-desktop-rates-ps5.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-rates-ps5.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 295696,
+      "sha256": "a046e2defbf839d0853ebd66d76ee7806c0578aa39fa09700dab2b06f4717e1f"
+    },
+    {
+      "name": "ua-desktop-summary-7days.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-summary-7days.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 85273,
+      "sha256": "ef2fef55d74599ec5c7fa0a2f2d1c33a1e77ee97b5a5c9d75e646b95e9cb0af7"
+    },
+    {
+      "name": "ua-desktop-summary-controllers2.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-summary-controllers2.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 83919,
+      "sha256": "c4ec1307d17522b5d0ba5c90cfc9c6d958dfe13e70f0df964c224651f5d0ab54"
+    },
+    {
+      "name": "ua-desktop-terms.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-terms.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 113126,
+      "sha256": "b27724196e38634c6b2017291e2d7f8555f90140802559287c53a2652cb11bf1"
+    },
+    {
+      "name": "ua-desktop-validation-empty.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-desktop-validation-empty.png",
+      "pixels": [
+        1440,
+        1000
+      ],
+      "bytes": 86359,
+      "sha256": "d4a480f8a108a3d95689db9b7188a10d9eef9f37d7a0021b34dae448b0f26b6d"
+    },
+    {
+      "name": "ua-mobile-booking-7days.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-booking-7days.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 32294,
+      "sha256": "d12775de019462a43b2de10bc101e2e7cbd8982816cff5bf19d7f7adde1451d6"
+    },
+    {
+      "name": "ua-mobile-booking-selected.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-booking-selected.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 32197,
+      "sha256": "e42bd7717e380e1941449d5f687cb1339e1a04eecc435506a8d769b86e04ed69"
+    },
+    {
+      "name": "ua-mobile-contacts.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-contacts.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 40797,
+      "sha256": "0587b3bb2e056e59f2d83af59ea97e3fff9c26c554c19cb236415819039f5da3"
+    },
+    {
+      "name": "ua-mobile-continue-after-back.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-continue-after-back.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 33767,
+      "sha256": "ad26c62fc5259bcb5334d250b32282d9ae54fbfaed8b30dd4ad8e9f7ab71e79d"
+    },
+    {
+      "name": "ua-mobile-delivery.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-delivery.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 41442,
+      "sha256": "0414ffcc26b95b96331b35223dd712d61ba92c1be3f92f1ab391b9acfb79d94d"
+    },
+    {
+      "name": "ua-mobile-faq-back.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-faq-back.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 32805,
+      "sha256": "81e46ae8bf1b4c6d49be3f5ed96e0dca024f5573de3082cef09bcdbf388d06f6"
+    },
+    {
+      "name": "ua-mobile-faq-expanded.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-faq-expanded.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 36771,
+      "sha256": "1174e762eba4815b3ea3553d799812787bcc2daa1ae4629b1bef10bf7f76b3e4"
+    },
+    {
+      "name": "ua-mobile-faq.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-faq.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 34733,
+      "sha256": "82c742abab0931f6898441708240801eddc1dd23b853d0d11b8788880af6bea1"
+    },
+    {
+      "name": "ua-mobile-footer.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-footer.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 35472,
+      "sha256": "d4d1a90c0a30e64211597ac96b3580e54e2baecdc1fc6146b6a172c0f2a0d226"
+    },
+    {
+      "name": "ua-mobile-fresh-duo.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-fresh-duo.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 201300,
+      "sha256": "a1b6fd1f3f1e8dc8bec7c68abe32591d5b2231b3df4a590f4dd83e5eed862579"
+    },
+    {
+      "name": "ua-mobile-game-detail.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-game-detail.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 200420,
+      "sha256": "9943c9dc6625d07ba09ff280c43a53acc43af5822409248701132ca377f5760d"
+    },
+    {
+      "name": "ua-mobile-game-long-title-card.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-game-long-title-card.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 196420,
+      "sha256": "a5f1ac441f687ab6407c6c07ae1ad46876a3c1f83aec4c0e9549e3019f9b8cc6"
+    },
+    {
+      "name": "ua-mobile-game-long-title-detail.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-game-long-title-detail.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 191429,
+      "sha256": "0ed63d79de328b24c0879b2558a6d99e5a649cf52922afd0543293a673737bb0"
+    },
+    {
+      "name": "ua-mobile-games-all-7days.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-games-all-7days.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 214503,
+      "sha256": "cebad9014bcbcb79f75c564395bb258b53dcc8630ee39d346e70bced31f6f46d"
+    },
+    {
+      "name": "ua-mobile-games-duo.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-games-duo.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 201300,
+      "sha256": "a1b6fd1f3f1e8dc8bec7c68abe32591d5b2231b3df4a590f4dd83e5eed862579"
+    },
+    {
+      "name": "ua-mobile-hero.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-hero.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 85540,
+      "sha256": "847fbc0b46121b3fb3e9e4fc89f288f70260204d7efeb298d5267d930fc43443"
+    },
+    {
+      "name": "ua-mobile-how-lower.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-how-lower.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 39862,
+      "sha256": "0c1d9388b132ec14ff27c403d4998de5bfcba1bbe27f1cad2f4d5657cc5fa390"
+    },
+    {
+      "name": "ua-mobile-how.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-how.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 38588,
+      "sha256": "4448ebddbf0f355f37ed5f9ea1bda32d0629b7276edadee412a1f03beb1c76e6"
+    },
+    {
+      "name": "ua-mobile-kit.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-kit.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 102255,
+      "sha256": "0a8c141fc6c5590d7b528478a781837e2c8b135d99d4b9f6b6e0daccc47ad842"
+    },
+    {
+      "name": "ua-mobile-menu-open.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-menu-open.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 75703,
+      "sha256": "5a9e56af152904d7b6972d1925a1a8bb978b2dde79549fca92df19d5cd34e92f"
+    },
+    {
+      "name": "ua-mobile-privacy.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-privacy.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 43203,
+      "sha256": "c902f0b622e240d42f650b6fbefffe5d6b3270a07b0a0fabf9a50f7b43655585"
+    },
+    {
+      "name": "ua-mobile-rates-ps4.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-rates-ps4.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 59717,
+      "sha256": "4b2ec74510610c3053977b78287ecf91ddd325e0d16b00435927a809d1231f00"
+    },
+    {
+      "name": "ua-mobile-rates-ps5.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-rates-ps5.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 60810,
+      "sha256": "bef7623e2e80551014da2a0075523b1f6a811b506937ed22d3b2f3dc6e50b206"
+    },
+    {
+      "name": "ua-mobile-summary-7days.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-summary-7days.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 34705,
+      "sha256": "900e4c4986ed78ca180881dad0391c4617186438e1f1ff3aa64f9aa0d95bd771"
+    },
+    {
+      "name": "ua-mobile-summary-controllers2.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-summary-controllers2.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 36665,
+      "sha256": "8e6c677e41ca56fe35414a30017273a7c6a4bcc9ba22afcd8f9d3629f5abd9a0"
+    },
+    {
+      "name": "ua-mobile-terms.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-terms.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 42500,
+      "sha256": "b54af3b51aadf5b14054dd814851959d051186786d421918ec7f0bd27097eba6"
+    },
+    {
+      "name": "ua-mobile-validation-empty.png",
+      "remotePath": "/tmp/joyrent-audit-20261003/artifacts/ua-mobile-validation-empty.png",
+      "pixels": [
+        390,
+        844
+      ],
+      "bytes": 33263,
+      "sha256": "92a2a772e23161e4cd980d4f628d45e96e0afff672c33925b45c634386793221"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+
+> joyrent-wordpress@1.5.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /workspace/Public
+
+ ✓ src/lib/rental.test.ts (16 tests) 5ms
+
+ Test Files  1 passed (1)
+      Tests  16 passed (16)
+   Start at  03:08:23
+   Duration  234ms (transform 41ms, setup 0ms, collect 41ms, tests 5ms, environment 0ms, prepare 55ms)

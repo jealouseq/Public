@@ -1,0 +1,3784 @@
+{
+  "run": "20261003T114757Z",
+  "base": "http://localhost:8080",
+  "expectedBuild": {
+    "main": "main-i_aDCQ0R.js",
+    "css": "main-Dr9ihFq-.css"
+  },
+  "servedAssets": {
+    "main-Dr9ihFq-.css": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css",
+      "status": 200,
+      "bytes": 92547,
+      "sha256": "4e209770f1580b248f512f731a7bfa3ac4b36332a7acd310bbc57b79da69564f",
+      "matchesLocal": true
+    },
+    "main-i_aDCQ0R.js": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+      "status": 200,
+      "bytes": 484907,
+      "sha256": "d5acf753c75b9cd83cfe4716dec7c2a1001592af72f86efc6802bc654b5db1aa",
+      "matchesLocal": true
+    }
+  },
+  "caseCount": 2,
+  "pass": 2,
+  "fail": 0,
+  "cases": [
+    {
+      "case": "viewport-ru-390",
+      "status": "PASS",
+      "seconds": 6.33,
+      "failure": null,
+      "evidence": {
+        "name": "viewport-ru-390",
+        "language": "ru",
+        "width": 390,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [
+          {
+            "url": "https://tile.openstreetmap.org/10/599/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1198/724.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1199/724.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1198/725.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1199/725.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/363.png",
+            "method": "GET"
+          }
+        ],
+        "pageErrors": [],
+        "consoleErrors": [
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+        ],
+        "HTTPFailures": [],
+        "failedRequests": [
+          {
+            "url": "https://tile.openstreetmap.org/10/599/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1198/724.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1199/724.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1198/725.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1199/725.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          }
+        ],
+        "requests": [
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-preview.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/delivery-zones-CaK9S-Hx.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/leaflet-CIGW-MKW.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/leaflet-src-CNNX6EnA.js",
+            "method": "GET"
+          }
+        ],
+        "screens": [
+          "work/refinement-1.8/browser-screens-20261003T114757Z/ru-mobile-process.png",
+          "work/refinement-1.8/browser-screens-20261003T114757Z/ru-mobile-delivery.png",
+          "work/refinement-1.8/browser-screens-20261003T114757Z/ru-mobile-delivery-map.png",
+          "work/refinement-1.8/browser-screens-20261003T114757Z/ru-mobile-booking-controller.png"
+        ],
+        "metrics": {
+          "navigation": {
+            "initial": "http://localhost:8080/?lang=ru",
+            "after": "http://localhost:8080/?lang=ru#how-it-works",
+            "heading": {
+              "x": 24,
+              "y": 117.609375,
+              "w": 323.03125,
+              "h": 37.6875,
+              "right": 347.03125,
+              "bottom": 155.296875,
+              "cx": 185.515625,
+              "cy": 136.453125
+            },
+            "visible": true,
+            "steps": [
+              "Выбери комплект",
+              "Получи консоль",
+              "Играй"
+            ]
+          },
+          "process": {
+            "grid": {
+              "x": 24,
+              "y": 184.296875,
+              "w": 342,
+              "h": 512.125,
+              "cx": 195,
+              "cy": 440.359375,
+              "right": 366,
+              "bottom": 696.421875
+            },
+            "items": [
+              {
+                "item": {
+                  "x": 24,
+                  "y": 184.296875,
+                  "w": 342,
+                  "h": 185.375,
+                  "cx": 195,
+                  "cy": 276.984375,
+                  "right": 366,
+                  "bottom": 369.671875
+                },
+                "node": {
+                  "x": 174,
+                  "y": 184.296875,
+                  "w": 42,
+                  "h": 42,
+                  "cx": 195,
+                  "cy": 205.296875,
+                  "right": 216,
+                  "bottom": 226.296875
+                },
+                "body": {
+                  "x": 25,
+                  "y": 240.296875,
+                  "w": 340,
+                  "h": 85.375,
+                  "cx": 195,
+                  "cy": 282.984375,
+                  "right": 365,
+                  "bottom": 325.671875
+                },
+                "title": {
+                  "box": {
+                    "x": 25,
+                    "y": 240.296875,
+                    "w": 340,
+                    "h": 28.59375,
+                    "cx": 195,
+                    "cy": 254.59375,
+                    "right": 365,
+                    "bottom": 268.890625
+                  },
+                  "text": "Выбери комплект",
+                  "align": "center",
+                  "glyph": {
+                    "left": 104.203125,
+                    "right": 285.78125,
+                    "cx": 194.9921875
+                  },
+                  "lines": [
+                    {
+                      "left": 104.203125,
+                      "right": 285.78125,
+                      "cx": 194.9921875
+                    }
+                  ]
+                },
+                "copy": {
+                  "box": {
+                    "x": 25,
+                    "y": 278.890625,
+                    "w": 340,
+                    "h": 46.78125,
+                    "cx": 195,
+                    "cy": 302.28125,
+                    "right": 365,
+                    "bottom": 325.671875
+                  },
+                  "text": "Выбери консоль, срок и дату. Добавь игры и оставь контакты.",
+                  "align": "center",
+                  "glyph": {
+                    "left": 37.25,
+                    "right": 352.75,
+                    "cx": 195
+                  },
+                  "lines": [
+                    {
+                      "left": 37.25,
+                      "right": 352.75,
+                      "cx": 195
+                    },
+                    {
+                      "left": 164.859375,
+                      "right": 225.140625,
+                      "cx": 195
+                    }
+                  ]
+                },
+                "border": "0px",
+                "radius": "0px",
+                "connector": {
+                  "content": "\"\"",
+                  "height": "20px",
+                  "width": "1px"
+                }
+              },
+              {
+                "item": {
+                  "x": 24,
+                  "y": 369.671875,
+                  "w": 342,
+                  "h": 185.375,
+                  "cx": 195,
+                  "cy": 462.359375,
+                  "right": 366,
+                  "bottom": 555.046875
+                },
+                "node": {
+                  "x": 174,
+                  "y": 369.671875,
+                  "w": 42,
+                  "h": 42,
+                  "cx": 195,
+                  "cy": 390.671875,
+                  "right": 216,
+                  "bottom": 411.671875
+                },
+                "body": {
+                  "x": 25,
+                  "y": 425.671875,
+                  "w": 340,
+                  "h": 85.375,
+                  "cx": 195,
+                  "cy": 468.359375,
+                  "right": 365,
+                  "bottom": 511.046875
+                },
+                "title": {
+                  "box": {
+                    "x": 25,
+                    "y": 425.671875,
+                    "w": 340,
+                    "h": 28.59375,
+                    "cx": 195,
+                    "cy": 439.96875,
+                    "right": 365,
+                    "bottom": 454.265625
+                  },
+                  "text": "Получи консоль",
+                  "align": "center",
+                  "glyph": {
+                    "left": 112.71875,
+                    "right": 277.265625,
+                    "cx": 194.9921875
+                  },
+                  "lines": [
+                    {
+                      "left": 112.71875,
+                      "right": 277.265625,
+                      "cx": 194.9921875
+                    }
+                  ]
+                },
+                "copy": {
+                  "box": {
+                    "x": 25,
+                    "y": 464.265625,
+                    "w": 340,
+                    "h": 46.78125,
+                    "cx": 195,
+                    "cy": 487.65625,
+                    "right": 365,
+                    "bottom": 511.046875
+                  },
+                  "text": "Подтвердим наличие и стоимость. Согласуем доставку, комплектацию и залог.",
+                  "align": "center",
+                  "glyph": {
+                    "left": 52.984375,
+                    "right": 337,
+                    "cx": 194.9921875
+                  },
+                  "lines": [
+                    {
+                      "left": 52.984375,
+                      "right": 337,
+                      "cx": 194.9921875
+                    },
+                    {
+                      "left": 92.765625,
+                      "right": 297.21875,
+                      "cx": 194.9921875
+                    }
+                  ]
+                },
+                "border": "0px",
+                "radius": "0px",
+                "connector": {
+                  "content": "\"\"",
+                  "height": "20px",
+                  "width": "1px"
+                }
+              },
+              {
+                "item": {
+                  "x": 24,
+                  "y": 555.046875,
+                  "w": 342,
+                  "h": 141.375,
+                  "cx": 195,
+                  "cy": 625.734375,
+                  "right": 366,
+                  "bottom": 696.421875
+                },
+                "node": {
+                  "x": 174,
+                  "y": 555.046875,
+                  "w": 42,
+                  "h": 42,
+                  "cx": 195,
+                  "cy": 576.046875,
+                  "right": 216,
+                  "bottom": 597.046875
+                },
+                "body": {
+                  "x": 25,
+                  "y": 611.046875,
+                  "w": 340,
+                  "h": 85.375,
+                  "cx": 195,
+                  "cy": 653.734375,
+                  "right": 365,
+                  "bottom": 696.421875
+                },
+                "title": {
+                  "box": {
+                    "x": 25,
+                    "y": 611.046875,
+                    "w": 340,
+                    "h": 28.59375,
+                    "cx": 195,
+                    "cy": 625.34375,
+                    "right": 365,
+                    "bottom": 639.640625
+                  },
+                  "text": "Играй",
+                  "align": "center",
+                  "glyph": {
+                    "left": 163.703125,
+                    "right": 226.28125,
+                    "cx": 194.9921875
+                  },
+                  "lines": [
+                    {
+                      "left": 163.703125,
+                      "right": 226.28125,
+                      "cx": 194.9921875
+                    }
+                  ]
+                },
+                "copy": {
+                  "box": {
+                    "x": 25,
+                    "y": 649.640625,
+                    "w": 340,
+                    "h": 46.78125,
+                    "cx": 195,
+                    "cy": 673.03125,
+                    "right": 365,
+                    "bottom": 696.421875
+                  },
+                  "text": "Наслаждайся игрой. Заберём комплект в согласованное время.",
+                  "align": "center",
+                  "glyph": {
+                    "left": 68.484375,
+                    "right": 321.5,
+                    "cx": 194.9921875
+                  },
+                  "lines": [
+                    {
+                      "left": 68.484375,
+                      "right": 321.5,
+                      "cx": 194.9921875
+                    },
+                    {
+                      "left": 125.515625,
+                      "right": 264.484375,
+                      "cx": 195
+                    }
+                  ]
+                },
+                "border": "0px",
+                "radius": "0px",
+                "connector": {
+                  "content": "none",
+                  "height": "auto",
+                  "width": "auto"
+                }
+              }
+            ]
+          },
+          "delivery": {
+            "preview": {
+              "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-preview.svg",
+              "natural": [
+                240,
+                360
+              ],
+              "box": {
+                "x": 97,
+                "y": 302.203125,
+                "w": 196,
+                "h": 294
+              },
+              "fit": "fill"
+            },
+            "panel": {
+              "x": 24,
+              "y": 18.421875,
+              "w": 342,
+              "h": 1027.84375,
+              "right": 366,
+              "bottom": 1046.265625,
+              "cx": 195,
+              "cy": 532.34375
+            },
+            "layout": {
+              "x": 49,
+              "y": 267.703125,
+              "w": 292,
+              "h": 674.5625,
+              "right": 341,
+              "bottom": 942.265625,
+              "cx": 195,
+              "cy": 604.984375
+            },
+            "service": {
+              "x": 49,
+              "y": 632.203125,
+              "w": 292,
+              "h": 310.0625,
+              "right": 341,
+              "bottom": 942.265625,
+              "cx": 195,
+              "cy": 787.234375
+            },
+            "opener": {
+              "x": 97,
+              "y": 965.265625,
+              "w": 196,
+              "h": 52,
+              "right": 293,
+              "bottom": 1017.265625,
+              "cx": 195,
+              "cy": 991.265625
+            },
+            "style": {
+              "radius": "999px",
+              "minHeight": "52px",
+              "minWidth": "196px"
+            },
+            "intro": "Доставляем по Одессе. Зелёная зона — 200 грн, жёлтая — 300 грн за доставку и возврат. Красная — по тарифу такси в обе стороны. От 7 дней зелёная и жёлтая зоны бесплатны. Зону подтвердим по адресу.",
+            "focus": {
+              "visible": true,
+              "outline": "solid",
+              "width": "2px"
+            }
+          },
+          "map": {
+            "polygons": 6,
+            "lazyRequests": [
+              {
+                "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/delivery-zones-CaK9S-Hx.js",
+                "method": "GET"
+              },
+              {
+                "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/leaflet-src-CNNX6EnA.js",
+                "method": "GET"
+              }
+            ],
+            "mainRequests": 1,
+            "reopened": true,
+            "escapeAndButtonFocusReturned": true
+          },
+          "icon": {
+            "instances": [
+              {
+                "viewBox": "0 0 64 64",
+                "stroke": "currentColor",
+                "fill": "none",
+                "strokeWidth": "2",
+                "color": "rgb(200, 174, 135)",
+                "computedStroke": "rgb(200, 174, 135)",
+                "computedFill": "none",
+                "transform": "none",
+                "focusable": "false",
+                "aria": "true",
+                "box": {
+                  "x": 1.600000023841858,
+                  "y": 9.989286422729492,
+                  "w": 59.30000305175781,
+                  "h": 43.23612976074219
+                },
+                "viewport": {
+                  "w": 21,
+                  "h": 21
+                },
+                "view": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 64,
+                  "h": 64
+                },
+                "geometry": [
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20 14.2c-3.4-1.5-9.9-1.1-12.2 1.6C4.4 20.1 1.6 31.5 1.6 42.1c0 6.5 2.2 10.8 5.9 11.1 3.2.4 5.2-4 7-7.6l2.3-3.9c1.1-2 2.5-2.6 4.9-2h19c2.4-.6 3.8 0 4.9 2l2.4 3.9c1.8 3.6 3.8 8 7 7.6 3.7-.3 5.9-4.6 5.9-11.1 0-10.6-2.8-22-6.2-26.3-2.3-2.7-8.8-3.1-12.2-1.6C40.5 13 35 13 31.25 13S22 13 20 14.2Z"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20 14.2c-1.2.7-.8 2.6-.5 4.3l1.5 5.9c.5 1.7 1.7 2.3 3.9 2.3h12.7c2.2 0 3.4-.6 3.9-2.3l1.5-5.9c.3-1.7.7-3.6-.5-4.3"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20.6 23.8c.1 3.1-2.3 4.9-4.6 7.5-3.6 4.3-6.5 12.9-9.7 21.4m35.6-28.9c-.1 3.1 2.3 4.9 4.6 7.5 3.6 4.3 6.5 12.9 9.7 21.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M10.4 14.1v-1c0-1.3 1.1-1.9 2.8-2.1l3-.3c1.3-.1 1.9.5 1.9 1.8v.8m34 0v-.9c0-1.3-1.1-1.9-2.8-2.1l-3-.3c-1.3-.1-1.9.5-1.9 1.8v.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "16.8"
+                      ],
+                      [
+                        "y",
+                        "15.3"
+                      ],
+                      [
+                        "width",
+                        "1.6"
+                      ],
+                      [
+                        "height",
+                        "3"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "44.1"
+                      ],
+                      [
+                        "y",
+                        "15.3"
+                      ],
+                      [
+                        "width",
+                        "1.6"
+                      ],
+                      [
+                        "height",
+                        "3"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M11.1 20.6c0-.7.5-1.1 1.2-1.1h1.1c.7 0 1.2.4 1.2 1.1v.9c0 .4-.2.6-.5.9l-1.2 1.1-1.3-1.1c-.3-.3-.5-.5-.5-.9v-.9Zm0 7.5c0 .7.5 1.1 1.2 1.1h1.1c.7 0 1.2-.4 1.2-1.1v-.9c0-.4-.2-.6-.5-.9l-1.2-1.1-1.3 1.1c-.3.3-.5.5-.5.9v.9Zm-2.5-5.5c-.7 0-1.1.5-1.1 1.2v1.1c0 .7.4 1.2 1.1 1.2h.9c.4 0 .6-.2.9-.5l1.1-1.2-1.1-1.3c-.3-.3-.5-.5-.9-.5h-.9Zm8.4 0c.7 0 1.1.5 1.1 1.2v1.1c0 .7-.4 1.2-1.1 1.2h-.9c-.4 0-.6-.2-.9-.5l-1.1-1.2 1.1-1.3c.3-.3.5-.5.9-.5h.9Z"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "22.5"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "4.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "22.5"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "3.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "40"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "4.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "40"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "3.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "49.8"
+                      ],
+                      [
+                        "cy",
+                        "20.2"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "45.7"
+                      ],
+                      [
+                        "cy",
+                        "24.4"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "53.9"
+                      ],
+                      [
+                        "cy",
+                        "24.4"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "49.8"
+                      ],
+                      [
+                        "cy",
+                        "28.6"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "29.1"
+                      ],
+                      [
+                        "y",
+                        "35.5"
+                      ],
+                      [
+                        "width",
+                        "4.3"
+                      ],
+                      [
+                        "height",
+                        "1.6"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  }
+                ]
+              },
+              {
+                "viewBox": "0 0 64 64",
+                "stroke": "currentColor",
+                "fill": "none",
+                "strokeWidth": "2",
+                "color": "rgb(244, 244, 241)",
+                "computedStroke": "rgb(244, 244, 241)",
+                "computedFill": "none",
+                "transform": "none",
+                "focusable": "false",
+                "aria": "true",
+                "box": {
+                  "x": 1.600000023841858,
+                  "y": 9.989286422729492,
+                  "w": 59.30000305175781,
+                  "h": 43.23612976074219
+                },
+                "viewport": {
+                  "w": 21,
+                  "h": 21
+                },
+                "view": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 64,
+                  "h": 64
+                },
+                "geometry": [
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20 14.2c-3.4-1.5-9.9-1.1-12.2 1.6C4.4 20.1 1.6 31.5 1.6 42.1c0 6.5 2.2 10.8 5.9 11.1 3.2.4 5.2-4 7-7.6l2.3-3.9c1.1-2 2.5-2.6 4.9-2h19c2.4-.6 3.8 0 4.9 2l2.4 3.9c1.8 3.6 3.8 8 7 7.6 3.7-.3 5.9-4.6 5.9-11.1 0-10.6-2.8-22-6.2-26.3-2.3-2.7-8.8-3.1-12.2-1.6C40.5 13 35 13 31.25 13S22 13 20 14.2Z"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20 14.2c-1.2.7-.8 2.6-.5 4.3l1.5 5.9c.5 1.7 1.7 2.3 3.9 2.3h12.7c2.2 0 3.4-.6 3.9-2.3l1.5-5.9c.3-1.7.7-3.6-.5-4.3"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20.6 23.8c.1 3.1-2.3 4.9-4.6 7.5-3.6 4.3-6.5 12.9-9.7 21.4m35.6-28.9c-.1 3.1 2.3 4.9 4.6 7.5 3.6 4.3 6.5 12.9 9.7 21.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M10.4 14.1v-1c0-1.3 1.1-1.9 2.8-2.1l3-.3c1.3-.1 1.9.5 1.9 1.8v.8m34 0v-.9c0-1.3-1.1-1.9-2.8-2.1l-3-.3c-1.3-.1-1.9.5-1.9 1.8v.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "16.8"
+                      ],
+                      [
+                        "y",
+                        "15.3"
+                      ],
+                      [
+                        "width",
+                        "1.6"
+                      ],
+                      [
+                        "height",
+                        "3"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "44.1"
+                      ],
+                      [
+                        "y",
+                        "15.3"
+                      ],
+                      [
+                        "width",
+                        "1.6"
+                      ],
+                      [
+                        "height",
+                        "3"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M11.1 20.6c0-.7.5-1.1 1.2-1.1h1.1c.7 0 1.2.4 1.2 1.1v.9c0 .4-.2.6-.5.9l-1.2 1.1-1.3-1.1c-.3-.3-.5-.5-.5-.9v-.9Zm0 7.5c0 .7.5 1.1 1.2 1.1h1.1c.7 0 1.2-.4 1.2-1.1v-.9c0-.4-.2-.6-.5-.9l-1.2-1.1-1.3 1.1c-.3.3-.5.5-.5.9v.9Zm-2.5-5.5c-.7 0-1.1.5-1.1 1.2v1.1c0 .7.4 1.2 1.1 1.2h.9c.4 0 .6-.2.9-.5l1.1-1.2-1.1-1.3c-.3-.3-.5-.5-.9-.5h-.9Zm8.4 0c.7 0 1.1.5 1.1 1.2v1.1c0 .7-.4 1.2-1.1 1.2h-.9c-.4 0-.6-.2-.9-.5l-1.1-1.2 1.1-1.3c.3-.3.5-.5.9-.5h.9Z"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "22.5"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "4.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "22.5"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "3.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "40"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "4.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "40"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "3.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "49.8"
+                      ],
+                      [
+                        "cy",
+                        "20.2"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "45.7"
+                      ],
+                      [
+                        "cy",
+                        "24.4"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "53.9"
+                      ],
+                      [
+                        "cy",
+                        "24.4"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "49.8"
+                      ],
+                      [
+                        "cy",
+                        "28.6"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "29.1"
+                      ],
+                      [
+                        "y",
+                        "35.5"
+                      ],
+                      [
+                        "width",
+                        "4.3"
+                      ],
+                      [
+                        "height",
+                        "1.6"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  }
+                ]
+              },
+              {
+                "viewBox": "0 0 64 64",
+                "stroke": "currentColor",
+                "fill": "none",
+                "strokeWidth": "2",
+                "color": "rgb(163, 165, 168)",
+                "computedStroke": "rgb(163, 165, 168)",
+                "computedFill": "none",
+                "transform": "none",
+                "focusable": "false",
+                "aria": "true",
+                "box": {
+                  "x": 1.600000023841858,
+                  "y": 9.989286422729492,
+                  "w": 59.30000305175781,
+                  "h": 43.23612976074219
+                },
+                "viewport": {
+                  "w": 21,
+                  "h": 21
+                },
+                "view": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 64,
+                  "h": 64
+                },
+                "geometry": [
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20 14.2c-3.4-1.5-9.9-1.1-12.2 1.6C4.4 20.1 1.6 31.5 1.6 42.1c0 6.5 2.2 10.8 5.9 11.1 3.2.4 5.2-4 7-7.6l2.3-3.9c1.1-2 2.5-2.6 4.9-2h19c2.4-.6 3.8 0 4.9 2l2.4 3.9c1.8 3.6 3.8 8 7 7.6 3.7-.3 5.9-4.6 5.9-11.1 0-10.6-2.8-22-6.2-26.3-2.3-2.7-8.8-3.1-12.2-1.6C40.5 13 35 13 31.25 13S22 13 20 14.2Z"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20 14.2c-1.2.7-.8 2.6-.5 4.3l1.5 5.9c.5 1.7 1.7 2.3 3.9 2.3h12.7c2.2 0 3.4-.6 3.9-2.3l1.5-5.9c.3-1.7.7-3.6-.5-4.3"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20.6 23.8c.1 3.1-2.3 4.9-4.6 7.5-3.6 4.3-6.5 12.9-9.7 21.4m35.6-28.9c-.1 3.1 2.3 4.9 4.6 7.5 3.6 4.3 6.5 12.9 9.7 21.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M10.4 14.1v-1c0-1.3 1.1-1.9 2.8-2.1l3-.3c1.3-.1 1.9.5 1.9 1.8v.8m34 0v-.9c0-1.3-1.1-1.9-2.8-2.1l-3-.3c-1.3-.1-1.9.5-1.9 1.8v.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "16.8"
+                      ],
+                      [
+                        "y",
+                        "15.3"
+                      ],
+                      [
+                        "width",
+                        "1.6"
+                      ],
+                      [
+                        "height",
+                        "3"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "44.1"
+                      ],
+                      [
+                        "y",
+                        "15.3"
+                      ],
+                      [
+                        "width",
+                        "1.6"
+                      ],
+                      [
+                        "height",
+                        "3"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M11.1 20.6c0-.7.5-1.1 1.2-1.1h1.1c.7 0 1.2.4 1.2 1.1v.9c0 .4-.2.6-.5.9l-1.2 1.1-1.3-1.1c-.3-.3-.5-.5-.5-.9v-.9Zm0 7.5c0 .7.5 1.1 1.2 1.1h1.1c.7 0 1.2-.4 1.2-1.1v-.9c0-.4-.2-.6-.5-.9l-1.2-1.1-1.3 1.1c-.3.3-.5.5-.5.9v.9Zm-2.5-5.5c-.7 0-1.1.5-1.1 1.2v1.1c0 .7.4 1.2 1.1 1.2h.9c.4 0 .6-.2.9-.5l1.1-1.2-1.1-1.3c-.3-.3-.5-.5-.9-.5h-.9Zm8.4 0c.7 0 1.1.5 1.1 1.2v1.1c0 .7-.4 1.2-1.1 1.2h-.9c-.4 0-.6-.2-.9-.5l-1.1-1.2 1.1-1.3c.3-.3.5-.5.9-.5h.9Z"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "22.5"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "4.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "22.5"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "3.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "40"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "4.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "40"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "3.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "49.8"
+                      ],
+                      [
+                        "cy",
+                        "20.2"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "45.7"
+                      ],
+                      [
+                        "cy",
+                        "24.4"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "53.9"
+                      ],
+                      [
+                        "cy",
+                        "24.4"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "49.8"
+                      ],
+                      [
+                        "cy",
+                        "28.6"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "29.1"
+                      ],
+                      [
+                        "y",
+                        "35.5"
+                      ],
+                      [
+                        "width",
+                        "4.3"
+                      ],
+                      [
+                        "height",
+                        "1.6"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ],
+            "controllerStates": [
+              {
+                "value": 1,
+                "box": {
+                  "x": 210,
+                  "y": 227.796875,
+                  "w": 72,
+                  "h": 48,
+                  "right": 282,
+                  "bottom": 275.796875,
+                  "cx": 246,
+                  "cy": 251.796875
+                },
+                "selected": {
+                  "color": "rgb(244, 244, 241)",
+                  "border": "rgb(244, 244, 241)",
+                  "background": "rgba(0, 0, 0, 0)"
+                },
+                "unselected": {
+                  "color": "rgb(163, 165, 168)",
+                  "border": "rgb(59, 60, 63)",
+                  "background": "rgba(0, 0, 0, 0)"
+                }
+              },
+              {
+                "value": 2,
+                "box": {
+                  "x": 294,
+                  "y": 227.796875,
+                  "w": 72,
+                  "h": 48,
+                  "right": 366,
+                  "bottom": 275.796875,
+                  "cx": 330,
+                  "cy": 251.796875
+                },
+                "selected": {
+                  "color": "rgb(244, 244, 241)",
+                  "border": "rgb(244, 244, 241)",
+                  "background": "rgba(0, 0, 0, 0)"
+                },
+                "unselected": {
+                  "color": "rgb(163, 165, 168)",
+                  "border": "rgb(59, 60, 63)",
+                  "background": "rgba(0, 0, 0, 0)"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "case": "viewport-ru-1920",
+      "status": "PASS",
+      "seconds": 5.49,
+      "failure": null,
+      "evidence": {
+        "name": "viewport-ru-1920",
+        "language": "ru",
+        "width": 1920,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [
+          {
+            "url": "https://tile.openstreetmap.org/10/598/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1198/724.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1199/724.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1198/725.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1199/725.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1198/723.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1199/723.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1197/724.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1200/724.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1197/725.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1200/725.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1198/726.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1199/726.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1197/723.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1200/723.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1197/726.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1200/726.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/362.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/361.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/363.png",
+            "method": "GET"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/363.png",
+            "method": "GET"
+          }
+        ],
+        "pageErrors": [],
+        "consoleErrors": [
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+          "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector"
+        ],
+        "HTTPFailures": [],
+        "failedRequests": [
+          {
+            "url": "https://tile.openstreetmap.org/10/598/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1198/724.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1199/724.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1198/725.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1199/725.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1198/723.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1199/723.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1197/724.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1200/724.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1197/725.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1200/725.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1198/726.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1199/726.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1197/723.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1200/723.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1197/726.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/11/1200/726.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/598/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/599/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/362.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/361.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/597/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          },
+          {
+            "url": "https://tile.openstreetmap.org/10/600/363.png",
+            "failure": "net::ERR_BLOCKED_BY_CLIENT.Inspector"
+          }
+        ],
+        "requests": [
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-fc27-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-mk1-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-stalker2-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-ufc6-360.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-preview.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/delivery-zones-CaK9S-Hx.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/leaflet-CIGW-MKW.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/leaflet-src-CNNX6EnA.js",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "navigation": {
+            "initial": "http://localhost:8080/?lang=ru",
+            "after": "http://localhost:8080/?lang=ru#how-it-works",
+            "heading": {
+              "x": 272,
+              "y": 245.421875,
+              "w": 623.765625,
+              "h": 68.3125,
+              "right": 895.765625,
+              "bottom": 313.734375,
+              "cx": 583.8828125,
+              "cy": 279.578125
+            },
+            "visible": true,
+            "steps": [
+              "Выбери комплект",
+              "Получи консоль",
+              "Играй"
+            ]
+          },
+          "process": {
+            "grid": {
+              "x": 272,
+              "y": 156.734375,
+              "w": 1376,
+              "h": 157.875,
+              "cx": 960,
+              "cy": 235.671875,
+              "right": 1648,
+              "bottom": 314.609375
+            },
+            "items": [
+              {
+                "item": {
+                  "x": 272,
+                  "y": 156.734375,
+                  "w": 416,
+                  "h": 157.875,
+                  "cx": 480,
+                  "cy": 235.671875,
+                  "right": 688,
+                  "bottom": 314.609375
+                },
+                "node": {
+                  "x": 458.5,
+                  "y": 156.734375,
+                  "w": 43,
+                  "h": 43,
+                  "cx": 480,
+                  "cy": 178.234375,
+                  "right": 501.5,
+                  "bottom": 199.734375
+                },
+                "body": {
+                  "x": 272,
+                  "y": 218.734375,
+                  "w": 416,
+                  "h": 95.875,
+                  "cx": 480,
+                  "cy": 266.671875,
+                  "right": 688,
+                  "bottom": 314.609375
+                },
+                "title": {
+                  "box": {
+                    "x": 272,
+                    "y": 218.734375,
+                    "w": 416,
+                    "h": 32.5,
+                    "cx": 480,
+                    "cy": 234.984375,
+                    "right": 688,
+                    "bottom": 251.234375
+                  },
+                  "text": "Выбери комплект",
+                  "align": "center",
+                  "glyph": {
+                    "left": 376.828125,
+                    "right": 583.15625,
+                    "cx": 479.9921875
+                  },
+                  "lines": [
+                    {
+                      "left": 376.828125,
+                      "right": 583.15625,
+                      "cx": 479.9921875
+                    }
+                  ]
+                },
+                "copy": {
+                  "box": {
+                    "x": 310,
+                    "y": 264.234375,
+                    "w": 340,
+                    "h": 50.375,
+                    "cx": 480,
+                    "cy": 289.421875,
+                    "right": 650,
+                    "bottom": 314.609375
+                  },
+                  "text": "Выбери консоль, срок и дату. Добавь игры и оставь контакты.",
+                  "align": "center",
+                  "glyph": {
+                    "left": 310.109375,
+                    "right": 649.875,
+                    "cx": 479.9921875
+                  },
+                  "lines": [
+                    {
+                      "left": 310.109375,
+                      "right": 649.875,
+                      "cx": 479.9921875
+                    },
+                    {
+                      "left": 447.53125,
+                      "right": 512.453125,
+                      "cx": 479.9921875
+                    }
+                  ]
+                },
+                "border": "0px",
+                "radius": "0px",
+                "connector": {
+                  "content": "\"\"",
+                  "height": "1px",
+                  "width": "480px"
+                }
+              },
+              {
+                "item": {
+                  "x": 752,
+                  "y": 156.734375,
+                  "w": 416,
+                  "h": 157.875,
+                  "cx": 960,
+                  "cy": 235.671875,
+                  "right": 1168,
+                  "bottom": 314.609375
+                },
+                "node": {
+                  "x": 938.5,
+                  "y": 156.734375,
+                  "w": 43,
+                  "h": 43,
+                  "cx": 960,
+                  "cy": 178.234375,
+                  "right": 981.5,
+                  "bottom": 199.734375
+                },
+                "body": {
+                  "x": 752,
+                  "y": 218.734375,
+                  "w": 416,
+                  "h": 95.875,
+                  "cx": 960,
+                  "cy": 266.671875,
+                  "right": 1168,
+                  "bottom": 314.609375
+                },
+                "title": {
+                  "box": {
+                    "x": 752,
+                    "y": 218.734375,
+                    "w": 416,
+                    "h": 32.5,
+                    "cx": 960,
+                    "cy": 234.984375,
+                    "right": 1168,
+                    "bottom": 251.234375
+                  },
+                  "text": "Получи консоль",
+                  "align": "center",
+                  "glyph": {
+                    "left": 866.5,
+                    "right": 1053.484375,
+                    "cx": 959.9921875
+                  },
+                  "lines": [
+                    {
+                      "left": 866.5,
+                      "right": 1053.484375,
+                      "cx": 959.9921875
+                    }
+                  ]
+                },
+                "copy": {
+                  "box": {
+                    "x": 790,
+                    "y": 264.234375,
+                    "w": 340,
+                    "h": 50.375,
+                    "cx": 960,
+                    "cy": 289.421875,
+                    "right": 1130,
+                    "bottom": 314.609375
+                  },
+                  "text": "Подтвердим наличие и стоимость. Согласуем доставку, комплектацию и залог.",
+                  "align": "center",
+                  "glyph": {
+                    "left": 807.0625,
+                    "right": 1112.921875,
+                    "cx": 959.9921875
+                  },
+                  "lines": [
+                    {
+                      "left": 807.0625,
+                      "right": 1112.921875,
+                      "cx": 959.9921875
+                    },
+                    {
+                      "left": 849.90625,
+                      "right": 1070.09375,
+                      "cx": 960
+                    }
+                  ]
+                },
+                "border": "0px",
+                "radius": "0px",
+                "connector": {
+                  "content": "\"\"",
+                  "height": "1px",
+                  "width": "480px"
+                }
+              },
+              {
+                "item": {
+                  "x": 1232,
+                  "y": 156.734375,
+                  "w": 416,
+                  "h": 157.875,
+                  "cx": 1440,
+                  "cy": 235.671875,
+                  "right": 1648,
+                  "bottom": 314.609375
+                },
+                "node": {
+                  "x": 1418.5,
+                  "y": 156.734375,
+                  "w": 43,
+                  "h": 43,
+                  "cx": 1440,
+                  "cy": 178.234375,
+                  "right": 1461.5,
+                  "bottom": 199.734375
+                },
+                "body": {
+                  "x": 1232,
+                  "y": 218.734375,
+                  "w": 416,
+                  "h": 95.875,
+                  "cx": 1440,
+                  "cy": 266.671875,
+                  "right": 1648,
+                  "bottom": 314.609375
+                },
+                "title": {
+                  "box": {
+                    "x": 1232,
+                    "y": 218.734375,
+                    "w": 416,
+                    "h": 32.5,
+                    "cx": 1440,
+                    "cy": 234.984375,
+                    "right": 1648,
+                    "bottom": 251.234375
+                  },
+                  "text": "Играй",
+                  "align": "center",
+                  "glyph": {
+                    "left": 1404.4375,
+                    "right": 1475.546875,
+                    "cx": 1439.9921875
+                  },
+                  "lines": [
+                    {
+                      "left": 1404.4375,
+                      "right": 1475.546875,
+                      "cx": 1439.9921875
+                    }
+                  ]
+                },
+                "copy": {
+                  "box": {
+                    "x": 1270,
+                    "y": 264.234375,
+                    "w": 340,
+                    "h": 50.375,
+                    "cx": 1440,
+                    "cy": 289.421875,
+                    "right": 1610,
+                    "bottom": 314.609375
+                  },
+                  "text": "Наслаждайся игрой. Заберём комплект в согласованное время.",
+                  "align": "center",
+                  "glyph": {
+                    "left": 1303.75,
+                    "right": 1576.234375,
+                    "cx": 1439.9921875
+                  },
+                  "lines": [
+                    {
+                      "left": 1303.75,
+                      "right": 1576.234375,
+                      "cx": 1439.9921875
+                    },
+                    {
+                      "left": 1365.171875,
+                      "right": 1514.828125,
+                      "cx": 1440
+                    }
+                  ]
+                },
+                "border": "0px",
+                "radius": "0px",
+                "connector": {
+                  "content": "none",
+                  "height": "auto",
+                  "width": "auto"
+                }
+              }
+            ]
+          },
+          "delivery": {
+            "preview": {
+              "src": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-preview.svg",
+              "natural": [
+                240,
+                360
+              ],
+              "box": {
+                "x": 554,
+                "y": 288.75,
+                "w": 232,
+                "h": 348
+              },
+              "fit": "fill"
+            },
+            "panel": {
+              "x": 272,
+              "y": 17.609375,
+              "w": 1376,
+              "h": 676.140625,
+              "right": 1648,
+              "bottom": 693.75,
+              "cx": 960,
+              "cy": 355.6796875
+            },
+            "layout": {
+              "x": 510,
+              "y": 254.25,
+              "w": 900,
+              "h": 394.5,
+              "right": 1410,
+              "bottom": 648.75,
+              "cx": 960,
+              "cy": 451.5
+            },
+            "service": {
+              "x": 894,
+              "y": 314.234375,
+              "w": 516,
+              "h": 274.53125,
+              "right": 1410,
+              "bottom": 588.765625,
+              "cx": 1152,
+              "cy": 451.5
+            },
+            "opener": {
+              "x": 1417,
+              "y": 88.609375,
+              "w": 186,
+              "h": 50,
+              "right": 1603,
+              "bottom": 138.609375,
+              "cx": 1510,
+              "cy": 113.609375
+            },
+            "style": {
+              "radius": "999px",
+              "minHeight": "50px",
+              "minWidth": "186px"
+            },
+            "intro": "Доставляем по Одессе. Зелёная зона — 200 грн, жёлтая — 300 грн за доставку и возврат. Красная — по тарифу такси в обе стороны. От 7 дней зелёная и жёлтая зоны бесплатны. Зону подтвердим по адресу.",
+            "focus": {
+              "visible": true,
+              "outline": "solid",
+              "width": "2px"
+            }
+          },
+          "map": {
+            "polygons": 6,
+            "lazyRequests": [
+              {
+                "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/delivery-zones-CaK9S-Hx.js",
+                "method": "GET"
+              },
+              {
+                "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/leaflet-src-CNNX6EnA.js",
+                "method": "GET"
+              }
+            ],
+            "mainRequests": 1,
+            "reopened": true,
+            "escapeAndButtonFocusReturned": true
+          },
+          "icon": {
+            "instances": [
+              {
+                "viewBox": "0 0 64 64",
+                "stroke": "currentColor",
+                "fill": "none",
+                "strokeWidth": "2",
+                "color": "rgb(200, 174, 135)",
+                "computedStroke": "rgb(200, 174, 135)",
+                "computedFill": "none",
+                "transform": "none",
+                "focusable": "false",
+                "aria": "true",
+                "box": {
+                  "x": 1.600000023841858,
+                  "y": 9.989286422729492,
+                  "w": 59.30000305175781,
+                  "h": 43.23612976074219
+                },
+                "viewport": {
+                  "w": 21,
+                  "h": 21
+                },
+                "view": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 64,
+                  "h": 64
+                },
+                "geometry": [
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20 14.2c-3.4-1.5-9.9-1.1-12.2 1.6C4.4 20.1 1.6 31.5 1.6 42.1c0 6.5 2.2 10.8 5.9 11.1 3.2.4 5.2-4 7-7.6l2.3-3.9c1.1-2 2.5-2.6 4.9-2h19c2.4-.6 3.8 0 4.9 2l2.4 3.9c1.8 3.6 3.8 8 7 7.6 3.7-.3 5.9-4.6 5.9-11.1 0-10.6-2.8-22-6.2-26.3-2.3-2.7-8.8-3.1-12.2-1.6C40.5 13 35 13 31.25 13S22 13 20 14.2Z"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20 14.2c-1.2.7-.8 2.6-.5 4.3l1.5 5.9c.5 1.7 1.7 2.3 3.9 2.3h12.7c2.2 0 3.4-.6 3.9-2.3l1.5-5.9c.3-1.7.7-3.6-.5-4.3"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20.6 23.8c.1 3.1-2.3 4.9-4.6 7.5-3.6 4.3-6.5 12.9-9.7 21.4m35.6-28.9c-.1 3.1 2.3 4.9 4.6 7.5 3.6 4.3 6.5 12.9 9.7 21.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M10.4 14.1v-1c0-1.3 1.1-1.9 2.8-2.1l3-.3c1.3-.1 1.9.5 1.9 1.8v.8m34 0v-.9c0-1.3-1.1-1.9-2.8-2.1l-3-.3c-1.3-.1-1.9.5-1.9 1.8v.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "16.8"
+                      ],
+                      [
+                        "y",
+                        "15.3"
+                      ],
+                      [
+                        "width",
+                        "1.6"
+                      ],
+                      [
+                        "height",
+                        "3"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "44.1"
+                      ],
+                      [
+                        "y",
+                        "15.3"
+                      ],
+                      [
+                        "width",
+                        "1.6"
+                      ],
+                      [
+                        "height",
+                        "3"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M11.1 20.6c0-.7.5-1.1 1.2-1.1h1.1c.7 0 1.2.4 1.2 1.1v.9c0 .4-.2.6-.5.9l-1.2 1.1-1.3-1.1c-.3-.3-.5-.5-.5-.9v-.9Zm0 7.5c0 .7.5 1.1 1.2 1.1h1.1c.7 0 1.2-.4 1.2-1.1v-.9c0-.4-.2-.6-.5-.9l-1.2-1.1-1.3 1.1c-.3.3-.5.5-.5.9v.9Zm-2.5-5.5c-.7 0-1.1.5-1.1 1.2v1.1c0 .7.4 1.2 1.1 1.2h.9c.4 0 .6-.2.9-.5l1.1-1.2-1.1-1.3c-.3-.3-.5-.5-.9-.5h-.9Zm8.4 0c.7 0 1.1.5 1.1 1.2v1.1c0 .7-.4 1.2-1.1 1.2h-.9c-.4 0-.6-.2-.9-.5l-1.1-1.2 1.1-1.3c.3-.3.5-.5.9-.5h.9Z"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "22.5"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "4.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "22.5"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "3.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "40"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "4.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "40"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "3.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "49.8"
+                      ],
+                      [
+                        "cy",
+                        "20.2"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "45.7"
+                      ],
+                      [
+                        "cy",
+                        "24.4"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "53.9"
+                      ],
+                      [
+                        "cy",
+                        "24.4"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "49.8"
+                      ],
+                      [
+                        "cy",
+                        "28.6"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "29.1"
+                      ],
+                      [
+                        "y",
+                        "35.5"
+                      ],
+                      [
+                        "width",
+                        "4.3"
+                      ],
+                      [
+                        "height",
+                        "1.6"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  }
+                ]
+              },
+              {
+                "viewBox": "0 0 64 64",
+                "stroke": "currentColor",
+                "fill": "none",
+                "strokeWidth": "2",
+                "color": "rgb(244, 244, 241)",
+                "computedStroke": "rgb(244, 244, 241)",
+                "computedFill": "none",
+                "transform": "none",
+                "focusable": "false",
+                "aria": "true",
+                "box": {
+                  "x": 1.600000023841858,
+                  "y": 9.989286422729492,
+                  "w": 59.30000305175781,
+                  "h": 43.23612976074219
+                },
+                "viewport": {
+                  "w": 21,
+                  "h": 21
+                },
+                "view": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 64,
+                  "h": 64
+                },
+                "geometry": [
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20 14.2c-3.4-1.5-9.9-1.1-12.2 1.6C4.4 20.1 1.6 31.5 1.6 42.1c0 6.5 2.2 10.8 5.9 11.1 3.2.4 5.2-4 7-7.6l2.3-3.9c1.1-2 2.5-2.6 4.9-2h19c2.4-.6 3.8 0 4.9 2l2.4 3.9c1.8 3.6 3.8 8 7 7.6 3.7-.3 5.9-4.6 5.9-11.1 0-10.6-2.8-22-6.2-26.3-2.3-2.7-8.8-3.1-12.2-1.6C40.5 13 35 13 31.25 13S22 13 20 14.2Z"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20 14.2c-1.2.7-.8 2.6-.5 4.3l1.5 5.9c.5 1.7 1.7 2.3 3.9 2.3h12.7c2.2 0 3.4-.6 3.9-2.3l1.5-5.9c.3-1.7.7-3.6-.5-4.3"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20.6 23.8c.1 3.1-2.3 4.9-4.6 7.5-3.6 4.3-6.5 12.9-9.7 21.4m35.6-28.9c-.1 3.1 2.3 4.9 4.6 7.5 3.6 4.3 6.5 12.9 9.7 21.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M10.4 14.1v-1c0-1.3 1.1-1.9 2.8-2.1l3-.3c1.3-.1 1.9.5 1.9 1.8v.8m34 0v-.9c0-1.3-1.1-1.9-2.8-2.1l-3-.3c-1.3-.1-1.9.5-1.9 1.8v.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "16.8"
+                      ],
+                      [
+                        "y",
+                        "15.3"
+                      ],
+                      [
+                        "width",
+                        "1.6"
+                      ],
+                      [
+                        "height",
+                        "3"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "44.1"
+                      ],
+                      [
+                        "y",
+                        "15.3"
+                      ],
+                      [
+                        "width",
+                        "1.6"
+                      ],
+                      [
+                        "height",
+                        "3"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M11.1 20.6c0-.7.5-1.1 1.2-1.1h1.1c.7 0 1.2.4 1.2 1.1v.9c0 .4-.2.6-.5.9l-1.2 1.1-1.3-1.1c-.3-.3-.5-.5-.5-.9v-.9Zm0 7.5c0 .7.5 1.1 1.2 1.1h1.1c.7 0 1.2-.4 1.2-1.1v-.9c0-.4-.2-.6-.5-.9l-1.2-1.1-1.3 1.1c-.3.3-.5.5-.5.9v.9Zm-2.5-5.5c-.7 0-1.1.5-1.1 1.2v1.1c0 .7.4 1.2 1.1 1.2h.9c.4 0 .6-.2.9-.5l1.1-1.2-1.1-1.3c-.3-.3-.5-.5-.9-.5h-.9Zm8.4 0c.7 0 1.1.5 1.1 1.2v1.1c0 .7-.4 1.2-1.1 1.2h-.9c-.4 0-.6-.2-.9-.5l-1.1-1.2 1.1-1.3c.3-.3.5-.5.9-.5h.9Z"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "22.5"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "4.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "22.5"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "3.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "40"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "4.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "40"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "3.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "49.8"
+                      ],
+                      [
+                        "cy",
+                        "20.2"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "45.7"
+                      ],
+                      [
+                        "cy",
+                        "24.4"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "53.9"
+                      ],
+                      [
+                        "cy",
+                        "24.4"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "49.8"
+                      ],
+                      [
+                        "cy",
+                        "28.6"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "29.1"
+                      ],
+                      [
+                        "y",
+                        "35.5"
+                      ],
+                      [
+                        "width",
+                        "4.3"
+                      ],
+                      [
+                        "height",
+                        "1.6"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  }
+                ]
+              },
+              {
+                "viewBox": "0 0 64 64",
+                "stroke": "currentColor",
+                "fill": "none",
+                "strokeWidth": "2",
+                "color": "rgb(163, 165, 168)",
+                "computedStroke": "rgb(163, 165, 168)",
+                "computedFill": "none",
+                "transform": "none",
+                "focusable": "false",
+                "aria": "true",
+                "box": {
+                  "x": 1.600000023841858,
+                  "y": 9.989286422729492,
+                  "w": 59.30000305175781,
+                  "h": 43.23612976074219
+                },
+                "viewport": {
+                  "w": 21,
+                  "h": 21
+                },
+                "view": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 64,
+                  "h": 64
+                },
+                "geometry": [
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20 14.2c-3.4-1.5-9.9-1.1-12.2 1.6C4.4 20.1 1.6 31.5 1.6 42.1c0 6.5 2.2 10.8 5.9 11.1 3.2.4 5.2-4 7-7.6l2.3-3.9c1.1-2 2.5-2.6 4.9-2h19c2.4-.6 3.8 0 4.9 2l2.4 3.9c1.8 3.6 3.8 8 7 7.6 3.7-.3 5.9-4.6 5.9-11.1 0-10.6-2.8-22-6.2-26.3-2.3-2.7-8.8-3.1-12.2-1.6C40.5 13 35 13 31.25 13S22 13 20 14.2Z"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20 14.2c-1.2.7-.8 2.6-.5 4.3l1.5 5.9c.5 1.7 1.7 2.3 3.9 2.3h12.7c2.2 0 3.4-.6 3.9-2.3l1.5-5.9c.3-1.7.7-3.6-.5-4.3"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M20.6 23.8c.1 3.1-2.3 4.9-4.6 7.5-3.6 4.3-6.5 12.9-9.7 21.4m35.6-28.9c-.1 3.1 2.3 4.9 4.6 7.5 3.6 4.3 6.5 12.9 9.7 21.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M10.4 14.1v-1c0-1.3 1.1-1.9 2.8-2.1l3-.3c1.3-.1 1.9.5 1.9 1.8v.8m34 0v-.9c0-1.3-1.1-1.9-2.8-2.1l-3-.3c-1.3-.1-1.9.5-1.9 1.8v.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "16.8"
+                      ],
+                      [
+                        "y",
+                        "15.3"
+                      ],
+                      [
+                        "width",
+                        "1.6"
+                      ],
+                      [
+                        "height",
+                        "3"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "44.1"
+                      ],
+                      [
+                        "y",
+                        "15.3"
+                      ],
+                      [
+                        "width",
+                        "1.6"
+                      ],
+                      [
+                        "height",
+                        "3"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "path",
+                    "attrs": [
+                      [
+                        "d",
+                        "M11.1 20.6c0-.7.5-1.1 1.2-1.1h1.1c.7 0 1.2.4 1.2 1.1v.9c0 .4-.2.6-.5.9l-1.2 1.1-1.3-1.1c-.3-.3-.5-.5-.5-.9v-.9Zm0 7.5c0 .7.5 1.1 1.2 1.1h1.1c.7 0 1.2-.4 1.2-1.1v-.9c0-.4-.2-.6-.5-.9l-1.2-1.1-1.3 1.1c-.3.3-.5.5-.5.9v.9Zm-2.5-5.5c-.7 0-1.1.5-1.1 1.2v1.1c0 .7.4 1.2 1.1 1.2h.9c.4 0 .6-.2.9-.5l1.1-1.2-1.1-1.3c-.3-.3-.5-.5-.9-.5h-.9Zm8.4 0c.7 0 1.1.5 1.1 1.2v1.1c0 .7-.4 1.2-1.1 1.2h-.9c-.4 0-.6-.2-.9-.5l-1.1-1.2 1.1-1.3c.3-.3.5-.5.9-.5h.9Z"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "22.5"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "4.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "22.5"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "3.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "40"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "4.8"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "40"
+                      ],
+                      [
+                        "cy",
+                        "32.8"
+                      ],
+                      [
+                        "r",
+                        "3.4"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "49.8"
+                      ],
+                      [
+                        "cy",
+                        "20.2"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "45.7"
+                      ],
+                      [
+                        "cy",
+                        "24.4"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "53.9"
+                      ],
+                      [
+                        "cy",
+                        "24.4"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "circle",
+                    "attrs": [
+                      [
+                        "cx",
+                        "49.8"
+                      ],
+                      [
+                        "cy",
+                        "28.6"
+                      ],
+                      [
+                        "r",
+                        "2.1"
+                      ]
+                    ]
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": [
+                      [
+                        "x",
+                        "29.1"
+                      ],
+                      [
+                        "y",
+                        "35.5"
+                      ],
+                      [
+                        "width",
+                        "4.3"
+                      ],
+                      [
+                        "height",
+                        "1.6"
+                      ],
+                      [
+                        "rx",
+                        ".8"
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ],
+            "controllerStates": [
+              {
+                "value": 1,
+                "box": {
+                  "x": 912.390625,
+                  "y": 488.9375,
+                  "w": 78,
+                  "h": 44,
+                  "right": 990.390625,
+                  "bottom": 532.9375,
+                  "cx": 951.390625,
+                  "cy": 510.9375
+                },
+                "selected": {
+                  "color": "rgb(244, 244, 241)",
+                  "border": "rgb(244, 244, 241)",
+                  "background": "rgba(0, 0, 0, 0)"
+                },
+                "unselected": {
+                  "color": "rgb(163, 165, 168)",
+                  "border": "rgb(59, 60, 63)",
+                  "background": "rgba(0, 0, 0, 0)"
+                }
+              },
+              {
+                "value": 2,
+                "box": {
+                  "x": 1000.390625,
+                  "y": 488.9375,
+                  "w": 78,
+                  "h": 44,
+                  "right": 1078.390625,
+                  "bottom": 532.9375,
+                  "cx": 1039.390625,
+                  "cy": 510.9375
+                },
+                "selected": {
+                  "color": "rgb(244, 244, 241)",
+                  "border": "rgb(244, 244, 241)",
+                  "background": "rgba(0, 0, 0, 0)"
+                },
+                "unselected": {
+                  "color": "rgb(163, 165, 168)",
+                  "border": "rgb(59, 60, 63)",
+                  "background": "rgba(0, 0, 0, 0)"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "captures": [
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114757Z/ru-mobile-process.png",
+      "name": "ru-mobile-process.png",
+      "case": "viewport-ru-390",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "535fdbcf341e03c31a6e6775bd71d66d493b1d8fced6dde498069fc854f6153a",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.8/screens/ru-mobile-process.png"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114757Z/ru-mobile-delivery.png",
+      "name": "ru-mobile-delivery.png",
+      "case": "viewport-ru-390",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "bf926bdf1bafe65faa1dca1e0c4a2591c05df090a979d0f79b4c027c26f7bd99",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.8/screens/ru-mobile-delivery.png"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114757Z/ru-mobile-delivery-map.png",
+      "name": "ru-mobile-delivery-map.png",
+      "case": "viewport-ru-390",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "65b61527995bdf2ae868972054f5c241129871f7da8c79280472e97aea6be63c",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": "blocked OSM raster; six local vectors",
+      "documentationCopy": "docs/refinement-1.8/screens/ru-mobile-delivery-map.png"
+    },
+    {
+      "file": "work/refinement-1.8/browser-screens-20261003T114757Z/ru-mobile-booking-controller.png",
+      "name": "ru-mobile-booking-controller.png",
+      "case": "viewport-ru-390",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "0d358e58c3aca722c30f9389fe7c5491b723742f633dcc2330ffbdfb81542dd3",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": false,
+      "externalTiles": null
+    }
+  ],
+  "safety": "All POST/non-GET/HEAD intercepted before allowlist/continue; only local GET/HEAD; no contacts entered or order/email sent.",
+  "mapTilePolicy": "All external OSM raster GET blocked deliberately; six local polygons and fallback notice tested.",
+  "scriptSha256": "3c6555b9c24fff447b957900716e89ac6178076ff7999bf74992283bbdfadcc5",
+  "helperSha256": "12ecbc2d8d97e9dfbea11ff48bbf436403de85960f3a9362c7c44fc5a9ad859b"
+}

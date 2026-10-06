@@ -1,0 +1,313 @@
+{
+  "run": "20261003T103549Z",
+  "expectedBuild": {
+    "main": "main-CNh65H_Y.js",
+    "css": "main-hpKQBRcV.css"
+  },
+  "servedAssets": {
+    "main-CNh65H_Y.js": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+      "status": 200,
+      "bytes": 485194,
+      "sha256": "99b37d873bfc96b85b555b7255a2aca4d7e755d46f4137756d1c94d9eac25b08",
+      "matchesLocal": true
+    },
+    "main-hpKQBRcV.css": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+      "status": 200,
+      "bytes": 92276,
+      "sha256": "3a577b6042e4db7b60caebb9ebed5e1a53d222d18eff2a27e42967fa86ac5fdd",
+      "matchesLocal": true
+    }
+  },
+  "captures": [
+    {
+      "file": "work/refinement-1.7/browser-screens-20261003T103549Z/ua-mobile-hero.png",
+      "name": "ua-mobile-hero.png",
+      "case": "viewport-uk-390",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "sha256": "1a18308d94e20894f121eadddf5ac6e44c6b437b98baa2f601c1761c0cb01ec3",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+        ]
+      },
+      "focusBlurredForCapture": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.7/screens/ua-mobile-hero.png"
+    },
+    {
+      "file": "work/refinement-1.7/browser-screens-20261003T103549Z/ua-mobile-kit.png",
+      "name": "ua-mobile-kit.png",
+      "case": "viewport-uk-390",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "sha256": "da7443976bc620fe56fe556d055c3b4c9121e3d7278326c1735a6327dbb9fd24",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+        ]
+      },
+      "focusBlurredForCapture": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.7/screens/ua-mobile-kit.png"
+    },
+    {
+      "file": "work/refinement-1.7/browser-screens-20261003T103549Z/ua-mobile-process-delivery.png",
+      "name": "ua-mobile-process-delivery.png",
+      "case": "viewport-uk-390",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "sha256": "a237587121763371f47c08eaa5bec10fdd0cde4205ed05ecfa56d890a1d78507",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+        ]
+      },
+      "focusBlurredForCapture": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.7/screens/ua-mobile-process-delivery.png"
+    },
+    {
+      "file": "work/refinement-1.7/browser-screens-20261003T103549Z/ua-mobile-delivery-map.png",
+      "name": "ua-mobile-delivery-map.png",
+      "case": "viewport-uk-390",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "sha256": "477e657c19c8c37be256476f1bd350547e93345722d8a4832d842397c124022f",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+        ]
+      },
+      "focusBlurredForCapture": true,
+      "externalTiles": "blocked; six local vectors",
+      "documentationCopy": "docs/refinement-1.7/screens/ua-mobile-delivery-map.png"
+    },
+    {
+      "file": "work/refinement-1.7/browser-screens-20261003T103549Z/ua-desktop-hero.png",
+      "name": "ua-desktop-hero.png",
+      "case": "viewport-uk-1440",
+      "language": "uk",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "sha256": "262b998a8b398e440250dcc0b9d1db1f91fcce23f2ca4f198ff35583b4da8ba6",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+        ]
+      },
+      "focusBlurredForCapture": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.7/screens/ua-desktop-hero.png"
+    },
+    {
+      "file": "work/refinement-1.7/browser-screens-20261003T103549Z/ua-desktop-kit.png",
+      "name": "ua-desktop-kit.png",
+      "case": "viewport-uk-1440",
+      "language": "uk",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "sha256": "2ad26b33eb36411537a15b8abc9ade808bdccc096bec03c9b6fb46c0de8b45e3",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+        ]
+      },
+      "focusBlurredForCapture": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.7/screens/ua-desktop-kit.png"
+    },
+    {
+      "file": "work/refinement-1.7/browser-screens-20261003T103549Z/ua-desktop-process-delivery.png",
+      "name": "ua-desktop-process-delivery.png",
+      "case": "viewport-uk-1440",
+      "language": "uk",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "sha256": "c7348c0f589c1c060fc3aabc47026a42bc08f284b350a63b19dd143bb8d8dc31",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+        ]
+      },
+      "focusBlurredForCapture": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.7/screens/ua-desktop-process-delivery.png"
+    },
+    {
+      "file": "work/refinement-1.7/browser-screens-20261003T103549Z/ru-mobile-hero.png",
+      "name": "ru-mobile-hero.png",
+      "case": "viewport-ru-390",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "sha256": "e541a14c725e8f09e72f21fcc29eb64faf108847361af131df48046cf98434e4",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+        ]
+      },
+      "focusBlurredForCapture": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.7/screens/ru-mobile-hero.png"
+    },
+    {
+      "file": "work/refinement-1.7/browser-screens-20261003T103549Z/ru-mobile-footer.png",
+      "name": "ru-mobile-footer.png",
+      "case": "viewport-ru-390",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "sha256": "94e3952960531a920cdd18aefb6d8749380030b205075c458035ac5b78c2c436",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+        ]
+      },
+      "focusBlurredForCapture": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.7/screens/ru-mobile-footer.png"
+    },
+    {
+      "file": "work/refinement-1.7/browser-screens-20261003T103549Z/ru-desktop-hero.png",
+      "name": "ru-desktop-hero.png",
+      "case": "viewport-ru-1440",
+      "language": "ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "sha256": "90af6cfa7dec7bfac96c6d92dea10944e3a270fe92a55a3e6190dff4f668fc36",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+        ]
+      },
+      "focusBlurredForCapture": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.7/screens/ru-desktop-hero.png"
+    },
+    {
+      "file": "work/refinement-1.7/browser-screens-20261003T103549Z/ru-desktop-footer.png",
+      "name": "ru-desktop-footer.png",
+      "case": "viewport-ru-1440",
+      "language": "ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "sha256": "8260b3f8349d030707b302c60f332da6d11c8c60a69f388abc4443f42f4280c3",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+        ]
+      },
+      "focusBlurredForCapture": true,
+      "externalTiles": null,
+      "documentationCopy": "docs/refinement-1.7/screens/ru-desktop-footer.png"
+    },
+    {
+      "file": "work/refinement-1.7/browser-screens-20261003T103549Z/ru-desktop-delivery-map.png",
+      "name": "ru-desktop-delivery-map.png",
+      "case": "viewport-ru-1440",
+      "language": "ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "motion": "reduce",
+      "fullPage": false,
+      "sha256": "c59f0ff1c51fa7ab8c43f4d5bcdaab6fb562009b7c02e55cb2558be03dad82c9",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+        ]
+      },
+      "focusBlurredForCapture": true,
+      "externalTiles": "blocked; six local vectors",
+      "documentationCopy": "docs/refinement-1.7/screens/ru-desktop-delivery-map.png"
+    }
+  ]
+}

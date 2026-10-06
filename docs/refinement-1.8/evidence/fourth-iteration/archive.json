@@ -1,0 +1,98 @@
+{
+  "archivedAt": "2026-10-03T12:48:33.543545+00:00",
+  "reason": "Root independent visual review identified real P2 attribution overlay obstruction of southern red zone tip at320px after this12PASS automated run. Acceptance held pending CSS correction.",
+  "files": [
+    {
+      "file": "browser-selected-screens.json",
+      "sha256": "d127588352f83adc56bef1f98e95a37ffd81f85cb4e8b6fcfed5aeeaf3bb06b2"
+    },
+    {
+      "file": "browser-report.md",
+      "sha256": "3737c63a311cee3bf7f5b8495faa40ff5b681c2d605aa19b8a73157c355bf417"
+    },
+    {
+      "file": "browser-receipt.json",
+      "sha256": "de8db8652ec7d392ac141ac1e8b9ebd6b6e99f65d348d0aaa7929a8487fb0773"
+    },
+    {
+      "file": "browser-report.json",
+      "sha256": "e259c80d8ba88c7bdee587f67455b9265dfc3e471505f9b9514cc322bacb873f"
+    },
+    {
+      "file": "compact-process-comparison.json",
+      "sha256": "c49b8d5158b381439a3eac9519596bd1f242a7f879e80983d55ba450bc944353"
+    },
+    {
+      "file": "browser-extra-20261003T124650Z.json",
+      "sha256": "a1e1229d9c31fa675866648556a3c8b6c14ec665e26239db047c79456fc7366f"
+    },
+    {
+      "file": "browser-results-20261003T124511Z.json",
+      "sha256": "1d922a9f4900843acc8da00042537c40a8ac9ca8ea428a944f792bb98b6d8997"
+    },
+    {
+      "file": "screens/ru-mobile-process.png",
+      "sha256": "c52eaa550168daeda808add38f75068106e7246cabef49130a46ec881f84342b"
+    },
+    {
+      "file": "screens/ru-mobile-delivery-map.png",
+      "sha256": "782371a90bfaae7ee9a634e93e1db991404058b0ce2f1d7da36252299055c9d5"
+    },
+    {
+      "file": "screens/ua-mobile-booking-controller.png",
+      "sha256": "845f0022a3337b932a73dd6cfa5593f63e6b250ffac30df6df8f769abe732106"
+    },
+    {
+      "file": "screens/ru-desktop-delivery-map.png",
+      "sha256": "f42d16c53e5bc5fde53a008820bf5d2280af9327669c00ba4995ab0fe3ee92ef"
+    },
+    {
+      "file": "screens/ua-desktop-delivery.png",
+      "sha256": "301d8b377a81a4ce95e3e8d7578d5307afa580eacd74c6513f2225ae195db63a"
+    },
+    {
+      "file": "screens/ru-desktop-delivery.png",
+      "sha256": "2d3ecbe76063dfdd6d40b794f69e3fbe7558f4842d408f30ab035f7acc199b99"
+    },
+    {
+      "file": "screens/ua-mobile-process.png",
+      "sha256": "61566d927c2c0c299b8d709e4e8f9665f10697cbb718f546f85d268d3ca1616e"
+    },
+    {
+      "file": "screens/ua-desktop-delivery-map.png",
+      "sha256": "4b5fd5b13dee1c5fa94ac31abca155078fcdfc1b2c26cb33f06e3f25c07ecaea"
+    },
+    {
+      "file": "screens/ua-mobile-delivery-map.png",
+      "sha256": "0c2b4441e7f75b1324ae2f792a9e329fbd7c39c31922a200f6b17b0e1705a3d8"
+    },
+    {
+      "file": "screens/ru-desktop-booking-controller.png",
+      "sha256": "ad1962ed266388a91018bb62b807639c7c3ab9a76239d80ba7fa96ba7ab68562"
+    },
+    {
+      "file": "screens/ru-desktop-process.png",
+      "sha256": "91e65a9966b60d7da2279080cdf16947333cb87b9de0f980364e16ad17df3042"
+    },
+    {
+      "file": "screens/ru-mobile-delivery.png",
+      "sha256": "9240b3d0f33ca7cf4c5907ddcfb1ea255134ce9ddab43a0f863f0afcc18c2d93"
+    },
+    {
+      "file": "screens/ua-desktop-process.png",
+      "sha256": "29969606a06b3df2ce957328ef6a5b2f3e82cd0e54212b3b9702a7b05e98b712"
+    },
+    {
+      "file": "screens/ru-mobile-booking-controller.png",
+      "sha256": "211f5a7af6cf56c03b4893f359ab6cb4d5a0ab22dbc39eeb35c1d551616a4634"
+    },
+    {
+      "file": "screens/ua-mobile-delivery.png",
+      "sha256": "208468e6a0a889498d201e3ec178974ddb5cf8bc693765569be6b5b049b02140"
+    },
+    {
+      "file": "screens/ua-desktop-booking-controller.png",
+      "sha256": "9c9869a9c6c16d8ac9d09793c2ed061f3cee660e9b8ad7d13addaafbfa056ed1"
+    }
+  ]
+}

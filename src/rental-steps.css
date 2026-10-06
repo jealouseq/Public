@@ -1,0 +1,68 @@
+.rental-process-heading { text-align: center; margin-bottom: 48px; }
+.rental-process-heading .eyebrow { margin-bottom: 16px; }
+.rental-process-heading h2 { text-wrap: balance; }
+.rental-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin: 0; padding: 0; list-style: none; }
+.rental-steps > li { min-width: 0; }
+.rental-step-surface { position: relative; height: 100%; min-height: 264px; padding: 28px; border: 1px solid #25272a; border-radius: 24px; background: var(--bg); transition: transform .3s ease, border-color .3s ease; }
+.rental-step-top { display: flex; align-items: center; justify-content: space-between; min-height: 64px; gap: 8px; margin-bottom: 24px; }
+.rental-step-number { font-family: var(--display); font-size: clamp(36px, 3.6vw, 52px); font-weight: 550; line-height: 1; letter-spacing: -.07em; font-variant-numeric: tabular-nums; }
+.rental-step-number > span { color: #8cc2ca; }
+.rental-step-2 .rental-step-number > span { color: #eab56e; }
+.rental-step-3 .rental-step-number > span { color: #ed7a8e; }
+.rental-step-4 .rental-step-number > span { color: #b39bcc; }
+.rental-step-surface h3 { font-family: var(--service, 'Onest Variable', sans-serif); font-size: 21px; font-weight: 600; line-height: 1.35; letter-spacing: -.025em; }
+.rental-step-surface p { margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--text-support); }
+.rental-step-badge { position: absolute; top: -14px; left: 24px; display: flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 12px; background: #eab56e; color: #19130c; font-size: 12px; line-height: 1.2; font-weight: 750; }
+.step-art { position: relative; display: block; width: 72px; height: 64px; flex-shrink: 0; }
+.step-art svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.step-map-disc { transform-origin: 36px 46px; animation: step-map-disc 5s ease-in-out infinite; }
+.step-map-pin { transform-origin: 54px 55px; animation: step-map-pin 5s ease-in-out infinite; }
+.step-document-float { animation: step-document 4s cubic-bezier(.37,0,.63,1) infinite; }
+.step-controller { perspective: 300px; }
+.step-controller-image { position: absolute; top: 11px; left: 1px; width: 100%; height: auto; object-fit: contain; animation: step-controller 2s ease-in-out infinite; }
+.step-game-symbol { position: absolute; font-size: 15px; line-height: 1; font-weight: 500; opacity: 0; animation: step-symbols 2s ease-out infinite; }
+.symbol-triangle { top: 0; left: 2px; color: #8cc2ca; --x: -5px; --y: -5px; }
+.symbol-circle { top: 7px; right: 0; color: #ed7a8e; --x: 5px; --y: -6px; animation-delay: .3s; }
+.symbol-cross { bottom: 0; left: 10px; color: #b39bcc; --x: -4px; --y: 5px; animation-delay: .6s; }
+.symbol-square { bottom: 1px; right: 2px; color: #eab56e; --x: 4px; --y: 4px; animation-delay: .9s; }
+.step-rocket { width: 24px; height: 24px; flex-shrink: 0; animation: step-rocket 1.7s cubic-bezier(.37,0,.63,1) infinite alternate; }
+.step-visual-motion { animation-play-state: paused; }
+.rental-process[data-motion='running'] .step-visual-motion { animation-play-state: running; }
+.rental-process-action { display: flex; justify-content: center; margin-top: 28px; }
+.rental-process-action .text-link { min-height: 44px; align-items: center; }
+@keyframes step-map-disc { 0%, 15%, 100% { transform: scale(1); opacity: 1; } 42%, 64% { transform: scale(.12); opacity: 0; } 85% { transform: scale(1.06); opacity: 1; } }
+@keyframes step-map-pin { 0%, 12%, 100% { transform: translateY(0); opacity: 1; } 35%, 72% { transform: translateY(10px) scale(.5); opacity: 0; } 85% { transform: translateY(-6px); opacity: 1; } }
+@keyframes step-document { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-4px) rotate(3deg); } }
+@keyframes step-controller { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(7deg); } }
+@keyframes step-symbols { 0%, 100% { opacity: 0; transform: scale(.6); } 35% { opacity: .85; } 75% { opacity: .7; transform: translate(var(--x), var(--y)) rotate(12deg); } }
+@keyframes step-rocket { from { transform: translate(0,0) rotate(0); } to { transform: translate(4px,5px) rotate(2deg); } }
+@media (hover: hover) and (pointer: fine) { .rental-step-surface:hover { transform: translateY(-4px); border-color: #67523a; } }
+@media (max-width: 1100px) { .rental-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 20px; } }
+@media (max-width: 700px) {
+  .rental-process-heading { margin-bottom: 40px; }
+  .rental-steps { gap: 28px 12px; }
+  .rental-step-surface { min-height: 228px; padding: 20px 18px; border-radius: 22px; }
+  .rental-step-top { min-height: 54px; gap: 4px; margin-bottom: 18px; }
+  .rental-step-number { font-size: 36px; }
+  .step-art { width: 56px; height: 54px; }
+  .step-controller-image { top: 9px; }
+  .step-game-symbol { font-size: 12px; }
+  .rental-step-surface h3 { font-size: 17px; }
+  .rental-step-surface p { margin-top: 12px; font-size: 14px; line-height: 1.55; }
+  .rental-step-badge { left: 12px; gap: 5px; padding: 6px 8px; border-radius: 10px; font-size: 10px; }
+  .step-rocket { width: 20px; height: 20px; }
+}
+@media (max-width: 360px) {
+  .rental-step-surface { padding: 18px 14px; }
+  .rental-step-number { font-size: 32px; }
+  .step-art { width: 46px; height: 48px; }
+  .rental-step-surface h3 { font-size: 16px; letter-spacing: -.035em; }
+  .rental-step-badge { left: 8px; font-size: 9px; padding-inline: 6px; gap: 3px; }
+  .step-rocket { width: 18px; height: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .step-visual-motion { animation: none; }
+  .step-game-symbol { opacity: .65; }
+  .rental-step-surface { transition: none; }
+  .rental-step-surface:hover { transform: none; }
+}

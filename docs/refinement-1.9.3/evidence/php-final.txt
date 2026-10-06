@@ -1,0 +1,59 @@
+{
+    "checks": 17,
+    "failures": [],
+    "realOrdersCreated": 0,
+    "realMailCalls": 0,
+    "wordpressLoaded": false
+}
+{
+    "checks": 50,
+    "failures": [],
+    "realDatabaseWrites": 0,
+    "realOrdersCreated": 0,
+    "realMailCalls": 0
+}
+{
+    "mode": "no-woocommerce",
+    "checks": 4,
+    "failures": [],
+    "realDatabaseWrites": 0,
+    "realOrdersCreated": 0,
+    "realMailCalls": 0
+}
+{
+    "checks": 18,
+    "failures": [],
+    "realDatabaseWrites": 0,
+    "realOrdersCreated": 0,
+    "realMailCalls": 0
+}
+{
+    "checks": 81,
+    "failures": [],
+    "mailAttempts": 0,
+    "orderAccess": 0,
+    "databaseAccess": 0
+}
+PASS: 15 PHP domain assertions
+{
+    "status": "passed",
+    "assertions": 110
+}
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/rest.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/store.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/settings.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/locale.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/games.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/domain.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/orders.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/includes/lock.php
+No syntax errors detected in /repo/wordpress/joyrent-rentals/joyrent-rentals.php
+No syntax errors detected in /repo/wordpress/joyrent/functions.php
+No syntax errors detected in /repo/wordpress/joyrent/footer.php
+No syntax errors detected in /repo/wordpress/joyrent/page-faq.php
+No syntax errors detected in /repo/wordpress/joyrent/index.php
+No syntax errors detected in /repo/wordpress/joyrent/page-faq-ru.php
+No syntax errors detected in /repo/wordpress/joyrent/front-page.php
+No syntax errors detected in /repo/wordpress/joyrent/includes/public-pages.php
+No syntax errors detected in /repo/wordpress/joyrent/woocommerce.php
+No syntax errors detected in /repo/wordpress/joyrent/header.php

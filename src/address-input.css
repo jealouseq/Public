@@ -1,0 +1,15 @@
+.odesa-address-field { position: relative; }
+.address-combobox { position: relative; }
+.booking-section .odesa-address-field input[type="text"] { font-size: 16px; min-width: 0; scroll-margin-block: 110px; }
+.address-suggestions { position: absolute; inset: calc(100% + 8px) 0 auto; z-index: 12; display: flex; flex-direction: column; max-height: var(--address-popup-height, 320px); overflow: hidden; background: #1b1d20; border: 1px solid #66605a; border-radius: 10px; box-shadow: 0 14px 34px #0007; transition: none; }
+.address-suggestions-above { transform: translateY(-100%); }
+.address-suggestions ul { margin: 0; padding: 5px; list-style: none; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.address-suggestions [role="option"] { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 10px 12px; border-radius: 6px; color: #f2f0eb; font-size: 15px; line-height: 1.45; cursor: pointer; touch-action: pan-y; }
+.address-suggestions [role="option"] svg { flex: 0 0 auto; color: #d8bb8e; }
+.address-suggestions [role="option"][aria-selected="true"] { background: #36312a; }
+.address-attribution { display: block; flex: 0 0 auto; padding: 8px 14px 10px; text-align: right; color: #a8aaae; font-size: 10px; line-height: 16px; border-top: 1px solid #ffffff12; }
+.address-attribution:hover { color: #e3cbab; }
+.address-sr-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 375px) {
+  .address-suggestions [role="option"] { padding-inline: 9px; font-size: 14px; }
+}

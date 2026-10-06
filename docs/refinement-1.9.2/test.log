@@ -1,0 +1,18 @@
+
+> joyrent-wordpress@1.9.2 test
+> vitest run
+
+
+ RUN  v3.2.7 /workspace/Public
+
+ ✓ src/lib/delivery-map.test.ts (17 tests) 11ms
+ ✓ src/lib/rental.test.ts (22 tests) 8ms
+ ✓ src/lib/odesa-streets.test.ts (6 tests) 11ms
+ ✓ src/lib/copy.test.ts (4 tests) 5ms
+ ✓ src/lib/game-search.test.ts (2 tests) 4ms
+ ✓ src/lib/draft.test.ts (4 tests) 3ms
+
+ Test Files  6 passed (6)
+      Tests  55 passed (55)
+   Start at  17:55:59
+   Duration  686ms (transform 263ms, setup 0ms, collect 433ms, tests 42ms, environment 1ms, prepare 594ms)
