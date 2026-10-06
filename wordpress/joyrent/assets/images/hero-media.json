@@ -2,20 +2,20 @@
   "mobileMedia": "(max-width: 900px)",
   "desktopMedia": "(width > 900px)",
   "desktop": {
-    "master": "hero-slim-studio.png",
-    "width": 1447,
-    "height": 1087,
-    "fallback": "hero-slim-studio-720.webp",
+    "master": "hero-slim-studio-tall.png",
+    "width": 1374,
+    "height": 1145,
+    "fallback": "hero-slim-studio-tall-720.webp",
     "sizes": "(min-width: 1443px) 670px, (min-width: 1201px) calc(41.6vw + 70px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
     "sources": [
       {
-        "file": "hero-slim-studio-720.webp",
+        "file": "hero-slim-studio-tall-720.webp",
         "width": 720,
         "quality": 96
       },
       {
-        "file": "hero-slim-studio-1447.webp",
-        "width": 1447,
+        "file": "hero-slim-studio-tall-1374.webp",
+        "width": 1374,
         "quality": 98
       }
     ]
@@ -46,20 +46,20 @@
   },
   "light": {
     "desktop": {
-      "master": "hero-slim-light.png",
-      "width": 1447,
-      "height": 1087,
-      "fallback": "hero-slim-light-720.webp",
+      "master": "hero-slim-light-tall.png",
+      "width": 1374,
+      "height": 1145,
+      "fallback": "hero-slim-light-tall-720.webp",
       "sizes": "(min-width: 1443px) 670px, (min-width: 1201px) calc(41.6vw + 70px), (min-width: 1067px) 41.6vw, calc(43vw - 15.4px)",
       "sources": [
         {
-          "file": "hero-slim-light-720.webp",
+          "file": "hero-slim-light-tall-720.webp",
           "width": 720,
           "quality": 94
         },
         {
-          "file": "hero-slim-light-1447.webp",
-          "width": 1447,
+          "file": "hero-slim-light-tall-1374.webp",
+          "width": 1374,
           "quality": 94
         }
       ]

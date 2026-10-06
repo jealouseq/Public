@@ -1,0 +1,90 @@
+[
+  {
+    "width": 900,
+    "dpr": 1.1,
+    "cssWidth": 440,
+    "file": "hero-slim-studio-960.webp",
+    "nativePixels": 960,
+    "CTA": "PASS",
+    "tariffToBooking": "PASS",
+    "noDoubleFetch": true,
+    "noWriteRequests": true
+  },
+  {
+    "width": 901,
+    "dpr": 1.1,
+    "cssWidth": 372.140625,
+    "file": "hero-slim-studio-tall-720.webp",
+    "nativePixels": 720,
+    "CTA": "PASS",
+    "tariffToBooking": "PASS",
+    "noDoubleFetch": true,
+    "noWriteRequests": true
+  },
+  {
+    "width": 1200,
+    "dpr": 1.1,
+    "cssWidth": 498.8125,
+    "file": "hero-slim-studio-tall-720.webp",
+    "nativePixels": 720,
+    "CTA": "PASS",
+    "tariffToBooking": "PASS",
+    "noDoubleFetch": true,
+    "noWriteRequests": true
+  },
+  {
+    "width": 1201,
+    "dpr": 1.1,
+    "cssWidth": 569.265625,
+    "file": "hero-slim-studio-tall-720.webp",
+    "nativePixels": 720,
+    "CTA": "PASS",
+    "tariffToBooking": "PASS",
+    "noDoubleFetch": true,
+    "noWriteRequests": true
+  },
+  {
+    "width": 1280,
+    "dpr": 1.1,
+    "cssWidth": 602.078125,
+    "file": "hero-slim-studio-tall-720.webp",
+    "nativePixels": 720,
+    "CTA": "PASS",
+    "tariffToBooking": "PASS",
+    "noDoubleFetch": true,
+    "noWriteRequests": true
+  },
+  {
+    "width": 1285,
+    "dpr": 1.1,
+    "cssWidth": 604.15625,
+    "file": "hero-slim-studio-tall-720.webp",
+    "nativePixels": 720,
+    "CTA": "PASS",
+    "tariffToBooking": "PASS",
+    "noDoubleFetch": true,
+    "noWriteRequests": true
+  },
+  {
+    "width": 1443,
+    "dpr": 1.1,
+    "cssWidth": 669.828125,
+    "file": "hero-slim-studio-tall-1374.webp",
+    "nativePixels": 1374,
+    "CTA": "PASS",
+    "tariffToBooking": "PASS",
+    "noDoubleFetch": true,
+    "noWriteRequests": true
+  },
+  {
+    "width": 1920,
+    "dpr": 2,
+    "cssWidth": 670,
+    "file": "hero-slim-studio-tall-1374.webp",
+    "nativePixels": 1374,
+    "CTA": "PASS",
+    "tariffToBooking": "PASS",
+    "noDoubleFetch": true,
+    "noWriteRequests": true
+  }
+]

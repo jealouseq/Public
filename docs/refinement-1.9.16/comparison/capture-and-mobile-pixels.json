@@ -1,0 +1,152 @@
+[
+  {
+    "language": "uk",
+    "width": 1440,
+    "height": 900,
+    "dpr": 1,
+    "info": {
+      "rect": {
+        "x": 696.53125,
+        "y": 153.421875,
+        "width": 668.578125,
+        "height": 557.140625,
+        "top": 153.421875,
+        "right": 1365.109375,
+        "bottom": 710.5625,
+        "left": 696.53125
+      },
+      "images": [
+        {
+          "file": "hero-slim-studio-tall-720.webp",
+          "complete": true,
+          "naturalWidth": 669,
+          "naturalHeight": 557
+        },
+        {
+          "file": "hero-slim-light-tall-720.webp",
+          "complete": true,
+          "naturalWidth": 669,
+          "naturalHeight": 557
+        }
+      ],
+      "transform": "none"
+    },
+    "pixelIdentical": false,
+    "diffBounds": [
+      700,
+      179,
+      1362,
+      710
+    ]
+  },
+  {
+    "language": "uk",
+    "width": 1920,
+    "height": 1080,
+    "dpr": 1,
+    "info": {
+      "rect": {
+        "x": 978,
+        "y": 152.828125,
+        "width": 670,
+        "height": 558.328125,
+        "top": 152.828125,
+        "right": 1648,
+        "bottom": 711.15625,
+        "left": 978
+      },
+      "images": [
+        {
+          "file": "hero-slim-studio-tall-720.webp",
+          "complete": true,
+          "naturalWidth": 670,
+          "naturalHeight": 558
+        },
+        {
+          "file": "hero-slim-light-tall-720.webp",
+          "complete": true,
+          "naturalWidth": 670,
+          "naturalHeight": 558
+        }
+      ],
+      "transform": "none"
+    },
+    "pixelIdentical": false,
+    "diffBounds": [
+      980,
+      179,
+      1645,
+      710
+    ]
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "height": 844,
+    "dpr": 3,
+    "info": {
+      "rect": {
+        "x": 24,
+        "y": 496.0625,
+        "width": 342,
+        "height": 256.90625,
+        "top": 496.0625,
+        "right": 366,
+        "bottom": 752.96875,
+        "left": 24
+      },
+      "images": [
+        {
+          "file": "hero-slim-studio-1447.webp",
+          "complete": true,
+          "naturalWidth": 342,
+          "naturalHeight": 256
+        },
+        {
+          "file": "hero-slim-light-1447.webp",
+          "complete": true,
+          "naturalWidth": 342,
+          "naturalHeight": 256
+        }
+      ],
+      "transform": "none"
+    },
+    "pixelIdentical": true,
+    "diffBounds": null
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "height": 844,
+    "dpr": 3,
+    "info": {
+      "rect": {
+        "x": 24,
+        "y": 520.5625,
+        "width": 342,
+        "height": 256.90625,
+        "top": 520.5625,
+        "right": 366,
+        "bottom": 777.46875,
+        "left": 24
+      },
+      "images": [
+        {
+          "file": "hero-slim-studio-1447.webp",
+          "complete": true,
+          "naturalWidth": 342,
+          "naturalHeight": 256
+        },
+        {
+          "file": "hero-slim-light-1447.webp",
+          "complete": true,
+          "naturalWidth": 342,
+          "naturalHeight": 256
+        }
+      ],
+      "transform": "none"
+    },
+    "pixelIdentical": true,
+    "diffBounds": null
+  }
+]
