@@ -47,6 +47,54 @@ $payload=json_decode($call[1]['body'],true);
 api_check($payload===['chat_id'=>'999','text'=>'Fixture booking','disable_web_page_preview'=>true],'Send payload contains only destination, plain message and preview flag');
 api_check($call[1]['headers']['Content-Type']==='application/json'&&$call[1]['data_format']==='body','Send body is JSON');
 
+// Optional presentation cannot override the pinned destination, message or API transport.
+$bookingUrl='https://example.invalid/wp-admin/admin.php?page=wc-orders&action=edit&id=87';
+$keyboard=['inline_keyboard'=>[[['text'=>'Открыть бронь','url'=>$bookingUrl]]]];
+api_response(['ok'=>true,'result'=>api_sent()]);
+api_check(JRTG_Api::send_message('<b>Бронь JR-87</b>',null,['parse_mode'=>'HTML','reply_markup'=>$keyboard])===['status'=>'sent','message_id'=>12],'HTML booking with one inline link is acknowledged');
+$formatted=$GLOBALS['api_calls'][array_key_last($GLOBALS['api_calls'])];
+$payload=json_decode($formatted[1]['body'],true);
+api_check(($payload['parse_mode']??null)==='HTML'&&($payload['reply_markup']??null)===$keyboard,'Telegram receives bold HTML and the inline booking button');
+api_check(($payload['chat_id']??null)==='999'&&($payload['text']??null)==='<b>Бронь JR-87</b>'&&($payload['disable_web_page_preview']??null)===true,'Presentation preserves the recipient, exact message and suppressed preview');
+api_check($formatted[1]['timeout']===8&&$formatted[1]['redirection']===0&&$formatted[1]['sslverify']===true,'Rich messages preserve bounded fixed-endpoint transport');
+api_check(JRTG_Api::send_message('Plain test',null,[])['status']==='sent','Empty presentation options preserve plain test messages');
+$plain=json_decode($GLOBALS['api_calls'][array_key_last($GLOBALS['api_calls'])][1]['body'],true);
+api_check($plain===['chat_id'=>'999','text'=>'Plain test','disable_web_page_preview'=>true],'Plain messages do not acquire parse mode or buttons');
+api_check(JRTG_Api::send_message('Booking',null,['reply_markup'=>$keyboard])['status']==='sent','An inline link also works with a plain message');
+$beforeInvalidOptions=api_call_count();
+foreach ([
+    'recipient overwrite'=>['chat_id'=>'111'],
+    'message overwrite'=>['text'=>'Injected'],
+    'token overwrite'=>['token'=>'not-a-token'],
+    'preview overwrite'=>['disable_web_page_preview'=>false],
+    'Markdown not supported'=>['parse_mode'=>'MarkdownV2'],
+    'non-string parse mode'=>['parse_mode'=>['HTML']],
+    'lowercase parse mode'=>['parse_mode'=>'html'],
+    'empty parse mode'=>['parse_mode'=>''],
+    'null parse mode'=>['parse_mode'=>null],
+    'non-array keyboard'=>['reply_markup'=>'invalid'],
+    'extra keyboard action'=>['reply_markup'=>$keyboard+['resize_keyboard'=>true]],
+    'empty keyboard'=>['reply_markup'=>['inline_keyboard'=>[]]],
+    'multiple rows'=>['reply_markup'=>['inline_keyboard'=>[$keyboard['inline_keyboard'][0],$keyboard['inline_keyboard'][0]]]],
+    'multiple buttons'=>['reply_markup'=>['inline_keyboard'=>[[$keyboard['inline_keyboard'][0][0],$keyboard['inline_keyboard'][0][0]]]]],
+    'associative row'=>['reply_markup'=>['inline_keyboard'=>[['button'=>$keyboard['inline_keyboard'][0][0]]]]],
+    'callback action'=>['reply_markup'=>['inline_keyboard'=>[[['text'=>'Open','url'=>$bookingUrl,'callback_data'=>'delete']]]]],
+    'empty label'=>['reply_markup'=>['inline_keyboard'=>[[['text'=>'   ','url'=>$bookingUrl]]]]],
+    'multiline label'=>['reply_markup'=>['inline_keyboard'=>[[['text'=>"Open\nbooking",'url'=>$bookingUrl]]]]],
+    'long label'=>['reply_markup'=>['inline_keyboard'=>[[['text'=>str_repeat('я',65),'url'=>$bookingUrl]]]]],
+    'missing URL'=>['reply_markup'=>['inline_keyboard'=>[[['text'=>'Open']]]]],
+    'non-string URL'=>['reply_markup'=>['inline_keyboard'=>[[['text'=>'Open','url'=>true]]]]],
+] as $label=>$options) {
+    api_check(JRTG_Api::send_message('Booking',null,$options)===['status'=>'failed','error'=>'invalid_message'],'Rejected message presentation: '.$label);
+}
+foreach (['javascript:alert(1)','tel:+380991234567','https://user:password@example.invalid/booking',$bookingUrl.'#fragment','https://example.invalid/booking path','https://example.invalid/booking\n','/relative/booking',str_repeat('x',2049),'https:///missing-host'] as $url) {
+    $badKeyboard=['inline_keyboard'=>[[['text'=>'Open booking','url'=>$url]]]];
+    api_check(JRTG_Api::send_message('Booking',null,['reply_markup'=>$badKeyboard])===['status'=>'failed','error'=>'invalid_message'],'Unsafe inline destination rejected before HTTP');
+}
+api_check(api_call_count()===$beforeInvalidOptions,'Invalid presentation makes zero Telegram API calls');
+$httpKeyboard=['inline_keyboard'=>[[['text'=>'Open booking','url'=>'http://example.invalid/wp-admin/post.php?post=87&action=edit']]]];
+api_check(JRTG_Api::send_message('Booking',null,['reply_markup'=>$httpKeyboard])['status']==='sent','A valid HTTP admin URL works on local development installations');
+
 foreach ([
     'another chat'=>api_sent(111),
     'opposite signed chat'=>api_sent(-999),

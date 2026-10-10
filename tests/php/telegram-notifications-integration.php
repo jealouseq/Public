@@ -16,11 +16,24 @@ function botupdate($id,$chat,$text,$secret=true){
  $r->set_body(wp_json_encode(['update_id'=>$id,'message'=>['from'=>['id'=>$chat,'is_bot'=>false],'chat'=>['id'=>$chat,'type'=>'private','first_name'=>'Fixture '.$chat],'text'=>$text]]));
  return rest_do_request($r);
 }
-$mock=function($pre,$args,$url)use(&$calls){
+$mock=function($pre,$args,$url)use(&$calls,&$orderId){
  if(wp_parse_url($url,PHP_URL_HOST)!=='api.telegram.org')return $pre;
  $body=json_decode($args['body']??'',true);if(!str_contains((string)($body['text']??''),'REST Queue Fixture'))return $pre;$chat=(string)($body['chat_id']??'');$calls[]=$chat;
  ec(in_array($chat,['987654321','987654322'],true),'Worker uses authenticated subscriber');
  ec(str_contains((string)($body['text']??''),'REST Queue Fixture'),'Worker contains actual REST booking');
+ $text=(string)($body['text']??'');
+ ec(($body['parse_mode']??null)==='HTML','Booking requests Telegram HTML mode');
+ ec(str_contains($text,'<b>')&&str_contains($text,'&amp;'),'Essential fields are emphasized and actual contact is HTML-escaped');
+ ec(!str_contains($text,'<unsafe>')&&!str_contains($text,'https://')&&!str_contains($text,'http://'),'Booking text has no injected HTML or raw admin URL');
+ preg_match_all('~</?(b|i)>~',$text,$tags);$stack=[];$balanced=true;
+ foreach($tags[0]as$tag){if(str_starts_with($tag,'</')){if(array_pop($stack)!==substr($tag,2,-1)){$balanced=false;break;}}else$stack[]=substr($tag,1,-1);}
+ ec($balanced&&!$stack,'Rich message tags remain balanced');
+ $rendered=html_entity_decode(strip_tags($text),ENT_QUOTES|ENT_HTML5,'UTF-8');
+ $units=0;foreach(preg_split('//u',$rendered,-1,PREG_SPLIT_NO_EMPTY)as$char)$units+=strlen($char)===4?2:1;
+ ec($units<=3900,'Rendered message fits Telegram Unicode budget');
+ $keyboard=$body['reply_markup']['inline_keyboard']??null;
+ ec(is_array($keyboard)&&count($keyboard)===1&&count($keyboard[0])===1,'Booking has exactly one inline button');
+ ec(($keyboard[0][0]??null)===['text'=>'Открыть бронь','url'=>wc_get_order($orderId)->get_edit_order_url()],'Button opens this real booking in the current order store');
  return ['response'=>['code'=>200,'message'=>'OK'],'headers'=>[],'body'=>wp_json_encode(['ok'=>true,'result'=>['message_id'=>314159+count($calls),'chat'=>['id'=>(int)$chat]]]),'cookies'=>[]];
 };
 add_filter('pre_http_request',$mock,50,3);
@@ -32,7 +45,7 @@ try{
  ec(count(JRTG_Subscriptions::all())===2,'Real webhook subscribes two recipients');
  botupdate(6,987654322,'fixture-pass');ec(count(JRTG_Subscriptions::all())===2,'Repeated update id is idempotent');
  $today=(new DateTimeImmutable('now',new DateTimeZone('Europe/Kyiv')))->modify('+10 days')->format('Y-m-d');
- $payload=['language'=>'ru','console'=>'ps5','days'=>3,'startDate'=>$today,'controllers'=>2,'gameIds'=>[],'name'=>'REST Queue Fixture','phone'=>'+380500000077','telegram'=>'@rest_fixture','method'=>'delivery','address'=>'Фонтанская дорога, 10','securityMode'=>'deposit','consent'=>true,'website'=>'','requestId'=>wp_generate_uuid4()];
+ $payload=['language'=>'ru','console'=>'ps5','days'=>3,'startDate'=>$today,'controllers'=>2,'gameIds'=>[],'name'=>'REST Queue Fixture & <unsafe>','phone'=>'+380500000077','telegram'=>'@rest_fixture','method'=>'delivery','address'=>'Фонтанская дорога, 10','securityMode'=>'deposit','consent'=>true,'website'=>'','requestId'=>wp_generate_uuid4()];
  $key=hash_hmac('sha256',$payload['requestId'],wp_salt('nonce'));$resultKey='jr_result_'.$key;
  $request=new WP_REST_Request('POST','/joyrent/v1/requests');$request->set_header('Content-Type','application/json');$request->set_body(wp_json_encode($payload));
  $response=rest_do_request($request);ec($response->get_status()===201,'Public booking accepted');

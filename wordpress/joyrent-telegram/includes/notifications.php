@@ -100,7 +100,7 @@ final class JRTG_Notifications {
                 self::continue_queue($id,$order,$state);return;
             }
             $attempting=true;$settings['chat_id']=$chat;
-            $result=JRTG_Api::send_message($message,$settings);
+            $result=JRTG_Api::send_message($message,$settings,JRTG_Message::options_for_order($order));
             if (($result['status']??'')==='sent'&&is_int($result['message_id']??null)&&$result['message_id']>0) {
                 $entry['status']='sent';$entry['message_id']=$result['message_id'];unset($entry['error']);
             } elseif (($result['status']??'')==='retry'&&$entry['attempts']<self::MAX_ATTEMPTS) {

@@ -3,14 +3,14 @@ if (!defined('ABSPATH')) exit;
 
 /** Fixed Telegram Bot API endpoints; neither token nor raw remote errors leave this class. */
 final class JRTG_Api {
-    public static function send_message(string $message,?array $snapshot=null): array {
+    public static function send_message(string $message,?array $snapshot=null,array $options=[]): array {
         $settings=$snapshot??JRTG_Settings::get();
         if (!preg_match('/^[0-9]{6,15}:[A-Za-z0-9_-]{20,100}$/D',(string)($settings['token']??''))||!preg_match('/^-?[1-9][0-9]{0,19}$/D',(string)($settings['chat_id']??''))) return self::failure('not_configured');
-        if ($message==='') return self::failure('invalid_message');
+        if ($message===''||!self::valid_presentation($options)) return self::failure('invalid_message');
         $response=self::request('sendMessage',[
             'chat_id'=>$settings['chat_id'],'text'=>$message,
             'disable_web_page_preview'=>true,
-        ],$settings);
+        ]+$options,$settings);
         if (($response['status']??'')!=='ok') return $response;
         $result=$response['result']??null;
         if (!is_array($result)||!isset($result['message_id'])||!is_int($result['message_id'])||$result['message_id']<=0
@@ -19,6 +19,30 @@ final class JRTG_Api {
             return ['status'=>'unknown','error'=>'invalid_ack'];
         }
         return ['status'=>'sent','message_id'=>$result['message_id']];
+    }
+
+    /** Accept only message presentation; destination, text and transport remain pinned above. */
+    private static function valid_presentation(array $options): bool {
+        foreach (array_keys($options) as $key) if (!in_array($key,['parse_mode','reply_markup'],true)) return false;
+        if (array_key_exists('parse_mode',$options)&&$options['parse_mode']!=='HTML') return false;
+        if (!array_key_exists('reply_markup',$options)) return true;
+        $markup=$options['reply_markup'];
+        if (!is_array($markup)||array_keys($markup)!==['inline_keyboard']) return false;
+        $rows=$markup['inline_keyboard'];
+        if (!is_array($rows)||count($rows)!==1||!isset($rows[0])||!is_array($rows[0])
+            ||count($rows[0])!==1||!isset($rows[0][0])||!is_array($rows[0][0])) return false;
+        $button=$rows[0][0];
+        if (count($button)!==2||array_diff(array_keys($button),['text','url'])!==[]
+            ||!is_string($button['text']??null)||trim($button['text'])===''
+            ||preg_match('/^.{1,64}$/uD',$button['text'])!==1
+            ||preg_match('/[\x00-\x1F\x7F]/',$button['text'])) return false;
+        $url=$button['url']??null;
+        if (!is_string($url)||strlen($url)>2048||str_contains($url,'\\')
+            ||preg_match('/[\s\x00-\x1F\x7F]/u',$url)!==0) return false;
+        $parts=wp_parse_url($url);
+        return is_array($parts)&&in_array($parts['scheme']??'',['http','https'],true)&&!empty($parts['host'])
+            &&!isset($parts['user'])&&!isset($parts['pass'])&&!isset($parts['fragment'])
+            &&(!isset($parts['port'])||$parts['port']>0);
     }
 
     /** Register only this site's HTTPS receiver and verify Telegram's acknowledgment. */

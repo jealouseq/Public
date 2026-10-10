@@ -2,7 +2,7 @@
 /**
  * Plugin Name: JOYRENT Telegram
  * Description: Private Telegram notifications for completed JOYRENT booking requests, with a durable queue and safe retries.
- * Version: 1.1.1
+ * Version: 1.1.2
  * Requires at least: 6.6
  * Requires PHP: 8.2
  * Requires Plugins: woocommerce, joyrent-rentals

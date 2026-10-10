@@ -126,8 +126,8 @@ for($i=0;$i<5;$i++){$s=state($o);$s['recipients']['999']['next_at']=0;$o->update
 check(state($o)['recipients']['999']['status']==='failed'&&state($o)['recipients']['999']['attempts']===4,'Retry cap is per recipient');
 
 $o=fresh(30);$o->meta['_joyrent_telegram']='@private_user';$o->meta['_joyrent_requested_game']=str_repeat('😀<b>З</b>',1500);
-$m=JRTG_Message::for_order($o);check(str_contains($m,'EA SPORTS FC 27')&&str_contains($m,'@private_user')&&!str_contains($m,'<b>')&&!str_contains($m,'Оплачено'),'Plain booking message contains actual fields without false payment claim');
-$units=0;foreach(preg_split('//u',$m,-1,PREG_SPLIT_NO_EMPTY) as $char)$units+=strlen($char)===4?2:1;check($units<=3900,'Message fits Unicode budget');
+$m=JRTG_Message::for_order($o);check(str_contains($m,'EA SPORTS FC 27')&&str_contains($m,'@private_user')&&str_contains($m,'<b>')&&!str_contains($m,'Оплачено')&&!str_contains($m,'https://'),'Compact booking message contains actual fields without false payment claim or long URL');
+$visible=html_entity_decode(strip_tags($m),ENT_QUOTES|ENT_HTML5,'UTF-8');$units=0;foreach(preg_split('//u',$visible,-1,PREG_SPLIT_NO_EMPTY) as $char)$units+=strlen($char)===4?2:1;check($units<=3900,'Message fits Unicode budget');
 
 $o=fresh(500);sentresponse();$wakes=count(JRTG_Dispatcher::$wakes);JRTG_Notifications::queue(500);
 check(count(JRTG_Dispatcher::$wakes)===$wakes+1&&min(array_column(pending_jobs(500),0))<=time(),'Durable new booking wakes immediate work with due backup');
