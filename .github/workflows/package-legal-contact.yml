@@ -47,7 +47,7 @@ jobs:
           sha256sum releases/joyrent-1.9.18.zip releases/joyrent-rentals-1.8.5.zip > releases/joyrent-1.9.18-SHA256SUMS.txt
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f releases/joyrent-1.9.18.zip releases/joyrent-rentals-1.8.5.zip releases/joyrent-1.9.18-SHA256SUMS.txt
+          git add --sparse -f releases/joyrent-1.9.18.zip releases/joyrent-rentals-1.8.5.zip releases/joyrent-1.9.18-SHA256SUMS.txt
           if ! git diff --cached --quiet; then
             git commit -m "Package JOYRENT theme 1.9.18 and rental plugin 1.8.5"
             git push origin "HEAD:${GITHUB_REF_NAME}"
