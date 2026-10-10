@@ -11,11 +11,37 @@ final class JR_Settings {
         if (isset($saved['delivery_text'])&&$saved['delivery_text']!==$defaults['delivery_text']&&empty($saved['delivery_text_ru'])) $defaults['delivery_text_ru']='';
         return array_merge($defaults,$saved);
     }
-    private static function amount(mixed $value): ?float { return $value === '' || $value === null ? null : max(0,(float)$value); }
+    private static function amount(mixed $value): ?float {
+        // Corrupt/imported settings must never turn an unknown fee into free or 1 грн.
+        if (!(is_int($value)||is_float($value)||is_string($value))||!is_numeric($value)) return null;
+        $amount=(float)$value;
+        return is_finite($amount)&&$amount>=0?$amount:null;
+    }
+    private static function public_text(mixed $value, int $limit): string {
+        if (!(is_string($value)||is_int($value)||(is_float($value)&&is_finite($value)))) return '';
+        $value=(string)$value;
+        if (preg_match('//u',$value)!==1) return '';
+        preg_match('/\A.{0,'.$limit.'}/us',$value,$match);
+        return $match[0]??'';
+    }
+    private static function public_integer(mixed $value, int $minimum, int $maximum, int $default): int {
+        $number=is_int($value)||is_string($value)||(is_float($value)&&is_finite($value))?filter_var($value,FILTER_VALIDATE_INT):false;
+        return $number===false?$default:max($minimum,min($maximum,$number));
+    }
     public static function search_indexing(): bool { return in_array(self::get()['search_indexing'],[true,1,'1'],true); }
     public static function public(): array {
         $s=self::get();
-        return ['city'=>$s['city'],'cityRu'=>$s['city_ru'],'phone'=>$s['phone'],'email'=>$s['email'],'telegram'=>$s['telegram'],'instagram'=>$s['instagram'],'deliveryFee'=>self::amount($s['delivery_fee']),'deliveryGreenFee'=>self::amount($s['delivery_green_fee']),'deliveryYellowFee'=>self::amount($s['delivery_yellow_fee']),'depositPs5'=>self::amount($s['deposit_ps5']),'depositPs4'=>self::amount($s['deposit_ps4']),'baseControllers'=>(int)$s['base_controllers'],'extraControllerFee'=>self::amount($s['extra_controller_fee']),'pickup'=>(bool)$s['pickup'],'freeDeliveryFrom'=>(int)$s['free_delivery_from'],'maxGames'=>max(1,min(100,(int)$s['max_games'])),'deliveryText'=>$s['delivery_text'],'deliveryTextRu'=>$s['delivery_text_ru']];
+        // Normalize the public view only; the stored owner/private configuration stays untouched.
+        return [
+            'city'=>self::public_text($s['city'],120),'cityRu'=>self::public_text($s['city_ru'],120),
+            'phone'=>self::public_text($s['phone'],80),'email'=>self::public_text($s['email'],254),
+            'telegram'=>self::public_text($s['telegram'],2048),'instagram'=>self::public_text($s['instagram'],2048),
+            'deliveryFee'=>self::amount($s['delivery_fee']),'deliveryGreenFee'=>self::amount($s['delivery_green_fee']),'deliveryYellowFee'=>self::amount($s['delivery_yellow_fee']),
+            'depositPs5'=>self::amount($s['deposit_ps5']),'depositPs4'=>self::amount($s['deposit_ps4']),
+            'baseControllers'=>self::public_integer($s['base_controllers'],1,2,2),'extraControllerFee'=>self::amount($s['extra_controller_fee']),
+            'pickup'=>in_array($s['pickup'],[true,1,'1'],true),'freeDeliveryFrom'=>self::public_integer($s['free_delivery_from'],1,30,7),'maxGames'=>self::public_integer($s['max_games'],1,100,100),
+            'deliveryText'=>self::public_text($s['delivery_text'],4096),'deliveryTextRu'=>self::public_text($s['delivery_text_ru'],4096),
+        ];
     }
     public static function register(): void { register_setting('joyrent','joyrent_settings',['type'=>'array','sanitize_callback'=>[self::class,'sanitize'],'default'=>self::defaults()]); }
     public static function sanitize(mixed $input): array {

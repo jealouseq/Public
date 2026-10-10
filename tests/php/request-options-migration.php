@@ -12,7 +12,7 @@ try {
     foreach($old as $slug=>$seed){$page=get_page_by_path($slug);if(!$page)throw new RuntimeException('Missing local page '.$slug);$original[$slug]=$page;wp_update_post(['ID'=>$page->ID,'post_title'=>$seed['title'],'post_content'=>$seed['content'],'post_excerpt'=>'','post_status'=>'publish']);}
     $approved=get_option('joyrent_settings');update_option('joyrent_version','1.7.1');JR_Store::upgrade();
     foreach($next as $slug=>$seed){$page=get_post($original[$slug]->ID);options_migration_check($page->post_content===$seed['content'],'Unedited previous managed '.$slug.' migrates in place');}
-    options_migration_check(get_option('joyrent_version')==='1.8.4','Upgrade advances current plugin version');
+    options_migration_check(get_option('joyrent_version')==='1.8.6','Upgrade advances current plugin version');
     options_migration_check(get_option('joyrent_settings')===$approved,'Existing private/business settings stay intact');
     foreach(['faq','faq-ru','umovy-orendy','usloviya-arendy'] as $slug)options_migration_check(str_contains(get_post($original[$slug]->ID)->post_content,$slug==='faq'||$slug==='umovy-orendy'?'перевірки паспорта':'проверки паспорта'),'Managed '.$slug.' explains conditional contract and document verification');
     $after=[];foreach($original as $slug=>$page){$after[$slug]=get_post($page->ID)->post_content;}JR_Store::upgrade();foreach($after as $slug=>$content)options_migration_check(get_post($original[$slug]->ID)->post_content===$content,'Repeated migration remains idempotent '.$slug);

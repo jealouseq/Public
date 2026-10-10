@@ -2,7 +2,7 @@
 /**
  * Plugin Name: JOYRENT Rentals
  * Description: Ukrainian and Russian PlayStation rental catalog, guest requests and WooCommerce order integration.
- * Version: 1.8.5
+ * Version: 1.8.6
  * Requires at least: 6.6
  * Requires PHP: 8.2
  * Requires Plugins: woocommerce
@@ -41,7 +41,14 @@ add_filter('woocommerce_privacy_remove_order_personal_data_meta_value', fn($valu
 add_filter('option_page_capability_joyrent', fn() => 'manage_woocommerce');
 // Support durable-key queries in the legacy order store as well as HPOS.
 add_filter('woocommerce_order_data_store_cpt_get_orders_query', function (array $query, array $vars): array {
-    if (!empty($vars['joyrent_request_key'])) $query['meta_query'][]=['key'=>'_joyrent_request_key','value'=>$vars['joyrent_request_key']];
+    if (!empty($vars['joyrent_request_key'])) {
+        $key=$vars['joyrent_request_key'];
+        // HPOS receives the explicit meta query; CPT must not add the same join twice.
+        foreach (($query['meta_query']??[]) as $clause) {
+            if (is_array($clause)&&($clause['key']??null)==='_joyrent_request_key'&&($clause['value']??null)===$key&&strtoupper((string)($clause['compare']??'='))==='=') return $query;
+        }
+        $query['meta_query'][]=['key'=>'_joyrent_request_key','value'=>$key];
+    }
     return $query;
 }, 10, 2);
 // Rental products enter orders only through the validated request route.

@@ -1,11 +1,25 @@
 <?php
 if (!defined('ABSPATH')) exit;
 
+/** A durable request exists but its final save has not completed yet. */
+final class JR_Incomplete_Booking extends RuntimeException {}
+
 final class JR_Orders {
     public static function register_status(): void {
+        register_post_status('wc-jr-incomplete',['label'=>'Бронювання — потребує перевірки','public'=>false,'exclude_from_search'=>true,'show_in_admin_all_list'=>true,'show_in_admin_status_list'=>true,'label_count'=>_n_noop('Незавершене бронювання <span class="count">(%s)</span>','Незавершені бронювання <span class="count">(%s)</span>','joyrent-rentals')]);
         register_post_status('wc-jr-request',['label'=>'Бронювання','public'=>true,'exclude_from_search'=>false,'show_in_admin_all_list'=>true,'show_in_admin_status_list'=>true,'label_count'=>_n_noop('Бронювання <span class="count">(%s)</span>','Бронювання <span class="count">(%s)</span>','joyrent-rentals')]);
     }
-    public static function statuses(array $statuses): array { $statuses['wc-jr-request']='Бронювання'; return $statuses; }
+    public static function statuses(array $statuses): array {
+        $statuses['wc-jr-request']='Бронювання';
+        $statuses['wc-jr-incomplete']='Бронювання — потребує перевірки';
+        return $statuses;
+    }
+    private static function complete(WC_Order $order): bool {
+        // Metadata can persist before a failing final status write in the CPT store.
+        // Accepted bookings remain replayable after the manager changes their status.
+        return $order->get_meta('_joyrent_completed')==='yes'
+            && !in_array($order->get_status(),['','draft','auto-draft','checkout-draft','jr-incomplete'],true);
+    }
     public static function existing(string $key, string $fingerprint, ?string $intent_fingerprint = null): ?array {
         $orders=wc_get_orders(['limit'=>1,'joyrent_request_key'=>$key,'meta_query'=>[['key'=>'_joyrent_request_key','value'=>$key]]]);
         if (!$orders) return null;
@@ -27,7 +41,7 @@ final class JR_Orders {
             $matches=hash_equals($stored,$intent_fingerprint);
         }
         if (!$matches) throw new InvalidArgumentException('Параметри бронювання змінилися. Онови сторінку та спробуй ще раз.');
-        if ($order->get_meta('_joyrent_completed')!=='yes') throw new RuntimeException('Заявка потребує перевірки магазином.');
+        if (!self::complete($order)) throw new JR_Incomplete_Booking('Заявка потребує перевірки магазином.');
         return ['reference'=>'JR-'.$order->get_order_number(),'rentalAmount'=>(float)$order->get_meta('_joyrent_rental_amount'),'status'=>'awaiting_confirmation'];
     }
     public static function create(array $data, string $key, string $fingerprint): array {
@@ -35,14 +49,20 @@ final class JR_Orders {
         if (!JR_Store::requestable($product)) throw new RuntimeException('Цей комплект тимчасово недоступний.');
         $amount=(float)$product->get_price(); $settings=JR_Settings::public();
         $order=new WC_Order();
-        $order->set_status('checkout-draft'); $order->set_created_via('joyrent');
+        // WooCommerce automatically deletes checkout-draft orders after one day.
+        // A retained status keeps interrupted requests and their durable keys reviewable.
+        $order->set_status('jr-incomplete'); $order->set_created_via('joyrent');
         // A durable key is stored in the first save, before customer/order items.
         // An interrupted worker can never create a second order on retry.
         $order->update_meta_data('_joyrent_request_key',$key);
         $order->update_meta_data('_joyrent_fingerprint',$fingerprint);
         $order->update_meta_data('_joyrent_intent_fingerprint',JR_Domain::intent_fingerprint($data));
-        $order->save();
         try {
+            // WooCommerce can catch a save exception internally and return 0 or an existing ID.
+            // Confirm the first durable key before creating items or accepting the request.
+            if ($order->save()<1) throw new RuntimeException('Не вдалося зберегти бронювання.');
+            $persisted=self::fresh_order($order->get_id());
+            if (!$persisted||$persisted->get_meta('_joyrent_request_key')!==$key||$persisted->get_meta('_joyrent_fingerprint')!==$fingerprint) throw new RuntimeException('Не вдалося зберегти бронювання.');
             $order->set_currency('UAH'); $order->set_billing_first_name($data['name']); $order->set_billing_phone($data['phone']); $order->set_billing_address_1($data['address']); $order->set_billing_country('UA');
             $item_id=$order->add_product($product,1,['subtotal'=>$amount,'total'=>$amount]);
             $item=$order->get_item($item_id);
@@ -74,11 +94,30 @@ final class JR_Orders {
             $order->add_order_note('Заявка JOYRENT: доступність консолі, ігор, адреса доставки та умови застави потребують підтвердження. Оплату не отримано. Бажані ігри: '.implode(', ',$data['gameIds']));
             $order->set_customer_note('Дата отримання: '.$data['startDate'].'. Повернення: '.$data['returnDate'].'. Геймпадів: '.$data['controllers'].'. Спосіб отримання: '.$data['method']);
             $order->update_meta_data('_joyrent_rental_amount',$amount);
+            // Calculate while still incomplete: WooCommerce saves inside calculate_totals().
+            // Notifications must run only after the complete totals and booking data are durable.
+            $order->calculate_totals(false);
             $order->update_meta_data('_joyrent_completed','yes');
             $order->set_status('jr-request');
-            $order->calculate_totals(false); $order->save();
-            return ['reference'=>'JR-'.$order->get_order_number(),'rentalAmount'=>$amount,'status'=>'awaiting_confirmation'];
-        } catch (Throwable $exception) { $order->delete(true); throw $exception; }
+            $order->save();
+            $persisted=self::fresh_order($order->get_id());
+            if (!$persisted||!self::complete($persisted)||$persisted->get_status()!=='jr-request'
+                ||$persisted->get_meta('_joyrent_request_key')!==$order->get_meta('_joyrent_request_key')
+                ||$persisted->get_meta('_joyrent_fingerprint')!==$fingerprint
+                ||$persisted->get_currency()!=='UAH'||count($persisted->get_items('line_item'))!==1) throw new RuntimeException('Не вдалося зберегти бронювання.');
+            return ['reference'=>'JR-'.$persisted->get_order_number(),'rentalAmount'=>$amount,'status'=>'awaiting_confirmation'];
+        } catch (Throwable $exception) {
+            // Keep a saved key even on failure; retry cannot create a second order.
+            // An interrupted booking remains available for manager review.
+            throw $exception;
+        }
+    }
+    private static function fresh_order(int $id): ?WC_Order {
+        if ($id<1) return null;
+        $order=wc_get_order($id);
+        if (!$order instanceof WC_Order) return null;
+        $order->read_meta_data(true);
+        return $order;
     }
     public static function notification_recipient(): string {
         $settings=JR_Settings::get(); $woo=(array)get_option('woocommerce_new_order_settings',[]);
@@ -101,15 +140,19 @@ final class JR_Orders {
         if (!$owner) return false;
         try {
             $order=wc_get_order($id);
-            if (!$order||$order->get_meta('_joyrent_completed')!=='yes') return false;
+            if (!$order instanceof WC_Order||!self::complete($order)) return false;
             $status=(string)$order->get_meta('_joyrent_notification_status');
             if ($status==='sent') return true;
             // An interrupted send has an uncertain result; only a reviewed admin retry may resend.
             if ($status==='sending'&&!$retry_uncertain) return false;
             $recipient=self::notification_recipient();
             $order->update_meta_data('_joyrent_notification_status','sending');
-            $order->update_meta_data('_joyrent_notification_attempts',(int)$order->get_meta('_joyrent_notification_attempts')+1);
+            $attempt=(int)$order->get_meta('_joyrent_notification_attempts')+1;
+            $order->update_meta_data('_joyrent_notification_attempts',$attempt);
             $order->save();
+            $persisted=self::fresh_order($id);
+            if (!$persisted||$persisted->get_meta('_joyrent_notification_status')!=='sending'
+                ||(int)$persisted->get_meta('_joyrent_notification_attempts')!==$attempt) return false;
             $subject='JOYRENT: нова заявка JR-'.$order->get_order_number();
             $body="Нова заявка очікує ручного підтвердження. Оплату не отримано.\n\n";
             foreach (['Ім’я'=>$order->get_billing_first_name(),'Телефон'=>$order->get_billing_phone(),'Адреса'=>$order->get_billing_address_1(),'Консоль'=>strtoupper((string)$order->get_meta('_joyrent_console')),'Термін'=>$order->get_meta('_joyrent_days').' дн.','Отримання'=>$order->get_meta('_joyrent_start_date'),'Повернення'=>$order->get_meta('_joyrent_return_date'),'Геймпади'=>$order->get_meta('_joyrent_controllers'),'Бажані ігри'=>implode(', ',(array)$order->get_meta('_joyrent_game_ids')),'Мова'=>$order->get_meta('_joyrent_language')] as $label=>$value) $body.=$label.': '.$value."\n";
@@ -123,7 +166,10 @@ final class JR_Orders {
             $order->update_meta_data('_joyrent_notification_status',$sent?'sent':'failed');
             $order->update_meta_data('_joyrent_notification_updated',gmdate('c'));
             $order->add_order_note($sent?'JOYRENT: сповіщення передано поштовій службі.':'JOYRENT: не вдалося передати сповіщення. Перевірте одержувача та пошту; повторіть спробу в блоці JOYRENT.');
-            $order->save(); return $sent;
+            $order->save();
+            $persisted=self::fresh_order($id);
+            return $sent&&$persisted&&$persisted->get_meta('_joyrent_notification_status')==='sent'
+                &&(int)$persisted->get_meta('_joyrent_notification_attempts')===$attempt;
         } catch (Throwable $e) { return false; }
         finally { JR_Lock::release($lock_name,$owner); }
     }

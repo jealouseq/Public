@@ -39,4 +39,35 @@ foreach ([null,[],false,123,'@','abcd',str_repeat('a',33),'@@username','user nam
     try { JR_Domain::canonical(array_merge($payload,['telegram'=>$input])); check(false,'Invalid Telegram rejected'); }
     catch (InvalidArgumentException $e) { check($e->getMessage()==='Вкажи Telegram у форматі @username або https://t.me/username.','Invalid Telegram has a specific validation message'); }
 }
+
+// Required contact text must survive WooCommerce normalization and owner notifications.
+foreach ([
+    ['name'=>'<b></b>'], ['name'=>'<img src=x onerror=alert(1)>'], ['name'=>'Іван <b>Петров</b>'],
+    ['name'=>"Іван\nОплачено: так"], ['name'=>"Іван\rЗастава: 0"], ['name'=>"Ів\0ан"], ['name'=>"Іван\tПетров"], ['name'=>"Іван\xff"],
+    ['address'=>'<div></div>'], ['address'=>'Одеса <b>10</b>'], ['address'=>"Одеса\nЗастава: 0"],
+    ['address'=>"Одеса\0 10"], ['address'=>"Одеса\r10"], ['address'=>"Одеса\t10"], ['address'=>"Одеса\xff 10"],
+] as $changes) {
+    $body=array_merge($payload,['method'=>'delivery','address'=>'Одеса, тестова адреса 10'],$changes);
+    try { JR_Domain::canonical($body); check(false,'Malformed required contact rejected: '.array_key_first($changes)); }
+    catch (InvalidArgumentException $e) { check($e->getMessage()===(array_key_first($changes)==='name'?'Вкажи своє ім’я.':'Вкажи адресу доставки в Одесі.'),'Malformed contact has its existing field validation message'); }
+}
+foreach ([null,[],false,123] as $address) {
+    foreach (['delivery','pickup'] as $method) {
+        try { JR_Domain::canonical(array_merge($payload,['method'=>$method,'address'=>$address])); check(false,'Invalid address type rejected for '.$method); }
+        catch (InvalidArgumentException $e) { check($e->getMessage()==='Вкажи адресу доставки в Одесі.','Invalid address type uses the existing field error'); }
+    }
+}
+$ordinary=JR_Domain::canonical(array_merge($payload,['name'=>"  О'Коннор & Сини  ",'method'=>'delivery','address'=>'  Проспект Шевченка, 4-А/2 (під’їзд №1)  ']));
+check($ordinary['name']==="О'Коннор & Сини"&&$ordinary['address']==='Проспект Шевченка, 4-А/2 (під’їзд №1)','Real Unicode names and address punctuation stay intact after trimming');
+$trimmed=JR_Domain::canonical(array_merge($payload,['name'=>'  Domain Test  ','address'=>'Old valid delivery address']));
+check($trimmed===$legacy,'Ordinary trimmed contact and discarded pickup address preserve canonical request');
+check(JR_Domain::intent_fingerprint($trimmed)===JR_Domain::intent_fingerprint($legacy),'Ordinary contact normalization preserves existing intent fingerprint');
+$limits=JR_Domain::canonical(array_merge($payload,['name'=>str_repeat('Я',100),'method'=>'delivery','address'=>str_repeat('Ї',300)]));
+check(mb_strlen($limits['name'])===100&&mb_strlen($limits['address'])===300,'Valid Unicode contact lengths count characters, not bytes');
+foreach ([['name'=>str_repeat('Я',101)],['address'=>str_repeat('Ї',301)]] as $changes) {
+    try { JR_Domain::canonical(array_merge($payload,$changes)); check(false,'Oversized required contact rejected'); }
+    catch (InvalidArgumentException $e) { check(true,'Oversized required contact rejected'); }
+}
+foreach ([['2026-03-28',3,'2026-03-31'],['2026-10-24',3,'2026-10-27'],['2028-02-28',1,'2028-02-29'],['2026-12-31',1,'2027-01-01']] as [$date,$days,$end]) check(JR_Domain::return_date($date,$days)===$end,'Calendar arithmetic across DST/leap/year boundary');
+
 echo "PASS: $checks PHP domain assertions\n";

@@ -24,8 +24,9 @@ final class WC_Product {
     public function is_in_stock(): bool { return false; }
 }
 final class WC_Order {
-    public function __construct(private array $meta, private array $billing = []) {}
+    public function __construct(private array $meta, private array $billing = [],private string $status='jr-request') {}
     public function get_meta(string $key): mixed { return $this->meta[$key] ?? ''; }
+    public function get_status(): string { return $this->status; }
     public function get_order_number(): int { return 42; }
     public function get_billing_first_name(): string { return $this->billing['name'] ?? ''; }
     public function get_billing_phone(): string { return $this->billing['phone'] ?? ''; }
@@ -72,7 +73,7 @@ $today=(new DateTimeImmutable('now',new DateTimeZone('Europe/Kyiv')))->format('Y
 $yesterday=(new DateTimeImmutable($today))->modify('-1 day')->format('Y-m-d');
 $payload=['requestId'=>'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee','console'=>'ps5','days'=>3,'startDate'=>$today,'controllers'=>2,'gameIds'=>['game-a','game-b'],'name'=>'Audit Test','phone'=>'+380000000001','method'=>'pickup','address'=>'','consent'=>true];
 $receipt=['reference'=>'JR-42','rentalAmount'=>1400.0,'status'=>'awaiting_confirmation'];
-function fixture_receipt(array $payload,string $when): array {
+function fixture_receipt(array $payload,string $when,string $status='jr-request'): array {
     $GLOBALS['options']=[];$GLOBALS['orders']=[];$GLOBALS['reads']=[];
     JR_Settings::$settings=['maxGames'=>100,'pickup'=>true];
     JR_Games::$inventory=[['id'=>'game-a','platforms'=>['ps5'],'available'=>false],['id'=>'game-b','platforms'=>['ps5'],'available'=>false]];
@@ -83,7 +84,7 @@ function fixture_receipt(array $payload,string $when): array {
     $meta=['_joyrent_request_key'=>$key,'_joyrent_fingerprint'=>$fingerprint,'_joyrent_completed'=>'yes','_joyrent_rental_amount'=>1400.0];
     foreach(['console'=>'console','days'=>'days','start_date'=>'startDate','controllers'=>'controllers','game_ids'=>'gameIds','method'=>'method'] as $stored=>$field)$meta['_joyrent_'.$stored]=$data[$field];
     if (isset($data['telegram'])) $meta['_joyrent_telegram']=$data['telegram'];
-    $GLOBALS['orders'][]=new WC_Order($meta,$data);
+    $GLOBALS['orders'][]=new WC_Order($meta,$data,$status);
     return [$key,$data];
 }
 fixture_receipt($payload,$today);check_request(status(call_request($payload))===200,'Unchanged legacy cached receipt replays');
@@ -119,5 +120,16 @@ try { JR_Orders::create($newData,'test-stock-key','test-stock-fingerprint'); }
 catch(RuntimeException $e) { $stockRejected=$e->getMessage()==='Цей комплект тимчасово недоступний.'; }
 catch(Throwable $e) {}
 check_request($stockRejected,'Out-of-stock tariff rejects new request before order construction');
+foreach(['checkout-draft','jr-incomplete'] as $partialStatus) {
+    [$key]=fixture_receipt($payload,$today,$partialStatus);unset($options['jr_result_'.$key]);
+    $response=call_request($payload);
+    check_request($response instanceof WP_Error&&status($response)===503,'A partial completed flag in '.$partialStatus.' never acknowledges acceptance');
+    $options['jr_lock_'.$key]=time().':active-final-save';
+    $response=call_request($payload);
+    check_request($response instanceof WP_Error&&status($response)===409&&$response->get_error_code()==='jr_busy','Partial '.$partialStatus.' active worker returns busy');
+    unset($options['jr_lock_'.$key]);
+}
+[$key]=fixture_receipt($payload,$today,'processing');unset($options['jr_result_'.$key]);
+check_request(status(call_request($payload))===200,'Accepted booking later moved to processing still replays');
 echo json_encode(['checks'=>$checks,'failures'=>$failures,'realOrdersCreated'=>0,'realMailCalls'=>0,'wordpressLoaded'=>false],JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n";
 exit($failures?1:0);

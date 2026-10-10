@@ -14,7 +14,7 @@ try {
     settings_check($s['notification_email']==='private@example.test'&&!str_contains(wp_json_encode($p),'private@example.test'),'Private notification recipient preserved without public leakage');
     settings_check($p['phone']==='+380996669946'&&$p['telegram']==='https://t.me/joyrent_od','Approved public contacts fill blank settings');
     settings_check(JR_Settings::defaults()['phone']==='+380996669946'&&JR_Settings::defaults()['telegram']==='https://t.me/joyrent_od','Fresh-install public contacts use approved defaults');
-    settings_check($p['email']===''&&JR_Settings::defaults()['email']===''&&JR_Settings::defaults()['notification_email']==='','No public email is invented and private recipient has no source default');
+    settings_check($p['email']==='info@joyrent.online'&&JR_Settings::defaults()['email']==='info@joyrent.online'&&JR_Settings::defaults()['notification_email']==='','Approved public work email is used and private recipient has no source default');
     $custom=['city'=>'Owner city','city_ru'=>'Город владельца','phone'=>'+380000000099','telegram'=>'https://t.me/owner_local','deposit_ps4'=>0,'deposit_ps5'=>9000,'base_controllers'=>1,'extra_controller_fee'=>75,'delivery_fee'=>125,'delivery_green_fee'=>150,'delivery_yellow_fee'=>250,'delivery_text'=>'Owner delivery','delivery_text_ru'=>'Авторская доставка','notification_email'=>'private@example.test'];
     update_option('joyrent_settings',$custom);update_option('joyrent_version','1.5.0');JR_Store::upgrade();$s=JR_Settings::get();
     foreach($custom as $key=>$value)settings_check($s[$key]===$value,'Configured owner setting preserved '.$key);

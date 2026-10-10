@@ -51,7 +51,7 @@ final class JR_REST {
         if (!is_array($payload)) return self::error('jr_payload','Перевір дані бронювання.',400);
         if (!empty($payload['website'])) return self::error('jr_invalid','Не вдалося надіслати бронювання.',400);
         $id=$payload['requestId']??'';
-        if (!is_string($id)||!preg_match('/^[a-f0-9-]{32,40}$/i',$id)) return self::error('jr_request_id','Онови сторінку та спробуй ще раз.',400);
+        if (!is_string($id)||!preg_match('/\A(?:[a-f0-9]{32}|[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12})\z/i',$id)) return self::error('jr_request_id','Онови сторінку та спробуй ще раз.',400);
         try { $data=JR_Domain::canonical($payload); } catch (InvalidArgumentException $e) { return self::error('jr_validation',$e->getMessage(),400); }
         $key=hash_hmac('sha256',$id,wp_salt('nonce')); $result_key='jr_result_'.$key;
         $fingerprint=hash('sha256',wp_json_encode($data));
@@ -61,6 +61,9 @@ final class JR_REST {
         try {
             $receipt=self::receipt($key,$result_key,$fingerprint,$intent_fingerprint);
             if ($receipt) return new WP_REST_Response($receipt,200);
+        } catch (JR_Incomplete_Booking $e) {
+            // A current worker saves the durable key before completion. Reach its mutex
+            // for a normal busy response; an orphan is still rejected on the locked recheck.
         } catch (InvalidArgumentException $e) { return self::error('jr_conflict',$e->getMessage(),409);
         } catch (Throwable $e) { return self::error('jr_create','Не вдалося прийняти бронювання. Спробуй ще раз трохи пізніше.',503); }
         if (!class_exists('WooCommerce')||get_woocommerce_currency()!=='UAH') return self::error('jr_unavailable','Зараз бронювання недоступне. Спробуй пізніше.',503);

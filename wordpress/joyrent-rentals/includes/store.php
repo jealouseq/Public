@@ -6,10 +6,13 @@ final class JR_Store {
     public static function product(string $console, int $days): ?WC_Product {
         if (!function_exists('wc_get_product_id_by_sku')) return null;
         $id=wc_get_product_id_by_sku(self::sku($console,$days));
-        return $id ? wc_get_product($id) : null;
+        $product=$id ? wc_get_product($id) : null;
+        return $product instanceof WC_Product ? $product : null;
     }
     public static function requestable(?WC_Product $product): bool {
-        return $product && $product->get_status()==='publish' && $product->get_price()!=='' && (float)$product->get_price()>0 && $product->is_in_stock() && $product->has_enough_stock(1);
+        if (!$product || $product->get_status()!=='publish') return false;
+        $price=$product->get_price();
+        return is_numeric($price) && is_finite((float)$price) && (float)$price>0 && $product->is_in_stock() && $product->has_enough_stock(1);
     }
     public static function catalog(): array {
         $data=JR_Domain::catalog(); $ready=class_exists('WooCommerce')&&get_woocommerce_currency()==='UAH';
@@ -58,11 +61,11 @@ final class JR_Store {
         }
     }
     public static function upgrade(): void {
-        if (version_compare((string)get_option('joyrent_version','0'),'1.8.5','>=')||!class_exists('WooCommerce')) return;
+        if (version_compare((string)get_option('joyrent_version','0'),'1.8.6','>=')||!class_exists('WooCommerce')) return;
         $lock=JR_Lock::acquire('joyrent_catalog_lock');
         if (!$lock) return;
         try {
-            if (version_compare((string)get_option('joyrent_version','0'),'1.8.5','>=') ) return;
+            if (version_compare((string)get_option('joyrent_version','0'),'1.8.6','>=') ) return;
             $previous=(string)get_option('joyrent_version','0');
             if (version_compare($previous,'1.6.0','<')) {
                 self::seed_games(); // Add missing games without republishing drafts or replacing owner content.
@@ -92,9 +95,11 @@ final class JR_Store {
                 }
                 self::reconcile_games(); self::upgrade_settings();
             }
-            self::upgrade_copy_settings();
-            self::legal_pages(); self::faq_pages(); // Migrate exact previous defaults while preserving owner pages/settings.
-            update_option('joyrent_version','1.8.5',false);
+            if (version_compare($previous,'1.8.5','<')) {
+                self::upgrade_copy_settings();
+                self::legal_pages(); self::faq_pages(); // Only the earlier copy/contact release needs these migrations.
+            }
+            update_option('joyrent_version','1.8.6',false);
         } finally { JR_Lock::release('joyrent_catalog_lock',$lock); }
     }
     private static function upgrade_copy_settings(): void {

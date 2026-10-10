@@ -58,7 +58,7 @@ foreach (['uk' => ['faq', 'Питання про оренду'], 'ru' => ['faq-r
 fixture_pages($old18); $options = ['joyrent_version' => '1.8.0', 'joyrent_settings' => JR_Settings::defaults()];
 $settings = $options['joyrent_settings']; $ids = array_map(fn($page) => $page->ID, $pages);
 JR_Store::upgrade();
-check_copy(get_option('joyrent_version') === '1.8.4', 'Existing 1.8 install advances to 1.8.4');
+check_copy(get_option('joyrent_version') === '1.8.6', 'Existing 1.8 install advances to 1.8.6');
 foreach ($next as $slug => $seed) {
     check_copy($pages[$slug]->post_content === $seed['content'] && $pages[$slug]->ID === $ids[$slug], 'Untouched 1.8 page migrates in place '.$slug);
     check_copy(!preg_match('/заяв[а-яіїєё]*/iu', $pages[$slug]->post_content), 'Visitor page uses booking wording '.$slug);

@@ -39,7 +39,7 @@ $settings=array_merge(JR_Settings::defaults(),['email'=>'','notification_email'=
 foreach([$released,$releasedNeutral] as $seeds){
     migration_fixture(array_merge($current,$seeds),$settings);$options['joyrent_version']='1.8.4';
     $ids=array_map(fn($page)=>$page->ID,$pages);JR_Store::upgrade();
-    migration_check(get_option('joyrent_version')==='1.8.5','Released version advances to 1.8.5');
+    migration_check(get_option('joyrent_version')==='1.8.6','Released version advances to 1.8.6');
     foreach($released as $slug=>$_) migration_check($pages[$slug]->post_content===$current[$slug]['content']&&$pages[$slug]->ID===$ids[$slug],'Released managed '.$slug.' updated in place');
     migration_check((get_option('joyrent_settings')['email']??null)==='info@joyrent.online','Blank public email upgraded');
     migration_check(get_option('joyrent_settings')['notification_email']==='private@example.invalid','Private notification recipient preserved');
@@ -60,5 +60,12 @@ foreach(['missing','custom'] as $emailCase){
     migration_fixture($current,$custom);$options['joyrent_version']='1.8.4';JR_Store::upgrade();
     migration_check((get_option('joyrent_settings')['email']??null)===($emailCase==='missing'?'info@joyrent.online':'owner@example.invalid'),'Public email '.$emailCase.' migration');
 }
+// A reliability-only update must not replay the earlier contact/copy migration.
+$owner=array_merge(JR_Settings::defaults(),['email'=>'','notification_email'=>'private@example.invalid','city'=>'Київ','pickup'=>true]);
+migration_fixture(array_merge($current,$releasedNeutral),$owner);$options['joyrent_version']='1.8.5';
+$beforePages=serialize($pages);$beforeSettings=$options['joyrent_settings'];JR_Store::upgrade();
+migration_check(get_option('joyrent_version')==='1.8.6','Reliability update advances existing 1.8.5 install');
+migration_check(serialize($pages)===$beforePages&&$writes===0,'Reliability update leaves current owner pages untouched');
+migration_check($options['joyrent_settings']===$beforeSettings,'Reliability update preserves an intentionally cleared public email and private settings');
 echo json_encode(['checks'=>$checks,'failures'=>$failures,'realDatabaseWrites'=>0,'realOrdersCreated'=>0,'realMailCalls'=>0],JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n";
 exit($failures?1:0);

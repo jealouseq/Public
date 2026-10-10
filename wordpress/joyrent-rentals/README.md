@@ -35,3 +35,15 @@ php tests/php/request-robustness-isolated.php
 php tests/php/settings-stock-isolated.php
 php tests/php/current-settings-migration-isolated.php
 ```
+
+## 1.8.6 reliability update
+
+- A receipt is returned only after the WooCommerce order, its durable key, rental item and completed booking status are verified in storage. WooCommerce can swallow a save exception; this no longer produces a false JR-0 / accepted receipt or orphan items.
+- Totals are calculated while the order is still incomplete, before booking notifications. The retained `jr-incomplete` status keeps interrupted bookings and their durable keys visible for manager review; WooCommerce draft cleanup cannot remove them. A partially saved completed flag without a final accepted status never acknowledges a receipt or triggers email.
+- Concurrent retries receive a busy response while the first worker holds the request mutex; an abandoned unfinished booking remains blocked for review.
+- Email is sent only after its sending-attempt marker is verified in storage. An uncertain attempt is not silently resent. Email uses wp_mail; actual delivery still depends on the host or configured mail provider.
+- Public game records are read in batches, stop at 100 valid unique games, and tolerate malformed metadata. Stale WooCommerce SKUs and nonfinite prices do not crash the catalog.
+- Required contact text rejects embedded controls, markup and invalid UTF-8. Public settings normalize types and unknown amounts to pending without rewriting stored owner values.
+- Valid previous request keys, CPT / HPOS, owner prices, pages, settings and Telegram notifications remain compatible. Updating an existing 1.8.5 install does not repeat the old copy/contact migration.
+
+Replace only JOYRENT Rentals with joyrent-rentals-1.8.6.zip through WordPress's plugin upload. WooCommerce and JOYRENT Telegram remain installed.

@@ -36,6 +36,13 @@ final class JR_Domain {
         if (preg_match('~\A@?([A-Za-z0-9_]{5,32})\z~',$value,$match) || preg_match('~\Ahttps://t\.me/([A-Za-z0-9_]{5,32})/?\z~i',$value,$match)) return '@'.strtolower($match[1]);
         throw new InvalidArgumentException($message);
     }
+    private static function plain_contact(string $value): bool {
+        // Keep plain user text intact; controls/markup can disappear in WooCommerce
+        // or impersonate separate fields in owner notifications.
+        return preg_match('//u',$value)===1
+            && preg_match('/[\x00-\x1F\x7F]/',$value)===0
+            && strip_tags($value)===$value;
+    }
     // Normalize syntax independently from today's availability, so an accepted request can replay.
     public static function canonical(array $payload): array {
         self::language($payload);
@@ -47,14 +54,16 @@ final class JR_Domain {
         $start = is_string($payload['startDate'] ?? null) ? $payload['startDate'] : '';
         self::parse_date($start);
         $name = trim(is_string($payload['name'] ?? null) ? $payload['name'] : '');
-        if (mb_strlen($name) < 2 || mb_strlen($name) > 100) throw new InvalidArgumentException('Вкажи своє ім’я.');
+        if (!self::plain_contact($name) || mb_strlen($name) < 2 || mb_strlen($name) > 100) throw new InvalidArgumentException('Вкажи своє ім’я.');
         $phone = preg_replace('/[\s()\-]/', '', is_string($payload['phone'] ?? null) ? $payload['phone'] : '');
         if (!preg_match('/^(?:\+?380\d{9}|0\d{9})$/', $phone)) throw new InvalidArgumentException('Вкажи український номер телефону.');
         if (($payload['consent'] ?? false) !== true) throw new InvalidArgumentException('Потрібна згода на обробку даних.');
         $method = $payload['method'] ?? 'delivery';
         if (!in_array($method, ['delivery','pickup'], true)) throw new InvalidArgumentException('Обери спосіб отримання.');
-        $address = trim(is_string($payload['address'] ?? null) ? $payload['address'] : '');
-        if (mb_strlen($address) > 300 || ($method === 'delivery' && mb_strlen($address) < 5)) throw new InvalidArgumentException('Вкажи адресу доставки в Одесі.');
+        $address_value = array_key_exists('address',$payload) ? $payload['address'] : '';
+        if (!is_string($address_value)) throw new InvalidArgumentException('Вкажи адресу доставки в Одесі.');
+        $address = trim($address_value);
+        if (!self::plain_contact($address) || mb_strlen($address) > 300 || ($method === 'delivery' && mb_strlen($address) < 5)) throw new InvalidArgumentException('Вкажи адресу доставки в Одесі.');
         if ($method === 'pickup') $address = '';
         $controllers = filter_var($payload['controllers'] ?? 1, FILTER_VALIDATE_INT);
         if (!in_array($controllers, [1,2], true)) throw new InvalidArgumentException('Обери один або два геймпади.');

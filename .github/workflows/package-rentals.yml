@@ -1,0 +1,69 @@
+name: Package JOYRENT Rentals
+on:
+  push:
+    branches: [feat/joyrent-rentals-audit-oct11]
+    paths-ignore: ['releases/**']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: joyrent-rentals-package
+  cancel-in-progress: false
+jobs:
+  package:
+    if: github.ref == 'refs/heads/feat/joyrent-rentals-audit-oct11'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            wordpress/joyrent-rentals
+            wordpress/joyrent-telegram
+            tests/php
+            .github
+      - name: Check syntax and isolated behaviors
+        run: |
+          find wordpress/joyrent-rentals -name '*.php' -print0 | xargs -0 -n1 php -l
+          php tests/php/domain-test.php
+          php tests/php/rentals-rest-audit-isolated.php
+          php tests/php/rentals-catalog-audit-isolated.php
+          php tests/php/rentals-settings-audit-isolated.php
+          php tests/php/request-robustness-isolated.php
+          php tests/php/settings-stock-isolated.php
+          php tests/php/current-settings-migration-isolated.php
+          php tests/php/legal-contact-migration-isolated.php
+          php tests/php/telegram-notification-settings-isolated.php
+          php tests/php/telegram-subscriptions-isolated.php
+          php tests/php/telegram-api-isolated.php
+          php tests/php/telegram-message-isolated.php
+          php tests/php/telegram-dispatcher-isolated.php
+          php tests/php/telegram-notifications-isolated.php
+      - name: Build installable plugin
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile
+          root = Path('wordpress/joyrent-rentals')
+          out = Path('releases/joyrent-rentals-1.8.6.zip')
+          out.parent.mkdir(exist_ok=True)
+          assert 'Version: 1.8.6' in (root / 'joyrent-rentals.php').read_text()
+          with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+              for path in sorted(root.rglob('*')):
+                  if path.is_file():
+                      archive.write(path, str(Path('joyrent-rentals') / path.relative_to(root)))
+          with zipfile.ZipFile(out) as archive:
+              assert archive.testzip() is None
+              assert 'joyrent-rentals/joyrent-rentals.php' in archive.namelist()
+              assert all(name.startswith('joyrent-rentals/') for name in archive.namelist())
+              assert all(archive.read(name) == (root / name.removeprefix('joyrent-rentals/')).read_bytes() for name in archive.namelist())
+          PY
+      - name: Save downloadable plugin
+        run: |
+          sha256sum releases/joyrent-rentals-1.8.6.zip > releases/joyrent-rentals-1.8.6-SHA256SUMS.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -f releases/joyrent-rentals-1.8.6.zip releases/joyrent-rentals-1.8.6-SHA256SUMS.txt
+          if ! git diff --cached --quiet; then
+            git commit -m "Package JOYRENT Rentals 1.8.6"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

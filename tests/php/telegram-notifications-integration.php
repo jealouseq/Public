@@ -45,7 +45,7 @@ try{
  ec(count(JRTG_Subscriptions::all())===2,'Real webhook subscribes two recipients');
  botupdate(6,987654322,'fixture-pass');ec(count(JRTG_Subscriptions::all())===2,'Repeated update id is idempotent');
  $today=(new DateTimeImmutable('now',new DateTimeZone('Europe/Kyiv')))->modify('+10 days')->format('Y-m-d');
- $payload=['language'=>'ru','console'=>'ps5','days'=>3,'startDate'=>$today,'controllers'=>2,'gameIds'=>[],'name'=>'REST Queue Fixture & <unsafe>','phone'=>'+380500000077','telegram'=>'@rest_fixture','method'=>'delivery','address'=>'Фонтанская дорога, 10','securityMode'=>'deposit','consent'=>true,'website'=>'','requestId'=>wp_generate_uuid4()];
+ $payload=['language'=>'ru','console'=>'ps5','days'=>3,'startDate'=>$today,'controllers'=>2,'gameIds'=>[],'name'=>'REST Queue Fixture & Тест','phone'=>'+380500000077','telegram'=>'@rest_fixture','method'=>'delivery','address'=>'Фонтанская дорога, 10','securityMode'=>'deposit','consent'=>true,'website'=>'','requestId'=>wp_generate_uuid4()];
  $key=hash_hmac('sha256',$payload['requestId'],wp_salt('nonce'));$resultKey='jr_result_'.$key;
  $request=new WP_REST_Request('POST','/joyrent/v1/requests');$request->set_header('Content-Type','application/json');$request->set_body(wp_json_encode($payload));
  $response=rest_do_request($request);ec($response->get_status()===201,'Public booking accepted');
