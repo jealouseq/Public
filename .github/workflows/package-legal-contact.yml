@@ -15,6 +15,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            src
+            components
+            wordpress
+            scripts
+            tests
+            .github
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
