@@ -1,0 +1,55 @@
+name: Package JOYRENT Telegram
+on:
+  push:
+    branches: [feat/joyrent-telegram-notifications]
+    paths-ignore: ['releases/**']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: joyrent-telegram-package
+  cancel-in-progress: false
+jobs:
+  package:
+    if: github.ref == 'refs/heads/feat/joyrent-telegram-notifications'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            wordpress/joyrent-telegram
+            tests/php
+            .github
+      - name: Check syntax and isolated behaviors
+        run: |
+          find wordpress/joyrent-telegram -name '*.php' -print0 | xargs -0 -n1 php -l
+          php tests/php/telegram-notification-settings-isolated.php
+          php tests/php/telegram-notifications-isolated.php
+      - name: Build installable plugin
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile
+          root = Path('wordpress/joyrent-telegram')
+          out = Path('releases/joyrent-telegram-1.0.0.zip')
+          out.parent.mkdir(exist_ok=True)
+          with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+              for path in sorted(root.rglob('*')):
+                  if path.is_file():
+                      archive.write(path, str(Path('joyrent-telegram') / path.relative_to(root)))
+          with zipfile.ZipFile(out) as archive:
+              assert archive.testzip() is None
+              assert 'joyrent-telegram/joyrent-telegram.php' in archive.namelist()
+              assert all(name.startswith('joyrent-telegram/') for name in archive.namelist())
+              assert all(archive.read(name) == (root / name.removeprefix('joyrent-telegram/')).read_bytes() for name in archive.namelist())
+          PY
+      - name: Save downloadable plugin
+        run: |
+          sha256sum releases/joyrent-telegram-1.0.0.zip > releases/joyrent-telegram-1.0.0-SHA256SUMS.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -f releases/joyrent-telegram-1.0.0.zip releases/joyrent-telegram-1.0.0-SHA256SUMS.txt
+          if ! git diff --cached --quiet; then
+            git commit -m "Package JOYRENT Telegram 1.0.0"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
