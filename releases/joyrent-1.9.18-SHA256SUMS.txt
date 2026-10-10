@@ -1,2 +1,2 @@
-cc8f0c4caab5a6bde4b227da156754ea2f4fcdb87c78f8cad2a2537484027522  releases/joyrent-1.9.18.zip
-20d2d51ccbc00d5647026a641a974591a5efef92f9f8a39c21a12ebf2ffda071  releases/joyrent-rentals-1.8.5.zip
+f3e66d5aa69e714bc7e3f87f99e9e01495a4a879f9a781b9204e5cc9135ad2e0  releases/joyrent-1.9.18.zip
+ccd9e6ca0d47b99f4ab44803c1e1d4fca0ee9c8364780db0759a63adff33a93d  releases/joyrent-rentals-1.8.5.zip
