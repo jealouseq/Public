@@ -19,33 +19,29 @@ final class JRTG_Api {
         return ['status'=>'sent','message_id'=>$result['message_id']];
     }
 
-    /** Read recent bot updates without acknowledging/removing them or changing any webhook. */
-    public static function get_chats(): array {
-        $response=self::request('getUpdates',['timeout'=>0,'limit'=>100,'allowed_updates'=>['message','channel_post','my_chat_member']]);
-        if (($response['status']??'')!=='ok') return ['status'=>$response['status']??'failed','chats'=>[],'error'=>$response['error']??'invalid_response'];
-        if (!is_array($response['result']??null)) return ['status'=>'unknown','chats'=>[],'error'=>'invalid_response'];
-        $chats=[];
-        foreach ($response['result'] as $update) {
-            if (!is_array($update)) continue;
-            foreach (['message','channel_post','my_chat_member'] as $kind) {
-                $chat=$update[$kind]['chat']??null;
-                if (!is_array($chat)||!isset($chat['id'])||(!is_int($chat['id'])&&!is_string($chat['id']))) continue;
-                $id=(string)$chat['id'];
-                if (!preg_match('/^-?[1-9][0-9]{0,19}$/D',$id)) continue;
-                $name=$chat['title']??trim(($chat['first_name']??'').' '.($chat['last_name']??''));
-                if (!is_string($name)) $name='';
-                $label=sanitize_text_field($name);
-                $label=self::cut($label,100);
-                $chats[$id]=['id'=>$id,'label'=>$label!==''?$label:$id];
-            }
-        }
-        return ['status'=>'ok','chats'=>array_values($chats)];
+    /** Register only this site's HTTPS receiver and verify Telegram's acknowledgment. */
+    public static function connect_webhook(array $settings,string $url): array {
+        $parts=wp_parse_url($url);$home=wp_parse_url(home_url('/'));
+        if (!is_array($parts)||($parts['scheme']??'')!=='https'||empty($parts['host'])
+            ||strcasecmp($parts['host'],(string)($home['host']??''))!==0
+            ||isset($parts['user'])||isset($parts['pass'])||isset($parts['fragment'])
+            ||!preg_match('/^[a-f0-9]{64}$/D',(string)($settings['webhook_secret']??''))) return self::failure('webhook_url');
+        $response=self::request('setWebhook',[
+            'url'=>$url,'secret_token'=>$settings['webhook_secret'],'allowed_updates'=>['message'],
+            'max_connections'=>1,'drop_pending_updates'=>false,
+        ],$settings);
+        if (($response['status']??'')!=='ok') return $response;
+        if (($response['result']??null)!==true) return self::failure('invalid_ack');
+        $info=self::request('getWebhookInfo',[],$settings);
+        if (($info['status']??'')!=='ok') return $info;
+        if (($info['result']['url']??null)!==$url) return self::failure('webhook_mismatch');
+        return ['status'=>'ok'];
     }
 
     private static function request(string $method,array $payload,?array $snapshot=null): array {
         $token=(string)(($snapshot??JRTG_Settings::get())['token']??'');
         if (!preg_match('/^[0-9]{6,15}:[A-Za-z0-9_-]{20,100}$/D',$token)) return self::failure('not_configured');
-        if (!in_array($method,['sendMessage','getUpdates'],true)) return self::failure('invalid_message');
+        if (!in_array($method,['sendMessage','setWebhook','getWebhookInfo'],true)) return self::failure('invalid_message');
         try {
             $response=wp_remote_post('https://api.telegram.org/bot'.$token.'/'.$method,[
                 'timeout'=>15,'redirection'=>0,'sslverify'=>true,'blocking'=>true,

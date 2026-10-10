@@ -2,7 +2,7 @@
 /**
  * Plugin Name: JOYRENT Telegram
  * Description: Private Telegram notifications for completed JOYRENT booking requests, with a durable queue and safe retries.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Requires at least: 6.6
  * Requires PHP: 8.2
  * Requires Plugins: woocommerce, joyrent-rentals
@@ -26,12 +26,13 @@ add_action('plugins_loaded',function():void {
         });
         return;
     }
-    foreach (['settings','api','message','notifications'] as $file) require_once __DIR__.'/includes/'.$file.'.php';
+    foreach (['settings','api','message','subscriptions','notifications'] as $file) require_once __DIR__.'/includes/'.$file.'.php';
     JRTG_Settings::boot();
+    JRTG_Subscriptions::boot();
     JRTG_Notifications::boot();
 },30);
 register_deactivation_hook(__FILE__,function():void {
-    foreach (['joyrent_telegram_deliver','joyrent_telegram_recover'] as $hook) {
+    foreach (['joyrent_telegram_deliver','joyrent_telegram_recover','joyrent_telegram_broadcast','joyrent_telegram_broadcast_recover','joyrent_telegram_subscriber_test'] as $hook) {
         try {
             if (function_exists('as_unschedule_all_actions')) as_unschedule_all_actions($hook,null,'joyrent-telegram');
             wp_unschedule_hook($hook);

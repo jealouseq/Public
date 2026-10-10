@@ -1,51 +1,39 @@
 <?php
-define('ABSPATH','/isolated/');
-define('MINUTE_IN_SECONDS',60);
-$options=[];$checks=0;$failures=[];
+define('ABSPATH','/isolated/');define('MINUTE_IN_SECONDS',60);
+$options=[];$checks=0;
 function get_option($key,$default=false){return $GLOBALS['options'][$key]??$default;}
 function wp_generate_uuid4(){static $i=0;return 'revision-'.++$i;}
-function current_user_can($cap){return true;}
-function get_current_user_id(){return 1;}
-function get_transient($key){return false;}
-function delete_transient($key){return true;}
-function esc_html($value){return htmlspecialchars((string)$value,ENT_QUOTES,'UTF-8');}
-function esc_attr($value){return esc_html($value);}
-function esc_url($value){return esc_html($value);}
-function admin_url($path=''){return 'https://example.test/wp-admin/'.$path;}
+function wp_hash_password($p){return password_hash($p,PASSWORD_BCRYPT);}
+function current_user_can($c){return true;}function get_current_user_id(){return 1;}
+function get_transient($k){return false;}function delete_transient($k){}
+function esc_html($v){return htmlspecialchars((string)$v,ENT_QUOTES,'UTF-8');}
+function esc_attr($v){return esc_html($v);}function esc_url($v){return esc_html($v);}
+function admin_url($p=''){return 'https://example.test/wp-admin/'.$p;}
 function wp_nonce_field($action){echo '<input name="_wpnonce" value="fixture">';}
-function settings_check($value,$label){global $checks,$failures;$checks++;if(!$value)$failures[]=$label;}
-$path=dirname(__DIR__,2).'/wordpress/joyrent-telegram/includes/settings.php';
-if(is_file($path))require $path;
-if(!class_exists('JRTG_Settings')){
- settings_check(false,'Telegram settings class is available');echo json_encode(['checks'=>$checks,'failures'=>$failures])."\n";exit(1);
-}
+function sc($ok,$label){global $checks;$checks++;if(!$ok)throw new RuntimeException('FAIL: '.$label);}
+require dirname(__DIR__,2).'/wordpress/joyrent-telegram/includes/settings.php';
 $token='123456789:'.str_repeat('a',35);
-$old=['enabled'=>true,'token'=>$token,'chat_id'=>'123456789','enabled_since'=>100,'revision'=>'old-generation'];
-$next=JRTG_Settings::candidate($old,['enabled'=>true,'token'=>'','chat_id'=>'123456789','clear_token'=>false],200);
-settings_check($next['token']===$token,'Blank password preserves saved bot token');
-settings_check($next['enabled_since']===100&&$next['revision']==='old-generation','Unchanged config preserves active queue generation');
-$changed=JRTG_Settings::candidate($old,['enabled'=>true,'token'=>'','chat_id'=>'-100123456789','clear_token'=>false],200);
-settings_check($changed['chat_id']==='-100123456789'&&$changed['revision']!=='old-generation'&&$changed['enabled_since']===200,'Changed recipient starts a new generation and cutoff');
-$disabled=JRTG_Settings::candidate($old,['enabled'=>false,'token'=>'','chat_id'=>'123456789','clear_token'=>true],200);
-settings_check($disabled['token']===''&&!$disabled['enabled'],'Explicit disabled clear removes token');
-$reenabled=JRTG_Settings::candidate(array_merge($old,['enabled'=>false]),['enabled'=>true,'token'=>'','chat_id'=>'123456789','clear_token'=>false],250);
-settings_check($reenabled['enabled_since']===250&&$reenabled['revision']!=='old-generation','Re-enabling starts future booking notifications');
-foreach([
- ['token'=>'https://evil.test/x'],['token'=>['secret']],['chat_id'=>'@unknown'],['chat_id'=>'0'],['chat_id'=>'1?x=1'],
- ['chat_id'=>'123<script>'],['chat_id'=>str_repeat('1',21)],['token'=>'','clear_token'=>true],
-] as $patch){
- try{JRTG_Settings::candidate($old,array_merge(['enabled'=>true,'token'=>'','chat_id'=>'123456789','clear_token'=>false],$patch),200);settings_check(false,'Invalid setting rejected '.json_encode($patch));}
- catch(InvalidArgumentException $e){settings_check(!str_contains($e->getMessage(),$token),'Invalid setting is rejected without secret leakage');}
+$first=JRTG_Settings::candidate([],['enabled'=>false,'token'=>$token,'password'=>'fixture-pass','clear_token'=>false],100);
+sc(isset($first['password_hash'])&&password_verify('fixture-pass',$first['password_hash']),'Access password is hashed');
+sc(!str_contains(json_encode($first),'fixture-pass'),'Plain password absent from saved settings');
+sc(!$first['enabled']&&!$first['webhook_connected'],'Initial config waits for authenticated webhook setup');
+$old=$first;$old['webhook_connected']=true;$old['webhook_bot']=hash('sha256',$token);$old['enabled']=true;
+$old['enabled_since']=100;$old['revision']='existing';
+$next=JRTG_Settings::candidate($old,['enabled'=>true,'token'=>'','password'=>'','clear_token'=>false],200);
+sc($next['token']===$token&&$next['password_hash']===$old['password_hash']&&$next['revision']==='existing','Blank fields preserve secrets and active queue');
+$changed=JRTG_Settings::candidate($old,['enabled'=>true,'token'=>'','password'=>'new-fixture-pass','clear_token'=>false],200);
+sc($changed['access_revision']!==$old['access_revision']&&!$changed['enabled'],'Password rotation invalidates subscriptions and waits for enable');
+$changed=JRTG_Settings::candidate($old,['enabled'=>true,'token'=>'987654321:'.str_repeat('b',35),'password'=>'','clear_token'=>false],200);
+sc(!$changed['webhook_connected']&&!$changed['enabled']&&$changed['webhook_secret']!==$old['webhook_secret'],'Bot change disconnects and rotates webhook secret');
+foreach([['token'=>['bad']],['password'=>'ab'],['token'=>'https://example.test'],['password'=>['bad']]]as$patch){
+ try{JRTG_Settings::candidate($old,array_merge(['enabled'=>true,'token'=>'','password'=>'','clear_token'=>false],$patch),200);sc(false,'Invalid input rejected');}
+ catch(InvalidArgumentException $e){sc(true,'Invalid input rejected');}
 }
 $options['joyrent_telegram_settings']=$old;
-settings_check(JRTG_Settings::ready(),'Valid enabled settings are ready');
+sc(JRTG_Settings::ready(),'Enabled connected bot ready');
 ob_start();JRTG_Settings::page();$html=ob_get_clean();
-settings_check(!str_contains($html,$token),'Stored bot token never appears in admin HTML');
-settings_check(str_contains($html,'type="password"')&&str_contains($html,'value=""'),'Token field is empty and concealed');
-settings_check(str_contains($html,'_wpnonce')&&str_contains($html,'jrtg_test')&&str_contains($html,'jrtg_discover'),'Admin connection actions carry nonce fields');
-$options['joyrent_telegram_settings']=array_merge($old,['enabled'=>false]);
-settings_check(!JRTG_Settings::ready(),'Disabled plugin is not ready');
-$options['joyrent_telegram_settings']=array_merge($old,['token'=>'invalid-token']);
-settings_check(!JRTG_Settings::ready(),'Corrupt credential never becomes ready');
-echo json_encode(['checks'=>$checks,'failures'=>$failures],JSON_PRETTY_PRINT|JSON_UNESCAPED_UNICODE)."\n";
-exit($failures?1:0);
+sc(!str_contains($html,$token)&&!str_contains($html,$old['password_hash'])&&!str_contains($html,$old['webhook_secret']),'Admin HTML hides every secret');
+sc(!str_contains($html,'ID чата')&&!str_contains($html,'name="chat_id"'),'No numeric destination UI');
+sc(str_contains($html,'Пароль доступа')&&str_contains($html,'Подключить бота')&&str_contains($html,'/start'),'Password subscriber flow in admin');
+sc(str_contains($html,'_wpnonce')&&str_contains($html,'jrtg_connect')&&str_contains($html,'jrtg_test'),'Authenticated connection actions in admin');
+echo "PASS: $checks settings checks\n";
