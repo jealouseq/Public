@@ -18,7 +18,7 @@ describe('short-lived non-personal rental draft', () => {
     expect(parseRentalDraft(JSON.stringify({ ...draft, expiresAt: 2000, version: 1, consoleId: 'ps6' }), 1001)).toBeNull();
   });
   it('never serializes contact details or consent even if passed by a caller', () => {
-    const stored = serializeRentalDraft({ ...draft, name: 'Private name', phone: '+380001234567', address: 'Private address', requestedGame: 'Private game request', consent: true } as RentalDraft, 1000);
-    expect(stored).not.toMatch(/Private|380001|name|phone|address|consent|requestedGame/);
+    const stored = serializeRentalDraft({ ...draft, telegram: '@private_contact', name: 'Private name', phone: '+380001234567', address: 'Private address', requestedGame: 'Private game request', consent: true } as RentalDraft, 1000);
+    expect(stored).not.toMatch(/private_contact|telegram|Private|380001|name|phone|address|consent|requestedGame/);
   });
 });

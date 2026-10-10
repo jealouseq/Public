@@ -21,6 +21,7 @@ final class JR_Orders {
                     'gameIds'=>(array)$order->get_meta('_joyrent_game_ids'),'method'=>(string)$order->get_meta('_joyrent_method'),
                     'name'=>$order->get_billing_first_name(),'phone'=>$order->get_billing_phone(),'address'=>$order->get_billing_address_1(),
                     'securityMode'=>$order->get_meta('_joyrent_security_mode')?:'deposit','requestedGame'=>(string)$order->get_meta('_joyrent_requested_game'),
+                    'telegram'=>(string)$order->get_meta('_joyrent_telegram'),
                 ]);
             }
             $matches=hash_equals($stored,$intent_fingerprint);
@@ -62,6 +63,7 @@ final class JR_Orders {
             $order->update_meta_data('_joyrent_security_mode',$security_mode);
             $order->update_meta_data('_joyrent_security_status',$security_mode==='contract'?'pending_document_verification':'pending_confirmation');
             if (($data['requestedGame']??'')!=='') $order->update_meta_data('_joyrent_requested_game',$data['requestedGame']);
+            if (($data['telegram']??'')!=='') $order->update_meta_data('_joyrent_telegram',$data['telegram']);
             if ($free_delivery_candidate) {
                 $order->update_meta_data('_joyrent_delivery_free_eligibility','pending_zone_confirmation');
                 $order->add_order_note('Від '.$settings['freeDeliveryFrom'].' днів безкоштовна доставка можлива лише у зеленій або жовтій зоні після підтвердження адреси магазином. Червона зона — за тарифом таксі в обидва боки.');
@@ -111,6 +113,7 @@ final class JR_Orders {
             $subject='JOYRENT: нова заявка JR-'.$order->get_order_number();
             $body="Нова заявка очікує ручного підтвердження. Оплату не отримано.\n\n";
             foreach (['Ім’я'=>$order->get_billing_first_name(),'Телефон'=>$order->get_billing_phone(),'Адреса'=>$order->get_billing_address_1(),'Консоль'=>strtoupper((string)$order->get_meta('_joyrent_console')),'Термін'=>$order->get_meta('_joyrent_days').' дн.','Отримання'=>$order->get_meta('_joyrent_start_date'),'Повернення'=>$order->get_meta('_joyrent_return_date'),'Геймпади'=>$order->get_meta('_joyrent_controllers'),'Бажані ігри'=>implode(', ',(array)$order->get_meta('_joyrent_game_ids')),'Мова'=>$order->get_meta('_joyrent_language')] as $label=>$value) $body.=$label.': '.$value."\n";
+            if ($order->get_meta('_joyrent_telegram')!=='') $body.='Telegram: '.sanitize_text_field((string)$order->get_meta('_joyrent_telegram'))."\n";
             $body.='Оформлення: '.self::security_label((string)$order->get_meta('_joyrent_security_mode'))."\n";
             $body.='Грошова застава: '.self::deposit_label($order)."\n";
             if ($order->get_meta('_joyrent_requested_game')!=='') $body.='Запит гри поза каталогом: '.wp_strip_all_tags((string)$order->get_meta('_joyrent_requested_game'))."\n";
@@ -128,6 +131,15 @@ final class JR_Orders {
         if (!$order->get_meta('_joyrent_request_key')||!current_user_can('manage_woocommerce')) return;
         echo '<p class="form-field form-field-wide"><strong>JOYRENT оформлення:</strong> '.esc_html(self::security_label((string)$order->get_meta('_joyrent_security_mode'))).'<br><strong>Грошова застава:</strong> '.esc_html(self::deposit_label($order)).'</p>';
         if ($order->get_meta('_joyrent_requested_game')!=='') echo '<p class="form-field form-field-wide"><strong>Запит гри поза каталогом:</strong> '.esc_html((string)$order->get_meta('_joyrent_requested_game')).'</p>';
+        $telegram=(string)$order->get_meta('_joyrent_telegram');
+        if ($telegram!=='') {
+            $contact=esc_html($telegram);
+            try {
+                $normalized=JR_Domain::telegram($telegram);
+                if ($normalized!=='') $contact='<a href="'.esc_url('https://t.me/'.substr($normalized,1)).'" target="_blank" rel="noopener noreferrer">'.esc_html($normalized).'</a>';
+            } catch (InvalidArgumentException $e) {}
+            echo '<p class="form-field form-field-wide"><strong>Telegram клієнта:</strong> '.$contact.'</p>';
+        }
         $status=(string)$order->get_meta('_joyrent_notification_status');
         $labels=['sent'=>'Передано поштовій службі','failed'=>'Помилка — перевірте поштові налаштування','sending'=>'Результат невідомий — перевірте доставку перед повтором'];
         echo '<p class="form-field form-field-wide"><strong>JOYRENT сповіщення:</strong> '.esc_html($labels[$status]??'Ще не надіслано');

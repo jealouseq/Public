@@ -19,9 +19,9 @@ export function RentalSteps() {
     <ol className="rental-steps">
       {steps.map(({ art, title, copy }, index) => <li key={index}>
         <div className={`rental-step-surface rental-step-${index + 1}`}>
-          {index === 2 && <span className="rental-step-badge"><StepRocket />{t('В Одесі', 'В Одессе')}</span>}
           <div className="rental-step-top">
             <motion.span className="rental-step-number" aria-hidden="true" initial={reduced ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: .3 }} transition={{ duration: reduced ? 0 : 2, delay: reduced ? 0 : index * .2, ease: [.22, 1, .36, 1] }}>{String(index + 1).padStart(2, '0')}<span>.</span></motion.span>
+            {index === 2 && <span className="rental-step-badge"><StepRocket />{t('В Одесі', 'В Одессе')}</span>}
             {art && <StepArtwork kind={art} />}
           </div>
           <h3>{title}</h3><p>{copy}</p>

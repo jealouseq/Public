@@ -2,7 +2,7 @@
 /**
  * Plugin Name: JOYRENT Rentals
  * Description: Ukrainian and Russian PlayStation rental catalog, guest requests and WooCommerce order integration.
- * Version: 1.8.4
+ * Version: 1.8.5
  * Requires at least: 6.6
  * Requires PHP: 8.2
  * Requires Plugins: woocommerce
@@ -29,6 +29,15 @@ add_action('woocommerce_order_status_jr-request', ['JR_Orders','notify']);
 add_action('woocommerce_admin_order_data_after_order_details', ['JR_Orders','notification_admin']);
 add_action('admin_post_joyrent_notification_retry', ['JR_Orders','notification_retry']);
 add_filter('wc_order_statuses', ['JR_Orders','statuses']);
+// Customer Telegram stays in private order metadata and follows WooCommerce privacy tools.
+add_filter('woocommerce_privacy_export_order_personal_data_meta', function (array $meta): array {
+    $meta['_joyrent_telegram']='Telegram'; return $meta;
+});
+add_filter('woocommerce_privacy_remove_order_personal_data_meta', function (array $meta): array {
+    $meta['_joyrent_telegram']='text'; return $meta;
+});
+// Delete the contact rather than keeping an unusable "[deleted]" username.
+add_filter('woocommerce_privacy_remove_order_personal_data_meta_value', fn($value, $key) => $key==='_joyrent_telegram'?'':$value, 10, 2);
 add_filter('option_page_capability_joyrent', fn() => 'manage_woocommerce');
 // Support durable-key queries in the legacy order store as well as HPOS.
 add_filter('woocommerce_order_data_store_cpt_get_orders_query', function (array $query, array $vars): array {

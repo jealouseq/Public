@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { canonicalRentalIntent, isUkrainianPhone, normalizeRentalPhone, trimRentalText } from './booking-input';
+import { canonicalRentalIntent, isUkrainianPhone, normalizeRentalPhone, normalizeTelegramContact, trimRentalText } from './booking-input';
 import type { RentalPayload } from './api';
 
 const intent: Omit<RentalPayload, 'requestId'> = {
@@ -47,5 +47,24 @@ describe('canonical retry intent', () => {
   it('trims a game wish using the PHP trim character set', () => {
     expect(canonicalRentalIntent({ ...intent, requestedGame: '\v Minecraft \0' })).toEqual(canonicalRentalIntent({ ...intent, requestedGame: 'Minecraft' }));
     expect(trimRentalText('\u00a0Тест\u00a0')).toBe('\u00a0Тест\u00a0');
+  });
+});
+
+
+describe('optional Telegram contact', () => {
+  it.each(['', '   '])('allows an empty optional contact %s', value => {
+    expect(normalizeTelegramContact(value)).toBe('');
+    expect(canonicalRentalIntent({ ...intent, telegram: value })).toEqual(canonicalRentalIntent(intent));
+  });
+  it.each(['@Customer_Name', 'Customer_Name', 'https://t.me/Customer_Name', ' https://t.me/Customer_Name/ '])('normalizes supported profile %s', value => {
+    expect(normalizeTelegramContact(value)).toBe('@customer_name');
+    expect(canonicalRentalIntent({ ...intent, telegram: value })).toEqual({ ...canonicalRentalIntent(intent), telegram: '@customer_name' });
+  });
+  it.each(['abcd', 'a'.repeat(33), 'https://t.me/name/extra', 'https://t.me/name123?x=1', 'https://t.me/name123#x', 'http://t.me/name123', 'https://evil.test/name123', '@<img>', '@name name', 'Имя', '\n@valid_name', '@valid_name\0', ' '.repeat(81)])('rejects malformed contact %s', value => {
+    expect(normalizeTelegramContact(value)).toBeNull();
+  });
+  it('gives a changed Telegram profile a new retry identity', () => {
+    expect(canonicalRentalIntent({ ...intent, telegram: '@customer_one' })).not.toEqual(canonicalRentalIntent({ ...intent, telegram: '@customer_two' }));
+    expect(canonicalRentalIntent({ ...intent, telegram: '@customer_one' })).not.toEqual(canonicalRentalIntent(intent));
   });
 });

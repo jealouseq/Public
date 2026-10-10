@@ -14,7 +14,7 @@ declare global { interface Window { JOYRENT?: BootConfig } }
 export const boot: BootConfig = window.JOYRENT ?? { apiBase: '/wp-api/joyrent/v1', assetBase: '' };
 export const imageUrl = (name: string) => `${boot.assetBase}/images/${name}.webp`;
 export const fallbackSettings: StoreSettings = {
-  city: 'Одеса', cityRu: 'Одесса', phone: '+380996669946', email: '', telegram: 'https://t.me/joyrent_od', instagram: 'https://www.instagram.com/joyrent_od/', deliveryFee: null, deliveryGreenFee: 200, deliveryYellowFee: 300, depositPs5: 25000, depositPs4: 7500,
+  city: 'Одеса', cityRu: 'Одесса', phone: '+380996669946', email: 'info@joyrent.online', telegram: 'https://t.me/joyrent_od', instagram: 'https://www.instagram.com/joyrent_od/', deliveryFee: null, deliveryGreenFee: 200, deliveryYellowFee: 300, depositPs5: 25000, depositPs4: 7500,
   baseControllers: 2, extraControllerFee: 0, pickup: false, freeDeliveryFrom: 7, maxGames: 100,
   deliveryText: 'Доставляємо по Одесі. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.',
   deliveryTextRu: 'Доставляем по Одессе. Привезём, подключим и заберём после аренды. Зону и время подтвердим по адресу.',
@@ -24,7 +24,7 @@ export type CatalogStatus = 'loading' | 'error' | 'ready';
 export const fallbackCatalog: StoreCatalog = { ...defaultCatalog, settings: fallbackSettings, currency: 'UAH', acceptingRequests: false };
 export interface RentalPayload {
   language?: 'uk' | 'ru'; console: ConsoleId; days: number; startDate: string; controllers: number; gameIds: string[];
-  name: string; phone: string; method: 'delivery' | 'pickup'; address: string;
+  name: string; phone: string; telegram?: string; method: 'delivery' | 'pickup'; address: string;
   securityMode?: SecurityMode; requestedGame?: string;
   consent: boolean; website: string; requestId: string;
 }

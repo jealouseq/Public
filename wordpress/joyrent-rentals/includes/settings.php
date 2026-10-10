@@ -3,7 +3,7 @@ if (!defined('ABSPATH')) exit;
 
 final class JR_Settings {
     public static function defaults(): array {
-        return ['city'=>'Одеса','city_ru'=>'Одесса','phone'=>'+380996669946','email'=>'','notification_email'=>'','search_indexing'=>false,'telegram'=>'https://t.me/joyrent_od','instagram'=>'https://www.instagram.com/joyrent_od/','delivery_fee'=>'','delivery_green_fee'=>200,'delivery_yellow_fee'=>300,'deposit_ps5'=>25000,'deposit_ps4'=>7500,'base_controllers'=>2,'extra_controller_fee'=>0,'pickup'=>false,'free_delivery_from'=>7,'max_games'=>100,'delivery_text_ru'=>'Доставляем по Одессе. Привезём, подключим и заберём после аренды. Зону и время подтвердим по адресу.', 'delivery_text'=>'Доставляємо по Одесі. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.'];
+        return ['city'=>'Одеса','city_ru'=>'Одесса','phone'=>'+380996669946','email'=>'info@joyrent.online','notification_email'=>'','search_indexing'=>false,'telegram'=>'https://t.me/joyrent_od','instagram'=>'https://www.instagram.com/joyrent_od/','delivery_fee'=>'','delivery_green_fee'=>200,'delivery_yellow_fee'=>300,'deposit_ps5'=>25000,'deposit_ps4'=>7500,'base_controllers'=>2,'extra_controller_fee'=>0,'pickup'=>false,'free_delivery_from'=>7,'max_games'=>100,'delivery_text_ru'=>'Доставляем по Одессе. Привезём, подключим и заберём после аренды. Зону и время подтвердим по адресу.', 'delivery_text'=>'Доставляємо по Одесі. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.'];
     }
     public static function get(): array {
         $defaults=self::defaults(); $saved=(array)get_option('joyrent_settings',[]);

@@ -143,6 +143,7 @@ input[readonly] { color: #a7a8ac !important; background: transparent !important;
 .customer-heading .text-link { font-size: 12px; }
 .customer-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .customer-inputs input, .address-field input { margin-top: 10px; }
+.telegram-contact { grid-column: 1 / -1; }
 .address-field { display: block; margin-top: 21px; }
 .consent { display: flex; gap: 12px; align-items: flex-start; font-size: 11px; line-height: 1.8; margin-top: 25px; color: #a1a3a8; }
 input[type=checkbox], input[type=radio] { accent-color: #ddbd94; width: 17px; height: 17px; flex-shrink: 0; margin: 2px 0 0; }
@@ -462,6 +463,11 @@ dialog::backdrop { background: #000b; backdrop-filter: blur(6px); }
 
 .wp-content { max-width: 840px; font-size: 16px; line-height: 1.9; color: #c4c5c8; }
 .wp-content p + p { margin-top: 22px; }
+.wp-content h2 { margin: 36px 0 14px; font-family: var(--service, sans-serif); font-size: clamp(21px, 2.2vw, 28px); line-height: 1.35; color: var(--text); text-wrap: balance; }
+.wp-content h2 + p { margin-top: 0; }
+.wp-content ul, .wp-content ol { padding-left: 24px; margin: 16px 0 22px; }
+.wp-content li + li { margin-top: 10px; }
+.wp-content a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
 
 /* JOYRENT 1.2 — full product framing and readable editorial hierarchy. */
 .hero { height: auto; background: var(--bg); overflow: visible; }

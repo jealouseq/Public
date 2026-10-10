@@ -1,0 +1,46 @@
+name: Package JOYRENT legal and contact update
+on:
+  push:
+    branches: [feat/joyrent-legal-contact-oct10]
+    paths-ignore: ['releases/**']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: joyrent-legal-contact-package
+  cancel-in-progress: false
+jobs:
+  package:
+    if: github.ref == 'refs/heads/feat/joyrent-legal-contact-oct10'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+      - name: Check installable archive roots and integrity
+        run: |
+          python3 - <<'PY'
+          import zipfile
+          from pathlib import Path
+          for filename, root in [('joyrent-1.9.18.zip','joyrent/'),('joyrent-rentals-1.8.5.zip','joyrent-rentals/')]:
+              path=Path('releases')/filename
+              with zipfile.ZipFile(path) as archive:
+                  assert archive.testzip() is None
+                  assert all(name.startswith(root) for name in archive.namelist())
+                  assert not any(name.endswith('.png') and not name.endswith('/screenshot.png') for name in archive.namelist())
+          PY
+      - name: Save downloadable installable packages
+        run: |
+          sha256sum releases/joyrent-1.9.18.zip releases/joyrent-rentals-1.8.5.zip > releases/joyrent-1.9.18-SHA256SUMS.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f releases/joyrent-1.9.18.zip releases/joyrent-rentals-1.8.5.zip releases/joyrent-1.9.18-SHA256SUMS.txt
+          if ! git diff --cached --quiet; then
+            git commit -m "Package JOYRENT theme 1.9.18 and rental plugin 1.8.5"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

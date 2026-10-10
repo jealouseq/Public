@@ -58,11 +58,11 @@ final class JR_Store {
         }
     }
     public static function upgrade(): void {
-        if (version_compare((string)get_option('joyrent_version','0'),'1.8.4','>=')||!class_exists('WooCommerce')) return;
+        if (version_compare((string)get_option('joyrent_version','0'),'1.8.5','>=')||!class_exists('WooCommerce')) return;
         $lock=JR_Lock::acquire('joyrent_catalog_lock');
         if (!$lock) return;
         try {
-            if (version_compare((string)get_option('joyrent_version','0'),'1.8.4','>=') ) return;
+            if (version_compare((string)get_option('joyrent_version','0'),'1.8.5','>=') ) return;
             $previous=(string)get_option('joyrent_version','0');
             if (version_compare($previous,'1.6.0','<')) {
                 self::seed_games(); // Add missing games without republishing drafts or replacing owner content.
@@ -94,7 +94,7 @@ final class JR_Store {
             }
             self::upgrade_copy_settings();
             self::legal_pages(); self::faq_pages(); // Migrate exact previous defaults while preserving owner pages/settings.
-            update_option('joyrent_version','1.8.4',false);
+            update_option('joyrent_version','1.8.5',false);
         } finally { JR_Lock::release('joyrent_catalog_lock',$lock); }
     }
     private static function upgrade_copy_settings(): void {
@@ -109,6 +109,10 @@ final class JR_Store {
             ],
         ];
         $defaults=JR_Settings::defaults();$changed=false;
+        // Add the public work contact once; explicit notification recipients remain private and unchanged.
+        if (!isset($saved['email'])||trim((string)$saved['email'])==='') {
+            $saved['email']=$defaults['email'];$changed=true;
+        }
         foreach ($old as $key=>$texts) if (in_array($saved[$key]??null,$texts,true)) {
             $saved[$key]=$defaults[$key];$changed=true;
         }
@@ -183,12 +187,14 @@ final class JR_Store {
     }
     private static function seed_page(string $slug,string $title,string $content,bool $privacy=false): void {
         $current_seed=['title'=>$title,'content'=>$content];
-        static $previous=null,$previous_recent=null,$previous_current=null,$previous_neutral=null,$neutral=null;
+        static $previous=null,$previous_recent=null,$previous_current=null,$previous_neutral=null,$released_legal=null,$released_neutral=null,$neutral=null;
         if ($previous===null) {
             $previous=json_decode((string)file_get_contents(__DIR__.'/../data/page-seeds-1.6.json'),true,512,JSON_THROW_ON_ERROR);
             $previous_recent=json_decode((string)file_get_contents(__DIR__.'/../data/page-seeds-1.7.json'),true,512,JSON_THROW_ON_ERROR);
             $previous_current=json_decode((string)file_get_contents(__DIR__.'/../data/page-seeds-1.8.json'),true,512,JSON_THROW_ON_ERROR);
             $previous_neutral=json_decode((string)file_get_contents(__DIR__.'/../data/page-defaults-neutral-1.8.3.json'),true,512,JSON_THROW_ON_ERROR);
+            $released_legal=json_decode((string)file_get_contents(__DIR__.'/../data/page-seeds-1.8.4.json'),true,512,JSON_THROW_ON_ERROR);
+            $released_neutral=json_decode((string)file_get_contents(__DIR__.'/../data/page-defaults-neutral-1.8.4.json'),true,512,JSON_THROW_ON_ERROR);
             $neutral=json_decode((string)file_get_contents(__DIR__.'/../data/page-defaults-neutral.json'),true,512,JSON_THROW_ON_ERROR);
         }
         $seed=$previous[$slug]??null;
@@ -205,7 +211,7 @@ final class JR_Store {
             return;
         }
         // Only exact, published managed defaults migrate. Author text, titles, excerpts and drafts stay intact.
-        foreach (array_filter([$current_seed,$seed,$previous_recent[$slug]??null,$previous_current[$slug]??null,$previous_neutral[$slug]??null,$neutral[$slug]??null]) as $known_seed) {
+        foreach (array_filter([$current_seed,$seed,$previous_recent[$slug]??null,$previous_current[$slug]??null,$previous_neutral[$slug]??null,$released_legal[$slug]??null,$released_neutral[$slug]??null,$neutral[$slug]??null]) as $known_seed) {
             if ($page->post_status==='publish'&&$page->post_excerpt===''&&$page->post_title===$known_seed['title']&&$page->post_content===$known_seed['content']&&$page->post_content!==$content) {
                 wp_update_post(['ID'=>$page->ID,'post_title'=>$title,'post_content'=>$content]);
                 break;

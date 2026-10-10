@@ -34,7 +34,7 @@ function migration_fixture(array $seeds,array $settings): void {
 }
 $settings=array_merge(JR_Settings::defaults(),['search_indexing'=>true,'notification_email'=>'synthetic@example.invalid']);
 migration_fixture($current,$settings);$before=serialize($pages);JR_Store::upgrade();
-migration_check(get_option('joyrent_version')==='1.8.4','Installed 1.8.1 advances to1.8.4');
+migration_check(get_option('joyrent_version')==='1.8.5','Installed 1.8.1 advances to1.8.5');
 migration_check(serialize($pages)===$before&&$writes===0,'Approved current pages remain unchanged');
 migration_check(get_option('joyrent_settings')===$settings&&get_option('wp_page_for_privacy_policy')===2,'Upgrade preserves complete private/admin settings and assigned policy');
 $custom=array_merge($settings,['deposit_ps5'=>9000,'base_controllers'=>1,'extra_controller_fee'=>75]);
@@ -46,7 +46,7 @@ $before=serialize($pages);$beforeWrites=$writes;JR_Store::upgrade();migration_ch
 foreach(['post_title'=>'Owner title','post_content'=>'Owner text','post_excerpt'=>'Owner excerpt','post_status'=>'draft'] as $field=>$value){
     migration_fixture($current,$custom);foreach($pages as $page)$page->$field=$value;$before=serialize($pages);JR_Store::upgrade();
     migration_check(serialize($pages)===$before&&$writes===0,'Upgrade preserves owner '.$field);
-    migration_check(get_option('joyrent_version')==='1.8.4','Owner pages do not block version advancement '.$field);
+    migration_check(get_option('joyrent_version')==='1.8.5','Owner pages do not block version advancement '.$field);
 }
 $previous_neutral=json_decode(file_get_contents($plugin.'/data/page-defaults-neutral-1.8.3.json'),true,512,JSON_THROW_ON_ERROR);
 foreach (['uk'=>'faq','ru'=>'faq-ru'] as $language=>$slug) {
@@ -59,7 +59,7 @@ foreach (['uk'=>'faq','ru'=>'faq-ru'] as $language=>$slug) {
 foreach (['uk'=>'umovy-orendy','ru'=>'usloviya-arendy'] as $language=>$slug) {
     $content=$neutral[$slug]['content'];
     migration_check(str_contains($content,$language==='uk'?'за договором':'по договору')&&str_contains($content,$language==='uk'?'перевірки паспорта':'проверки паспорта'),'Neutral '.$slug.' explains conditional contract arrangement');
-    migration_check(!str_contains($content,$language==='uk'?'Не розбирайте':'Не разбирайте'),'Neutral '.$slug.' keeps the same informal voice as the storefront');
+    migration_check(str_contains($content,$language==='uk'?'не ремонтуйте їх самостійно':'не ремонтируйте их самостоятельно'),'Neutral '.$slug.' explains equipment handling in the complete legal terms');
 }
 $live_settings=array_merge($settings,['delivery_green_fee'=>199,'delivery_yellow_fee'=>299,'pickup'=>true]);
 foreach (['1.8.2','1.8.3'] as $installed) {

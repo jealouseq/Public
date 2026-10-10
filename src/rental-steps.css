@@ -12,7 +12,7 @@
 .rental-step-4 .rental-step-number > span { color: #b39bcc; }
 .rental-step-surface h3 { font-family: var(--service, 'Onest Variable', sans-serif); font-size: 21px; font-weight: 600; line-height: 1.35; letter-spacing: -.025em; }
 .rental-step-surface p { margin-top: 16px; font-size: 15px; line-height: 1.6; color: var(--text-support); }
-.rental-step-badge { position: absolute; top: -14px; left: 24px; display: flex; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 12px; background: #eab56e; color: #19130c; font-size: 12px; line-height: 1.2; font-weight: 750; }
+.rental-step-badge { display: flex; flex-shrink: 0; white-space: nowrap; align-items: center; gap: 8px; padding: 7px 12px; border-radius: 12px; background: #eab56e; color: #19130c; font-size: 12px; line-height: 1.2; font-weight: 750; }
 .step-art { position: relative; display: block; width: 72px; height: 64px; flex-shrink: 0; }
 .step-art svg { display: block; width: 100%; height: 100%; overflow: visible; }
 .step-map-disc { transform-origin: 36px 46px; animation: step-map-disc 5s ease-in-out infinite; }
@@ -49,15 +49,16 @@
   .step-game-symbol { font-size: 12px; }
   .rental-step-surface h3 { font-size: 17px; }
   .rental-step-surface p { margin-top: 12px; font-size: 14px; line-height: 1.55; }
-  .rental-step-badge { left: 12px; gap: 5px; padding: 6px 8px; border-radius: 10px; font-size: 10px; }
-  .step-rocket { width: 20px; height: 20px; }
+  .rental-step-badge { gap: 0; padding: 6px; border-radius: 10px; font-size: 10px; }
+  .rental-step-badge .step-rocket { display: none; }
 }
 @media (max-width: 360px) {
+  .rental-step-3 .rental-step-top { gap: 2px; }
   .rental-step-surface { padding: 18px 14px; }
   .rental-step-number { font-size: 32px; }
   .step-art { width: 46px; height: 48px; }
   .rental-step-surface h3 { font-size: 16px; letter-spacing: -.035em; }
-  .rental-step-badge { left: 8px; font-size: 9px; padding-inline: 6px; gap: 3px; }
+  .rental-step-badge { font-size: 9px; padding-inline: 4px; }
   .step-rocket { width: 18px; height: 18px; }
 }
 @media (prefers-reduced-motion: reduce) {

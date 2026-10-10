@@ -28,6 +28,14 @@ final class JR_Domain {
         if (!is_string($language) || !in_array($language, ['uk','ru'], true)) throw new InvalidArgumentException('Обери мову uk або ru.');
         return $language;
     }
+    public static function telegram(mixed $value): string {
+        $message='Вкажи Telegram у форматі @username або https://t.me/username.';
+        if (!is_string($value) || strlen($value)>80 || preg_match('//u',$value)!==1 || preg_match('/[\x00-\x1F\x7F]/',$value)) throw new InvalidArgumentException($message);
+        $value=trim($value);
+        if ($value==='') return '';
+        if (preg_match('~\A@?([A-Za-z0-9_]{5,32})\z~',$value,$match) || preg_match('~\Ahttps://t\.me/([A-Za-z0-9_]{5,32})/?\z~i',$value,$match)) return '@'.strtolower($match[1]);
+        throw new InvalidArgumentException($message);
+    }
     // Normalize syntax independently from today's availability, so an accepted request can replay.
     public static function canonical(array $payload): array {
         self::language($payload);
@@ -61,10 +69,12 @@ final class JR_Domain {
         if (!is_string($requested_game) || preg_match('//u',$requested_game)!==1) throw new InvalidArgumentException('Вкажи назву гри звичайним текстом (до 120 символів).');
         $requested_game = trim($requested_game);
         if (mb_strlen($requested_game)>120 || preg_match('/[\x00-\x1F\x7F]/u',$requested_game) || strip_tags($requested_game)!==$requested_game) throw new InvalidArgumentException('Вкажи назву гри звичайним текстом (до 120 символів).');
+        $telegram=self::telegram(array_key_exists('telegram',$payload)?$payload['telegram']:'');
         $data = ['console'=>$console,'days'=>$days,'tariff'=>$tariff,'startDate'=>$start,'returnDate'=>self::return_date($start,$days),'name'=>$name,'phone'=>$phone,'method'=>$method,'address'=>$address,'controllers'=>$controllers,'gameIds'=>$game_ids];
         // Explicit defaults keep the same fingerprint as requests made before these options existed.
         if ($security_mode!=='deposit') $data['securityMode']=$security_mode;
         if ($requested_game!=='') $data['requestedGame']=$requested_game;
+        if ($telegram!=='') $data['telegram']=$telegram;
         return $data;
     }
     public static function intent_fingerprint(array $data): string {
@@ -76,6 +86,8 @@ final class JR_Domain {
             'controllers'=>$data['controllers'],'gameIds'=>$games,
             'securityMode'=>$data['securityMode']??'deposit','requestedGame'=>trim($data['requestedGame']??''),
         ];
+        $telegram=self::telegram($data['telegram']??'');
+        if ($telegram!=='') $intent['telegram']=$telegram;
         return hash('sha256', json_encode($intent, JSON_UNESCAPED_UNICODE|JSON_THROW_ON_ERROR));
     }
     public static function validate(array $payload, ?string $today = null, ?array $inventory = null): array {

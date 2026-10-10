@@ -16,6 +16,7 @@ final class WP_Error {
     public function __construct(private string $code, private string $message, private array $data) {}
     public function get_error_data(): array { return $this->data; }
     public function get_error_code(): string { return $this->code; }
+    public function get_error_message(): string { return $this->message; }
 }
 final class WC_Product {
     public function get_status(): string { return 'publish'; }
@@ -81,6 +82,7 @@ function fixture_receipt(array $payload,string $when): array {
     $GLOBALS['options']['jr_result_'.$key]=['fingerprint'=>$fingerprint,'receipt'=>$GLOBALS['receipt']];
     $meta=['_joyrent_request_key'=>$key,'_joyrent_fingerprint'=>$fingerprint,'_joyrent_completed'=>'yes','_joyrent_rental_amount'=>1400.0];
     foreach(['console'=>'console','days'=>'days','start_date'=>'startDate','controllers'=>'controllers','game_ids'=>'gameIds','method'=>'method'] as $stored=>$field)$meta['_joyrent_'.$stored]=$data[$field];
+    if (isset($data['telegram'])) $meta['_joyrent_telegram']=$data['telegram'];
     $GLOBALS['orders'][]=new WC_Order($meta,$data);
     return [$key,$data];
 }
@@ -94,7 +96,17 @@ fixture_receipt($payload,$today);$changed=$payload;$changed['requestedGame']='An
 fixture_receipt($payload,$today);$equivalent=$payload;$equivalent['language']='ru';$equivalent['securityMode']='deposit';$equivalent['requestedGame']='  ';check_request(status(call_request($equivalent))===200,'Language and explicit empty/default options preserve legacy intent');
 fixture_receipt($payload,$today);$equivalent=$payload;$equivalent['gameIds']=['game-b','game-a','game-a'];$equivalent['phone']='+380 (00) 000-00-01';check_request(status(call_request($equivalent))===200,'Legacy order recovery accepts equivalent game set and phone formatting');
 [$key]=fixture_receipt($payload,$today);unset($options['jr_result_'.$key]);JR_Games::$inventory=[];JR_Settings::$settings['pickup']=false;check_request(status(call_request($payload))===200,'Durable Woo order recovers before current eligibility');
+fixture_receipt($payload,$today);$empty=$payload;$empty['telegram']='  ';check_request(status(call_request($empty))===200,'Empty Telegram preserves pre-feature cached receipts');
+fixture_receipt($payload,$today);$changed=$payload;$changed['telegram']='@customer_one';check_request(status(call_request($changed))===409,'Adding Telegram to completed booking conflicts');
+$contact=$payload;$contact['telegram']='@Customer_One';[$key]=fixture_receipt($contact,$today);unset($options['jr_result_'.$key]);
+$equivalent=$contact;$equivalent['telegram']='https://t.me/customer_one/';$equivalent['gameIds']=['game-b','game-a'];$equivalent['phone']='+380 (00) 000-00-01';
+check_request(status(call_request($equivalent))===200,'Telegram formats replay through durable intent reconstruction');
+$changed=$contact;$changed['telegram']='customer_two';check_request(status(call_request($changed))===409,'Changing saved Telegram conflicts without another order');
+$changed=$contact;unset($changed['telegram']);check_request(status(call_request($changed))===409,'Removing saved Telegram conflicts without another order');
+$bad=$payload;$bad['telegram']='https://evil.test/customer';$bad['language']='ru';$response=call_request($bad);
+check_request($response instanceof WP_Error&&status($response)===400&&$response->get_error_message()==='Укажи Telegram в формате @username или https://t.me/username.','Invalid Telegram returns localized Russian validation');
 $options=[];$orders=[];JR_Games::$inventory=[['id'=>'game-a','platforms'=>['ps5']]];JR_Settings::$settings['pickup']=true;
+
 $newPast=$past;$newPast['gameIds']=[];check_request(status(call_request($newPast))===400,'New requests still reject dates in the past');
 check_request(status(call_request($payload))===400,'New requests still reject unpublished selected games');
 JR_Settings::$settings['pickup']=false;$newPickup=$payload;$newPickup['gameIds']=[];check_request(status(call_request($newPickup))===400,'New requests still reject disabled pickup');JR_Settings::$settings['pickup']=true;
