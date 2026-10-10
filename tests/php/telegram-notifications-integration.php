@@ -21,7 +21,7 @@ $mock=function($pre,$args,$url)use(&$calls){
  $body=json_decode($args['body']??'',true);if(!str_contains((string)($body['text']??''),'REST Queue Fixture'))return $pre;$chat=(string)($body['chat_id']??'');$calls[]=$chat;
  ec(in_array($chat,['987654321','987654322'],true),'Worker uses authenticated subscriber');
  ec(str_contains((string)($body['text']??''),'REST Queue Fixture'),'Worker contains actual REST booking');
- return ['response'=>['code'=>200,'message'=>'OK'],'headers'=>[],'body'=>wp_json_encode(['ok'=>true,'result'=>['message_id'=>314159+count($calls)]]),'cookies'=>[]];
+ return ['response'=>['code'=>200,'message'=>'OK'],'headers'=>[],'body'=>wp_json_encode(['ok'=>true,'result'=>['message_id'=>314159+count($calls),'chat'=>['id'=>(int)$chat]]]),'cookies'=>[]];
 };
 add_filter('pre_http_request',$mock,50,3);
 try{

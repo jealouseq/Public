@@ -21,6 +21,7 @@ final class JRTG_Subscriptions {
 
     private static function state(): array {
         wp_cache_delete(self::OPTION, 'options');
+        wp_cache_delete('notoptions', 'options');
         $state = get_option(self::OPTION, []);
         $stamp = self::stamp();
         if (!is_array($state) || !is_string($state['bot'] ?? null) || !hash_equals($stamp, $state['bot'])) {
@@ -30,6 +31,13 @@ final class JRTG_Subscriptions {
             if (!is_array($state[$key] ?? null)) $state[$key] = [];
         }
         return $state;
+    }
+
+    private static function persist(array $state): bool {
+        if (!hash_equals((string) $state['bot'], self::stamp())) return false;
+        update_option(self::OPTION, $state, false);
+        // Never acknowledge a subscription or mark an update seen before durable storage.
+        return self::state() === $state;
     }
 
     public static function all(): array {
@@ -121,7 +129,9 @@ final class JRTG_Subscriptions {
             }
             $state['seen'][(string) $update_id] = $now;
             if (count($state['seen']) > 1000) $state['seen'] = array_slice($state['seen'], -1000, null, true);
-            update_option(self::OPTION, $state, false);
+            if (!self::persist($state)) {
+                return new WP_Error('jrtg_unavailable', 'Временно недоступно.', ['status' => 503]);
+            }
             // Telegram accepts sendMessage as the webhook response, avoiding a second HTTP request.
             return new WP_REST_Response([
                 'method' => 'sendMessage', 'chat_id' => $chat, 'text' => $reply,

@@ -13,7 +13,9 @@ final class JRTG_Api {
         ],$settings);
         if (($response['status']??'')!=='ok') return $response;
         $result=$response['result']??null;
-        if (!is_array($result)||!isset($result['message_id'])||!is_int($result['message_id'])||$result['message_id']<=0) {
+        if (!is_array($result)||!isset($result['message_id'])||!is_int($result['message_id'])||$result['message_id']<=0
+            ||!is_array($result['chat']??null)||!is_int($result['chat']['id']??null)
+            ||(string)$result['chat']['id']!==(string)$settings['chat_id']) {
             return ['status'=>'unknown','error'=>'invalid_ack'];
         }
         return ['status'=>'sent','message_id'=>$result['message_id']];
@@ -44,7 +46,7 @@ final class JRTG_Api {
         if (!in_array($method,['sendMessage','setWebhook','getWebhookInfo'],true)) return self::failure('invalid_message');
         try {
             $response=wp_remote_post('https://api.telegram.org/bot'.$token.'/'.$method,[
-                'timeout'=>15,'redirection'=>0,'sslverify'=>true,'blocking'=>true,
+                'timeout'=>8,'redirection'=>0,'sslverify'=>true,'blocking'=>true,
                 'limit_response_size'=>65536,'headers'=>['Content-Type'=>'application/json'],
                 'body'=>wp_json_encode($payload),'data_format'=>'body',
             ]);

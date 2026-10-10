@@ -25,6 +25,8 @@ jobs:
           find wordpress/joyrent-telegram -name '*.php' -print0 | xargs -0 -n1 php -l
           php tests/php/telegram-notification-settings-isolated.php
           php tests/php/telegram-subscriptions-isolated.php
+          php tests/php/telegram-api-isolated.php
+          php tests/php/telegram-dispatcher-isolated.php
           php tests/php/telegram-notifications-isolated.php
       - name: Build installable plugin
         run: |
@@ -32,7 +34,7 @@ jobs:
           from pathlib import Path
           import zipfile
           root = Path('wordpress/joyrent-telegram')
-          out = Path('releases/joyrent-telegram-1.1.0.zip')
+          out = Path('releases/joyrent-telegram-1.1.1.zip')
           out.parent.mkdir(exist_ok=True)
           with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
               for path in sorted(root.rglob('*')):
@@ -46,11 +48,11 @@ jobs:
           PY
       - name: Save downloadable plugin
         run: |
-          sha256sum releases/joyrent-telegram-1.1.0.zip > releases/joyrent-telegram-1.1.0-SHA256SUMS.txt
+          sha256sum releases/joyrent-telegram-1.1.1.zip > releases/joyrent-telegram-1.1.1-SHA256SUMS.txt
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add --sparse -f releases/joyrent-telegram-1.1.0.zip releases/joyrent-telegram-1.1.0-SHA256SUMS.txt
+          git add --sparse -f releases/joyrent-telegram-1.1.1.zip releases/joyrent-telegram-1.1.1-SHA256SUMS.txt
           if ! git diff --cached --quiet; then
-            git commit -m "Package JOYRENT Telegram 1.1.0"
+            git commit -m "Package JOYRENT Telegram 1.1.1"
             git push origin "HEAD:${GITHUB_REF_NAME}"
           fi

@@ -1,12 +1,24 @@
 <?php
 define('ABSPATH','/isolated/');
 define('MINUTE_IN_SECONDS',60);
-$opts=[];$checks=0;
-function get_option($key,$default=false){return $GLOBALS['opts'][$key]??$default;}
-function update_option($key,$value,$autoload=null){$GLOBALS['opts'][$key]=$value;return true;}
-function wp_cache_delete(...$args){}
+$opts=[];$checks=0;$cache=[];$fail_write=false;
+function get_option($key,$default=false){
+ if(isset($GLOBALS['cache']['notoptions'][$key]))return $default;
+ if(array_key_exists($key,$GLOBALS['cache']))return $GLOBALS['cache'][$key];
+ if(!array_key_exists($key,$GLOBALS['opts'])){$GLOBALS['cache']['notoptions'][$key]=true;return $default;}
+ return $GLOBALS['cache'][$key]=$GLOBALS['opts'][$key];
+}
+function update_option($key,$value,$autoload=null){
+ if($GLOBALS['fail_write'])return false;
+ if(($GLOBALS['opts'][$key]??null)===$value)return false;
+ $GLOBALS['opts'][$key]=$value;unset($GLOBALS['cache'][$key],$GLOBALS['cache']['notoptions'][$key]);return true;
+}
+function wp_cache_delete($key,$group=''){unset($GLOBALS['cache'][$key]);return true;}
 function wp_generate_uuid4(){static $n=0;return 'generation-'.++$n;}
-function wp_check_password($plain,$hash){return password_verify($plain,$hash);}
+function wp_check_password($plain,$hash){
+ if(isset($GLOBALS['during_password_check'])){$callback=$GLOBALS['during_password_check'];unset($GLOBALS['during_password_check']);$callback();}
+ return password_verify($plain,$hash);
+}
 function sanitize_text_field($s){return trim(strip_tags($s));}
 class JR_Lock {static function acquire(...$a){return 'owner';}static function release(...$a){}}
 class WP_Error {public function __construct(public $code,public $message,public $data=[]){}}
@@ -57,4 +69,49 @@ $serialized=json_encode($GLOBALS['opts']);
 subcheck(!str_contains($serialized,'fixture-pass')&&!str_contains($serialized,JRTG_Settings::$data['token']),'Registry never stores plaintext password or token');
 JRTG_Settings::$data['access_revision']='access-2';
 subcheck(JRTG_Subscriptions::all()===[],'Password generation change invalidates prior subscribers');
+
+
+$cases=[];
+$cases['failed onboarding write']=function(){
+ JRTG_Subscriptions::receive(new WP_REST_Request([],update_fixture(100,'/start',606)));
+ $GLOBALS['fail_write']=true;
+ $r=JRTG_Subscriptions::receive(new WP_REST_Request([],update_fixture(101,'fixture-pass',606)));
+ subcheck($r instanceof WP_Error&&($r->data['status']??0)===503,'Failed subscription persistence asks Telegram to retry rather than announcing success');
+ subcheck(!isset(JRTG_Subscriptions::all()['606']),'Failed subscription cannot become an active recipient');
+ $GLOBALS['fail_write']=false;
+ $r=JRTG_Subscriptions::receive(new WP_REST_Request([],update_fixture(101,'fixture-pass',606)));
+ subcheck(isset(JRTG_Subscriptions::all()['606'])&&str_contains($r->data['text']??'','Вы подключены!'),'Same update can recover after DB failure without being incorrectly deduplicated');
+};
+$cases['failed stop write']=function(){
+ $GLOBALS['fail_write']=false;
+ JRTG_Subscriptions::receive(new WP_REST_Request([],update_fixture(102,'/start',707)));
+ JRTG_Subscriptions::receive(new WP_REST_Request([],update_fixture(103,'fixture-pass',707)));
+ $GLOBALS['fail_write']=true;
+ $r=JRTG_Subscriptions::receive(new WP_REST_Request([],update_fixture(104,'/stop',707)));
+ subcheck($r instanceof WP_Error&&($r->data['status']??0)===503,'Failed unsubscribe is never acknowledged as successful');
+ subcheck(isset(JRTG_Subscriptions::all()['707']),'Failed unsubscribe preserves the previously persisted registry');
+ $GLOBALS['fail_write']=false;
+ JRTG_Subscriptions::receive(new WP_REST_Request([],update_fixture(104,'/stop',707)));
+ subcheck(!isset(JRTG_Subscriptions::all()['707']),'Unsubscribe retry can persist after DB recovers');
+};
+$cases['fresh negative registry cache']=function(){
+ $GLOBALS['opts']=[];$GLOBALS['cache']=[];$GLOBALS['fail_write']=false;JRTG_Subscriptions::all();
+ $GLOBALS['opts'][JRTG_Subscriptions::OPTION]=['bot'=>JRTG_Subscriptions::stamp(),'subscribers'=>['808'=>['generation'=>'external','label'=>'External']],'pending'=>[],'seen'=>[]];
+ subcheck(isset(JRTG_Subscriptions::all()['808']),'Registry created by another worker is visible after a cached absence');
+};
+$cases['access rotation during onboarding']=function(){
+ $GLOBALS['opts']=[];$GLOBALS['cache']=[];$GLOBALS['fail_write']=false;
+ JRTG_Subscriptions::receive(new WP_REST_Request([],update_fixture(200,'/start',909)));
+ $before=$GLOBALS['opts'][JRTG_Subscriptions::OPTION];
+ $GLOBALS['during_password_check']=function(){JRTG_Settings::$data['access_revision']='access-during-password';};
+ $r=JRTG_Subscriptions::receive(new WP_REST_Request([],update_fixture(201,'fixture-pass',909)));
+ subcheck($r instanceof WP_Error&&($r->data['status']??0)===503,'Password rotation during onboarding never announces an old-generation subscription');
+ subcheck($GLOBALS['opts'][JRTG_Subscriptions::OPTION]===$before,'Password rotation prevents persisting old-generation onboarding state');
+ JRTG_Subscriptions::receive(new WP_REST_Request([],update_fixture(202,'/start',909)));
+ $r=JRTG_Subscriptions::receive(new WP_REST_Request([],update_fixture(203,'fixture-pass',909)));
+ subcheck(isset(JRTG_Subscriptions::all()['909'])&&str_contains($r->data['text']??'','Вы подключены!'),'Fresh onboarding remains possible after access generation changed');
+};
+$failures=[];
+foreach($cases as $label=>$case){try{$case();}catch(Throwable $e){$failures[]=$label;fwrite(STDERR,$e->getMessage()."\n");}finally{$GLOBALS['fail_write']=false;}}
+if($failures)throw new RuntimeException('FAIL cases: '.implode(', ',$failures));
 echo "PASS: $checks subscription checks\n";

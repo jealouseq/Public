@@ -9,6 +9,8 @@ final class JRTG_Notifications {
     private const GROUP='joyrent-telegram';
     private const LOCK_TTL=300;
     private const MAX_ATTEMPTS=4;
+    private const SEND_LOCK='jrtg_notification_send';
+    private const SEND_LOCK_TTL=45;
     private static array $admin_forms=[];
 
     public static function boot(): void {
@@ -36,7 +38,8 @@ final class JRTG_Notifications {
             if (!$recipients) return;
             $state=['status'=>'queued','config'=>self::stamp($settings),'recipients'=>$recipients];
             self::save($order,$state);
-            if (!self::schedule($id,time()+1)) self::fail_pending($order,$state,'queue_unavailable');
+            if (!self::schedule($id,time())) self::fail_pending($order,$state,'queue_unavailable');
+            else self::wake($id);
         } catch (Throwable $ignored) {
             // The core catches exceptions by deleting the order: keep all connector failures here.
         } finally {self::release($id,$owner);}
@@ -44,15 +47,17 @@ final class JRTG_Notifications {
 
     /** One HTTP request per worker keeps execution bounded even with many subscribers. */
     public static function deliver($order_id): void {
-        $id=(int)$order_id;$owner=false;$order=null;$state=[];$chat=null;$attempting=false;
+        $id=(int)$order_id;$owner=false;$sender=false;$order=null;$state=[];$chat=null;$attempting=false;
         try {
             if ($id<=0) return;
+            $sender=JR_Lock::acquire(self::SEND_LOCK,self::SEND_LOCK_TTL);
+            if (!$sender) {self::schedule($id,time()+30,self::WATCHDOG);return;}
             $owner=JR_Lock::acquire(self::lock($id),self::LOCK_TTL);
-            if (!$owner) {self::schedule($id,time()+30,self::WATCHDOG,false);return;}
+            if (!$owner) {self::schedule($id,time()+30,self::WATCHDOG);return;}
             $order=wc_get_order($id);
-            if (!$order instanceof WC_Order) return;
+            if (!$order instanceof WC_Order) {self::cancel($id);return;}
             $state=self::state($order);
-            if (empty($state['recipients'])) return;
+            if (empty($state['recipients'])||self::due($state)===null) {self::cancel($id);return;}
             if (!self::eligible($order)) {self::fail_pending($order,$state,'order_unavailable');return;}
             $settings=JRTG_Settings::get();
             if (!JRTG_Settings::ready()) {self::fail_pending($order,$state,'disabled');return;}
@@ -90,7 +95,7 @@ final class JRTG_Notifications {
             $entry=&$state['recipients'][$chat];
             $entry['status']='sending';$entry['attempts']++;$entry['updated_at']=time();unset($entry['error'],$entry['next_at']);
             self::save($order,$state);
-            if (!self::schedule($id,time()+self::LOCK_TTL+30,self::WATCHDOG,false)) {
+            if (!self::schedule($id,time()+self::LOCK_TTL+30,self::WATCHDOG)) {
                 $entry['status']='failed';$entry['error']='queue_unavailable';self::save($order,$state);
                 self::continue_queue($id,$order,$state);return;
             }
@@ -106,6 +111,7 @@ final class JRTG_Notifications {
                 $entry['error']=($result['status']??'')==='retry'?'retry_limit':self::safe_error($result['error']??'invalid_response');
             }
             $entry['updated_at']=time();unset($entry);self::save($order,$state);
+            self::cancel($id,self::WATCHDOG);
             self::continue_queue($id,$order,$state);
         } catch (Throwable $ignored) {
             if ($order instanceof WC_Order&&$state) {
@@ -115,7 +121,10 @@ final class JRTG_Notifications {
                 }
                 try {self::save($order,$state);self::continue_queue($id,$order,$state);} catch (Throwable $ignoredAgain) {}
             }
-        } finally {self::release($id,$owner);}
+        } finally {
+            self::release($id,$owner);
+            if ($sender) {try {JR_Lock::release(self::SEND_LOCK,$sender);} catch (Throwable $ignored) {}}
+        }
     }
 
     /** Requeue only eligible failed recipients; preserve every acknowledged delivery. */
@@ -140,10 +149,63 @@ final class JRTG_Notifications {
             unset($entry);
             if (!$changed) return false;
             $state['config']=self::stamp(JRTG_Settings::get());self::save($order,$state);
-            if (!self::schedule($id,time()+1,self::HOOK,false)) {self::fail_pending($order,$state,'queue_unavailable');return false;}
-            return true;
+            if (!self::schedule($id,time(),self::HOOK)) {self::fail_pending($order,$state,'queue_unavailable');return false;}
+            self::wake($id);return true;
         } catch (Throwable $ignored) {return false;}
         finally {self::release($id,$owner);}
+    }
+
+    /** Recover lost producer wakes from bounded durable scheduler indexes, without scanning orders. */
+    public static function pending_due_ids(array $exclude=[]): array {
+        $ids=[];$skip=[];$now=time();
+        foreach ($exclude as $raw) {
+            if ((is_int($raw)||(is_string($raw)&&ctype_digit($raw)))&&(int)$raw>0) $skip[(int)$raw]=true;
+        }
+        $add=static function($raw) use (&$ids,$skip): void {
+            if ((!is_int($raw)&&(!is_string($raw)||!ctype_digit($raw)))||(int)$raw<=0) return;
+            $id=(int)$raw;if (!isset($skip[$id])) $ids[$id]=$id;
+        };
+        foreach ([self::HOOK,self::WATCHDOG] as $hook) {
+            if (!function_exists('as_get_scheduled_actions')) break;
+            try {
+                for ($page=0;$page<3;$page++) {
+                    $actions=as_get_scheduled_actions(['hook'=>$hook,'group'=>self::GROUP,'status'=>'pending','date'=>$now,'date_compare'=>'<=','per_page'=>20,'offset'=>$page*20,'orderby'=>'date','order'=>'ASC'],'OBJECT');
+                    foreach ($actions as $action) {
+                        $date=$action->get_schedule()->get_date();if ($date&&$date->getTimestamp()>$now) continue;
+                        $args=$action->get_args();$add(is_array($args)?($args[0]??null):null);
+                        if (count($ids)>=40) return array_values($ids);
+                    }
+                    if (count($actions)<20) break;
+                }
+            } catch (Throwable $ignored) {}
+        }
+        try {
+            $cron=function_exists('_get_cron_array')?_get_cron_array():[];
+            foreach (is_array($cron)?$cron:[] as $at=>$hooks) {
+                if ((int)$at>$now) continue;
+                foreach ([self::HOOK,self::WATCHDOG] as $hook) {
+                    foreach ($hooks[$hook]??[] as $event) {
+                        $add($event['args'][0]??null);
+                        if (count($ids)>=40) return array_values($ids);
+                    }
+                }
+            }
+        } catch (Throwable $ignored) {}
+        return array_values($ids);
+    }
+
+    /** Fresh authoritative state lets dispatchers stop when a worker makes no progress. */
+    public static function inspect($order_id): array {
+        $empty=['due'=>null,'marker'=>hash('sha256',serialize([]))];
+        try {
+            $id=(int)$order_id;if ($id<=0) return $empty;
+            $order=wc_get_order($id);if (!$order instanceof WC_Order) return $empty;
+            $state=self::state($order);
+            return ['due'=>self::due($state),'marker'=>hash('sha256',serialize($state))];
+        } catch (Throwable $ignored) {return $empty;}
+    }
+    public static function next_due($order_id): ?int {
+        return self::inspect($order_id)['due'];
     }
 
     public static function admin_status(WC_Order $order): void {
@@ -190,14 +252,23 @@ final class JRTG_Notifications {
         self::resend($id);wp_safe_redirect($order->get_edit_order_url());exit;
     }
 
-    private static function continue_queue(int $id,WC_Order $order,array $state): void {
+    private static function due(array $state): ?int {
         $next=null;
-        foreach ($state['recipients'] as $entry) {
+        foreach ($state['recipients']??[] as $entry) {
             $status=$entry['status']??'';
-            $at=in_array($status,['queued','retry'],true)?max(time()+1,(int)($entry['next_at']??0)):($status==='sending'?(int)$entry['updated_at']+self::LOCK_TTL+30:null);
+            $at=in_array($status,['queued','retry'],true)?(int)($entry['next_at']??0):($status==='sending'?(int)($entry['updated_at']??0)+self::LOCK_TTL+30:null);
             if ($at!==null) $next=$next===null?$at:min($next,$at);
         }
-        if ($next!==null&&!self::schedule($id,$next,self::HOOK,false)) self::fail_pending($order,$state,'queue_unavailable');
+        return $next;
+    }
+    private static function continue_queue(int $id,WC_Order $order,array $state): void {
+        $next=self::due($state);
+        if ($next===null) {self::cancel($id);return;}
+        if (!self::schedule($id,max(time(),$next),self::HOOK)) {self::fail_pending($order,$state,'queue_unavailable');return;}
+        if ($next<=time()) self::wake($id);
+    }
+    private static function wake(int $id): void {
+        try {if (class_exists('JRTG_Dispatcher')) JRTG_Dispatcher::wake($id);} catch (Throwable $ignored) {}
     }
     private static function fail_pending(WC_Order $order,array $state,string $error): void {
         foreach ($state['recipients'] as &$entry) {
@@ -205,6 +276,7 @@ final class JRTG_Notifications {
             elseif (($entry['status']??'')==='sending'&&(int)($entry['updated_at']??0)<=time()-self::LOCK_TTL) {$entry['status']='unknown';$entry['error']='send_interrupted';}
         }
         unset($entry);self::save($order,$state);
+        if (self::due($state)===null) self::cancel($order->get_id());
     }
     private static function eligible($order): bool {
         return $order instanceof WC_Order&&$order->get_created_via()==='joyrent'&&$order->get_status()==='jr-request'
@@ -225,17 +297,37 @@ final class JRTG_Notifications {
         $state['status']=in_array('sending',$statuses,true)?'sending':(in_array('queued',$statuses,true)||in_array('retry',$statuses,true)?'queued':(count(array_unique($statuses))===1?($statuses[0]??'failed'):'partial'));
         $state['updated_at']=time();$order->update_meta_data(self::META,$state);$order->save_meta_data();
     }
-    private static function schedule(int $id,int $at,string $hook=self::HOOK,bool $unique=true): bool {
+    /** Deduplicate pending work only: the running action must allow its successor. */
+    private static function schedule(int $id,int $at,string $hook=self::HOOK): bool {
         if (function_exists('as_schedule_single_action')) {
             try {
-                if (as_schedule_single_action($at,$hook,[$id],self::GROUP,$unique)) return true;
-                if ($unique&&function_exists('as_has_scheduled_action')&&as_has_scheduled_action($hook,[$id],self::GROUP)) return true;
+                $pending=self::pending_at($id,$hook);
+                if ($pending!==null&&$pending<=$at) return true;
+                if ($pending!==null) self::cancel($id,$hook);
+                if (as_schedule_single_action($at,$hook,[$id],self::GROUP,false)) return true;
             } catch (Throwable $ignored) {}
         }
         try {
-            if (wp_next_scheduled($hook,[$id])) return true;
+            $existing=wp_next_scheduled($hook,[$id]);
+            if ($existing!==false&&$existing<=$at) return true;
+            if ($existing!==false) wp_clear_scheduled_hook($hook,[$id]);
             $scheduled=wp_schedule_single_event($at,$hook,[$id],true);return $scheduled!==false&&!is_wp_error($scheduled);
         } catch (Throwable $ignored) {return false;}
+    }
+    private static function pending_at(int $id,string $hook): ?int {
+        if (!function_exists('as_get_scheduled_actions')) return null;
+        $actions=as_get_scheduled_actions(['hook'=>$hook,'args'=>[$id],'group'=>self::GROUP,'status'=>'pending','per_page'=>1,'orderby'=>'date','order'=>'ASC'],'OBJECT');
+        foreach ($actions as $action) {
+            $date=$action->get_schedule()->get_date();return $date?$date->getTimestamp():0;
+        }
+        return null;
+    }
+    private static function cancel(int $id,?string $only=null): void {
+        foreach ($only===null?[self::HOOK,self::WATCHDOG]:[$only] as $hook) {
+            try {if (function_exists('as_unschedule_all_actions')) as_unschedule_all_actions($hook,[$id],self::GROUP);} catch (Throwable $ignored) {}
+            try {wp_clear_scheduled_hook($hook,[$id]);} catch (Throwable $ignored) {}
+        }
+        if ($only===null) {try {if (class_exists('JRTG_Dispatcher')) JRTG_Dispatcher::forget($id);} catch (Throwable $ignored) {}}
     }
     private static function abandoned(int $id,array $state): bool {
         if (!in_array($state['status']??'',['queued','sending'],true)||(int)($state['updated_at']??0)>time()-self::LOCK_TTL) return false;

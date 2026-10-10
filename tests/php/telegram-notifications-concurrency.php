@@ -19,7 +19,8 @@ if($mode==='worker'){
         if(!str_starts_with($url,'https://api.telegram.org/'))return $pre;
         global $wpdb;$wpdb->query($wpdb->prepare("UPDATE {$wpdb->options} SET option_value=CAST(option_value AS UNSIGNED)+1 WHERE option_name=%s",'jrtg_qa_http_count'));wp_cache_delete('jrtg_qa_http_count','options');
         usleep(500000);
-        return ['response'=>['code'=>200,'message'=>'Fixture'],'headers'=>[],'body'=>'{"ok":true,"result":{"message_id":991}}','cookies'=>[]];
+        $body=json_decode($args['body']??'',true);
+        return ['response'=>['code'=>200,'message'=>'Fixture'],'headers'=>[],'body'=>wp_json_encode(['ok'=>true,'result'=>['message_id'=>991,'chat'=>['id'=>(int)($body['chat_id']??0)]]]),'cookies'=>[]];
     },50,3);
     JRTG_Notifications::deliver((int)get_option('jrtg_qa_order_id'));echo "Worker completed\n";exit;
 }

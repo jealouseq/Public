@@ -4,13 +4,16 @@ defined('ABSPATH') || exit;
 /** Administrator-only bot connection; token, password hash and webhook secret stay server-side. */
 final class JRTG_Settings {
     const OPTION = 'joyrent_telegram_settings';
+    private const WRITE_LOCK = 'jrtg_settings_write';
+    const TEST_OPTION = 'joyrent_telegram_test_status';
+    private const TEST_LOCK = 'jrtg_test_status_write';
 
     public static function boot(): void {
         add_action('admin_menu', [self::class, 'menu']);
         foreach (['save', 'connect', 'test'] as $action) {
             add_action('admin_post_jrtg_' . $action, [self::class, $action]);
         }
-        add_action('joyrent_telegram_subscriber_test', [self::class, 'send_test']);
+        add_action('joyrent_telegram_subscriber_test', [self::class, 'send_test'], 10, 4);
     }
 
     public static function menu(): void {
@@ -19,8 +22,27 @@ final class JRTG_Settings {
     }
 
     private static function raw(): array {
+        // Another PHP worker may have changed this non-autoloaded option.
+        wp_cache_delete(self::OPTION, 'options');
+        wp_cache_delete('notoptions', 'options');
         $raw = get_option(self::OPTION, []);
         return is_array($raw) ? $raw : [];
+    }
+
+    private static function persist(array $settings): bool {
+        update_option(self::OPTION, $settings, false);
+        // update_option returns false both for unchanged data and failed writes.
+        return self::raw() === $settings;
+    }
+
+    private static function release($owner): void {
+        if (!$owner) return;
+        try { JR_Lock::release(self::WRITE_LOCK, $owner); } catch (Throwable $ignored) {}
+    }
+
+    private static function connection_stamp(array $settings): string {
+        // Include password/access and enabled revisions, not only the bot token.
+        return hash('sha256', serialize($settings));
     }
 
     private static function constant_token(): ?string {
@@ -126,17 +148,28 @@ final class JRTG_Settings {
 
     public static function save(): void {
         self::authorize('jrtg_save');
+        $owner = false;
+        $code = 'settings_unavailable';
         try {
-            $password = self::text('password');
-            $settings = self::candidate(self::raw(), [
-                'enabled' => self::flag('enabled'), 'token' => self::text('token'),
-                'password' => $password, 'clear_token' => self::flag('clear_token'),
-            ], time());
-            update_option(self::OPTION, $settings, false);
-            self::finish($password !== '' ? 'password_saved' : 'saved');
+            $owner = JR_Lock::acquire(self::WRITE_LOCK, 30);
+            if (!$owner) {
+                $code = 'settings_busy';
+            } else {
+                $password = self::text('password');
+                $settings = self::candidate(self::raw(), [
+                    'enabled' => self::flag('enabled'), 'token' => self::text('token'),
+                    'password' => $password, 'clear_token' => self::flag('clear_token'),
+                ], time());
+                if (self::persist($settings)) $code = $password !== '' ? 'password_saved' : 'saved';
+            }
         } catch (InvalidArgumentException $e) {
-            self::finish('invalid_settings');
+            $code = 'invalid_settings';
+        } catch (Throwable $e) {
+            $code = 'settings_unavailable';
+        } finally {
+            self::release($owner);
         }
+        self::finish($code);
     }
 
     public static function connect(): void {
@@ -144,16 +177,149 @@ final class JRTG_Settings {
         $settings = self::get();
         if (!self::valid_token($settings['token']) || $settings['password_hash'] === '' ||
             !preg_match('/^[a-f0-9]{64}$/D', $settings['webhook_secret'])) self::finish('not_configured');
-        $stamp = hash('sha256', $settings['token'] . $settings['webhook_secret']);
+        $stamp = self::connection_stamp($settings);
+        // Keep Telegram's two HTTP requests outside the short database write lock.
         $result = JRTG_Api::connect_webhook($settings, rest_url('joyrent-telegram/v1/update'));
         if (($result['status'] ?? '') !== 'ok') self::finish((string) ($result['error'] ?? 'telegram_error'));
-        $current = self::get();
-        if (!hash_equals($stamp, hash('sha256', $current['token'] . $current['webhook_secret']))) self::finish('config_changed');
-        $raw = self::raw();
-        $raw['webhook_connected'] = true;
-        $raw['webhook_bot'] = hash('sha256', $settings['token']);
-        update_option(self::OPTION, $raw, false);
-        self::finish('connected');
+        $owner = false;
+        $code = 'settings_unavailable';
+        try {
+            $owner = JR_Lock::acquire(self::WRITE_LOCK, 30);
+            if (!$owner) {
+                $code = 'settings_busy';
+            } elseif (!hash_equals($stamp, self::connection_stamp(self::get()))) {
+                $code = 'config_changed';
+            } else {
+                $raw = self::raw();
+                $raw['webhook_connected'] = true;
+                $raw['webhook_bot'] = hash('sha256', $settings['token']);
+                if (self::persist($raw)) $code = 'connected';
+            }
+        } catch (Throwable $e) {
+            $code = 'settings_unavailable';
+        } finally {
+            self::release($owner);
+        }
+        self::finish($code);
+    }
+
+    private static function test_state(): array {
+        wp_cache_delete(self::TEST_OPTION, 'options');
+        wp_cache_delete('notoptions', 'options');
+        $state = get_option(self::TEST_OPTION, []);
+        return is_array($state) ? $state : [];
+    }
+
+    private static function test_write(array $state): bool {
+        update_option(self::TEST_OPTION, $state, false);
+        return self::test_state() === $state;
+    }
+
+    private static function test_release($owner): void {
+        if ($owner) {
+            try { JR_Lock::release(self::TEST_LOCK, $owner); } catch (Throwable $ignored) {}
+        }
+    }
+
+    private static function test_config(array $settings): string {
+        return hash('sha256', serialize([
+            $settings['token'], $settings['access_revision'], $settings['webhook_secret'],
+            $settings['webhook_connected'],
+        ]));
+    }
+
+    /** Opaque tickets keep recipient IDs and credentials out of health diagnostics. */
+    private static function prepare_tests(int $count, array $settings): array {
+        $owner = false;
+        try {
+            $owner = JR_Lock::acquire(self::TEST_LOCK, 10);
+            if (!$owner) return [];
+            $state = [
+                'batch' => wp_generate_uuid4(), 'config' => self::test_config($settings),
+                'created_at' => time(), 'updated_at' => time(), 'results' => [],
+            ];
+            for ($i = 0; $i < $count; $i++) {
+                $state['results'][wp_generate_uuid4()] = ['status' => 'planning', 'updated_at' => time()];
+            }
+            return self::test_write($state) ? $state : [];
+        } catch (Throwable $ignored) {
+            return [];
+        } finally {
+            self::test_release($owner);
+        }
+    }
+
+    /** Legacy jobs may share a legacy batch, but never supersede a newer admin test. */
+    private static function prepare_legacy_test(array $settings): ?array {
+        $owner = false;
+        try {
+            $owner = JR_Lock::acquire(self::TEST_LOCK, 10);
+            if (!$owner) return null;
+            $state = self::test_state();
+            if (!empty($state['results']) && empty($state['legacy'])) return [];
+            if (empty($state['batch']) || !is_array($state['results'] ?? null) ||
+                ($state['config'] ?? '') !== self::test_config($settings)) {
+                $state = [
+                    'batch' => wp_generate_uuid4(), 'config' => self::test_config($settings),
+                    'created_at' => time(), 'updated_at' => time(), 'legacy' => true, 'results' => [],
+                ];
+            }
+            $ticket = wp_generate_uuid4();
+            $state['results'][$ticket] = ['status' => 'planning', 'updated_at' => time()];
+            $state['updated_at'] = time();
+            return self::test_write($state) ? $state + ['ticket' => $ticket] : null;
+        } catch (Throwable $ignored) {
+            return null;
+        } finally {
+            self::test_release($owner);
+        }
+    }
+
+    private static function test_result(string $batch, string $ticket, string $status, string $error = ''): bool {
+        $owner = false;
+        try {
+            $owner = JR_Lock::acquire(self::TEST_LOCK, 10);
+            if (!$owner) return false;
+            $state = self::test_state();
+            if (($state['batch'] ?? '') !== $batch || !isset($state['results'][$ticket])) return false;
+            $before = $state['results'][$ticket]['status'] ?? '';
+            // A fast worker may finish before the scheduler's acknowledgment is recorded.
+            if ($status === 'queued' && in_array($before, ['queued', 'sending', 'sent', 'failed', 'unknown'], true)) return true;
+            if (!in_array($before, ['planning', 'queued', 'sending'], true) ||
+                ($status === 'sending' && !in_array($before, ['planning', 'queued'], true))) return false;
+            $state['results'][$ticket] = ['status' => $status, 'updated_at' => time()];
+            if ($error !== '') $state['results'][$ticket]['error'] = self::test_error($error);
+            $state['updated_at'] = time();
+            return self::test_write($state);
+        } catch (Throwable $ignored) {
+            return false;
+        } finally {
+            self::test_release($owner);
+        }
+    }
+
+    private static function test_error($error): string {
+        $allowed = [
+            'not_configured', 'config_changed', 'unsubscribed', 'queue_unavailable',
+            'http_unknown', 'invalid_response', 'invalid_ack', 'rate_limited',
+            'telegram_server_error', 'bot_unauthorized', 'chat_forbidden', 'bad_request',
+            'telegram_error', 'send_interrupted',
+        ];
+        return is_string($error) && in_array($error, $allowed, true) ? $error : 'invalid_response';
+    }
+
+    private static function schedule_test(array $args, int $at = 0): bool {
+        if ($at === 0 && function_exists('as_enqueue_async_action')) {
+            try {
+                if (as_enqueue_async_action('joyrent_telegram_subscriber_test', $args, 'joyrent-telegram', true)) return true;
+            } catch (Throwable $ignored) {}
+        }
+        try {
+            $scheduled = wp_schedule_single_event($at ?: time() + 1, 'joyrent_telegram_subscriber_test', $args, true);
+            return $scheduled !== false && !is_wp_error($scheduled);
+        } catch (Throwable $ignored) {
+            return false;
+        }
     }
 
     public static function test(): void {
@@ -162,31 +328,132 @@ final class JRTG_Settings {
         if (!$s['webhook_connected']) self::finish('not_configured');
         $subscribers = JRTG_Subscriptions::all();
         if (!$subscribers) self::finish('no_subscribers');
+        $state = self::prepare_tests(count($subscribers), $s);
+        if (!$state) self::finish('test_status_unavailable');
+        $tickets = array_keys($state['results']);
         $queued = false;
+        $confirmed = true;
+        $index = 0;
         foreach ($subscribers as $id => $subscriber) {
-            if (function_exists('as_enqueue_async_action')) {
-                $queued = (bool) as_enqueue_async_action('joyrent_telegram_subscriber_test', [(string) $id], 'joyrent-telegram', true) || $queued;
+            $ticket = $tickets[$index++];
+            $args = [(string) $id, $state['batch'], $ticket, (string) ($subscriber['generation'] ?? '')];
+            if (self::schedule_test($args)) {
+                $queued = true;
+                $confirmed = self::test_result($state['batch'], $ticket, 'queued') && $confirmed;
             } else {
-                $scheduled = wp_schedule_single_event(time() + 1, 'joyrent_telegram_subscriber_test', [(string) $id], true);
-                $queued = ($scheduled !== false && !is_wp_error($scheduled)) || $queued;
+                $confirmed = self::test_result($state['batch'], $ticket, 'failed', 'queue_unavailable') && $confirmed;
             }
         }
-        self::finish($queued ? 'test_queued' : 'queue_unavailable');
+        self::finish(!$confirmed ? 'test_status_unavailable' : ($queued ? 'test_queued' : 'queue_unavailable'));
     }
 
-    public static function send_test($id): void {
+    public static function send_test($id, $batch = '', $ticket = '', $generation = ''): void {
+        if (!is_scalar($id) || !preg_match('/^[1-9][0-9]{0,19}$/D', (string) $id) ||
+            !is_string($batch) || !is_string($ticket) || !is_string($generation)) return;
         $s = self::get();
-        if (!$s['webhook_connected'] || !isset(JRTG_Subscriptions::all()[(string) $id])) return;
+        if ($batch === '' && $ticket === '') {
+            // Jobs queued by 1.1.0 carried only the destination ID.
+            $legacy = self::prepare_legacy_test($s);
+            if ($legacy === null) throw new RuntimeException('Telegram test status unavailable.');
+            if (!$legacy) return;
+            $batch = $legacy['batch'];
+            $ticket = $legacy['ticket'];
+        }
+        $state = self::test_state();
+        if (($state['batch'] ?? '') !== $batch ||
+            !in_array($state['results'][$ticket]['status'] ?? '', ['planning', 'queued'], true)) return;
+        $error = '';
+        if (!$s['webhook_connected'] || !self::valid_token($s['token'])) $error = 'not_configured';
+        elseif (!hash_equals((string) ($state['config'] ?? ''), self::test_config($s))) $error = 'config_changed';
+        $subscribers = JRTG_Subscriptions::all();
+        if ($error === '' && (!isset($subscribers[(string) $id]) ||
+            ($generation !== '' && !hash_equals($generation, (string) ($subscribers[(string) $id]['generation'] ?? ''))))) $error = 'unsubscribed';
+        if ($error !== '') {
+            if (!self::test_result($batch, $ticket, 'failed', $error)) throw new RuntimeException('Telegram test status unavailable.');
+            return;
+        }
+        if (!self::test_result($batch, $ticket, 'sending')) {
+            if (!self::schedule_test([(string) $id, $batch, $ticket, $generation], time() + 5)) {
+                throw new RuntimeException('Telegram test status unavailable.');
+            }
+            return;
+        }
         $s['chat_id'] = (string) $id;
-        JRTG_Api::send_message('JOYRENT: тестовое уведомление. Вы подписаны на новые брони. Для отключения отправьте /stop.', $s);
+        try {
+            $result = JRTG_Api::send_message('JOYRENT: тестовое уведомление. Вы подписаны на новые брони. Для отключения отправьте /stop.', $s);
+        } catch (Throwable $ignored) {
+            $result = ['status' => 'unknown', 'error' => 'http_unknown'];
+        }
+        $status = ($result['status'] ?? '') === 'sent' ? 'sent' :
+            (in_array($result['status'] ?? '', ['failed', 'retry'], true) ? 'failed' : 'unknown');
+        if (!self::test_result($batch, $ticket, $status, $status === 'sent' ? '' : ($result['error'] ?? 'invalid_response'))) {
+            throw new RuntimeException('Telegram test status unavailable.');
+        }
+    }
+
+    private static function diagnostic_time($timestamp): string {
+        return is_int($timestamp) && $timestamp > 0 ? wp_date('d.m.Y H:i:s', $timestamp) : 'ещё не было';
+    }
+
+    private static function diagnostics(): void {
+        echo '<div class="card" style="max-width:850px"><h2>Фоновая отправка</h2>';
+        $dispatch = [];
+        try {
+            if (class_exists('JRTG_Dispatcher')) $dispatch = JRTG_Dispatcher::status();
+        } catch (Throwable $ignored) {}
+        $jobs = is_array($dispatch['jobs'] ?? null) ? $dispatch['jobs'] : [];
+        $due = array_filter($jobs, static fn($at): bool => is_numeric($at) && (int) $at <= time());
+        echo '<p>'.esc_html('В очереди броней: '.count($jobs).'. Готовы к отправке: '.count($due).'.').'</p>';
+        echo '<p>'.esc_html('Последний запуск: '.self::diagnostic_time($dispatch['last_start'] ?? 0).'. Последнее завершение: '.self::diagnostic_time($dispatch['last_finish'] ?? 0).'.').'</p>';
+        $error = $dispatch['error'] ?? '';
+        if ($error !== '') {
+            $label = match ($error) {
+                'loopback_failed' => 'Не удалось запустить запрос к собственному сайту. Проверьте loopback-запросы хостинга и запуск WP-Cron.',
+                'worker_failed' => 'Фоновая отправка завершилась с ошибкой. Проверьте журнал PHP и запланированные действия WooCommerce.',
+                default => 'Последняя фоновая отправка сообщила об ошибке. Проверьте журнал PHP и запланированные действия WooCommerce.',
+            };
+            echo '<p>'.esc_html($label).'</p>';
+        }
+        if ($due && min(array_map('intval', $due)) < time() - 60) {
+            echo '<p>Очередь задерживается больше минуты. Проверьте фоновые запросы и WP-Cron: для отправки не требуется новая команда /start.</p>';
+        }
+        $test = self::test_state();
+        echo '<h3>Последний тест</h3>';
+        if (empty($test['results']) || !is_array($test['results'])) {
+            echo '<p>Тест ещё не отправлялся.</p>';
+        } else {
+            $counts = ['planning' => 0, 'queued' => 0, 'sending' => 0, 'sent' => 0, 'failed' => 0, 'unknown' => 0];
+            $errors = [];
+            foreach ($test['results'] as $entry) {
+                if (!is_array($entry)) continue;
+                $status = is_string($entry['status'] ?? null) ? $entry['status'] : 'unknown';
+                if ($status === 'sending' && (int) ($entry['updated_at'] ?? 0) < time() - 60) {
+                    $status = 'unknown';
+                    $entry['error'] = 'send_interrupted';
+                }
+                $counts[array_key_exists($status, $counts) ? $status : 'unknown']++;
+                if (!empty($entry['error'])) $errors[self::test_error($entry['error'])] = true;
+            }
+            echo '<p>'.esc_html('Создан: '.self::diagnostic_time($test['created_at'] ?? 0).'. Обновлён: '.self::diagnostic_time($test['updated_at'] ?? 0).'.').'</p>';
+            foreach (['planning'=>'Планирование не подтверждено', 'queued'=>'В очереди', 'sending'=>'Отправляется', 'sent'=>'Telegram подтвердил отправку', 'failed'=>'Не отправлено', 'unknown'=>'Результат неизвестен'] as $status => $label) {
+                if ($counts[$status]) echo '<p>'.esc_html($label.': '.$counts[$status]).'</p>';
+            }
+            foreach (array_keys($errors) as $code) echo '<p>'.esc_html(self::error_label($code)).'</p>';
+            if (($counts['planning'] || $counts['queued']) && (int) ($test['created_at'] ?? 0) < time() - 60) echo '<p>Тест ожидает фонового запуска больше минуты. Проверьте Action Scheduler и WP-Cron.</p>';
+        }
+        echo '</div>';
     }
 
     public static function error_label(string $code): string {
         $labels = [
             'saved' => 'Настройки сохранены.',
+            'settings_busy' => 'Настройки меняются в другом запросе. Повторите действие.',
+            'settings_unavailable' => 'Не удалось сохранить настройки. Повторите действие после восстановления базы данных.',
             'password_saved' => 'Пароль сохранён. Подписчики должны заново отправить /start и ввести пароль. Затем включите уведомления.',
-            'connected' => 'Бот подключён. Откройте его в Telegram, отправьте /start и введите пароль.',
-            'test_queued' => 'Тестовое сообщение поставлено в очередь для всех активных подписчиков.',
+            'connected' => 'Webhook бота зарегистрирован. Откройте его в Telegram, отправьте /start и введите пароль.',
+            'test_queued' => 'Тест поставлен в очередь. Результат отправки отображается в блоке «Последний тест».',
+            'test_status_unavailable' => 'Не удалось подтвердить статус теста. Проверьте базу данных и запланированные действия; перед повтором проверьте Telegram.',
+            'telegram_server_error' => 'Telegram временно недоступен. Проверьте статус теста и повторите его позже.',
             'no_subscribers' => 'Подписчиков пока нет. Отправьте боту /start и введите пароль.',
             'invalid_settings' => 'Настройки не сохранены. Проверьте токен и пароль длиной от 4 до 128 символов.',
             'not_configured' => 'Сначала сохраните токен и пароль, затем нажмите «Подключить бота».',
@@ -245,7 +512,7 @@ final class JRTG_Settings {
                         <input id="jrtg-password" type="password" name="password" value="" class="regular-text" autocomplete="new-password" spellcheck="false">
                         <p class="description"><?php echo $s['password_hash'] !== '' ? 'Пароль сохранён. Пустое поле сохраняет его. Смена пароля требует повторной подписки всех получателей.' : 'Этот пароль получатели вводят боту после /start.'; ?></p>
                     </td></tr>
-                    <tr><th scope="row">Подключение</th><td><?php echo $s['webhook_connected'] ? 'Бот подключён' : 'Сначала сохраните настройки и подключите бота'; ?></td></tr>
+                    <tr><th scope="row">Подключение</th><td><?php echo $s['webhook_connected'] ? 'Webhook зарегистрирован (сохранённая настройка)' : 'Сначала сохраните настройки и подключите бота'; ?></td></tr>
                     <tr><th scope="row"><label for="jrtg-enabled">Уведомления</label></th><td>
                         <label><input id="jrtg-enabled" type="checkbox" name="enabled" value="1"<?php echo $s['enabled'] ? ' checked' : ''; ?><?php echo !$configured ? ' disabled' : ''; ?>> Отправлять новые брони подписчикам</label>
                         <p class="description">Старые брони не рассылаются. Email-уведомления продолжают работать.</p>
@@ -261,6 +528,8 @@ final class JRTG_Settings {
                 <input type="hidden" name="action" value="jrtg_test"><?php wp_nonce_field('jrtg_test'); ?>
                 <button type="submit" class="button">Отправить тест подписчикам</button>
             </form>
+            <p>Текущая доступность webhook здесь не проверяется. Если бот не отвечает, проверьте доступ к сайту и повторите «Подключить бота».</p>
+            <?php self::diagnostics(); ?>
             <h2>Подписчики: <?php echo count($subscribers); ?></h2>
             <?php if ($subscribers): ?><ul><?php foreach ($subscribers as $subscriber): ?><li><?php echo esc_html((string) ($subscriber['label'] ?? 'Подписчик Telegram')); ?></li><?php endforeach; ?></ul>
             <?php else: ?><p>После /start и правильного пароля получатели появятся здесь.</p><?php endif; ?>
