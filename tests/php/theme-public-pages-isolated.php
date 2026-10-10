@@ -58,9 +58,9 @@ function get_posts($args): array {
     return array_values(array_map(fn($post)=>$post->ID,array_filter($posts,fn($post)=>$post->post_type==='product'&&joyrent_is_internal_tariff($post->ID))));
 }
 function home_url($path): string { return 'https://staging.example'.$path; }
-function get_permalink($post): string { $post=is_int($post)?get_post($post):$post; return home_url('/'.$post->post_name.'/'); }
+function get_permalink($post): string { global $plain_permalinks; $post=is_int($post)?get_post($post):$post; return ($plain_permalinks ?? false) ? home_url('/?page_id='.$post->ID) : home_url('/'.$post->post_name.'/'); }
 function add_query_arg($key,$value,$url): string { return $url.'?'.$key.'='.$value; }
-function get_template_directory(): string { return __DIR__.'/../../wordpress/joyrent'; }
+function get_template_directory(): string { global $template_directory; return $template_directory ?? __DIR__.'/../../wordpress/joyrent'; }
 function get_template_directory_uri(): string { return home_url('/theme'); }
 function esc_attr($value): string { return htmlspecialchars((string)$value,ENT_QUOTES); }
 function esc_url($value): string { return esc_attr($value); }
@@ -71,7 +71,7 @@ function wp_enqueue_style(...$arguments): void {}
 function wp_enqueue_script(...$arguments): void {}
 function rest_url($path): string { return home_url('/wp-json/'.$path); }
 function is_user_logged_in(): bool { return false; }
-function wp_add_inline_script(...$arguments): void {}
+function wp_add_inline_script(...$arguments): void { $GLOBALS['inline_scripts'][$arguments[0]]=$arguments[1]; }
 function wp_json_encode($value,$flags=0): string { return json_encode($value,$flags); }
 function check(bool $condition,string $message): void { global $count; if (!$condition) throw new RuntimeException($message); $count=($count ?? 0)+1; }
 require __DIR__.'/../../wordpress/joyrent/functions.php';

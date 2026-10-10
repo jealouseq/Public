@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { ArrowUpRight, CaretDown, CaretRight, Check, MagnifyingGlass, Plus, X } from '@phosphor-icons/react';
 import { GameCover, GameDetailDialog, GameFilters } from './GamePresentation';
 import { matchesGameFilter, type ConsoleId, type Game } from '../lib/rental';
+import { isPlainRentalText } from '../lib/booking-input';
 import { matchesGameQuery } from '../lib/game-search';
 import { useI18n } from '../lib/i18n';
 import { gameLimitLabel } from '../lib/copy';
@@ -29,6 +30,7 @@ export function GamePicker({ games, consoleId, selected, maxGames, requestedGame
   const [coverWidth, setCoverWidth] = useState(280);
   const id = useId();
   const trimmedQuery = query.trim();
+  const invalidRequest = !isPlainRentalText(requestedGame, 0, 120);
   const visible = games.filter(game => (!selectionView || selected.includes(game.id)) && matchesGameFilter(game, consoleId, filter) && matchesGameQuery(game.title, query));
   const toggleSelection = (focusResults = false) => {
     const focusList = focusResults || (selectionView && selected.length === 0 && !requestedGame.trim());
@@ -47,7 +49,11 @@ export function GamePicker({ games, consoleId, selected, maxGames, requestedGame
     scrollArea.current?.scrollTo({ top: 0, behavior: 'instant' });
     content.current?.scrollTo({ top: 0, behavior: 'instant' });
   }, [filter, query, selectionView]);
-  useEffect(() => { dialog.current?.showModal(); return () => dialog.current?.close(); }, []);
+  useEffect(() => {
+    dialog.current?.showModal();
+    if (!isPlainRentalText(requestedGame, 0, 120)) requestInput.current?.focus({ preventScroll: true });
+    return () => dialog.current?.close();
+  }, []);
   useEffect(() => {
     const viewport = window.visualViewport;
     const viewportEvents = viewport ?? window;
@@ -66,6 +72,10 @@ export function GamePicker({ games, consoleId, selected, maxGames, requestedGame
     return () => { viewportEvents.removeEventListener('resize', updateViewport); viewportEvents.removeEventListener('scroll', updateViewport); };
   }, []);
   const close = () => { dialog.current?.close(); onClose(); };
+  const finish = () => {
+    if (invalidRequest) { setRequestOpen(true); requestAnimationFrame(() => { requestInput.current?.focus({ preventScroll: true }); requestInput.current?.scrollIntoView({ block: 'center', behavior: 'instant' }); }); return; }
+    close();
+  };
   const closeDetail = () => {
     setDetail(null);
     requestAnimationFrame(() => (detailOpener.current?.isConnected ? detailOpener.current : selectionToggle.current)?.focus({ preventScroll: true }));
@@ -104,11 +114,11 @@ export function GamePicker({ games, consoleId, selected, maxGames, requestedGame
           {selected.length >= maxGames && maxGames < games.filter(game => game.platforms.includes(consoleId)).length && <p className="input-help game-picker-limit" role="status">{gameLimitLabel(maxGames, language)}</p>}
           {(!selectionView || requestedGame.trim()) && <section className="game-picker-request" data-request-open={requestOpen} aria-labelledby={`${id}-request-title`}>
             <div className="missing-game-heading"><div><h3 id={`${id}-request-title`}>{selectionView ? t('Побажання про іншу гру', 'Пожелание о другой игре') : t('Не знайшли гру?', 'Не нашли игру?')}</h3>{!requestOpen && !requestedGame.trim() && <p className="missing-game-description">{t('Залиш назву — перевіримо, чи можемо додати гру до твоєї оренди.', 'Оставь название — проверим, можем ли добавить игру к твоей аренде.')}</p>}{!requestOpen && requestedGame.trim() && <p className="missing-game-saved">{t('Побажання:', 'Пожелание:')} <strong>{requestedGame.trim()}</strong></p>}</div><button type="button" className="missing-game-toggle" aria-expanded={requestOpen} aria-controls={`${id}-request`} onClick={() => requestOpen ? setRequestOpen(false) : revealRequest(visible.length === 0 ? trimmedQuery : undefined)}><span>{requestOpen ? t('Згорнути', 'Свернуть') : requestedGame.trim() ? t('Змінити назву', 'Изменить название') : t('Вказати назву', 'Указать название')}</span><CaretDown size={17} aria-hidden="true" /></button></div>
-            <div id={`${id}-request`} className="missing-game-fields" hidden={!requestOpen}><label htmlFor={`${id}-game`} className="field-label">{t('Назва гри', 'Название игры')}</label><input ref={requestInput} id={`${id}-game`} type="text" value={requestedGame} onChange={event => onRequestedGameChange(event.target.value)} maxLength={120} autoComplete="off" enterKeyHint="done" aria-describedby={`${id}-request-help`} placeholder={t('Наприклад, Minecraft', 'Например, Minecraft')} /><p id={`${id}-request-help`}>{t('Наявність і можливість додати гру підтвердимо після бронювання.', 'Наличие и возможность добавить игру подтвердим после оформления брони.')}</p></div>
+            <div id={`${id}-request`} className="missing-game-fields" hidden={!requestOpen}><label htmlFor={`${id}-game`} className="field-label">{t('Назва гри', 'Название игры')}</label><input ref={requestInput} id={`${id}-game`} type="text" value={requestedGame} onChange={event => onRequestedGameChange(event.target.value)} maxLength={240} autoComplete="off" enterKeyHint="done" aria-invalid={invalidRequest || undefined} aria-describedby={`${id}-request-help${invalidRequest ? ` ${id}-request-error` : ''}`} placeholder={t('Наприклад, Minecraft', 'Например, Minecraft')} /><p id={`${id}-request-help`}>{t('Наявність і можливість додати гру підтвердимо після бронювання.', 'Наличие и возможность добавить игру подтвердим после оформления брони.')}</p>{invalidRequest && <p id={`${id}-request-error`} className="field-error" role="alert">{t('Вкажи назву гри звичайним текстом (до 120 символів).', 'Укажи название игры обычным текстом (до 120 символов).')}</p>}</div>
           </section>}
         </div>
         </div>
-        <div className="game-picker-footer"><button ref={selectionToggle} type="button" className="game-picker-selection-toggle" aria-label={t('Показувати лише обрані ігри', 'Показывать только выбранные игры')} aria-pressed={selectionView} aria-controls={`${id}-results`} disabled={!selectionView && selected.length === 0 && !requestedGame.trim()} onClick={() => toggleSelection()}><span><span className="selection-review-count" aria-live="polite">{selected.length === 0 && requestedGame.trim() ? t('Побажання', 'Пожелание') : `${t('Обрано', 'Выбрано')}: ${selected.length}`}{selected.length > 0 && requestedGame.trim() && <span className="sr-only">{t(' та побажання про іншу гру', ' и пожелание о другой игре')}</span>}</span><span className="selection-review-action">{selectionView ? t('До каталогу', 'В каталог') : t('Переглянути', 'Посмотреть')}</span></span><CaretRight size={17} aria-hidden="true" /></button><button type="button" className="button button-light" onClick={close}>{t('Готово', 'Готово')} <Check size={18} /></button></div>
+        <div className="game-picker-footer"><button ref={selectionToggle} type="button" className="game-picker-selection-toggle" aria-label={t('Показувати лише обрані ігри', 'Показывать только выбранные игры')} aria-pressed={selectionView} aria-controls={`${id}-results`} disabled={!selectionView && selected.length === 0 && !requestedGame.trim()} onClick={() => toggleSelection()}><span><span className="selection-review-count" aria-live="polite">{selected.length === 0 && requestedGame.trim() ? t('Побажання', 'Пожелание') : `${t('Обрано', 'Выбрано')}: ${selected.length}`}{selected.length > 0 && requestedGame.trim() && <span className="sr-only">{t(' та побажання про іншу гру', ' и пожелание о другой игре')}</span>}</span><span className="selection-review-action">{selectionView ? t('До каталогу', 'В каталог') : t('Переглянути', 'Посмотреть')}</span></span><CaretRight size={17} aria-hidden="true" /></button><button type="button" className="button button-light" onClick={finish}>{t('Готово', 'Готово')} <Check size={18} /></button></div>
       </div>
     </dialog>
     {detail && <GameDetailDialog game={detail} consoleId={consoleId} selected={selected.includes(detail.id)} coverWidth={coverWidth} disabled={!selected.includes(detail.id) && selected.length >= maxGames} disabledMessage={!selected.includes(detail.id) && selected.length >= maxGames ? t('Досягнуто ліміту ігор. Прибери одну, щоб додати іншу.', 'Достигнут лимит игр. Убери одну, чтобы добавить другую.') : undefined} onToggle={() => onToggle(detail.id)} onClose={closeDetail} />}

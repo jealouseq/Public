@@ -1,0 +1,70 @@
+name: Package JOYRENT theme audit
+on:
+  push:
+    branches: [feat/joyrent-theme-audit-oct11]
+    paths-ignore: ['releases/**', 'wordpress/joyrent/assets/dist/**']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: joyrent-theme-audit-package
+  cancel-in-progress: false
+jobs:
+  package:
+    if: github.ref == 'refs/heads/feat/joyrent-theme-audit-oct11'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            src
+            components
+            wordpress
+            tests
+            .github
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npx tsc --noEmit && npx vite build
+      - name: Check theme PHP behaviors
+        run: |
+          find wordpress/joyrent -name '*.php' -print0 | xargs -0 -n1 php -l
+          php tests/php/theme-public-pages-isolated.php
+          php tests/php/theme-php-audit-isolated.php
+          php tests/php/theme-without-plugin-isolated.php
+      - name: Build only the installable theme
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil,zipfile,json
+          root=Path('wordpress/joyrent')
+          assert json.loads(Path('package.json').read_text())['version']=='1.9.19'
+          assert 'Version: 1.9.19' in (root/'style.css').read_text()
+          (root/'licenses').mkdir(exist_ok=True)
+          for font in ['manrope','unbounded','onest']:
+              shutil.copyfile(Path('node_modules')/('@fontsource-variable/'+font)/'LICENSE',root/'licenses'/(font+'-OFL.txt'))
+          included=[p for p in sorted(root.rglob('*')) if p.is_file() and (p.suffix!='.png' or p.name=='screenshot.png')]
+          out=Path('releases/joyrent-1.9.19.zip')
+          out.parent.mkdir(exist_ok=True)
+          with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
+              for p in included: archive.write(p,str(Path('joyrent')/p.relative_to(root)))
+          with zipfile.ZipFile(out) as archive:
+              assert archive.testzip() is None
+              assert all(n.startswith('joyrent/') for n in archive.namelist())
+              assert len(archive.namelist())==len(included)
+              assert all(archive.read('joyrent/'+str(p.relative_to(root)))==p.read_bytes() for p in included)
+          PY
+      - name: Save tested build and downloadable theme
+        run: |
+          sha256sum releases/joyrent-1.9.19.zip > releases/joyrent-1.9.19-SHA256SUMS.txt
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add --sparse -f -A wordpress/joyrent/assets/dist wordpress/joyrent/licenses
+          git add --sparse -f releases/joyrent-1.9.19.zip releases/joyrent-1.9.19-SHA256SUMS.txt
+          if ! git diff --cached --quiet; then
+            git commit -m "Package audited JOYRENT theme 1.9.19"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

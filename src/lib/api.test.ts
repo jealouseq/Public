@@ -145,3 +145,34 @@ describe('received API errors', () => {
     expect(vi.getTimerCount()).toBe(0);
   });
 });
+
+describe('verified booking receipts', () => {
+  it.each([
+    null, {}, { code: 'jr_create', message: 'Server error in an OK response' },
+    { ...receipt, reference: '' }, { ...receipt, reference: '   ' }, { ...receipt, reference: 'x'.repeat(101) },
+    { ...receipt, rentalAmount: -1 }, { ...receipt, rentalAmount: null }, { ...receipt, rentalAmount: '1400' },
+    { ...receipt, status: 'completed' },
+  ])('rejects an invalid successful response as uncertain: %j', async data => {
+    vi.stubGlobal('fetch', () => Promise.resolve(Response.json(data)));
+    await expect(api.submitRequest(payload)).rejects.toThrow(uncertainUk);
+    expect(vi.getTimerCount()).toBe(0);
+  });
+  it('localizes an invalid receipt and retains the caller request identity for retry', async () => {
+    browser.location.search = '?lang=ru';
+    vi.stubGlobal('fetch', () => Promise.resolve(Response.json({})));
+    await expect(api.submitRequest({ ...payload, language: 'ru' })).rejects.toThrow(uncertainRu);
+    vi.stubGlobal('fetch', () => Promise.resolve(Response.json(receipt)));
+    await expect(api.submitRequest({ ...payload, language: 'ru' })).resolves.toEqual(receipt);
+  });
+  it('accepts a finite zero amount supported by configured tariffs', async () => {
+    vi.stubGlobal('fetch', () => Promise.resolve(Response.json({ ...receipt, rentalAmount: 0 })));
+    await expect(api.submitRequest(payload)).resolves.toEqual({ ...receipt, rentalAmount: 0 });
+  });
+  it.each([
+    { code: 123, message: 'Bad shape' }, { code: 'jr_validation', message: {} },
+    { code: 'jr_validation', message: '' }, null,
+  ])('uses safe localized guidance for malformed error bodies: %j', async data => {
+    vi.stubGlobal('fetch', () => Promise.resolve(Response.json(data, { status: 400 })));
+    await expect(api.submitRequest(payload)).rejects.toThrow('Не вдалося оформити бронювання. Перевір з’єднання та спробуй ще раз.');
+  });
+});

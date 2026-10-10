@@ -10,8 +10,9 @@ function joyrent_home(string $anchor = ''): string {
     return $anchor ? $url.'#'.$anchor : $url;
 }
 function joyrent_faq_url(string $language): string {
-    $page=get_page_by_path($language==='ru'?'faq-ru':'faq');
-    return $page ? get_permalink($page) : home_url($language==='ru'?'/faq-ru/':'/faq/');
+    return joyrent_public_page_url('faq',$language)
+        ?: joyrent_public_page_url('faq',$language==='ru'?'uk':'ru')
+        ?: joyrent_public_page_url('home',$language);
 }
 function joyrent_privacy_url(): string {
     $assigned_id=(int)get_option('wp_page_for_privacy_policy');
@@ -43,7 +44,7 @@ add_action('wp_enqueue_scripts', function (): void {
     // Hashed filenames handle cache busting. A query would give lazy chunks a
     // second URL for the entry module and execute its React bootstrap again.
     wp_enqueue_script('joyrent-app', $base . $entry['file'], [], null, true);
-    $config = ['apiBase'=>rest_url('joyrent/v1'),'assetBase'=>get_template_directory_uri().'/assets','nonce'=>is_user_logged_in() ? wp_create_nonce('wp_rest') : '', 'privacyUrl'=>joyrent_privacy_url(), 'termsUrl'=>home_url('/umovy-orendy/'), 'privacyRuUrl'=>home_url('/konfidentsialnost/'), 'termsRuUrl'=>home_url('/usloviya-arendy/'), 'faqUrl'=>joyrent_faq_url('uk'), 'faqRuUrl'=>joyrent_faq_url('ru')];
+    $config = ['apiBase'=>rest_url('joyrent/v1'),'assetBase'=>get_template_directory_uri().'/assets','nonce'=>is_user_logged_in() ? wp_create_nonce('wp_rest') : '', 'privacyUrl'=>joyrent_privacy_url(), 'termsUrl'=>joyrent_public_page_url('terms','uk'), 'privacyRuUrl'=>joyrent_public_page_url('privacy','ru'), 'termsRuUrl'=>joyrent_public_page_url('terms','ru'), 'faqUrl'=>joyrent_faq_url('uk'), 'faqRuUrl'=>joyrent_faq_url('ru'), 'homeMetadata'=>joyrent_home_metadata()];
     wp_add_inline_script('joyrent-app', 'window.JOYRENT = ' . wp_json_encode($config, JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT) . ';', 'before');
 });
 add_filter('script_loader_tag', function (string $tag, string $handle, string $src): string {

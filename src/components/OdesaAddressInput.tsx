@@ -4,10 +4,11 @@ import { useI18n } from '../lib/i18n';
 import { addressWithStreet, findOdesaStreets, hasCompleteOdesaStreet, type OdesaStreetSuggestion } from '../lib/odesa-streets';
 import '../address-input.css';
 
-export function OdesaAddressInput({ value, onChange, inputRef }: {
+export function OdesaAddressInput({ value, onChange, inputRef, error }: {
   value: string;
   onChange: (value: string) => void;
   inputRef?: Ref<HTMLInputElement>;
+  error?: string;
 }) {
   const { t, language } = useI18n();
   const id = useId();
@@ -193,11 +194,12 @@ export function OdesaAddressInput({ value, onChange, inputRef }: {
         aria-expanded={expanded}
         aria-controls={expanded ? `${id}-streets` : undefined}
         aria-activedescendant={activeId}
-        aria-describedby={`${id}-help`}
+        aria-describedby={`${id}-help${error ? ` ${id}-error` : ''}`}
+        aria-invalid={error ? true : undefined}
         placeholder={t('Вулиця, будинок, квартира', 'Улица, дом, квартира')}
         value={value}
         minLength={5}
-        maxLength={300}
+        maxLength={600}
         required
         onFocus={() => setOpen(true)}
         onBlur={() => { if (optionPress.current) optionPress.current.blurred = true; else { setOpen(false); setActive(-1); } }}
@@ -249,6 +251,7 @@ export function OdesaAddressInput({ value, onChange, inputRef }: {
       </div>}
     </div>
     <span className="input-help" id={`${id}-help`}>{t('Можна обрати підказку або ввести адресу вручну.', 'Можно выбрать подсказку или ввести адрес вручную.')}</span>
+    {error && <span id={`${id}-error`} className="field-error" role="alert">{error}</span>}
     <span className="address-sr-status" role="status" aria-live="polite" aria-atomic="true">{expanded ? t(`Підказок: ${suggestions.length}. Обери стрілками та натисни Enter.`, `Подсказок: ${suggestions.length}. Выбери стрелками и нажми Enter.`) : ''}</span>
   </div>;
 }

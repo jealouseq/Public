@@ -18,15 +18,26 @@ function joyrent_public_page_url(string $kind, string $language): string {
     return $page&&$page->post_status==='publish' ? get_permalink($page) : '';
 }
 
+/** Shared by the server head and the client's language switch. */
+function joyrent_home_metadata(): array {
+    $metadata=[
+        'uk'=>['title'=>'JOYRENT — оренда PlayStation 5 та PlayStation 4 в Одесі','description'=>'Оренда PS5 та PS4 в Одесі від JOYRENT. Обирайте консоль, дати та ігри; доставку й наявність підтвердимо перед орендою.'],
+        'ru'=>['title'=>'JOYRENT — аренда PlayStation 5 и PlayStation 4 в Одессе','description'=>'Аренда PS5 и PS4 в Одессе от JOYRENT. Выбирайте консоль, даты и игры; доставку и наличие подтвердим перед арендой.'],
+    ];
+    foreach ($metadata as $language=>&$entry) {
+        $entry['url']=joyrent_public_page_url('home',$language);
+        $entry['locale']=$language==='ru'?'ru_UA':'uk_UA';
+    }
+    unset($entry);
+    return $metadata;
+}
+
 function joyrent_page_metadata(): array {
     $kind=joyrent_public_page();
     if (!$kind) return [];
     $language=joyrent_language();
+    if ($kind==='home') return ['kind'=>$kind,'language'=>$language]+joyrent_home_metadata()[$language];
     $copy=[
-        'home'=>[
-            'uk'=>['JOYRENT — оренда PlayStation 5 та PlayStation 4 в Одесі','Оренда PS5 та PS4 в Одесі від JOYRENT. Обирайте консоль, дати та ігри; доставку й наявність підтвердимо перед орендою.'],
-            'ru'=>['JOYRENT — аренда PlayStation 5 и PlayStation 4 в Одессе','Аренда PS5 и PS4 в Одессе от JOYRENT. Выбирайте консоль, даты и игры; доставку и наличие подтвердим перед арендой.'],
-        ],
         'faq'=>[
             'uk'=>['Питання про оренду PlayStation — JOYRENT','Відповіді JOYRENT про оренду PS5 та PS4: бронювання, комплект, ігри, доставка та оформлення із заставою або за договором.'],
             'ru'=>['Вопросы об аренде PlayStation — JOYRENT','Ответы JOYRENT об аренде PS5 и PS4: бронь, комплект, игры, доставка и оформление с залогом или по договору.'],
@@ -70,7 +81,10 @@ add_action('wp_head', function (): void {
     if (!empty($alternates['uk'])) echo '<link rel="alternate" hreflang="x-default" href="'.esc_url($alternates['uk']).'">';
     // A JPEG export of existing hero artwork, without cropping or design changes.
     $image=get_template_directory_uri().'/assets/images/ps5-share.jpg';
-    foreach (['og:type'=>'website','og:site_name'=>'JOYRENT','og:title'=>$metadata['title'],'og:description'=>$metadata['description'],'og:url'=>$metadata['url'],'og:locale'=>$metadata['language']==='ru'?'ru_UA':'uk_UA','og:image'=>$image,'og:image:type'=>'image/jpeg','og:image:width'=>'1200','og:image:height'=>'900','og:image:alt'=>'PlayStation 5 — JOYRENT'] as $property=>$value) {
+    $image_path=get_template_directory().'/assets/images/ps5-share.jpg';
+    $dimensions=is_readable($image_path)?@getimagesize($image_path):false;
+    $width=(string)($dimensions[0] ?? 1200); $height=(string)($dimensions[1] ?? 1000);
+    foreach (['og:type'=>'website','og:site_name'=>'JOYRENT','og:title'=>$metadata['title'],'og:description'=>$metadata['description'],'og:url'=>$metadata['url'],'og:locale'=>$metadata['language']==='ru'?'ru_UA':'uk_UA','og:image'=>$image,'og:image:type'=>'image/jpeg','og:image:width'=>$width,'og:image:height'=>$height,'og:image:alt'=>'PlayStation 5 — JOYRENT'] as $property=>$value) {
         echo '<meta property="'.esc_attr($property).'" content="'.esc_attr($value).'">';
     }
     $other=$metadata['language']==='ru'?'uk':'ru';
@@ -115,7 +129,28 @@ add_filter('wp_headers', function (array $headers): array {
     foreach (['X-Content-Type-Options'=>'nosniff','Referrer-Policy'=>'strict-origin-when-cross-origin','Permissions-Policy'=>'camera=(), microphone=(), geolocation=()'] as $name=>$value) {
         if (!isset($existing[strtolower($name)])) $headers[$name]=$value;
     }
-    if (joyrent_noindex_request()) $headers['X-Robots-Tag']='noindex';
+    if (joyrent_noindex_request()) {
+        $name='X-Robots-Tag'; $found=false; $generic_values=[]; $scoped_values=[];
+        // Parameter directives contain colons too; only a bot prefix starts a scope.
+        $scope='/(?:^|,)\s*(?!(?:max-snippet|max-image-preview|max-video-preview|unavailable_after)\s*:)[a-z][a-z0-9_-]*\s*:/i';
+        foreach ($headers as $key=>$value) {
+            if (strtolower($key)!=='x-robots-tag') continue;
+            if (!$found) { $name=$key; $found=true; }
+            $value=(string)$value;
+            if (preg_match($scope,$value,$match,PREG_OFFSET_CAPTURE)) {
+                $offset=$match[0][1];
+                $generic=trim(substr($value,0,$offset));
+                $scoped_values[]=ltrim(trim(substr($value,$offset)),', ');
+            } else $generic=trim($value);
+            if ($generic!=='') $generic_values[]=$generic;
+            unset($headers[$key]);
+        }
+        // Keep global restrictions before scoped directives so they apply to every crawler.
+        $value=implode(', ',array_unique($generic_values));
+        if (!preg_match('/(?:^|,)\s*noindex\s*(?:,|$)/i',$value)) $value='noindex'.($value!==''?', '.$value:'');
+        if ($scoped_values) $value.=', '.implode(', ',array_unique($scoped_values));
+        $headers[$name]=$value;
+    }
     return $headers;
 });
 

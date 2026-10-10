@@ -9,6 +9,7 @@ export interface StoreSettings {
 }
 export interface BootConfig {
   apiBase: string; assetBase: string; nonce?: string; privacyUrl?: string; termsUrl?: string; preview?: boolean; privacyRuUrl?: string; termsRuUrl?: string; faqUrl?: string; faqRuUrl?: string;
+  homeMetadata?: Partial<Record<'uk' | 'ru', { title: string; description: string; url: string; locale: string }>>;
 }
 declare global { interface Window { JOYRENT?: BootConfig } }
 export const boot: BootConfig = window.JOYRENT ?? { apiBase: '/wp-api/joyrent/v1', assetBase: '' };
@@ -31,6 +32,13 @@ export interface RentalPayload {
 export type RequestReceipt = { reference: string; rentalAmount: number; status: 'awaiting_confirmation' };
 const requestFailure = () => new URLSearchParams(window.location.search).get('lang') === 'ru' ? 'Не удалось оформить бронь. Проверь подключение и попробуй ещё раз.' : 'Не вдалося оформити бронювання. Перевір з’єднання та спробуй ще раз.';
 const uncertainRequestFailure = () => new URLSearchParams(window.location.search).get('lang') === 'ru' ? 'Не удалось подтвердить бронь. Повтори попытку с теми же данными или свяжись с нами.' : 'Не вдалося підтвердити бронювання. Повтори спробу з тими самими даними або зв’яжися з нами.';
+function isRequestReceipt(data: unknown): data is RequestReceipt {
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return false;
+  const receipt = data as Partial<RequestReceipt>;
+  return typeof receipt.reference === 'string' && receipt.reference.trim().length > 0 && receipt.reference.length <= 100
+    && typeof receipt.rentalAmount === 'number' && Number.isFinite(receipt.rentalAmount) && receipt.rentalAmount >= 0
+    && receipt.status === 'awaiting_confirmation';
+}
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
   const controller = new AbortController();
   const transportFailure = () => new Error(path === '/requests' ? uncertainRequestFailure() : requestFailure());
@@ -57,8 +65,10 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
       if (!response.ok) {
         const submittedLanguage = options?.body && typeof options.body === 'string' ? JSON.parse(options.body).language ?? 'uk' : 'uk';
         const currentLanguage = new URLSearchParams(window.location.search).get('lang') === 'ru' ? 'ru' : 'uk';
-        throw new Error(submittedLanguage === currentLanguage && data?.code?.startsWith('jr_') ? data.message : requestFailure());
+        const readableError = typeof data?.code === 'string' && data.code.startsWith('jr_') && typeof data.message === 'string' && data.message.trim().length > 0;
+        throw new Error(submittedLanguage === currentLanguage && readableError ? data.message : requestFailure());
       }
+      if (path === '/requests' && !isRequestReceipt(data)) throw transportFailure();
       return data as T;
     })(), deadline]);
   } finally {

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { canonicalRentalIntent, isUkrainianPhone, normalizeRentalPhone, normalizeTelegramContact, trimRentalText } from './booking-input';
+import * as bookingInput from './booking-input';
 import type { RentalPayload } from './api';
 
 const intent: Omit<RentalPayload, 'requestId'> = {
@@ -66,5 +67,31 @@ describe('optional Telegram contact', () => {
   it('gives a changed Telegram profile a new retry identity', () => {
     expect(canonicalRentalIntent({ ...intent, telegram: '@customer_one' })).not.toEqual(canonicalRentalIntent({ ...intent, telegram: '@customer_two' }));
     expect(canonicalRentalIntent({ ...intent, telegram: '@customer_one' })).not.toEqual(canonicalRentalIntent(intent));
+  });
+});
+
+
+describe('plain booking text matching the server', () => {
+  it.each(['  ', '<b>Олена</b>', 'Оле\0на', 'Оле\tна', 'Олена\x7f', '<foo', 'Олена <3', '\ud800'])('rejects invalid names %j', value => {
+    expect(bookingInput.isPlainRentalText?.(value, 2, 100)).toBe(false);
+  });
+  it.each(["  Олена  ", "Мар'яна", 'Анна-Марія', 'Олена & Олег', 'А < Б', 'Олег > Олена', 'Ірина ’', '😀'.repeat(100)])('allows ordinary plain names and Unicode length %j', value => {
+    expect(bookingInput.isPlainRentalText?.(value, 2, 100)).toBe(true);
+  });
+  it('validates trimmed address and wish limits by Unicode characters', () => {
+    expect(bookingInput.isPlainRentalText?.('     ', 5, 300)).toBe(false);
+    expect(bookingInput.isPlainRentalText?.('  Фонтанська дорога, 10/2  ', 5, 300)).toBe(true);
+    expect(bookingInput.isPlainRentalText?.('😀'.repeat(300), 5, 300)).toBe(true);
+    expect(bookingInput.isPlainRentalText?.('😀'.repeat(301), 5, 300)).toBe(false);
+    expect(bookingInput.isPlainRentalText?.('', 0, 120)).toBe(true);
+    expect(bookingInput.isPlainRentalText?.('Minecraft & Friends', 0, 120)).toBe(true);
+    expect(bookingInput.isPlainRentalText?.('<b>Minecraft</b>', 0, 120)).toBe(false);
+    expect(bookingInput.isPlainRentalText?.('a'.repeat(121), 0, 120)).toBe(false);
+  });
+});
+
+describe('server-compatible Telegram URL casing', () => {
+  it.each(['HTTPS://T.ME/Customer_Name', 'https://T.me/Customer_Name/'])('accepts supported URL casing %s', value => {
+    expect(normalizeTelegramContact(value)).toBe('@customer_name');
   });
 });

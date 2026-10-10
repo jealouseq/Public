@@ -3,6 +3,7 @@ import { ArrowCounterClockwise, MapTrifold, X } from '@phosphor-icons/react';
 import type * as Leaflet from 'leaflet';
 import { useI18n } from '../../src/lib/i18n';
 import { useMotionPreference } from '../../src/lib/motion';
+import { loopDialogTab } from '../../src/lib/dialog-focus';
 import { money } from '../../src/lib/rental';
 import { dayGenitiveLabel } from '../../src/lib/copy';
 import { classifyDeliveryPoint, deliveryTerms, type DeliveryFees, type DeliveryPointZone, type DeliveryZone, type DeliveryZones } from '../../src/lib/delivery-map';
@@ -159,7 +160,7 @@ export function DeliveryZoneMap({ freeDeliveryFrom, greenFee, yellowFee }: Deliv
 
   return <>
     <button ref={opener} type="button" className="delivery-map-open" data-motion={!reduced && buttonVisible && documentVisible && !opened ? 'running' : 'paused'} aria-haspopup="dialog" aria-expanded={opened} onClick={() => { dialog.current?.showModal(); setOpened(true); }}><span className="delivery-map-open-content"><MapTrifold size={19} weight="light" aria-hidden="true" />{t('Зони доставки', 'Зоны доставки')}</span></button>
-    <dialog ref={dialog} className="delivery-map-dialog" aria-labelledby={titleId} aria-describedby={helpId} onClose={() => { setOpened(false); opener.current?.focus({ preventScroll: true }); }} onClick={event => {
+    <dialog ref={dialog} className="delivery-map-dialog" aria-labelledby={titleId} aria-describedby={helpId} onKeyDown={loopDialogTab} onClose={() => { setOpened(false); opener.current?.focus({ preventScroll: true }); }} onClick={event => {
       if (event.target !== event.currentTarget) return;
       const rect = event.currentTarget.getBoundingClientRect();
       if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.current?.close();
@@ -174,7 +175,7 @@ export function DeliveryZoneMap({ freeDeliveryFrom, greenFee, yellowFee }: Deliv
           {mapState === 'error' && <p className="delivery-map-load-error" role="status">{t('Не вдалося завантажити межі зон. Онови сторінку або уточни доставку під час підтвердження бронювання.', 'Не удалось загрузить границы зон. Обнови страницу или уточни доставку при подтверждении брони.')}</p>}
           {mapState === 'ready' && <button className="delivery-map-reset" type="button" onClick={resetMap}><ArrowCounterClockwise size={17} />{t('Усі зони', 'Все зоны')}</button>}
         </div>
-        <div className="delivery-map-legend" aria-label={t('Умови доставки за зонами', 'Условия доставки по зонам')}>
+        <div className="delivery-map-legend" role="group" aria-label={t('Умови доставки за зонами', 'Условия доставки по зонам')}>
           <p className="delivery-map-legend-title">{t('Доставка та повернення', 'Доставка и возврат')}</p>
           {zoneOrder.map(zone => <button key={zone} className={`delivery-map-zone delivery-map-zone-${zone}`} type="button" aria-pressed={selection?.zone === zone} onClick={() => selectZone(zone)}><span className="delivery-map-zone-name"><span aria-hidden="true" className="delivery-map-swatch" />{zoneName(zone)}</span><strong>{price(zone)}</strong></button>)}
           <p className="delivery-map-fee-note">{t('У вартість зони входять доставка та повернення консолі. Поза зонами — за погодженням.', 'В стоимость зоны входят доставка и обратный забор. Вне зон — по согласованию.')}</p>
