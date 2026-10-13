@@ -37,7 +37,7 @@ add_action('wp_head', function () {
     $featured = is_singular() && !post_password_required() ? zh_public_thumbnail_id(get_post()) : 0;
     $image = $featured ? wp_get_attachment_image_url($featured, 'large') : zh_img('ui/og.jpg');
     echo '<meta name="theme-color" content="#f2e9db"><meta name="color-scheme" content="light">';
-    foreach (array('Onest.woff2', 'PlayfairDisplay.woff2') as $font) { echo '<link rel="preload" href="' . esc_url(zh_asset('fonts/' . $font)) . '" as="font" type="font/woff2" crossorigin>'; }
+    foreach (array('Onest.woff2', 'Lora.woff2') as $font) { echo '<link rel="preload" href="' . esc_url(zh_asset('fonts/' . $font)) . '" as="font" type="font/woff2" crossorigin>'; }
     echo '<meta name="description" content="' . esc_attr($description) . '">';
     echo '<link rel="icon" type="image/svg+xml" href="' . esc_url(zh_img('ui/favicon.svg')) . '">';
     echo '<link rel="apple-touch-icon" href="' . esc_url(zh_img('ui/apple-touch-icon.png')) . '">';
@@ -65,7 +65,7 @@ add_action('admin_notices', function () {
 add_action('wp_enqueue_scripts', function () {
     $u = get_template_directory_uri();
     $d = get_template_directory();
-    $v = function ($rel) use ($d) { $f = $d . '/assets/' . $rel; return is_file($f) ? (string) filemtime($f) : '5.1.0'; };
+    $v = function ($rel) use ($d) { $f = $d . '/assets/' . $rel; return is_file($f) ? (string) filemtime($f) : '5.3.0'; };
     // Стили внутренних страниц главной не нужны: меньше CSS, быстрее первая отрисовка на телефоне.
     $css = is_front_page() ? array('base', 'home') : array('base', 'home', 'inner');
     $prev = array();

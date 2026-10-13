@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ZHIBEK Cattery
  * Description: Породы, коты, заявки и демо-контент для сайта питомника ZHIBEK.
- * Version: 4.2.0
+ * Version: 4.2.1
  * Requires at least: 6.5
  * Requires PHP: 8.0
  * Author: ZHIBEK
@@ -378,12 +378,12 @@ function zhibek_settings_page() {
         <div class="notice notice-<?php echo esc_attr(in_array($notice['level'], array('success', 'warning', 'error'), true) ? $notice['level'] : 'info'); ?> is-dismissible"><p><?php echo esc_html($notice['message']); ?></p></div>
     <?php endif; ?>
     <?php if ($settings['demo']) : ?>
-        <div class="notice notice-warning inline"><p><strong>Демо-режим включён.</strong> Иллюстрации в галереях пород — примеры. Перед запуском добавьте своих котов и фотографии, укажите контакты ниже и выключите демо-режим.</p></div>
+        <div class="notice notice-warning inline"><p><strong>Демо-режим включён.</strong> Иллюстрации пород и пометка «иллюстрации — примеры» в подвале показываются, пока нет ваших фотографий. Перед запуском добавьте своих котов и фотографии, укажите контакты ниже и выключите демо-режим.</p></div>
     <?php endif; ?>
     <form action="options.php" method="post">
         <?php settings_fields('zhibek_settings_group'); ?>
         <table class="form-table" role="presentation">
-            <tr><th scope="row">Демонстрационный режим</th><td><label><input type="checkbox" name="zhibek_settings[demo]" value="1" <?php checked($settings['demo']); ?>> Демонстрационный режим: иллюстрации в галереях пород и пометка «пример»</label><p class="description">Когда загрузите настоящие фотографии пород, выключите режим: иллюстрации исчезнут с сайта. Котов вы добавляете сами в разделе «Коты».</p></td></tr>
+            <tr><th scope="row">Демонстрационный режим</th><td><label><input type="checkbox" name="zhibek_settings[demo]" value="1" <?php checked($settings['demo']); ?>> Демонстрационный режим: иллюстрации-заглушки пород и пометка «примеры» в подвале</label><p class="description">Когда загрузите настоящие фотографии пород, выключите режим: заглушки и пометка исчезнут с сайта. Котов вы добавляете сами в разделе «Коты».</p></td></tr>
             <tr><th scope="row"><label for="zhibek-whatsapp">WhatsApp (номер, только цифры)</label></th><td><input id="zhibek-whatsapp" class="regular-text" name="zhibek_settings[whatsapp]" value="<?php echo esc_attr($settings['whatsapp']); ?>" maxlength="15" placeholder="77011234567" inputmode="numeric"></td></tr>
             <tr><th scope="row"><label for="zhibek-telegram">Telegram (имя пользователя)</label></th><td><input id="zhibek-telegram" class="regular-text" name="zhibek_settings[telegram]" value="<?php echo esc_attr($settings['telegram']); ?>" maxlength="40" placeholder="zhibek_cattery"></td></tr>
             <tr><th scope="row"><label for="zhibek-email">Email для посетителей</label></th><td><input id="zhibek-email" type="email" class="regular-text" name="zhibek_settings[email]" value="<?php echo esc_attr($settings['email']); ?>" maxlength="120"></td></tr>

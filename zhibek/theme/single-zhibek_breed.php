@@ -14,7 +14,6 @@ while (have_posts()) : the_post();
   $traits = zh_traits($b);
   $fit = get_post_meta($b->ID, '_zhibek_fit', true); $note = get_post_meta($b->ID, '_zhibek_note', true);
   $cats = zh_cats(array('meta_key' => '_zhibek_breed', 'meta_value' => $b->ID));
-  $gallery = zh_breed_gallery($b);
   $points = zh_callout_points($b->post_name);
   $others = array_values(array_filter(zh_breeds(), function ($x) use ($b) { return $x->ID !== $b->ID; }));
   $all = zh_breeds(); $idx = 0; foreach ($all as $k => $x) { if ($x->ID === $b->ID) { $idx = $k; } }
@@ -71,7 +70,11 @@ while (have_posts()) : the_post();
     </div>
   </section>
 
-  <?php if ($b->post_name === 'bengal') { echo zh_scene('right', $color, 'Хотите познакомиться <em>с бенгалом?</em>', 'Он смотрит из-за угла, наклоняет голову и ждёт вопросов. Спросите о характере, окрасе и ближайших помётах.', '<a class="btn btn-light" href="#cats"><span>Коты породы</span>' . zh_arrow() . '</a><button class="btn btn-line-light" type="button" data-enquire="' . esc_attr($b->post_title) . '"><span>Задать вопрос</span></button>'); } ?>
+  <?php if ($b->post_name === 'bengal') {
+    $sc = zh_content()['breed_scene'];
+    $sc_actions = '<a class="btn btn-light" href="#cats"><span>Коты породы</span>' . zh_arrow() . '</a><button class="btn btn-line-light" type="button" data-enquire="' . esc_attr($b->post_title) . '"><span>Задать вопрос</span></button>';
+    echo zh_scene('right', $color, $sc['title'], $sc['lead'], $sc_actions, array('hook' => $sc['hook'], 'facts' => $sc['facts'], 'notes' => $sc['notes']));
+  } ?>
 
   <section class="sec bcats" id="cats" style="padding-top:0">
     <div class="wrap">
@@ -82,20 +85,6 @@ while (have_posts()) : the_post();
       <?php else : echo zh_empty_cats('Котов этой породы <em>пока нет</em>', 'Напишите нам, расскажем о ближайших помётах.', $b->post_title); endif; ?>
     </div>
   </section>
-
-  <?php if ($gallery) : ?>
-  <section class="bgal" aria-label="Порода в кадре" style="--bg:<?php echo esc_attr($color); ?>">
-    <div class="wrap"><div class="sec-head"><h2 class="h2">Порода <em>в кадре</em></h2><?php if (zh_is_demo()) : ?><p class="lead muted">Иллюстрации. Здесь появятся ваши фотографии породы.</p><?php endif; ?></div></div>
-    <div class="bgal-rail" data-drag tabindex="0" role="region" aria-label="Фотографии породы, прокручиваются вбок">
-      <?php foreach ($gallery as $it) : ?>
-        <figure class="gframe gframe--<?php echo esc_attr($it['type']); ?>">
-          <span class="gframe-in"><img src="<?php echo esc_url($it['small']); ?>" alt="<?php echo esc_attr($it['alt']); ?>"<?php if ($it['w']) : ?> width="<?php echo (int) $it['w']; ?>" height="<?php echo (int) $it['h']; ?>"<?php endif; ?> loading="lazy" decoding="async" draggable="false"></span>
-          <?php if ($it['note']) : ?><figcaption class="hand"><?php echo esc_html($it['note']); ?></figcaption><?php endif; ?>
-        </figure>
-      <?php endforeach; ?>
-    </div>
-  </section>
-  <?php endif; ?>
 
   <?php if ($others) : ?>
   <section class="nextb">

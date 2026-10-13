@@ -159,20 +159,6 @@
     draw();
   }
 
-  /* ---------- горизонтальные ленты: перетаскивание мышью ---------- */
-  $$('[data-drag]').forEach((rail) => {
-    let down = false, sx = 0, sl = 0, moved = false;
-    rail.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') return; down = true; moved = false; sx = e.clientX; sl = rail.scrollLeft; });
-    window.addEventListener('pointermove', (e) => {
-      if (!down) return;
-      const dx = e.clientX - sx;
-      if (Math.abs(dx) > 4) { moved = true; rail.classList.add('is-drag'); }
-      rail.scrollLeft = sl - dx;
-    });
-    window.addEventListener('pointerup', () => { down = false; rail.classList.remove('is-drag'); });
-    rail.addEventListener('click', (e) => { if (moved) { e.preventDefault(); moved = false; } }, true);
-  });
-
   /* ---------- частицы: кот собирается из точек и разлетается от курсора ---------- */
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   $$('[data-particles]').forEach((host) => {
@@ -369,11 +355,14 @@
     heads.forEach((h) => io.observe(h));
   });
 
-  // Карта доставки: город на карте и кнопка города подсвечиваются вместе, по нажатию выбор закрепляется.
+  // Карта доставки: город на карте, его связи и кнопка города подсвечиваются вместе, по нажатию выбор закрепляется.
   $$('[data-map]').forEach((box) => {
-    const items = $$('[data-city]', box);
+    const items = $$('[data-city]', box), links = $$('.kz-link', box);
     let pinned = '';
-    const show = (name) => items.forEach((el) => el.classList.toggle('is-hot', !!name && el.dataset.city === name && !el.classList.contains('kz-label--hub')));
+    const show = (name) => {
+      items.forEach((el) => el.classList.toggle('is-hot', !!name && el.dataset.city === name));
+      links.forEach((el) => el.classList.toggle('is-hot', !!name && (el.dataset.a === name || el.dataset.b === name)));
+    };
     items.filter((el) => el.matches('button, .kz-city')).forEach((el) => {
       const name = el.dataset.city;
       el.addEventListener('mouseenter', () => show(name));
@@ -382,6 +371,49 @@
       el.addEventListener('blur', () => show(pinned));
       el.addEventListener('click', () => { pinned = pinned === name ? '' : name; show(pinned); });
     });
+  });
+
+  // Панели выбора породы: кот и свет за ним слегка следуют за курсором.
+  if (window.matchMedia('(hover: hover) and (min-width: 960px)').matches && !sceneReduce) {
+    $$('.pick-panel').forEach((panel) => {
+      let raf = 0, last = null;
+      const apply = () => {
+        raf = 0; const r = panel.getBoundingClientRect(); if (!r.width || !last) return;
+        const x = (last.clientX - r.left) / r.width, y = (last.clientY - r.top) / r.height;
+        panel.style.setProperty('--mx', (x * 100).toFixed(1) + '%'); panel.style.setProperty('--my', (y * 100).toFixed(1) + '%');
+        panel.style.setProperty('--px', (x * 2 - 1).toFixed(3)); panel.style.setProperty('--py', (y * 2 - 1).toFixed(3));
+      };
+      panel.addEventListener('pointermove', (e) => { last = e; if (!raf) raf = requestAnimationFrame(apply); });
+      panel.addEventListener('pointerleave', () => { last = null; ['--px', '--py'].forEach((k) => panel.style.setProperty(k, '0')); panel.style.setProperty('--mx', '50%'); panel.style.setProperty('--my', '100%'); });
+    });
+  }
+
+  // Карточки характеров: переворачиваются при наведении мыши, по кнопке и по касанию; скрытая сторона недоступна для фокуса.
+  const canHover = window.matchMedia('(hover: hover)').matches;
+  $$('[data-char]').forEach((card) => {
+    const btn = $('.char-flip', card), front = $('.char-front', card), back = $('.char-back', card), name = btn ? btn.dataset.label : '';
+    if (!btn || !front || !back) return;
+    let pinned = false; // карточка «закреплена» кнопкой или касанием и не возвращается, когда мышь уходит
+    const set = (on, pin) => {
+      pinned = on && !!pin;
+      card.classList.toggle('is-flipped', on); btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+      btn.setAttribute('aria-label', (on ? 'Вернуться к оценкам: ' : 'Подробнее: ') + name);
+      front.inert = on; back.inert = !on;
+    };
+    set(false);
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const on = card.classList.contains('is-flipped');
+      if (on && !pinned && canHover && e.detail > 0) { pinned = true; return; } // мышь: карточка уже перевёрнута наведением, клик закрепляет её
+      set(!on, !on);
+    });
+    if (canHover) {
+      card.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse' && !card.classList.contains('is-flipped')) set(true); });
+      card.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse' && !pinned && !card.contains(document.activeElement)) set(false); });
+    } else {
+      card.addEventListener('click', (e) => { if (!e.target.closest('a, button')) set(!card.classList.contains('is-flipped'), true); });
+    }
+    card.addEventListener('keydown', (e) => { if (e.key === 'Escape' && card.classList.contains('is-flipped')) { set(false); btn.focus(); } });
   });
 
   doc.classList.add('is-ready');

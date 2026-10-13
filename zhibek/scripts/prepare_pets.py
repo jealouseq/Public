@@ -13,7 +13,6 @@ PETS = {
     'siamese': {'sit': 20, 'stand': 21, 'stretch': 22, 'paw': 23, 'up': 24, 'lie': 25},
 }
 STICKERS = {'paw': 46, 'face': 47, 'sit': 48, 'sleep': 49, 'ears': 50, 'whiskers': 51, 'yarn': 52, 'fish': 53, 'tail': 54, 'jump': 55}
-PHOTOS = {'bengal-table': 12, 'bengal-forest': 13, 'bengal-portrait': 14, 'bengal-studio': 15, 'abyssinian-kitten': 16, 'abyssinian-blue': 17, 'abyssinian-portrait': 18, 'siamese-dark': 19}
 
 
 def find(n):
@@ -84,6 +83,3 @@ def peek_side(n):
 
 
 save(defog(peek_side(60)), os.path.join(OUT, 'pets', 'peek-side.webp'), 1000, 82)
-for name, n in PHOTOS.items():
-    im = Image.open(find(n)).convert('RGB')
-    save(im, os.path.join(OUT, 'photos', f'{name}.webp'), 1500, 74)

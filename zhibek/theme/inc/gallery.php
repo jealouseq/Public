@@ -20,7 +20,7 @@ function zh_gallery_video_sanitize_id($value) {
 }
 
 add_action('init', function () {
-    foreach (array('zhibek_breed', 'zhibek_cat') as $type) {
+    foreach (array('zhibek_cat') as $type) {
         register_post_meta($type, '_zhibek_gallery_ids', array(
             'type' => 'array', 'single' => true, 'default' => array(),
             'show_in_rest' => array('schema' => array('type' => 'array', 'items' => array('type' => 'integer'), 'maxItems' => 40)),
@@ -36,7 +36,7 @@ add_action('init', function () {
 }, 20);
 
 add_action('add_meta_boxes', function () {
-    foreach (array('zhibek_breed', 'zhibek_cat') as $type) {
+    foreach (array('zhibek_cat') as $type) {
         add_meta_box('zhibek-photo-gallery', 'Фотогалерея', 'zh_gallery_metabox', $type, 'normal', 'default');
     }
 });
