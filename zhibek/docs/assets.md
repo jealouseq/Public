@@ -11,7 +11,6 @@
 | `img/stickers/step-*.webp` | крупные наклейки для блока «Как забрать кота» (мордочка, лапа с клубком, лапа, спящий котёнок, переноска): `scripts/prepare_steps.py` |
 | `img/photos/*.webp` | фотографии бенгальских, абиссинских и сиамских кошек в интерьере |
 | `anim/bengal-bottom`, `anim/bengal-right` | кадры анимации кота при прокрутке (47 и 33 кадра), присланы владельцем, уменьшены до 800×600 (`scripts/prepare_frames.py`), пустые кадры и «уход» кота убраны (`scripts/trim_frames.py`) |
-| `img/products/*.webp` | кадры товаров прежней сборки (заглушки) |
 | `img/ui/*` | фавикон, иконка для iOS, картинка для соцсетей 1200×630 |
 | `fonts/*` | Onest, Playfair Display, Caveat — Google Fonts, SIL OFL |
 | карта Казахстана | Natural Earth; проекция и города — `scripts/kzmap.mjs`, результат — `theme/inc/map.php` |

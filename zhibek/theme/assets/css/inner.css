@@ -10,7 +10,7 @@
 .inner-sec { padding-bottom: var(--sec); }
 
 /* ------------------------------------------------------------ список пород */
-.bands { display: grid; gap: 12px; padding: 0 var(--pad) var(--sec); }
+.bands { display: grid; gap: 12px; padding: 0 var(--pad-x) var(--sec); }
 .band { position: relative; display: block; min-height: clamp(440px, 66vh, 660px); min-height: clamp(440px, 66svh, 660px); overflow: hidden; border-radius: var(--r-xl); background: var(--bg); color: var(--on-dark); text-decoration: none; isolation: isolate; }
 .band::before { content: ''; position: absolute; z-index: -1; right: -10%; bottom: -40%; width: 70%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(closest-side, rgba(255, 255, 255, .22), transparent); }
 .band-in { position: relative; display: grid; align-items: center; min-height: inherit; }
@@ -28,7 +28,7 @@
 @media (max-width: 799px) { .band { min-height: 560px; } .band-copy { align-content: start; padding-block: 32px; } .band-cat { height: 56%; max-width: 86%; right: 50%; transform: translateX(50%); } .band:hover .band-cat { transform: translateX(50%) scale(1.03); } }
 
 /* ------------------------------------------------------------ страница породы */
-.bhero { position: relative; margin: 0 var(--pad); border-radius: var(--r-xl); background: var(--bg); color: var(--on-dark); overflow: hidden; isolation: isolate; }
+.bhero { position: relative; margin: 0 var(--pad-x); border-radius: var(--r-xl); background: var(--bg); color: var(--on-dark); overflow: hidden; isolation: isolate; }
 .bhero::before { content: ''; position: absolute; z-index: -1; left: 50%; bottom: -40%; width: 90%; aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(255, 255, 255, .2), transparent); }
 .bhero-in { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr) minmax(0, 1fr); min-height: clamp(660px, 90vh, 900px); min-height: clamp(660px, 90svh, 900px); padding-top: 28px; }
 .bhero-name { position: absolute; z-index: 0; left: 0; right: 0; top: clamp(70px, 9vw, 120px); text-align: center; font-family: var(--f-display); font-weight: 900; font-size: clamp(3rem, 11.4vw, 11.5rem); line-height: .8; letter-spacing: -.04em; color: var(--on-dark); white-space: nowrap; margin: 0; }
@@ -58,7 +58,7 @@
   .callout { display: none; }
 }
 
-.bscores { margin: 12px var(--pad) 0; border-radius: var(--r-l); background: var(--ink); color: var(--on-dark); }
+.bscores { margin: 12px var(--pad-x) 0; border-radius: var(--r-l); background: var(--ink); color: var(--on-dark); }
 .bscores-in { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding-block: 8px; }
 .bscore { display: grid; gap: 10px; padding: 22px 24px; border-left: 1px solid rgba(245, 236, 220, .18); }
 .bscore:first-child { border-left: 0; padding-left: 0; }
@@ -77,7 +77,7 @@
 .traits li { padding: 8px 16px; border-radius: 999px; background: var(--paper-2); color: var(--ink); font-weight: 600; line-height: 1.2; }
 @media (min-width: 960px) { .bbody-in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } .bquote { position: sticky; top: calc(var(--header-h) + var(--wp-bar) + 32px); align-self: start; } }
 
-.bgal { margin: 0 var(--pad) var(--pad); padding-block: clamp(48px, 6vw, 88px); border-radius: var(--r-xl); background: var(--bg); color: var(--on-dark); overflow: hidden; }
+.bgal { margin: 0 var(--pad-x) var(--pad); padding-block: clamp(48px, 6vw, 88px); border-radius: var(--r-xl); background: var(--bg); color: var(--on-dark); overflow: hidden; }
 .bgal h2 { color: var(--on-dark); } .bgal h2 em { color: var(--gold); } .bgal .lead { color: var(--on-dark-2); }
 .bgal-rail { display: flex; gap: 18px; overflow-x: auto; padding: 8px var(--gutter) 24px; scroll-snap-type: x proximity; scroll-padding-inline: var(--gutter); scrollbar-width: none; cursor: grab; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain; }
 .bgal-rail::-webkit-scrollbar { display: none; }
@@ -88,7 +88,7 @@
 .gframe--photo .gframe-in img { padding: 0; object-fit: cover; }
 .gframe figcaption { margin-top: 12px; text-align: center; color: var(--gold); font-size: 1.6rem; }
 
-.nextb { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 var(--pad) var(--pad); }
+.nextb { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 var(--pad-x) var(--pad); }
 .nextb-item { position: relative; display: grid; align-content: space-between; gap: 40px; min-height: 280px; padding: clamp(24px, 3vw, 40px); overflow: hidden; border-radius: var(--r-xl); background: var(--bg); color: var(--on-dark); text-decoration: none; isolation: isolate; }
 .nextb-item .hand { color: var(--gold); }
 .nextb-name { font-family: var(--f-display); font-weight: 900; font-size: clamp(2.5rem, 5.4vw, 5rem); line-height: .9; letter-spacing: -.03em; }

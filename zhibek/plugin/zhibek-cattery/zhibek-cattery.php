@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: ZHIBEK Cattery
- * Description: Породы, коты, заявки и демо-контент для сайта питомника ZHIBEK. WooCommerce используется только для товаров магазина.
- * Version: 4.1.0
+ * Description: Породы, коты, заявки и демо-контент для сайта питомника ZHIBEK.
+ * Version: 4.2.0
  * Requires at least: 6.5
  * Requires PHP: 8.0
  * Author: ZHIBEK
@@ -126,26 +126,24 @@ function zhibek_migrate_demo() {
             update_post_meta($breed_id, '_zhibek_accent', $legacy[$slug][1]);
         }
     }
-    zhibek_russian_shop_titles();
     update_option('zhibek_cleanup_5', 1);
 }
 add_action('init', 'zhibek_migrate_demo', 20);
 
-/** Страницы магазина, созданные WooCommerce на другом языке (например, «Мій обліковий запис»), получают русские названия. Правки владельца не трогаем. */
-function zhibek_russian_shop_titles() {
-    if (!function_exists('wc_get_page_id')) { return; }
-    $titles = array(
-        'shop' => array('Магазин', array('Крамниця', 'Shop')),
-        'cart' => array('Корзина', array('Кошик', 'Cart')),
-        'checkout' => array('Оформление заказа', array('Оформлення замовлення', 'Checkout')),
-        'myaccount' => array('Личный кабинет', array('Мій обліковий запис', 'My account', 'Мой аккаунт')),
-    );
-    foreach ($titles as $page => $t) {
-        $id = wc_get_page_id($page);
-        $post = $id > 0 ? get_post($id) : null;
-        if ($post && in_array($post->post_title, $t[1], true)) { wp_update_post(array('ID' => $id, 'post_title' => $t[0])); }
+/**
+ * Версия 4.2: магазина на сайте больше нет. Демо-товары, которые раньше создавал плагин, переносятся в корзину WordPress
+ * (записи с пометкой «демо»), а их картинки из медиатеки удаляются. Сам WooCommerce и его страницы не трогаем: его можно отключить в «Плагинах».
+ */
+function zhibek_remove_demo_shop() {
+    if (get_option('zhibek_cleanup_6')) { return; }
+    $demo = get_posts(array('post_type' => array('product', 'attachment'), 'post_status' => 'any', 'numberposts' => -1, 'fields' => 'ids', 'meta_key' => '_zhibek_demo', 'meta_value' => '1'));
+    foreach ($demo as $id) {
+        if ('attachment' === get_post_type($id)) { wp_delete_attachment($id, true); }
+        else { wp_trash_post($id); }
     }
+    update_option('zhibek_cleanup_6', 1);
 }
+add_action('init', 'zhibek_remove_demo_shop', 21);
 
 function zhibek_maybe_flush_rewrite() {
     if (get_option('zhibek_flush_rewrite')) { flush_rewrite_rules(false); delete_option('zhibek_flush_rewrite'); }
@@ -380,12 +378,7 @@ function zhibek_settings_page() {
         <div class="notice notice-<?php echo esc_attr(in_array($notice['level'], array('success', 'warning', 'error'), true) ? $notice['level'] : 'info'); ?> is-dismissible"><p><?php echo esc_html($notice['message']); ?></p></div>
     <?php endif; ?>
     <?php if ($settings['demo']) : ?>
-        <div class="notice notice-warning inline"><p><strong>Демо-режим включён.</strong> Иллюстрации в галереях пород и товары на сайте — примеры. Перед запуском добавьте своих котов и фотографии, укажите контакты ниже и выключите демо-режим.</p></div>
-    <?php endif; ?>
-    <?php if (!class_exists('WooCommerce')) : ?>
-        <div class="notice notice-info inline"><p><strong>WooCommerce не активен.</strong> Импорт создаст породы, котов, статьи и страницы. Чтобы появился магазин, установите и активируйте WooCommerce и повторите импорт.</p></div>
-    <?php elseif ('KZT' !== get_option('woocommerce_currency')) : ?>
-        <div class="notice notice-info inline"><p>Магазин сохраняет выбранную вами валюту. Для цен в тенге выберите KZT в <a href="<?php echo esc_url(admin_url('admin.php?page=wc-settings')); ?>">основных настройках WooCommerce</a> до импорта товаров.</p></div>
+        <div class="notice notice-warning inline"><p><strong>Демо-режим включён.</strong> Иллюстрации в галереях пород — примеры. Перед запуском добавьте своих котов и фотографии, укажите контакты ниже и выключите демо-режим.</p></div>
     <?php endif; ?>
     <form action="options.php" method="post">
         <?php settings_fields('zhibek_settings_group'); ?>
@@ -402,8 +395,8 @@ function zhibek_settings_page() {
         <?php submit_button('Сохранить'); ?>
     </form>
     <hr><h2>Демонстрационный контент</h2>
-    <p>Создаёт три породы, три статьи журнала и страницы «Конфиденциальность» и «Доставка и оплата». При активном WooCommerce добавляет четыре товара-примера.</p>
-    <p>Повторный запуск ничего не дублирует и не затирает ваши правки: тексты демо-записей, которые вы не меняли, обновляются до текущей версии. Платёжные шлюзы не включаются.</p>
+    <p>Создаёт три породы, три статьи журнала и страницы «Конфиденциальность» и «Как передаём котят». Котов импорт не создаёт: их добавляете вы.</p>
+    <p>Повторный запуск ничего не дублирует и не затирает ваши правки: тексты демо-записей, которые вы не меняли, обновляются до текущей версии.</p>
     <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
         <input type="hidden" name="action" value="zhibek_import_demo">
         <?php wp_nonce_field('zhibek_import_demo', 'zhibek_import_nonce'); ?>
@@ -426,10 +419,7 @@ function zhibek_handle_demo_import() {
     }
     try {
         $result = zhibek_seed_content();
-        $notice = array(
-            'level' => $result['woocommerce'] ? 'success' : 'warning',
-            'message' => 'Демо-контент создан. Ваши правки сохранены, дубликатов нет. ' . ($result['woocommerce'] ? 'Товары-примеры добавлены в WooCommerce.' : 'WooCommerce не активен, поэтому товаров нет: активируйте его и повторите импорт.'),
-        );
+        $notice = array('level' => 'success', 'message' => 'Демо-контент создан. Ваши правки сохранены, дубликатов нет.');
     } catch (Throwable $exception) {
         $notice = array('level' => 'error', 'message' => 'Не удалось завершить импорт. Уже созданные записи сохранены. Проверьте работу WordPress и повторите импорт: существующий контент не будет продублирован.');
     }
@@ -743,119 +733,6 @@ function zhibek_seed_post($key, $post, $meta = array()) {
     return (int) $id;
 }
 
-function zhibek_native_shop_blocks($blocks, $block_name, $shortcode) {
-    foreach ($blocks as &$block) {
-        if ($block_name === $block['blockName']) {
-            $block = array('blockName' => 'core/shortcode', 'attrs' => array(), 'innerBlocks' => array(), 'innerHTML' => $shortcode, 'innerContent' => array($shortcode));
-        } elseif (!empty($block['innerBlocks'])) {
-            $block['innerBlocks'] = zhibek_native_shop_blocks($block['innerBlocks'], $block_name, $shortcode);
-        }
-    }
-    unset($block);
-    return $blocks;
-}
-
-/** Translate Woo's unmodified English defaults without rewriting owner legal copy. */
-function zhibek_localize_privacy_text($text, $type) {
-    $defaults = array(
-        'checkout' => array(
-            'Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our [privacy_policy].',
-            'Ваши персональные данные используются для обработки заказа, работы с сайтом и других целей, описанных в документе «[privacy_policy]».',
-        ),
-        'registration' => array(
-            'Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our [privacy_policy].',
-            'Ваши персональные данные используются для работы с сайтом, управления доступом к личному кабинету и других целей, описанных в документе «[privacy_policy]».',
-        ),
-    );
-    return isset($defaults[$type]) && $defaults[$type][0] === $text ? $defaults[$type][1] : $text;
-}
-add_filter('woocommerce_get_privacy_policy_text', 'zhibek_localize_privacy_text', 10, 2);
-
-/** Only exact factory markup is eligible; translated stock headings can vary between installation and import. */
-function zhibek_is_pristine_shop_content($content, $default_content, $page) {
-    if (trim($content) === trim($default_content)) { return true; }
-    if ('cart' !== $page) { return false; }
-    $english = 'You may be interested in&hellip;';
-    $headings = array_unique(array($english, 'Обратите внимание&hellip;', __($english, 'woocommerce')));
-    $tokens = array();
-    foreach ($headings as $heading) {
-        if ('' !== $heading) { $tokens[] = '>' . $heading . '</h2>'; }
-    }
-    $canonical = '>' . $english . '</h2>';
-    return trim(str_replace($tokens, $canonical, $content)) === trim(str_replace($tokens, $canonical, $default_content));
-}
-
-/** Localize new or verified factory pages; owner titles and categories stay intact. */
-function zhibek_localize_shop_labels($default_page_ids = array()) {
-    $pages = array(
-        'shop' => array('Shop', 'Магазин'), 'cart' => array('Cart', 'Корзина'),
-        'checkout' => array('Checkout', 'Оформление заказа'), 'myaccount' => array('My account', 'Личный кабинет'),
-    );
-    foreach ($pages as $page => $labels) {
-        $id = wc_get_page_id($page);
-        $post = $id > 0 ? get_post($id) : null;
-        if ($post && in_array($id, $default_page_ids, true) && $labels[0] === $post->post_title) {
-            wp_update_post(array('ID' => $id, 'post_title' => $labels[1]));
-        }
-    }
-}
-
-function zhibek_setup_woocommerce() {
-    if (!class_exists('WooCommerce') || !class_exists('WC_Install')) { return false; }
-    $created_pages = array();
-    $default_pages = array();
-    $record_page = function ($page_id) use (&$created_pages) { $created_pages[] = (int) $page_id; };
-    $record_defaults = function ($pages) use (&$default_pages) { $default_pages = $pages; return $pages; };
-    add_action('woocommerce_page_created', $record_page);
-    add_filter('woocommerce_create_pages', $record_defaults, PHP_INT_MAX);
-    try { WC_Install::create_pages(); }
-    finally {
-        remove_action('woocommerce_page_created', $record_page);
-        remove_filter('woocommerce_create_pages', $record_defaults, PHP_INT_MAX);
-    }
-    $default_page_ids = $created_pages;
-    foreach ($default_pages as $page => $template) {
-        $id = wc_get_page_id($page);
-        $post = $id > 0 ? get_post($id) : null;
-        if ($post && isset($template['content']) && zhibek_is_pristine_shop_content($post->post_content, $template['content'], $page)) {
-            $default_page_ids[] = (int) $id;
-        }
-    }
-    foreach (array('cart' => '[woocommerce_cart]', 'checkout' => '[woocommerce_checkout]', 'myaccount' => '[woocommerce_my_account]') as $page => $shortcode) {
-        $id = wc_get_page_id($page);
-        $post = $id > 0 ? get_post($id) : null;
-        $is_native_default = $post && in_array(trim($post->post_content), array($shortcode, '<!-- wp:shortcode -->' . $shortcode . '<!-- /wp:shortcode -->'), true);
-        $is_default = $post && ($is_native_default || in_array((int) $id, $default_page_ids, true));
-        if (!$post || (!in_array($id, $created_pages, true) && !$is_default)) { continue; }
-        $default_page_ids[] = (int) $id;
-        if ($post && '' === trim($post->post_content)) {
-            wp_update_post(array('ID' => $id, 'post_content' => $shortcode));
-        } elseif ($post && has_block('woocommerce/' . $page, $post->post_content)) {
-            $blocks = zhibek_native_shop_blocks(parse_blocks($post->post_content), 'woocommerce/' . $page, $shortcode);
-            wp_update_post(array('ID' => $id, 'post_content' => wp_slash(serialize_blocks($blocks))));
-        }
-    }
-    zhibek_localize_shop_labels(array_unique($default_page_ids));
-    // Gateways, shipping and merchant credentials require the owner's real configuration.
-    return true;
-}
-
-/** Копирует картинку из темы в медиатеку и делает её миниатюрой записи. Возвращает ID вложения или 0. */
-function zhibek_attach_theme_image($post_id, $relative) {
-    $path = get_template_directory() . '/assets/img/' . $relative;
-    if (!is_file($path)) { return 0; }
-    require_once ABSPATH . 'wp-admin/includes/file.php';
-    require_once ABSPATH . 'wp-admin/includes/media.php';
-    require_once ABSPATH . 'wp-admin/includes/image.php';
-    $tmp = wp_tempnam($path);
-    if (!$tmp || !copy($path, $tmp)) { return 0; }
-    $id = media_handle_sideload(array('name' => basename($path), 'tmp_name' => $tmp), $post_id);
-    if (is_wp_error($id)) { @unlink($tmp); return 0; }
-    update_post_meta($id, '_zhibek_demo', '1');
-    set_post_thumbnail($post_id, $id);
-    return (int) $id;
-}
-
 function zhibek_seed_content() {
     add_option('zhibek_settings', zhibek_default_settings());
     $breeds = array(
@@ -903,9 +780,9 @@ function zhibek_seed_content() {
         $old_id = zhibek_seed_find('kitten-' . $old, 'zhibek_cat');
         if ($old_id && get_post_meta($old_id, '_zhibek_demo', true)) { wp_delete_post($old_id, true); }
     }
-    $privacy = zhibek_seed_post('page-privacy', array('post_type' => 'page', 'post_title' => 'Конфиденциальность', 'post_name' => 'privacy', 'post_content' => '<p><strong>Оператор данных:</strong> владелец сайта ZHIBEK. Реквизиты (ИП или ТОО, БИН/ИИН, адрес, email) владелец указывает здесь перед запуском.</p><h2>Какие данные мы получаем</h2><p>Через форму заявки — имя, телефон или email, город, интересующая порода и текст сообщения. Через магазин — данные, необходимые для оформления и доставки заказа.</p><h2>Зачем</h2><p>Чтобы ответить на заявку, согласовать знакомство с котёнком и выполнить заказ. Данные не передаются третьим лицам, кроме служб доставки и платёжного сервиса при оформлении заказа.</p><h2>Где хранятся</h2><p>Заявки сохраняются в закрытом разделе панели сайта и доступны только администратору. Сохранение происходит только после вашего согласия в форме.</p><h2>Cookie</h2><p>Магазин использует технические cookie для корзины и оформления заказа. Рекламных и аналитических cookie на сайте по умолчанию нет.</p><h2>Ваши права</h2><p>Вы можете запросить уточнение или удаление своих данных, написав по контактам, указанным на сайте.</p>'));
+    $privacy = zhibek_seed_post('page-privacy', array('post_type' => 'page', 'post_title' => 'Конфиденциальность', 'post_name' => 'privacy', 'post_content' => '<p><strong>Оператор данных:</strong> владелец сайта ZHIBEK. Реквизиты (ИП или ТОО, БИН/ИИН, адрес, email) владелец указывает здесь перед запуском.</p><h2>Какие данные мы получаем</h2><p>Через форму заявки — имя, телефон или email, город, интересующая порода и текст сообщения.</p><h2>Зачем</h2><p>Чтобы ответить на заявку и согласовать знакомство с котёнком. Данные не передаются третьим лицам.</p><h2>Где хранятся</h2><p>Заявки сохраняются в закрытом разделе панели сайта и доступны только администратору. Сохранение происходит только после вашего согласия в форме.</p><h2>Cookie</h2><p>Рекламных и аналитических cookie на сайте по умолчанию нет. Если владелец подключит счётчики, он расскажет о них здесь.</p><h2>Ваши права</h2><p>Вы можете запросить уточнение или удаление своих данных, написав по контактам, указанным на сайте.</p>'));
     if (!(int) get_option('wp_page_for_privacy_policy') && 'publish' === get_post_status($privacy)) { update_option('wp_page_for_privacy_policy', $privacy); }
-    zhibek_seed_post('page-order-terms', array('post_type' => 'page', 'post_title' => 'Доставка и оплата', 'post_name' => 'order-terms', 'post_content' => '<h2>Котята</h2><p>Котята не продаются через корзину. Сначала вы знакомитесь с питомником и котёнком, затем обсуждаете условия, документы и способ передачи. Передать котёнка можно лично или привезти в ваш город — маршрут и стоимость согласуются отдельно.</p><h2>Товары магазина</h2><p>Доставка по Казахстану службой доставки. Сроки и стоимость рассчитываются при оформлении заказа. Оплата — способами, подключёнными в магазине.</p><h2>Возврат</h2><p>Условия возврата товаров владелец указывает здесь перед запуском магазина.</p>'));
+    zhibek_seed_post('page-order-terms', array('post_type' => 'page', 'post_title' => 'Как передаём котят', 'post_name' => 'order-terms', 'post_content' => '<h2>Знакомство</h2><p>Сначала вы знакомитесь с питомником и котёнком: фото, видео, видеозвонок. Заявка на сайте ничего не фиксирует и не требует оплаты.</p><h2>Договор и документы</h2><p>Условия, документы и порядок расчёта обсуждаются лично и фиксируются в договоре. Оплата через сайт не принимается.</p><h2>Передача</h2><p>Котёнка можно забрать у нас или встретить в своём городе. Маршрут, сроки и стоимость согласуются отдельно. Владелец уточняет условия здесь перед запуском.</p>'));
     $category = term_exists('journal', 'category');
     if (!$category) { $category = wp_insert_term('Журнал', 'category', array('slug' => 'journal')); }
     $journal_category = !is_wp_error($category) ? (is_array($category) ? (int) $category['term_id'] : (int) $category) : 0;
@@ -919,40 +796,8 @@ function zhibek_seed_content() {
         $id = zhibek_seed_post('journal-' . $slug, array('post_type' => 'post', 'post_title' => $article[0], 'post_name' => $slug, 'post_excerpt' => $article[1], 'post_content' => $article[2]));
         if ($journal_category && !$existing) { wp_set_post_categories($id, array($journal_category), true); }
     }
-    $woocommerce = zhibek_setup_woocommerce();
-    if ($woocommerce && class_exists('WC_Product_Simple')) {
-        $products = array(
-            'house' => array('Домик-лежанка из фанеры', '19900', 'furniture', 'Мебель', 'Берёзовая фанера, съёмная подушка из букле.'),
-            'bowl' => array('Керамическая миска на дубовой подставке', '6900', 'care', 'Уход', 'Широкая миска, не сдвигается по полу.'),
-            'food' => array('Сухой корм для взрослых кошек, 2 кг', '8900', 'food', 'Питание', 'Состав и назначение корма укажите в описании товара.'),
-            'toy' => array('Игрушка-дразнилка с перьями', '4900', 'care', 'Уход', 'Деревянная ручка, шнур с шариком из сизаля и перьями.'),
-        );
-        foreach ($products as $slug => $item) {
-            $existing_product = zhibek_seed_find('product-' . $slug, 'product');
-            if ($existing_product) {
-                // Картинка нужна в медиатеке: из неё берут фото корзина, оформление заказа и письма.
-                if (get_post_meta($existing_product, '_zhibek_demo', true) && !has_post_thumbnail($existing_product)) { zhibek_attach_theme_image($existing_product, 'products/product-' . $slug . '.webp'); }
-                continue;
-            }
-            $category = term_exists($item[2], 'product_cat');
-            if (!$category) { $category = wp_insert_term($item[3], 'product_cat', array('slug' => $item[2])); }
-            if (is_wp_error($category)) { throw new RuntimeException($category->get_error_message()); }
-            $category_id = is_array($category) ? (int) $category['term_id'] : (int) $category;
-            $product = new WC_Product_Simple();
-            $product->set_name($item[0]); $product->set_slug('demo-' . $slug); $product->set_status('publish');
-            $product->set_regular_price($item[1]); $product->set_tax_status('none');
-            $product->set_catalog_visibility('visible'); $product->set_category_ids(array($category_id));
-            $product->set_short_description($item[4]);
-            $product->set_description($item[4] . ' Описание, цену и фотографию замените данными настоящего товара.');
-            $product->update_meta_data('_zhibek_seed', 'product-' . $slug);
-            $product->update_meta_data('_zhibek_demo', '1');
-            $product->update_meta_data('_zhibek_image', 'product-' . $slug . '.webp');
-            $product->save();
-            zhibek_attach_theme_image($product->get_id(), 'products/product-' . $slug . '.webp');
-        }
-    }
     flush_rewrite_rules();
-    return array('breeds' => count($breed_ids), 'cats' => 0, 'products' => $woocommerce ? 4 : 0, 'woocommerce' => $woocommerce);
+    return array('breeds' => count($breed_ids), 'cats' => 0);
 }
 
 if (defined('WP_CLI') && WP_CLI) {
@@ -961,8 +806,7 @@ if (defined('WP_CLI') && WP_CLI) {
         public function __invoke($args, $assoc_args) {
             try { $result = zhibek_seed_content(); }
             catch (Throwable $exception) { WP_CLI::error($exception->getMessage()); return; }
-            if (!$result['woocommerce']) { WP_CLI::warning('WooCommerce не активен: магазин не создан. После активации повторите wp zhibek seed.'); }
-            WP_CLI::success('ZHIBEK: породы, журнал и страницы созданы. Демо-товаров: ' . $result['products'] . '. Повторный запуск сохраняет существующие записи. Платёжные шлюзы не изменены.');
+            WP_CLI::success('ZHIBEK: породы, журнал и страницы созданы. Повторный запуск сохраняет существующие записи.');
         }
     }
     WP_CLI::add_command('zhibek seed', 'Zhibek_Seed_Command');

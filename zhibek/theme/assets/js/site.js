@@ -294,10 +294,18 @@
     const sticky = $('.scene-sticky', scene);
     const canvas = $('canvas', scene);
     const n = Number(scene.dataset.frames), base = scene.dataset.base;
-    if (!sticky || !canvas || !n || !canvas.getContext || sceneReduce || saveData) { scene.classList.add('is-end'); return; }
+    if (!sticky || !canvas || !n || !canvas.getContext || sceneReduce || saveData) {
+      scene.classList.add('is-end');
+      const last = $$('.scene-note', scene); if (last.length) last[last.length - 1].classList.add('is-on');
+      return;
+    }
     const ctx = canvas.getContext('2d');
     const frames = new Array(n + 1);
     let target = 1, shown = 0, started = false, raf = 0, near = false;
+    // Подписи и полоски шагов меняются вместе с позой кота: границы поз заданы номерами кадров.
+    const breaks = (scene.dataset.breaks || '').split(',').map(Number).filter(Boolean);
+    const notes = $$('.scene-note', scene), bars = $$('.scene-steps li', scene);
+    const setStep = (step) => { notes.forEach((el, i) => el.classList.toggle('is-on', i === step - 1)); bars.forEach((el, i) => el.classList.toggle('is-on', i < step)); };
     const url = (i) => `${base}frame_${String(i).padStart(4, '0')}.webp`;
     const draw = () => {
       raf = 0;
@@ -332,6 +340,7 @@
       sticky.style.setProperty('--p', p.toFixed(3));
       scene.classList.toggle('is-end', p > 0.6);
       target = Math.max(1, Math.min(n, 1 + Math.round(p * (n - 1))));
+      if (notes.length) setStep(1 + breaks.filter((b) => target >= b).length);
       if (!raf) raf = requestAnimationFrame(draw);
     };
     let ticking = false;
@@ -358,6 +367,21 @@
       en.forEach((e) => { if (e.isIntersecting) links.forEach((l) => l.classList.toggle('is-active', l.getAttribute('href') === '#' + e.target.id)); });
     }, { rootMargin: '-15% 0px -75% 0px' });
     heads.forEach((h) => io.observe(h));
+  });
+
+  // Карта доставки: город на карте и кнопка города подсвечиваются вместе, по нажатию выбор закрепляется.
+  $$('[data-map]').forEach((box) => {
+    const items = $$('[data-city]', box);
+    let pinned = '';
+    const show = (name) => items.forEach((el) => el.classList.toggle('is-hot', !!name && el.dataset.city === name && !el.classList.contains('kz-label--hub')));
+    items.filter((el) => el.matches('button, .kz-city')).forEach((el) => {
+      const name = el.dataset.city;
+      el.addEventListener('mouseenter', () => show(name));
+      el.addEventListener('mouseleave', () => show(pinned));
+      el.addEventListener('focus', () => show(name));
+      el.addEventListener('blur', () => show(pinned));
+      el.addEventListener('click', () => { pinned = pinned === name ? '' : name; show(pinned); });
+    });
   });
 
   doc.classList.add('is-ready');

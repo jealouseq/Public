@@ -9,7 +9,6 @@ $all_cats = zh_cats();
 $cities = zh_map_city_list();
 $posts = get_posts(array('numberposts' => 3, 'post_status' => 'publish', 'category_name' => 'journal', 'ignore_sticky_posts' => true));
 if (!$posts) { $posts = get_posts(array('numberposts' => 3, 'post_status' => 'publish', 'ignore_sticky_posts' => true)); }
-$products = function_exists('wc_get_products') ? wc_get_products(array('limit' => 4, 'status' => 'publish', 'visibility' => 'catalog')) : array();
 $count_by_breed = array();
 foreach ($all_cats as $cat) { $bid = (int) get_post_meta($cat->ID, '_zhibek_breed', true); $count_by_breed[$bid] = ($count_by_breed[$bid] ?? 0) + 1; }
 $sticker_cycle = array('paw', 'fish', 'yarn', 'tail');
@@ -75,8 +74,11 @@ $em = array('em' => array());
   </section>
 
   <?php
-  $bengal_color = '#6a2230'; foreach ($breeds as $bb) { if ($bb->post_name === 'bengal') { $bengal_color = zh_breed_color($bb); } }
-  echo zh_scene('bottom', $bengal_color, $c['scene']['title'], $c['scene']['lead'], '<a class="btn btn-light" href="' . esc_url(home_url('/breeds/')) . '"><span>' . esc_html($c['scene']['cta']) . '</span>' . zh_arrow() . '</a>');
+  $bengal = null; foreach ($breeds as $bb) { if ($bb->post_name === 'bengal') { $bengal = $bb; } }
+  $bengal_color = $bengal ? zh_breed_color($bengal) : '#6a2230';
+  $scene_facts = $bengal ? array_slice(array_filter(zh_breed_facts($bengal), function ($f) { return $f[0] !== ''; }), 0, 4) : array();
+  $scene_actions = '<a class="btn btn-light" href="' . esc_url($bengal ? get_permalink($bengal) : home_url('/breeds/')) . '"><span>' . esc_html($c['scene']['cta']) . '</span>' . zh_arrow() . '</a><button class="btn btn-line-light" type="button" data-enquire="Бенгальская"><span>' . esc_html($c['scene']['ask']) . '</span></button>';
+  echo zh_scene('bottom', $bengal_color, $c['scene']['title'], $c['scene']['lead'], $scene_actions, array('hook' => $c['scene']['hook'], 'facts' => $scene_facts, 'notes' => $c['scene']['notes']));
   ?>
 
   <?php $compare = array(); foreach ($breeds as $b) { $sc = zh_breed_scores($b); if ($sc) { $compare[] = array($b, $sc); } } ?>
@@ -130,44 +132,34 @@ $em = array('em' => array());
   <section class="delivery" id="delivery" aria-labelledby="delivery-title">
     <div class="wrap delivery-in">
       <div class="delivery-copy" data-reveal>
+        <span class="eyebrow"><?php echo esc_html($c['delivery']['eyebrow']); ?></span>
         <h2 class="h2" id="delivery-title"><?php echo wp_kses($c['delivery']['title'], $em); ?></h2>
-        <p><?php echo zh_t($c['delivery']['text']); ?></p>
+        <p class="delivery-lead"><?php echo zh_t($c['delivery']['text']); ?></p>
+        <ul class="dfacts">
+          <?php foreach ($c['delivery']['facts'] as $f) : ?>
+            <li><span class="dfact-ico"><?php echo zh_icon($f[0]); ?></span><div><b><?php echo zh_t($f[1]); ?></b><span><?php echo zh_t($f[2]); ?></span></div></li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+      <div class="delivery-map" data-reveal data-map>
+        <?php echo zh_map_svg(); ?>
         <?php if ($cities) : ?>
-          <p class="delivery-count"><b><?php echo (int) count($cities); ?></b><span><?php echo esc_html($c['delivery']['label']); ?></span></p>
-          <ul class="cities"><?php foreach ($cities as $city) { echo '<li>' . esc_html($city) . '</li>'; } ?></ul>
+          <ul class="cities"><?php foreach ($cities as $city) { echo '<li><button type="button" data-city="' . esc_attr($city) . '">' . esc_html($city) . '</button></li>'; } ?></ul>
         <?php endif; ?>
       </div>
-      <div class="delivery-map" data-reveal><?php echo zh_map_svg(); ?></div>
     </div>
   </section>
 
-  <?php if ($products) : ?>
-  <section class="sec" id="shop" aria-labelledby="shop-title">
-    <div class="wrap">
-      <div class="sec-head" data-reveal>
-        <h2 class="h2" id="shop-title">Для <em>дома</em></h2>
-        <a class="link-arrow" href="<?php echo esc_url(zh_wc_url('shop')); ?>"><span>Весь магазин</span><?php echo zh_arrow(); ?></a>
-      </div>
-      <div class="pgrid">
-        <?php foreach ($products as $p) : ?>
-          <a class="pcard" href="<?php echo esc_url($p->get_permalink()); ?>" data-reveal>
-            <span class="pcard-img"><?php zh_product_image($p); ?></span>
-            <span class="pcard-name"><?php echo esc_html($p->get_name()); ?></span>
-            <span class="pcard-price"><?php echo wp_kses_post($p->get_price_html()); ?></span>
-          </a>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </section>
-  <?php endif; ?>
 
   <section class="sec" id="faq" aria-labelledby="faq-title">
     <div class="wrap faq-grid">
       <div class="faq-head" data-reveal>
         <h2 class="h2" id="faq-title"><?php echo wp_kses($c['faq']['title'], $em); ?></h2>
-        <?php echo zh_sticker('face', 'faq-sticker'); ?>
+        <p class="faq-help"><?php echo zh_t($c['faq']['help']); ?></p>
+        <button class="btn btn-primary" type="button" data-enquire="Вопрос"><span><?php echo esc_html($c['faq']['cta']); ?></span><?php echo zh_arrow(); ?></button>
       </div>
       <div class="faq-list">
+        <?php if (zh_has_img('pets/peek-2.webp')) : ?><img class="faq-peek" src="<?php echo esc_url(zh_img('pets/peek-2.webp')); ?>" alt="" width="1100" height="733" loading="lazy" decoding="async" draggable="false"><?php endif; ?>
         <?php foreach ($c['faq']['items'] as $i => $q) : ?>
           <details class="faq-item" data-reveal><summary><span class="faq-n"><?php echo esc_html(sprintf('%02d', $i + 1)); ?></span><span class="faq-q"><?php echo zh_t($q[0]); ?></span></summary><p><?php echo zh_t($q[1]); ?></p></details>
         <?php endforeach; ?>

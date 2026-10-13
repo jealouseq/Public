@@ -29,10 +29,6 @@ function zh_cats($args = array()) {
     return $limit > 0 ? array_slice($cats, 0, $limit) : $cats;
 }
 
-function zh_wc_url($page) {
-    return function_exists('wc_get_page_permalink') ? wc_get_page_permalink($page) : home_url('/' . ($page === 'myaccount' ? 'my-account' : $page) . '/');
-}
-
 /** Нижний регистр без зависимости от mbstring. */
 function zh_lower($s) { return function_exists('mb_strtolower') ? mb_strtolower($s, 'UTF-8') : strtolower($s); }
 
@@ -113,11 +109,15 @@ function zh_hand_arrow($class = '') {
 
 function zh_icon($name) {
     $paths = array(
-        'bag' => '<path d="M5 8h14l1 13H4L5 8zM8 8V6a4 4 0 018 0v2"/>',
         'close' => '<path d="M5 5l14 14M19 5L5 19"/>',
         'whatsapp' => '<path d="M3.5 20.5l1.3-4.6A8.5 8.5 0 1112 20.5a8.4 8.4 0 01-4-1z"/><path d="M9 8.5c.3 3 2.5 5.2 5.5 6.5l1.5-1.5-2-1-1 .8c-.9-.4-1.8-1.3-2.2-2.2l.8-1-1-2z"/>',
         'telegram' => '<path d="M21 4L3 11l5.5 2L10 19l3-3.5L17.5 19 21 4z"/><path d="M8.5 13L21 4"/>',
         'instagram' => '<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6"/>',
+        'phone' => '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/>',
+        'mail' => '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/>',
+        'handoff' => '<circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M9 12h6"/>',
+        'pin' => '<path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+        'camera' => '<rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/>',
     );
     return '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . ($paths[$name] ?? '') . '</svg>';
 }
@@ -442,10 +442,10 @@ function zh_empty_cats($title_html, $text, $topic = 'Ближайшие помё
  * Сцена с анимацией кота, привязанной к прокрутке (кадры в theme/assets/anim).
  * variant: bottom — кот выглядывает снизу, right — из-за правого края.
  */
-function zh_scene($variant, $color, $title_html, $lead, $actions_html) {
+function zh_scene($variant, $color, $title_html, $lead, $actions_html, $extra = array()) {
     $cfg = array(
-        'bottom' => array('dir' => 'bengal-bottom', 'alt' => 'Бенгальский кот выглядывает снизу'),
-        'right' => array('dir' => 'bengal-right', 'alt' => 'Бенгальский кот выглядывает сбоку'),
+        'bottom' => array('dir' => 'bengal-bottom', 'alt' => 'Бенгальский кот выглядывает снизу', 'breaks' => '14,24,33'),
+        'right' => array('dir' => 'bengal-right', 'alt' => 'Бенгальский кот выглядывает сбоку', 'breaks' => ''),
     );
     if (!isset($cfg[$variant])) { return ''; }
     $c = $cfg[$variant];
@@ -454,9 +454,35 @@ function zh_scene($variant, $color, $title_html, $lead, $actions_html) {
     if (!$frames) { return ''; }
     $c['n'] = count($frames);
     $poster = 'anim/' . $c['dir'] . '/' . basename(end($frames));
+    // Расширенная сцена: подпись «кто тут спрятался», факты о породе и рукописные пометки, которые меняются вместе с позой кота.
+    $rich = $variant === 'bottom' && (!empty($extra['facts']) || !empty($extra['notes']));
+    $facts = $extra['facts'] ?? array(); $notes = $extra['notes'] ?? array();
     ob_start(); ?>
-    <section class="scene scene--<?php echo esc_attr($variant); ?>" data-scene data-frames="<?php echo (int) $c['n']; ?>" data-base="<?php echo esc_url(zh_asset('anim/' . $c['dir'] . '/')); ?>" style="--bg:<?php echo esc_attr($color); ?>">
+    <section class="scene scene--<?php echo esc_attr($variant); ?><?php echo $rich ? ' scene--rich' : ''; ?>" data-scene data-frames="<?php echo (int) $c['n']; ?>" data-base="<?php echo esc_url(zh_asset('anim/' . $c['dir'] . '/')); ?>"<?php echo $rich ? ' data-breaks="' . esc_attr($c['breaks']) . '"' : ''; ?> style="--bg:<?php echo esc_attr($color); ?>">
         <div class="scene-sticky">
+            <?php if ($rich) : ?>
+            <div class="scene-in">
+                <div class="scene-text">
+                    <?php if (!empty($extra['hook'])) : ?><span class="hand scene-hook"><?php echo esc_html($extra['hook']); ?></span><?php endif; ?>
+                    <h2 class="h2"><?php echo wp_kses($title_html, array('em' => array())); ?></h2>
+                    <p class="lead"><?php echo zh_t($lead); ?></p>
+                    <?php if ($facts) : ?>
+                    <dl class="scene-facts"><?php foreach ($facts as $f) : ?><div><dt><?php echo esc_html($f[0]); ?></dt><dd><?php echo zh_t($f[1]); ?></dd></div><?php endforeach; ?></dl>
+                    <?php endif; ?>
+                    <div class="scene-cta"><?php echo $actions_html; ?></div>
+                </div>
+                <div class="scene-stage">
+                    <div class="scene-cat">
+                        <canvas width="800" height="600" aria-hidden="true"></canvas>
+                        <img src="<?php echo esc_url(zh_asset($poster)); ?>" alt="<?php echo esc_attr($c['alt']); ?>" width="800" height="600" loading="lazy" decoding="async" draggable="false">
+                    </div>
+                    <?php if ($notes) : ?>
+                    <div class="scene-notes" aria-hidden="true"><?php foreach ($notes as $i => $note) : ?><p class="scene-note"><?php echo zh_hand_arrow(); ?><span><?php echo esc_html($note); ?></span></p><?php endforeach; ?></div>
+                    <ol class="scene-steps" aria-hidden="true"><?php foreach ($notes as $note) { echo '<li></li>'; } ?></ol>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <?php else : ?>
             <div class="scene-text">
                 <h2 class="h2"><?php echo wp_kses($title_html, array('em' => array())); ?></h2>
                 <p class="lead"><?php echo zh_t($lead); ?></p>
@@ -466,6 +492,7 @@ function zh_scene($variant, $color, $title_html, $lead, $actions_html) {
                 <canvas width="800" height="600" aria-hidden="true"></canvas>
                 <img src="<?php echo esc_url(zh_asset($poster)); ?>" alt="<?php echo esc_attr($c['alt']); ?>" width="800" height="600" loading="lazy" decoding="async" draggable="false">
             </div>
+            <?php endif; ?>
         </div>
     </section>
     <?php
@@ -474,25 +501,55 @@ function zh_scene($variant, $color, $title_html, $lead, $actions_html) {
 
 /* ------------------------------------------------------------------ карта */
 
+/**
+ * Карта доставки: контур Казахстана из точек, дуги маршрутов от питомника к городам, пины и подписи.
+ * Города берутся из «Настройки → ZHIBEK». Питомник — город из поля «Город», если он есть на карте, иначе первый город списка.
+ */
 function zh_map_svg() {
     require_once get_template_directory() . '/inc/map.php';
     $map = zh_kz_map();
     $s = zh_settings();
-    $active = array_filter(array_map('trim', preg_split('/[,\n]+/u', (string) $s['cities'])));
+    $active = zh_map_city_list();
+    $coords = $map['cities'];
+    $on = array(); foreach ($active as $name) { if (isset($coords[$name])) { $on[$name] = $coords[$name]; } }
+    $hub_name = isset($coords[trim((string) $s['city'])]) ? trim((string) $s['city']) : (key($on) ?: '');
+    $hub = $hub_name ? $coords[$hub_name] : null;
+    $W = (int) $map['w']; $H = (int) $map['h'];
+    $pct = function ($xy) use ($W, $H) { return 'left:' . round($xy[0] / $W * 100, 2) . '%;top:' . round($xy[1] / $H * 100, 2) . '%'; };
     ob_start(); ?>
-    <svg class="kzmap" viewBox="0 0 <?php echo (int) $map['w']; ?> <?php echo (int) $map['h']; ?>" role="img" aria-label="Карта Казахстана с городами, куда мы привозим котов">
-        <defs>
-            <pattern id="kzdots" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="1.25"/></pattern>
-            <clipPath id="kzclip"><path d="<?php echo esc_attr($map['d']); ?>"/></clipPath>
-        </defs>
-        <g class="kz-dots" clip-path="url(#kzclip)"><rect width="<?php echo (int) $map['w']; ?>" height="<?php echo (int) $map['h']; ?>" fill="url(#kzdots)" style="fill:url(#kzdots)"/></g>
-        <path class="kz-line" d="<?php echo esc_attr($map['d']); ?>"/>
-        <g class="kz-cities">
-            <?php foreach ($map['cities'] as $name => $xy) : if (!in_array($name, $active, true)) { continue; } ?>
-                <g class="kz-city is-on" transform="translate(<?php echo (int) $xy[0]; ?> <?php echo (int) $xy[1]; ?>)"><circle class="kz-pulse" r="14"/><circle class="kz-pin" r="5"/></g>
-            <?php endforeach; ?>
-        </g>
-    </svg>
+    <div class="map-stage">
+        <svg class="kzmap" viewBox="0 0 <?php echo $W; ?> <?php echo $H; ?>" role="img" aria-label="Карта Казахстана с городами, куда мы привозим котов">
+            <defs>
+                <pattern id="kzdots" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="1.25"/></pattern>
+                <clipPath id="kzclip"><path d="<?php echo esc_attr($map['d']); ?>"/></clipPath>
+            </defs>
+            <g class="kz-dots" clip-path="url(#kzclip)"><rect width="<?php echo $W; ?>" height="<?php echo $H; ?>" fill="url(#kzdots)" style="fill:url(#kzdots)"/></g>
+            <path class="kz-line" d="<?php echo esc_attr($map['d']); ?>"/>
+            <?php if ($hub) : $i = 0; ?>
+            <g class="kz-arcs">
+                <?php foreach ($on as $name => $xy) : if ($name === $hub_name) { continue; }
+                    $dx = $xy[0] - $hub[0]; $dy = $xy[1] - $hub[1]; $len = max(1, sqrt($dx * $dx + $dy * $dy));
+                    $nx = -$dy / $len; $ny = $dx / $len; if ($ny > 0) { $nx = -$nx; $ny = -$ny; }
+                    $cx = ($hub[0] + $xy[0]) / 2 + $nx * $len * .22; $cy = ($hub[1] + $xy[1]) / 2 + $ny * $len * .22; ?>
+                    <path class="kz-arc" data-city="<?php echo esc_attr($name); ?>" style="--i:<?php echo $i++; ?>" pathLength="1" d="M<?php echo (int) $hub[0]; ?> <?php echo (int) $hub[1]; ?>Q<?php echo round($cx); ?> <?php echo round($cy); ?> <?php echo (int) $xy[0]; ?> <?php echo (int) $xy[1]; ?>"/>
+                <?php endforeach; ?>
+            </g>
+            <?php endif; ?>
+            <g class="kz-cities">
+                <?php foreach ($on as $name => $xy) : if ($name === $hub_name) { continue; } ?>
+                    <g class="kz-city" data-city="<?php echo esc_attr($name); ?>" transform="translate(<?php echo (int) $xy[0]; ?> <?php echo (int) $xy[1]; ?>)"><circle class="kz-hit" r="22"/><circle class="kz-pulse" r="14"/><circle class="kz-pin" r="5"/></g>
+                <?php endforeach; ?>
+                <?php if ($hub) : ?>
+                    <g class="kz-hub" transform="translate(<?php echo (int) $hub[0]; ?> <?php echo (int) $hub[1]; ?>)"><circle class="kz-hub-ring" r="26"/><circle class="kz-hub-dot" r="9"/></g>
+                <?php endif; ?>
+            </g>
+        </svg>
+        <?php foreach ($on as $name => $xy) : ?>
+            <span class="kz-label<?php echo $name === $hub_name ? ' kz-label--hub is-hot' : ''; ?>" data-city="<?php echo esc_attr($name); ?>" style="<?php echo $pct($xy); ?>"><?php echo $name === $hub_name ? 'Питомник · ' . esc_html($name) : esc_html($name); ?></span>
+        <?php endforeach; ?>
+        <p class="map-stat"><b><?php echo (int) count($on); ?></b><span>городов<br>на карте</span></p>
+        <span class="hand map-hint" aria-hidden="true">наведите на город</span>
+    </div>
     <?php
     return ob_get_clean();
 }

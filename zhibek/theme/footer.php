@@ -2,7 +2,7 @@
 $s = zh_settings();
 $contacts = zh_contacts();
 $c = zh_content();
-$show_cta = !is_front_page() && !(function_exists('is_cart') && (is_cart() || is_checkout() || is_account_page()));
+$show_cta = !is_front_page();
 $peek = zh_has_img('pets/peek-2.webp') ? zh_img('pets/peek-2.webp') : '';
 $peek_dlg = zh_has_img('pets/peek.webp') ? zh_img('pets/peek.webp') : '';
 ?>
@@ -26,44 +26,46 @@ $peek_dlg = zh_has_img('pets/peek.webp') ? zh_img('pets/peek.webp') : '';
 </section>
 <?php endif; ?>
 <footer class="site-footer">
-  <div class="wrap footer-grid">
-    <div class="footer-brand">
-      <a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><?php echo zh_brand(); ?></a>
-      <p><?php echo esc_html($c['footer']['tagline']); ?></p>
-    </div>
-    <nav class="footer-col" aria-label="Питомник">
-      <span class="label">Питомник</span>
-      <a href="<?php echo esc_url(home_url('/breeds/')); ?>">Породы</a>
-      <a href="<?php echo esc_url(home_url('/cats/')); ?>">Коты</a>
-      <a href="<?php echo esc_url(home_url('/#process')); ?>">Как забрать</a>
-      <a href="<?php echo esc_url(home_url('/#faq')); ?>">Вопросы</a>
-      <a href="<?php echo esc_url(home_url('/#journal')); ?>">Журнал</a>
-    </nav>
-    <?php $terms_url = zh_page_url('order-terms'); $has_shop = class_exists('WooCommerce'); if ($has_shop || $terms_url) : ?>
-    <nav class="footer-col" aria-label="Магазин и условия">
-      <span class="label"><?php echo $has_shop ? 'Магазин' : 'Условия'; ?></span>
-      <?php if ($has_shop) : ?>
-        <a href="<?php echo esc_url(zh_wc_url('shop')); ?>">Вещи для дома</a>
-        <a href="<?php echo esc_url(zh_wc_url('myaccount')); ?>">Личный кабинет</a>
+  <div class="footer-panel">
+    <?php echo zh_sticker('step-sleep', 'footer-cat'); ?>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><?php echo zh_brand(); ?></a>
+        <p><?php echo esc_html($c['footer']['tagline']); ?></p>
+        <button class="btn btn-primary" type="button" data-enquire="Консультация"><span>Написать нам</span><?php echo zh_arrow(); ?></button>
+      </div>
+      <nav class="footer-col" aria-label="Питомник">
+        <span class="label">Питомник</span>
+        <a href="<?php echo esc_url(home_url('/cats/')); ?>">Коты</a>
+        <a href="<?php echo esc_url(home_url('/#process')); ?>">Как забрать</a>
+        <a href="<?php echo esc_url(home_url('/#delivery')); ?>">Доставка</a>
+        <a href="<?php echo esc_url(home_url('/#faq')); ?>">Вопросы</a>
+        <a href="<?php echo esc_url(zh_journal_url()); ?>">Журнал</a>
+      </nav>
+      <?php $fbreeds = zh_breeds(); if ($fbreeds) : ?>
+      <nav class="footer-col" aria-label="Породы">
+        <span class="label">Породы</span>
+        <?php foreach ($fbreeds as $fb) : ?><a class="footer-breed" href="<?php echo esc_url(get_permalink($fb)); ?>" style="--bc:<?php echo esc_attr(zh_breed_color($fb)); ?>"><i aria-hidden="true"></i><?php echo esc_html($fb->post_title); ?></a><?php endforeach; ?>
+      </nav>
       <?php endif; ?>
-      <?php if ($terms_url) : ?><a href="<?php echo esc_url($terms_url); ?>">Доставка и оплата</a><?php endif; ?>
-    </nav>
-    <?php endif; ?>
-    <div class="footer-col">
-      <span class="label">Связаться</span>
-      <?php foreach ($contacts as $key => $ct) : ?>
-        <a href="<?php echo esc_url($ct[1]); ?>" <?php echo in_array($key, array('whatsapp', 'telegram', 'instagram'), true) ? 'target="_blank" rel="noopener"' : ''; ?>><?php echo esc_html($ct[0]); ?></a>
-      <?php endforeach; ?>
-      <button class="link-btn" type="button" data-enquire="Вопрос питомнику">Написать нам</button>
-      <span class="muted"><?php echo esc_html($s['city']); ?></span>
+      <div class="footer-col footer-contacts">
+        <span class="label">Связаться</span>
+        <?php foreach ($contacts as $key => $ct) : $ico = $key === 'email' ? 'mail' : $key; ?>
+          <a href="<?php echo esc_url($ct[1]); ?>" <?php echo in_array($key, array('whatsapp', 'telegram', 'instagram'), true) ? 'target="_blank" rel="noopener"' : ''; ?>><?php echo zh_icon($ico); ?><span><?php echo esc_html($ct[0]); ?></span></a>
+        <?php endforeach; ?>
+        <?php if (!$contacts) : ?><button class="link-btn footer-ask" type="button" data-enquire="Вопрос питомнику"><?php echo zh_icon('mail'); ?><span>Оставить заявку на сайте</span></button><?php endif; ?>
+        <?php if (!empty($s['city'])) : ?><span class="footer-city"><?php echo zh_icon('pin'); ?><span><?php echo esc_html($s['city']); ?></span></span><?php endif; ?>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <span>© <?php echo esc_html(wp_date('Y')); ?> ZHIBEK</span>
+      <?php if (zh_is_demo()) : ?><span class="demo-note">Демонстрационный режим: иллюстрации — примеры.<?php if (current_user_can('manage_options')) : ?> Выключить: Настройки → ZHIBEK.<?php endif; ?></span><?php endif; ?>
+      <span class="footer-links">
+        <?php $terms_url = zh_page_url('order-terms'); if ($terms_url) : ?><a href="<?php echo esc_url($terms_url); ?>">Как передаём котят</a><?php endif; ?>
+        <?php if (zh_privacy_url()) : ?><a href="<?php echo esc_url(zh_privacy_url()); ?>">Конфиденциальность</a><?php endif; ?>
+      </span>
     </div>
   </div>
-  <?php if (zh_is_demo()) : ?><p class="wrap demo-note">Сайт работает в демонстрационном режиме: иллюстрации и товары — примеры.<?php if (current_user_can('manage_options')) : ?> Выключить: Настройки → ZHIBEK.<?php endif; ?></p><?php endif; ?>
-  <div class="wrap footer-bottom">
-    <span>© <?php echo esc_html(wp_date('Y')); ?> ZHIBEK</span>
-    <?php if (zh_privacy_url()) : ?><a href="<?php echo esc_url(zh_privacy_url()); ?>">Конфиденциальность</a><?php endif; ?>
-  </div>
-  <div class="footer-mega" aria-hidden="true"><?php echo zh_wordmark('wm'); ?></div>
 </footer>
 
 <dialog id="enquiry" class="enquiry" aria-labelledby="enquiry-title">

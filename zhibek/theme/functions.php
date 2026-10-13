@@ -1,19 +1,16 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 
-require_once get_template_directory() . '/inc/localization.php';
 require_once get_template_directory() . '/inc/gallery.php';
 require_once get_template_directory() . '/inc/helpers.php';
 require_once get_template_directory() . '/inc/content.php';
 
 // Тексты сайта русские; язык админки определяет владелец.
 add_filter('locale', function ($locale) { return is_admin() ? $locale : 'ru_RU'; });
-add_filter('woocommerce_date_format', function () { return 'd.m.Y'; });
 
 add_action('after_setup_theme', function () {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
-    add_theme_support('woocommerce');
     add_theme_support('html5', array('search-form', 'gallery', 'caption', 'style', 'script'));
     register_nav_menus(array('primary' => 'Главное меню'));
 });
@@ -69,8 +66,8 @@ add_action('wp_enqueue_scripts', function () {
     $u = get_template_directory_uri();
     $d = get_template_directory();
     $v = function ($rel) use ($d) { $f = $d . '/assets/' . $rel; return is_file($f) ? (string) filemtime($f) : '5.1.0'; };
-    $css = array('base', 'home', 'inner');
-    if (class_exists('WooCommerce') && zh_is_shop_page()) { $css[] = 'shop'; }
+    // Стили внутренних страниц главной не нужны: меньше CSS, быстрее первая отрисовка на телефоне.
+    $css = is_front_page() ? array('base', 'home') : array('base', 'home', 'inner');
     $prev = array();
     foreach ($css as $name) {
         wp_enqueue_style('zh-' . $name, $u . '/assets/css/' . $name . '.css', $prev, $v('css/' . $name . '.css'));
@@ -81,7 +78,6 @@ add_action('wp_enqueue_scripts', function () {
         wp_dequeue_style('wp-block-library'); wp_dequeue_style('classic-theme-styles'); wp_dequeue_style('global-styles');
     }
     wp_enqueue_script('zh-site', $u . '/assets/js/site.js', array(), $v('js/site.js'), array('in_footer' => true, 'strategy' => 'defer'));
-    if (class_exists('WooCommerce')) { wp_enqueue_script('wc-cart-fragments'); }
     $contacts = zh_contacts();
     $fallback = isset($contacts['whatsapp']) ? $contacts['whatsapp'][1] : (isset($contacts['telegram']) ? $contacts['telegram'][1] : (isset($contacts['email']) ? $contacts['email'][1] : (isset($contacts['phone']) ? $contacts['phone'][1] : home_url('/'))));
     wp_localize_script('zh-site', 'ZHIBEK', array('ajaxUrl' => admin_url('admin-ajax.php'), 'nonce' => wp_create_nonce('zh_enquiry'), 'contact' => $fallback));
@@ -123,7 +119,6 @@ add_filter('body_class', function ($classes) {
 function zh_default_navigation($args = array()) {
     $id = is_array($args) ? ($args['menu_id'] ?? 'primary-menu') : ($args->menu_id ?? 'primary-menu');
     $links = array(array(home_url('/breeds/'), 'Породы'), array(home_url('/cats/'), 'Коты'), array(home_url('/#process'), 'Как забрать'), array(home_url('/#faq'), 'Вопросы'), array(home_url('/#journal'), 'Журнал'));
-    if (class_exists('WooCommerce')) { $links[] = array(zh_wc_url('shop'), 'Магазин'); }
     echo '<ul class="nav-items" id="' . esc_attr($id) . '">';
     foreach ($links as $i => $l) { echo '<li style="--i:' . (int) $i . '"><a href="' . esc_url($l[0]) . '">' . esc_html($l[1]) . '</a></li>'; }
     echo '</ul>';
@@ -135,72 +130,10 @@ function zh_navigation($id) {
 
 /* ------------------------------------------------------------- WooCommerce */
 
-/**
- * Скрипты и стили WooCommerce нужны на страницах магазина и у тех, у кого в корзине уже что-то лежит (число на значке корзины).
- * Остальным посетителям главная и страницы пород отдаются без jQuery и без CSS магазина: быстрее открываются на телефоне.
- */
-function zh_is_shop_page() { return function_exists('is_woocommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page()); }
+// Магазина на сайте нет. Если плагин WooCommerce всё ещё включён, его скрипты и стили не загружаются.
 add_action('wp_enqueue_scripts', function () {
-    if (!class_exists('WooCommerce') || zh_is_shop_page() || !empty($_COOKIE['woocommerce_items_in_cart'])) { return; }
-    foreach (array('wc-add-to-cart', 'wc-cart-fragments', 'woocommerce', 'jquery-blockui', 'js-cookie') as $handle) { wp_dequeue_script($handle); }
-}, 100);
-add_action('wp_enqueue_scripts', function () {
-    if (!class_exists('WooCommerce') || zh_is_shop_page()) { return; }
+    if (!class_exists('WooCommerce')) { return; }
+    foreach (array('wc-add-to-cart', 'wc-cart-fragments', 'woocommerce', 'jquery-blockui', 'js-cookie', 'sourcebuster-js', 'wc-order-attribution') as $handle) { wp_dequeue_script($handle); }
     foreach (array('wc-blocks-style', 'wc-blocks-vendors-style', 'wc-all-blocks-style', 'brands-styles', 'woocommerce-brands-style', 'woocommerce-inline') as $handle) { wp_dequeue_style($handle); }
 }, 9999);
-// Стили блоков WooCommerce иногда подключаются в подвале: снимаем их и там.
-add_action('wp_print_footer_scripts', function () {
-    if (!class_exists('WooCommerce') || zh_is_shop_page()) { return; }
-    foreach (array('wc-blocks-style', 'wc-blocks-vendors-style', 'brands-styles') as $handle) { wp_dequeue_style($handle); }
-}, 5);
-add_filter('woocommerce_enqueue_styles', function ($styles) { return zh_is_shop_page() ? $styles : array(); });
-
-add_filter('woocommerce_add_to_cart_fragments', function ($fragments) {
-    $n = WC()->cart ? (int) WC()->cart->get_cart_contents_count() : 0;
-    $fragments['span.cart-count'] = '<span class="cart-count" data-n="' . $n . '">' . $n . '</span>';
-    return $fragments;
-});
-add_filter('woocommerce_currency_symbol', function ($symbol, $currency) { return $currency === 'KZT' ? '₸' : $symbol; }, 10, 2);
-// Цены в виде «19 900 ₸»: без копеек, с неразрывными пробелами, знак валюты после суммы.
-add_filter('wc_get_price_decimals', function () { return 0; });
-add_filter('wc_get_price_thousand_separator', function () { return "\u{00A0}"; });
-add_filter('woocommerce_price_format', function () { return '%2$s&nbsp;%1$s'; });
-add_filter('pre_option_woocommerce_currency_pos', function () { return 'right_space'; });
-// Размеры картинок товаров под крупные карточки темы (применяются к новым загрузкам).
-add_filter('woocommerce_get_image_size_thumbnail', function () { return array('width' => 640, 'height' => 853, 'crop' => 1); });
-add_filter('woocommerce_get_image_size_single', function () { return array('width' => 960, 'height' => 0, 'crop' => 0); });
-add_filter('woocommerce_breadcrumb_defaults', function ($d) { $d['home'] = 'Главная'; $d['delimiter'] = ' / '; return $d; });
-
-/** Картинка товара: загруженная в WooCommerce или файл-заглушка из темы. */
-function zh_product_image($product) {
-    if ($product->get_image_id()) { echo wp_get_attachment_image($product->get_image_id(), 'woocommerce_thumbnail', false, array('loading' => 'lazy')); return; }
-    $file = basename((string) get_post_meta($product->get_id(), '_zhibek_image', true));
-    if ($file && is_file(get_template_directory() . '/assets/img/products/' . $file)) {
-        echo '<img src="' . esc_url(zh_img('products/' . $file)) . '" alt="' . esc_attr($product->get_name()) . '" loading="lazy" decoding="async">';
-        return;
-    }
-    echo wc_placeholder_img('woocommerce_thumbnail');
-}
-add_filter('woocommerce_product_get_image', function ($image, $product) {
-    if ($product->get_image_id()) { return $image; }
-    ob_start(); zh_product_image($product); return ob_get_clean();
-}, 10, 2);
-add_filter('woocommerce_single_product_image_thumbnail_html', function ($html, $attachment_id) {
-    global $product;
-    if (!$product || $attachment_id || $product->get_image_id() || !get_post_meta($product->get_id(), '_zhibek_demo', true)) { return $html; }
-    ob_start(); echo '<div class="woocommerce-product-gallery__image">'; zh_product_image($product); echo '</div>'; return ob_get_clean();
-}, 10, 2);
-
-remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
-add_filter('woocommerce_show_page_title', '__return_false');
-add_action('woocommerce_before_main_content', function () {
-    echo '<main id="main" class="shop-main">';
-    if (!is_product()) {
-        $title = is_shop() ? 'Магазин' : woocommerce_page_title(false);
-        echo '<header class="page-head"><div class="wrap"><span class="eyebrow">Для дома</span><h1 class="h1">' . esc_html($title) . '</h1>' . (is_shop() ? '<p class="lead">Вещи для кошки и дома.</p>' : '') . '</div></header>';
-    }
-    echo '<div class="wrap shop-wrap">';
-}, 10);
-add_action('woocommerce_after_main_content', function () { echo '</div></main>'; }, 10);
+add_filter('woocommerce_enqueue_styles', '__return_empty_array');
