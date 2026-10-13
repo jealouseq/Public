@@ -34,20 +34,19 @@ add_action('init', function () {
 add_action('wp_head', function () {
     $s = zh_settings();
     $title = wp_get_document_title();
-    $default = 'ZHIBEK — питомник абиссинских, бенгальских и сиамских кошек в Казахстане. Котята с родословной, ветпаспортом и чипом, доставка по стране.';
+    $default = 'ZHIBEK — питомник абиссинских, бенгальских и сиамских кошек в Казахстане. Коты и котята с родословной, ветпаспортом и чипом, доставка по стране.';
     $description = is_singular() && !post_password_required() ? wp_trim_words(wp_strip_all_tags(get_the_excerpt()), 28) : $default;
     if (!$description) { $description = $default; }
     $featured = is_singular() && !post_password_required() ? zh_public_thumbnail_id(get_post()) : 0;
     $image = $featured ? wp_get_attachment_image_url($featured, 'large') : zh_img('ui/og.jpg');
-    echo '<meta name="theme-color" content="#f3ece0"><meta name="color-scheme" content="light">';
-    echo '<link rel="preload" href="' . esc_url(zh_asset('fonts/Onest.woff2')) . '" as="font" type="font/woff2" crossorigin>';
-    if (is_front_page()) { echo '<link rel="preload" as="image" href="' . esc_url(zh_img('scenes/trio-960.webp')) . '" imagesrcset="' . esc_attr(zh_scene_srcset('trio')) . '" imagesizes="(min-width: 960px) 46vw, 92vw" fetchpriority="high">'; }
+    echo '<meta name="theme-color" content="#f2e9db"><meta name="color-scheme" content="light">';
+    foreach (array('Onest.woff2', 'PlayfairDisplay.woff2') as $font) { echo '<link rel="preload" href="' . esc_url(zh_asset('fonts/' . $font)) . '" as="font" type="font/woff2" crossorigin>'; }
     echo '<meta name="description" content="' . esc_attr($description) . '">';
     echo '<link rel="icon" type="image/svg+xml" href="' . esc_url(zh_img('ui/favicon.svg')) . '">';
     echo '<link rel="apple-touch-icon" href="' . esc_url(zh_img('ui/apple-touch-icon.png')) . '">';
     echo '<meta property="og:site_name" content="ZHIBEK"><meta property="og:locale" content="ru_RU"><meta property="og:title" content="' . esc_attr($title) . '"><meta property="og:description" content="' . esc_attr($description) . '"><meta property="og:image" content="' . esc_url($image) . '"><meta property="og:type" content="' . (is_singular('post') ? 'article' : 'website') . '"><meta name="twitter:card" content="summary_large_image">';
     // Фон до загрузки стилей и страховка: если скрипт не загрузится, блоки с появлением всё равно станут видимыми.
-    echo '<style id="zh-critical">html{background:#f3ece0}</style>';
+    echo '<style id="zh-critical">html{background:#f2e9db}</style>';
     echo '<script>(function(d,w){var e=d.documentElement;e.classList.add("js");w.__zhT=setTimeout(function(){e.classList.add("reveal-fail")},4500)})(document,window)</script>';
     if (is_front_page()) {
         $same = array_values(array_filter(array($s['instagram'] ?? '')));
@@ -69,7 +68,7 @@ add_action('admin_notices', function () {
 add_action('wp_enqueue_scripts', function () {
     $u = get_template_directory_uri();
     $d = get_template_directory();
-    $v = function ($rel) use ($d) { $f = $d . '/assets/' . $rel; return is_file($f) ? (string) filemtime($f) : '4.0.0'; };
+    $v = function ($rel) use ($d) { $f = $d . '/assets/' . $rel; return is_file($f) ? (string) filemtime($f) : '5.0.0'; };
     $css = array('base', 'home', 'inner');
     if (class_exists('WooCommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page())) { $css[] = 'shop'; }
     $prev = array();
@@ -78,7 +77,7 @@ add_action('wp_enqueue_scripts', function () {
         $prev = array('zh-' . $name);
     }
     // Служебные стили блоков WordPress на страницах темы не нужны.
-    if (is_front_page() || is_singular(array('zhibek_breed', 'zhibek_kitten')) || is_post_type_archive(array('zhibek_breed', 'zhibek_kitten'))) {
+    if (is_front_page() || is_singular(array('zhibek_breed', 'zhibek_cat')) || is_post_type_archive(array('zhibek_breed', 'zhibek_cat'))) {
         wp_dequeue_style('wp-block-library'); wp_dequeue_style('classic-theme-styles'); wp_dequeue_style('global-styles');
     }
     wp_enqueue_script('zh-site', $u . '/assets/js/site.js', array(), $v('js/site.js'), array('in_footer' => true, 'strategy' => 'defer'));
@@ -103,8 +102,8 @@ add_filter('pre_get_document_title', function ($title) {
 add_action('pre_get_posts', function ($query) {
     if (is_admin() || (defined('WP_CLI') && WP_CLI) || wp_doing_cron() || (defined('REST_REQUEST') && REST_REQUEST) || $query->is_singular()) { return; }
     $types = (array) $query->get('post_type');
-    if (array_intersect($types, array('zhibek_breed', 'zhibek_kitten'))) { $query->set('has_password', false); }
-    if ($query->is_main_query() && !is_admin() && $query->is_post_type_archive('zhibek_kitten')) {
+    if (array_intersect($types, array('zhibek_breed', 'zhibek_cat'))) { $query->set('has_password', false); }
+    if ($query->is_main_query() && !is_admin() && $query->is_post_type_archive('zhibek_cat')) {
         $query->set('posts_per_page', -1);
         if (!zh_is_demo()) { $query->set('meta_query', array(array('key' => '_zhibek_demo', 'compare' => 'NOT EXISTS'))); }
     }
@@ -124,7 +123,7 @@ add_filter('body_class', function ($classes) {
 
 function zh_default_navigation($args = array()) {
     $id = is_array($args) ? ($args['menu_id'] ?? 'primary-menu') : ($args->menu_id ?? 'primary-menu');
-    $links = array(array(home_url('/breeds/'), 'Породы'), array(home_url('/kittens/'), 'Котята'), array(home_url('/#process'), 'Как забрать котёнка'), array(home_url('/#faq'), 'Вопросы'), array(home_url('/#journal'), 'Журнал'));
+    $links = array(array(home_url('/breeds/'), 'Породы'), array(home_url('/cats/'), 'Коты'), array(home_url('/#process'), 'Как забрать'), array(home_url('/#faq'), 'Вопросы'), array(home_url('/#journal'), 'Журнал'));
     if (class_exists('WooCommerce')) { $links[] = array(zh_wc_url('shop'), 'Магазин'); }
     echo '<ul class="nav-items" id="' . esc_attr($id) . '">';
     foreach ($links as $i => $l) { echo '<li style="--i:' . (int) $i . '"><a href="' . esc_url($l[0]) . '">' . esc_html($l[1]) . '</a></li>'; }

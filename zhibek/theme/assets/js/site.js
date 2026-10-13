@@ -109,32 +109,147 @@
     });
   }
 
-  /* ---------- фильтр котят ---------- */
-  const filters = $$('.filter');
-  if (filters.length) {
-    const cards = $$('.kcard');
-    const empty = $('.k-empty[data-filter-empty]');
-    const apply = (key, pushUrl) => {
+  /* ---------- фильтры котов: порода и возраст ---------- */
+  const filterBox = $('[data-filters]');
+  const grid = $('[data-cgrid]');
+  if (filterBox && grid) {
+    const cards = $$('.ccard', grid);
+    const empty = $('[data-filter-empty]');
+    const state = { breed: 'all', kind: 'all' };
+    const apply = (pushUrl) => {
       let shown = 0;
       cards.forEach((c) => {
-        const ok = key === 'all' || c.dataset.breed === key;
+        const ok = (state.breed === 'all' || c.dataset.breed === state.breed) && (state.kind === 'all' || c.dataset.kind === state.kind);
+        const was = !c.classList.contains('is-hidden');
         c.classList.toggle('is-hidden', !ok);
-        if (ok) { shown++; c.style.animation = 'none'; void c.offsetWidth; c.style.animation = `rise .6s var(--ease) ${Math.min(shown, 8) * 40}ms both`; }
+        if (ok) { shown++; if (!was) { c.style.animation = 'none'; void c.offsetWidth; c.style.animation = `rise .6s var(--ease) ${Math.min(shown, 8) * 40}ms both`; } }
       });
-      filters.forEach((f) => { const on = f.dataset.filter === key; f.classList.toggle('is-active', on); f.setAttribute('aria-pressed', String(on)); });
+      $$('.filter', filterBox).forEach((f) => { const on = state[f.dataset.group] === f.dataset.value; f.classList.toggle('is-active', on); f.setAttribute('aria-pressed', String(on)); });
       if (empty) empty.hidden = shown > 0;
       if (pushUrl && window.history && history.replaceState) {
-        const f = filters.find((x) => x.dataset.filter === key);
         const u = new URL(window.location.href);
-        if (key === 'all' || !f || !f.dataset.slug) u.searchParams.delete('breed'); else u.searchParams.set('breed', f.dataset.slug);
+        if (state.breed === 'all') u.searchParams.delete('breed'); else u.searchParams.set('breed', state.breed);
         history.replaceState(null, '', u);
       }
     };
-    filters.forEach((f) => f.addEventListener('click', () => apply(f.dataset.filter, true)));
+    filterBox.addEventListener('click', (e) => {
+      const f = e.target.closest('.filter'); if (!f) return;
+      state[f.dataset.group] = f.dataset.value; apply(f.dataset.group === 'breed');
+    });
     const want = new URL(window.location.href).searchParams.get('breed');
-    const pre = want && filters.find((f) => f.dataset.slug === want);
-    if (pre) apply(pre.dataset.filter, false);
+    if (want && $(`.filter[data-group="breed"][data-value="${CSS.escape(want)}"]`, filterBox)) { state.breed = want; apply(false); }
   }
+
+  /* ---------- нить на странице «как забрать»: прогресс по прокрутке ---------- */
+  const thread = $('[data-thread]');
+  if (thread) {
+    const steps = $$('.step', thread);
+    let raf = 0;
+    const draw = () => {
+      raf = 0;
+      const r = thread.getBoundingClientRect();
+      const mark = window.innerHeight * 0.6;
+      const p = Math.max(0, Math.min(1, (mark - r.top) / r.height));
+      thread.style.setProperty('--p', p.toFixed(4));
+      steps.forEach((st) => { const sr = st.getBoundingClientRect(); st.classList.toggle('is-passed', sr.top < mark); });
+    };
+    const queue = () => { if (!raf) raf = requestAnimationFrame(draw); };
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    draw();
+  }
+
+  /* ---------- горизонтальные ленты: перетаскивание мышью ---------- */
+  $$('[data-drag]').forEach((rail) => {
+    let down = false, sx = 0, sl = 0, moved = false;
+    rail.addEventListener('pointerdown', (e) => { if (e.pointerType !== 'mouse') return; down = true; moved = false; sx = e.clientX; sl = rail.scrollLeft; });
+    window.addEventListener('pointermove', (e) => {
+      if (!down) return;
+      const dx = e.clientX - sx;
+      if (Math.abs(dx) > 4) { moved = true; rail.classList.add('is-drag'); }
+      rail.scrollLeft = sl - dx;
+    });
+    window.addEventListener('pointerup', () => { down = false; rail.classList.remove('is-drag'); });
+    rail.addEventListener('click', (e) => { if (moved) { e.preventDefault(); moved = false; } }, true);
+  });
+
+  /* ---------- частицы: кот собирается из точек и разлетается от курсора ---------- */
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  $$('[data-particles]').forEach((host) => {
+    const canvas = $('canvas', host);
+    if (!canvas || reduce || !canvas.getContext) return;
+    const ctx = canvas.getContext('2d', { alpha: true });
+    const small = window.matchMedia('(max-width: 700px)').matches;
+    const S = small ? 420 : 620;
+    canvas.width = S; canvas.height = S;
+    const img = new Image();
+    img.decoding = 'async';
+    let P = null, N = 0, live = false, running = false, t0 = 0, raf = 0;
+    const ptr = { x: -999, y: -999, on: false };
+    const build = () => {
+      const off = document.createElement('canvas'); off.width = S; off.height = S;
+      const o = off.getContext('2d', { willReadFrequently: true });
+      const k = Math.min(S / img.naturalWidth, S / img.naturalHeight) * 0.96;
+      const w = img.naturalWidth * k, h = img.naturalHeight * k;
+      o.drawImage(img, (S - w) / 2, S - h - S * 0.02, w, h);
+      const d = o.getImageData(0, 0, S, S).data;
+      const step = small ? 5 : 4;
+      const pts = [];
+      for (let y = 0; y < S; y += step) for (let x = 0; x < S; x += step) {
+        const i = (y * S + x) * 4;
+        if (d[i + 3] > 120) pts.push([x + (Math.random() - .5) * step, y + (Math.random() - .5) * step, d[i], d[i + 1], d[i + 2]]);
+      }
+      N = pts.length;
+      P = { hx: new Float32Array(N), hy: new Float32Array(N), x: new Float32Array(N), y: new Float32Array(N), vx: new Float32Array(N), vy: new Float32Array(N), c: new Uint32Array(N), delay: new Float32Array(N) };
+      for (let i = 0; i < N; i++) {
+        const p = pts[i];
+        P.hx[i] = p[0]; P.hy[i] = p[1];
+        const a = Math.random() * Math.PI * 2, r = S * (0.5 + Math.random() * 0.7);
+        P.x[i] = S / 2 + Math.cos(a) * r; P.y[i] = S / 2 + Math.sin(a) * r;
+        const lift = (v) => Math.min(255, v * 0.7 + 95) | 0;
+        P.c[i] = (255 << 24) | (lift(p[4]) << 16) | (lift(p[3]) << 8) | lift(p[2]);
+        P.delay[i] = Math.random() * 0.9;
+      }
+      host.classList.add('is-live');
+    };
+    const frame = (now) => {
+      raf = 0;
+      if (!running) return;
+      const t = (now - t0) / 1000;
+      const buf = ctx.createImageData(S, S);
+      const px = new Uint32Array(buf.data.buffer);
+      const R = S * 0.13, R2 = R * R, dpr = S / (host.clientWidth || S);
+      for (let i = 0; i < N; i++) {
+        const e = Math.max(0, Math.min(1, (t - P.delay[i]) / 1.6));
+        const k = 0.012 + 0.07 * e * e;
+        let ax = (P.hx[i] - P.x[i]) * k, ay = (P.hy[i] - P.y[i]) * k;
+        if (ptr.on) {
+          const dx = P.x[i] - ptr.x, dy = P.y[i] - ptr.y, dd = dx * dx + dy * dy;
+          if (dd < R2) { const f = (1 - dd / R2) * 3.4; const L = Math.sqrt(dd) + 0.001; ax += dx / L * f; ay += dy / L * f; }
+        }
+        P.vx[i] = (P.vx[i] + ax) * 0.86; P.vy[i] = (P.vy[i] + ay) * 0.86;
+        P.x[i] += P.vx[i]; P.y[i] += P.vy[i];
+        const x = P.x[i] | 0, y = P.y[i] | 0;
+        if (x > 0 && x < S - 2 && y > 0 && y < S - 2) { const j = y * S + x; px[j] = P.c[i]; px[j + 1] = P.c[i]; px[j + S] = P.c[i]; px[j + S + 1] = P.c[i]; }
+      }
+      ctx.putImageData(buf, 0, 0);
+      raf = requestAnimationFrame(frame);
+    };
+    const start = () => { if (running || !P) return; running = true; if (!t0) t0 = performance.now(); raf = requestAnimationFrame(frame); };
+    const stop = () => { running = false; if (raf) cancelAnimationFrame(raf); raf = 0; };
+    const setPtr = (e) => { const r = canvas.getBoundingClientRect(); ptr.x = (e.clientX - r.left) * (S / r.width); ptr.y = (e.clientY - r.top) * (S / r.height); ptr.on = true; };
+    host.addEventListener('pointermove', setPtr);
+    host.addEventListener('pointerdown', setPtr);
+    host.addEventListener('pointerleave', () => { ptr.on = false; });
+    host.addEventListener('pointerup', () => { if (window.matchMedia('(hover: none)').matches) ptr.on = false; });
+    const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+      if (en.isIntersecting) {
+        if (!img.src) { img.onload = () => { build(); live = true; if (en.target.dataset.on) start(); }; img.src = host.dataset.src; }
+        host.dataset.on = '1'; if (live) { t0 = t0 || performance.now(); start(); }
+      } else { host.dataset.on = ''; stop(); }
+    }), { threshold: 0.15 });
+    io.observe(host);
+  });
 
   /* ---------- галерея на страницах породы и котёнка ---------- */
   $$('[data-gallery]').forEach((g) => {
@@ -170,6 +285,60 @@
       box.onkeydown = (ev) => { if (ev.key === 'ArrowLeft') go(-1); if (ev.key === 'ArrowRight') go(1); };
       box.showModal(); doc.classList.add('dialog-open');
     });
+  });
+
+  /* ---------- сцены с котом: кадры меняются при прокрутке ---------- */
+  const sceneReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const saveData = !!(navigator.connection && navigator.connection.saveData);
+  $$('[data-scene]').forEach((scene) => {
+    const sticky = $('.scene-sticky', scene);
+    const canvas = $('canvas', scene);
+    const n = Number(scene.dataset.frames), base = scene.dataset.base;
+    if (!sticky || !canvas || !n || !canvas.getContext || sceneReduce || saveData) { scene.classList.add('is-end'); return; }
+    const ctx = canvas.getContext('2d');
+    const frames = new Array(n + 1);
+    let target = 1, shown = 0, started = false, raf = 0, near = false;
+    const url = (i) => `${base}frame_${String(i).padStart(4, '0')}.webp`;
+    const draw = () => {
+      raf = 0;
+      let i = target;
+      if (!frames[i]) { // ближайший загруженный кадр
+        let d = 1;
+        while (d < n && !frames[i - d] && !frames[i + d]) d++;
+        i = frames[i - d] ? i - d : (frames[i + d] ? i + d : 0);
+      }
+      if (i && i !== shown) { ctx.clearRect(0, 0, canvas.width, canvas.height); ctx.drawImage(frames[i], 0, 0, canvas.width, canvas.height); shown = i; scene.classList.add('is-live'); }
+    };
+    const load = () => {
+      if (started) return; started = true;
+      // сначала каждый пятый кадр, затем остальные: прокрутка работает, пока догружается
+      const order = []; for (let k = 0; k < 5; k++) for (let i = 1 + k; i <= n; i += 5) order.push(i);
+      let at = 0, active = 0;
+      const next = () => {
+        while (active < 4 && at < order.length) {
+          const i = order[at++]; active++;
+          const im = new Image(); im.decoding = 'async';
+          im.onload = () => { frames[i] = im; active--; if (!raf) raf = requestAnimationFrame(draw); next(); };
+          im.onerror = () => { active--; next(); };
+          im.src = url(i);
+        }
+      };
+      next();
+    };
+    const update = () => {
+      const r = scene.getBoundingClientRect();
+      const span = Math.max(1, r.height - sticky.offsetHeight);
+      const p = Math.max(0, Math.min(1, -r.top / span));
+      sticky.style.setProperty('--p', p.toFixed(3));
+      scene.classList.toggle('is-end', p > 0.6);
+      target = Math.max(1, Math.min(n, 1 + Math.round(p * (n - 1))));
+      if (!raf) raf = requestAnimationFrame(draw);
+    };
+    let ticking = false;
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { ticking = false; if (near) update(); }); } };
+    new IntersectionObserver((en) => { near = en[0].isIntersecting; if (near) { load(); update(); } }, { rootMargin: '120% 0px' }).observe(scene);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
   });
 
   doc.classList.add('is-ready');

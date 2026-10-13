@@ -20,7 +20,7 @@ function zh_gallery_video_sanitize_id($value) {
 }
 
 add_action('init', function () {
-    foreach (array('zhibek_breed', 'zhibek_kitten') as $type) {
+    foreach (array('zhibek_breed', 'zhibek_cat') as $type) {
         register_post_meta($type, '_zhibek_gallery_ids', array(
             'type' => 'array', 'single' => true, 'default' => array(),
             'show_in_rest' => array('schema' => array('type' => 'array', 'items' => array('type' => 'integer'), 'maxItems' => 40)),
@@ -36,7 +36,7 @@ add_action('init', function () {
 }, 20);
 
 add_action('add_meta_boxes', function () {
-    foreach (array('zhibek_breed', 'zhibek_kitten') as $type) {
+    foreach (array('zhibek_breed', 'zhibek_cat') as $type) {
         add_meta_box('zhibek-photo-gallery', 'Фотогалерея', 'zh_gallery_metabox', $type, 'normal', 'default');
     }
 });
@@ -59,7 +59,7 @@ function zh_gallery_metabox($post) {
 }
 
 function zh_gallery_save($post_id, $post) {
-    if (!in_array($post->post_type, array('zhibek_breed', 'zhibek_kitten'), true) || wp_is_post_revision($post_id) || wp_is_post_autosave($post_id)) { return; }
+    if (!in_array($post->post_type, array('zhibek_breed', 'zhibek_cat'), true) || wp_is_post_revision($post_id) || wp_is_post_autosave($post_id)) { return; }
     if (!isset($_POST['zhibek_gallery_nonce']) || !is_string($_POST['zhibek_gallery_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['zhibek_gallery_nonce'])), 'zhibek_save_gallery') || !current_user_can('edit_post', $post_id)) { return; }
     if (isset($_POST['zhibek_gallery_ids']) && is_string($_POST['zhibek_gallery_ids'])) {
         $value = wp_unslash($_POST['zhibek_gallery_ids']);
@@ -74,7 +74,7 @@ add_action('save_post', 'zh_gallery_save', 20, 2);
 add_action('admin_enqueue_scripts', function ($hook) {
     if (!in_array($hook, array('post.php', 'post-new.php'), true)) { return; }
     $screen = get_current_screen();
-    if (!$screen || !in_array($screen->post_type, array('zhibek_breed', 'zhibek_kitten'), true)) { return; }
+    if (!$screen || !in_array($screen->post_type, array('zhibek_breed', 'zhibek_cat'), true)) { return; }
     wp_enqueue_media();
     wp_add_inline_style('common', '.zhibek-gallery-admin{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}.zhibek-gallery-admin li{width:170px;padding:10px;border:1px solid #dcdcde;background:#fff}.zhibek-gallery-admin img{display:block;width:100%;height:130px;object-fit:cover}.zhibek-gallery-admin span{display:block;overflow-wrap:anywhere;margin:8px 0}.zhibek-gallery-admin button{margin:0 0 4px}');
     wp_add_inline_script('media-editor', <<<'JS'
@@ -157,7 +157,7 @@ function zh_gallery_attachment_is_public($id) {
 
 function zh_gallery_video($post) {
     $post = get_post($post);
-    if (!$post || !in_array($post->post_type, array('zhibek_breed', 'zhibek_kitten'), true) || $post->post_status !== 'publish' || $post->post_password) { return null; }
+    if (!$post || !in_array($post->post_type, array('zhibek_breed', 'zhibek_cat'), true) || $post->post_status !== 'publish' || $post->post_password) { return null; }
     $id = zh_gallery_video_sanitize_id(get_post_meta($post->ID, '_zhibek_video_id', true));
     $attachment = $id ? get_post($id) : null;
     if (!$attachment || $attachment->post_password || !in_array($attachment->post_status, array('inherit', 'publish'), true)) { return null; }
@@ -174,7 +174,7 @@ function zh_gallery_video($post) {
 /** Снимки записи: основная фотография + галерея. Если ничего не загружено, берётся вырезка из темы. */
 function zh_gallery_items($post) {
     $post = get_post($post);
-    if (!$post || !in_array($post->post_type, array('zhibek_breed', 'zhibek_kitten'), true) || $post->post_status !== 'publish' || $post->post_password) { return array(); }
+    if (!$post || !in_array($post->post_type, array('zhibek_breed', 'zhibek_cat'), true) || $post->post_status !== 'publish' || $post->post_password) { return array(); }
     $ids = zh_gallery_sanitize_ids(get_post_meta($post->ID, '_zhibek_gallery_ids', true));
     $featured = get_post_thumbnail_id($post);
     if ($featured) { array_unshift($ids, $featured); }
