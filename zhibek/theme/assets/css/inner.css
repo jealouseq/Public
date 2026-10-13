@@ -218,14 +218,6 @@
 .prose-wrap { padding-bottom: var(--sec); }
 
 .posts { display: grid; gap: 0; border-top: 2px solid var(--ink); }
-.post-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 24px; padding: 28px 0; border-bottom: 1px solid var(--line); color: inherit; text-decoration: none; transition: padding .45s var(--ease), background-color .3s, color .3s; }
-.post-card:hover { padding-inline: 22px; background: var(--ink); color: var(--on-dark); }
-.post-card .meta { font-size: .9375rem; font-weight: 600; color: var(--muted); grid-column: 1 / -1; }
-.post-card:hover .meta { color: var(--on-dark-2); }
-.post-card h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); color: inherit; font-weight: 600; }
-.post-card p { margin: 10px 0 0; max-width: 40em; opacity: .85; }
-.post-card .go { display: inline-flex; align-items: center; gap: 8px; align-self: center; font-weight: 650; }
-.post-card .go .arr { width: 22px; height: 22px; }
 
 .pagination { margin-top: 48px; }
 .pagination .nav-links { display: flex; flex-wrap: wrap; gap: 8px; }

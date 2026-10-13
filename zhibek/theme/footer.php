@@ -2,7 +2,8 @@
 $s = zh_settings();
 $contacts = zh_contacts();
 $c = zh_content();
-$show_cta = !is_front_page();
+// Большой блок «Напишите нам» нужен там, где человек уже выбрал кота или статью; на остальных страницах хватает кнопки в шапке и ссылки в подвале.
+$show_cta = is_post_type_archive('zhibek_cat') || is_singular(array('zhibek_cat', 'post'));
 $peek = zh_has_img('pets/peek-2.webp') ? zh_img('pets/peek-2.webp') : '';
 $peek_dlg = zh_has_img('pets/peek.webp') ? zh_img('pets/peek.webp') : '';
 ?>
@@ -32,7 +33,6 @@ $peek_dlg = zh_has_img('pets/peek.webp') ? zh_img('pets/peek.webp') : '';
       <div class="footer-brand">
         <a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><?php echo zh_brand(); ?></a>
         <p><?php echo esc_html($c['footer']['tagline']); ?></p>
-        <button class="btn btn-primary" type="button" data-enquire="Консультация"><span>Написать нам</span><?php echo zh_arrow(); ?></button>
       </div>
       <nav class="footer-col" aria-label="Питомник">
         <span class="label">Питомник</span>

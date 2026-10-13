@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ZHIBEK Cattery
  * Description: Породы, коты, заявки и демо-контент для сайта питомника ZHIBEK.
- * Version: 4.2.1
+ * Version: 4.3.0
  * Requires at least: 6.5
  * Requires PHP: 8.0
  * Author: ZHIBEK
@@ -130,6 +130,11 @@ function zhibek_migrate_demo() {
 }
 add_action('init', 'zhibek_migrate_demo', 20);
 
+/** Текст страницы «Конфиденциальность»: владелец дополняет его реквизитами перед запуском. */
+function zhibek_privacy_html() {
+    return '<p><strong>Оператор данных:</strong> владелец сайта ZHIBEK. Реквизиты (ИП или ТОО, БИН/ИИН, адрес, email) владелец указывает здесь перед запуском.</p><h2>Какие данные мы получаем</h2><p>Через форму заявки — имя, телефон или email, город, интересующая порода и текст сообщения.</p><h2>Зачем</h2><p>Чтобы ответить на заявку и согласовать знакомство с котёнком. Данные не передаются третьим лицам.</p><h2>Где хранятся</h2><p>Заявки сохраняются в закрытом разделе панели сайта и доступны только администратору. Сохранение происходит только после вашего согласия в форме.</p><h2>Cookie</h2><p>Рекламных и аналитических cookie на сайте по умолчанию нет. Если владелец подключит счётчики, он расскажет о них здесь.</p><h2>Ваши права</h2><p>Вы можете запросить уточнение или удаление своих данных, написав по контактам, указанным на сайте.</p>';
+}
+
 /**
  * Версия 4.2: магазина на сайте больше нет. Демо-товары, которые раньше создавал плагин, переносятся в корзину WordPress
  * (записи с пометкой «демо»), а их картинки из медиатеки удаляются. Сам WooCommerce и его страницы не трогаем: его можно отключить в «Плагинах».
@@ -144,6 +149,20 @@ function zhibek_remove_demo_shop() {
     update_option('zhibek_cleanup_6', 1);
 }
 add_action('init', 'zhibek_remove_demo_shop', 21);
+
+/**
+ * Версия 4.3: страница «Конфиденциальность» от версий с магазином упоминала заказы и оплату.
+ * Обновляем её один раз и только если владелец ещё не менял этот текст.
+ */
+function zhibek_refresh_privacy() {
+    if (get_option('zhibek_cleanup_7')) { return; }
+    $privacy = get_page_by_path('privacy');
+    if ($privacy && false !== strpos($privacy->post_content, 'Через магазин')) {
+        wp_update_post(array('ID' => $privacy->ID, 'post_content' => zhibek_privacy_html()));
+    }
+    update_option('zhibek_cleanup_7', 1);
+}
+add_action('init', 'zhibek_refresh_privacy', 22);
 
 function zhibek_maybe_flush_rewrite() {
     if (get_option('zhibek_flush_rewrite')) { flush_rewrite_rules(false); delete_option('zhibek_flush_rewrite'); }
@@ -780,7 +799,7 @@ function zhibek_seed_content() {
         $old_id = zhibek_seed_find('kitten-' . $old, 'zhibek_cat');
         if ($old_id && get_post_meta($old_id, '_zhibek_demo', true)) { wp_delete_post($old_id, true); }
     }
-    $privacy = zhibek_seed_post('page-privacy', array('post_type' => 'page', 'post_title' => 'Конфиденциальность', 'post_name' => 'privacy', 'post_content' => '<p><strong>Оператор данных:</strong> владелец сайта ZHIBEK. Реквизиты (ИП или ТОО, БИН/ИИН, адрес, email) владелец указывает здесь перед запуском.</p><h2>Какие данные мы получаем</h2><p>Через форму заявки — имя, телефон или email, город, интересующая порода и текст сообщения.</p><h2>Зачем</h2><p>Чтобы ответить на заявку и согласовать знакомство с котёнком. Данные не передаются третьим лицам.</p><h2>Где хранятся</h2><p>Заявки сохраняются в закрытом разделе панели сайта и доступны только администратору. Сохранение происходит только после вашего согласия в форме.</p><h2>Cookie</h2><p>Рекламных и аналитических cookie на сайте по умолчанию нет. Если владелец подключит счётчики, он расскажет о них здесь.</p><h2>Ваши права</h2><p>Вы можете запросить уточнение или удаление своих данных, написав по контактам, указанным на сайте.</p>'));
+    $privacy = zhibek_seed_post('page-privacy', array('post_type' => 'page', 'post_title' => 'Конфиденциальность', 'post_name' => 'privacy', 'post_content' => zhibek_privacy_html()));
     if (!(int) get_option('wp_page_for_privacy_policy') && 'publish' === get_post_status($privacy)) { update_option('wp_page_for_privacy_policy', $privacy); }
     zhibek_seed_post('page-order-terms', array('post_type' => 'page', 'post_title' => 'Как передаём котят', 'post_name' => 'order-terms', 'post_content' => '<h2>Знакомство</h2><p>Сначала вы знакомитесь с питомником и котёнком: фото, видео, видеозвонок. Заявка на сайте ничего не фиксирует и не требует оплаты.</p><h2>Договор и документы</h2><p>Условия, документы и порядок расчёта обсуждаются лично и фиксируются в договоре. Оплата через сайт не принимается.</p><h2>Передача</h2><p>Котёнка можно забрать у нас или встретить в своём городе. Маршрут, сроки и стоимость согласуются отдельно. Владелец уточняет условия здесь перед запуском.</p>'));
     $category = term_exists('journal', 'category');
