@@ -138,14 +138,6 @@ function zh_wordmark($class = 'wm') {
 
 function zh_brand() { return zh_mark('mark') . zh_wordmark('wm'); }
 
-/** Наклейка из набора (img/stickers/*.webp). */
-function zh_sticker($name, $class = '') {
-    $file = 'stickers/' . $name . '.webp';
-    if (!zh_has_img($file)) { return ''; }
-    $size = @getimagesize(get_template_directory() . '/assets/img/' . $file);
-    return '<img class="sticker ' . esc_attr($class) . '" src="' . esc_url(zh_img($file)) . '" alt=""' . ($size ? ' width="' . (int) $size[0] . '" height="' . (int) $size[1] . '"' : '') . ' loading="lazy" decoding="async" draggable="false" aria-hidden="true">';
-}
-
 /* ------------------------------------------------------------ породы */
 
 /** Цвет породы: насыщенный тон, на котором кот «загорается». Для новой породы берётся поле «Цвет» из карточки. */
@@ -510,7 +502,6 @@ function zh_map_svg() {
             <span class="kz-label" data-city="<?php echo esc_attr($name); ?>" style="<?php echo $pct($xy); ?>"><?php echo esc_html($name); ?></span>
         <?php endforeach; ?>
         <p class="map-stat"><b><?php echo (int) count($on); ?></b><span>городов<br>на карте</span></p>
-        <span class="hand map-hint" aria-hidden="true">наведите на город</span>
     </div>
     <?php
     return ob_get_clean();
@@ -547,8 +538,3 @@ function zh_archive_title() {
 }
 
 /** Наклейка для статьи: одна и та же у одной записи, разные у разных. */
-function zh_post_sticker($post = null) {
-    $post = get_post($post);
-    $set = array('yarn', 'fish', 'paw', 'tail', 'whiskers', 'ears');
-    return $set[((int) $post->ID) % count($set)];
-}

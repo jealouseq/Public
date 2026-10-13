@@ -12,7 +12,6 @@ PETS = {
     'bengal': {'stand': 26, 'sit': 27, 'lie': 28, 'stretch': 29, 'walk': 30, 'play': 31, 'lick': 32, 'up': 33, 'paw': 34, 'sleep': 35},
     'siamese': {'sit': 20, 'stand': 21, 'stretch': 22, 'paw': 23, 'up': 24, 'lie': 25},
 }
-STICKERS = {'paw': 46, 'face': 47, 'sit': 48, 'sleep': 49, 'ears': 50, 'whiskers': 51, 'yarn': 52, 'fish': 53, 'tail': 54, 'jump': 55}
 
 
 def find(n):
@@ -62,8 +61,6 @@ for breed in ('abyssinian', 'bengal', 'siamese'):
     top = im.crop((0, 0, im.width, round(im.height * 0.30)))
     top = top.crop(top.getchannel('A').point(lambda v: 255 if v > 12 else 0).getbbox())
     save(top, os.path.join(OUT, 'pets', f'{breed}-head.webp'), 520, 80)
-for name, n in STICKERS.items():
-    save(cut(n), os.path.join(OUT, 'stickers', f'{name}.webp'), 520, 88)
 save(defog(cut(58)), os.path.join(OUT, 'pets', 'peek.webp'), 1100, 82)
 save(defog(cut(59)), os.path.join(OUT, 'pets', 'peek-2.webp'), 1100, 82)
 

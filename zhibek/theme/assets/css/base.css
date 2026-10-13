@@ -6,15 +6,15 @@
 @font-face { font-family: 'Caveat'; src: url('../fonts/Caveat.woff2') format('woff2'); font-weight: 600; font-style: normal; font-display: swap; }
 
 :root {
-  --paper: #f2e9db;
-  --paper-2: #e8dcc8;
-  --card: #fbf6ec;
+  --paper: #f3f0e9;
+  --paper-2: #e7e2d6;
+  --card: #faf8f3;
   --ink: #1f1410;
   --ink-2: #43372e;
   --muted: #65584b;
   --line: rgba(31, 20, 16, .18);
   --line-soft: rgba(31, 20, 16, .1);
-  --clay: #b3401a;
+  --clay: #6a2230;
   --gold: #f0b95a;
   --on-dark: #f5ecdc;
   --on-dark-2: #d8c9b2;
@@ -56,7 +56,7 @@ img, svg, video, canvas { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-underline-offset: .22em; }
 button { font: inherit; color: inherit; }
 h1, h2, h3, h4 { margin: 0; color: var(--ink); font-family: var(--f-display); font-weight: 600; line-height: 1.12; letter-spacing: -.012em; text-wrap: balance; }
-h1 em, h2 em, h3 em { font-style: italic; font-weight: 600; color: var(--clay); }
+h1 em, h2 em, h3 em { font-style: normal; font-weight: inherit; color: inherit; }
 p { margin: 0 0 1em; text-wrap: pretty; }
 ul, ol { margin: 0; padding: 0; }
 :focus-visible { outline: 3px solid var(--clay); outline-offset: 3px; border-radius: 6px; }
@@ -239,7 +239,7 @@ html.menu-open .menu-nav li { opacity: 1; transform: none; transition-delay: cal
 .footer-grid { display: grid; gap: 40px 32px; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; padding-bottom: clamp(36px, 4vw, 60px); }
 .footer-brand p { max-width: 26ch; margin: 18px 0 0; color: var(--muted); }
 .footer-col { display: grid; align-content: start; gap: 4px; }
-.footer-col .label { margin-bottom: 10px; font-size: .8125rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: #8c3412; }
+.footer-col .label { margin-bottom: 10px; font-size: .8125rem; font-weight: 700;  color: var(--clay); }
 .footer-col a { display: flex; align-items: center; gap: 10px; min-height: 36px; text-decoration: none; font-weight: 550; color: var(--ink); }
 .footer-col a:hover, .footer-ask:hover { color: var(--clay); }
 .footer-ask { display: flex; align-items: center; gap: 10px; min-height: 36px; font-weight: 550; color: var(--ink); text-decoration: none; }

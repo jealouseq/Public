@@ -30,13 +30,13 @@ while (have_posts()) : the_post();
 <main id="main">
   <section class="bhero" style="--bg:<?php echo esc_attr($color); ?>">
     <div class="wrap bhero-in">
-      <div class="bhero-top"><a class="back" href="<?php echo esc_url(home_url('/breeds/')); ?>"><?php echo zh_arrow('arr-back'); ?><span>Все породы</span></a><span class="bhero-n"><?php echo esc_html(sprintf('%02d', $idx + 1)); ?> / <?php echo esc_html(sprintf('%02d', count($all))); ?></span></div>
+      <div class="bhero-top"><a class="back" href="<?php echo esc_url(home_url('/breeds/')); ?>"><?php echo zh_arrow('arr-back'); ?><span>Все породы</span></a></div>
       <h1 class="bhero-name"><?php the_title(); ?></h1>
       <div class="bhero-copy">
         <p class="bhero-sub"><?php echo zh_t(get_post_meta($b->ID, '_zhibek_subtitle', true)); ?></p>
         <?php if ($facts) : ?><dl class="bhero-facts"><?php foreach ($facts as $f) : ?><div><dt><?php echo esc_html($f[0]); ?></dt><dd><?php echo zh_t($f[1]); ?></dd></div><?php endforeach; ?></dl><?php endif; ?>
         <div class="bhero-cta">
-          <a class="btn btn-light" href="#cats"><span>Коты породы</span><?php echo zh_arrow(); ?></a>
+          <?php if ($cats) : ?><a class="btn btn-light" href="#cats"><span>Коты породы</span><?php echo zh_arrow(); ?></a><?php endif; ?>
           <button class="btn btn-line-light" type="button" data-enquire="<?php echo esc_attr($b->post_title); ?>"><span>Задать вопрос</span></button>
         </div>
       </div>
@@ -72,19 +72,20 @@ while (have_posts()) : the_post();
 
   <?php if ($b->post_name === 'bengal') {
     $sc = zh_content()['breed_scene'];
-    $sc_actions = '<a class="btn btn-light" href="#cats"><span>Коты породы</span>' . zh_arrow() . '</a><button class="btn btn-line-light" type="button" data-enquire="' . esc_attr($b->post_title) . '"><span>Задать вопрос</span></button>';
-    echo zh_scene('right', $color, $sc['title'], $sc['lead'], $sc_actions, array('hook' => $sc['hook'], 'facts' => $sc['facts'], 'notes' => $sc['notes']));
+    $sc_actions = ($cats ? '<a class="btn btn-light" href="#cats"><span>Коты породы</span>' . zh_arrow() . '</a>' : '') . '<button class="btn ' . ($cats ? 'btn-line-light' : 'btn-light') . '" type="button" data-enquire="' . esc_attr($b->post_title) . '"><span>Задать вопрос</span></button>';
+    echo zh_scene('right', $color, $sc['title'], $sc['lead'], $sc_actions, array('notes' => $sc['notes']));
   } ?>
 
+  <?php if ($cats) : ?>
   <section class="sec bcats" id="cats" style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head" data-reveal><h2 class="h2">Коты породы <em><?php echo esc_html(zh_lower($b->post_title)); ?></em></h2><p class="lead">Котята и взрослые вместе. Фильтр поможет выбрать нужных.</p></div>
-      <?php if ($cats) : zh_cat_filters(array($b), $cats, false); ?>
+      <div class="sec-head" data-reveal><h2 class="h2">Коты породы <?php echo esc_html(zh_lower($b->post_title)); ?></h2><p class="lead">Котята и взрослые вместе. Фильтр поможет выбрать нужных.</p></div>
+      <?php zh_cat_filters(array($b), $cats, false); ?>
         <div class="cgrid" data-cgrid><?php zh_render_cat_cards($cats); ?></div>
         <p class="k-empty" data-filter-empty hidden>Таких котов сейчас нет. <button class="link-btn" type="button" data-enquire="<?php echo esc_attr($b->post_title); ?>">Напишите нам</button>, расскажем о ближайших помётах.</p>
-      <?php else : echo zh_empty_cats('Котов этой породы <em>пока нет</em>', 'Напишите нам, расскажем о ближайших помётах.', $b->post_title); endif; ?>
     </div>
   </section>
+  <?php endif; ?>
 
   <?php if ($others) : ?>
   <section class="nextb">

@@ -19,8 +19,7 @@ $guide = get_posts(array('name' => 'choose-breed', 'post_type' => 'post', 'numbe
 <main id="main" class="page-breeds">
   <header class="page-head">
     <div class="wrap">
-      <span class="eyebrow">Питомник</span>
-      <h1 class="h1">Наши <em>породы</em></h1>
+      <h1 class="h1">Наши породы</h1>
       <p class="lead"><?php echo zh_t($c['breeds']['lead']); ?></p>
       <?php if ($total > 1) : ?>
       <nav class="breed-jump" aria-label="Перейти к породе">
@@ -36,27 +35,19 @@ $guide = get_posts(array('name' => 'choose-breed', 'post_type' => 'post', 'numbe
       $m = zh_media($b); $n = (int) ($count[$b->ID] ?? 0);
       $fit = (string) get_post_meta($b->ID, '_zhibek_fit', true);
       $traits = zh_traits($b);
-      $chips = array(); foreach ($facts[$b->ID] as $lab => $val) { if (count($chips) < 3 && mb_stripos($lab, 'Глаза') !== 0) { $chips[] = array($lab, $val); } }
-      $note = !empty($c['hero']['notes'][$b->post_name]) ? $c['hero']['notes'][$b->post_name] : '';
     ?>
     <section class="band<?php echo $i % 2 ? ' band--flip' : ''; ?>" id="<?php echo esc_attr($b->post_name); ?>" data-breed="<?php echo esc_attr($b->post_name); ?>" style="--bg:<?php echo esc_attr(zh_breed_color($b)); ?>" aria-labelledby="band-<?php echo esc_attr($b->post_name); ?>">
       <div class="band-in wrap">
         <div class="band-copy">
-          <span class="band-n"><?php echo esc_html(sprintf('%02d', $i + 1)); ?> / <?php echo esc_html(sprintf('%02d', $total)); ?></span>
           <h2 class="band-name" id="band-<?php echo esc_attr($b->post_name); ?>"><a href="<?php echo esc_url(get_permalink($b)); ?>"><?php echo esc_html($b->post_title); ?></a></h2>
           <p class="band-sub"><?php echo zh_t(get_post_meta($b->ID, '_zhibek_subtitle', true)); ?></p>
-          <?php if ($fit) : ?><p class="band-fit"><span class="hand">подойдёт, если</span><?php echo zh_t($fit); ?></p><?php endif; ?>
-          <?php if ($scores[$b->ID]) : ?>
-          <dl class="band-scores"><?php foreach ($scores[$b->ID] as $lab => $val) : ?><div><dt><?php echo esc_html($lab); ?></dt><dd><span class="sr-only"><?php echo (int) $val; ?> из 5</span><span class="dots" aria-hidden="true"><?php for ($d = 1; $d <= 5; $d++) { echo '<i' . ($d <= $val ? ' class="on"' : '') . '></i>'; } ?></span></dd></div><?php endforeach; ?></dl>
-          <?php endif; ?>
-          <?php if ($chips) : ?><ul class="band-chips"><?php foreach ($chips as $ch) { echo '<li><b>' . esc_html($ch[0]) . '</b> ' . esc_html($ch[1]) . '</li>'; } ?></ul><?php endif; ?>
+          <?php if ($fit) : ?><p class="band-fit"><?php echo zh_t($fit); ?></p><?php endif; ?>
           <div class="band-actions">
             <a class="btn btn-light" href="<?php echo esc_url(get_permalink($b)); ?>"><span>Смотреть породу</span><?php echo zh_arrow(); ?></a>
             <?php if ($n) : ?><a class="btn btn-line-light" href="<?php echo esc_url(add_query_arg('breed', $b->post_name, home_url('/cats/'))); ?>"><span><?php echo $n . ' ' . esc_html(zh_plural($n, 'кот', 'кота', 'котов')); ?></span></a><?php endif; ?>
           </div>
         </div>
         <div class="band-stage">
-          <?php if ($note) : ?><span class="band-note hand" aria-hidden="true"><?php echo zh_hand_arrow(); ?><span><?php echo esc_html($note); ?></span></span><?php endif; ?>
           <?php if ($m['url']) : ?><img class="band-cat" src="<?php echo esc_url($m['url']); ?>" alt="<?php echo esc_attr($b->post_title . ' кошка'); ?>"<?php if ($m['w']) : ?> width="<?php echo (int) $m['w']; ?>" height="<?php echo (int) $m['h']; ?>"<?php endif; ?> loading="<?php echo $i ? 'lazy' : 'eager'; ?>" decoding="async" draggable="false"><?php endif; ?>
         </div>
       </div>
@@ -68,7 +59,7 @@ $guide = get_posts(array('name' => 'choose-breed', 'post_type' => 'post', 'numbe
   <section class="cmp-sec" id="compare-breeds" aria-labelledby="cmp-title">
     <div class="wrap">
       <div class="sec-head" data-reveal>
-        <h2 class="h2" id="cmp-title">Породы <em>рядом</em></h2>
+        <h2 class="h2" id="cmp-title">Породы рядом</h2>
         <p class="lead"><?php echo zh_t($c['breeds']['compare']); ?></p>
       </div>
       <div class="cmp-scroll" tabindex="0" role="region" aria-label="Сравнение пород">

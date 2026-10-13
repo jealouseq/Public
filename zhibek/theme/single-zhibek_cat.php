@@ -59,7 +59,7 @@ while (have_posts()) : the_post();
   <?php if ($others) : ?>
   <section class="sec">
     <div class="wrap">
-      <div class="sec-head"><h2 class="h2">Ещё <em>коты</em></h2><a class="link-arrow" href="<?php echo esc_url(home_url('/cats/')); ?>"><span>Все коты</span><?php echo zh_arrow(); ?></a></div>
+      <div class="sec-head"><h2 class="h2">Ещё коты</h2><a class="link-arrow" href="<?php echo esc_url(home_url('/cats/')); ?>"><span>Все коты</span><?php echo zh_arrow(); ?></a></div>
       <div class="cgrid cgrid--3"><?php zh_render_cat_cards($others); ?></div>
     </div>
   </section>

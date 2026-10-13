@@ -3,7 +3,7 @@ $s = zh_settings();
 $contacts = zh_contacts();
 $c = zh_content();
 // Большой блок «Напишите нам» нужен там, где человек уже выбрал кота или статью; на остальных страницах хватает кнопки в шапке и ссылки в подвале.
-$show_cta = is_post_type_archive('zhibek_cat') || is_singular(array('zhibek_cat', 'post'));
+$show_cta = is_front_page() || is_post_type_archive('zhibek_cat') || is_singular(array('zhibek_cat', 'post'));
 $peek = zh_has_img('pets/peek-2.webp') ? zh_img('pets/peek-2.webp') : '';
 $peek_dlg = zh_has_img('pets/peek.webp') ? zh_img('pets/peek.webp') : '';
 ?>
@@ -28,7 +28,6 @@ $peek_dlg = zh_has_img('pets/peek.webp') ? zh_img('pets/peek.webp') : '';
 <?php endif; ?>
 <footer class="site-footer">
   <div class="footer-panel">
-    <?php echo zh_sticker('step-sleep', 'footer-cat'); ?>
     <div class="wrap footer-grid">
       <div class="footer-brand">
         <a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><?php echo zh_brand(); ?></a>
@@ -73,7 +72,7 @@ $peek_dlg = zh_has_img('pets/peek.webp') ? zh_img('pets/peek.webp') : '';
   <div class="enquiry-card">
     <button class="enquiry-close" type="button" data-close aria-label="Закрыть форму"><?php echo zh_icon('close'); ?></button>
     <div class="enquiry-body">
-      <h2 id="enquiry-title">Напишите <em>нам</em></h2>
+      <h2 id="enquiry-title">Напишите нам</h2>
       <p class="enquiry-lead">Оставьте контакт, и мы ответим. Заявка ни к чему вас не обязывает.</p>
       <form id="enquiry-form" method="post" action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>" novalidate>
         <input type="hidden" name="action" value="zhibek_enquiry">
@@ -90,7 +89,7 @@ $peek_dlg = zh_has_img('pets/peek.webp') ? zh_img('pets/peek.webp') : '';
         <button type="submit" class="btn btn-primary btn-block"><span>Отправить</span><?php echo zh_arrow(); ?></button>
         <p id="form-result" class="form-result" role="status" aria-live="polite"></p>
       </form>
-      <div class="sent" role="status"><h2>Заявка <em>отправлена</em></h2><p class="enquiry-lead" id="sent-text">Мы свяжемся с вами по указанному контакту.</p><button class="btn btn-outline" type="button" data-close><span>Закрыть</span></button></div>
+      <div class="sent" role="status"><h2>Заявка отправлена</h2><p class="enquiry-lead" id="sent-text">Мы свяжемся с вами по указанному контакту.</p><button class="btn btn-outline" type="button" data-close><span>Закрыть</span></button></div>
       <?php if (isset($contacts['whatsapp']) || isset($contacts['telegram'])) : ?>
         <p class="enquiry-alt">Или сразу в мессенджер:
           <?php foreach (array('whatsapp', 'telegram') as $k) { if (isset($contacts[$k])) { echo '<a href="' . esc_url($contacts[$k][1]) . '" target="_blank" rel="noopener">' . esc_html($contacts[$k][0]) . '</a>'; } } ?>
