@@ -25,7 +25,19 @@ function zh_lcfirst($s) {
     return mb_strtolower(mb_substr($s, 0, 1, 'UTF-8'), 'UTF-8') . mb_substr($s, 1, null, 'UTF-8');
 }
 
-function zh_privacy_url() { return get_privacy_policy_url() ?: home_url('/privacy/'); }
+/** Адрес страницы конфиденциальности или пустая строка, если страницы нет. */
+function zh_privacy_url() {
+    $url = get_privacy_policy_url();
+    if ($url) { return $url; }
+    $page = get_page_by_path('privacy');
+    return $page ? get_permalink($page) : '';
+}
+
+/** Адрес страницы по её слагу или пустая строка. */
+function zh_page_url($slug) {
+    $page = get_page_by_path($slug);
+    return $page && 'publish' === $page->post_status ? get_permalink($page) : '';
+}
 
 /** Ссылки на мессенджеры и соцсети, которые владелец указал в настройках. */
 function zh_contacts() {
@@ -39,38 +51,81 @@ function zh_contacts() {
     return $out;
 }
 
+/** Студийный кадр сцены с адаптивными размерами (640, 960 и полный). Файлы: name-640.webp, name-960.webp, name.webp, 1536×1024. */
+function zh_scene_srcset($name) {
+    return zh_img('scenes/' . $name . '-640.webp') . ' 640w, ' . zh_img('scenes/' . $name . '-960.webp') . ' 960w, ' . zh_img('scenes/' . $name . '.webp') . ' 1536w';
+}
+
+function zh_scene_img($name, $alt, $sizes, $attrs = '') {
+    return '<img src="' . esc_url(zh_img('scenes/' . $name . '-960.webp')) . '" srcset="' . esc_attr(zh_scene_srcset($name)) . '" sizes="' . esc_attr($sizes) . '" width="1536" height="1024" alt="' . esc_attr($alt) . '" decoding="async" ' . $attrs . '>';
+}
+
+
+/* ------------------------------------------------------------- типографика */
+
+/** Неразрывные пробелы по правилам русской типографики: предлоги и союзы не остаются в конце строки, число и единица не разрываются. */
+function zh_nbsp($text) {
+    $text = (string) $text;
+    if ($text === '' || !function_exists('mb_strlen')) { return $text; }
+    $nb = "\xC2\xA0";
+    $short = 'а|без|бы|в|во|да|для|до|ж|же|за|и|из|или|к|ко|ли|на|над|не|ни|но|о|об|от|по|под|при|про|с|со|у';
+    $text = preg_replace('/(^|[\s(«„"\x{2014}\x{2013}\-])(' . $short . ')\s+(?=\S)/iu', '$1$2' . $nb, $text);
+    $text = preg_replace('/(\d)\s+(₸|кг|г|мм|см|нед\.|недель|недели|неделя|месяц\w*|дн\w*|лет|года?)(?![\p{L}])/iu', '$1' . $nb . '$2', $text);
+    $text = preg_replace('/\s+([\x{2014}])/u', $nb . '$1', $text);
+    return $text;
+}
+
+/** Экранированный текст с неразрывными пробелами. */
+function zh_t($text) { return esc_html(zh_nbsp($text)); }
+
+/** То же для HTML: правятся только текстовые узлы, теги и атрибуты не затрагиваются. */
+function zh_nbsp_html($html) {
+    $parts = preg_split('/(<[^>]*>)/u', (string) $html, -1, PREG_SPLIT_DELIM_CAPTURE);
+    if (!is_array($parts)) { return $html; }
+    foreach ($parts as $i => $part) {
+        if ($part !== '' && $part[0] !== '<') { $parts[$i] = zh_nbsp($part); }
+    }
+    return implode('', $parts);
+}
+
+/** «в WhatsApp или Telegram» по тем мессенджерам, которые владелец указал в настройках. Пустая строка, если не указан ни один. */
+function zh_messengers_phrase() {
+    $c = zh_contacts(); $names = array();
+    if (isset($c['whatsapp'])) { $names[] = 'WhatsApp'; }
+    if (isset($c['telegram'])) { $names[] = 'Telegram'; }
+    return $names ? 'в ' . implode(' или ', $names) : '';
+}
+
 /* ------------------------------------------------------------------ иконки */
 
 function zh_arrow($class = '') {
-    return '<svg class="arr ' . esc_attr($class) . '" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    return '<svg class="arr ' . esc_attr($class) . '" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+}
+
+function zh_arrow_up_right() {
+    return '<svg class="arr" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 }
 
 function zh_icon($name) {
     $paths = array(
         'bag' => '<path d="M5 8h14l1 13H4L5 8zM8 8V6a4 4 0 018 0v2"/>',
-        'menu' => '<path d="M3 8h18M3 16h18"/>',
         'close' => '<path d="M5 5l14 14M19 5L5 19"/>',
-        'heart' => '<path d="M12 20S3 14.5 3 8.5a4.5 4.5 0 019-1 4.5 4.5 0 019 1c0 6-9 11.5-9 11.5z"/>',
         'whatsapp' => '<path d="M3.5 20.5l1.3-4.6A8.5 8.5 0 1112 20.5a8.4 8.4 0 01-4-1z"/><path d="M9 8.5c.3 3 2.5 5.2 5.5 6.5l1.5-1.5-2-1-1 .8c-.9-.4-1.8-1.3-2.2-2.2l.8-1-1-2z"/>',
         'telegram' => '<path d="M21 4L3 11l5.5 2L10 19l3-3.5L17.5 19 21 4z"/><path d="M8.5 13L21 4"/>',
         'instagram' => '<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6"/>',
-        'phone' => '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/>',
-        'mail' => '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
         'doc' => '<path d="M6 3h8l4 4v14H6V3z"/><path d="M14 3v4h4M9 12h6M9 16h6"/>',
         'shield' => '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
         'chip' => '<rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/>',
         'contract' => '<path d="M6 3h9l3 3v15H6V3z"/><path d="M9 9h6M9 13h6M9 17h3"/>',
         'gift' => '<rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M3 9h18v3H3zM12 9v11M12 9c-3 0-5-1-5-3a2 2 0 014 0c0 1 1 3 1 3zm0 0c3 0 5-1 5-3a2 2 0 00-4 0c0 1-1 3-1 3z"/>',
         'chat' => '<path d="M4 5h16v11H9l-5 4V5z"/><path d="M8 9.5h8M8 12.5h5"/>',
-        'sound' => '<path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 010 7"/>',
-        'pin' => '<path d="M12 21s7-6 7-11.5A7 7 0 005 9.5C5 15 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
     );
-    return '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . ($paths[$name] ?? '') . '</svg>';
+    return '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . ($paths[$name] ?? '') . '</svg>';
 }
 
 /** Знак: радужка с вертикальным зрачком. */
-function zh_mark($class = 'mark') {
-    return '<svg class="' . esc_attr($class) . '" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22.5" stroke="currentColor" stroke-width="1.1"/><circle cx="24" cy="24" r="16.5" stroke="currentColor" stroke-opacity=".45" stroke-width=".9"/><path d="M24 9.5c5.6 5.6 5.6 23.4 0 29-5.6-5.6-5.6-23.4 0-29z" fill="currentColor"/></svg>';
+function zh_mark($class = 'mark', $accent = true) {
+    return '<svg class="' . esc_attr($class) . '" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="2.2"/><path d="M24 8c6.6 6.4 6.6 25.6 0 32-6.6-6.4-6.6-25.6 0-32z" fill="' . ($accent ? '#a3481f' : 'currentColor') . '"/></svg>';
 }
 
 /** Щель-зрачок, заменяющая букву I в слове ZHIBEK. */
@@ -87,23 +142,17 @@ function zh_brand() { return zh_mark('mark') . zh_wordmark('wm'); }
 
 /* ------------------------------------------------------------ породы/котята */
 
-/** Оформление «мира» породы: цвета и тип декоративного слоя. Для новых пород берутся цвета из полей админки. */
-function zh_breed_world($post) {
-    $post = get_post($post);
+/** Цвет фона карточек породы. Для новых пород берётся «Фирменный цвет» из карточки породы. */
+function zh_breed_color($post) {
+    $post = $post ? get_post($post) : null;
     $slug = $post ? $post->post_name : '';
-    $worlds = array(
-        'abyssinian' => array('kind' => 'sun', 'accent' => '#d28c45', 'glow' => '#f7b960', 'bg1' => '#2a140a', 'bg2' => '#7a431b', 'eye' => '#e0a63a'),
-        'bengal' => array('kind' => 'wild', 'accent' => '#c8962f', 'glow' => '#e0b04a', 'bg1' => '#0c0803', 'bg2' => '#2a1c07', 'eye' => '#a6cb5e'),
-        'siamese' => array('kind' => 'moon', 'accent' => '#9fb6dd', 'glow' => '#cfdcf5', 'bg1' => '#070d1d', 'bg2' => '#1b3158', 'eye' => '#5a98e0'),
-    );
-    $w = $worlds[$slug] ?? array('kind' => 'soft', 'accent' => '#d4b06a', 'glow' => '#f1dba5', 'bg1' => '#0d0b09', 'bg2' => '#2b2216', 'eye' => '#d4b06a');
+    $defaults = array('abyssinian' => '#b9c7b0', 'bengal' => '#e0c088', 'siamese' => '#a9bdd4');
+    $color = $defaults[$slug] ?? '#d9cdb8';
     if ($post) {
-        $accent = get_post_meta($post->ID, '_zhibek_accent', true);
-        $eye = get_post_meta($post->ID, '_zhibek_eye', true);
-        if ($accent) { $w['accent'] = $accent; }
-        if ($eye) { $w['eye'] = $eye; }
+        $custom = (string) get_post_meta($post->ID, '_zhibek_accent', true);
+        if (preg_match('/^#[0-9a-f]{6}$/i', $custom) && !isset($defaults[$slug])) { $color = $custom; }
     }
-    return $w;
+    return $color;
 }
 
 /** Факты породы: строки «Название: значение» → [[название, значение], …]. */
@@ -155,15 +204,6 @@ function zh_media($post, $size = 'large') {
     return array('url' => '', 'w' => 0, 'h' => 0, 'type' => 'none', 'id' => 0);
 }
 
-function zh_media_img($post, $class = '', $size = 'large', $lazy = true) {
-    $m = zh_media($post, $size);
-    if (!$m['url']) { return; }
-    $attrs = ' class="' . esc_attr($class) . '" src="' . esc_url($m['url']) . '" alt="' . esc_attr(get_the_title($post)) . '"';
-    if ($m['w'] && $m['h']) { $attrs .= ' width="' . (int) $m['w'] . '" height="' . (int) $m['h'] . '"'; }
-    $attrs .= ($lazy ? ' loading="lazy"' : '') . ' decoding="async" draggable="false"';
-    echo '<img' . $attrs . '>';
-}
-
 function zh_status_label($status) {
     $labels = array('available' => 'Свободен', 'reserved' => 'В резерве', 'expected' => 'Ожидается', 'home' => 'В новой семье', 'demo' => 'Свободен');
     return $labels[$status] ?? '';
@@ -205,7 +245,7 @@ function zh_kitten_data($post) {
     $price = (string) get_post_meta($post->ID, '_zhibek_price', true);
     return array(
         'id' => $post->ID, 'title' => get_the_title($post), 'url' => get_permalink($post),
-        'breed' => $breed, 'breed_name' => $breed ? $breed->post_title : '', 'world' => $breed ? zh_breed_world($breed) : zh_breed_world(null),
+        'breed' => $breed, 'breed_name' => $breed ? $breed->post_title : '', 'breed_slug' => $breed ? $breed->post_name : '', 'color_hex' => zh_breed_color($breed),
         'status' => $status, 'status_label' => zh_status_label($status),
         'sex' => trim((string) get_post_meta($post->ID, '_zhibek_sex', true)), 'color' => trim((string) get_post_meta($post->ID, '_zhibek_color', true)),
         'birth' => (string) get_post_meta($post->ID, '_zhibek_birth', true), 'sire' => trim((string) get_post_meta($post->ID, '_zhibek_sire', true)), 'dam' => trim((string) get_post_meta($post->ID, '_zhibek_dam', true)),
@@ -214,24 +254,21 @@ function zh_kitten_data($post) {
     );
 }
 
-/** Карточка котёнка: наклон 3D, цветной «мир» породы, вырезанный кот или фото. */
-function zh_kitten_card($post, $i = 0) {
+/** Карточка котёнка: цветной фон породы, вырезанный кот или фото. */
+function zh_kitten_card($post) {
     $k = zh_kitten_data($post);
     $m = zh_media($post, 'large');
-    $w = $k['world'];
     $age = zh_age($k['birth']);
     $meta = array_filter(array($k['sex'], $k['color'], $age));
-    $style = '--accent:' . esc_attr($w['accent']) . ';--bg1:' . esc_attr($w['bg1']) . ';--bg2:' . esc_attr($w['bg2']) . ';--glow:' . esc_attr($w['glow']);
     ob_start(); ?>
-    <article class="kcard" data-breed="<?php echo (int) ($k['breed'] ? $k['breed']->ID : 0); ?>" data-status="<?php echo esc_attr($k['status']); ?>" data-sex="<?php echo esc_attr($k['sex']); ?>" data-color="<?php echo esc_attr($k['color']); ?>" style="<?php echo $style; ?>">
-        <a class="kcard-link" href="<?php echo esc_url($k['url']); ?>" data-cursor="Открыть" data-kitten="<?php echo (int) $k['id']; ?>">
-            <span class="kcard-media" data-type="<?php echo esc_attr($m['type']); ?>">
-                <span class="kcard-glow" aria-hidden="true"></span>
+    <article class="kcard" data-breed="<?php echo (int) ($k['breed'] ? $k['breed']->ID : 0); ?>" data-status="<?php echo esc_attr($k['status']); ?>">
+        <a class="kcard-link" href="<?php echo esc_url($k['url']); ?>">
+            <span class="kcard-media" data-type="<?php echo esc_attr($m['type']); ?>" style="--bg:<?php echo esc_attr($k['color_hex']); ?>;--vt:k<?php echo (int) $k['id']; ?>">
                 <?php if ($m['url']) : ?>
-                    <img class="kcard-img" src="<?php echo esc_url($m['url']); ?>" alt="<?php echo esc_attr($k['title'] . ($k['breed_name'] ? ' — ' . zh_lower($k['breed_name']) . ' кошка' : '')); ?>"<?php if ($m['w'] && $m['h']) : ?> width="<?php echo (int) $m['w']; ?>" height="<?php echo (int) $m['h']; ?>"<?php endif; ?> loading="lazy" decoding="async" draggable="false">
+                    <img src="<?php echo esc_url($m['url']); ?>" alt="<?php echo esc_attr($k['title'] . ($k['breed_name'] ? ', ' . zh_lower($k['breed_name']) . ' кошка' : '')); ?>"<?php if ($m['w'] && $m['h']) : ?> width="<?php echo (int) $m['w']; ?>" height="<?php echo (int) $m['h']; ?>"<?php endif; ?> loading="lazy" decoding="async" draggable="false">
                 <?php endif; ?>
                 <span class="kcard-badges">
-                    <?php if ($k['status_label']) : ?><span class="chip chip-status" data-status="<?php echo esc_attr($k['status']); ?>"><?php echo esc_html($k['status_label']); ?></span><?php endif; ?>
+                    <?php if ($k['status_label']) : ?><span class="chip" data-status="<?php echo esc_attr($k['status']); ?>"><?php echo esc_html($k['status_label']); ?></span><?php endif; ?>
                     <?php if ($k['demo'] && zh_is_demo()) : ?><span class="chip chip-demo">Пример</span><?php endif; ?>
                 </span>
             </span>
@@ -239,27 +276,68 @@ function zh_kitten_card($post, $i = 0) {
                 <span class="kcard-breed"><?php echo esc_html($k['breed_name'] ?: 'ZHIBEK'); ?></span>
                 <span class="kcard-name"><?php echo esc_html($k['title']); ?></span>
                 <?php if ($meta) : ?><span class="kcard-meta"><?php echo esc_html(implode(' · ', $meta)); ?></span><?php endif; ?>
+                <?php if ($k['price']) : ?><span class="kcard-price"><?php echo esc_html($k['price']); ?></span><?php endif; ?>
             </span>
         </a>
-        <button class="kcard-save" type="button" data-save="<?php echo (int) $k['id']; ?>" aria-pressed="false" aria-label="Сохранить: <?php echo esc_attr($k['title']); ?>"><?php echo zh_icon('heart'); ?></button>
     </article>
     <?php
     return ob_get_clean();
 }
 
 function zh_render_kitten_cards($posts) {
-    foreach ($posts as $i => $p) { echo zh_kitten_card($p, $i); }
+    foreach ($posts as $p) { echo zh_kitten_card($p); }
 }
 
-/** Фильтры каталога: породы + «сохранённые». */
+/** Фильтры каталога по породам. */
 function zh_kitten_filters($breeds, $kittens) {
     $counts = array();
     foreach ($kittens as $k) { $b = (int) get_post_meta($k->ID, '_zhibek_breed', true); $counts[$b] = ($counts[$b] ?? 0) + 1; }
-    echo '<div class="filters" role="group" aria-label="Фильтр котят"><button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Все <sup>' . count($kittens) . '</sup></button>';
+    echo '<div class="filters" role="group" aria-label="Порода"><button class="filter is-active" type="button" data-filter="all" aria-pressed="true">Все <sup>' . count($kittens) . '</sup></button>';
     foreach ($breeds as $b) {
-        echo '<button class="filter" type="button" data-filter="' . (int) $b->ID . '" data-slug="' . esc_attr($b->post_name) . '" aria-pressed="false">' . esc_html($b->post_title) . ' <sup>' . (int) ($counts[$b->ID] ?? 0) . '</sup></button>';
+        if (empty($counts[$b->ID])) { continue; }
+        echo '<button class="filter" type="button" data-filter="' . (int) $b->ID . '" data-slug="' . esc_attr($b->post_name) . '" aria-pressed="false">' . esc_html($b->post_title) . ' <sup>' . (int) $counts[$b->ID] . '</sup></button>';
     }
-    echo '<button class="filter filter-saved" type="button" data-filter="saved" aria-pressed="false">' . zh_icon('heart') . ' Сохранённые <sup class="saved-count">0</sup></button></div>';
+    echo '</div>';
+}
+
+/**
+ * Панель породы: цветной фон, название, подпись, факты и кот на вырезанном фоне.
+ * $hero = true — шапка страницы породы (заголовок h1, без закрепления при прокрутке).
+ */
+function zh_breed_panel($b, $i = 0, $total = 1, $hero = false, $heading = 'h3') {
+    $m = zh_media($b);
+    $facts = array_slice(zh_breed_facts($b), 0, 4);
+    $name_l = zh_lower($b->post_title);
+    $tag = $hero ? 'h1' : $heading;
+    $kittens_url = add_query_arg('breed', $b->post_name, home_url('/kittens/'));
+    ob_start(); ?>
+    <article class="panel<?php echo $hero ? ' panel--hero' : ''; ?>" data-breed="<?php echo esc_attr($b->post_name); ?>" style="--i:<?php echo (int) $i; ?>;--p-bg:<?php echo esc_attr(zh_breed_color($b)); ?>">
+        <div class="panel-copy">
+            <div>
+                <?php if ($hero) : ?>
+                    <a class="back" href="<?php echo esc_url(home_url('/breeds/')); ?>"><?php echo zh_arrow('arr-back'); ?><span>Все породы</span></a>
+                <?php else : ?>
+                    <span class="panel-n"><?php echo esc_html(sprintf('%02d', $i + 1)); ?> / <?php echo esc_html(sprintf('%02d', $total)); ?></span>
+                <?php endif; ?>
+                <<?php echo $tag; ?> class="panel-title"><?php echo esc_html($b->post_title); ?></<?php echo $tag; ?>>
+                <p class="panel-sub"><?php echo zh_t(get_post_meta($b->ID, '_zhibek_subtitle', true)); ?></p>
+            </div>
+            <?php if ($facts) : ?><dl class="panel-facts"><?php foreach ($facts as $f) : ?><div><dt><?php echo zh_t($f[0]); ?></dt><dd><?php echo zh_t($f[1]); ?></dd></div><?php endforeach; ?></dl><?php endif; ?>
+            <div class="panel-cta">
+                <a class="btn btn-primary" href="<?php echo esc_url($kittens_url); ?>"><span>Котята: <?php echo esc_html($name_l); ?></span><?php echo zh_arrow(); ?></a>
+                <?php if ($hero) : ?>
+                    <button class="btn btn-outline" type="button" data-enquire="<?php echo esc_attr($b->post_title); ?>"><span>Задать вопрос</span></button>
+                <?php else : ?>
+                    <a class="btn btn-outline" href="<?php echo esc_url(get_permalink($b)); ?>"><span>О породе</span></a>
+                <?php endif; ?>
+            </div>
+        </div>
+        <div class="panel-art"<?php echo $hero ? '' : ' aria-hidden="true"'; ?>>
+            <?php if ($m['url']) : ?><img src="<?php echo esc_url($m['url']); ?>" alt="<?php echo $hero ? esc_attr($b->post_title . ' кошка') : ''; ?>"<?php if ($m['w']) : ?> width="<?php echo (int) $m['w']; ?>" height="<?php echo (int) $m['h']; ?>"<?php endif; ?><?php echo $hero ? ' fetchpriority="high"' : ' loading="lazy"'; ?> decoding="async" draggable="false"><?php endif; ?>
+        </div>
+    </article>
+    <?php
+    return ob_get_clean();
 }
 
 function zh_render_animal_media($post) {
@@ -284,13 +362,13 @@ function zh_map_svg() {
             <clipPath id="kzclip"><path d="<?php echo esc_attr($map['d']); ?>"/></clipPath>
         </defs>
         <path class="kz-fill" d="<?php echo esc_attr($map['d']); ?>"/>
-        <rect class="kz-dots" width="<?php echo (int) $map['w']; ?>" height="<?php echo (int) $map['h']; ?>" fill="url(#kzdots)" clip-path="url(#kzclip)"/>
-        <path class="kz-line" d="<?php echo esc_attr($map['d']); ?>" pathLength="1"/>
+        <g class="kz-dots" clip-path="url(#kzclip)"><rect width="<?php echo (int) $map['w']; ?>" height="<?php echo (int) $map['h']; ?>" fill="url(#kzdots)" style="fill:url(#kzdots)"/></g>
+        <path class="kz-line" d="<?php echo esc_attr($map['d']); ?>"/>
         <g class="kz-cities">
-            <?php foreach ($map['cities'] as $name => $xy) : $on = in_array($name, $active, true); ?>
-                <g class="kz-city<?php echo $on ? ' is-on' : ''; ?>" data-city="<?php echo esc_attr($name); ?>" transform="translate(<?php echo (int) $xy[0]; ?> <?php echo (int) $xy[1]; ?>)">
-                    <circle class="kz-pulse" r="6"/><circle class="kz-pin" r="3.2"/>
-                    <text class="kz-label" x="10" y="4"><?php echo esc_html($name); ?></text>
+            <?php foreach ($map['cities'] as $name => $xy) : $on = in_array($name, $active, true); if (!$on) { continue; } ?>
+                <g class="kz-city<?php echo $on ? ' is-on' : ''; ?>" transform="translate(<?php echo (int) $xy[0]; ?> <?php echo (int) $xy[1]; ?>)">
+                    <circle class="kz-pulse" r="14"/><circle class="kz-pin" r="5"/>
+                    <text class="kz-label" x="11" y="4"><?php echo esc_html($name); ?></text>
                 </g>
             <?php endforeach; ?>
         </g>
@@ -302,79 +380,4 @@ function zh_map_svg() {
 function zh_map_city_list() {
     $s = zh_settings();
     return array_values(array_filter(array_map('trim', preg_split('/[,\n]+/u', (string) $s['cities']))));
-}
-
-/* ------------------------------------------------- врата: эмблема на створке */
-
-/** Половина эмблемы-радужки для левой ('l') или правой ('r') створки. Зрачок-щель лежит на стыке створок. */
-function zh_door_emblem($side) {
-    $cx = 150; $cy = 150;
-    $vb = $side === 'l' ? '0 0 150 300' : '150 0 150 300';
-    $ticks = ''; $rays = '';
-    for ($i = 0; $i < 72; $i++) {
-        $a = deg2rad($i * 5); $long = $i % 6 === 0; $r1 = $long ? 124 : 130; $r2 = 138;
-        $ticks .= sprintf('M%.1f %.1fL%.1f %.1f', $cx + cos($a) * $r1, $cy + sin($a) * $r1, $cx + cos($a) * $r2, $cy + sin($a) * $r2);
-    }
-    for ($i = 0; $i < 60; $i++) {
-        $a = deg2rad($i * 6 + 1.5); $r1 = 72; $r2 = $i % 2 ? 100 : 112;
-        $rays .= sprintf('M%.1f %.1fL%.1f %.1f', $cx + cos($a) * $r1, $cy + sin($a) * $r1, $cx + cos($a) * $r2, $cy + sin($a) * $r2);
-    }
-    $id = 'dl' . $side;
-    return '<svg class="door-emblem door-emblem-' . $side . '" viewBox="' . $vb . '" fill="none" aria-hidden="true"><defs><linearGradient id="' . $id . '" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5dfa6"/><stop offset=".5" stop-color="#fff3d1"/><stop offset="1" stop-color="#d9a64e"/></linearGradient></defs>'
-        . '<g stroke="currentColor" stroke-linecap="round"><circle cx="150" cy="150" r="147" stroke-width="1"/><circle cx="150" cy="150" r="141" stroke-opacity=".4" stroke-width=".7"/>'
-        . '<path d="' . $ticks . '" stroke-opacity=".55" stroke-width=".7"/><circle cx="150" cy="150" r="118" stroke-opacity=".7" stroke-width=".8"/>'
-        . '<path d="' . $rays . '" stroke-opacity=".5" stroke-width=".7"/><circle cx="150" cy="150" r="66" stroke-width="1"/></g>'
-        . '<path d="M150 50C196 100 196 200 150 250 104 200 104 100 150 50Z" fill="url(#' . $id . ')"/>'
-        . '<path d="M150 50C196 100 196 200 150 250 104 200 104 100 150 50Z" stroke="currentColor" stroke-width="1.2"/></svg>';
-}
-
-/* ------------------------------------------------------- родословная (пример) */
-
-function zh_pedigree_demo() {
-    return array(
-        0 => array(array('Алтын', 'Абиссинская кошка, руди', 'Котёнок')),
-        1 => array(array('Aston of Zhibek', 'Абиссинский кот, руди', 'Отец'), array('Miura of Zhibek', 'Абиссинская кошка, соррель', 'Мать')),
-        2 => array(array('Ramses', 'Кот, руди', 'Дед по отцу'), array('Nefer', 'Кошка, руди', 'Бабушка по отцу'), array('Amun', 'Кот, соррель', 'Дед по матери'), array('Safira', 'Кошка, фавн', 'Бабушка по матери')),
-        3 => array(array('Horus', 'Кот, руди', 'Прадед'), array('Isis', 'Кошка, руди', 'Прабабушка'), array('Anubis', 'Кот, руди', 'Прадед'), array('Nubia', 'Кошка, соррель', 'Прабабушка'), array('Osiris', 'Кот, соррель', 'Прадед'), array('Kleo', 'Кошка, руди', 'Прабабушка'), array('Seth', 'Кот, фавн', 'Прадед'), array('Hathor', 'Кошка, фавн', 'Прабабушка')),
-    );
-}
-
-/** SVG-схема: котёнок слева, предки справа; линии рисуются при прокрутке (pathLength=1). */
-function zh_pedigree_svg() {
-    $data = zh_pedigree_demo();
-    $xs = array(78, 318, 548, 770);
-    $rs = array(40, 27, 20, 13);
-    $ys = array();
-    $n3 = count($data[3]);
-    for ($i = 0; $i < $n3; $i++) { $ys[3][$i] = 44 + $i * (492 / ($n3 - 1)); }
-    for ($g = 2; $g >= 0; $g--) {
-        foreach ($data[$g] as $i => $_) { $ys[$g][$i] = ($ys[$g + 1][2 * $i] + $ys[$g + 1][2 * $i + 1]) / 2; }
-    }
-    $kitten = zh_img('cats/k-abyssinian.webp');
-    $edges = ''; $nodes = '';
-    for ($g = 0; $g < 3; $g++) {
-        foreach ($data[$g] as $i => $_) {
-            foreach (array(2 * $i, 2 * $i + 1) as $j) {
-                $x0 = $xs[$g] + $rs[$g]; $y0 = $ys[$g][$i]; $x1 = $xs[$g + 1] - $rs[$g + 1]; $y1 = $ys[$g + 1][$j]; $xm = ($x0 + $x1) / 2;
-                $edges .= sprintf('<path class="pe" data-g="%d" data-from="%d-%d" data-to="%d-%d" pathLength="1" d="M%.1f %.1fC%.1f %.1f %.1f %.1f %.1f %.1f"/>', $g + 1, $g, $i, $g + 1, $j, $x0, $y0, $xm, $y0, $xm, $y1, $x1, $y1);
-            }
-        }
-    }
-    foreach ($data as $g => $row) {
-        foreach ($row as $i => $nd) {
-            $x = $xs[$g]; $y = $ys[$g][$i]; $r = $rs[$g]; $is_sire = $i % 2 === 0;
-            $nodes .= sprintf('<g class="pn pn-g%d%s" tabindex="0" role="button" data-id="%d-%d" data-g="%d" data-name="%s" data-meta="%s" data-rel="%s" transform="translate(%.1f %.1f)" aria-label="%s, %s">',
-                $g, $g > 0 ? ($is_sire ? ' is-sire' : ' is-dam') : ' is-root', $g, $i, $g, esc_attr($nd[0]), esc_attr($nd[1]), esc_attr($nd[2]), $x, $y, esc_attr($nd[0]), esc_attr($nd[2]));
-            $nodes .= '<circle class="pn-halo" r="' . ($r + 7) . '"/><circle class="pn-ring" r="' . $r . '"/>';
-            if ($g === 0) {
-                $nodes .= '<clipPath id="pk"><circle r="' . ($r - 3) . '"/></clipPath><image href="' . esc_url($kitten) . '" x="-14.5" y="-36" width="97" height="176" clip-path="url(#pk)" preserveAspectRatio="xMidYMid slice" transform="translate(-12 2)"/>';
-            } else {
-                $s = $r * .5;
-                $nodes .= '<path class="pn-eye" d="M0 ' . (-$s) . 'C' . ($s * .55) . ' ' . (-$s * .4) . ' ' . ($s * .55) . ' ' . ($s * .4) . ' 0 ' . $s . ' ' . (-$s * .55) . ' ' . ($s * .4) . ' ' . (-$s * .55) . ' ' . (-$s * .4) . ' 0 ' . (-$s) . 'Z"/>';
-            }
-            $label_y = $g === 0 ? $r + 22 : -$r - 9;
-            $nodes .= '<text class="pn-name" y="' . $label_y . '" text-anchor="middle">' . esc_html($nd[0]) . '</text></g>';
-        }
-    }
-    return '<svg class="pedigree-svg" viewBox="0 0 860 580" role="group" aria-label="Пример родословной на три поколения предков"><g class="pe-lines" fill="none">' . $edges . '</g><g class="pe-nodes">' . $nodes . '</g></svg>';
 }

@@ -199,14 +199,12 @@ function zh_gallery_items($post) {
     return array();
 }
 
-/** Галерея: большой кадр, миниатюры, полноэкранный просмотр (обрабатывается в core.js). */
+/** Галерея: большой кадр, миниатюры, полноэкранный просмотр (site.js). */
 function zh_render_gallery($post) {
     $record = get_post($post);
     $items = zh_gallery_items($record);
     if (!$items) { return false; }
-    $world = zh_breed_world(get_post_type($record) === 'zhibek_breed' ? $record : zh_public_breed(get_post_meta($record->ID, '_zhibek_breed', true)));
-    $style = '--accent:' . esc_attr($world['accent']) . ';--bg1:' . esc_attr($world['bg1']) . ';--bg2:' . esc_attr($world['bg2']) . ';--glow:' . esc_attr($world['glow']);
-    echo '<div class="zg" data-gallery style="' . $style . '"><a class="zg-main" href="' . esc_url($items[0]['src']) . '" data-cursor="Смотреть" aria-label="Открыть фотографию на весь экран" data-type="' . ($items[0]['cutout'] ? 'cutout' : 'photo') . '"><span class="zg-glow" aria-hidden="true"></span>';
+    echo '<div class="zg" data-gallery><a class="zg-main" href="' . esc_url($items[0]['src']) . '" aria-label="Открыть фотографию на весь экран" data-type="' . ($items[0]['cutout'] ? 'cutout' : 'photo') . '">';
     echo '<img src="' . esc_url($items[0]['preview']) . '" alt="' . esc_attr($items[0]['alt']) . '" width="' . (int) $items[0]['w'] . '" height="' . (int) $items[0]['h'] . '" decoding="async" fetchpriority="high"></a>';
     if (count($items) > 1) {
         echo '<div class="zg-thumbs" role="group" aria-label="Фотографии">';

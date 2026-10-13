@@ -39,16 +39,16 @@ add_action('wp_head', function () {
     if (!$description) { $description = $default; }
     $featured = is_singular() && !post_password_required() ? zh_public_thumbnail_id(get_post()) : 0;
     $image = $featured ? wp_get_attachment_image_url($featured, 'large') : zh_img('ui/og.jpg');
-    echo '<meta name="theme-color" content="#0d0b09"><meta name="color-scheme" content="dark light">';
-    echo '<link rel="preload" href="' . esc_url(zh_asset('fonts/PlayfairDisplay-roman.woff2')) . '" as="font" type="font/woff2" crossorigin>';
-    echo '<link rel="preload" href="' . esc_url(zh_asset('fonts/GolosText.woff2')) . '" as="font" type="font/woff2" crossorigin>';
+    echo '<meta name="theme-color" content="#f3ece0"><meta name="color-scheme" content="light">';
+    echo '<link rel="preload" href="' . esc_url(zh_asset('fonts/Onest.woff2')) . '" as="font" type="font/woff2" crossorigin>';
+    if (is_front_page()) { echo '<link rel="preload" as="image" href="' . esc_url(zh_img('scenes/trio-960.webp')) . '" imagesrcset="' . esc_attr(zh_scene_srcset('trio')) . '" imagesizes="(min-width: 960px) 46vw, 92vw" fetchpriority="high">'; }
     echo '<meta name="description" content="' . esc_attr($description) . '">';
     echo '<link rel="icon" type="image/svg+xml" href="' . esc_url(zh_img('ui/favicon.svg')) . '">';
     echo '<link rel="apple-touch-icon" href="' . esc_url(zh_img('ui/apple-touch-icon.png')) . '">';
     echo '<meta property="og:site_name" content="ZHIBEK"><meta property="og:locale" content="ru_RU"><meta property="og:title" content="' . esc_attr($title) . '"><meta property="og:description" content="' . esc_attr($description) . '"><meta property="og:image" content="' . esc_url($image) . '"><meta property="og:type" content="' . (is_singular('post') ? 'article' : 'website') . '"><meta name="twitter:card" content="summary_large_image">';
-    // Первый кадр: тёмный фон без белой вспышки и плёнка шёлка, если пользователь пришёл по внутренней ссылке.
-    echo '<style id="zh-critical">html{background:#0d0b09;color-scheme:dark}html.zh-silk-wait::before{content:"";position:fixed;inset:0;z-index:2147483000;background:#0d0b09}</style>';
-    echo '<script>(function(d){var e=d.documentElement;e.classList.add("js");try{if(sessionStorage.getItem("zhSilk")==="1"||sessionStorage.getItem("zhSx")){e.classList.add("zh-silk-wait");setTimeout(function(){e.classList.remove("zh-silk-wait")},3500)}if(matchMedia("(prefers-reduced-motion: reduce)").matches||localStorage.getItem("zhMotion")==="off"){e.classList.add("reduce-motion")}}catch(x){}})(document)</script>';
+    // Фон до загрузки стилей и страховка: если скрипт не загрузится, блоки с появлением всё равно станут видимыми.
+    echo '<style id="zh-critical">html{background:#f3ece0}</style>';
+    echo '<script>(function(d,w){var e=d.documentElement;e.classList.add("js");w.__zhT=setTimeout(function(){e.classList.add("reveal-fail")},4500)})(document,window)</script>';
     if (is_front_page()) {
         $same = array_values(array_filter(array($s['instagram'] ?? '')));
         echo '<script type="application/ld+json">' . wp_json_encode(array(
@@ -69,46 +69,26 @@ add_action('admin_notices', function () {
 add_action('wp_enqueue_scripts', function () {
     $u = get_template_directory_uri();
     $d = get_template_directory();
-    $v = function ($rel) use ($d) { $f = $d . '/assets/' . $rel; return is_file($f) ? (string) filemtime($f) : '3.0.0'; };
-    $css = array('base');
-    if (is_front_page() || is_singular(array('zhibek_breed', 'zhibek_kitten')) || is_post_type_archive('zhibek_breed')) { $css[] = 'worlds'; }
-    if (is_front_page()) { $css[] = 'home'; }
-    $css[] = 'inner';
-    $wc_page = class_exists('WooCommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page());
-    if ($wc_page) { $css[] = 'shop'; }
+    $v = function ($rel) use ($d) { $f = $d . '/assets/' . $rel; return is_file($f) ? (string) filemtime($f) : '4.0.0'; };
+    $css = array('base', 'home', 'inner');
+    if (class_exists('WooCommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page())) { $css[] = 'shop'; }
+    $prev = array();
     foreach ($css as $name) {
-        wp_enqueue_style('zh-' . $name, $u . '/assets/css/' . $name . '.css', $name === 'base' ? array() : array('zh-base'), $v('css/' . $name . '.css'));
+        wp_enqueue_style('zh-' . $name, $u . '/assets/css/' . $name . '.css', $prev, $v('css/' . $name . '.css'));
+        $prev = array('zh-' . $name);
     }
-    // Служебные стили блоков WordPress нужны только внутренним страницам с контентом.
+    // Служебные стили блоков WordPress на страницах темы не нужны.
     if (is_front_page() || is_singular(array('zhibek_breed', 'zhibek_kitten')) || is_post_type_archive(array('zhibek_breed', 'zhibek_kitten'))) {
         wp_dequeue_style('wp-block-library'); wp_dequeue_style('classic-theme-styles'); wp_dequeue_style('global-styles');
     }
-    $js = $u . '/assets/js/';
-    $in_footer = array('in_footer' => true, 'strategy' => 'defer');
-    wp_enqueue_script('gsap', $js . 'vendor/gsap.min.js', array(), '3.15.0', $in_footer);
-    wp_enqueue_script('gsap-st', $js . 'vendor/ScrollTrigger.min.js', array('gsap'), '3.15.0', $in_footer);
-    wp_enqueue_script('gsap-flip', $js . 'vendor/Flip.min.js', array('gsap'), '3.15.0', $in_footer);
-    wp_enqueue_script('gsap-draw', $js . 'vendor/DrawSVGPlugin.min.js', array('gsap'), '3.15.0', $in_footer);
-    wp_enqueue_script('lenis', $js . 'vendor/lenis.min.js', array(), '1.3.26', $in_footer);
-    wp_enqueue_script('zh-gl', $js . 'gl.js', array(), $v('js/gl.js'), $in_footer);
-    wp_enqueue_script('zh-core', $js . 'core.js', array('gsap-st', 'gsap-flip', 'lenis', 'zh-gl'), $v('js/core.js'), $in_footer);
-    $last = 'zh-core';
-    if (is_front_page()) {
-        wp_enqueue_script('zh-home', $js . 'home.js', array('zh-core', 'gsap-draw'), $v('js/home.js'), $in_footer);
-        $last = 'zh-home';
-    }
-    wp_enqueue_script('zh-inner', $js . 'inner.js', array($last), $v('js/inner.js'), $in_footer);
+    wp_enqueue_script('zh-site', $u . '/assets/js/site.js', array(), $v('js/site.js'), array('in_footer' => true, 'strategy' => 'defer'));
     if (class_exists('WooCommerce')) {
         wp_enqueue_script('wc-cart-fragments');
         if (is_front_page()) { wp_enqueue_script('wc-add-to-cart'); }
     }
-    $s = zh_settings();
-    wp_localize_script('zh-core', 'ZHIBEK', array(
-        'ajaxUrl' => admin_url('admin-ajax.php'), 'nonce' => wp_create_nonce('zh_enquiry'),
-        'assetUrl' => $u . '/assets/', 'home' => home_url('/'), 'isHome' => is_front_page(),
-        'whatsapp' => $s['whatsapp'] ? 'https://wa.me/' . $s['whatsapp'] : '', 'telegram' => $s['telegram'] ? 'https://t.me/' . $s['telegram'] : '',
-        'cartUrl' => function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url('/cart/'),
-    ));
+    $contacts = zh_contacts();
+    $fallback = isset($contacts['whatsapp']) ? $contacts['whatsapp'][1] : (isset($contacts['telegram']) ? $contacts['telegram'][1] : (isset($contacts['email']) ? $contacts['email'][1] : (isset($contacts['phone']) ? $contacts['phone'][1] : home_url('/'))));
+    wp_localize_script('zh-site', 'ZHIBEK', array('ajaxUrl' => admin_url('admin-ajax.php'), 'nonce' => wp_create_nonce('zh_enquiry'), 'contact' => $fallback));
 });
 
 /* ---------------------------------------------------------------- запросы */
@@ -130,6 +110,11 @@ add_action('pre_get_posts', function ($query) {
     }
 });
 
+// Неразрывные пробелы в тексте записей и страниц (только на сайте, не в админке и не в REST).
+add_filter('the_content', function ($html) {
+    return (is_admin() || (defined('REST_REQUEST') && REST_REQUEST)) ? $html : zh_nbsp_html($html);
+}, 30);
+
 add_filter('body_class', function ($classes) {
     $classes[] = 'zh';
     return $classes;
@@ -139,10 +124,10 @@ add_filter('body_class', function ($classes) {
 
 function zh_default_navigation($args = array()) {
     $id = is_array($args) ? ($args['menu_id'] ?? 'primary-menu') : ($args->menu_id ?? 'primary-menu');
-    $links = array(array(home_url('/breeds/'), 'Породы'), array(home_url('/kittens/'), 'Котята'), array(home_url('/#process'), 'Питомник'), array(home_url('/#journal'), 'Журнал'));
+    $links = array(array(home_url('/breeds/'), 'Породы'), array(home_url('/kittens/'), 'Котята'), array(home_url('/#process'), 'Как забрать котёнка'), array(home_url('/#faq'), 'Вопросы'), array(home_url('/#journal'), 'Журнал'));
     if (class_exists('WooCommerce')) { $links[] = array(zh_wc_url('shop'), 'Магазин'); }
     echo '<ul class="nav-items" id="' . esc_attr($id) . '">';
-    foreach ($links as $l) { echo '<li><a href="' . esc_url($l[0]) . '"><span>' . esc_html($l[1]) . '</span></a></li>'; }
+    foreach ($links as $i => $l) { echo '<li style="--i:' . (int) $i . '"><a href="' . esc_url($l[0]) . '">' . esc_html($l[1]) . '</a></li>'; }
     echo '</ul>';
 }
 
@@ -185,10 +170,10 @@ remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrap
 remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
 add_filter('woocommerce_show_page_title', '__return_false');
 add_action('woocommerce_before_main_content', function () {
-    echo '<main id="main" class="shop-main" data-header="light">';
+    echo '<main id="main" class="shop-main">';
     if (!is_product()) {
         $title = is_shop() ? 'Магазин' : woocommerce_page_title(false);
-        echo '<header class="page-hero page-hero-light"><div class="wrap"><span class="eyebrow">ZHIBEK · Для дома</span><h1 class="display-m">' . esc_html($title) . '</h1>' . (is_shop() ? '<p class="lead">Вещи для кошки и дома: проверенные материалы, простые формы.</p>' : '') . '</div></header>';
+        echo '<header class="page-head"><div class="wrap"><span class="eyebrow">Для дома</span><h1 class="h1">' . esc_html($title) . '</h1>' . (is_shop() ? '<p class="lead">Вещи для кошки и дома.</p>' : '') . '</div></header>';
     }
     echo '<div class="wrap shop-wrap">';
 }, 10);

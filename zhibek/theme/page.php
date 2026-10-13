@@ -1,10 +1,10 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 get_header(); ?>
-<main id="main" class="inner">
+<main id="main">
   <?php while (have_posts()) : the_post(); ?>
-    <header class="page-hero page-hero-compact" data-header="dark"><div class="wrap"><span class="eyebrow">ZHIBEK</span><h1 class="display-l"><?php the_title(); ?></h1></div></header>
-    <section class="prose-wrap" data-header="light"><div class="wrap"><div class="prose"><?php the_content(); ?></div></div></section>
+    <header class="page-head page-head--narrow"><div class="wrap"><h1 class="h1"><?php the_title(); ?></h1></div></header>
+    <div class="wrap prose-wrap"><div class="prose"><?php the_content(); ?></div></div>
   <?php endwhile; ?>
 </main>
 <?php get_footer(); ?>

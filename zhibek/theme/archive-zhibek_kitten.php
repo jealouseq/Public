@@ -5,19 +5,19 @@ $breeds = zh_breeds();
 $kittens = zh_kittens();
 $c = zh_content();
 ?>
-<main id="main" class="inner">
-  <header class="page-hero page-hero-compact" data-header="dark">
+<main id="main">
+  <header class="page-head">
     <div class="wrap">
-      <span class="eyebrow">ZHIBEK · Котята</span>
-      <h1 class="display-l">Сейчас <em>в питомнике</em></h1>
-      <p class="lead">Нажмите на котёнка, чтобы увидеть паспорт, родителей и написать нам. Заявка ничего не фиксирует и не требует оплаты.</p>
+      <span class="eyebrow">Питомник</span>
+      <h1 class="h1">Котята</h1>
+      <p class="lead"><?php echo zh_t($c['kittens']['lead']); ?> Заявка ничего не фиксирует и не требует оплаты.</p>
     </div>
   </header>
-  <section class="collection collection-inner" data-header="light">
+  <section class="inner-sec">
     <div class="wrap">
-      <?php zh_kitten_filters($breeds, $kittens); ?>
+      <?php if ($kittens) { zh_kitten_filters($breeds, $kittens); } ?>
       <div class="kgrid" data-kgrid><?php zh_render_kitten_cards($kittens); ?></div>
-      <p class="kempty" <?php echo $kittens ? 'hidden' : ''; ?>><?php echo esc_html($c['collection']['empty']); ?> <button class="link-btn" type="button" data-enquire="Ближайшие помёты">Написать нам</button></p>
+      <p class="k-empty" data-filter-empty <?php echo $kittens ? 'hidden' : ''; ?>><?php echo zh_t($c['kittens']['empty']); ?> <button class="link-btn" type="button" data-enquire="Ближайшие помёты">Написать нам</button></p>
     </div>
   </section>
 </main>

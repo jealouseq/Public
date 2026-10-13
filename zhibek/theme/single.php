@@ -1,20 +1,21 @@
 <?php
 if (!defined('ABSPATH')) { exit; }
 get_header(); ?>
-<main id="main" class="inner">
+<main id="main">
   <?php while (have_posts()) : the_post(); ?>
-    <header class="page-hero page-hero-compact article-hero" data-header="dark">
+    <header class="page-head page-head--narrow">
       <div class="wrap">
         <a class="back" href="<?php echo esc_url(home_url('/#journal')); ?>"><?php echo zh_arrow('arr-back'); ?><span>Журнал</span></a>
-        <h1 class="display-l"><?php the_title(); ?></h1>
-        <p class="article-meta"><?php echo esc_html(zh_date_ru(get_the_date('Y-m-d'))); ?> · <?php echo esc_html(max(1, (int) ceil(str_word_count(wp_strip_all_tags(get_the_content()), 0, 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя') / 180))); ?> мин чтения</p>
+        <h1 class="h1"><?php the_title(); ?></h1>
+        <p class="article-meta"><span><?php echo esc_html(zh_date_ru(get_the_date('Y-m-d'))); ?></span><span><?php echo esc_html(max(1, (int) ceil(str_word_count(wp_strip_all_tags(get_the_content()), 0, 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя') / 180))); ?> мин чтения</span></p>
       </div>
     </header>
-    <article class="prose-wrap" data-header="light"><div class="wrap"><div class="prose prose-article"><?php the_content(); ?></div></div></article>
+    <article class="wrap prose-wrap"><div class="prose"><?php the_content(); ?></div></article>
     <?php $more = get_posts(array('post_type' => 'post', 'posts_per_page' => 2, 'post__not_in' => array(get_the_ID()), 'category_name' => 'journal')); if ($more) : ?>
-    <section class="journal journal-more" data-header="light"><div class="wrap"><div class="sec-head"><div><span class="eyebrow">Ещё в журнале</span></div></div>
-      <div class="journal-grid journal-grid-2"><?php foreach ($more as $i => $a) : ?>
-        <a class="jcard" href="<?php echo esc_url(get_permalink($a)); ?>" data-cursor="Читать"><span class="jcard-n"><?php echo esc_html(sprintf('%02d', $i + 1)); ?></span><h3><?php echo esc_html($a->post_title); ?></h3><p><?php echo esc_html(wp_trim_words(get_the_excerpt($a), 20)); ?></p><span class="link-arrow"><span>Читать</span><?php echo zh_arrow(); ?></span></a>
+    <section class="inner-sec"><div class="wrap">
+      <div class="sec-head"><div><span class="eyebrow">Журнал</span><h2 class="h2">Читайте дальше</h2></div></div>
+      <div class="posts"><?php foreach ($more as $a) : ?>
+        <a class="post-card" href="<?php echo esc_url(get_permalink($a)); ?>"><div><span class="meta"><?php echo esc_html(zh_date_ru(get_the_date('Y-m-d', $a))); ?></span><h3><?php echo zh_t($a->post_title); ?></h3><p><?php echo zh_t(wp_trim_words(get_the_excerpt($a), 20)); ?></p></div><span class="go">Читать<?php echo zh_arrow(); ?></span></a>
       <?php endforeach; ?></div></div></section>
     <?php endif; ?>
   <?php endwhile; ?>
