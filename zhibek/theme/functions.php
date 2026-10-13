@@ -68,9 +68,9 @@ add_action('admin_notices', function () {
 add_action('wp_enqueue_scripts', function () {
     $u = get_template_directory_uri();
     $d = get_template_directory();
-    $v = function ($rel) use ($d) { $f = $d . '/assets/' . $rel; return is_file($f) ? (string) filemtime($f) : '5.0.0'; };
+    $v = function ($rel) use ($d) { $f = $d . '/assets/' . $rel; return is_file($f) ? (string) filemtime($f) : '5.1.0'; };
     $css = array('base', 'home', 'inner');
-    if (class_exists('WooCommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page())) { $css[] = 'shop'; }
+    if (class_exists('WooCommerce') && zh_is_shop_page()) { $css[] = 'shop'; }
     $prev = array();
     foreach ($css as $name) {
         wp_enqueue_style('zh-' . $name, $u . '/assets/css/' . $name . '.css', $prev, $v('css/' . $name . '.css'));
@@ -81,10 +81,7 @@ add_action('wp_enqueue_scripts', function () {
         wp_dequeue_style('wp-block-library'); wp_dequeue_style('classic-theme-styles'); wp_dequeue_style('global-styles');
     }
     wp_enqueue_script('zh-site', $u . '/assets/js/site.js', array(), $v('js/site.js'), array('in_footer' => true, 'strategy' => 'defer'));
-    if (class_exists('WooCommerce')) {
-        wp_enqueue_script('wc-cart-fragments');
-        if (is_front_page()) { wp_enqueue_script('wc-add-to-cart'); }
-    }
+    if (class_exists('WooCommerce')) { wp_enqueue_script('wc-cart-fragments'); }
     $contacts = zh_contacts();
     $fallback = isset($contacts['whatsapp']) ? $contacts['whatsapp'][1] : (isset($contacts['telegram']) ? $contacts['telegram'][1] : (isset($contacts['email']) ? $contacts['email'][1] : (isset($contacts['phone']) ? $contacts['phone'][1] : home_url('/'))));
     wp_localize_script('zh-site', 'ZHIBEK', array('ajaxUrl' => admin_url('admin-ajax.php'), 'nonce' => wp_create_nonce('zh_enquiry'), 'contact' => $fallback));
@@ -114,6 +111,8 @@ add_filter('the_content', function ($html) {
     return (is_admin() || (defined('REST_REQUEST') && REST_REQUEST)) ? $html : zh_nbsp_html($html);
 }, 30);
 
+add_filter('get_the_archive_title_prefix', '__return_empty_string');
+
 add_filter('body_class', function ($classes) {
     $classes[] = 'zh';
     return $classes;
@@ -136,12 +135,40 @@ function zh_navigation($id) {
 
 /* ------------------------------------------------------------- WooCommerce */
 
+/**
+ * Скрипты и стили WooCommerce нужны на страницах магазина и у тех, у кого в корзине уже что-то лежит (число на значке корзины).
+ * Остальным посетителям главная и страницы пород отдаются без jQuery и без CSS магазина: быстрее открываются на телефоне.
+ */
+function zh_is_shop_page() { return function_exists('is_woocommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page()); }
+add_action('wp_enqueue_scripts', function () {
+    if (!class_exists('WooCommerce') || zh_is_shop_page() || !empty($_COOKIE['woocommerce_items_in_cart'])) { return; }
+    foreach (array('wc-add-to-cart', 'wc-cart-fragments', 'woocommerce', 'jquery-blockui', 'js-cookie') as $handle) { wp_dequeue_script($handle); }
+}, 100);
+add_action('wp_enqueue_scripts', function () {
+    if (!class_exists('WooCommerce') || zh_is_shop_page()) { return; }
+    foreach (array('wc-blocks-style', 'wc-blocks-vendors-style', 'wc-all-blocks-style', 'brands-styles', 'woocommerce-brands-style', 'woocommerce-inline') as $handle) { wp_dequeue_style($handle); }
+}, 9999);
+// Стили блоков WooCommerce иногда подключаются в подвале: снимаем их и там.
+add_action('wp_print_footer_scripts', function () {
+    if (!class_exists('WooCommerce') || zh_is_shop_page()) { return; }
+    foreach (array('wc-blocks-style', 'wc-blocks-vendors-style', 'brands-styles') as $handle) { wp_dequeue_style($handle); }
+}, 5);
+add_filter('woocommerce_enqueue_styles', function ($styles) { return zh_is_shop_page() ? $styles : array(); });
+
 add_filter('woocommerce_add_to_cart_fragments', function ($fragments) {
     $n = WC()->cart ? (int) WC()->cart->get_cart_contents_count() : 0;
     $fragments['span.cart-count'] = '<span class="cart-count" data-n="' . $n . '">' . $n . '</span>';
     return $fragments;
 });
 add_filter('woocommerce_currency_symbol', function ($symbol, $currency) { return $currency === 'KZT' ? '₸' : $symbol; }, 10, 2);
+// Цены в виде «19 900 ₸»: без копеек, с неразрывными пробелами, знак валюты после суммы.
+add_filter('wc_get_price_decimals', function () { return 0; });
+add_filter('wc_get_price_thousand_separator', function () { return "\u{00A0}"; });
+add_filter('woocommerce_price_format', function () { return '%2$s&nbsp;%1$s'; });
+add_filter('pre_option_woocommerce_currency_pos', function () { return 'right_space'; });
+// Размеры картинок товаров под крупные карточки темы (применяются к новым загрузкам).
+add_filter('woocommerce_get_image_size_thumbnail', function () { return array('width' => 640, 'height' => 853, 'crop' => 1); });
+add_filter('woocommerce_get_image_size_single', function () { return array('width' => 960, 'height' => 0, 'crop' => 0); });
 add_filter('woocommerce_breadcrumb_defaults', function ($d) { $d['home'] = 'Главная'; $d['delimiter'] = ' / '; return $d; });
 
 /** Картинка товара: загруженная в WooCommerce или файл-заглушка из темы. */

@@ -13,7 +13,21 @@ function zh_settings() {
 
 function zh_is_demo() { return function_exists('zhibek_is_demo') ? zhibek_is_demo() : true; }
 function zh_breeds() { return function_exists('zhibek_get_breeds') ? zhibek_get_breeds() : array(); }
-function zh_cats($args = array()) { return function_exists('zhibek_get_cats') ? zhibek_get_cats($args) : array(); }
+/** Порядок в каталоге: сначала свободные, затем ожидаются, в резерве, производители и дома; внутри группы — новые выше. */
+function zh_sort_cats($cats) {
+    $weight = array('available' => 0, 'expected' => 1, 'reserved' => 2, 'breeder' => 3, 'home' => 4);
+    $rows = array(); $i = 0;
+    foreach ($cats as $cat) { $rows[] = array($cat, $weight[get_post_meta($cat->ID, '_zhibek_status', true)] ?? 0, $i++); }
+    usort($rows, function ($a, $b) { return $a[1] <=> $b[1] ?: $a[2] <=> $b[2]; });
+    return array_map(function ($r) { return $r[0]; }, $rows);
+}
+function zh_cats($args = array()) {
+    if (!function_exists('zhibek_get_cats')) { return array(); }
+    $limit = isset($args['numberposts']) ? (int) $args['numberposts'] : -1;
+    $args['numberposts'] = -1;
+    $cats = zh_sort_cats(zhibek_get_cats($args));
+    return $limit > 0 ? array_slice($cats, 0, $limit) : $cats;
+}
 
 function zh_wc_url($page) {
     return function_exists('wc_get_page_permalink') ? wc_get_page_permalink($page) : home_url('/' . ($page === 'myaccount' ? 'my-account' : $page) . '/');
@@ -210,6 +224,12 @@ function zh_media($post, $size = 'large') {
         $size_info = @getimagesize(get_template_directory() . '/assets/img/pets/' . $file);
         $sm = preg_replace('/\.webp$/', '-sm.webp', $file);
         return array('url' => zh_img('pets/' . $file), 'small' => zh_has_img('pets/' . $sm) ? zh_img('pets/' . $sm) : zh_img('pets/' . $file), 'w' => $size_info ? $size_info[0] : 0, 'h' => $size_info ? $size_info[1] : 0, 'type' => 'cutout', 'id' => 0);
+    }
+    // В демо-режиме у базовых пород картинка находится по слагу, даже если в записи остался старый путь к файлу.
+    if ($post->post_type === 'zhibek_breed' && zh_is_demo() && zh_has_img('pets/' . $post->post_name . '-sit.webp')) {
+        $file = $post->post_name . '-sit.webp';
+        $size_info = @getimagesize(get_template_directory() . '/assets/img/pets/' . $file);
+        return array('url' => zh_img('pets/' . $file), 'small' => zh_has_img('pets/' . $post->post_name . '-sit-sm.webp') ? zh_img('pets/' . $post->post_name . '-sit-sm.webp') : zh_img('pets/' . $file), 'w' => $size_info ? $size_info[0] : 0, 'h' => $size_info ? $size_info[1] : 0, 'type' => 'cutout', 'id' => 0);
     }
     return array('url' => '', 'small' => '', 'w' => 0, 'h' => 0, 'type' => 'none', 'id' => 0);
 }
@@ -424,13 +444,16 @@ function zh_empty_cats($title_html, $text, $topic = 'Ближайшие помё
  */
 function zh_scene($variant, $color, $title_html, $lead, $actions_html) {
     $cfg = array(
-        'bottom' => array('dir' => 'bengal-bottom', 'n' => 72, 'poster' => 60, 'alt' => 'Бенгальский кот выглядывает снизу'),
-        'right' => array('dir' => 'bengal-right', 'n' => 56, 'poster' => 30, 'alt' => 'Бенгальский кот выглядывает сбоку'),
+        'bottom' => array('dir' => 'bengal-bottom', 'alt' => 'Бенгальский кот выглядывает снизу'),
+        'right' => array('dir' => 'bengal-right', 'alt' => 'Бенгальский кот выглядывает сбоку'),
     );
     if (!isset($cfg[$variant])) { return ''; }
     $c = $cfg[$variant];
-    $poster = sprintf('anim/%s/frame_%04d.webp', $c['dir'], $c['poster']);
-    if (!is_file(get_template_directory() . '/assets/' . $poster)) { return ''; }
+    // Число кадров считаем по файлам; постер — последний кадр (поза, в которой кот остаётся в конце прокрутки).
+    $frames = glob(get_template_directory() . '/assets/anim/' . $c['dir'] . '/frame_*.webp');
+    if (!$frames) { return ''; }
+    $c['n'] = count($frames);
+    $poster = 'anim/' . $c['dir'] . '/' . basename(end($frames));
     ob_start(); ?>
     <section class="scene scene--<?php echo esc_attr($variant); ?>" data-scene data-frames="<?php echo (int) $c['n']; ?>" data-base="<?php echo esc_url(zh_asset('anim/' . $c['dir'] . '/')); ?>" style="--bg:<?php echo esc_attr($color); ?>">
         <div class="scene-sticky">
@@ -477,4 +500,36 @@ function zh_map_svg() {
 function zh_map_city_list() {
     $s = zh_settings();
     return array_values(array_filter(array_map('trim', preg_split('/[,\n]+/u', (string) $s['cities']))));
+}
+
+/* ----------------------------------------------------------------- журнал */
+
+function zh_journal_url() {
+    $cat = get_category_by_slug('journal');
+    if ($cat) { return get_category_link($cat); }
+    return get_option('page_for_posts') ? get_permalink(get_option('page_for_posts')) : home_url('/');
+}
+
+/** Время чтения в минутах (около 180 слов в минуту). */
+function zh_read_minutes($post = null) {
+    $post = get_post($post);
+    $text = wp_strip_all_tags((string) $post->post_content);
+    $words = preg_match_all('/[\p{L}\p{N}]+/u', $text);
+    return max(1, (int) ceil($words / 180));
+}
+
+/** Заголовок архива без служебных слов («Рубрика:», «Метка:») и без разметки. */
+function zh_archive_title() {
+    if (is_search()) { return 'Поиск'; }
+    if (is_category() || is_tag() || is_tax()) { return single_term_title('', false); }
+    if (is_author()) { return get_the_author(); }
+    $title = wp_strip_all_tags(get_the_archive_title());
+    return trim(preg_replace('/^[^:]+:\s*/u', '', $title));
+}
+
+/** Наклейка для статьи: одна и та же у одной записи, разные у разных. */
+function zh_post_sticker($post = null) {
+    $post = get_post($post);
+    $set = array('yarn', 'fish', 'paw', 'tail', 'whiskers', 'ears');
+    return $set[((int) $post->ID) % count($set)];
 }

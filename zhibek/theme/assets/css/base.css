@@ -251,3 +251,13 @@ html.menu-open .menu-nav li { opacity: 1; transform: none; transition-delay: cal
 
 @media (max-width: 899px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-brand { grid-column: 1 / -1; } }
 @media (max-width: 520px) { .footer-grid { grid-template-columns: 1fr; } }
+
+/* крупные зоны нажатия на телефоне */
+@media (pointer: coarse), (max-width: 699px) {
+  .brand { min-height: 44px; }
+  .footer-col { gap: 0; }
+  .footer-col a, .footer-col .link-btn { display: flex; align-items: center; min-height: 40px; }
+  .footer-col .label { margin-bottom: 6px; }
+  .footer-bottom a { display: inline-flex; align-items: center; min-height: 40px; }
+  .back { min-height: 40px; }
+}

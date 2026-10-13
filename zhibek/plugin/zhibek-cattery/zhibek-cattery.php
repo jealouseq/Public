@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ZHIBEK Cattery
  * Description: Породы, коты, заявки и демо-контент для сайта питомника ZHIBEK. WooCommerce используется только для товаров магазина.
- * Version: 4.0.0
+ * Version: 4.1.0
  * Requires at least: 6.5
  * Requires PHP: 8.0
  * Author: ZHIBEK
@@ -107,6 +107,45 @@ function zhibek_migrate() {
     update_option('zhibek_flush_rewrite', 1);
 }
 add_action('init', 'zhibek_migrate', 5);
+
+/**
+ * Версия 5: демо-котята прежних версий больше не нужны (котов добавляет владелец), а картинки пород переехали в theme/assets/img/pets.
+ * Трогаем только записи с пометкой «демо», которые создал сам плагин, и только один раз.
+ */
+function zhibek_migrate_demo() {
+    if (get_option('zhibek_cleanup_5')) { return; }
+    foreach (array('abyssinian', 'bengal', 'siamese') as $slug) {
+        $old_id = zhibek_seed_find('kitten-' . $slug, 'zhibek_cat');
+        if ($old_id && get_post_meta($old_id, '_zhibek_demo', true)) { wp_delete_post($old_id, true); }
+        $breed_id = zhibek_seed_find('breed-' . $slug, 'zhibek_breed');
+        if ($breed_id && in_array(get_post_meta($breed_id, '_zhibek_image', true), array($slug . '.webp', 'k-' . $slug . '.webp', ''), true)) {
+            update_post_meta($breed_id, '_zhibek_image', $slug . '-sit.webp');
+        }
+        $legacy = array('abyssinian' => array('#b9c7b0', '#2c4a3b'), 'bengal' => array('#e0c088', '#6a2230'), 'siamese' => array('#a9bdd4', '#2a46a0'));
+        if ($breed_id && strtolower((string) get_post_meta($breed_id, '_zhibek_accent', true)) === $legacy[$slug][0]) {
+            update_post_meta($breed_id, '_zhibek_accent', $legacy[$slug][1]);
+        }
+    }
+    zhibek_russian_shop_titles();
+    update_option('zhibek_cleanup_5', 1);
+}
+add_action('init', 'zhibek_migrate_demo', 20);
+
+/** Страницы магазина, созданные WooCommerce на другом языке (например, «Мій обліковий запис»), получают русские названия. Правки владельца не трогаем. */
+function zhibek_russian_shop_titles() {
+    if (!function_exists('wc_get_page_id')) { return; }
+    $titles = array(
+        'shop' => array('Магазин', array('Крамниця', 'Shop')),
+        'cart' => array('Корзина', array('Кошик', 'Cart')),
+        'checkout' => array('Оформление заказа', array('Оформлення замовлення', 'Checkout')),
+        'myaccount' => array('Личный кабинет', array('Мій обліковий запис', 'My account', 'Мой аккаунт')),
+    );
+    foreach ($titles as $page => $t) {
+        $id = wc_get_page_id($page);
+        $post = $id > 0 ? get_post($id) : null;
+        if ($post && in_array($post->post_title, $t[1], true)) { wp_update_post(array('ID' => $id, 'post_title' => $t[0])); }
+    }
+}
 
 function zhibek_maybe_flush_rewrite() {
     if (get_option('zhibek_flush_rewrite')) { flush_rewrite_rules(false); delete_option('zhibek_flush_rewrite'); }
@@ -801,6 +840,22 @@ function zhibek_setup_woocommerce() {
     return true;
 }
 
+/** Копирует картинку из темы в медиатеку и делает её миниатюрой записи. Возвращает ID вложения или 0. */
+function zhibek_attach_theme_image($post_id, $relative) {
+    $path = get_template_directory() . '/assets/img/' . $relative;
+    if (!is_file($path)) { return 0; }
+    require_once ABSPATH . 'wp-admin/includes/file.php';
+    require_once ABSPATH . 'wp-admin/includes/media.php';
+    require_once ABSPATH . 'wp-admin/includes/image.php';
+    $tmp = wp_tempnam($path);
+    if (!$tmp || !copy($path, $tmp)) { return 0; }
+    $id = media_handle_sideload(array('name' => basename($path), 'tmp_name' => $tmp), $post_id);
+    if (is_wp_error($id)) { @unlink($tmp); return 0; }
+    update_post_meta($id, '_zhibek_demo', '1');
+    set_post_thumbnail($post_id, $id);
+    return (int) $id;
+}
+
 function zhibek_seed_content() {
     add_option('zhibek_settings', zhibek_default_settings());
     $breeds = array(
@@ -873,7 +928,12 @@ function zhibek_seed_content() {
             'toy' => array('Игрушка-дразнилка с перьями', '4900', 'care', 'Уход', 'Деревянная ручка, шнур с шариком из сизаля и перьями.'),
         );
         foreach ($products as $slug => $item) {
-            if (zhibek_seed_find('product-' . $slug, 'product')) { continue; }
+            $existing_product = zhibek_seed_find('product-' . $slug, 'product');
+            if ($existing_product) {
+                // Картинка нужна в медиатеке: из неё берут фото корзина, оформление заказа и письма.
+                if (get_post_meta($existing_product, '_zhibek_demo', true) && !has_post_thumbnail($existing_product)) { zhibek_attach_theme_image($existing_product, 'products/product-' . $slug . '.webp'); }
+                continue;
+            }
             $category = term_exists($item[2], 'product_cat');
             if (!$category) { $category = wp_insert_term($item[3], 'product_cat', array('slug' => $item[2])); }
             if (is_wp_error($category)) { throw new RuntimeException($category->get_error_message()); }
@@ -888,6 +948,7 @@ function zhibek_seed_content() {
             $product->update_meta_data('_zhibek_demo', '1');
             $product->update_meta_data('_zhibek_image', 'product-' . $slug . '.webp');
             $product->save();
+            zhibek_attach_theme_image($product->get_id(), 'products/product-' . $slug . '.webp');
         }
     }
     flush_rewrite_rules();

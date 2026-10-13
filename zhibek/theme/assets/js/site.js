@@ -341,5 +341,24 @@
     window.addEventListener('resize', onScroll);
   });
 
+  // Содержание страницы и статьи: строится из заголовков h2.
+  $$('[data-toc]').forEach((toc) => {
+    const prose = $('.prose', toc.parentElement), list = $('.toc-list', toc);
+    const heads = prose ? $$('h2', prose) : [];
+    if (heads.length < 3 || !list) return;
+    heads.forEach((h, i) => {
+      if (!h.id) h.id = 'part-' + (i + 1);
+      const li = document.createElement('li'), a = document.createElement('a');
+      a.href = '#' + h.id; a.textContent = h.textContent; li.appendChild(a); list.appendChild(li);
+    });
+    toc.hidden = false;
+    if (!('IntersectionObserver' in window)) return;
+    const links = $$('a', list);
+    const io = new IntersectionObserver((en) => {
+      en.forEach((e) => { if (e.isIntersecting) links.forEach((l) => l.classList.toggle('is-active', l.getAttribute('href') === '#' + e.target.id)); });
+    }, { rootMargin: '-15% 0px -75% 0px' });
+    heads.forEach((h) => io.observe(h));
+  });
+
   doc.classList.add('is-ready');
 })();

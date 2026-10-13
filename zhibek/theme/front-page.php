@@ -118,7 +118,7 @@ $em = array('em' => array());
             <li class="step" data-reveal>
               <span class="step-n"><?php echo esc_html(sprintf('%02d', $i + 1)); ?></span>
               <div class="step-body"><h3><?php echo esc_html($st[0]); ?></h3><p><?php echo zh_t($st[1]); ?></p></div>
-              <?php echo zh_sticker($st[2], 'step-sticker'); ?>
+              <span class="step-art" aria-hidden="true"><?php echo zh_sticker($st[2], 'step-sticker'); ?></span>
             </li>
           <?php endforeach; ?>
         </ol>

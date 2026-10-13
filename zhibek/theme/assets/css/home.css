@@ -5,6 +5,7 @@
 .sec-head { display: grid; grid-template-columns: minmax(0, 1fr); align-items: end; gap: 18px var(--col-gap); margin-bottom: clamp(32px, 5vw, 64px); }
 .sec-head .lead { max-width: 30em; margin: 0; color: var(--muted); }
 .sec-head > :nth-child(2) { justify-self: start; }
+.sec-head > .link-arrow { justify-self: end; }
 .sec-head--center { justify-items: center; text-align: center; }
 @media (min-width: 960px) { .sec-head { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); } .sec-head--center { grid-template-columns: 1fr; } }
 
@@ -114,23 +115,37 @@
 .thread-line { position: absolute; top: 0; bottom: 0; left: 26px; width: 4px; border-radius: 4px; background: var(--line); overflow: hidden; }
 .thread-line span { display: block; width: 100%; height: 100%; background: var(--clay); transform-origin: top; transform: scaleY(var(--p)); }
 .thread-yarn { position: absolute; z-index: 3; left: 28px; top: calc(var(--p) * 100%); width: 58px; height: auto; transform: translate(-50%, -50%) rotate(calc(var(--p) * 1080deg)); filter: drop-shadow(0 6px 8px rgba(0, 0, 0, .25)); }
-.steps { list-style: none; display: grid; gap: 52px; }
-.step { position: relative; display: grid; grid-template-columns: 1fr; gap: 4px; padding-left: 78px; }
+.steps { list-style: none; display: grid; gap: 40px; }
+.step { position: relative; display: grid; grid-template-columns: 1fr; gap: 4px; min-height: 124px; padding-left: 78px; --c: #2c4a3b; }
+.step:nth-child(3n + 2) { --c: #6a2230; }
+.step:nth-child(3n) { --c: #2a46a0; }
+.step::before { content: ''; position: absolute; z-index: 2; top: 10px; left: 18px; width: 20px; height: 20px; border: 3px solid var(--line); border-radius: 50%; background: var(--paper); transition: border-color .5s, background-color .5s, transform .5s var(--ease); }
+.step.is-passed::before { border-color: var(--clay); background: var(--clay); transform: scale(1.15); }
 .step-n { font-family: var(--f-display); font-style: italic; font-weight: 800; font-size: clamp(2.6rem, 6vw, 5rem); line-height: .9; color: #85755f; transition: color .5s; }
 .step.is-passed .step-n { color: var(--clay); }
 .step h3 { font-weight: 800; font-size: clamp(1.75rem, 3vw, 2.5rem); }
 .step p { max-width: 34em; margin: 10px 0 0; color: var(--ink-2); }
-.step-sticker { display: none; }
+/* наклейка в арке цвета породы: кот выглядывает за верхний край, как в карточках каталога */
+.step-art { position: absolute; top: 0; right: 0; width: 84px; aspect-ratio: 4 / 5; border-radius: 999px 999px 18px 18px; background: var(--c); }
+.step-sticker { position: absolute; left: 50%; bottom: -4%; width: 128%; max-width: none; height: auto; transform: translateX(-50%) rotate(var(--r, 6deg)); filter: drop-shadow(0 10px 12px rgba(0, 0, 0, .3)); transition: transform .8s var(--ease); }
+.step:nth-child(even) { --r: -7deg; }
+.js .step .step-art { opacity: 0; transform: translateY(22px) scale(.92); transition: opacity .8s var(--ease) .15s, transform .8s var(--ease) .15s; }
+.js .step.is-in .step-art { opacity: 1; transform: none; }
+.reveal-fail .step .step-art { opacity: 1 !important; transform: none !important; }
+.step:hover .step-sticker { transform: translateX(-50%) rotate(calc(var(--r, 6deg) * -.6)) scale(1.05); }
+@media (max-width: 899px) { .step-n, .step h3 { padding-right: 100px; } .step p { margin-top: 32px; } .step-art { top: 2px; width: 74px; } }
 @media (min-width: 900px) {
   .thread-line { left: 50%; margin-left: -2px; } .thread-yarn { left: 50%; }
-  .steps { gap: 28px; }
-  .step { padding-left: 0; width: calc(50% - 64px); text-align: right; }
+  .steps { gap: clamp(20px, 3vw, 44px); }
+  .step { min-height: clamp(210px, 19vw, 270px); align-content: center; padding-left: 0; width: calc(50% - 64px); text-align: right; }
   .step p { margin-left: auto; }
   .step:nth-child(even) { margin-left: calc(50% + 64px); text-align: left; }
   .step:nth-child(even) p { margin-left: 0; }
-  .step-sticker { display: block; position: absolute; top: 4px; width: clamp(90px, 9vw, 130px); height: auto; filter: drop-shadow(0 8px 10px rgba(0, 0, 0, .22)); }
-  .step:nth-child(odd) .step-sticker { left: calc(100% + 128px); transform: rotate(8deg); }
-  .step:nth-child(even) .step-sticker { right: calc(100% + 128px); transform: rotate(-9deg); }
+  .step::before { top: calc(50% - 10px); left: calc(100% + 64px - 10px); }
+  .step:nth-child(even)::before { left: -74px; }
+  .step-art { top: 50%; right: auto; width: clamp(150px, 15vw, 220px); margin-top: calc(clamp(150px, 15vw, 220px) * -.625); }
+  .step:nth-child(odd) .step-art { left: calc(100% + 64px + clamp(32px, 4vw, 64px)); }
+  .step:nth-child(even) .step-art { right: calc(100% + 64px + clamp(32px, 4vw, 64px)); }
 }
 
 /* ------------------------------------------------------------ доставка */
@@ -178,7 +193,7 @@
 .jrow:hover .jrow-d { color: var(--on-dark-2); }
 .jrow-go .arr { width: 28px; height: 28px; transition: transform .4s var(--ease); }
 .jrow:hover .jrow-go .arr { transform: rotate(45deg); }
-@media (max-width: 699px) { .jrow { grid-template-columns: 2.4rem minmax(0, 1fr) 2rem; } .jrow-d { grid-column: 2; grid-row: 2; } .jrow-go { grid-column: 3; grid-row: 1; } .jrow:hover { padding-inline: 12px; } }
+@media (max-width: 699px) { .jrow { grid-template-columns: 1.8rem minmax(0, 1fr) 1.6rem; gap: 8px 14px; padding: 24px 0; } .jrow-t { font-size: 1.3rem; } .jrow-d { grid-column: 2; grid-row: 2; } .jrow-go { grid-column: 3; grid-row: 1; } .jrow:hover { padding-inline: 12px; } }
 
 /* ------------------------------------------------------------ финал с частицами */
 .finale { margin: var(--sec) var(--pad) var(--pad); border-radius: var(--r-xl); background: var(--ink); color: var(--on-dark); overflow: hidden; }
@@ -209,7 +224,7 @@
 }
 
 /* ------------------------------------------------------------ сцены: кот, привязанный к прокрутке */
-.scene { position: relative; height: 240vh; margin: 0 var(--pad); }
+.scene { position: relative; height: 240vh; margin: 0 var(--pad) clamp(56px, 8vw, 112px); }
 .scene--right { height: 200vh; }
 .scene-sticky { position: sticky; top: calc(var(--header-h) + var(--wp-bar) + 8px); display: grid; height: calc(100vh - var(--header-h) - var(--wp-bar) - 16px); height: calc(100svh - var(--header-h) - var(--wp-bar) - 16px); min-height: 420px; overflow: hidden; border-radius: var(--r-xl); background: var(--bg); color: var(--on-dark); isolation: isolate; --p: 0; }
 .scene-sticky::before { content: ''; position: absolute; z-index: -1; left: 50%; bottom: -45%; width: 90%; aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(255, 255, 255, .2), transparent); }

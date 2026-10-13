@@ -17,8 +17,10 @@ while (have_posts()) : the_post();
   if ($k['birth']) { $specs[] = array('Родился', zh_date_ru($k['birth'])); }
   if ($k['price']) { $specs[] = array('Цена', $k['price']); }
   $wa = isset($contacts['whatsapp']) ? preg_replace('/\?text=.*/', '', $contacts['whatsapp'][1]) . '?text=' . rawurlencode('Здравствуйте! Интересует ' . $k['title'] . ($k['breed_name'] ? ' (' . zh_lower($k['breed_name']) . ')' : '') . '.') : '';
-  $others = array_slice(array_filter(zh_cats(array('numberposts' => 8)), function ($p) use ($post, $k) { return $p->ID !== $post->ID; }), 0, 4);
-  usort($others, function ($a, $b) use ($k) { $sa = (int) get_post_meta($a->ID, '_zhibek_breed', true) === ($k['breed'] ? $k['breed']->ID : 0) ? 0 : 1; $sb = (int) get_post_meta($b->ID, '_zhibek_breed', true) === ($k['breed'] ? $k['breed']->ID : 0) ? 0 : 1; return $sa <=> $sb; });
+  // Другие коты: сначала той же породы, затем остальные.
+  $breed_id = $k['breed'] ? $k['breed']->ID : 0;
+  $others = array_values(array_filter(zh_cats(), function ($p) use ($post) { return $p->ID !== $post->ID; }));
+  usort($others, function ($a, $b) use ($breed_id) { return ((int) get_post_meta($a->ID, '_zhibek_breed', true) === $breed_id ? 0 : 1) <=> ((int) get_post_meta($b->ID, '_zhibek_breed', true) === $breed_id ? 0 : 1); });
   $others = array_slice($others, 0, 3);
 ?>
 <main id="main">
