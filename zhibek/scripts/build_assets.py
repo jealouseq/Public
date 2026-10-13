@@ -1,4 +1,4 @@
-"""Build the theme's image assets from the cleaned cutouts and the studio frames.
+"""Сборка WebP-ассетов темы из вырезок и студийных кадров.
 
 Inputs (not in the repo, see docs/assets.md): cleaned RGBA cutouts and the original studio frames.
 Usage: python3 build_assets.py <clean_dir> <studio_dir> <theme_assets_dir>

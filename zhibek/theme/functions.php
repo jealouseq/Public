@@ -40,10 +40,11 @@ add_action('wp_head', function () {
     $featured = is_singular() && !post_password_required() ? zh_public_thumbnail_id(get_post()) : 0;
     $image = $featured ? wp_get_attachment_image_url($featured, 'large') : zh_img('ui/og.jpg');
     echo '<meta name="theme-color" content="#0d0b09"><meta name="color-scheme" content="dark light">';
-    echo '<link rel="preload" href="' . esc_url(zh_asset('fonts/NotoSerifDisplay-roman.woff2')) . '" as="font" type="font/woff2" crossorigin>';
-    echo '<link rel="preload" href="' . esc_url(zh_asset('fonts/Manrope.woff2')) . '" as="font" type="font/woff2" crossorigin>';
+    echo '<link rel="preload" href="' . esc_url(zh_asset('fonts/PlayfairDisplay-roman.woff2')) . '" as="font" type="font/woff2" crossorigin>';
+    echo '<link rel="preload" href="' . esc_url(zh_asset('fonts/GolosText.woff2')) . '" as="font" type="font/woff2" crossorigin>';
     echo '<meta name="description" content="' . esc_attr($description) . '">';
     echo '<link rel="icon" type="image/svg+xml" href="' . esc_url(zh_img('ui/favicon.svg')) . '">';
+    echo '<link rel="apple-touch-icon" href="' . esc_url(zh_img('ui/apple-touch-icon.png')) . '">';
     echo '<meta property="og:site_name" content="ZHIBEK"><meta property="og:locale" content="ru_RU"><meta property="og:title" content="' . esc_attr($title) . '"><meta property="og:description" content="' . esc_attr($description) . '"><meta property="og:image" content="' . esc_url($image) . '"><meta property="og:type" content="' . (is_singular('post') ? 'article' : 'website') . '"><meta name="twitter:card" content="summary_large_image">';
     // Первый кадр: тёмный фон без белой вспышки и плёнка шёлка, если пользователь пришёл по внутренней ссылке.
     echo '<style id="zh-critical">html{background:#0d0b09;color-scheme:dark}html.zh-silk-wait::before{content:"";position:fixed;inset:0;z-index:2147483000;background:#0d0b09}</style>';
@@ -112,6 +113,12 @@ add_action('wp_enqueue_scripts', function () {
 
 /* ---------------------------------------------------------------- запросы */
 
+// Заголовок вкладки: на главной — полное название питомника, на остальных — «Страница — ZHIBEK».
+add_filter('document_title_separator', function () { return '—'; });
+add_filter('pre_get_document_title', function ($title) {
+    return is_front_page() ? 'ZHIBEK — питомник абиссинских, бенгальских и сиамских кошек в Казахстане' : $title;
+});
+
 // Закрытые паролем записи не попадают в публичный каталог.
 add_action('pre_get_posts', function ($query) {
     if (is_admin() || (defined('WP_CLI') && WP_CLI) || wp_doing_cron() || (defined('REST_REQUEST') && REST_REQUEST) || $query->is_singular()) { return; }
@@ -146,7 +153,8 @@ function zh_navigation($id) {
 /* ------------------------------------------------------------- WooCommerce */
 
 add_filter('woocommerce_add_to_cart_fragments', function ($fragments) {
-    $fragments['span.cart-count'] = '<span class="cart-count">' . (WC()->cart ? WC()->cart->get_cart_contents_count() : 0) . '</span>';
+    $n = WC()->cart ? (int) WC()->cart->get_cart_contents_count() : 0;
+    $fragments['span.cart-count'] = '<span class="cart-count" data-n="' . $n . '">' . $n . '</span>';
     return $fragments;
 });
 add_filter('woocommerce_currency_symbol', function ($symbol, $currency) { return $currency === 'KZT' ? '₸' : $symbol; }, 10, 2);

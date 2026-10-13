@@ -117,8 +117,13 @@
     if (!dlg) return;
     if (topic && form) { const sel = $('select[name="breed"]', form); if (sel) { const o = Array.from(sel.options).find((x) => x.textContent === topic); if (o) sel.value = o.value; } }
     if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+    refreshNonce();
     ZH.stopScroll(); closeMenu();
     setTimeout(() => { const f = $('input[name="name"]', dlg); f && f.focus({ preventScroll: true }); }, 60);
+  }
+  function refreshNonce() {
+    if (!form || !CFG.ajaxUrl) return;
+    fetch(CFG.ajaxUrl + '?action=zhibek_nonce', { credentials: 'same-origin', cache: 'no-store' }).then((r) => r.json()).then((d) => { if (d && d.success && d.data.nonce) { const n = $('input[name="nonce"]', form); if (n) n.value = d.data.nonce; } }).catch(() => {});
   }
   function closeEnquiry() { if (dlg && dlg.open) { dlg.close(); } ZH.startScroll(); }
   ZH.openEnquiry = openEnquiry;
@@ -138,7 +143,7 @@
       if (!form.consent.checked) { result.textContent = 'Подтвердите согласие на обработку данных.'; result.classList.add('is-error'); return; }
       const btn = $('button[type=submit]', form); btn.disabled = true; btn.classList.add('is-busy'); result.textContent = 'Отправляем…';
       try {
-        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), credentials: 'same-origin' });
+        const res = await fetch(form.getAttribute('action'), { method: 'POST', body: new FormData(form), credentials: 'same-origin' });
         const data = await res.json();
         if (data && data.success) {
           dlg.classList.add('is-sent');

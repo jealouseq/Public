@@ -48,7 +48,7 @@ function zhibek_get_kittens($args = array()) {
 function zhibek_meta_keys() {
     return array(
         '_zhibek_subtitle', '_zhibek_traits', '_zhibek_image', '_zhibek_status', '_zhibek_sex', '_zhibek_color', '_zhibek_birth', '_zhibek_breed',
-        '_zhibek_facts', '_zhibek_eye', '_zhibek_accent', '_zhibek_fit', '_zhibek_note', '_zhibek_sire', '_zhibek_dam', '_zhibek_price',
+        '_zhibek_facts', '_zhibek_eye', '_zhibek_accent', '_zhibek_fit', '_zhibek_note', '_zhibek_sire', '_zhibek_dam', '_zhibek_price', '_zhibek_cutout',
     );
 }
 
@@ -263,6 +263,13 @@ function zhibek_handle_enquiry() {
     }
     wp_send_json_success($result);
 }
+/** Свежий nonce для формы: на сайтах с кэшем страниц встроенный в HTML nonce может устареть. */
+function zhibek_fresh_nonce() {
+    nocache_headers();
+    wp_send_json_success(array('nonce' => wp_create_nonce('zh_enquiry')));
+}
+add_action('wp_ajax_zhibek_nonce', 'zhibek_fresh_nonce');
+add_action('wp_ajax_nopriv_zhibek_nonce', 'zhibek_fresh_nonce');
 add_action('wp_ajax_zhibek_enquiry', 'zhibek_handle_enquiry');
 add_action('wp_ajax_nopriv_zhibek_enquiry', 'zhibek_handle_enquiry');
 
@@ -304,14 +311,13 @@ function zhibek_settings_page() {
         <div class="notice notice-<?php echo esc_attr(in_array($notice['level'], array('success', 'warning', 'error'), true) ? $notice['level'] : 'info'); ?> is-dismissible"><p><?php echo esc_html($notice['message']); ?></p></div>
     <?php endif; ?>
     <?php if ($settings['demo']) : ?>
-        <div class="notice notice-warning inline"><p><strong>Демонстрационный режим включён.</strong> Перед публичным запуском замените демонстрационные сведения реальными фактами о питомнике и животных, уточните цены и загрузите собственные изображения. Владелец отдельно настраивает доставку, почту (SMTP) и оплату с действующими реквизитами. Отключение предупреждения не превращает демо-карточки в реальные предложения.</p></div>
+        <div class="notice notice-warning inline"><p><strong>Демо-режим включён.</strong> Котята, родословная, товары и фотографии на сайте — примеры. Перед запуском добавьте настоящих котят и свои фотографии, укажите контакты ниже и выключите демо-режим.</p></div>
     <?php endif; ?>
     <?php if (!class_exists('WooCommerce')) : ?>
-        <div class="notice notice-info inline"><p><strong>WooCommerce не активен.</strong> Импорт подготовит породы, демо-котят, журнал и информационные страницы. Для демонстрационных товаров отдельно установите и активируйте WooCommerce, затем повторите импорт. Плагин не устанавливает внешние зависимости.</p></div>
+        <div class="notice notice-info inline"><p><strong>WooCommerce не активен.</strong> Импорт создаст породы, котят, статьи и страницы. Чтобы появился магазин, установите и активируйте WooCommerce и повторите импорт.</p></div>
     <?php elseif ('KZT' !== get_option('woocommerce_currency')) : ?>
         <div class="notice notice-info inline"><p>Магазин сохраняет выбранную вами валюту. Для цен в тенге выберите KZT в <a href="<?php echo esc_url(admin_url('admin.php?page=wc-settings')); ?>">основных настройках WooCommerce</a> до импорта товаров.</p></div>
     <?php endif; ?>
-    <p>Реальные контакты, наличие котят, условия доставки и оплаты заполняет владелец. Демо-котята и товары остаются помеченными независимо от этой настройки.</p>
     <form action="options.php" method="post">
         <?php settings_fields('zhibek_settings_group'); ?>
         <table class="form-table" role="presentation">
@@ -327,8 +333,8 @@ function zhibek_settings_page() {
         <?php submit_button('Сохранить'); ?>
     </form>
     <hr><h2>Демонстрационный контент</h2>
-    <p>Создать три породы, три явно помеченные карточки демо-котят, две статьи по уходу и информационные страницы. При активном WooCommerce также создаются четыре помеченных демо-товара с примерными ценами.</p>
-    <p>Повторный импорт не дублирует записи и сохраняет изменения существующих демонстрационных записей и товаров. Платёжные шлюзы не включаются. При активации плагина контент автоматически не импортируется.</p>
+    <p>Создаёт три породы, три карточки котят-примеров, три статьи журнала и страницы «Конфиденциальность» и «Доставка и оплата». При активном WooCommerce добавляет четыре товара-примера.</p>
+    <p>Повторный запуск ничего не дублирует и не затирает ваши правки. Платёжные шлюзы не включаются.</p>
     <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
         <input type="hidden" name="action" value="zhibek_import_demo">
         <?php wp_nonce_field('zhibek_import_demo', 'zhibek_import_nonce'); ?>
@@ -353,7 +359,7 @@ function zhibek_handle_demo_import() {
         $result = zhibek_seed_content();
         $notice = array(
             'level' => $result['woocommerce'] ? 'success' : 'warning',
-            'message' => 'Демонстрационный контент подготовлен. Существующие записи и товары сохранены; повторный импорт не создаёт дубликаты. ' . ($result['woocommerce'] ? 'Демо-товары доступны в WooCommerce. Импорт не изменяет настройки платёжных шлюзов.' : 'WooCommerce не активен: товары не импортированы. Активируйте его отдельно и повторите импорт.'),
+            'message' => 'Демо-контент создан. Ваши правки сохранены, дубликатов нет. ' . ($result['woocommerce'] ? 'Товары-примеры добавлены в WooCommerce.' : 'WooCommerce не активен, поэтому товаров нет: активируйте его и повторите импорт.'),
         );
     } catch (Throwable $exception) {
         $notice = array('level' => 'error', 'message' => 'Не удалось завершить импорт. Уже созданные записи сохранены. Проверьте работу WordPress и повторите импорт: существующий контент не будет продублирован.');
@@ -383,11 +389,13 @@ function zhibek_details_meta_box($post) {
         $text += array('_zhibek_sex' => 'Пол', '_zhibek_color' => 'Окрас', '_zhibek_birth' => 'Дата рождения', '_zhibek_sire' => 'Отец (имя)', '_zhibek_dam' => 'Мать (имя)', '_zhibek_price' => 'Цена в тенге (только цифры, можно оставить пустым)');
     }
     $text['_zhibek_image'] = 'Файл-заглушка из темы (необязательно)';
+    $cutout_checked = get_post_meta($post->ID, '_zhibek_cutout', true) ? ' checked' : '';
     echo '<p>Основную фотографию загрузите в блоке «Изображение записи». Для вырезанного на прозрачном фоне кота главная страница использует тот же файл — лучше всего подходит PNG/WebP с прозрачностью. Не указывайте вымышленные факты о животном.</p>';
     foreach ($text as $key => $label) {
         $type = '_zhibek_birth' === $key ? 'date' : 'text';
         echo '<p><label for="' . esc_attr($key) . '"><strong>' . esc_html($label) . '</strong></label><br><input class="widefat" id="' . esc_attr($key) . '" name="zhibek_meta[' . esc_attr($key) . ']" type="' . esc_attr($type) . '" value="' . esc_attr(get_post_meta($post->ID, $key, true)) . '"></p>';
     }
+    echo '<p><label><input type="checkbox" name="zhibek_meta[_zhibek_cutout]" value="1"' . $cutout_checked . '> <strong>Главное фото вырезано на прозрачном фоне</strong> (PNG или WebP с прозрачностью). Тогда сайт поставит животное на фирменный фон породы. Обычная фотография показывается как есть.</label></p>';
     if ($is_breed) {
         $areas = array(
             '_zhibek_facts' => array('Факты (по одному на строку: «Название: значение»)', "Вес: 3,5–5 кг\nШерсть: короткая, шелковистая"),
@@ -521,6 +529,7 @@ function zhibek_sanitize_content_meta($value, $key) {
         $id = absint($value);
         return $id && 'zhibek_breed' === get_post_type($id) && !in_array(get_post_status($id), array('trash', 'auto-draft'), true) ? $id : 0;
     }
+    if ('_zhibek_cutout' === $key) { return $value ? '1' : ''; }
     if (in_array($key, array('_zhibek_facts', '_zhibek_fit', '_zhibek_note'), true)) {
         return sanitize_textarea_field((string) $value);
     }
@@ -595,7 +604,8 @@ function zhibek_save_content_meta($post_id, $post) {
     if ('zhibek_breed' === $post->post_type) { zhibek_sync_breed_term($post_id); }
     if (!isset($_POST['zhibek_meta_nonce']) || !is_string($_POST['zhibek_meta_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['zhibek_meta_nonce'])), 'zhibek_save_meta') || !current_user_can('edit_post', $post_id)) { return; }
     $input = isset($_POST['zhibek_meta']) && is_array($_POST['zhibek_meta']) ? wp_unslash($_POST['zhibek_meta']) : array();
-    foreach (array_diff(zhibek_meta_keys(), array('_zhibek_status', '_zhibek_breed')) as $key) {
+    update_post_meta($post_id, '_zhibek_cutout', isset($input['_zhibek_cutout']) ? '1' : '');
+    foreach (array_diff(zhibek_meta_keys(), array('_zhibek_status', '_zhibek_breed', '_zhibek_cutout')) as $key) {
         if (!array_key_exists($key, $input) || !is_scalar($input[$key])) { continue; }
         $value = zhibek_sanitize_content_meta($input[$key], $key);
         update_post_meta($post_id, $key, $value);

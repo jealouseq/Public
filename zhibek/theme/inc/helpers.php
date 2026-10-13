@@ -18,6 +18,13 @@ function zh_wc_url($page) {
     return function_exists('wc_get_page_permalink') ? wc_get_page_permalink($page) : home_url('/' . ($page === 'myaccount' ? 'my-account' : $page) . '/');
 }
 
+/** Нижний регистр и строчная первая буква без зависимости от mbstring. */
+function zh_lower($s) { return function_exists('mb_strtolower') ? mb_strtolower($s, 'UTF-8') : strtolower($s); }
+function zh_lcfirst($s) {
+    if (!function_exists('mb_substr')) { return $s; }
+    return mb_strtolower(mb_substr($s, 0, 1, 'UTF-8'), 'UTF-8') . mb_substr($s, 1, null, 'UTF-8');
+}
+
 function zh_privacy_url() { return get_privacy_policy_url() ?: home_url('/privacy/'); }
 
 /** Ссылки на мессенджеры и соцсети, которые владелец указал в настройках. */
@@ -73,7 +80,7 @@ function zh_pupil_i() {
 
 /** Название питомника: ZH + зрачок + BEK. */
 function zh_wordmark($class = 'wm') {
-    return '<span class="' . esc_attr($class) . '" aria-label="ZHIBEK"><span aria-hidden="true">ZH</span>' . zh_pupil_i() . '<span aria-hidden="true">BEK</span></span>';
+    return '<span class="' . esc_attr($class) . '" role="img" aria-label="ZHIBEK"><span aria-hidden="true">ZH</span>' . zh_pupil_i() . '<span aria-hidden="true">BEK</span></span>';
 }
 
 function zh_brand() { return zh_mark('mark') . zh_wordmark('wm'); }
@@ -221,7 +228,7 @@ function zh_kitten_card($post, $i = 0) {
             <span class="kcard-media" data-type="<?php echo esc_attr($m['type']); ?>">
                 <span class="kcard-glow" aria-hidden="true"></span>
                 <?php if ($m['url']) : ?>
-                    <img class="kcard-img" src="<?php echo esc_url($m['url']); ?>" alt="<?php echo esc_attr($k['title'] . ($k['breed_name'] ? ' — ' . mb_strtolower($k['breed_name']) . ' кошка' : '')); ?>"<?php if ($m['w'] && $m['h']) : ?> width="<?php echo (int) $m['w']; ?>" height="<?php echo (int) $m['h']; ?>"<?php endif; ?> loading="lazy" decoding="async" draggable="false">
+                    <img class="kcard-img" src="<?php echo esc_url($m['url']); ?>" alt="<?php echo esc_attr($k['title'] . ($k['breed_name'] ? ' — ' . zh_lower($k['breed_name']) . ' кошка' : '')); ?>"<?php if ($m['w'] && $m['h']) : ?> width="<?php echo (int) $m['w']; ?>" height="<?php echo (int) $m['h']; ?>"<?php endif; ?> loading="lazy" decoding="async" draggable="false">
                 <?php endif; ?>
                 <span class="kcard-badges">
                     <?php if ($k['status_label']) : ?><span class="chip chip-status" data-status="<?php echo esc_attr($k['status']); ?>"><?php echo esc_html($k['status_label']); ?></span><?php endif; ?>

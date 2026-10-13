@@ -33,18 +33,16 @@
       gsap.to(pin, { '--ajar': 1, duration: already ? 0.01 : 2.6, ease: 'power3.inOut', delay: already ? 0 : 0.35 });
     });
     // часть открытия по скроллу
-    const tl = gsap.timeline({ defaults: { ease: 'none' }, scrollTrigger: { trigger: gate, start: 'top top', end: () => '+=' + Math.round(innerHeight * (small() ? 1.5 : 2.0)), pin: pin, scrub: 0.7, anticipatePin: 1, invalidateOnRefresh: true } });
+    const markOpen = () => { const open = parseFloat(gsap.getProperty(pin, '--open')) || 0; gate.classList.toggle('is-open', open > 0.55); gate.classList.toggle('is-done', open > 0.995); };
+    const tl = gsap.timeline({ defaults: { ease: 'none' }, onUpdate: markOpen, scrollTrigger: { trigger: gate, start: 'top top', end: () => '+=' + Math.round(innerHeight * (small() ? 1.5 : 2.0)), pin: pin, scrub: 0.7, anticipatePin: 1, invalidateOnRefresh: true } });
     tl.to(pin, { '--open': 1, duration: 0.62, ease: 'power2.inOut' }, 0);
     tl.to(pin, { '--gx': '96%', duration: 0.7 }, 0);
     tl.to('.doors-copy', { opacity: 0, y: -26, duration: 0.14 }, 0);
-    tl.to(wm, { '--sheen': '95%', duration: 1 }, 0);
+    tl.to(wm, { '--sheen': '72%', duration: 1 }, 0);
     tl.to(cat, { yPercent: -2, duration: 1 }, 0);
     tl.to('.hero-halo', { opacity: 1.0, scale: 1.08, duration: 1 }, 0);
     tl.to({}, { duration: 0.38 });
-    ScrollTrigger.create({ trigger: gate, start: 'top top', end: () => '+=' + Math.round(innerHeight * (small() ? 1.5 : 2.0)), onUpdate: (self) => {
-      const open = gsap.getProperty(pin, '--open');
-      gate.classList.toggle('is-open', open > 0.55); gate.classList.toggle('is-done', open > 0.995);
-    } });
+    ScrollTrigger.addEventListener('refresh', markOpen);
     // светлое пятно за курсором, лёгкий параллакс
     const lightX = gsap.quickSetter(hero, '--lx', '%'), lightY = gsap.quickSetter(hero, '--ly', '%');
     const px = { x: 64, y: 44 };
@@ -107,7 +105,7 @@
     const sec = $('[data-worlds]'); if (!sec) return;
     const n = parseInt(sec.dataset.count, 10) || 1;
     const bgs = $$('[data-wbg]', sec), cats = $$('[data-wcat]', sec), slides = $$('[data-wslide]', sec), navs = $$('[data-wgo]', sec), pinEl = $('.worlds-pin', sec);
-    const rosCanvas = $('[data-rosette]', sec);
+    const rosCanvas = $('[data-rosette]', sec), shade = $('[data-shade]', sec);
     // буквы названий
     slides.forEach((s) => {
       const h = $('.wname', s); const txt = h.textContent; h.setAttribute('aria-label', txt); h.textContent = '';
@@ -137,7 +135,7 @@
       let best = 0, bestW = -1;
       for (let i = 0; i < n; i++) {
         const d = Math.abs(x - (i + 0.5));
-        let w = 1 - smooth(0.5 - 0.14, 0.5 + 0.14, d);
+        let w = 1 - smooth(0.5 - 0.1, 0.5 + 0.1, d);
         if ((i === 0 && x < 0.5) || (i === n - 1 && x > n - 0.5)) w = 1;
         if (w > bestW) { bestW = w; best = i; }
         const off = (i + 0.5 - x);
@@ -151,7 +149,7 @@
       activate(best, true);
       if (ros) {
         const wv = wildIdx >= 0 ? parseFloat(bgs[wildIdx].style.opacity || 0) : 0;
-        rosCanvas.style.opacity = (wv * 0.9).toFixed(3);
+        rosCanvas.style.opacity = (wv * 0.9).toFixed(3); if (shade) shade.style.opacity = wv.toFixed(3);
         const want = wv > 0.02; if (want !== rosOn) { rosOn = want; want ? ros.start() : ros.stop(); }
         ros.set({ zoom: clamp((x - wildIdx) , 0, 1), shx: x * 0.6 });
       }
@@ -210,6 +208,7 @@
     const byGen = [0, 1, 2, 3].map((g) => ({ nodes: nodes.filter((n) => +n.dataset.g === g), edges: edges.filter((e) => +e.dataset.g === g) }));
     const tl = gsap.timeline({ paused: true });
     byGen.forEach((gen, g) => {
+      if (!gen.nodes.length) return;
       tl.to(gen.nodes, { opacity: 1, duration: 0.7, stagger: 0.05, ease: 'power2.out' }, g * 0.55);
       if (gen.edges.length) tl.to(gen.edges, { strokeDashoffset: 0, duration: 1.1, stagger: 0.05, ease: 'power2.inOut' }, g * 0.55 - 0.2);
     });
@@ -251,7 +250,7 @@
     const canvas = $('[data-particles]', sec); if (!canvas) return;
     const fallback = () => { const im = document.createElement('img'); im.src = canvas.dataset.src; im.alt = ''; im.className = 'finale-fallback'; im.setAttribute('aria-hidden', 'true'); sec.prepend(im); canvas.remove(); };
     if (!ZH.gl || !ZH.gl.supported || ZH.reduce) { fallback(); return; }
-    let part; try { part = ZH.gl.Particles(canvas, canvas.dataset.src, { count: small() ? 3800 : 7600, align: small() ? 0.5 : 0.72, height: small() ? 0.62 : 0.92 }); } catch (e) { fallback(); return; }
+    let part; try { part = ZH.gl.Particles(canvas, canvas.dataset.src, { count: small() ? 4200 : 9800, align: small() ? 0.5 : 0.77, height: small() ? 0.62 : 0.92 }); } catch (e) { fallback(); return; }
     ScrollTrigger.create({ trigger: sec, start: 'top bottom', end: 'bottom top', onToggle: (s) => (s.isActive ? part.start() : part.stop()) });
     ScrollTrigger.create({ trigger: sec, start: 'top 85%', end: 'top 25%', scrub: 0.9, onUpdate: (s) => part.set({ assemble: s.progress }) });
     sec.addEventListener('pointermove', (e) => { const r = canvas.getBoundingClientRect(); part.pointer(e.clientX - r.left, e.clientY - r.top); });

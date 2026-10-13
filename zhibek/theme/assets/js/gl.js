@@ -213,7 +213,7 @@ vec3 rosette(vec2 uv){
 void main(){
   vec2 uv=(vUv-.5)*vec2(uRes.x/uRes.y,1.);
   float zoom=1.+uZoom*1.8;
-  vec2 P=(uv/zoom)*7.2+uShift+vec2(uTime*.01,0.);
+  vec2 P=(uv/zoom)*9.5+uShift+vec2(uTime*.01,0.);
   vec3 r=rosette(P);
   float fur=fbm(vec2(P.x*14.,P.y*4.))*.65+fbm(vec2(P.x*34.,P.y*9.))*.35;
   float h=r.x*.9+fur*.07;
@@ -224,7 +224,7 @@ void main(){
   vec3 gold=mix(vec3(.58,.36,.09),vec3(.92,.66,.22),fur);
   vec3 rust=mix(vec3(.34,.17,.05),vec3(.5,.28,.08),fur);
   vec3 base=mix(gold,rust,r.y*.75);
-  vec3 col=mix(base,vec3(.035,.022,.01),r.x);
+  vec3 col=mix(base,vec3(.09,.052,.02),r.x);
   col*=.45+.9*diff;
   col+=vec3(1.,.8,.45)*spec*(1.-r.x*.5);
   float vig=smoothstep(1.25,.1,length(uv*vec2(.8,1.)));
@@ -287,13 +287,13 @@ void main(){ vec2 d=gl_PointCoord-.5; float r=length(d)*2.; float a=smoothstep(1
       const pts = [];
       const step = Math.max(1, Math.sqrt((cw * ch * 0.62) / opts.count));
       for (let yy = 0; yy < ch; yy += step) for (let xx = 0; xx < cw; xx += step) {
-        const i = ((yy | 0) * cw + (xx | 0)) * 4; if (data[i + 3] > 140) pts.push([xx / cw, yy / ch, data[i] / 255, data[i + 1] / 255, data[i + 2] / 255]);
+        const i = ((yy | 0) * cw + (xx | 0)) * 4; if (data[i + 3] > 140) pts.push([(xx + (Math.random() - 0.5) * step) / cw, (yy + (Math.random() - 0.5) * step) / ch, Math.min(1, data[i] / 255 * 1.55 + 0.06), Math.min(1, data[i + 1] / 255 * 1.55 + 0.05), Math.min(1, data[i + 2] / 255 * 1.55 + 0.03)]);
       }
       tgtN = pts; const n = pts.length; st.n = n;
       tx = new Float32Array(n); ty = new Float32Array(n); sx = new Float32Array(n); sy = new Float32Array(n); x = new Float32Array(n); y = new Float32Array(n);
       vx = new Float32Array(n); vy = new Float32Array(n); col = new Float32Array(n * 3); size = new Float32Array(n); seed = new Float32Array(n); posArr = new Float32Array(n * 2);
       for (let i = 0; i < n; i++) {
-        col[i * 3] = pts[i][2]; col[i * 3 + 1] = pts[i][3]; col[i * 3 + 2] = pts[i][4]; size[i] = 1.6 + Math.random() * 2.2; seed[i] = Math.random() * 6.283;
+        col[i * 3] = pts[i][2]; col[i * 3 + 1] = pts[i][3]; col[i * 3 + 2] = pts[i][4]; size[i] = 2.1 + Math.random() * 2.7; seed[i] = Math.random() * 6.283;
       }
       vao = gl.createVertexArray(); gl.bindVertexArray(vao);
       posBuf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, posBuf); gl.bufferData(gl.ARRAY_BUFFER, posArr, gl.DYNAMIC_DRAW); gl.enableVertexAttribArray(loc.pos); gl.vertexAttribPointer(loc.pos, 2, gl.FLOAT, false, 0, 0);
@@ -317,18 +317,21 @@ void main(){ vec2 d=gl_PointCoord-.5; float r=length(d)*2.; float a=smoothstep(1
       if (w !== st.w || h !== st.h) { st.w = w; st.h = h; layout(false); }
       gl.viewport(0, 0, canvas.width, canvas.height);
     }
+    let lastT = 0;
     function step(t) {
+      const dt = lastT ? Math.min(3, (t - lastT) / 16.67) : 1; lastT = t;
+      const kSpring = 0.045 * dt, kDamp = Math.pow(0.86, dt);
       const n = st.n, A = st.assemble, E = A * A * (3 - 2 * A);
       const R = Math.min(st.w, st.h) * 0.16, R2 = R * R;
       for (let i = 0; i < n; i++) {
         const drift = (1 - E) * 14 + 1.3;
         const gx = lerp(sx[i], tx[i], E) + Math.sin(t * 0.0006 + seed[i]) * drift;
         const gy = lerp(sy[i], ty[i], E) + Math.cos(t * 0.0005 + seed[i] * 1.7) * drift;
-        let fx = (gx - x[i]) * 0.045, fy = (gy - y[i]) * 0.045;
+        let fx = (gx - x[i]) * kSpring, fy = (gy - y[i]) * kSpring;
         const dx = x[i] - st.mx, dy = y[i] - st.my, d2 = dx * dx + dy * dy;
-        if (d2 < R2) { const d = Math.sqrt(d2) + 0.001, k = (1 - d / R); const f = k * k * 3.2; fx += (dx / d) * f; fy += (dy / d) * f; }
-        vx[i] = (vx[i] + fx) * 0.86; vy[i] = (vy[i] + fy) * 0.86;
-        x[i] += vx[i]; y[i] += vy[i]; posArr[i * 2] = x[i]; posArr[i * 2 + 1] = y[i];
+        if (d2 < R2) { const d = Math.sqrt(d2) + 0.001, k = (1 - d / R); const f = k * k * 3.2 * dt; fx += (dx / d) * f; fy += (dy / d) * f; }
+        vx[i] = (vx[i] + fx) * kDamp; vy[i] = (vy[i] + fy) * kDamp;
+        x[i] += vx[i] * dt; y[i] += vy[i] * dt; posArr[i * 2] = x[i]; posArr[i * 2 + 1] = y[i];
       }
     }
     function draw(t) {
@@ -350,7 +353,7 @@ void main(){ vec2 d=gl_PointCoord-.5; float r=length(d)*2.; float a=smoothstep(1
       state: st, resize,
       set(o) { Object.assign(st, o); },
       pointer(px, py) { st.mx = px; st.my = py; },
-      start() { if (st.running) return; st.running = true; st.raf = requestAnimationFrame(loop); },
+      start() { if (st.running) return; st.running = true; lastT = 0; st.raf = requestAnimationFrame(loop); },
       stop() { st.running = false; cancelAnimationFrame(st.raf); },
     };
   };

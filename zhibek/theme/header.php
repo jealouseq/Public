@@ -18,7 +18,7 @@
   <div class="header-actions">
     <button class="hdr-contact" type="button" data-enquire="Консультация" data-magnetic><span>Написать</span></button>
     <?php if (function_exists('wc_get_cart_url')) : ?>
-      <a class="cart-link" href="<?php echo esc_url(wc_get_cart_url()); ?>" aria-label="Корзина"><?php echo zh_icon('bag'); ?><span class="cart-count"><?php echo WC()->cart ? (int) WC()->cart->get_cart_contents_count() : 0; ?></span></a>
+      <a class="cart-link" href="<?php echo esc_url(wc_get_cart_url()); ?>" aria-label="Корзина"><?php echo zh_icon('bag'); ?><span class="cart-count" data-n="<?php echo WC()->cart ? (int) WC()->cart->get_cart_contents_count() : 0; ?>"><?php echo WC()->cart ? (int) WC()->cart->get_cart_contents_count() : 0; ?></span></a>
     <?php endif; ?>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Открыть меню"><span></span><span></span></button>
   </div>

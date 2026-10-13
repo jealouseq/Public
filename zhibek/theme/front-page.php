@@ -52,7 +52,7 @@ $cities = zh_map_city_list();
 <section class="eye" id="eye" data-chapter="Взгляд" data-header="dark" data-eye data-colors="<?php echo esc_attr(implode(',', $eye_colors)); ?>">
   <div class="eye-pin">
     <canvas class="eye-canvas" data-eye-canvas aria-hidden="true"></canvas>
-    <div class="eye-fallback" aria-hidden="true"><span></span></div>
+    <div class="eye-fallback" aria-hidden="true"><span style="--c:<?php echo esc_attr($eye_colors[0]); ?>"></span></div>
     <div class="eye-shade" aria-hidden="true"></div>
     <div class="eye-copy">
       <?php foreach ($c['eye']['lines'] as $i => $line) : ?>
@@ -78,7 +78,7 @@ $cities = zh_map_city_list();
           <span class="wbg-sky"></span><span class="wbg-orb"></span><span class="wbg-rays"></span><span class="wbg-mist"></span><span class="wbg-stars"></span>
         </div>
       <?php endforeach; ?>
-      <canvas class="worlds-rosette" data-rosette></canvas>
+      <canvas class="worlds-rosette" data-rosette></canvas><span class="worlds-shade" data-shade></span>
     </div>
     <div class="worlds-stage">
       <?php foreach ($breeds as $i => $b) : $w = zh_breed_world($b); $m = zh_media($b); ?>
@@ -99,10 +99,10 @@ $cities = zh_map_city_list();
               <dl class="wfacts"><?php foreach ($facts as $f) : ?><div><dt><?php echo esc_html($f[0]); ?></dt><dd><?php echo esc_html($f[1]); ?></dd></div><?php endforeach; ?></dl>
             <?php endif; ?>
             <?php $fit = get_post_meta($b->ID, '_zhibek_fit', true); $note = get_post_meta($b->ID, '_zhibek_note', true); if ($fit || $note) : ?>
-              <div class="wnotes"><?php if ($fit) : ?><p><b>Подойдёт, если</b> <?php echo esc_html(lcfirst($fit)); ?></p><?php endif; ?><?php if ($note) : ?><p><b>Важно знать</b> <?php echo esc_html($note); ?></p><?php endif; ?></div>
+              <div class="wnotes"><?php if ($fit) : ?><p><b>Подойдёт, если</b> <?php echo esc_html(zh_lcfirst($fit)); ?></p><?php endif; ?><?php if ($note) : ?><p><b>Важно знать</b> <?php echo esc_html($note); ?></p><?php endif; ?></div>
             <?php endif; ?>
             <div class="wlinks">
-              <a class="btn btn-gold" href="<?php echo esc_url(add_query_arg('breed', $b->post_name, home_url('/kittens/'))); ?>" data-magnetic><span>Котята: <?php echo esc_html(mb_strtolower($b->post_title)); ?></span><?php echo zh_arrow(); ?></a>
+              <a class="btn btn-gold" href="<?php echo esc_url(add_query_arg('breed', $b->post_name, home_url('/kittens/'))); ?>" data-magnetic><span>Котята: <?php echo esc_html(zh_lower($b->post_title)); ?></span><?php echo zh_arrow(); ?></a>
               <a class="link-arrow" href="<?php echo esc_url(get_permalink($b)); ?>"><span>О породе</span><?php echo zh_arrow(); ?></a>
             </div>
           </article>
@@ -179,7 +179,7 @@ $cities = zh_map_city_list();
     </div>
     <?php zh_kitten_filters($breeds, $kittens); ?>
     <div class="kgrid" data-kgrid><?php zh_render_kitten_cards($kittens); ?></div>
-    <p class="kempty" hidden><?php echo esc_html($c['collection']['empty']); ?> <button class="link-btn" type="button" data-enquire="Ближайшие помёты">Написать нам</button></p>
+    <p class="kempty" <?php echo $kittens ? 'hidden' : ''; ?>><?php echo esc_html($c['collection']['empty']); ?> <button class="link-btn" type="button" data-enquire="Ближайшие помёты">Написать нам</button></p>
     <div class="collection-foot"><a class="link-arrow" href="<?php echo esc_url(home_url('/kittens/')); ?>"><span>Все котята</span><?php echo zh_arrow(); ?></a></div>
   </div>
 </section>
@@ -206,7 +206,26 @@ $cities = zh_map_city_list();
   </div>
 </section>
 
-<!-- ═════ 08 · ЖУРНАЛ ═════ -->
+<!-- ═════ 08 · МАГАЗИН (если подключён WooCommerce) ═════ -->
+<?php $products = function_exists('wc_get_products') ? wc_get_products(array('limit' => 4, 'status' => 'publish', 'orderby' => 'menu_order', 'order' => 'ASC')) : array(); ?>
+<?php if ($products) : ?>
+<section class="shopband" id="shop" data-chapter="Магазин" data-header="light">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Магазин</span><h2 class="display-l">Для дома</h2></div><a class="link-arrow" href="<?php echo esc_url(zh_wc_url('shop')); ?>"><span>Весь магазин</span><?php echo zh_arrow(); ?></a></div>
+    <div class="pgrid">
+      <?php foreach ($products as $pr) : ?>
+        <a class="pcard" href="<?php echo esc_url($pr->get_permalink()); ?>" data-cursor="Открыть">
+          <span class="pcard-img"><?php zh_product_image($pr); ?></span>
+          <span class="pcard-name"><?php echo esc_html($pr->get_name()); ?></span>
+          <span class="pcard-price"><?php echo wp_kses_post($pr->get_price_html()); ?></span>
+        </a>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+<?php endif; ?>
+
+<!-- ═════ 09 · ЖУРНАЛ ═════ -->
 <?php $articles = get_posts(array('post_type' => 'post', 'posts_per_page' => 3, 'post_status' => 'publish', 'category_name' => 'journal')); ?>
 <?php if ($articles) : ?>
 <section class="journal" id="journal" data-chapter="Журнал" data-header="light">

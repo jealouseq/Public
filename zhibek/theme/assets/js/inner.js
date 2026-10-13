@@ -5,37 +5,39 @@
   const { $, $$ } = ZH; const gsap = window.gsap, ScrollTrigger = window.ScrollTrigger;
   const html = document.documentElement;
 
-  /* ───── переход «карточка котёнка → страница котёнка» ───── */
+  /* ───── переход «карточка котёнка → страница котёнка» ─────
+     Карточка остаётся на месте, остальной экран темнеет; на новой странице та же карточка перелетает в главное фото. */
   ZH.kittenTransition = function (link) {
     return new Promise((resolve) => {
-      const img = $('.kcard-img', link), media = $('.kcard-media', link);
-      if (!img || ZH.reduce) { resolve(); return; }
-      const r = img.getBoundingClientRect(), mr = media.getBoundingClientRect();
-      try { sessionStorage.setItem('zhSx', JSON.stringify({ src: img.currentSrc || img.src, r: [r.left, r.top, r.width, r.height], m: [mr.left, mr.top, mr.width, mr.height], bg: getComputedStyle(media).backgroundImage })); } catch (e) {}
-      const veil = document.createElement('div'); veil.className = 'sx-veil';
-      const card = document.createElement('div'); card.className = 'sx-card'; Object.assign(card.style, { left: mr.left + 'px', top: mr.top + 'px', width: mr.width + 'px', height: mr.height + 'px', backgroundImage: getComputedStyle(media).backgroundImage, borderRadius: getComputedStyle(media).borderRadius });
-      const im = document.createElement('img'); im.src = img.currentSrc || img.src; im.alt = ''; Object.assign(im.style, { left: r.left - mr.left + 'px', top: r.top - mr.top + 'px', width: r.width + 'px', height: r.height + 'px' });
-      card.append(im); document.body.append(veil, card);
+      const media = $('.kcard-media', link);
+      if (!media || ZH.reduce) { resolve(); return; }
+      const mr = media.getBoundingClientRect();
+      const clone = media.cloneNode(true);
+      clone.classList.add('sx-card'); clone.style.cssText = 'left:' + mr.left + 'px;top:' + mr.top + 'px;width:' + mr.width + 'px;height:' + mr.height + 'px;';
+      try { sessionStorage.setItem('zhSx', JSON.stringify({ r: [mr.left, mr.top, mr.width, mr.height], html: clone.innerHTML, bg: getComputedStyle(media).backgroundImage, type: media.dataset.type || 'cutout' })); } catch (e) {}
+      const veil = document.createElement('div'); veil.className = 'sx-veil'; document.body.append(veil, clone);
       gsap.fromTo(veil, { opacity: 0 }, { opacity: 1, duration: 0.55, ease: 'power2.inOut' });
-      gsap.to(card, { left: 0, top: 0, width: innerWidth, height: innerHeight, borderRadius: 0, duration: 0.7, ease: 'power3.inOut', delay: 0.05 });
-      gsap.to(im, { opacity: 0, duration: 0.3, delay: 0.45 });
-      setTimeout(resolve, 760);
+      gsap.to(clone, { scale: 1.035, duration: 0.6, ease: 'power2.out' });
+      setTimeout(resolve, 640);
     });
   };
-  // прибытие: «карточка» раскрыта на весь экран и сворачивается к главному фото страницы
   (function arrive() {
     let data = null; try { data = JSON.parse(sessionStorage.getItem('zhSx') || 'null'); sessionStorage.removeItem('zhSx'); } catch (e) {}
     const target = $('.zg-main'); html.classList.remove('zh-silk-wait');
     if (!data || !target || ZH.reduce) return;
-    const card = document.createElement('div'); card.className = 'sx-card sx-arrive'; Object.assign(card.style, { left: '0px', top: '0px', width: innerWidth + 'px', height: innerHeight + 'px', backgroundImage: data.bg, borderRadius: '0px' });
-    document.body.append(card);
+    const veil = document.createElement('div'); veil.className = 'sx-veil';
+    const card = document.createElement('div'); card.className = 'sx-card kcard-media'; card.dataset.type = data.type; card.innerHTML = data.html;
+    card.style.cssText = 'left:' + data.r[0] + 'px;top:' + data.r[1] + 'px;width:' + data.r[2] + 'px;height:' + data.r[3] + 'px;background-image:' + data.bg + ';';
+    document.body.append(veil, card);
     gsap.set(target, { opacity: 0 });
+    let done = false; const finish = () => { if (done) return; done = true; gsap.set(target, { opacity: 1 }); card.remove(); veil.remove(); };
     const go = () => {
-      const t = target.getBoundingClientRect();
-      gsap.to(card, { left: t.left, top: t.top, width: t.width, height: t.height, borderRadius: getComputedStyle(target).borderRadius, duration: 1.0, ease: 'power3.inOut', onComplete: () => { gsap.set(target, { opacity: 1 }); card.remove(); } });
+      const t = target.getBoundingClientRect(), br = getComputedStyle(target).borderRadius;
+      gsap.to(veil, { opacity: 0, duration: 0.9, ease: 'power2.inOut', delay: 0.15 });
+      gsap.to(card, { left: t.left, top: t.top, width: t.width, height: t.height, borderRadius: br, duration: 1.05, ease: 'power3.inOut', onComplete: finish });
     };
-    requestAnimationFrame(() => requestAnimationFrame(go));
-    setTimeout(() => { gsap.set(target, { opacity: 1 }); card && card.remove(); }, 2500);
+    ZH.afterReveal(() => requestAnimationFrame(() => requestAnimationFrame(go)));
+    setTimeout(finish, 3200);
   })();
 
   /* ───── галерея на странице котёнка/породы ───── */

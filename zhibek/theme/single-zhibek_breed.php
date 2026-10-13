@@ -24,7 +24,7 @@ while (have_posts()) : the_post();
         <p class="wsub"><?php echo esc_html(get_post_meta($b->ID, '_zhibek_subtitle', true)); ?></p>
         <?php if ($facts) : ?><dl class="wfacts"><?php foreach ($facts as $f) : ?><div><dt><?php echo esc_html($f[0]); ?></dt><dd><?php echo esc_html($f[1]); ?></dd></div><?php endforeach; ?></dl><?php endif; ?>
         <div class="wlinks">
-          <a class="btn btn-gold" href="<?php echo esc_url(add_query_arg('breed', $b->post_name, home_url('/kittens/'))); ?>" data-magnetic><span>Котята: <?php echo esc_html(mb_strtolower($b->post_title)); ?></span><?php echo zh_arrow(); ?></a>
+          <a class="btn btn-gold" href="<?php echo esc_url(add_query_arg('breed', $b->post_name, home_url('/kittens/'))); ?>" data-magnetic><span>Котята: <?php echo esc_html(zh_lower($b->post_title)); ?></span><?php echo zh_arrow(); ?></a>
           <button class="btn btn-ghost" type="button" data-enquire="<?php echo esc_attr($b->post_title); ?>" data-magnetic><span>Задать вопрос</span></button>
         </div>
       </div>
