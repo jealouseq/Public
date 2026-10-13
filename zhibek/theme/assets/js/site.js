@@ -283,6 +283,7 @@
     if (!sticky || !canvas || !n || !canvas.getContext || sceneReduce || saveData) {
       scene.classList.add('is-end');
       const last = $$('.scene-note', scene); if (last.length) last[last.length - 1].classList.add('is-on');
+      $$('.scene-steps li', scene).forEach((el) => el.classList.add('is-on'));
       return;
     }
     const ctx = canvas.getContext('2d');
@@ -322,7 +323,8 @@
     const update = () => {
       const r = scene.getBoundingClientRect();
       const span = Math.max(1, r.height - sticky.offsetHeight);
-      const p = Math.max(0, Math.min(1, -r.top / span));
+      const pin = parseFloat(getComputedStyle(sticky).top) || 0; // панель закрепляется на этом расстоянии от верха окна
+      const p = Math.max(0, Math.min(1, (pin - r.top) / span));
       sticky.style.setProperty('--p', p.toFixed(3));
       scene.classList.toggle('is-end', p > 0.6);
       target = Math.max(1, Math.min(n, 1 + Math.round(p * (n - 1))));
