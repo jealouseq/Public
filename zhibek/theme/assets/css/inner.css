@@ -82,6 +82,9 @@
 .inner{background:var(--ink-1)}
 .page-hero{position:relative;padding:calc(var(--header-h) + clamp(70px,10vw,150px)) 0 clamp(60px,8vw,110px);background:radial-gradient(70% 90% at 85% 0,rgba(122,67,27,.34),transparent 70%),radial-gradient(50% 60% at 0 100%,rgba(70,40,14,.3),transparent 70%),var(--ink-1);overflow:hidden}
 .page-hero-compact{padding-bottom:clamp(40px,6vw,80px)}
+.page-hero .display-l,.page-hero .display-xl{overflow-wrap:break-word;hyphens:auto}
+.page-hero-compact .display-l{font-size:clamp(1.9rem,7.6vw,5.4rem)}
+@media (min-width:900px){.page-hero-compact .display-l{font-size:clamp(2.4rem,5.2vw,5.4rem)}}
 .page-hero .display-l{max-width:11em}
 .page-hero .lead{margin-top:28px}
 .page-hero-light{background:var(--cream);color:var(--ink)}
