@@ -28,6 +28,7 @@ $peek_dlg = zh_has_img('pets/peek.webp') ? zh_img('pets/peek.webp') : '';
 <?php endif; ?>
 <footer class="site-footer">
   <div class="footer-panel">
+    <?php if (zh_has_img('pets/bengal-sleep.webp')) : ?><img class="footer-cat" src="<?php echo esc_url(zh_img('pets/bengal-sleep.webp')); ?>" alt="" width="720" height="500" loading="lazy" decoding="async" draggable="false"><?php endif; ?>
     <div class="wrap footer-grid">
       <div class="footer-brand">
         <a class="brand" href="<?php echo esc_url(home_url('/')); ?>"><?php echo zh_brand(); ?></a>

@@ -17,29 +17,47 @@ $em = array('em' => array());
 ?>
 <main id="main">
 
-  <section class="pick" aria-labelledby="hero-title">
-    <div class="wrap pick-head">
-      <div>
-        <h1 class="h1" id="hero-title" data-hero style="--i:1"><?php echo wp_kses($c['hero']['title'], $em); ?></h1>
+  <?php
+  $hb = array_slice($breeds, 0, 3);
+  $score_labels = array(); foreach ($breeds as $bb) { foreach (zh_breed_scores($bb) as $sc) { if (!in_array($sc[0], $score_labels, true)) { $score_labels[] = $sc[0]; } } }
+  ?>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-in">
+      <div class="hero-copy">
+        <h1 class="h1" id="hero-title"><?php echo wp_kses($c['hero']['title'], $em); ?></h1>
+        <p class="lead"><?php echo zh_t($c['hero']['lead']); ?></p>
+        <?php if ($hb) : ?>
+        <div class="hero-tabs" aria-label="Порода" data-hero-tabs>
+          <?php foreach ($hb as $i => $b) : ?>
+            <button class="hero-tab<?php echo $i === 0 ? ' is-on' : ''; ?>" type="button" aria-controls="hs-<?php echo esc_attr($b->post_name); ?>" aria-pressed="<?php echo $i === 0 ? 'true' : 'false'; ?>" data-i="<?php echo (int) $i; ?>" style="--bc:<?php echo esc_attr(zh_breed_color($b)); ?>">
+              <i aria-hidden="true"></i><span class="hero-tab-n"><?php echo esc_html($b->post_title); ?></span><span class="hero-tab-t"><?php echo esc_html(implode(', ', array_slice(zh_traits($b), 0, 3))); ?></span>
+            </button>
+          <?php endforeach; ?>
+        </div>
+        <?php endif; ?>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#picker"><span><?php echo esc_html($c['hero']['pick']); ?></span><?php echo zh_arrow(); ?></a>
+          <button class="btn btn-outline" type="button" data-enquire="Консультация"><span>Написать</span></button>
+        </div>
       </div>
-      <p class="lead" data-hero style="--i:2"><?php echo zh_t($c['hero']['lead']); ?></p>
-    </div>
-    <div class="pick-rail" data-hero style="--i:3">
-      <div class="pick-panels">
-        <?php foreach (array_slice($breeds, 0, 4) as $i => $b) :
+      <?php if ($hb) : ?>
+      <div class="hero-stage" data-hero-stage style="--bg:<?php echo esc_attr(zh_breed_color($hb[0])); ?>">
+        <?php foreach ($hb as $i => $b) :
           $m = zh_media($b); $n = (int) ($count_by_breed[$b->ID] ?? 0);
-          $weight = ''; $coat = ''; foreach (zh_breed_facts($b) as $f) { if (mb_stripos($f[0], 'Вес') === 0 && !$weight) { $weight = $f[1]; } elseif (mb_stripos($f[0], 'Шерсть') === 0 && !$coat) { $parts = array_values(array_filter(array_map('trim', explode(',', $f[1])))); if ($parts) { $coat = zh_lower($parts[min(1, count($parts) - 1)]) . ' шерсть'; } } }
-          $traits = zh_traits($b);
-          $small_w = ($m['w'] && $m['h']) ? (int) round($m['w'] * 520 / max($m['w'], $m['h'])) : 0; ?>
-        <a class="pick-panel" href="<?php echo esc_url(get_permalink($b)); ?>" data-breed="<?php echo esc_attr($b->post_name); ?>" style="--bg:<?php echo esc_attr(zh_breed_color($b)); ?>">
-          <?php if ($n) : ?><span class="pick-count"><?php echo (int) $n; ?> <?php echo esc_html(zh_plural($n, 'кот', 'кота', 'котов')); ?></span><?php endif; ?>
-          <span class="pick-name"><?php echo esc_html($b->post_title); ?></span>
-          <?php if ($traits) : ?><span class="pick-traits"><?php echo esc_html(implode(' · ', array_slice($traits, 0, 3))); ?></span><?php endif; ?>
-          <?php if ($m['url']) : ?><img class="pick-cat" src="<?php echo esc_url($m['url']); ?>"<?php if ($m['small'] !== $m['url'] && $small_w) : ?> srcset="<?php echo esc_url($m['small']); ?> <?php echo $small_w; ?>w, <?php echo esc_url($m['url']); ?> <?php echo (int) $m['w']; ?>w" sizes="(min-width: 960px) 32vw, 64vw"<?php endif; ?> alt="<?php echo esc_attr($b->post_title . ' кошка'); ?>"<?php if ($m['w']) : ?> width="<?php echo (int) $m['w']; ?>" height="<?php echo (int) $m['h']; ?>"<?php endif; ?> decoding="async"<?php echo $i === 0 ? ' fetchpriority="high"' : ' loading="lazy"'; ?> draggable="false"><?php endif; ?>
-          <span class="pick-go"><span class="pick-go-t"><?php echo esc_html($c['hero']['open']); ?></span><span class="pick-go-i" aria-hidden="true"><?php echo zh_arrow_up_right(); ?></span></span>
+          $facts = array_values(array_filter(zh_breed_facts($b), function ($f) { return $f[0] !== '' && mb_stripos($f[0], 'Глаза') !== 0; })); $facts = array_slice($facts, 0, 3);
+          $small_w = ($m['w'] && $m['h']) ? (int) round($m['w'] * 640 / max($m['w'], $m['h'])) : 0; ?>
+        <a class="hs-slide<?php echo $i === 0 ? ' is-on' : ''; ?>" href="<?php echo esc_url(get_permalink($b)); ?>" id="hs-<?php echo esc_attr($b->post_name); ?>" data-color="<?php echo esc_attr(zh_breed_color($b)); ?>"<?php echo $i === 0 ? '' : ' inert'; ?>>
+          <span class="hs-name"><?php echo esc_html($b->post_title); ?></span>
+          <?php if ($m['url']) : ?><img class="hs-cat" src="<?php echo esc_url($m['url']); ?>"<?php if ($m['small'] !== $m['url'] && $small_w) : ?> srcset="<?php echo esc_url($m['small']); ?> <?php echo $small_w; ?>w, <?php echo esc_url($m['url']); ?> <?php echo (int) $m['w']; ?>w" sizes="(min-width: 960px) 40vw, 90vw"<?php endif; ?> alt="<?php echo esc_attr($b->post_title . ' кошка'); ?>"<?php if ($m['w']) : ?> width="<?php echo (int) $m['w']; ?>" height="<?php echo (int) $m['h']; ?>"<?php endif; ?> decoding="async" draggable="false"<?php echo $i === 0 ? ' fetchpriority="high"' : ' loading="lazy"'; ?>><?php endif; ?>
+          <dl class="hs-facts">
+            <?php if ($n) : ?><div><dt>В питомнике</dt><dd><?php echo (int) $n . ' ' . esc_html(zh_plural($n, 'кот', 'кота', 'котов')); ?></dd></div><?php endif; ?>
+            <?php foreach ($facts as $f) : ?><div><dt><?php echo esc_html($f[0]); ?></dt><dd><?php echo zh_t($f[1]); ?></dd></div><?php endforeach; ?>
+          </dl>
+          <span class="hs-go"><span><?php echo esc_html($c['hero']['open']); ?></span><?php echo zh_arrow_up_right(); ?></span>
         </a>
         <?php endforeach; ?>
       </div>
+      <?php endif; ?>
     </div>
   </section>
 
@@ -58,42 +76,44 @@ $em = array('em' => array());
   </section>
   <?php endif; ?>
 
-  <?php $compare = array(); foreach ($breeds as $b) { $sc = zh_breed_scores($b); if ($sc) { $compare[] = array($b, $sc); } } ?>
-  <?php if (count($compare) > 1) : ?>
-  <section class="sec compare" id="compare" aria-labelledby="compare-title" style="padding-top:0">
+  <?php if ($score_labels && count($hb) > 1) :
+    $pk = array();
+    foreach ($hb as $b) {
+      $sc = array(); foreach (zh_breed_scores($b) as $r) { $sc[$r[0]] = $r[1]; }
+      $pk[] = array('name' => $b->post_title, 'url' => get_permalink($b), 'color' => zh_breed_color($b), 'scores' => $sc,
+        'fit' => wp_strip_all_tags(zh_t((string) get_post_meta($b->ID, '_zhibek_fit', true))),
+        'img' => array('lie' => zh_pose($b, 'lie'), 'sit' => zh_pose($b, 'sit'), 'stretch' => zh_pose($b, 'stretch')));
+    } ?>
+  <section class="sec" id="picker" aria-labelledby="picker-title">
     <div class="wrap">
       <div class="sec-head" data-reveal>
-        <h2 class="h2" id="compare-title"><?php echo wp_kses($c['compare']['title'], $em); ?></h2>
-        <p class="lead"><?php echo zh_t($c['compare']['lead']); ?></p>
+        <h2 class="h2" id="picker-title"><?php echo esc_html($c['picker']['title']); ?></h2>
+        <p class="lead"><?php echo zh_t($c['picker']['lead']); ?></p>
       </div>
-      <div class="chars">
-        <?php foreach ($compare as $i => $row) : $b = $row[0]; $head = 'pets/' . $b->post_name . '-head.webp';
-          $fit = (string) get_post_meta($b->ID, '_zhibek_fit', true); $bnote = (string) get_post_meta($b->ID, '_zhibek_note', true);
-          $bfacts = array_slice(array_filter(zh_breed_facts($b), function ($f) { return $f[0] !== ''; }), 0, 4); ?>
-        <div class="char" data-char data-reveal data-breed="<?php echo esc_attr($b->post_name); ?>" style="--bg:<?php echo esc_attr(zh_breed_color($b)); ?>;--d:<?php echo (int) $i; ?>">
-          <?php if (zh_has_img($head)) : ?><img class="char-head" src="<?php echo esc_url(zh_img($head)); ?>" alt="" loading="lazy" decoding="async" draggable="false"><?php endif; ?>
-          <div class="char-card">
-            <div class="char-inner">
-              <div class="char-front">
-                <h3><a href="<?php echo esc_url(get_permalink($b)); ?>"><?php echo esc_html($b->post_title); ?></a></h3>
-                <dl>
-                  <?php foreach ($row[1] as $sc) : ?>
-                    <div><dt><?php echo esc_html($sc[0]); ?></dt><dd><span class="sr-only"><?php echo (int) $sc[1]; ?> из 5</span><span class="dots" aria-hidden="true"><?php for ($d = 1; $d <= 5; $d++) { echo '<i' . ($d <= $sc[1] ? ' class="on"' : '') . '></i>'; } ?></span></dd></div>
-                  <?php endforeach; ?>
-                </dl>
-                <?php $ctr = zh_traits($b); if ($ctr) : ?><ul class="char-traits"><?php foreach (array_slice($ctr, 0, 4) as $t) { echo '<li>' . esc_html($t) . '</li>'; } ?></ul><?php endif; ?>
-              </div>
-              <div class="char-back">
-                <?php if ($fit) : ?><p class="char-fit"><?php echo zh_t($fit); ?></p><?php endif; ?>
-                <?php if ($bfacts) : ?><dl class="char-facts"><?php foreach ($bfacts as $f) : ?><div><dt><?php echo esc_html($f[0]); ?></dt><dd><?php echo zh_t($f[1]); ?></dd></div><?php endforeach; ?></dl><?php endif; ?>
-                <?php if ($bnote) : ?><p class="char-note"><?php echo zh_t($bnote); ?></p><?php endif; ?>
-                <a class="btn btn-light btn-sm" href="<?php echo esc_url(get_permalink($b)); ?>"><span><?php echo esc_html($c['compare']['open']); ?></span><?php echo zh_arrow(); ?></a>
-              </div>
-            </div>
-            <button class="char-flip" type="button" aria-pressed="false" aria-label="<?php echo esc_attr('Подробнее: ' . $b->post_title); ?>" data-label="<?php echo esc_attr($b->post_title); ?>"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 11-2.4-5.7"/><path d="M20 4v5h-5"/></svg></button>
+      <div class="picker" data-picker data-breeds="<?php echo esc_attr(wp_json_encode($pk, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)); ?>" data-match="<?php echo esc_attr($c['picker']['match']); ?>" data-open="<?php echo esc_attr($c['picker']['open']); ?>">
+        <div class="picker-rows">
+          <?php foreach ($score_labels as $lab) : $h = $c['picker']['hints'][$lab] ?? array('меньше', 'больше'); ?>
+          <div class="prow" role="radiogroup" aria-label="<?php echo esc_attr($lab); ?>" data-label="<?php echo esc_attr($lab); ?>">
+            <span class="prow-l"><?php echo esc_html($lab); ?></span>
+            <span class="prow-dots"><?php for ($v = 1; $v <= 5; $v++) : ?><button type="button" role="radio" aria-checked="false" aria-label="<?php echo esc_attr($lab . ': ' . $v . ' из 5'); ?>" data-v="<?php echo (int) $v; ?>"><i></i></button><?php endfor; ?></span>
+            <span class="prow-h"><span><?php echo esc_html($h[0]); ?></span><span><?php echo esc_html($h[1]); ?></span></span>
           </div>
+          <?php endforeach; ?>
+          <button class="link-btn picker-reset" type="button" hidden><?php echo esc_html($c['picker']['reset']); ?></button>
         </div>
-        <?php endforeach; ?>
+        <div class="picker-result" aria-live="polite">
+          <div class="pr-empty">
+            <span class="pr-trio" aria-hidden="true"><?php foreach ($pk as $row) { echo '<img src="' . esc_url($row['img']['sit']) . '" alt="" loading="lazy" decoding="async" draggable="false">'; } ?></span>
+            <p><?php echo esc_html($c['picker']['empty']); ?></p>
+          </div>
+          <a class="pr-card" href="#" hidden>
+            <span class="pr-name"></span>
+            <span class="pr-fit"></span>
+            <img class="pr-cat" src="" alt="" decoding="async" draggable="false">
+            <span class="hs-go"><span><?php echo esc_html($c['picker']['open']); ?></span><?php echo zh_arrow_up_right(); ?></span>
+          </a>
+          <ul class="pr-bars" hidden></ul>
+        </div>
       </div>
     </div>
   </section>
@@ -101,22 +121,31 @@ $em = array('em' => array());
 
   <section class="sec" id="process" aria-labelledby="process-title" style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head sec-head--center" data-reveal><h2 class="h2" id="process-title"><?php echo wp_kses($c['process']['title'], $em); ?></h2></div>
-      <ol class="steps">
-        <?php foreach ($c['process']['steps'] as $i => $st) : $sb = $breeds ? $breeds[$i % count($breeds)] : null; $sh = $sb ? 'pets/' . $sb->post_name . '-head.webp' : ''; ?>
-          <li class="step" data-reveal style="--c:<?php echo esc_attr($sb ? zh_breed_color($sb) : '#2c4a3b'); ?>">
-            <span class="step-art" aria-hidden="true"><?php if ($sh && zh_has_img($sh)) : ?><img src="<?php echo esc_url(zh_img($sh)); ?>" alt="" loading="lazy" decoding="async" draggable="false"><?php endif; ?></span>
-            <span class="step-n"><?php echo esc_html(sprintf('%02d', $i + 1)); ?></span>
-            <h3><?php echo esc_html($st[0]); ?></h3>
-            <p><?php echo zh_t($st[1]); ?></p>
-          </li>
-        <?php endforeach; ?>
-      </ol>
+      <div class="sec-head" data-reveal><h2 class="h2" id="process-title"><?php echo esc_html($c['process']['title']); ?></h2></div>
+      <?php $bybreed = array(); foreach ($breeds as $bb) { $bybreed[$bb->post_name] = $bb; } ?>
+      <div class="proc" data-proc>
+        <div class="proc-stage" aria-hidden="true" style="--bg:#2a46a0">
+          <?php foreach ($c['process']['steps'] as $i => $st) : $pb = $bybreed[$st[2]] ?? null; $pimg = $pb ? zh_pose($pb, $st[3]) : ''; ?>
+            <span class="ps-slide<?php echo $i === 0 ? ' is-on' : ''; ?>" data-color="<?php echo esc_attr($pb ? zh_breed_color($pb) : '#2c4a3b'); ?>"><?php if ($pimg) : ?><img src="<?php echo esc_url($pimg); ?>" alt="" decoding="async" draggable="false"<?php echo $i === 0 ? '' : ' loading="lazy"'; ?>><?php endif; ?></span>
+          <?php endforeach; ?>
+        </div>
+        <ol class="proc-list">
+          <?php foreach ($c['process']['steps'] as $i => $st) : $pb = $bybreed[$st[2]] ?? null; $pimg = $pb ? zh_pose($pb, $st[3]) : ''; ?>
+            <li class="pstep<?php echo $i === 0 ? ' is-on' : ''; ?>" data-i="<?php echo (int) $i; ?>" style="--c:<?php echo esc_attr($pb ? zh_breed_color($pb) : '#2c4a3b'); ?>">
+              <span class="pstep-n"><?php echo (int) ($i + 1); ?></span>
+              <h3><?php echo esc_html($st[0]); ?></h3>
+              <p><?php echo zh_t($st[1]); ?></p>
+              <?php if ($pimg) : ?><span class="pstep-art" aria-hidden="true"><img src="<?php echo esc_url($pimg); ?>" alt="" loading="lazy" decoding="async" draggable="false"></span><?php endif; ?>
+            </li>
+          <?php endforeach; ?>
+        </ol>
+      </div>
       <p class="more" data-reveal><button class="btn btn-primary" type="button" data-enquire="Консультация"><span>Написать нам</span><?php echo zh_arrow(); ?></button></p>
     </div>
   </section>
 
   <section class="delivery" id="delivery" aria-labelledby="delivery-title">
+    <?php if (zh_has_img('pets/bengal-lie.webp')) : ?><img class="edge-cat" src="<?php echo esc_url(zh_img('pets/bengal-lie.webp')); ?>" alt="" width="720" height="619" loading="lazy" decoding="async" draggable="false"><?php endif; ?>
     <div class="wrap delivery-in">
       <div class="delivery-copy" data-reveal>
         

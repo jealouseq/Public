@@ -538,3 +538,15 @@ function zh_archive_title() {
 }
 
 /** Наклейка для статьи: одна и та же у одной записи, разные у разных. */
+
+/**
+ * Поза кота из набора темы (img/pets/{порода}-{поза}.webp) или основное изображение породы.
+ * Если у породы загружено своё фото, позы не используются: показывается только оно.
+ */
+function zh_pose($breed, $pose) {
+    $breed = get_post($breed);
+    $main = zh_media($breed);
+    if ($main['id']) { return $main['url']; }
+    $file = 'pets/' . $breed->post_name . '-' . $pose . '.webp';
+    return zh_has_img($file) ? zh_img($file) : $main['url'];
+}

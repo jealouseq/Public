@@ -278,32 +278,82 @@
     });
   });
 
-  // Карточки характеров: переворачиваются при наведении мыши, по кнопке и по касанию; скрытая сторона недоступна для фокуса.
-  const canHover = window.matchMedia('(hover: hover)').matches;
-  $$('[data-char]').forEach((card) => {
-    const btn = $('.char-flip', card), front = $('.char-front', card), back = $('.char-back', card), name = btn ? btn.dataset.label : '';
-    if (!btn || !front || !back) return;
-    let pinned = false; // карточка «закреплена» кнопкой или касанием и не возвращается, когда мышь уходит
-    const set = (on, pin) => {
-      pinned = on && !!pin;
-      card.classList.toggle('is-flipped', on); btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-      btn.setAttribute('aria-label', (on ? 'Вернуться к оценкам: ' : 'Подробнее: ') + name);
-      front.inert = on; back.inert = !on;
+  // Герой: переключатель пород. Все три слайда уже в разметке, меняются цвет сцены и видимый слайд.
+  const heroTabs = $('[data-hero-tabs]'), heroStage = $('[data-hero-stage]');
+  if (heroTabs && heroStage) {
+    const tabs = $$('.hero-tab', heroTabs), slides = $$('.hs-slide', heroStage);
+    const pick = (i) => {
+      tabs.forEach((t, k) => { const on = k === i; t.classList.toggle('is-on', on); t.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+      slides.forEach((sl, k) => { const on = k === i; sl.classList.toggle('is-on', on); sl.inert = !on; });
+      heroStage.style.setProperty('--bg', slides[i].dataset.color);
     };
-    set(false);
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const on = card.classList.contains('is-flipped');
-      if (on && !pinned && canHover && e.detail > 0) { pinned = true; return; } // мышь: карточка уже перевёрнута наведением, клик закрепляет её
-      set(!on, !on);
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => pick(i));
+      t.addEventListener('mouseenter', () => { if (window.matchMedia('(hover: hover) and (min-width: 960px)').matches) pick(i); });
     });
-    if (canHover) {
-      card.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse' && !card.classList.contains('is-flipped')) set(true); });
-      card.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse' && !pinned && !card.contains(document.activeElement)) set(false); });
-    } else {
-      card.addEventListener('click', (e) => { if (!e.target.closest('a, button')) set(!card.classList.contains('is-flipped'), true); });
+  }
+
+  // Подбор породы: человек отмечает, что для него важно, и видит ближайшую по оценкам породу.
+  $$('[data-picker]').forEach((box) => {
+    let breeds = []; try { breeds = JSON.parse(box.dataset.breeds || '[]'); } catch (e) { return; }
+    if (!breeds.length) return;
+    const rows = $$('.prow', box), state = {};
+    const empty = $('.pr-empty', box), card = $('.pr-card', box), bars = $('.pr-bars', box), reset = $('.picker-reset', box);
+    const word = box.dataset.match || 'совпадение';
+    const render = () => {
+      const chosen = Object.keys(state);
+      rows.forEach((row) => {
+        const v = state[row.dataset.label] || 0;
+        $$('button', row).forEach((b) => { const n = Number(b.dataset.v); b.classList.toggle('is-fill', n <= v); b.setAttribute('aria-checked', n === v ? 'true' : 'false'); });
+      });
+      reset.hidden = !chosen.length;
+      if (!chosen.length) { empty.hidden = false; card.hidden = true; bars.hidden = true; return; }
+      const res = breeds.map((b) => {
+        const dist = chosen.reduce((sum, l) => sum + Math.abs((b.scores[l] || 3) - state[l]), 0);
+        return { b, pct: Math.round(100 * (1 - dist / (4 * chosen.length))) };
+      }).sort((x, y) => y.pct - x.pct);
+      const best = res[0].b, act = state['Активность'];
+      const pose = act ? (act <= 2 ? 'lie' : act >= 4 ? 'stretch' : 'sit') : 'sit';
+      empty.hidden = true; card.hidden = false; bars.hidden = false;
+      card.style.setProperty('--bg', best.color); card.href = best.url;
+      $('.pr-name', card).textContent = best.name;
+      $('.pr-fit', card).textContent = best.fit ? '«' + best.fit + '»' : '';
+      const img = $('.pr-cat', card); img.src = best.img[pose] || best.img.sit; img.alt = best.name;
+      bars.innerHTML = '';
+      res.forEach((r) => {
+        const li = document.createElement('li'); li.style.setProperty('--bc', r.b.color);
+        li.innerHTML = '<span></span><span class="bar"><span></span></span><b></b>';
+        li.firstChild.textContent = r.b.name; li.lastChild.textContent = r.pct + '%';
+        li.querySelector('.bar span').style.width = r.pct + '%'; li.setAttribute('title', r.pct + '% ' + word);
+        bars.appendChild(li);
+      });
+    };
+    rows.forEach((row) => {
+      $$('button', row).forEach((b) => b.addEventListener('click', () => {
+        const l = row.dataset.label, v = Number(b.dataset.v);
+        if (state[l] === v) delete state[l]; else state[l] = v;
+        render();
+      }));
+    });
+    reset.addEventListener('click', () => { Object.keys(state).forEach((k) => delete state[k]); render(); });
+    render();
+  });
+
+  // Как забрать: поза кота и цвет сцены меняются вместе с шагом (при прокрутке, наведении и фокусе).
+  $$('[data-proc]').forEach((box) => {
+    const stage = $('.proc-stage', box), slides = $$('.ps-slide', box), steps = $$('.pstep', box);
+    if (!stage || !steps.length) return;
+    const set = (i) => {
+      steps.forEach((st, k) => st.classList.toggle('is-on', k === i));
+      slides.forEach((sl, k) => sl.classList.toggle('is-on', k === i));
+      if (slides[i]) stage.style.setProperty('--bg', slides[i].dataset.color);
+    };
+    set(0);
+    steps.forEach((st, i) => { st.addEventListener('mouseenter', () => { if (window.matchMedia('(hover: hover)').matches) set(i); }); st.addEventListener('click', () => set(i)); });
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((en) => { en.forEach((e) => { if (e.isIntersecting) set(Number(e.target.dataset.i)); }); }, { rootMargin: '-42% 0px -48% 0px' });
+      steps.forEach((st) => io.observe(st));
     }
-    card.addEventListener('keydown', (e) => { if (e.key === 'Escape' && card.classList.contains('is-flipped')) { set(false); btn.focus(); } });
   });
 
   doc.classList.add('is-ready');
