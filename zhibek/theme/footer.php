@@ -74,8 +74,7 @@ $peek_dlg = zh_has_img('pets/peek.webp') ? zh_img('pets/peek.webp') : '';
     <button class="enquiry-close" type="button" data-close aria-label="Закрыть форму"><?php echo zh_icon('close'); ?></button>
     <div class="enquiry-body">
       <h2 id="enquiry-title">Напишите нам</h2>
-      <p class="enquiry-lead">Оставьте контакт, и мы ответим. Заявка ни к чему вас не обязывает.</p>
-      <form id="enquiry-form" method="post" action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>" novalidate>
+            <form id="enquiry-form" method="post" action="<?php echo esc_url(admin_url('admin-ajax.php')); ?>" novalidate>
         <input type="hidden" name="action" value="zhibek_enquiry">
         <input type="hidden" name="nonce" value="<?php echo esc_attr(wp_create_nonce('zh_enquiry')); ?>">
         <div class="field"><label for="f-name">Имя</label><input id="f-name" name="name" required maxlength="100" autocomplete="name"></div>
@@ -84,11 +83,11 @@ $peek_dlg = zh_has_img('pets/peek.webp') ? zh_img('pets/peek.webp') : '';
           <div class="field"><label for="f-city">Город</label><input id="f-city" name="city" required maxlength="100" autocomplete="address-level2"></div>
         </div>
         <div class="field"><label for="f-breed">Что вас интересует</label><select id="f-breed" name="breed"><option>Консультация</option><?php foreach (zh_breeds() as $b) { echo '<option>' . esc_html($b->post_title) . '</option>'; } ?><option>Ближайшие помёты</option></select></div>
-        <div class="field"><label for="f-message">Сообщение</label><textarea id="f-message" name="message" rows="3" maxlength="2000" placeholder="Расскажите о доме и пожеланиях"></textarea></div>
+        <div class="field"><label for="f-message">Сообщение</label><textarea id="f-message" name="message" rows="2" maxlength="2000" placeholder="Расскажите о доме и пожеланиях"></textarea></div>
         <div class="honeypot" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
         <label class="consent"><input type="checkbox" name="consent" value="1" required><span>Согласен на <?php if (zh_privacy_url()) : ?><a href="<?php echo esc_url(zh_privacy_url()); ?>" target="_blank" rel="noopener">обработку данных</a><?php else : ?>обработку данных<?php endif; ?> для ответа на заявку</span></label>
-        <button type="submit" class="btn btn-primary btn-block"><span>Отправить</span><?php echo zh_arrow(); ?></button>
         <p id="form-result" class="form-result" role="status" aria-live="polite"></p>
+        <button type="submit" class="btn btn-primary btn-block"><span>Отправить</span><?php echo zh_arrow(); ?></button>
       </form>
       <div class="sent" role="status"><h2>Заявка отправлена</h2><p class="enquiry-lead" id="sent-text">Мы свяжемся с вами по указанному контакту.</p><button class="btn btn-outline" type="button" data-close><span>Закрыть</span></button></div>
       <?php if (isset($contacts['whatsapp']) || isset($contacts['telegram'])) : ?>

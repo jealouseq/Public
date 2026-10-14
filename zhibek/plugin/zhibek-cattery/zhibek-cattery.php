@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ZHIBEK Cattery
  * Description: Породы, коты, заявки и демо-контент для сайта питомника ZHIBEK.
- * Version: 4.4.0
+ * Version: 4.4.1
  * Requires at least: 6.5
  * Requires PHP: 8.0
  * Author: ZHIBEK
@@ -67,8 +67,8 @@ function zhibek_register_content() {
     ));
     register_taxonomy('zhibek_breed_type', 'zhibek_cat', array(
         'labels' => array('name' => 'Породы котов', 'singular_name' => 'Порода кота'),
-        'public' => true, 'show_ui' => false, 'show_in_rest' => true,
-        'rewrite' => array('slug' => 'cat-breed', 'with_front' => false), 'hierarchical' => false,
+        'public' => false, 'publicly_queryable' => false, 'show_ui' => false, 'show_in_rest' => true,
+        'rewrite' => false, 'hierarchical' => false,
     ));
     register_post_type('zhibek_enquiry', array(
         'labels' => array('name' => 'Заявки ZHIBEK', 'singular_name' => 'Заявка', 'edit_item' => 'Просмотр заявки'),
@@ -171,9 +171,10 @@ function zhibek_refresh_privacy() {
 /** Версия 4.4: в тексте страницы «Как передаём котят» больше нет договора и видеозвонка. Обновляем её один раз, если владелец не менял текст. */
 function zhibek_refresh_terms() {
     if (get_option('zhibek_cleanup_8')) { return; }
+    update_option('zhibek_flush_rewrite', 1); // таксономия пород больше не имеет публичных адресов
     $terms = get_page_by_path('order-terms');
-    if ($terms && (false !== strpos($terms->post_content, 'видеозвонок') || false !== strpos($terms->post_content, 'в договоре'))) {
-        wp_update_post(array('ID' => $terms->ID, 'post_content' => zhibek_terms_html()));
+    if ($terms && ($terms->post_title === 'Доставка и оплата' || false !== strpos($terms->post_content, 'видеозвонок') || false !== strpos($terms->post_content, 'в договоре'))) {
+        wp_update_post(array('ID' => $terms->ID, 'post_title' => 'Как передаём котят', 'post_content' => zhibek_terms_html()));
     }
     update_option('zhibek_cleanup_8', 1);
 }

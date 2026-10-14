@@ -75,11 +75,11 @@
     });
     dlg.addEventListener('close', () => doc.classList.remove('dialog-open'));
 
-    const fail = (field, text) => { const wrap = field.closest('.field'); if (wrap) wrap.classList.add('has-error'); result.textContent = text; result.className = 'form-result is-error'; field.focus(); };
-    form.addEventListener('input', (e) => { const w = e.target.closest('.field'); if (w) w.classList.remove('has-error'); });
+    const fail = (field, text) => { const wrap = field.closest('.field'); if (wrap) wrap.classList.add('has-error'); field.setAttribute('aria-invalid', 'true'); field.setAttribute('aria-describedby', 'form-result'); result.textContent = text; result.className = 'form-result is-error'; field.focus({ preventScroll: true }); field.scrollIntoView({ block: 'nearest' }); };
+    form.addEventListener('input', (e) => { const w = e.target.closest('.field'); if (w) w.classList.remove('has-error'); e.target.removeAttribute('aria-invalid'); });
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      $$('.has-error', form).forEach((n) => n.classList.remove('has-error'));
+      $$('.has-error', form).forEach((n) => n.classList.remove('has-error')); $$('[aria-invalid]', form).forEach((n) => n.removeAttribute('aria-invalid'));
       const name = form.elements.name, contact = form.elements.contact, city = form.elements.city, consent = form.elements.consent;
       if (name.value.trim().length < 2) return fail(name, 'Укажите имя.');
       const cv = contact.value.trim();
@@ -87,7 +87,7 @@
       const digits = cv.replace(/\D/g, '');
       if (!looksEmail && !(digits.length >= 7 && digits.length <= 15)) return fail(contact, 'Укажите телефон с кодом страны или email.');
       if (city.value.trim().length < 2) return fail(city, 'Укажите город.');
-      if (!consent.checked) { result.textContent = 'Подтвердите согласие на обработку данных.'; result.className = 'form-result is-error'; consent.focus(); return; }
+      if (!consent.checked) { result.textContent = 'Подтвердите согласие на обработку данных.'; result.className = 'form-result is-error'; consent.setAttribute('aria-invalid', 'true'); consent.focus({ preventScroll: true }); consent.scrollIntoView({ block: 'nearest' }); return; }
       const btn = $('button[type=submit]', form); btn.disabled = true; result.className = 'form-result'; result.textContent = 'Отправляем…';
       try {
         // Свежий nonce: на сайтах с кэшем страницы встроенный мог устареть.
@@ -344,14 +344,27 @@
         bars.appendChild(li);
       });
     };
+    // Клавиатура: одна точка остановки на строку, стрелки меняют значение.
+    const syncTab = (row) => { const v = state[row.dataset.label] || 0; $$('button', row).forEach((b, i) => { b.tabIndex = (v ? Number(b.dataset.v) === v : i === 0) ? 0 : -1; }); };
+    rows.forEach((row) => {
+      syncTab(row);
+      row.addEventListener('keydown', (e) => {
+        const k = e.key === 'ArrowRight' || e.key === 'ArrowUp' ? 1 : e.key === 'ArrowLeft' || e.key === 'ArrowDown' ? -1 : 0;
+        if (!k) return;
+        e.preventDefault();
+        const cur = state[row.dataset.label] || (k > 0 ? 0 : 6), next = Math.max(1, Math.min(5, cur + k));
+        state[row.dataset.label] = next; render(); syncTab(row);
+        const nb = $$('button', row)[next - 1]; if (nb) nb.focus();
+      });
+    });
     rows.forEach((row) => {
       $$('button', row).forEach((b) => b.addEventListener('click', () => {
         const l = row.dataset.label, v = Number(b.dataset.v);
         if (state[l] === v) delete state[l]; else state[l] = v;
-        render();
+        render(); syncTab(row);
       }));
     });
-    reset.addEventListener('click', () => { Object.keys(state).forEach((k) => delete state[k]); render(); });
+    reset.addEventListener('click', () => { Object.keys(state).forEach((k) => delete state[k]); render(); rows.forEach(syncTab); });
     render();
   });
 

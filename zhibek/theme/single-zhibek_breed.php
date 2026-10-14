@@ -94,7 +94,7 @@ while (have_posts()) : the_post();
         <span class="hand">другая порода</span>
         <span class="nextb-name"><?php echo esc_html($o->post_title); ?></span>
         <span class="nextb-go" aria-hidden="true"><?php echo zh_arrow(); ?></span>
-        <?php if ($om['url']) : ?><img src="<?php echo esc_url($om['small']); ?>" alt="" loading="lazy" decoding="async" draggable="false"><?php endif; ?>
+        <?php if ($om['url']) : ?><img src="<?php echo esc_url($om['small']); ?>" alt=""<?php if ($om['w']) : ?> width="<?php echo (int) $om['w']; ?>" height="<?php echo (int) $om['h']; ?>"<?php endif; ?> loading="lazy" decoding="async" draggable="false"><?php endif; ?>
       </a>
     <?php endforeach; ?>
   </section>

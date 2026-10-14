@@ -12,7 +12,7 @@
 
 /* ------------------------------------------------------------ список пород */
 .breed-jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
-.breed-jump a { display: inline-flex; align-items: center; gap: 9px; min-height: 42px; padding: 0 18px; border: 1.5px solid var(--line); border-radius: 999px; font-weight: 600; color: var(--ink); text-decoration: none; transition: background-color .3s, border-color .3s, color .3s; }
+.breed-jump a { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; padding: 0 18px; border: 1.5px solid var(--line); border-radius: 999px; font-weight: 600; color: var(--ink); text-decoration: none; transition: background-color .3s, border-color .3s, color .3s; }
 .breed-jump a i { width: 11px; height: 11px; border-radius: 50%; background: var(--bc, var(--ink)); }
 .breed-jump a:hover { border-color: var(--ink); background: var(--ink); color: var(--paper); }
 .breed-jump .breed-jump-cmp { border-style: dashed; color: var(--muted); }

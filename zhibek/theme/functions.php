@@ -32,19 +32,31 @@ add_action('wp_head', function () {
     $s = zh_settings();
     $title = wp_get_document_title();
     $default = 'ZHIBEK — питомник абиссинских, бенгальских и сиамских кошек в Казахстане. Коты и котята с родословной, ветпаспортом и чипом, доставка по стране.';
-    $description = is_singular() && !post_password_required() ? wp_trim_words(wp_strip_all_tags(get_the_excerpt()), 28) : $default;
-    if (!$description) { $description = $default; }
+    $description = zh_page_description($default);
     $featured = is_singular() && !post_password_required() ? zh_public_thumbnail_id(get_post()) : 0;
     $image = $featured ? wp_get_attachment_image_url($featured, 'large') : zh_img('ui/og.jpg');
-    echo '<meta name="theme-color" content="#f2e9db"><meta name="color-scheme" content="light">';
+    echo '<meta name="theme-color" content="#f3f0e9"><meta name="color-scheme" content="light">';
     foreach (array('Onest.woff2', 'Lora.woff2') as $font) { echo '<link rel="preload" href="' . esc_url(zh_asset('fonts/' . $font)) . '" as="font" type="font/woff2" crossorigin>'; }
     echo '<meta name="description" content="' . esc_attr($description) . '">';
     echo '<link rel="icon" type="image/svg+xml" href="' . esc_url(zh_img('ui/favicon.svg')) . '">';
     echo '<link rel="apple-touch-icon" href="' . esc_url(zh_img('ui/apple-touch-icon.png')) . '">';
     echo '<meta property="og:site_name" content="ZHIBEK"><meta property="og:locale" content="ru_RU"><meta property="og:title" content="' . esc_attr($title) . '"><meta property="og:description" content="' . esc_attr($description) . '"><meta property="og:image" content="' . esc_url($image) . '"><meta property="og:type" content="' . (is_singular('post') ? 'article' : 'website') . '"><meta name="twitter:card" content="summary_large_image">';
     // Фон до загрузки стилей и страховка: если скрипт не загрузится, блоки с появлением всё равно станут видимыми.
-    echo '<style id="zh-critical">html{background:#f2e9db}</style>';
+    echo '<style id="zh-critical">html{background:#f3f0e9}</style>';
     echo '<script>(function(d,w){var e=d.documentElement;e.classList.add("js");w.__zhT=setTimeout(function(){e.classList.add("reveal-fail")},4500)})(document,window)</script>';
+    // Канонический адрес для страниц, где WordPress его не выводит (главная, архивы, рубрика).
+    if (!is_singular()) {
+        $canon = is_front_page() ? home_url('/') : (is_post_type_archive() ? get_post_type_archive_link(get_query_var('post_type')) : (is_category() ? get_category_link(get_queried_object_id()) : ''));
+        if ($canon) { echo '<link rel="canonical" href="' . esc_url($canon) . '">'; }
+    }
+    if (is_singular('post')) {
+        echo '<script type="application/ld+json">' . wp_json_encode(array(
+            '@context' => 'https://schema.org', '@type' => 'Article', 'headline' => get_the_title(), 'description' => $description,
+            'datePublished' => get_the_date('c'), 'dateModified' => get_the_modified_date('c'), 'image' => $image,
+            'author' => array('@type' => 'Organization', 'name' => 'ZHIBEK'), 'publisher' => array('@type' => 'Organization', 'name' => 'ZHIBEK'),
+            'mainEntityOfPage' => get_permalink(),
+        ), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>';
+    }
     if (is_front_page()) {
         $same = array_values(array_filter(array($s['instagram'] ?? '')));
         echo '<script type="application/ld+json">' . wp_json_encode(array(
@@ -53,6 +65,41 @@ add_action('wp_head', function () {
         ), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>';
     }
 }, 1);
+
+/** Описание страницы для поисковиков и соцсетей: у котов и пород собирается из полей, у остальных из выдержки. */
+function zh_page_description($default) {
+    $c = function_exists('zh_content') ? zh_content() : array();
+    if (is_post_type_archive('zhibek_breed')) { return wp_strip_all_tags($c['breeds']['lead'] ?? $default); }
+    if (is_post_type_archive('zhibek_cat')) { return wp_strip_all_tags(($c['cats']['lead'] ?? '') . ' Питомник ZHIBEK, Казахстан.') ?: $default; }
+    if (is_category('journal')) { return 'Журнал питомника ZHIBEK: коротко о породах, уходе и первых днях кошки в новом доме.'; }
+    if (!is_singular() || post_password_required()) { return $default; }
+    $post = get_post();
+    $text = wp_trim_words(wp_strip_all_tags(get_the_excerpt()), 28);
+    if ($post->post_type === 'zhibek_breed') {
+        $sub = (string) get_post_meta($post->ID, '_zhibek_subtitle', true);
+        $text = trim($post->post_title . ' кошка: ' . ($sub ?: $text) . ' Питомник ZHIBEK, Казахстан.');
+    } elseif ($post->post_type === 'zhibek_cat') {
+        $bits = array();
+        $bid = (int) get_post_meta($post->ID, '_zhibek_breed', true);
+        if ($bid) { $bits[] = get_the_title($bid); }
+        $sex = (string) get_post_meta($post->ID, '_zhibek_sex', true); if ($sex) { $bits[] = $sex; }
+        $text = trim($post->post_title . ($bits ? ': ' . implode(', ', $bits) : '') . '. Питомник ZHIBEK, Казахстан. ' . $text);
+    }
+    return $text ?: $default;
+}
+
+
+/* ------------------------------------------------------- лишние адреса */
+
+// Поиска и страниц авторов на сайте нет: они открывали имя пользователя и пустые страницы. Ведём на главную.
+add_action('template_redirect', function () {
+    if (is_search() || is_author()) { wp_safe_redirect(home_url('/'), 301); exit; }
+});
+add_filter('wp_sitemaps_add_provider', function ($provider, $name) { return $name === 'users' ? false : $provider; }, 10, 2);
+add_filter('document_title_parts', function ($parts) {
+    if (is_404()) { $parts['title'] = 'Страница не найдена'; }
+    return $parts;
+});
 
 add_action('admin_notices', function () {
     if (current_user_can('activate_plugins') && !function_exists('zhibek_get_breeds')) {
@@ -65,7 +112,7 @@ add_action('admin_notices', function () {
 add_action('wp_enqueue_scripts', function () {
     $u = get_template_directory_uri();
     $d = get_template_directory();
-    $v = function ($rel) use ($d) { $f = $d . '/assets/' . $rel; return is_file($f) ? (string) filemtime($f) : '5.5.2'; };
+    $v = function ($rel) use ($d) { $f = $d . '/assets/' . $rel; return is_file($f) ? (string) filemtime($f) : '5.5.3'; };
     // Стили внутренних страниц главной не нужны: меньше CSS, быстрее первая отрисовка на телефоне.
     $css = is_front_page() ? array('base', 'home') : array('base', 'home', 'inner');
     $prev = array();
