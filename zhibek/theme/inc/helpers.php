@@ -462,46 +462,27 @@ function zh_map_svg() {
     $on = array(); foreach (zh_map_city_list() as $name) { if (isset($coords[$name])) { $on[$name] = $coords[$name]; } }
     $W = (int) $map['w']; $H = (int) $map['h'];
     $pct = function ($xy) use ($W, $H) { return 'left:' . round($xy[0] / $W * 100, 2) . '%;top:' . round($xy[1] / $H * 100, 2) . '%'; };
-    // Сеть связей: минимальное остовное дерево по расстоянию (алгоритм Прима), чтобы города не висели по отдельности.
-    $links = array(); $names = array_keys($on);
-    if (count($names) > 1) {
-        $in = array($names[0]); $rest = array_slice($names, 1);
-        while ($rest) {
-            $best = null;
-            foreach ($in as $a1) { foreach ($rest as $b1) {
-                $d = pow($on[$a1][0] - $on[$b1][0], 2) + pow($on[$a1][1] - $on[$b1][1], 2);
-                if ($best === null || $d < $best[0]) { $best = array($d, $a1, $b1); }
-            } }
-            $links[] = array($best[1], $best[2]); $in[] = $best[2]; $rest = array_values(array_diff($rest, array($best[2])));
-        }
-    }
     ob_start(); ?>
     <div class="map-stage">
-        <svg class="kzmap" viewBox="0 0 <?php echo $W; ?> <?php echo $H; ?>" role="img" aria-label="Карта Казахстана с городами, куда мы привозим котов">
+        <svg class="kzmap" viewBox="0 0 <?php echo $W; ?> <?php echo $H; ?>" role="img" aria-label="Карта Казахстана: возим котов в любую точку страны, частые направления отмечены точками">
             <defs>
                 <pattern id="kzdots" width="9" height="9" patternUnits="userSpaceOnUse"><circle cx="4.5" cy="4.5" r="1.25"/></pattern>
                 <clipPath id="kzclip"><path d="<?php echo esc_attr($map['d']); ?>"/></clipPath>
             </defs>
             <g class="kz-dots" clip-path="url(#kzclip)"><rect width="<?php echo $W; ?>" height="<?php echo $H; ?>" fill="url(#kzdots)" style="fill:url(#kzdots)"/></g>
             <path class="kz-line" d="<?php echo esc_attr($map['d']); ?>"/>
-            <g class="kz-links">
-                <?php foreach ($links as $i => $l) : $p1 = $on[$l[0]]; $p2 = $on[$l[1]];
-                    $dx = $p2[0] - $p1[0]; $dy = $p2[1] - $p1[1]; $len = max(1, sqrt($dx * $dx + $dy * $dy));
-                    $nx = -$dy / $len; $ny = $dx / $len; if ($ny > 0) { $nx = -$nx; $ny = -$ny; }
-                    $cx = ($p1[0] + $p2[0]) / 2 + $nx * $len * .16; $cy = ($p1[1] + $p2[1]) / 2 + $ny * $len * .16; ?>
-                    <path class="kz-link" data-a="<?php echo esc_attr($l[0]); ?>" data-b="<?php echo esc_attr($l[1]); ?>" style="--i:<?php echo (int) $i; ?>" pathLength="1" d="M<?php echo (int) $p1[0]; ?> <?php echo (int) $p1[1]; ?>Q<?php echo round($cx); ?> <?php echo round($cy); ?> <?php echo (int) $p2[0]; ?> <?php echo (int) $p2[1]; ?>"/>
-                <?php endforeach; ?>
-            </g>
             <g class="kz-cities">
                 <?php foreach ($on as $name => $xy) : ?>
-                    <g class="kz-city" data-city="<?php echo esc_attr($name); ?>" transform="translate(<?php echo (int) $xy[0]; ?> <?php echo (int) $xy[1]; ?>)"><circle class="kz-hit" r="22"/><circle class="kz-pulse" r="14"/><circle class="kz-pin" r="5"/></g>
+                    <g class="kz-city" data-city="<?php echo esc_attr($name); ?>" transform="translate(<?php echo (int) $xy[0]; ?> <?php echo (int) $xy[1]; ?>)"><circle class="kz-hit" r="22"/><circle class="kz-pin" r="5"/></g>
                 <?php endforeach; ?>
             </g>
+            <g class="kz-drop" aria-hidden="true"><circle class="kz-drop-ring" r="16"/><circle class="kz-drop-pin" r="6"/></g>
         </svg>
         <?php foreach ($on as $name => $xy) : ?>
             <span class="kz-label" data-city="<?php echo esc_attr($name); ?>" style="<?php echo $pct($xy); ?>"><?php echo esc_html($name); ?></span>
         <?php endforeach; ?>
-        <p class="map-stat"><b><?php echo (int) count($on); ?></b><span>городов<br>на карте</span></p>
+        <span class="kz-drop-label" aria-hidden="true">Довезём и сюда</span>
+        <p class="map-hint" aria-hidden="true">Нажмите на любое место на карте</p>
     </div>
     <?php
     return ob_get_clean();

@@ -103,7 +103,7 @@ $em = array('em' => array());
         </div>
         <div class="picker-result" aria-live="polite">
           <div class="pr-empty">
-            <span class="pr-trio" aria-hidden="true"><?php foreach ($pk as $row) { echo '<img src="' . esc_url($row['img']['sit']) . '" alt="" loading="lazy" decoding="async" draggable="false">'; } ?></span>
+            <span class="pr-trio" aria-hidden="true"><?php foreach ($pk as $row) { echo '<span class="pr-pick" style="--bc:' . esc_attr($row['color']) . '"><span class="pr-arch"><img src="' . esc_url($row['img']['sit']) . '" alt="" loading="lazy" decoding="async" draggable="false"></span><b>' . esc_html($row['name']) . '</b></span>'; } ?></span>
             <p><?php echo esc_html($c['picker']['empty']); ?></p>
           </div>
           <a class="pr-card" href="#" hidden>
@@ -145,7 +145,6 @@ $em = array('em' => array());
   </section>
 
   <section class="delivery" id="delivery" aria-labelledby="delivery-title">
-    <?php if (zh_has_img('pets/bengal-lie.webp')) : ?><img class="edge-cat" src="<?php echo esc_url(zh_img('pets/bengal-lie.webp')); ?>" alt="" width="720" height="619" loading="lazy" decoding="async" draggable="false"><?php endif; ?>
     <div class="wrap delivery-in">
       <div class="delivery-copy" data-reveal>
         
@@ -159,9 +158,7 @@ $em = array('em' => array());
       </div>
       <div class="delivery-map" data-reveal data-map>
         <?php echo zh_map_svg(); ?>
-        <?php if ($cities) : ?>
-          <ul class="cities"><?php foreach ($cities as $city) { echo '<li><button type="button" data-city="' . esc_attr($city) . '">' . esc_html($city) . '</button></li>'; } ?></ul>
-        <?php endif; ?>
+        <ul class="cities"><?php foreach ($cities as $city) { echo '<li><button type="button" data-city="' . esc_attr($city) . '">' . esc_html($city) . '</button></li>'; } ?><li><button class="cities-other" type="button" data-enquire="Другой город"><?php echo esc_html($c['delivery']['other']); ?></button></li></ul>
       </div>
     </div>
   </section>

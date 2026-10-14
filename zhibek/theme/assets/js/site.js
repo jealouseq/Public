@@ -262,7 +262,23 @@
 
   // Карта доставки: город на карте, его связи и кнопка города подсвечиваются вместе, по нажатию выбор закрепляется.
   $$('[data-map]').forEach((box) => {
-    const items = $$('[data-city]', box), links = $$('.kz-link', box);
+    const items = $$('[data-city]', box), links = [];
+    // Карта: клик или касание в любом месте страны ставит метку «Довезём и сюда».
+    const svg = $('.kzmap', box), outline = $('.kz-line', box), drop = $('.kz-drop', box), dropLabel = $('.kz-drop-label', box), hint = $('.map-hint', box);
+    if (svg && outline && drop && typeof outline.isPointInFill === 'function' && svg.getScreenCTM) {
+      const vb = svg.viewBox.baseVal;
+      const toSvg = (e) => { const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; return pt.matrixTransform(svg.getScreenCTM().inverse()); };
+      svg.addEventListener('pointermove', (e) => { if (e.pointerType === 'mouse') svg.classList.toggle('is-over', outline.isPointInFill(toSvg(e))); });
+      svg.addEventListener('pointerleave', () => svg.classList.remove('is-over'));
+      svg.addEventListener('click', (e) => {
+        if (e.target.closest('.kz-city')) return;
+        const pt = toSvg(e); if (!outline.isPointInFill(pt)) return;
+        drop.setAttribute('transform', 'translate(' + pt.x.toFixed(1) + ' ' + pt.y.toFixed(1) + ')');
+        drop.classList.remove('is-on'); void drop.getBoundingClientRect(); drop.classList.add('is-on');
+        if (dropLabel) { dropLabel.style.left = (pt.x / vb.width * 100).toFixed(2) + '%'; dropLabel.style.top = (pt.y / vb.height * 100).toFixed(2) + '%'; dropLabel.classList.add('is-on'); }
+        if (hint) hint.classList.add('is-off');
+      });
+    }
     let pinned = '';
     const show = (name) => {
       items.forEach((el) => el.classList.toggle('is-hot', !!name && el.dataset.city === name));

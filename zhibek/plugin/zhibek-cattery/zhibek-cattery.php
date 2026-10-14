@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ZHIBEK Cattery
  * Description: Породы, коты, заявки и демо-контент для сайта питомника ZHIBEK.
- * Version: 4.3.0
+ * Version: 4.4.0
  * Requires at least: 6.5
  * Requires PHP: 8.0
  * Author: ZHIBEK
@@ -150,6 +150,11 @@ function zhibek_remove_demo_shop() {
 }
 add_action('init', 'zhibek_remove_demo_shop', 21);
 
+/** Текст страницы «Как передаём котят»: владелец уточняет условия перед запуском. */
+function zhibek_terms_html() {
+    return '<h2>Знакомство</h2><p>Сначала вы знакомитесь с питомником и котёнком по фото и видео. Заявка на сайте ничего не фиксирует и не требует оплаты.</p><h2>Условия и документы</h2><p>Условия, документы и порядок расчёта обсуждаются лично. Оплата через сайт не принимается.</p><h2>Передача</h2><p>Котёнка можно забрать у нас или встретить в своём городе. Маршрут, сроки и стоимость согласуются заранее. Владелец уточняет условия здесь перед запуском.</p>';
+}
+
 /**
  * Версия 4.3: страница «Конфиденциальность» от версий с магазином упоминала заказы и оплату.
  * Обновляем её один раз и только если владелец ещё не менял этот текст.
@@ -162,6 +167,17 @@ function zhibek_refresh_privacy() {
     }
     update_option('zhibek_cleanup_7', 1);
 }
+
+/** Версия 4.4: в тексте страницы «Как передаём котят» больше нет договора и видеозвонка. Обновляем её один раз, если владелец не менял текст. */
+function zhibek_refresh_terms() {
+    if (get_option('zhibek_cleanup_8')) { return; }
+    $terms = get_page_by_path('order-terms');
+    if ($terms && (false !== strpos($terms->post_content, 'видеозвонок') || false !== strpos($terms->post_content, 'в договоре'))) {
+        wp_update_post(array('ID' => $terms->ID, 'post_content' => zhibek_terms_html()));
+    }
+    update_option('zhibek_cleanup_8', 1);
+}
+add_action('init', 'zhibek_refresh_terms', 23);
 add_action('init', 'zhibek_refresh_privacy', 22);
 
 function zhibek_maybe_flush_rewrite() {
@@ -801,7 +817,7 @@ function zhibek_seed_content() {
     }
     $privacy = zhibek_seed_post('page-privacy', array('post_type' => 'page', 'post_title' => 'Конфиденциальность', 'post_name' => 'privacy', 'post_content' => zhibek_privacy_html()));
     if (!(int) get_option('wp_page_for_privacy_policy') && 'publish' === get_post_status($privacy)) { update_option('wp_page_for_privacy_policy', $privacy); }
-    zhibek_seed_post('page-order-terms', array('post_type' => 'page', 'post_title' => 'Как передаём котят', 'post_name' => 'order-terms', 'post_content' => '<h2>Знакомство</h2><p>Сначала вы знакомитесь с питомником и котёнком: фото, видео, видеозвонок. Заявка на сайте ничего не фиксирует и не требует оплаты.</p><h2>Договор и документы</h2><p>Условия, документы и порядок расчёта обсуждаются лично и фиксируются в договоре. Оплата через сайт не принимается.</p><h2>Передача</h2><p>Котёнка можно забрать у нас или встретить в своём городе. Маршрут, сроки и стоимость согласуются отдельно. Владелец уточняет условия здесь перед запуском.</p>'));
+    zhibek_seed_post('page-order-terms', array('post_type' => 'page', 'post_title' => 'Как передаём котят', 'post_name' => 'order-terms', 'post_content' => zhibek_terms_html()));
     $category = term_exists('journal', 'category');
     if (!$category) { $category = wp_insert_term('Журнал', 'category', array('slug' => 'journal')); }
     $journal_category = !is_wp_error($category) ? (is_array($category) ? (int) $category['term_id'] : (int) $category) : 0;
