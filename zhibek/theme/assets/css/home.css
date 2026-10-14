@@ -68,7 +68,7 @@
 .picker-result { display: grid; gap: 14px; }
 .pr-empty { display: grid; justify-items: center; align-content: center; gap: 18px; min-height: 360px; padding: 28px; border-radius: var(--r-xl); background: var(--paper-2); text-align: center; }
 .pr-trio { display: flex; align-items: flex-end; justify-content: center; gap: clamp(18px, 4vw, 52px); width: 100%; }
-.pr-trio img { flex: 0 1 auto; min-width: 0; height: clamp(112px, 12vw, 160px); width: auto; object-fit: contain; object-position: bottom; }
+.pr-trio img { flex: 0 1 auto; min-width: 0; max-width: 33%; height: clamp(112px, 12vw, 160px); width: auto; object-fit: contain; object-position: bottom; }
 .pr-empty p { max-width: 20em; margin: 0; color: var(--ink-2); }
 .pr-card { position: relative; display: block; min-height: 400px; padding: clamp(24px, 3vw, 36px); border-radius: var(--r-xl); background: var(--bg); color: var(--on-dark); text-decoration: none; overflow: hidden; isolation: isolate; transition: background-color .5s var(--ease); }
 .pr-name { display: block; font-family: var(--f-display); font-weight: 600; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.05; }
