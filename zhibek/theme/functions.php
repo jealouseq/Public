@@ -65,7 +65,7 @@ add_action('admin_notices', function () {
 add_action('wp_enqueue_scripts', function () {
     $u = get_template_directory_uri();
     $d = get_template_directory();
-    $v = function ($rel) use ($d) { $f = $d . '/assets/' . $rel; return is_file($f) ? (string) filemtime($f) : '5.5.1'; };
+    $v = function ($rel) use ($d) { $f = $d . '/assets/' . $rel; return is_file($f) ? (string) filemtime($f) : '5.5.2'; };
     // Стили внутренних страниц главной не нужны: меньше CSS, быстрее первая отрисовка на телефоне.
     $css = is_front_page() ? array('base', 'home') : array('base', 'home', 'inner');
     $prev = array();

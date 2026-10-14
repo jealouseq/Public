@@ -103,7 +103,7 @@ $em = array('em' => array());
         </div>
         <div class="picker-result" aria-live="polite">
           <div class="pr-empty">
-            <span class="pr-trio" aria-hidden="true"><?php foreach ($pk as $row) { echo '<span class="pr-pick" style="--bc:' . esc_attr($row['color']) . '"><span class="pr-arch"><img src="' . esc_url($row['img']['sit']) . '" alt="" loading="lazy" decoding="async" draggable="false"></span><b>' . esc_html($row['name']) . '</b></span>'; } ?></span>
+            <span class="pr-trio" aria-hidden="true"><?php foreach ($pk as $row) { echo '<img src="' . esc_url($row['img']['sit']) . '" alt="" loading="lazy" decoding="async" draggable="false">'; } ?></span>
             <p><?php echo esc_html($c['picker']['empty']); ?></p>
           </div>
           <a class="pr-card" href="#" hidden>

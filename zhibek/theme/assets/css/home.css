@@ -66,12 +66,9 @@
 .prow-h { display: flex; justify-content: space-between; width: 270px; max-width: 100%; font-size: .875rem; color: var(--muted); }
 .picker-reset { margin-top: 6px; justify-self: start; }
 .picker-result { display: grid; gap: 14px; }
-.pr-empty { display: grid; justify-items: center; align-content: center; gap: 22px; min-height: 400px; padding: 28px; border-radius: var(--r-xl); background: var(--paper-2); text-align: center; }
-.pr-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 2vw, 22px); width: min(100%, 520px); }
-.pr-pick { display: grid; gap: 10px; justify-items: center; }
-.pr-arch { display: flex; align-items: flex-end; justify-content: center; width: 100%; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 999px 999px var(--r-s) var(--r-s); background: var(--bc); }
-.pr-arch img { width: 84%; height: 88%; object-fit: contain; object-position: bottom; }
-.pr-pick b { font-family: var(--f-display); font-weight: 600; font-size: 1.0625rem; color: var(--ink); }
+.pr-empty { display: grid; justify-items: center; align-content: center; gap: 18px; min-height: 360px; padding: 28px; border-radius: var(--r-xl); background: var(--paper-2); text-align: center; }
+.pr-trio { display: flex; align-items: flex-end; justify-content: center; gap: clamp(18px, 4vw, 52px); width: 100%; }
+.pr-trio img { flex: 0 1 auto; min-width: 0; height: clamp(112px, 12vw, 160px); width: auto; object-fit: contain; object-position: bottom; }
 .pr-empty p { max-width: 20em; margin: 0; color: var(--ink-2); }
 .pr-card { position: relative; display: block; min-height: 400px; padding: clamp(24px, 3vw, 36px); border-radius: var(--r-xl); background: var(--bg); color: var(--on-dark); text-decoration: none; overflow: hidden; isolation: isolate; transition: background-color .5s var(--ease); }
 .pr-name { display: block; font-family: var(--f-display); font-weight: 600; font-size: clamp(2rem, 3.4vw, 3rem); line-height: 1.05; }
