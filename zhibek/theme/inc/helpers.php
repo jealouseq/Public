@@ -11,6 +11,24 @@ function zh_settings() {
     return function_exists('zhibek_get_settings') ? array_merge($defaults, zhibek_get_settings()) : $defaults;
 }
 
+/** Документы питомника: скан, подпись и размеры для просмотра. Пусто, пока владелец не загрузил ни одного. */
+function zh_documents() {
+    if (!function_exists('zhibek_get_docs')) { return array(); }
+    $items = array();
+    foreach (zhibek_get_docs() as $doc) {
+        $id = get_post_thumbnail_id($doc);
+        $full = wp_get_attachment_image_src($id, 'full');
+        $tile = wp_get_attachment_image_src($id, 'medium_large');
+        if (!$full || !$tile) { continue; }
+        $items[] = array(
+            'title' => get_the_title($doc), 'text' => has_excerpt($doc) ? get_the_excerpt($doc) : '',
+            'src' => $full[0], 'tile' => $tile[0], 'w' => (int) $tile[1], 'h' => (int) $tile[2],
+            'alt' => trim((string) get_post_meta($id, '_wp_attachment_image_alt', true)) ?: get_the_title($doc),
+        );
+    }
+    return $items;
+}
+
 function zh_is_demo() { return function_exists('zhibek_is_demo') ? zhibek_is_demo() : true; }
 function zh_breeds() { return function_exists('zhibek_get_breeds') ? zhibek_get_breeds() : array(); }
 /** Порядок в каталоге: сначала свободные, затем ожидаются, в резерве, производители и дома; внутри группы — новые выше. */
@@ -117,6 +135,11 @@ function zh_icon($name) {
         'mail' => '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/>',
         'handoff' => '<circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/><path d="M9 12h6"/>',
         'pin' => '<path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/>',
+        'doc' => '<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/>',
+        'passport' => '<rect x="5" y="3" width="14" height="18" rx="2.5"/><circle cx="12" cy="10" r="3"/><path d="M9 16h6"/>',
+        'chip' => '<rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 11h4M10 13.5h4M9 3v4M15 3v4M9 17v4M15 17v4M3 9h4M3 15h4M17 9h4M17 15h4"/>',
+        'tree' => '<rect x="3" y="9.5" width="5" height="5" rx="1.2"/><rect x="16" y="3.5" width="5" height="5" rx="1.2"/><rect x="16" y="15.5" width="5" height="5" rx="1.2"/><path d="M8 12h3.5V6H16M11.5 12V18H16"/>',
+        'route' => '<circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 000-6H9a3 3 0 010-6h6.5"/>',
         'camera' => '<rect x="3" y="7" width="18" height="13" rx="3"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/>',
     );
     return '<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . ($paths[$name] ?? '') . '</svg>';

@@ -176,6 +176,36 @@
     });
   });
 
+  /* ---------- документы: просмотр скана ---------- */
+  const docsEl = $('[data-docs]');
+  if (docsEl) {
+    let list = [];
+    try { list = JSON.parse(docsEl.dataset.items || '[]'); } catch (err) { list = []; }
+    let box = null, cur = 0;
+    const paint = () => {
+      const it = list[cur]; if (!it) return;
+      const im = $('img', box); im.src = it.src; im.alt = it.alt || it.title;
+      $('.lb-cap', box).innerHTML = '';
+      const b = document.createElement('b'); b.textContent = it.title; $('.lb-cap', box).appendChild(b);
+      if (it.text) { const s = document.createElement('span'); s.textContent = it.text; $('.lb-cap', box).appendChild(s); }
+    };
+    const go = (d) => { cur = (cur + d + list.length) % list.length; paint(); };
+    docsEl.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-doc]'); if (!btn || typeof HTMLDialogElement === 'undefined') return;
+      cur = Number(btn.dataset.doc) || 0;
+      if (!box) {
+        box = document.createElement('dialog'); box.className = 'lightbox is-doc'; box.setAttribute('aria-label', 'Документ');
+        box.innerHTML = '<button class="lb-close" type="button" aria-label="Закрыть">×</button><img alt=""><div class="lb-cap" aria-live="polite"></div><button class="lb-nav lb-prev" type="button" aria-label="Предыдущий документ">‹</button><button class="lb-nav lb-next" type="button" aria-label="Следующий документ">›</button>';
+        document.body.appendChild(box);
+        box.addEventListener('click', (ev) => { if (ev.target === box || ev.target.closest('.lb-close')) box.close(); if (ev.target.closest('.lb-prev')) go(-1); if (ev.target.closest('.lb-next')) go(1); });
+        box.addEventListener('keydown', (ev) => { if (ev.key === 'ArrowLeft') go(-1); if (ev.key === 'ArrowRight') go(1); });
+        box.addEventListener('close', () => { doc.classList.remove('dialog-open'); const back = $('[data-doc="' + cur + '"]', docsEl); if (back) back.focus({ preventScroll: true }); });
+      }
+      $$('.lb-nav', box).forEach((n) => { n.hidden = list.length < 2; });
+      paint(); box.showModal(); doc.classList.add('dialog-open');
+    });
+  }
+
   /* ---------- сцены с котом: кадры меняются при прокрутке ---------- */
   const sceneReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const saveData = !!(navigator.connection && navigator.connection.saveData);

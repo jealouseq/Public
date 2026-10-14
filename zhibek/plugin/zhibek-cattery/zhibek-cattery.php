@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ZHIBEK Cattery
  * Description: Породы, коты, заявки и демо-контент для сайта питомника ZHIBEK.
- * Version: 4.4.1
+ * Version: 4.5.0
  * Requires at least: 6.5
  * Requires PHP: 8.0
  * Author: ZHIBEK
@@ -44,6 +44,12 @@ function zhibek_get_cats($args = array()) {
     return get_posts(array_merge($defaults, $args));
 }
 
+/** Опубликованные документы питомника: только те, у которых загружен скан. Порядок задаётся полем «Порядок». */
+function zhibek_get_docs() {
+    $docs = get_posts(array('post_type' => 'zhibek_doc', 'post_status' => 'publish', 'numberposts' => -1, 'orderby' => array('menu_order' => 'ASC', 'date' => 'ASC')));
+    return array_values(array_filter($docs, function ($doc) { return has_post_thumbnail($doc); }));
+}
+
 /** Every public field of breeds and cats; the theme reads them through get_post_meta(). */
 function zhibek_meta_keys() {
     return array(
@@ -64,6 +70,13 @@ function zhibek_register_content() {
         'public' => true, 'show_in_rest' => true, 'has_archive' => true,
         'rewrite' => array('slug' => 'cats', 'with_front' => false),
         'menu_icon' => 'dashicons-heart', 'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'custom-fields'),
+    ));
+    register_post_type('zhibek_doc', array(
+        'labels' => array('name' => 'Документы', 'singular_name' => 'Документ', 'add_new' => 'Добавить документ', 'add_new_item' => 'Добавить документ', 'edit_item' => 'Редактировать документ', 'all_items' => 'Все документы', 'featured_image' => 'Скан или фото документа', 'set_featured_image' => 'Загрузить скан документа', 'remove_featured_image' => 'Убрать скан', 'use_featured_image' => 'Использовать как скан'),
+        'public' => false, 'publicly_queryable' => false, 'exclude_from_search' => true, 'show_ui' => true, 'show_in_rest' => true,
+        'has_archive' => false, 'rewrite' => false, 'query_var' => false,
+        'menu_icon' => 'dashicons-media-document', 'menu_position' => 22,
+        'supports' => array('title', 'excerpt', 'thumbnail', 'page-attributes'),
     ));
     register_taxonomy('zhibek_breed_type', 'zhibek_cat', array(
         'labels' => array('name' => 'Породы котов', 'singular_name' => 'Порода кота'),

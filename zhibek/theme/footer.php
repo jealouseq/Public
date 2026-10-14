@@ -82,7 +82,7 @@ $peek_dlg = zh_has_img('pets/peek.webp') ? zh_img('pets/peek.webp') : '';
           <div class="field"><label for="f-contact">Телефон или email</label><input id="f-contact" name="contact" required maxlength="120" autocomplete="tel" inputmode="email"></div>
           <div class="field"><label for="f-city">Город</label><input id="f-city" name="city" required maxlength="100" autocomplete="address-level2"></div>
         </div>
-        <div class="field"><label for="f-breed">Что вас интересует</label><select id="f-breed" name="breed"><option>Консультация</option><?php foreach (zh_breeds() as $b) { echo '<option>' . esc_html($b->post_title) . '</option>'; } ?><option>Ближайшие помёты</option></select></div>
+        <div class="field"><label for="f-breed">Что вас интересует</label><select id="f-breed" name="breed"><option>Консультация</option><?php foreach (zh_breeds() as $b) { echo '<option>' . esc_html($b->post_title) . '</option>'; } ?><option>Ближайшие помёты</option><option>Документы</option></select></div>
         <div class="field"><label for="f-message">Сообщение</label><textarea id="f-message" name="message" rows="2" maxlength="2000" placeholder="Расскажите о доме и пожеланиях"></textarea></div>
         <div class="honeypot" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
         <label class="consent"><input type="checkbox" name="consent" value="1" required><span>Согласен на <?php if (zh_privacy_url()) : ?><a href="<?php echo esc_url(zh_privacy_url()); ?>" target="_blank" rel="noopener">обработку данных</a><?php else : ?>обработку данных<?php endif; ?> для ответа на заявку</span></label>

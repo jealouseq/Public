@@ -144,6 +144,34 @@ $em = array('em' => array());
     </div>
   </section>
 
+  <?php $docs = zh_documents(); $dc = $c['docs']; ?>
+  <section class="sec" id="documents" aria-labelledby="documents-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head" data-reveal><h2 class="h2" id="documents-title"><?php echo esc_html($dc['title']); ?></h2><p class="lead"><?php echo zh_t($dc['lead']); ?></p></div>
+      <?php if ($docs) : ?>
+        <?php $dn = count($docs); $dcols = $dn <= 3 ? 3 : ($dn === 5 ? 5 : (($dn === 6 || $dn === 9) ? 3 : 4)); ?>
+        <ul class="docgrid" style="--cols:<?php echo (int) $dcols; ?>" data-docs data-items="<?php echo esc_attr(wp_json_encode(array_map(function ($d) { return array('src' => $d['src'], 'title' => $d['title'], 'text' => $d['text'], 'alt' => $d['alt']); }, $docs))); ?>">
+          <?php foreach ($docs as $i => $d) : ?>
+            <li data-reveal>
+              <button class="docitem" type="button" data-doc="<?php echo (int) $i; ?>" aria-label="<?php echo esc_attr('Открыть: ' . $d['title']); ?>">
+                <span class="docitem-art"><img src="<?php echo esc_url($d['tile']); ?>" alt="" width="<?php echo (int) $d['w']; ?>" height="<?php echo (int) $d['h']; ?>" loading="lazy" decoding="async" draggable="false"></span>
+                <span class="docitem-t"><?php echo zh_t($d['title']); ?></span>
+                <?php if ($d['text']) : ?><span class="docitem-p"><?php echo zh_t($d['text']); ?></span><?php endif; ?>
+              </button>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+      <?php else : ?>
+        <ul class="doclist" data-reveal>
+          <?php foreach ($dc['list'] as $row) : ?>
+            <li><span class="doclist-ico"><?php echo zh_icon($row[0]); ?></span><h3><?php echo zh_t($row[1]); ?></h3><p><?php echo zh_t($row[2]); ?></p></li>
+          <?php endforeach; ?>
+        </ul>
+        <p class="doclist-note" data-reveal><?php echo zh_t($dc['list_note']); ?> <button class="link-arrow" type="button" data-enquire="Документы"><span>Запросить</span><?php echo zh_arrow(); ?></button></p>
+      <?php endif; ?>
+    </div>
+  </section>
+
   <section class="delivery" id="delivery" aria-labelledby="delivery-title">
     <div class="wrap delivery-in">
       <div class="delivery-copy" data-reveal>
