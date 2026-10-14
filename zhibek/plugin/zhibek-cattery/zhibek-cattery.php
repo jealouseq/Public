@@ -1,0 +1,862 @@
+<?php
+/**
+ * Plugin Name: ZHIBEK Cattery
+ * Description: Породы, коты, заявки и демо-контент для сайта питомника ZHIBEK.
+ * Version: 4.5.0
+ * Requires at least: 6.5
+ * Requires PHP: 8.0
+ * Author: ZHIBEK
+ * Text Domain: zhibek-cattery
+ * License: GPL-2.0-or-later
+ */
+
+defined('ABSPATH') || exit;
+
+/** Public theme interfaces. */
+function zhibek_default_settings() {
+    return array(
+        'demo' => true, 'phone' => '', 'whatsapp' => '', 'telegram' => '', 'instagram' => '', 'email' => '',
+        'city' => 'Казахстан', 'cities' => 'Алматы, Астана, Шымкент, Караганда, Актобе, Атырау, Павлодар, Усть-Каменогорск, Костанай, Актау',
+    );
+}
+
+function zhibek_get_settings() {
+    $saved = get_option('zhibek_settings', array());
+    $settings = array_merge(zhibek_default_settings(), is_array($saved) ? $saved : array());
+    $settings['demo'] = in_array($settings['demo'], array(true, 1, '1', 'on', 'yes', 'true'), true);
+    return $settings;
+}
+
+function zhibek_is_demo() {
+    return (bool) zhibek_get_settings()['demo'];
+}
+
+function zhibek_get_breeds($args = array()) {
+    return get_posts(array_merge(array('post_type' => 'zhibek_breed', 'post_status' => 'publish', 'numberposts' => -1, 'orderby' => 'menu_order title', 'order' => 'ASC'), $args));
+}
+
+function zhibek_get_cats($args = array()) {
+    $defaults = array('post_type' => 'zhibek_cat', 'post_status' => 'publish', 'numberposts' => -1, 'orderby' => 'date', 'order' => 'DESC');
+    // Демо-коты исчезают из каталога, как только хозяин выключит демо-режим.
+    if (!zhibek_is_demo()) {
+        $defaults['meta_query'] = array(array('key' => '_zhibek_demo', 'compare' => 'NOT EXISTS'));
+    }
+    return get_posts(array_merge($defaults, $args));
+}
+
+/** Опубликованные документы питомника: только те, у которых загружен скан. Порядок задаётся полем «Порядок». */
+function zhibek_get_docs() {
+    $docs = get_posts(array('post_type' => 'zhibek_doc', 'post_status' => 'publish', 'numberposts' => -1, 'orderby' => array('menu_order' => 'ASC', 'date' => 'ASC')));
+    return array_values(array_filter($docs, function ($doc) { return has_post_thumbnail($doc); }));
+}
+
+/** Every public field of breeds and cats; the theme reads them through get_post_meta(). */
+function zhibek_meta_keys() {
+    return array(
+        '_zhibek_subtitle', '_zhibek_traits', '_zhibek_image', '_zhibek_status', '_zhibek_sex', '_zhibek_color', '_zhibek_birth', '_zhibek_breed',
+        '_zhibek_facts', '_zhibek_eye', '_zhibek_accent', '_zhibek_fit', '_zhibek_note', '_zhibek_sire', '_zhibek_dam', '_zhibek_price', '_zhibek_cutout', '_zhibek_kind', '_zhibek_scores',
+    );
+}
+
+function zhibek_register_content() {
+    register_post_type('zhibek_breed', array(
+        'labels' => array('name' => 'Породы', 'singular_name' => 'Порода', 'add_new_item' => 'Добавить породу', 'edit_item' => 'Редактировать породу'),
+        'public' => true, 'show_in_rest' => true, 'has_archive' => true,
+        'rewrite' => array('slug' => 'breeds', 'with_front' => false),
+        'menu_icon' => 'dashicons-pets', 'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'page-attributes', 'custom-fields'),
+    ));
+    register_post_type('zhibek_cat', array(
+        'labels' => array('name' => 'Коты', 'singular_name' => 'Кот', 'add_new_item' => 'Добавить кота', 'edit_item' => 'Редактировать кота', 'all_items' => 'Все коты'),
+        'public' => true, 'show_in_rest' => true, 'has_archive' => true,
+        'rewrite' => array('slug' => 'cats', 'with_front' => false),
+        'menu_icon' => 'dashicons-heart', 'supports' => array('title', 'editor', 'excerpt', 'thumbnail', 'custom-fields'),
+    ));
+    register_post_type('zhibek_doc', array(
+        'labels' => array('name' => 'Документы', 'singular_name' => 'Документ', 'add_new' => 'Добавить документ', 'add_new_item' => 'Добавить документ', 'edit_item' => 'Редактировать документ', 'all_items' => 'Все документы', 'featured_image' => 'Скан или фото документа', 'set_featured_image' => 'Загрузить скан документа', 'remove_featured_image' => 'Убрать скан', 'use_featured_image' => 'Использовать как скан'),
+        'public' => false, 'publicly_queryable' => false, 'exclude_from_search' => true, 'show_ui' => true, 'show_in_rest' => true,
+        'has_archive' => false, 'rewrite' => false, 'query_var' => false,
+        'menu_icon' => 'dashicons-media-document', 'menu_position' => 22,
+        'supports' => array('title', 'excerpt', 'thumbnail', 'page-attributes'),
+    ));
+    register_taxonomy('zhibek_breed_type', 'zhibek_cat', array(
+        'labels' => array('name' => 'Породы котов', 'singular_name' => 'Порода кота'),
+        'public' => false, 'publicly_queryable' => false, 'show_ui' => false, 'show_in_rest' => true,
+        'rewrite' => false, 'hierarchical' => false,
+    ));
+    register_post_type('zhibek_enquiry', array(
+        'labels' => array('name' => 'Заявки ZHIBEK', 'singular_name' => 'Заявка', 'edit_item' => 'Просмотр заявки'),
+        'public' => false, 'publicly_queryable' => false, 'exclude_from_search' => true,
+        'show_ui' => true, 'show_in_rest' => false, 'has_archive' => false, 'rewrite' => false,
+        'query_var' => false, 'menu_icon' => 'dashicons-email-alt', 'supports' => array('title'),
+        'map_meta_cap' => false,
+        'capabilities' => array(
+            'edit_post' => 'manage_options', 'read_post' => 'manage_options', 'delete_post' => 'manage_options',
+            'edit_posts' => 'manage_options', 'edit_others_posts' => 'manage_options', 'publish_posts' => 'manage_options',
+            'read_private_posts' => 'manage_options', 'delete_posts' => 'manage_options', 'delete_private_posts' => 'manage_options',
+            'delete_published_posts' => 'manage_options', 'delete_others_posts' => 'manage_options',
+            'edit_private_posts' => 'manage_options', 'edit_published_posts' => 'manage_options', 'create_posts' => 'do_not_allow',
+        ),
+    ));
+    foreach (array('zhibek_breed', 'zhibek_cat') as $type) {
+        foreach (zhibek_meta_keys() as $key) {
+            register_post_meta($type, $key, array(
+                'type' => '_zhibek_breed' === $key ? 'integer' : 'string', 'single' => true, 'show_in_rest' => true,
+                'sanitize_callback' => 'zhibek_sanitize_content_meta',
+                'auth_callback' => function ($allowed, $meta_key, $post_id) { return current_user_can('edit_post', $post_id); },
+            ));
+        }
+    }
+}
+add_action('init', 'zhibek_register_content');
+
+
+/** Версия 4: «котята» стали «котами». Переносим записи и ставим редирект со старых адресов. */
+define('ZHIBEK_DB_VERSION', 4);
+function zhibek_migrate() {
+    if ((int) get_option('zhibek_db_version', 0) >= ZHIBEK_DB_VERSION) { return; }
+    global $wpdb;
+    $wpdb->query("UPDATE {$wpdb->posts} SET post_type = 'zhibek_cat' WHERE post_type = 'zhibek_kitten'");
+    update_option('zhibek_db_version', ZHIBEK_DB_VERSION);
+    update_option('zhibek_flush_rewrite', 1);
+}
+add_action('init', 'zhibek_migrate', 5);
+
+/**
+ * Версия 5: демо-котята прежних версий больше не нужны (котов добавляет владелец), а картинки пород переехали в theme/assets/img/pets.
+ * Трогаем только записи с пометкой «демо», которые создал сам плагин, и только один раз.
+ */
+function zhibek_migrate_demo() {
+    if (get_option('zhibek_cleanup_5')) { return; }
+    foreach (array('abyssinian', 'bengal', 'siamese') as $slug) {
+        $old_id = zhibek_seed_find('kitten-' . $slug, 'zhibek_cat');
+        if ($old_id && get_post_meta($old_id, '_zhibek_demo', true)) { wp_delete_post($old_id, true); }
+        $breed_id = zhibek_seed_find('breed-' . $slug, 'zhibek_breed');
+        if ($breed_id && in_array(get_post_meta($breed_id, '_zhibek_image', true), array($slug . '.webp', 'k-' . $slug . '.webp', ''), true)) {
+            update_post_meta($breed_id, '_zhibek_image', $slug . '-sit.webp');
+        }
+        $legacy = array('abyssinian' => array('#b9c7b0', '#2c4a3b'), 'bengal' => array('#e0c088', '#6a2230'), 'siamese' => array('#a9bdd4', '#2a46a0'));
+        if ($breed_id && strtolower((string) get_post_meta($breed_id, '_zhibek_accent', true)) === $legacy[$slug][0]) {
+            update_post_meta($breed_id, '_zhibek_accent', $legacy[$slug][1]);
+        }
+    }
+    update_option('zhibek_cleanup_5', 1);
+}
+add_action('init', 'zhibek_migrate_demo', 20);
+
+/** Текст страницы «Конфиденциальность»: владелец дополняет его реквизитами перед запуском. */
+function zhibek_privacy_html() {
+    return '<p><strong>Оператор данных:</strong> владелец сайта ZHIBEK. Реквизиты (ИП или ТОО, БИН/ИИН, адрес, email) владелец указывает здесь перед запуском.</p><h2>Какие данные мы получаем</h2><p>Через форму заявки — имя, телефон или email, город, интересующая порода и текст сообщения.</p><h2>Зачем</h2><p>Чтобы ответить на заявку и согласовать знакомство с котёнком. Данные не передаются третьим лицам.</p><h2>Где хранятся</h2><p>Заявки сохраняются в закрытом разделе панели сайта и доступны только администратору. Сохранение происходит только после вашего согласия в форме.</p><h2>Cookie</h2><p>Рекламных и аналитических cookie на сайте по умолчанию нет. Если владелец подключит счётчики, он расскажет о них здесь.</p><h2>Ваши права</h2><p>Вы можете запросить уточнение или удаление своих данных, написав по контактам, указанным на сайте.</p>';
+}
+
+/**
+ * Версия 4.2: магазина на сайте больше нет. Демо-товары, которые раньше создавал плагин, переносятся в корзину WordPress
+ * (записи с пометкой «демо»), а их картинки из медиатеки удаляются. Сам WooCommerce и его страницы не трогаем: его можно отключить в «Плагинах».
+ */
+function zhibek_remove_demo_shop() {
+    if (get_option('zhibek_cleanup_6')) { return; }
+    $demo = get_posts(array('post_type' => array('product', 'attachment'), 'post_status' => 'any', 'numberposts' => -1, 'fields' => 'ids', 'meta_key' => '_zhibek_demo', 'meta_value' => '1'));
+    foreach ($demo as $id) {
+        if ('attachment' === get_post_type($id)) { wp_delete_attachment($id, true); }
+        else { wp_trash_post($id); }
+    }
+    update_option('zhibek_cleanup_6', 1);
+}
+add_action('init', 'zhibek_remove_demo_shop', 21);
+
+/** Текст страницы «Как передаём котят»: владелец уточняет условия перед запуском. */
+function zhibek_terms_html() {
+    return '<h2>Знакомство</h2><p>Сначала вы знакомитесь с питомником и котёнком по фото и видео. Заявка на сайте ничего не фиксирует и не требует оплаты.</p><h2>Условия и документы</h2><p>Условия, документы и порядок расчёта обсуждаются лично. Оплата через сайт не принимается.</p><h2>Передача</h2><p>Котёнка можно забрать у нас или встретить в своём городе. Маршрут, сроки и стоимость согласуются заранее. Владелец уточняет условия здесь перед запуском.</p>';
+}
+
+/**
+ * Версия 4.3: страница «Конфиденциальность» от версий с магазином упоминала заказы и оплату.
+ * Обновляем её один раз и только если владелец ещё не менял этот текст.
+ */
+function zhibek_refresh_privacy() {
+    if (get_option('zhibek_cleanup_7')) { return; }
+    $privacy = get_page_by_path('privacy');
+    if ($privacy && false !== strpos($privacy->post_content, 'Через магазин')) {
+        wp_update_post(array('ID' => $privacy->ID, 'post_content' => zhibek_privacy_html()));
+    }
+    update_option('zhibek_cleanup_7', 1);
+}
+
+/** Версия 4.4: в тексте страницы «Как передаём котят» больше нет договора и видеозвонка. Обновляем её один раз, если владелец не менял текст. */
+function zhibek_refresh_terms() {
+    if (get_option('zhibek_cleanup_8')) { return; }
+    update_option('zhibek_flush_rewrite', 1); // таксономия пород больше не имеет публичных адресов
+    $terms = get_page_by_path('order-terms');
+    if ($terms && ($terms->post_title === 'Доставка и оплата' || false !== strpos($terms->post_content, 'видеозвонок') || false !== strpos($terms->post_content, 'в договоре'))) {
+        wp_update_post(array('ID' => $terms->ID, 'post_title' => 'Как передаём котят', 'post_content' => zhibek_terms_html()));
+    }
+    update_option('zhibek_cleanup_8', 1);
+}
+add_action('init', 'zhibek_refresh_terms', 23);
+add_action('init', 'zhibek_refresh_privacy', 22);
+
+function zhibek_maybe_flush_rewrite() {
+    if (get_option('zhibek_flush_rewrite')) { flush_rewrite_rules(false); delete_option('zhibek_flush_rewrite'); }
+}
+add_action('init', 'zhibek_maybe_flush_rewrite', 99);
+
+function zhibek_legacy_redirect() {
+    if (!is_404()) { return; }
+    $path = trim((string) parse_url(isset($_SERVER['REQUEST_URI']) ? (string) $_SERVER['REQUEST_URI'] : '', PHP_URL_PATH), '/');
+    $home = trim((string) parse_url(home_url(), PHP_URL_PATH), '/');
+    if ($home !== '' && 0 === strpos($path, $home . '/')) { $path = substr($path, strlen($home) + 1); }
+    if (preg_match('#^kittens(/.*)?$#', $path, $m)) {
+        wp_safe_redirect(home_url('/cats' . (isset($m[1]) ? rtrim($m[1], '/') : '') . '/'), 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'zhibek_legacy_redirect');
+
+/** Never allow an enquiry to become public, including through an admin update. */
+function zhibek_force_private_enquiry($data) {
+    if (isset($data['post_type']) && 'zhibek_enquiry' === $data['post_type'] && 'trash' !== $data['post_status']) {
+        $data['post_status'] = 'private';
+    }
+    return $data;
+}
+add_filter('wp_insert_post_data', 'zhibek_force_private_enquiry');
+
+function zhibek_activate() {
+    add_option('zhibek_settings', zhibek_default_settings());
+    zhibek_migrate();
+    zhibek_register_content();
+    flush_rewrite_rules();
+}
+register_activation_hook(__FILE__, 'zhibek_activate');
+register_deactivation_hook(__FILE__, 'flush_rewrite_rules');
+
+/** Count characters rather than UTF-8 bytes on installations without mbstring. */
+function zhibek_text_length($value) {
+    return function_exists('mb_strlen') ? mb_strlen($value, 'UTF-8') : preg_match_all('/./us', $value, $matches);
+}
+
+function zhibek_text_limit($value, $limit) {
+    if (function_exists('mb_substr')) { return mb_substr($value, 0, $limit, 'UTF-8'); }
+    return preg_match('/^.{0,' . (int) $limit . '}/us', $value, $match) ? $match[0] : '';
+}
+
+/** Validate before persistence; oversized fields are rejected instead of silently truncated. */
+function zhibek_validate_enquiry($input) {
+    if (!is_array($input)) {
+        return new WP_Error('invalid_input', 'Проверьте поля формы.');
+    }
+    $limits = array('name' => 100, 'contact' => 180, 'city' => 100, 'breed' => 100, 'message' => 2000, 'website' => 200);
+    $clean = array();
+    foreach ($limits as $field => $limit) {
+        $value = isset($input[$field]) ? $input[$field] : '';
+        if (!is_string($value) && !is_numeric($value)) {
+            return new WP_Error('invalid_input', 'Проверьте поля формы.');
+        }
+        $value = (string) $value;
+        if (zhibek_text_length($value) > $limit) {
+            return new WP_Error('field_too_long', 'Одно из полей слишком длинное. Сообщение — до 2000 символов.');
+        }
+        if ('website' === $field && '' !== trim($value)) {
+            return new WP_Error('spam', 'Не удалось отправить форму. Обновите страницу и попробуйте ещё раз.');
+        }
+        $clean[$field] = 'message' === $field ? sanitize_textarea_field($value) : sanitize_text_field($value);
+    }
+    if ('' !== trim($clean['website'])) {
+        return new WP_Error('spam', 'Не удалось отправить форму. Обновите страницу и попробуйте ещё раз.');
+    }
+    if (!isset($input['consent']) || !in_array($input['consent'], array(true, 1, '1', 'on', 'yes', 'true'), true)) {
+        return new WP_Error('consent_required', 'Подтвердите согласие на обработку данных заявки.');
+    }
+    if (zhibek_text_length($clean['name']) < 2) {
+        return new WP_Error('name_required', 'Укажите имя — минимум 2 символа.');
+    }
+    $contact = $clean['contact'];
+    $raw_contact = isset($input['contact']) ? trim((string) $input['contact']) : '';
+    $digits = preg_replace('/\D/', '', $contact);
+    $parentheses = preg_replace('/\([0-9\s]+\)/', '', $contact);
+    $is_phone = !preg_match('/[\x00-\x1F\x7F]/', $raw_contact)
+        && preg_match('/^\+?[0-9().\s-]+$/D', $contact)
+        && !preg_match('/[()]/', $parentheses)
+        && strlen($digits) >= 7 && strlen($digits) <= 15
+        && preg_match('/[1-9]/', $digits)
+        && ('+' !== substr($contact, 0, 1) || '0' !== substr($digits, 0, 1));
+    if (preg_match('/[\x00-\x1F\x7F]/', $raw_contact)) {
+        return new WP_Error('contact_required', 'Укажите действующий email или телефон с кодом страны.');
+    }
+    if (!is_email($contact) && !$is_phone) {
+        return new WP_Error('contact_required', 'Укажите действующий email или телефон с кодом страны.');
+    }
+    if (is_email($contact)) {
+        $clean['contact'] = sanitize_email($contact);
+    }
+    $clean['consent'] = true;
+    unset($clean['website']);
+    return $clean;
+}
+
+/** Use the direct peer address; forwarded headers cannot bypass the limit. No IP is saved in the enquiry. */
+function zhibek_enquiry_rate_limit() {
+    $ip = isset($_SERVER['REMOTE_ADDR']) ? (string) $_SERVER['REMOTE_ADDR'] : 'unknown';
+    $key = 'zhibek_rate_' . hash_hmac('sha256', $ip, wp_salt('nonce'));
+    $lock = $key . '_lock';
+    $now = time();
+    if (!add_option($lock, $now + 30, '', false)) {
+        // The unique option key serializes concurrent requests even without a persistent object cache.
+        global $wpdb;
+        $expired = $wpdb->query($wpdb->prepare("DELETE FROM {$wpdb->options} WHERE option_name = %s AND CAST(option_value AS UNSIGNED) < %d", $lock, $now));
+        if ($expired) { wp_cache_delete($lock, 'options'); }
+        if (!$expired || !add_option($lock, $now + 30, '', false)) {
+            return new WP_Error('rate_limit', 'Форма уже отправляется. Подождите немного и попробуйте снова.');
+        }
+    }
+    try {
+        $count = (int) get_transient($key);
+        if ($count >= 5) {
+            return new WP_Error('rate_limit', 'Слишком много попыток. Попробуйте снова через 15 минут.');
+        }
+        set_transient($key, $count + 1, 15 * MINUTE_IN_SECONDS);
+    } finally {
+        delete_option($lock);
+    }
+    return true;
+}
+
+/** Storage success and email success are deliberately separate. */
+function zhibek_store_enquiry($data) {
+    $content = "Имя: {$data['name']}\nКонтакт: {$data['contact']}\nГород: {$data['city']}\nПорода: {$data['breed']}\n\n{$data['message']}\n\nСогласие на обработку данных: предоставлено.";
+    $id = wp_insert_post(wp_slash(array(
+        'post_type' => 'zhibek_enquiry', 'post_status' => 'private',
+        'post_title' => 'Заявка — ' . $data['name'] . ' — ' . current_time('Y-m-d H:i'),
+        'post_content' => $content,
+        'meta_input' => array(
+            '_zhibek_name' => $data['name'], '_zhibek_contact' => $data['contact'], '_zhibek_city' => $data['city'],
+            '_zhibek_breed' => $data['breed'], '_zhibek_message' => $data['message'],
+            '_zhibek_consent_at' => current_time('mysql', true), '_zhibek_email_sent' => '0',
+            '_zhibek_enquiry_status' => 'new',
+        ),
+    )), true);
+    if (is_wp_error($id) || !$id) {
+        return new WP_Error('save_failed', 'Заявка не сохранена. Попробуйте ещё раз позднее.');
+    }
+    $recipient = sanitize_email((string) get_option('admin_email'));
+    $headers = array('Content-Type: text/plain; charset=UTF-8');
+    if (is_email($data['contact'])) {
+        $headers[] = 'Reply-To: ' . sanitize_email($data['contact']);
+    }
+    $sent = false;
+    if (is_email($recipient)) {
+        try {
+            $sent = (bool) wp_mail($recipient, 'Новая заявка ZHIBEK №' . $id, $content, $headers);
+        } catch (Throwable $exception) {
+            $sent = false;
+        }
+    }
+    update_post_meta($id, '_zhibek_email_sent', $sent ? '1' : '0');
+    return array(
+        'enquiry_id' => (int) $id, 'email_sent' => $sent, 'saved' => true,
+        'message' => $sent ? 'Заявка сохранена и отправлена владельцу питомника.' : 'Заявка сохранена, но письмо владельцу отправить не удалось. Он сможет прочитать её в панели сайта.',
+    );
+}
+
+function zhibek_handle_enquiry() {
+    if (!isset($_SERVER['REQUEST_METHOD']) || 'POST' !== $_SERVER['REQUEST_METHOD']) {
+        wp_send_json_error(array('message' => 'Используйте POST для отправки формы.'), 405);
+    }
+    $nonce = isset($_POST['nonce']) && is_string($_POST['nonce']) ? sanitize_text_field(wp_unslash($_POST['nonce'])) : '';
+    if (!wp_verify_nonce($nonce, 'zh_enquiry')) {
+        wp_send_json_error(array('message' => 'Сессия формы истекла. Обновите страницу.'), 403);
+    }
+    $rate = zhibek_enquiry_rate_limit();
+    if (is_wp_error($rate)) {
+        wp_send_json_error(array('message' => $rate->get_error_message()), 429);
+    }
+    $data = zhibek_validate_enquiry(wp_unslash($_POST));
+    if (is_wp_error($data)) {
+        wp_send_json_error(array('message' => $data->get_error_message()), 422);
+    }
+    $result = zhibek_store_enquiry($data);
+    if (is_wp_error($result)) {
+        wp_send_json_error(array('message' => $result->get_error_message()), 500);
+    }
+    wp_send_json_success($result);
+}
+/** Свежий nonce для формы: на сайтах с кэшем страниц встроенный в HTML nonce может устареть. */
+function zhibek_fresh_nonce() {
+    nocache_headers();
+    wp_send_json_success(array('nonce' => wp_create_nonce('zh_enquiry')));
+}
+add_action('wp_ajax_zhibek_nonce', 'zhibek_fresh_nonce');
+add_action('wp_ajax_nopriv_zhibek_nonce', 'zhibek_fresh_nonce');
+add_action('wp_ajax_zhibek_enquiry', 'zhibek_handle_enquiry');
+add_action('wp_ajax_nopriv_zhibek_enquiry', 'zhibek_handle_enquiry');
+
+/** Settings remain empty until the owner supplies real contacts. */
+function zhibek_sanitize_settings($input) {
+    $input = is_array($input) ? $input : array();
+    $get = function ($field) use ($input) { return isset($input[$field]) && is_scalar($input[$field]) ? (string) $input[$field] : ''; };
+    $cities = array_filter(array_map('trim', preg_split('/[,\n]+/u', $get('cities'))));
+    $cities = array_slice(array_unique($cities), 0, 24);
+    return array(
+        'demo' => isset($input['demo']) && in_array($input['demo'], array(true, 1, '1', 'on'), true),
+        'phone' => zhibek_text_limit(sanitize_text_field($get('phone')), 80),
+        'whatsapp' => zhibek_text_limit(preg_replace('/[^0-9]/', '', $get('whatsapp')), 15),
+        'telegram' => zhibek_text_limit(preg_replace('/[^A-Za-z0-9_]/', '', ltrim(trim($get('telegram')), '@')), 40),
+        'instagram' => esc_url_raw($get('instagram'), array('https', 'http')),
+        'email' => sanitize_email($get('email')),
+        'city' => zhibek_text_limit(sanitize_text_field($get('city')), 100),
+        'cities' => zhibek_text_limit(implode(', ', array_map('sanitize_text_field', $cities)), 600),
+    );
+}
+
+function zhibek_register_settings() {
+    register_setting('zhibek_settings_group', 'zhibek_settings', array('sanitize_callback' => 'zhibek_sanitize_settings', 'type' => 'array', 'show_in_rest' => false));
+}
+add_action('admin_init', 'zhibek_register_settings');
+function zhibek_settings_menu() {
+    add_options_page('ZHIBEK', 'ZHIBEK', 'manage_options', 'zhibek-settings', 'zhibek_settings_page');
+}
+add_action('admin_menu', 'zhibek_settings_menu');
+function zhibek_settings_page() {
+    if (!current_user_can('manage_options')) { return; }
+    $settings = zhibek_get_settings();
+    $notice_key = 'zhibek_import_notice_' . get_current_user_id();
+    $notice = get_transient($notice_key);
+    if (is_array($notice)) { delete_transient($notice_key); }
+    ?>
+    <div class="wrap"><h1>ZHIBEK</h1>
+    <?php if (is_array($notice) && isset($notice['message'], $notice['level'])) : ?>
+        <div class="notice notice-<?php echo esc_attr(in_array($notice['level'], array('success', 'warning', 'error'), true) ? $notice['level'] : 'info'); ?> is-dismissible"><p><?php echo esc_html($notice['message']); ?></p></div>
+    <?php endif; ?>
+    <?php if ($settings['demo']) : ?>
+        <div class="notice notice-warning inline"><p><strong>Демо-режим включён.</strong> Иллюстрации пород и пометка «иллюстрации — примеры» в подвале показываются, пока нет ваших фотографий. Перед запуском добавьте своих котов и фотографии, укажите контакты ниже и выключите демо-режим.</p></div>
+    <?php endif; ?>
+    <form action="options.php" method="post">
+        <?php settings_fields('zhibek_settings_group'); ?>
+        <table class="form-table" role="presentation">
+            <tr><th scope="row">Демонстрационный режим</th><td><label><input type="checkbox" name="zhibek_settings[demo]" value="1" <?php checked($settings['demo']); ?>> Демонстрационный режим: иллюстрации-заглушки пород и пометка «примеры» в подвале</label><p class="description">Когда загрузите настоящие фотографии пород, выключите режим: заглушки и пометка исчезнут с сайта. Котов вы добавляете сами в разделе «Коты».</p></td></tr>
+            <tr><th scope="row"><label for="zhibek-whatsapp">WhatsApp (номер, только цифры)</label></th><td><input id="zhibek-whatsapp" class="regular-text" name="zhibek_settings[whatsapp]" value="<?php echo esc_attr($settings['whatsapp']); ?>" maxlength="15" placeholder="77011234567" inputmode="numeric"></td></tr>
+            <tr><th scope="row"><label for="zhibek-telegram">Telegram (имя пользователя)</label></th><td><input id="zhibek-telegram" class="regular-text" name="zhibek_settings[telegram]" value="<?php echo esc_attr($settings['telegram']); ?>" maxlength="40" placeholder="zhibek_cattery"></td></tr>
+            <tr><th scope="row"><label for="zhibek-email">Email для посетителей</label></th><td><input id="zhibek-email" type="email" class="regular-text" name="zhibek_settings[email]" value="<?php echo esc_attr($settings['email']); ?>" maxlength="120"></td></tr>
+            <tr><th scope="row"><label for="zhibek-cities">Города на карте</label></th><td><textarea id="zhibek-cities" class="large-text" rows="3" name="zhibek_settings[cities]"><?php echo esc_textarea($settings['cities']); ?></textarea><p class="description">Города через запятую, куда вы передаёте или привозите котят. Подсвечиваются на карте Казахстана; доступны: Алматы, Астана, Шымкент, Караганда, Актобе, Атырау, Актау, Павлодар, Усть-Каменогорск, Семей, Костанай, Петропавловск, Кокшетау, Уральск, Кызылорда, Туркестан, Тараз, Талдыкорган.</p></td></tr>
+            <tr><th scope="row"><label for="zhibek-phone">Телефон</label></th><td><input id="zhibek-phone" class="regular-text" name="zhibek_settings[phone]" value="<?php echo esc_attr($settings['phone']); ?>" maxlength="80" autocomplete="tel"></td></tr>
+            <tr><th scope="row"><label for="zhibek-city">Город</label></th><td><input id="zhibek-city" class="regular-text" name="zhibek_settings[city]" value="<?php echo esc_attr($settings['city']); ?>" maxlength="100"></td></tr>
+            <tr><th scope="row"><label for="zhibek-instagram">Instagram URL</label></th><td><input id="zhibek-instagram" type="url" class="regular-text" name="zhibek_settings[instagram]" value="<?php echo esc_attr($settings['instagram']); ?>" placeholder="https://www.instagram.com/your-account/"></td></tr>
+        </table>
+        <?php submit_button('Сохранить'); ?>
+    </form>
+    <hr><h2>Демонстрационный контент</h2>
+    <p>Создаёт три породы, три статьи журнала и страницы «Конфиденциальность» и «Как передаём котят». Котов импорт не создаёт: их добавляете вы.</p>
+    <p>Повторный запуск ничего не дублирует и не затирает ваши правки: тексты демо-записей, которые вы не меняли, обновляются до текущей версии.</p>
+    <form action="<?php echo esc_url(admin_url('admin-post.php')); ?>" method="post">
+        <input type="hidden" name="action" value="zhibek_import_demo">
+        <?php wp_nonce_field('zhibek_import_demo', 'zhibek_import_nonce'); ?>
+        <?php submit_button('Создать демонстрационный контент', 'secondary', 'submit', false); ?>
+    </form></div>
+    <?php
+}
+
+/** Dashboard alternative to WP-CLI; activation never imports content. */
+function zhibek_handle_demo_import() {
+    if (!current_user_can('manage_options')) {
+        wp_die('Импорт доступен только администратору сайта.', 'ZHIBEK', array('response' => 403));
+    }
+    if (!isset($_SERVER['REQUEST_METHOD']) || 'POST' !== $_SERVER['REQUEST_METHOD']) {
+        wp_die('Используйте кнопку импорта в настройках ZHIBEK.', 'ZHIBEK', array('response' => 405));
+    }
+    $nonce = isset($_POST['zhibek_import_nonce']) && is_string($_POST['zhibek_import_nonce']) ? sanitize_text_field(wp_unslash($_POST['zhibek_import_nonce'])) : '';
+    if (!wp_verify_nonce($nonce, 'zhibek_import_demo')) {
+        wp_die('Сессия импорта истекла. Откройте настройки ZHIBEK и попробуйте снова.', 'ZHIBEK', array('response' => 403));
+    }
+    try {
+        $result = zhibek_seed_content();
+        $notice = array('level' => 'success', 'message' => 'Демо-контент создан. Ваши правки сохранены, дубликатов нет.');
+    } catch (Throwable $exception) {
+        $notice = array('level' => 'error', 'message' => 'Не удалось завершить импорт. Уже созданные записи сохранены. Проверьте работу WordPress и повторите импорт: существующий контент не будет продублирован.');
+    }
+    set_transient('zhibek_import_notice_' . get_current_user_id(), $notice, 5 * MINUTE_IN_SECONDS);
+    wp_safe_redirect(admin_url('options-general.php?page=zhibek-settings'));
+    exit;
+}
+add_action('admin_post_zhibek_import_demo', 'zhibek_handle_demo_import');
+add_action('admin_post_nopriv_zhibek_import_demo', 'zhibek_handle_demo_import');
+
+function zhibek_add_meta_boxes() {
+    foreach (array('zhibek_breed', 'zhibek_cat') as $type) {
+        add_meta_box('zhibek-details', 'Данные ZHIBEK', 'zhibek_details_meta_box', $type, 'normal', 'high');
+    }
+    add_meta_box('zhibek-enquiry', 'Содержание заявки', 'zhibek_enquiry_meta_box', 'zhibek_enquiry', 'normal', 'high');
+}
+add_action('add_meta_boxes', 'zhibek_add_meta_boxes');
+
+function zhibek_details_meta_box($post) {
+    wp_nonce_field('zhibek_save_meta', 'zhibek_meta_nonce');
+    $is_breed = 'zhibek_breed' === $post->post_type;
+    $text = array('_zhibek_subtitle' => $is_breed ? 'Подпись (одна строка под названием)' : 'Подпись');
+    if ($is_breed) {
+        $text['_zhibek_traits'] = 'Характер — три-четыре слова через запятую';
+    } else {
+        $text += array('_zhibek_sex' => 'Пол', '_zhibek_color' => 'Окрас', '_zhibek_birth' => 'Дата рождения', '_zhibek_sire' => 'Отец (имя)', '_zhibek_dam' => 'Мать (имя)', '_zhibek_price' => 'Цена в тенге (только цифры, можно оставить пустым)');
+    }
+    $text['_zhibek_image'] = 'Файл-заглушка из темы (необязательно)';
+    $cutout_checked = get_post_meta($post->ID, '_zhibek_cutout', true) ? ' checked' : '';
+    echo '<p>Основную фотографию загрузите в блоке «Изображение записи». Лучше всего работает вырезанный на прозрачном фоне кот (PNG/WebP): сайт ставит его на цветной фон породы. Не указывайте вымышленные факты о животном.</p>';
+    foreach ($text as $key => $label) {
+        $type = '_zhibek_birth' === $key ? 'date' : 'text';
+        echo '<p><label for="' . esc_attr($key) . '"><strong>' . esc_html($label) . '</strong></label><br><input class="widefat" id="' . esc_attr($key) . '" name="zhibek_meta[' . esc_attr($key) . ']" type="' . esc_attr($type) . '" value="' . esc_attr(get_post_meta($post->ID, $key, true)) . '"></p>';
+    }
+    echo '<p><label><input type="checkbox" name="zhibek_meta[_zhibek_cutout]" value="1"' . $cutout_checked . '> <strong>Главное фото вырезано на прозрачном фоне</strong> (PNG или WebP с прозрачностью). Тогда сайт поставит животное на цветной фон породы. Обычная фотография показывается как есть.</label></p>';
+    if ($is_breed) {
+        $areas = array(
+            '_zhibek_facts' => array('Факты (по одному на строку: «Название: значение»)', "Вес: 3,5–5 кг\nШерсть: короткая, шелковистая"),
+            '_zhibek_fit' => array('Кому подойдёт (одно-два предложения)', ''),
+            '_zhibek_note' => array('Что нужно знать (одно-два предложения)', ''),
+        );
+        foreach ($areas as $key => $meta) {
+            echo '<p><label for="' . esc_attr($key) . '"><strong>' . esc_html($meta[0]) . '</strong></label><br><textarea class="widefat" rows="4" id="' . esc_attr($key) . '" name="zhibek_meta[' . esc_attr($key) . ']" placeholder="' . esc_attr($meta[1]) . '">' . esc_textarea(get_post_meta($post->ID, $key, true)) . '</textarea></p>';
+        }
+        echo '<p><label for="_zhibek_scores"><strong>Оценки характера для сравнения пород (1–5, по одной на строку)</strong></label><br><textarea class="widefat" rows="5" id="_zhibek_scores" name="zhibek_meta[_zhibek_scores]" placeholder="Активность: 5&#10;Голос: 2&#10;Размер: 3&#10;Уход за шерстью: 1">' . esc_textarea(get_post_meta($post->ID, '_zhibek_scores', true)) . '</textarea><span class="description">Это ориентиры породы, у каждой кошки свой характер.</span></p>';
+        foreach (array('_zhibek_accent' => 'Цвет породы на сайте: фон панели и карточек, насыщенный тёмный тон, например #2c4a3b') as $key => $label) {
+            echo '<p><label for="' . esc_attr($key) . '"><strong>' . esc_html($label) . '</strong></label><br><input class="regular-text" id="' . esc_attr($key) . '" name="zhibek_meta[' . esc_attr($key) . ']" type="text" maxlength="7" placeholder="#rrggbb" value="' . esc_attr(get_post_meta($post->ID, $key, true)) . '"></p>';
+        }
+    } else {
+        echo '<p><label for="_zhibek_status"><strong>Статус</strong></label><br><select name="zhibek_meta[_zhibek_status]" id="_zhibek_status">';
+        foreach (array('available' => 'Свободен', 'reserved' => 'В резерве', 'expected' => 'Ожидается', 'breeder' => 'Производитель', 'home' => 'В новой семье') as $value => $label) {
+            echo '<option value="' . esc_attr($value) . '" ' . selected(get_post_meta($post->ID, '_zhibek_status', true), $value, false) . '>' . esc_html($label) . '</option>';
+        }
+        echo '</select></p><p><label for="_zhibek_kind"><strong>Возраст</strong></label><br><select name="zhibek_meta[_zhibek_kind]" id="_zhibek_kind">';
+        foreach (array('' => 'Определить по дате рождения (младше года — котёнок)', 'kitten' => 'Котёнок', 'adult' => 'Взрослый') as $value => $label) {
+            echo '<option value="' . esc_attr($value) . '" ' . selected((string) get_post_meta($post->ID, '_zhibek_kind', true), $value, false) . '>' . esc_html($label) . '</option>';
+        }
+        echo '</select></p><p><label for="_zhibek_breed"><strong>Порода</strong></label><br><select name="zhibek_meta[_zhibek_breed]" id="_zhibek_breed"><option value="0">Не выбрана</option>';
+        foreach (zhibek_get_breeds(array('post_status' => array('publish', 'draft', 'pending', 'private', 'future'))) as $breed) {
+            if ('publish' !== $breed->post_status && !current_user_can('edit_post', $breed->ID)) { continue; }
+            $label = $breed->post_title;
+            if ('publish' !== $breed->post_status) {
+                $status = get_post_status_object($breed->post_status);
+                $label .= ' — ' . ($status ? $status->label : $breed->post_status);
+            }
+            echo '<option value="' . esc_attr($breed->ID) . '" ' . selected(get_post_meta($post->ID, '_zhibek_breed', true), $breed->ID, false) . '>' . esc_html($label) . '</option>';
+        }
+        echo '</select></p>';
+    }
+    if (get_post_meta($post->ID, '_zhibek_demo', true)) {
+        echo '<p><strong>Это демонстрационная запись.</strong> Она показывается на сайте, пока включён демо-режим (Настройки → ZHIBEK). Для настоящего кота создайте новую запись.</p>';
+    }
+}
+
+function zhibek_enquiry_meta_box($post) {
+    if (!current_user_can('manage_options')) { return; }
+    wp_nonce_field('zhibek_save_enquiry', 'zhibek_enquiry_nonce');
+    echo '<p><label for="zhibek-enquiry-status"><strong>Обработка заявки</strong></label><br><select id="zhibek-enquiry-status" name="zhibek_enquiry_status">';
+    foreach (zhibek_enquiry_statuses() as $value => $label) {
+        echo '<option value="' . esc_attr($value) . '" ' . selected(zhibek_enquiry_status($post->ID), $value, false) . '>' . esc_html($label) . '</option>';
+    }
+    echo '</select></p>';
+    $contact = get_post_meta($post->ID, '_zhibek_contact', true);
+    echo '<p><strong>Контакт:</strong> ' . zhibek_enquiry_contact_link($contact) . '</p>';
+    echo '<pre style="white-space:pre-wrap">' . esc_html($post->post_content) . '</pre>';
+    echo '<p><strong>Письмо владельцу:</strong> ' . (get_post_meta($post->ID, '_zhibek_email_sent', true) ? 'отправлено через wp_mail (доставку нужно проверить)' : 'не отправлено; заявка сохранена') . '</p>';
+    echo '<p><strong>Согласие получено (UTC):</strong> ' . esc_html(get_post_meta($post->ID, '_zhibek_consent_at', true)) . '</p>';
+}
+
+/** Processing belongs to the private enquiry, separate from WordPress publication status. */
+function zhibek_enquiry_statuses() {
+    return array('new' => 'Новая', 'in_progress' => 'В работе', 'closed' => 'Закрыта');
+}
+
+function zhibek_enquiry_status($post_id) {
+    $status = get_post_meta($post_id, '_zhibek_enquiry_status', true);
+    return is_string($status) && isset(zhibek_enquiry_statuses()[$status]) ? $status : 'new';
+}
+
+function zhibek_enquiry_contact_link($contact) {
+    $contact = is_scalar($contact) ? (string) $contact : '';
+    if (is_email($contact)) {
+        return '<a href="' . esc_url('mailto:' . $contact) . '">' . esc_html($contact) . '</a>';
+    }
+    $digits = preg_replace('/\D/', '', $contact);
+    if (strlen($digits) >= 7 && strlen($digits) <= 15) {
+        return '<a href="' . esc_url('tel:' . ('+' === substr($contact, 0, 1) ? '+' : '') . $digits) . '">' . esc_html($contact) . '</a>';
+    }
+    return esc_html($contact);
+}
+
+function zhibek_save_enquiry_status($post_id, $post) {
+    if ('zhibek_enquiry' !== $post->post_type || wp_is_post_revision($post_id) || wp_is_post_autosave($post_id) || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) || !current_user_can('manage_options')) { return; }
+    $nonce = isset($_POST['zhibek_enquiry_nonce']) && is_string($_POST['zhibek_enquiry_nonce']) ? sanitize_text_field(wp_unslash($_POST['zhibek_enquiry_nonce'])) : '';
+    $status = isset($_POST['zhibek_enquiry_status']) && is_string($_POST['zhibek_enquiry_status']) ? sanitize_key(wp_unslash($_POST['zhibek_enquiry_status'])) : '';
+    if (!wp_verify_nonce($nonce, 'zhibek_save_enquiry') || !isset(zhibek_enquiry_statuses()[$status])) { return; }
+    update_post_meta($post_id, '_zhibek_enquiry_status', $status);
+}
+add_action('save_post', 'zhibek_save_enquiry_status', 10, 2);
+
+function zhibek_enquiry_columns($columns) {
+    return array_merge(array('cb' => isset($columns['cb']) ? $columns['cb'] : '', 'title' => 'Заявка'), array(
+        'zhibek_contact' => 'Контакт', 'zhibek_city' => 'Город', 'zhibek_breed' => 'Интерес',
+        'zhibek_enquiry_status' => 'Обработка', 'zhibek_email' => 'Письмо',
+        'date' => isset($columns['date']) ? $columns['date'] : 'Дата',
+    ));
+}
+add_filter('manage_zhibek_enquiry_posts_columns', 'zhibek_enquiry_columns');
+
+function zhibek_enquiry_column($column, $post_id) {
+    if (!current_user_can('manage_options')) { return; }
+    if ('zhibek_contact' === $column) {
+        echo zhibek_enquiry_contact_link(get_post_meta($post_id, '_zhibek_contact', true));
+    } elseif (in_array($column, array('zhibek_city', 'zhibek_breed'), true)) {
+        echo esc_html(get_post_meta($post_id, '_' . $column, true));
+    } elseif ('zhibek_enquiry_status' === $column) {
+        echo esc_html(zhibek_enquiry_statuses()[zhibek_enquiry_status($post_id)]);
+    } elseif ('zhibek_email' === $column) {
+        echo '1' === get_post_meta($post_id, '_zhibek_email_sent', true) ? 'Отправлено' : 'Не отправлено';
+    }
+}
+add_action('manage_zhibek_enquiry_posts_custom_column', 'zhibek_enquiry_column', 10, 2);
+
+function zhibek_sync_breed_term($breed_id) {
+    $post = get_post($breed_id);
+    if (!$post || 'zhibek_breed' !== $post->post_type) { return 0; }
+    if ('publish' !== $post->post_status) {
+        zhibek_remove_breed_term($breed_id);
+        return 0;
+    }
+    $term_id = (int) get_post_meta($breed_id, '_zhibek_taxonomy_term', true);
+    $term = $term_id ? get_term($term_id, 'zhibek_breed_type') : false;
+    if ($term && !is_wp_error($term)) {
+        $result = wp_update_term($term_id, 'zhibek_breed_type', array('name' => $post->post_title, 'slug' => $post->post_name));
+    } else {
+        $existing = term_exists($post->post_name, 'zhibek_breed_type');
+        $result = $existing ? $existing : wp_insert_term($post->post_title, 'zhibek_breed_type', array('slug' => $post->post_name));
+    }
+    if (is_wp_error($result)) { return 0; }
+    $term_id = is_array($result) ? (int) $result['term_id'] : (int) $result;
+    update_post_meta($breed_id, '_zhibek_taxonomy_term', $term_id);
+    update_term_meta($term_id, '_zhibek_breed_id', (int) $breed_id);
+    return $term_id;
+}
+
+/** The same metadata rules apply to the admin form, REST requests and programmatic updates. */
+function zhibek_sanitize_content_meta($value, $key) {
+    if (!is_scalar($value)) { return '_zhibek_breed' === $key ? 0 : ''; }
+    if ('_zhibek_breed' === $key) {
+        if (!preg_match('/^\d+$/D', (string) $value)) { return 0; }
+        $id = absint($value);
+        return $id && 'zhibek_breed' === get_post_type($id) && !in_array(get_post_status($id), array('trash', 'auto-draft'), true) ? $id : 0;
+    }
+    if ('_zhibek_cutout' === $key) { return $value ? '1' : ''; }
+    if (in_array($key, array('_zhibek_facts', '_zhibek_fit', '_zhibek_note', '_zhibek_scores'), true)) {
+        return sanitize_textarea_field((string) $value);
+    }
+    $value = sanitize_text_field((string) $value);
+    if (in_array($key, array('_zhibek_eye', '_zhibek_accent'), true)) {
+        return preg_match('/^#[0-9a-fA-F]{6}$/D', $value) ? strtolower($value) : '';
+    }
+    if ('_zhibek_price' === $key) {
+        $digits = preg_replace('/\D/', '', $value);
+        return strlen($digits) <= 9 ? $digits : '';
+    }
+    if ('_zhibek_status' === $key) {
+        return in_array($value, array('available', 'reserved', 'home', 'expected', 'breeder', 'demo'), true) ? $value : 'demo';
+    }
+    if ('_zhibek_kind' === $key) {
+        return in_array($value, array('kitten', 'adult'), true) ? $value : '';
+    }
+    if ('_zhibek_image' === $key) {
+        $value = sanitize_file_name(wp_basename($value));
+        return preg_match('/\.(?:webp|png|jpe?g|avif)$/i', $value) ? $value : '';
+    }
+    if ('_zhibek_birth' === $key && '' !== $value) {
+        $date = DateTimeImmutable::createFromFormat('!Y-m-d', $value);
+        return $date && $date->format('Y-m-d') === $value ? $value : '';
+    }
+    return $value;
+}
+
+function zhibek_sync_cat_breed($post) {
+    $post_id = is_object($post) ? $post->ID : (int) $post;
+    if ('zhibek_cat' !== get_post_type($post_id)) { return; }
+    $breed_id = (int) get_post_meta($post_id, '_zhibek_breed', true);
+    $term_id = $breed_id ? zhibek_sync_breed_term($breed_id) : 0;
+    wp_set_object_terms($post_id, $term_id ? array($term_id) : array(), 'zhibek_breed_type');
+}
+add_action('rest_after_insert_zhibek_cat', 'zhibek_sync_cat_breed');
+
+function zhibek_cat_breed_meta_changed($meta_id, $post_id, $key) {
+    if ('_zhibek_breed' === $key && 'zhibek_cat' === get_post_type($post_id)) {
+        zhibek_sync_cat_breed($post_id);
+    }
+}
+add_action('added_post_meta', 'zhibek_cat_breed_meta_changed', 10, 3);
+add_action('updated_post_meta', 'zhibek_cat_breed_meta_changed', 10, 3);
+add_action('deleted_post_meta', 'zhibek_cat_breed_meta_changed', 10, 3);
+
+function zhibek_remove_breed_term($breed_id) {
+    $term_id = (int) get_post_meta($breed_id, '_zhibek_taxonomy_term', true);
+    if ($term_id && (int) get_term_meta($term_id, '_zhibek_breed_id', true) === (int) $breed_id) {
+        wp_delete_term($term_id, 'zhibek_breed_type');
+    }
+    delete_post_meta($breed_id, '_zhibek_taxonomy_term');
+}
+
+function zhibek_breed_cats($breed_id) {
+    return get_posts(array('post_type' => 'zhibek_cat', 'post_status' => array_keys(get_post_stati()), 'numberposts' => -1, 'fields' => 'ids', 'meta_key' => '_zhibek_breed', 'meta_value' => (int) $breed_id));
+}
+
+function zhibek_breed_status_changed($new_status, $old_status, $post) {
+    if ('zhibek_breed' !== $post->post_type || $new_status === $old_status) { return; }
+    zhibek_sync_breed_term($post->ID);
+    foreach (zhibek_breed_cats($post->ID) as $cat_id) { zhibek_sync_cat_breed($cat_id); }
+}
+add_action('transition_post_status', 'zhibek_breed_status_changed', 10, 3);
+
+function zhibek_deleted_breed($post_id, $post) {
+    if ('zhibek_breed' !== $post->post_type) { return; }
+    foreach (zhibek_breed_cats($post_id) as $cat_id) { update_post_meta($cat_id, '_zhibek_breed', 0); }
+    zhibek_remove_breed_term($post_id);
+}
+add_action('before_delete_post', 'zhibek_deleted_breed', 10, 2);
+
+function zhibek_save_content_meta($post_id, $post) {
+    if (!in_array($post->post_type, array('zhibek_breed', 'zhibek_cat'), true) || wp_is_post_revision($post_id) || wp_is_post_autosave($post_id) || (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)) { return; }
+    if ('zhibek_breed' === $post->post_type) { zhibek_sync_breed_term($post_id); }
+    if (!isset($_POST['zhibek_meta_nonce']) || !is_string($_POST['zhibek_meta_nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['zhibek_meta_nonce'])), 'zhibek_save_meta') || !current_user_can('edit_post', $post_id)) { return; }
+    $input = isset($_POST['zhibek_meta']) && is_array($_POST['zhibek_meta']) ? wp_unslash($_POST['zhibek_meta']) : array();
+    update_post_meta($post_id, '_zhibek_cutout', isset($input['_zhibek_cutout']) ? '1' : '');
+    foreach (array_diff(zhibek_meta_keys(), array('_zhibek_status', '_zhibek_breed', '_zhibek_cutout')) as $key) {
+        if (!array_key_exists($key, $input) || !is_scalar($input[$key])) { continue; }
+        $value = zhibek_sanitize_content_meta($input[$key], $key);
+        update_post_meta($post_id, $key, $value);
+    }
+    if ('zhibek_cat' === $post->post_type) {
+        foreach (array('_zhibek_status', '_zhibek_breed') as $key) {
+            if (!array_key_exists($key, $input) || !is_scalar($input[$key])) { continue; }
+            update_post_meta($post_id, $key, zhibek_sanitize_content_meta($input[$key], $key));
+        }
+    }
+}
+add_action('save_post', 'zhibek_save_content_meta', 10, 2);
+
+/** Seed keys make repeat runs harmless and preserve edits made in the admin. */
+function zhibek_seed_find($key, $type) {
+    $ids = get_posts(array('post_type' => $type, 'post_status' => array('publish', 'draft', 'private', 'pending', 'future', 'trash'), 'numberposts' => 1, 'fields' => 'ids', 'meta_key' => '_zhibek_seed', 'meta_value' => $key));
+    return $ids ? (int) $ids[0] : 0;
+}
+
+/** Хэш видимого содержимого демо-записи: если он не изменился, владелец её не правил. */
+function zhibek_seed_state($id, $meta_keys) {
+    $post = get_post($id);
+    $state = array($post->post_title, $post->post_content, $post->post_excerpt);
+    foreach ($meta_keys as $key) { $state[] = (string) get_post_meta($id, $key, true); }
+    return md5(wp_json_encode($state));
+}
+
+function zhibek_seed_post($key, $post, $meta = array()) {
+    $existing = zhibek_seed_find($key, $post['post_type']);
+    $keys = array_keys($meta);
+    if ($existing) {
+        // Тексты демо-записи обновляются, только если владелец её не менял. Хэш считается и по текущему, и по прежнему набору полей (без оценок характера).
+        $current = get_post($existing);
+        $stored = (string) get_post_meta($existing, '_zhibek_seed_state', true);
+        $untouched = false;
+        if ($current && 'trash' !== $current->post_status) {
+            if ($stored !== '') {
+                foreach (array($keys, array_values(array_diff($keys, array('_zhibek_scores')))) as $candidate) {
+                    if (hash_equals($stored, zhibek_seed_state($existing, $candidate))) { $untouched = true; break; }
+                }
+            } else {
+                $untouched = (strtotime($current->post_modified_gmt) - strtotime($current->post_date_gmt)) < 120;
+            }
+        }
+        if ($untouched) {
+            $update = array('ID' => $existing, 'post_title' => $post['post_title'], 'post_content' => isset($post['post_content']) ? $post['post_content'] : '', 'post_excerpt' => isset($post['post_excerpt']) ? $post['post_excerpt'] : '');
+            wp_update_post(wp_slash($update));
+            foreach ($meta as $meta_key => $value) { update_post_meta($existing, $meta_key, $value); }
+            update_post_meta($existing, '_zhibek_seed_state', zhibek_seed_state($existing, $keys));
+        }
+        return $existing;
+    }
+    $post['post_status'] = 'publish';
+    $post['meta_input'] = array_merge($meta, array('_zhibek_seed' => $key));
+    $id = wp_insert_post(wp_slash($post), true);
+    if (is_wp_error($id)) { throw new RuntimeException($id->get_error_message()); }
+    update_post_meta($id, '_zhibek_seed_state', zhibek_seed_state($id, $keys));
+    return (int) $id;
+}
+
+function zhibek_seed_content() {
+    add_option('zhibek_settings', zhibek_default_settings());
+    $breeds = array(
+        'abyssinian' => array(
+            'title' => 'Абиссинская', 'order' => 1, 'scores' => "Активность: 5\nГолос: 2\nРазмер: 3\nУход за шерстью: 1",
+            'subtitle' => 'Тикированная шерсть, большие уши, подвижный характер.',
+            'traits' => 'Подвижная, любопытная, привязчивая, ловкая',
+            'facts' => "Вес: 3,5–5 кг\nШерсть: короткая, тикированная\nОкрасы: руди, соррель, голубой, фавн\nГлаза: золотые, медовые, зелёные",
+            'fit' => 'Вы хотите активную кошку, которая ходит за вами по дому.',
+            'note' => 'Любит высоту. Нужны когтеточка, полки и ежедневные игры.',
+            'eye' => '#d9a238', 'accent' => '#2c4a3b', 'image' => 'abyssinian-sit.webp',
+            'content' => "Абиссинская кошка гибкая и мускулистая, с короткой плотной шерстью. Каждый волос окрашен тёмными и светлыми полосками (тикинг), поэтому окрас тёплый и переливается.\n\nХарактер подвижный и любопытный. Абиссинцы ходят за хозяином по квартире, залезают на шкафы, открывают дверцы и проверяют каждую коробку. Голос тихий.\n\nШерсть почти не требует ухода: достаточно расчёсывать раз в неделю. Больше всего кошке нужны игры и общение. Если дома никого нет большую часть дня, подумайте о паре.",
+        ),
+        'bengal' => array(
+            'title' => 'Бенгальская', 'order' => 2, 'scores' => "Активность: 5\nГолос: 3\nРазмер: 4\nУход за шерстью: 1",
+            'subtitle' => 'Пятнистый окрас и высокая активность. Нужен простор.',
+            'traits' => 'Энергичная, умная, игривая, любит воду',
+            'facts' => "Вес: 4–7 кг\nШерсть: короткая, плотная, с блеском\nРисунок: розетки или мрамор\nОкрасы: браун, снежные, серебристые",
+            'fit' => 'Вы готовы играть каждый день и любите кошек с яркой индивидуальностью.',
+            'note' => 'Нужны высокие комплексы и сетка на окнах и балконе.',
+            'eye' => '#9ec35b', 'accent' => '#6a2230', 'image' => 'bengal-sit.webp',
+            'content' => "Бенгальская кошка крупная и мускулистая. Рисунок на шерсти бывает розеточным (кольца, как у леопарда) или мраморным. Шерсть короткая, плотная, с характерным блеском.\n\nБенгалы энергичные и умные. Многие любят воду, приносят игрушки и учатся открывать двери. Им нужны высокие комплексы для лазания, активные игры и занятия для ума, например кормовые головоломки.\n\nШерсть почти не требует ухода. Зато скучающий бенгал быстро находит себе занятие сам, поэтому играйте с ним каждый день. Окна и балкон закройте сеткой.",
+        ),
+        'siamese' => array(
+            'title' => 'Сиамская', 'order' => 3, 'scores' => "Активность: 4\nГолос: 5\nРазмер: 3\nУход за шерстью: 1",
+            'subtitle' => 'Голубые глаза, колор-пойнт и разговорчивый характер.',
+            'traits' => 'Общительная, голосистая, преданная, ласковая',
+            'facts' => "Вес: 3–5 кг\nШерсть: короткая, шелковистая\nОкрас: колор-пойнт — сил, шоколад, блю, лилак\nГлаза: насыщенно-голубые",
+            'fit' => 'Вы часто бываете дома и любите разговаривать с кошкой.',
+            'note' => 'Плохо переносит одиночество. Если вас часто нет дома, подумайте о паре.',
+            'eye' => '#4f8fd6', 'accent' => '#2a46a0', 'image' => 'siamese-sit.webp',
+            'content' => "Сиамская кошка стройная и светлая, с тёмными отметинами на морде, ушах, лапах и хвосте. Глаза миндалевидные, ярко-голубые. Шерсть короткая и плотно прилегает к телу.\n\nКотята рождаются почти белыми. Тёмные отметины проявляются в первые недели и темнеют в течение первого года.\n\nСиамцы общительные и громкие: разговаривают, ходят за хозяином и привязываются к семье. Хорошо ладят с другими кошками. Шерсть ухода почти не требует, главное для сиамской кошки — общение и игра.",
+        ),
+    );
+    $breed_ids = array();
+    foreach ($breeds as $slug => $b) {
+        $breed_ids[$slug] = zhibek_seed_post('breed-' . $slug, array('post_type' => 'zhibek_breed', 'post_title' => $b['title'], 'post_name' => $slug, 'menu_order' => $b['order'], 'post_content' => $b['content'], 'post_excerpt' => $b['subtitle']), array(
+            '_zhibek_subtitle' => $b['subtitle'], '_zhibek_traits' => $b['traits'], '_zhibek_facts' => $b['facts'], '_zhibek_fit' => $b['fit'], '_zhibek_note' => $b['note'],
+            '_zhibek_eye' => $b['eye'], '_zhibek_accent' => $b['accent'], '_zhibek_image' => $b['image'], '_zhibek_scores' => $b['scores'],
+        ));
+        zhibek_sync_breed_term($breed_ids[$slug]);
+    }
+    // Старые демо-котята версии 3–4 заменяются новыми котами: удаляем только записи с пометкой «демо».
+    foreach (array('abyssinian', 'bengal', 'siamese') as $old) {
+        $old_id = zhibek_seed_find('kitten-' . $old, 'zhibek_cat');
+        if ($old_id && get_post_meta($old_id, '_zhibek_demo', true)) { wp_delete_post($old_id, true); }
+    }
+    $privacy = zhibek_seed_post('page-privacy', array('post_type' => 'page', 'post_title' => 'Конфиденциальность', 'post_name' => 'privacy', 'post_content' => zhibek_privacy_html()));
+    if (!(int) get_option('wp_page_for_privacy_policy') && 'publish' === get_post_status($privacy)) { update_option('wp_page_for_privacy_policy', $privacy); }
+    zhibek_seed_post('page-order-terms', array('post_type' => 'page', 'post_title' => 'Как передаём котят', 'post_name' => 'order-terms', 'post_content' => zhibek_terms_html()));
+    $category = term_exists('journal', 'category');
+    if (!$category) { $category = wp_insert_term('Журнал', 'category', array('slug' => 'journal')); }
+    $journal_category = !is_wp_error($category) ? (is_array($category) ? (int) $category['term_id'] : (int) $category) : 0;
+    $articles = array(
+        'choose-breed' => array('Какую породу выбрать: абиссинская, бенгальская или сиамская', 'Чем отличаются характер и потребности трёх пород.', '<p>Все три породы короткошёрстные, активные и привязаны к человеку. Различаются они размером, голосом и тем, сколько внимания им нужно.</p><h2>Абиссинская</h2><p>Подвижная и любопытная. Ходит за хозяином по квартире, любит высоту. Голос тихий, вес 3,5–5 кг. Подойдёт тем, кто хочет активную кошку без громкого общения.</p><h2>Бенгальская</h2><p>Самая крупная и энергичная: 4–7 кг. Ей нужны высокие комплексы, ежедневные игры и сетка на окнах и балконе. Подойдёт тем, кто готов заниматься с кошкой каждый день.</p><h2>Сиамская</h2><p>Самая разговорчивая: часто и громко общается с хозяином. Вес 3–5 кг. Тяжело переносит одиночество, лучше всего чувствует себя там, где кто-то часто бывает дома.</p><h2>Что спросить у заводчика</h2><ul><li>Кто родители котёнка и обследовали ли их.</li><li>Как и где рос котёнок.</li><li>Какие документы вы получите.</li><li>Что входит в стоимость.</li><li>Можно ли обратиться за советом после переезда.</li></ul>'),
+        'first-days' => array('Первые дни котёнка в новом доме', 'Что подготовить заранее и как пройдёт первая неделя.', '<p>Подготовьте тихую комнату до приезда котёнка: лоток, вода, привычный корм, укрытие и когтеточка. Лоток и миски поставьте в разных местах.</p><h2>Перед приездом</h2><ul><li>Закройте окна сеткой, уберите провода и мелкие предметы, которые можно проглотить.</li><li>Узнайте у заводчика, чем котёнка кормили, и купите такой же корм.</li><li>Возьмите наполнитель, к которому он привык.</li></ul><h2>Первая неделя</h2><p>Откройте переноску и дайте котёнку выйти самому. Не вытаскивайте его из укрытия и не знакомьте со всеми гостями сразу. Говорите спокойно и предложите игру, когда он проявит интерес. Одним нужно несколько часов, другим несколько дней.</p><p>Корм меняйте постепенно, за 7–10 дней: резкая смена вызывает расстройство желудка. Если дома есть другие животные, знакомьте их постепенно, начиная с раздельных комнат.</p><h2>Когда нужен врач</h2><p>Если котёнок не ест больше суток, вялый, его рвёт или он тяжело дышит, обратитесь к ветеринару. Статья даёт общие ориентиры и не заменяет осмотр.</p>'),
+        'safe-play' => array('Как играть с домашней кошкой', 'Во что играть, как часто и какие игрушки опасны.', '<p>Домашней кошке нужно двигаться, прятаться, точить когти и наблюдать. Начните с устойчивой когтеточки, укрытия и места у окна с сеткой.</p><h2>Играйте каждый день</h2><p>Двух-трёх коротких игр по 10–15 минут достаточно большинству взрослых кошек. Бенгалам и котятам нужно больше. Используйте игрушку-удочку: пусть кошка преследует её и ловит. Не играйте руками: котёнок привыкнет кусать кожу.</p><h2>Что убрать</h2><p>Нитки, ленты и резинки опасны, если кошка их проглотит. Убирайте удочку после игры. Проверьте комнатные растения: лилии, например, ядовиты для кошек. Осматривайте игрушки и заменяйте повреждённые.</p><h2>Разнообразие</h2><p>Меняйте игрушки каждые несколько дней. Кормовые головоломки помогают занять кошку, пока вас нет дома. Дайте ей тихое место для сна и отдыха.</p>'),
+    );
+    foreach ($articles as $slug => $article) {
+        $existing = zhibek_seed_find('journal-' . $slug, 'post');
+        $id = zhibek_seed_post('journal-' . $slug, array('post_type' => 'post', 'post_title' => $article[0], 'post_name' => $slug, 'post_excerpt' => $article[1], 'post_content' => $article[2]));
+        if ($journal_category && !$existing) { wp_set_post_categories($id, array($journal_category), true); }
+    }
+    flush_rewrite_rules();
+    return array('breeds' => count($breed_ids), 'cats' => 0);
+}
+
+if (defined('WP_CLI') && WP_CLI) {
+    /** Create marked demo data, owner-editable breeds and original care articles without enabling payments. */
+    class Zhibek_Seed_Command {
+        public function __invoke($args, $assoc_args) {
+            try { $result = zhibek_seed_content(); }
+            catch (Throwable $exception) { WP_CLI::error($exception->getMessage()); return; }
+            WP_CLI::success('ZHIBEK: породы, журнал и страницы созданы. Повторный запуск сохраняет существующие записи.');
+        }
+    }
+    WP_CLI::add_command('zhibek seed', 'Zhibek_Seed_Command');
+}
