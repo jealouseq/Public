@@ -25,7 +25,7 @@ ffmpeg -y -hide_banner -loglevel error -framerate $FPS -i "$FR/f_%05d.jpg" -vf "
   -pass 1 -passlogfile out/x264 -an -f mp4 /dev/null
 ffmpeg -y -hide_banner -loglevel error -framerate $FPS -i "$FR/f_%05d.jpg" -i "$A" -vf "$VF" $COL \
   -c:v libx264 -preset slower -b:v $BR -maxrate 3600k -bufsize 6000k -profile:v high -level 4.1 -r $FPS \
-  -pass 2 -passlogfile out/x264 -af "$AF" -c:a aac -b:a 128k -movflags +faststart -shortest "out/cpr_promo_${SUF}_telegram_10mb.mp4"
+  -pass 2 -passlogfile out/x264 -af "$AF" -c:a aac -b:a 128k -movflags +faststart -shortest "out/cpr_promo_${SUF}_compact.mp4"
 rm -f out/x264*
 
 # 3) posters

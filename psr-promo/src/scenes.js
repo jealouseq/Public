@@ -166,7 +166,7 @@ function sceneState(t, W, H) {
   const c = cameraAt(t, W, H);
   const S = { cam: c };
   S.sun = sunAt(t, c);
-  S.tint = smooth(0.0, 1.2, t) * (1 - smooth(TL.logoIn + 0.8, TL.logoIn + 2.8, t));
+  S.tint = (0.62 + 0.38 * smooth(0.0, 1.2, t)) * (1 - smooth(TL.logoIn + 0.8, TL.logoIn + 2.8, t));
   // search zone ring on the globe (before the dive)
   const zOn = smooth(TL.zoneOn, TL.zoneOn + 1.1, t) * (1 - smooth(TL.revealStart - 0.9, TL.revealStart + 0.1, t));
   const zBack = smooth(TL.arcStart - 0.4, TL.arcStart + 0.8, t) * (1 - smooth(TL.logoIn - 0.4, TL.logoIn + 0.8, t));
@@ -207,7 +207,7 @@ function drawScene(ctx, gctx, W, H, t, frame) {
   const hz = ctx.createRadialGradient(cam.cx, cam.cy, 0, cam.cx, cam.cy, W * 0.9);
   hz.addColorStop(0, `rgba(70,6,14,${0.30 * S.tint})`); hz.addColorStop(1, 'rgba(0,0,0,0)');
   ctx.fillStyle = hz; ctx.fillRect(0, 0, W, H);
-  const starA = smooth(0, 0.8, t) * (1 - smooth(22.5, 24.5, t) * 0.0) * (t < 20 ? 1 : 1);
+  const starA = (0.5 + 0.5 * smooth(0, 0.8, t)) * (1 - smooth(22.5, 24.5, t) * 0.0) * (t < 20 ? 1 : 1);
   drawStars(ctx, cam, t, starA * (1 - smooth(0.2, 0.9, S.reveal.a * smooth(0.0, 0.2, 1 - S.cam.alt)) * 0));
   // ---- globe
   const globeA = 1 - smooth(TL.logoIn + 0.5, TL.logoIn + 2.1, t);
@@ -258,7 +258,7 @@ function drawScene(ctx, gctx, W, H, t, frame) {
   }
   ctx.restore();
   // ---- sun flare (opening only)
-  drawFlare(ctx, cam, S.sun, smooth(0.0, 1.0, t) * (1 - smooth(3.3, 5.2, t)), t);
+  drawFlare(ctx, cam, S.sun, (0.62 + 0.38 * smooth(0.0, 1.0, t)) * (1 - smooth(3.3, 5.2, t)), t);
   // ---- bloom
   bloomPass(ctx, W, H, 0.55 - 0.2 * smooth(11.5, 13, t) * (1 - smooth(20.5, 22, t)), 5);
   // ---- scrim for text legibility
@@ -275,7 +275,7 @@ function drawScene(ctx, gctx, W, H, t, frame) {
   grain(ctx, W, H, frame, 0.07);
   // fade in / out
   const fade = 1 - smooth(TL.total - 0.6, TL.total, t);
-  const fin = smooth(0, 0.22, t);
+  const fin = 1; // first frame is the in-feed poster: start on the picture, no fade from black
   const k = Math.min(fade, 0.0001 + fin);
   if (k < 1) { ctx.fillStyle = `rgba(0,0,0,${1 - k})`; ctx.fillRect(0, 0, W, H); }
 }
