@@ -1,0 +1,9 @@
+node_modules/
+out/frames/
+raw/
+assets/nasa/
+assets/ne/
+data/*.u8
+data/*.i16
+audio/*.wav
+*.log
