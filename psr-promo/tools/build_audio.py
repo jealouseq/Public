@@ -11,7 +11,7 @@ D minor, 72 BPM. Structure follows src/timeline.js so every hit lands on a visua
   25-32     D major  warm resolution                      (logo + call to action)
 Run: python3 -I tools/build_audio.py  ->  audio/score.wav (48 kHz, stereo)
 """
-import json, math, os, subprocess, wave
+import json, math, os, subprocess, sys, wave
 import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,6 +20,7 @@ TL = json.loads(subprocess.check_output(["node", "-e", f"console.log(JSON.string
 DUR = TL["total"]; N = int(DUR * SR)
 BEAT = 60.0 / TL["bpm"]
 rng = np.random.default_rng(7)
+SFX_ONLY = "--sfx-only" in sys.argv
 
 def midi(m): return 440.0 * 2 ** ((m - 69) / 12.0)
 NOTE = {"C": 0, "D": 2, "E": 4, "F": 5, "G": 7, "A": 9, "B": 11}
@@ -161,55 +162,57 @@ CH = {  # chord: (bass, pad voices)
     "D":     ("D1", ["D3", "F#3", "A3", "D4", "A4"]),
 }
 SEGS = [("Dm", 0.0, 6.667), ("Bbmaj7", 6.667, 11.667), ("Gm7", 11.667, 20.0), ("Bb", 20.0, 25.0), ("D", 25.0, DUR)]
-for name, s0, s1 in SEGS:
-    bass, voices = CH[name]; d = s1 - s0
-    sub(n(bass if bass[-1] != "0" else "Bb1"), s0, d + 0.4, gain=0.085 if name != "D" else 0.10, glide=0.6)
-    pad([n(v) for v in voices], s0, d + 1.5, att=2.2 if s0 == 0 else 1.1, rel=2.4, gain=0.34 if name != "D" else 0.38,
-        cutoff=1500 if name in ("Dm", "Gm7") else 2300, vib=1.0)
-# airy octave layer swells
-pad([n("A4"), n("D5"), n("F5")], 0.8, 5.0, att=2.4, rel=2.0, gain=0.09, cutoff=3000, send=0.7)
-pad([n("F4"), n("A4"), n("D5"), n("F5")], 7.0, 5.2, att=2.2, rel=1.2, gain=0.14, cutoff=3200, send=0.7, vib=1.4)
-pad([n("D4"), n("G4"), n("Bb4"), n("D5")], 12.6, 7.4, att=3.0, rel=2.0, gain=0.12, cutoff=3000, send=0.7, vib=1.4)
-pad([n("F4"), n("Bb4"), n("D5"), n("F5")], 21.0, 4.4, att=1.8, rel=0.8, gain=0.14, cutoff=3200, send=0.7, vib=1.2)
-pad([n("A4"), n("D5"), n("F#5"), n("A5")], 25.0, 7.5, att=0.9, rel=2.5, gain=0.17, cutoff=3800, send=0.75, vib=1.2)
+if not SFX_ONLY:
+    for name, s0, s1 in SEGS:
+        bass, voices = CH[name]; d = s1 - s0
+        sub(n(bass if bass[-1] != "0" else "Bb1"), s0, d + 0.4, gain=0.085 if name != "D" else 0.10, glide=0.6)
+        pad([n(v) for v in voices], s0, d + 1.5, att=2.2 if s0 == 0 else 1.1, rel=2.4, gain=0.34 if name != "D" else 0.38,
+            cutoff=1500 if name in ("Dm", "Gm7") else 2300, vib=1.0)
+    # airy octave layer swells
+    pad([n("A4"), n("D5"), n("F5")], 0.8, 5.0, att=2.4, rel=2.0, gain=0.09, cutoff=3000, send=0.7)
+    pad([n("F4"), n("A4"), n("D5"), n("F5")], 7.0, 5.2, att=2.2, rel=1.2, gain=0.14, cutoff=3200, send=0.7, vib=1.4)
+    pad([n("D4"), n("G4"), n("Bb4"), n("D5")], 12.6, 7.4, att=3.0, rel=2.0, gain=0.12, cutoff=3000, send=0.7, vib=1.4)
+    pad([n("F4"), n("Bb4"), n("D5"), n("F5")], 21.0, 4.4, att=1.8, rel=0.8, gain=0.14, cutoff=3200, send=0.7, vib=1.2)
+    pad([n("A4"), n("D5"), n("F#5"), n("A5")], 25.0, 7.5, att=0.9, rel=2.5, gain=0.17, cutoff=3800, send=0.75, vib=1.2)
 
-# melody (felt bells)
-mel = [(1.667, "A4", 0.8), (3.333, "D5", 0.9), (5.0, "F5", 1.0),
-       (6.667, "Bb4", 0.7), (7.5, "D5", 0.7), (8.333, "F5", 0.8), (9.167, "A5", 0.8), (10.0, "C6", 0.9),
-       (20.8, "F5", 0.9), (22.5, "D5", 0.9), (24.2, "Bb4", 0.8),
-       (25.0, "D5", 1.0), (26.667, "A5", 0.8), (28.333, "F#5", 0.8), (30.0, "D6", 0.7)]
-for t0, nm, v in mel: bell(n(nm), t0, v, tau=1.9, pan=0.15 * (1 if int(t0 * 10) % 2 else -1))
-# low octave doubling on the heavy beats
-for t0, nm, v in [(3.333, "D4", .6), (8.333, "Bb3", .5), (25.0, "D4", .9), (30.0, "D4", .6)]: bell(n(nm), t0, v, tau=2.6, send=0.5, bright=1.2)
+    # melody (felt bells)
+    mel = [(1.667, "A4", 0.8), (3.333, "D5", 0.9), (5.0, "F5", 1.0),
+           (6.667, "Bb4", 0.7), (7.5, "D5", 0.7), (8.333, "F5", 0.8), (9.167, "A5", 0.8), (10.0, "C6", 0.9),
+           (20.8, "F5", 0.9), (22.5, "D5", 0.9), (24.2, "Bb4", 0.8),
+           (25.0, "D5", 1.0), (26.667, "A5", 0.8), (28.333, "F#5", 0.8), (30.0, "D6", 0.7)]
+    for t0, nm, v in mel: bell(n(nm), t0, v, tau=1.9, pan=0.15 * (1 if int(t0 * 10) % 2 else -1))
+    # low octave doubling on the heavy beats
+    for t0, nm, v in [(3.333, "D4", .6), (8.333, "Bb3", .5), (25.0, "D4", .9), (30.0, "D4", .6)]: bell(n(nm), t0, v, tau=2.6, send=0.5, bright=1.2)
 
-# scanning arpeggio under the tactical map (8th notes), quiet and wide
-seq = ["G4", "D5", "Bb4", "F5", "D5", "Bb4", "G4", "D5"]
-k = 0; t0 = 12.5 + 0.0
-while t0 < 19.7:
-    nm = seq[k % 8]; accent = 1.0 if k % 4 == 0 else 0.55
-    pluck(n(nm), t0, accent * (0.5 + 0.5 * min(1, (t0 - 12.5) / 2.0)), pan=math.sin(k * 0.9) * 0.6)
-    t0 += BEAT / 2; k += 1
+    # scanning arpeggio under the tactical map (8th notes), quiet and wide
+    seq = ["G4", "D5", "Bb4", "F5", "D5", "Bb4", "G4", "D5"]
+    k = 0; t0 = 12.5 + 0.0
+    while t0 < 19.7:
+        nm = seq[k % 8]; accent = 1.0 if k % 4 == 0 else 0.55
+        pluck(n(nm), t0, accent * (0.5 + 0.5 * min(1, (t0 - 12.5) / 2.0)), pan=math.sin(k * 0.9) * 0.6)
+        t0 += BEAT / 2; k += 1
 
-# heartbeat pulse (lub-dub) in the second act and a soft hat grid
-t0 = b(11)
-while t0 < 20.0:
-    thud(t0, 0.55 if t0 < 11.6 else 0.9); thud(t0 + BEAT * 0.38, 0.45 if t0 < 11.6 else 0.6, f0=95)
-    t0 += BEAT * 2
-tk = 12.0
-while tk < 19.9: tick(tk, 1.0 if int((tk - 12.0) / (BEAT / 2)) % 2 == 0 else 0.55, pan=0.3); tk += BEAT / 2
-# fading pulse into the logo
-for kk in range(3): thud(22.5 + kk * BEAT * 2, 0.35 - kk * 0.08)
+    # heartbeat pulse (lub-dub) in the second act and a soft hat grid
+    t0 = b(11)
+    while t0 < 20.0:
+        thud(t0, 0.55 if t0 < 11.6 else 0.9); thud(t0 + BEAT * 0.38, 0.45 if t0 < 11.6 else 0.6, f0=95)
+        t0 += BEAT * 2
+    tk = 12.0
+    while tk < 19.9: tick(tk, 1.0 if int((tk - 12.0) / (BEAT / 2)) % 2 == 0 else 0.55, pan=0.3); tk += BEAT / 2
+    # fading pulse into the logo
+    for kk in range(3): thud(22.5 + kk * BEAT * 2, 0.35 - kk * 0.08)
+
 
 # sound design tied to the picture
 riser(TL["cues"]["flare"] - 1.3, 2.4, gain=0.22, f0=1500, f1=9000, seed=3)               # sun flare shimmer
 ping(TL["cues"]["zone"], f=1320, vel=1.1)                                                # zone ring appears
 riser(TL["cues"]["riser"], TL["cues"]["impact"] - TL["cues"]["riser"], gain=0.55, seed=4)  # dive
-boom(TL["cues"]["impact"], 1.0)                                                          # terrain bloom
+boom(TL["cues"]["impact"], 0.7 if SFX_ONLY else 1.0)                                                          # terrain bloom
 for i, tp in enumerate(TL["pings"]): ping(tp + 0.02, f=1650 + 90 * (i % 3), vel=1.0 if i else 0.0, pan=(-0.4, 0.4, -0.2, 0.5, 0.0)[i % 5])
 whoosh_down(TL["cues"]["pullback"], 2.8, gain=0.55)                                      # pull-back
 for i in range(24): tick(TL["arcStart"] + i * 0.1, 1.4, pan=(i % 5 - 2) * 0.3)           # arcs launching
 riser(23.0, 2.0, gain=0.4, f0=400, f1=8000, seed=9)                                     # globe condenses to emblem
-boom(TL["cues"]["logo"], 1.0)                                                            # emblem locks
+boom(TL["cues"]["logo"], 0.7 if SFX_ONLY else 1.0)                                                            # emblem locks
 ping(TL["cues"]["wordmark"], f=1980, vel=0.7); ping(TL["cues"]["cta"], f=1760, vel=0.6)
 
 # ------------------------------------------------------------------- reverb
@@ -237,13 +240,15 @@ mix = dry + rev * 0.85
 mix = np.stack([highpass(mix[c], 28, 2) for c in range(2)])
 mix = np.tanh(mix * 1.15) / 1.15
 t = np.arange(N) / SR
-arc_t = [0, 1.5, 6.0, 9.4, 11.55, 11.667, 13, 19.5, 20.0, 22, 24.8, 25.0, 28, 32]
-arc_g = [0.35, 0.5, 0.62, 0.72, 0.78, 1.0, 0.82, 0.86, 0.78, 0.84, 0.9, 1.0, 0.92, 0.85]
+if SFX_ONLY: arc_t = [0, 32]; arc_g = [1.0, 1.0]
+else:
+  arc_t = [0, 1.5, 6.0, 9.4, 11.55, 11.667, 13, 19.5, 20.0, 22, 24.8, 25.0, 28, 32]
+  arc_g = [0.35, 0.5, 0.62, 0.72, 0.78, 1.0, 0.82, 0.86, 0.78, 0.84, 0.9, 1.0, 0.92, 0.85]
 mix *= np.interp(t, arc_t, arc_g)
 mix *= np.minimum(1, t / 0.8) ** 1.5 * np.minimum(1, (DUR - t) / 1.4) ** 1.2
 mix /= np.max(np.abs(mix)) / 0.89
 os.makedirs(os.path.join(ROOT, "audio"), exist_ok=True)
-out = os.path.join(ROOT, "audio", "score.wav")
+out = os.path.join(ROOT, "audio", "sfx.wav" if SFX_ONLY else "score.wav")
 with wave.open(out, "wb") as w:
     w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR)
     w.writeframes((mix.T * 32767).astype("<i2").tobytes())

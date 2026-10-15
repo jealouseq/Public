@@ -19,3 +19,16 @@
 ---
 
 Если пост выходит как реклама в чужих каналах, не забудьте пометку «Реклама», данные рекламодателя и токен erid (требование закона «О рекламе», ОРД).
+
+## Подпись автора музыки (обязательна для вариантов A, B, C)
+
+Музыка в вариантах A–C — Кевин Маклауд (Kevin MacLeod), лицензия CC BY 4.0: использовать бесплатно можно, но нужно указать автора в описании поста. Оставьте только строку выбранного варианта:
+
+> Музыка: «Hero Down» — Kevin MacLeod (incompetech.com)
+> Лицензия: Creative Commons: By Attribution 4.0 — http://creativecommons.org/licenses/by/4.0/
+
+> Музыка: «Americana» — Kevin MacLeod (incompetech.com)
+> Лицензия: Creative Commons: By Attribution 4.0 — http://creativecommons.org/licenses/by/4.0/
+
+> Музыка: «Second Coming» — Kevin MacLeod (incompetech.com)
+> Лицензия: Creative Commons: By Attribution 4.0 — http://creativecommons.org/licenses/by/4.0/
