@@ -1,5 +1,5 @@
 node_modules/
-out/frames/
+out/frames*/
 raw/
 assets/nasa/
 assets/ne/
