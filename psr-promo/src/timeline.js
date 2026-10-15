@@ -24,7 +24,8 @@ const TL = {
     d1: [20.2, 23.9],
   },
   // sonar pings in the deep section (also drive the audio)
-  pings: [12.4, 13.9, 15.5, 17.1, 18.7],
+  lights: [13.6, 14.6, 15.6, 16.6, 17.5, 18.4],   // the search lights bloom in groups at these times (picture + sound)
+  pings: [13.6, 14.6, 15.6, 16.6, 17.5],
   // sound cue times
   bpm: 72,
   cues: { flare: 2.4, zone: 6.3, riser: 8.0, impact: 10.6, pullback: 20.0, logo: 25.0, wordmark: 25.9, tagline: 26.7, cta: 27.5, contact: 28.5 },

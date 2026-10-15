@@ -14,7 +14,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SR = 48000
 TL = json.loads(subprocess.check_output(["node", "-e", f"console.log(JSON.stringify(require('{ROOT}/src/timeline.js')))"]))
 DUR = TL["total"]; N = int(DUR * SR)
-C = TL["cues"]; P = TL["pings"]
+C = TL["cues"]; P = TL["pings"]; LT = TL["lights"]
 MUSIC = "545_Rebecca_on_the_Shore"
 NO_MUSIC = "--no-music" in sys.argv
 for i, a in enumerate(sys.argv):
@@ -57,12 +57,12 @@ SFX = [
     ("swoosh-slow",            C["impact"] - 0.20, 0.34, "peak", "dive accelerates through the clouds", False),
     ("impact-deep-whoosh",     C["impact"], 0.62, "peak", "clouds part: terrain revealed", False),
     ("sparkle-poof-hit",       C["impact"] + 0.10, 0.22, "peak", "light across the revealed land", False),
-    ("sparkle-touch",          P[0], 0.26, "start", "first lights of the search appear", False),
-    ("sparkle-touch",          P[1], 0.30, "start", "lights bloom", False),
-    ("sparkle-touch",          P[2], 0.28, "start", "lights bloom", False),
-    ("sparkle-touch",          P[3], 0.28, "start", "lights bloom", False),
-    ("sparkle-wand",           17.55, 0.30, "start", "more lights across the map", False),
-    ("sparkle-touch",          P[4], 0.26, "start", "last lights", False),
+    ("sparkle-touch",          LT[0] + 0.30, 0.40, "peak", "first search lights bloom", False),
+    ("sparkle-touch",          LT[1] + 0.30, 0.38, "peak", "lights bloom", False),
+    ("sparkle-touch",          LT[2] + 0.30, 0.38, "peak", "lights bloom", False),
+    ("sparkle-touch",          LT[3] + 0.30, 0.36, "peak", "lights bloom", False),
+    ("sparkle-wand",           LT[4] + 0.15, 0.36, "peak", "more lights across the map", False),
+    ("sparkle-touch",          LT[5] + 0.30, 0.34, "peak", "last lights", False),
     ("swoosh-slow",            C["pullback"] + 0.6, 0.44, "peak", "camera pulls back from the terrain", False),
     ("stardust-swish",         TL["arcStart"], 0.30, "start", "lines of light leave for the cities", False),
     ("light-aura",             C["logo"] - 0.02, 0.40, "end", "reverse swell: the globe condenses into the emblem", True),

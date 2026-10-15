@@ -117,16 +117,13 @@ function initSearchPoints() {
   for (let i = 0; i < 20; i++) {
     const a = r() * TAU, rad = 0.4 + Math.sqrt(r()) * 2.4;
     const lon = R0.lon + Math.cos(a) * rad * 1.45, lat = R0.lat + Math.sin(a) * rad;
-    SPTS.push({ lon, lat, v: llv(lon, lat), t0: 13.4 + r() * 4.4, lock: i % 7 === 3 });
+    SPTS.push({ lon, lat, v: llv(lon, lat), t0: TL.lights[Math.min(TL.lights.length - 1, Math.floor(i * TL.lights.length / 20))] + r() * 0.3, lock: false });
   }
   SPTS.sort((p, q) => p.t0 - q.t0);
 }
 
 /* ------------------------------------------------------------------ state */
-const RIPS = [
-  { t: 6.3, dur: 2.8, rmax: 0.15, a: 0.6 }, { t: 7.8, dur: 2.8, rmax: 0.12, a: 0.35 },
-  { t: 20.9, dur: 2.8, rmax: 0.13, a: 0.4 },
-];
+const RIPS = [];      // no radar-style rings: the search area is a soft glow and a warm light
 function ripples(t) {
   const out = [];
   for (const e of RIPS) { const k = (t - e.t) / e.dur; if (k > 0 && k < 1) out.push({ r: 0.006 + e.rmax * easeOutCubic(k), a: (1 - k) * e.a }); }
@@ -142,7 +139,8 @@ function sceneState(t, W, H) {
   S.cloudA = 1 - 0.32 * smooth(13, 23, t);
   const open = smoother(9.2, 12.0, t), close = smooth(21.0, 24.0, t);
   S.cloudClear = 0.62 * open * (1 - 0.82 * close);
-  S.lightsGain = 1.0;
+  S.lightsGain = 1 + 0.15 * (1 - smooth(3, 6, t));
+  S.cloudGain = 1 - 0.40 * smooth(7.6, 9.2, t) * (1 - smooth(10.4, 11.8, t));       // the dive passes through bright clouds: keep them from clipping
   S.haloGain = 0.35 + 0.65 * smooth(0.25, 0.8, c.alt);
   const zOn = smooth(TL.zoneOn, TL.zoneOn + 1.1, t) * (1 - smooth(TL.reveal - 1.0, TL.reveal, t));
   const zBack = smooth(TL.arcStart - 0.4, TL.arcStart + 0.8, t) * (1 - smooth(TL.logoIn - 0.4, TL.logoIn + 0.8, t));
@@ -192,11 +190,11 @@ function drawScene(ctx, gctx, W, H, t, frame) {
   }
   const hudA = 1 - smooth(TL.logoIn - 0.2, TL.logoIn + 0.6, t);
   if (hudA > 0.01) {
-    const g = ctx.createLinearGradient(0, 0, 0, H * 0.17);
-    g.addColorStop(0, `rgba(3,6,14,${0.5 * hudA})`); g.addColorStop(1, 'rgba(3,6,14,0)');
+    const g = ctx.createLinearGradient(0, 0, 0, H * 0.2);
+    g.addColorStop(0, `rgba(3,6,14,${0.64 * hudA})`); g.addColorStop(1, 'rgba(3,6,14,0)');
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H * 0.2);
   }
-  gradePass(ctx, W, H, frame, { sat: 1.04, con: 1.07, grain: 2.0 });
+  gradePass(ctx, W, H, frame, { sat: 1.04, con: 1.07, grain: 2.4 });
   vignette(ctx, W, H, 0.42);
   drawBrandBug(ctx, t, W, H, U, hudA);
   drawTexts(ctx, t, W, H, U, L);
@@ -245,8 +243,7 @@ function drawArcs(ctx, cam, t, U) {
       const q = project(cam, c.v, [0, 0, 0], 1);
       if (q[2]) {
         const k = seg(t, st + 1.85, st + 3.0);
-        lightDot(ctx, q[0], q[1], 14 * U, AMBER, 0.95 * fadeOut);
-        thinRing(ctx, q[0], q[1], (5 + k * 28) * U, WARM, (1 - k) * 0.7 * fadeOut, 1.5 * U);
+        lightDot(ctx, q[0], q[1], (14 + 6 * Math.sin(k * 3.14)) * U, AMBER, 0.95 * fadeOut);
       }
     }
   });
@@ -271,10 +268,10 @@ const GOLDHEX = '#ffc978';
 function drawTexts(ctx, t, W, H, U, L) {
   const cx = W / 2, base = L.base, T = TL.text, AC = { accent: GOLDHEX, accentGlow: 'rgba(255,170,70,0.45)', accentBlur: 0.35 };
   drawWords(ctx, t, { lines: [{ text: 'Когда нет вестей от бойца…' }], x: cx, y: base - 26 * U, align: 'center', size: 62 * U, weight: 700, t0: T.a1[0], per: 0.16, dur: 0.85, tOut: T.a1[1], outDur: 0.7 });
-  drawWords(ctx, t, { lines: [{ text: 'самое трудное — *неизвестность*' }], x: cx, y: base + 52 * U, align: 'center', size: 57 * U, weight: 600, t0: T.a2[0], per: 0.15, dur: 0.85, tOut: T.a2[1], outDur: 0.7, accent: '#ff5063', accentGlow: 'rgba(255,40,60,0.35)', accentBlur: 0.3 });
-  drawWords(ctx, t, { lines: [{ text: 'Профессиональный розыск', size: 58 * U, weight: 600 }, { text: '*в зоне СВО*', size: 98 * U, weight: 800 }], x: cx, y: base - 58 * U, align: 'center', size: 58 * U, weight: 700, lh: 1.14, t0: T.b1[0], per: 0.2, dur: 0.9, tOut: T.b1[1], outDur: 0.7, ...AC });
+  drawWords(ctx, t, { lines: [{ text: 'самое трудное — *неизвестность*' }], x: cx, y: base + 52 * U, align: 'center', size: 55 * U, weight: 600, tracking: -0.2 * U, t0: T.a2[0], per: 0.15, dur: 0.85, tOut: T.a2[1], outDur: 0.7, accent: '#ff5063', accentGlow: 'rgba(255,40,60,0.35)', accentBlur: 0.3 });
+  drawWords(ctx, t, { lines: [{ text: 'Профессиональный розыск', size: 58 * U, weight: 600 }, { text: '*в зоне СВО*', size: 98 * U, weight: 800 }], x: cx, y: base - 74 * U, align: 'center', size: 58 * U, weight: 700, lh: 1.62, t0: T.b1[0], per: 0.2, dur: 0.9, tOut: T.b1[1], outDur: 0.7, ...AC });
   drawWords(ctx, t, { lines: [{ text: 'Ищем *ответы* там,' }, { text: 'где они нужны семьям' }], x: cx, y: base - 40 * U, align: 'center', size: 64 * U, weight: 700, lh: 1.2, t0: T.c1[0], per: 0.14, dur: 0.85, tOut: T.c1[1], outDur: 0.7, ...AC });
-  drawWords(ctx, t, { lines: [{ text: '*На связи с каждой семьёй*', size: 61 * U, weight: 800 }, { text: 'Вежливо и бережно', size: 50 * U, weight: 600, family: 'Manrope' }], x: cx, y: base - 34 * U, align: 'center', size: 70 * U, weight: 800, lh: 1.3, t0: T.d1[0], per: 0.11, dur: 0.8, tOut: T.d1[1], outDur: 0.5, ...AC });
+  drawWords(ctx, t, { lines: [{ text: '*На связи с семьями*', size: 68 * U, weight: 800 }, { text: 'Вежливо и бережно', size: 58 * U, weight: 700, family: 'Manrope' }], x: cx, y: base - 34 * U, align: 'center', size: 70 * U, weight: 800, lh: 1.3, t0: T.d1[0], per: 0.11, dur: 0.8, tOut: T.d1[1], outDur: 0.5, ...AC });
 }
 
 /* ----------------------------------------------------------- logo + CTA card */
@@ -302,30 +299,32 @@ function drawLogoBlock(ctx, t, W, H, U, L) {
     for (let i = 0; i < 2; i++) { const kk = clamp(k * 1.15 - i * 0.14), rr = R * (2.4 - 1.5 * easeOutCubic(kk)); thinRing(ctx, cx, cy - R * 0.2, rr, WARM, (1 - kk) * 0.5 * kk * 3, 2 * U); }
     ctx.restore();
   }
-  // the beat: one clean amber flash
-  const fl = Math.exp(-Math.pow((t - tf) / 0.09, 2)) + 0.35 * Math.exp(-Math.pow((t - tf - 0.12) / 0.2, 2));
+  // anticipation: a warm glow gathers where the emblem will appear (no empty black beat)
+  const pre = smooth(t0 + 0.15, tf, t) * (t < tf ? 1 : 0);
+  if (pre > 0.01) {
+    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 1.5);
+    g.addColorStop(0, `rgba(255,200,120,${0.30 * pre})`); g.addColorStop(1, 'rgba(255,170,90,0)');
+    ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); ctx.restore();
+  }
+  // the beat: one clean golden flash with a tight core
+  const fl = Math.exp(-Math.pow((t - tf) / 0.08, 2)) + 0.3 * Math.exp(-Math.pow((t - tf - 0.12) / 0.2, 2));
   if (fl > 0.01) {
-    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 2.6);
-    g.addColorStop(0, `rgba(255,222,170,${Math.min(0.9, 0.85 * fl)})`); g.addColorStop(1, 'rgba(255,170,100,0)');
+    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 1.9);
+    g.addColorStop(0, `rgba(255,238,196,${Math.min(0.95, 0.9 * fl)})`); g.addColorStop(0.3, `rgba(255,196,110,${0.5 * fl})`); g.addColorStop(1, 'rgba(255,160,70,0)');
     ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); ctx.restore();
   }
   const breathe = 1 + 0.010 * Math.sin(t * 1.6), pop = 1 + 0.06 * Math.exp(-Math.pow((t - tf - 0.1) / 0.16, 2));
   ctx.save(); ctx.translate(cx, cy); ctx.scale(breathe * pop, breathe * pop); ctx.translate(-cx, -cy);
   drawEmblem(ctx, cx, cy, R, t, { neutral: true, crisp: true, a: smooth(tf - 0.05, tf + 0.12, t), disc: smooth(tf - 0.05, tf + 0.35, t), ring: easeOutCubic(seg(t, tf, tf + 0.5)), cross: seg(t, tf + 0.05, tf + 0.6), text: seg(t, tf + 0.18, tf + 0.7), spin: Math.sin(t * 0.9) * 0.04 });
   ctx.restore();
-  if (t > tf + 0.7) {
-    ctx.save(); ctx.globalCompositeOperation = 'lighter';
-    for (let i = 0; i < 3; i++) { const ph = (((t - (tf + 0.7) - i * 0.95) % 2.85) + 2.85) % 2.85 / 2.85; thinRing(ctx, cx, cy, R * (1.02 + 0.85 * easeOutCubic(ph)), WARM, (1 - ph) * 0.22 * smooth(tf + 0.7, tf + 1.4, t), 2 * U); }
-    ctx.restore();
-  }
   drawWords(ctx, t, { lines: [{ text: 'ЦЕНТР ПОИСКОВЫХ РЕШЕНИЙ' }], x: cx, y: cy + R + 90 * U, align: 'center', size: 50 * U, weight: 800, tracking: 3.0 * U, t0: TL.wordmark, per: 0.12, dur: 0.8 });
-  drawWords(ctx, t, { lines: [{ text: '*Профессиональный розыск в зоне СВО*' }], x: cx, y: cy + R + 150 * U, align: 'center', size: 36 * U, weight: 600, family: 'Manrope', tracking: 0.4 * U, t0: TL.tagline, per: 0.07, dur: 0.7, blur: 6, accent: GOLDHEX, accentGlow: 'rgba(255,170,70,0.3)', accentBlur: 0.3 });
+  drawWords(ctx, t, { lines: [{ text: '*Профессиональный розыск в зоне СВО*' }], x: cx, y: cy + R + 150 * U, align: 'center', size: 38 * U, weight: 600, family: 'Manrope', tracking: 0.4 * U, t0: TL.tagline, per: 0.07, dur: 0.7, blur: 6, accent: GOLDHEX, accentGlow: 'rgba(255,170,70,0.3)', accentBlur: 0.3 });
   const sp = easeOutCubic(seg(t, TL.cta - 0.3, TL.cta + 0.5));
   if (sp > 0) { ctx.save(); ctx.globalAlpha = sp; ctx.strokeStyle = 'rgba(255,201,120,0.85)'; ctx.lineWidth = 2 * U; ctx.beginPath(); ctx.moveTo(cx - 90 * U * sp, cy + R + 196 * U); ctx.lineTo(cx + 90 * U * sp, cy + R + 196 * U); ctx.stroke(); ctx.restore(); }
-  drawWords(ctx, t, { lines: [{ text: 'Напишите нам — мы ответим' }, { text: 'и подскажем, с чего начать' }], x: cx, y: cy + R + 262 * U, align: 'center', size: 46 * U, weight: 700, family: 'Manrope', lh: 1.24, t0: TL.cta, per: 0.09, dur: 0.7 });
+  drawWords(ctx, t, { lines: [{ text: 'Напишите нам — мы ответим' }, { text: 'и подскажем, с чего начать' }], x: cx, y: cy + R + 262 * U, align: 'center', size: 48 * U, weight: 700, family: 'Manrope', lh: 1.22, t0: TL.cta, per: 0.09, dur: 0.7 });
   const hk = easeOutCubic(seg(t, TL.contact, TL.contact + 0.7));
   if (hk > 0) {
-    const yy = cy + R + 428 * U;
-    drawTextAt(ctx, 'Контакты — в описании канала', cx, yy, { size: 42 * U, weight: 700, family: 'Manrope', color: GOLDHEX, align: 'center', alpha: hk, glow: 'rgba(255,170,70,0.4)', glowR: 14 });
+    const yy = cy + R + 438 * U;
+    drawTextAt(ctx, 'Контакты — в описании канала', cx, yy, { size: 48 * U, weight: 700, family: 'Manrope', color: GOLDHEX, align: 'center', alpha: hk, glow: 'rgba(255,170,70,0.4)', glowR: 14 });
   }
 }

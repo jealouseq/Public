@@ -11,7 +11,7 @@ COL="-colorspace bt709 -color_primaries bt709 -color_trc bt709"
 # loudness: bring the mix to -14 LUFS (typical for social feeds) with a true-peak safety limiter
 I=$(ffmpeg -hide_banner -nostats -i "$A" -af ebur128 -f null - 2>&1 | awk '/I:/ {v=$2} END {print v}')
 GAIN=$(awk -v i="$I" 'BEGIN{printf "%.2f", -14 - i}')
-AF="volume=${GAIN}dB,alimiter=limit=0.84:level=disabled,aresample=48000"
+AF="volume=${GAIN}dB,alimiter=limit=0.78:level=disabled,aresample=48000"
 echo "mix loudness ${I} LUFS -> gain ${GAIN} dB"
 
 # 1) master quality
@@ -33,7 +33,7 @@ if [ -f audio/mix_v2_no_music.wav ]; then
   I2=$(ffmpeg -hide_banner -nostats -i audio/mix_v2_no_music.wav -af ebur128 -f null - 2>&1 | awk '/I:/ {v=$2} END {print v}')
   G2=$(awk -v i="$I2" 'BEGIN{printf "%.2f", -16 - i}')
   ffmpeg -y -hide_banner -loglevel error -i "out/cpr_promo_${SUF}_compact.mp4" -i audio/mix_v2_no_music.wav -map 0:v -map 1:a -c:v copy \
-    -af "volume=${G2}dB,alimiter=limit=0.84:level=disabled,aresample=48000" -c:a aac -b:a 128k -movflags +faststart -shortest "out/cpr_promo_${SUF}_no_music.mp4"
+    -af "volume=${G2}dB,alimiter=limit=0.78:level=disabled,aresample=48000" -c:a aac -b:a 128k -movflags +faststart -shortest "out/cpr_promo_${SUF}_no_music.mp4"
 fi
 
 # 3) posters

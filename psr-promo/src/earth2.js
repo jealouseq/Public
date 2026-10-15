@@ -87,6 +87,7 @@ function renderEarth2(ctxG, W, H, cam, S) {
   const cloudStrength = (S.cloudA === undefined ? 1 : S.cloudA) * 0.86 * smooth(0.2, 0.62, d - 1);
   const clear = S.cloudClear === undefined ? 0 : S.cloudClear;            // radius (rad) of the 'parted clouds' hole around the region
   const lightsGain = S.lightsGain === undefined ? 1 : S.lightsGain;
+  const cloudGain = S.cloudGain === undefined ? 1 : S.cloudGain;
   const expo = S.exposure === undefined ? 1 : S.exposure;
   const haloGain = S.haloGain === undefined ? 1 : S.haloGain;
   const zone = S.zone, rip = S.ripples || [];
@@ -206,7 +207,7 @@ function renderEarth2(ctxG, W, H, cam, S) {
           if (Cc > 0.01) {
             const cd = nxq * Lx + nyq * Ly + nzq * Lz;
             const cl2 = smooth(-0.14, 0.38, cd), cw = Math.exp(-Math.pow((cd - 0.02) / 0.12, 2));
-            let kr = 0.05 + 0.90 * cl2 + 0.80 * cw, kg = 0.05 + 0.90 * cl2 + 0.34 * cw, kb = 0.06 + 0.92 * cl2 + 0.06 * cw;
+            let kr = (0.05 + 0.90 * cl2 + 0.80 * cw) * cloudGain, kg = (0.05 + 0.90 * cl2 + 0.34 * cw) * cloudGain, kb = (0.06 + 0.92 * cl2 + 0.06 * cw) * cloudGain;
             // night clouds: cold, dark, with a faint glow from the cities beneath
             const nc = 1 - cl2;
             kr += 0.004 * nc; kg += 0.007 * nc; kb += 0.014 * nc;

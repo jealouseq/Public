@@ -16,19 +16,17 @@ function lightDot(ctx, x, y, r, c, a) {          // soft light: hot white core, 
 }
 function thinRing(ctx, x, y, r, c, a, lw) { ctx.strokeStyle = col(c, a); ctx.lineWidth = lw; ctx.beginPath(); ctx.arc(x, y, r, 0, TAU); ctx.stroke(); }
 
-// the brand marker: calm red dot with white ring and a slow pulse
+// a calm warm light on the search area: slow double "heartbeat" glow, no rings, no red
 function beacon(ctx, x, y, U, t, a) {
   if (a <= 0.005) return;
-  ctx.save(); ctx.globalAlpha = a;
-  for (let i = 0; i < 2; i++) {
-    const ph = (((t * 0.55 + i * 0.5) % 1) + 1) % 1;
-    thinRing(ctx, x, y, (10 + ph * 46) * U, BRAND, (1 - ph) * 0.75, 2 * U);
-  }
-  const g = ctx.createRadialGradient(x, y, 0, x, y, 30 * U);
-  g.addColorStop(0, 'rgba(255,60,76,0.55)'); g.addColorStop(1, 'rgba(255,40,56,0)');
-  ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, 30 * U, 0, TAU); ctx.fill();
-  thinRing(ctx, x, y, 14 * U, WARM, 0.95, 2.2 * U);
-  ctx.fillStyle = '#ff2d44'; ctx.beginPath(); ctx.arc(x, y, 6.2 * U, 0, TAU); ctx.fill();
+  const ph = (t % 1.9) / 1.9;
+  const pulse = Math.exp(-Math.pow((ph - 0.08) / 0.06, 2)) + 0.65 * Math.exp(-Math.pow((ph - 0.30) / 0.07, 2));
+  ctx.save(); ctx.globalAlpha = a; ctx.globalCompositeOperation = 'lighter';
+  const R = (52 + 26 * pulse) * U;
+  const g = ctx.createRadialGradient(x, y, 0, x, y, R);
+  g.addColorStop(0, `rgba(255,244,222,${0.55 + 0.35 * pulse})`); g.addColorStop(0.22, `rgba(255,205,130,${0.38 + 0.2 * pulse})`); g.addColorStop(1, 'rgba(255,170,90,0)');
+  ctx.fillStyle = g; ctx.beginPath(); ctx.arc(x, y, R, 0, TAU); ctx.fill();
+  ctx.fillStyle = 'rgba(255,250,240,0.98)'; ctx.beginPath(); ctx.arc(x, y, (5.2 + 1.2 * pulse) * U, 0, TAU); ctx.fill();
   ctx.restore();
 }
 function brackets(ctx, x, y, s, c, a, lw) {
