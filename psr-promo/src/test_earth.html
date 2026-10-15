@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/fonts/fonts.css">
+<style>html,body{margin:0;background:#000}canvas{display:block}</style></head><body><canvas id="c"></canvas>
+<script src="/src/timeline.js"></script><script src="/src/engine.js"></script><script src="/src/earth2.js"></script>
+<script>
+const Q=new URLSearchParams(location.search), W=+Q.get('w')||1080, H=+Q.get('h')||1080;
+const canvas=document.getElementById('c'); canvas.width=W; canvas.height=H; const ctx=canvas.getContext('2d',{alpha:false});
+const g=document.createElement('canvas'); g.width=W; g.height=H; const gctx=g.getContext('2d');
+window.READY=false;
+(async()=>{ await loadData(); await loadData2(); window.READY=true; })();
+// renderTest({cam:{...}, sunLon, sunLat, ...})
+window.renderTest=(o)=>{
+  const cam=makeCamera(Object.assign({roll:0,fov:45,shiftX:0,shiftY:0,heading:0,pitch:0},o.cam),W,H);
+  ctx.fillStyle='#02040a'; ctx.fillRect(0,0,W,H);
+  const S={sun:norm3(llv(o.sunLon,o.sunLat)), cloudA:o.cloudA===undefined?1:o.cloudA, lightsGain:1, exposure:o.exposure||1, cloudClear:o.cloudClear||0, zone:o.zone?{c:llv(37.4,48.1),R:0.07,a:1,spin:0}:null, ripples:[]};
+  renderEarth2(gctx,W,H,cam,S); ctx.drawImage(g,0,0);
+  return canvas.toDataURL('image/jpeg',0.92);
+};
+</script></body></html>

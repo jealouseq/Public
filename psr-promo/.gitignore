@@ -9,3 +9,7 @@ audio/*.wav
 *.log
 audio/candidates/
 audio/variants/
+audio/mixkit/
+audio/sfx_src/
+out/frames*/
+assets/v2/

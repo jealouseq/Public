@@ -12,7 +12,8 @@ import numpy as np
 
 CUE1, CUE2, DUR = 11.667, 25.0, 32.0
 HERE = os.path.dirname(os.path.abspath(__file__))
-cat = {p["filename"]: p for p in json.load(open(os.path.join(HERE, "..", "audio", "candidates", "pieces.json")))}
+try: cat = {p["filename"]: p for p in json.load(open(os.path.join(HERE, "..", "audio", "candidates", "pieces.json")))}
+except Exception: cat = {}
 
 ARC_T = np.array([0, 1.5, 6.0, 9.4, 11.55, 11.667, 13, 19.5, 20.0, 22, 24.8, 25.0, 28, 32])
 ARC_G = np.array([0.35, 0.5, 0.62, 0.72, 0.78, 1.0, 0.82, 0.86, 0.78, 0.84, 0.9, 1.0, 0.92, 0.85])
@@ -35,11 +36,13 @@ def onset_env(x):
 
 def beat_grid(env, bpm0):
     fps = SR / HOP; best = (-1, None, None)
-    for bpm in np.arange(bpm0 * 0.94, bpm0 * 1.06, 0.1):
+    rng_bpm = np.arange(bpm0 * 0.94, bpm0 * 1.06, 0.1) if bpm0 else np.arange(66, 132, 0.25)
+    for bpm in rng_bpm:
         P = 60.0 / bpm * fps
         for ph in np.arange(0, P, 0.5):
             pos = np.arange(ph, len(env) - 1, P)
             s = np.interp(pos, np.arange(len(env)), env).sum() / len(pos)
+            s *= 1 - 0.003 * max(0, bpm - 100)
             if s > best[0]: best = (s, bpm, ph)
     _, bpm, ph = best
     P = 60.0 / bpm * fps
@@ -52,9 +55,9 @@ def rms_db(x, win=0.5):
     return 20 * np.log10(r), win
 
 def analyse(path):
-    name = os.path.basename(path); meta = cat[name]
+    name = os.path.basename(path); meta = cat.get(name, {"bpm": None, "title": os.path.splitext(name)[0]})
     x = load(path); dur = len(x) / SR
-    env = onset_env(x); bpm, beats = beat_grid(env, float(meta["bpm"]))
+    env = onset_env(x); bpm, beats = beat_grid(env, float(meta["bpm"]) if meta["bpm"] else None)
     P = 60.0 / bpm
     k = max(1, round((CUE2 - CUE1) / P))
     P_target = (CUE2 - CUE1) / k
@@ -96,4 +99,4 @@ if __name__ == "__main__":
     for r in rows:
         sc, s_in, c, o1, o2, span, seg = r["best"]
         print(f"{r['title'][:34]:34s} {r['bpm']:6.1f} {100*(r['f']-1):+6.1f}% {s_in:6.1f}s {c:6.2f} {o1:6.2f} {o2:6.2f} {sc:6.2f}")
-    json.dump([{k: (v if k != 'best' else [float(x) for x in v[:6]]) for k, v in r.items()} for r in rows], open(os.path.join(HERE, "..", "audio", "candidates", "ranking.json"), "w"), indent=1, default=float)
+    json.dump([{k: (v if k != 'best' else [float(x) for x in v[:6]]) for k, v in r.items()} for r in rows], open(os.path.join(HERE, "..", "audio", os.environ.get("RANK_OUT", "candidates/ranking.json")), "w"), indent=1, default=float)

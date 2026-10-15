@@ -195,8 +195,8 @@ function drawWords(ctx, t, spec) {
         const dy = (1 - p) * size * 0.35, bl = (1 - p) * (spec.blur === undefined ? 10 : spec.blur);
         ctx.filter = bl > 0.4 ? `blur(${bl.toFixed(1)}px)` : 'none';
         ctx.letterSpacing = tr + 'px';
-        if (spec.shadow !== false) { ctx.shadowColor = red ? 'rgba(255,30,50,0.65)' : 'rgba(0,0,0,0.75)'; ctx.shadowBlur = red ? size * 0.5 : size * 0.3; }
-        ctx.fillStyle = red ? '#ff3346' : (ln.color || spec.color || '#f6f1ee');
+        if (spec.shadow !== false) { ctx.shadowColor = red ? (spec.accentGlow || 'rgba(255,30,50,0.65)') : (spec.shadowColor || 'rgba(0,0,0,0.75)'); ctx.shadowBlur = red ? size * (spec.accentBlur === undefined ? 0.5 : spec.accentBlur) : size * (spec.shadowBlur === undefined ? 0.3 : spec.shadowBlur); }
+        ctx.fillStyle = red ? (spec.accent || '#ff3346') : (ln.color || spec.color || '#f6f1ee');
         ctx.fillText(txt, x, y + dy);
         ctx.filter = 'none'; ctx.shadowBlur = 0;
       }
@@ -227,17 +227,18 @@ function drawEmblem(ctx, x, y, R, t, o) {
   // disc
   if (o.disc > 0) {
     const g = ctx.createRadialGradient(0, -R * 0.15, R * 0.05, 0, 0, R);
-    g.addColorStop(0, `rgba(168,14,30,${0.95 * o.disc})`); g.addColorStop(0.5, `rgba(86,7,17,${0.96 * o.disc})`); g.addColorStop(1, `rgba(24,2,6,${0.98 * o.disc})`);
+    if (o.neutral) { g.addColorStop(0, `rgba(34,38,52,${0.96 * o.disc})`); g.addColorStop(0.55, `rgba(16,18,28,${0.97 * o.disc})`); g.addColorStop(1, `rgba(6,8,14,${0.98 * o.disc})`); }
+    else { g.addColorStop(0, `rgba(168,14,30,${0.95 * o.disc})`); g.addColorStop(0.5, `rgba(86,7,17,${0.96 * o.disc})`); g.addColorStop(1, `rgba(24,2,6,${0.98 * o.disc})`); }
     ctx.globalAlpha = a; ctx.fillStyle = g; ctx.beginPath(); ctx.arc(0, 0, R, 0, TAU); ctx.fill();
     // slow radar sweep inside the disc
-    if (o.disc > 0.6) {
+    if (o.disc > 0.6 && !o.neutral) {
       ctx.save(); ctx.beginPath(); ctx.arc(0, 0, R * 0.97, 0, TAU); ctx.clip();
       const cg = ctx.createConicGradient(t * 1.1, 0, 0);
       cg.addColorStop(0, 'rgba(255,50,66,0)'); cg.addColorStop(0.7, 'rgba(255,50,66,0)'); cg.addColorStop(0.985, 'rgba(255,60,76,0.34)'); cg.addColorStop(1, 'rgba(255,120,130,0.55)');
       ctx.globalAlpha = a * o.disc; ctx.fillStyle = cg; ctx.fillRect(-R, -R, R * 2, R * 2); ctx.restore();
     }
     // ember speckle texture
-    const r2 = rng(5); ctx.globalAlpha = a * 0.55 * o.disc;
+    const r2 = rng(5); ctx.globalAlpha = a * (o.neutral ? 0.18 : 0.55) * o.disc;
     for (let i = 0; i < 260; i++) {
       const aa = r2() * TAU, rr = Math.sqrt(r2()) * R * 0.96, s = 0.6 + r2() * 1.8;
       ctx.fillStyle = `rgba(255,${40 + (r2() * 60) | 0},${50 + (r2() * 50) | 0},${0.05 + r2() * 0.25})`;
