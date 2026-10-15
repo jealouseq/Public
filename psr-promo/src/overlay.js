@@ -246,7 +246,7 @@ function drawEmblem(ctx, x, y, R, t, o) {
     }
   }
   ctx.globalAlpha = a;
-  ctx.shadowColor = 'rgba(255,30,48,0.9)'; ctx.shadowBlur = R * 0.14;
+  ctx.shadowColor = 'rgba(255,30,48,0.9)'; ctx.shadowBlur = R * (o.crisp ? 0.045 : 0.14);
   // outer ring
   ctx.strokeStyle = '#e4182c'; ctx.lineWidth = Math.max(2, R * 0.035);
   ctx.beginPath(); ctx.arc(0, 0, R, -PI / 2, -PI / 2 + TAU * clamp(o.ring === undefined ? 1 : o.ring)); ctx.stroke();
@@ -272,9 +272,9 @@ function drawEmblem(ctx, x, y, R, t, o) {
     const sc = 1 + (1 - easeOutCubic(ts)) * 0.22;
     ctx.save(); ctx.translate(0, R * 0.52); ctx.scale(sc, sc); ctx.globalAlpha = a * easeOutCubic(ts);
     ctx.font = `400 ${R * 0.46}px "Russo One"`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.letterSpacing = (R * 0.01) + 'px';
-    ctx.shadowBlur = R * 0.12;
-    ctx.lineWidth = R * 0.03; ctx.strokeStyle = '#2a0308'; ctx.strokeText('ЦПР', 0, 0);
-    ctx.fillStyle = '#d3162b'; ctx.fillText('ЦПР', 0, 0);
+    ctx.shadowBlur = R * (o.crisp ? 0.03 : 0.12);
+    ctx.lineWidth = R * (o.crisp ? 0.022 : 0.03); ctx.strokeStyle = '#2a0308'; ctx.strokeText('ЦПР', 0, 0);
+    ctx.fillStyle = o.crisp ? '#e3192f' : '#d3162b'; ctx.fillText('ЦПР', 0, 0);
     ctx.restore();
   }
   ctx.restore();

@@ -17,7 +17,7 @@ async function loadData2() {
   D2.lut = new Uint8Array(4097);
   for (let i = 0; i <= 4096; i++) {
     const x = (i / 4096) * 6;
-    const y = (x * (1 + x / 7.5)) / (1 + x * 1.0);           // soft shoulder
+    const y = (x * (1 + x / 9)) / (1 + x * 1.18);            // soft shoulder, stronger highlight roll-off
     D2.lut[i] = Math.round(255 * Math.pow(clamp(y, 0, 1), 1 / 2.2));
   }
 }
@@ -129,9 +129,9 @@ function renderEarth2(ctxG, W, H, cam, S) {
               sampleRGBLod(regM, clamp(lodReg0 + graz, 0, 3), ru, rv, c, false);
               {
                 let qr = c[0] * 0.003921569, qg = c[1] * 0.003921569, qb = c[2] * 0.003921569;
-                const ql = 0.3 * qr + 0.59 * qg + 0.11 * qb, sat = 1.42;
+                const ql = 0.3 * qr + 0.59 * qg + 0.11 * qb, sat = 1.02;
                 qr = ql + (qr - ql) * sat; qg = ql + (qg - ql) * sat; qb = ql + (qb - ql) * sat;
-                qr = Math.pow(Math.max(qr, 0), 0.82) * 1.06; qg = Math.pow(Math.max(qg, 0), 0.82) * 1.04; qb = Math.pow(Math.max(qb, 0), 0.84);
+                qr = Math.pow(Math.max(qr, 0), 0.88) * 1.04; qg = Math.pow(Math.max(qg, 0), 0.88) * 1.0; qb = Math.pow(Math.max(qb, 0), 0.9);
                 ar += (qr - ar) * ed; ag += (qg - ag) * ed; ab += (qb - ab) * ed;
               }
               if (reliefStrength > 0.002) {
@@ -206,7 +206,7 @@ function renderEarth2(ctxG, W, H, cam, S) {
           if (Cc > 0.01) {
             const cd = nxq * Lx + nyq * Ly + nzq * Lz;
             const cl2 = smooth(-0.14, 0.38, cd), cw = Math.exp(-Math.pow((cd - 0.02) / 0.12, 2));
-            let kr = 0.05 + 1.12 * cl2 + 0.9 * cw, kg = 0.05 + 1.12 * cl2 + 0.38 * cw, kb = 0.06 + 1.12 * cl2 + 0.06 * cw;
+            let kr = 0.05 + 0.90 * cl2 + 0.80 * cw, kg = 0.05 + 0.90 * cl2 + 0.34 * cw, kb = 0.06 + 0.92 * cl2 + 0.06 * cw;
             // night clouds: cold, dark, with a faint glow from the cities beneath
             const nc = 1 - cl2;
             kr += 0.004 * nc; kg += 0.007 * nc; kb += 0.014 * nc;
@@ -225,15 +225,13 @@ function renderEarth2(ctxG, W, H, cam, S) {
           if (cosA > 0.6) {
             const ang = Math.acos(clamp(cosA, -1, 1));
             if (zone.a > 0.001) {
-              const ring = Math.exp(-Math.pow((ang - zone.R) / (zone.R * 0.018 + 0.0006), 2));
-              const inside = 1 - smooth(zone.R * 0.7, zone.R, ang);
-              const brg = Math.atan2(px * E0[0] + py * E0[1] + pz * E0[2], px * N0[0] + py * N0[1] + pz * N0[2]);
-              const dash = 0.5 + 0.5 * Math.sign(Math.sin(brg * 48 + (zone.spin || 0)));
-              r += 0.55 * ring * (0.4 + 0.6 * dash) * zone.a; g += 0.50 * ring * (0.4 + 0.6 * dash) * zone.a; bl += 0.36 * ring * (0.4 + 0.6 * dash) * zone.a;
+              // soft golden glow over the search area (no hard ring, no labels)
+              const gl = Math.exp(-Math.pow(ang / (zone.R * 0.95), 2));
+              r += 0.46 * gl * zone.a; g += 0.30 * gl * zone.a; bl += 0.10 * gl * zone.a;
             }
             for (let i = 0; i < rip.length; i++) {
               const q = rip[i], rr = Math.exp(-Math.pow((ang - q.r) / (0.0022 + q.r * 0.011), 2)) * q.a;
-              r += 0.65 * rr; g += 0.58 * rr; bl += 0.42 * rr;
+              r += 0.26 * rr; g += 0.23 * rr; bl += 0.16 * rr;
             }
           }
         }

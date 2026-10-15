@@ -78,7 +78,7 @@ function sunAt(t, c) {
   if (w <= 0) return world;
   const u = llv(c.lon, c.lat), clon = c.lon * D2R, clat = c.lat * D2R;
   const E = [-Math.sin(clon), Math.cos(clon), 0], N = [-Math.sin(clat) * Math.cos(clon), -Math.sin(clat) * Math.sin(clon), Math.cos(clat)];
-  const hd = (c.heading + 9) * D2R, el = (-33.6 + 2.0 * Math.sin(t * 0.5) + 2.2 * smooth(0.5, 4.5, t)) * D2R;
+  const hd = (c.heading + 9) * D2R, el = (-35.7 + 2.9 * smooth(0.0, 3.0, t) + 0.4 * Math.sin(t * 0.6) + 2.0 * smooth(3.0, 6.0, t)) * D2R;
   const h = add3(mul3(N, Math.cos(hd)), mul3(E, Math.sin(hd)));
   const open = norm3(add3(mul3(u, Math.sin(el)), mul3(h, Math.cos(el))));
   return norm3(add3(mul3(open, w), mul3(world, 1 - w)));
@@ -124,9 +124,8 @@ function initSearchPoints() {
 
 /* ------------------------------------------------------------------ state */
 const RIPS = [
-  { t: 6.3, dur: 2.6, rmax: 0.17, a: 0.8 }, { t: 7.8, dur: 2.6, rmax: 0.14, a: 0.5 },
-  ...TL.pings.map((p) => ({ t: p, dur: 2.6, rmax: 0.2, a: 0.75 })),
-  { t: 20.9, dur: 2.6, rmax: 0.15, a: 0.6 },
+  { t: 6.3, dur: 2.8, rmax: 0.15, a: 0.6 }, { t: 7.8, dur: 2.8, rmax: 0.12, a: 0.35 },
+  { t: 20.9, dur: 2.8, rmax: 0.13, a: 0.4 },
 ];
 function ripples(t) {
   const out = [];
@@ -137,19 +136,19 @@ function shake(t, t0, amp, dur) { const k = t - t0; if (k < 0 || k > dur) return
 function sceneState(t, W, H) {
   const c = cameraAt(t, W, H), S = { cam: c };
   S.sun = sunAt(t, c);
-  const worldFade = 1 - smooth(TL.logoIn + 0.5, TL.logoIn + 2.3, t);
+  const worldFade = 1 - smooth(TL.logoIn + 0.2, TL.logoIn + 1.15, t);
   S.worldA = worldFade;
-  S.exposure = (0.97 + 0.55 * (1 - smooth(0.22, 1.5, c.alt))) * (1 - 0.2 * smooth(12, 22, t));
+  S.exposure = (0.92 + 0.5 * (1 - smooth(0.22, 1.5, c.alt))) * (1 - 0.14 * smooth(12, 22, t));
   S.cloudA = 1 - 0.32 * smooth(13, 23, t);
-  const open = easeOutCubic(seg(t, 9.0, 13.6)), close = smooth(21.0, 24.0, t);
+  const open = smoother(9.2, 12.0, t), close = smooth(21.0, 24.0, t);
   S.cloudClear = 0.62 * open * (1 - 0.82 * close);
   S.lightsGain = 1.0;
-  S.haloGain = 1.0;
-  const zOn = smooth(TL.zoneOn, TL.zoneOn + 1.1, t) * (1 - smooth(10.6, 11.6, t));
+  S.haloGain = 0.35 + 0.65 * smooth(0.25, 0.8, c.alt);
+  const zOn = smooth(TL.zoneOn, TL.zoneOn + 1.1, t) * (1 - smooth(TL.reveal - 1.0, TL.reveal, t));
   const zBack = smooth(TL.arcStart - 0.4, TL.arcStart + 0.8, t) * (1 - smooth(TL.logoIn - 0.4, TL.logoIn + 0.8, t));
-  S.zone = { c: R0v, R: 0.074 + 0.003 * Math.sin(t * 2.0), a: Math.max(zOn, zBack * 0.7), spin: t * 0.5 };
+  S.zone = { c: R0v, R: 0.085 + 0.004 * Math.sin(t * 1.6), a: Math.max(zOn * 0.9, zBack * 0.55), spin: 0 };
   S.ripples = ripples(t);
-  const k1 = shake(t, TL.cues.impact, 7, 0.55), k2 = shake(t, TL.cues.logo, 5, 0.45);
+  const k1 = shake(t, TL.cues.impact, 6, 0.5), k2 = shake(t, TL.cues.logo, 5, 0.45);
   c.shiftX += (k1[0] + k2[0]) * (W / 1080); c.shiftY += (k1[1] + k2[1]) * (W / 1080);
   return S;
 }
@@ -176,19 +175,13 @@ function drawScene(ctx, gctx, W, H, t, frame) {
   }
   // ---- light overlays (additive)
   ctx.save(); ctx.globalCompositeOperation = 'lighter';
-  const deep = smooth(10.5, 12.5, t) * (1 - smooth(20.4, 21.6, t));
-  if (deep > 0.01) {
-    const b = { lon0: R0.lon - 9, lon1: R0.lon + 9, lat0: R0.lat - 6, lat1: R0.lat + 6 };
-    drawGraticule2(ctx, cam, 1, 0.11 * deep, b, 1 * U);
-    drawGraticule2(ctx, cam, 0.25, 0.04 * deep, { lon0: R0.lon - 2.5, lon1: R0.lon + 2.5, lat0: R0.lat - 1.7, lat1: R0.lat + 1.7 }, 1 * U);
-  }
   if (t > 13 && t < 20.6) drawSearchPoints(ctx, cam, t, W, H, U);
   if (t > TL.arcStart - 0.2 && t < TL.logoIn + 2.2) drawArcs(ctx, cam, t, U);
   ctx.restore();
   // the brand beacon on the region
   { const bA = smooth(TL.zoneOn + 0.3, TL.zoneOn + 1.3, t) * S.worldA * (1 - smooth(TL.logoIn - 0.2, TL.logoIn + 0.6, t));
     if (bA > 0.01) { const q = project(cam, R0v, [0, 0, 0], 1); if (q[2]) beacon(ctx, q[0], q[1], U * (t < 12 ? 0.8 : 1), t, bA); } }
-  drawFlare(ctx, cam, S.sun, (0.62 + 0.38 * smooth(0.0, 1.0, t)) * (1 - smooth(3.6, 5.6, t)), t);
+  drawFlare(ctx, cam, S.sun, 1 - smooth(3.6, 5.6, t), t);
   bloomPass(ctx, W, H, 0.32, 5);
   // ---- legibility scrims
   const sa = scrimAlpha(t);
@@ -197,15 +190,15 @@ function drawScene(ctx, gctx, W, H, t, frame) {
     g.addColorStop(0, 'rgba(3,6,14,0)'); g.addColorStop(0.5, `rgba(3,6,14,${0.55 * sa})`); g.addColorStop(1, `rgba(3,6,14,${0.88 * sa})`);
     ctx.fillStyle = g; ctx.fillRect(0, H * 0.5, W, H * 0.5);
   }
-  const hudA = smooth(TL.zoneOn + 0.2, TL.zoneOn + 1.2, t) * (1 - smooth(TL.logoIn - 0.6, TL.logoIn + 0.4, t));
+  const hudA = 1 - smooth(TL.logoIn - 0.2, TL.logoIn + 0.6, t);
   if (hudA > 0.01) {
-    const g = ctx.createLinearGradient(0, 0, 0, H * 0.2);
-    g.addColorStop(0, `rgba(3,6,14,${0.55 * hudA})`); g.addColorStop(1, 'rgba(3,6,14,0)');
+    const g = ctx.createLinearGradient(0, 0, 0, H * 0.17);
+    g.addColorStop(0, `rgba(3,6,14,${0.5 * hudA})`); g.addColorStop(1, 'rgba(3,6,14,0)');
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H * 0.2);
   }
-  gradePass(ctx, W, H, frame, { sat: 1.10, con: 1.07 });
+  gradePass(ctx, W, H, frame, { sat: 1.04, con: 1.07, grain: 2.0 });
   vignette(ctx, W, H, 0.42);
-  drawHUD(ctx, cam, t, W, H, U, hudA);
+  drawBrandBug(ctx, t, W, H, U, hudA);
   drawTexts(ctx, t, W, H, U, L);
   drawLogoBlock(ctx, t, W, H, U, L);
   const fade = 1 - smooth(TL.total - 0.6, TL.total, t);
@@ -228,31 +221,24 @@ function drawGraticule2(ctx, cam, stepDeg, alpha, b, lw) {
   ctx.stroke(); ctx.restore();
 }
 function drawSearchPoints(ctx, cam, t, W, H, U) {
-  const tp = [0, 0, 0], tc = project(cam, R0v, [0, 0, 0], 1);
-  const gate = smooth(13.0, 13.8, t) * (1 - smooth(19.6, 20.5, t));
+  const tp = [0, 0, 0];
+  const gate = smooth(13.0, 13.8, t) * (1 - smooth(19.4, 20.4, t));
   for (const p of SPTS) {
-    const k = seg(t, p.t0, p.t0 + 0.9); if (k <= 0) continue;
+    const k = easeOutCubic(seg(t, p.t0, p.t0 + 1.4)); if (k <= 0) continue;
     project(cam, p.v, tp, 1); if (!tp[2]) continue;
-    const lk = easeOutCubic(seg(t, p.t0 + 0.3, p.t0 + 1.6));
-    if (lk > 0 && tc[2]) {
-      ctx.strokeStyle = `rgba(255,244,228,${0.30 * gate})`; ctx.lineWidth = 1.3 * U;
-      ctx.beginPath(); ctx.moveTo(tc[0], tc[1]); ctx.lineTo(tc[0] + (tp[0] - tc[0]) * lk, tc[1] + (tp[1] - tc[1]) * lk); ctx.stroke();
-    }
-    const ping = seg(t, p.t0, p.t0 + 1.4);
-    thinRing(ctx, tp[0], tp[1], (6 + ping * 34) * U, WARM, (1 - ping) * 0.8 * gate, 1.6 * U);
-    lightDot(ctx, tp[0], tp[1], 17 * U, AMBER, k * gate);
-    if (p.lock && t > 17.4) {
-      const lq = easeOutBack(seg(t, 17.4 + (p.t0 - 13) * 0.05, 18.1 + (p.t0 - 13) * 0.05));
-      brackets(ctx, tp[0], tp[1], (21 - 8 * lq) * U, WARM, 0.95 * gate * clamp(lq * 2), 2 * U);
-    }
+    const pulse = 0.78 + 0.22 * Math.sin(t * 2.1 + p.lon * 7);
+    lightDot(ctx, tp[0], tp[1], (13 + 7 * k) * U, AMBER, 0.9 * k * gate * pulse);
   }
 }
 function drawArcs(ctx, cam, t, U) {
-  const fadeOut = 1 - smooth(TL.logoIn + 0.5, TL.logoIn + 2.2, t);
+  const fadeOut = 1 - smooth(TL.logoIn + 0.1, TL.logoIn + 0.9, t);
   CITIES.forEach((c, i) => {
     const st = TL.arcStart + i * 0.1, prog = easeInOut(seg(t, st, st + 1.9));
     if (prog <= 0) return;
-    const head = drawArc(ctx, cam, R0v, c.v, prog, 0.1, GOLD, 2.0 * U * (cam.d > 6 ? 0.6 : 1), 0);
+    ctx.globalCompositeOperation = 'source-over';
+    drawArc(ctx, cam, R0v, c.v, prog, 0.1, [6, 10, 22], 4.6 * U, 0); ctx.globalAlpha = 1;
+    ctx.globalCompositeOperation = 'lighter';
+    const head = drawArc(ctx, cam, R0v, c.v, prog, 0.1, GOLD, 2.2 * U * (cam.d > 6 ? 0.6 : 1), 0);
     ctx.globalAlpha = 1;
     if (head && prog < 1) lightDot(ctx, head[0], head[1], 18 * U, AMBER, 0.95 * fadeOut);
     if (prog >= 0.98) {
@@ -266,27 +252,18 @@ function drawArcs(ctx, cam, t, U) {
   });
 }
 
-/* --------------------------------------------------------------------- HUD */
-function drawHUD(ctx, cam, t, W, H, U, a) {
+/* ---------------------------------------------------------------- brand bug */
+// small, calm brand lock-up in the corner from the first frame (the feed preview must not be anonymous)
+function drawBrandBug(ctx, t, W, H, U, a) {
   if (a <= 0.01) return;
-  cornerFrame(ctx, W, H, 36 * U, 44 * U, a * 0.6, 2 * U);
-  const blink = 0.6 + 0.4 * Math.sin(t * 5);
-  ctx.save(); ctx.globalAlpha = a;
-  ctx.fillStyle = `rgba(255,45,68,${blink})`; ctx.beginPath(); ctx.arc(80 * U, 88 * U, 6.5 * U, 0, TAU); ctx.fill();
-  drawTextAt(ctx, 'ЗОНА СВО', 100 * U, 98 * U, { size: 32 * U, weight: 700, family: 'Montserrat', tracking: 4 * U, color: '#fff7ee', glow: 'rgba(0,0,0,0.65)', glowR: 10 });
-  drawTextAt(ctx, `${R0.lat.toFixed(2)}° с.ш.   ${R0.lon.toFixed(2)}° в.д.`, 80 * U, 134 * U, { size: 25 * U, weight: 500, family: '"JetBrains Mono"', tracking: 0.5 * U, color: 'rgba(255,238,215,0.92)', glow: 'rgba(0,0,0,0.65)', glowR: 8 });
-  drawTextAt(ctx, 'ПОИСК ВЕДЁТСЯ', W - 80 * U, 98 * U, { size: 28 * U, weight: 700, family: 'Montserrat', tracking: 3.5 * U, color: '#fff7ee', align: 'right', glow: 'rgba(0,0,0,0.65)', glowR: 10 });
-  const n = 1 + (Math.floor(t * 2.5) % 3);
-  for (let i = 0; i < 3; i++) { ctx.fillStyle = i < n ? 'rgba(255,190,110,0.95)' : 'rgba(255,255,255,0.22)'; ctx.beginPath(); ctx.arc(W - (80 - i * 20) * U + 0 * U, 128 * U, 4.4 * U, 0, TAU); ctx.fill(); }
-  const sb = smooth(13.4, 14.4, t) * (1 - smooth(19.6, 20.4, t));
-  if (sb > 0.01) {
-    const kmpp = ((cam.d - 1) * 6371) / cam.f, km = kmpp < 0.9 ? 50 : 100, len = km / kmpp;
-    ctx.globalAlpha = a * sb; ctx.strokeStyle = 'rgba(255,244,228,0.95)'; ctx.lineWidth = 2.2 * U;
-    const x0 = 66 * U, y0 = H - 66 * U;
-    ctx.beginPath(); ctx.moveTo(x0, y0 - 9 * U); ctx.lineTo(x0, y0); ctx.lineTo(x0 + len, y0); ctx.lineTo(x0 + len, y0 - 9 * U); ctx.stroke();
-    drawTextAt(ctx, `${km} КМ`, x0 + len + 14 * U, y0 + 8 * U, { size: 24 * U, weight: 500, family: '"JetBrains Mono"', color: 'rgba(255,244,228,0.95)', alpha: a * sb, glow: 'rgba(0,0,0,0.6)', glowR: 8 });
-  }
+  ctx.save(); ctx.globalAlpha = a * 0.95;
+  const x = 62 * U, y = 74 * U, r = 17 * U;
+  ctx.strokeStyle = '#ff2d44'; ctx.lineWidth = 2.6 * U; ctx.shadowColor = 'rgba(0,0,0,0.55)'; ctx.shadowBlur = 8;
+  ctx.beginPath(); ctx.arc(x + r, y, r, 0, TAU); ctx.stroke();
+  ctx.beginPath(); ctx.arc(x + r, y, r * 0.38, 0, TAU); ctx.stroke();
+  for (let i = 0; i < 4; i++) { const c = Math.cos(i * PI / 2), s = Math.sin(i * PI / 2); ctx.beginPath(); ctx.moveTo(x + r + c * r * 0.62, y + s * r * 0.62); ctx.lineTo(x + r + c * r * 1.2, y + s * r * 1.2); ctx.stroke(); }
   ctx.restore();
+  drawTextAt(ctx, 'ЦЕНТР ПОИСКОВЫХ РЕШЕНИЙ', x + r * 2 + 20 * U, y + 11 * U, { size: 32 * U, weight: 700, family: 'Montserrat', tracking: 2.4 * U, color: '#fff7ee', alpha: a * 0.96, glow: 'rgba(0,0,0,0.6)', glowR: 10 });
 }
 
 /* ------------------------------------------------------------------ texts */
@@ -294,10 +271,10 @@ const GOLDHEX = '#ffc978';
 function drawTexts(ctx, t, W, H, U, L) {
   const cx = W / 2, base = L.base, T = TL.text, AC = { accent: GOLDHEX, accentGlow: 'rgba(255,170,70,0.45)', accentBlur: 0.35 };
   drawWords(ctx, t, { lines: [{ text: 'Когда нет вестей от бойца…' }], x: cx, y: base - 26 * U, align: 'center', size: 62 * U, weight: 700, t0: T.a1[0], per: 0.16, dur: 0.85, tOut: T.a1[1], outDur: 0.7 });
-  drawWords(ctx, t, { lines: [{ text: 'самое трудное — *неизвестность*' }], x: cx, y: base + 52 * U, align: 'center', size: 54 * U, weight: 600, t0: T.a2[0], per: 0.15, dur: 0.85, tOut: T.a2[1], outDur: 0.7, accent: '#ff5063', accentGlow: 'rgba(255,40,60,0.35)', accentBlur: 0.3 });
+  drawWords(ctx, t, { lines: [{ text: 'самое трудное — *неизвестность*' }], x: cx, y: base + 52 * U, align: 'center', size: 57 * U, weight: 600, t0: T.a2[0], per: 0.15, dur: 0.85, tOut: T.a2[1], outDur: 0.7, accent: '#ff5063', accentGlow: 'rgba(255,40,60,0.35)', accentBlur: 0.3 });
   drawWords(ctx, t, { lines: [{ text: 'Профессиональный розыск', size: 58 * U, weight: 600 }, { text: '*в зоне СВО*', size: 98 * U, weight: 800 }], x: cx, y: base - 58 * U, align: 'center', size: 58 * U, weight: 700, lh: 1.14, t0: T.b1[0], per: 0.2, dur: 0.9, tOut: T.b1[1], outDur: 0.7, ...AC });
-  drawWords(ctx, t, { lines: [{ text: 'Находим *ответы* там,' }, { text: 'где другие опускают руки' }], x: cx, y: base - 40 * U, align: 'center', size: 64 * U, weight: 700, lh: 1.2, t0: T.c1[0], per: 0.16, dur: 0.85, tOut: T.c1[1], outDur: 0.7, ...AC });
-  drawWords(ctx, t, { lines: [{ text: '*Всегда на связи*', size: 86 * U, weight: 800 }, { text: 'Вежливо и бережно к каждой семье', size: 46 * U, weight: 600, family: 'Manrope' }], x: cx, y: base - 34 * U, align: 'center', size: 70 * U, weight: 800, lh: 1.3, t0: T.d1[0], per: 0.2, dur: 0.85, tOut: T.d1[1], outDur: 0.5, ...AC });
+  drawWords(ctx, t, { lines: [{ text: 'Ищем *ответы* там,' }, { text: 'где они нужны семьям' }], x: cx, y: base - 40 * U, align: 'center', size: 64 * U, weight: 700, lh: 1.2, t0: T.c1[0], per: 0.14, dur: 0.85, tOut: T.c1[1], outDur: 0.7, ...AC });
+  drawWords(ctx, t, { lines: [{ text: '*На связи с каждой семьёй*', size: 61 * U, weight: 800 }, { text: 'Вежливо и бережно', size: 50 * U, weight: 600, family: 'Manrope' }], x: cx, y: base - 34 * U, align: 'center', size: 70 * U, weight: 800, lh: 1.3, t0: T.d1[0], per: 0.11, dur: 0.8, tOut: T.d1[1], outDur: 0.5, ...AC });
 }
 
 /* ----------------------------------------------------------- logo + CTA card */
@@ -305,53 +282,50 @@ let MOTES = null;
 function initMotes() { const r = rng(88); MOTES = []; for (let i = 0; i < 70; i++) MOTES.push({ x: r(), y: r(), s: 0.4 + r() * 1.3, sp: 0.01 + r() * 0.03, ph: r() * TAU }); }
 function drawLogoBlock(ctx, t, W, H, U, L) {
   const t0 = TL.logoIn; if (t < t0 - 0.2) return;
-  const cx = W / 2, R = L.R, cy = L.emblemCy;
-  // warm dark backdrop that takes over from the planet
-  const bgA = smooth(t0 + 0.4, t0 + 2.0, t);
+  const cx = W / 2, R = L.R, cy = L.emblemCy, tf = t0 + 1.15;            // tf = the beat where the emblem locks (25.0 s)
+  const bgA = smooth(t0 + 0.3, t0 + 1.4, t);
   if (bgA > 0.01) {
     const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, Math.max(W, H) * 0.75);
     g.addColorStop(0, `rgba(22,26,40,${0.92 * bgA})`); g.addColorStop(0.5, `rgba(7,9,16,${0.96 * bgA})`); g.addColorStop(1, `rgba(3,4,8,${bgA})`);
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
-    // slow lights drifting up: homes waiting for news
     ctx.save(); ctx.globalCompositeOperation = 'lighter';
     for (const m of MOTES) {
       const y = ((m.y - t * m.sp) % 1 + 1) % 1, x = m.x + Math.sin(t * 0.4 + m.ph) * 0.01, tw = 0.5 + 0.5 * Math.sin(t * 1.3 + m.ph);
-      lightDot(ctx, x * W, y * H, (3 + m.s * 5) * U, AMBER, 0.28 * tw * bgA);
+      lightDot(ctx, x * W, y * H, (3 + m.s * 5) * U, AMBER, 0.26 * tw * bgA);
     }
     ctx.restore();
   }
-  const k = seg(t, t0, t0 + 1.2);
+  // light gathers (2 slim rings) just before the beat
+  const k = seg(t, t0 + 0.1, tf);
   if (k > 0 && k < 1) {
     ctx.save(); ctx.globalCompositeOperation = 'lighter';
-    for (let i = 0; i < 3; i++) { const kk = clamp(k * 1.2 - i * 0.12), rr = R * (2.6 - 1.6 * easeOutCubic(kk)); thinRing(ctx, cx, cy - R * 0.2, rr, WARM, (1 - kk) * 0.55 * kk * 3, 2 * U); }
+    for (let i = 0; i < 2; i++) { const kk = clamp(k * 1.15 - i * 0.14), rr = R * (2.4 - 1.5 * easeOutCubic(kk)); thinRing(ctx, cx, cy - R * 0.2, rr, WARM, (1 - kk) * 0.5 * kk * 3, 2 * U); }
     ctx.restore();
   }
-  const fl = Math.exp(-Math.pow((t - (t0 + 1.15)) / 0.12, 2));
+  // the beat: one clean amber flash
+  const fl = Math.exp(-Math.pow((t - tf) / 0.09, 2)) + 0.35 * Math.exp(-Math.pow((t - tf - 0.12) / 0.2, 2));
   if (fl > 0.01) {
-    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 2.2);
-    g.addColorStop(0, `rgba(255,214,160,${0.5 * fl})`); g.addColorStop(1, 'rgba(255,170,100,0)');
+    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, R * 2.6);
+    g.addColorStop(0, `rgba(255,222,170,${Math.min(0.9, 0.85 * fl)})`); g.addColorStop(1, 'rgba(255,170,100,0)');
     ctx.save(); ctx.globalCompositeOperation = 'lighter'; ctx.fillStyle = g; ctx.fillRect(0, 0, W, H); ctx.restore();
   }
-  const breathe = 1 + 0.010 * Math.sin(t * 1.6);
-  ctx.save(); ctx.translate(cx, cy); ctx.scale(breathe, breathe); ctx.translate(-cx, -cy);
-  drawEmblem(ctx, cx, cy, R, t, { neutral: true, a: smooth(t0 + 0.3, t0 + 1.0, t), disc: smooth(t0 + 0.8, t0 + 1.9, t), ring: easeOutCubic(seg(t, t0 + 0.25, t0 + 1.6)), cross: seg(t, t0 + 0.7, t0 + 1.7), text: seg(t, t0 + 1.1, t0 + 1.8), spin: Math.sin(t * 0.9) * 0.05 });
+  const breathe = 1 + 0.010 * Math.sin(t * 1.6), pop = 1 + 0.06 * Math.exp(-Math.pow((t - tf - 0.1) / 0.16, 2));
+  ctx.save(); ctx.translate(cx, cy); ctx.scale(breathe * pop, breathe * pop); ctx.translate(-cx, -cy);
+  drawEmblem(ctx, cx, cy, R, t, { neutral: true, crisp: true, a: smooth(tf - 0.05, tf + 0.12, t), disc: smooth(tf - 0.05, tf + 0.35, t), ring: easeOutCubic(seg(t, tf, tf + 0.5)), cross: seg(t, tf + 0.05, tf + 0.6), text: seg(t, tf + 0.18, tf + 0.7), spin: Math.sin(t * 0.9) * 0.04 });
   ctx.restore();
-  if (t > t0 + 1.9) {
+  if (t > tf + 0.7) {
     ctx.save(); ctx.globalCompositeOperation = 'lighter';
-    for (let i = 0; i < 3; i++) { const ph = (((t - (t0 + 1.9) - i * 0.95) % 2.85) + 2.85) % 2.85 / 2.85; thinRing(ctx, cx, cy, R * (1.02 + 0.85 * easeOutCubic(ph)), WARM, (1 - ph) * 0.26 * smooth(t0 + 1.9, t0 + 2.6, t), 2 * U); }
+    for (let i = 0; i < 3; i++) { const ph = (((t - (tf + 0.7) - i * 0.95) % 2.85) + 2.85) % 2.85 / 2.85; thinRing(ctx, cx, cy, R * (1.02 + 0.85 * easeOutCubic(ph)), WARM, (1 - ph) * 0.22 * smooth(tf + 0.7, tf + 1.4, t), 2 * U); }
     ctx.restore();
   }
-  drawWords(ctx, t, { lines: [{ text: 'ЦЕНТР ПОИСКОВЫХ РЕШЕНИЙ' }], x: cx, y: cy + R + 90 * U, align: 'center', size: 50 * U, weight: 800, tracking: 3.0 * U, t0: TL.wordmark, per: 0.13, dur: 0.85 });
-  drawWords(ctx, t, { lines: [{ text: '*Профессиональный розыск в зоне СВО*' }], x: cx, y: cy + R + 150 * U, align: 'center', size: 34 * U, weight: 600, family: 'Manrope', tracking: 0.5 * U, t0: TL.tagline, per: 0.07, dur: 0.75, blur: 6, accent: GOLDHEX, accentGlow: 'rgba(255,170,70,0.3)', accentBlur: 0.3 });
-  const sp = easeOutCubic(seg(t, TL.cta - 0.3, TL.cta + 0.6));
+  drawWords(ctx, t, { lines: [{ text: 'ЦЕНТР ПОИСКОВЫХ РЕШЕНИЙ' }], x: cx, y: cy + R + 90 * U, align: 'center', size: 50 * U, weight: 800, tracking: 3.0 * U, t0: TL.wordmark, per: 0.12, dur: 0.8 });
+  drawWords(ctx, t, { lines: [{ text: '*Профессиональный розыск в зоне СВО*' }], x: cx, y: cy + R + 150 * U, align: 'center', size: 36 * U, weight: 600, family: 'Manrope', tracking: 0.4 * U, t0: TL.tagline, per: 0.07, dur: 0.7, blur: 6, accent: GOLDHEX, accentGlow: 'rgba(255,170,70,0.3)', accentBlur: 0.3 });
+  const sp = easeOutCubic(seg(t, TL.cta - 0.3, TL.cta + 0.5));
   if (sp > 0) { ctx.save(); ctx.globalAlpha = sp; ctx.strokeStyle = 'rgba(255,201,120,0.85)'; ctx.lineWidth = 2 * U; ctx.beginPath(); ctx.moveTo(cx - 90 * U * sp, cy + R + 196 * U); ctx.lineTo(cx + 90 * U * sp, cy + R + 196 * U); ctx.stroke(); ctx.restore(); }
-  drawWords(ctx, t, { lines: [{ text: 'Напишите нам — мы ответим' }, { text: 'и подскажем, с чего начать' }], x: cx, y: cy + R + 262 * U, align: 'center', size: 44 * U, weight: 700, family: 'Manrope', lh: 1.26, t0: TL.cta, per: 0.1, dur: 0.75 });
-  const hk = easeOutCubic(seg(t, TL.cta + 1.5, TL.cta + 2.3));
+  drawWords(ctx, t, { lines: [{ text: 'Напишите нам — мы ответим' }, { text: 'и подскажем, с чего начать' }], x: cx, y: cy + R + 262 * U, align: 'center', size: 46 * U, weight: 700, family: 'Manrope', lh: 1.24, t0: TL.cta, per: 0.09, dur: 0.7 });
+  const hk = easeOutCubic(seg(t, TL.contact, TL.contact + 0.7));
   if (hk > 0) {
-    const yy = cy + R + 436 * U;
-    drawTextAt(ctx, 'Контакты — в описании канала', cx, yy, { size: 34 * U, weight: 700, family: 'Manrope', color: GOLDHEX, align: 'center', alpha: hk, glow: 'rgba(255,170,70,0.4)', glowR: 14 });
-    const bob = Math.sin(t * 4) * 5 * U;
-    ctx.save(); ctx.globalAlpha = hk; ctx.strokeStyle = GOLDHEX; ctx.lineWidth = 3.4 * U; ctx.lineCap = 'round'; ctx.lineJoin = 'round';
-    ctx.beginPath(); ctx.moveTo(cx - 13 * U, yy + 36 * U + bob); ctx.lineTo(cx, yy + 50 * U + bob); ctx.lineTo(cx + 13 * U, yy + 36 * U + bob); ctx.stroke(); ctx.restore();
+    const yy = cy + R + 428 * U;
+    drawTextAt(ctx, 'Контакты — в описании канала', cx, yy, { size: 42 * U, weight: 700, family: 'Manrope', color: GOLDHEX, align: 'center', alpha: hk, glow: 'rgba(255,170,70,0.4)', glowR: 14 });
   }
 }

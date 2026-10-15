@@ -38,6 +38,22 @@ for i in range(0, top):
 for i in range(bot + 1, a.shape[0]):
     w = ((a.shape[0] - 1 - i) / max(1, a.shape[0] - 1 - bot)) ** 1.5; a[i] = a[bot] * w + pb * (1 - w)
 print('valid rows', top, bot, 'of', a.shape[0])
+# polar caps: blend towards a soft, noisy, nearly uniform veil (equirectangular pinching otherwise makes wedge shapes)
+rr = np.random.default_rng(5)
+def veil(rows):
+    n = rr.standard_normal((rows, a.shape[1])).astype(np.float32)
+    k = np.exp(-0.5 * (np.arange(-120, 121) / 40.0) ** 2); k /= k.sum()
+    n = np.apply_along_axis(lambda v: np.convolve(np.concatenate([v[-120:], v, v[:120]]), k, mode="same")[120:-120], 1, n)
+    return np.clip(0.62 + n * 0.9, 0.35, 0.9)
+cap = int((90 - 76) / 180 * a.shape[0])
+vt = veil(cap)
+for i in range(cap):
+    w = float(np.clip((cap - i) / (cap * 0.55), 0, 1)); w = w * w * (3 - 2 * w)
+    a[i] = a[i] * (1 - w) + vt[i] * w
+vb = veil(cap)
+for j in range(cap):
+    i = a.shape[0] - 1 - j; w = float(np.clip((cap - j) / (cap * 0.55), 0, 1)); w = w * w * (3 - 2 * w)
+    a[i] = a[i] * (1 - w) + vb[j] * w
 (a * 255).astype(np.uint8).tofile(os.path.join(D, "clouds.u8")); print("clouds", a.shape, "coverage", float((a > 0.3).mean()))
 
 # ---- regional satellite crop (sharper, same colour family as the global texture)
