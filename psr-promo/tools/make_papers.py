@@ -78,27 +78,32 @@ h1{top:132px}.sub{top:414px}
 '<svg width="0" height="0" style="position:absolute"><defs><filter id="st" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="2" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="6" result="d"/><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="9" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -9 6.4" result="m"/><feComposite in="d" in2="m" operator="in"/></filter><path id="c1" d="M0 0m-100 0a100 100 0 1 1 200 0"/></defs></svg>'+ROWS+ARR,
 "Официальный","путь.","Письменно — и копию оставьте себе.")
 
-# 4 — care: a night facade, one lit window
+# 4 — care (v3): one big arched window with warm light + three words
 page("care","ЗАБОТА","""
-.top{z-index:5;color:#e8e0c6;border-bottom-color:rgba(232,224,198,.55)}.top span:last-child{color:#f2c46f}
-svg.fc{position:absolute;left:0;top:0;width:1080px;height:790px;-webkit-mask-image:linear-gradient(180deg,#000 90%,transparent);mask-image:linear-gradient(180deg,#000 90%,transparent)}
+h1{top:132px}.sub{display:none}
+.win{position:absolute;left:560px;top:456px;width:460px;height:764px}
+.halo{position:absolute;left:470px;top:380px;width:640px;height:900px;background:radial-gradient(closest-side,rgba(242,196,111,.75),rgba(242,196,111,.24) 60%,transparent);filter:blur(10px)}
+.wd{position:absolute;left:72px;top:560px;width:440px}
+.wd div{font:600 112px/1 'Cormorant Garamond',serif;letter-spacing:-.03em;padding:34px 0 30px;border-top:2.5px solid var(--ink)}
+.wd div:last-child{border-bottom:2.5px solid var(--ink);color:var(--rust)}
 """,
-'''<svg class="fc" viewBox="0 0 1080 790"><defs>
-<linearGradient id="fb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d120d"/><stop offset="1" stop-color="#151c12"/></linearGradient>
-<radialGradient id="gl" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd98f" stop-opacity=".85"/><stop offset=".35" stop-color="#f2c46f" stop-opacity=".3"/><stop offset="1" stop-color="#f2c46f" stop-opacity="0"/></radialGradient>
-<linearGradient id="wl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2c8"/><stop offset="1" stop-color="#f0b45a"/></linearGradient>
-<filter id="gr"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .5 -.1"/></filter></defs>
-<rect width="1080" height="790" fill="url(#fb)"/><g id="wins"></g>
-<circle cx="745" cy="445" r="470" fill="url(#gl)" style="mix-blend-mode:screen"/>
-<g transform="translate(670 350)"><rect width="150" height="190" fill="url(#wl)"/>
- <rect x="0" y="146" width="150" height="44" fill="#6a4410" opacity=".55"/>
- <path d="M104 100l8-22h22l8 22z" fill="#fff6dc" opacity=".95"/><path d="M123 100v46" stroke="#3a2a10" stroke-width="4"/>
- <path d="M46 118h36l-5 28H51z" fill="#2c2412"/><path d="M82 124c10 0 10 14 0 14" fill="none" stroke="#2c2412" stroke-width="4"/>
- <path d="M58 106c-8-10 8-14 0-26M70 106c-8-10 8-14 0-26" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="3" stroke-linecap="round"/>
- <path d="M75 0v190M0 95h150" stroke="#161b11" stroke-width="7"/><rect width="150" height="190" fill="none" stroke="#161b11" stroke-width="9"/></g>
-<rect width="1080" height="790" filter="url(#gr)" opacity=".35"/></svg>
-<script>let h="",sd=3;const r=()=>((sd=(sd*1664525+1013904223)>>>0)/4294967296);for(let j=0;j<3;j++)for(let i=0;i<5;i++){const x=55+i*205,y=130+j*220;if(i===3&&j===1)continue;const v=r();const f=v<.1?"#2a2f22":(v<.18?"#243038":"#1b2216");h+=`<rect x="${x}" y="${y}" width="150" height="190" fill="${f}"/><path d="M${x+75} ${y}v190M${x} ${y+95}h150" stroke="#0b0f0a" stroke-width="7"/><rect x="${x}" y="${y}" width="150" height="190" fill="none" stroke="#0b0f0a" stroke-width="9"/>`}document.getElementById("wins").innerHTML=h;</script>''',
-"Берегите себя,","пока ждёте.","Сон. Еда. Близкий человек рядом.")
+'''<div class="halo"></div>
+<svg class="win" viewBox="-12 -12 460 764"><defs>
+<clipPath id="ar"><path d="M0 740V218A218 218 0 0 1 436 218V740Z"/></clipPath>
+<linearGradient id="rm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0c2"/><stop offset=".55" stop-color="#f6c872"/><stop offset="1" stop-color="#d98f3d"/></linearGradient>
+<radialGradient id="lp" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fffbe6" stop-opacity=".95"/><stop offset="1" stop-color="#fff0c2" stop-opacity="0"/></radialGradient></defs>
+<g clip-path="url(#ar)"><rect width="436" height="740" fill="url(#rm)"/>
+ <circle cx="322" cy="330" r="190" fill="url(#lp)"/>
+ <g fill="#b9772c" opacity=".55"><rect x="40" y="250" width="120" height="10"/><rect x="44" y="196" width="16" height="54"/><rect x="64" y="208" width="14" height="42"/><rect x="82" y="190" width="18" height="60"/><rect x="104" y="204" width="14" height="46"/></g>
+ <path d="M278 360l22-62h56l22 62z" fill="#fff8de"/><path d="M328 360v200" stroke="#7a4f1c" stroke-width="9"/><ellipse cx="328" cy="566" rx="40" ry="9" fill="#7a4f1c"/>
+ <rect x="0" y="548" width="436" height="192" fill="#8a5a1e"/><rect x="0" y="548" width="436" height="14" fill="#a8701f"/>
+ <path d="M82 556h82l-10 64H92z" fill="#fff6dc"/><path d="M164 570c26 0 26 34 0 34" fill="none" stroke="#fff6dc" stroke-width="10"/>
+ <path d="M104 536c-18-24 18-30 0-60M134 536c-18-24 18-30 0-60" fill="none" stroke="rgba(255,255,255,.75)" stroke-width="6" stroke-linecap="round"/>
+ <path d="M218 0v740M0 330h436" stroke="#1d2615" stroke-width="14"/></g>
+<path d="M0 740V218A218 218 0 0 1 436 218V740Z" fill="none" stroke="#1d2615" stroke-width="22"/>
+<rect x="-14" y="716" width="464" height="24" fill="#1d2615"/></svg>
+<div class="wd"><div>Сон.</div><div>Еда.</div><div>Рядом.</div></div>''',
+"Берегите себя,","пока ждёте.","")
 
 # 5 — listen: a big voice message, a calm reply and listening waves
 page("listen","ДИАЛОГ","""
