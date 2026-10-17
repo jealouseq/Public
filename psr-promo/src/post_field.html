@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>ЦПР — пост «Памятка» (полевой стиль)</title>
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/fonts/post2.css">
+<style>
+  :root{--bg:#161b13;--bg2:#1d2418;--olive:#2a3322;--khaki:#b9a97a;--sand:#e6dab8;--paper:#f1e8cd;--ink:#12160f;--rust:#b4432f}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000}
+  .post{width:1080px;height:1350px;position:relative;overflow:hidden;background:radial-gradient(120% 90% at 30% 20%,#232c1d 0%,var(--bg) 60%,#0f130d 100%);color:var(--sand);font-family:Manrope,sans-serif}
+  svg.topo,svg.grid,svg.paper{position:absolute;inset:0}
+  .paper{opacity:.16;mix-blend-mode:overlay;pointer-events:none}
+  .vig{position:absolute;inset:0;background:radial-gradient(110% 100% at 50% 45%,transparent 55%,rgba(0,0,0,.55) 100%)}
+  .top{position:absolute;left:64px;right:64px;top:54px;display:flex;justify-content:space-between;align-items:center}
+  .brand{display:flex;align-items:center;gap:16px}
+  .mark{width:54px;height:54px;background:var(--sand);color:var(--ink);display:grid;place-items:center;font:700 26px Oswald;letter-spacing:.02em;clip-path:polygon(0 0,86% 0,100% 14%,100% 100%,0 100%)}
+  .brand b{font:600 25px Oswald;letter-spacing:.2em;color:var(--sand)}
+  .brand small{display:block;font:500 15px 'JetBrains Mono';letter-spacing:.18em;color:var(--khaki);margin-top:4px}
+  .no{font:500 20px 'JetBrains Mono';letter-spacing:.2em;color:var(--sand);border:1.5px solid var(--khaki);padding:9px 16px}
+  .kick{position:absolute;left:64px;top:158px;font:500 22px 'JetBrains Mono';letter-spacing:.3em;color:var(--khaki);display:flex;align-items:center;gap:16px}
+  .kick i{width:46px;height:2px;background:var(--khaki)}
+  h1{position:absolute;left:60px;top:196px;font:700 122px/1.12 Oswald;text-transform:uppercase;letter-spacing:.005em;color:var(--paper);text-shadow:0 5px 0 rgba(0,0,0,.35)}
+  h1 span{display:block;white-space:nowrap}
+  h1 .b{display:inline-block;margin-top:6px;background:var(--khaki);color:var(--ink);padding:0 22px 4px 18px;text-shadow:none;clip-path:polygon(0 0,100% 0,calc(100% - 22px) 100%,0 100%)}
+  .note{position:absolute;left:64px;top:560px;width:420px;font:400 25px/1.45 'JetBrains Mono';color:var(--sand)}
+  .note em{font-style:normal;color:var(--khaki)}
+  .note:before{content:"";display:block;width:64px;height:3px;background:var(--rust);margin-bottom:18px}
+  .tag{position:absolute;right:-6px;top:452px;width:560px;height:330px}
+  .list{position:absolute;left:64px;right:64px;top:800px;display:flex;flex-direction:column}
+  .row{display:flex;align-items:center;gap:24px;height:92px;border-top:1.5px dashed rgba(185,169,122,.45)}
+  .row:last-child{border-bottom:1.5px dashed rgba(185,169,122,.45)}
+  .n{flex:none;width:62px;height:62px;background:var(--olive);border:2px solid var(--khaki);display:grid;place-items:center;font:700 36px Oswald;color:var(--paper);clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%)}
+  .t{flex:1;min-width:0}
+  .t b{display:block;font:600 38px/1.05 Oswald;text-transform:uppercase;letter-spacing:.03em;color:var(--paper)}
+  .t s{display:block;text-decoration:none;margin-top:6px;font:500 26px/1.15 Manrope;color:rgba(230,218,184,.78)}
+  .ic{flex:none;width:46px;height:46px;fill:none;stroke:var(--khaki);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .row.last{background:var(--sand);border-color:transparent;margin-top:2px;padding:0 22px 0 18px;margin-left:-18px;margin-right:-22px;clip-path:polygon(0 0,100% 0,100% 100%,22px 100%,0 calc(100% - 22px))}
+  .row.last .n{background:var(--ink);border-color:var(--ink);color:var(--sand)}
+  .row.last .t b{color:var(--ink)} .row.last .t s{color:rgba(18,22,15,.78)} .row.last .ic{stroke:var(--ink)}
+  .tape{position:absolute;left:0;right:0;bottom:0;height:30px;background:repeating-linear-gradient(-45deg,var(--khaki) 0 26px,#1a2015 26px 52px);opacity:.9}
+  .foot{position:absolute;left:64px;right:64px;bottom:46px;display:flex;justify-content:space-between;font:500 18px 'JetBrains Mono';letter-spacing:.14em;color:var(--khaki)}
+</style>
+</head>
+<body>
+<div class="post" id="post">
+  <svg class="topo" id="topo" width="1080" height="1350"></svg>
+  <svg class="grid" id="grid" width="1080" height="1350"></svg>
+  <div class="vig"></div>
+  <div class="top">
+    <div class="brand"><div class="mark">ЦПР</div><div><b>ЦЕНТР ПОИСКОВЫХ РЕШЕНИЙ</b><small>РОЗЫСК · ЗОНА СВО</small></div></div>
+    <div class="no">№ 01</div>
+  </div>
+  <div class="kick"><i></i>ПАМЯТКА ДЛЯ СЕМЬИ</div>
+  <h1><span>Если нет вестей</span><span class="b">с чего начать</span></h1>
+  <svg class="tag" id="tag" viewBox="0 0 560 330"></svg>
+  <div class="note">Спокойно.<br>По порядку.<br><em>Без спешки.</em></div>
+  <div class="list">
+    <div class="row"><div class="n">1</div><div class="t"><b>Сохраните переписку</b><s>Сообщения, голосовые, фото, номера</s></div><svg class="ic" viewBox="0 0 40 40"><path d="M6 9h28v18H18l-8 6v-6H6z"/><path d="M13 18l5 5 9-9"/></svg></div>
+    <div class="row"><div class="n">2</div><div class="t"><b>Соберите сведения</b><s>ФИО, позывной, часть, последний контакт</s></div><svg class="ic" viewBox="0 0 40 40"><path d="M10 4h14l8 8v24H10z"/><path d="M24 4v8h8M15 20h12M15 26h12M15 14h5"/></svg></div>
+    <div class="row"><div class="n">3</div><div class="t"><b>Обратитесь официально</b><s>В командование части и в военкомат</s></div><svg class="ic" viewBox="0 0 40 40"><path d="M20 4l14 5v10c0 8-6 14-14 17C12 33 6 27 6 19V9z"/><path d="M13 20l5 5 9-10"/></svg></div>
+    <div class="row"><div class="n">4</div><div class="t"><b>Берегите личные данные</b><s>Документы — не в открытых чатах</s></div><svg class="ic" viewBox="0 0 40 40"><rect x="8" y="18" width="24" height="17"/><path d="M13 18v-5a7 7 0 0 1 14 0v5M20 25v5"/></svg></div>
+    <div class="row last"><div class="n">5</div><div class="t"><b>Берегите себя</b><s>Спите, ешьте, просите поддержки</s></div><svg class="ic" viewBox="0 0 40 40"><path d="M20 34S6 25.5 6 15.5A7.5 7.5 0 0 1 20 11a7.5 7.5 0 0 1 14 4.5C34 25.5 20 34 20 34z"/></svg></div>
+  </div>
+  <div class="foot"><span>ЦЕНТР ПОИСКОВЫХ РЕШЕНИЙ</span><span>ПРОФЕССИОНАЛЬНЫЙ РОЗЫСК В ЗОНЕ СВО</span></div>
+  <div class="tape"></div>
+  <svg class="paper" width="1080" height="1350"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="3" seed="9"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1.2 -.25"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+</div>
+<script>
+// ---- topographic contours: seeded value-noise field + marching squares
+(function(){
+  let s=7; const rnd=()=>((s=(s*1664525+1013904223)>>>0)/4294967296);
+  const G=64, T=[]; for(let i=0;i<G*G;i++) T.push(rnd());
+  const sm=t=>t*t*(3-2*t), at=(x,y)=>T[((y%G+G)%G)*G+((x%G+G)%G)];
+  const vn=(x,y)=>{const xi=Math.floor(x),yi=Math.floor(y),fx=sm(x-xi),fy=sm(y-yi);return (at(xi,yi)*(1-fx)+at(xi+1,yi)*fx)*(1-fy)+(at(xi,yi+1)*(1-fx)+at(xi+1,yi+1)*fx)*fy;};
+  const f=(x,y)=>0.55*vn(x*.0042+3,y*.0042+1)+0.30*vn(x*.0095+9,y*.0095+4)+0.15*vn(x*.021+2,y*.021+7);
+  const C=9, nx=Math.ceil(1080/C)+1, ny=Math.ceil(1350/C)+1, F=[];
+  for(let j=0;j<ny;j++)for(let i=0;i<nx;i++)F.push(f(i*C,j*C));
+  const val=(i,j)=>F[j*nx+i]; let major='', minor='';
+  for(let lv=0.20,k=0;lv<0.80;lv+=0.022,k++){
+    let d='';
+    for(let j=0;j<ny-1;j++)for(let i=0;i<nx-1;i++){
+      const a=val(i,j),b=val(i+1,j),c=val(i+1,j+1),e=val(i,j+1);
+      const idx=(a>lv?8:0)|(b>lv?4:0)|(c>lv?2:0)|(e>lv?1:0); if(idx===0||idx===15)continue;
+      const X=i*C,Y=j*C, L=(p,q)=>(lv-p)/(q-p);
+      const top=[X+C*L(a,b),Y], rig=[X+C,Y+C*L(b,c)], bot=[X+C*L(e,c),Y+C], lef=[X,Y+C*L(a,e)];
+      const seg={1:[lef,bot],2:[bot,rig],3:[lef,rig],4:[top,rig],5:[top,lef,bot,rig],6:[top,bot],7:[top,lef],8:[top,lef],9:[top,bot],10:[top,rig,lef,bot],11:[top,rig],12:[lef,rig],13:[bot,rig],14:[lef,bot]}[idx];
+      for(let q=0;q<seg.length;q+=2)d+=`M${seg[q][0].toFixed(1)} ${seg[q][1].toFixed(1)}L${seg[q+1][0].toFixed(1)} ${seg[q+1][1].toFixed(1)}`;
+    }
+    if(k%5===0)major+=d; else minor+=d;
+  }
+  document.getElementById('topo').innerHTML=`<path d="${minor}" fill="none" stroke="#9aa77a" stroke-opacity=".20" stroke-width="1.2"/><path d="${major}" fill="none" stroke="#b9a97a" stroke-opacity=".34" stroke-width="2.2"/>`;
+  // coordinate grid (map squares) with edge labels
+  let g='',L='';const S=135,cols='АБВГДЕЖЗ';
+  for(let x=0;x<=1080;x+=S)g+=`M${x} 0V1350`; for(let y=0;y<=1350;y+=S)g+=`M0 ${y}H1080`;
+  for(let i=0;i<8;i++)L+=`<text x="${i*S+S/2}" y="1288" text-anchor="middle">${cols[i]}</text>`;
+  for(let j=0;j<10;j++)L+=`<text x="1060" y="${j*S+S/2+6}" text-anchor="end">${String(j+1).padStart(2,'0')}</text>`;
+  document.getElementById('grid').innerHTML=`<path d="${g}" stroke="#b9a97a" stroke-opacity=".10" stroke-width="1" fill="none"/><g font-family="JetBrains Mono" font-size="16" fill="#b9a97a" fill-opacity=".0">${L}</g>`;
+})();
+// ---- dog tag + ball chain
+(function(){
+  const el=document.getElementById('tag');
+  // chain from the tag hole to the right edge, gently sagging
+  const P=[[132,70],[330,10],[520,-40],[640,-60]]; let beads='';
+  const bez=t=>{const u=1-t;return [u*u*u*P[0][0]+3*u*u*t*P[1][0]+3*u*t*t*P[2][0]+t*t*t*P[3][0],u*u*u*P[0][1]+3*u*u*t*P[1][1]+3*u*t*t*P[2][1]+t*t*t*P[3][1]];};
+  for(let i=0;i<=26;i++){const [x,y]=bez(i/26);beads+=`<circle cx="${x.toFixed(1)}" cy="${(y+150).toFixed(1)}" r="6.2" fill="url(#bead)"/>`;}
+  el.innerHTML=`<defs>
+    <radialGradient id="bead" cx=".35" cy=".3"><stop offset="0" stop-color="#f4f1e6"/><stop offset=".5" stop-color="#9aa09a"/><stop offset="1" stop-color="#3b403c"/></radialGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9ece6"/><stop offset=".35" stop-color="#a9b0aa"/><stop offset=".6" stop-color="#c7ccc4"/><stop offset="1" stop-color="#6d746f"/></linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".55"/></filter>
+    <clipPath id="tg"><path id="tp" d="M70 0h360a46 46 0 0 1 46 46v136a46 46 0 0 1-46 46H70a60 60 0 0 1-60-60v-110A60 60 0 0 1 70 0z"/></clipPath>
+  </defs>
+  <g transform="translate(36 26)">${beads}</g>
+  <g transform="translate(62 94) rotate(-6 240 114)" filter="url(#sh)">
+    <path d="M70 0h360a46 46 0 0 1 46 46v136a46 46 0 0 1-46 46H70a60 60 0 0 1-60-60v-110A60 60 0 0 1 70 0z" fill="url(#steel)"/>
+    <g clip-path="url(#tg)"><rect x="-40" y="-40" width="140" height="320" fill="url(#sheen)" transform="rotate(20 60 100) translate(240 0)"/></g>
+    <path d="M70 12h360a34 34 0 0 1 34 34v136a34 34 0 0 1-34 34H70a48 48 0 0 1-48-48v-108A48 48 0 0 1 70 12z" fill="none" stroke="#5d645f" stroke-width="2.4" stroke-opacity=".8"/>
+    <circle cx="62" cy="114" r="15" fill="#161b13" stroke="#6d746f" stroke-width="3"/>
+    <g font-family="Oswald" fill="#4a514c" text-anchor="start" style="paint-order:stroke" stroke="#f3f5ef" stroke-opacity=".55" stroke-width="1.2">
+      <text x="116" y="92" font-size="64" font-weight="700" letter-spacing="3">ЦПР</text>
+      <text x="116" y="132" font-size="25" font-weight="500" letter-spacing="5">ЦЕНТР ПОИСКОВЫХ</text>
+      <text x="116" y="164" font-size="25" font-weight="500" letter-spacing="5">РЕШЕНИЙ</text>
+      <text x="116" y="204" font-size="22" font-weight="500" letter-spacing="6">ИЩЕМ · ПОМОГАЕМ</text>
+    </g>
+  </g>`;
+})();
+</script>
+</body>
+</html>
