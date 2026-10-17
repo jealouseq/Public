@@ -60,24 +60,22 @@ page("phone","ПАМЯТКА","""
 <script>let h="",s=11;const r=()=>((s=(s*1664525+1013904223)>>>0)/4294967296);for(let i=0;i<24;i++){const x=150+i*11.4,a=20+Math.abs(Math.sin(i*.5))*84*(.45+r()*.7);h+=`<rect x="${x.toFixed(0)}" y="${(170-a/2).toFixed(0)}" width="6.4" height="${a.toFixed(0)}" rx="3.2" fill="#11150f"/>`}document.getElementById("wv").innerHTML=h;</script>''',
 "Следы","в телефоне.","Сохраните, пока ничего не удалилось.")
 
-# 3 — route: three big rubber stamps joined by dashed arrows that stop at the stamp edges
-import math
-R=140
-C=[(190,172,-8,"#34441f","КОМАНДОВАНИЕ ЧАСТИ",1),(570,312,5,"#34441f","ВОЕННЫЙ КОМИССАРИАТ",2),(878,470,-5,"#a8412b","КОПИИ — СЕБЕ",3)]
-def stamp(x,y,rot,col,txt,num):
-    return f'''<g transform="translate({x} {y}) rotate({rot})" fill="none" stroke="{col}"><circle r="{R}" stroke-width="9"/><circle r="{R-17}" stroke-width="3"/><circle r="64" stroke-width="3"/><text font-family="Oswald" font-weight="600" font-size="23" letter-spacing="3" fill="{col}" stroke="none" text-anchor="middle"><textPath href="#c1" startOffset="50%">{txt}</textPath></text><text y="32" text-anchor="middle" font-family="Cormorant Garamond" font-weight="700" font-size="104" fill="{col}" stroke="none">{num}</text><text y="108" text-anchor="middle" font-family="Oswald" font-size="22" letter-spacing="8" fill="{col}" stroke="none">★ ★ ★</text></g>'''
-def arrow(a,b):
-    (x1,y1),(x2,y2)=a[:2],b[:2]; d=math.hypot(x2-x1,y2-y1); ux,uy=(x2-x1)/d,(y2-y1)/d
-    sx,sy=x1+ux*(R+20),y1+uy*(R+20); ex,ey=x2-ux*(R+30),y2-uy*(R+30)
-    mx,my=(sx+ex)/2-uy*38,(sy+ey)/2+ux*38
-    tx,ty=ex-mx,ey-my; tl=math.hypot(tx,ty); tx,ty=tx/tl,ty/tl
-    p1=(ex-tx*26-ty*14,ey-ty*26+tx*14); p2=(ex-tx*26+ty*14,ey-ty*26-tx*14)
-    return f'<path d="M{sx:.0f} {sy:.0f}Q{mx:.0f} {my:.0f} {ex-tx*20:.0f} {ey-ty*20:.0f}" fill="none" stroke="#34441f" stroke-width="5.5" stroke-dasharray="1 15" stroke-linecap="round"/><path d="M{ex:.0f} {ey:.0f}L{p1[0]:.0f} {p1[1]:.0f}L{p2[0]:.0f} {p2[1]:.0f}Z" fill="#34441f"/>'
-ROUTE=''.join(arrow(C[i],C[i+1]) for i in range(2))+'<g filter="url(#st)">'+''.join(stamp(*c) for c in C)+'</g>'
+# 3 — route (v3): headline on top, three big rows, each with a rubber stamp as the marker
+def stamp3(col,num,txt):
+    return f'''<svg viewBox="-160 -160 320 320" width="196" height="196"><g filter="url(#st)" fill="none" stroke="{col}"><circle r="148" stroke-width="12"/><circle r="126" stroke-width="4"/><circle r="64" stroke-width="4"/><text font-family="Oswald" font-weight="600" font-size="27" letter-spacing="3" fill="{col}" stroke="none" text-anchor="middle"><textPath href="#c1" startOffset="50%">{txt}</textPath></text><text y="36" text-anchor="middle" font-family="Cormorant Garamond" font-weight="700" font-size="118" fill="{col}" stroke="none">{num}</text><text y="114" text-anchor="middle" font-family="Oswald" font-size="24" letter-spacing="8" fill="{col}" stroke="none">★ ★ ★</text></g></svg>'''
+rows=[("#34441f",1,"ЧАСТЬ","Командование части"),("#34441f",2,"ВОЕНКОМАТ","Военкомат"),("#a8412b",3,"КОПИИ","Копии — себе")]
+ROWS=''.join(f'<div class="rw" style="top:{504+i*244}px"><div class="sp" style="transform:rotate({[-7,5,-4][i]}deg)">{stamp3(c,n,t)}</div><div class="rt">{title}</div></div>' for i,(c,n,t,title) in enumerate(rows))
+ARR=''.join(f'<svg class="ar" style="top:{504+i*244+202}px" width="26" height="30" viewBox="0 0 26 30"><path d="M13 0v18" stroke="#34441f" stroke-width="5" stroke-dasharray="1 9" stroke-linecap="round"/><path d="M3 18h20L13 30z" fill="#34441f"/></svg>' for i in range(2))
 page("route","МАРШРУТ","""
-svg.rt{position:absolute;left:0;top:128px;width:1080px;height:680px}
+h1{top:132px}.sub{top:414px}
+.rw{position:absolute;left:72px;right:72px;height:200px;display:flex;align-items:center;gap:52px}
+.sp{flex:none;width:196px;height:196px}
+.rt{font:600 82px/1 'Cormorant Garamond',serif;letter-spacing:-.03em;color:var(--ink);white-space:nowrap}
+.rw:nth-of-type(1) .rt{color:var(--ink)}
+.ar{position:absolute;left:157px}
+.line{position:absolute;left:72px;right:72px;height:2.5px;background:var(--ink)}
 """,
-'<svg class="rt" viewBox="0 0 1080 680"><defs><filter id="st" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="2" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="5" result="d"/><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="9" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -9 6.4" result="m"/><feComposite in="d" in2="m" operator="in"/></filter><path id="c1" d="M0 0m-100 0a100 100 0 1 1 200 0"/></defs>'+ROUTE+'</svg>',
+'<svg width="0" height="0" style="position:absolute"><defs><filter id="st" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="2" result="w"/><feDisplacementMap in="SourceGraphic" in2="w" scale="6" result="d"/><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="9" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -9 6.4" result="m"/><feComposite in="d" in2="m" operator="in"/></filter><path id="c1" d="M0 0m-100 0a100 100 0 1 1 200 0"/></defs></svg>'+ROWS+ARR,
 "Официальный","путь.","Письменно — и копию оставьте себе.")
 
 # 4 — care: a night facade, one lit window
