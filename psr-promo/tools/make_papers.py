@@ -102,9 +102,9 @@ document.getElementById('w').innerHTML=h;</script>''',
 page("listen","ДИАЛОГ","""
 .b{position:absolute;padding:34px 44px;font:500 52px/1.3 Manrope;border-radius:38px}
 .b1{right:72px;top:176px;width:690px;background:linear-gradient(160deg,#4d6b38,#34441f);color:#f6efd8;border-bottom-right-radius:8px;box-shadow:0 24px 50px rgba(52,68,31,.35)}
-.b2{left:72px;top:404px;width:760px;background:var(--card);border:3px solid var(--ink);border-bottom-left-radius:8px;box-shadow:0 24px 50px rgba(70,56,20,.18)}
+.b2{left:72px;top:420px;width:760px;background:var(--card);border:3px solid var(--ink);border-bottom-left-radius:8px;box-shadow:0 24px 50px rgba(70,56,20,.18)}
 .b2 b{font-weight:800}
-.dots{position:absolute;left:72px;top:704px;display:flex;gap:12px;padding:20px 28px;border-radius:30px;border-bottom-left-radius:8px;background:rgba(17,21,15,.07)}
+.dots{position:absolute;left:72px;top:716px;display:flex;gap:12px;padding:20px 28px;border-radius:30px;border-bottom-left-radius:8px;background:rgba(17,21,15,.07)}
 .dots i{width:14px;height:14px;border-radius:50%;background:var(--ink);opacity:.5}.dots i:nth-child(2){opacity:.75}.dots i:nth-child(3){opacity:1}
 """,
 '<div class="b b1">Мы не знаем, с чего начать…</div><div class="b b2"><b>Расскажите, что известно.</b> Остальное — вместе.</div><div class="dots"><i></i><i></i><i></i></div>',
