@@ -14,7 +14,7 @@ const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.json': 'applica
   await pg.waitForFunction('window.READY === true', null, { timeout: 180000 });
   fs.mkdirSync(OUT, { recursive: true });
   for (let i = 0; i < list.length; i++) {
-    const d = await pg.evaluate((o) => window.renderBackdrop(o, 0.9), list[i]);
+    const d = await pg.evaluate((o) => window.renderBackdrop(o, 0.96), list[i]);
     fs.writeFileSync(path.join(OUT, `bg_${i}.jpg`), Buffer.from(d.split(',')[1], 'base64')); console.log('bg', i, JSON.stringify(list[i]));
   }
   await b.close(); s.close();

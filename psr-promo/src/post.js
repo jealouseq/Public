@@ -22,7 +22,12 @@ function backdrop(o) {
   const t = o.t, S = sceneState(t, W, H);
   Object.assign(S.cam, o.cam || {});
   S.cam.shiftY += (o.dy || 0) * H; S.cam.shiftX = (o.dx || 0) * W;
-  if (o.sunEl !== undefined) { /* reserved */ }
+  if (o.sunEl !== undefined) {              // sun placed relative to the camera's sub-point: elevation (deg) above the local horizontal, azimuth = heading + offset
+    const c = S.cam, u = llv(c.lon, c.lat), clon = c.lon * D2R, clat = c.lat * D2R;
+    const E = [-Math.sin(clon), Math.cos(clon), 0], N = [-Math.sin(clat) * Math.cos(clon), -Math.sin(clat) * Math.sin(clon), Math.cos(clat)];
+    const hd = (c.heading + (o.sunHd || 0)) * D2R, el = o.sunEl * D2R, h = add3(mul3(N, Math.cos(hd)), mul3(E, Math.sin(hd)));
+    S.sun = norm3(add3(mul3(u, Math.sin(el)), mul3(h, Math.cos(el))));
+  }
   const cam = makeCamera(S.cam, W, H);
   const bg = ctx.createLinearGradient(0, 0, 0, H); bg.addColorStop(0, '#02040a'); bg.addColorStop(1, '#050a16');
   ctx.globalCompositeOperation = 'source-over'; ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
