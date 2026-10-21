@@ -1,0 +1,432 @@
+[
+  {
+    "language": "uk",
+    "width": 390,
+    "dpr": 3,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 10)",
+        "y": 10
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 3.58419)",
+        "y": 3.58419
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.51703)",
+        "y": 0.51703
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 342,
+      "dpr": 3
+    },
+    "stage": {
+      "x": 24,
+      "y": 496.0625,
+      "width": 342,
+      "height": 256.90625
+    }
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "dpr": 3,
+    "motion": "reduce",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 342,
+      "dpr": 3
+    },
+    "stage": {
+      "x": 24,
+      "y": 496.0625,
+      "width": 342,
+      "height": 256.90625
+    }
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "dpr": 2,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 8.97335)",
+        "y": 8.97335
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 2.65774)",
+        "y": 2.65774
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.358393)",
+        "y": 0.358393
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-1374.webp",
+      "sourcePixels": 1374,
+      "renderedWidth": 668.578125,
+      "dpr": 2
+    },
+    "stage": {
+      "x": 696.53125,
+      "y": 153.421875,
+      "width": 668.578125,
+      "height": 557.140625
+    }
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "dpr": 2,
+    "motion": "reduce",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-1374.webp",
+      "sourcePixels": 1374,
+      "renderedWidth": 668.578125,
+      "dpr": 2
+    },
+    "stage": {
+      "x": 696.53125,
+      "y": 153.421875,
+      "width": 668.578125,
+      "height": 557.140625
+    }
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "dpr": 3,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 8.96843)",
+        "y": 8.96843
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 2.65818)",
+        "y": 2.65818
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.358466)",
+        "y": 0.358466
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 342,
+      "dpr": 3
+    },
+    "stage": {
+      "x": 24,
+      "y": 520.5625,
+      "width": 342,
+      "height": 256.90625
+    }
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "dpr": 3,
+    "motion": "reduce",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 342,
+      "dpr": 3
+    },
+    "stage": {
+      "x": 24,
+      "y": 520.5625,
+      "width": 342,
+      "height": 256.90625
+    }
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "dpr": 2,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 10)",
+        "y": 10
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 4.14145)",
+        "y": 4.14145
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.616566)",
+        "y": 0.616566
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-1374.webp",
+      "sourcePixels": 1374,
+      "renderedWidth": 668.578125,
+      "dpr": 2
+    },
+    "stage": {
+      "x": 696.53125,
+      "y": 153.421875,
+      "width": 668.578125,
+      "height": 557.140625
+    }
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "dpr": 2,
+    "motion": "reduce",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-1374.webp",
+      "sourcePixels": 1374,
+      "renderedWidth": 668.578125,
+      "dpr": 2
+    },
+    "stage": {
+      "x": 696.53125,
+      "y": 153.421875,
+      "width": 668.578125,
+      "height": 557.140625
+    }
+  },
+  {
+    "language": "uk",
+    "width": 320,
+    "dpr": 3,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 10)",
+        "y": 10
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 3.58148)",
+        "y": 3.58148
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.517107)",
+        "y": 0.517107
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp",
+      "sourcePixels": 960,
+      "renderedWidth": 280,
+      "dpr": 3
+    },
+    "stage": {
+      "x": 20,
+      "y": 506.40625,
+      "width": 280,
+      "height": 210.328125
+    }
+  },
+  {
+    "language": "uk",
+    "width": 901,
+    "dpr": 2,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 10)",
+        "y": 10
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 4.14152)",
+        "y": 4.14152
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.616579)",
+        "y": 0.616579
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-1374.webp",
+      "sourcePixels": 1374,
+      "renderedWidth": 372.140625,
+      "dpr": 2
+    },
+    "stage": {
+      "x": 482,
+      "y": 229.9375,
+      "width": 372.140625,
+      "height": 310.109375
+    }
+  },
+  {
+    "language": "uk",
+    "width": 1536,
+    "dpr": 2,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 8.97221)",
+        "y": 8.97221
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 2.28127)",
+        "y": 2.28127
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.295944)",
+        "y": 0.295944
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-1374.webp",
+      "sourcePixels": 1374,
+      "renderedWidth": 670,
+      "dpr": 2
+    },
+    "stage": {
+      "x": 786.140625,
+      "y": 152.828125,
+      "width": 670,
+      "height": 558.328125
+    }
+  },
+  {
+    "language": "uk",
+    "width": 3000,
+    "dpr": 1,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 10)",
+        "y": 10
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 4.7703)",
+        "y": 4.7703
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.616417)",
+        "y": 0.616417
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-720.webp",
+      "sourcePixels": 720,
+      "renderedWidth": 670,
+      "dpr": 1
+    },
+    "stage": {
+      "x": 1518,
+      "y": 152.828125,
+      "width": 670,
+      "height": 558.328125
+    }
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "dpr": 3,
+    "motion": "no-preference",
+    "saveData": true,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 10)",
+        "y": 10
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 3.08889)",
+        "y": 3.08889
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.431194)",
+        "y": 0.431194
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-tall-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 342,
+      "dpr": 3
+    },
+    "stage": {
+      "x": 24,
+      "y": 496.0625,
+      "width": 342,
+      "height": 256.90625
+    }
+  }
+]

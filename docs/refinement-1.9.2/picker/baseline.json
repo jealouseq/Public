@@ -1,0 +1,96 @@
+{
+  "run": "2026-10-03T17:45:14.839876+00:00",
+  "base": "http://localhost:5173",
+  "baselineCommit": "ad63767",
+  "sourceHashes": {
+    "src/components/GamePicker.tsx": "0638800ec0d308d8d118874e82ddbbc81676ac8d9b9c14d975258cd6ec3a4dc2",
+    "src/game-picker.css": "89e7a1f30f9186a27305572ce467baea3a40492dcb13f7552565ef7f6c7fd5c4"
+  },
+  "cases": [
+    {
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "row": {
+        "mortalKombat": {
+          "title": "Mortal Kombat 1",
+          "titleHeight": 20.796875,
+          "titleLineHeight": "20.8px",
+          "buttonY": 424.890625,
+          "buttonH": 44,
+          "cardDisplay": "block",
+          "cardHeight": 262.59375,
+          "artWidth": 156,
+          "artHeight": 156
+        },
+        "stalker": {
+          "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+          "titleHeight": 41.59375,
+          "titleLineHeight": "20.8px",
+          "buttonY": 445.6875,
+          "buttonH": 44,
+          "cardDisplay": "block",
+          "cardHeight": 262.59375,
+          "artWidth": 156,
+          "artHeight": 156
+        },
+        "buttonDifference": 20.796875
+      },
+      "missingPanel": {
+        "center": 195,
+        "titleTextAlign": "start",
+        "buttonCenter": 122.171875,
+        "buttonH": 44,
+        "titleBoxCenter": 195
+      },
+      "screens": [
+        "uk-390-before-cards.png",
+        "uk-390-before-missing.png"
+      ],
+      "nonReadRequests": []
+    },
+    {
+      "language": "ru",
+      "width": 390,
+      "height": 844,
+      "row": {
+        "mortalKombat": {
+          "title": "Mortal Kombat 1",
+          "titleHeight": 20.796875,
+          "titleLineHeight": "20.8px",
+          "buttonY": 450.890625,
+          "buttonH": 44,
+          "cardDisplay": "block",
+          "cardHeight": 262.59375,
+          "artWidth": 156,
+          "artHeight": 156
+        },
+        "stalker": {
+          "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+          "titleHeight": 41.59375,
+          "titleLineHeight": "20.8px",
+          "buttonY": 471.6875,
+          "buttonH": 44,
+          "cardDisplay": "block",
+          "cardHeight": 262.59375,
+          "artWidth": 156,
+          "artHeight": 156
+        },
+        "buttonDifference": 20.796875
+      },
+      "missingPanel": {
+        "center": 195,
+        "titleTextAlign": "start",
+        "buttonCenter": 133.53125,
+        "buttonH": 44,
+        "titleBoxCenter": 195
+      },
+      "screens": [
+        "ru-390-before-cards.png",
+        "ru-390-before-missing.png"
+      ],
+      "nonReadRequests": []
+    }
+  ],
+  "cause": "Grid stretches sibling articles to equal row height, but block-flow child buttons sit immediately after unequal title heights; the short title leaves unused space after its button. Missing heading/action inherit start alignment on mobile and space-between on desktop."
+}

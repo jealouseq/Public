@@ -1,0 +1,358 @@
+{
+  "generatedUtc": "2026-10-03T03:31:44.487678+00:00",
+  "site": "https://flowers-luxury.shop/",
+  "runtime": {
+    "device": "isolated authorized browser environment",
+    "browser": "Remote headless Chromium 153 via isolated Playwright 1.63",
+    "viewports": {
+      "desktop": [
+        1440,
+        1000
+      ],
+      "mobile": [
+        390,
+        844
+      ]
+    },
+    "devicePixelRatio": 1,
+    "contexts": "Fresh isolated browser contexts; no login or existing cookies",
+    "limits": "Phone-sized Chromium, not physical Safari/iOS; no live submission; performance single-run lab only"
+  },
+  "captureMethod": {
+    "motion": "Normal motion; fonts ready; 800ms settle after scroll; visible image decode bounded at2s; structural headings confirmed visible",
+    "imageMasks": "None; contact data in back-bug captures are harmless dummy values",
+    "screenshots": 103,
+    "manifest": "/tmp/joyrent-audit-20261003/live-browser-screenshots-manifest.json",
+    "excluded": [
+      "ru-mobile-failure.png",
+      "ua-mobile-contact-inspect.png",
+      "ua-mobile-failure.png",
+      "ua-mobile-game-modal-inspect.png",
+      "ua-mobile-validation-inspect.png"
+    ],
+    "missing": [],
+    "visibleUnloadedImages": []
+  },
+  "findings": [
+    {
+      "priority": "high",
+      "finding": "Continue transitions reuse a submit control",
+      "evidence": "All four contact screenshots show native required-field tooltip immediately after first Continue; all four Back -> Continue cases emit one intercepted POST with already filled dummy contacts",
+      "endpoint": "/wp-json/joyrent/v1/requests",
+      "actualSent": false,
+      "requestSelection": {
+        "console": "ps5",
+        "days": 7,
+        "startDate": "2026-10-10",
+        "controllers": 2,
+        "gameIds": [
+          "fc27"
+        ]
+      },
+      "proofFiles": [
+        "artifacts/ua-desktop-back-bug.json",
+        "artifacts/ua-mobile-back-bug.json",
+        "artifacts/ru-desktop-back-bug.json",
+        "artifacts/ru-mobile-back-bug.json"
+      ]
+    },
+    {
+      "priority": "high",
+      "finding": "Duplicate catalog IDs leave orphaned game cards under filters",
+      "catalog": {
+        "rows": 25,
+        "uniqueIds": 20,
+        "initialPs5Rendered": 24,
+        "initialPs5UniqueTitles": 19
+      },
+      "freshAllToTwo": {
+        "expected": 8,
+        "rendered": 13,
+        "extras": [
+          "God of War Ragnarök",
+          "ELDEN RING",
+          "Resident Evil Requiem",
+          "ASTRO BOT",
+          "Horizon Forbidden West"
+        ]
+      },
+      "afterConsoleSwitches": {
+        "renderedTwo": 21,
+        "uniqueTwoTitles": 13
+      },
+      "causeEvidence": "Fresh response duplicate IDs retain story/kids filters; extras do not match two; repeated console toggles increase orphaned DOM; root source review confirms repeated React keys",
+      "proof": "artifacts/fresh-filter-proof.json"
+    },
+    {
+      "priority": "medium",
+      "finding": "Mobile sticky rent bar shows starting rate after a different rental term has been selected",
+      "selected": "PS5 7days 2500грн; booking summary is correct",
+      "sticky": "PS5 starting600грн/1day",
+      "evidence": [
+        "artifacts/ua-mobile-summary-7days.png",
+        "artifacts/ua-mobile-games-all-7days.png",
+        "artifacts/ru-mobile-summary-7days.png",
+        "artifacts/ru-mobile-games-all-7days.png"
+      ]
+    },
+    {
+      "priority": "medium",
+      "finding": "7-day summary leaves delivery label ambiguous",
+      "tariff": "Delivery included",
+      "summary": "За адресою / По адресу",
+      "api": {
+        "deliveryFee": null,
+        "freeDeliveryFrom": 7
+      },
+      "interpretation": "Pricing communication inconsistency; no charge assessed or live backend submission performed"
+    },
+    {
+      "priority": "medium",
+      "finding": "FAQ -> browser Back resets rental selection",
+      "before": "7days,2controllers,2026-10-10,fc27selected",
+      "after": "Default3days,1controller,today,no selected game",
+      "language": "UA/RU and ?lang=ru query preserved",
+      "evidence": "All four faq-back.json snapshots"
+    },
+    {
+      "priority": "medium",
+      "finding": "No city or direct contact channel is configured",
+      "apiSettings": {
+        "city": "",
+        "phone": "",
+        "email": "",
+        "telegram": ""
+      },
+      "experience": "Delivery form asks for city/address; privacy modal tells users to use store contact channel but none is shown"
+    }
+  ],
+  "verifiedHealthy": {
+    "initialLoads": "Both language URLs and four contexts HTTP200; no initial console/page/asset errors",
+    "horizontalOverflow": "None in four hero snapshots",
+    "mobileMenu": "Opens then header link navigates to Rates successfully in UA/RU",
+    "gameDialog": "Native dialog with aria-labelledby; initial close-button focus; Tab reaches close/add/browser focus boundary without focusing background controls; Escape closes and restores game-art trigger",
+    "popupImages": "Square cover fully visible in FC27 and long-title STALKER captures; no clipping or black frame observed",
+    "faq": "Native details accordion opens first answer in UA/RU; back preserves language/query",
+    "mainLanguageSwitch": "UA -> RU -> UA preserves7day term,2controllers,start2026-10-10/end2026-10-17 in desktop and phone; language proof JSONs",
+    "legal": "Terms/privacy native dialogs open and close via Escape; UA privacy full-information URL is empty while RU has one",
+    "motion": "Normal-motion captured section headings visible; reduced-motion spot check keeps visible lower step headings visible and shortens transitions; no reduced-motion failure supported",
+    "emptyValidation": "Required fields prevent empty submission; native prompt follows browser locale"
+  },
+  "errorClassification": {
+    "freshNavigation": "No console, JS or asset/network errors",
+    "flow": "One console Failed to load resource:net::ERR_FAILED per context follows deliberate abort of unintended POST; not production backend evidence",
+    "blockedRequests": "Four unintended rental requests captured before transmission; no live POST permitted; no other non-GET attempted"
+  },
+  "heroImages": {
+    "ua-desktop": {
+      "src": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+      "natural": [
+        681,
+        510
+      ],
+      "box": {
+        "x": 706.6875,
+        "y": 185.078125,
+        "w": 658.421875,
+        "h": 493.8125,
+        "font": "16px",
+        "color": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(244, 244, 241) none 3px",
+        "display": "block"
+      }
+    },
+    "ua-mobile": {
+      "src": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+      "natural": [
+        383,
+        287
+      ],
+      "box": {
+        "x": 3.484375,
+        "y": 424.9765625,
+        "w": 383.03125,
+        "h": 287.265625,
+        "font": "16px",
+        "color": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(244, 244, 241) none 3px",
+        "display": "block"
+      }
+    },
+    "ru-desktop": {
+      "src": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+      "natural": [
+        681,
+        510
+      ],
+      "box": {
+        "x": 706.6875,
+        "y": 185.078125,
+        "w": 658.421875,
+        "h": 493.8125,
+        "font": "16px",
+        "color": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(244, 244, 241) none 3px",
+        "display": "block"
+      }
+    },
+    "ru-mobile": {
+      "src": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+      "natural": [
+        383,
+        287
+      ],
+      "box": {
+        "x": 3.484375,
+        "y": 424.9765625,
+        "w": 383.03125,
+        "h": 287.265625,
+        "font": "16px",
+        "color": "rgb(244, 244, 241)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "outline": "rgb(244, 244, 241) none 3px",
+        "display": "block"
+      }
+    }
+  },
+  "visualNotes": {
+    "type": "Hero copy readable at390; forms and main CTA fit both viewports; secondary/interface labels frequently10-12px so human review should prioritize readability",
+    "targets": "Mobile language controls38x44px, carousel arrows32x32px; these meet24px minimum but44px arrows would be easier to tap; small inline legal buttons require spacing/inline exception assessment",
+    "masks": "No redaction was needed because all typed contacts were synthetic"
+  },
+  "performance": {
+    "source": "/tmp/joyrent-audit-20261003/perf-summary.json",
+    "method": "Single fresh-context six-second headless lab samples, not Core Web Vitals certification",
+    "labLcpSeconds": {
+      "uaDesktop": 1.528,
+      "uaMobile": 0.704,
+      "ruDesktop": 0.568,
+      "ruMobile": 0.4
+    },
+    "labCls": {
+      "uaDesktop": 0.00068,
+      "uaMobile": 0.0005,
+      "ruDesktop": 0.00745,
+      "ruMobile": 0.01862
+    },
+    "opportunities": "Game covers720x720 have lazy/async but no srcset/sizes; initial lazy threshold still fetched10 desktop(~960KB) or7 phone(~705KB) covers; DualSense adds237KB",
+    "hero": "Responsive eager/async/high-priority WebP;23.3KB desktop or11.5KB phone atDPR1",
+    "fonts": "Fonts settled; five active faces total~137.5KB"
+  },
+  "supportingData": [
+    "artifacts/fresh-filter-proof.json",
+    "perf-results.json",
+    "perf-summary.json",
+    "perf-section-snapshots.json",
+    "perf-how-lower-snapshots.json",
+    "artifacts/language-desktop-proof.json",
+    "artifacts/language-mobile-proof.json"
+  ],
+  "intendedScreenshotNames": [
+    "language-desktop-ua-to-ru.png",
+    "language-mobile-ua-to-ru.png",
+    "ru-desktop-booking-7days.png",
+    "ru-desktop-booking-selected.png",
+    "ru-desktop-contacts.png",
+    "ru-desktop-continue-after-back.png",
+    "ru-desktop-delivery.png",
+    "ru-desktop-faq-back.png",
+    "ru-desktop-faq-expanded.png",
+    "ru-desktop-faq.png",
+    "ru-desktop-footer.png",
+    "ru-desktop-game-detail.png",
+    "ru-desktop-game-long-title-card.png",
+    "ru-desktop-game-long-title-detail.png",
+    "ru-desktop-games-all-7days.png",
+    "ru-desktop-games-duo.png",
+    "ru-desktop-hero.png",
+    "ru-desktop-how.png",
+    "ru-desktop-kit.png",
+    "ru-desktop-privacy.png",
+    "ru-desktop-rates-ps4.png",
+    "ru-desktop-rates-ps5.png",
+    "ru-desktop-summary-7days.png",
+    "ru-desktop-summary-controllers2.png",
+    "ru-desktop-terms.png",
+    "ru-desktop-validation-empty.png",
+    "ru-mobile-booking-7days.png",
+    "ru-mobile-booking-selected.png",
+    "ru-mobile-contacts.png",
+    "ru-mobile-continue-after-back.png",
+    "ru-mobile-delivery.png",
+    "ru-mobile-faq-back.png",
+    "ru-mobile-faq-expanded.png",
+    "ru-mobile-faq.png",
+    "ru-mobile-footer.png",
+    "ru-mobile-game-detail.png",
+    "ru-mobile-game-long-title-card.png",
+    "ru-mobile-game-long-title-detail.png",
+    "ru-mobile-games-all-7days.png",
+    "ru-mobile-games-duo.png",
+    "ru-mobile-hero.png",
+    "ru-mobile-how-lower.png",
+    "ru-mobile-how.png",
+    "ru-mobile-kit.png",
+    "ru-mobile-menu-open.png",
+    "ru-mobile-privacy.png",
+    "ru-mobile-rates-ps4.png",
+    "ru-mobile-rates-ps5.png",
+    "ru-mobile-summary-7days.png",
+    "ru-mobile-summary-controllers2.png",
+    "ru-mobile-terms.png",
+    "ru-mobile-validation-empty.png",
+    "ua-desktop-booking-7days.png",
+    "ua-desktop-booking-selected.png",
+    "ua-desktop-contacts.png",
+    "ua-desktop-continue-after-back.png",
+    "ua-desktop-delivery.png",
+    "ua-desktop-faq-back.png",
+    "ua-desktop-faq-expanded.png",
+    "ua-desktop-faq.png",
+    "ua-desktop-footer.png",
+    "ua-desktop-game-detail.png",
+    "ua-desktop-game-long-title-card.png",
+    "ua-desktop-game-long-title-detail.png",
+    "ua-desktop-games-all-7days.png",
+    "ua-desktop-games-duo.png",
+    "ua-desktop-hero.png",
+    "ua-desktop-how.png",
+    "ua-desktop-kit.png",
+    "ua-desktop-privacy.png",
+    "ua-desktop-rates-ps4.png",
+    "ua-desktop-rates-ps5.png",
+    "ua-desktop-summary-7days.png",
+    "ua-desktop-summary-controllers2.png",
+    "ua-desktop-terms.png",
+    "ua-desktop-validation-empty.png",
+    "ua-mobile-booking-7days.png",
+    "ua-mobile-booking-selected.png",
+    "ua-mobile-contacts.png",
+    "ua-mobile-continue-after-back.png",
+    "ua-mobile-delivery.png",
+    "ua-mobile-faq-back.png",
+    "ua-mobile-faq-expanded.png",
+    "ua-mobile-faq.png",
+    "ua-mobile-footer.png",
+    "ua-mobile-fresh-duo.png",
+    "ua-mobile-game-detail.png",
+    "ua-mobile-game-long-title-card.png",
+    "ua-mobile-game-long-title-detail.png",
+    "ua-mobile-games-all-7days.png",
+    "ua-mobile-games-duo.png",
+    "ua-mobile-hero.png",
+    "ua-mobile-how-lower.png",
+    "ua-mobile-how.png",
+    "ua-mobile-kit.png",
+    "ua-mobile-menu-open.png",
+    "ua-mobile-privacy.png",
+    "ua-mobile-rates-ps4.png",
+    "ua-mobile-rates-ps5.png",
+    "ua-mobile-summary-7days.png",
+    "ua-mobile-summary-controllers2.png",
+    "ua-mobile-terms.png",
+    "ua-mobile-validation-empty.png"
+  ]
+}

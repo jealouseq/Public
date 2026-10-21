@@ -1,0 +1,311 @@
+{
+  "head": "ed3145f0ea1a8fe21398dc4b3389dbba4343aaae",
+  "scope": "Read-only source, fresh local WordPress browser/REST tests, comparison against parent-captured live GET catalog. No product edits and no live POST. Test orders only localhost:8080. Notification probe intercepted all potential outgoing email.",
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "P1",
+      "kind": "defect",
+      "title": "Continue after Back silently submits the rental request",
+      "reproduce": "Open booking, click Continue, fill valid name/phone/address and consent, click the contact step Back button, then click Continue again. This produces one POST without ever clicking Send request.",
+      "verified": "Repeated isolated intercepted-POST probe reproduced in UA and RU; earlier real-local probes also created requests and replaced form with success unexpectedly.",
+      "cause": "The step===0/1 conditional reuses a button DOM node. onClick changes step synchronously so type=button becomes type=submit before the browser's default click action completes.",
+      "refs": [
+        "src/sections/Booking.tsx:80"
+      ],
+      "recommendation": "Give continue/submit separate keys (or distinct stable DOM nodes), prevent Continue default activation, and add a meaningful regression asserting no POST for Back→Continue with a valid retained draft. Only the explicit submit action should send.",
+      "evidence": [
+        "continue-submit.json"
+      ],
+      "workingEvidence": [
+        "continue-submit.json",
+        "continue-submit.log",
+        "continue-before-uk.png",
+        "continue-unintended-submit-uk.png",
+        "continue-unintended-submit-ru.png"
+      ]
+    },
+    {
+      "id": "F02",
+      "severity": "P1",
+      "kind": "operational gap",
+      "title": "New rental requests do not notify the store",
+      "reproduce": "Create an otherwise valid rental request in the local fixture; inspect WooCommerce status transitions, wp_mail attempts and new-order email flag.",
+      "verified": "JR-90 reached jr-request via checkout-draft; zero attempted email, newOrderEmailSent=false, no custom transition notification hook. A pre_wp_mail interceptor prevented all potential external mail.",
+      "cause": "Plugin defines custom order status but registers no email trigger. WooCommerce's standard New Order email handles pending/failed/cancelled to processing/completed/on-hold, not checkout-draft to jr-request.",
+      "refs": [
+        "wordpress/joyrent-rentals/includes/orders.php:22",
+        "wordpress/joyrent-rentals/includes/orders.php:47",
+        "wordpress/joyrent-rentals/joyrent-rentals.php:18",
+        "WooCommerce includes/emails/class-wc-email-new-order.php:47"
+      ],
+      "recommendation": "Connect one dependable store notification to completed jr-request creation, idempotently; retain pending/manual confirmation behavior. Verify a configured store recipient. This needs no extra storefront sections.",
+      "evidence": [
+        "notifications.json"
+      ],
+      "workingEvidence": [
+        "notifications.php",
+        "notifications.json"
+      ]
+    },
+    {
+      "id": "F03",
+      "severity": "P2",
+      "kind": "live defect",
+      "title": "Live duplicate IDs corrupt category filtering and accumulate stale game cards",
+      "reproduce": "Inspect parent-captured live /joyrent/v1/catalog JSON: 25 records, 20 unique IDs. Duplicate IDs are god-of-war-ragnarok, elden-ring, resident-evil-requiem, astro-bot, horizon-forbidden-west; paired records are identical.",
+      "verified": "Live GET records compared against fresh local catalog. No expected 1.5 IDs missing; duplicate records differ in no public fields. Live-catalog replay at390 and1440: All24→two13 (expected8), with five solo cards retained; further story/kids/racing switches accumulate ghost DOM: racing11 (expected1), return All34 (expected24), two23 (expected8). Filters in JSON are correct. Control removing only duplicate records restores every expected count and title, with identical product code.",
+      "cause": "JR_Games::records emits each managed post without enforcing ID uniqueness; Games uses key=game.id. seed_games checks and inserts without a migration lock, allowing concurrent seeding, but historical source of live duplicates is not provable read-only. Duplicate React sibling keys cause stale game-card DOM nodes to survive filter transitions; controlled dedup-only fixture confirms the cause.",
+      "refs": [
+        "wordpress/joyrent-rentals/includes/games.php:31",
+        "wordpress/joyrent-rentals/includes/games.php:46",
+        "wordpress/joyrent-rentals/includes/store.php:38",
+        "wordpress/joyrent-rentals/includes/store.php:46",
+        "src/sections/Games.tsx:42"
+      ],
+      "recommendation": "Enforce unique stable IDs in returned catalog, reconcile redundant managed posts while preserving any owner edits, and serialize migrations. Add a duplicate-record regression alongside existing migration coverage. Normalize unique game IDs before rendering as defense; verify all→two→story→kids→racing→all against DOM counts/titles. Do not change correct game filters to mask ghost cards.",
+      "evidence": [
+        "live-catalog-comparison.json",
+        "duplicate-filters.json",
+        "duplicate-control.json",
+        "live-catalog.json"
+      ],
+      "workingEvidence": [
+        "live-catalog-comparison.json",
+        "../live-fetch/catalog.json",
+        "duplicate-filters.json",
+        "duplicate-filters.py",
+        "duplicate-control.json",
+        "duplicate-control.py",
+        "duplicate-two-390-viewport.png",
+        "duplicate-two-1440-viewport.png"
+      ]
+    },
+    {
+      "id": "F04",
+      "severity": "P2",
+      "kind": "defect",
+      "title": "Catalog failure is hidden until the user completes contacts; no recovery",
+      "reproduce": "Block GET catalog in browser, load homepage, use Continue, fill contacts and consent, then submit. Continue remains enabled; no load error appears early; submit shows shop not accepting requests, and there is no retry action.",
+      "verified": "Offline GET browser probe: enabled first-step CTA, zero early errors, late unavailable message, zero retry controls. No POST sent from this case.",
+      "cause": "App catches catalog failure silently and retains acceptingRequests=false seeded fallback; booking checks readiness only inside submit.",
+      "refs": [
+        "src/App.tsx:23",
+        "src/lib/api.ts:21",
+        "src/sections/Booking.tsx:54",
+        "src/sections/Booking.tsx:80"
+      ],
+      "recommendation": "Track catalog loading/failed/ready, prevent order progression until current catalog is ready, show one concise in-place loading/failure state with retry, and preserve the draft during retry.",
+      "evidence": [
+        "probes.json"
+      ],
+      "workingEvidence": [
+        "probes.json",
+        "catalog-offline-late-error.png"
+      ]
+    },
+    {
+      "id": "F05",
+      "severity": "P2",
+      "kind": "defect",
+      "title": "Slow owner catalog can leave an invalid blank selected game",
+      "reproduce": "Delay catalog GET, select seeded It Takes Two from fallback, then resolve the owner catalog with zero published games. The catalog correctly empties but selected-game becomes a blank removable chip.",
+      "verified": "Browser route fixture returned a valid empty catalog; zero game cards plus selected-game text ['']. Server rejects stale game IDs against current published records.",
+      "cause": "gameIds is not reconciled when store catalog changes; compatibility pruning occurs only on an explicit console switch.",
+      "refs": [
+        "src/App.tsx:23",
+        "src/App.tsx:26",
+        "src/App.tsx:28",
+        "src/sections/Booking.tsx:77",
+        "wordpress/joyrent-rentals/includes/domain.php:55"
+      ],
+      "recommendation": "Allow game selection only after current catalog is ready and reconcile selected IDs/platform compatibility whenever catalog data changes. Preserve compatible selections without introducing extra counters.",
+      "evidence": [
+        "probes.json"
+      ],
+      "workingEvidence": [
+        "probes.json",
+        "empty-catalog-stale-game.png"
+      ]
+    },
+    {
+      "id": "F06",
+      "severity": "P2",
+      "kind": "defect",
+      "title": "FAQ/full legal navigation discards an in-progress order",
+      "reproduce": "Choose PS4, a future date and It Takes Two; fill contact step. Visit standalone FAQ, then its Choose dates CTA. Homepage returns PS5 / three days / today / no games / contact step closed. Legal Full information is also a full same-tab navigation.",
+      "verified": "Browser FAQ return probe yielded default PlayStation 5, 1400/three days, zero selected games and step0 despite prior PS4/name/date/game draft.",
+      "cause": "All draft values live only in component state; native FAQ return does a new homepage navigation.",
+      "refs": [
+        "src/App.tsx:15",
+        "src/sections/Booking.tsx:23",
+        "src/sections/Header.tsx:26",
+        "wordpress/joyrent/page-faq.php:9",
+        "src/App.tsx:33"
+      ],
+      "recommendation": "Persist a short-lived session draft across internal informational navigation; restore/reconcile it on return. Alternatively keep full legal information separate without replacing the active order. Avoid adding a new checkout page.",
+      "evidence": [
+        "probes.json"
+      ],
+      "workingEvidence": [
+        "probes.json",
+        "faq-return-lost-draft.png"
+      ]
+    },
+    {
+      "id": "F07",
+      "severity": "P2",
+      "kind": "defect",
+      "title": "UI permits 13+ games but REST rejects every such order",
+      "reproduce": "Add the first 13 PS5 games via their dialogs, complete contacts and consent, submit. UI has no restriction; actual local REST responds HTTP400 jr_validation / Некоректний список ігор.",
+      "verified": "13 visible selected chips, REST400, inline generic invalid-list error. This is a valid UI-created request rejected by domain validation.",
+      "cause": "toggleGame accepts unlimited IDs; domain hardcodes count(gameIds)>12.",
+      "refs": [
+        "src/App.tsx:28",
+        "wordpress/joyrent-rentals/includes/domain.php:54"
+      ],
+      "recommendation": "Align UI and server policy. For the simple wishlist model, permit all unique games in the active catalog with a sane server upper bound; otherwise guard addition at the shared limit and explain only on that attempt. No permanent selection counter is required.",
+      "evidence": [
+        "probes.json"
+      ],
+      "workingEvidence": [
+        "probes.json",
+        "thirteen-games-rejected.png"
+      ]
+    },
+    {
+      "id": "F08",
+      "severity": "P2",
+      "kind": "live configuration/installation defect",
+      "title": "UA privacy modal has no full-policy link",
+      "reproduce": "Live boot privacyUrl is empty; open UA privacy dialog: no Повна інформація. Russian equivalent has a native page link. Fresh local install has configured Privacy Policy ID3 in draft, while seeded UA privacy ID31 is published.",
+      "verified": "Parent's live captured boot confirms empty privacyUrl; localPolicyConfig in legal-routing.json confirms draft default prevents get_privacy_policy_url.",
+      "cause": "Seed only assigns published UA policy if privacy option is empty; stock WordPress already points to draft default. Boot only uses get_privacy_policy_url without a fallback to seeded route.",
+      "refs": [
+        "wordpress/joyrent-rentals/includes/store.php:85",
+        "wordpress/joyrent/functions.php:36",
+        "src/App.tsx:31",
+        "src/App.tsx:33"
+      ],
+      "recommendation": "Resolve the valid published owner-designated privacy policy, falling back safely to the seeded UA policy; preserve valid owner policy choices. Use consistent bilingual native page links.",
+      "evidence": [
+        "legal-routing.json"
+      ],
+      "workingEvidence": [
+        "legal-routing.json",
+        "../live-fetch/index.html"
+      ]
+    },
+    {
+      "id": "F09",
+      "severity": "P2",
+      "kind": "configuration behavior defect",
+      "title": "Unpublishing one tariff blocks every console and keeps unavailable offer visible",
+      "reproduce": "Read-only process-local product-status filter simulates owner drafting only PS4 30 days. JR_Store::catalog acceptingRequests becomes false, PS5 three-day product remains publish at1400, and PS4 30-day card remains in catalog at2500.",
+      "verified": "partial-catalog.json demonstrates global false status with valid PS5 product and retained unavailable PS4 tariff. No database mutation for this probe.",
+      "cause": "A single missing/unpublished/nonpriced tariff sets one global ready flag false while leaving bundled fallback tariff data.",
+      "refs": [
+        "wordpress/joyrent-rentals/includes/store.php:11",
+        "wordpress/joyrent-rentals/includes/store.php:16",
+        "src/sections/Booking.tsx:54"
+      ],
+      "recommendation": "Expose availability per tariff or omit unusable tariffs, allow valid offers to keep accepting requests, and choose the first valid term when a selected one disappears. Keep global unavailable only for unavailable WooCommerce/currency/whole store.",
+      "evidence": [
+        "partial-catalog.json"
+      ],
+      "workingEvidence": [
+        "partial-catalog.php",
+        "partial-catalog.json"
+      ]
+    },
+    {
+      "id": "F10",
+      "severity": "P3",
+      "kind": "accessibility/design",
+      "title": "Low-contrast input boundaries and small mobile secondary targets",
+      "reproduce": "At390px date input border against fill measures1.61:1; fill against booking backdrop1.06:1. PS console targets are68x35, carousel33x33, filters28px high. Main controls/date inputs/controllers already48–54px.",
+      "verified": "Computed-style measurements in controls.json plus actual viewport screenshots. Small targets meet WCAG2.2's general24px minimum where spacing exception applies; 44px is a usability recommendation, not a claimed blanket AA failure.",
+      "refs": [
+        "src/styles.css:110",
+        "src/styles.css:281",
+        "src/styles.css:295",
+        "src/styles.css:298"
+      ],
+      "recommendation": "Use a restrained stronger input outline that visibly defines control boundaries, enlarge secondary mobile hit areas to44px with invisible padding/min-height, and preserve the minimal visual style. Avoid extra labels or counters.",
+      "evidence": [
+        "controls.json"
+      ],
+      "workingEvidence": [
+        "controls.json",
+        "booking-viewport-390.png",
+        "booking-viewport-1440.png"
+      ]
+    },
+    {
+      "id": "F11",
+      "severity": "P3",
+      "kind": "portable-install localization",
+      "title": "UA native legal pages inherit WordPress locale rather than explicit UA",
+      "reproduce": "Local fresh WP en-US: /umovy-orendy/ and /konfidentsiinist/ emit lang=en-US; RU legal correctly emits ru. Parent's LIVE UA terms currently emits uk via site locale, so this is not a live defect.",
+      "verified": "legal-routing.json and parent live terms HTML comparison.",
+      "cause": "language_attributes filter covers front page, RU legal, and FAQ but omits UA legal slugs.",
+      "refs": [
+        "wordpress/joyrent/functions.php:17"
+      ],
+      "recommendation": "Apply explicit UK language attributes to UA legal pages and ignore lang=ru override on a fixed-UA legal route; keep RU routes explicitly RU.",
+      "evidence": [
+        "legal-routing.json"
+      ],
+      "workingEvidence": [
+        "legal-routing.json"
+      ]
+    },
+    {
+      "id": "F12",
+      "severity": "P2",
+      "kind": "live-backed pricing presentation defect",
+      "title": "Free-delivery tariffs stay pending when short-term delivery fee is unspecified",
+      "reproduce": "With captured live settings deliveryFee=null/freeDeliveryFrom=7, choose PS5 7 or30 days. The tariff promises Доставка включена, delivery panel says Включені від7днів, but summary says За адресою/По адресу instead of included/zero.",
+      "verified": "Browser probe replayed unmodified parent-captured LIVE catalog on local byte-identical app. Four UA/RU 7/30-day cases show pending delivery. No live requests and no POST.",
+      "cause": "Both Booking deliveryPrice and JR_Orders delivery computation check null delivery_fee before the free-delivery days threshold, leaving long tariffs pending.",
+      "refs": [
+        "src/sections/Booking.tsx:45",
+        "wordpress/joyrent-rentals/includes/orders.php:34",
+        "src/sections/Tariffs.tsx:21",
+        "src/sections/Story.tsx:45"
+      ],
+      "recommendation": "Apply pickup/free-threshold before checking short-term fee null; show Включено/Включена for eligible delivery (subject to existing service-zone qualification) and persist delivery0 rather than pending. Keep a single concise label in current summary.",
+      "evidence": [
+        "delivery-dialog.json"
+      ],
+      "workingEvidence": [
+        "delivery-dialog.json",
+        "delivery-7-uk-viewport.png",
+        "delivery-30-ru-viewport.png"
+      ]
+    }
+  ],
+  "verifiedHealthy": [
+    "Fresh npm test:16 passed; TypeScript noEmit:0 errors; Docker PHP domain:15 assertions passed.",
+    "Fresh local real REST integration: prices authoritative from WooCommerce, awaiting_confirmation, no PII receipt, same-key idempotency, changed payload conflict, unsupported console/date/consent/phone/game/compatibility/honeypot/pickup rejected.",
+    "Fresh concurrency regression:6 identical simultaneous submissions create1 request; expired lock/durable recovery works; rate admission permits exactly1 remaining request.",
+    "Fresh migration suite:14 checks, restored fixture. Owner game text/thumbnail, drafts/trash, prices/settings/orders preserved; no duplicate posts on sequential re-run; intentionally unpublished catalog stays empty.",
+    "Fresh bilingual/FAQ tests:RU validation/receipt/language retry and native routes work; standalone FAQ7 answers per language, localized return link, no homepage FAQ or horizontal overflow.",
+    "UA/RU at320/390/768/1440/1920:10 browser cases with no horizontal overflow, uncaught JavaScript error or HTTP400+ assets under normal catalog load.",
+    "PS5 one-day switches safely to PS4 three-day; incompatible Spider-Man removed, compatible It Takes Two retained; future return dates correct, past dates stop Continue.",
+    "Language switch preserves contacts/date/games/consent; form Back retains contacts; required consent native validation; modal Escape restores opener; native dialogs keep underlying controls inert; mobile menu first-link focus and Escape restoration work. Native modal Tab may cycle through browser/body sentinel, not underlying page controls.",
+    "Native game dialog semantics confirmed with captured live catalog replay: get_by_role(dialog,name) resolves native DIALOG; open=true and :modal=true; aria-labelledby titles valid; close button receives initial focus; underlying wordmark programmatic focus is blocked; Escape closes and restores opener in both UA/RU. Missing explicit role and aria-modal attributes are not defects for native showModal dialogs."
+  ],
+  "intentionalProductBoundaries": [
+    "Current flow submits a rental request, not confirmed booking/payment; all messaging consistently says availability, delivery, deposit and games are agreed manually. Absence of stock calendar/payment is an intentional scope boundary, not a code defect.",
+    "Additional controller fee, delivery fees and deposits are configurable and may be null/pending. Two controllers supported, pickup hidden unless enabled. Owner managed game titles/RU copy/thumbnails and priorities are supported.",
+    "All-contact-empty default leaves only booking link; user must configure contact and service region before public operation. Parent owns live product assessment.",
+    "Full-section element screenshots can expose offscreen fixed skip-link as a screenshot artifact. controls.json verifies top=-70px, unfocused; actual viewport captures show no overlay. Do not report that artifact as a product bug."
+  ],
+  "simplificationRecommendations": [
+    "Keep existing console→term/date→contacts request path, but on mobile let contact step focus on contacts plus a compact editable rental recap instead of repeating the entire chooser above the send action.",
+    "Avoid new promotional blocks, counters, FAQ homepage expansion or explanatory banners; concentrate fixes in existing catalog/order/legal states.",
+    "Represent manual confirmation once in summary/success; use concise field-specific errors for phone/list issues rather than generic server invalid-list messages."
+  ],
+  "evidenceNote": "evidence contains files included beside this report; workingEvidence preserves original probe/capture filenames from the ignored work directory. Source refs are relative to the repository root."
+}

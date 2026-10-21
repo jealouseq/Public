@@ -1,0 +1,494 @@
+[
+  {
+    "origin": "local-baseline",
+    "base": "http://localhost:8080/",
+    "run": "2026-10-03T11:32:14.697908+00:00",
+    "assets": [
+      {
+        "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+        "bytes": 92276,
+        "sha256": "3a577b6042e4db7b60caebb9ebed5e1a53d222d18eff2a27e42967fa86ac5fdd",
+        "status": 200
+      },
+      {
+        "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+        "bytes": 485194,
+        "sha256": "99b37d873bfc96b85b555b7255a2aca4d7e755d46f4137756d1c94d9eac25b08",
+        "status": 200
+      }
+    ],
+    "screens": 8,
+    "cases": [
+      {
+        "language": "ua",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "process": [
+          {
+            "itemCx": 270.71875,
+            "nodeCx": 96.375,
+            "nodeDelta": -174.344,
+            "titleGlyphDelta": -99.875,
+            "bodyGlyphDelta": -30.555,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 720,
+            "nodeCx": 545.65625,
+            "nodeDelta": -174.344,
+            "titleGlyphDelta": -93.18,
+            "bodyGlyphDelta": -50.797,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 1169.28125,
+            "nodeCx": 994.9375,
+            "nodeDelta": -174.344,
+            "titleGlyphDelta": -168.188,
+            "bodyGlyphDelta": -53.617,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          }
+        ],
+        "opener": {
+          "x": 804.9375,
+          "y": 386.59375,
+          "w": 186,
+          "h": 50,
+          "cx": 897.9375,
+          "cy": 411.59375
+        },
+        "openerStyle": {
+          "font": "15px",
+          "radius": "999px",
+          "minHeight": "50px",
+          "minWidth": "186px"
+        },
+        "deliveryText": "Доставляємо Одесою. Зелена зона — 200 грн, жовта — 300 грн за доставку та повернення. Червона — за тарифом таксі в обидва боки. Від 7 днів зелена й жовта зони безкоштовні. Зону підтвердимо за адресою.",
+        "overflow": false,
+        "posts": [],
+        "errors": [],
+        "httpFailures": [],
+        "leafletRequested": false
+      },
+      {
+        "language": "ua",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "process": [
+          {
+            "itemCx": 195,
+            "nodeCx": 45,
+            "nodeDelta": -150,
+            "titleGlyphDelta": -26.547,
+            "bodyGlyphDelta": 21.906,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 195,
+            "nodeCx": 45,
+            "nodeDelta": -150,
+            "titleGlyphDelta": -20.656,
+            "bodyGlyphDelta": 23.688,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 195,
+            "nodeCx": 45,
+            "nodeDelta": -150,
+            "titleGlyphDelta": -86.664,
+            "bodyGlyphDelta": 21.07,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          }
+        ],
+        "opener": {
+          "x": 97,
+          "y": 682.328125,
+          "w": 196,
+          "h": 52,
+          "cx": 195,
+          "cy": 708.328125
+        },
+        "openerStyle": {
+          "font": "15px",
+          "radius": "999px",
+          "minHeight": "52px",
+          "minWidth": "196px"
+        },
+        "deliveryText": "Доставляємо Одесою. Зелена зона — 200 грн, жовта — 300 грн за доставку та повернення. Червона — за тарифом таксі в обидва боки. Від 7 днів зелена й жовта зони безкоштовні. Зону підтвердимо за адресою.",
+        "overflow": false,
+        "posts": [],
+        "errors": [],
+        "httpFailures": [],
+        "leafletRequested": false
+      },
+      {
+        "language": "ru",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "process": [
+          {
+            "itemCx": 270.71875,
+            "nodeCx": 96.375,
+            "nodeDelta": -174.344,
+            "titleGlyphDelta": -92.68,
+            "bodyGlyphDelta": -25.961,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 720,
+            "nodeCx": 545.65625,
+            "nodeDelta": -174.344,
+            "titleGlyphDelta": -102.352,
+            "bodyGlyphDelta": -42.914,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 1169.28125,
+            "nodeCx": 994.9375,
+            "nodeDelta": -174.344,
+            "titleGlyphDelta": -160.289,
+            "bodyGlyphDelta": -59.602,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          }
+        ],
+        "opener": {
+          "x": 804.9375,
+          "y": 386.59375,
+          "w": 186,
+          "h": 50,
+          "cx": 897.9375,
+          "cy": 411.59375
+        },
+        "openerStyle": {
+          "font": "15px",
+          "radius": "999px",
+          "minHeight": "50px",
+          "minWidth": "186px"
+        },
+        "deliveryText": "Доставляем по Одессе. Зелёная зона — 200 грн, жёлтая — 300 грн за доставку и возврат. Красная — по тарифу такси в обе стороны. От 7 дней зелёная и жёлтая зоны бесплатны. Зону подтвердим по адресу.",
+        "overflow": false,
+        "posts": [],
+        "errors": [],
+        "httpFailures": [],
+        "leafletRequested": false
+      },
+      {
+        "language": "ru",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "process": [
+          {
+            "itemCx": 195,
+            "nodeCx": 45,
+            "nodeDelta": -150,
+            "titleGlyphDelta": -20.211,
+            "bodyGlyphDelta": 24.367,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 195,
+            "nodeCx": 45,
+            "nodeDelta": -150,
+            "titleGlyphDelta": -28.727,
+            "bodyGlyphDelta": 26.422,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 195,
+            "nodeCx": 45,
+            "nodeDelta": -150,
+            "titleGlyphDelta": -79.711,
+            "bodyGlyphDelta": 15.508,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          }
+        ],
+        "opener": {
+          "x": 97,
+          "y": 682.71875,
+          "w": 196,
+          "h": 52,
+          "cx": 195,
+          "cy": 708.71875
+        },
+        "openerStyle": {
+          "font": "15px",
+          "radius": "999px",
+          "minHeight": "52px",
+          "minWidth": "196px"
+        },
+        "deliveryText": "Доставляем по Одессе. Зелёная зона — 200 грн, жёлтая — 300 грн за доставку и возврат. Красная — по тарифу такси в обе стороны. От 7 дней зелёная и жёлтая зоны бесплатны. Зону подтвердим по адресу.",
+        "overflow": false,
+        "posts": [],
+        "errors": [],
+        "httpFailures": [],
+        "leafletRequested": false
+      }
+    ]
+  },
+  {
+    "origin": "live-baseline",
+    "base": "https://flowers-luxury.shop/",
+    "run": "2026-10-03T11:32:18.666576+00:00",
+    "assets": [
+      {
+        "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+        "bytes": 92276,
+        "sha256": "3a577b6042e4db7b60caebb9ebed5e1a53d222d18eff2a27e42967fa86ac5fdd",
+        "status": 200
+      },
+      {
+        "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+        "bytes": 485194,
+        "sha256": "99b37d873bfc96b85b555b7255a2aca4d7e755d46f4137756d1c94d9eac25b08",
+        "status": 200
+      }
+    ],
+    "screens": 8,
+    "cases": [
+      {
+        "language": "ua",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "process": [
+          {
+            "itemCx": 270.71875,
+            "nodeCx": 96.375,
+            "nodeDelta": -174.344,
+            "titleGlyphDelta": -99.719,
+            "bodyGlyphDelta": -30.844,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 720,
+            "nodeCx": 545.65625,
+            "nodeDelta": -174.344,
+            "titleGlyphDelta": -93.531,
+            "bodyGlyphDelta": -50.344,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 1169.28125,
+            "nodeCx": 994.9375,
+            "nodeDelta": -174.344,
+            "titleGlyphDelta": -168.594,
+            "bodyGlyphDelta": -53.344,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          }
+        ],
+        "opener": {
+          "x": 804.9375,
+          "y": 386.59375,
+          "w": 186,
+          "h": 50,
+          "cx": 897.9375,
+          "cy": 411.59375
+        },
+        "openerStyle": {
+          "font": "15px",
+          "radius": "999px",
+          "minHeight": "50px",
+          "minWidth": "186px"
+        },
+        "deliveryText": "Доставляємо Одесою. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.",
+        "overflow": false,
+        "posts": [],
+        "errors": [],
+        "httpFailures": [],
+        "leafletRequested": false
+      },
+      {
+        "language": "ua",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "process": [
+          {
+            "itemCx": 195,
+            "nodeCx": 45,
+            "nodeDelta": -150,
+            "titleGlyphDelta": -26.344,
+            "bodyGlyphDelta": 24.5,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 195,
+            "nodeCx": 45,
+            "nodeDelta": -150,
+            "titleGlyphDelta": -21.117,
+            "bodyGlyphDelta": 26.5,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 195,
+            "nodeCx": 45,
+            "nodeDelta": -150,
+            "titleGlyphDelta": -87.094,
+            "bodyGlyphDelta": 22.5,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          }
+        ],
+        "opener": {
+          "x": 97,
+          "y": 634.234375,
+          "w": 196,
+          "h": 52,
+          "cx": 195,
+          "cy": 660.234375
+        },
+        "openerStyle": {
+          "font": "15px",
+          "radius": "999px",
+          "minHeight": "52px",
+          "minWidth": "196px"
+        },
+        "deliveryText": "Доставляємо Одесою. Привеземо, підключимо та заберемо після оренди. Зону й час підтвердимо за адресою.",
+        "overflow": false,
+        "posts": [],
+        "errors": [],
+        "httpFailures": [],
+        "leafletRequested": false
+      },
+      {
+        "language": "ru",
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        },
+        "process": [
+          {
+            "itemCx": 270.71875,
+            "nodeCx": 96.375,
+            "nodeDelta": -174.344,
+            "titleGlyphDelta": -92.031,
+            "bodyGlyphDelta": -25.844,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 720,
+            "nodeCx": 545.65625,
+            "nodeDelta": -174.344,
+            "titleGlyphDelta": -102.719,
+            "bodyGlyphDelta": -41.844,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 1169.28125,
+            "nodeCx": 994.9375,
+            "nodeDelta": -174.344,
+            "titleGlyphDelta": -160.406,
+            "bodyGlyphDelta": -57.844,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          }
+        ],
+        "opener": {
+          "x": 804.9375,
+          "y": 386.59375,
+          "w": 186,
+          "h": 50,
+          "cx": 897.9375,
+          "cy": 411.59375
+        },
+        "openerStyle": {
+          "font": "15px",
+          "radius": "999px",
+          "minHeight": "50px",
+          "minWidth": "186px"
+        },
+        "deliveryText": "Доставляем по Одессе. Привезём, подключим и заберём после аренды. Зону и время подтвердим по адресу.",
+        "overflow": false,
+        "posts": [],
+        "errors": [],
+        "httpFailures": [],
+        "leafletRequested": false
+      },
+      {
+        "language": "ru",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "process": [
+          {
+            "itemCx": 195,
+            "nodeCx": 45,
+            "nodeDelta": -150,
+            "titleGlyphDelta": -19.617,
+            "bodyGlyphDelta": 26.5,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 195,
+            "nodeCx": 45,
+            "nodeDelta": -150,
+            "titleGlyphDelta": -29.344,
+            "bodyGlyphDelta": 26.5,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          },
+          {
+            "itemCx": 195,
+            "nodeCx": 45,
+            "nodeDelta": -150,
+            "titleGlyphDelta": -80.367,
+            "bodyGlyphDelta": 16,
+            "titleAlign": "start",
+            "bodyAlign": "start"
+          }
+        ],
+        "opener": {
+          "x": 97,
+          "y": 633.71875,
+          "w": 196,
+          "h": 52,
+          "cx": 195,
+          "cy": 659.71875
+        },
+        "openerStyle": {
+          "font": "15px",
+          "radius": "999px",
+          "minHeight": "52px",
+          "minWidth": "196px"
+        },
+        "deliveryText": "Доставляем по Одессе. Привезём, подключим и заберём после аренды. Зону и время подтвердим по адресу.",
+        "overflow": false,
+        "posts": [],
+        "errors": [],
+        "httpFailures": [],
+        "leafletRequested": false
+      }
+    ]
+  }
+]

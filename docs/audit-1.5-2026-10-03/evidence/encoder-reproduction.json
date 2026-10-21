@@ -1,0 +1,111 @@
+{
+  "matches": [
+    {
+      "quality": 92,
+      "effort": 6
+    }
+  ],
+  "checks": [
+    {
+      "quality": 86,
+      "effort": 5,
+      "bytes": 55818,
+      "exactMatch": false
+    },
+    {
+      "quality": 86,
+      "effort": 6,
+      "bytes": 53814,
+      "exactMatch": false
+    },
+    {
+      "quality": 88,
+      "effort": 5,
+      "bytes": 62594,
+      "exactMatch": false
+    },
+    {
+      "quality": 88,
+      "effort": 6,
+      "bytes": 60336,
+      "exactMatch": false
+    },
+    {
+      "quality": 90,
+      "effort": 5,
+      "bytes": 73454,
+      "exactMatch": false
+    },
+    {
+      "quality": 90,
+      "effort": 6,
+      "bytes": 71132,
+      "exactMatch": false
+    },
+    {
+      "quality": 92,
+      "effort": 5,
+      "bytes": 85528,
+      "exactMatch": false
+    },
+    {
+      "quality": 92,
+      "effort": 6,
+      "bytes": 83212,
+      "exactMatch": true
+    },
+    {
+      "quality": 94,
+      "effort": 5,
+      "bytes": 105068,
+      "exactMatch": false
+    },
+    {
+      "quality": 94,
+      "effort": 6,
+      "bytes": 103150,
+      "exactMatch": false
+    },
+    {
+      "quality": 96,
+      "effort": 5,
+      "bytes": 131754,
+      "exactMatch": false
+    },
+    {
+      "quality": 96,
+      "effort": 6,
+      "bytes": 124872,
+      "exactMatch": false
+    }
+  ],
+  "otherDerivatives": [
+    {
+      "target": "ps5-commercial-desktop-close-768.webp",
+      "width": 768,
+      "bytes": 23294,
+      "exactReproduction": {
+        "quality": 89,
+        "effort": 6
+      }
+    },
+    {
+      "target": "ps5-commercial-mobile.webp",
+      "width": 1120,
+      "bytes": 48246,
+      "exactReproduction": {
+        "quality": 92,
+        "effort": 6
+      }
+    },
+    {
+      "target": "ps5-commercial-mobile-560.webp",
+      "width": 560,
+      "bytes": 11462,
+      "exactReproduction": {
+        "quality": 89,
+        "effort": 6
+      }
+    }
+  ]
+}

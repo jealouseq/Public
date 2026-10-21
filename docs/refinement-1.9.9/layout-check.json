@@ -1,0 +1,258 @@
+[
+  {
+    "language": "uk",
+    "width": 390,
+    "processHeight": 703,
+    "cards": [
+      {
+        "height": 226,
+        "width": 163,
+        "copyFont": "14px",
+        "overflow": false
+      },
+      {
+        "height": 226,
+        "width": 163,
+        "copyFont": "14px",
+        "overflow": false
+      },
+      {
+        "height": 226,
+        "width": 163,
+        "copyFont": "14px",
+        "overflow": false
+      },
+      {
+        "height": 226,
+        "width": 163,
+        "copyFont": "14px",
+        "overflow": false
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "processHeight": 555,
+    "cards": [
+      {
+        "height": 262,
+        "width": 303,
+        "copyFont": "15px",
+        "overflow": false
+      },
+      {
+        "height": 262,
+        "width": 303,
+        "copyFont": "15px",
+        "overflow": false
+      },
+      {
+        "height": 262,
+        "width": 303,
+        "copyFont": "15px",
+        "overflow": false
+      },
+      {
+        "height": 262,
+        "width": 303,
+        "copyFont": "15px",
+        "overflow": false
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 320,
+    "processHeight": 707,
+    "cards": [
+      {
+        "height": 228,
+        "width": 132,
+        "copyFont": "14px",
+        "overflow": false
+      },
+      {
+        "height": 228,
+        "width": 132,
+        "copyFont": "14px",
+        "overflow": false
+      },
+      {
+        "height": 228,
+        "width": 132,
+        "copyFont": "14px",
+        "overflow": false
+      },
+      {
+        "height": 228,
+        "width": 132,
+        "copyFont": "14px",
+        "overflow": false
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "processHeight": 703,
+    "cards": [
+      {
+        "height": 226,
+        "width": 163,
+        "copyFont": "14px",
+        "overflow": false
+      },
+      {
+        "height": 226,
+        "width": 163,
+        "copyFont": "14px",
+        "overflow": false
+      },
+      {
+        "height": 226,
+        "width": 163,
+        "copyFont": "14px",
+        "overflow": false
+      },
+      {
+        "height": 226,
+        "width": 163,
+        "copyFont": "14px",
+        "overflow": false
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 768,
+    "processHeight": 793,
+    "cards": [
+      {
+        "height": 262,
+        "width": 332,
+        "copyFont": "15px",
+        "overflow": false
+      },
+      {
+        "height": 262,
+        "width": 332,
+        "copyFont": "15px",
+        "overflow": false
+      },
+      {
+        "height": 262,
+        "width": 332,
+        "copyFont": "15px",
+        "overflow": false
+      },
+      {
+        "height": 262,
+        "width": 332,
+        "copyFont": "15px",
+        "overflow": false
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 430,
+    "processHeight": 703,
+    "cards": [
+      {
+        "height": 226,
+        "width": 183,
+        "copyFont": "14px",
+        "overflow": false
+      },
+      {
+        "height": 226,
+        "width": 183,
+        "copyFont": "14px",
+        "overflow": false
+      },
+      {
+        "height": 226,
+        "width": 183,
+        "copyFont": "14px",
+        "overflow": false
+      },
+      {
+        "height": 226,
+        "width": 183,
+        "copyFont": "14px",
+        "overflow": false
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 1024,
+    "processHeight": 821,
+    "cards": [
+      {
+        "height": 262,
+        "width": 447,
+        "copyFont": "15px",
+        "overflow": false
+      },
+      {
+        "height": 262,
+        "width": 447,
+        "copyFont": "15px",
+        "overflow": false
+      },
+      {
+        "height": 262,
+        "width": 447,
+        "copyFont": "15px",
+        "overflow": false
+      },
+      {
+        "height": 262,
+        "width": 447,
+        "copyFont": "15px",
+        "overflow": false
+      }
+    ],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "processHeight": 555,
+    "cards": [
+      {
+        "height": 262,
+        "width": 303,
+        "copyFont": "15px",
+        "overflow": false
+      },
+      {
+        "height": 262,
+        "width": 303,
+        "copyFont": "15px",
+        "overflow": false
+      },
+      {
+        "height": 262,
+        "width": 303,
+        "copyFont": "15px",
+        "overflow": false
+      },
+      {
+        "height": 262,
+        "width": 303,
+        "copyFont": "15px",
+        "overflow": false
+      }
+    ],
+    "overflow": false
+  }
+]

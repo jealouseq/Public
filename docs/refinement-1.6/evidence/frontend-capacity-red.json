@@ -1,0 +1,19 @@
+{
+  "phase": "red",
+  "results": [
+    {
+      "language": "uk",
+      "atCapacityAddDisabled": false,
+      "localExplanation": false,
+      "selectedCount": 1,
+      "posts": 0
+    },
+    {
+      "language": "ru",
+      "atCapacityAddDisabled": false,
+      "localExplanation": false,
+      "selectedCount": 1,
+      "posts": 0
+    }
+  ]
+}

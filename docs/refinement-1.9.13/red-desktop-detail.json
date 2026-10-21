@@ -1,0 +1,225 @@
+[
+  {
+    "width": 1440,
+    "density": 1,
+    "motion": [
+      {
+        "object": "kit-item kit-card-plus",
+        "travel": 2.35504150390625,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-card-ea",
+        "travel": 2.35504150390625,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-controller",
+        "travel": 3.0936279296875,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-box-fc",
+        "travel": 0.904266357421875,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-box-ufc",
+        "travel": 0.898712158203125,
+        "duration": 16000
+      }
+    ],
+    "images": [
+      {
+        "file": "dualsense-cutout-560.webp",
+        "pixels": 560,
+        "rendered": 417.500732421875,
+        "ratio": 1.3413150121953146
+      },
+      {
+        "file": "kit-fc27-case-320.webp",
+        "pixels": 320,
+        "rendered": 253.6602783203125,
+        "ratio": 1.261529799300765
+      },
+      {
+        "file": "kit-ufc6-case-320.webp",
+        "pixels": 320,
+        "rendered": 267.269775390625,
+        "ratio": 1.197292135005942
+      }
+    ],
+    "problems": [
+      "Desktop movement is too small or slow to be perceptible",
+      "Desktop product bitmap lacks a 2x detail reserve"
+    ],
+    "pass": false
+  },
+  {
+    "width": 1920,
+    "density": 1,
+    "motion": [
+      {
+        "object": "kit-item kit-card-plus",
+        "travel": 2.379364013671875,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-card-ea",
+        "travel": 2.379364013671875,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-controller",
+        "travel": 3.1688232421875,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-box-fc",
+        "travel": 0.850738525390625,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-box-ufc",
+        "travel": 0.842193603515625,
+        "duration": 16000
+      }
+    ],
+    "images": [
+      {
+        "file": "dualsense-cutout-560.webp",
+        "pixels": 560,
+        "rendered": 446.1298828125,
+        "ratio": 1.2552398339013697
+      },
+      {
+        "file": "kit-fc27-case-320.webp",
+        "pixels": 320,
+        "rendered": 271.05279541015625,
+        "ratio": 1.1805818106977166
+      },
+      {
+        "file": "kit-ufc6-case-320.webp",
+        "pixels": 320,
+        "rendered": 285.60009765625,
+        "ratio": 1.1204477961529058
+      }
+    ],
+    "problems": [
+      "Desktop movement is too small or slow to be perceptible",
+      "Desktop product bitmap lacks a 2x detail reserve"
+    ],
+    "pass": false
+  },
+  {
+    "width": 3000,
+    "density": 1,
+    "motion": [
+      {
+        "object": "kit-item kit-card-plus",
+        "travel": 2.379364013671875,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-card-ea",
+        "travel": 2.379364013671875,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-controller",
+        "travel": 3.1688232421875,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-box-fc",
+        "travel": 0.850738525390625,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-box-ufc",
+        "travel": 0.842193603515625,
+        "duration": 16000
+      }
+    ],
+    "images": [
+      {
+        "file": "dualsense-cutout-560.webp",
+        "pixels": 560,
+        "rendered": 446.1298828125,
+        "ratio": 1.2552398339013697
+      },
+      {
+        "file": "kit-fc27-case-320.webp",
+        "pixels": 320,
+        "rendered": 271.052734375,
+        "ratio": 1.1805820765389576
+      },
+      {
+        "file": "kit-ufc6-case-320.webp",
+        "pixels": 320,
+        "rendered": 285.60009765625,
+        "ratio": 1.1204477961529058
+      }
+    ],
+    "problems": [
+      "Desktop movement is too small or slow to be perceptible",
+      "Desktop product bitmap lacks a 2x detail reserve"
+    ],
+    "pass": false
+  },
+  {
+    "width": 1920,
+    "density": 2,
+    "motion": [
+      {
+        "object": "kit-item kit-card-plus",
+        "travel": 2.379364013671875,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-card-ea",
+        "travel": 2.379364013671875,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-controller",
+        "travel": 3.16876220703125,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-box-fc",
+        "travel": 0.850738525390625,
+        "duration": 16000
+      },
+      {
+        "object": "kit-item kit-box-ufc",
+        "travel": 0.841339111328125,
+        "duration": 16000
+      }
+    ],
+    "images": [
+      {
+        "file": "dualsense-cutout-1120.webp",
+        "pixels": 1120,
+        "rendered": 446.1319580078125,
+        "ratio": 2.510467990236169
+      },
+      {
+        "file": "kit-fc27-case-640.webp",
+        "pixels": 640,
+        "rendered": 271.05279541015625,
+        "ratio": 2.3611636213954332
+      },
+      {
+        "file": "kit-ufc6-case-640.webp",
+        "pixels": 640,
+        "rendered": 285.601806640625,
+        "ratio": 2.240882183232535
+      }
+    ],
+    "problems": [
+      "Desktop movement is too small or slow to be perceptible"
+    ],
+    "pass": false
+  }
+]

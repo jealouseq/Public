@@ -1,0 +1,2142 @@
+[
+  {
+    "width": 390,
+    "filter": "all",
+    "expectedRecordCount": 24,
+    "expectedUniqueCount": 19,
+    "observedCount": 24,
+    "expectedTitles": [
+      "EA SPORTS FC 27",
+      "Grand Theft Auto V",
+      "Mortal Kombat 1",
+      "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "EA SPORTS UFC 6",
+      "Tekken 8",
+      "Split Fiction",
+      "It Takes Two",
+      "Call of Duty: Black Ops 7",
+      "Gran Turismo 7",
+      "God of War Ragnarök",
+      "God of War Ragnarök",
+      "Red Dead Redemption 2",
+      "Marvel’s Spider-Man 2",
+      "Hogwarts Legacy",
+      "ELDEN RING",
+      "ELDEN RING",
+      "Resident Evil Requiem",
+      "Resident Evil Requiem",
+      "ASTRO BOT",
+      "ASTRO BOT",
+      "Sackboy: A Big Adventure",
+      "Horizon Forbidden West",
+      "Horizon Forbidden West"
+    ],
+    "observed": [
+      {
+        "title": "EA SPORTS FC 27",
+        "players": "4",
+        "buttonLabel": "Детальніше про EA SPORTS FC 27"
+      },
+      {
+        "title": "Grand Theft Auto V",
+        "players": "1",
+        "buttonLabel": "Детальніше про Grand Theft Auto V"
+      },
+      {
+        "title": "Mortal Kombat 1",
+        "players": "2",
+        "buttonLabel": "Детальніше про Mortal Kombat 1"
+      },
+      {
+        "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+        "players": "1",
+        "buttonLabel": "Детальніше про S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+      },
+      {
+        "title": "EA SPORTS UFC 6",
+        "players": "2",
+        "buttonLabel": "Детальніше про EA SPORTS UFC 6"
+      },
+      {
+        "title": "Tekken 8",
+        "players": "2",
+        "buttonLabel": "Детальніше про Tekken 8"
+      },
+      {
+        "title": "Split Fiction",
+        "players": "2",
+        "buttonLabel": "Детальніше про Split Fiction"
+      },
+      {
+        "title": "It Takes Two",
+        "players": "2",
+        "buttonLabel": "Детальніше про It Takes Two"
+      },
+      {
+        "title": "Call of Duty: Black Ops 7",
+        "players": "1",
+        "buttonLabel": "Детальніше про Call of Duty: Black Ops 7"
+      },
+      {
+        "title": "Gran Turismo 7",
+        "players": "2",
+        "buttonLabel": "Детальніше про Gran Turismo 7"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "Red Dead Redemption 2",
+        "players": "1",
+        "buttonLabel": "Детальніше про Red Dead Redemption 2"
+      },
+      {
+        "title": "Marvel’s Spider-Man 2",
+        "players": "1",
+        "buttonLabel": "Детальніше про Marvel’s Spider-Man 2"
+      },
+      {
+        "title": "Hogwarts Legacy",
+        "players": "1",
+        "buttonLabel": "Детальніше про Hogwarts Legacy"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Sackboy: A Big Adventure",
+        "players": "4",
+        "buttonLabel": "Детальніше про Sackboy: A Big Adventure"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ],
+    "staleWrongCategory": []
+  },
+  {
+    "width": 390,
+    "filter": "two",
+    "expectedRecordCount": 8,
+    "expectedUniqueCount": 8,
+    "observedCount": 13,
+    "expectedTitles": [
+      "EA SPORTS FC 27",
+      "Mortal Kombat 1",
+      "EA SPORTS UFC 6",
+      "Tekken 8",
+      "Split Fiction",
+      "It Takes Two",
+      "Gran Turismo 7",
+      "Sackboy: A Big Adventure"
+    ],
+    "observed": [
+      {
+        "title": "EA SPORTS FC 27",
+        "players": "4",
+        "buttonLabel": "Детальніше про EA SPORTS FC 27"
+      },
+      {
+        "title": "Mortal Kombat 1",
+        "players": "2",
+        "buttonLabel": "Детальніше про Mortal Kombat 1"
+      },
+      {
+        "title": "EA SPORTS UFC 6",
+        "players": "2",
+        "buttonLabel": "Детальніше про EA SPORTS UFC 6"
+      },
+      {
+        "title": "Tekken 8",
+        "players": "2",
+        "buttonLabel": "Детальніше про Tekken 8"
+      },
+      {
+        "title": "Split Fiction",
+        "players": "2",
+        "buttonLabel": "Детальніше про Split Fiction"
+      },
+      {
+        "title": "It Takes Two",
+        "players": "2",
+        "buttonLabel": "Детальніше про It Takes Two"
+      },
+      {
+        "title": "Gran Turismo 7",
+        "players": "2",
+        "buttonLabel": "Детальніше про Gran Turismo 7"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Sackboy: A Big Adventure",
+        "players": "4",
+        "buttonLabel": "Детальніше про Sackboy: A Big Adventure"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ],
+    "staleWrongCategory": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "filter": "story",
+    "expectedRecordCount": 16,
+    "expectedUniqueCount": 12,
+    "observedCount": 21,
+    "expectedTitles": [
+      "Grand Theft Auto V",
+      "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "Split Fiction",
+      "It Takes Two",
+      "Call of Duty: Black Ops 7",
+      "God of War Ragnarök",
+      "God of War Ragnarök",
+      "Red Dead Redemption 2",
+      "Marvel’s Spider-Man 2",
+      "Hogwarts Legacy",
+      "ELDEN RING",
+      "ELDEN RING",
+      "Resident Evil Requiem",
+      "Resident Evil Requiem",
+      "Horizon Forbidden West",
+      "Horizon Forbidden West"
+    ],
+    "observed": [
+      {
+        "title": "Grand Theft Auto V",
+        "players": "1",
+        "buttonLabel": "Детальніше про Grand Theft Auto V"
+      },
+      {
+        "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+        "players": "1",
+        "buttonLabel": "Детальніше про S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+      },
+      {
+        "title": "Split Fiction",
+        "players": "2",
+        "buttonLabel": "Детальніше про Split Fiction"
+      },
+      {
+        "title": "It Takes Two",
+        "players": "2",
+        "buttonLabel": "Детальніше про It Takes Two"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "Call of Duty: Black Ops 7",
+        "players": "1",
+        "buttonLabel": "Детальніше про Call of Duty: Black Ops 7"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "Red Dead Redemption 2",
+        "players": "1",
+        "buttonLabel": "Детальніше про Red Dead Redemption 2"
+      },
+      {
+        "title": "Marvel’s Spider-Man 2",
+        "players": "1",
+        "buttonLabel": "Детальніше про Marvel’s Spider-Man 2"
+      },
+      {
+        "title": "Hogwarts Legacy",
+        "players": "1",
+        "buttonLabel": "Детальніше про Hogwarts Legacy"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ],
+    "staleWrongCategory": [
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "filter": "kids",
+    "expectedRecordCount": 5,
+    "expectedUniqueCount": 4,
+    "observedCount": 14,
+    "expectedTitles": [
+      "EA SPORTS FC 27",
+      "Gran Turismo 7",
+      "ASTRO BOT",
+      "ASTRO BOT",
+      "Sackboy: A Big Adventure"
+    ],
+    "observed": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "EA SPORTS FC 27",
+        "players": "4",
+        "buttonLabel": "Детальніше про EA SPORTS FC 27"
+      },
+      {
+        "title": "Gran Turismo 7",
+        "players": "2",
+        "buttonLabel": "Детальніше про Gran Turismo 7"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Sackboy: A Big Adventure",
+        "players": "4",
+        "buttonLabel": "Детальніше про Sackboy: A Big Adventure"
+      }
+    ],
+    "staleWrongCategory": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "filter": "racing",
+    "expectedRecordCount": 1,
+    "expectedUniqueCount": 1,
+    "observedCount": 11,
+    "expectedTitles": [
+      "Gran Turismo 7"
+    ],
+    "observed": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "Gran Turismo 7",
+        "players": "2",
+        "buttonLabel": "Детальніше про Gran Turismo 7"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      }
+    ],
+    "staleWrongCategory": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "filter": "all",
+    "expectedRecordCount": 24,
+    "expectedUniqueCount": 19,
+    "observedCount": 34,
+    "expectedTitles": [
+      "EA SPORTS FC 27",
+      "Grand Theft Auto V",
+      "Mortal Kombat 1",
+      "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "EA SPORTS UFC 6",
+      "Tekken 8",
+      "Split Fiction",
+      "It Takes Two",
+      "Call of Duty: Black Ops 7",
+      "Gran Turismo 7",
+      "God of War Ragnarök",
+      "God of War Ragnarök",
+      "Red Dead Redemption 2",
+      "Marvel’s Spider-Man 2",
+      "Hogwarts Legacy",
+      "ELDEN RING",
+      "ELDEN RING",
+      "Resident Evil Requiem",
+      "Resident Evil Requiem",
+      "ASTRO BOT",
+      "ASTRO BOT",
+      "Sackboy: A Big Adventure",
+      "Horizon Forbidden West",
+      "Horizon Forbidden West"
+    ],
+    "observed": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "EA SPORTS FC 27",
+        "players": "4",
+        "buttonLabel": "Детальніше про EA SPORTS FC 27"
+      },
+      {
+        "title": "Grand Theft Auto V",
+        "players": "1",
+        "buttonLabel": "Детальніше про Grand Theft Auto V"
+      },
+      {
+        "title": "Mortal Kombat 1",
+        "players": "2",
+        "buttonLabel": "Детальніше про Mortal Kombat 1"
+      },
+      {
+        "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+        "players": "1",
+        "buttonLabel": "Детальніше про S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+      },
+      {
+        "title": "EA SPORTS UFC 6",
+        "players": "2",
+        "buttonLabel": "Детальніше про EA SPORTS UFC 6"
+      },
+      {
+        "title": "Tekken 8",
+        "players": "2",
+        "buttonLabel": "Детальніше про Tekken 8"
+      },
+      {
+        "title": "Split Fiction",
+        "players": "2",
+        "buttonLabel": "Детальніше про Split Fiction"
+      },
+      {
+        "title": "It Takes Two",
+        "players": "2",
+        "buttonLabel": "Детальніше про It Takes Two"
+      },
+      {
+        "title": "Call of Duty: Black Ops 7",
+        "players": "1",
+        "buttonLabel": "Детальніше про Call of Duty: Black Ops 7"
+      },
+      {
+        "title": "Gran Turismo 7",
+        "players": "2",
+        "buttonLabel": "Детальніше про Gran Turismo 7"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "Red Dead Redemption 2",
+        "players": "1",
+        "buttonLabel": "Детальніше про Red Dead Redemption 2"
+      },
+      {
+        "title": "Marvel’s Spider-Man 2",
+        "players": "1",
+        "buttonLabel": "Детальніше про Marvel’s Spider-Man 2"
+      },
+      {
+        "title": "Hogwarts Legacy",
+        "players": "1",
+        "buttonLabel": "Детальніше про Hogwarts Legacy"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Sackboy: A Big Adventure",
+        "players": "4",
+        "buttonLabel": "Детальніше про Sackboy: A Big Adventure"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ],
+    "staleWrongCategory": []
+  },
+  {
+    "width": 390,
+    "filter": "two",
+    "expectedRecordCount": 8,
+    "expectedUniqueCount": 8,
+    "observedCount": 23,
+    "expectedTitles": [
+      "EA SPORTS FC 27",
+      "Mortal Kombat 1",
+      "EA SPORTS UFC 6",
+      "Tekken 8",
+      "Split Fiction",
+      "It Takes Two",
+      "Gran Turismo 7",
+      "Sackboy: A Big Adventure"
+    ],
+    "observed": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "EA SPORTS FC 27",
+        "players": "4",
+        "buttonLabel": "Детальніше про EA SPORTS FC 27"
+      },
+      {
+        "title": "Mortal Kombat 1",
+        "players": "2",
+        "buttonLabel": "Детальніше про Mortal Kombat 1"
+      },
+      {
+        "title": "EA SPORTS UFC 6",
+        "players": "2",
+        "buttonLabel": "Детальніше про EA SPORTS UFC 6"
+      },
+      {
+        "title": "Tekken 8",
+        "players": "2",
+        "buttonLabel": "Детальніше про Tekken 8"
+      },
+      {
+        "title": "Split Fiction",
+        "players": "2",
+        "buttonLabel": "Детальніше про Split Fiction"
+      },
+      {
+        "title": "It Takes Two",
+        "players": "2",
+        "buttonLabel": "Детальніше про It Takes Two"
+      },
+      {
+        "title": "Gran Turismo 7",
+        "players": "2",
+        "buttonLabel": "Детальніше про Gran Turismo 7"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Sackboy: A Big Adventure",
+        "players": "4",
+        "buttonLabel": "Детальніше про Sackboy: A Big Adventure"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ],
+    "staleWrongCategory": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "filter": "all",
+    "expectedRecordCount": 24,
+    "expectedUniqueCount": 19,
+    "observedCount": 24,
+    "expectedTitles": [
+      "EA SPORTS FC 27",
+      "Grand Theft Auto V",
+      "Mortal Kombat 1",
+      "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "EA SPORTS UFC 6",
+      "Tekken 8",
+      "Split Fiction",
+      "It Takes Two",
+      "Call of Duty: Black Ops 7",
+      "Gran Turismo 7",
+      "God of War Ragnarök",
+      "God of War Ragnarök",
+      "Red Dead Redemption 2",
+      "Marvel’s Spider-Man 2",
+      "Hogwarts Legacy",
+      "ELDEN RING",
+      "ELDEN RING",
+      "Resident Evil Requiem",
+      "Resident Evil Requiem",
+      "ASTRO BOT",
+      "ASTRO BOT",
+      "Sackboy: A Big Adventure",
+      "Horizon Forbidden West",
+      "Horizon Forbidden West"
+    ],
+    "observed": [
+      {
+        "title": "EA SPORTS FC 27",
+        "players": "4",
+        "buttonLabel": "Детальніше про EA SPORTS FC 27"
+      },
+      {
+        "title": "Grand Theft Auto V",
+        "players": "1",
+        "buttonLabel": "Детальніше про Grand Theft Auto V"
+      },
+      {
+        "title": "Mortal Kombat 1",
+        "players": "2",
+        "buttonLabel": "Детальніше про Mortal Kombat 1"
+      },
+      {
+        "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+        "players": "1",
+        "buttonLabel": "Детальніше про S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+      },
+      {
+        "title": "EA SPORTS UFC 6",
+        "players": "2",
+        "buttonLabel": "Детальніше про EA SPORTS UFC 6"
+      },
+      {
+        "title": "Tekken 8",
+        "players": "2",
+        "buttonLabel": "Детальніше про Tekken 8"
+      },
+      {
+        "title": "Split Fiction",
+        "players": "2",
+        "buttonLabel": "Детальніше про Split Fiction"
+      },
+      {
+        "title": "It Takes Two",
+        "players": "2",
+        "buttonLabel": "Детальніше про It Takes Two"
+      },
+      {
+        "title": "Call of Duty: Black Ops 7",
+        "players": "1",
+        "buttonLabel": "Детальніше про Call of Duty: Black Ops 7"
+      },
+      {
+        "title": "Gran Turismo 7",
+        "players": "2",
+        "buttonLabel": "Детальніше про Gran Turismo 7"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "Red Dead Redemption 2",
+        "players": "1",
+        "buttonLabel": "Детальніше про Red Dead Redemption 2"
+      },
+      {
+        "title": "Marvel’s Spider-Man 2",
+        "players": "1",
+        "buttonLabel": "Детальніше про Marvel’s Spider-Man 2"
+      },
+      {
+        "title": "Hogwarts Legacy",
+        "players": "1",
+        "buttonLabel": "Детальніше про Hogwarts Legacy"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Sackboy: A Big Adventure",
+        "players": "4",
+        "buttonLabel": "Детальніше про Sackboy: A Big Adventure"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ],
+    "staleWrongCategory": []
+  },
+  {
+    "width": 1440,
+    "filter": "two",
+    "expectedRecordCount": 8,
+    "expectedUniqueCount": 8,
+    "observedCount": 13,
+    "expectedTitles": [
+      "EA SPORTS FC 27",
+      "Mortal Kombat 1",
+      "EA SPORTS UFC 6",
+      "Tekken 8",
+      "Split Fiction",
+      "It Takes Two",
+      "Gran Turismo 7",
+      "Sackboy: A Big Adventure"
+    ],
+    "observed": [
+      {
+        "title": "EA SPORTS FC 27",
+        "players": "4",
+        "buttonLabel": "Детальніше про EA SPORTS FC 27"
+      },
+      {
+        "title": "Mortal Kombat 1",
+        "players": "2",
+        "buttonLabel": "Детальніше про Mortal Kombat 1"
+      },
+      {
+        "title": "EA SPORTS UFC 6",
+        "players": "2",
+        "buttonLabel": "Детальніше про EA SPORTS UFC 6"
+      },
+      {
+        "title": "Tekken 8",
+        "players": "2",
+        "buttonLabel": "Детальніше про Tekken 8"
+      },
+      {
+        "title": "Split Fiction",
+        "players": "2",
+        "buttonLabel": "Детальніше про Split Fiction"
+      },
+      {
+        "title": "It Takes Two",
+        "players": "2",
+        "buttonLabel": "Детальніше про It Takes Two"
+      },
+      {
+        "title": "Gran Turismo 7",
+        "players": "2",
+        "buttonLabel": "Детальніше про Gran Turismo 7"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Sackboy: A Big Adventure",
+        "players": "4",
+        "buttonLabel": "Детальніше про Sackboy: A Big Adventure"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ],
+    "staleWrongCategory": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "filter": "story",
+    "expectedRecordCount": 16,
+    "expectedUniqueCount": 12,
+    "observedCount": 21,
+    "expectedTitles": [
+      "Grand Theft Auto V",
+      "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "Split Fiction",
+      "It Takes Two",
+      "Call of Duty: Black Ops 7",
+      "God of War Ragnarök",
+      "God of War Ragnarök",
+      "Red Dead Redemption 2",
+      "Marvel’s Spider-Man 2",
+      "Hogwarts Legacy",
+      "ELDEN RING",
+      "ELDEN RING",
+      "Resident Evil Requiem",
+      "Resident Evil Requiem",
+      "Horizon Forbidden West",
+      "Horizon Forbidden West"
+    ],
+    "observed": [
+      {
+        "title": "Grand Theft Auto V",
+        "players": "1",
+        "buttonLabel": "Детальніше про Grand Theft Auto V"
+      },
+      {
+        "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+        "players": "1",
+        "buttonLabel": "Детальніше про S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+      },
+      {
+        "title": "Split Fiction",
+        "players": "2",
+        "buttonLabel": "Детальніше про Split Fiction"
+      },
+      {
+        "title": "It Takes Two",
+        "players": "2",
+        "buttonLabel": "Детальніше про It Takes Two"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "Call of Duty: Black Ops 7",
+        "players": "1",
+        "buttonLabel": "Детальніше про Call of Duty: Black Ops 7"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "Red Dead Redemption 2",
+        "players": "1",
+        "buttonLabel": "Детальніше про Red Dead Redemption 2"
+      },
+      {
+        "title": "Marvel’s Spider-Man 2",
+        "players": "1",
+        "buttonLabel": "Детальніше про Marvel’s Spider-Man 2"
+      },
+      {
+        "title": "Hogwarts Legacy",
+        "players": "1",
+        "buttonLabel": "Детальніше про Hogwarts Legacy"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ],
+    "staleWrongCategory": [
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "filter": "kids",
+    "expectedRecordCount": 5,
+    "expectedUniqueCount": 4,
+    "observedCount": 14,
+    "expectedTitles": [
+      "EA SPORTS FC 27",
+      "Gran Turismo 7",
+      "ASTRO BOT",
+      "ASTRO BOT",
+      "Sackboy: A Big Adventure"
+    ],
+    "observed": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "EA SPORTS FC 27",
+        "players": "4",
+        "buttonLabel": "Детальніше про EA SPORTS FC 27"
+      },
+      {
+        "title": "Gran Turismo 7",
+        "players": "2",
+        "buttonLabel": "Детальніше про Gran Turismo 7"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Sackboy: A Big Adventure",
+        "players": "4",
+        "buttonLabel": "Детальніше про Sackboy: A Big Adventure"
+      }
+    ],
+    "staleWrongCategory": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "filter": "racing",
+    "expectedRecordCount": 1,
+    "expectedUniqueCount": 1,
+    "observedCount": 11,
+    "expectedTitles": [
+      "Gran Turismo 7"
+    ],
+    "observed": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "Gran Turismo 7",
+        "players": "2",
+        "buttonLabel": "Детальніше про Gran Turismo 7"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      }
+    ],
+    "staleWrongCategory": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "filter": "all",
+    "expectedRecordCount": 24,
+    "expectedUniqueCount": 19,
+    "observedCount": 34,
+    "expectedTitles": [
+      "EA SPORTS FC 27",
+      "Grand Theft Auto V",
+      "Mortal Kombat 1",
+      "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "EA SPORTS UFC 6",
+      "Tekken 8",
+      "Split Fiction",
+      "It Takes Two",
+      "Call of Duty: Black Ops 7",
+      "Gran Turismo 7",
+      "God of War Ragnarök",
+      "God of War Ragnarök",
+      "Red Dead Redemption 2",
+      "Marvel’s Spider-Man 2",
+      "Hogwarts Legacy",
+      "ELDEN RING",
+      "ELDEN RING",
+      "Resident Evil Requiem",
+      "Resident Evil Requiem",
+      "ASTRO BOT",
+      "ASTRO BOT",
+      "Sackboy: A Big Adventure",
+      "Horizon Forbidden West",
+      "Horizon Forbidden West"
+    ],
+    "observed": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "EA SPORTS FC 27",
+        "players": "4",
+        "buttonLabel": "Детальніше про EA SPORTS FC 27"
+      },
+      {
+        "title": "Grand Theft Auto V",
+        "players": "1",
+        "buttonLabel": "Детальніше про Grand Theft Auto V"
+      },
+      {
+        "title": "Mortal Kombat 1",
+        "players": "2",
+        "buttonLabel": "Детальніше про Mortal Kombat 1"
+      },
+      {
+        "title": "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+        "players": "1",
+        "buttonLabel": "Детальніше про S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+      },
+      {
+        "title": "EA SPORTS UFC 6",
+        "players": "2",
+        "buttonLabel": "Детальніше про EA SPORTS UFC 6"
+      },
+      {
+        "title": "Tekken 8",
+        "players": "2",
+        "buttonLabel": "Детальніше про Tekken 8"
+      },
+      {
+        "title": "Split Fiction",
+        "players": "2",
+        "buttonLabel": "Детальніше про Split Fiction"
+      },
+      {
+        "title": "It Takes Two",
+        "players": "2",
+        "buttonLabel": "Детальніше про It Takes Two"
+      },
+      {
+        "title": "Call of Duty: Black Ops 7",
+        "players": "1",
+        "buttonLabel": "Детальніше про Call of Duty: Black Ops 7"
+      },
+      {
+        "title": "Gran Turismo 7",
+        "players": "2",
+        "buttonLabel": "Детальніше про Gran Turismo 7"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "Red Dead Redemption 2",
+        "players": "1",
+        "buttonLabel": "Детальніше про Red Dead Redemption 2"
+      },
+      {
+        "title": "Marvel’s Spider-Man 2",
+        "players": "1",
+        "buttonLabel": "Детальніше про Marvel’s Spider-Man 2"
+      },
+      {
+        "title": "Hogwarts Legacy",
+        "players": "1",
+        "buttonLabel": "Детальніше про Hogwarts Legacy"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Sackboy: A Big Adventure",
+        "players": "4",
+        "buttonLabel": "Детальніше про Sackboy: A Big Adventure"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ],
+    "staleWrongCategory": []
+  },
+  {
+    "width": 1440,
+    "filter": "two",
+    "expectedRecordCount": 8,
+    "expectedUniqueCount": 8,
+    "observedCount": 23,
+    "expectedTitles": [
+      "EA SPORTS FC 27",
+      "Mortal Kombat 1",
+      "EA SPORTS UFC 6",
+      "Tekken 8",
+      "Split Fiction",
+      "It Takes Two",
+      "Gran Turismo 7",
+      "Sackboy: A Big Adventure"
+    ],
+    "observed": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "EA SPORTS FC 27",
+        "players": "4",
+        "buttonLabel": "Детальніше про EA SPORTS FC 27"
+      },
+      {
+        "title": "Mortal Kombat 1",
+        "players": "2",
+        "buttonLabel": "Детальніше про Mortal Kombat 1"
+      },
+      {
+        "title": "EA SPORTS UFC 6",
+        "players": "2",
+        "buttonLabel": "Детальніше про EA SPORTS UFC 6"
+      },
+      {
+        "title": "Tekken 8",
+        "players": "2",
+        "buttonLabel": "Детальніше про Tekken 8"
+      },
+      {
+        "title": "Split Fiction",
+        "players": "2",
+        "buttonLabel": "Детальніше про Split Fiction"
+      },
+      {
+        "title": "It Takes Two",
+        "players": "2",
+        "buttonLabel": "Детальніше про It Takes Two"
+      },
+      {
+        "title": "Gran Turismo 7",
+        "players": "2",
+        "buttonLabel": "Детальніше про Gran Turismo 7"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Sackboy: A Big Adventure",
+        "players": "4",
+        "buttonLabel": "Детальніше про Sackboy: A Big Adventure"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ],
+    "staleWrongCategory": [
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "God of War Ragnarök",
+        "players": "1",
+        "buttonLabel": "Детальніше про God of War Ragnarök"
+      },
+      {
+        "title": "ELDEN RING",
+        "players": "1",
+        "buttonLabel": "Детальніше про ELDEN RING"
+      },
+      {
+        "title": "Resident Evil Requiem",
+        "players": "1",
+        "buttonLabel": "Детальніше про Resident Evil Requiem"
+      },
+      {
+        "title": "ASTRO BOT",
+        "players": "1",
+        "buttonLabel": "Детальніше про ASTRO BOT"
+      },
+      {
+        "title": "Horizon Forbidden West",
+        "players": "1",
+        "buttonLabel": "Детальніше про Horizon Forbidden West"
+      }
+    ]
+  }
+]

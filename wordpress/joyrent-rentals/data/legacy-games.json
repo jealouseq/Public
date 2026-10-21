@@ -1,0 +1,71 @@
+[
+  {
+    "id": "fc25",
+    "title": "EA SPORTS FC 25",
+    "shortTitle": "FC 25",
+    "eyebrow": "EA SPORTS",
+    "genre": "Спорт",
+    "filters": [
+      "two",
+      "party",
+      "sport",
+      "kids"
+    ],
+    "platforms": [
+      "ps5",
+      "ps4"
+    ],
+    "players": 4,
+    "rating": "3+",
+    "image": "cover-fc25",
+    "description": "Матч із друзями, улюблений клуб і той самий вирішальний гол.",
+    "available": false,
+    "legacyImage": "game-fc",
+    "genreRu": "Спорт",
+    "descriptionRu": "Футбольные матчи с друзьями, любимый клуб и решающий гол."
+  },
+  {
+    "id": "ufc5",
+    "title": "EA SPORTS UFC 5",
+    "shortTitle": "UFC 5",
+    "eyebrow": "EA SPORTS",
+    "genre": "Спорт",
+    "filters": [
+      "two",
+      "sport"
+    ],
+    "platforms": [
+      "ps5"
+    ],
+    "players": 2,
+    "rating": "16+",
+    "image": "cover-ufc5",
+    "description": "Спортивні поєдинки та уважний розрахунок кожного руху.",
+    "available": false,
+    "legacyImage": "game-fighting",
+    "genreRu": "Спорт",
+    "descriptionRu": "Смешанные единоборства и точный расчёт каждого движения."
+  },
+  {
+    "id": "cod-bo6",
+    "title": "Call of Duty: Black Ops 6",
+    "shortTitle": "Black Ops 6",
+    "eyebrow": "CALL OF DUTY",
+    "genre": "Екшн",
+    "filters": [
+      "story"
+    ],
+    "platforms": [
+      "ps5",
+      "ps4"
+    ],
+    "players": 1,
+    "rating": "18+",
+    "image": "cover-cod-bo6",
+    "description": "Кінематографічна кампанія та динамічні режими. Онлайн-функції залежать від підписки.",
+    "available": false,
+    "legacyImage": "game-action",
+    "genreRu": "Экшен",
+    "descriptionRu": "Кинематографическая кампания и динамичные режимы. Онлайн-функции зависят от подписки."
+  }
+]

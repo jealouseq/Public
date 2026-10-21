@@ -1,0 +1,480 @@
+{
+  "run": "20261003T105301Z",
+  "base": "http://localhost:8080",
+  "group": "native",
+  "expectedBuild": {
+    "main": "main-CNh65H_Y.js",
+    "css": "main-hpKQBRcV.css"
+  },
+  "servedAssets": {
+    "main-CNh65H_Y.js": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+      "status": 200,
+      "bytes": 485194,
+      "sha256": "99b37d873bfc96b85b555b7255a2aca4d7e755d46f4137756d1c94d9eac25b08",
+      "matchesLocal": true
+    },
+    "main-hpKQBRcV.css": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+      "status": 200,
+      "bytes": 92276,
+      "sha256": "3a577b6042e4db7b60caebb9ebed5e1a53d222d18eff2a27e42967fa86ac5fdd",
+      "matchesLocal": true
+    }
+  },
+  "pass": 2,
+  "fail": 0,
+  "caseCount": 2,
+  "selectedScreens": [],
+  "cases": [
+    {
+      "case": "native-privacy-uk",
+      "status": "PASS",
+      "seconds": 4.22,
+      "failure": null,
+      "evidence": {
+        "name": "native-privacy-uk",
+        "language": "uk",
+        "width": 390,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/konfidentsiinist/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "native": {
+            "kind": "privacy",
+            "url": "http://localhost:8080/konfidentsiinist/",
+            "status": 200,
+            "heading": "Конфіденційність",
+            "requiredCopy": [
+              "Не надсилай у заявці паролі PSN, документи або платіжні дані.",
+              "Заявка не підписує на рекламну розсилку.",
+              "напиши нам у Telegram або зателефонуй."
+            ],
+            "text": "Конфіденційність\n\nJOYRENT отримує ім’я, телефон, місто, адресу й параметри оренди для обробки заявки та узгодження передачі обладнання. Ці дані зберігаються у магазині, доступ до них мають уповноважені працівники.\n\nНе надсилай у заявці паролі PSN, документи або платіжні дані. Заявка не підписує на рекламну розсилку. Для уточнення або видалення даних напиши нам у Telegram або зателефонуй.",
+            "overflow": false,
+            "publicContactsPresent": true,
+            "contactBounds": [
+              {
+                "width": 390,
+                "phone": {
+                  "x": 186.90625,
+                  "y": 555.59375,
+                  "w": 128.09375,
+                  "h": 44,
+                  "right": 315,
+                  "bottom": 599.59375,
+                  "cx": 250.953125,
+                  "cy": 577.59375
+                },
+                "telegram": {
+                  "x": 322,
+                  "y": 555.59375,
+                  "w": 44,
+                  "h": 44,
+                  "right": 366,
+                  "bottom": 599.59375,
+                  "cx": 344,
+                  "cy": 577.59375
+                }
+              },
+              {
+                "width": 320,
+                "phone": {
+                  "x": 156.59375,
+                  "y": 555.671875,
+                  "w": 92.40625,
+                  "h": 44,
+                  "right": 249,
+                  "bottom": 599.671875,
+                  "cx": 202.796875,
+                  "cy": 577.671875
+                },
+                "telegram": {
+                  "x": 256,
+                  "y": 555.671875,
+                  "w": 44,
+                  "h": 44,
+                  "right": 300,
+                  "bottom": 599.671875,
+                  "cx": 278,
+                  "cy": 577.671875
+                }
+              }
+            ],
+            "htmlSha256": "da92d82383312948a8901c083978e9401219c38a443905815186eccffe1cd7f6",
+            "nativeHeadingStyle": {
+              "font": "\"Onest Variable\", sans-serif",
+              "size": "24px",
+              "overflowWrap": "anywhere"
+            },
+            "localNativeTemplates": {
+              "footer.php": "761b5601dfd0d003a18ddbd00e04b8a8bd5998df851887c33e79e0a04bca748d",
+              "index.php": "880b849466d366061f9bcfef2ca4a25c9ab2be672ece9e7cadb4b053b077d35f"
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "native-privacy-ru",
+      "status": "PASS",
+      "seconds": 4.05,
+      "failure": null,
+      "evidence": {
+        "name": "native-privacy-ru",
+        "language": "ru",
+        "width": 1440,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/konfidentsialnost/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "native": {
+            "kind": "privacy",
+            "url": "http://localhost:8080/konfidentsialnost/",
+            "status": 200,
+            "heading": "Конфиденциальность",
+            "requiredCopy": [
+              "Не отправляй в заявке пароли PSN, документы или платёжные данные.",
+              "Заявка не подписывает на рекламную рассылку.",
+              "напиши нам в Telegram или позвони."
+            ],
+            "text": "Конфиденциальность\n\nJOYRENT получает имя, телефон, город, адрес и параметры аренды для обработки заявки и согласования передачи оборудования. Эти данные хранятся в магазине, доступ имеют уполномоченные сотрудники.\n\nНе отправляй в заявке пароли PSN, документы или платёжные данные. Заявка не подписывает на рекламную рассылку. Для уточнения или удаления данных напиши нам в Telegram или позвони.",
+            "overflow": false,
+            "publicContactsPresent": true,
+            "contactBounds": [
+              {
+                "width": 1440,
+                "phone": {
+                  "x": 1046.109375,
+                  "y": 786,
+                  "w": 184.4375,
+                  "h": 48,
+                  "right": 1230.546875,
+                  "bottom": 834,
+                  "cx": 1138.328125,
+                  "cy": 810
+                },
+                "telegram": {
+                  "x": 1240.546875,
+                  "y": 786,
+                  "w": 124.578125,
+                  "h": 48,
+                  "right": 1365.125,
+                  "bottom": 834,
+                  "cx": 1302.8359375,
+                  "cy": 810
+                }
+              },
+              {
+                "width": 320,
+                "phone": {
+                  "x": 156.59375,
+                  "y": 555.671875,
+                  "w": 92.40625,
+                  "h": 44,
+                  "right": 249,
+                  "bottom": 599.671875,
+                  "cx": 202.796875,
+                  "cy": 577.671875
+                },
+                "telegram": {
+                  "x": 256,
+                  "y": 555.671875,
+                  "w": 44,
+                  "h": 44,
+                  "right": 300,
+                  "bottom": 599.671875,
+                  "cx": 278,
+                  "cy": 577.671875
+                }
+              }
+            ],
+            "htmlSha256": "9f8a5db22f875980799184643313004b6067dca3a63254f3d1540b1d303774f6",
+            "nativeHeadingStyle": {
+              "font": "\"Onest Variable\", sans-serif",
+              "size": "24px",
+              "overflowWrap": "anywhere"
+            },
+            "localNativeTemplates": {
+              "footer.php": "761b5601dfd0d003a18ddbd00e04b8a8bd5998df851887c33e79e0a04bca748d",
+              "index.php": "880b849466d366061f9bcfef2ca4a25c9ab2be672ece9e7cadb4b053b077d35f"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "safety": "All POST/non-GET/HEAD intercepted before any allowlist/continue; only localhost GET/HEAD allowed; no contacts entered, no order/email sent.",
+  "limits": [
+    "UI focus scope; no old test totals copied",
+    "document.hidden transition simulated in headless Chromium; CSS motion measured",
+    "OSM raster GET blocked, local vector fallback used",
+    "Native WP FAQ/terms/privacy copy awaits backend completion"
+  ]
+}

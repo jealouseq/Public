@@ -1,0 +1,289 @@
+{
+  "versionAssets": [
+    "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+    "https://flowers-luxury.shop/wp-includes/js/wp-emoji-release.min.js?ver=7.1.2",
+    "https://cdn-reach.hostinger.com/js/embed.js",
+    "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-2YiB-VTt.js"
+  ],
+  "hero": [
+    {
+      "src": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+      "natural": [
+        681,
+        510
+      ],
+      "rect": {
+        "x": 706.6875,
+        "y": 185.078125,
+        "width": 658.421875,
+        "height": 493.8125,
+        "top": 185.078125,
+        "right": 1365.109375,
+        "bottom": 678.890625,
+        "left": 706.6875
+      },
+      "dpr": 1
+    }
+  ],
+  "fonts": [
+    {
+      "tag": "BUTTON",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "11px"
+    },
+    {
+      "tag": "BUTTON",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "11px"
+    },
+    {
+      "tag": "BUTTON",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "16px"
+    },
+    {
+      "tag": "P",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "14px"
+    },
+    {
+      "tag": "H1",
+      "font": "\"Unbounded Variable\", sans-serif",
+      "size": "59.76px"
+    },
+    {
+      "tag": "P",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "16px"
+    },
+    {
+      "tag": "P",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "14px"
+    },
+    {
+      "tag": "P",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "11px"
+    },
+    {
+      "tag": "H2",
+      "font": "\"Unbounded Variable\", sans-serif",
+      "size": "56px"
+    },
+    {
+      "tag": "BUTTON",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "14px"
+    },
+    {
+      "tag": "BUTTON",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "14px"
+    },
+    {
+      "tag": "P",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "15px"
+    },
+    {
+      "tag": "P",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "16px"
+    },
+    {
+      "tag": "BUTTON",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "14px"
+    },
+    {
+      "tag": "P",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "15px"
+    },
+    {
+      "tag": "P",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "16px"
+    },
+    {
+      "tag": "BUTTON",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "14px"
+    },
+    {
+      "tag": "P",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "15px"
+    },
+    {
+      "tag": "P",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "16px"
+    },
+    {
+      "tag": "BUTTON",
+      "font": "\"Manrope Variable\", sans-serif",
+      "size": "14px"
+    }
+  ],
+  "resources": [
+    {
+      "name": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+      "transferSize": 25265,
+      "encodedBodySize": 24965,
+      "decodedBodySize": 113130,
+      "startTime": 691.5,
+      "duration": 390.89999997615814
+    },
+    {
+      "name": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+      "transferSize": 39266,
+      "encodedBodySize": 38966,
+      "decodedBodySize": 38966,
+      "startTime": 700.1000000238419,
+      "duration": 431.5
+    },
+    {
+      "name": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+      "transferSize": 51204,
+      "encodedBodySize": 50904,
+      "decodedBodySize": 50904,
+      "startTime": 701.8999999761581,
+      "duration": 451.90000009536743
+    },
+    {
+      "name": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+      "transferSize": 31724,
+      "encodedBodySize": 31424,
+      "decodedBodySize": 31424,
+      "startTime": 710.3999999761581,
+      "duration": 504.2000000476837
+    },
+    {
+      "name": "https://cdn-reach.hostinger.com/js/embed.js",
+      "transferSize": 0,
+      "encodedBodySize": 0,
+      "decodedBodySize": 0,
+      "startTime": 716.6000000238419,
+      "duration": 635.6000000238419
+    },
+    {
+      "name": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-2YiB-VTt.js",
+      "transferSize": 150875,
+      "encodedBodySize": 150575,
+      "decodedBodySize": 514560,
+      "startTime": 716.8999999761581,
+      "duration": 489.3000000715256
+    },
+    {
+      "name": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+      "transferSize": 25136,
+      "encodedBodySize": 24836,
+      "decodedBodySize": 24836,
+      "startTime": 1909.3999999761581,
+      "duration": 226.80000007152557
+    },
+    {
+      "name": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+      "transferSize": 16160,
+      "encodedBodySize": 15860,
+      "decodedBodySize": 15860,
+      "startTime": 1939.3999999761581,
+      "duration": 223.5
+    },
+    {
+      "name": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+      "transferSize": 14800,
+      "encodedBodySize": 14500,
+      "decodedBodySize": 14500,
+      "startTime": 1974.3000000715256,
+      "duration": 191.09999990463257
+    },
+    {
+      "name": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+      "transferSize": 34060,
+      "encodedBodySize": 33760,
+      "decodedBodySize": 33760,
+      "startTime": 2034.1000000238419,
+      "duration": 139.89999997615814
+    },
+    {
+      "name": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+      "transferSize": 145580,
+      "encodedBodySize": 145280,
+      "decodedBodySize": 145280,
+      "startTime": 2365.7000000476837,
+      "duration": 151.79999995231628
+    },
+    {
+      "name": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+      "transferSize": 27234,
+      "encodedBodySize": 26934,
+      "decodedBodySize": 26934,
+      "startTime": 2366.2000000476837,
+      "duration": 165.29999995231628
+    },
+    {
+      "name": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+      "transferSize": 3622,
+      "encodedBodySize": 3322,
+      "decodedBodySize": 8678,
+      "startTime": 2366.2000000476837,
+      "duration": 192.29999995231628
+    },
+    {
+      "name": "https://flowers-luxury.shop/wp-json/joyrent/v1/catalog",
+      "transferSize": 7613,
+      "encodedBodySize": 7313,
+      "decodedBodySize": 29308,
+      "startTime": 2856.2000000476837,
+      "duration": 93.69999992847443
+    },
+    {
+      "name": "https://flowers-luxury.shop/wp-includes/js/wp-emoji-release.min.js?ver=7.1.2",
+      "transferSize": 5216,
+      "encodedBodySize": 4916,
+      "decodedBodySize": 22752,
+      "startTime": 3511,
+      "duration": 15
+    }
+  ],
+  "sections": [
+    {
+      "id": "top",
+      "y": 92,
+      "h": 680
+    },
+    {
+      "id": "rates",
+      "y": 772,
+      "h": 557
+    },
+    {
+      "id": "games",
+      "y": 1329,
+      "h": 735
+    },
+    {
+      "id": "kit",
+      "y": 2063,
+      "h": 645
+    },
+    {
+      "id": "how-it-works",
+      "y": 2708,
+      "h": 1218
+    },
+    {
+      "id": "booking",
+      "y": 3926,
+      "h": 1159
+    },
+    {
+      "id": "",
+      "y": 4660,
+      "h": 99
+    }
+  ]
+}

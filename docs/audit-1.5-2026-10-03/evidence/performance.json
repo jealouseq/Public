@@ -1,0 +1,598 @@
+{
+  "observedAtUTC": "2026-10-03T03:21:41.411721+00:00",
+  "methodology": {
+    "browser": "remote headless Chromium",
+    "contexts": "fresh isolated contexts; GET-only network guard",
+    "throttling": "none",
+    "DPR": 1,
+    "observation": "six seconds after load, no scrolling",
+    "limits": [
+      "Single run per language/viewport; shared remote host and browser connections can affect timing.",
+      "Lab LCP/CLS observations are not certified Core Web Vitals or field measurements.",
+      "Resource byte totals exclude navigation; zero-byte timings can reflect cache or unavailable cross-origin timing.",
+      "Hero natural dimensions are browser density-corrected DOM values."
+    ]
+  },
+  "results": [
+    {
+      "label": "default-desktop",
+      "url": "https://flowers-luxury.shop/",
+      "language": "ua",
+      "viewport": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1
+      },
+      "LCP_ms": 1528,
+      "LCP_elementClass": "hero-photo",
+      "CLS_maxSession": 0.0006822054714626736,
+      "FCP_ms": 1528,
+      "load_ms": 888,
+      "resourceTotals": {
+        "count": 30,
+        "transferSize": 1574647,
+        "encodedBodySize": 1565947,
+        "decodedBodySize": 2065262,
+        "resourceTimingsWithZeroTransfer": 1,
+        "excludeNavigation": true
+      },
+      "requestCount": 31,
+      "criticalJSandCSS": [
+        {
+          "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CS3Q60Md.css?ver=1.5.0",
+          "type": "link",
+          "encodedBytes": 17594,
+          "decodedBytes": 69618
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+          "type": "script",
+          "encodedBytes": 4671,
+          "decodedBytes": 13577
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+          "type": "script",
+          "encodedBytes": 29531,
+          "decodedBytes": 87553
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+          "type": "script",
+          "encodedBytes": 3280,
+          "decodedBytes": 9636
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 1289,
+          "decodedBytes": 4350
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+          "type": "script",
+          "encodedBytes": 760,
+          "decodedBytes": 1720
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 1385,
+          "decodedBytes": 4281
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-C8HSsnBs.js?ver=1.5.0",
+          "type": "script",
+          "encodedBytes": 130613,
+          "decodedBytes": 439507
+        },
+        {
+          "url": "https://cdn-reach.hostinger.com/js/embed.js",
+          "type": "script",
+          "encodedBytes": 0,
+          "decodedBytes": 0
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 4602,
+          "decodedBytes": 15315
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 1020,
+          "decodedBytes": 2439
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-includes/js/wp-emoji-release.min.js?ver=7.1.2",
+          "type": "script",
+          "encodedBytes": 4916,
+          "decodedBytes": 22752
+        }
+      ],
+      "covers": {
+        "count": 24,
+        "downloadedBeforeScroll": 10,
+        "downloadedEncodedBytes": 960136,
+        "displayWidthCSSpx": 283.81,
+        "naturalDimensionsPx": [
+          720,
+          720
+        ],
+        "allHaveNoSrcset": true,
+        "allHaveNoSizes": true,
+        "allLazy": true,
+        "allAsyncDecode": true
+      },
+      "dualSense": {
+        "encodedBytes": 237144,
+        "naturalDimensionsPx": [
+          1536,
+          1024
+        ]
+      },
+      "hero": {
+        "currentSrc": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "encodedBytes": 23294,
+        "CSSdimensionsPx": [
+          658.42,
+          493.81
+        ],
+        "DOMnaturalDimensionsPx": [
+          681,
+          510
+        ],
+        "DPR": 1,
+        "loading": "eager",
+        "decoding": "async",
+        "fetchpriority": "high"
+      },
+      "fonts": {
+        "status": "loaded",
+        "encodedBytes": 137524
+      },
+      "errors": {
+        "failed": [],
+        "badResponses": [],
+        "pageErrors": [],
+        "blocked": []
+      }
+    },
+    {
+      "label": "default-phone",
+      "url": "https://flowers-luxury.shop/",
+      "language": "ua",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "LCP_ms": 704,
+      "LCP_elementClass": "hero-photo",
+      "CLS_maxSession": 0.0004986734868419917,
+      "FCP_ms": 704,
+      "load_ms": 454.4,
+      "resourceTotals": {
+        "count": 27,
+        "transferSize": 1307003,
+        "encodedBodySize": 1299203,
+        "decodedBodySize": 1798518,
+        "resourceTimingsWithZeroTransfer": 1,
+        "excludeNavigation": true
+      },
+      "requestCount": 28,
+      "criticalJSandCSS": [
+        {
+          "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CS3Q60Md.css?ver=1.5.0",
+          "type": "link",
+          "encodedBytes": 17594,
+          "decodedBytes": 69618
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+          "type": "script",
+          "encodedBytes": 29531,
+          "decodedBytes": 87553
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+          "type": "script",
+          "encodedBytes": 4671,
+          "decodedBytes": 13577
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+          "type": "script",
+          "encodedBytes": 3280,
+          "decodedBytes": 9636
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 1289,
+          "decodedBytes": 4350
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+          "type": "script",
+          "encodedBytes": 760,
+          "decodedBytes": 1720
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 1385,
+          "decodedBytes": 4281
+        },
+        {
+          "url": "https://cdn-reach.hostinger.com/js/embed.js",
+          "type": "script",
+          "encodedBytes": 0,
+          "decodedBytes": 0
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-C8HSsnBs.js?ver=1.5.0",
+          "type": "script",
+          "encodedBytes": 130613,
+          "decodedBytes": 439507
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 4602,
+          "decodedBytes": 15315
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 1020,
+          "decodedBytes": 2439
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-includes/js/wp-emoji-release.min.js?ver=7.1.2",
+          "type": "script",
+          "encodedBytes": 4916,
+          "decodedBytes": 22752
+        }
+      ],
+      "covers": {
+        "count": 24,
+        "downloadedBeforeScroll": 7,
+        "downloadedEncodedBytes": 705224,
+        "displayWidthCSSpx": 287.27,
+        "naturalDimensionsPx": [
+          720,
+          720
+        ],
+        "allHaveNoSrcset": true,
+        "allHaveNoSizes": true,
+        "allLazy": true,
+        "allAsyncDecode": true
+      },
+      "dualSense": {
+        "encodedBytes": 237144,
+        "naturalDimensionsPx": [
+          1536,
+          1024
+        ]
+      },
+      "hero": {
+        "currentSrc": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "encodedBytes": 11462,
+        "CSSdimensionsPx": [
+          383.03,
+          287.27
+        ],
+        "DOMnaturalDimensionsPx": [
+          383,
+          287
+        ],
+        "DPR": 1,
+        "loading": "eager",
+        "decoding": "async",
+        "fetchpriority": "high"
+      },
+      "fonts": {
+        "status": "loaded",
+        "encodedBytes": 137524
+      },
+      "errors": {
+        "failed": [],
+        "badResponses": [],
+        "pageErrors": [],
+        "blocked": []
+      }
+    },
+    {
+      "label": "ru-desktop",
+      "url": "https://flowers-luxury.shop/?lang=ru",
+      "language": "ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1
+      },
+      "LCP_ms": 568,
+      "LCP_elementClass": "hero-photo",
+      "CLS_maxSession": 0.007449336299189814,
+      "FCP_ms": 568,
+      "load_ms": 265.5,
+      "resourceTotals": {
+        "count": 30,
+        "transferSize": 1574647,
+        "encodedBodySize": 1565947,
+        "decodedBodySize": 2065262,
+        "resourceTimingsWithZeroTransfer": 1,
+        "excludeNavigation": true
+      },
+      "requestCount": 31,
+      "criticalJSandCSS": [
+        {
+          "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CS3Q60Md.css?ver=1.5.0",
+          "type": "link",
+          "encodedBytes": 17594,
+          "decodedBytes": 69618
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+          "type": "script",
+          "encodedBytes": 29531,
+          "decodedBytes": 87553
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+          "type": "script",
+          "encodedBytes": 4671,
+          "decodedBytes": 13577
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+          "type": "script",
+          "encodedBytes": 3280,
+          "decodedBytes": 9636
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 1289,
+          "decodedBytes": 4350
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+          "type": "script",
+          "encodedBytes": 760,
+          "decodedBytes": 1720
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 1385,
+          "decodedBytes": 4281
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 4602,
+          "decodedBytes": 15315
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 1020,
+          "decodedBytes": 2439
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-C8HSsnBs.js?ver=1.5.0",
+          "type": "script",
+          "encodedBytes": 130613,
+          "decodedBytes": 439507
+        },
+        {
+          "url": "https://cdn-reach.hostinger.com/js/embed.js",
+          "type": "script",
+          "encodedBytes": 0,
+          "decodedBytes": 0
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-includes/js/wp-emoji-release.min.js?ver=7.1.2",
+          "type": "script",
+          "encodedBytes": 4916,
+          "decodedBytes": 22752
+        }
+      ],
+      "covers": {
+        "count": 24,
+        "downloadedBeforeScroll": 10,
+        "downloadedEncodedBytes": 960136,
+        "displayWidthCSSpx": 283.81,
+        "naturalDimensionsPx": [
+          720,
+          720
+        ],
+        "allHaveNoSrcset": true,
+        "allHaveNoSizes": true,
+        "allLazy": true,
+        "allAsyncDecode": true
+      },
+      "dualSense": {
+        "encodedBytes": 237144,
+        "naturalDimensionsPx": [
+          1536,
+          1024
+        ]
+      },
+      "hero": {
+        "currentSrc": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "encodedBytes": 23294,
+        "CSSdimensionsPx": [
+          658.42,
+          493.81
+        ],
+        "DOMnaturalDimensionsPx": [
+          681,
+          510
+        ],
+        "DPR": 1,
+        "loading": "eager",
+        "decoding": "async",
+        "fetchpriority": "high"
+      },
+      "fonts": {
+        "status": "loaded",
+        "encodedBytes": 137524
+      },
+      "errors": {
+        "failed": [],
+        "badResponses": [],
+        "pageErrors": [],
+        "blocked": []
+      }
+    },
+    {
+      "label": "ru-phone",
+      "url": "https://flowers-luxury.shop/?lang=ru",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "LCP_ms": 400,
+      "LCP_elementClass": "hero-photo",
+      "CLS_maxSession": 0.018623056813184963,
+      "FCP_ms": 400,
+      "load_ms": 245.5,
+      "resourceTotals": {
+        "count": 27,
+        "transferSize": 1307003,
+        "encodedBodySize": 1299203,
+        "decodedBodySize": 1798518,
+        "resourceTimingsWithZeroTransfer": 1,
+        "excludeNavigation": true
+      },
+      "requestCount": 28,
+      "criticalJSandCSS": [
+        {
+          "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CS3Q60Md.css?ver=1.5.0",
+          "type": "link",
+          "encodedBytes": 17594,
+          "decodedBytes": 69618
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+          "type": "script",
+          "encodedBytes": 29531,
+          "decodedBytes": 87553
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+          "type": "script",
+          "encodedBytes": 4671,
+          "decodedBytes": 13577
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+          "type": "script",
+          "encodedBytes": 3280,
+          "decodedBytes": 9636
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 1289,
+          "decodedBytes": 4350
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+          "type": "script",
+          "encodedBytes": 760,
+          "decodedBytes": 1720
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 1385,
+          "decodedBytes": 4281
+        },
+        {
+          "url": "https://cdn-reach.hostinger.com/js/embed.js",
+          "type": "script",
+          "encodedBytes": 0,
+          "decodedBytes": 0
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 4602,
+          "decodedBytes": 15315
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+          "type": "script",
+          "encodedBytes": 1020,
+          "decodedBytes": 2439
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-C8HSsnBs.js?ver=1.5.0",
+          "type": "script",
+          "encodedBytes": 130613,
+          "decodedBytes": 439507
+        },
+        {
+          "url": "https://flowers-luxury.shop/wp-includes/js/wp-emoji-release.min.js?ver=7.1.2",
+          "type": "script",
+          "encodedBytes": 4916,
+          "decodedBytes": 22752
+        }
+      ],
+      "covers": {
+        "count": 24,
+        "downloadedBeforeScroll": 7,
+        "downloadedEncodedBytes": 705224,
+        "displayWidthCSSpx": 287.27,
+        "naturalDimensionsPx": [
+          720,
+          720
+        ],
+        "allHaveNoSrcset": true,
+        "allHaveNoSizes": true,
+        "allLazy": true,
+        "allAsyncDecode": true
+      },
+      "dualSense": {
+        "encodedBytes": 237144,
+        "naturalDimensionsPx": [
+          1536,
+          1024
+        ]
+      },
+      "hero": {
+        "currentSrc": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "encodedBytes": 11462,
+        "CSSdimensionsPx": [
+          383.03,
+          287.27
+        ],
+        "DOMnaturalDimensionsPx": [
+          383,
+          287
+        ],
+        "DPR": 1,
+        "loading": "eager",
+        "decoding": "async",
+        "fetchpriority": "high"
+      },
+      "fonts": {
+        "status": "loaded",
+        "encodedBytes": 137524
+      },
+      "errors": {
+        "failed": [],
+        "badResponses": [],
+        "pageErrors": [],
+        "blocked": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "case": "touch-clickthrough",
+    "pass": false,
+    "error": "{'address': 'Середньофонтанська вулиця', 'openDialogs': 1, 'posts': 0, 'errors': []}"
+  },
+  {
+    "case": "phone-uk",
+    "pass": false,
+    "error": "{'posts': 1, 'focused': False, 'invalid': None, 'describedby': None, 'errors': []}"
+  },
+  {
+    "case": "phone-ru",
+    "pass": false,
+    "error": "{'posts': 1, 'focused': False, 'invalid': None, 'describedby': None, 'errors': []}"
+  },
+  {
+    "case": "canonical-retry",
+    "pass": false,
+    "error": "{'requestIds': ['e6b10bd9-f374-4466-8f56-ece268325d9b', 'e6b10bd9-f374-4466-8f56-ece268325d9b', '297ab78c-71d1-411e-94fd-7402e396c95d'], 'phones': ['+380500000000', '+380500000000', '+380 (50) 000-00-00'], 'focusedError': False, 'errors': []}"
+  }
+]

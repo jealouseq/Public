@@ -1,0 +1,150 @@
+[
+  {
+    "case": "free-delivery-live-catalog-replay",
+    "language": "uk",
+    "days": 7,
+    "deliveryFee": null,
+    "freeDeliveryFrom": 7,
+    "summaryLines": "Доставка\nЗа адресою\nЗастава\n(повертається)\nУзгодимо",
+    "tariffBenefit": "Доставка включена",
+    "deliveryService": "Включені від 7 днів оренди"
+  },
+  {
+    "case": "free-delivery-live-catalog-replay",
+    "language": "uk",
+    "days": 30,
+    "deliveryFee": null,
+    "freeDeliveryFrom": 7,
+    "summaryLines": "Доставка\nЗа адресою\nЗастава\n(повертається)\nУзгодимо",
+    "tariffBenefit": "Доставка включена",
+    "deliveryService": "Включені від 7 днів оренди"
+  },
+  {
+    "case": "native-game-dialog",
+    "language": "uk",
+    "native": {
+      "tag": "DIALOG",
+      "open": true,
+      "modal": true,
+      "explicitRole": null,
+      "explicitAriaModal": null,
+      "labelledBy": "game-dialog-title",
+      "initialFocusInside": true,
+      "initialFocus": "Закрити опис гри"
+    },
+    "underlyingFocusSucceeded": false,
+    "tabCycle": [
+      {
+        "tag": "BUTTON",
+        "ariaLabel": null,
+        "inside": true,
+        "text": "Додати до заявки"
+      },
+      {
+        "tag": "BODY",
+        "ariaLabel": null,
+        "inside": false,
+        "text": "Перейти до вмісту\nJOYRENT.\nUA\nRU\n\nОренда PlayStation\n\nТвій вечір.\nТвоя"
+      },
+      {
+        "tag": "BUTTON",
+        "ariaLabel": "Закрити опис гри",
+        "inside": true,
+        "text": ""
+      },
+      {
+        "tag": "BUTTON",
+        "ariaLabel": null,
+        "inside": true,
+        "text": "Додати до заявки"
+      },
+      {
+        "tag": "BODY",
+        "ariaLabel": null,
+        "inside": false,
+        "text": "Перейти до вмісту\nJOYRENT.\nUA\nRU\n\nОренда PlayStation\n\nТвій вечір.\nТвоя"
+      },
+      {
+        "tag": "BUTTON",
+        "ariaLabel": "Закрити опис гри",
+        "inside": true,
+        "text": ""
+      }
+    ],
+    "escapeFocusRestored": true
+  },
+  {
+    "case": "free-delivery-live-catalog-replay",
+    "language": "ru",
+    "days": 7,
+    "deliveryFee": null,
+    "freeDeliveryFrom": 7,
+    "summaryLines": "Доставка\nПо адресу\nЗалог\n(возвращается)\nСогласуем",
+    "tariffBenefit": "Доставка включена",
+    "deliveryService": "Включены от 7 дней аренды"
+  },
+  {
+    "case": "free-delivery-live-catalog-replay",
+    "language": "ru",
+    "days": 30,
+    "deliveryFee": null,
+    "freeDeliveryFrom": 7,
+    "summaryLines": "Доставка\nПо адресу\nЗалог\n(возвращается)\nСогласуем",
+    "tariffBenefit": "Доставка включена",
+    "deliveryService": "Включены от 7 дней аренды"
+  },
+  {
+    "case": "native-game-dialog",
+    "language": "ru",
+    "native": {
+      "tag": "DIALOG",
+      "open": true,
+      "modal": true,
+      "explicitRole": null,
+      "explicitAriaModal": null,
+      "labelledBy": "game-dialog-title",
+      "initialFocusInside": true,
+      "initialFocus": "Закрыть описание игры"
+    },
+    "underlyingFocusSucceeded": false,
+    "tabCycle": [
+      {
+        "tag": "BUTTON",
+        "ariaLabel": null,
+        "inside": true,
+        "text": "Добавить в заявку"
+      },
+      {
+        "tag": "BODY",
+        "ariaLabel": null,
+        "inside": false,
+        "text": "Перейти к содержимому\nJOYRENT.\nКонсоли\nИгры\nКак арендовать\nFAQ\nUA\nRU\nВ"
+      },
+      {
+        "tag": "BUTTON",
+        "ariaLabel": "Закрыть описание игры",
+        "inside": true,
+        "text": ""
+      },
+      {
+        "tag": "BUTTON",
+        "ariaLabel": null,
+        "inside": true,
+        "text": "Добавить в заявку"
+      },
+      {
+        "tag": "BODY",
+        "ariaLabel": null,
+        "inside": false,
+        "text": "Перейти к содержимому\nJOYRENT.\nКонсоли\nИгры\nКак арендовать\nFAQ\nUA\nRU\nВ"
+      },
+      {
+        "tag": "BUTTON",
+        "ariaLabel": "Закрыть описание игры",
+        "inside": true,
+        "text": ""
+      }
+    ],
+    "escapeFocusRestored": true
+  }
+]

@@ -1,0 +1,97 @@
+{
+  "asset": "images/delivery-basemap-odessa.webp",
+  "asset_sha256": "e2ab79de5709088c0294d5524b0a4a0b5a7519f160ad045174e33b49889079c5",
+  "logical_size": [
+    640,
+    440
+  ],
+  "raster_size": [
+    1280,
+    880
+  ],
+  "device_scale": 2,
+  "projection": {
+    "width": 640,
+    "height": 440,
+    "padding": 22,
+    "scale": 55563.326671730516,
+    "center_x": 0.5362297870994994,
+    "center_y": -0.9178932585594465,
+    "bounds": {
+      "west": 30.39372611729199,
+      "east": 31.053681182707997,
+      "south": 46.303969452017704,
+      "north": 46.61651612659042
+    },
+    "city_percent": [
+      49.938836744931855,
+      42.94908315040718
+    ],
+    "formula": "x=(lng*pi/180-center_x)*scale+width/2; y=(-log(tan(pi/4+lat*pi/360))-center_y)*scale+height/2"
+  },
+  "mercator_bounds": {
+    "west_x_radians": 0.5304705926961375,
+    "east_x_radians": 0.5419889815028613,
+    "south_y_radians": -0.9139338124071353,
+    "north_y_radians": -0.9218527047117578
+  },
+  "epsg3857_bounds_metres": {
+    "west": 3383414.1146871643,
+    "east": 3456879.9765157155,
+    "south": 5829195.064465009,
+    "north": 5879702.844472137
+  },
+  "crop_offset": [
+    0,
+    0
+  ],
+  "raster_tiles_used": false,
+  "source": "OpenStreetMap via bounded public Overpass API query",
+  "copyright": "©OpenStreetMap contributors",
+  "copyright_url": "https://www.openstreetmap.org/copyright",
+  "source_license": "ODbL-1.0",
+  "source_license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "source_extract": "data/delivery-basemap-osm.geojson.gz",
+  "source_extract_sha256": "d03568d531da665e241425b5c117ee92c7028134381244327ea97c11c9e3080c",
+  "source_feature_count": 2809,
+  "osm_timestamps": [
+    "2026-10-03T12:27:36Z",
+    "2026-10-03T12:32:36Z"
+  ],
+  "verified_sea_label_lng_lat": [
+    30.95,
+    46.44
+  ],
+  "verified_sea_label_pixel": [
+    539.4538258581458,
+    248.807902337947
+  ],
+  "coastline_note": "Original OSM ways joined by exact shared endpoints. Sea polygon closures fall outside the viewport; no invented visible coastline or roads.",
+  "cartographic_style": {
+    "land": "#171c23",
+    "water": "#090f16",
+    "roads": {
+      "tertiary": [
+        "#2b343d",
+        0.65
+      ],
+      "secondary": [
+        "#34414a",
+        0.85
+      ],
+      "primary": [
+        "#3c4b56",
+        1.1
+      ],
+      "trunk": [
+        "#435562",
+        1.3
+      ],
+      "motorway": [
+        "#435562",
+        1.3
+      ]
+    }
+  },
+  "delivery_zones_in_basemap": false
+}

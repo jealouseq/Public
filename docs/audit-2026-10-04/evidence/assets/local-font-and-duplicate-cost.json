@@ -1,0 +1,776 @@
+{
+  "allFontCount": 16,
+  "allFontBytes": 431640,
+  "latinCyrillicCount": 6,
+  "latinCyrillicBytes": 171284,
+  "otherSubsetBytes": 260356,
+  "otherSubsets": [
+    {
+      "file": "assets/dist/assets/manrope-greek-wght-normal-DL7QRZyv.woff2",
+      "bytes": 9444,
+      "sha256": "2fb2e8cbfd52ae46179a8b6024eb162f1f9c6de3d22d6e3a30d8f395de7220be",
+      "gzipBytes": 9467
+    },
+    {
+      "file": "assets/dist/assets/manrope-latin-ext-wght-normal-Ch3YOpNY.woff2",
+      "bytes": 15120,
+      "sha256": "3911b66d9f2e005a4b989223405d0e5032619c668597ba467cc76a23c8fffcfb",
+      "gzipBytes": 15143
+    },
+    {
+      "file": "assets/dist/assets/manrope-vietnamese-wght-normal-usUDDRr7.woff2",
+      "bytes": 8520,
+      "sha256": "6bbb044ab420e07edb0a3042d2eb314b85e83a0182e945a15ab3b9092668dfd5",
+      "gzipBytes": 8543
+    },
+    {
+      "file": "assets/dist/assets/onest-cyrillic-ext-wght-normal-DOFToQv1.woff2",
+      "bytes": 10540,
+      "sha256": "268f03691b3d06e57abcf20f9277e314ea8784298983aab5b40c1b91965027e1",
+      "gzipBytes": 10563
+    },
+    {
+      "file": "assets/dist/assets/onest-latin-ext-wght-normal-QAhDxQuo.woff2",
+      "bytes": 28452,
+      "sha256": "14e7d3079b75860e2ab50efc6c318c398fdb46ede9b56e625f12ae70a3c5d9a4",
+      "gzipBytes": 28480
+    },
+    {
+      "file": "assets/dist/assets/onest-math-wght-normal-Bl4ZGkZl.woff2",
+      "bytes": 25480,
+      "sha256": "c74952a8c0c8c558c4f879f83773cf529d11350609f7073f5b2c5999dec46041",
+      "gzipBytes": 25508
+    },
+    {
+      "file": "assets/dist/assets/onest-symbols-wght-normal-DxQzqQfC.woff2",
+      "bytes": 18168,
+      "sha256": "2ec2d45d2ec0770e2c18cba2dba5126cf2dcff181d23ad192e9fffeb4af4b0b6",
+      "gzipBytes": 18196
+    },
+    {
+      "file": "assets/dist/assets/onest-vietnamese-wght-normal-BBxOatbv.woff2",
+      "bytes": 12400,
+      "sha256": "d852d4d094a3a46d701d16245deb7ca83b16b5bd69e20aa0aba089392ad69474",
+      "gzipBytes": 12423
+    },
+    {
+      "file": "assets/dist/assets/unbounded-latin-ext-wght-normal-D6H-S6MW.woff2",
+      "bytes": 118348,
+      "sha256": "845e1c9fe2e9a7bfbedfeb447fbeba4bc1b5ecd6246277910ccdaad35a7a532c",
+      "gzipBytes": 114522
+    },
+    {
+      "file": "assets/dist/assets/unbounded-vietnamese-wght-normal-rat7GD3o.woff2",
+      "bytes": 13884,
+      "sha256": "aa6b9cba3768a781df88a462a85ca40c6644662bb7d59ab4375ad1ff64f51251",
+      "gzipBytes": 13907
+    }
+  ],
+  "duplicateImageGroups": [
+    [
+      {
+        "file": "assets/images/cover-astro-bot-720.webp",
+        "bytes": 74746,
+        "sha256": "1442ef62d986bd79854b09b66a1110f3fb1ab2d55c69fb98613e0f263d644829",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-astro-bot.webp",
+        "bytes": 74746,
+        "sha256": "1442ef62d986bd79854b09b66a1110f3fb1ab2d55c69fb98613e0f263d644829",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-cod-bo6-720.webp",
+        "bytes": 80994,
+        "sha256": "91809f24dc78b6c549441cae14b46fac6a1b1363412f6de8a06ccb9b61544641",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-cod-bo6.webp",
+        "bytes": 80994,
+        "sha256": "91809f24dc78b6c549441cae14b46fac6a1b1363412f6de8a06ccb9b61544641",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-cod-bo7-720.webp",
+        "bytes": 70638,
+        "sha256": "9e20f5df3867600bdb41c591ef54b291ce4403e54232a89ea6d0897adf24ed4d",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-cod-bo7.webp",
+        "bytes": 70638,
+        "sha256": "9e20f5df3867600bdb41c591ef54b291ce4403e54232a89ea6d0897adf24ed4d",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-elden-ring-720.webp",
+        "bytes": 59718,
+        "sha256": "291e632c3edabd21da72569fd38f1fcd1fbb56572045bbdcc8ae944ad3c56724",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-elden-ring.webp",
+        "bytes": 59718,
+        "sha256": "291e632c3edabd21da72569fd38f1fcd1fbb56572045bbdcc8ae944ad3c56724",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-fc25-720.webp",
+        "bytes": 92024,
+        "sha256": "1e14e5b04430f3a4bd88acfd58312d75d9828add7340a9c2beedffeeef4cca93",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-fc25.webp",
+        "bytes": 92024,
+        "sha256": "1e14e5b04430f3a4bd88acfd58312d75d9828add7340a9c2beedffeeef4cca93",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-fc27-720.webp",
+        "bytes": 122106,
+        "sha256": "f07c4ee7dafefe76f70bae28a3755ba33972a6d8b18ae433c5d0cd86914d57cc",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-fc27.webp",
+        "bytes": 122106,
+        "sha256": "f07c4ee7dafefe76f70bae28a3755ba33972a6d8b18ae433c5d0cd86914d57cc",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-god-of-war-ragnarok-720.webp",
+        "bytes": 91728,
+        "sha256": "d8ccb347ff4cece5ee8b1b838296177760db0a3956d535d254a3646b182e59c8",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-god-of-war-ragnarok.webp",
+        "bytes": 91728,
+        "sha256": "d8ccb347ff4cece5ee8b1b838296177760db0a3956d535d254a3646b182e59c8",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-gt7-720.webp",
+        "bytes": 94676,
+        "sha256": "2c2be4cb4dffff3ea424ab07e7ef7d1b2279a91caf265ddbcab3c5d82286336f",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-gt7.webp",
+        "bytes": 94676,
+        "sha256": "2c2be4cb4dffff3ea424ab07e7ef7d1b2279a91caf265ddbcab3c5d82286336f",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-gta-v-720.webp",
+        "bytes": 139260,
+        "sha256": "8eb000508ebbe336198658b0318b0a65c4f0f2459efc1f66f9c4f71836c868a7",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-gta-v.webp",
+        "bytes": 139260,
+        "sha256": "8eb000508ebbe336198658b0318b0a65c4f0f2459efc1f66f9c4f71836c868a7",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-hogwarts-720.webp",
+        "bytes": 106598,
+        "sha256": "870b0af2f9f0781af208c5d8e3704b331eff973793be330b654dcac0dee20266",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-hogwarts.webp",
+        "bytes": 106598,
+        "sha256": "870b0af2f9f0781af208c5d8e3704b331eff973793be330b654dcac0dee20266",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-horizon-forbidden-west-720.webp",
+        "bytes": 121372,
+        "sha256": "0061afd359485a14a6eb3dd1fe6e7d9515931a940054ccd273219c84d1f34d9b",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-horizon-forbidden-west.webp",
+        "bytes": 121372,
+        "sha256": "0061afd359485a14a6eb3dd1fe6e7d9515931a940054ccd273219c84d1f34d9b",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-it-takes-two-720.webp",
+        "bytes": 89598,
+        "sha256": "20d6fec572977a8126f68c0ae97e237d106dedd1fb2daa7fb82e8f108f07b673",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-it-takes-two.webp",
+        "bytes": 89598,
+        "sha256": "20d6fec572977a8126f68c0ae97e237d106dedd1fb2daa7fb82e8f108f07b673",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-mk1-720.webp",
+        "bytes": 96888,
+        "sha256": "90418ebbb5f13653e274696fc92d3961f718dab71c5c803896e4bffa7b3d91ec",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-mk1.webp",
+        "bytes": 96888,
+        "sha256": "90418ebbb5f13653e274696fc92d3961f718dab71c5c803896e4bffa7b3d91ec",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-mk11-720.webp",
+        "bytes": 83738,
+        "sha256": "7ad84bdd5c25668fe31437a42e92e4b5d04f0a054b7f510dddd94e1209d3e937",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-mk11.webp",
+        "bytes": 83738,
+        "sha256": "7ad84bdd5c25668fe31437a42e92e4b5d04f0a054b7f510dddd94e1209d3e937",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-red-dead-redemption-2-720.webp",
+        "bytes": 91492,
+        "sha256": "1c8713196b6f4bea15991dc71e09475a7c0de04cf44606a3ef869c066a35856f",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-red-dead-redemption-2.webp",
+        "bytes": 91492,
+        "sha256": "1c8713196b6f4bea15991dc71e09475a7c0de04cf44606a3ef869c066a35856f",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-resident-evil-requiem-720.webp",
+        "bytes": 125360,
+        "sha256": "248883149522a5f40de55ef12469bf26a30284e48b589b6d5320ac8a708b9256",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-resident-evil-requiem.webp",
+        "bytes": 125360,
+        "sha256": "248883149522a5f40de55ef12469bf26a30284e48b589b6d5320ac8a708b9256",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-sackboy-720.webp",
+        "bytes": 207790,
+        "sha256": "973e4c6a03213c8ce58b4895c5499bd15a5715dc786e1e653b2f04d5ca986520",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-sackboy.webp",
+        "bytes": 207790,
+        "sha256": "973e4c6a03213c8ce58b4895c5499bd15a5715dc786e1e653b2f04d5ca986520",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-spider-man-2-720.webp",
+        "bytes": 55620,
+        "sha256": "5a147e98c86220fe229341ba1fe747785c661eda445b8c14e054d532310d33b8",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-spider-man-2.webp",
+        "bytes": 55620,
+        "sha256": "5a147e98c86220fe229341ba1fe747785c661eda445b8c14e054d532310d33b8",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-split-fiction-720.webp",
+        "bytes": 116116,
+        "sha256": "c369b21aa08292778192dc7d196e135696b1d21d0e9a83069d668e5404a4c61d",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-split-fiction.webp",
+        "bytes": 116116,
+        "sha256": "c369b21aa08292778192dc7d196e135696b1d21d0e9a83069d668e5404a4c61d",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-stalker2-720.webp",
+        "bytes": 75206,
+        "sha256": "2b2662d5ab9231b76a82c2513a853ee08b56d34ad6b77e47fa805fbdcb6dc6ce",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-stalker2.webp",
+        "bytes": 75206,
+        "sha256": "2b2662d5ab9231b76a82c2513a853ee08b56d34ad6b77e47fa805fbdcb6dc6ce",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-tekken8-720.webp",
+        "bytes": 81324,
+        "sha256": "20b2c92da9b0a7e6472b13b1a03cf3ab9da4fce7f4467599919e8d6d287d94f2",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-tekken8.webp",
+        "bytes": 81324,
+        "sha256": "20b2c92da9b0a7e6472b13b1a03cf3ab9da4fce7f4467599919e8d6d287d94f2",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-ufc5-720.webp",
+        "bytes": 68962,
+        "sha256": "9a00ce6827d3efbb556c4ef11cfb01518bab4ec0b15920d4d885487e5588b7e9",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-ufc5.webp",
+        "bytes": 68962,
+        "sha256": "9a00ce6827d3efbb556c4ef11cfb01518bab4ec0b15920d4d885487e5588b7e9",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/cover-ufc6-720.webp",
+        "bytes": 74324,
+        "sha256": "a78451ecad32b213ef5686cf4a6aec6a65eb29afc704bb225123abdd2d41082c",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/cover-ufc6.webp",
+        "bytes": 74324,
+        "sha256": "a78451ecad32b213ef5686cf4a6aec6a65eb29afc704bb225123abdd2d41082c",
+        "pixels": [
+          720,
+          720
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/game-action-720.webp",
+        "bytes": 103522,
+        "sha256": "a9655cbddb70dcc6675667815e7f6ba049af5f85414aa1314e0ba1daa6c25b5a",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/game-action.webp",
+        "bytes": 103522,
+        "sha256": "a9655cbddb70dcc6675667815e7f6ba049af5f85414aa1314e0ba1daa6c25b5a",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/game-city-720.webp",
+        "bytes": 212192,
+        "sha256": "f06cb393ab8adb0108b0fd15b712747ebdfa8ce2cdc4b5c600d16dc32aad2969",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/game-city.webp",
+        "bytes": 212192,
+        "sha256": "f06cb393ab8adb0108b0fd15b712747ebdfa8ce2cdc4b5c600d16dc32aad2969",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/game-coop-720.webp",
+        "bytes": 218892,
+        "sha256": "660e2298cb111e30e9555c2fcbabdf4f375360448e586a282a3d347ad043d75b",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/game-coop.webp",
+        "bytes": 218892,
+        "sha256": "660e2298cb111e30e9555c2fcbabdf4f375360448e586a282a3d347ad043d75b",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/game-family-720.webp",
+        "bytes": 212268,
+        "sha256": "b5ee4300db833d41d2d17b2cf7e3a92c6a499dc7aa3cd296729c71c5b9a4a7aa",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/game-family.webp",
+        "bytes": 212268,
+        "sha256": "b5ee4300db833d41d2d17b2cf7e3a92c6a499dc7aa3cd296729c71c5b9a4a7aa",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/game-fc-720.webp",
+        "bytes": 93978,
+        "sha256": "5e452c784b8bc0c79a208aec07098208486e55faea593ce868223bc76d3f6f19",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/game-fc.webp",
+        "bytes": 93978,
+        "sha256": "5e452c784b8bc0c79a208aec07098208486e55faea593ce868223bc76d3f6f19",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/game-fighting-720.webp",
+        "bytes": 119022,
+        "sha256": "dcb638797661627820ab823d2b55c49c9b6146655d1d526765d70647b78e47f1",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/game-fighting.webp",
+        "bytes": 119022,
+        "sha256": "dcb638797661627820ab823d2b55c49c9b6146655d1d526765d70647b78e47f1",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/game-magic-720.webp",
+        "bytes": 198574,
+        "sha256": "efdea7db4125846f020fa73f0083ef348e4d56c5f3b677c0422e6a32f1f22dcc",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/game-magic.webp",
+        "bytes": 198574,
+        "sha256": "efdea7db4125846f020fa73f0083ef348e4d56c5f3b677c0422e6a32f1f22dcc",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/game-openworld-720.webp",
+        "bytes": 156938,
+        "sha256": "6b3e73ada2bd5fbe1260f6ab16a8c0bcd676c2508ddfe20bac05e799cb9a23eb",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/game-openworld.webp",
+        "bytes": 156938,
+        "sha256": "6b3e73ada2bd5fbe1260f6ab16a8c0bcd676c2508ddfe20bac05e799cb9a23eb",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      }
+    ],
+    [
+      {
+        "file": "assets/images/game-racing-720.webp",
+        "bytes": 113360,
+        "sha256": "be959466ea1b030b0edf6bf09ce82e3873c3f84581a47581bb2952cc8d5287c1",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      },
+      {
+        "file": "assets/images/game-racing.webp",
+        "bytes": 113360,
+        "sha256": "be959466ea1b030b0edf6bf09ce82e3873c3f84581a47581bb2952cc8d5287c1",
+        "pixels": [
+          720,
+          1080
+        ],
+        "mode": "RGB"
+      }
+    ]
+  ],
+  "duplicateImageBytesAfterFirst": 3649024
+}

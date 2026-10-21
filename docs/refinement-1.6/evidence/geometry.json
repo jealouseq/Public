@@ -1,0 +1,2432 @@
+[
+  {
+    "language": "uk",
+    "width": 320,
+    "dpr": 1,
+    "hero": {
+      "width": 313.59375,
+      "height": 235.1875,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-mobile-560.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        146,
+        178
+      ],
+      "width": 280,
+      "scrollWidth": 280,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout-560.webp",
+      "width": 280,
+      "height": 186.5
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 105.671875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 68,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "12px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 68,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "12px"
+      },
+      {
+        "class": "icon-button",
+        "height": 33,
+        "width": 33,
+        "pseudoInset": "-5.5px",
+        "pseudoContent": "\"\"",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 33,
+        "width": 33,
+        "pseudoInset": "-5.5px",
+        "pseudoContent": "\"\"",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-mobile-560.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout-560.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "dpr": 1,
+    "hero": {
+      "width": 383.03125,
+      "height": 287.265625,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-mobile-560.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        146,
+        184
+      ],
+      "width": 342,
+      "scrollWidth": 342,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout-560.webp",
+      "width": 341.96875,
+      "height": 227.765625
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 105.671875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 68,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "12px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 68,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "12px"
+      },
+      {
+        "class": "icon-button",
+        "height": 33,
+        "width": 33,
+        "pseudoInset": "-5.5px",
+        "pseudoContent": "\"\"",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 33,
+        "width": 33,
+        "pseudoInset": "-5.5px",
+        "pseudoContent": "\"\"",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-mobile-560.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout-560.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "dpr": 3,
+    "hero": {
+      "width": 383.03125,
+      "height": 287.265625,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-mobile-1448.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        146,
+        184
+      ],
+      "width": 342,
+      "scrollWidth": 342,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout-1120.webp",
+      "width": 341.984375,
+      "height": 228.078125
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 105.671875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 68,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "12px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 68,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "12px"
+      },
+      {
+        "class": "icon-button",
+        "height": 33,
+        "width": 33,
+        "pseudoInset": "-5.5px",
+        "pseudoContent": "\"\"",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 33,
+        "width": 33,
+        "pseudoInset": "-5.5px",
+        "pseudoContent": "\"\"",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-mobile-1448.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout-1120.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 768,
+    "dpr": 3,
+    "hero": {
+      "width": 492.796875,
+      "height": 369.59375,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-mobile-1448.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        152,
+        212
+      ],
+      "width": 640,
+      "scrollWidth": 640,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout-1120.webp",
+      "width": 362.859375,
+      "height": 242
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 105.671875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 47.875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 78.234375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 60.578125,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 53.09375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-mobile-1448.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout-1120.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 900,
+    "dpr": 3,
+    "hero": {
+      "width": 492.796875,
+      "height": 369.59375,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-mobile-1448.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        152,
+        212
+      ],
+      "width": 640,
+      "scrollWidth": 640,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout.webp",
+      "width": 428.5625,
+      "height": 285.703125
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 105.671875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 47.875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 78.234375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 60.578125,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 53.09375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-mobile-1448.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 901,
+    "dpr": 3,
+    "hero": {
+      "width": 409.34375,
+      "height": 307,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-desktop-detail.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        241,
+        285
+      ],
+      "width": 403,
+      "scrollWidth": 403,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout.webp",
+      "width": 429.0625,
+      "height": 286.03125
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 97.53125,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "12px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 47.875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 78.234375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 60.578125,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 53.09375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-desktop-detail.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "dpr": 1,
+    "hero": {
+      "width": 658.421875,
+      "height": 493.8125,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-desktop-detail-768.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        258,
+        329
+      ],
+      "width": 648,
+      "scrollWidth": 648,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout-1120.webp",
+      "width": 677.90625,
+      "height": 452.125
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 121.921875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "15px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 47.875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 78.234375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 60.578125,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 53.09375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-desktop-detail-768.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout-1120.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "dpr": 3,
+    "hero": {
+      "width": 658.421875,
+      "height": 493.8125,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-desktop-detail.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        258,
+        329
+      ],
+      "width": 648,
+      "scrollWidth": 648,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout.webp",
+      "width": 677.90625,
+      "height": 451.9375
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 121.921875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "15px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 47.875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 78.234375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 60.578125,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 53.09375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-desktop-detail.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 1920,
+    "dpr": 3,
+    "hero": {
+      "width": 701.1875,
+      "height": 525.890625,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-desktop-detail.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        255,
+        329
+      ],
+      "width": 691,
+      "scrollWidth": 691,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout.webp",
+      "width": 725.5625,
+      "height": 483.703125
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 121.921875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "15px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 47.875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 78.234375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 60.578125,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 53.09375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-desktop-detail.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 320,
+    "dpr": 1,
+    "hero": {
+      "width": 313.59375,
+      "height": 235.1875,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-mobile-560.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        146,
+        178
+      ],
+      "width": 280,
+      "scrollWidth": 280,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout-560.webp",
+      "width": 280,
+      "height": 186.5
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 106.984375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 68,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "12px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 68,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "12px"
+      },
+      {
+        "class": "icon-button",
+        "height": 33,
+        "width": 33,
+        "pseudoInset": "-5.5px",
+        "pseudoContent": "\"\"",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 33,
+        "width": 33,
+        "pseudoInset": "-5.5px",
+        "pseudoContent": "\"\"",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-mobile-560.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout-560.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "dpr": 1,
+    "hero": {
+      "width": 383.03125,
+      "height": 287.265625,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-mobile-560.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        146,
+        184
+      ],
+      "width": 342,
+      "scrollWidth": 342,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout-560.webp",
+      "width": 341.96875,
+      "height": 227.765625
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 106.984375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 68,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "12px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 68,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "12px"
+      },
+      {
+        "class": "icon-button",
+        "height": 33,
+        "width": 33,
+        "pseudoInset": "-5.5px",
+        "pseudoContent": "\"\"",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 33,
+        "width": 33,
+        "pseudoInset": "-5.5px",
+        "pseudoContent": "\"\"",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-mobile-560.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout-560.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "dpr": 3,
+    "hero": {
+      "width": 383.03125,
+      "height": 287.265625,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-mobile-1448.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        146,
+        184
+      ],
+      "width": 342,
+      "scrollWidth": 342,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout-1120.webp",
+      "width": 341.984375,
+      "height": 228.078125
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 106.984375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 68,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "12px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 68,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "12px"
+      },
+      {
+        "class": "icon-button",
+        "height": 33,
+        "width": 33,
+        "pseudoInset": "-5.5px",
+        "pseudoContent": "\"\"",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 33,
+        "width": 33,
+        "pseudoInset": "-5.5px",
+        "pseudoContent": "\"\"",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-mobile-1448.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout-1120.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 768,
+    "dpr": 3,
+    "hero": {
+      "width": 492.796875,
+      "height": 369.59375,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-mobile-1448.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        152,
+        212
+      ],
+      "width": 640,
+      "scrollWidth": 640,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout-1120.webp",
+      "width": 362.859375,
+      "height": 242
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 106.984375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 46.796875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 86.953125,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 66.375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-mobile-1448.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout-1120.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 900,
+    "dpr": 3,
+    "hero": {
+      "width": 492.796875,
+      "height": 369.59375,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-mobile-1448.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        152,
+        212
+      ],
+      "width": 640,
+      "scrollWidth": 640,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout.webp",
+      "width": 428.5625,
+      "height": 285.703125
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 106.984375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 46.796875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 86.953125,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 66.375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-mobile-1448.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 901,
+    "dpr": 3,
+    "hero": {
+      "width": 409.34375,
+      "height": 307,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-desktop-detail.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        241,
+        285
+      ],
+      "width": 403,
+      "scrollWidth": 403,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout.webp",
+      "width": 429.0625,
+      "height": 286.03125
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 98.75,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "12px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 46.796875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 86.953125,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 66.375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-desktop-detail.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "dpr": 1,
+    "hero": {
+      "width": 658.421875,
+      "height": 493.8125,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-desktop-detail-768.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        258,
+        329
+      ],
+      "width": 648,
+      "scrollWidth": 648,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout-1120.webp",
+      "width": 677.90625,
+      "height": 452.125
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 123.4375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "15px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 46.796875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 86.953125,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 66.375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-desktop-detail-768.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout-1120.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "dpr": 3,
+    "hero": {
+      "width": 658.421875,
+      "height": 493.8125,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-desktop-detail.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        258,
+        329
+      ],
+      "width": 648,
+      "scrollWidth": 648,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout.webp",
+      "width": 677.90625,
+      "height": 451.9375
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 123.4375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "15px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 46.796875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 86.953125,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 66.375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-desktop-detail.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 1920,
+    "dpr": 3,
+    "hero": {
+      "width": 701.1875,
+      "height": 525.890625,
+      "currentSrc": "http://localhost:5199/images/ps5-commercial-desktop-detail.webp",
+      "filter": "none",
+      "transform": "none",
+      "objectFit": "contain",
+      "ambientAnimation": "none",
+      "ambientOpacity": "0.03"
+    },
+    "heading": {
+      "baselines": [
+        255,
+        329
+      ],
+      "width": 691,
+      "scrollWidth": 691,
+      "font": "\"Unbounded Variable\", sans-serif"
+    },
+    "controller": {
+      "currentSrc": "http://localhost:5199/images/dualsense-cutout.webp",
+      "width": 725.5625,
+      "height": 483.703125
+    },
+    "controls": [
+      {
+        "class": "text-link",
+        "height": 44,
+        "width": 123.4375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "15px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 82,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "14px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "icon-button",
+        "height": 46,
+        "width": 46,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "16px"
+      },
+      {
+        "class": "active",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 46.796875,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 86.953125,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 66.375,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      },
+      {
+        "class": "",
+        "height": 44,
+        "width": 44,
+        "pseudoInset": "auto",
+        "pseudoContent": "none",
+        "fontSize": "13px"
+      }
+    ],
+    "heroRequests": [
+      "http://localhost:5199/images/ps5-commercial-desktop-detail.webp"
+    ],
+    "controllerRequests": [
+      "http://localhost:5199/images/dualsense-cutout.webp"
+    ],
+    "errors": [],
+    "overflow": false
+  }
+]

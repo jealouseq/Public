@@ -1,0 +1,351 @@
+{
+  "reportSource": "work/refinement-1.8/review.md",
+  "reportCopy": "docs/refinement-1.8/evidence/review.md",
+  "reportSha256": "9f5a5d7d9e91ef8e6f2425320087c5b1797645da8ee433cc32979dd486a2d048",
+  "reportByteIdentical": true,
+  "scopes": [
+    {
+      "scope": "landscape-map",
+      "main": "main-DymdWJeq.js",
+      "css": "main-CBL0otFI.css",
+      "cases": 8,
+      "passed": 8,
+      "screens": 8,
+      "receipt": "docs/refinement-1.8/evidence/review-scoped/landscape-map/receipt.json"
+    },
+    {
+      "scope": "attribution-before",
+      "main": "main-CYezEY1c.js",
+      "css": "main-DTp9pLQ1.css",
+      "cases": 18,
+      "passed": 18,
+      "screens": 10,
+      "receipt": "docs/refinement-1.8/evidence/review-scoped/attribution-before/receipt.json"
+    },
+    {
+      "scope": "mobile-connectors",
+      "main": "main-CYezEY1c.js",
+      "css": "main-DTp9pLQ1.css",
+      "cases": 8,
+      "passed": 8,
+      "screens": 8,
+      "receipt": "docs/refinement-1.8/evidence/review-scoped/mobile-connectors/receipt.json"
+    },
+    {
+      "scope": "compact-history",
+      "main": "main-seI-bBsh.js",
+      "css": "main-CyZhN2wL.css",
+      "cases": 12,
+      "passed": 12,
+      "screens": 12,
+      "receipt": "docs/refinement-1.8/evidence/review-scoped/compact-history/receipt.json"
+    }
+  ],
+  "screens": [
+    {
+      "source": "work/refinement-1.8/landscape-review/ru-320-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/landscape-map/ru-320-map-fees.png",
+      "sha256": "360bd4a718b83a083ace18438cc021244902c9b8837f2c934801ce84c1754e5b",
+      "width": 238,
+      "height": 575,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/ru-390-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/landscape-map/ru-390-map-fees.png",
+      "sha256": "c39dd85ac845b2613e8d1cca85b4230d8d0645cd24ac39625dd069d922e11d51",
+      "width": 292,
+      "height": 593,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/ru-768-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/landscape-map/ru-768-map-fees.png",
+      "sha256": "0d70c15a553025a721da02510f2647ede73c4c75cf6af0f8df13b998df8ae2c4",
+      "width": 632,
+      "height": 778,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/ru-980-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/landscape-map/ru-980-map-fees.png",
+      "sha256": "a8beccb0bf56e9c0fd133130affca0fd4296823b3ba0663ea8b0a7f0f39e1a3d",
+      "width": 818,
+      "height": 332,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/uk-320-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/landscape-map/uk-320-map-fees.png",
+      "sha256": "36839ec3672eeddf198d56f40750cb0fff21a4b077da2419d2d4ebcf7dbf1a70",
+      "width": 238,
+      "height": 575,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/uk-390-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/landscape-map/uk-390-map-fees.png",
+      "sha256": "fa8fab5f2cb7c0661e98eb78e12688f7bf68ca2757f680a63fecac4310f9479a",
+      "width": 292,
+      "height": 575,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/uk-768-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/landscape-map/uk-768-map-fees.png",
+      "sha256": "1299d5ab207c45f32311ced42d48693aae788c7cdde19654e39ff8b866d40e43",
+      "width": 632,
+      "height": 778,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/uk-980-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/landscape-map/uk-980-map-fees.png",
+      "sha256": "8be7de6b591331c4fc16103e6c3d98ad31b4bc149365015fb2589a203277f49d",
+      "width": 818,
+      "height": 332,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/attribution-before/ru-1440-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/attribution-before/ru-1440-map-fees.png",
+      "sha256": "30935caa06d9f8c6738218ad3a81260131d5568e5c91240509104baa4a138ce6",
+      "width": 1202,
+      "height": 471,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/attribution-before/ru-320-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/attribution-before/ru-320-map-fees.png",
+      "sha256": "f10ec89f11decad85daf4e752f1d6b934ac2a28b02f6e0272d1f8854b6e11415",
+      "width": 238,
+      "height": 549,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/attribution-before/ru-700-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/attribution-before/ru-700-map-fees.png",
+      "sha256": "789168ebf4f3c981f28aec863702c57866b7af653c4ea2a2857b2f8faa7d24f1",
+      "width": 602,
+      "height": 724,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/attribution-before/ru-900-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/attribution-before/ru-900-map-fees.png",
+      "sha256": "d794a7fd791fbd800af06ed5c31b9af8cb6585c7610e12ac54d7b64a2ab8df60",
+      "width": 750,
+      "height": 833,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/attribution-before/ru-901-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/attribution-before/ru-901-map-fees.png",
+      "sha256": "79618e7d1eb8cb6d2529a7498766af67e5b8dc325633d8702552621352cc11c5",
+      "width": 751,
+      "height": 350,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/attribution-before/uk-1440-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/attribution-before/uk-1440-map-fees.png",
+      "sha256": "d3816270a456325bb52c50cfd19f931b78fb9f474cc34d56225e15b96109f36f",
+      "width": 1202,
+      "height": 471,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/attribution-before/uk-320-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/attribution-before/uk-320-map-fees.png",
+      "sha256": "695b6e1664444f5b28de3eaf27e03f977fc50fbf686e7f51eb96ac365a9bf982",
+      "width": 238,
+      "height": 549,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/attribution-before/uk-700-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/attribution-before/uk-700-map-fees.png",
+      "sha256": "7628173c893ef4ae1bbd71c12779102229666d6e3d6b8ca6ae7889a232bfc388",
+      "width": 602,
+      "height": 724,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/attribution-before/uk-900-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/attribution-before/uk-900-map-fees.png",
+      "sha256": "6266ead56d06436e1215cbc59133b47f16385dd66091216a7067b0fa823b8501",
+      "width": 750,
+      "height": 833,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/landscape-review/attribution-before/uk-901-map-fees.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/attribution-before/uk-901-map-fees.png",
+      "sha256": "db2b2cc90e6c5945b1d4c47b38c5015b87da990ab23a1f629cb81d3ee5185b76",
+      "width": 751,
+      "height": 332,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/connector-review/ru-320-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/mobile-connectors/ru-320-process.png",
+      "sha256": "37dde38ea2aafd7cae2e1f8ea179be22f89967ed4c9c8e8f1e79109e08bcc9dd",
+      "width": 280,
+      "height": 344,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/connector-review/ru-390-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/mobile-connectors/ru-390-process.png",
+      "sha256": "5adfee0c9f37a6f4c436a538ec3c8e7ccbea004f4312dd7f24fcb3d7e72b9d5f",
+      "width": 342,
+      "height": 343,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/connector-review/ru-700-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/mobile-connectors/ru-700-process.png",
+      "sha256": "bff162cdd11e3f1474307d4d1a468af794e49c8299479e7b987fe418670b58ee",
+      "width": 652,
+      "height": 343,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/connector-review/ru-701-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/mobile-connectors/ru-701-process.png",
+      "sha256": "a08bbdd93d07b09dea919f35b6534c622c5be2c184cc3892c2cecbf80b88c412",
+      "width": 629,
+      "height": 145,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/connector-review/uk-320-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/mobile-connectors/uk-320-process.png",
+      "sha256": "28859fd6e0ec119d2fa7c6ce57efc8c20c7911a276a0b63534c9e4a62b610046",
+      "width": 280,
+      "height": 344,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/connector-review/uk-390-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/mobile-connectors/uk-390-process.png",
+      "sha256": "429105646420fb0eafa78a9621957a679b39b69bdf8df528faaf577324195fb8",
+      "width": 342,
+      "height": 344,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/connector-review/uk-700-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/mobile-connectors/uk-700-process.png",
+      "sha256": "9bef133649d77f23c7f188bae136e5889181aacd6e31a735e6891549d5908e61",
+      "width": 652,
+      "height": 343,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/connector-review/uk-701-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/mobile-connectors/uk-701-process.png",
+      "sha256": "dd7b4acc0ce6a1861d6b42f1e4680fbf15a826ad30e9d876a184b1b6714f7a11",
+      "width": 629,
+      "height": 122,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/compact-review/ru-1440-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/compact-history/ru-1440-process.png",
+      "sha256": "a97269dc057ffe4675196d3365970660e3603e991704ed57cda6b3e9a46614f3",
+      "width": 1292,
+      "height": 101,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/compact-review/ru-320-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/compact-history/ru-320-process.png",
+      "sha256": "a9db7be78f3cdeefc77b9c3ed27a90c89dc26296f280323a28a5a40adf047b37",
+      "width": 280,
+      "height": 344,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/compact-review/ru-390-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/compact-history/ru-390-process.png",
+      "sha256": "08fc90047ad8bc78c51fdf2a4de5c299de4f9d35939018220dedf437df47e395",
+      "width": 342,
+      "height": 343,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/compact-review/ru-701-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/compact-history/ru-701-process.png",
+      "sha256": "a08bbdd93d07b09dea919f35b6534c622c5be2c184cc3892c2cecbf80b88c412",
+      "width": 629,
+      "height": 145,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/compact-review/ru-768-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/compact-history/ru-768-process.png",
+      "sha256": "9a496e78ce8b11cf536752dafa6c75f93e25166dd7b6ca373eceb287c8732574",
+      "width": 690,
+      "height": 122,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/compact-review/ru-980-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/compact-history/ru-980-process.png",
+      "sha256": "6ebd87b74c47af38af16dfd2b9d1fe2d6091cc4cf317fe45fff3aff4d65cff18",
+      "width": 880,
+      "height": 98,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/compact-review/uk-1440-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/compact-history/uk-1440-process.png",
+      "sha256": "39c97920cf4464c4c20a42b096d18d1681329c99cdaccfaa8c497afecc5b1cb8",
+      "width": 1292,
+      "height": 101,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/compact-review/uk-320-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/compact-history/uk-320-process.png",
+      "sha256": "936d283c0a0097b3bdd620a64fdd6f214b718cb4efa3fca558d0a80c7a9c68dc",
+      "width": 280,
+      "height": 344,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/compact-review/uk-390-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/compact-history/uk-390-process.png",
+      "sha256": "ddf513b7ccf48209baf22a0ada03a92a3481e491f56cfeb02f194908774650b9",
+      "width": 342,
+      "height": 344,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/compact-review/uk-701-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/compact-history/uk-701-process.png",
+      "sha256": "dd7b4acc0ce6a1861d6b42f1e4680fbf15a826ad30e9d876a184b1b6714f7a11",
+      "width": 629,
+      "height": 122,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/compact-review/uk-768-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/compact-history/uk-768-process.png",
+      "sha256": "c6c6e9abf23c25389c21476f40fa82c427e237df0aec1a75e6b5f85834da15ef",
+      "width": 690,
+      "height": 122,
+      "byteIdentical": true
+    },
+    {
+      "source": "work/refinement-1.8/compact-review/uk-980-process.png",
+      "copy": "docs/refinement-1.8/evidence/review-scoped/compact-history/uk-980-process.png",
+      "sha256": "4fe616d533a27707b7634e2a50eaf0dae8507745df5677217373ec38c511e94f",
+      "width": 880,
+      "height": 98,
+      "byteIdentical": true
+    }
+  ],
+  "safety": "Only reviewer receipt JSON and PNGs exported; no scripts, private settings, raw mail, contacts, orders or external mutation."
+}

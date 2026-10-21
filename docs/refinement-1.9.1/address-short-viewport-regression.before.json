@@ -1,0 +1,16 @@
+{
+  "commit": "efe5c09ae8e1fbbe0cdd5f9a2f950174e290bf63",
+  "scenario": "address suggestions in 390x380 visible viewport",
+  "first_option_fully_visible": false,
+  "option_box": {
+    "x": 30,
+    "y": 392.078125,
+    "width": 330,
+    "height": 48
+  },
+  "visual_viewport": {
+    "top": 0,
+    "height": 380
+  },
+  "pass": false
+}

@@ -1,0 +1,667 @@
+{
+  "auditDate": "2026-10-04",
+  "sourceHead": "b9b16e83604a605b8052c904c43f1c6635930e53",
+  "count": 55,
+  "screens": [
+    {
+      "file": "screens/live/01-ua-1440-hero.png",
+      "origin": "Live",
+      "sha256": "3746f38bd7ab413eeda509a7202a5215c006420a2e519af8856af705aa3d2dab",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "UA header, hero and top of tariffs; balanced copy/art/action"
+    },
+    {
+      "file": "screens/live/02-ua-1440-rates.png",
+      "origin": "Live",
+      "sha256": "eaa9587b1e1bc83dd000eac9107a7291261de6804272958727f517341638f2fe",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Four tariffs, console switch, short delivery badges, game section start"
+    },
+    {
+      "file": "screens/live/03-ua-1440-games.png",
+      "origin": "Live",
+      "sha256": "e779ddffff8075e3d8653faf87706239e24787341b6862ddb3d8d0b510c63a49",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Loaded carousel, filters, detail arrows, titles and player counts"
+    },
+    {
+      "file": "screens/live/03a-ua-1440-game-detail.png",
+      "origin": "Live",
+      "sha256": "196a4147ccbf1124a6097d65040875ba548958eab6d64c5715489edfe21dd3fa",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "GTA artwork beside detail panel; white Add action"
+    },
+    {
+      "file": "screens/live/04-ua-1440-kit.png",
+      "origin": "Live",
+      "sha256": "e79c2d7c833378a56f6dfec49f45b522ea3aea3431024148854d176b53fcfb74",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Checklist, complete controller, process section start"
+    },
+    {
+      "file": "screens/live/05-ua-1440-process-delivery.png",
+      "origin": "Live",
+      "sha256": "83e1372a944d7a08222684c356fd65bd8a487b2625a076eec8d043d7b05eacfe",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Centered process pairs and connected steps; delivery preview/prices"
+    },
+    {
+      "file": "screens/live/05b-ua-1440-delivery-map-settled.png",
+      "origin": "Live",
+      "sha256": "62cf16e13422a2f04d79630c62d342f3ec4d1a8585e46817c8e2a738311f032d",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Road tiles loaded in full delivery map modal, controls and textual legend"
+    },
+    {
+      "file": "screens/live/06-ua-1440-calculator.png",
+      "origin": "Live",
+      "sha256": "c441843381ed80933bd50eeba69daced45f596bb32ab68c6418e0d0c80013470",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Desktop options, weak inactive boundaries, optional-games card, summary"
+    },
+    {
+      "file": "screens/live/07-ua-1440-game-picker.png",
+      "origin": "Live",
+      "sha256": "9bbea209630d8472296211bb89c0c10a182b800f9accfacdc93b7cb31f17b95e",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Four-column picker, toolbar, aligned Add actions and fixed Done footer"
+    },
+    {
+      "file": "screens/live/07a-ua-1440-game-no-results.png",
+      "origin": "Live",
+      "sha256": "9b2ddfc3fd1c362b7f4d852b8ce7e1e30acd560e8eac332e752dda772906389b",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Zero results plus two same-purpose request actions"
+    },
+    {
+      "file": "screens/live/07b-ua-1440-missing-game.png",
+      "origin": "Live",
+      "sha256": "b485824f3535064a196078516f3490294c5d00b5f8b3bfc95eb74be2edf98bb4",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Expanded missing-game field, query prefilled and focused"
+    },
+    {
+      "file": "screens/live/08-ua-1440-contact.png",
+      "origin": "Live",
+      "sha256": "d80f7d463cddcdd215608d4b0fcce1fdc62d21bccd9b9e637974e9d366e0b939",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Security, contact fields/consent, summary and desktop footer"
+    },
+    {
+      "file": "screens/live/08a-ua-1440-address-suggestions.png",
+      "origin": "Live",
+      "sha256": "d7c0254d4b324a1112b77c60e07355e9b60f97e75d257ed4d3a29627ae0aed07",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Address prefix typed and focused; no visible suggestions"
+    },
+    {
+      "file": "screens/live/08b-ua-1440-address-list.png",
+      "origin": "Live",
+      "sha256": "deaa9b755d09f81eb44426a3fdb5577d52cbf5e1a99b7ff89845d9a80fb2d6b6",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Two visible address suggestions under the field"
+    },
+    {
+      "file": "screens/live/08c-ru-1440-contact-preserved.png",
+      "origin": "Live",
+      "sha256": "d107b220e3ddc042d24b638a82d5fedae7f8a9a4f48bcdcf328a431587d90301",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "RU header/hero, not the contact step named in its filename"
+    },
+    {
+      "file": "screens/local/uk-1440-01-hero.png",
+      "origin": "Packaged local",
+      "sha256": "785fe7a3edda8367d74cbe82b409757c533a54ba428bce0c00ea7e6a07f9ded8",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "UA hero at desktop, consistent with live visual direction"
+    },
+    {
+      "file": "screens/local/ru-1440-01-hero.png",
+      "origin": "Packaged local",
+      "sha256": "0f12e22940e5ad2d8e3e3b4beb89a8ce19586ddabb70511af6261547d11f3507",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "RU hero and longer tariff headline fit at desktop"
+    },
+    {
+      "file": "screens/local/uk-390-01-hero.png",
+      "origin": "Packaged local",
+      "sha256": "92b26ec98582c0e055f8a363329f7a6bcc83d17c028ac43638d6b156982aac28",
+      "dimensions": [
+        390,
+        844
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Centered UA hero, approved content-width CTA, complete device"
+    },
+    {
+      "file": "screens/local/ru-390-01-hero.png",
+      "origin": "Packaged local",
+      "sha256": "d75a4dd95905ab12c27c9d5da4cf4ba04f4861bd402de7e2978b15088f7c2a81",
+      "dimensions": [
+        390,
+        844
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Centered RU hero, approved wider CTA, extra description line"
+    },
+    {
+      "file": "screens/local/uk-390-02-rates.png",
+      "origin": "Packaged local",
+      "sha256": "0f0c89e2e62797dab7e6e8f62cbb491a72fba4ab02f1401f98a95e768a486198",
+      "dimensions": [
+        390,
+        844
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Balanced two-by-two tariff comparison; short approved badges"
+    },
+    {
+      "file": "screens/local/uk-390-03-games.png",
+      "origin": "Packaged local",
+      "sha256": "578d470fd895782b9df88bfe7ab4c7ec7e65108ecf4ab76d6f879986e2625557",
+      "dimensions": [
+        390,
+        844
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "One full cover/next-cover cue, horizontal filters and section heading"
+    },
+    {
+      "file": "screens/local/uk-390-04-kit.png",
+      "origin": "Packaged local",
+      "sha256": "a97ce540a63c3c5ee209bba5bffadc2567837bd62141a0bac76eaa482a0b9879",
+      "dimensions": [
+        390,
+        844
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Checklist, caption and scaled complete controller"
+    },
+    {
+      "file": "screens/local/uk-390-05-how-it-works.png",
+      "origin": "Packaged local",
+      "sha256": "02c422fc4922b8f122f2515ffc8662cacc2f8730d185375e8190720d439198f7",
+      "dimensions": [
+        390,
+        844
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Approved side-by-side icon/title pairs and vertical connectors"
+    },
+    {
+      "file": "screens/local/uk-390-06-delivery.png",
+      "origin": "Packaged local",
+      "sha256": "aa3cbd544dd074726f75346b1aa02418df1b76c06e64c1cfdb29fa3ae437a9cb",
+      "dimensions": [
+        390,
+        844
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Geographic preview, named zones, prices and included-delivery note"
+    },
+    {
+      "file": "screens/local/uk-390-07-booking.png",
+      "origin": "Packaged local",
+      "sha256": "32a333f7973aede2c4b45afdc5a19236ff27f453f23e49ba8646c53ff35685ea",
+      "dimensions": [
+        390,
+        844
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Rental inputs, stacked dates, controller options, weak inactive borders"
+    },
+    {
+      "file": "screens/local/uk-390-08-contact.png",
+      "origin": "Packaged local",
+      "sha256": "ab3014f88434388a39237573e5f49620f5e3025ab63a1b899d72da8b7de88eff",
+      "dimensions": [
+        390,
+        844
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "UA labels/focus/consent and summary with delivery context"
+    },
+    {
+      "file": "screens/local/ru-390-08-contact.png",
+      "origin": "Packaged local",
+      "sha256": "80426be6b8152182aba2411fbf18b23ffa325d80b3a2f3d4916af00675a5f146",
+      "dimensions": [
+        390,
+        844
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "RU labels/focus/consent and summary fit without visible clipping"
+    },
+    {
+      "file": "screens/visual/uk-320-games-heading.png",
+      "origin": "Visual-local new capture",
+      "sha256": "c095f00984598e16fc46424340737d7269daaf8eae4c1b40c1fb3509f2b92724",
+      "dimensions": [
+        320,
+        844
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "UA two-line games heading with clear arrow-group separation"
+    },
+    {
+      "file": "screens/visual/ru-320-games-heading.png",
+      "origin": "Visual-local new capture",
+      "sha256": "a4389cb903b968ece2e2cad0d6803ef8d89a26e6abc413c25e68a5dff3bfca7a",
+      "dimensions": [
+        320,
+        844
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "RU two-line games heading with clear arrow-group separation"
+    },
+    {
+      "file": "screens/visual/ru-390-games-heading.png",
+      "origin": "Visual-local new capture",
+      "sha256": "2ebd78e038379c040f169ca86dabaf618df0824c5d6ca768a797d997994d359f",
+      "dimensions": [
+        390,
+        844
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "RU one-line games heading, close but positive arrow-group gap"
+    },
+    {
+      "file": "screens/live/08d-ru-1440-contact-preserved.png",
+      "origin": "Live",
+      "sha256": "9a8d50f9f18b86d69d1ecbddebf44865478add1f6b0f1b07756b677f33373755",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Actual RU contact/security/games request and summary; no visible layout clipping"
+    },
+    {
+      "file": "screens/live/09-ru-1440-terms.png",
+      "origin": "Live",
+      "sha256": "aa68c1d32314a8d02616cf346ed08e05206497782d8f29f9dd317b53d068aec4",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Compact terms dialog, readable paragraphs, Close/Understand/full information actions"
+    },
+    {
+      "file": "screens/live/10-ru-1440-native-faq.png",
+      "origin": "Live",
+      "sha256": "9aba7e897a65b7335e74198df9cda9a5decf7ee77f7b0b47cdcdff1a3efce107",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Native RU FAQ page, supporting headline and ruled question list"
+    },
+    {
+      "file": "screens/live/10a-ru-1440-native-faq-open.png",
+      "origin": "Live",
+      "sha256": "c13d0c1af32d1b9a257a7579f4492b14090fd5aad45e9e21fa065ef32d3c1ba1",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "FAQ opened answer expands cleanly and keeps later questions visible"
+    },
+    {
+      "file": "screens/live/11-ua-390-hero.png",
+      "origin": "Live",
+      "sha256": "d0ef2c9895c7c9a4f14da5152ef419092afe95689f4c71ebc28dc022fdf9a7a1",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Live centered UA mobile hero, complete artwork and approved CTA dimensions"
+    },
+    {
+      "file": "screens/live/12-ua-390-rates.png",
+      "origin": "Live",
+      "sha256": "9131274ef452d91ae700cdd9400a0f57172ba10eff4a4821d73447470721ec55",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Live two-by-two mobile tariffs with short badges and fixed rental bar"
+    },
+    {
+      "file": "screens/live/13-ua-390-games.png",
+      "origin": "Live",
+      "sha256": "11b7b520dcda13f17ebbbc860f3c9833ed7ef7072c631dead498d93e4bb0e76e",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Live mobile carousel/filters and healthy heading/arrow spacing"
+    },
+    {
+      "file": "screens/live/13a-ua-390-game-detail.png",
+      "origin": "Live",
+      "sha256": "c0ed22ab01a56626559bbd763e76b15d0e4c9d5bbed5780d92337135053a2e7f",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Stacked artwork/detail mobile dialog, clear close and Add action"
+    },
+    {
+      "file": "screens/live/14-ua-390-kit.png",
+      "origin": "Live",
+      "sha256": "2a70cd6b52a68c08dfe8b9a30df92cc099cf2428a9ecced0012f24dfb003f734",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Full scaled controller, short checklist and caption"
+    },
+    {
+      "file": "screens/live/15-ua-390-process.png",
+      "origin": "Live",
+      "sha256": "4283c2f17a82037f77cca9c6eb0d1a97fdfdc95170b786af02aabd8e3b55ac3c",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Approved centered icon/title pairs with vertical connecting lines"
+    },
+    {
+      "file": "screens/live/16-ua-390-delivery.png",
+      "origin": "Live",
+      "sha256": "c2a31687f4580a63e5d986389cf5ffcd173a2bd687b0828968566799bb1ceb25",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Preview geography, named charge list and included-delivery note"
+    },
+    {
+      "file": "screens/live/16a-ua-390-delivery-map.png",
+      "origin": "Live",
+      "sha256": "949d3e6e36d494f3bf5e9dd5cf9bbf2d6857d7a5c7758bef84bf1edabd238aab",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Detailed mobile map, clear close/reset/zoom, named fee rows; lower notes scroll"
+    },
+    {
+      "file": "screens/live/17-ua-390-calculator.png",
+      "origin": "Live",
+      "sha256": "4aea815105f9105874aa834abc8c3e8faa05cbca1d15b66ef1117e2b82de6655",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Live mobile fields/controller options confirm faint inactive boundaries"
+    },
+    {
+      "file": "screens/live/18-ua-390-game-picker.png",
+      "origin": "Live",
+      "sha256": "02b75a4c5d51e12b7345e7e7dba36eb8142f30d92fe727e45038c473d1013894",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Two-column mobile picker, persistent search/category toolbar and Done footer"
+    },
+    {
+      "file": "screens/live/18a-ua-390-game-no-results.png",
+      "origin": "Live",
+      "sha256": "89c3e6f21a8817117e0b6df15cf779e0433c0cd77bacdffb56e76cda271ff4fd",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Mobile zero results show two stacked same-purpose request actions"
+    },
+    {
+      "file": "screens/live/18b-ua-390-missing-game.png",
+      "origin": "Live",
+      "sha256": "0a68755f46f95147ab3c691d76206168b27b7e9ec63c6d5adace9c485a56a1ea",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Mobile expanded requested title is prefilled and visibly focused"
+    },
+    {
+      "file": "screens/live/19-ua-390-contact.png",
+      "origin": "Live",
+      "sha256": "4b9e3be29adb348d50d5c8eb689d12117d390808d26728fd5e1c6a874d042aff",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Mobile persistent labels/focus/consent and separate price summary"
+    },
+    {
+      "file": "screens/live/19a-ua-390-address-list.png",
+      "origin": "Live",
+      "sha256": "c650dcc0c7a4a3da3a0563edffb8da7ffa79328a2d1f06cded4888647a94fafc",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Two mobile address suggestions overlay under field; tap behavior checked separately"
+    },
+    {
+      "file": "screens/live/20b-ua-390-footer.png",
+      "origin": "Live",
+      "sha256": "5360377b7622bfcd64145471ffde6bf33667a7efeb8a4d94788ae3e417e49ce1",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Actual live mobile summary ending/footer, phone+Telegram icon row and copyright/legal/FAQ without clipping"
+    },
+    {
+      "file": "screens/live/21-ru-320-hero.png",
+      "origin": "Live",
+      "sha256": "603798d91195cf5b79b438b04553ca5a9788ea83318c8d5c47d11f44ebb82428",
+      "dimensions": [
+        640,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Live RU narrow hero, four description lines, full approved CTA and complete device without clipping"
+    },
+    {
+      "file": "screens/live/24-ru-390-hero.png",
+      "origin": "Live",
+      "sha256": "a9291f51bddca919cb1910c41fd7a8c83494bbba74f759b4b92263194857202d",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image",
+      "actualObservation": "Live RU390 centered hero, approved CTA content width, complete device and three description lines"
+    },
+    {
+      "file": "screens/frontend/phone-invalid-next-tab.png",
+      "origin": "Local safe frontend probe",
+      "sha256": "70a09a4649142d4d7b965d6ccff3b30bbadcdb719821abd2ad2a704f2133abb8",
+      "dimensions": [
+        390,
+        844
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image (root)",
+      "actualObservation": "Local mocked phone rejection: error under summary and next Tab at footer"
+    },
+    {
+      "file": "screens/frontend/touch-address-touch-before.png",
+      "origin": "Local safe frontend probe",
+      "sha256": "773772727deae7b2d0101c82b491d8b095ba0e6ff2a400fa47bd4ca431e6c3ad",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image (root)",
+      "actualObservation": "Current packaged local touch context: second street option overlays consent button"
+    },
+    {
+      "file": "screens/frontend/touch-address-touch-after.png",
+      "origin": "Local safe frontend probe",
+      "sha256": "0f9e3f155b83ede95b210e02d0d39b7a3f454365020fc4b2ba87ae06cc584a26",
+      "dimensions": [
+        780,
+        1688
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image (root)",
+      "actualObservation": "Same gesture selects street and opens underlying privacy dialog"
+    },
+    {
+      "file": "screens/live/09a-ru-1440-native-terms.png",
+      "origin": "Live frozen read-only browser audit",
+      "sha256": "982b43735520b90db9aad94953c468a705913f4483cd4a5b2f7bfa3e875d5473",
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "accepted": true,
+      "inspectedWith": "view_image (root)",
+      "actualObservation": "RU native rental terms, separate from legal dialog"
+    }
+  ]
+}

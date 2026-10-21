@@ -1,0 +1,69 @@
+{
+  "version": "1.9.16",
+  "scope": "desktop hero product photo and aligned light only",
+  "photo": {
+    "master": "hero-slim-studio-tall.png",
+    "imagegenSource": "/workspace/generated_images/exec-599cd629-ac77-42a7-90df-0cafac2900a5.png",
+    "nativePixels": [
+      1374,
+      1145
+    ],
+    "generation": "ImageGen edit of hero-slim-studio.png; console larger, quieter charcoal satin floor; no mechanical artwork enlargement"
+  },
+  "light": {
+    "master": "hero-slim-light-tall.png",
+    "imagegenSource": "/workspace/generated_images/exec-fe9af546-9f4c-4618-826f-ee2a778b0231.png",
+    "nativePixels": [
+      1374,
+      1145
+    ],
+    "alpha": true,
+    "generation": "ImageGen sparse highlights registered to new photograph"
+  },
+  "webp": [
+    {
+      "file": "hero-slim-studio-tall-720.webp",
+      "pixels": [
+        720,
+        600
+      ],
+      "quality": 96
+    },
+    {
+      "file": "hero-slim-studio-tall-1374.webp",
+      "pixels": [
+        1374,
+        1145
+      ],
+      "quality": 98
+    },
+    {
+      "file": "hero-slim-light-tall-720.webp",
+      "pixels": [
+        720,
+        600
+      ],
+      "quality": 94
+    },
+    {
+      "file": "hero-slim-light-tall-1374.webp",
+      "pixels": [
+        1374,
+        1145
+      ],
+      "quality": 94
+    }
+  ],
+  "approximateMeasurementsAt670CSSpx": {
+    "consoleHeightBefore": 413,
+    "consoleHeightAfter": 448,
+    "consoleWidthBefore": 191,
+    "consoleWidthAfter": 213,
+    "controllerWidthBefore": 310,
+    "controllerWidthAfter": 297
+  },
+  "mobileManifestUnchanged": true,
+  "maxDesktopCSSWidth": 670,
+  "nativeCoverageAtDPR2": 1.0253731343283583,
+  "provenanceLimit": "Photorealistic generated interpretation of the selected product scene, not an official Sony product photograph."
+}

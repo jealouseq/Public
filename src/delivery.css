@@ -1,0 +1,21 @@
+.delivery-zones { display: block; }
+.delivery-zones > div { width: 100%; }
+.delivery-zone-prices { margin: 24px 0 20px; display: grid; gap: 0; }
+.delivery-zone-prices > div { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+.delivery-zone-prices dt { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #ccc; }
+.delivery-zone-prices dd { margin: 0; white-space: nowrap; font-size: 16px; font-weight: 600; color: #f3f2ef; }
+.zone-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.zone-green { background: #91aa92; }
+.zone-yellow { background: #c6aa74; }
+.zone-red { background: #b4867e; }
+.delivery-zones .delivery-included { font-size: 14px; line-height: 1.65; }
+.delivery-zones .delivery-service-note { font-size: 13px; line-height: 1.65; }
+.process-item { position: relative; }
+@media (min-width: 701px) {
+  .process-item:not(:last-child)::after { content: ''; position: absolute; left: calc(100% + 4px); top: 40px; width: 16px; height: 1px; background: rgba(192,156,94,.3); }
+}
+@media (max-width: 700px) {
+  .delivery-zone-prices { margin-top: 20px; }
+  .delivery-zone-prices dt { font-size: 13px; }
+  .delivery-zone-prices dd { font-size: 15px; }
+}

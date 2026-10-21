@@ -1,0 +1,304 @@
+{
+  "capturedUTC": "2026-10-04T12:11:49.079444+00:00",
+  "resources": [
+    {
+      "path": "/hello-world/",
+      "status": 200,
+      "finalURL": "https://flowers-luxury.shop/hello-world/",
+      "wireBodyBytes": 8171,
+      "decodedBytes": 28428,
+      "sha256Decoded": "59da7f9274799bbe64b78d1496f8d343af69655fb975108540679218ed102230",
+      "title": "Hello world! – flowers-luxury.shop",
+      "meta": [
+        {
+          "charset": "UTF-8"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "robots",
+          "content": "max-image-preview:large"
+        },
+        {
+          "name": "generator",
+          "content": "WordPress 7.1.2"
+        },
+        {
+          "name": "generator",
+          "content": "WooCommerce 11.1.2"
+        },
+        {
+          "name": "theme-color",
+          "content": "#08090b"
+        },
+        {
+          "name": "description",
+          "content": "JOYRENT — оренда PlayStation 5 та PlayStation 4. Обирай консоль, дати та улюблені ігри."
+        }
+      ],
+      "headings": [
+        "Hello world!"
+      ],
+      "canonicalLinks": [
+        {
+          "rel": "canonical",
+          "href": "https://flowers-luxury.shop/hello-world/"
+        }
+      ],
+      "cartbuttons": []
+    },
+    {
+      "path": "/shop/",
+      "status": 200,
+      "finalURL": "https://flowers-luxury.shop/shop/",
+      "wireBodyBytes": 8623,
+      "decodedBytes": 31655,
+      "sha256Decoded": "340d5c3b98b9936f227f1b2b5b5d7c204f98c7fd508dc03a447a4c32f3e56dfd",
+      "title": "Магазин – flowers-luxury.shop",
+      "meta": [
+        {
+          "charset": "UTF-8"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1"
+        },
+        {
+          "name": "robots",
+          "content": "max-image-preview:large"
+        },
+        {
+          "name": "generator",
+          "content": "WordPress 7.1.2"
+        },
+        {
+          "name": "generator",
+          "content": "WooCommerce 11.1.2"
+        },
+        {
+          "name": "theme-color",
+          "content": "#08090b"
+        },
+        {
+          "name": "description",
+          "content": "JOYRENT — оренда PlayStation 5 та PlayStation 4. Обирай консоль, дати та улюблені ігри."
+        }
+      ],
+      "headings": [
+        "Великі справи на горизонті"
+      ],
+      "canonicalLinks": [],
+      "cartbuttons": []
+    },
+    {
+      "path": "/cart/",
+      "status": 200,
+      "finalURL": "https://flowers-luxury.shop/cart/",
+      "wireBodyBytes": 37086,
+      "decodedBytes": 196946,
+      "sha256Decoded": "601bc00646fff87b987fd2cf0f43bbc270766ae2daf88c4aa6fa37938e68f365",
+      "title": "Кошик – flowers-luxury.shop",
+      "meta": [
+        {
+          "charset": "UTF-8"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1"
+        },
+        {
+          "name": "robots",
+          "content": "max-image-preview:large, noindex, follow"
+        },
+        {
+          "name": "generator",
+          "content": "WordPress 7.1.2"
+        },
+        {
+          "name": "generator",
+          "content": "WooCommerce 11.1.2"
+        },
+        {
+          "name": "theme-color",
+          "content": "#08090b"
+        },
+        {
+          "name": "description",
+          "content": "JOYRENT — оренда PlayStation 5 та PlayStation 4. Обирай консоль, дати та улюблені ігри."
+        }
+      ],
+      "headings": [
+        "Великі справи на горизонті"
+      ],
+      "canonicalLinks": [
+        {
+          "rel": "canonical",
+          "href": "https://flowers-luxury.shop/cart/"
+        }
+      ],
+      "cartbuttons": []
+    },
+    {
+      "path": "/checkout/",
+      "status": 200,
+      "finalURL": "https://flowers-luxury.shop/cart/",
+      "wireBodyBytes": 37086,
+      "decodedBytes": 196946,
+      "sha256Decoded": "601bc00646fff87b987fd2cf0f43bbc270766ae2daf88c4aa6fa37938e68f365",
+      "title": "Кошик – flowers-luxury.shop",
+      "meta": [
+        {
+          "charset": "UTF-8"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1"
+        },
+        {
+          "name": "robots",
+          "content": "max-image-preview:large, noindex, follow"
+        },
+        {
+          "name": "generator",
+          "content": "WordPress 7.1.2"
+        },
+        {
+          "name": "generator",
+          "content": "WooCommerce 11.1.2"
+        },
+        {
+          "name": "theme-color",
+          "content": "#08090b"
+        },
+        {
+          "name": "description",
+          "content": "JOYRENT — оренда PlayStation 5 та PlayStation 4. Обирай консоль, дати та улюблені ігри."
+        }
+      ],
+      "headings": [
+        "Великі справи на горизонті"
+      ],
+      "canonicalLinks": [
+        {
+          "rel": "canonical",
+          "href": "https://flowers-luxury.shop/cart/"
+        }
+      ],
+      "cartbuttons": []
+    },
+    {
+      "path": "/my-account/",
+      "status": 200,
+      "finalURL": "https://flowers-luxury.shop/my-account/",
+      "wireBodyBytes": 8462,
+      "decodedBytes": 29868,
+      "sha256Decoded": "b60e47edf220e9836f3c46f2a108cdff3b1961e8b1bf901a6ed0ff97a6c1ecbc",
+      "title": "Мій обліковий запис – flowers-luxury.shop",
+      "meta": [
+        {
+          "charset": "UTF-8"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "robots",
+          "content": "max-image-preview:large, noindex, follow"
+        },
+        {
+          "name": "generator",
+          "content": "WordPress 7.1.2"
+        },
+        {
+          "name": "generator",
+          "content": "WooCommerce 11.1.2"
+        },
+        {
+          "name": "theme-color",
+          "content": "#08090b"
+        },
+        {
+          "name": "description",
+          "content": "JOYRENT — оренда PlayStation 5 та PlayStation 4. Обирай консоль, дати та улюблені ігри."
+        }
+      ],
+      "headings": [
+        "Мій обліковий запис"
+      ],
+      "canonicalLinks": [
+        {
+          "rel": "canonical",
+          "href": "https://flowers-luxury.shop/my-account/"
+        }
+      ],
+      "cartbuttons": []
+    },
+    {
+      "path": "/product/ps5-%d1%82%d0%b5%d1%81%d1%82-%d0%b4%d1%80%d0%b0%d0%b9%d0%b2-1-%d0%b4%d0%bd/",
+      "status": 200,
+      "finalURL": "https://flowers-luxury.shop/product/ps5-%d1%82%d0%b5%d1%81%d1%82-%d0%b4%d1%80%d0%b0%d0%b9%d0%b2-1-%d0%b4%d0%bd/",
+      "wireBodyBytes": 9301,
+      "decodedBytes": 34207,
+      "sha256Decoded": "d5eab96b4ba7cde28515adbbf591091d156527f6ee64273708fb57731d14ed45",
+      "title": "PS5 — Тест-драйв (1 дн.) – flowers-luxury.shop",
+      "meta": [
+        {
+          "charset": "UTF-8"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1.0"
+        },
+        {
+          "name": "viewport",
+          "content": "width=device-width, initial-scale=1"
+        },
+        {
+          "name": "robots",
+          "content": "max-image-preview:large"
+        },
+        {
+          "name": "generator",
+          "content": "WordPress 7.1.2"
+        },
+        {
+          "name": "generator",
+          "content": "WooCommerce 11.1.2"
+        },
+        {
+          "name": "theme-color",
+          "content": "#08090b"
+        },
+        {
+          "name": "description",
+          "content": "JOYRENT — оренда PlayStation 5 та PlayStation 4. Обирай консоль, дати та улюблені ігри."
+        }
+      ],
+      "headings": [
+        "Великі справи на горизонті"
+      ],
+      "canonicalLinks": [
+        {
+          "rel": "canonical",
+          "href": "https://flowers-luxury.shop/product/ps5-%d1%82%d0%b5%d1%81%d1%82-%d0%b4%d1%80%d0%b0%d0%b9%d0%b2-1-%d0%b4%d0%bd/"
+        }
+      ],
+      "cartbuttons": []
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "language": "uk",
+    "width": 390,
+    "faqSeparate": true,
+    "accordionWorks": true,
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "faqSeparate": true,
+    "accordionWorks": true,
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "faqSeparate": true,
+    "accordionWorks": true,
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "faqSeparate": true,
+    "accordionWorks": true,
+    "overflow": false
+  }
+]

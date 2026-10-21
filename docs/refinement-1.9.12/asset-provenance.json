@@ -1,0 +1,62 @@
+{
+  "method": "ImageGen photorealistic mockups referenced selected-source.png and unchanged official game cover art; natural PNG alpha trimmed and optimized with Sharp",
+  "sources": {
+    "fc27": "/workspace/generated_images/exec-9563047a-9000-4a92-8fff-757d7ab9d628.png",
+    "ufc6": "/workspace/generated_images/exec-e77bafa6-2c4e-42dc-861d-12b78d6a5da5.png",
+    "floor": "/workspace/generated_images/exec-34129267-78d4-469c-b485-de113d6dc409.png"
+  },
+  "controller": "Existing dualsense-cutout image and its derivatives unchanged",
+  "subscriptions": "Existing photorealistic PS Plus Deluxe and EA Play images unchanged",
+  "limitation": "Physical case mockups reconstruct the referenced packaging photographically; printed photographs are synthesized rather than byte-identical to official cover art. Official catalogue images remain unchanged.",
+  "assets": [
+    {
+      "file": "wordpress/joyrent/assets/images/kit-fc27-case-320.webp",
+      "width": 320,
+      "height": 475,
+      "bytes": 52676,
+      "sha256": "c8cad241011fa66d332edc8ad08f09788b4333e67bc1180d17f2d78d2d2106ec",
+      "hasAlpha": true
+    },
+    {
+      "file": "wordpress/joyrent/assets/images/kit-fc27-case-640.webp",
+      "width": 640,
+      "height": 950,
+      "bytes": 160190,
+      "sha256": "f1142494f22b1ad60e94de0805d58d4c7578529b0c84ecb9a6252b3c5d377769",
+      "hasAlpha": true
+    },
+    {
+      "file": "wordpress/joyrent/assets/images/kit-ufc6-case-320.webp",
+      "width": 320,
+      "height": 451,
+      "bytes": 41332,
+      "sha256": "72aeae7e92098d9ae54a840a593567b8d866e32768c987f8483f6f2621c73756",
+      "hasAlpha": true
+    },
+    {
+      "file": "wordpress/joyrent/assets/images/kit-ufc6-case-640.webp",
+      "width": 640,
+      "height": 903,
+      "bytes": 117340,
+      "sha256": "910a1f9d4fc5f1b8fac1a1db42e86d8e5b4ecb6318aaba113798e3f04673295a",
+      "hasAlpha": true
+    },
+    {
+      "file": "wordpress/joyrent/assets/images/kit-studio-floor-560.webp",
+      "width": 560,
+      "height": 280,
+      "bytes": 17238,
+      "sha256": "1edabce098512d4b4aff59c0210f6c37483c4e6043c35e8f9cd2ce97206de967",
+      "hasAlpha": true
+    },
+    {
+      "file": "wordpress/joyrent/assets/images/kit-studio-floor-1120.webp",
+      "width": 1120,
+      "height": 560,
+      "bytes": 72016,
+      "sha256": "7ce1987790e92d2585dfc2885c23465e974b76873a0fffd5d301154001687bdf",
+      "hasAlpha": true
+    }
+  ],
+  "totalBytes": 460792
+}

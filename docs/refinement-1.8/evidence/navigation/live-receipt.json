@@ -1,0 +1,229 @@
+{
+  "base": "https://flowers-luxury.shop",
+  "phase": "live",
+  "cases": [
+    {
+      "language": "uk",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "initial": {
+        "url": "https://flowers-luxury.shop/",
+        "scrollY": 1111,
+        "linkHref": "#delivery",
+        "linkText": "Як отримати консоль"
+      },
+      "afterClick": {
+        "url": "https://flowers-luxury.shop/#delivery",
+        "hash": "#delivery",
+        "scrollY": 3500,
+        "scrollPaddingTop": "25px",
+        "headerPosition": "relative",
+        "header": {
+          "top": -3500,
+          "bottom": -3426,
+          "height": 74
+        },
+        "processSection": {
+          "top": -571.078125,
+          "bottom": 782.234375,
+          "height": 1353.3125
+        },
+        "processHeading": {
+          "top": -478.78125,
+          "bottom": -441.09375,
+          "height": 37.6875
+        },
+        "processHeadingVisible": false,
+        "deliveryPanel": {
+          "top": 25.03125,
+          "bottom": 722.234375,
+          "height": 697.203125
+        },
+        "visibleStepTitles": [],
+        "entryScripts": [
+          "https://flowers-luxury.shop/wp-includes/js/wp-emoji-release.min.js?ver=7.1.2",
+          "https://cdn-reach.hostinger.com/js/embed.js",
+          "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "overflow": false
+      },
+      "expectedTarget": "#how-it-works",
+      "pass": false,
+      "screenshot": "live-ua-mobile.png",
+      "postAttempts": [],
+      "pageErrors": [],
+      "externalGetsBlocked": 1
+    },
+    {
+      "language": "uk",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "initial": {
+        "url": "https://flowers-luxury.shop/",
+        "scrollY": 722,
+        "linkHref": "#delivery",
+        "linkText": "Як отримати консоль"
+      },
+      "afterClick": {
+        "url": "https://flowers-luxury.shop/#delivery",
+        "hash": "#delivery",
+        "scrollY": 3041,
+        "scrollPaddingTop": "105px",
+        "headerPosition": "relative",
+        "header": {
+          "top": -3041,
+          "bottom": -2949,
+          "height": 92
+        },
+        "processSection": {
+          "top": -339.4375,
+          "bottom": 672.78125,
+          "height": 1012.21875
+        },
+        "processHeading": {
+          "top": -198.75,
+          "bottom": -130.4375,
+          "height": 68.3125
+        },
+        "processHeadingVisible": false,
+        "deliveryPanel": {
+          "top": 105.4375,
+          "bottom": 567.78125,
+          "height": 462.34375
+        },
+        "visibleStepTitles": [],
+        "entryScripts": [
+          "https://flowers-luxury.shop/wp-includes/js/wp-emoji-release.min.js?ver=7.1.2",
+          "https://cdn-reach.hostinger.com/js/embed.js",
+          "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "overflow": false
+      },
+      "expectedTarget": "#how-it-works",
+      "pass": false,
+      "screenshot": "live-ua-desktop.png",
+      "postAttempts": [],
+      "pageErrors": [],
+      "externalGetsBlocked": 1
+    },
+    {
+      "language": "ru",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "initial": {
+        "url": "https://flowers-luxury.shop/?lang=ru",
+        "scrollY": 1170,
+        "linkHref": "#delivery",
+        "linkText": "Как получить консоль"
+      },
+      "afterClick": {
+        "url": "https://flowers-luxury.shop/?lang=ru#delivery",
+        "hash": "#delivery",
+        "scrollY": 3559,
+        "scrollPaddingTop": "25px",
+        "headerPosition": "relative",
+        "header": {
+          "top": -3559,
+          "bottom": -3485,
+          "height": 74
+        },
+        "processSection": {
+          "top": -571.59375,
+          "bottom": 781.71875,
+          "height": 1353.3125
+        },
+        "processHeading": {
+          "top": -479.296875,
+          "bottom": -441.609375,
+          "height": 37.6875
+        },
+        "processHeadingVisible": false,
+        "deliveryPanel": {
+          "top": 24.515625,
+          "bottom": 721.71875,
+          "height": 697.203125
+        },
+        "visibleStepTitles": [],
+        "entryScripts": [
+          "https://flowers-luxury.shop/wp-includes/js/wp-emoji-release.min.js?ver=7.1.2",
+          "https://cdn-reach.hostinger.com/js/embed.js",
+          "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "overflow": false
+      },
+      "expectedTarget": "#how-it-works",
+      "pass": false,
+      "screenshot": "live-ru-mobile.png",
+      "postAttempts": [],
+      "pageErrors": [],
+      "externalGetsBlocked": 1
+    },
+    {
+      "language": "ru",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "initial": {
+        "url": "https://flowers-luxury.shop/?lang=ru",
+        "scrollY": 722,
+        "linkHref": "#delivery",
+        "linkText": "Как получить консоль"
+      },
+      "afterClick": {
+        "url": "https://flowers-luxury.shop/?lang=ru#delivery",
+        "hash": "#delivery",
+        "scrollY": 3041,
+        "scrollPaddingTop": "105px",
+        "headerPosition": "relative",
+        "header": {
+          "top": -3041,
+          "bottom": -2949,
+          "height": 92
+        },
+        "processSection": {
+          "top": -339.4375,
+          "bottom": 672.78125,
+          "height": 1012.21875
+        },
+        "processHeading": {
+          "top": -198.75,
+          "bottom": -130.4375,
+          "height": 68.3125
+        },
+        "processHeadingVisible": false,
+        "deliveryPanel": {
+          "top": 105.4375,
+          "bottom": 567.78125,
+          "height": 462.34375
+        },
+        "visibleStepTitles": [],
+        "entryScripts": [
+          "https://flowers-luxury.shop/wp-includes/js/wp-emoji-release.min.js?ver=7.1.2",
+          "https://cdn-reach.hostinger.com/js/embed.js",
+          "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+        ],
+        "overflow": false
+      },
+      "expectedTarget": "#how-it-works",
+      "pass": false,
+      "screenshot": "live-ru-desktop.png",
+      "postAttempts": [],
+      "pageErrors": [],
+      "externalGetsBlocked": 1
+    }
+  ],
+  "pass": 0,
+  "fail": 4,
+  "safety": "Non-GET/HEAD blocked before transmission; only audited host GET/HEAD allowed. Form untouched."
+}

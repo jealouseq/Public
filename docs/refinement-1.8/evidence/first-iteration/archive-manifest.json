@@ -1,0 +1,86 @@
+{
+  "archivedAt": "2026-10-03T11:54:37.693201+00:00",
+  "reason": "Root P2 icon reference-fidelity correction; prior evidence preserved without editing raw observations",
+  "files": [
+    {
+      "name": "browser-selected-screens.json",
+      "sha256": "62dcec28a5d71ef72641121dc7798be2a3e6596f068237dc62fc238c7f73f608"
+    },
+    {
+      "name": "browser-report.md",
+      "sha256": "ba6573a4aa038d491b53e6f5a66bc2e98e81abd10a691c76b4ba8abcb70acd7c"
+    },
+    {
+      "name": "browser-receipt.json",
+      "sha256": "42306fd0145d7ddecb26ecb35f18334270fda54ee9ebe90b22589f25ea49bad4"
+    },
+    {
+      "name": "browser-report.json",
+      "sha256": "5258a27d611e6eb3ae4ddb19f0e8f85d938e1a0f3fa8829581553bf4157e1616"
+    },
+    {
+      "name": "docs-screens/ru-mobile-process.png",
+      "sha256": "535fdbcf341e03c31a6e6775bd71d66d493b1d8fced6dde498069fc854f6153a"
+    },
+    {
+      "name": "docs-screens/ru-mobile-delivery-map.png",
+      "sha256": "65b61527995bdf2ae868972054f5c241129871f7da8c79280472e97aea6be63c"
+    },
+    {
+      "name": "docs-screens/ua-mobile-booking-controller.png",
+      "sha256": "8b4605a602f0b7aee3bf048f9f34239b5b82e1b07cc50ed05543b672d16bc4fc"
+    },
+    {
+      "name": "docs-screens/ru-desktop-delivery-map.png",
+      "sha256": "d9e6e4ea70c341278a0651361d0e1f877b0f5df3ae4260db9681f1a6564236da"
+    },
+    {
+      "name": "docs-screens/ua-desktop-delivery.png",
+      "sha256": "6d1ed348a6c15edc44d5632fbe07b2cd52e19078a226055739ecafb5fae29d1f"
+    },
+    {
+      "name": "docs-screens/ru-desktop-delivery.png",
+      "sha256": "d47b7ba4aa6f5c601f89756fea114b5f1d8ae412fe06a2469e422817f6ce0b33"
+    },
+    {
+      "name": "docs-screens/ua-mobile-process.png",
+      "sha256": "150ddffb1099691ddbc2ec5f7d28ada04c2fa3af8579f8b5d435f76c0d36bc13"
+    },
+    {
+      "name": "docs-screens/ua-desktop-delivery-map.png",
+      "sha256": "7e1f284c5dcf7b9fd6172c1708946773c34d4c87bb28a391ea61bfb86117c84e"
+    },
+    {
+      "name": "docs-screens/ua-mobile-delivery-map.png",
+      "sha256": "822adc1b35d9972873e61dea1d613e8fa30fa76da3da9dce7f8b07948657e702"
+    },
+    {
+      "name": "docs-screens/ru-desktop-booking-controller.png",
+      "sha256": "7d555acb76b96a6d3355740892d0366c24629bc3c02c842308d791f49d2e8703"
+    },
+    {
+      "name": "docs-screens/ru-desktop-process.png",
+      "sha256": "00e1ffd27cf6fb88c672b7e61d75dfcc9f1b5e7070ebd40b379438a340dcd077"
+    },
+    {
+      "name": "docs-screens/ru-mobile-delivery.png",
+      "sha256": "9a7400a8d2eb41848e3d62cf72d8da29de2b43a018d81ac9cfe0e1be871c513a"
+    },
+    {
+      "name": "docs-screens/ua-desktop-process.png",
+      "sha256": "d561fc58ff91506909e6ec6af30d60882ec51e14e38fb794568af1c81dd5dee5"
+    },
+    {
+      "name": "docs-screens/ru-mobile-booking-controller.png",
+      "sha256": "0d358e58c3aca722c30f9389fe7c5491b723742f633dcc2330ffbdfb81542dd3"
+    },
+    {
+      "name": "docs-screens/ua-mobile-delivery.png",
+      "sha256": "6e6efdb517f00c6ae8dcab80e1e73811cf03356b0fd04fa974df572abd7ea955"
+    },
+    {
+      "name": "docs-screens/ua-desktop-booking-controller.png",
+      "sha256": "9868ac5ce03402cd72267af82069b3e43ab42585f0e9e9ae2f1c0cf4f8cc98db"
+    }
+  ]
+}

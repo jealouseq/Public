@@ -1,0 +1,112 @@
+{
+  "checked": "2026-10-03",
+  "method": "Fresh public category and exact component page reads through authorized remote reader; publisher static preview images visually inspected.",
+  "liveInteractionsTested": false,
+  "animationTimingsVerified": false,
+  "productionEdits": false,
+  "registryInstalls": false,
+  "paidToolsUsed": false,
+  "selections": [
+    {
+      "scope": "process",
+      "url": "https://21st.dev/@shadcnui-blocks/components/timeline-05",
+      "meta": {
+        "name": "Process Timeline",
+        "description": "A vertical timeline component that lists sequential process steps with a check icon marking completed stages and numbered circles for pending ones.",
+        "license": "no-license",
+        "dependencies": {
+          "lucide-react": "latest"
+        },
+        "source_url": "https://shadcnui-blocks.com/r/timeline-05.json",
+        "website_url": "https://shadcnui-blocks.com"
+      },
+      "preview": "https://cdn.21st.dev/shadcnui-blocks/timeline-05/default/preview.1789972934699-4d7c5529-cf3f-4dbc-8164-ccdd84b0c9dc.png",
+      "inspected": true,
+      "recommendation": "Single rail and open text rows; independent adaptation, no enclosing cards or fabricated completion."
+    },
+    {
+      "scope": "footer",
+      "url": "https://21st.dev/@ln-dev7/components/footer-17",
+      "meta": {
+        "name": "Minimal Two-Column Footer",
+        "description": "A simple site footer with a brand mark and tagline on the left and a compact vertical navigation list on the right, plus a copyright line.",
+        "license": "MIT",
+        "dependencies": {},
+        "source_url": "https://blockus.lndevui.com/r/footer-17.json",
+        "website_url": "https://blockus.lndevui.com"
+      },
+      "preview": "https://cdn.21st.dev/ln-dev7/footer-17/default/preview.1788991572948-a215dfe7-1375-461b-8406-0ca12d832f8d.png",
+      "inspected": true,
+      "recommendation": "Quiet brand/contact link layout; Phone and Telegram labels plus existing icons."
+    },
+    {
+      "scope": "hero_cta",
+      "url": "https://21st.dev/@xubohuah/components/flow-button",
+      "meta": {
+        "name": "FlowButton",
+        "description": "FlowButton",
+        "license": "mit",
+        "dependencies": {
+          "lucide-react": "latest"
+        },
+        "source_url": null,
+        "website_url": ""
+      },
+      "preview": "https://cdn.21st.dev/user_2vl1Dn19f2uJMuYVfUEcAh5qqyv/flow-button/default/preview.1746631996530.png",
+      "inspected": true,
+      "recommendation": "Short action label with trailing arrow; understated hover movement."
+    },
+    {
+      "scope": "hero_cta",
+      "url": "https://21st.dev/@cult-ui/components/texture-button",
+      "meta": {
+        "name": "Texture Button",
+        "description": "A button with numorphic undertones",
+        "license": "mit",
+        "dependencies": {
+          "@radix-ui/react-slot": "latest",
+          "class-variance-authority": "latest"
+        },
+        "source_url": null,
+        "website_url": "https://cult-ui.com/docs/components/texture-button"
+      },
+      "preview": "https://cdn.21st.dev/user_cult_ui/texture-button/default/preview.png",
+      "inspected": true,
+      "recommendation": "A restrained top highlight and tiny pressed depth on a solid warm-white or amber CTA."
+    },
+    {
+      "scope": "photo_motion",
+      "url": "https://21st.dev/@daiwiikharihar/components/reveal-image-mask",
+      "meta": {
+        "name": "Reveal Image Mask",
+        "description": "An editorial image reveal component that elegantly masks and blooms images into full frame using scroll-driven Framer Motion transitions.",
+        "license": "unknown",
+        "dependencies": {
+          "framer-motion": "latest"
+        },
+        "source_url": null,
+        "website_url": null
+      },
+      "preview": "https://cdn.21st.dev/user_332oxzW8MyPod4IDIdKq9rbPYuk/reveal-image-mask/default/preview.1785744283195.png",
+      "inspected": true,
+      "recommendation": "One measured image arrival; preserve JOYRENT whole product image and avoid the large bloom/mask itself."
+    },
+    {
+      "scope": "photo_motion",
+      "url": "https://21st.dev/@cnippet-dev/components/parallax-floating/floating-card",
+      "meta": {
+        "name": "Parallax Floating",
+        "description": "Layered elements that float at different speeds based on cursor position to create a parallax depth effect.",
+        "license": "no-license",
+        "dependencies": {
+          "motion": "latest"
+        },
+        "source_url": null,
+        "website_url": "https://ui.cnippet.dev/motion/scroll-animations/parallax-floating"
+      },
+      "preview": "https://cdn.21st.dev/user_36Tbt0v8JdD4jEycmBFhR8tojnR/parallax-floating/floating-card/preview.1787333855127.png",
+      "inspected": true,
+      "recommendation": "Depth through tiny independent movement of photo/light layers, with no added dots, blobs or card wrapper."
+    }
+  ]
+}

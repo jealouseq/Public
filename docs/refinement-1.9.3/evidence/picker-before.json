@@ -1,0 +1,1 @@
+{"status": "FAIL", "completed": [], "error": "Locator expected to have count '0'\nActual value: 1 \nCall log:\n  - Expect \"to_have_count\" with timeout 5000ms\n  - waiting for locator(\".game-picker-empty button\")\n    14 × locator resolved to 1 element\n       - unexpected value \"1\"\n"}

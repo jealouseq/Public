@@ -1,0 +1,77 @@
+{
+  "run": "2026-10-03T18:01:36.027994+00:00",
+  "independentReviewer": true,
+  "frozenSourceHashesMatch": true,
+  "phpLint": {
+    "pass": 9,
+    "fail": 0,
+    "checks": [
+      {
+        "file": "wordpress/joyrent/footer.php",
+        "exitCode": 0,
+        "stdout": "No syntax errors detected in /dev/stdin",
+        "stderr": ""
+      },
+      {
+        "file": "wordpress/joyrent-rentals/includes/locale.php",
+        "exitCode": 0,
+        "stdout": "No syntax errors detected in /dev/stdin",
+        "stderr": ""
+      },
+      {
+        "file": "wordpress/joyrent-rentals/includes/rest.php",
+        "exitCode": 0,
+        "stdout": "No syntax errors detected in /dev/stdin",
+        "stderr": ""
+      },
+      {
+        "file": "wordpress/joyrent-rentals/includes/orders.php",
+        "exitCode": 0,
+        "stdout": "No syntax errors detected in /dev/stdin",
+        "stderr": ""
+      },
+      {
+        "file": "wordpress/joyrent-rentals/joyrent-rentals.php",
+        "exitCode": 0,
+        "stdout": "No syntax errors detected in /dev/stdin",
+        "stderr": ""
+      },
+      {
+        "file": "wordpress/joyrent-rentals/includes/store.php",
+        "exitCode": 0,
+        "stdout": "No syntax errors detected in /dev/stdin",
+        "stderr": ""
+      },
+      {
+        "file": "tests/php/booking-copy-migration.php",
+        "exitCode": 0,
+        "stdout": "No syntax errors detected in /dev/stdin",
+        "stderr": ""
+      },
+      {
+        "file": "tests/php/copy-migration.php",
+        "exitCode": 0,
+        "stdout": "No syntax errors detected in /dev/stdin",
+        "stderr": ""
+      },
+      {
+        "file": "tests/php/request-options-migration.php",
+        "exitCode": 0,
+        "stdout": "No syntax errors detected in /dev/stdin",
+        "stderr": ""
+      }
+    ]
+  },
+  "migrationRerun": {
+    "command": "docker exec -e JR_TEST_PLUGIN_PATH=/var/www/html/wp-content/plugins/joyrent-rentals -i joyrent-wp php -d display_errors=1 /dev/stdin < tests/php/booking-copy-migration.php",
+    "checks": 81,
+    "failures": [],
+    "mailAttempts": 0,
+    "orderAccess": 0,
+    "databaseAccess": 0,
+    "exitCode": 0
+  },
+  "oldActiveVisitorCopy": 0,
+  "immutable1_6and1_7ArchivesUnchanged": true,
+  "noBuildOrCommit": true
+}

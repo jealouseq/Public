@@ -1,0 +1,81 @@
+{
+  "missingLinks": [],
+  "literalEmailPatternFiles": [],
+  "pendingReleasePlaceholders": [],
+  "selectedAfterScreens": [
+    {
+      "file": "screens/ru-desktop-delivery-map.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "c59f0ff1c51fa7ab8c43f4d5bcdaab6fb562009b7c02e55cb2558be03dad82c9"
+    },
+    {
+      "file": "screens/ru-desktop-footer.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "8260b3f8349d030707b302c60f332da6d11c8c60a69f388abc4443f42f4280c3"
+    },
+    {
+      "file": "screens/ru-desktop-hero.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "90af6cfa7dec7bfac96c6d92dea10944e3a270fe92a55a3e6190dff4f668fc36"
+    },
+    {
+      "file": "screens/ru-mobile-footer.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "94e3952960531a920cdd18aefb6d8749380030b205075c458035ac5b78c2c436"
+    },
+    {
+      "file": "screens/ru-mobile-hero.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "e541a14c725e8f09e72f21fcc29eb64faf108847361af131df48046cf98434e4"
+    },
+    {
+      "file": "screens/ua-desktop-hero.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "262b998a8b398e440250dcc0b9d1db1f91fcce23f2ca4f198ff35583b4da8ba6"
+    },
+    {
+      "file": "screens/ua-desktop-kit.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "2ad26b33eb36411537a15b8abc9ade808bdccc096bec03c9b6fb46c0de8b45e3"
+    },
+    {
+      "file": "screens/ua-desktop-process-delivery.png",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "c7348c0f589c1c060fc3aabc47026a42bc08f284b350a63b19dd143bb8d8dc31"
+    },
+    {
+      "file": "screens/ua-mobile-delivery-map.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "477e657c19c8c37be256476f1bd350547e93345722d8a4832d842397c124022f"
+    },
+    {
+      "file": "screens/ua-mobile-hero.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "1a18308d94e20894f121eadddf5ac6e44c6b437b98baa2f601c1761c0cb01ec3"
+    },
+    {
+      "file": "screens/ua-mobile-kit.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "da7443976bc620fe56fe556d055c3b4c9121e3d7278326c1735a6327dbb9fd24"
+    },
+    {
+      "file": "screens/ua-mobile-process-delivery.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "a237587121763371f47c08eaa5bec10fdd0cde4205ed05ecfa56d890a1d78507"
+    }
+  ],
+  "selectedAfterScreenCount": 12,
+  "pass": true
+}

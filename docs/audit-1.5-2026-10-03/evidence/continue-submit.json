@@ -1,0 +1,52 @@
+[
+  {
+    "lang": "uk",
+    "buttonClicked": "Продовжити",
+    "postsWithoutSubmitClick": 1,
+    "posts": [
+      {
+        "console": "ps5",
+        "days": 3,
+        "startDate": "2026-10-03",
+        "controllers": 1,
+        "gameIds": [],
+        "name": "Аудит локальний",
+        "phone": "+380000000001",
+        "method": "delivery",
+        "address": "Київ, тестова адреса 1",
+        "consent": true,
+        "website": "",
+        "language": "uk",
+        "requestId": "71988326-7fd0-404d-956f-b61ba34b284a"
+      }
+    ],
+    "error": [
+      "Не вдалося надіслати заявку. Перевір з’єднання та спробуй ще раз."
+    ]
+  },
+  {
+    "lang": "ru",
+    "buttonClicked": "Продолжить",
+    "postsWithoutSubmitClick": 1,
+    "posts": [
+      {
+        "console": "ps5",
+        "days": 3,
+        "startDate": "2026-10-03",
+        "controllers": 1,
+        "gameIds": [],
+        "name": "Аудит локальний",
+        "phone": "+380000000001",
+        "method": "delivery",
+        "address": "Київ, тестова адреса 1",
+        "consent": true,
+        "website": "",
+        "language": "ru",
+        "requestId": "af40b518-e8fc-4948-ba0e-95772ce1ba4e"
+      }
+    ],
+    "error": [
+      "Не удалось отправить заявку. Проверь подключение и попробуй ещё раз."
+    ]
+  }
+]

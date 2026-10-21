@@ -1,0 +1,165 @@
+{
+  "files": [
+    "src/App.tsx",
+    "src/lib/api.ts",
+    "src/lib/copy.ts",
+    "src/lib/copy.test.ts",
+    "src/sections/Footer.tsx",
+    "src/sections/Story.tsx",
+    "src/components/SecurityChoice.tsx",
+    "src/components/GamePresentation.tsx",
+    "components/ui/delivery-zone-map.tsx"
+  ],
+  "replacements": [
+    {
+      "file": "src/App.tsx",
+      "before": "Надсилання заявки не підтверджує бронювання й не потребує оплати. Ми перевіримо доступність консолі та ігор і зв’яжемося з тобою.",
+      "after": "Бронювання на сайті не потребує оплати. Ми перевіримо доступність консолі та ігор і зв’яжемося з тобою для підтвердження.",
+      "occurrences": 1
+    },
+    {
+      "file": "src/App.tsx",
+      "before": "Отправка заявки не подтверждает бронирование и не требует оплаты. Мы проверим доступность консоли и игр и свяжемся с тобой.",
+      "after": "Бронирование на сайте не требует оплаты. Мы проверим доступность консоли и игр и свяжемся с тобой для подтверждения.",
+      "occurrences": 1
+    },
+    {
+      "file": "src/App.tsx",
+      "before": "Ім’я, телефон, адреса доставки, вибір оренди та побажання щодо ігор потрібні для обробки заявки.",
+      "after": "Ім’я, телефон, адреса доставки, вибір оренди та побажання щодо ігор потрібні для обробки бронювання.",
+      "occurrences": 1
+    },
+    {
+      "file": "src/App.tsx",
+      "before": "Имя, телефон, адрес доставки, выбор аренды и пожелания об играх нужны для обработки заявки.",
+      "after": "Имя, телефон, адрес доставки, выбор аренды и пожелания об играх нужны для обработки брони.",
+      "occurrences": 1
+    },
+    {
+      "file": "src/App.tsx",
+      "before": "Заявка зберігається у магазині JOYRENT.",
+      "after": "Дані бронювання зберігаються у магазині JOYRENT.",
+      "occurrences": 1
+    },
+    {
+      "file": "src/App.tsx",
+      "before": "Заявка хранится в магазине JOYRENT.",
+      "after": "Данные бронирования хранятся в магазине JOYRENT.",
+      "occurrences": 1
+    },
+    {
+      "file": "src/lib/api.ts",
+      "before": "Не удалось отправить заявку. Проверь подключение и попробуй ещё раз.",
+      "after": "Не удалось оформить бронь. Проверь подключение и попробуй ещё раз.",
+      "occurrences": 1
+    },
+    {
+      "file": "src/lib/api.ts",
+      "before": "Не вдалося надіслати заявку. Перевір з’єднання та спробуй ще раз.",
+      "after": "Не вдалося оформити бронювання. Перевір з’єднання та спробуй ще раз.",
+      "occurrences": 1
+    },
+    {
+      "file": "src/lib/copy.ts",
+      "before": " в заявке.",
+      "after": " в брони.",
+      "occurrences": 1
+    },
+    {
+      "file": "src/lib/copy.ts",
+      "before": " у заявці.",
+      "after": " у бронюванні.",
+      "occurrences": 1
+    },
+    {
+      "file": "src/lib/copy.test.ts",
+      "before": " в заявке.",
+      "after": " в брони.",
+      "occurrences": 5
+    },
+    {
+      "file": "src/lib/copy.test.ts",
+      "before": " у заявці.",
+      "after": " у бронюванні.",
+      "occurrences": 5
+    },
+    {
+      "file": "src/sections/Footer.tsx",
+      "before": "Залишити заявку",
+      "after": "Забронювати",
+      "occurrences": 1
+    },
+    {
+      "file": "src/sections/Footer.tsx",
+      "before": "Оставить заявку",
+      "after": "Забронировать",
+      "occurrences": 1
+    },
+    {
+      "file": "src/sections/Story.tsx",
+      "before": "Вкажи місто та адресу в заявці. Перевіримо можливість доставки й узгодимо час отримання та повернення.",
+      "after": "Вкажи адресу доставки під час бронювання. Перевіримо можливість доставки й узгодимо час отримання та повернення.",
+      "occurrences": 1
+    },
+    {
+      "file": "src/sections/Story.tsx",
+      "before": "Укажи город и адрес в заявке. Проверим возможность доставки и согласуем время получения и возврата.",
+      "after": "Укажи адрес доставки при бронировании. Проверим возможность доставки и согласуем время получения и возврата.",
+      "occurrences": 1
+    },
+    {
+      "file": "src/components/SecurityChoice.tsx",
+      "before": "Деталі узгодимо після заявки.",
+      "after": "Деталі узгодимо під час підтвердження бронювання.",
+      "occurrences": 1
+    },
+    {
+      "file": "src/components/SecurityChoice.tsx",
+      "before": "Детали согласуем после заявки.",
+      "after": "Детали согласуем при подтверждении брони.",
+      "occurrences": 1
+    },
+    {
+      "file": "src/components/GamePresentation.tsx",
+      "before": "Прибрати із заявки",
+      "after": "Прибрати з бронювання",
+      "occurrences": 1
+    },
+    {
+      "file": "src/components/GamePresentation.tsx",
+      "before": "Убрать из заявки",
+      "after": "Убрать из брони",
+      "occurrences": 1
+    },
+    {
+      "file": "src/components/GamePresentation.tsx",
+      "before": "Додати до заявки",
+      "after": "Додати до бронювання",
+      "occurrences": 1
+    },
+    {
+      "file": "src/components/GamePresentation.tsx",
+      "before": "Добавить в заявку",
+      "after": "Добавить в бронь",
+      "occurrences": 1
+    },
+    {
+      "file": "components/ui/delivery-zone-map.tsx",
+      "before": "під час підтвердження заявки.",
+      "after": "під час підтвердження бронювання.",
+      "occurrences": 1
+    },
+    {
+      "file": "components/ui/delivery-zone-map.tsx",
+      "before": "при подтверждении заявки.",
+      "after": "при подтверждении брони.",
+      "occurrences": 1
+    }
+  ],
+  "constraints": [
+    "No technical keys/storage/status/schema/API names changed",
+    "Existing personal availability followup preserved",
+    "No website payment promise added; no automatic reservation claim",
+    "Only existing copy-test expectations updated"
+  ]
+}

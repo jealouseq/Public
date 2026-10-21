@@ -1,0 +1,24 @@
+{
+  "umovy-orendy": {
+    "lang": "en-US",
+    "hasH1": true
+  },
+  "konfidentsiinist": {
+    "lang": "en-US",
+    "hasH1": true
+  },
+  "usloviya-arendy": {
+    "lang": "ru",
+    "hasH1": true
+  },
+  "konfidentsialnost": {
+    "lang": "ru",
+    "hasH1": true
+  },
+  "localPolicyConfig": {
+    "configuredPrivacyId": 3,
+    "configuredStatus": "draft",
+    "privacyUrl": "",
+    "seededUAPolicyId": 31
+  }
+}

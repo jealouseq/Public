@@ -1,0 +1,36 @@
+{
+  "versions": {
+    "theme": "1.9.0",
+    "plugin": "1.8.0",
+    "preview": "1.9.0"
+  },
+  "archives": [
+    {
+      "archive": "joyrent-1.9.0.zip",
+      "bytes": 11621250,
+      "sha256": "7d25348dcc6eae6bcc4801d15b0c532cc9d7c660e7decfd2ae3eb1689b6c31e7",
+      "crc": "pass",
+      "sourceEqualityFiles": 158,
+      "unexpectedFiles": 0,
+      "privateRecipientHits": 0
+    },
+    {
+      "archive": "joyrent-rentals-1.8.0.zip",
+      "bytes": 42881,
+      "sha256": "579238cba253c2c6cc8fef21e5ddaf99aaccd26625bab8030fc5fb0bbcaf74b4",
+      "crc": "pass",
+      "sourceEqualityFiles": 17,
+      "unexpectedFiles": 0,
+      "privateRecipientHits": 0
+    },
+    {
+      "archive": "joyrent-preview-1.9.0.zip",
+      "bytes": 11129607,
+      "sha256": "c369be2bd7caeb570c8cb43af945461df6aa96a84e6ac9e0a2c59d9d3987f61f",
+      "crc": "pass",
+      "sourceEqualityFiles": 146,
+      "unexpectedFiles": 0,
+      "privateRecipientHits": 0
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+{
+  "theme": "1.9.2",
+  "plugin": "1.8.1",
+  "entry": {
+    "file": "assets/main-2YiB-VTt.js",
+    "name": "main",
+    "src": "src/main.tsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "wordpress/joyrent-rentals/data/delivery-zones.json",
+      "_leaflet-src-Bd1C1PtC.js"
+    ],
+    "css": [
+      "assets/main-CAUCxMPb.css"
+    ],
+    "assets": [
+      "assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+      "assets/unbounded-vietnamese-wght-normal-rat7GD3o.woff2",
+      "assets/unbounded-latin-ext-wght-normal-D6H-S6MW.woff2",
+      "assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+      "assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+      "assets/manrope-greek-wght-normal-DL7QRZyv.woff2",
+      "assets/manrope-vietnamese-wght-normal-usUDDRr7.woff2",
+      "assets/manrope-latin-ext-wght-normal-Ch3YOpNY.woff2",
+      "assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+      "assets/onest-cyrillic-ext-wght-normal-DOFToQv1.woff2",
+      "assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+      "assets/onest-math-wght-normal-Bl4ZGkZl.woff2",
+      "assets/onest-symbols-wght-normal-DxQzqQfC.woff2",
+      "assets/onest-vietnamese-wght-normal-BBxOatbv.woff2",
+      "assets/onest-latin-ext-wght-normal-QAhDxQuo.woff2",
+      "assets/onest-latin-wght-normal-Dun_Rd-l.woff2"
+    ]
+  },
+  "archives": [
+    {
+      "archive": "joyrent-1.9.2.zip",
+      "sha256": "a9827496d447bb6289f3cc7760a6be9386a302589b66eae5ad5d782fc0b6314b",
+      "files": 159,
+      "crc": "PASS",
+      "sourceByteEquality": "PASS",
+      "privateRecipientHits": 0
+    },
+    {
+      "archive": "joyrent-rentals-1.8.1.zip",
+      "sha256": "58c6a569fd413b0331982d9de6b17640a5d1ca919d20af317f3754e064d23dd0",
+      "files": 19,
+      "crc": "PASS",
+      "sourceByteEquality": "PASS",
+      "privateRecipientHits": 0
+    },
+    {
+      "archive": "joyrent-preview-1.9.2.zip",
+      "sha256": "b7dccbcca3b6aba302a8a1bd37dd100ba92d31076ebe65300c40a91b642ad8e5",
+      "files": 146,
+      "crc": "PASS",
+      "sourceByteEquality": "PASS",
+      "privateRecipientHits": 0
+    }
+  ],
+  "historicalReleasesUnchanged": [
+    {
+      "file": "releases/checksums-1.5.0.txt",
+      "sha256": "59d6790e83b5212aa897a35a226192b8c77b9f330760f3097d252c55f742ba6d"
+    },
+    {
+      "file": "releases/checksums-1.9.1.txt",
+      "sha256": "ffc8766c12d238973c1ce5ae88643a3aeafc6fc00bc19d1de9da34323abaf81a"
+    },
+    {
+      "file": "releases/joyrent-1.0.0.zip",
+      "sha256": "8ea2ae60ab6744f7d93c10b297594d9667cdef739fe1174f5985dd16637597ca"
+    },
+    {
+      "file": "releases/joyrent-1.1.0.zip",
+      "sha256": "f0a4c373c604a9d26d573e12f05d00403fd910d4b1e45f602fe96dc716c1c2f3"
+    },
+    {
+      "file": "releases/joyrent-1.2.0.zip",
+      "sha256": "27ab6f7f3eba1a21145c7afb8ed4adcc3c1b29e33621628fa0836d5f49e09a28"
+    },
+    {
+      "file": "releases/joyrent-1.3.0.zip",
+      "sha256": "8daa40a37f05614deba7a4e9174e92beef350e856ecbeffd3646745f07640aee"
+    },
+    {
+      "file": "releases/joyrent-1.4.0.zip",
+      "sha256": "c261089d60f53465db6d94c40373e2753f95a0f66de80bab1332268d2d4e674b"
+    },
+    {
+      "file": "releases/joyrent-1.4.1.zip",
+      "sha256": "2ed1fe67b3c69b6aded26e5a7ab06f3d1ed13bcc1b09b98c08be53a606a3b227"
+    },
+    {
+      "file": "releases/joyrent-1.4.2.zip",
+      "sha256": "a7f593225ba0091e113bbc179255c10c802c6a86483caa3a138652cc8d53bdb8"
+    },
+    {
+      "file": "releases/joyrent-1.5.0.zip",
+      "sha256": "a521030d308b799652f1379de873900a2619019d0a3e1b4c009a5d3355c095f8"
+    },
+    {
+      "file": "releases/joyrent-1.6.0.zip",
+      "sha256": "cdc9ff8d45fc6a2f9a237603420c0d25752255281f0c392c9a68c4faf6332c89"
+    },
+    {
+      "file": "releases/joyrent-1.7.0.zip",
+      "sha256": "06b707f58ad9d6caa5fc91a61c703b8655b80cd9485d6aefba2ec03660e525db"
+    },
+    {
+      "file": "releases/joyrent-1.8.0.zip",
+      "sha256": "c7dffe4f5e49569b93fa5a553a96bfaaf9b3c4a189bd7823ed15cf0341d97130"
+    },
+    {
+      "file": "releases/joyrent-1.8.1.zip",
+      "sha256": "3fe42e64e509d7b77584165e056268196c46883e35dca2ca2f33cb5c99803dab"
+    },
+    {
+      "file": "releases/joyrent-1.8.2.zip",
+      "sha256": "74c12b6912e7c2143c37cf0df346a8874492892aa1975ccc6cdb2a32f3043a86"
+    },
+    {
+      "file": "releases/joyrent-1.9.0.zip",
+      "sha256": "7d25348dcc6eae6bcc4801d15b0c532cc9d7c660e7decfd2ae3eb1689b6c31e7"
+    },
+    {
+      "file": "releases/joyrent-1.9.1.zip",
+      "sha256": "5b2b797c787b6e45216515b94642308f1075e1cf5d82696ecd226362870b5a68"
+    },
+    {
+      "file": "releases/joyrent-preview-1.0.0.zip",
+      "sha256": "fe0915072747ddc56d78041b65224bc7f4d255c63a4f8fa297352fd3b7cbe30f"
+    },
+    {
+      "file": "releases/joyrent-preview-1.1.0.zip",
+      "sha256": "f2c84caaea4a131dad9e1ff13b567c26e51b7897c817017c3d81c4664df9186f"
+    },
+    {
+      "file": "releases/joyrent-preview-1.2.0.zip",
+      "sha256": "faaa8736c2f35a8d234fa49fcab26205c0a28be7698acf689e498944ecb4e115"
+    },
+    {
+      "file": "releases/joyrent-preview-1.3.0.zip",
+      "sha256": "9c7f858f7992f354e875b33c29aec954136bb6efe911b627b23baa94987b6c38"
+    },
+    {
+      "file": "releases/joyrent-preview-1.4.0.zip",
+      "sha256": "34c03ac985fc3fd901cec27adfeceb355c214fbbbd39416d24d6b711fd163ce1"
+    },
+    {
+      "file": "releases/joyrent-preview-1.4.1.zip",
+      "sha256": "f46cbd108bfc68330659f485c7da9c2466b1b5ffff41b058ab19120956e548f9"
+    },
+    {
+      "file": "releases/joyrent-preview-1.4.2.zip",
+      "sha256": "200b1e56711fc249479d6af98df9d744cd9af3fbd07e3813fc9557d920bfd20b"
+    },
+    {
+      "file": "releases/joyrent-preview-1.5.0.zip",
+      "sha256": "0b5d35fdec84acce865f2ac5ccff66e98f842c238b6e06d2645324b0d08555cd"
+    },
+    {
+      "file": "releases/joyrent-preview-1.6.0.zip",
+      "sha256": "79ec011d9b04ca1a3a7d7662a31634b28df83ccc2a6f712a0e9271701e02177b"
+    },
+    {
+      "file": "releases/joyrent-preview-1.7.0.zip",
+      "sha256": "8f0d3ff30ffb70dc87122d72ce139c0d8273140be13bbdcac1081236e8678dee"
+    },
+    {
+      "file": "releases/joyrent-preview-1.8.0.zip",
+      "sha256": "3e689d3f12b53f80d39a42c78b9f7ef0ca0ae7efee6d6727508c468be30b148b"
+    },
+    {
+      "file": "releases/joyrent-preview-1.8.1.zip",
+      "sha256": "5e711cfc0226f967cc176966324e349e2461a7a463ba5ea6b56b1f1a6911c01a"
+    },
+    {
+      "file": "releases/joyrent-preview-1.8.2.zip",
+      "sha256": "445a9a405b5b1e1737c929760ae63eeabb4fa71fd157ad196aafd1fc9a80ae1d"
+    },
+    {
+      "file": "releases/joyrent-preview-1.9.0.zip",
+      "sha256": "c369be2bd7caeb570c8cb43af945461df6aa96a84e6ac9e0a2c59d9d3987f61f"
+    },
+    {
+      "file": "releases/joyrent-preview-1.9.1.zip",
+      "sha256": "06a1619c74560f146f4bbd2bf2aee6fb26ea2a0ae7445653ce525a8ea50f80ea"
+    },
+    {
+      "file": "releases/joyrent-rentals-1.0.0.zip",
+      "sha256": "885816a73a20d9dd2e4fb70b619f39efe81d55b5ebe756238a1a8bb335958bc1"
+    },
+    {
+      "file": "releases/joyrent-rentals-1.1.0.zip",
+      "sha256": "3abd42ed3b9fff9e8ae7682a7789dac3841dbdd53635241157edaf34e7246b5a"
+    },
+    {
+      "file": "releases/joyrent-rentals-1.2.0.zip",
+      "sha256": "12993d703f717bf77243cb0758c42a0f7d809a45d680d8dd419e92658e3a4682"
+    },
+    {
+      "file": "releases/joyrent-rentals-1.3.0.zip",
+      "sha256": "37baa8a65513e2df93d9e8c9215eefe66caee765b6e21c446239539736c7ec51"
+    },
+    {
+      "file": "releases/joyrent-rentals-1.5.0.zip",
+      "sha256": "4a133969ee3c81ed0c2daad6b485c663e40eec762a63ef8fa85e3b039662bb19"
+    },
+    {
+      "file": "releases/joyrent-rentals-1.6.0.zip",
+      "sha256": "73b10c3fe6187b1f99b98505a4a06df449f87c7665d3783589be6662f3802035"
+    },
+    {
+      "file": "releases/joyrent-rentals-1.7.0.zip",
+      "sha256": "8ad30d40784017774e96a4547da7a3c7d18221297be7baa9576addace3b62d06"
+    },
+    {
+      "file": "releases/joyrent-rentals-1.7.1.zip",
+      "sha256": "916ac125eac0800d837b90ab478f2a24bae5d225e595634afde01d80385f767f"
+    },
+    {
+      "file": "releases/joyrent-rentals-1.8.0.zip",
+      "sha256": "579238cba253c2c6cc8fef21e5ddaf99aaccd26625bab8030fc5fb0bbcaf74b4"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,21 @@
+{
+  "archives": [
+    {
+      "file": "releases/joyrent-1.8.1.zip",
+      "files": 158,
+      "sha256": "3fe42e64e509d7b77584165e056268196c46883e35dca2ca2f33cb5c99803dab",
+      "crc": "passed",
+      "sourceByteEquality": true,
+      "privateRecipientMatches": 0
+    },
+    {
+      "file": "releases/joyrent-preview-1.8.1.zip",
+      "files": 146,
+      "sha256": "5e711cfc0226f967cc176966324e349e2461a7a463ba5ea6b56b1f1a6911c01a",
+      "crc": "passed",
+      "sourceByteEquality": true,
+      "privateRecipientMatches": 0
+    }
+  ],
+  "pluginUnchanged": true
+}

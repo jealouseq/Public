@@ -1,0 +1,27 @@
+.booking-section .booking-games { margin-top: 24px; padding: 22px; border: 1px solid #47413a; border-radius: 12px; background: #c79b5d05; }
+.booking-games-heading { display: flex; justify-content: space-between; align-items: center; gap: 22px; }
+.booking-games-intro { display: flex; align-items: flex-start; gap: 14px; min-width: 0; }
+.booking-games-icon { display: grid; place-items: center; flex: 0 0 44px; height: 44px; color: #cfb587; }
+.booking-games-intro h3 { font-family: 'Onest Variable', sans-serif; font-size: 18px; font-weight: 550; line-height: 1.4; letter-spacing: -.025em; }
+.booking-games-intro p { margin-top: 6px; max-width: 310px; color: #b9b9b4; font-size: 13px; line-height: 1.65; }
+.booking-section .booking-games .game-picker-button { flex-shrink: 0; min-height: 48px; }
+.booking-section .booking-games .selected-games { list-style: none; display: flex; flex-wrap: wrap; margin: 18px 0 0; padding: 16px 0 0; gap: 8px; border-top: 1px solid #ffffff12; }
+.booking-games .selected-games li { min-width: 0; max-width: 100%; }
+.booking-section .booking-games .selected-game { max-width: 100%; min-height: 44px; padding: 9px 12px; text-align: left; font-size: 13px; line-height: 1.5; }
+.booking-games .selected-game span { overflow-wrap: anywhere; }
+.booking-games .selected-game svg { flex-shrink: 0; color: #bdb6aa; }
+.booking-section .booking-games .requested-game-note { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; padding-top: 14px; border-top: 1px solid #ffffff12; font-size: 13px; line-height: 1.6; }
+.booking-games .requested-game-note p { min-width: 0; }
+.booking-games .requested-game-note p > span { display: block; margin-bottom: 3px; color: #c8b28e; font-size: 12px; }
+.booking-games .requested-game-note strong { display: block; color: #f4f4f1; font-weight: 500; overflow-wrap: anywhere; }
+.booking-games .requested-game-note button { width: 44px; height: 44px; flex-shrink: 0; display: grid; place-items: center; border: 1px solid #625d55; border-radius: 50%; background: transparent; }
+@media (max-width: 1000px) {
+  .booking-games-heading { flex-wrap: wrap; gap: 18px; }
+  .booking-section .booking-games .game-picker-button { width: 100%; }
+}
+@media (max-width: 700px) {
+  .booking-section .booking-games { margin-top: 22px; padding: 18px 16px; }
+  .booking-games-intro { gap: 12px; }
+  .booking-games-intro h3 { font-size: 17px; }
+  .booking-games-intro p { font-size: 13px; }
+}

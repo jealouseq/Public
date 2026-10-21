@@ -1,0 +1,19 @@
+{
+  "width": 640,
+  "height": 440,
+  "padding": 22,
+  "scale": 55563.326671730516,
+  "center_x": 0.5362297870994994,
+  "center_y": -0.9178932585594465,
+  "bounds": {
+    "west": 30.39372611729199,
+    "east": 31.053681182707997,
+    "south": 46.303969452017704,
+    "north": 46.61651612659042
+  },
+  "city_percent": [
+    49.938836744931855,
+    42.94908315040718
+  ],
+  "formula": "x=(lng*pi/180-center_x)*scale+width/2; y=(-log(tan(pi/4+lat*pi/360))-center_y)*scale+height/2"
+}

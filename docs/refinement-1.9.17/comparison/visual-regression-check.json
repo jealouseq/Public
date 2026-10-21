@@ -1,0 +1,250 @@
+[
+  {
+    "language": "uk",
+    "width": 1440,
+    "height": 900,
+    "dpr": 1,
+    "info": {
+      "rect": {
+        "x": 564.953125,
+        "y": 232.125,
+        "width": 800.171875,
+        "height": 484.9375,
+        "top": 232.125,
+        "right": 1365.125,
+        "bottom": 717.0625,
+        "left": 564.953125
+      },
+      "items": [
+        {
+          "className": "kit-item kit-card-plus",
+          "rect": {
+            "x": 833,
+            "y": 261.21875,
+            "width": 136.015625,
+            "height": 204.015625,
+            "top": 261.21875,
+            "right": 969.015625,
+            "bottom": 465.234375,
+            "left": 833
+          }
+        },
+        {
+          "className": "kit-item kit-card-ea",
+          "rect": {
+            "x": 961.03125,
+            "y": 261.21875,
+            "width": 136.015625,
+            "height": 204.015625,
+            "top": 261.21875,
+            "right": 1097.046875,
+            "bottom": 465.234375,
+            "left": 961.03125
+          }
+        },
+        {
+          "className": "kit-item kit-controller",
+          "rect": {
+            "x": 756.984375,
+            "y": 432.296875,
+            "width": 416.078125,
+            "height": 277.5,
+            "top": 432.296875,
+            "right": 1173.0625,
+            "bottom": 709.796875,
+            "left": 756.984375
+          }
+        },
+        {
+          "className": "kit-item kit-box-fc",
+          "rect": {
+            "x": 576.953125,
+            "y": 251.515625,
+            "width": 252.046875,
+            "height": 374.125,
+            "top": 251.515625,
+            "right": 829,
+            "bottom": 625.640625,
+            "left": 576.953125
+          }
+        },
+        {
+          "className": "kit-item kit-box-ufc",
+          "rect": {
+            "x": 1087.46875,
+            "y": 251.515625,
+            "width": 265.65625,
+            "height": 374.8125,
+            "top": 251.515625,
+            "right": 1353.125,
+            "bottom": 626.328125,
+            "left": 1087.46875
+          }
+        }
+      ],
+      "images": [
+        {
+          "file": "kit-ps-plus-card-640.webp",
+          "complete": true
+        },
+        {
+          "file": "kit-ea-play-card-640.webp",
+          "complete": true
+        },
+        {
+          "file": "dualsense-cutout-1120.webp",
+          "complete": true
+        },
+        {
+          "file": "kit-fc27-case-640.webp",
+          "complete": true
+        },
+        {
+          "file": "kit-ufc6-case-640.webp",
+          "complete": true
+        }
+      ],
+      "floorCount": 0,
+      "caption": {
+        "x": 715.03125,
+        "y": 725.0625,
+        "width": 500,
+        "height": 49.1875,
+        "top": 725.0625,
+        "right": 1215.03125,
+        "bottom": 774.25,
+        "left": 715.03125
+      }
+    },
+    "floorRequests": [],
+    "heroPixelIdentical": true,
+    "heroDiffBounds": null,
+    "builtMatchesNoFloorExploration": true,
+    "explorationDiffBounds": null,
+    "stageBoundsUnchanged": true
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "height": 844,
+    "dpr": 3,
+    "info": {
+      "rect": {
+        "x": 24,
+        "y": 471.890625,
+        "width": 342,
+        "height": 207.265625,
+        "top": 471.890625,
+        "right": 366,
+        "bottom": 679.15625,
+        "left": 24
+      },
+      "items": [
+        {
+          "className": "kit-item kit-card-plus",
+          "rect": {
+            "x": 138.5625,
+            "y": 484.3125,
+            "width": 58.125,
+            "height": 87.1875,
+            "top": 484.3125,
+            "right": 196.6875,
+            "bottom": 571.5,
+            "left": 138.5625
+          }
+        },
+        {
+          "className": "kit-item kit-card-ea",
+          "rect": {
+            "x": 193.28125,
+            "y": 484.3125,
+            "width": 58.125,
+            "height": 87.1875,
+            "top": 484.3125,
+            "right": 251.40625,
+            "bottom": 571.5,
+            "left": 193.28125
+          }
+        },
+        {
+          "className": "kit-item kit-controller",
+          "rect": {
+            "x": 106.078125,
+            "y": 557.46875,
+            "width": 177.828125,
+            "height": 118.59375,
+            "top": 557.46875,
+            "right": 283.90625,
+            "bottom": 676.0625,
+            "left": 106.078125
+          }
+        },
+        {
+          "className": "kit-item kit-box-fc",
+          "rect": {
+            "x": 29.125,
+            "y": 480.171875,
+            "width": 107.71875,
+            "height": 159.890625,
+            "top": 480.171875,
+            "right": 136.84375,
+            "bottom": 640.0625,
+            "left": 29.125
+          }
+        },
+        {
+          "className": "kit-item kit-box-ufc",
+          "rect": {
+            "x": 247.34375,
+            "y": 480.171875,
+            "width": 113.53125,
+            "height": 160.171875,
+            "top": 480.171875,
+            "right": 360.875,
+            "bottom": 640.34375,
+            "left": 247.34375
+          }
+        }
+      ],
+      "images": [
+        {
+          "file": "kit-ps-plus-card-320.webp",
+          "complete": true
+        },
+        {
+          "file": "kit-ea-play-card-320.webp",
+          "complete": true
+        },
+        {
+          "file": "dualsense-cutout-1120.webp",
+          "complete": true
+        },
+        {
+          "file": "kit-fc27-case-640.webp",
+          "complete": true
+        },
+        {
+          "file": "kit-ufc6-case-640.webp",
+          "complete": true
+        }
+      ],
+      "floorCount": 0,
+      "caption": {
+        "x": 24,
+        "y": 691.15625,
+        "width": 342,
+        "height": 47.578125,
+        "top": 691.15625,
+        "right": 366,
+        "bottom": 738.734375,
+        "left": 24
+      }
+    },
+    "floorRequests": [],
+    "heroPixelIdentical": true,
+    "heroDiffBounds": null,
+    "builtMatchesNoFloorExploration": true,
+    "explorationDiffBounds": null,
+    "stageBoundsUnchanged": true
+  }
+]

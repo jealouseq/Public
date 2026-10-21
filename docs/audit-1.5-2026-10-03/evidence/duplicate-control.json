@@ -1,0 +1,122 @@
+[
+  {
+    "filter": "all",
+    "expectedCount": 19,
+    "observedCount": 19,
+    "titles": [
+      "EA SPORTS FC 27",
+      "Grand Theft Auto V",
+      "Mortal Kombat 1",
+      "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "EA SPORTS UFC 6",
+      "Tekken 8",
+      "Split Fiction",
+      "It Takes Two",
+      "Call of Duty: Black Ops 7",
+      "Gran Turismo 7",
+      "God of War Ragnarök",
+      "Red Dead Redemption 2",
+      "Marvel’s Spider-Man 2",
+      "Hogwarts Legacy",
+      "ELDEN RING",
+      "Resident Evil Requiem",
+      "ASTRO BOT",
+      "Sackboy: A Big Adventure",
+      "Horizon Forbidden West"
+    ]
+  },
+  {
+    "filter": "two",
+    "expectedCount": 8,
+    "observedCount": 8,
+    "titles": [
+      "EA SPORTS FC 27",
+      "Mortal Kombat 1",
+      "EA SPORTS UFC 6",
+      "Tekken 8",
+      "Split Fiction",
+      "It Takes Two",
+      "Gran Turismo 7",
+      "Sackboy: A Big Adventure"
+    ]
+  },
+  {
+    "filter": "story",
+    "expectedCount": 12,
+    "observedCount": 12,
+    "titles": [
+      "Grand Theft Auto V",
+      "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "Split Fiction",
+      "It Takes Two",
+      "Call of Duty: Black Ops 7",
+      "God of War Ragnarök",
+      "Red Dead Redemption 2",
+      "Marvel’s Spider-Man 2",
+      "Hogwarts Legacy",
+      "ELDEN RING",
+      "Resident Evil Requiem",
+      "Horizon Forbidden West"
+    ]
+  },
+  {
+    "filter": "kids",
+    "expectedCount": 4,
+    "observedCount": 4,
+    "titles": [
+      "EA SPORTS FC 27",
+      "Gran Turismo 7",
+      "ASTRO BOT",
+      "Sackboy: A Big Adventure"
+    ]
+  },
+  {
+    "filter": "racing",
+    "expectedCount": 1,
+    "observedCount": 1,
+    "titles": [
+      "Gran Turismo 7"
+    ]
+  },
+  {
+    "filter": "all",
+    "expectedCount": 19,
+    "observedCount": 19,
+    "titles": [
+      "EA SPORTS FC 27",
+      "Grand Theft Auto V",
+      "Mortal Kombat 1",
+      "S.T.A.L.K.E.R. 2: Heart of Chornobyl",
+      "EA SPORTS UFC 6",
+      "Tekken 8",
+      "Split Fiction",
+      "It Takes Two",
+      "Call of Duty: Black Ops 7",
+      "Gran Turismo 7",
+      "God of War Ragnarök",
+      "Red Dead Redemption 2",
+      "Marvel’s Spider-Man 2",
+      "Hogwarts Legacy",
+      "ELDEN RING",
+      "Resident Evil Requiem",
+      "ASTRO BOT",
+      "Sackboy: A Big Adventure",
+      "Horizon Forbidden West"
+    ]
+  },
+  {
+    "filter": "two",
+    "expectedCount": 8,
+    "observedCount": 8,
+    "titles": [
+      "EA SPORTS FC 27",
+      "Mortal Kombat 1",
+      "EA SPORTS UFC 6",
+      "Tekken 8",
+      "Split Fiction",
+      "It Takes Two",
+      "Gran Turismo 7",
+      "Sackboy: A Big Adventure"
+    ]
+  }
+]

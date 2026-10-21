@@ -1,0 +1,1196 @@
+{
+  "run": "20261003T104841Z",
+  "base": "http://localhost:8080",
+  "group": "native",
+  "expectedBuild": {
+    "main": "main-CNh65H_Y.js",
+    "css": "main-hpKQBRcV.css"
+  },
+  "servedAssets": {
+    "main-CNh65H_Y.js": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+      "status": 200,
+      "bytes": 485194,
+      "sha256": "99b37d873bfc96b85b555b7255a2aca4d7e755d46f4137756d1c94d9eac25b08",
+      "matchesLocal": true
+    },
+    "main-hpKQBRcV.css": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+      "status": 200,
+      "bytes": 92276,
+      "sha256": "3a577b6042e4db7b60caebb9ebed5e1a53d222d18eff2a27e42967fa86ac5fdd",
+      "matchesLocal": true
+    }
+  },
+  "pass": 4,
+  "fail": 2,
+  "caseCount": 6,
+  "selectedScreens": [],
+  "cases": [
+    {
+      "case": "native-faq-uk",
+      "status": "PASS",
+      "seconds": 4.19,
+      "failure": null,
+      "evidence": {
+        "name": "native-faq-uk",
+        "language": "uk",
+        "width": 390,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/faq/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "native": {
+            "kind": "faq",
+            "url": "http://localhost:8080/faq/",
+            "status": 200,
+            "heading": "Питання про оренду",
+            "requiredCopy": [
+              "Деякі ігри потребують його й для одиночної гри.",
+              "другий геймпад без доплати.",
+              "Не надсилай пароль PSN",
+              "PS4 — 7 500 грн, PS5 — 25 000 грн."
+            ],
+            "text": "На головну\n\nFAQ\n\nПитання про оренду\n\nЩо підготувати, як отримати консоль і що важливо знати перед орендою.\n\nЩо потрібно для підключення?\n\nТелевізор або монітор із HDMI-входом і розетка. Усі необхідні кабелі передбачені в комплекті.\n\nЧи потрібний інтернет?\n\nДля онлайн-режимів, оновлень і завантажень потрібен інтернет. Деякі ігри потребують його й для одиночної гри. Вимоги обраної гри уточнимо до оренди.\n\nМожна грати на двох?\n\nТак, у сумісних іграх. Обери два геймпади та гру з категорії «На двох» — другий геймпад без доплати.\n\nЧи можна використати свій PSN та ігри?\n\nУзгодимо це до передачі консолі. Не надсилай пароль PSN у заявці та вийди зі свого профілю перед поверненням.\n\nКоли повертається застава?\n\nЗастава: PS4 — 7 500 грн, PS5 — 25 000 грн. Повертаємо після повернення й перевірки обладнання за погодженими умовами. Спосіб внесення та строк повернення узгодимо до оренди.\n\nЧи можна продовжити оренду?\n\nНапиши до запланованого повернення. Перевіримо доступність на нові дати та повідомимо вартість продовження.\n\nЩо робити у разі пошкодження?\n\nОдразу повідом нас. Не розбирай і не ремонтуй обладнання самостійно. Перевіримо стан і вирішимо ситуацію за погодженими умовами оренди.\n\nОбрати дати",
+            "overflow": false,
+            "publicContactsPresent": true,
+            "contactBounds": [
+              {
+                "width": 390,
+                "phone": {
+                  "x": 186.90625,
+                  "y": 555.84375,
+                  "w": 128.09375,
+                  "h": 44,
+                  "right": 315,
+                  "bottom": 599.84375,
+                  "cx": 250.953125,
+                  "cy": 577.84375
+                },
+                "telegram": {
+                  "x": 322,
+                  "y": 555.84375,
+                  "w": 44,
+                  "h": 44,
+                  "right": 366,
+                  "bottom": 599.84375,
+                  "cx": 344,
+                  "cy": 577.84375
+                }
+              },
+              {
+                "width": 320,
+                "phone": {
+                  "x": 156.59375,
+                  "y": 555.390625,
+                  "w": 92.40625,
+                  "h": 44,
+                  "right": 249,
+                  "bottom": 599.390625,
+                  "cx": 202.796875,
+                  "cy": 577.390625
+                },
+                "telegram": {
+                  "x": 256,
+                  "y": 555.390625,
+                  "w": 44,
+                  "h": 44,
+                  "right": 300,
+                  "bottom": 599.390625,
+                  "cx": 278,
+                  "cy": 577.390625
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "case": "native-privacy-uk",
+      "status": "FAIL",
+      "seconds": 4.07,
+      "failure": "Traceback (most recent call last):\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 359, in run_case\n    fn(s);s.validate()\n    ^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 397, in <lambda>\n    for kind in ['faq','privacy','terms']:run_case(browser,f'native-{kind}-{lang}',lang,390 if lang=='uk' else 1440,lambda s,k=kind:native(s,k))\n                                                                                                                                    ^^^^^^^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 352, in native\n    nooverflow(p);contactbounds.append({'width':width,'phone':a,'telegram':b})\n    ^^^^^^^^^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 44, in nooverflow\n    check(page.evaluate('document.documentElement.scrollWidth<=innerWidth'), 'Horizontal document overflow')\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 40, in check\n    if not condition:raise AssertionError(message)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Horizontal document overflow\n",
+      "evidence": {
+        "name": "native-privacy-uk",
+        "language": "uk",
+        "width": 390,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/konfidentsiinist/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {}
+      }
+    },
+    {
+      "case": "native-terms-uk",
+      "status": "PASS",
+      "seconds": 4.32,
+      "failure": null,
+      "evidence": {
+        "name": "native-terms-uk",
+        "language": "uk",
+        "width": 390,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/umovy-orendy/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "native": {
+            "kind": "terms",
+            "url": "http://localhost:8080/umovy-orendy/",
+            "status": 200,
+            "heading": "Умови оренди",
+            "requiredCopy": [
+              "не потребує оплати.",
+              "другий геймпад без доплати.",
+              "PS4 — 7 500 грн, PS5 — 25 000 грн.",
+              "200 грн",
+              "300 грн",
+              "зеленій і жовтій зонах безкоштовна.",
+              "за тарифом таксі в обидва боки."
+            ],
+            "text": "Умови оренди\n\nНадсилання заявки не є підтвердженням бронювання та не потребує оплати. Після заявки JOYRENT перевіряє доступність консолі та ігор і зв’язується з тобою.\n\nУ комплекті — консоль і потрібні кабелі. Обери один або два геймпади: другий геймпад без доплати.\n\nЗастава: PS4 — 7 500 грн, PS5 — 25 000 грн. Повертаємо після повернення й перевірки обладнання за погодженими умовами. Спосіб внесення та строк повернення узгодимо до оренди.\n\nДоставляємо Одесою. Зелена зона — 200 грн, жовта — 300 грн за доставку та повернення. Від 7 днів доставка у зеленій і жовтій зонах безкоштовна. Червона зона — за тарифом таксі в обидва боки. Зону підтвердимо за адресою.\n\nДо підтвердження узгодимо комплектацію, дати й час отримання та повернення, доставку та відповідальність за обладнання. Усі умови погоджуємо до передачі консолі.\n\nДля продовження оренди перевіримо доступність на нові дати. Не розбирай обладнання та одразу повідом про несправності чи пошкодження.",
+            "overflow": false,
+            "publicContactsPresent": true,
+            "contactBounds": [
+              {
+                "width": 390,
+                "phone": {
+                  "x": 186.90625,
+                  "y": 555.15625,
+                  "w": 128.09375,
+                  "h": 44,
+                  "right": 315,
+                  "bottom": 599.15625,
+                  "cx": 250.953125,
+                  "cy": 577.15625
+                },
+                "telegram": {
+                  "x": 322,
+                  "y": 555.15625,
+                  "w": 44,
+                  "h": 44,
+                  "right": 366,
+                  "bottom": 599.15625,
+                  "cx": 344,
+                  "cy": 577.15625
+                }
+              },
+              {
+                "width": 320,
+                "phone": {
+                  "x": 156.59375,
+                  "y": 555.890625,
+                  "w": 92.40625,
+                  "h": 44,
+                  "right": 249,
+                  "bottom": 599.890625,
+                  "cx": 202.796875,
+                  "cy": 577.890625
+                },
+                "telegram": {
+                  "x": 256,
+                  "y": 555.890625,
+                  "w": 44,
+                  "h": 44,
+                  "right": 300,
+                  "bottom": 599.890625,
+                  "cx": 278,
+                  "cy": 577.890625
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "case": "native-faq-ru",
+      "status": "PASS",
+      "seconds": 4.15,
+      "failure": null,
+      "evidence": {
+        "name": "native-faq-ru",
+        "language": "ru",
+        "width": 1440,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/faq-ru/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "native": {
+            "kind": "faq",
+            "url": "http://localhost:8080/faq-ru/",
+            "status": 200,
+            "heading": "Вопросы об аренде",
+            "requiredCopy": [
+              "Некоторые игры требуют его и для одиночной игры.",
+              "второй геймпад без доплаты.",
+              "Не отправляй пароль PSN",
+              "PS4 — 7 500 грн, PS5 — 25 000 грн."
+            ],
+            "text": "На главную\n\nFAQ\n\nВопросы об аренде\n\nЧто подготовить, как получить консоль и что важно знать перед арендой.\n\nЧто нужно для подключения?\n\nТелевизор или монитор с HDMI-входом и розетка. Все необходимые кабели предусмотрены в комплекте.\n\nНужен ли интернет?\n\nДля онлайн-режимов, обновлений и загрузок нужен интернет. Некоторые игры требуют его и для одиночной игры. Требования выбранной игры уточним до аренды.\n\nМожно играть вдвоём?\n\nДа, в совместимых играх. Выбери два геймпада и игру из категории «Вдвоём» — второй геймпад без доплаты.\n\nМожно использовать свой PSN и игры?\n\nСогласуем это до передачи консоли. Не отправляй пароль PSN в заявке и выйди из своего профиля перед возвратом.\n\nКогда возвращается залог?\n\nЗалог: PS4 — 7 500 грн, PS5 — 25 000 грн. Возвращаем после возврата и проверки оборудования по согласованным условиям. Способ внесения и срок возврата согласуем до аренды.\n\nМожно продлить аренду?\n\nНапиши до запланированного возврата. Проверим доступность на новые даты и сообщим стоимость продления.\n\nЧто делать при повреждении?\n\nСразу сообщи нам. Не разбирай и не ремонтируй оборудование самостоятельно. Проверим состояние и решим ситуацию по согласованным условиям аренды.\n\nВыбрать даты",
+            "overflow": false,
+            "publicContactsPresent": true,
+            "contactBounds": [
+              {
+                "width": 1440,
+                "phone": {
+                  "x": 1046.109375,
+                  "y": 822.90625,
+                  "w": 184.4375,
+                  "h": 48,
+                  "right": 1230.546875,
+                  "bottom": 870.90625,
+                  "cx": 1138.328125,
+                  "cy": 846.90625
+                },
+                "telegram": {
+                  "x": 1240.546875,
+                  "y": 822.90625,
+                  "w": 124.578125,
+                  "h": 48,
+                  "right": 1365.125,
+                  "bottom": 870.90625,
+                  "cx": 1302.8359375,
+                  "cy": 846.90625
+                }
+              },
+              {
+                "width": 320,
+                "phone": {
+                  "x": 156.59375,
+                  "y": 555.765625,
+                  "w": 92.40625,
+                  "h": 44,
+                  "right": 249,
+                  "bottom": 599.765625,
+                  "cx": 202.796875,
+                  "cy": 577.765625
+                },
+                "telegram": {
+                  "x": 256,
+                  "y": 555.765625,
+                  "w": 44,
+                  "h": 44,
+                  "right": 300,
+                  "bottom": 599.765625,
+                  "cx": 278,
+                  "cy": 577.765625
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "case": "native-privacy-ru",
+      "status": "FAIL",
+      "seconds": 4.17,
+      "failure": "Traceback (most recent call last):\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 359, in run_case\n    fn(s);s.validate()\n    ^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 397, in <lambda>\n    for kind in ['faq','privacy','terms']:run_case(browser,f'native-{kind}-{lang}',lang,390 if lang=='uk' else 1440,lambda s,k=kind:native(s,k))\n                                                                                                                                    ^^^^^^^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 352, in native\n    nooverflow(p);contactbounds.append({'width':width,'phone':a,'telegram':b})\n    ^^^^^^^^^^^^^\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 44, in nooverflow\n    check(page.evaluate('document.documentElement.scrollWidth<=innerWidth'), 'Horizontal document overflow')\n  File \"/workspace/Public/work/refinement-1.7/browser-qa.py\", line 40, in check\n    if not condition:raise AssertionError(message)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Horizontal document overflow\n",
+      "evidence": {
+        "name": "native-privacy-ru",
+        "language": "ru",
+        "width": 1440,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/konfidentsialnost/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {}
+      }
+    },
+    {
+      "case": "native-terms-ru",
+      "status": "PASS",
+      "seconds": 4.11,
+      "failure": null,
+      "evidence": {
+        "name": "native-terms-ru",
+        "language": "ru",
+        "width": 1440,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CNh65H_Y.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/usloviya-arendy/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-hpKQBRcV.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/sourcebuster/sourcebuster.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/order-attribution.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.7.0-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=11.1.2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [],
+        "metrics": {
+          "native": {
+            "kind": "terms",
+            "url": "http://localhost:8080/usloviya-arendy/",
+            "status": 200,
+            "heading": "Условия аренды",
+            "requiredCopy": [
+              "не требует оплаты.",
+              "второй геймпад без доплаты.",
+              "PS4 — 7 500 грн, PS5 — 25 000 грн.",
+              "200 грн",
+              "300 грн",
+              "зелёной и жёлтой зонах бесплатна.",
+              "по тарифу такси в обе стороны."
+            ],
+            "text": "Условия аренды\n\nОтправка заявки не подтверждает бронирование и не требует оплаты. После заявки JOYRENT проверяет доступность консоли и игр и связывается с тобой.\n\nВ комплекте — консоль и необходимые кабели. Выбери один или два геймпада: второй геймпад без доплаты.\n\nЗалог: PS4 — 7 500 грн, PS5 — 25 000 грн. Возвращаем после возврата и проверки оборудования по согласованным условиям. Способ внесения и срок возврата согласуем до аренды.\n\nДоставляем по Одессе. Зелёная зона — 200 грн, жёлтая — 300 грн за доставку и возврат. От 7 дней доставка в зелёной и жёлтой зонах бесплатна. Красная зона — по тарифу такси в обе стороны. Зону подтвердим по адресу.\n\nДо подтверждения согласуем комплектацию, даты и время получения и возврата, доставку и ответственность за оборудование. Все условия согласуем до передачи консоли.\n\nДля продления аренды проверим доступность на новые даты. Не разбирай оборудование и сразу сообщи о неисправностях или повреждениях.",
+            "overflow": false,
+            "publicContactsPresent": true,
+            "contactBounds": [
+              {
+                "width": 1440,
+                "phone": {
+                  "x": 1046.109375,
+                  "y": 822.6875,
+                  "w": 184.4375,
+                  "h": 48,
+                  "right": 1230.546875,
+                  "bottom": 870.6875,
+                  "cx": 1138.328125,
+                  "cy": 846.6875
+                },
+                "telegram": {
+                  "x": 1240.546875,
+                  "y": 822.6875,
+                  "w": 124.578125,
+                  "h": 48,
+                  "right": 1365.125,
+                  "bottom": 870.6875,
+                  "cx": 1302.8359375,
+                  "cy": 846.6875
+                }
+              },
+              {
+                "width": 320,
+                "phone": {
+                  "x": 156.59375,
+                  "y": 555.890625,
+                  "w": 92.40625,
+                  "h": 44,
+                  "right": 249,
+                  "bottom": 599.890625,
+                  "cx": 202.796875,
+                  "cy": 577.890625
+                },
+                "telegram": {
+                  "x": 256,
+                  "y": 555.890625,
+                  "w": 44,
+                  "h": 44,
+                  "right": 300,
+                  "bottom": 599.890625,
+                  "cx": 278,
+                  "cy": 577.890625
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "safety": "All POST/non-GET/HEAD intercepted before any allowlist/continue; only localhost GET/HEAD allowed; no contacts entered, no order/email sent.",
+  "limits": [
+    "UI focus scope; no old test totals copied",
+    "document.hidden transition simulated in headless Chromium; CSS motion measured",
+    "OSM raster GET blocked, local vector fallback used",
+    "Native WP FAQ/terms/privacy copy awaits backend completion"
+  ]
+}

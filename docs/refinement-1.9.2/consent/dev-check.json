@@ -1,0 +1,649 @@
+{
+  "cases": [
+    {
+      "language": "uk",
+      "width": 320,
+      "status": "PASS",
+      "consent": {
+        "consent": {
+          "x": 20,
+          "y": 450.234375,
+          "w": 280,
+          "h": 54.1875,
+          "display": "grid",
+          "lineHeight": "22.1px",
+          "minHeight": "0px",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "span": {
+          "x": 72,
+          "y": 450.234375,
+          "w": 228,
+          "h": 54.1875,
+          "display": "block",
+          "lineHeight": "22.1px",
+          "minHeight": "auto",
+          "padding": "10px 0px 0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "checkboxHitArea": {
+          "x": 20,
+          "y": 450.234375,
+          "w": 44,
+          "h": 44,
+          "display": "grid",
+          "lineHeight": "22.1px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "buttons": [
+          {
+            "text": "умовами оренди",
+            "x": 162.40625,
+            "y": 460.234375,
+            "w": 102.5625,
+            "h": 22.09375,
+            "display": "inline-block",
+            "lineHeight": "22.1px",
+            "minHeight": "0px",
+            "padding": "0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          },
+          {
+            "text": "обробкою персональних даних",
+            "x": 72,
+            "y": 482.328125,
+            "w": 193.109375,
+            "h": 22.09375,
+            "display": "inline-block",
+            "lineHeight": "22.1px",
+            "minHeight": "0px",
+            "padding": "0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          }
+        ],
+        "textTops": [
+          462.23,
+          484.33
+        ],
+        "text": "Погоджуюся з умовами оренди та обробкою персональних даних."
+      },
+      "icon": {
+        "border": "0px solid rgb(207, 181, 135)",
+        "background": "rgba(0, 0, 0, 0)",
+        "width": 44,
+        "height": 44,
+        "ariaHidden": "true",
+        "svg": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z\"></path></svg>"
+      },
+      "legalClickTapEnterEscapeFocusAndCheckbox": "PASS",
+      "POST": [],
+      "pageErrors": [],
+      "HTTPFailures": []
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "status": "PASS",
+      "consent": {
+        "consent": {
+          "x": 24,
+          "y": 429.578125,
+          "w": 342,
+          "h": 54.1875,
+          "display": "grid",
+          "lineHeight": "22.1px",
+          "minHeight": "0px",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "span": {
+          "x": 76,
+          "y": 429.578125,
+          "w": 290,
+          "h": 54.1875,
+          "display": "block",
+          "lineHeight": "22.1px",
+          "minHeight": "auto",
+          "padding": "10px 0px 0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "checkboxHitArea": {
+          "x": 24,
+          "y": 429.578125,
+          "w": 44,
+          "h": 44,
+          "display": "grid",
+          "lineHeight": "22.1px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "buttons": [
+          {
+            "text": "умовами оренди",
+            "x": 166.40625,
+            "y": 439.578125,
+            "w": 102.5625,
+            "h": 22.09375,
+            "display": "inline-block",
+            "lineHeight": "22.1px",
+            "minHeight": "0px",
+            "padding": "0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          },
+          {
+            "text": "обробкою персональних даних",
+            "x": 76,
+            "y": 461.671875,
+            "w": 193.109375,
+            "h": 22.09375,
+            "display": "inline-block",
+            "lineHeight": "22.1px",
+            "minHeight": "0px",
+            "padding": "0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          }
+        ],
+        "textTops": [
+          441.58,
+          463.67
+        ],
+        "text": "Погоджуюся з умовами оренди та обробкою персональних даних."
+      },
+      "icon": {
+        "border": "0px solid rgb(207, 181, 135)",
+        "background": "rgba(0, 0, 0, 0)",
+        "width": 44,
+        "height": 44,
+        "ariaHidden": "true",
+        "svg": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z\"></path></svg>"
+      },
+      "legalClickTapEnterEscapeFocusAndCheckbox": "PASS",
+      "POST": [],
+      "pageErrors": [],
+      "HTTPFailures": []
+    },
+    {
+      "language": "uk",
+      "width": 1440,
+      "status": "PASS",
+      "consent": {
+        "consent": {
+          "x": 74.875,
+          "y": 629.546875,
+          "w": 753.03125,
+          "h": 44,
+          "display": "grid",
+          "lineHeight": "22.1px",
+          "minHeight": "0px",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "span": {
+          "x": 126.875,
+          "y": 629.546875,
+          "w": 701.03125,
+          "h": 32.09375,
+          "display": "block",
+          "lineHeight": "22.1px",
+          "minHeight": "auto",
+          "padding": "10px 0px 0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "checkboxHitArea": {
+          "x": 74.875,
+          "y": 629.546875,
+          "w": 44,
+          "h": 44,
+          "display": "grid",
+          "lineHeight": "22.1px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "buttons": [
+          {
+            "text": "умовами оренди",
+            "x": 217.28125,
+            "y": 639.546875,
+            "w": 102.5625,
+            "h": 22.09375,
+            "display": "inline-block",
+            "lineHeight": "22.1px",
+            "minHeight": "0px",
+            "padding": "0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          },
+          {
+            "text": "обробкою персональних даних",
+            "x": 338.609375,
+            "y": 639.546875,
+            "w": 193.109375,
+            "h": 22.09375,
+            "display": "inline-block",
+            "lineHeight": "22.1px",
+            "minHeight": "0px",
+            "padding": "0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          }
+        ],
+        "textTops": [
+          641.55
+        ],
+        "text": "Погоджуюся з умовами оренди та обробкою персональних даних."
+      },
+      "icon": {
+        "border": "0px solid rgb(207, 181, 135)",
+        "background": "rgba(0, 0, 0, 0)",
+        "width": 44,
+        "height": 44,
+        "ariaHidden": "true",
+        "svg": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z\"></path></svg>"
+      },
+      "legalClickTapEnterEscapeFocusAndCheckbox": "PASS",
+      "POST": [],
+      "pageErrors": [],
+      "HTTPFailures": []
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "status": "PASS",
+      "consent": {
+        "consent": {
+          "x": 20,
+          "y": 450.046875,
+          "w": 280,
+          "h": 54.1875,
+          "display": "grid",
+          "lineHeight": "22.1px",
+          "minHeight": "0px",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "span": {
+          "x": 72,
+          "y": 450.046875,
+          "w": 228,
+          "h": 54.1875,
+          "display": "block",
+          "lineHeight": "22.1px",
+          "minHeight": "auto",
+          "padding": "10px 0px 0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "checkboxHitArea": {
+          "x": 20,
+          "y": 450.046875,
+          "w": 44,
+          "h": 44,
+          "display": "grid",
+          "lineHeight": "22.1px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "buttons": [
+          {
+            "text": "условиями аренды",
+            "x": 163.515625,
+            "y": 460.046875,
+            "w": 116,
+            "h": 22.09375,
+            "display": "inline-block",
+            "lineHeight": "22.1px",
+            "minHeight": "0px",
+            "padding": "0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          },
+          {
+            "text": "обработкой персональных данных",
+            "x": 72,
+            "y": 482.140625,
+            "w": 214.171875,
+            "h": 22.09375,
+            "display": "inline-block",
+            "lineHeight": "22.1px",
+            "minHeight": "0px",
+            "padding": "0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          }
+        ],
+        "textTops": [
+          462.05,
+          484.14
+        ],
+        "text": "Соглашаюсь с условиями аренды и обработкой персональных данных."
+      },
+      "icon": {
+        "border": "0px solid rgb(207, 181, 135)",
+        "background": "rgba(0, 0, 0, 0)",
+        "width": 44,
+        "height": 44,
+        "ariaHidden": "true",
+        "svg": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z\"></path></svg>"
+      },
+      "legalClickTapEnterEscapeFocusAndCheckbox": "PASS",
+      "POST": [],
+      "pageErrors": [],
+      "HTTPFailures": []
+    },
+    {
+      "language": "ru",
+      "width": 390,
+      "status": "PASS",
+      "consent": {
+        "consent": {
+          "x": 24,
+          "y": 429.15625,
+          "w": 342,
+          "h": 54.1875,
+          "display": "grid",
+          "lineHeight": "22.1px",
+          "minHeight": "0px",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "span": {
+          "x": 76,
+          "y": 429.15625,
+          "w": 290,
+          "h": 54.1875,
+          "display": "block",
+          "lineHeight": "22.1px",
+          "minHeight": "auto",
+          "padding": "10px 0px 0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "checkboxHitArea": {
+          "x": 24,
+          "y": 429.15625,
+          "w": 44,
+          "h": 44,
+          "display": "grid",
+          "lineHeight": "22.1px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "buttons": [
+          {
+            "text": "условиями аренды",
+            "x": 167.515625,
+            "y": 439.15625,
+            "w": 116,
+            "h": 22.09375,
+            "display": "inline-block",
+            "lineHeight": "22.1px",
+            "minHeight": "0px",
+            "padding": "0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          },
+          {
+            "text": "обработкой персональных данных",
+            "x": 76,
+            "y": 461.25,
+            "w": 214.171875,
+            "h": 22.09375,
+            "display": "inline-block",
+            "lineHeight": "22.1px",
+            "minHeight": "0px",
+            "padding": "0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          }
+        ],
+        "textTops": [
+          441.16,
+          463.25
+        ],
+        "text": "Соглашаюсь с условиями аренды и обработкой персональных данных."
+      },
+      "icon": {
+        "border": "0px solid rgb(207, 181, 135)",
+        "background": "rgba(0, 0, 0, 0)",
+        "width": 44,
+        "height": 44,
+        "ariaHidden": "true",
+        "svg": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z\"></path></svg>"
+      },
+      "legalClickTapEnterEscapeFocusAndCheckbox": "PASS",
+      "POST": [],
+      "pageErrors": [],
+      "HTTPFailures": []
+    },
+    {
+      "language": "ru",
+      "width": 1440,
+      "status": "PASS",
+      "consent": {
+        "consent": {
+          "x": 74.875,
+          "y": 629.984375,
+          "w": 753.03125,
+          "h": 44,
+          "display": "grid",
+          "lineHeight": "22.1px",
+          "minHeight": "0px",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "span": {
+          "x": 126.875,
+          "y": 629.984375,
+          "w": 701.03125,
+          "h": 32.09375,
+          "display": "block",
+          "lineHeight": "22.1px",
+          "minHeight": "auto",
+          "padding": "10px 0px 0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "checkboxHitArea": {
+          "x": 74.875,
+          "y": 629.984375,
+          "w": 44,
+          "h": 44,
+          "display": "grid",
+          "lineHeight": "22.1px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "buttons": [
+          {
+            "text": "условиями аренды",
+            "x": 218.390625,
+            "y": 639.984375,
+            "w": 116,
+            "h": 22.09375,
+            "display": "inline-block",
+            "lineHeight": "22.1px",
+            "minHeight": "0px",
+            "padding": "0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          },
+          {
+            "text": "обработкой персональных данных",
+            "x": 347,
+            "y": 639.984375,
+            "w": 214.171875,
+            "h": 22.09375,
+            "display": "inline-block",
+            "lineHeight": "22.1px",
+            "minHeight": "0px",
+            "padding": "0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          }
+        ],
+        "textTops": [
+          641.98
+        ],
+        "text": "Соглашаюсь с условиями аренды и обработкой персональных данных."
+      },
+      "icon": {
+        "border": "0px solid rgb(207, 181, 135)",
+        "background": "rgba(0, 0, 0, 0)",
+        "width": 44,
+        "height": 44,
+        "ariaHidden": "true",
+        "svg": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M8.984 2.596v17.547l3.915 1.261V6.688c0-.69.304-1.151.794-.991.636.18.76.814.76 1.505v5.875c2.441 1.193 4.362-.002 4.362-3.152 0-3.237-1.126-4.675-4.438-5.827-1.307-.448-3.728-1.186-5.39-1.502zm4.656 16.241l6.296-2.275c.715-.258.826-.625.246-.818-.586-.192-1.637-.139-2.357.123l-4.205 1.5V14.98l.24-.085s1.201-.42 2.913-.615c1.696-.18 3.785.03 5.437.661 1.848.601 2.04 1.472 1.576 2.072-.465.6-1.622 1.036-1.622 1.036l-8.544 3.107V18.86zM1.807 18.6c-1.9-.545-2.214-1.668-1.352-2.32.801-.586 2.16-1.052 2.16-1.052l5.615-2.013v2.313L4.205 17c-.705.271-.825.632-.239.826.586.195 1.637.15 2.343-.12L8.247 17v2.074c-.12.03-.256.044-.39.073-1.939.331-3.996.196-6.038-.479z\"></path></svg>"
+      },
+      "legalClickTapEnterEscapeFocusAndCheckbox": "PASS",
+      "POST": [],
+      "pageErrors": [],
+      "HTTPFailures": []
+    }
+  ],
+  "screens": [
+    {
+      "file": "work/refinement-1.9.2/consent/dev-uk-320-booking-games.png",
+      "phase": "booking-games",
+      "language": "uk",
+      "width": 320,
+      "height": 844,
+      "sha256": "a2e9273da5e398278c3bd12e8541278fbdba078f9a92e2ec6bcd0b9f3c6264c5",
+      "accepted": true
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/dev-uk-320-consent.png",
+      "phase": "consent",
+      "language": "uk",
+      "width": 320,
+      "height": 844,
+      "sha256": "9360893fa2bbfb1072b7369f599110f41db63f9e1ef0ef1561c375dd54699599",
+      "accepted": true
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/dev-uk-390-booking-games.png",
+      "phase": "booking-games",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "7eec12e32f3096e5b35cead6fdefe2be1871177faf051e4d5d4f697600aefef0",
+      "accepted": true
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/dev-uk-390-consent.png",
+      "phase": "consent",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "df58d59406cff65ab36e316e6771f3d854c247ac35c359bcfba09fba2216b442",
+      "accepted": true
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/dev-uk-1440-booking-games.png",
+      "phase": "booking-games",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "d6d80e668195415f4cd7695b82022d2a00cbc07e2d5b8349fc2d1c171f0b090d",
+      "accepted": true
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/dev-uk-1440-consent.png",
+      "phase": "consent",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "d17311e1ea737771d8dffc9aaab5a592576378a64b5f4a0b21f6c3c382e8f0e5",
+      "accepted": true
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/dev-ru-320-booking-games.png",
+      "phase": "booking-games",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "6586b2c6949e107549e690a54c5f8a8b33f11b07370eaab8cb48bfb029d54fff",
+      "accepted": true
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/dev-ru-320-consent.png",
+      "phase": "consent",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "5dc6aec0e9cdd00802a4060da5172af958d69191ed12eb9a4e4529ceb46d9538",
+      "accepted": true
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/dev-ru-390-booking-games.png",
+      "phase": "booking-games",
+      "language": "ru",
+      "width": 390,
+      "height": 844,
+      "sha256": "977207f7f11e62735d568f3fd85f224ea3564a069fc4f0ff7438a104775a3e0b",
+      "accepted": true
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/dev-ru-390-consent.png",
+      "phase": "consent",
+      "language": "ru",
+      "width": 390,
+      "height": 844,
+      "sha256": "c388f7045ec7bc2f0a2285b149f26458b4278af14171537a97929432c897f70a",
+      "accepted": true
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/dev-ru-1440-booking-games.png",
+      "phase": "booking-games",
+      "language": "ru",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "e675322cf0f18da61e0bdbd7369232aad8fd426ed16747ad5144ec6ac8a2d3e9",
+      "accepted": true
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/dev-ru-1440-consent.png",
+      "phase": "consent",
+      "language": "ru",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "c4f63a5dacf097b71af81fc0bcd99d22ff9c14994a5ccff8d2ed3e376dba994e",
+      "accepted": true
+    }
+  ],
+  "physicalSafariVerified": false,
+  "kind": "Vite development check; not final packaged acceptance",
+  "safety": {
+    "realOrders": 0,
+    "realEmails": 0,
+    "POSTAttempts": 0,
+    "sourceMutations": false,
+    "physicalSafariVerified": false
+  }
+}

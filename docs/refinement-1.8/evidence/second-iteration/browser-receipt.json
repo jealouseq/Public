@@ -1,0 +1,77 @@
+{
+  "finalizedAt": "2026-10-03T11:58:14.158894+00:00",
+  "base": "http://localhost:8080",
+  "release": "theme1.8.0 / rentals plugin unchanged1.7.0",
+  "expectedBuild": {
+    "main": "main-By-zN2f-.js",
+    "css": "main-Dr9ihFq-.css"
+  },
+  "caseCount": 12,
+  "pass": 12,
+  "fail": 0,
+  "rawRuns": [
+    {
+      "file": "browser-results-20261003T114503Z.json",
+      "run": "20261003T114503Z",
+      "pass": 10,
+      "fail": 2
+    },
+    {
+      "file": "browser-results-20261003T114757Z.json",
+      "run": "20261003T114757Z",
+      "pass": 2,
+      "fail": 0
+    },
+    {
+      "file": "browser-results-20261003T115515Z.json",
+      "run": "20261003T115515Z",
+      "pass": 12,
+      "fail": 0
+    }
+  ],
+  "historyClassification": {
+    "harness": 2,
+    "product": 1,
+    "browserProductFailures": 0,
+    "rootVisualProductFindings": 1
+  },
+  "servedAssets": {
+    "main-By-zN2f-.js": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-By-zN2f-.js",
+      "status": 200,
+      "bytes": 484927,
+      "sha256": "b8f27ecd05dffebef72bd3000b2304041103f3b7a579d01c27c75212ca38fe91",
+      "matchesLocal": true,
+      "freshVerifiedAt": "2026-10-03T11:58:14.156687+00:00"
+    },
+    "main-Dr9ihFq-.css": {
+      "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css",
+      "status": 200,
+      "bytes": 92547,
+      "sha256": "4e209770f1580b248f512f731a7bfa3ac4b36332a7acd310bbc57b79da69564f",
+      "matchesLocal": true,
+      "freshVerifiedAt": "2026-10-03T11:58:14.157869+00:00"
+    }
+  },
+  "staticPreview": {
+    "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-preview.svg",
+    "status": 200,
+    "bytes": 6685,
+    "sha256": "a43b380b692acaa537be108ffac71523a004ce81572b1def122b41cfb2ab8e81",
+    "matchesLocal": true,
+    "zonePathIds": [
+      "green-1",
+      "yellow-1",
+      "yellow-2",
+      "red-1",
+      "red-2",
+      "red-3"
+    ],
+    "viewBox": "0 0 240 360"
+  },
+  "safety": "All POST/non-GET/HEAD guarded before allowlist/continue; audited local GET/HEAD only. No contact values entered, no order/email or server mutation. Supplemental42px icon uses browser-only catalog GET fixture; server catalog bytes unchanged.",
+  "provenance": "All12 latest cases are fresh on the corrected final icon build, run20261003T115515Z. Earlier runs and two harness observations preserved; root P2 icon reference finding recorded separately as real product evidence. First-iteration report/receipt/screens archived before replacing current copies.",
+  "selectedPNGs": 12,
+  "additionalBookingPNGs": 4,
+  "additional42pxFixturePNGsInWork": 2
+}

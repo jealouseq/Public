@@ -1,0 +1,23 @@
+{
+  "heroEntrance": {
+    "early": {
+      "opacity": "0.907277",
+      "transform": "matrix(1, 0, 0, 1, 0, 1.11268)",
+      "animation": "joyrent-hero-word-in",
+      "filter": "blur(0.463617px)"
+    },
+    "final": {
+      "opacity": "1",
+      "animation": "joyrent-hero-word-in",
+      "filter": "blur(0px)"
+    }
+  },
+  "hover": {
+    "shiftPx": -5.0,
+    "coverWidthBefore": 283.8125,
+    "coverWidthAfter": 283.8125,
+    "coverTransform": "none"
+  },
+  "reducedMotion": "Immediate visible headline; no hover movement",
+  "artworkAndDialogs": "Every supported cover/dialog in UA/RU at 390 and 1440: square, same width, focus restored"
+}

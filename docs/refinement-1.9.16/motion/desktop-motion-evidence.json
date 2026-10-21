@@ -1,0 +1,16 @@
+{
+  "frames": 144,
+  "actualDurationSeconds": 14.736,
+  "capture": "ordinary-time screenshots; no animation seeking or synthetic transforms",
+  "opacityMin": 0.180006,
+  "opacityMax": 0.4,
+  "heroChangedPixelsAbove2RGB": 15314,
+  "heroDifferenceBBox": [
+    80,
+    34,
+    609,
+    557
+  ],
+  "photoSettledTransform": "none",
+  "initialConcurrentRun": "2/13 failed first sample >=5px because delayed animationstart sample; mobile inputs/CSS/JS unchanged; all13 pass sequential rerun without source/test changes"
+}

@@ -1,0 +1,54 @@
+{
+  "workersPerBatch": 6,
+  "migrations": [
+    {
+      "version": "1.6.0",
+      "count": 20,
+      "unique": 20
+    },
+    {
+      "version": "1.6.0",
+      "count": 20,
+      "unique": 20
+    },
+    {
+      "version": "1.6.0",
+      "count": 20,
+      "unique": 20
+    },
+    {
+      "version": "1.6.0",
+      "count": 20,
+      "unique": 20
+    },
+    {
+      "version": "1.6.0",
+      "count": 20,
+      "unique": 20
+    },
+    {
+      "version": "1.6.0",
+      "count": 20,
+      "unique": 20
+    }
+  ],
+  "requestStatuses": [
+    409,
+    409,
+    200,
+    409,
+    201,
+    200
+  ],
+  "retryStatus": 200,
+  "verified": {
+    "canonicalGames": 1,
+    "catalogCount": 20,
+    "unique": 20,
+    "orders": 1,
+    "notificationStatuses": [
+      "sent"
+    ],
+    "mailAttempts": 1
+  }
+}

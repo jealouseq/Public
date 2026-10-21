@@ -1,0 +1,77 @@
+{
+  "density": 1,
+  "captures": [
+    {
+      "file": "docs/refinement-1.8.1/screens/ru-1440-controller-options.png",
+      "width": 754,
+      "height": 110,
+      "sha256": "8339a81dd966dbbf334e526e85b9f49923af7bc03b70bc8fcf37d0056f051488"
+    },
+    {
+      "file": "docs/refinement-1.8.1/screens/ru-1440-process.png",
+      "width": 1292,
+      "height": 101,
+      "sha256": "f62a99ef6ed0335e2013ea7b8bbfdd3f42371c8521ce3a5652c39096590a3ee0"
+    },
+    {
+      "file": "docs/refinement-1.8.1/screens/ru-320-controller-options.png",
+      "width": 280,
+      "height": 170,
+      "sha256": "88ac0e65181f7016616c1f9af2417259462348f8a6dc7488e94e9322a922ab4c"
+    },
+    {
+      "file": "docs/refinement-1.8.1/screens/ru-320-process.png",
+      "width": 280,
+      "height": 344,
+      "sha256": "5dfeb39c67d42610eb1dd0ebc3a6f030df9c66db5e353e3e6fcd47b7d153f939"
+    },
+    {
+      "file": "docs/refinement-1.8.1/screens/ru-390-controller-options.png",
+      "width": 342,
+      "height": 106,
+      "sha256": "67b4cb143a69b8d0e4d29e776372cedbfadb095165e7058070fe51626132c29a"
+    },
+    {
+      "file": "docs/refinement-1.8.1/screens/ru-390-process.png",
+      "width": 342,
+      "height": 343,
+      "sha256": "7f478c40a441c578f66af7ec8d2b703a315e69a8cae3de8306c6e9214519bd24"
+    },
+    {
+      "file": "docs/refinement-1.8.1/screens/uk-1440-controller-options.png",
+      "width": 754,
+      "height": 110,
+      "sha256": "8c201577a712159da9acc541f04c136bf409720556a8bbfb4c05eb5f20982777"
+    },
+    {
+      "file": "docs/refinement-1.8.1/screens/uk-1440-process.png",
+      "width": 1292,
+      "height": 101,
+      "sha256": "7a8804766451f21a8e5e0302e4b496d9ecfdeb6053388a0b276814688ea68627"
+    },
+    {
+      "file": "docs/refinement-1.8.1/screens/uk-320-controller-options.png",
+      "width": 280,
+      "height": 170,
+      "sha256": "e7a28ea75dc35ae3c65a5d85567a1bcaff7e36c6cb265101ce4f3b24528c6dea"
+    },
+    {
+      "file": "docs/refinement-1.8.1/screens/uk-320-process.png",
+      "width": 280,
+      "height": 344,
+      "sha256": "84c953a39c1c145d86421100a1d2751689440175dd9d9adaa60ccd78e47f6c2f"
+    },
+    {
+      "file": "docs/refinement-1.8.1/screens/uk-390-controller-options.png",
+      "width": 342,
+      "height": 106,
+      "sha256": "30e7caaa049ae5864e01d30e198a0971d699c511d5a2d3520f0f078ae9f32f5f"
+    },
+    {
+      "file": "docs/refinement-1.8.1/screens/uk-390-process.png",
+      "width": 342,
+      "height": 344,
+      "sha256": "12bca4561a419a14ec3f5d2a0a7800831d016a3de19af836a91b32bd60fe5cd6"
+    }
+  ]
+}

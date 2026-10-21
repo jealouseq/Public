@@ -1,0 +1,20 @@
+[
+  {
+    "language": "uk",
+    "full_cross_language_closes": true,
+    "partial_still_suggests": true,
+    "house_apartment_retained": true,
+    "enterkeyhint": "done",
+    "done_blurs_without_submit": true,
+    "submissions": 0
+  },
+  {
+    "language": "ru",
+    "full_cross_language_closes": true,
+    "partial_still_suggests": true,
+    "house_apartment_retained": true,
+    "enterkeyhint": "done",
+    "done_blurs_without_submit": true,
+    "submissions": 0
+  }
+]

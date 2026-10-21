@@ -1,0 +1,36 @@
+[
+  {
+    "time": "after aria wait",
+    "state": [
+      {
+        "class": "",
+        "aria": "false",
+        "opacity": "1",
+        "svgClass": "playstation-controller"
+      },
+      {
+        "class": "selected",
+        "aria": "true",
+        "opacity": "0.58",
+        "svgClass": "playstation-controller"
+      }
+    ]
+  },
+  {
+    "time": "after 2 RAF",
+    "state": [
+      {
+        "class": "",
+        "aria": "false",
+        "opacity": "0.58",
+        "svgClass": "playstation-controller"
+      },
+      {
+        "class": "selected",
+        "aria": "true",
+        "opacity": "1",
+        "svgClass": "playstation-controller"
+      }
+    ]
+  }
+]

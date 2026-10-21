@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "archives": [
+    {
+      "file": "joyrent-1.9.11.zip",
+      "bytes": 12140419,
+      "sha256": "0eaccaa86014d30db2f680f140ca104a8821a89ac80bed3cfe6853ff816964df",
+      "files": 177,
+      "crcAndSourceBytes": "PASS",
+      "permissions": "PASS",
+      "sensitiveFilesAbsent": true
+    },
+    {
+      "file": "joyrent-preview-1.9.11.zip",
+      "bytes": 11641591,
+      "sha256": "9894baf197b015c130d07647cf841e0a964a2f80c38306f67b758c5e4d07860b",
+      "files": 157,
+      "crcAndSourceBytes": "PASS",
+      "permissions": "PASS",
+      "sensitiveFilesAbsent": true
+    }
+  ],
+  "historicalReleasesUnchanged": 61,
+  "pluginSourceUnchanged": true,
+  "pluginVersion": "1.8.4"
+}

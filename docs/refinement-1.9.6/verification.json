@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-06",
+  "themeVersion": "1.9.6",
+  "pluginVersion": "1.8.4",
+  "status": "PASS",
+  "checks": {
+    "unitTests": {
+      "passed": 123,
+      "files": 9
+    },
+    "typescriptAndBuild": "PASS",
+    "browserMatrix": {
+      "passed": 19,
+      "languages": [
+        "uk",
+        "ru"
+      ],
+      "widths": [
+        320,
+        390,
+        480,
+        481,
+        700,
+        768,
+        1024,
+        1440
+      ],
+      "tariffChoices": 112
+    },
+    "gameDialogs": {
+      "passed": 186,
+      "nestedPickerCases": 6,
+      "customLongCopyCases": 2,
+      "gameLimitCases": 2
+    },
+    "bookingInputGroups": 6,
+    "faqSeparate": true,
+    "archives": "PASS",
+    "historicalArchivesUnchanged": 54,
+    "separateFaqBrowserCases": 4
+  },
+  "environment": "Installed theme on local WordPress / WooCommerce, Chromium desktop and touch emulation",
+  "realBookingsSent": 0,
+  "liveDeployment": false,
+  "limitations": [
+    "Physical iPhone Safari was not tested.",
+    "Vite retains its existing warning about a JavaScript chunk over 500 kB.",
+    "The intentional hung-request test emits a Playwright cancellation warning during cleanup; all six assertion groups pass without page errors."
+  ],
+  "browserMatrixUnexpectedWrites": 0,
+  "networkWritesToLiveSite": 0
+}

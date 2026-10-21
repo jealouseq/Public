@@ -1,0 +1,42 @@
+{
+    "source": "HEAD b9b16e8; real JR_REST and JR_Domain, all WP\/Woo effects stubbed",
+    "results": [
+        {
+            "case": "same data and settings",
+            "priorReceiptPresent": true,
+            "status": 200,
+            "error": null,
+            "receiptLookupPerformed": true
+        },
+        {
+            "case": "selected game removed from published inventory",
+            "priorReceiptPresent": true,
+            "status": 400,
+            "error": "jr_validation",
+            "receiptLookupPerformed": false
+        },
+        {
+            "case": "pickup disabled after first receipt",
+            "priorReceiptPresent": true,
+            "status": 400,
+            "error": "jr_pickup",
+            "receiptLookupPerformed": false
+        },
+        {
+            "case": "retry booking created yesterday with yesterday pickup date",
+            "priorReceiptPresent": true,
+            "status": 400,
+            "error": "jr_validation",
+            "receiptLookupPerformed": false
+        }
+    ],
+    "nullByteDate": {
+        "returnedClass": null,
+        "exceptionEscaped": true,
+        "exceptionClass": "ValueError",
+        "message": "DateTimeImmutable::createFromFormat(): Argument #2 ($datetime) must not contain any null bytes"
+    },
+    "realOrdersCreated": 0,
+    "mailCalls": 0,
+    "networkAccess": false
+}

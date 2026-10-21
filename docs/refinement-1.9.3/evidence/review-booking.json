@@ -1,0 +1,66 @@
+{
+  "assessment": "approve with verification limits",
+  "findings": [],
+  "scope": "Independent review of booking frontend and plugin request domain/REST/order changes only; tracked source was not edited",
+  "reviewed_file_sha256": {
+    "src/components/OdesaAddressInput.tsx": "02ac84829c6a9d54291f9ce18a8a8186eee2801d49b9315a8999fca51600806d",
+    "src/lib/booking-input.ts": "48d31cf8062a2c4f057308ad9825562df5296f70e899f0955a3e8ff830462ebc",
+    "src/lib/api.ts": "0d05b55f15ce1f1b198a62ffcb721c5a4cd001f67ec9b99bf3c20a1f872d5487",
+    "src/sections/Booking.tsx": "898334d674e1f29272e01ae52c0feef4b6b177b5f134ef6bb8440216f3d36f34",
+    "wordpress/joyrent-rentals/includes/domain.php": "ad405bdb77a64a369e84b1235ba43a8839af94a73c859895e63730e0c4340c5e",
+    "wordpress/joyrent-rentals/includes/rest.php": "8682dc28a3ff39a5b93a887ce82cdb54d0c9b6ddbb26e43a234b2c7ab2171426",
+    "wordpress/joyrent-rentals/includes/orders.php": "ef8098d538344318ccd5b4ab6dc77e0d5156759f701d1029de16f4b0c6e6b506",
+    "wordpress/joyrent-rentals/includes/store.php": "994070f68220e084c053c96456c1cefcbf31120693a5baeaf4c4cb627ce379dd"
+  },
+  "head": "1a1abb6dbb956db600e380834f81a0ab9f19bf79",
+  "verification": {
+    "client_unit_tests": {
+      "passed": 40,
+      "files": [
+        "src/lib/api.test.ts",
+        "src/lib/booking-input.test.ts"
+      ]
+    },
+    "typescript": "npx tsc --noEmit: exit0",
+    "php_existing": {
+      "checks": 17,
+      "failures": [],
+      "wordpressLoaded": false,
+      "realOrdersCreated": 0,
+      "realMailCalls": 0
+    },
+    "php_independent_extended": {
+      "checks": 38,
+      "includes_existing_17": true,
+      "failures": [],
+      "script": "work/review-booking-probe.php",
+      "runtime": "cached wordpress:php8.3-apache, network none, read-only project mount"
+    },
+    "browser": {
+      "groups": 6,
+      "all_passed": true,
+      "records": "work/review-booking-browser/independent-browser.json",
+      "writes": "all nonGET localrequests intercepted; external hosts blocked",
+      "runtime": "local isolated Chromium,390touch and1440mouse",
+      "stderr": "Playwright CancelledError during closure of intentionally held mock route; all product pageerror arrays empty and process exit0"
+    }
+  },
+  "invariants_reviewed": [
+    "Touch guard captures one same-coordinate compatibility click; real next pointerdown/keydown resets it; detail0 activation remains allowed",
+    "Touch movement and popup scrolling prevent selection; pointercancel and pan-y retained",
+    "UA/RU inline phone error is associated with input and focuses it without send",
+    "Canonical client intent preserves ID for formatting/set-order/default/language equivalence and changes ID for material change",
+    "Complete fetch+JSONresponse bounded to30s; uncertain-send guidance and same-ID retry preserved",
+    "Current/legacy receipts recover before mutable date/game/maxGames/pickup/currency eligibility; incomplete durable order does not claim success",
+    "8-per15min rate reserve and request-owner locking remain unchanged and reject gated new attempts",
+    "Malformed array fields return400 without escaped Throwable; pickup address bound300 applies before discard",
+    "Current intent hash and legacy durable order fallback tolerate changed old tariff hash; conflicting phone/options return409"
+  ],
+  "limits": [
+    "No live actions; frozen live audit unaffected",
+    "Browser proof is Chromium touch emulation, not physical Safari or VoiceOver",
+    "PHP tests use real production classes with in-memory WordPress/WooCommerce/DB boundaries; no actual HPOS/CPT/object-cache/concurrent process run in this review",
+    "Client and server identity rules align for supported API IDs/ASCIIphone formats; no schema/protocol broadening",
+    "Review applies to recorded file hashes; later edits require relevant recheck"
+  ]
+}

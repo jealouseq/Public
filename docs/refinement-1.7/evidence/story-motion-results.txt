@@ -1,0 +1,1 @@
+PASS: visible yaw/roll and travelling light, hidden pause/resume, offscreen pause, reduced-motion neutral image, removed caption.

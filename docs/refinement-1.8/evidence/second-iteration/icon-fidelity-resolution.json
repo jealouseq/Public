@@ -1,0 +1,36 @@
+{
+  "verifiedAt": "2026-10-03T11:58:13.441764+00:00",
+  "finding": "Root independent P2 reference fidelity: stroke2 roughly3x too thick; dense controls appeared solid",
+  "classification": "fixed real product finding, separate from2 historical harness errors",
+  "finalMain": "main-By-zN2f-.js",
+  "finalCSS": "main-Dr9ihFq-.css",
+  "rootComparison": [
+    {
+      "source": "work/refinement-1.8/icon-comparison-before.png",
+      "evidenceCopy": "docs/refinement-1.8/evidence/icon-comparison-before.png",
+      "sha256": "36ef1ef1f7f58032b2bc53cbd8924b57f2deed0afa6de2b781a1e1d5cc2fb09e"
+    },
+    {
+      "source": "work/refinement-1.8/icon-comparison.png",
+      "evidenceCopy": "docs/refinement-1.8/evidence/icon-comparison-after.png",
+      "sha256": "1bbcb7c8c0231783f93c223c6a4ef42e423d6c45d20bf45b12abc83470d9b526"
+    }
+  ],
+  "selectedReference": {
+    "file": "docs/refinement-1.8/icons/01-detailed-generated.png",
+    "sha256": "bb87a4c93fb974babed9f6a68af739eda1a545edb21e136ec5f642d31ad832cf"
+  },
+  "standaloneSVG": {
+    "file": "docs/refinement-1.8/icons/selected-controller.svg",
+    "sha256": "a992dee7ecf221e922e2ab7728c6d22c02904e8701bbf6cd4b4a3f1e9a1f41d1",
+    "viewBox": "0 0 64 64",
+    "strokeWidth": ".8"
+  },
+  "browserVerification": {
+    "fresh12CaseRun": "20261003T115515Z",
+    "smallIcons": "28px / stroke1.25 / transparent currentColor / unchanged contour / no clipped stroke",
+    "fallback42": "42px / stroke0.8 / browser-only catalogGET fixture / server catalog unchanged",
+    "supplementRun": "20261003T115656Z"
+  },
+  "visualInspection": "Before/after512px reference comparison inspected; final controls retain open interiors and lineweight follows the selected reference. Actual process/Booking/fallback screenshots inspected."
+}

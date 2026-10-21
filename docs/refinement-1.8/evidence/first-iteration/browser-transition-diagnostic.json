@@ -1,0 +1,916 @@
+[
+  {
+    "width": 390,
+    "samples": [
+      {
+        "selected": 1,
+        "waitMs": 0,
+        "styles": [
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 1,
+        "waitMs": 32,
+        "styles": [
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 1,
+        "waitMs": 250,
+        "styles": [
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 2,
+        "waitMs": 0,
+        "styles": [
+          {
+            "pressed": "false",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": [
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              }
+            ]
+          },
+          {
+            "pressed": "true",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": [
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "selected": 2,
+        "waitMs": 32,
+        "styles": [
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 2,
+        "waitMs": 250,
+        "styles": [
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 1,
+        "waitMs": 0,
+        "styles": [
+          {
+            "pressed": "true",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": [
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              }
+            ]
+          },
+          {
+            "pressed": "false",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": [
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "selected": 1,
+        "waitMs": 32,
+        "styles": [
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 1,
+        "waitMs": 250,
+        "styles": [
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 2,
+        "waitMs": 0,
+        "styles": [
+          {
+            "pressed": "false",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": [
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              }
+            ]
+          },
+          {
+            "pressed": "true",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": [
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "selected": 2,
+        "waitMs": 32,
+        "styles": [
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 2,
+        "waitMs": 250,
+        "styles": [
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      }
+    ],
+    "evidence": {
+      "name": "diagnostic-ru-390",
+      "language": "ru",
+      "width": 390,
+      "motion": "reduce",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "posts": [],
+      "blocked": [],
+      "pageErrors": [],
+      "consoleErrors": [],
+      "HTTPFailures": [],
+      "failedRequests": [],
+      "requests": [
+        {
+          "url": "http://localhost:8080/?lang=ru",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-preview.svg",
+          "method": "GET"
+        }
+      ],
+      "screens": [],
+      "metrics": {}
+    }
+  },
+  {
+    "width": 1920,
+    "samples": [
+      {
+        "selected": 1,
+        "waitMs": 0,
+        "styles": [
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 1,
+        "waitMs": 32,
+        "styles": [
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 1,
+        "waitMs": 250,
+        "styles": [
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 2,
+        "waitMs": 0,
+        "styles": [
+          {
+            "pressed": "false",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": [
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              }
+            ]
+          },
+          {
+            "pressed": "true",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": [
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "selected": 2,
+        "waitMs": 32,
+        "styles": [
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 2,
+        "waitMs": 250,
+        "styles": [
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 1,
+        "waitMs": 0,
+        "styles": [
+          {
+            "pressed": "true",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": [
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              }
+            ]
+          },
+          {
+            "pressed": "false",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": [
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "selected": 1,
+        "waitMs": 32,
+        "styles": [
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 1,
+        "waitMs": 250,
+        "styles": [
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 2,
+        "waitMs": 0,
+        "styles": [
+          {
+            "pressed": "false",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": [
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              }
+            ]
+          },
+          {
+            "pressed": "true",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": [
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              },
+              {
+                "state": "running",
+                "time": 0
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "selected": 2,
+        "waitMs": 32,
+        "styles": [
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      },
+      {
+        "selected": 2,
+        "waitMs": 250,
+        "styles": [
+          {
+            "pressed": "false",
+            "color": "rgb(163, 165, 168)",
+            "border": "rgb(59, 60, 63)",
+            "transition": "1e-05s",
+            "animations": []
+          },
+          {
+            "pressed": "true",
+            "color": "rgb(244, 244, 241)",
+            "border": "rgb(244, 244, 241)",
+            "transition": "1e-05s",
+            "animations": []
+          }
+        ]
+      }
+    ],
+    "evidence": {
+      "name": "diagnostic-ru-1920",
+      "language": "ru",
+      "width": 1920,
+      "motion": "reduce",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css"
+        ]
+      },
+      "posts": [],
+      "blocked": [],
+      "pageErrors": [],
+      "consoleErrors": [],
+      "HTTPFailures": [],
+      "failedRequests": [],
+      "requests": [
+        {
+          "url": "http://localhost:8080/?lang=ru",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-Dr9ihFq-.css",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-detail-768.webp",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-i_aDCQ0R.js",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-1120.webp",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-preview.svg",
+          "method": "GET"
+        }
+      ],
+      "screens": [],
+      "metrics": {}
+    }
+  }
+]

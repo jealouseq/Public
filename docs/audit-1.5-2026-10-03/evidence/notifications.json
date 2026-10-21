@@ -1,0 +1,20 @@
+{
+    "receipt": {
+        "reference": "JR-90",
+        "rentalAmount": 1400,
+        "status": "awaiting_confirmation"
+    },
+    "status": "jr-request",
+    "newOrderEmailSent": false,
+    "emailAttemptCount": 0,
+    "emails": [],
+    "statusEvents": [
+        "woocommerce_order_status_checkout-draft",
+        "woocommerce_order_status_pending_to_checkout-draft",
+        "woocommerce_order_status_changed",
+        "woocommerce_order_status_jr-request",
+        "woocommerce_order_status_checkout-draft_to_jr-request",
+        "woocommerce_order_status_changed"
+    ],
+    "customNotificationHook": false
+}

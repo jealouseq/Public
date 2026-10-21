@@ -1,0 +1,23 @@
+[
+  {
+    "file": "joyrent-1.9.4.zip",
+    "bytes": 11705791,
+    "sha256": "9c427b98ab9a7dbf379a16804144a01ab22fd5b5165b18d55178f24837edff6c",
+    "crcAndSourceBytes": "PASS",
+    "privateRecipientAbsent": true
+  },
+  {
+    "file": "joyrent-rentals-1.8.3.zip",
+    "bytes": 50246,
+    "sha256": "2eff98f20f3e2067e3a958f4946056a98fc36044cf00a49fefabffdd69952143",
+    "crcAndSourceBytes": "PASS",
+    "privateRecipientAbsent": true
+  },
+  {
+    "file": "joyrent-preview-1.9.4.zip",
+    "bytes": 11207174,
+    "sha256": "04fad6b4f166a1c59b10c6f69b4a4d99a3f240741e9a858a49728c0110abf665",
+    "crcAndSourceBytes": "PASS",
+    "privateRecipientAbsent": true
+  }
+]

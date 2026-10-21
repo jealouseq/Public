@@ -1,0 +1,25 @@
+{
+    "checks": 29,
+    "failures": [
+        "Game selection 13 accepted: Некоректний список ігор.",
+        "Game selection 19 accepted: Некоректний список ігор.",
+        "Configured game limit enforced",
+        "Configured limit published",
+        "One hidden tariff leaves other offers accepting requests",
+        "Hidden tariff omitted",
+        "Delivery 7 days uses threshold before unknown fee",
+        "Delivery 30 days uses threshold before unknown fee",
+        "One shop notification per completed request",
+        "Configured shop recipient used",
+        "Failed notification retry exists",
+        "Public game IDs stay unique before migration",
+        "Redundant identical managed duplicate removed",
+        "Unique IDs after reconciliation",
+        "BO7 platform players",
+        "GT7 platform players",
+        "BO7 internet requirement explicit",
+        "Published UA privacy fallback replaces draft option",
+        "UA legal route has explicit language"
+    ],
+    "mailAttempts": 0
+}

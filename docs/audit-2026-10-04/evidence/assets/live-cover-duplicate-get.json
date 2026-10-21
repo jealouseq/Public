@@ -1,0 +1,26 @@
+{
+  "capturedUTC": "2026-10-04T12:13:36.064440+00:00",
+  "resources": [
+    {
+      "path": "/wp-content/themes/joyrent/assets/images/cover-fc27-360.webp",
+      "status": 200,
+      "bytes": 43354,
+      "sha256": "81a6487409cccb93c014d2e72ebe6d3d93a41e9936d00e784686c2e3876c0e7f",
+      "cacheControl": "public, max-age=604800"
+    },
+    {
+      "path": "/wp-content/themes/joyrent/assets/images/cover-fc27-720.webp",
+      "status": 200,
+      "bytes": 122106,
+      "sha256": "f07c4ee7dafefe76f70bae28a3755ba33972a6d8b18ae433c5d0cd86914d57cc",
+      "cacheControl": "public, max-age=604800"
+    },
+    {
+      "path": "/wp-content/themes/joyrent/assets/images/cover-fc27.webp",
+      "status": 200,
+      "bytes": 122106,
+      "sha256": "f07c4ee7dafefe76f70bae28a3755ba33972a6d8b18ae433c5d0cd86914d57cc",
+      "cacheControl": "public, max-age=604800"
+    }
+  ]
+}

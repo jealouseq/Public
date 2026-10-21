@@ -1,0 +1,432 @@
+[
+  {
+    "language": "uk",
+    "width": 390,
+    "dpr": 3,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 8.97269)",
+        "y": 8.97269
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 2.65665)",
+        "y": 2.65665
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.358616)",
+        "y": 0.358616
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 342,
+      "dpr": 3
+    },
+    "stage": {
+      "x": 24,
+      "y": 496.0625,
+      "width": 342,
+      "height": 256.90625
+    }
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "dpr": 3,
+    "motion": "reduce",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 342,
+      "dpr": 3
+    },
+    "stage": {
+      "x": 24,
+      "y": 496.0625,
+      "width": 342,
+      "height": 256.90625
+    }
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "dpr": 2,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 8.00358)",
+        "y": 8.00358
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 2.2793)",
+        "y": 2.2793
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.295968)",
+        "y": 0.295968
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 718.578125,
+      "dpr": 2
+    },
+    "stage": {
+      "x": 646.53125,
+      "y": 162.09375,
+      "width": 718.578125,
+      "height": 539.796875
+    }
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "dpr": 2,
+    "motion": "reduce",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 718.578125,
+      "dpr": 2
+    },
+    "stage": {
+      "x": 646.53125,
+      "y": 162.09375,
+      "width": 718.578125,
+      "height": 539.796875
+    }
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "dpr": 3,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 8.97065)",
+        "y": 8.97065
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 2.65908)",
+        "y": 2.65908
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.358211)",
+        "y": 0.358211
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 342,
+      "dpr": 3
+    },
+    "stage": {
+      "x": 24,
+      "y": 520.5625,
+      "width": 342,
+      "height": 256.90625
+    }
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "dpr": 3,
+    "motion": "reduce",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 342,
+      "dpr": 3
+    },
+    "stage": {
+      "x": 24,
+      "y": 520.5625,
+      "width": 342,
+      "height": 256.90625
+    }
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "dpr": 2,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 8.00138)",
+        "y": 8.00138
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 1.66845)",
+        "y": 1.66845
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.198208)",
+        "y": 0.198208
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 718.578125,
+      "dpr": 2
+    },
+    "stage": {
+      "x": 646.53125,
+      "y": 162.09375,
+      "width": 718.578125,
+      "height": 539.796875
+    }
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "dpr": 2,
+    "motion": "reduce",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 718.578125,
+      "dpr": 2
+    },
+    "stage": {
+      "x": 646.53125,
+      "y": 162.09375,
+      "width": 718.578125,
+      "height": 539.796875
+    }
+  },
+  {
+    "language": "uk",
+    "width": 320,
+    "dpr": 3,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 8.97209)",
+        "y": 8.97209
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 2.65723)",
+        "y": 2.65723
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.358308)",
+        "y": 0.358308
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-960.webp",
+      "sourcePixels": 960,
+      "renderedWidth": 280,
+      "dpr": 3
+    },
+    "stage": {
+      "x": 20,
+      "y": 506.40625,
+      "width": 280,
+      "height": 210.328125
+    }
+  },
+  {
+    "language": "uk",
+    "width": 901,
+    "dpr": 2,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 10)",
+        "y": 10
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 4.14454)",
+        "y": 4.14454
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.617128)",
+        "y": 0.617128
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 372.140625,
+      "dpr": 2
+    },
+    "stage": {
+      "x": 482,
+      "y": 245.21875,
+      "width": 372.140625,
+      "height": 279.546875
+    }
+  },
+  {
+    "language": "uk",
+    "width": 1536,
+    "dpr": 2,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 8.97576)",
+        "y": 8.97576
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 2.2804)",
+        "y": 2.2804
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.296147)",
+        "y": 0.296147
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 720,
+      "dpr": 2
+    },
+    "stage": {
+      "x": 736.140625,
+      "y": 161.5625,
+      "width": 720,
+      "height": 540.859375
+    }
+  },
+  {
+    "language": "uk",
+    "width": 3000,
+    "dpr": 1,
+    "motion": "no-preference",
+    "saveData": false,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 8.97335)",
+        "y": 8.97335
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 2.28167)",
+        "y": 2.28167
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.358393)",
+        "y": 0.358393
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp",
+      "sourcePixels": 720,
+      "renderedWidth": 720,
+      "dpr": 1
+    },
+    "stage": {
+      "x": 1468,
+      "y": 161.5625,
+      "width": 720,
+      "height": 540.859375
+    }
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "dpr": 3,
+    "motion": "no-preference",
+    "saveData": true,
+    "pass": true,
+    "entranceFrames": [
+      {
+        "delay": 0,
+        "transform": "matrix(1, 0, 0, 1, 0, 10)",
+        "y": 10
+      },
+      {
+        "delay": 160,
+        "transform": "matrix(1, 0, 0, 1, 0, 4.14187)",
+        "y": 4.14187
+      },
+      {
+        "delay": 360,
+        "transform": "matrix(1, 0, 0, 1, 0, 0.616644)",
+        "y": 0.616644
+      }
+    ],
+    "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-720.webp",
+    "imageDensity": {
+      "source": "http://localhost:8080/wp-content/themes/joyrent/assets/images/hero-slim-studio-1447.webp",
+      "sourcePixels": 1447,
+      "renderedWidth": 342,
+      "dpr": 3
+    },
+    "stage": {
+      "x": 24,
+      "y": 496.0625,
+      "width": 342,
+      "height": 256.90625
+    }
+  }
+]

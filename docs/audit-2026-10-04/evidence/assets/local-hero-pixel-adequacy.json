@@ -1,0 +1,65 @@
+[
+  {
+    "evidenceOrigin": "fresh local Vite source browser geometry; active hero bytes match live GET",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "dpr": 2,
+    "file": "ps5-commercial-desktop-detail.webp",
+    "encodedPixelDimensions": [
+      1448,
+      1086
+    ],
+    "imageBytes": 157622,
+    "renderedCssDimensions": [
+      658.421875,
+      493.8125
+    ],
+    "physicalPixelRatioWidth": 1.0995989463442417,
+    "srcsetNaturalWidthDensityCorrected": 681,
+    "objectFit": "contain"
+  },
+  {
+    "evidenceOrigin": "fresh local Vite source browser geometry; active hero bytes match live GET",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "dpr": 3,
+    "file": "ps5-commercial-mobile-1448.webp",
+    "encodedPixelDimensions": [
+      1448,
+      1086
+    ],
+    "imageBytes": 74314,
+    "renderedCssDimensions": [
+      383.03125,
+      287.265625
+    ],
+    "physicalPixelRatioWidth": 1.2601234668624732,
+    "srcsetNaturalWidthDensityCorrected": 383,
+    "objectFit": "contain"
+  },
+  {
+    "evidenceOrigin": "fresh local Vite source browser geometry; active hero bytes match live GET",
+    "viewport": {
+      "width": 320,
+      "height": 740
+    },
+    "dpr": 2,
+    "file": "ps5-commercial-mobile.webp",
+    "encodedPixelDimensions": [
+      1120,
+      840
+    ],
+    "imageBytes": 48246,
+    "renderedCssDimensions": [
+      313.59375,
+      235.1875
+    ],
+    "physicalPixelRatioWidth": 1.7857498754359742,
+    "srcsetNaturalWidthDensityCorrected": 313,
+    "objectFit": "contain"
+  }
+]

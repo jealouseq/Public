@@ -1,0 +1,57 @@
+{
+    "productionCode": "JR_Orders::notify; Woo WC_Data\/WC_Meta_Data",
+    "stubbed": "order, storage, locks, options, notes, mail",
+    "results": [
+        {
+            "case": "sent",
+            "returned": true,
+            "persistedNotificationStatus": "sent",
+            "mailStubCalls": 1
+        },
+        {
+            "case": "failed",
+            "returned": false,
+            "persistedNotificationStatus": "failed",
+            "mailStubCalls": 1
+        },
+        {
+            "case": "throw",
+            "returned": false,
+            "persistedNotificationStatus": "failed",
+            "mailStubCalls": 1
+        },
+        {
+            "case": "concurrent-edit",
+            "returned": true,
+            "persistedNotificationStatus": "sent",
+            "mailStubCalls": 1
+        },
+        {
+            "case": "existing-sent",
+            "returned": true,
+            "mailStubCalls": 0
+        },
+        {
+            "case": "existing-sending",
+            "returned": false,
+            "mailStubCalls": 0
+        },
+        {
+            "case": "admin-reviewed-uncertain-retry",
+            "returned": true,
+            "mailStubCalls": 1
+        },
+        {
+            "case": "incomplete",
+            "returned": false,
+            "mailStubCalls": 0
+        },
+        {
+            "case": "lock-contention",
+            "returned": false,
+            "mailStubCalls": 0
+        }
+    ],
+    "realOrdersCreated": 0,
+    "realMailCalls": 0
+}

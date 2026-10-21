@@ -1,0 +1,10 @@
+{
+  "checks": 81,
+  "failures": [],
+  "mailAttempts": 0,
+  "orderAccess": 0,
+  "databaseAccess": 0,
+  "exitCode": 0,
+  "stderr": "",
+  "runtime": "PHP 8.3.35 in joyrent-wp; isolated stubs; no wp-load"
+}

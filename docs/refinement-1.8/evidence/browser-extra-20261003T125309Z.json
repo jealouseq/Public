@@ -1,0 +1,1025 @@
+{
+  "run": "20261003T125309Z",
+  "expectedBuild": {
+    "expect_main": "main-DymdWJeq.js",
+    "expect_css": "main-CBL0otFI.css"
+  },
+  "captures": [
+    {
+      "file": "work/refinement-1.8/browser-extra-screens-20261003T125309Z/ua-mobile-delivery.png",
+      "name": "ua-mobile-delivery.png",
+      "case": "supplement-uk",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "388cb3f872c101748a657ad36932c85fb43087c213a90cbca25fc75134029014",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DymdWJeq.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CBL0otFI.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": null,
+      "compositionViewport": "preview + all fee conditions + preserved pill visible",
+      "documentationCopy": "docs/refinement-1.8/screens/ua-mobile-delivery.png"
+    },
+    {
+      "file": "work/refinement-1.8/browser-extra-screens-20261003T125309Z/ua-mobile-missing-cover-fixture.png",
+      "name": "ua-mobile-missing-cover-fixture.png",
+      "case": "supplement-uk",
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "4d377fea7bae6b2fc6ae076ba883a3af7d2f733c29e9d8fb010fcc3a2e81fc9f",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DymdWJeq.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CBL0otFI.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": false,
+      "externalTiles": null,
+      "browserOnlyFixture": "first game image/imageUrl empty in local intercepted catalog GET; server untouched"
+    },
+    {
+      "file": "work/refinement-1.8/browser-extra-screens-20261003T125309Z/ru-mobile-delivery.png",
+      "name": "ru-mobile-delivery.png",
+      "case": "supplement-ru",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "c19ce22b58a5af8803c9eb7e2c913d070d670c62e3b5e46222c018d20bfa2d5b",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DymdWJeq.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CBL0otFI.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": true,
+      "externalTiles": null,
+      "compositionViewport": "preview + all fee conditions + preserved pill visible",
+      "documentationCopy": "docs/refinement-1.8/screens/ru-mobile-delivery.png"
+    },
+    {
+      "file": "work/refinement-1.8/browser-extra-screens-20261003T125309Z/ru-mobile-missing-cover-fixture.png",
+      "name": "ru-mobile-missing-cover-fixture.png",
+      "case": "supplement-ru",
+      "language": "ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false,
+      "DPR": 1,
+      "motion": "reduce",
+      "sha256": "ecf97093516397fdb8f0563b51cc84c1ace8908d82f2dfc6f6d6cfb7f439fb85",
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DymdWJeq.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CBL0otFI.css"
+        ]
+      },
+      "focusBlurred": true,
+      "selected": false,
+      "externalTiles": null,
+      "browserOnlyFixture": "first game image/imageUrl empty in local intercepted catalog GET; server untouched"
+    }
+  ],
+  "contexts": [
+    {
+      "language": "uk",
+      "fallback42": {
+        "viewBox": "0 0 64 64",
+        "stroke": "currentColor",
+        "fill": "none",
+        "strokeWidth": "0.8",
+        "color": "rgb(163, 165, 168)",
+        "computedStroke": "rgb(163, 165, 168)",
+        "computedFill": "none",
+        "transform": "none",
+        "focusable": "false",
+        "aria": "true",
+        "box": {
+          "x": 1.600000023841858,
+          "y": 9.989286422729492,
+          "w": 59.30000305175781,
+          "h": 43.23612976074219
+        },
+        "viewport": {
+          "w": 42,
+          "h": 42
+        },
+        "view": {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64
+        },
+        "geometry": [
+          {
+            "tag": "path",
+            "attrs": [
+              [
+                "d",
+                "M20 14.2c-3.4-1.5-9.9-1.1-12.2 1.6C4.4 20.1 1.6 31.5 1.6 42.1c0 6.5 2.2 10.8 5.9 11.1 3.2.4 5.2-4 7-7.6l2.3-3.9c1.1-2 2.5-2.6 4.9-2h19c2.4-.6 3.8 0 4.9 2l2.4 3.9c1.8 3.6 3.8 8 7 7.6 3.7-.3 5.9-4.6 5.9-11.1 0-10.6-2.8-22-6.2-26.3-2.3-2.7-8.8-3.1-12.2-1.6C40.5 13 35 13 31.25 13S22 13 20 14.2Z"
+              ]
+            ]
+          },
+          {
+            "tag": "path",
+            "attrs": [
+              [
+                "d",
+                "M20 14.2c-1.2.7-.8 2.6-.5 4.3l1.5 5.9c.5 1.7 1.7 2.3 3.9 2.3h12.7c2.2 0 3.4-.6 3.9-2.3l1.5-5.9c.3-1.7.7-3.6-.5-4.3"
+              ]
+            ]
+          },
+          {
+            "tag": "path",
+            "attrs": [
+              [
+                "d",
+                "M20.6 23.8c.1 3.1-2.3 4.9-4.6 7.5-3.6 4.3-6.5 12.9-9.7 21.4m35.6-28.9c-.1 3.1 2.3 4.9 4.6 7.5 3.6 4.3 6.5 12.9 9.7 21.4"
+              ]
+            ]
+          },
+          {
+            "tag": "path",
+            "attrs": [
+              [
+                "d",
+                "M10.4 14.1v-1c0-1.3 1.1-1.9 2.8-2.1l3-.3c1.3-.1 1.9.5 1.9 1.8v.8m34 0v-.9c0-1.3-1.1-1.9-2.8-2.1l-3-.3c-1.3-.1-1.9.5-1.9 1.8v.8"
+              ]
+            ]
+          },
+          {
+            "tag": "rect",
+            "attrs": [
+              [
+                "x",
+                "16.8"
+              ],
+              [
+                "y",
+                "15.3"
+              ],
+              [
+                "width",
+                "1.6"
+              ],
+              [
+                "height",
+                "3"
+              ],
+              [
+                "rx",
+                ".8"
+              ]
+            ]
+          },
+          {
+            "tag": "rect",
+            "attrs": [
+              [
+                "x",
+                "44.1"
+              ],
+              [
+                "y",
+                "15.3"
+              ],
+              [
+                "width",
+                "1.6"
+              ],
+              [
+                "height",
+                "3"
+              ],
+              [
+                "rx",
+                ".8"
+              ]
+            ]
+          },
+          {
+            "tag": "path",
+            "attrs": [
+              [
+                "d",
+                "M11.1 20.6c0-.7.5-1.1 1.2-1.1h1.1c.7 0 1.2.4 1.2 1.1v.9c0 .4-.2.6-.5.9l-1.2 1.1-1.3-1.1c-.3-.3-.5-.5-.5-.9v-.9Zm0 7.5c0 .7.5 1.1 1.2 1.1h1.1c.7 0 1.2-.4 1.2-1.1v-.9c0-.4-.2-.6-.5-.9l-1.2-1.1-1.3 1.1c-.3.3-.5.5-.5.9v.9Zm-2.5-5.5c-.7 0-1.1.5-1.1 1.2v1.1c0 .7.4 1.2 1.1 1.2h.9c.4 0 .6-.2.9-.5l1.1-1.2-1.1-1.3c-.3-.3-.5-.5-.9-.5h-.9Zm8.4 0c.7 0 1.1.5 1.1 1.2v1.1c0 .7-.4 1.2-1.1 1.2h-.9c-.4 0-.6-.2-.9-.5l-1.1-1.2 1.1-1.3c.3-.3.5-.5.9-.5h.9Z"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "22.5"
+              ],
+              [
+                "cy",
+                "32.8"
+              ],
+              [
+                "r",
+                "4.8"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "22.5"
+              ],
+              [
+                "cy",
+                "32.8"
+              ],
+              [
+                "r",
+                "3.4"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "40"
+              ],
+              [
+                "cy",
+                "32.8"
+              ],
+              [
+                "r",
+                "4.8"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "40"
+              ],
+              [
+                "cy",
+                "32.8"
+              ],
+              [
+                "r",
+                "3.4"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "49.8"
+              ],
+              [
+                "cy",
+                "20.2"
+              ],
+              [
+                "r",
+                "2.1"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "45.7"
+              ],
+              [
+                "cy",
+                "24.4"
+              ],
+              [
+                "r",
+                "2.1"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "53.9"
+              ],
+              [
+                "cy",
+                "24.4"
+              ],
+              [
+                "r",
+                "2.1"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "49.8"
+              ],
+              [
+                "cy",
+                "28.6"
+              ],
+              [
+                "r",
+                "2.1"
+              ]
+            ]
+          },
+          {
+            "tag": "rect",
+            "attrs": [
+              [
+                "x",
+                "29.1"
+              ],
+              [
+                "y",
+                "35.5"
+              ],
+              [
+                "width",
+                "4.3"
+              ],
+              [
+                "height",
+                "1.6"
+              ],
+              [
+                "rx",
+                ".8"
+              ]
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "name": "supplement-uk",
+        "language": "uk",
+        "width": 390,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DymdWJeq.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CBL0otFI.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CBL0otFI.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DymdWJeq.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CBL0otFI.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DymdWJeq.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v-360.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [
+          "work/refinement-1.8/browser-extra-screens-20261003T125309Z/ua-mobile-delivery.png",
+          "work/refinement-1.8/browser-extra-screens-20261003T125309Z/ua-mobile-missing-cover-fixture.png"
+        ],
+        "metrics": {}
+      }
+    },
+    {
+      "language": "ru",
+      "fallback42": {
+        "viewBox": "0 0 64 64",
+        "stroke": "currentColor",
+        "fill": "none",
+        "strokeWidth": "0.8",
+        "color": "rgb(163, 165, 168)",
+        "computedStroke": "rgb(163, 165, 168)",
+        "computedFill": "none",
+        "transform": "none",
+        "focusable": "false",
+        "aria": "true",
+        "box": {
+          "x": 1.600000023841858,
+          "y": 9.989286422729492,
+          "w": 59.30000305175781,
+          "h": 43.23612976074219
+        },
+        "viewport": {
+          "w": 42,
+          "h": 42
+        },
+        "view": {
+          "x": 0,
+          "y": 0,
+          "w": 64,
+          "h": 64
+        },
+        "geometry": [
+          {
+            "tag": "path",
+            "attrs": [
+              [
+                "d",
+                "M20 14.2c-3.4-1.5-9.9-1.1-12.2 1.6C4.4 20.1 1.6 31.5 1.6 42.1c0 6.5 2.2 10.8 5.9 11.1 3.2.4 5.2-4 7-7.6l2.3-3.9c1.1-2 2.5-2.6 4.9-2h19c2.4-.6 3.8 0 4.9 2l2.4 3.9c1.8 3.6 3.8 8 7 7.6 3.7-.3 5.9-4.6 5.9-11.1 0-10.6-2.8-22-6.2-26.3-2.3-2.7-8.8-3.1-12.2-1.6C40.5 13 35 13 31.25 13S22 13 20 14.2Z"
+              ]
+            ]
+          },
+          {
+            "tag": "path",
+            "attrs": [
+              [
+                "d",
+                "M20 14.2c-1.2.7-.8 2.6-.5 4.3l1.5 5.9c.5 1.7 1.7 2.3 3.9 2.3h12.7c2.2 0 3.4-.6 3.9-2.3l1.5-5.9c.3-1.7.7-3.6-.5-4.3"
+              ]
+            ]
+          },
+          {
+            "tag": "path",
+            "attrs": [
+              [
+                "d",
+                "M20.6 23.8c.1 3.1-2.3 4.9-4.6 7.5-3.6 4.3-6.5 12.9-9.7 21.4m35.6-28.9c-.1 3.1 2.3 4.9 4.6 7.5 3.6 4.3 6.5 12.9 9.7 21.4"
+              ]
+            ]
+          },
+          {
+            "tag": "path",
+            "attrs": [
+              [
+                "d",
+                "M10.4 14.1v-1c0-1.3 1.1-1.9 2.8-2.1l3-.3c1.3-.1 1.9.5 1.9 1.8v.8m34 0v-.9c0-1.3-1.1-1.9-2.8-2.1l-3-.3c-1.3-.1-1.9.5-1.9 1.8v.8"
+              ]
+            ]
+          },
+          {
+            "tag": "rect",
+            "attrs": [
+              [
+                "x",
+                "16.8"
+              ],
+              [
+                "y",
+                "15.3"
+              ],
+              [
+                "width",
+                "1.6"
+              ],
+              [
+                "height",
+                "3"
+              ],
+              [
+                "rx",
+                ".8"
+              ]
+            ]
+          },
+          {
+            "tag": "rect",
+            "attrs": [
+              [
+                "x",
+                "44.1"
+              ],
+              [
+                "y",
+                "15.3"
+              ],
+              [
+                "width",
+                "1.6"
+              ],
+              [
+                "height",
+                "3"
+              ],
+              [
+                "rx",
+                ".8"
+              ]
+            ]
+          },
+          {
+            "tag": "path",
+            "attrs": [
+              [
+                "d",
+                "M11.1 20.6c0-.7.5-1.1 1.2-1.1h1.1c.7 0 1.2.4 1.2 1.1v.9c0 .4-.2.6-.5.9l-1.2 1.1-1.3-1.1c-.3-.3-.5-.5-.5-.9v-.9Zm0 7.5c0 .7.5 1.1 1.2 1.1h1.1c.7 0 1.2-.4 1.2-1.1v-.9c0-.4-.2-.6-.5-.9l-1.2-1.1-1.3 1.1c-.3.3-.5.5-.5.9v.9Zm-2.5-5.5c-.7 0-1.1.5-1.1 1.2v1.1c0 .7.4 1.2 1.1 1.2h.9c.4 0 .6-.2.9-.5l1.1-1.2-1.1-1.3c-.3-.3-.5-.5-.9-.5h-.9Zm8.4 0c.7 0 1.1.5 1.1 1.2v1.1c0 .7-.4 1.2-1.1 1.2h-.9c-.4 0-.6-.2-.9-.5l-1.1-1.2 1.1-1.3c.3-.3.5-.5.9-.5h.9Z"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "22.5"
+              ],
+              [
+                "cy",
+                "32.8"
+              ],
+              [
+                "r",
+                "4.8"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "22.5"
+              ],
+              [
+                "cy",
+                "32.8"
+              ],
+              [
+                "r",
+                "3.4"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "40"
+              ],
+              [
+                "cy",
+                "32.8"
+              ],
+              [
+                "r",
+                "4.8"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "40"
+              ],
+              [
+                "cy",
+                "32.8"
+              ],
+              [
+                "r",
+                "3.4"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "49.8"
+              ],
+              [
+                "cy",
+                "20.2"
+              ],
+              [
+                "r",
+                "2.1"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "45.7"
+              ],
+              [
+                "cy",
+                "24.4"
+              ],
+              [
+                "r",
+                "2.1"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "53.9"
+              ],
+              [
+                "cy",
+                "24.4"
+              ],
+              [
+                "r",
+                "2.1"
+              ]
+            ]
+          },
+          {
+            "tag": "circle",
+            "attrs": [
+              [
+                "cx",
+                "49.8"
+              ],
+              [
+                "cy",
+                "28.6"
+              ],
+              [
+                "r",
+                "2.1"
+              ]
+            ]
+          },
+          {
+            "tag": "rect",
+            "attrs": [
+              [
+                "x",
+                "29.1"
+              ],
+              [
+                "y",
+                "35.5"
+              ],
+              [
+                "width",
+                "4.3"
+              ],
+              [
+                "height",
+                "1.6"
+              ],
+              [
+                "rx",
+                ".8"
+              ]
+            ]
+          }
+        ]
+      },
+      "evidence": {
+        "name": "supplement-ru",
+        "language": "ru",
+        "width": 390,
+        "motion": "reduce",
+        "entry": {
+          "scripts": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DymdWJeq.js"
+          ],
+          "styles": [
+            "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CBL0otFI.css"
+          ]
+        },
+        "posts": [],
+        "blocked": [],
+        "pageErrors": [],
+        "consoleErrors": [],
+        "HTTPFailures": [],
+        "failedRequests": [],
+        "requests": [
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CBL0otFI.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DymdWJeq.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-basemap-odessa.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/delivery-zone-map-landscape.svg",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/?lang=ru",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CBL0otFI.css",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-latin-wght-normal-D5afBTBx.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/unbounded-cyrillic-wght-normal-C627f1f8.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DymdWJeq.js",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-latin-wght-normal-DHIcAJRg.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-cyrillic-wght-normal-DayYxulF.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/manrope-cyrillic-wght-normal-Dvxsihut.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/onest-latin-wght-normal-Dun_Rd-l.woff2",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-json/joyrent/v1/catalog",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/favicon.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/dualsense-cutout-560.webp",
+            "method": "GET"
+          },
+          {
+            "url": "http://localhost:8080/wp-content/themes/joyrent/assets/images/cover-gta-v-360.webp",
+            "method": "GET"
+          }
+        ],
+        "screens": [
+          "work/refinement-1.8/browser-extra-screens-20261003T125309Z/ru-mobile-delivery.png",
+          "work/refinement-1.8/browser-extra-screens-20261003T125309Z/ru-mobile-missing-cover-fixture.png"
+        ],
+        "metrics": {}
+      }
+    }
+  ],
+  "catalogBeforeAfterSha256": "d087a2a3a8248da9a43940808033cbee3d04797b48be895a09b0c5de727455ed",
+  "serverUnchanged": true,
+  "safety": "All nonGET/HEAD blocked before network; local GET only; fixture response in browser only; no contacts or submit",
+  "purpose": "Additional visual evidence, no extra acceptance case counts"
+}

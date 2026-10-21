@@ -1,0 +1,194 @@
+[
+  {
+    "lang": "uk",
+    "width": 320,
+    "credit": {
+      "x": 42,
+      "y": 462.484375,
+      "width": 236,
+      "height": 26
+    },
+    "viewport": {
+      "x": 42,
+      "y": 300.234375,
+      "width": 236,
+      "height": 162.25
+    },
+    "overlay": {
+      "x": 42,
+      "y": 300.234375,
+      "width": 236,
+      "height": 162.25
+    },
+    "southern_tip_y": 454.371875,
+    "page_errors": []
+  },
+  {
+    "lang": "ru",
+    "width": 320,
+    "credit": {
+      "x": 42,
+      "y": 436.09375,
+      "width": 236,
+      "height": 26
+    },
+    "viewport": {
+      "x": 42,
+      "y": 273.84375,
+      "width": 236,
+      "height": 162.25
+    },
+    "overlay": {
+      "x": 42,
+      "y": 273.84375,
+      "width": 236,
+      "height": 162.25
+    },
+    "southern_tip_y": 427.98125,
+    "page_errors": []
+  },
+  {
+    "lang": "uk",
+    "width": 390,
+    "credit": {
+      "x": 50,
+      "y": 474.921875,
+      "width": 290,
+      "height": 26
+    },
+    "viewport": {
+      "x": 50,
+      "y": 275.546875,
+      "width": 290,
+      "height": 199.375
+    },
+    "overlay": {
+      "x": 50,
+      "y": 275.546875,
+      "width": 290,
+      "height": 199.375
+    },
+    "southern_tip_y": 464.953125,
+    "page_errors": []
+  },
+  {
+    "lang": "ru",
+    "width": 390,
+    "credit": {
+      "x": 50,
+      "y": 465.921875,
+      "width": 290,
+      "height": 26
+    },
+    "viewport": {
+      "x": 50,
+      "y": 266.546875,
+      "width": 290,
+      "height": 199.375
+    },
+    "overlay": {
+      "x": 50,
+      "y": 266.546875,
+      "width": 290,
+      "height": 199.375
+    },
+    "southern_tip_y": 455.953125,
+    "page_errors": []
+  },
+  {
+    "lang": "uk",
+    "width": 700,
+    "credit": {
+      "x": 50,
+      "y": 587.625,
+      "width": 600,
+      "height": 26
+    },
+    "viewport": {
+      "x": 50,
+      "y": 175.125,
+      "width": 600,
+      "height": 412.5
+    },
+    "overlay": {
+      "x": 50,
+      "y": 175.125,
+      "width": 600,
+      "height": 412.5
+    },
+    "southern_tip_y": 567.0,
+    "page_errors": []
+  },
+  {
+    "lang": "ru",
+    "width": 700,
+    "credit": {
+      "x": 50,
+      "y": 587.625,
+      "width": 600,
+      "height": 26
+    },
+    "viewport": {
+      "x": 50,
+      "y": 175.125,
+      "width": 600,
+      "height": 412.5
+    },
+    "overlay": {
+      "x": 50,
+      "y": 175.125,
+      "width": 600,
+      "height": 412.5
+    },
+    "southern_tip_y": 567.0,
+    "page_errors": []
+  },
+  {
+    "lang": "uk",
+    "width": 768,
+    "credit": {
+      "x": 69.921875,
+      "y": 675.75,
+      "width": 628.15625,
+      "height": 26
+    },
+    "viewport": {
+      "x": 69.921875,
+      "y": 243.90625,
+      "width": 628.15625,
+      "height": 431.84375
+    },
+    "overlay": {
+      "x": 69.921875,
+      "y": 243.90625,
+      "width": 628.15625,
+      "height": 431.84375
+    },
+    "southern_tip_y": 654.1578125,
+    "page_errors": []
+  },
+  {
+    "lang": "ru",
+    "width": 768,
+    "credit": {
+      "x": 69.921875,
+      "y": 675.75,
+      "width": 628.15625,
+      "height": 26
+    },
+    "viewport": {
+      "x": 69.921875,
+      "y": 243.90625,
+      "width": 628.15625,
+      "height": 431.84375
+    },
+    "overlay": {
+      "x": 69.921875,
+      "y": 243.90625,
+      "width": 628.15625,
+      "height": 431.84375
+    },
+    "southern_tip_y": 654.1578125,
+    "page_errors": []
+  }
+]

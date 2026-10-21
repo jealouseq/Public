@@ -1,0 +1,2585 @@
+[
+  {
+    "viewport": {
+      "width": 320,
+      "height": 1000,
+      "dpr": 1
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+      "naturalWidth": 313,
+      "naturalHeight": 235,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 3.203125,
+        "y": 439.328125,
+        "width": 313.59375,
+        "height": 235.1875,
+        "ratio": 1.3333776242359818
+      },
+      "styles": {
+        "width": "313.594px",
+        "height": "235.188px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 3.203125,
+        "y": 439.328125,
+        "width": 313.59375,
+        "height": 235.1875,
+        "ratio": 1.3333776242359818
+      },
+      "styles": {
+        "width": "313.594px",
+        "height": "235.188px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -117.594)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 20,
+        "y": 451.921875,
+        "width": 280,
+        "height": 210,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "280px",
+        "height": "210px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 74,
+      "width": 320,
+      "height": 609.921875,
+      "ratio": 0.5246573587805815
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "transferSize": 11762,
+        "encodedBodySize": 11462,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp"
+    ],
+    "decodedAsset": {
+      "width": 560,
+      "height": 420,
+      "bytes": 11462,
+      "sha256": "ea9b32bd167cdeddc444c8c60f8d82906f758f47e82a436bfe08ef646ace605f"
+    },
+    "density": 1.7857498754359742,
+    "rasterScaleAtDPR": 0.5599888392857143,
+    "coverageAtDPR": 1.7857498754359742
+  },
+  {
+    "viewport": {
+      "width": 320,
+      "height": 1000,
+      "dpr": 2
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp",
+      "naturalWidth": 313,
+      "naturalHeight": 235,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 3.203125,
+        "y": 439.328125,
+        "width": 313.59375,
+        "height": 235.1875,
+        "ratio": 1.3333776242359818
+      },
+      "styles": {
+        "width": "313.594px",
+        "height": "235.188px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 3.203125,
+        "y": 439.328125,
+        "width": 313.59375,
+        "height": 235.1875,
+        "ratio": 1.3333776242359818
+      },
+      "styles": {
+        "width": "313.594px",
+        "height": "235.188px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -117.594)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 20,
+        "y": 451.921875,
+        "width": 280,
+        "height": 210,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "280px",
+        "height": "210px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 74,
+      "width": 320,
+      "height": 609.921875,
+      "ratio": 0.5246573587805815
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp",
+        "transferSize": 48546,
+        "encodedBodySize": 48246,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp"
+    ],
+    "decodedAsset": {
+      "width": 1120,
+      "height": 840,
+      "bytes": 48246,
+      "sha256": "9bf292408685518bcf487ad5f76d8d9bda0a96fb7d0d7f0259c9b123154d6806"
+    },
+    "density": 3.5714997508719484,
+    "rasterScaleAtDPR": 0.5599888392857143,
+    "coverageAtDPR": 1.7857498754359742
+  },
+  {
+    "viewport": {
+      "width": 320,
+      "height": 1000,
+      "dpr": 3
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp",
+      "naturalWidth": 313,
+      "naturalHeight": 235,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 3.203125,
+        "y": 439.328125,
+        "width": 313.59375,
+        "height": 235.1875,
+        "ratio": 1.3333776242359818
+      },
+      "styles": {
+        "width": "313.594px",
+        "height": "235.188px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 3.203125,
+        "y": 439.328125,
+        "width": 313.59375,
+        "height": 235.1875,
+        "ratio": 1.3333776242359818
+      },
+      "styles": {
+        "width": "313.594px",
+        "height": "235.188px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -117.594)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 20,
+        "y": 451.921875,
+        "width": 280,
+        "height": 210,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "280px",
+        "height": "210px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 74,
+      "width": 320,
+      "height": 609.921875,
+      "ratio": 0.5246573587805815
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp",
+        "transferSize": 48546,
+        "encodedBodySize": 48246,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp"
+    ],
+    "decodedAsset": {
+      "width": 1120,
+      "height": 840,
+      "bytes": 48246,
+      "sha256": "9bf292408685518bcf487ad5f76d8d9bda0a96fb7d0d7f0259c9b123154d6806"
+    },
+    "density": 3.5714997508719484,
+    "rasterScaleAtDPR": 0.8399832589285714,
+    "coverageAtDPR": 1.190499916957316
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 1000,
+      "dpr": 1
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+      "naturalWidth": 383,
+      "naturalHeight": 287,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 3.484375,
+        "y": 424.9765625,
+        "width": 383.03125,
+        "height": 287.265625,
+        "ratio": 1.333369594778352
+      },
+      "styles": {
+        "width": "383.031px",
+        "height": "287.266px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 3.484375,
+        "y": 424.9765625,
+        "width": 383.03125,
+        "height": 287.265625,
+        "ratio": 1.333369594778352
+      },
+      "styles": {
+        "width": "383.031px",
+        "height": "287.266px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -143.633)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 24,
+        "y": 440.359375,
+        "width": 342,
+        "height": 256.5,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "342px",
+        "height": "256.5px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 74,
+      "width": 390,
+      "height": 644.859375,
+      "ratio": 0.6047830195536817
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "transferSize": 11762,
+        "encodedBodySize": 11462,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp"
+    ],
+    "decodedAsset": {
+      "width": 560,
+      "height": 420,
+      "bytes": 11462,
+      "sha256": "ea9b32bd167cdeddc444c8c60f8d82906f758f47e82a436bfe08ef646ace605f"
+    },
+    "density": 1.4620217018846373,
+    "rasterScaleAtDPR": 0.683984375,
+    "coverageAtDPR": 1.4620217018846373
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 1000,
+      "dpr": 2
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp",
+      "naturalWidth": 383,
+      "naturalHeight": 287,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 3.484375,
+        "y": 424.9765625,
+        "width": 383.03125,
+        "height": 287.265625,
+        "ratio": 1.333369594778352
+      },
+      "styles": {
+        "width": "383.031px",
+        "height": "287.266px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 3.484375,
+        "y": 424.9765625,
+        "width": 383.03125,
+        "height": 287.265625,
+        "ratio": 1.333369594778352
+      },
+      "styles": {
+        "width": "383.031px",
+        "height": "287.266px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -143.633)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 24,
+        "y": 440.359375,
+        "width": 342,
+        "height": 256.5,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "342px",
+        "height": "256.5px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 74,
+      "width": 390,
+      "height": 644.859375,
+      "ratio": 0.6047830195536817
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp",
+        "transferSize": 48546,
+        "encodedBodySize": 48246,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp"
+    ],
+    "decodedAsset": {
+      "width": 1120,
+      "height": 840,
+      "bytes": 48246,
+      "sha256": "9bf292408685518bcf487ad5f76d8d9bda0a96fb7d0d7f0259c9b123154d6806"
+    },
+    "density": 2.9240434037692746,
+    "rasterScaleAtDPR": 0.683984375,
+    "coverageAtDPR": 1.4620217018846373
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 1000,
+      "dpr": 3
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp",
+      "naturalWidth": 383,
+      "naturalHeight": 287,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 3.484375,
+        "y": 424.9765625,
+        "width": 383.03125,
+        "height": 287.265625,
+        "ratio": 1.333369594778352
+      },
+      "styles": {
+        "width": "383.031px",
+        "height": "287.266px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 3.484375,
+        "y": 424.9765625,
+        "width": 383.03125,
+        "height": 287.265625,
+        "ratio": 1.333369594778352
+      },
+      "styles": {
+        "width": "383.031px",
+        "height": "287.266px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -143.633)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 24,
+        "y": 440.359375,
+        "width": 342,
+        "height": 256.5,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "342px",
+        "height": "256.5px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 74,
+      "width": 390,
+      "height": 644.859375,
+      "ratio": 0.6047830195536817
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp",
+        "transferSize": 48546,
+        "encodedBodySize": 48246,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp"
+    ],
+    "decodedAsset": {
+      "width": 1120,
+      "height": 840,
+      "bytes": 48246,
+      "sha256": "9bf292408685518bcf487ad5f76d8d9bda0a96fb7d0d7f0259c9b123154d6806"
+    },
+    "density": 2.9240434037692746,
+    "rasterScaleAtDPR": 1.0259765625000001,
+    "coverageAtDPR": 0.9746811345897582
+  },
+  {
+    "viewport": {
+      "width": 900,
+      "height": 1000,
+      "dpr": 1
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+      "naturalWidth": 492,
+      "naturalHeight": 369,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 203.609375,
+        "y": 489.6875,
+        "width": 492.796875,
+        "height": 369.59375,
+        "ratio": 1.3333474253825992
+      },
+      "styles": {
+        "width": "492.797px",
+        "height": "369.594px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 203.609375,
+        "y": 489.6875,
+        "width": 492.796875,
+        "height": 369.59375,
+        "ratio": 1.3333474253825992
+      },
+      "styles": {
+        "width": "492.797px",
+        "height": "369.594px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -184.797)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 230,
+        "y": 509.484375,
+        "width": 440,
+        "height": 330,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "440px",
+        "height": "330px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 80,
+      "width": 900,
+      "height": 781.484375,
+      "ratio": 1.1516545036489054
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "transferSize": 11762,
+        "encodedBodySize": 11462,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp"
+    ],
+    "decodedAsset": {
+      "width": 560,
+      "height": 420,
+      "bytes": 11462,
+      "sha256": "ea9b32bd167cdeddc444c8c60f8d82906f758f47e82a436bfe08ef646ace605f"
+    },
+    "density": 1.1363708424490313,
+    "rasterScaleAtDPR": 0.8799944196428572,
+    "coverageAtDPR": 1.1363708424490313
+  },
+  {
+    "viewport": {
+      "width": 900,
+      "height": 1000,
+      "dpr": 2
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp",
+      "naturalWidth": 492,
+      "naturalHeight": 369,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 203.609375,
+        "y": 489.6875,
+        "width": 492.796875,
+        "height": 369.59375,
+        "ratio": 1.3333474253825992
+      },
+      "styles": {
+        "width": "492.797px",
+        "height": "369.594px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 203.609375,
+        "y": 489.6875,
+        "width": 492.796875,
+        "height": 369.59375,
+        "ratio": 1.3333474253825992
+      },
+      "styles": {
+        "width": "492.797px",
+        "height": "369.594px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -184.797)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 230,
+        "y": 509.484375,
+        "width": 440,
+        "height": 330,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "440px",
+        "height": "330px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 80,
+      "width": 900,
+      "height": 781.484375,
+      "ratio": 1.1516545036489054
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp",
+        "transferSize": 48546,
+        "encodedBodySize": 48246,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp"
+    ],
+    "decodedAsset": {
+      "width": 1120,
+      "height": 840,
+      "bytes": 48246,
+      "sha256": "9bf292408685518bcf487ad5f76d8d9bda0a96fb7d0d7f0259c9b123154d6806"
+    },
+    "density": 2.2727416848980626,
+    "rasterScaleAtDPR": 0.8799944196428572,
+    "coverageAtDPR": 1.1363708424490313
+  },
+  {
+    "viewport": {
+      "width": 900,
+      "height": 1000,
+      "dpr": 3
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp",
+      "naturalWidth": 492,
+      "naturalHeight": 369,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 203.609375,
+        "y": 489.6875,
+        "width": 492.796875,
+        "height": 369.59375,
+        "ratio": 1.3333474253825992
+      },
+      "styles": {
+        "width": "492.797px",
+        "height": "369.594px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 203.609375,
+        "y": 489.6875,
+        "width": 492.796875,
+        "height": 369.59375,
+        "ratio": 1.3333474253825992
+      },
+      "styles": {
+        "width": "492.797px",
+        "height": "369.594px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -184.797)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 230,
+        "y": 509.484375,
+        "width": 440,
+        "height": 330,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "440px",
+        "height": "330px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 80,
+      "width": 900,
+      "height": 781.484375,
+      "ratio": 1.1516545036489054
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp",
+        "transferSize": 48546,
+        "encodedBodySize": 48246,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp"
+    ],
+    "decodedAsset": {
+      "width": 1120,
+      "height": 840,
+      "bytes": 48246,
+      "sha256": "9bf292408685518bcf487ad5f76d8d9bda0a96fb7d0d7f0259c9b123154d6806"
+    },
+    "density": 2.2727416848980626,
+    "rasterScaleAtDPR": 1.3199916294642857,
+    "coverageAtDPR": 0.7575805616326875
+  },
+  {
+    "viewport": {
+      "width": 901,
+      "height": 1000,
+      "dpr": 1
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+      "naturalWidth": 426,
+      "naturalHeight": 319,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 444.796875,
+        "y": 231.5,
+        "width": 409.34375,
+        "height": 307,
+        "ratio": 1.3333672638436482
+      },
+      "styles": {
+        "width": "409.344px",
+        "height": "307px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 444.796875,
+        "y": 231.5,
+        "width": 409.34375,
+        "height": 307,
+        "ratio": 1.3333672638436482
+      },
+      "styles": {
+        "width": "409.344px",
+        "height": "307px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -153.5)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 482,
+        "y": 245.453125,
+        "width": 372.140625,
+        "height": 279.09375,
+        "ratio": 1.3333893181054752
+      },
+      "styles": {
+        "width": "372.141px",
+        "height": "279.094px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 80,
+      "width": 901,
+      "height": 610,
+      "ratio": 1.477049180327869
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "transferSize": 23594,
+        "encodedBodySize": 23294,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp"
+    ],
+    "decodedAsset": {
+      "width": 768,
+      "height": 576,
+      "bytes": 23294,
+      "sha256": "c729dac325b3bf04cfb9971984da7248a057462138a7a1e9517c5cc3e2e3a46a"
+    },
+    "density": 1.876173753721658,
+    "rasterScaleAtDPR": 0.5329996744791667,
+    "coverageAtDPR": 1.876173753721658
+  },
+  {
+    "viewport": {
+      "width": 901,
+      "height": 1000,
+      "dpr": 2
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+      "naturalWidth": 426,
+      "naturalHeight": 319,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 444.796875,
+        "y": 231.5,
+        "width": 409.34375,
+        "height": 307,
+        "ratio": 1.3333672638436482
+      },
+      "styles": {
+        "width": "409.344px",
+        "height": "307px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 444.796875,
+        "y": 231.5,
+        "width": 409.34375,
+        "height": 307,
+        "ratio": 1.3333672638436482
+      },
+      "styles": {
+        "width": "409.344px",
+        "height": "307px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -153.5)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 482,
+        "y": 245.453125,
+        "width": 372.140625,
+        "height": 279.09375,
+        "ratio": 1.3333893181054752
+      },
+      "styles": {
+        "width": "372.141px",
+        "height": "279.094px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 80,
+      "width": 901,
+      "height": 610,
+      "ratio": 1.477049180327869
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+        "transferSize": 83512,
+        "encodedBodySize": 83212,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp"
+    ],
+    "decodedAsset": {
+      "width": 1448,
+      "height": 1086,
+      "bytes": 83212,
+      "sha256": "187bd725dceba21328d1400373b7939f72f49cbcb22f314e06454a2b49ba997c"
+    },
+    "density": 3.537369264829376,
+    "rasterScaleAtDPR": 0.5653919198895028,
+    "coverageAtDPR": 1.768684632414688
+  },
+  {
+    "viewport": {
+      "width": 901,
+      "height": 1000,
+      "dpr": 3
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+      "naturalWidth": 426,
+      "naturalHeight": 319,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 444.796875,
+        "y": 231.5,
+        "width": 409.34375,
+        "height": 307,
+        "ratio": 1.3333672638436482
+      },
+      "styles": {
+        "width": "409.344px",
+        "height": "307px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 444.796875,
+        "y": 231.5,
+        "width": 409.34375,
+        "height": 307,
+        "ratio": 1.3333672638436482
+      },
+      "styles": {
+        "width": "409.344px",
+        "height": "307px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -153.5)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 482,
+        "y": 245.453125,
+        "width": 372.140625,
+        "height": 279.09375,
+        "ratio": 1.3333893181054752
+      },
+      "styles": {
+        "width": "372.141px",
+        "height": "279.094px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 80,
+      "width": 901,
+      "height": 610,
+      "ratio": 1.477049180327869
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+        "transferSize": 83512,
+        "encodedBodySize": 83212,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp"
+    ],
+    "decodedAsset": {
+      "width": 1448,
+      "height": 1086,
+      "bytes": 83212,
+      "sha256": "187bd725dceba21328d1400373b7939f72f49cbcb22f314e06454a2b49ba997c"
+    },
+    "density": 3.537369264829376,
+    "rasterScaleAtDPR": 0.8480878798342542,
+    "coverageAtDPR": 1.1791230882764587
+  },
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 1000,
+      "dpr": 1
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+      "naturalWidth": 681,
+      "naturalHeight": 510,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 706.6875,
+        "y": 185.078125,
+        "width": 658.421875,
+        "height": 493.8125,
+        "ratio": 1.333343880521453
+      },
+      "styles": {
+        "width": "658.422px",
+        "height": "493.812px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 706.6875,
+        "y": 185.078125,
+        "width": 658.421875,
+        "height": 493.8125,
+        "ratio": 1.333343880521453
+      },
+      "styles": {
+        "width": "658.422px",
+        "height": "493.812px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -246.906)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 766.53125,
+        "y": 207.53125,
+        "width": 598.578125,
+        "height": 448.921875,
+        "ratio": 1.3333681389439977
+      },
+      "styles": {
+        "width": "598.578px",
+        "height": "448.922px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 92,
+      "width": 1440,
+      "height": 680,
+      "ratio": 2.1176470588235294
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "transferSize": 23594,
+        "encodedBodySize": 23294,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp"
+    ],
+    "decodedAsset": {
+      "width": 768,
+      "height": 576,
+      "bytes": 23294,
+      "sha256": "c729dac325b3bf04cfb9971984da7248a057462138a7a1e9517c5cc3e2e3a46a"
+    },
+    "density": 1.1664254016469304,
+    "rasterScaleAtDPR": 0.8573201497395833,
+    "coverageAtDPR": 1.1664254016469304
+  },
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 1000,
+      "dpr": 2
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+      "naturalWidth": 681,
+      "naturalHeight": 510,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 706.6875,
+        "y": 185.078125,
+        "width": 658.421875,
+        "height": 493.8125,
+        "ratio": 1.333343880521453
+      },
+      "styles": {
+        "width": "658.422px",
+        "height": "493.812px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 706.6875,
+        "y": 185.078125,
+        "width": 658.421875,
+        "height": 493.8125,
+        "ratio": 1.333343880521453
+      },
+      "styles": {
+        "width": "658.422px",
+        "height": "493.812px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -246.906)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 766.53125,
+        "y": 207.53125,
+        "width": 598.578125,
+        "height": 448.921875,
+        "ratio": 1.3333681389439977
+      },
+      "styles": {
+        "width": "598.578px",
+        "height": "448.922px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 92,
+      "width": 1440,
+      "height": 680,
+      "ratio": 2.1176470588235294
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+        "transferSize": 83512,
+        "encodedBodySize": 83212,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp"
+    ],
+    "decodedAsset": {
+      "width": 1448,
+      "height": 1086,
+      "bytes": 83212,
+      "sha256": "187bd725dceba21328d1400373b7939f72f49cbcb22f314e06454a2b49ba997c"
+    },
+    "density": 2.1991978926884834,
+    "rasterScaleAtDPR": 0.9094224792817679,
+    "coverageAtDPR": 1.0995989463442417
+  },
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 1000,
+      "dpr": 3
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+      "naturalWidth": 681,
+      "naturalHeight": 510,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 706.6875,
+        "y": 185.078125,
+        "width": 658.421875,
+        "height": 493.8125,
+        "ratio": 1.333343880521453
+      },
+      "styles": {
+        "width": "658.422px",
+        "height": "493.812px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 706.6875,
+        "y": 185.078125,
+        "width": 658.421875,
+        "height": 493.8125,
+        "ratio": 1.333343880521453
+      },
+      "styles": {
+        "width": "658.422px",
+        "height": "493.812px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -246.906)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 766.53125,
+        "y": 207.53125,
+        "width": 598.578125,
+        "height": 448.921875,
+        "ratio": 1.3333681389439977
+      },
+      "styles": {
+        "width": "598.578px",
+        "height": "448.922px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 92,
+      "width": 1440,
+      "height": 680,
+      "ratio": 2.1176470588235294
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+        "transferSize": 83512,
+        "encodedBodySize": 83212,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp"
+    ],
+    "decodedAsset": {
+      "width": 1448,
+      "height": 1086,
+      "bytes": 83212,
+      "sha256": "187bd725dceba21328d1400373b7939f72f49cbcb22f314e06454a2b49ba997c"
+    },
+    "density": 2.1991978926884834,
+    "rasterScaleAtDPR": 1.364133718922652,
+    "coverageAtDPR": 0.7330659642294944
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1000,
+      "dpr": 1
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+      "naturalWidth": 701,
+      "naturalHeight": 526,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 946.8125,
+        "y": 169.0390625,
+        "width": 701.1875,
+        "height": 525.890625,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "701.188px",
+        "height": "525.891px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 946.8125,
+        "y": 169.0390625,
+        "width": 701.1875,
+        "height": 525.890625,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "701.188px",
+        "height": "525.891px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -262.945)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 1010.546875,
+        "y": 192.953125,
+        "width": 637.453125,
+        "height": 478.078125,
+        "ratio": 1.3333660162761054
+      },
+      "styles": {
+        "width": "637.453px",
+        "height": "478.078px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 92,
+      "width": 1920,
+      "height": 680,
+      "ratio": 2.823529411764706
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "transferSize": 23594,
+        "encodedBodySize": 23294,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp"
+    ],
+    "decodedAsset": {
+      "width": 768,
+      "height": 576,
+      "bytes": 23294,
+      "sha256": "c729dac325b3bf04cfb9971984da7248a057462138a7a1e9517c5cc3e2e3a46a"
+    },
+    "density": 1.095284784740173,
+    "rasterScaleAtDPR": 0.9130045572916666,
+    "coverageAtDPR": 1.095284784740173
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1000,
+      "dpr": 2
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+      "naturalWidth": 702,
+      "naturalHeight": 526,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 946.8125,
+        "y": 169.0390625,
+        "width": 701.1875,
+        "height": 525.890625,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "701.188px",
+        "height": "525.891px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 946.8125,
+        "y": 169.0390625,
+        "width": 701.1875,
+        "height": 525.890625,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "701.188px",
+        "height": "525.891px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -262.945)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 1010.546875,
+        "y": 192.953125,
+        "width": 637.453125,
+        "height": 478.078125,
+        "ratio": 1.3333660162761054
+      },
+      "styles": {
+        "width": "637.453px",
+        "height": "478.078px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 92,
+      "width": 1920,
+      "height": 680,
+      "ratio": 2.823529411764706
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+        "transferSize": 83512,
+        "encodedBodySize": 83212,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp"
+    ],
+    "decodedAsset": {
+      "width": 1448,
+      "height": 1086,
+      "bytes": 83212,
+      "sha256": "187bd725dceba21328d1400373b7939f72f49cbcb22f314e06454a2b49ba997c"
+    },
+    "density": 2.0650681878955344,
+    "rasterScaleAtDPR": 0.9684910220994475,
+    "coverageAtDPR": 1.0325340939477672
+  },
+  {
+    "viewport": {
+      "width": 1920,
+      "height": 1000,
+      "dpr": 3
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+      "naturalWidth": 702,
+      "naturalHeight": 526,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 946.8125,
+        "y": 169.0390625,
+        "width": 701.1875,
+        "height": 525.890625,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "701.188px",
+        "height": "525.891px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 946.8125,
+        "y": 169.0390625,
+        "width": 701.1875,
+        "height": 525.890625,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "701.188px",
+        "height": "525.891px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -262.945)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 1010.546875,
+        "y": 192.953125,
+        "width": 637.453125,
+        "height": 478.078125,
+        "ratio": 1.3333660162761054
+      },
+      "styles": {
+        "width": "637.453px",
+        "height": "478.078px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 92,
+      "width": 1920,
+      "height": 680,
+      "ratio": 2.823529411764706
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+        "transferSize": 83512,
+        "encodedBodySize": 83212,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp"
+    ],
+    "decodedAsset": {
+      "width": 1448,
+      "height": 1086,
+      "bytes": 83212,
+      "sha256": "187bd725dceba21328d1400373b7939f72f49cbcb22f314e06454a2b49ba997c"
+    },
+    "density": 2.0650681878955344,
+    "rasterScaleAtDPR": 1.4527365331491713,
+    "coverageAtDPR": 0.6883560626318448
+  },
+  {
+    "viewport": {
+      "width": 3355,
+      "height": 1000,
+      "dpr": 1
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+      "naturalWidth": 701,
+      "naturalHeight": 526,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 1664.3125,
+        "y": 169.0390625,
+        "width": 701.1875,
+        "height": 525.890625,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "701.188px",
+        "height": "525.891px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 1664.3125,
+        "y": 169.0390625,
+        "width": 701.1875,
+        "height": 525.890625,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "701.188px",
+        "height": "525.891px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -262.945)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 1728.046875,
+        "y": 192.953125,
+        "width": 637.453125,
+        "height": 478.078125,
+        "ratio": 1.3333660162761054
+      },
+      "styles": {
+        "width": "637.453px",
+        "height": "478.078px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 92,
+      "width": 3355,
+      "height": 680,
+      "ratio": 4.9338235294117645
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "transferSize": 23594,
+        "encodedBodySize": 23294,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp"
+    ],
+    "decodedAsset": {
+      "width": 768,
+      "height": 576,
+      "bytes": 23294,
+      "sha256": "c729dac325b3bf04cfb9971984da7248a057462138a7a1e9517c5cc3e2e3a46a"
+    },
+    "density": 1.095284784740173,
+    "rasterScaleAtDPR": 0.9130045572916666,
+    "coverageAtDPR": 1.095284784740173
+  },
+  {
+    "viewport": {
+      "width": 3355,
+      "height": 1000,
+      "dpr": 2
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+      "naturalWidth": 702,
+      "naturalHeight": 526,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 1664.3125,
+        "y": 169.0390625,
+        "width": 701.1875,
+        "height": 525.890625,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "701.188px",
+        "height": "525.891px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 1664.3125,
+        "y": 169.0390625,
+        "width": 701.1875,
+        "height": 525.890625,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "701.188px",
+        "height": "525.891px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -262.945)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 1728.046875,
+        "y": 192.953125,
+        "width": 637.453125,
+        "height": 478.078125,
+        "ratio": 1.3333660162761054
+      },
+      "styles": {
+        "width": "637.453px",
+        "height": "478.078px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 92,
+      "width": 3355,
+      "height": 680,
+      "ratio": 4.9338235294117645
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+        "transferSize": 83512,
+        "encodedBodySize": 83212,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp"
+    ],
+    "decodedAsset": {
+      "width": 1448,
+      "height": 1086,
+      "bytes": 83212,
+      "sha256": "187bd725dceba21328d1400373b7939f72f49cbcb22f314e06454a2b49ba997c"
+    },
+    "density": 2.0650681878955344,
+    "rasterScaleAtDPR": 0.9684910220994475,
+    "coverageAtDPR": 1.0325340939477672
+  },
+  {
+    "viewport": {
+      "width": 3355,
+      "height": 1000,
+      "dpr": 3
+    },
+    "image": {
+      "currentSrc": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+      "naturalWidth": 702,
+      "naturalHeight": 526,
+      "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+      "sizes": "(min-width: 1536px) 702px, 47.3vw",
+      "rect": {
+        "x": 1664.3125,
+        "y": 169.0390625,
+        "width": 701.1875,
+        "height": 525.890625,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "701.188px",
+        "height": "525.891px",
+        "objectFit": "contain",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      }
+    },
+    "picture": {
+      "rect": {
+        "x": 1664.3125,
+        "y": 169.0390625,
+        "width": 701.1875,
+        "height": 525.890625,
+        "ratio": 1.3333333333333333
+      },
+      "styles": {
+        "width": "701.188px",
+        "height": "525.891px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "matrix(1, 0, 0, 1, 0, -262.945)",
+        "maskImage": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 8%, rgb(0, 0, 0) 96%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 2%, rgb(0, 0, 0) 92%, rgba(0, 0, 0, 0))",
+        "maskComposite": "intersect, intersect",
+        "mixBlendMode": "normal",
+        "opacity": "1"
+      },
+      "sources": [
+        {
+          "media": "(max-width: 900px)",
+          "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+          "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+        }
+      ]
+    },
+    "figure": {
+      "rect": {
+        "x": 1728.046875,
+        "y": 192.953125,
+        "width": 637.453125,
+        "height": 478.078125,
+        "ratio": 1.3333660162761054
+      },
+      "styles": {
+        "width": "637.453px",
+        "height": "478.078px",
+        "objectFit": "fill",
+        "objectPosition": "50% 50%",
+        "filter": "none",
+        "transform": "none",
+        "maskImage": "none",
+        "maskComposite": "add",
+        "mixBlendMode": "lighten",
+        "opacity": "1"
+      }
+    },
+    "hero": {
+      "x": 0,
+      "y": 92,
+      "width": 3355,
+      "height": 680,
+      "ratio": 4.9338235294117645
+    },
+    "preloads": [
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+        "media": "(width > 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp 768w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp 1448w",
+        "sizes": "(min-width: 1536px) 702px, 47.3vw"
+      },
+      {
+        "href": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+        "media": "(max-width: 900px)",
+        "srcset": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp 560w, http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp 1120w",
+        "sizes": "(min-width: 489px) 492.8px, (max-width: 375px) calc(112vw - 44.8px), calc(112vw - 53.76px)"
+      }
+    ],
+    "resources": [
+      {
+        "name": "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+        "transferSize": 83512,
+        "encodedBodySize": 83212,
+        "initiatorType": "link"
+      }
+    ],
+    "requests": [
+      "http://localhost:8080/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp"
+    ],
+    "decodedAsset": {
+      "width": 1448,
+      "height": 1086,
+      "bytes": 83212,
+      "sha256": "187bd725dceba21328d1400373b7939f72f49cbcb22f314e06454a2b49ba997c"
+    },
+    "density": 2.0650681878955344,
+    "rasterScaleAtDPR": 1.4527365331491713,
+    "coverageAtDPR": 0.6883560626318448
+  }
+]

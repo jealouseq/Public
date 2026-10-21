@@ -1,0 +1,55 @@
+{
+  "version": "1.6.0",
+  "archives": [
+    {
+      "file": "joyrent-1.6.0.zip",
+      "files": 153,
+      "bytes": 11292310,
+      "sha256": "cdc9ff8d45fc6a2f9a237603420c0d25752255281f0c392c9a68c4faf6332c89",
+      "matches_local_source": true,
+      "private_recipient_absent": true
+    },
+    {
+      "file": "joyrent-rentals-1.6.0.zip",
+      "files": 13,
+      "bytes": 32704,
+      "sha256": "73b10c3fe6187b1f99b98505a4a06df449f87c7665d3783589be6662f3802035",
+      "matches_local_source": true,
+      "private_recipient_absent": true
+    },
+    {
+      "file": "joyrent-preview-1.6.0.zip",
+      "files": 141,
+      "bytes": 10801805,
+      "sha256": "79ec011d9b04ca1a3a7d7662a31634b28df83ccc2a6f712a0e9271701e02177b",
+      "matches_local_source": true,
+      "private_recipient_absent": true
+    }
+  ],
+  "public": [
+    {
+      "route": "/",
+      "entry": "main-Dm7Og9CV.js",
+      "canonical_module_url": true,
+      "hero_preload_count": 2,
+      "private_recipient_absent": true
+    },
+    {
+      "route": "/?lang=ru",
+      "entry": "main-Dm7Og9CV.js",
+      "canonical_module_url": true,
+      "hero_preload_count": 2,
+      "private_recipient_absent": true
+    }
+  ],
+  "catalog": {
+    "approved_conditions": true,
+    "unique_games": 20,
+    "private_recipient_absent": true
+  },
+  "php_lint": {
+    "production_files": 17,
+    "result": "pass",
+    "verification": "Independent Docker php -l pass on every production PHP file, recorded before release."
+  }
+}

@@ -1,0 +1,264 @@
+{
+  "run": "2026-10-03T16:37:39.294304+00:00",
+  "base": "http://localhost:5173",
+  "entry": "Vite development source, not a packaged WordPress release",
+  "sources": {
+    "src/components/GamePicker.tsx": "0638800ec0d308d8d118874e82ddbbc81676ac8d9b9c14d975258cd6ec3a4dc2",
+    "src/game-picker.css": "89e7a1f30f9186a27305572ce467baea3a40492dcb13f7552565ef7f6c7fd5c4"
+  },
+  "cases": [
+    {
+      "language": "uk",
+      "width": 320,
+      "height": 844,
+      "status": "PASS",
+      "dialog": {
+        "x": 16,
+        "y": 16,
+        "w": 288,
+        "h": 812,
+        "scrollWidth": 286,
+        "clientWidth": 286
+      },
+      "initialDone": {
+        "x": 170.5,
+        "y": 757.5,
+        "width": 116.5,
+        "height": 56.5
+      },
+      "placeholder": {
+        "color": "rgb(183, 185, 188)",
+        "opacity": "1"
+      },
+      "shortViewport": null,
+      "screens": [
+        "work/refinement-1.9.1/game-picker-screens/uk-320-catalog.png",
+        "work/refinement-1.9.1/game-picker-screens/uk-320-request.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": [],
+      "blockedExternalRequests": 0
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "status": "PASS",
+      "dialog": {
+        "x": 16,
+        "y": 16,
+        "w": 358,
+        "h": 812,
+        "scrollWidth": 356,
+        "clientWidth": 356
+      },
+      "initialDone": {
+        "x": 240.5,
+        "y": 757.5,
+        "width": 116.5,
+        "height": 56.5
+      },
+      "placeholder": {
+        "color": "rgb(183, 185, 188)",
+        "opacity": "1"
+      },
+      "shortViewport": {
+        "x": 16,
+        "y": 16,
+        "width": 358,
+        "height": 388
+      },
+      "screens": [
+        "work/refinement-1.9.1/game-picker-screens/uk-390-catalog.png",
+        "work/refinement-1.9.1/game-picker-screens/uk-390-request.png",
+        "work/refinement-1.9.1/game-picker-screens/uk-390-short-viewport.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": [],
+      "blockedExternalRequests": 0
+    },
+    {
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "status": "PASS",
+      "dialog": {
+        "x": 230,
+        "y": 80,
+        "w": 980,
+        "h": 840,
+        "scrollWidth": 978,
+        "clientWidth": 978
+      },
+      "initialDone": {
+        "x": 1031,
+        "y": 846.5,
+        "width": 150,
+        "height": 56.5
+      },
+      "placeholder": {
+        "color": "rgb(183, 185, 188)",
+        "opacity": "1"
+      },
+      "shortViewport": null,
+      "screens": [
+        "work/refinement-1.9.1/game-picker-screens/uk-1440-catalog.png",
+        "work/refinement-1.9.1/game-picker-screens/uk-1440-request.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": [],
+      "blockedExternalRequests": 0
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "status": "PASS",
+      "dialog": {
+        "x": 16,
+        "y": 16,
+        "w": 288,
+        "h": 812,
+        "scrollWidth": 286,
+        "clientWidth": 286
+      },
+      "initialDone": {
+        "x": 170.5,
+        "y": 757.5,
+        "width": 116.5,
+        "height": 56.5
+      },
+      "placeholder": {
+        "color": "rgb(183, 185, 188)",
+        "opacity": "1"
+      },
+      "shortViewport": null,
+      "screens": [
+        "work/refinement-1.9.1/game-picker-screens/ru-320-catalog.png",
+        "work/refinement-1.9.1/game-picker-screens/ru-320-request.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": [],
+      "blockedExternalRequests": 0
+    },
+    {
+      "language": "ru",
+      "width": 390,
+      "height": 844,
+      "status": "PASS",
+      "dialog": {
+        "x": 16,
+        "y": 16,
+        "w": 358,
+        "h": 812,
+        "scrollWidth": 356,
+        "clientWidth": 356
+      },
+      "initialDone": {
+        "x": 240.5,
+        "y": 757.5,
+        "width": 116.5,
+        "height": 56.5
+      },
+      "placeholder": {
+        "color": "rgb(183, 185, 188)",
+        "opacity": "1"
+      },
+      "shortViewport": {
+        "x": 16,
+        "y": 16,
+        "width": 358,
+        "height": 388
+      },
+      "screens": [
+        "work/refinement-1.9.1/game-picker-screens/ru-390-catalog.png",
+        "work/refinement-1.9.1/game-picker-screens/ru-390-request.png",
+        "work/refinement-1.9.1/game-picker-screens/ru-390-short-viewport.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": [],
+      "blockedExternalRequests": 0
+    },
+    {
+      "language": "ru",
+      "width": 1440,
+      "height": 1000,
+      "status": "PASS",
+      "dialog": {
+        "x": 230,
+        "y": 80,
+        "w": 980,
+        "h": 840,
+        "scrollWidth": 978,
+        "clientWidth": 978
+      },
+      "initialDone": {
+        "x": 1031,
+        "y": 846.5,
+        "width": 150,
+        "height": 56.5
+      },
+      "placeholder": {
+        "color": "rgb(183, 185, 188)",
+        "opacity": "1"
+      },
+      "shortViewport": null,
+      "screens": [
+        "work/refinement-1.9.1/game-picker-screens/ru-1440-catalog.png",
+        "work/refinement-1.9.1/game-picker-screens/ru-1440-request.png"
+      ],
+      "pageErrors": [],
+      "nonReadRequests": [],
+      "blockedExternalRequests": 0
+    }
+  ],
+  "pass": 6,
+  "fail": 0,
+  "checks": [
+    "Header/search/filter position survives body scroll; Done visible at top/bottom/request states",
+    "Explicit panel reveal focuses input; collapse preserves and shows title",
+    "Empty result CTA trims and prefills query; category reset restores matching game",
+    "Clear search restores focus; nested native Escape restores artwork focus",
+    "Outer/nested native Tab does not focus background controls (browser-chrome/body sentinel allowed); Done restores booking opener",
+    "16px input, readable placeholder and no horizontal overflow",
+    "Missing-game wishes stay out of browser storage",
+    "420px short viewport reflows focused request and Done"
+  ],
+  "safety": "All non-GET/HEAD requests intercepted before transmission; only localhost/127.0.0.1 GET/HEAD allowed. No order or notification sent.",
+  "limits": [
+    "Chromium native viewport screenshots, not physical-device Safari keyboard testing",
+    "Keyboard layout tested by reducing visual viewport to420px; no real OS keyboard used",
+    "Packaged release verification remains with root",
+    "Native Chromium can move Tab to browser chrome: document.activeElement is body at that boundary; no background control received focus"
+  ],
+  "placeholderContrast": [
+    {
+      "selector": ".game-picker-search input",
+      "text": [
+        183,
+        185,
+        188
+      ],
+      "background": [
+        19.38,
+        21.36,
+        23.34
+      ],
+      "ratio": 9.277891646354108
+    },
+    {
+      "selector": ".missing-game-fields input",
+      "text": [
+        183,
+        185,
+        188
+      ],
+      "background": [
+        24.7854,
+        25.3992,
+        25.4784
+      ],
+      "ratio": 8.91616435385473
+    }
+  ]
+}

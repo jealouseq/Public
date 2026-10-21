@@ -1,0 +1,20 @@
+[
+  {
+    "font": "manrope",
+    "packageLicensePresent": true,
+    "matchesInstalledFontLicense": true,
+    "bytes": 4383
+  },
+  {
+    "font": "onest",
+    "packageLicensePresent": true,
+    "matchesInstalledFontLicense": true,
+    "bytes": 4378
+  },
+  {
+    "font": "unbounded",
+    "packageLicensePresent": true,
+    "matchesInstalledFontLicense": true,
+    "bytes": 4390
+  }
+]

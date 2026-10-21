@@ -1,0 +1,190 @@
+{
+  "scope": "Fresh local WordPress installation: packaged theme 1.9.0, plugin 1.8.0. Chromium, read-only, all POST requests blocked before transmission. Live hosting inspection is handled separately by the root agent.",
+  "languages": [
+    "uk",
+    "ru"
+  ],
+  "viewports": [
+    320,
+    390,
+    1440
+  ],
+  "screensInspected": 41,
+  "P1": 0,
+  "steps": [
+    {
+      "step": 1,
+      "surface": "Hero and tariffs",
+      "health": "Clear responsive two-line hero and centered mobile tariffs; minor delivery qualification below.",
+      "screens": [
+        "01-uk-390-hero.png",
+        "02-uk-390-tariffs.png",
+        "28-ru-1440-hero.png",
+        "29-ru-1440-tariffs.png"
+      ]
+    },
+    {
+      "step": 2,
+      "surface": "Games catalog and kit",
+      "health": "Readable, logical hierarchy and order; centered availability note is prominent.",
+      "screens": [
+        "03-uk-390-games.png",
+        "04-uk-390-kit.png",
+        "30-ru-1440-games.png",
+        "31-ru-1440-kit.png"
+      ]
+    },
+    {
+      "step": 3,
+      "surface": "How it works / delivery",
+      "health": "Centered process and connected steps are clear; delivery information precedes calculator.",
+      "screens": [
+        "05-uk-390-how.png",
+        "32-ru-1440-how.png"
+      ]
+    },
+    {
+      "step": 4,
+      "surface": "Calculator / games byrequest",
+      "health": "Calculator is understandable; optional games have weak hierarchy.",
+      "screens": [
+        "38-uk-390-booking-games.png",
+        "40-ru-1440-booking-games.png"
+      ]
+    },
+    {
+      "step": 5,
+      "surface": "Game picker / missingtitle",
+      "health": "Catalog search works; empty-state instructions point to a hidden field.",
+      "screens": [
+        "09-uk-390-picker-request.png",
+        "10-uk-390-picker-no-results.png",
+        "21-ru-320-picker-no-results.png",
+        "26-uk-1440-picker-no-results.png"
+      ]
+    },
+    {
+      "step": 6,
+      "surface": "Contacts",
+      "health": "Name, phone, and address use 16px text and clear labels; street interaction is handled by the separate bug audit.",
+      "screens": [
+        "11-uk-390-contacts.png",
+        "22-ru-320-contacts.png",
+        "27-uk-1440-contacts.png"
+      ]
+    },
+    {
+      "step": 7,
+      "surface": "FAQ / legal / footer",
+      "health": "Native full legal texts are consistent; mini privacy dialogue contains stale information.",
+      "screens": [
+        "12-uk-390-privacy-modal.png",
+        "15-uk-390-privacy.png",
+        "36-ru-1440-terms.png",
+        "39-uk-390-faq-open.png",
+        "41-ru-1440-faq-open.png"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "TYPO-F1",
+      "priority": "P2",
+      "title": "Empty search directs the visitor to a closed field",
+      "evidence": [
+        "10-uk-390-picker-no-results.png",
+        "21-ru-320-picker-no-results.png",
+        "26-uk-1440-picker-no-results.png"
+      ],
+      "reproduce": "Search any unlisted title while the missing-game accordion is closed. The input count is 0, but the text says to leave the title above.",
+      "recommendation": "Use an obvious empty-state action to request the searched title. Open and focus the named field; avoid pointing to a hidden input."
+    },
+    {
+      "id": "TYPO-F2",
+      "priority": "P2",
+      "title": "Contact placeholders have low text contrast",
+      "evidence": [
+        "11-uk-390-contacts.png",
+        "22-ru-320-contacts.png"
+      ],
+      "measurement": {
+        "foreground": "#71747a",
+        "background": "#141618",
+        "ratio": 3.8708950063883183,
+        "normalTextReference": 4.5,
+        "computedInputs": [
+          {
+            "placeholder": "Твоє ім’я",
+            "font": "16px",
+            "foreground": "rgb(113, 116, 122)",
+            "background": "rgb(20, 22, 24)"
+          },
+          {
+            "placeholder": "+380 __ ___ __ __",
+            "font": "16px",
+            "foreground": "rgb(113, 116, 122)",
+            "background": "rgb(20, 22, 24)"
+          },
+          {
+            "placeholder": "Вулиця, будинок, квартира",
+            "font": "16px",
+            "foreground": "rgb(113, 116, 122)",
+            "background": "rgb(20, 22, 24)"
+          }
+        ]
+      },
+      "recommendation": "Increase the placeholder foreground to at least 4.5:1 against the normal input surface, retaining existing 16px text and labels."
+    },
+    {
+      "id": "TYPO-F3",
+      "priority": "P3",
+      "title": "Optional games section looks detached from calculator",
+      "evidence": [
+        "38-uk-390-booking-games.png",
+        "40-ru-1440-booking-games.png"
+      ],
+      "measurement": "Existing 13px field label on the far left and 14px pill on the far right, with an explanatory line below; the desktop empty state spans 753px.",
+      "recommendation": "Group heading, optional status, short helper text, and action in one compact section. Show selected games directly below; make the mobile action full width."
+    },
+    {
+      "id": "TYPO-F4",
+      "priority": "P3",
+      "title": "Privacy mini-dialogue still describes old fields",
+      "evidence": [
+        "12-uk-390-privacy-modal.png",
+        "15-uk-390-privacy.png",
+        "37-ru-1440-privacy.png"
+      ],
+      "source": "src/App.tsx legal privacy branch",
+      "quote": "Ім’я, телефон або Telegram, місто й адреса / Имя, телефон или Telegram, город и адрес",
+      "recommendation": "Describe actual field types: name, phone, address, rental parameters, security choice, and game wishes. The native managed full privacy page is already correct."
+    },
+    {
+      "id": "TYPO-F5",
+      "priority": "P3",
+      "title": "Tariff delivery badges omit geographic condition",
+      "evidence": [
+        "02-uk-390-tariffs.png",
+        "29-ru-1440-tariffs.png",
+        "32-ru-1440-how.png"
+      ],
+      "measurement": "Tariffs say delivery is included; the later delivery section limits this benefit to green and yellow zones and charges red-zone delivery by taxi.",
+      "recommendation": "If clarifying, specify zones within the existing badge or an accessible explanation. Respect the user’s removal of the duplicate section footnote."
+    }
+  ],
+  "fonts": {
+    "loaded": [
+      "Manrope Variable",
+      "Unbounded Variable",
+      "Onest Variable"
+    ],
+    "result": "All six cases load all three fonts. No fallback or garbled glyphs were seen; there is no justification for replacing the typefaces. Normal content is 13–16px; eyebrows are 9–11px and carry supplementary labels. Contact, search, and wishlist text inputs are 16px."
+  },
+  "structureRecommendation": "Keep the existing sequence: hero → tariffs → games → kit → how it works / delivery → calculator → contacts / footer. Improve optional games within the calculator instead of adding another main section.",
+  "limits": [
+    "No actual request submission, orders, or emails.",
+    "No physical iPhone / Safari / keyboard testing. Chromium mobile viewports validate CSS rendering only.",
+    "No claim of full accessibility compliance or exhaustive interaction testing.",
+    "No fresh screenshot of the lower part of every expanded FAQ answer. All eight answers in both languages were inspected in the fresh live DOM and source; two expanded viewport captures are included."
+  ]
+}

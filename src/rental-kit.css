@@ -1,0 +1,69 @@
+.story-kit .kit-layout { display: grid; grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr); align-items: center; gap: clamp(24px, 3vw, 40px); }
+.story-kit .kit-copy h2 { max-width: 480px; }
+.story-kit .kit-checklist { margin-top: 28px; }
+.story-kit .kit-checklist li { padding-block: 16px; }
+.story-kit .kit-note { margin-top: 20px; font-size: 14px; }
+.kit-visual { min-width: 0; }
+.kit-product-stage { position: relative; width: 100%; max-width: 880px; margin-inline: auto; aspect-ratio: 1.65; isolation: isolate; perspective: 1000px; overflow: hidden; }
+.kit-item { position: absolute; pointer-events: none; perspective: 900px; --duration: 16s; --phase: -3s; }
+.kit-element-motion { width: 100%; transform-origin: 50% 82%; animation: kit-object-float var(--duration) ease-in-out infinite; animation-delay: var(--phase); animation-play-state: paused; }
+.kit-product-stage picture { display: block; width: 100%; }
+.kit-subscription-image, .kit-controller-image { display: block; width: 100%; height: auto; }
+.kit-card-plus, .kit-card-ea { z-index: 1; top: 6%; width: 17%; --tilt: 0deg; --turn: .3deg; --yaw-start: -.4deg; --yaw-end: .4deg; --rise: -2px; }
+.kit-card-plus { left: 33.5%; }
+.kit-card-ea { left: 49.5%; }
+.kit-subscription-image { filter: drop-shadow(0 8px 6px #0006) drop-shadow(0 0 16px #c792481a); }
+.kit-controller { z-index: 3; left: 24%; bottom: 1.5%; width: 52%; --tilt: 0deg; --turn: .3deg; --yaw-start: -.6deg; --yaw-end: .6deg; --rise: -2px; }
+.kit-controller-image { filter: drop-shadow(0 8px 7px #0006); }
+.kit-box-fc, .kit-box-ufc { z-index: 2; top: 4%; --tilt: 0deg; --rise: -1px; }
+.kit-box-fc { left: 1.5%; width: 31.5%; --turn: -.25deg; --yaw-start: -.7deg; --yaw-end: .7deg; }
+.kit-box-ufc { right: 1.5%; width: 33.2%; --turn: .25deg; --yaw-start: .7deg; --yaw-end: -.7deg; }
+.kit-product-stage[data-motion='running'] .kit-element-motion,
+.kit-product-stage[data-motion='running'] .kit-game-box { animation-play-state: running; }
+.kit-product-stage[data-motion='running'] .kit-element-motion { will-change: transform; }
+.kit-subscription-note { display: flex; flex-direction: column; gap: 6px; margin: 8px auto 0; max-width: 500px; color: var(--text-support); text-align: center; font-size: 13px; line-height: 1.6; }
+.kit-subscription-note strong { color: var(--text); font-weight: 550; font-size: 14px; }
+.kit-console-names { white-space: nowrap; }
+@keyframes kit-object-float {
+  0%, 100% { transform: translateY(0) rotate(var(--tilt)) rotateY(var(--yaw-start, 0deg)); }
+  50% { transform: translateY(var(--rise)) rotate(calc(var(--tilt) + var(--turn))) rotateY(var(--yaw-end, 0deg)); }
+}
+/* Tiny rotations soften composited bitmaps at desktop scale. Translate the
+   sharp images instead, with enough travel to see the shared motion cycle. */
+@keyframes kit-desktop-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(var(--rise)); }
+}
+@media (min-width: 901px) {
+  .kit-item { --duration: 8s; --phase: -1.5s; }
+  .kit-element-motion { animation-name: kit-desktop-float; }
+  .kit-controller { --rise: -8px; }
+  .kit-card-plus, .kit-card-ea { --rise: -6px; }
+  .kit-box-fc, .kit-box-ufc { --rise: -5px; }
+  .kit-game-box { animation-duration: 8s; animation-delay: -1.5s; }
+}
+@media (min-width: 1101px) {
+  .story-kit.section { padding-block: clamp(105px, 12.5vw, 200px); }
+}
+@media (max-width: 1100px) and (min-width: 901px) {
+  .story-kit .kit-layout { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 28px; }
+}
+@media (max-width: 900px) {
+  .story-kit .kit-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .story-kit .kit-copy h2 { max-width: 480px; }
+  .kit-product-stage { max-width: 620px; }
+}
+@media (max-width: 700px) {
+  .story-kit .kit-copy h2 { max-width: 340px; }
+  .story-kit .kit-checklist { margin-top: 24px; }
+  .story-kit .kit-checklist li { padding-block: 14px; }
+  .kit-product-stage { max-width: 440px; }
+  .kit-item { --rise: -1px; }
+  .kit-subscription-note { margin-top: 12px; font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .kit-element-motion { animation: none; transform: rotate(var(--tilt)) rotateY(var(--yaw-start, 0deg)); }
+}
+@media (min-width: 901px) and (prefers-reduced-motion: reduce) {
+  .kit-element-motion { transform: translateY(0); }
+}

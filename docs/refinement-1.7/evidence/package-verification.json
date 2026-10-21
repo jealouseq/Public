@@ -1,0 +1,30 @@
+{
+  "phpFilesLinted": 17,
+  "phpFailures": 0,
+  "archives": [
+    {
+      "file": "releases/joyrent-1.7.0.zip",
+      "bytes": 11301908,
+      "sha256": "06b707f58ad9d6caa5fc91a61c703b8655b80cd9485d6aefba2ec03660e525db",
+      "sourceFilesMatched": 154
+    },
+    {
+      "file": "releases/joyrent-rentals-1.7.0.zip",
+      "bytes": 36744,
+      "sha256": "8ad30d40784017774e96a4547da7a3c7d18221297be7baa9576addace3b62d06",
+      "sourceFilesMatched": 15
+    },
+    {
+      "file": "releases/joyrent-preview-1.7.0.zip",
+      "bytes": 10810086,
+      "sha256": "8f0d3ff30ffb70dc87122d72ce139c0d8273140be13bbdcac1081236e8678dee",
+      "sourceFilesMatched": 142
+    }
+  ],
+  "privateReceiverAbsent": true,
+  "devMailBlockAbsent": true,
+  "entry": "assets/main-CNh65H_Y.js",
+  "css": [
+    "assets/main-hpKQBRcV.css"
+  ]
+}

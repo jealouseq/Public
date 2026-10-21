@@ -1,0 +1,772 @@
+{
+  "cases": [
+    {
+      "language": "uk",
+      "width": 320,
+      "status": "PASS",
+      "consent": {
+        "consent": {
+          "x": 20,
+          "y": 453.234375,
+          "w": 280,
+          "h": 88,
+          "display": "flex",
+          "lineHeight": "21.45px",
+          "minHeight": "0px",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "span": {
+          "x": 49,
+          "y": 453.234375,
+          "w": 251,
+          "h": 88,
+          "display": "block",
+          "lineHeight": "21.45px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "input": {
+          "x": 20,
+          "y": 459.234375,
+          "w": 17,
+          "h": 17,
+          "display": "block",
+          "lineHeight": "21.45px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "buttons": [
+          {
+            "text": "умовами оренди",
+            "x": 139.40625,
+            "y": 453.234375,
+            "w": 102.5625,
+            "h": 44,
+            "display": "inline-block",
+            "lineHeight": "21.45px",
+            "minHeight": "44px",
+            "padding": "8px 0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          },
+          {
+            "text": "обробкою персональних даних",
+            "x": 49,
+            "y": 497.234375,
+            "w": 193.109375,
+            "h": 44,
+            "display": "inline-block",
+            "lineHeight": "21.45px",
+            "minHeight": "44px",
+            "padding": "8px 0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          }
+        ],
+        "textTops": [
+          465.02,
+          509.02
+        ],
+        "textBottoms": [
+          483.02,
+          527.02
+        ],
+        "text": "Погоджуюся з умовами оренди та обробкою персональних даних.",
+        "label": "LABEL"
+      },
+      "bookingGames": {
+        "cardHeight": 176.671875,
+        "icon": {
+          "width": 44,
+          "height": 44,
+          "border": "1px solid rgb(93, 81, 64)",
+          "bg": "rgba(199, 155, 93, 0.03)",
+          "svg": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 64 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\" class=\"playstation-controller\"><path d=\"M18.5 13.3h27l8.3 35.4c-4-7.7-6.3-11-9.3-11h-25c-3 0-5.3 3.3-9.3 11Z\" fill=\"#141516\"></path><g fill=\"#f4f2e8\"><path d=\"M17.6 13c-3.5.3-7.5 1.4-10.2 4.1C4.9 21.6 1 32.9 1 42.2c0 6.2 2.9 8.8 6.6 9.6 1.4.3 1.8-.6 2.3-1.5C13.5 40.8 15.2 33.3 20.6 27.4c.7-1.4.6-2.4.2-4l-2-9.1c-.2-1-.5-1.4-1.2-1.3Z\"></path><path d=\"M17.6 13c-3.5.3-7.5 1.4-10.2 4.1C4.9 21.6 1 32.9 1 42.2c0 6.2 2.9 8.8 6.6 9.6 1.4.3 1.8-.6 2.3-1.5C13.5 40.8 15.2 33.3 20.6 27.4c.7-1.4.6-2.4.2-4l-2-9.1c-.2-1-.5-1.4-1.2-1.3Z\" transform=\"translate(64 0) scale(-1 1)\"></path></g><path d=\"M21 13.3h22c1.5 0 2.2.6 1.8 2.2L43 21.2c-.8 2.7-2.3 4-4.6 4H25.6c-2.3 0-3.8-1.3-4.6-4l-1.8-5.7c-.4-1.6.3-2.2 1.8-2.2Z\" fill=\"#c8a96b\"></path><g fill=\"#0c0e0f\"><rect x=\"11.3\" y=\"19.2\" width=\"3.2\" height=\"9.8\" rx=\"1.3\"></rect><rect x=\"8\" y=\"22.5\" width=\"9.8\" height=\"3.2\" rx=\"1.3\"></rect><circle cx=\"51.2\" cy=\"19.5\" r=\"1.8\"></circle><circle cx=\"47.5\" cy=\"23.3\" r=\"1.8\"></circle><circle cx=\"54.9\" cy=\"23.3\" r=\"1.8\"></circle><circle cx=\"51.2\" cy=\"27.1\" r=\"1.8\"></circle></g><g fill=\"#141516\" stroke=\"#f4f2e8\" stroke-width=\"1.4\"><circle cx=\"22.5\" cy=\"31.8\" r=\"3.3\"></circle><circle cx=\"41.5\" cy=\"31.8\" r=\"3.3\"></circle></g><rect x=\"30.2\" y=\"31.3\" width=\"3.6\" height=\"1\" rx=\".35\" fill=\"#787a78\"></rect></svg>"
+        }
+      },
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css"
+        ]
+      },
+      "POST": [],
+      "pageErrors": [],
+      "HTTPFailures": [],
+      "legalOpenEscapeFocusConsentSemantics": "PASS"
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "status": "PASS",
+      "consent": {
+        "consent": {
+          "x": 24,
+          "y": 432.078125,
+          "w": 342,
+          "h": 88,
+          "display": "flex",
+          "lineHeight": "21.45px",
+          "minHeight": "0px",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "span": {
+          "x": 53,
+          "y": 432.078125,
+          "w": 313,
+          "h": 88,
+          "display": "block",
+          "lineHeight": "21.45px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "input": {
+          "x": 24,
+          "y": 438.078125,
+          "w": 17,
+          "h": 17,
+          "display": "block",
+          "lineHeight": "21.45px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "buttons": [
+          {
+            "text": "умовами оренди",
+            "x": 143.40625,
+            "y": 432.078125,
+            "w": 102.5625,
+            "h": 44,
+            "display": "inline-block",
+            "lineHeight": "21.45px",
+            "minHeight": "44px",
+            "padding": "8px 0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          },
+          {
+            "text": "обробкою персональних даних",
+            "x": 53,
+            "y": 476.078125,
+            "w": 193.109375,
+            "h": 44,
+            "display": "inline-block",
+            "lineHeight": "21.45px",
+            "minHeight": "44px",
+            "padding": "8px 0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          }
+        ],
+        "textTops": [
+          443.86,
+          487.86
+        ],
+        "textBottoms": [
+          461.86,
+          505.86
+        ],
+        "text": "Погоджуюся з умовами оренди та обробкою персональних даних.",
+        "label": "LABEL"
+      },
+      "bookingGames": {
+        "cardHeight": 176.671875,
+        "icon": {
+          "width": 44,
+          "height": 44,
+          "border": "1px solid rgb(93, 81, 64)",
+          "bg": "rgba(199, 155, 93, 0.03)",
+          "svg": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 64 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\" class=\"playstation-controller\"><path d=\"M18.5 13.3h27l8.3 35.4c-4-7.7-6.3-11-9.3-11h-25c-3 0-5.3 3.3-9.3 11Z\" fill=\"#141516\"></path><g fill=\"#f4f2e8\"><path d=\"M17.6 13c-3.5.3-7.5 1.4-10.2 4.1C4.9 21.6 1 32.9 1 42.2c0 6.2 2.9 8.8 6.6 9.6 1.4.3 1.8-.6 2.3-1.5C13.5 40.8 15.2 33.3 20.6 27.4c.7-1.4.6-2.4.2-4l-2-9.1c-.2-1-.5-1.4-1.2-1.3Z\"></path><path d=\"M17.6 13c-3.5.3-7.5 1.4-10.2 4.1C4.9 21.6 1 32.9 1 42.2c0 6.2 2.9 8.8 6.6 9.6 1.4.3 1.8-.6 2.3-1.5C13.5 40.8 15.2 33.3 20.6 27.4c.7-1.4.6-2.4.2-4l-2-9.1c-.2-1-.5-1.4-1.2-1.3Z\" transform=\"translate(64 0) scale(-1 1)\"></path></g><path d=\"M21 13.3h22c1.5 0 2.2.6 1.8 2.2L43 21.2c-.8 2.7-2.3 4-4.6 4H25.6c-2.3 0-3.8-1.3-4.6-4l-1.8-5.7c-.4-1.6.3-2.2 1.8-2.2Z\" fill=\"#c8a96b\"></path><g fill=\"#0c0e0f\"><rect x=\"11.3\" y=\"19.2\" width=\"3.2\" height=\"9.8\" rx=\"1.3\"></rect><rect x=\"8\" y=\"22.5\" width=\"9.8\" height=\"3.2\" rx=\"1.3\"></rect><circle cx=\"51.2\" cy=\"19.5\" r=\"1.8\"></circle><circle cx=\"47.5\" cy=\"23.3\" r=\"1.8\"></circle><circle cx=\"54.9\" cy=\"23.3\" r=\"1.8\"></circle><circle cx=\"51.2\" cy=\"27.1\" r=\"1.8\"></circle></g><g fill=\"#141516\" stroke=\"#f4f2e8\" stroke-width=\"1.4\"><circle cx=\"22.5\" cy=\"31.8\" r=\"3.3\"></circle><circle cx=\"41.5\" cy=\"31.8\" r=\"3.3\"></circle></g><rect x=\"30.2\" y=\"31.3\" width=\"3.6\" height=\"1\" rx=\".35\" fill=\"#787a78\"></rect></svg>"
+        }
+      },
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css"
+        ]
+      },
+      "POST": [],
+      "pageErrors": [],
+      "HTTPFailures": [],
+      "legalOpenEscapeFocusConsentSemantics": "PASS"
+    },
+    {
+      "language": "uk",
+      "width": 1440,
+      "status": "PASS",
+      "consent": {
+        "consent": {
+          "x": 74.875,
+          "y": 629.546875,
+          "w": 753.03125,
+          "h": 44,
+          "display": "flex",
+          "lineHeight": "21.45px",
+          "minHeight": "0px",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "span": {
+          "x": 103.875,
+          "y": 629.546875,
+          "w": 408.140625,
+          "h": 44,
+          "display": "block",
+          "lineHeight": "21.45px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "input": {
+          "x": 74.875,
+          "y": 635.546875,
+          "w": 17,
+          "h": 17,
+          "display": "block",
+          "lineHeight": "21.45px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "buttons": [
+          {
+            "text": "умовами оренди",
+            "x": 194.28125,
+            "y": 629.546875,
+            "w": 102.5625,
+            "h": 44,
+            "display": "inline-block",
+            "lineHeight": "21.45px",
+            "minHeight": "44px",
+            "padding": "8px 0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          },
+          {
+            "text": "обробкою персональних даних",
+            "x": 315.609375,
+            "y": 629.546875,
+            "w": 193.109375,
+            "h": 44,
+            "display": "inline-block",
+            "lineHeight": "21.45px",
+            "minHeight": "44px",
+            "padding": "8px 0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          }
+        ],
+        "textTops": [
+          641.33
+        ],
+        "textBottoms": [
+          659.33
+        ],
+        "text": "Погоджуюся з умовами оренди та обробкою персональних даних.",
+        "label": "LABEL"
+      },
+      "bookingGames": {
+        "cardHeight": 98.625,
+        "icon": {
+          "width": 44,
+          "height": 44,
+          "border": "1px solid rgb(93, 81, 64)",
+          "bg": "rgba(199, 155, 93, 0.03)",
+          "svg": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 64 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\" class=\"playstation-controller\"><path d=\"M18.5 13.3h27l8.3 35.4c-4-7.7-6.3-11-9.3-11h-25c-3 0-5.3 3.3-9.3 11Z\" fill=\"#141516\"></path><g fill=\"#f4f2e8\"><path d=\"M17.6 13c-3.5.3-7.5 1.4-10.2 4.1C4.9 21.6 1 32.9 1 42.2c0 6.2 2.9 8.8 6.6 9.6 1.4.3 1.8-.6 2.3-1.5C13.5 40.8 15.2 33.3 20.6 27.4c.7-1.4.6-2.4.2-4l-2-9.1c-.2-1-.5-1.4-1.2-1.3Z\"></path><path d=\"M17.6 13c-3.5.3-7.5 1.4-10.2 4.1C4.9 21.6 1 32.9 1 42.2c0 6.2 2.9 8.8 6.6 9.6 1.4.3 1.8-.6 2.3-1.5C13.5 40.8 15.2 33.3 20.6 27.4c.7-1.4.6-2.4.2-4l-2-9.1c-.2-1-.5-1.4-1.2-1.3Z\" transform=\"translate(64 0) scale(-1 1)\"></path></g><path d=\"M21 13.3h22c1.5 0 2.2.6 1.8 2.2L43 21.2c-.8 2.7-2.3 4-4.6 4H25.6c-2.3 0-3.8-1.3-4.6-4l-1.8-5.7c-.4-1.6.3-2.2 1.8-2.2Z\" fill=\"#c8a96b\"></path><g fill=\"#0c0e0f\"><rect x=\"11.3\" y=\"19.2\" width=\"3.2\" height=\"9.8\" rx=\"1.3\"></rect><rect x=\"8\" y=\"22.5\" width=\"9.8\" height=\"3.2\" rx=\"1.3\"></rect><circle cx=\"51.2\" cy=\"19.5\" r=\"1.8\"></circle><circle cx=\"47.5\" cy=\"23.3\" r=\"1.8\"></circle><circle cx=\"54.9\" cy=\"23.3\" r=\"1.8\"></circle><circle cx=\"51.2\" cy=\"27.1\" r=\"1.8\"></circle></g><g fill=\"#141516\" stroke=\"#f4f2e8\" stroke-width=\"1.4\"><circle cx=\"22.5\" cy=\"31.8\" r=\"3.3\"></circle><circle cx=\"41.5\" cy=\"31.8\" r=\"3.3\"></circle></g><rect x=\"30.2\" y=\"31.3\" width=\"3.6\" height=\"1\" rx=\".35\" fill=\"#787a78\"></rect></svg>"
+        }
+      },
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css"
+        ]
+      },
+      "POST": [],
+      "pageErrors": [],
+      "HTTPFailures": [],
+      "legalOpenEscapeFocusConsentSemantics": "PASS"
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "status": "PASS",
+      "consent": {
+        "consent": {
+          "x": 20,
+          "y": 453.046875,
+          "w": 280,
+          "h": 88,
+          "display": "flex",
+          "lineHeight": "21.45px",
+          "minHeight": "0px",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "span": {
+          "x": 49,
+          "y": 453.046875,
+          "w": 251,
+          "h": 88,
+          "display": "block",
+          "lineHeight": "21.45px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "input": {
+          "x": 20,
+          "y": 459.046875,
+          "w": 17,
+          "h": 17,
+          "display": "block",
+          "lineHeight": "21.45px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "buttons": [
+          {
+            "text": "условиями аренды",
+            "x": 140.515625,
+            "y": 453.046875,
+            "w": 116,
+            "h": 44,
+            "display": "inline-block",
+            "lineHeight": "21.45px",
+            "minHeight": "44px",
+            "padding": "8px 0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          },
+          {
+            "text": "обработкой персональных данных",
+            "x": 49,
+            "y": 497.046875,
+            "w": 214.171875,
+            "h": 44,
+            "display": "inline-block",
+            "lineHeight": "21.45px",
+            "minHeight": "44px",
+            "padding": "8px 0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          }
+        ],
+        "textTops": [
+          464.83,
+          508.83
+        ],
+        "textBottoms": [
+          482.83,
+          526.83
+        ],
+        "text": "Соглашаюсь с условиями аренды и обработкой персональных данных.",
+        "label": "LABEL"
+      },
+      "bookingGames": {
+        "cardHeight": 176.671875,
+        "icon": {
+          "width": 44,
+          "height": 44,
+          "border": "1px solid rgb(93, 81, 64)",
+          "bg": "rgba(199, 155, 93, 0.03)",
+          "svg": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 64 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\" class=\"playstation-controller\"><path d=\"M18.5 13.3h27l8.3 35.4c-4-7.7-6.3-11-9.3-11h-25c-3 0-5.3 3.3-9.3 11Z\" fill=\"#141516\"></path><g fill=\"#f4f2e8\"><path d=\"M17.6 13c-3.5.3-7.5 1.4-10.2 4.1C4.9 21.6 1 32.9 1 42.2c0 6.2 2.9 8.8 6.6 9.6 1.4.3 1.8-.6 2.3-1.5C13.5 40.8 15.2 33.3 20.6 27.4c.7-1.4.6-2.4.2-4l-2-9.1c-.2-1-.5-1.4-1.2-1.3Z\"></path><path d=\"M17.6 13c-3.5.3-7.5 1.4-10.2 4.1C4.9 21.6 1 32.9 1 42.2c0 6.2 2.9 8.8 6.6 9.6 1.4.3 1.8-.6 2.3-1.5C13.5 40.8 15.2 33.3 20.6 27.4c.7-1.4.6-2.4.2-4l-2-9.1c-.2-1-.5-1.4-1.2-1.3Z\" transform=\"translate(64 0) scale(-1 1)\"></path></g><path d=\"M21 13.3h22c1.5 0 2.2.6 1.8 2.2L43 21.2c-.8 2.7-2.3 4-4.6 4H25.6c-2.3 0-3.8-1.3-4.6-4l-1.8-5.7c-.4-1.6.3-2.2 1.8-2.2Z\" fill=\"#c8a96b\"></path><g fill=\"#0c0e0f\"><rect x=\"11.3\" y=\"19.2\" width=\"3.2\" height=\"9.8\" rx=\"1.3\"></rect><rect x=\"8\" y=\"22.5\" width=\"9.8\" height=\"3.2\" rx=\"1.3\"></rect><circle cx=\"51.2\" cy=\"19.5\" r=\"1.8\"></circle><circle cx=\"47.5\" cy=\"23.3\" r=\"1.8\"></circle><circle cx=\"54.9\" cy=\"23.3\" r=\"1.8\"></circle><circle cx=\"51.2\" cy=\"27.1\" r=\"1.8\"></circle></g><g fill=\"#141516\" stroke=\"#f4f2e8\" stroke-width=\"1.4\"><circle cx=\"22.5\" cy=\"31.8\" r=\"3.3\"></circle><circle cx=\"41.5\" cy=\"31.8\" r=\"3.3\"></circle></g><rect x=\"30.2\" y=\"31.3\" width=\"3.6\" height=\"1\" rx=\".35\" fill=\"#787a78\"></rect></svg>"
+        }
+      },
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css"
+        ]
+      },
+      "POST": [],
+      "pageErrors": [],
+      "HTTPFailures": [],
+      "legalOpenEscapeFocusConsentSemantics": "PASS"
+    },
+    {
+      "language": "ru",
+      "width": 390,
+      "status": "PASS",
+      "consent": {
+        "consent": {
+          "x": 24,
+          "y": 432.65625,
+          "w": 342,
+          "h": 88,
+          "display": "flex",
+          "lineHeight": "21.45px",
+          "minHeight": "0px",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "span": {
+          "x": 53,
+          "y": 432.65625,
+          "w": 313,
+          "h": 88,
+          "display": "block",
+          "lineHeight": "21.45px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "input": {
+          "x": 24,
+          "y": 438.65625,
+          "w": 17,
+          "h": 17,
+          "display": "block",
+          "lineHeight": "21.45px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "buttons": [
+          {
+            "text": "условиями аренды",
+            "x": 144.515625,
+            "y": 432.65625,
+            "w": 116,
+            "h": 44,
+            "display": "inline-block",
+            "lineHeight": "21.45px",
+            "minHeight": "44px",
+            "padding": "8px 0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          },
+          {
+            "text": "обработкой персональных данных",
+            "x": 53,
+            "y": 476.65625,
+            "w": 214.171875,
+            "h": 44,
+            "display": "inline-block",
+            "lineHeight": "21.45px",
+            "minHeight": "44px",
+            "padding": "8px 0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          }
+        ],
+        "textTops": [
+          444.44,
+          488.44
+        ],
+        "textBottoms": [
+          462.44,
+          506.44
+        ],
+        "text": "Соглашаюсь с условиями аренды и обработкой персональных данных.",
+        "label": "LABEL"
+      },
+      "bookingGames": {
+        "cardHeight": 176.671875,
+        "icon": {
+          "width": 44,
+          "height": 44,
+          "border": "1px solid rgb(93, 81, 64)",
+          "bg": "rgba(199, 155, 93, 0.03)",
+          "svg": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 64 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\" class=\"playstation-controller\"><path d=\"M18.5 13.3h27l8.3 35.4c-4-7.7-6.3-11-9.3-11h-25c-3 0-5.3 3.3-9.3 11Z\" fill=\"#141516\"></path><g fill=\"#f4f2e8\"><path d=\"M17.6 13c-3.5.3-7.5 1.4-10.2 4.1C4.9 21.6 1 32.9 1 42.2c0 6.2 2.9 8.8 6.6 9.6 1.4.3 1.8-.6 2.3-1.5C13.5 40.8 15.2 33.3 20.6 27.4c.7-1.4.6-2.4.2-4l-2-9.1c-.2-1-.5-1.4-1.2-1.3Z\"></path><path d=\"M17.6 13c-3.5.3-7.5 1.4-10.2 4.1C4.9 21.6 1 32.9 1 42.2c0 6.2 2.9 8.8 6.6 9.6 1.4.3 1.8-.6 2.3-1.5C13.5 40.8 15.2 33.3 20.6 27.4c.7-1.4.6-2.4.2-4l-2-9.1c-.2-1-.5-1.4-1.2-1.3Z\" transform=\"translate(64 0) scale(-1 1)\"></path></g><path d=\"M21 13.3h22c1.5 0 2.2.6 1.8 2.2L43 21.2c-.8 2.7-2.3 4-4.6 4H25.6c-2.3 0-3.8-1.3-4.6-4l-1.8-5.7c-.4-1.6.3-2.2 1.8-2.2Z\" fill=\"#c8a96b\"></path><g fill=\"#0c0e0f\"><rect x=\"11.3\" y=\"19.2\" width=\"3.2\" height=\"9.8\" rx=\"1.3\"></rect><rect x=\"8\" y=\"22.5\" width=\"9.8\" height=\"3.2\" rx=\"1.3\"></rect><circle cx=\"51.2\" cy=\"19.5\" r=\"1.8\"></circle><circle cx=\"47.5\" cy=\"23.3\" r=\"1.8\"></circle><circle cx=\"54.9\" cy=\"23.3\" r=\"1.8\"></circle><circle cx=\"51.2\" cy=\"27.1\" r=\"1.8\"></circle></g><g fill=\"#141516\" stroke=\"#f4f2e8\" stroke-width=\"1.4\"><circle cx=\"22.5\" cy=\"31.8\" r=\"3.3\"></circle><circle cx=\"41.5\" cy=\"31.8\" r=\"3.3\"></circle></g><rect x=\"30.2\" y=\"31.3\" width=\"3.6\" height=\"1\" rx=\".35\" fill=\"#787a78\"></rect></svg>"
+        }
+      },
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css"
+        ]
+      },
+      "POST": [],
+      "pageErrors": [],
+      "HTTPFailures": [],
+      "legalOpenEscapeFocusConsentSemantics": "PASS"
+    },
+    {
+      "language": "ru",
+      "width": 1440,
+      "status": "PASS",
+      "consent": {
+        "consent": {
+          "x": 74.875,
+          "y": 629.984375,
+          "w": 753.03125,
+          "h": 44,
+          "display": "flex",
+          "lineHeight": "21.45px",
+          "minHeight": "0px",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "span": {
+          "x": 103.875,
+          "y": 629.984375,
+          "w": 437.59375,
+          "h": 44,
+          "display": "block",
+          "lineHeight": "21.45px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "input": {
+          "x": 74.875,
+          "y": 635.984375,
+          "w": 17,
+          "h": 17,
+          "display": "block",
+          "lineHeight": "21.45px",
+          "minHeight": "auto",
+          "padding": "0px",
+          "fontSize": "13px",
+          "verticalAlign": "baseline"
+        },
+        "buttons": [
+          {
+            "text": "условиями аренды",
+            "x": 195.390625,
+            "y": 629.984375,
+            "w": 116,
+            "h": 44,
+            "display": "inline-block",
+            "lineHeight": "21.45px",
+            "minHeight": "44px",
+            "padding": "8px 0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          },
+          {
+            "text": "обработкой персональных данных",
+            "x": 324,
+            "y": 629.984375,
+            "w": 214.171875,
+            "h": 44,
+            "display": "inline-block",
+            "lineHeight": "21.45px",
+            "minHeight": "44px",
+            "padding": "8px 0px",
+            "fontSize": "13px",
+            "verticalAlign": "baseline"
+          }
+        ],
+        "textTops": [
+          641.77
+        ],
+        "textBottoms": [
+          659.77
+        ],
+        "text": "Соглашаюсь с условиями аренды и обработкой персональных данных.",
+        "label": "LABEL"
+      },
+      "bookingGames": {
+        "cardHeight": 120.0625,
+        "icon": {
+          "width": 44,
+          "height": 44,
+          "border": "1px solid rgb(93, 81, 64)",
+          "bg": "rgba(199, 155, 93, 0.03)",
+          "svg": "<svg width=\"28\" height=\"28\" viewBox=\"0 0 64 64\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" aria-hidden=\"true\" focusable=\"false\" class=\"playstation-controller\"><path d=\"M18.5 13.3h27l8.3 35.4c-4-7.7-6.3-11-9.3-11h-25c-3 0-5.3 3.3-9.3 11Z\" fill=\"#141516\"></path><g fill=\"#f4f2e8\"><path d=\"M17.6 13c-3.5.3-7.5 1.4-10.2 4.1C4.9 21.6 1 32.9 1 42.2c0 6.2 2.9 8.8 6.6 9.6 1.4.3 1.8-.6 2.3-1.5C13.5 40.8 15.2 33.3 20.6 27.4c.7-1.4.6-2.4.2-4l-2-9.1c-.2-1-.5-1.4-1.2-1.3Z\"></path><path d=\"M17.6 13c-3.5.3-7.5 1.4-10.2 4.1C4.9 21.6 1 32.9 1 42.2c0 6.2 2.9 8.8 6.6 9.6 1.4.3 1.8-.6 2.3-1.5C13.5 40.8 15.2 33.3 20.6 27.4c.7-1.4.6-2.4.2-4l-2-9.1c-.2-1-.5-1.4-1.2-1.3Z\" transform=\"translate(64 0) scale(-1 1)\"></path></g><path d=\"M21 13.3h22c1.5 0 2.2.6 1.8 2.2L43 21.2c-.8 2.7-2.3 4-4.6 4H25.6c-2.3 0-3.8-1.3-4.6-4l-1.8-5.7c-.4-1.6.3-2.2 1.8-2.2Z\" fill=\"#c8a96b\"></path><g fill=\"#0c0e0f\"><rect x=\"11.3\" y=\"19.2\" width=\"3.2\" height=\"9.8\" rx=\"1.3\"></rect><rect x=\"8\" y=\"22.5\" width=\"9.8\" height=\"3.2\" rx=\"1.3\"></rect><circle cx=\"51.2\" cy=\"19.5\" r=\"1.8\"></circle><circle cx=\"47.5\" cy=\"23.3\" r=\"1.8\"></circle><circle cx=\"54.9\" cy=\"23.3\" r=\"1.8\"></circle><circle cx=\"51.2\" cy=\"27.1\" r=\"1.8\"></circle></g><g fill=\"#141516\" stroke=\"#f4f2e8\" stroke-width=\"1.4\"><circle cx=\"22.5\" cy=\"31.8\" r=\"3.3\"></circle><circle cx=\"41.5\" cy=\"31.8\" r=\"3.3\"></circle></g><rect x=\"30.2\" y=\"31.3\" width=\"3.6\" height=\"1\" rx=\".35\" fill=\"#787a78\"></rect></svg>"
+        }
+      },
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css"
+        ]
+      },
+      "POST": [],
+      "pageErrors": [],
+      "HTTPFailures": [],
+      "legalOpenEscapeFocusConsentSemantics": "PASS"
+    }
+  ],
+  "screens": [
+    {
+      "file": "work/refinement-1.9.2/consent/uk-320-booking-games.png",
+      "phase": "booking-games",
+      "language": "uk",
+      "width": 320,
+      "height": 844,
+      "sha256": "7a0b572f8e3af034af8eab96fa7c94146f24506a3640ed43d79ca22b77e11edd",
+      "accepted": true,
+      "acceptance": "Native baseline screenshot visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/uk-320-consent.png",
+      "phase": "consent",
+      "language": "uk",
+      "width": 320,
+      "height": 844,
+      "sha256": "a18c3a7be3205f619d5c19f86cbf389daeda68268e7200544485c9c91e0e1e62",
+      "accepted": true,
+      "acceptance": "Native baseline screenshot visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/uk-390-booking-games.png",
+      "phase": "booking-games",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "1c9bbd61ad35a76c0025e44793366b5f97f5c3d0f1ead2e96d6a6ac1a1a304c9",
+      "accepted": true,
+      "acceptance": "Native baseline screenshot visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/uk-390-consent.png",
+      "phase": "consent",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "a7562a888c178a09f6dfb4656c80cd10623f50c808ca94ae0a3c789b2f90ba40",
+      "accepted": true,
+      "acceptance": "Native baseline screenshot visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/uk-1440-booking-games.png",
+      "phase": "booking-games",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "a40e09943df64d1c66453b9c2f39af4ecaa6e4ca9efa9f4f6f55e1b1a61ef74d",
+      "accepted": true,
+      "acceptance": "Native baseline screenshot visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/uk-1440-consent.png",
+      "phase": "consent",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "6734701e6377e9dbd725cfd2b0a0927ac9503c001c394669692da883fdca2a96",
+      "accepted": true,
+      "acceptance": "Native baseline screenshot visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/ru-320-booking-games.png",
+      "phase": "booking-games",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "aeec33fc4d188eb11de2cd5d645710c0357a88e7d18beb261cc1efb0e125989e",
+      "accepted": true,
+      "acceptance": "Native baseline screenshot visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/ru-320-consent.png",
+      "phase": "consent",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "598962a36b6e3fd4b7ef072fb6725477eaa9a0707bb2f15f87db008dfaef92d0",
+      "accepted": true,
+      "acceptance": "Native baseline screenshot visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/ru-390-booking-games.png",
+      "phase": "booking-games",
+      "language": "ru",
+      "width": 390,
+      "height": 844,
+      "sha256": "63db5b62208eb4184b1f69b3cc2e7bf223f13844401741007c8b44cf7b14de39",
+      "accepted": true,
+      "acceptance": "Native baseline screenshot visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/ru-390-consent.png",
+      "phase": "consent",
+      "language": "ru",
+      "width": 390,
+      "height": 844,
+      "sha256": "d9ac197557814adb6bc6d3a054e2b1725aa28cbb106d78e9bfd3e8380566acb5",
+      "accepted": true,
+      "acceptance": "Native baseline screenshot visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/ru-1440-booking-games.png",
+      "phase": "booking-games",
+      "language": "ru",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "d35e48972030941a8d11f9b2cfcb72540e7bdf9d963310380375530f3e2d26c4",
+      "accepted": true,
+      "acceptance": "Native baseline screenshot visually inspected."
+    },
+    {
+      "file": "work/refinement-1.9.2/consent/ru-1440-consent.png",
+      "phase": "consent",
+      "language": "ru",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "dc8f1fc0ecabe76c4bbf6861c1d5cea09de6ee5e342eff405f7c4a2ff095e519",
+      "accepted": true,
+      "acceptance": "Native baseline screenshot visually inspected."
+    }
+  ],
+  "physicalSafariVerified": false,
+  "findings": [
+    {
+      "severity": "P2",
+      "id": "consent-atomic-inline-buttons",
+      "problem": "Consent sentence uses legal buttons with44px min-height and8px vertical padding inside an inline span. On both UA/RU mobile cases it takes88px total with44px text-line pitch, despite computed13px font and21.45px line-height. This reproduces the visible separated sentence and oversized underlined bars in Chromium; the same source plausibly explains the supplied iPhoneSafari screenshot without a physicalSafari verification claim.",
+      "causalSource": [
+        "src/booking.css:14",
+        ".booking-section .consent button { min-height:44px; padding-block:8px; line-height:1.65; vertical-align:baseline; }",
+        "src/sections/Booking.tsx:97 embeds two legal buttons inside span inside outer label",
+        ".consent button base display resolves inline-block; each legal phrase is an atomic inline box"
+      ],
+      "recommendation": "Use a dedicated accessible checkbox with44px label/hit area and a continuous13–14px sentence with naturally wrapping inline legal controls. Remove min-height/padding-block from each inline legal phrase; use underline/text-decoration rather than deep block underlines. Preserve explicit type=button/legal callbacks/Escape focus return, checkbox required and state, and ensure legal actions never change consent. Visually verify UA/RU320/390/1440 and physicalSafari after installation."
+    },
+    {
+      "severity": "P3",
+      "id": "booking-game-icon-frame",
+      "problem": "The decorative controller icon is enclosed in an extra44×44px bordered/gold-tinted rounded square; the user requested lighter integration.",
+      "causalSource": [
+        "src/components/booking-games.css:4",
+        ".booking-games-icon border1px solid#5d5140, radius10px, background#c79b5d08"
+      ],
+      "recommendation": "Remove only decorative icon tile border/background while retaining the controller artwork, placement beside heading, and sensible fixed-size alignment. It is decorative aria-hidden, so44px minimum does not apply as an interaction requirement."
+    }
+  ],
+  "safety": {
+    "realOrders": 0,
+    "realEmails": 0,
+    "POSTAttempts": 0,
+    "physicalSafariVerified": false,
+    "sourcesMutated": false
+  }
+}

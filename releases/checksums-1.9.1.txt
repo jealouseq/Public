@@ -1,0 +1,3 @@
+5b2b797c787b6e45216515b94642308f1075e1cf5d82696ecd226362870b5a68  joyrent-1.9.1.zip
+06a1619c74560f146f4bbd2bf2aee6fb26ea2a0ae7445653ce525a8ea50f80ea  joyrent-preview-1.9.1.zip
+579238cba253c2c6cc8fef21e5ddaf99aaccd26625bab8030fc5fb0bbcaf74b4  joyrent-rentals-1.8.0.zip

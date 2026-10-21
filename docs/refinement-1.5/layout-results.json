@@ -1,0 +1,258 @@
+[
+  {
+    "language": "uk",
+    "width": 320,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 360,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 375,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 430,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 700,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 768,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 900,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 901,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 980,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 1024,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 1280,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 1920,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 2560,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "uk",
+    "width": 3355,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 320,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 360,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 375,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 430,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 700,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 768,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 900,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 901,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 980,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 1024,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 1280,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 1920,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 2560,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  },
+  {
+    "language": "ru",
+    "width": 3355,
+    "headingLines": 2,
+    "tariffChoices": 7,
+    "errors": [],
+    "overflow": false
+  }
+]

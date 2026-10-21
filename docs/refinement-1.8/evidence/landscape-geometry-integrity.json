@@ -1,0 +1,52 @@
+{
+  "sixExactContours": true,
+  "projectedVertices": 219,
+  "zones": [
+    {
+      "id": "green-1",
+      "zone": "green",
+      "vertices": 83,
+      "sha256Path": "4def3fdd479eb92525c1996d47288842fc35ba829da6065340918f3a9a664ce6"
+    },
+    {
+      "id": "yellow-1",
+      "zone": "yellow",
+      "vertices": 22,
+      "sha256Path": "fd7a642f5a9ba77729463d69028fc56f3f40b79f8b3da4617d23fdeb600d0e6a"
+    },
+    {
+      "id": "yellow-2",
+      "zone": "yellow",
+      "vertices": 38,
+      "sha256Path": "501d731ac6d603117baea90ee5178fb3d6677e80c8d7cc433dc1677c868a6ba6"
+    },
+    {
+      "id": "red-1",
+      "zone": "red",
+      "vertices": 28,
+      "sha256Path": "f0a7bfe9bad1d2cddc5cd54d150d6ec0a21a79cbd26b0d908eb4a93f158e61ee"
+    },
+    {
+      "id": "red-2",
+      "zone": "red",
+      "vertices": 26,
+      "sha256Path": "4939877c3b897dad3f1fa96654a70c69e624b020965a70eb7dc6f8c6e74b7b61"
+    },
+    {
+      "id": "red-3",
+      "zone": "red",
+      "vertices": 22,
+      "sha256Path": "5e46e81607907755262fc3c4885420dca4790d1d70223e2759e073a7043de663"
+    }
+  ],
+  "projection": "x=longitude radians; y=-ln(tan(pi/4+latitude/2))",
+  "affine": {
+    "scaleX": 55563.32670113193,
+    "scaleY": 55563.326703970815,
+    "offsetX": -29474.710847505397,
+    "offsetY": 51221.20300466032
+  },
+  "maxResidualPixels": 6.390400990596845e-07,
+  "viewBox": "0 0 640 440",
+  "svgSha256": "4d0898889adf919de3665e4ace1ff30f4c98c663d8df387750d91a2873868a8a"
+}

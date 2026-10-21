@@ -1,0 +1,591 @@
+{
+  "run": "2026-10-03T16:43:05.001947+00:00",
+  "base": "http://localhost:5173/",
+  "reviewType": "read-only source review with browser regression; no source edits/builds/commits",
+  "unresolvedP1": 0,
+  "unresolvedP2": 0,
+  "finding": {
+    "priority": "P2",
+    "title": "Fixed picker toolbar/footer overlap all scrollable catalog area in short viewports",
+    "affectedSourceAtObservation": "src/game-picker.css:2-3,11-13",
+    "status": "RESOLVED",
+    "beforeEvidenceType": "Actual observed native Chromium viewport geometry and click failure, before source fix",
+    "beforeScreenshot": null,
+    "beforeEvidence": [
+      {
+        "viewport": {
+          "width": 844,
+          "height": 220
+        },
+        "dialog": {
+          "top": 16,
+          "bottom": 204
+        },
+        "toolbarHeight": 171,
+        "scroll": {
+          "top": 168,
+          "bottom": 216,
+          "height": 48
+        },
+        "footer": {
+          "top": 168,
+          "bottom": 245.5
+        },
+        "done": {
+          "top": 179,
+          "bottom": 235.5
+        },
+        "clickFailure": "No-result request CTA click timed out because game-picker-footer intercepted pointer events after scrolling into view."
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 220
+        },
+        "dialog": {
+          "top": 16,
+          "bottom": 204
+        },
+        "scroll": {
+          "top": 168,
+          "bottom": 208,
+          "height": 40
+        },
+        "footer": {
+          "top": 168,
+          "bottom": 245.5
+        }
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 280
+        },
+        "dialog": {
+          "top": 16,
+          "bottom": 264
+        },
+        "toolbarHeight": 174.375,
+        "scroll": {
+          "top": 191.375,
+          "bottom": 231.375,
+          "height": 40
+        },
+        "footer": {
+          "top": 191.375,
+          "bottom": 268.875
+        }
+      }
+    ],
+    "resolution": "At VisualViewport heights <=360px toolbar and catalog share a scrollable content region; Done stays in a separate footer row."
+  },
+  "afterPass": 6,
+  "afterFail": 0,
+  "afterCases": [
+    {
+      "language": "uk",
+      "width": 844,
+      "height": 220,
+      "status": "PASS",
+      "afterGeometry": {
+        "viewport": {
+          "width": 844,
+          "height": 220,
+          "visualHeight": 220
+        },
+        "compact": "true",
+        "dialog": {
+          "x": 16,
+          "y": 16,
+          "width": 812,
+          "height": 188,
+          "top": 16,
+          "right": 828,
+          "bottom": 204,
+          "left": 16
+        },
+        "content": {
+          "x": 17,
+          "y": 17,
+          "width": 810,
+          "height": 112.5,
+          "top": 17,
+          "right": 827,
+          "bottom": 129.5,
+          "left": 17
+        },
+        "footer": {
+          "x": 17,
+          "y": 129.5,
+          "width": 810,
+          "height": 73.5,
+          "top": 129.5,
+          "right": 827,
+          "bottom": 203,
+          "left": 17
+        },
+        "request": {
+          "x": 66,
+          "y": 49.6875,
+          "width": 712,
+          "height": 48,
+          "top": 49.6875,
+          "right": 778,
+          "bottom": 97.6875,
+          "left": 66
+        },
+        "done": {
+          "x": 649,
+          "y": 138.5,
+          "width": 150,
+          "height": 56.5,
+          "top": 138.5,
+          "right": 799,
+          "bottom": 195,
+          "left": 649
+        },
+        "fieldFocused": true,
+        "fieldValue": "Review Missing Game",
+        "horizontalOverflow": false
+      },
+      "screenshot": "work/refinement-1.9.1/review/after-uk-844-220.png",
+      "checks": [
+        "no-result CTA clickable",
+        "request prefilled and focused",
+        "request and Done bounded by dialog",
+        "no focused background element while modal open; browser chrome Tab stop allowed",
+        "Done closes and returns focus",
+        "wishlist retained on booking",
+        "no horizontal overflow"
+      ],
+      "browserErrors": [],
+      "blockedNonReadRequests": []
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "height": 220,
+      "status": "PASS",
+      "afterGeometry": {
+        "viewport": {
+          "width": 390,
+          "height": 220,
+          "visualHeight": 220
+        },
+        "compact": "true",
+        "dialog": {
+          "x": 16,
+          "y": 16,
+          "width": 358,
+          "height": 188,
+          "top": 16,
+          "right": 374,
+          "bottom": 204,
+          "left": 16
+        },
+        "content": {
+          "x": 17,
+          "y": 17,
+          "width": 356,
+          "height": 112.5,
+          "top": 17,
+          "right": 373,
+          "bottom": 129.5,
+          "left": 17
+        },
+        "footer": {
+          "x": 17,
+          "y": 129.5,
+          "width": 356,
+          "height": 73.5,
+          "top": 129.5,
+          "right": 373,
+          "bottom": 203,
+          "left": 17
+        },
+        "request": {
+          "x": 50,
+          "y": 49.265625,
+          "width": 290,
+          "height": 48,
+          "top": 49.265625,
+          "right": 340,
+          "bottom": 97.265625,
+          "left": 50
+        },
+        "done": {
+          "x": 240.5,
+          "y": 138.5,
+          "width": 116.5,
+          "height": 56.5,
+          "top": 138.5,
+          "right": 357,
+          "bottom": 195,
+          "left": 240.5
+        },
+        "fieldFocused": true,
+        "fieldValue": "Review Missing Game",
+        "horizontalOverflow": false
+      },
+      "screenshot": "work/refinement-1.9.1/review/after-uk-390-220.png",
+      "checks": [
+        "no-result CTA clickable",
+        "request prefilled and focused",
+        "request and Done bounded by dialog",
+        "no focused background element while modal open; browser chrome Tab stop allowed",
+        "Done closes and returns focus",
+        "wishlist retained on booking",
+        "no horizontal overflow"
+      ],
+      "browserErrors": [],
+      "blockedNonReadRequests": []
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "height": 280,
+      "status": "PASS",
+      "afterGeometry": {
+        "viewport": {
+          "width": 320,
+          "height": 280,
+          "visualHeight": 280
+        },
+        "compact": "true",
+        "dialog": {
+          "x": 16,
+          "y": 16,
+          "width": 288,
+          "height": 248,
+          "top": 16,
+          "right": 304,
+          "bottom": 264,
+          "left": 16
+        },
+        "content": {
+          "x": 17,
+          "y": 17,
+          "width": 286,
+          "height": 172.5,
+          "top": 17,
+          "right": 303,
+          "bottom": 189.5,
+          "left": 17
+        },
+        "footer": {
+          "x": 17,
+          "y": 189.5,
+          "width": 286,
+          "height": 73.5,
+          "top": 189.5,
+          "right": 303,
+          "bottom": 263,
+          "left": 17
+        },
+        "request": {
+          "x": 50,
+          "y": 79.03125,
+          "width": 220,
+          "height": 48,
+          "top": 79.03125,
+          "right": 270,
+          "bottom": 127.03125,
+          "left": 50
+        },
+        "done": {
+          "x": 175,
+          "y": 198.5,
+          "width": 112,
+          "height": 56.5,
+          "top": 198.5,
+          "right": 287,
+          "bottom": 255,
+          "left": 175
+        },
+        "fieldFocused": true,
+        "fieldValue": "Review Missing Game",
+        "horizontalOverflow": false
+      },
+      "screenshot": "work/refinement-1.9.1/review/after-ru-320-280.png",
+      "checks": [
+        "no-result CTA clickable",
+        "request prefilled and focused",
+        "request and Done bounded by dialog",
+        "no focused background element while modal open; browser chrome Tab stop allowed",
+        "Done closes and returns focus",
+        "wishlist retained on booking",
+        "no horizontal overflow"
+      ],
+      "browserErrors": [],
+      "blockedNonReadRequests": []
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "height": 380,
+      "status": "PASS",
+      "afterGeometry": {
+        "viewport": {
+          "width": 390,
+          "height": 380,
+          "visualHeight": 380
+        },
+        "compact": "false",
+        "dialog": {
+          "x": 16,
+          "y": 16,
+          "width": 358,
+          "height": 348,
+          "top": 16,
+          "right": 374,
+          "bottom": 364,
+          "left": 16
+        },
+        "content": {
+          "x": 17,
+          "y": 17,
+          "width": 356,
+          "height": 268.5,
+          "top": 17,
+          "right": 373,
+          "bottom": 285.5,
+          "left": 17
+        },
+        "footer": {
+          "x": 17,
+          "y": 285.5,
+          "width": 356,
+          "height": 77.5,
+          "top": 285.5,
+          "right": 373,
+          "bottom": 363,
+          "left": 17
+        },
+        "request": {
+          "x": 50,
+          "y": 212.265625,
+          "width": 290,
+          "height": 48,
+          "top": 212.265625,
+          "right": 340,
+          "bottom": 260.265625,
+          "left": 50
+        },
+        "done": {
+          "x": 240.5,
+          "y": 296.5,
+          "width": 116.5,
+          "height": 56.5,
+          "top": 296.5,
+          "right": 357,
+          "bottom": 353,
+          "left": 240.5
+        },
+        "fieldFocused": true,
+        "fieldValue": "Review Missing Game",
+        "horizontalOverflow": false
+      },
+      "screenshot": "work/refinement-1.9.1/review/after-uk-390-380.png",
+      "checks": [
+        "no-result CTA clickable",
+        "request prefilled and focused",
+        "request and Done bounded by dialog",
+        "no focused background element while modal open; browser chrome Tab stop allowed",
+        "Done closes and returns focus",
+        "wishlist retained on booking",
+        "no horizontal overflow"
+      ],
+      "browserErrors": [],
+      "blockedNonReadRequests": []
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "status": "PASS",
+      "afterGeometry": {
+        "viewport": {
+          "width": 390,
+          "height": 844,
+          "visualHeight": 844
+        },
+        "compact": "false",
+        "dialog": {
+          "x": 16,
+          "y": 16,
+          "width": 358,
+          "height": 812,
+          "top": 16,
+          "right": 374,
+          "bottom": 828,
+          "left": 16
+        },
+        "content": {
+          "x": 17,
+          "y": 17,
+          "width": 356,
+          "height": 726.5,
+          "top": 17,
+          "right": 373,
+          "bottom": 743.5,
+          "left": 17
+        },
+        "footer": {
+          "x": 17,
+          "y": 743.5,
+          "width": 356,
+          "height": 83.5,
+          "top": 743.5,
+          "right": 373,
+          "bottom": 827,
+          "left": 17
+        },
+        "request": {
+          "x": 50,
+          "y": 560.5625,
+          "width": 290,
+          "height": 48,
+          "top": 560.5625,
+          "right": 340,
+          "bottom": 608.5625,
+          "left": 50
+        },
+        "done": {
+          "x": 240.5,
+          "y": 757.5,
+          "width": 116.5,
+          "height": 56.5,
+          "top": 757.5,
+          "right": 357,
+          "bottom": 814,
+          "left": 240.5
+        },
+        "fieldFocused": true,
+        "fieldValue": "Review Missing Game",
+        "horizontalOverflow": false
+      },
+      "screenshot": "work/refinement-1.9.1/review/after-uk-390-844.png",
+      "checks": [
+        "no-result CTA clickable",
+        "request prefilled and focused",
+        "request and Done bounded by dialog",
+        "no focused background element while modal open; browser chrome Tab stop allowed",
+        "Done closes and returns focus",
+        "wishlist retained on booking",
+        "no horizontal overflow"
+      ],
+      "browserErrors": [],
+      "blockedNonReadRequests": []
+    },
+    {
+      "language": "uk",
+      "width": 1440,
+      "height": 900,
+      "status": "PASS",
+      "afterGeometry": {
+        "viewport": {
+          "width": 1440,
+          "height": 900,
+          "visualHeight": 900
+        },
+        "compact": "false",
+        "dialog": {
+          "x": 230,
+          "y": 30,
+          "width": 980,
+          "height": 840,
+          "top": 30,
+          "right": 1210,
+          "bottom": 870,
+          "left": 230
+        },
+        "content": {
+          "x": 231,
+          "y": 31,
+          "width": 978,
+          "height": 748.5,
+          "top": 31,
+          "right": 1209,
+          "bottom": 779.5,
+          "left": 231
+        },
+        "footer": {
+          "x": 231,
+          "y": 779.5,
+          "width": 978,
+          "height": 89.5,
+          "top": 779.5,
+          "right": 1209,
+          "bottom": 869,
+          "left": 231
+        },
+        "request": {
+          "x": 280,
+          "y": 577.875,
+          "width": 880,
+          "height": 48,
+          "top": 577.875,
+          "right": 1160,
+          "bottom": 625.875,
+          "left": 280
+        },
+        "done": {
+          "x": 1031,
+          "y": 796.5,
+          "width": 150,
+          "height": 56.5,
+          "top": 796.5,
+          "right": 1181,
+          "bottom": 853,
+          "left": 1031
+        },
+        "fieldFocused": true,
+        "fieldValue": "Review Missing Game",
+        "horizontalOverflow": false
+      },
+      "screenshot": "work/refinement-1.9.1/review/after-uk-1440-900.png",
+      "checks": [
+        "no-result CTA clickable",
+        "request prefilled and focused",
+        "request and Done bounded by dialog",
+        "no focused background element while modal open; browser chrome Tab stop allowed",
+        "Done closes and returns focus",
+        "wishlist retained on booking",
+        "no horizontal overflow"
+      ],
+      "browserErrors": [],
+      "blockedNonReadRequests": []
+    }
+  ],
+  "additionalReview": [
+    "BookingGames extraction, responsive390/1440 card layout, controller→games→security order",
+    "Picker empty-search request CTA, wishlist state and focus",
+    "Privacy mini-dialog copy and existing submission/draft behavior",
+    "Backend requestedGame/securityMode API compatibility",
+    "Tariff delivery qualification and consistent npm/theme1.9.1 versions",
+    "OdesaAddressInput native pointer transaction stores current commit closure, keeps suggestion DOM through input blur, validates target/movement/list scroll at pointerup, handles cancel/window blur, freezes placement during press, cleans global listeners on unmount"
+  ],
+  "addressOwnerEvidence": {
+    "pointerTransaction": "work/refinement-1.9.1/address-pointer-transaction-check.json",
+    "pointerGuards": "work/refinement-1.9.1/address-pointer-guards-check.json",
+    "physicalSafariTested": false
+  },
+  "sources": {
+    "src/components/GamePicker.tsx": "0638800ec0d308d8d118874e82ddbbc81676ac8d9b9c14d975258cd6ec3a4dc2",
+    "src/game-picker.css": "89e7a1f30f9186a27305572ce467baea3a40492dcb13f7552565ef7f6c7fd5c4",
+    "src/components/BookingGames.tsx": "1a28d1194716ef093a944c738f52a3ac7ff65427489f63e92a6067f48c8f860a",
+    "src/components/booking-games.css": "d8d71caeefaf9d960c18f7b75633f94f1ebaa5bfaabe9a6c32273dd9d1a886eb",
+    "src/components/OdesaAddressInput.tsx": "e32db30e3dec3672a51044d585e16edab8f68bf4acccfc5ed7d0b9b838728910",
+    "src/address-input.css": "58ad9a9f05179b9a60bdb8320193b3a35d29a7a58294d215053386b2e398983e",
+    "src/sections/Booking.tsx": "b04a3aee31dd89f2693b2b7dc974fc7cb84c7fb66d84315c1080a1ad9e1efd04",
+    "src/App.tsx": "3ea64923704874c9aaf53d340b9d3f23013595df6f27d81b4afc70fbadf3f504",
+    "src/sections/Tariffs.tsx": "289ce75d0fbc5a3d3f6c3f798a05a9d7ba66c447c30d06eb129266c0b66c682a"
+  },
+  "limitations": [
+    "No pre-fix screenshot was captured; actual pre-fix geometry and click failure are recorded above. No reconstructed image used.",
+    "Physical iOS Safari/OS keyboard not exercised; WebKit executable unavailable in reviewer runtime. Address owner models native pointerdown→forced input blur→pointerup in Chromium.",
+    "Native Chromium after screenshots only; source code unchanged for each case.",
+    "All non-GET/HEAD requests blocked before transmission; no orders or emails sent.",
+    "Mobile Hero refinement is separately reviewed by root."
+  ]
+}

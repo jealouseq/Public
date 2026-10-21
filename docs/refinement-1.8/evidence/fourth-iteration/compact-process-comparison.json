@@ -1,0 +1,50 @@
+{
+  "before": {
+    "file": "work/refinement-1.8/browser-screens-20261003T121640Z/ua-mobile-process.png",
+    "run": "20261003T121640Z",
+    "main": "main-seI-bBsh.js",
+    "sha256": "2ec7253a8c0e8e81881166783042d7fd7bcdcde7d8f2dc48aa9e7044849435dd"
+  },
+  "after": {
+    "file": "work/refinement-1.8/browser-screens-20261003T124511Z/ua-mobile-process.png",
+    "run": "20261003T124511Z",
+    "main": "main-CYezEY1c.js",
+    "sha256": "61566d927c2c0c299b8d709e4e8f9665f10697cbb718f546f85d268d3ca1616e"
+  },
+  "matchedContext": {
+    "language": "uk",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "DPR": 1,
+    "reducedMotion": true,
+    "capture": "actual viewport, process heading top18px; fonts and visible images loaded/decoded; incidental focus blurred; no accessibility CSS hidden"
+  },
+  "reason": "Explicit latest user steering restores18px directional mobile connectors within the existing26px gap while retaining compact centered icon/title pairs. Landscape map is a separate requested composition change. Third iteration is preserved.",
+  "earlierCompactComparison": {
+    "before": {
+      "file": "work/refinement-1.8/browser-screens-20261003T115515Z/ua-mobile-process.png",
+      "run": "20261003T115515Z",
+      "main": "main-By-zN2f-.js",
+      "sha256": "21ad079ec7eb494b668fcdf7e19ee06af5a5fe6f893c0b454db62a0ad9e3f3f7"
+    },
+    "after": {
+      "file": "work/refinement-1.8/browser-screens-20261003T121640Z/ua-mobile-process.png",
+      "run": "20261003T121640Z",
+      "main": "main-seI-bBsh.js",
+      "sha256": "2ec7253a8c0e8e81881166783042d7fd7bcdcde7d8f2dc48aa9e7044849435dd"
+    },
+    "matchedContext": {
+      "language": "uk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "DPR": 1,
+      "reducedMotion": true,
+      "capture": "actual viewport, process heading top18px; fonts and visible images loaded/decoded; incidental focus blurred; no accessibility CSS hidden"
+    },
+    "reason": "Explicit latest user steering: detailed icon beside title in compact centered cluster; paragraph centered below; mobile spacing26px. Prior second iteration is preserved."
+  }
+}

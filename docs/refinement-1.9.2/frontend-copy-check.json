@@ -1,0 +1,69 @@
+{
+  "pass": 9,
+  "fail": 0,
+  "checks": [
+    {
+      "file": "src/App.tsx",
+      "nodesTraversed": 1496,
+      "oldVisitorCopyOccurrences": 0,
+      "onlyStringOrTemplateTextChanged": true
+    },
+    {
+      "file": "src/lib/api.ts",
+      "nodesTraversed": 893,
+      "oldVisitorCopyOccurrences": 0,
+      "onlyStringOrTemplateTextChanged": true
+    },
+    {
+      "file": "src/lib/copy.ts",
+      "nodesTraversed": 263,
+      "oldVisitorCopyOccurrences": 0,
+      "onlyStringOrTemplateTextChanged": true
+    },
+    {
+      "file": "src/lib/copy.test.ts",
+      "nodesTraversed": 268,
+      "oldVisitorCopyOccurrences": 0,
+      "onlyStringOrTemplateTextChanged": true
+    },
+    {
+      "file": "src/sections/Footer.tsx",
+      "nodesTraversed": 846,
+      "oldVisitorCopyOccurrences": 0,
+      "onlyStringOrTemplateTextChanged": true
+    },
+    {
+      "file": "src/sections/Story.tsx",
+      "nodesTraversed": 1386,
+      "oldVisitorCopyOccurrences": 0,
+      "onlyStringOrTemplateTextChanged": true
+    },
+    {
+      "file": "src/components/SecurityChoice.tsx",
+      "nodesTraversed": 378,
+      "oldVisitorCopyOccurrences": 0,
+      "onlyStringOrTemplateTextChanged": true
+    },
+    {
+      "file": "src/components/GamePresentation.tsx",
+      "nodesTraversed": 1196,
+      "oldVisitorCopyOccurrences": 0,
+      "onlyStringOrTemplateTextChanged": true
+    },
+    {
+      "file": "components/ui/delivery-zone-map.tsx",
+      "nodesTraversed": 2647,
+      "oldVisitorCopyOccurrences": 0,
+      "onlyStringOrTemplateTextChanged": true
+    }
+  ],
+  "copyTests": {
+    "command": "npx vitest run src/lib/copy.test.ts",
+    "pass": 4,
+    "fail": 0
+  },
+  "diffCheck": {
+    "command": "git diff --check -- [9 scoped files]",
+    "exitCode": 0
+  }
+}

@@ -1,0 +1,13 @@
+PASS: unsupported PS4 one-day tariff
+PASS: unknown console
+PASS: impossible date
+PASS: past date
+PASS: missing consent
+PASS: missing address
+PASS: invalid phone
+PASS: unknown game
+PASS: incompatible game
+PASS: honeypot filled
+PASS: disabled pickup
+PASS: server price, pending confirmation, no PII in response, idempotency, changed-key conflict and catalog configuration.
+CREATED_REFERENCE=JR-91

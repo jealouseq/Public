@@ -1,0 +1,241 @@
+{
+  "base": "http://localhost:5173",
+  "phase": "after-local",
+  "cases": [
+    {
+      "language": "uk",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "initial": {
+        "url": "http://localhost:5173/",
+        "scrollY": 1111,
+        "linkHref": "#how-it-works",
+        "linkText": "Як отримати консоль"
+      },
+      "afterClick": {
+        "url": "http://localhost:5173/#how-it-works",
+        "hash": "#how-it-works",
+        "scrollY": 2904,
+        "scrollPaddingTop": "25px",
+        "headerPosition": "relative",
+        "header": {
+          "top": -2904,
+          "bottom": -2830,
+          "height": 74
+        },
+        "processSection": {
+          "top": 24.921875,
+          "bottom": 1426.328125,
+          "height": 1401.40625
+        },
+        "processHeading": {
+          "top": 117.21875,
+          "bottom": 154.90625,
+          "height": 37.6875
+        },
+        "processHeadingVisible": true,
+        "deliveryPanel": {
+          "top": 621.03125,
+          "bottom": 1366.328125,
+          "height": 745.296875
+        },
+        "visibleStepTitles": [
+          "Обери комплект",
+          "Отримай консоль",
+          "Грай"
+        ],
+        "entryScripts": [
+          "http://localhost:5173/@vite/client",
+          "http://localhost:5173/src/main.tsx?t=1791027461583"
+        ],
+        "overflow": false
+      },
+      "expectedTarget": "#how-it-works",
+      "pass": true,
+      "screenshot": "after-local-ua-mobile.png",
+      "postAttempts": [],
+      "pageErrors": [],
+      "externalGetsBlocked": 0
+    },
+    {
+      "language": "uk",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "initial": {
+        "url": "http://localhost:5173/",
+        "scrollY": 722,
+        "linkHref": "#how-it-works",
+        "linkText": "Як отримати консоль"
+      },
+      "afterClick": {
+        "url": "http://localhost:5173/#how-it-works",
+        "hash": "#how-it-works",
+        "scrollY": 2597,
+        "scrollPaddingTop": "105px",
+        "headerPosition": "relative",
+        "header": {
+          "top": -2597,
+          "bottom": -2505,
+          "height": 92
+        },
+        "processSection": {
+          "top": 104.5625,
+          "bottom": 1116.78125,
+          "height": 1012.21875
+        },
+        "processHeading": {
+          "top": 245.25,
+          "bottom": 313.5625,
+          "height": 68.3125
+        },
+        "processHeadingVisible": true,
+        "deliveryPanel": {
+          "top": 549.4375,
+          "bottom": 1011.78125,
+          "height": 462.34375
+        },
+        "visibleStepTitles": [
+          "Обери комплект",
+          "Отримай консоль",
+          "Грай"
+        ],
+        "entryScripts": [
+          "http://localhost:5173/@vite/client",
+          "http://localhost:5173/src/main.tsx?t=1791027461583"
+        ],
+        "overflow": false
+      },
+      "expectedTarget": "#how-it-works",
+      "pass": true,
+      "screenshot": "after-local-ua-desktop.png",
+      "postAttempts": [],
+      "pageErrors": [],
+      "externalGetsBlocked": 0
+    },
+    {
+      "language": "ru",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "initial": {
+        "url": "http://localhost:5173/?lang=ru",
+        "scrollY": 1147,
+        "linkHref": "#how-it-works",
+        "linkText": "Как получить консоль"
+      },
+      "afterClick": {
+        "url": "http://localhost:5173/?lang=ru#how-it-works",
+        "hash": "#how-it-works",
+        "scrollY": 2940,
+        "scrollPaddingTop": "25px",
+        "headerPosition": "relative",
+        "header": {
+          "top": -2940,
+          "bottom": -2866,
+          "height": 74
+        },
+        "processSection": {
+          "top": 25.3125,
+          "bottom": 1426.71875,
+          "height": 1401.40625
+        },
+        "processHeading": {
+          "top": 117.609375,
+          "bottom": 155.296875,
+          "height": 37.6875
+        },
+        "processHeadingVisible": true,
+        "deliveryPanel": {
+          "top": 621.421875,
+          "bottom": 1366.71875,
+          "height": 745.296875
+        },
+        "visibleStepTitles": [
+          "Выбери комплект",
+          "Получи консоль",
+          "Играй"
+        ],
+        "entryScripts": [
+          "http://localhost:5173/@vite/client",
+          "http://localhost:5173/src/main.tsx?t=1791027461583"
+        ],
+        "overflow": false
+      },
+      "expectedTarget": "#how-it-works",
+      "pass": true,
+      "screenshot": "after-local-ru-mobile.png",
+      "postAttempts": [],
+      "pageErrors": [],
+      "externalGetsBlocked": 0
+    },
+    {
+      "language": "ru",
+      "device": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "initial": {
+        "url": "http://localhost:5173/?lang=ru",
+        "scrollY": 722,
+        "linkHref": "#how-it-works",
+        "linkText": "Как получить консоль"
+      },
+      "afterClick": {
+        "url": "http://localhost:5173/?lang=ru#how-it-works",
+        "hash": "#how-it-works",
+        "scrollY": 2597,
+        "scrollPaddingTop": "105px",
+        "headerPosition": "relative",
+        "header": {
+          "top": -2597,
+          "bottom": -2505,
+          "height": 92
+        },
+        "processSection": {
+          "top": 104.5625,
+          "bottom": 1116.78125,
+          "height": 1012.21875
+        },
+        "processHeading": {
+          "top": 245.25,
+          "bottom": 313.5625,
+          "height": 68.3125
+        },
+        "processHeadingVisible": true,
+        "deliveryPanel": {
+          "top": 549.4375,
+          "bottom": 1011.78125,
+          "height": 462.34375
+        },
+        "visibleStepTitles": [
+          "Выбери комплект",
+          "Получи консоль",
+          "Играй"
+        ],
+        "entryScripts": [
+          "http://localhost:5173/@vite/client",
+          "http://localhost:5173/src/main.tsx?t=1791027461583"
+        ],
+        "overflow": false
+      },
+      "expectedTarget": "#how-it-works",
+      "pass": true,
+      "screenshot": "after-local-ru-desktop.png",
+      "postAttempts": [],
+      "pageErrors": [],
+      "externalGetsBlocked": 0
+    }
+  ],
+  "pass": 4,
+  "fail": 0,
+  "safety": "Non-GET/HEAD blocked before transmission; only audited host GET/HEAD allowed. Form untouched."
+}

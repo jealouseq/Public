@@ -1,0 +1,43 @@
+{
+    "head": "b9b16e83604a605b8052c904c43f1c6635930e53",
+    "environment": {
+        "wordpressLoaded": false,
+        "databaseAccess": 0,
+        "orderAccess": 0,
+        "mailAttempts": 0,
+        "network": "none"
+    },
+    "currentSettings": {
+        "depositPs5": 9000,
+        "baseControllers": 1,
+        "extraControllerFee": 75
+    },
+    "staleCurrentManagedCopy": {
+        "writesFromUpgrade": 0,
+        "writesAfterExplicitPageReconciliation": 0,
+        "termsStillClaim25000": true,
+        "termsStillClaimSecondControllerFree": true,
+        "faqStillClaims25000": true
+    },
+    "controlOlderManagedCopy": {
+        "writes": 6,
+        "termsClaim25000": false
+    },
+    "uncheckedGameStillSelectable": {
+        "available": false,
+        "selectedIds": [
+            "disabled-game"
+        ]
+    },
+    "pickupAddressValidation": {
+        "inputBytes": 1048576,
+        "acceptedBytes": 1048576
+    },
+    "outOfStockTariffCatalog": {
+        "fixtureStockStatus": "outofstock",
+        "fixtureIsInStock": false,
+        "acceptingRequests": true,
+        "ps5TariffCount": 4,
+        "ps4TariffCount": 3
+    }
+}

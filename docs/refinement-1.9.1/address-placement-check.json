@@ -1,0 +1,264 @@
+[
+  {
+    "lang": "uk",
+    "short_above": {
+      "input": {
+        "x": 24,
+        "y": 326.671875,
+        "width": 342,
+        "height": 52,
+        "top": 326.671875,
+        "right": 366,
+        "bottom": 378.671875,
+        "left": 24
+      },
+      "popup": {
+        "x": 24,
+        "y": 175.671875,
+        "width": 342,
+        "height": 143,
+        "top": 175.671875,
+        "right": 366,
+        "bottom": 318.671875,
+        "left": 24
+      },
+      "list": {
+        "x": 25,
+        "y": 176.671875,
+        "width": 340,
+        "height": 106,
+        "top": 176.671875,
+        "right": 365,
+        "bottom": 282.671875,
+        "left": 25
+      },
+      "scroll": 0,
+      "scrollHeight": 106,
+      "clientHeight": 106,
+      "side": "above",
+      "viewport": {
+        "top": 0,
+        "bottom": 380,
+        "height": 380
+      }
+    },
+    "scroll_side_stable": true,
+    "resize_in_view": true,
+    "internal_scroll": {
+      "input": {
+        "x": 24,
+        "y": 182.671875,
+        "width": 342,
+        "height": 52,
+        "top": 182.671875,
+        "right": 366,
+        "bottom": 234.671875,
+        "left": 24
+      },
+      "popup": {
+        "x": 24,
+        "y": 12.671875,
+        "width": 342,
+        "height": 162,
+        "top": 12.671875,
+        "right": 366,
+        "bottom": 174.671875,
+        "left": 24
+      },
+      "list": {
+        "x": 25,
+        "y": 13.671875,
+        "width": 340,
+        "height": 125,
+        "top": 13.671875,
+        "right": 365,
+        "bottom": 138.671875,
+        "left": 25
+      },
+      "scroll": 0,
+      "scrollHeight": 250,
+      "clientHeight": 125,
+      "side": "above",
+      "viewport": {
+        "top": 0,
+        "bottom": 220,
+        "height": 220
+      }
+    },
+    "active_after_arrows": {
+      "input": {
+        "x": 24,
+        "y": 182.671875,
+        "width": 342,
+        "height": 52,
+        "top": 182.671875,
+        "right": 366,
+        "bottom": 234.671875,
+        "left": 24
+      },
+      "popup": {
+        "x": 24,
+        "y": 12.671875,
+        "width": 342,
+        "height": 162,
+        "top": 12.671875,
+        "right": 366,
+        "bottom": 174.671875,
+        "left": 24
+      },
+      "list": {
+        "x": 25,
+        "y": 13.671875,
+        "width": 340,
+        "height": 125,
+        "top": 13.671875,
+        "right": 365,
+        "bottom": 138.671875,
+        "left": 25
+      },
+      "scroll": 125,
+      "scrollHeight": 250,
+      "clientHeight": 125,
+      "side": "above",
+      "viewport": {
+        "top": 0,
+        "bottom": 220,
+        "height": 220
+      }
+    },
+    "keyboard_select": true,
+    "house_retained": true,
+    "escape_closes": true
+  },
+  {
+    "lang": "ru",
+    "short_above": {
+      "input": {
+        "x": 24,
+        "y": 326.25,
+        "width": 342,
+        "height": 52,
+        "top": 326.25,
+        "right": 366,
+        "bottom": 378.25,
+        "left": 24
+      },
+      "popup": {
+        "x": 24,
+        "y": 175.25,
+        "width": 342,
+        "height": 143,
+        "top": 175.25,
+        "right": 366,
+        "bottom": 318.25,
+        "left": 24
+      },
+      "list": {
+        "x": 25,
+        "y": 176.25,
+        "width": 340,
+        "height": 106,
+        "top": 176.25,
+        "right": 365,
+        "bottom": 282.25,
+        "left": 25
+      },
+      "scroll": 0,
+      "scrollHeight": 106,
+      "clientHeight": 106,
+      "side": "above",
+      "viewport": {
+        "top": 0,
+        "bottom": 380,
+        "height": 380
+      }
+    },
+    "scroll_side_stable": true,
+    "resize_in_view": true,
+    "internal_scroll": {
+      "input": {
+        "x": 24,
+        "y": 182.25,
+        "width": 342,
+        "height": 52,
+        "top": 182.25,
+        "right": 366,
+        "bottom": 234.25,
+        "left": 24
+      },
+      "popup": {
+        "x": 24,
+        "y": 12.25,
+        "width": 342,
+        "height": 162,
+        "top": 12.25,
+        "right": 366,
+        "bottom": 174.25,
+        "left": 24
+      },
+      "list": {
+        "x": 25,
+        "y": 13.25,
+        "width": 340,
+        "height": 125,
+        "top": 13.25,
+        "right": 365,
+        "bottom": 138.25,
+        "left": 25
+      },
+      "scroll": 0,
+      "scrollHeight": 250,
+      "clientHeight": 125,
+      "side": "above",
+      "viewport": {
+        "top": 0,
+        "bottom": 220,
+        "height": 220
+      }
+    },
+    "active_after_arrows": {
+      "input": {
+        "x": 24,
+        "y": 182.25,
+        "width": 342,
+        "height": 52,
+        "top": 182.25,
+        "right": 366,
+        "bottom": 234.25,
+        "left": 24
+      },
+      "popup": {
+        "x": 24,
+        "y": 12.25,
+        "width": 342,
+        "height": 162,
+        "top": 12.25,
+        "right": 366,
+        "bottom": 174.25,
+        "left": 24
+      },
+      "list": {
+        "x": 25,
+        "y": 13.25,
+        "width": 340,
+        "height": 125,
+        "top": 13.25,
+        "right": 365,
+        "bottom": 138.25,
+        "left": 25
+      },
+      "scroll": 125,
+      "scrollHeight": 250,
+      "clientHeight": 125,
+      "side": "above",
+      "viewport": {
+        "top": 0,
+        "bottom": 220,
+        "height": 220
+      }
+    },
+    "keyboard_select": true,
+    "house_retained": true,
+    "escape_closes": true
+  }
+]

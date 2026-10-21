@@ -1,0 +1,15 @@
+{
+    "checks": 12,
+    "failures": [
+        "Zero assigned privacy ID ignores the current published page",
+        "Missing privacy option ignores the current published page",
+        "Owner legacy excerpt edit preserved",
+        "Owner legacy priority edit preserved",
+        "Owner legacy draft edit preserved",
+        "Owner legacy parent edit preserved",
+        "Owner legacy metadata edit preserved",
+        "Owner legacy excerpt content retained",
+        "Owner legacy priority retained",
+        "Unknown owner post metadata retained"
+    ]
+}

@@ -1,0 +1,3512 @@
+{
+  "commit": "efe5c09ae8e1fbbe0cdd5f9a2f950174e290bf63",
+  "source_sha256": "e32db30e3dec3672a51044d585e16edab8f68bf4acccfc5ed7d0b9b838728910",
+  "cases": [
+    {
+      "lang": "uk",
+      "mode": "mouse",
+      "width": 1440,
+      "browser": "Chromium",
+      "failures": [],
+      "selections": [
+        {
+          "target": "label",
+          "expected": "Фонтанська дорога",
+          "value": "Фонтанська дорога",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "LI",
+            "role": "option",
+            "option": "Фонтанська дорога",
+            "ancestors": [
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "customer-fields",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3093.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3093.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3110.2000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3110.4000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3127.4000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3127.5999999940395
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3145.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3146
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "DIV::Адреса доставкиФонтанська дорогаСередньо",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3160.5
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "DIV::Адреса доставкиФонтанська дорогаСередньо",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3160.5
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3177.5999999940395
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3177.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3193.7999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3194.0999999940395
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3210.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3210.5
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3226.7999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3227
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3229
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3229.2000000029802
+            },
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3229.4000000059605
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 3229.5999999940395
+            }
+          ]
+        },
+        {
+          "target": "icon",
+          "expected": "Фонтанська дорога",
+          "value": "Фонтанська дорога",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "svg",
+            "role": null,
+            "option": "Фонтанська дорога",
+            "ancestors": [
+              {
+                "tag": "svg",
+                "cls": {},
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3560.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3560.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3580.2000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3580.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3601.2000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3601.4000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3610.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3610.4000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "DIV::Адреса доставкиФонтанська дорогаСередньо",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3627.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "DIV::Адреса доставкиФонтанська дорогаСередньо",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3627.4000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3644.2000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3644.4000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3660.4000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3660.7000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "SPAN::Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3680.2000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "SPAN::Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3680.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3696.7000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3696.7999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3701.5999999940395
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3701.7000000029802
+            },
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3702
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 3702.0999999940395
+            }
+          ]
+        },
+        {
+          "target": "second",
+          "expected": "Середньофонтанська вулиця",
+          "value": "Середньофонтанська вулиця",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "LI",
+            "role": "option",
+            "option": "Середньофонтанська вулиця",
+            "ancestors": [
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "customer-fields",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4010.5999999940395
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4010.7000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4026.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4027
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "DIV::Адреса доставкиФонтанська дорогаСередньо",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4043.5999999940395
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "DIV::Адреса доставкиФонтанська дорогаСередньо",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4043.7000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4060.4000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4060.7000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4076.7999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4077.0999999940395
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4095.5999999940395
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4095.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4110
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4110.0999999940395
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4127.0999999940395
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4127.29999999702
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4143.29999999702
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4143.5
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4145.70000000298
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4145.9000000059605
+            },
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "LI:option:Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 4146.0999999940395
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "LI:option:Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 4146.20000000298
+            }
+          ]
+        }
+      ],
+      "consoleErrors": []
+    },
+    {
+      "lang": "uk",
+      "mode": "touch",
+      "width": 390,
+      "browser": "Chromium",
+      "failures": [],
+      "selections": [
+        {
+          "target": "label",
+          "expected": "Фонтанська дорога",
+          "value": "Фонтанська дорога",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "SPAN",
+            "role": null,
+            "option": "Фонтанська дорога",
+            "ancestors": [
+              {
+                "tag": "SPAN",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "SPAN::Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2714.5999999940395
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "SPAN::Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 2714.7999999970198
+            },
+            {
+              "type": "touchstart",
+              "phase": "capture",
+              "target": "SPAN::Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2714.9000000059605
+            },
+            {
+              "type": "touchstart",
+              "phase": "bubble",
+              "target": "SPAN::Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2715
+            }
+          ]
+        },
+        {
+          "target": "icon",
+          "expected": "Фонтанська дорога",
+          "value": "Фонтанська дорога",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "svg",
+            "role": null,
+            "option": "Фонтанська дорога",
+            "ancestors": [
+              {
+                "tag": "svg",
+                "cls": {},
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2960.9000000059605
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 2961.0999999940395
+            },
+            {
+              "type": "touchstart",
+              "phase": "capture",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2961.0999999940395
+            },
+            {
+              "type": "touchstart",
+              "phase": "bubble",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2961.0999999940395
+            }
+          ]
+        },
+        {
+          "target": "second",
+          "expected": "Середньофонтанська вулиця",
+          "value": "Середньофонтанська вулиця",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "SPAN",
+            "role": null,
+            "option": "Середньофонтанська вулиця",
+            "ancestors": [
+              {
+                "tag": "SPAN",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "SPAN::Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3208.0999999940395
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "SPAN::Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 3208.2000000029802
+            },
+            {
+              "type": "touchstart",
+              "phase": "capture",
+              "target": "SPAN::Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3208.2000000029802
+            },
+            {
+              "type": "touchstart",
+              "phase": "bubble",
+              "target": "SPAN::Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3208.2999999970198
+            },
+            {
+              "type": "blur",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "BODY::\n    Перейти до вмістуJOYRENT.КонсоліІгр",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 3284.7000000029802
+            },
+            {
+              "type": "focusout",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "BODY::\n    Перейти до вмістуJOYRENT.КонсоліІгр",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 3284.7000000029802
+            },
+            {
+              "type": "focusout",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "BODY::\n    Перейти до вмістуJOYRENT.КонсоліІгр",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 3284.9000000059605
+            }
+          ]
+        }
+      ],
+      "consoleErrors": []
+    },
+    {
+      "lang": "uk",
+      "mode": "touch",
+      "width": 320,
+      "browser": "Chromium",
+      "failures": [],
+      "selections": [
+        {
+          "target": "label",
+          "expected": "Фонтанська дорога",
+          "value": "Фонтанська дорога",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "SPAN",
+            "role": null,
+            "option": "Фонтанська дорога",
+            "ancestors": [
+              {
+                "tag": "SPAN",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "SPAN::Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2260.4000000059605
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "SPAN::Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 2260.6000000089407
+            },
+            {
+              "type": "touchstart",
+              "phase": "capture",
+              "target": "SPAN::Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2260.7000000029802
+            },
+            {
+              "type": "touchstart",
+              "phase": "bubble",
+              "target": "SPAN::Фонтанська дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2260.800000011921
+            },
+            {
+              "type": "click",
+              "phase": "capture",
+              "target": "SPAN::Можна обрати підказку або ввести адресу ",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2275
+            },
+            {
+              "type": "click",
+              "phase": "bubble",
+              "target": "SPAN::Можна обрати підказку або ввести адресу ",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2275.1000000089407
+            }
+          ]
+        },
+        {
+          "target": "icon",
+          "expected": "Фонтанська дорога",
+          "value": "Фонтанська дорога",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "path",
+            "role": null,
+            "option": "Фонтанська дорога",
+            "ancestors": [
+              {
+                "tag": "path",
+                "cls": {},
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "svg",
+                "cls": {},
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "path::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2503.300000011921
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "path::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 2503.4000000059605
+            },
+            {
+              "type": "touchstart",
+              "phase": "capture",
+              "target": "path::",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2503.4000000059605
+            },
+            {
+              "type": "touchstart",
+              "phase": "bubble",
+              "target": "path::",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2503.5
+            },
+            {
+              "type": "click",
+              "phase": "capture",
+              "target": "SPAN::Можна обрати підказку або ввести адресу ",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2521.9000000059605
+            },
+            {
+              "type": "click",
+              "phase": "bubble",
+              "target": "SPAN::Можна обрати підказку або ввести адресу ",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2522
+            }
+          ]
+        },
+        {
+          "target": "second",
+          "expected": "Середньофонтанська вулиця",
+          "value": "Середньофонтанська вулиця",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "SPAN",
+            "role": null,
+            "option": "Середньофонтанська вулиця",
+            "ancestors": [
+              {
+                "tag": "SPAN",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "SPAN::Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2747.9000000059605
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "SPAN::Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 2748
+            },
+            {
+              "type": "touchstart",
+              "phase": "capture",
+              "target": "SPAN::Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2748.1000000089407
+            },
+            {
+              "type": "touchstart",
+              "phase": "bubble",
+              "target": "SPAN::Середньофонтанська вулиця",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2748.1000000089407
+            },
+            {
+              "type": "blur",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "BODY::\n    Перейти до вмістуJOYRENT.КонсоліІгр",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2817.4000000059605
+            },
+            {
+              "type": "focusout",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "BODY::\n    Перейти до вмістуJOYRENT.КонсоліІгр",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2817.4000000059605
+            },
+            {
+              "type": "focusout",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "BODY::\n    Перейти до вмістуJOYRENT.КонсоліІгр",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2817.6000000089407
+            }
+          ]
+        }
+      ],
+      "consoleErrors": []
+    },
+    {
+      "lang": "ru",
+      "mode": "mouse",
+      "width": 1440,
+      "browser": "Chromium",
+      "failures": [],
+      "selections": [
+        {
+          "target": "label",
+          "expected": "Фонтанская дорога",
+          "value": "Фонтанская дорога",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "LI",
+            "role": "option",
+            "option": "Фонтанская дорога",
+            "ancestors": [
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "customer-fields",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2361.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2361.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2377.5
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2377.7000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2394.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2394.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2410.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2410.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "DIV::Адрес доставкиФонтанская дорогаСреднефон",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2427.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "DIV::Адрес доставкиФонтанская дорогаСреднефон",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2427.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2444.5
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2444.7000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2461.1000000089407
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2461.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2477.7000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2477.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2494.2000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2494.2000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2495.7999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2495.9000000059605
+            },
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2496.1000000089407
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 2496.4000000059605
+            }
+          ]
+        },
+        {
+          "target": "icon",
+          "expected": "Фонтанская дорога",
+          "value": "Фонтанская дорога",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "svg",
+            "role": null,
+            "option": "Фонтанская дорога",
+            "ancestors": [
+              {
+                "tag": "svg",
+                "cls": {},
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2744.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2744.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2761
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2761
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2777.6000000089407
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2777.7000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2794.2000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2794.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "DIV::Адрес доставкиФонтанская дорогаСреднефон",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2811.1000000089407
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "DIV::Адрес доставкиФонтанская дорогаСреднефон",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2811.1000000089407
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2827.7999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2828.1000000089407
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2844.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2844.5
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "SPAN::Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2861.4000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "SPAN::Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2861.4000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2878.6000000089407
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2878.6000000089407
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2881.7000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2881.7999999970198
+            },
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2882
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 2882.2000000029802
+            }
+          ]
+        },
+        {
+          "target": "second",
+          "expected": "Среднефонтанская улица",
+          "value": "Среднефонтанская улица",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "LI",
+            "role": "option",
+            "option": "Среднефонтанская улица",
+            "ancestors": [
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "customer-fields",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3133.7000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3133.7999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3144.2000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3144.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "DIV::Адрес доставкиФонтанская дорогаСреднефон",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3161.2000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "DIV::Адрес доставкиФонтанская дорогаСреднефон",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3161.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3177.7000000029802
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3177.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3194.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3194.5
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3211
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3211.4000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3227.7999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3227.9000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3244.6000000089407
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3244.7999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3261.2999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3261.4000000059605
+            },
+            {
+              "type": "pointermove",
+              "phase": "capture",
+              "target": "LI:option:Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3263.7999999970198
+            },
+            {
+              "type": "pointermove",
+              "phase": "bubble",
+              "target": "LI:option:Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": -1,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3264.2999999970198
+            },
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "LI:option:Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 3264.4000000059605
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "LI:option:Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": "mouse",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 3264.6000000089407
+            }
+          ]
+        }
+      ],
+      "consoleErrors": []
+    },
+    {
+      "lang": "ru",
+      "mode": "touch",
+      "width": 390,
+      "browser": "Chromium",
+      "failures": [],
+      "selections": [
+        {
+          "target": "label",
+          "expected": "Фонтанская дорога",
+          "value": "Фонтанская дорога",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "SPAN",
+            "role": null,
+            "option": "Фонтанская дорога",
+            "ancestors": [
+              {
+                "tag": "SPAN",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "SPAN::Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2264
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "SPAN::Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 2264.2000000029802
+            },
+            {
+              "type": "touchstart",
+              "phase": "capture",
+              "target": "SPAN::Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2264.4000000059605
+            },
+            {
+              "type": "touchstart",
+              "phase": "bubble",
+              "target": "SPAN::Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2264.5
+            }
+          ]
+        },
+        {
+          "target": "icon",
+          "expected": "Фонтанская дорога",
+          "value": "Фонтанская дорога",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "svg",
+            "role": null,
+            "option": "Фонтанская дорога",
+            "ancestors": [
+              {
+                "tag": "svg",
+                "cls": {},
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2514.2999999970198
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 2514.4000000059605
+            },
+            {
+              "type": "touchstart",
+              "phase": "capture",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2514.4000000059605
+            },
+            {
+              "type": "touchstart",
+              "phase": "bubble",
+              "target": "svg::",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2514.4000000059605
+            }
+          ]
+        },
+        {
+          "target": "second",
+          "expected": "Среднефонтанская улица",
+          "value": "Среднефонтанская улица",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "SPAN",
+            "role": null,
+            "option": "Среднефонтанская улица",
+            "ancestors": [
+              {
+                "tag": "SPAN",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "SPAN::Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2758.2999999970198
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "SPAN::Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 2758.4000000059605
+            },
+            {
+              "type": "touchstart",
+              "phase": "capture",
+              "target": "SPAN::Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2758.4000000059605
+            },
+            {
+              "type": "touchstart",
+              "phase": "bubble",
+              "target": "SPAN::Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2758.5
+            },
+            {
+              "type": "blur",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "BODY::\n    Перейти к содержимомуJOYRENT.Консол",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2829.2999999970198
+            },
+            {
+              "type": "focusout",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "BODY::\n    Перейти к содержимомуJOYRENT.Консол",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2829.2999999970198
+            },
+            {
+              "type": "focusout",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "BODY::\n    Перейти к содержимомуJOYRENT.Консол",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2829.5999999940395
+            }
+          ]
+        }
+      ],
+      "consoleErrors": []
+    },
+    {
+      "lang": "ru",
+      "mode": "touch",
+      "width": 320,
+      "browser": "Chromium",
+      "failures": [],
+      "selections": [
+        {
+          "target": "label",
+          "expected": "Фонтанская дорога",
+          "value": "Фонтанская дорога",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "SPAN",
+            "role": null,
+            "option": "Фонтанская дорога",
+            "ancestors": [
+              {
+                "tag": "SPAN",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "SPAN::Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2283.2000000029802
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "SPAN::Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 2283.3999999910593
+            },
+            {
+              "type": "touchstart",
+              "phase": "capture",
+              "target": "SPAN::Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2283.5
+            },
+            {
+              "type": "touchstart",
+              "phase": "bubble",
+              "target": "SPAN::Фонтанская дорога",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2283.5999999940395
+            },
+            {
+              "type": "click",
+              "phase": "capture",
+              "target": "SPAN::Можно выбрать подсказку или ввести адрес",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2298.3999999910593
+            },
+            {
+              "type": "click",
+              "phase": "bubble",
+              "target": "SPAN::Можно выбрать подсказку или ввести адрес",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2298.5
+            }
+          ]
+        },
+        {
+          "target": "icon",
+          "expected": "Фонтанская дорога",
+          "value": "Фонтанская дорога",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "path",
+            "role": null,
+            "option": "Фонтанская дорога",
+            "ancestors": [
+              {
+                "tag": "path",
+                "cls": {},
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "svg",
+                "cls": {},
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "path::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2520.7999999970198
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "path::",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 2520.7999999970198
+            },
+            {
+              "type": "touchstart",
+              "phase": "capture",
+              "target": "path::",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2520.8999999910593
+            },
+            {
+              "type": "touchstart",
+              "phase": "bubble",
+              "target": "path::",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2520.8999999910593
+            },
+            {
+              "type": "click",
+              "phase": "capture",
+              "target": "SPAN::Можно выбрать подсказку или ввести адрес",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2547.7999999970198
+            },
+            {
+              "type": "click",
+              "phase": "bubble",
+              "target": "SPAN::Можно выбрать подсказку или ввести адрес",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2547.7999999970198
+            }
+          ]
+        },
+        {
+          "target": "second",
+          "expected": "Среднефонтанская улица",
+          "value": "Среднефонтанская улица",
+          "expanded": "false",
+          "pass": true,
+          "hit": {
+            "tag": "SPAN",
+            "role": null,
+            "option": "Среднефонтанская улица",
+            "ancestors": [
+              {
+                "tag": "SPAN",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "LI",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "UL",
+                "cls": "",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-suggestions",
+                "pointer": "auto",
+                "z": "12"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-combobox",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "address-field odesa-address-field",
+                "pointer": "auto",
+                "z": "auto"
+              },
+              {
+                "tag": "DIV",
+                "cls": "booking-address",
+                "pointer": "auto",
+                "z": "auto"
+              }
+            ]
+          },
+          "events": [
+            {
+              "type": "pointerdown",
+              "phase": "capture",
+              "target": "SPAN::Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2778.0999999940395
+            },
+            {
+              "type": "pointerdown",
+              "phase": "bubble",
+              "target": "SPAN::Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": "touch",
+              "button": 0,
+              "defaultPrevented": true,
+              "expanded": "true",
+              "options": 2,
+              "time": 2778.2000000029802
+            },
+            {
+              "type": "touchstart",
+              "phase": "capture",
+              "target": "SPAN::Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2778.2000000029802
+            },
+            {
+              "type": "touchstart",
+              "phase": "bubble",
+              "target": "SPAN::Среднефонтанская улица",
+              "active": "INPUT:combobox:address",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "true",
+              "options": 2,
+              "time": 2778.2999999970198
+            },
+            {
+              "type": "blur",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "BODY::\n    Перейти к содержимомуJOYRENT.Консол",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2859
+            },
+            {
+              "type": "focusout",
+              "phase": "capture",
+              "target": "INPUT:combobox:address",
+              "active": "BODY::\n    Перейти к содержимомуJOYRENT.Консол",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2859
+            },
+            {
+              "type": "focusout",
+              "phase": "bubble",
+              "target": "INPUT:combobox:address",
+              "active": "BODY::\n    Перейти к содержимомуJOYRENT.Консол",
+              "pointerType": null,
+              "button": null,
+              "defaultPrevented": false,
+              "expanded": "false",
+              "options": 0,
+              "time": 2859.2000000029802
+            }
+          ]
+        }
+      ],
+      "consoleErrors": []
+    }
+  ],
+  "fail": 0,
+  "pass": 6
+}

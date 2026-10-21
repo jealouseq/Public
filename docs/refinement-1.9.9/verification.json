@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-06",
+  "status": "PASS",
+  "themeVersion": "1.9.9",
+  "pluginVersion": "1.8.4",
+  "pluginChanged": false,
+  "environment": {
+    "site": "http://localhost:8080",
+    "wordpress": true,
+    "woocommerce": true,
+    "browser": "Chromium",
+    "touchEmulation": true
+  },
+  "checks": {
+    "unitTests": 123,
+    "unitTestFiles": 9,
+    "kitAndMotionCases": 20,
+    "selectionAndCarouselCases": 20,
+    "languages": [
+      "uk",
+      "ru"
+    ],
+    "viewportWidths": [
+      320,
+      390,
+      768,
+      1024,
+      1440
+    ],
+    "additionalVisualWidth": 430,
+    "typeScriptBuild": "PASS",
+    "zipIntegrity": "PASS",
+    "historicalReleaseArchivesUnchanged": 57,
+    "capturedScreenshots": 32,
+    "selectedReviewScreenshots": 12,
+    "motionDemoMobileSeconds": 17.92,
+    "motionDemoDesktopSeconds": 19.92
+  },
+  "scope": {
+    "duplicateConsoleShowcaseRemoved": true,
+    "subscriptionsInExistingKit": true,
+    "uniqueKitImage": true,
+    "mobileStepsTwoColumns": true,
+    "faqRemainsSeparate": true,
+    "heroBenefitsRemoved": true,
+    "bookingApiUnchanged": true,
+    "gameCoversUnchanged": true,
+    "liveSiteChecked": false,
+    "liveDeployment": false,
+    "realBookingsOrMail": 0
+  },
+  "reference": {
+    "site": "https://egorent.com.ua/",
+    "sourceHtmlInspected": true,
+    "sourceAnimationSettingsInspected": true,
+    "mapAndControllerGifFramesInspected": true,
+    "referenceGifsCopiedIntoTheme": false,
+    "uploadedMp4Viewed": false,
+    "mapCycleSeconds": 5,
+    "controllerCycleSeconds": 2,
+    "rocketOneWaySeconds": 1.7
+  },
+  "limitations": [
+    "The uploaded reference MP4 exceeded the 32 MiB transfer limit; reference motion was inspected from source animation settings and GIF frames instead.",
+    "Physical iPhone Safari was not tested; Chromium used viewport and touch emulation.",
+    "The existing Vite warning about the main JavaScript chunk exceeding 500 kB remains."
+  ]
+}

@@ -1,0 +1,1562 @@
+[
+  {
+    "lang": "uk",
+    "width": 320,
+    "state": {
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 74,
+        "top": 0,
+        "right": 320,
+        "bottom": 74,
+        "left": 0
+      },
+      "hero": {
+        "x": 0,
+        "y": 74,
+        "width": 320,
+        "height": 610.921875,
+        "top": 74,
+        "right": 320,
+        "bottom": 684.921875,
+        "left": 0
+      },
+      "elements": [
+        {
+          "cls": "eyebrow hero-eyebrow",
+          "rect": {
+            "x": 20,
+            "y": 106,
+            "width": 280,
+            "height": 20.390625,
+            "top": 106,
+            "right": 300,
+            "bottom": 126.390625,
+            "left": 20
+          },
+          "font": "12px",
+          "align": "start",
+          "text": "Оренда PlayStation"
+        },
+        {
+          "cls": "",
+          "rect": {
+            "x": 20,
+            "y": 146.390625,
+            "width": 280,
+            "height": 62.390625,
+            "top": 146.390625,
+            "right": 300,
+            "bottom": 208.78125,
+            "left": 20
+          },
+          "font": "26px",
+          "align": "start",
+          "text": "Твій вечір.Твоя PlayStation."
+        },
+        {
+          "cls": "hero-description",
+          "rect": {
+            "x": 20,
+            "y": 230.78125,
+            "width": 280,
+            "height": 72.140625,
+            "top": 230.78125,
+            "right": 300,
+            "bottom": 302.921875,
+            "left": 20
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "PS5 або PS4 на день, вихідні чи довше. Обери консоль і дати — решту узгодимо з тобою."
+        },
+        {
+          "cls": "hero-actions",
+          "rect": {
+            "x": 20,
+            "y": 326.921875,
+            "width": 280,
+            "height": 50,
+            "top": 326.921875,
+            "right": 300,
+            "bottom": 376.921875,
+            "left": 20
+          },
+          "font": "16px",
+          "align": "start",
+          "text": "Обрати PS5 Тарифи PS5 / PS4"
+        },
+        {
+          "cls": "button button-light hero-primary",
+          "rect": {
+            "x": 30.53125,
+            "y": 326.921875,
+            "width": 145.40625,
+            "height": 50,
+            "top": 326.921875,
+            "right": 175.9375,
+            "bottom": 376.921875,
+            "left": 30.53125
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "Обрати PS5 "
+        },
+        {
+          "cls": "hero-primary-direction",
+          "rect": {
+            "x": 135.9375,
+            "y": 336.921875,
+            "width": 30,
+            "height": 30,
+            "top": 336.921875,
+            "right": 165.9375,
+            "bottom": 366.921875,
+            "left": 135.9375
+          },
+          "font": "13px",
+          "align": "start",
+          "text": ""
+        },
+        {
+          "cls": "hero-price",
+          "rect": {
+            "x": 20,
+            "y": 401.921875,
+            "width": 280,
+            "height": 39,
+            "top": 401.921875,
+            "right": 300,
+            "bottom": 440.921875,
+            "left": 20
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "від 600 грн/день"
+        },
+        {
+          "cls": "hero-visual",
+          "rect": {
+            "x": 20,
+            "y": 452.921875,
+            "width": 280,
+            "height": 210,
+            "top": 452.921875,
+            "right": 300,
+            "bottom": 662.921875,
+            "left": 20
+          },
+          "font": "16px",
+          "align": "start",
+          "text": ""
+        }
+      ]
+    }
+  },
+  {
+    "lang": "uk",
+    "width": 390,
+    "state": {
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 74,
+        "top": 0,
+        "right": 390,
+        "bottom": 74,
+        "left": 0
+      },
+      "hero": {
+        "x": 0,
+        "y": 74,
+        "width": 390,
+        "height": 645.859375,
+        "top": 74,
+        "right": 390,
+        "bottom": 719.859375,
+        "left": 0
+      },
+      "elements": [
+        {
+          "cls": "eyebrow hero-eyebrow",
+          "rect": {
+            "x": 24,
+            "y": 106,
+            "width": 342,
+            "height": 20.390625,
+            "top": 106,
+            "right": 366,
+            "bottom": 126.390625,
+            "left": 24
+          },
+          "font": "12px",
+          "align": "start",
+          "text": "Оренда PlayStation"
+        },
+        {
+          "cls": "",
+          "rect": {
+            "x": 24,
+            "y": 146.390625,
+            "width": 342,
+            "height": 74.875,
+            "top": 146.390625,
+            "right": 366,
+            "bottom": 221.265625,
+            "left": 24
+          },
+          "font": "31.2px",
+          "align": "start",
+          "text": "Твій вечір.Твоя PlayStation."
+        },
+        {
+          "cls": "hero-description",
+          "rect": {
+            "x": 24,
+            "y": 243.265625,
+            "width": 342,
+            "height": 48.09375,
+            "top": 243.265625,
+            "right": 366,
+            "bottom": 291.359375,
+            "left": 24
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "PS5 або PS4 на день, вихідні чи довше. Обери консоль і дати — решту узгодимо з тобою."
+        },
+        {
+          "cls": "hero-actions",
+          "rect": {
+            "x": 24,
+            "y": 315.359375,
+            "width": 342,
+            "height": 50,
+            "top": 315.359375,
+            "right": 366,
+            "bottom": 365.359375,
+            "left": 24
+          },
+          "font": "16px",
+          "align": "start",
+          "text": "Обрати PS5 Тарифи PS5 / PS4"
+        },
+        {
+          "cls": "button button-light hero-primary",
+          "rect": {
+            "x": 54.59375,
+            "y": 315.359375,
+            "width": 159.140625,
+            "height": 50,
+            "top": 315.359375,
+            "right": 213.734375,
+            "bottom": 365.359375,
+            "left": 54.59375
+          },
+          "font": "14px",
+          "align": "start",
+          "text": "Обрати PS5 "
+        },
+        {
+          "cls": "hero-primary-direction",
+          "rect": {
+            "x": 173.734375,
+            "y": 325.359375,
+            "width": 30,
+            "height": 30,
+            "top": 325.359375,
+            "right": 203.734375,
+            "bottom": 355.359375,
+            "left": 173.734375
+          },
+          "font": "14px",
+          "align": "start",
+          "text": ""
+        },
+        {
+          "cls": "hero-price",
+          "rect": {
+            "x": 24,
+            "y": 390.359375,
+            "width": 342,
+            "height": 39,
+            "top": 390.359375,
+            "right": 366,
+            "bottom": 429.359375,
+            "left": 24
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "від 600 грн/день"
+        },
+        {
+          "cls": "hero-visual",
+          "rect": {
+            "x": 24,
+            "y": 441.359375,
+            "width": 342,
+            "height": 256.5,
+            "top": 441.359375,
+            "right": 366,
+            "bottom": 697.859375,
+            "left": 24
+          },
+          "font": "16px",
+          "align": "start",
+          "text": ""
+        }
+      ]
+    }
+  },
+  {
+    "lang": "uk",
+    "width": 700,
+    "state": {
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 700,
+        "height": 74,
+        "top": 0,
+        "right": 700,
+        "bottom": 74,
+        "left": 0
+      },
+      "hero": {
+        "x": 0,
+        "y": 74,
+        "width": 700,
+        "height": 764.484375,
+        "top": 74,
+        "right": 700,
+        "bottom": 838.484375,
+        "left": 0
+      },
+      "elements": [
+        {
+          "cls": "eyebrow hero-eyebrow",
+          "rect": {
+            "x": 30,
+            "y": 106,
+            "width": 640,
+            "height": 20.390625,
+            "top": 106,
+            "right": 670,
+            "bottom": 126.390625,
+            "left": 30
+          },
+          "font": "12px",
+          "align": "start",
+          "text": "Оренда PlayStation"
+        },
+        {
+          "cls": "",
+          "rect": {
+            "x": 30,
+            "y": 146.390625,
+            "width": 640,
+            "height": 120,
+            "top": 146.390625,
+            "right": 670,
+            "bottom": 266.390625,
+            "left": 30
+          },
+          "font": "50px",
+          "align": "start",
+          "text": "Твій вечір.Твоя PlayStation."
+        },
+        {
+          "cls": "hero-description",
+          "rect": {
+            "x": 30,
+            "y": 288.390625,
+            "width": 390,
+            "height": 48.09375,
+            "top": 288.390625,
+            "right": 420,
+            "bottom": 336.484375,
+            "left": 30
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "PS5 або PS4 на день, вихідні чи довше. Обери консоль і дати — решту узгодимо з тобою."
+        },
+        {
+          "cls": "hero-actions",
+          "rect": {
+            "x": 30,
+            "y": 360.484375,
+            "width": 640,
+            "height": 50,
+            "top": 360.484375,
+            "right": 670,
+            "bottom": 410.484375,
+            "left": 30
+          },
+          "font": "16px",
+          "align": "start",
+          "text": "Обрати PS5 Тарифи PS5 / PS4"
+        },
+        {
+          "cls": "button button-light hero-primary",
+          "rect": {
+            "x": 209.59375,
+            "y": 360.484375,
+            "width": 159.140625,
+            "height": 50,
+            "top": 360.484375,
+            "right": 368.734375,
+            "bottom": 410.484375,
+            "left": 209.59375
+          },
+          "font": "14px",
+          "align": "start",
+          "text": "Обрати PS5 "
+        },
+        {
+          "cls": "hero-primary-direction",
+          "rect": {
+            "x": 328.734375,
+            "y": 370.484375,
+            "width": 30,
+            "height": 30,
+            "top": 370.484375,
+            "right": 358.734375,
+            "bottom": 400.484375,
+            "left": 328.734375
+          },
+          "font": "14px",
+          "align": "start",
+          "text": ""
+        },
+        {
+          "cls": "hero-price",
+          "rect": {
+            "x": 30,
+            "y": 435.484375,
+            "width": 640,
+            "height": 39,
+            "top": 435.484375,
+            "right": 670,
+            "bottom": 474.484375,
+            "left": 30
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "від 600 грн/день"
+        },
+        {
+          "cls": "hero-visual",
+          "rect": {
+            "x": 130,
+            "y": 486.484375,
+            "width": 440,
+            "height": 330,
+            "top": 486.484375,
+            "right": 570,
+            "bottom": 816.484375,
+            "left": 130
+          },
+          "font": "16px",
+          "align": "start",
+          "text": ""
+        }
+      ]
+    }
+  },
+  {
+    "lang": "uk",
+    "width": 701,
+    "state": {
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 701,
+        "height": 80,
+        "top": 0,
+        "right": 701,
+        "bottom": 80,
+        "left": 0
+      },
+      "hero": {
+        "x": 0,
+        "y": 80,
+        "width": 701,
+        "height": 774.984375,
+        "top": 80,
+        "right": 701,
+        "bottom": 854.984375,
+        "left": 0
+      },
+      "elements": [
+        {
+          "cls": "eyebrow hero-eyebrow",
+          "rect": {
+            "x": 36.4375,
+            "y": 112,
+            "width": 628.125,
+            "height": 20.390625,
+            "top": 112,
+            "right": 664.5625,
+            "bottom": 132.390625,
+            "left": 36.4375
+          },
+          "font": "12px",
+          "align": "start",
+          "text": "Оренда PlayStation"
+        },
+        {
+          "cls": "",
+          "rect": {
+            "x": 36.4375,
+            "y": 152.390625,
+            "width": 628.125,
+            "height": 120,
+            "top": 152.390625,
+            "right": 664.5625,
+            "bottom": 272.390625,
+            "left": 36.4375
+          },
+          "font": "50px",
+          "align": "start",
+          "text": "Твій вечір.Твоя PlayStation."
+        },
+        {
+          "cls": "hero-description",
+          "rect": {
+            "x": 36.4375,
+            "y": 294.390625,
+            "width": 390,
+            "height": 48.09375,
+            "top": 294.390625,
+            "right": 426.4375,
+            "bottom": 342.484375,
+            "left": 36.4375
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "PS5 або PS4 на день, вихідні чи довше. Обери консоль і дати — решту узгодимо з тобою."
+        },
+        {
+          "cls": "hero-actions",
+          "rect": {
+            "x": 36.4375,
+            "y": 366.484375,
+            "width": 628.125,
+            "height": 50,
+            "top": 366.484375,
+            "right": 664.5625,
+            "bottom": 416.484375,
+            "left": 36.4375
+          },
+          "font": "16px",
+          "align": "start",
+          "text": "Обрати PS5 Тарифи PS5 / PS4"
+        },
+        {
+          "cls": "button button-light hero-primary",
+          "rect": {
+            "x": 210.09375,
+            "y": 366.484375,
+            "width": 159.140625,
+            "height": 50,
+            "top": 366.484375,
+            "right": 369.234375,
+            "bottom": 416.484375,
+            "left": 210.09375
+          },
+          "font": "14px",
+          "align": "start",
+          "text": "Обрати PS5 "
+        },
+        {
+          "cls": "hero-primary-direction",
+          "rect": {
+            "x": 329.234375,
+            "y": 376.484375,
+            "width": 30,
+            "height": 30,
+            "top": 376.484375,
+            "right": 359.234375,
+            "bottom": 406.484375,
+            "left": 329.234375
+          },
+          "font": "14px",
+          "align": "start",
+          "text": ""
+        },
+        {
+          "cls": "hero-price",
+          "rect": {
+            "x": 36.4375,
+            "y": 441.484375,
+            "width": 628.125,
+            "height": 49.5,
+            "top": 441.484375,
+            "right": 664.5625,
+            "bottom": 490.984375,
+            "left": 36.4375
+          },
+          "font": "14px",
+          "align": "start",
+          "text": "від 600 грн/день"
+        },
+        {
+          "cls": "hero-visual",
+          "rect": {
+            "x": 130.5,
+            "y": 502.984375,
+            "width": 440,
+            "height": 330,
+            "top": 502.984375,
+            "right": 570.5,
+            "bottom": 832.984375,
+            "left": 130.5
+          },
+          "font": "16px",
+          "align": "start",
+          "text": ""
+        }
+      ]
+    }
+  },
+  {
+    "lang": "uk",
+    "width": 1440,
+    "state": {
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 92,
+        "top": 0,
+        "right": 1440,
+        "bottom": 92,
+        "left": 0
+      },
+      "hero": {
+        "x": 0,
+        "y": 92,
+        "width": 1440,
+        "height": 680,
+        "top": 92,
+        "right": 1440,
+        "bottom": 772,
+        "left": 0
+      },
+      "elements": [
+        {
+          "cls": "eyebrow hero-eyebrow",
+          "rect": {
+            "x": 74.875,
+            "y": 208.140625,
+            "width": 648.46875,
+            "height": 23.796875,
+            "top": 208.140625,
+            "right": 723.34375,
+            "bottom": 231.9375,
+            "left": 74.875
+          },
+          "font": "14px",
+          "align": "start",
+          "text": "Оренда PlayStation"
+        },
+        {
+          "cls": "",
+          "rect": {
+            "x": 74.875,
+            "y": 258.9375,
+            "width": 648.46875,
+            "height": 142.21875,
+            "top": 258.9375,
+            "right": 723.34375,
+            "bottom": 401.15625,
+            "left": 74.875
+          },
+          "font": "59.76px",
+          "align": "start",
+          "text": "Твій вечір.Твоя PlayStation."
+        },
+        {
+          "cls": "hero-description",
+          "rect": {
+            "x": 74.875,
+            "y": 429.15625,
+            "width": 435,
+            "height": 59.1875,
+            "top": 429.15625,
+            "right": 509.875,
+            "bottom": 488.34375,
+            "left": 74.875
+          },
+          "font": "16px",
+          "align": "start",
+          "text": "PS5 або PS4 на день, вихідні чи довше. Обери консоль і дати — решту узгодимо з тобою."
+        },
+        {
+          "cls": "hero-actions",
+          "rect": {
+            "x": 74.875,
+            "y": 518.34375,
+            "width": 648.46875,
+            "height": 54,
+            "top": 518.34375,
+            "right": 723.34375,
+            "bottom": 572.34375,
+            "left": 74.875
+          },
+          "font": "16px",
+          "align": "start",
+          "text": "Обрати PS5 Тарифи PS5 / PS4"
+        },
+        {
+          "cls": "button button-light hero-primary",
+          "rect": {
+            "x": 74.875,
+            "y": 518.34375,
+            "width": 172.859375,
+            "height": 54,
+            "top": 518.34375,
+            "right": 247.734375,
+            "bottom": 572.34375,
+            "left": 74.875
+          },
+          "font": "15px",
+          "align": "start",
+          "text": "Обрати PS5 "
+        },
+        {
+          "cls": "hero-primary-direction",
+          "rect": {
+            "x": 204.734375,
+            "y": 529.34375,
+            "width": 32,
+            "height": 32,
+            "top": 529.34375,
+            "right": 236.734375,
+            "bottom": 561.34375,
+            "left": 204.734375
+          },
+          "font": "15px",
+          "align": "start",
+          "text": ""
+        },
+        {
+          "cls": "hero-price",
+          "rect": {
+            "x": 74.875,
+            "y": 606.34375,
+            "width": 648.46875,
+            "height": 49.5,
+            "top": 606.34375,
+            "right": 723.34375,
+            "bottom": 655.84375,
+            "left": 74.875
+          },
+          "font": "14px",
+          "align": "start",
+          "text": "від 600 грн/день"
+        },
+        {
+          "cls": "hero-visual",
+          "rect": {
+            "x": 766.53125,
+            "y": 207.53125,
+            "width": 598.578125,
+            "height": 448.921875,
+            "top": 207.53125,
+            "right": 1365.109375,
+            "bottom": 656.453125,
+            "left": 766.53125
+          },
+          "font": "16px",
+          "align": "start",
+          "text": ""
+        }
+      ]
+    }
+  },
+  {
+    "lang": "ru",
+    "width": 320,
+    "state": {
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 74,
+        "top": 0,
+        "right": 320,
+        "bottom": 74,
+        "left": 0
+      },
+      "hero": {
+        "x": 0,
+        "y": 74,
+        "width": 320,
+        "height": 610.921875,
+        "top": 74,
+        "right": 320,
+        "bottom": 684.921875,
+        "left": 0
+      },
+      "elements": [
+        {
+          "cls": "eyebrow hero-eyebrow",
+          "rect": {
+            "x": 20,
+            "y": 106,
+            "width": 280,
+            "height": 20.390625,
+            "top": 106,
+            "right": 300,
+            "bottom": 126.390625,
+            "left": 20
+          },
+          "font": "12px",
+          "align": "start",
+          "text": "Аренда PlayStation"
+        },
+        {
+          "cls": "",
+          "rect": {
+            "x": 20,
+            "y": 146.390625,
+            "width": 280,
+            "height": 62.390625,
+            "top": 146.390625,
+            "right": 300,
+            "bottom": 208.78125,
+            "left": 20
+          },
+          "font": "26px",
+          "align": "start",
+          "text": "Твой вечер.Твоя PlayStation."
+        },
+        {
+          "cls": "hero-description",
+          "rect": {
+            "x": 20,
+            "y": 230.78125,
+            "width": 280,
+            "height": 72.140625,
+            "top": 230.78125,
+            "right": 300,
+            "bottom": 302.921875,
+            "left": 20
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "PS5 или PS4 на день, выходные или дольше. Выбери консоль и даты — остальное согласуем с тобой."
+        },
+        {
+          "cls": "hero-actions",
+          "rect": {
+            "x": 20,
+            "y": 326.921875,
+            "width": 280,
+            "height": 50,
+            "top": 326.921875,
+            "right": 300,
+            "bottom": 376.921875,
+            "left": 20
+          },
+          "font": "16px",
+          "align": "start",
+          "text": "Выбрать PS5 Тарифы PS5 / PS4"
+        },
+        {
+          "cls": "button button-light hero-primary",
+          "rect": {
+            "x": 26.203125,
+            "y": 326.921875,
+            "width": 152.84375,
+            "height": 50,
+            "top": 326.921875,
+            "right": 179.046875,
+            "bottom": 376.921875,
+            "left": 26.203125
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "Выбрать PS5 "
+        },
+        {
+          "cls": "hero-primary-direction",
+          "rect": {
+            "x": 139.046875,
+            "y": 336.921875,
+            "width": 30,
+            "height": 30,
+            "top": 336.921875,
+            "right": 169.046875,
+            "bottom": 366.921875,
+            "left": 139.046875
+          },
+          "font": "13px",
+          "align": "start",
+          "text": ""
+        },
+        {
+          "cls": "hero-price",
+          "rect": {
+            "x": 20,
+            "y": 401.921875,
+            "width": 280,
+            "height": 39,
+            "top": 401.921875,
+            "right": 300,
+            "bottom": 440.921875,
+            "left": 20
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "от 600 грн/день"
+        },
+        {
+          "cls": "hero-visual",
+          "rect": {
+            "x": 20,
+            "y": 452.921875,
+            "width": 280,
+            "height": 210,
+            "top": 452.921875,
+            "right": 300,
+            "bottom": 662.921875,
+            "left": 20
+          },
+          "font": "16px",
+          "align": "start",
+          "text": ""
+        }
+      ]
+    }
+  },
+  {
+    "lang": "ru",
+    "width": 390,
+    "state": {
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 74,
+        "top": 0,
+        "right": 390,
+        "bottom": 74,
+        "left": 0
+      },
+      "hero": {
+        "x": 0,
+        "y": 74,
+        "width": 390,
+        "height": 645.859375,
+        "top": 74,
+        "right": 390,
+        "bottom": 719.859375,
+        "left": 0
+      },
+      "elements": [
+        {
+          "cls": "eyebrow hero-eyebrow",
+          "rect": {
+            "x": 24,
+            "y": 106,
+            "width": 342,
+            "height": 20.390625,
+            "top": 106,
+            "right": 366,
+            "bottom": 126.390625,
+            "left": 24
+          },
+          "font": "12px",
+          "align": "start",
+          "text": "Аренда PlayStation"
+        },
+        {
+          "cls": "",
+          "rect": {
+            "x": 24,
+            "y": 146.390625,
+            "width": 342,
+            "height": 74.875,
+            "top": 146.390625,
+            "right": 366,
+            "bottom": 221.265625,
+            "left": 24
+          },
+          "font": "31.2px",
+          "align": "start",
+          "text": "Твой вечер.Твоя PlayStation."
+        },
+        {
+          "cls": "hero-description",
+          "rect": {
+            "x": 24,
+            "y": 243.265625,
+            "width": 342,
+            "height": 48.09375,
+            "top": 243.265625,
+            "right": 366,
+            "bottom": 291.359375,
+            "left": 24
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "PS5 или PS4 на день, выходные или дольше. Выбери консоль и даты — остальное согласуем с тобой."
+        },
+        {
+          "cls": "hero-actions",
+          "rect": {
+            "x": 24,
+            "y": 315.359375,
+            "width": 342,
+            "height": 50,
+            "top": 315.359375,
+            "right": 366,
+            "bottom": 365.359375,
+            "left": 24
+          },
+          "font": "16px",
+          "align": "start",
+          "text": "Выбрать PS5 Тарифы PS5 / PS4"
+        },
+        {
+          "cls": "button button-light hero-primary",
+          "rect": {
+            "x": 49.9375,
+            "y": 315.359375,
+            "width": 167.140625,
+            "height": 50,
+            "top": 315.359375,
+            "right": 217.078125,
+            "bottom": 365.359375,
+            "left": 49.9375
+          },
+          "font": "14px",
+          "align": "start",
+          "text": "Выбрать PS5 "
+        },
+        {
+          "cls": "hero-primary-direction",
+          "rect": {
+            "x": 177.078125,
+            "y": 325.359375,
+            "width": 30,
+            "height": 30,
+            "top": 325.359375,
+            "right": 207.078125,
+            "bottom": 355.359375,
+            "left": 177.078125
+          },
+          "font": "14px",
+          "align": "start",
+          "text": ""
+        },
+        {
+          "cls": "hero-price",
+          "rect": {
+            "x": 24,
+            "y": 390.359375,
+            "width": 342,
+            "height": 39,
+            "top": 390.359375,
+            "right": 366,
+            "bottom": 429.359375,
+            "left": 24
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "от 600 грн/день"
+        },
+        {
+          "cls": "hero-visual",
+          "rect": {
+            "x": 24,
+            "y": 441.359375,
+            "width": 342,
+            "height": 256.5,
+            "top": 441.359375,
+            "right": 366,
+            "bottom": 697.859375,
+            "left": 24
+          },
+          "font": "16px",
+          "align": "start",
+          "text": ""
+        }
+      ]
+    }
+  },
+  {
+    "lang": "ru",
+    "width": 700,
+    "state": {
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 700,
+        "height": 74,
+        "top": 0,
+        "right": 700,
+        "bottom": 74,
+        "left": 0
+      },
+      "hero": {
+        "x": 0,
+        "y": 74,
+        "width": 700,
+        "height": 764.484375,
+        "top": 74,
+        "right": 700,
+        "bottom": 838.484375,
+        "left": 0
+      },
+      "elements": [
+        {
+          "cls": "eyebrow hero-eyebrow",
+          "rect": {
+            "x": 30,
+            "y": 106,
+            "width": 640,
+            "height": 20.390625,
+            "top": 106,
+            "right": 670,
+            "bottom": 126.390625,
+            "left": 30
+          },
+          "font": "12px",
+          "align": "start",
+          "text": "Аренда PlayStation"
+        },
+        {
+          "cls": "",
+          "rect": {
+            "x": 30,
+            "y": 146.390625,
+            "width": 640,
+            "height": 120,
+            "top": 146.390625,
+            "right": 670,
+            "bottom": 266.390625,
+            "left": 30
+          },
+          "font": "50px",
+          "align": "start",
+          "text": "Твой вечер.Твоя PlayStation."
+        },
+        {
+          "cls": "hero-description",
+          "rect": {
+            "x": 30,
+            "y": 288.390625,
+            "width": 390,
+            "height": 48.09375,
+            "top": 288.390625,
+            "right": 420,
+            "bottom": 336.484375,
+            "left": 30
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "PS5 или PS4 на день, выходные или дольше. Выбери консоль и даты — остальное согласуем с тобой."
+        },
+        {
+          "cls": "hero-actions",
+          "rect": {
+            "x": 30,
+            "y": 360.484375,
+            "width": 640,
+            "height": 50,
+            "top": 360.484375,
+            "right": 670,
+            "bottom": 410.484375,
+            "left": 30
+          },
+          "font": "16px",
+          "align": "start",
+          "text": "Выбрать PS5 Тарифы PS5 / PS4"
+        },
+        {
+          "cls": "button button-light hero-primary",
+          "rect": {
+            "x": 204.9375,
+            "y": 360.484375,
+            "width": 167.140625,
+            "height": 50,
+            "top": 360.484375,
+            "right": 372.078125,
+            "bottom": 410.484375,
+            "left": 204.9375
+          },
+          "font": "14px",
+          "align": "start",
+          "text": "Выбрать PS5 "
+        },
+        {
+          "cls": "hero-primary-direction",
+          "rect": {
+            "x": 332.078125,
+            "y": 370.484375,
+            "width": 30,
+            "height": 30,
+            "top": 370.484375,
+            "right": 362.078125,
+            "bottom": 400.484375,
+            "left": 332.078125
+          },
+          "font": "14px",
+          "align": "start",
+          "text": ""
+        },
+        {
+          "cls": "hero-price",
+          "rect": {
+            "x": 30,
+            "y": 435.484375,
+            "width": 640,
+            "height": 39,
+            "top": 435.484375,
+            "right": 670,
+            "bottom": 474.484375,
+            "left": 30
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "от 600 грн/день"
+        },
+        {
+          "cls": "hero-visual",
+          "rect": {
+            "x": 130,
+            "y": 486.484375,
+            "width": 440,
+            "height": 330,
+            "top": 486.484375,
+            "right": 570,
+            "bottom": 816.484375,
+            "left": 130
+          },
+          "font": "16px",
+          "align": "start",
+          "text": ""
+        }
+      ]
+    }
+  },
+  {
+    "lang": "ru",
+    "width": 701,
+    "state": {
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 701,
+        "height": 80,
+        "top": 0,
+        "right": 701,
+        "bottom": 80,
+        "left": 0
+      },
+      "hero": {
+        "x": 0,
+        "y": 80,
+        "width": 701,
+        "height": 774.984375,
+        "top": 80,
+        "right": 701,
+        "bottom": 854.984375,
+        "left": 0
+      },
+      "elements": [
+        {
+          "cls": "eyebrow hero-eyebrow",
+          "rect": {
+            "x": 36.4375,
+            "y": 112,
+            "width": 628.125,
+            "height": 20.390625,
+            "top": 112,
+            "right": 664.5625,
+            "bottom": 132.390625,
+            "left": 36.4375
+          },
+          "font": "12px",
+          "align": "start",
+          "text": "Аренда PlayStation"
+        },
+        {
+          "cls": "",
+          "rect": {
+            "x": 36.4375,
+            "y": 152.390625,
+            "width": 628.125,
+            "height": 120,
+            "top": 152.390625,
+            "right": 664.5625,
+            "bottom": 272.390625,
+            "left": 36.4375
+          },
+          "font": "50px",
+          "align": "start",
+          "text": "Твой вечер.Твоя PlayStation."
+        },
+        {
+          "cls": "hero-description",
+          "rect": {
+            "x": 36.4375,
+            "y": 294.390625,
+            "width": 390,
+            "height": 48.09375,
+            "top": 294.390625,
+            "right": 426.4375,
+            "bottom": 342.484375,
+            "left": 36.4375
+          },
+          "font": "13px",
+          "align": "start",
+          "text": "PS5 или PS4 на день, выходные или дольше. Выбери консоль и даты — остальное согласуем с тобой."
+        },
+        {
+          "cls": "hero-actions",
+          "rect": {
+            "x": 36.4375,
+            "y": 366.484375,
+            "width": 628.125,
+            "height": 50,
+            "top": 366.484375,
+            "right": 664.5625,
+            "bottom": 416.484375,
+            "left": 36.4375
+          },
+          "font": "16px",
+          "align": "start",
+          "text": "Выбрать PS5 Тарифы PS5 / PS4"
+        },
+        {
+          "cls": "button button-light hero-primary",
+          "rect": {
+            "x": 205.4375,
+            "y": 366.484375,
+            "width": 167.140625,
+            "height": 50,
+            "top": 366.484375,
+            "right": 372.578125,
+            "bottom": 416.484375,
+            "left": 205.4375
+          },
+          "font": "14px",
+          "align": "start",
+          "text": "Выбрать PS5 "
+        },
+        {
+          "cls": "hero-primary-direction",
+          "rect": {
+            "x": 332.578125,
+            "y": 376.484375,
+            "width": 30,
+            "height": 30,
+            "top": 376.484375,
+            "right": 362.578125,
+            "bottom": 406.484375,
+            "left": 332.578125
+          },
+          "font": "14px",
+          "align": "start",
+          "text": ""
+        },
+        {
+          "cls": "hero-price",
+          "rect": {
+            "x": 36.4375,
+            "y": 441.484375,
+            "width": 628.125,
+            "height": 49.5,
+            "top": 441.484375,
+            "right": 664.5625,
+            "bottom": 490.984375,
+            "left": 36.4375
+          },
+          "font": "14px",
+          "align": "start",
+          "text": "от 600 грн/день"
+        },
+        {
+          "cls": "hero-visual",
+          "rect": {
+            "x": 130.5,
+            "y": 502.984375,
+            "width": 440,
+            "height": 330,
+            "top": 502.984375,
+            "right": 570.5,
+            "bottom": 832.984375,
+            "left": 130.5
+          },
+          "font": "16px",
+          "align": "start",
+          "text": ""
+        }
+      ]
+    }
+  },
+  {
+    "lang": "ru",
+    "width": 1440,
+    "state": {
+      "header": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 92,
+        "top": 0,
+        "right": 1440,
+        "bottom": 92,
+        "left": 0
+      },
+      "hero": {
+        "x": 0,
+        "y": 92,
+        "width": 1440,
+        "height": 680,
+        "top": 92,
+        "right": 1440,
+        "bottom": 772,
+        "left": 0
+      },
+      "elements": [
+        {
+          "cls": "eyebrow hero-eyebrow",
+          "rect": {
+            "x": 74.875,
+            "y": 208.140625,
+            "width": 648.46875,
+            "height": 23.796875,
+            "top": 208.140625,
+            "right": 723.34375,
+            "bottom": 231.9375,
+            "left": 74.875
+          },
+          "font": "14px",
+          "align": "start",
+          "text": "Аренда PlayStation"
+        },
+        {
+          "cls": "",
+          "rect": {
+            "x": 74.875,
+            "y": 258.9375,
+            "width": 648.46875,
+            "height": 142.21875,
+            "top": 258.9375,
+            "right": 723.34375,
+            "bottom": 401.15625,
+            "left": 74.875
+          },
+          "font": "59.76px",
+          "align": "start",
+          "text": "Твой вечер.Твоя PlayStation."
+        },
+        {
+          "cls": "hero-description",
+          "rect": {
+            "x": 74.875,
+            "y": 429.15625,
+            "width": 435,
+            "height": 59.1875,
+            "top": 429.15625,
+            "right": 509.875,
+            "bottom": 488.34375,
+            "left": 74.875
+          },
+          "font": "16px",
+          "align": "start",
+          "text": "PS5 или PS4 на день, выходные или дольше. Выбери консоль и даты — остальное согласуем с тобой."
+        },
+        {
+          "cls": "hero-actions",
+          "rect": {
+            "x": 74.875,
+            "y": 518.34375,
+            "width": 648.46875,
+            "height": 54,
+            "top": 518.34375,
+            "right": 723.34375,
+            "bottom": 572.34375,
+            "left": 74.875
+          },
+          "font": "16px",
+          "align": "start",
+          "text": "Выбрать PS5 Тарифы PS5 / PS4"
+        },
+        {
+          "cls": "button button-light hero-primary",
+          "rect": {
+            "x": 74.875,
+            "y": 518.34375,
+            "width": 181.4375,
+            "height": 54,
+            "top": 518.34375,
+            "right": 256.3125,
+            "bottom": 572.34375,
+            "left": 74.875
+          },
+          "font": "15px",
+          "align": "start",
+          "text": "Выбрать PS5 "
+        },
+        {
+          "cls": "hero-primary-direction",
+          "rect": {
+            "x": 213.3125,
+            "y": 529.34375,
+            "width": 32,
+            "height": 32,
+            "top": 529.34375,
+            "right": 245.3125,
+            "bottom": 561.34375,
+            "left": 213.3125
+          },
+          "font": "15px",
+          "align": "start",
+          "text": ""
+        },
+        {
+          "cls": "hero-price",
+          "rect": {
+            "x": 74.875,
+            "y": 606.34375,
+            "width": 648.46875,
+            "height": 49.5,
+            "top": 606.34375,
+            "right": 723.34375,
+            "bottom": 655.84375,
+            "left": 74.875
+          },
+          "font": "14px",
+          "align": "start",
+          "text": "от 600 грн/день"
+        },
+        {
+          "cls": "hero-visual",
+          "rect": {
+            "x": 766.53125,
+            "y": 207.53125,
+            "width": 598.578125,
+            "height": 448.921875,
+            "top": 207.53125,
+            "right": 1365.109375,
+            "bottom": 656.453125,
+            "left": 766.53125
+          },
+          "font": "16px",
+          "align": "start",
+          "text": ""
+        }
+      ]
+    }
+  }
+]

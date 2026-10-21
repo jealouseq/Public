@@ -1,0 +1,24 @@
+[
+  {
+    "lang": "uk",
+    "without_synthesized_click": true,
+    "accessible_click": true,
+    "outside_blur_closes": true,
+    "native_touch_cancel": true,
+    "moved_touch_no_select": true,
+    "scroll_during_press_no_select": true,
+    "no_consent_click_through": true,
+    "physical_safari_tested": false
+  },
+  {
+    "lang": "ru",
+    "without_synthesized_click": true,
+    "accessible_click": true,
+    "outside_blur_closes": true,
+    "native_touch_cancel": true,
+    "moved_touch_no_select": true,
+    "scroll_during_press_no_select": true,
+    "no_consent_click_through": true,
+    "physical_safari_tested": false
+  }
+]

@@ -1,0 +1,98 @@
+[
+  {
+    "language": "uk",
+    "width": 320,
+    "status": "PASS",
+    "copyChecks": 31,
+    "posts": 0,
+    "errors": [],
+    "entry": {
+      "scripts": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-D_O_s3Db.js"
+      ],
+      "styles": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DPPXm2cL.css"
+      ]
+    }
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "status": "PASS",
+    "copyChecks": 31,
+    "posts": 0,
+    "errors": [],
+    "entry": {
+      "scripts": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-D_O_s3Db.js"
+      ],
+      "styles": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DPPXm2cL.css"
+      ]
+    }
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "status": "PASS",
+    "copyChecks": 31,
+    "posts": 0,
+    "errors": [],
+    "entry": {
+      "scripts": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-D_O_s3Db.js"
+      ],
+      "styles": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DPPXm2cL.css"
+      ]
+    }
+  },
+  {
+    "language": "ru",
+    "width": 320,
+    "status": "PASS",
+    "copyChecks": 31,
+    "posts": 0,
+    "errors": [],
+    "entry": {
+      "scripts": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-D_O_s3Db.js"
+      ],
+      "styles": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DPPXm2cL.css"
+      ]
+    }
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "status": "PASS",
+    "copyChecks": 31,
+    "posts": 0,
+    "errors": [],
+    "entry": {
+      "scripts": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-D_O_s3Db.js"
+      ],
+      "styles": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DPPXm2cL.css"
+      ]
+    }
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "status": "PASS",
+    "copyChecks": 31,
+    "posts": 0,
+    "errors": [],
+    "entry": {
+      "scripts": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-D_O_s3Db.js"
+      ],
+      "styles": [
+        "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-DPPXm2cL.css"
+      ]
+    }
+  }
+]

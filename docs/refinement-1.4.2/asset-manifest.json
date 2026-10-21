@@ -1,0 +1,14 @@
+{
+  "icon": {
+    "name": "Iconoir PlayStation Gamepad",
+    "source": "https://raw.githubusercontent.com/iconoir-icons/iconoir/main/icons/regular/playstation-gamepad.svg",
+    "license": "MIT ©2021 Luca Burgio",
+    "licenseFile": "wordpress/joyrent/licenses/iconoir-MIT.txt",
+    "originalSvgSha256": "43199565bcbec41c4ec37022b54adca1a2fe701243f1d8bd740c3f2538458c20",
+    "component": "components/ui/playstation-controller.tsx",
+    "pathGeometry": "unchanged",
+    "strokeWidth": 1.5
+  },
+  "heroImages": "unchanged from1.4.1",
+  "newNpmDependencies": []
+}

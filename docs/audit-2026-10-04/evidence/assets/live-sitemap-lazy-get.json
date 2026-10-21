@@ -1,0 +1,84 @@
+{
+  "capturedUTC": "2026-10-04T12:10:41.531208+00:00",
+  "resources": [
+    {
+      "path": "/wp-sitemap-posts-page-1.xml",
+      "status": 200,
+      "wireBodyBytes": 311,
+      "decodedBytes": 1334,
+      "encoding": "gzip",
+      "sha256Decoded": "206fc98b4d29fe5fbba6a99bc252fa61cfde6918952cbba25ad66187c69abfe3",
+      "cacheControl": null,
+      "urls": [
+        "https://flowers-luxury.shop/",
+        "https://flowers-luxury.shop/shop/",
+        "https://flowers-luxury.shop/cart/",
+        "https://flowers-luxury.shop/checkout/",
+        "https://flowers-luxury.shop/my-account/",
+        "https://flowers-luxury.shop/umovy-orendy/",
+        "https://flowers-luxury.shop/konfidentsiinist/",
+        "https://flowers-luxury.shop/usloviya-arendy/",
+        "https://flowers-luxury.shop/konfidentsialnost/",
+        "https://flowers-luxury.shop/faq/",
+        "https://flowers-luxury.shop/faq-ru/"
+      ]
+    },
+    {
+      "path": "/wp-sitemap-posts-product-1.xml",
+      "status": 200,
+      "wireBodyBytes": 355,
+      "decodedBytes": 1494,
+      "encoding": "gzip",
+      "sha256Decoded": "fef9161073abdecb41235d55c7d84fb25cc5c5bcf856fdfbd2651bca04937ee9",
+      "cacheControl": null,
+      "urls": [
+        "https://flowers-luxury.shop/product/ps5-%d1%82%d0%b5%d1%81%d1%82-%d0%b4%d1%80%d0%b0%d0%b9%d0%b2-1-%d0%b4%d0%bd/",
+        "https://flowers-luxury.shop/product/ps5-%d1%96%d0%b3%d1%80%d0%be%d0%b2%d0%b8%d0%b9-%d0%b2%d1%96%d0%ba%d0%b5%d0%bd%d0%b4-3-%d0%b4%d0%bd/",
+        "https://flowers-luxury.shop/product/ps5-%d1%82%d0%b8%d0%b6%d0%b4%d0%b5%d0%bd%d1%8c-%d1%84%d0%b0%d0%bd%d1%83-7-%d0%b4%d0%bd/",
+        "https://flowers-luxury.shop/product/ps5-%d0%bc%d0%b0%d0%ba%d1%81%d0%b8%d0%bc%d1%83%d0%bc-30-%d0%b4%d0%bd/",
+        "https://flowers-luxury.shop/product/ps4-%d1%96%d0%b3%d1%80%d0%be%d0%b2%d0%b8%d0%b9-%d0%b2%d1%96%d0%ba%d0%b5%d0%bd%d0%b4-3-%d0%b4%d0%bd/",
+        "https://flowers-luxury.shop/product/ps4-%d1%82%d0%b8%d0%b6%d0%b4%d0%b5%d0%bd%d1%8c-%d1%84%d0%b0%d0%bd%d1%83-7-%d0%b4%d0%bd/",
+        "https://flowers-luxury.shop/product/ps4-%d0%bc%d0%b0%d0%ba%d1%81%d0%b8%d0%bc%d1%83%d0%bc-30-%d0%b4%d0%bd/"
+      ]
+    },
+    {
+      "path": "/wp-sitemap-posts-post-1.xml",
+      "status": 200,
+      "wireBodyBytes": 223,
+      "decodedBytes": 301,
+      "encoding": "gzip",
+      "sha256Decoded": "370037c9fa9205253cc945afe4a17402202c153b298da4db8f1915e80a00c6ac",
+      "cacheControl": null,
+      "urls": [
+        "https://flowers-luxury.shop/hello-world/"
+      ]
+    },
+    {
+      "path": "/wp-content/themes/joyrent/assets/dist/assets/leaflet-src-Bd1C1PtC.js",
+      "status": 200,
+      "wireBodyBytes": 43353,
+      "decodedBytes": 149900,
+      "encoding": "gzip",
+      "sha256Decoded": "b43bdb41f1557c7ddcfcac993d80b2e162ddaf1eeaf7f978b30695164dd16c33",
+      "cacheControl": "public, max-age=604800"
+    },
+    {
+      "path": "/wp-content/themes/joyrent/assets/dist/assets/delivery-zones-CaK9S-Hx.js",
+      "status": 200,
+      "wireBodyBytes": 1921,
+      "decodedBytes": 6028,
+      "encoding": "gzip",
+      "sha256Decoded": "e9b4ea8b8edc3c604029120a2aeef96e993834b500dc96611fe8ee6a309b56f8",
+      "cacheControl": "public, max-age=604800"
+    },
+    {
+      "path": "/wp-content/themes/joyrent/assets/dist/assets/leaflet-CIGW-MKW.css",
+      "status": 200,
+      "wireBodyBytes": 6449,
+      "decodedBytes": 15607,
+      "encoding": "gzip",
+      "sha256Decoded": "fcd9fbeec3e87013f776847f0e76395d4d7eba07d982964933a41bd07503e6fe",
+      "cacheControl": "public, max-age=604800"
+    }
+  ]
+}

@@ -1,0 +1,463 @@
+{
+  "build": "main-By-zN2f-.js",
+  "cases": [
+    {
+      "language": "uk",
+      "width": 320,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-By-zN2f-.js",
+      "processSizes": [
+        [
+          21,
+          21
+        ],
+        [
+          21,
+          21
+        ],
+        [
+          28,
+          28
+        ]
+      ],
+      "booking": {
+        "row": {
+          "x": 20,
+          "right": 300,
+          "y": 427.90625,
+          "w": 280,
+          "h": 168.984375
+        },
+        "overflow": false,
+        "buttons": [
+          {
+            "box": {
+              "x": 144,
+              "right": 216,
+              "y": 519.890625,
+              "w": 72,
+              "h": 48
+            },
+            "pressed": "true",
+            "icon": {
+              "x": 158.265625,
+              "right": 186.265625,
+              "y": 529.890625,
+              "w": 28,
+              "h": 28
+            },
+            "stroke": "1.25",
+            "color": "rgb(244, 244, 241)",
+            "fill": "none",
+            "focusable": "false"
+          },
+          {
+            "box": {
+              "x": 228,
+              "right": 300,
+              "y": 519.890625,
+              "w": 72,
+              "h": 48
+            },
+            "pressed": "false",
+            "icon": {
+              "x": 241,
+              "right": 269,
+              "y": 529.890625,
+              "w": 28,
+              "h": 28
+            },
+            "stroke": "1.25",
+            "color": "rgb(163, 165, 168)",
+            "fill": "none",
+            "focusable": "false"
+          }
+        ]
+      },
+      "errors": [],
+      "nonGetAttempts": [],
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-By-zN2f-.js",
+      "processSizes": [
+        [
+          21,
+          21
+        ],
+        [
+          21,
+          21
+        ],
+        [
+          28,
+          28
+        ]
+      ],
+      "booking": {
+        "row": {
+          "x": 24,
+          "right": 366,
+          "y": 460.40625,
+          "w": 342,
+          "h": 105
+        },
+        "overflow": false,
+        "buttons": [
+          {
+            "box": {
+              "x": 210,
+              "right": 282,
+              "y": 488.40625,
+              "w": 72,
+              "h": 48
+            },
+            "pressed": "true",
+            "icon": {
+              "x": 224.265625,
+              "right": 252.265625,
+              "y": 498.40625,
+              "w": 28,
+              "h": 28
+            },
+            "stroke": "1.25",
+            "color": "rgb(244, 244, 241)",
+            "fill": "none",
+            "focusable": "false"
+          },
+          {
+            "box": {
+              "x": 294,
+              "right": 366,
+              "y": 488.40625,
+              "w": 72,
+              "h": 48
+            },
+            "pressed": "false",
+            "icon": {
+              "x": 307,
+              "right": 335,
+              "y": 498.40625,
+              "w": 28,
+              "h": 28
+            },
+            "stroke": "1.25",
+            "color": "rgb(163, 165, 168)",
+            "fill": "none",
+            "focusable": "false"
+          }
+        ]
+      },
+      "errors": [],
+      "nonGetAttempts": [],
+      "pass": true
+    },
+    {
+      "language": "uk",
+      "width": 1440,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-By-zN2f-.js",
+      "processSizes": [
+        [
+          21,
+          21
+        ],
+        [
+          21,
+          21
+        ],
+        [
+          28,
+          28
+        ]
+      ],
+      "booking": {
+        "row": {
+          "x": 74.875,
+          "right": 827.90625,
+          "y": 498.6875,
+          "w": 753.03125,
+          "h": 108.59375
+        },
+        "overflow": false,
+        "buttons": [
+          {
+            "box": {
+              "x": 661.90625,
+              "right": 739.90625,
+              "y": 530.484375,
+              "w": 78,
+              "h": 44
+            },
+            "pressed": "true",
+            "icon": {
+              "x": 678.171875,
+              "right": 706.171875,
+              "y": 538.484375,
+              "w": 28,
+              "h": 28
+            },
+            "stroke": "1.25",
+            "color": "rgb(244, 244, 241)",
+            "fill": "none",
+            "focusable": "false"
+          },
+          {
+            "box": {
+              "x": 749.90625,
+              "right": 827.90625,
+              "y": 530.484375,
+              "w": 78,
+              "h": 44
+            },
+            "pressed": "false",
+            "icon": {
+              "x": 764.90625,
+              "right": 792.90625,
+              "y": 538.484375,
+              "w": 28,
+              "h": 28
+            },
+            "stroke": "1.25",
+            "color": "rgb(163, 165, 168)",
+            "fill": "none",
+            "focusable": "false"
+          }
+        ]
+      },
+      "errors": [],
+      "nonGetAttempts": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-By-zN2f-.js",
+      "processSizes": [
+        [
+          21,
+          21
+        ],
+        [
+          21,
+          21
+        ],
+        [
+          28,
+          28
+        ]
+      ],
+      "booking": {
+        "row": {
+          "x": 20,
+          "right": 300,
+          "y": 428,
+          "w": 280,
+          "h": 168.984375
+        },
+        "overflow": false,
+        "buttons": [
+          {
+            "box": {
+              "x": 144,
+              "right": 216,
+              "y": 519.984375,
+              "w": 72,
+              "h": 48
+            },
+            "pressed": "true",
+            "icon": {
+              "x": 158.265625,
+              "right": 186.265625,
+              "y": 529.984375,
+              "w": 28,
+              "h": 28
+            },
+            "stroke": "1.25",
+            "color": "rgb(244, 244, 241)",
+            "fill": "none",
+            "focusable": "false"
+          },
+          {
+            "box": {
+              "x": 228,
+              "right": 300,
+              "y": 519.984375,
+              "w": 72,
+              "h": 48
+            },
+            "pressed": "false",
+            "icon": {
+              "x": 241,
+              "right": 269,
+              "y": 529.984375,
+              "w": 28,
+              "h": 28
+            },
+            "stroke": "1.25",
+            "color": "rgb(163, 165, 168)",
+            "fill": "none",
+            "focusable": "false"
+          }
+        ]
+      },
+      "errors": [],
+      "nonGetAttempts": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 390,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-By-zN2f-.js",
+      "processSizes": [
+        [
+          21,
+          21
+        ],
+        [
+          21,
+          21
+        ],
+        [
+          28,
+          28
+        ]
+      ],
+      "booking": {
+        "row": {
+          "x": 24,
+          "right": 366,
+          "y": 459.796875,
+          "w": 342,
+          "h": 105
+        },
+        "overflow": false,
+        "buttons": [
+          {
+            "box": {
+              "x": 210,
+              "right": 282,
+              "y": 487.796875,
+              "w": 72,
+              "h": 48
+            },
+            "pressed": "true",
+            "icon": {
+              "x": 224.265625,
+              "right": 252.265625,
+              "y": 497.796875,
+              "w": 28,
+              "h": 28
+            },
+            "stroke": "1.25",
+            "color": "rgb(244, 244, 241)",
+            "fill": "none",
+            "focusable": "false"
+          },
+          {
+            "box": {
+              "x": 294,
+              "right": 366,
+              "y": 487.796875,
+              "w": 72,
+              "h": 48
+            },
+            "pressed": "false",
+            "icon": {
+              "x": 307,
+              "right": 335,
+              "y": 497.796875,
+              "w": 28,
+              "h": 28
+            },
+            "stroke": "1.25",
+            "color": "rgb(163, 165, 168)",
+            "fill": "none",
+            "focusable": "false"
+          }
+        ]
+      },
+      "errors": [],
+      "nonGetAttempts": [],
+      "pass": true
+    },
+    {
+      "language": "ru",
+      "width": 1440,
+      "entry": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-By-zN2f-.js",
+      "processSizes": [
+        [
+          21,
+          21
+        ],
+        [
+          21,
+          21
+        ],
+        [
+          28,
+          28
+        ]
+      ],
+      "booking": {
+        "row": {
+          "x": 74.875,
+          "right": 827.90625,
+          "y": 498.6875,
+          "w": 753.03125,
+          "h": 108.59375
+        },
+        "overflow": false,
+        "buttons": [
+          {
+            "box": {
+              "x": 661.90625,
+              "right": 739.90625,
+              "y": 530.484375,
+              "w": 78,
+              "h": 44
+            },
+            "pressed": "true",
+            "icon": {
+              "x": 678.171875,
+              "right": 706.171875,
+              "y": 538.484375,
+              "w": 28,
+              "h": 28
+            },
+            "stroke": "1.25",
+            "color": "rgb(244, 244, 241)",
+            "fill": "none",
+            "focusable": "false"
+          },
+          {
+            "box": {
+              "x": 749.90625,
+              "right": 827.90625,
+              "y": 530.484375,
+              "w": 78,
+              "h": 44
+            },
+            "pressed": "false",
+            "icon": {
+              "x": 764.90625,
+              "right": 792.90625,
+              "y": 538.484375,
+              "w": 28,
+              "h": 28
+            },
+            "stroke": "1.25",
+            "color": "rgb(163, 165, 168)",
+            "fill": "none",
+            "focusable": "false"
+          }
+        ]
+      },
+      "errors": [],
+      "nonGetAttempts": [],
+      "pass": true
+    }
+  ],
+  "pass": 6,
+  "scope": "Optical icon stroke/size and controller-row geometry. Only local GET/HEAD; no contacts or submission."
+}

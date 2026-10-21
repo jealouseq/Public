@@ -1,0 +1,497 @@
+[
+  {
+    "language": "uk",
+    "width": 320,
+    "centering": [
+      {
+        "item": 160,
+        "grid": 160,
+        "node": 160,
+        "title": 159.9921875,
+        "body": 160
+      },
+      {
+        "item": 160,
+        "grid": 160,
+        "node": 160,
+        "title": 159.9921875,
+        "body": 160
+      },
+      {
+        "item": 160,
+        "grid": 160,
+        "node": 160,
+        "title": 160,
+        "body": 159.9921875
+      }
+    ],
+    "map_placement": {
+      "button": {
+        "x": 62,
+        "y": 1774.796875,
+        "width": 196,
+        "height": 52
+      },
+      "panel": {
+        "x": 20,
+        "width": 280
+      },
+      "layoutY": 1077.234375,
+      "serviceBottom": 1751.796875,
+      "radius": "999px"
+    },
+    "preview_height": 294,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "ru",
+    "width": 320,
+    "centering": [
+      {
+        "item": 160,
+        "grid": 160,
+        "node": 160,
+        "title": 160,
+        "body": 159.9921875
+      },
+      {
+        "item": 160,
+        "grid": 160,
+        "node": 160,
+        "title": 160,
+        "body": 160
+      },
+      {
+        "item": 160,
+        "grid": 160,
+        "node": 160,
+        "title": 159.9921875,
+        "body": 159.9921875
+      }
+    ],
+    "map_placement": {
+      "button": {
+        "x": 62,
+        "y": 1743.84375,
+        "width": 196,
+        "height": 52
+      },
+      "panel": {
+        "x": 20,
+        "width": 280
+      },
+      "layoutY": 1024.84375,
+      "serviceBottom": 1720.84375,
+      "radius": "999px"
+    },
+    "preview_height": 294,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "centering": [
+      {
+        "item": 195,
+        "grid": 195,
+        "node": 195,
+        "title": 195,
+        "body": 195
+      },
+      {
+        "item": 195,
+        "grid": 195,
+        "node": 195,
+        "title": 195,
+        "body": 194.9921875
+      },
+      {
+        "item": 195,
+        "grid": 195,
+        "node": 195,
+        "title": 194.9921875,
+        "body": 194.9921875
+      }
+    ],
+    "map_placement": {
+      "button": {
+        "x": 97,
+        "y": 1694.890625,
+        "width": 196,
+        "height": 52
+      },
+      "panel": {
+        "x": 24,
+        "width": 342
+      },
+      "layoutY": 997.328125,
+      "serviceBottom": 1671.890625,
+      "radius": "999px"
+    },
+    "preview_height": 294,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "centering": [
+      {
+        "item": 195,
+        "grid": 195,
+        "node": 195,
+        "title": 194.9921875,
+        "body": 195
+      },
+      {
+        "item": 195,
+        "grid": 195,
+        "node": 195,
+        "title": 194.9921875,
+        "body": 194.9921875
+      },
+      {
+        "item": 195,
+        "grid": 195,
+        "node": 195,
+        "title": 194.9921875,
+        "body": 194.9921875
+      }
+    ],
+    "map_placement": {
+      "button": {
+        "x": 97,
+        "y": 1694.890625,
+        "width": 196,
+        "height": 52
+      },
+      "panel": {
+        "x": 24,
+        "width": 342
+      },
+      "layoutY": 997.328125,
+      "serviceBottom": 1671.890625,
+      "radius": "999px"
+    },
+    "preview_height": 294,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "uk",
+    "width": 701,
+    "centering": [
+      {
+        "item": 133.125,
+        "grid": 350.5,
+        "node": 133.125,
+        "title": 133.1171875,
+        "body": 133.125
+      },
+      {
+        "item": 350.5,
+        "grid": 350.5,
+        "node": 350.5,
+        "title": 350.4921875,
+        "body": 350.5
+      },
+      {
+        "item": 567.875,
+        "grid": 350.5,
+        "node": 567.875,
+        "title": 567.875,
+        "body": 567.875
+      }
+    ],
+    "map_placement": {
+      "button": {
+        "x": 449.5625,
+        "y": 561.984375,
+        "width": 186,
+        "height": 50
+      },
+      "panel": {
+        "x": 36.4375,
+        "width": 628.125
+      },
+      "layoutY": 718.171875,
+      "serviceBottom": 1074.953125,
+      "radius": "999px"
+    },
+    "preview_height": 348,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "ru",
+    "width": 701,
+    "centering": [
+      {
+        "item": 133.125,
+        "grid": 350.5,
+        "node": 133.125,
+        "title": 133.125,
+        "body": 133.1171875
+      },
+      {
+        "item": 350.5,
+        "grid": 350.5,
+        "node": 350.5,
+        "title": 350.5,
+        "body": 350.5
+      },
+      {
+        "item": 567.875,
+        "grid": 350.5,
+        "node": 567.875,
+        "title": 567.8671875,
+        "body": 567.875
+      }
+    ],
+    "map_placement": {
+      "button": {
+        "x": 449.5625,
+        "y": 585.375,
+        "width": 186,
+        "height": 50
+      },
+      "panel": {
+        "x": 36.4375,
+        "width": 628.125
+      },
+      "layoutY": 717.515625,
+      "serviceBottom": 1074.296875,
+      "radius": "999px"
+    },
+    "preview_height": 348,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "uk",
+    "width": 980,
+    "centering": [
+      {
+        "item": 189.296875,
+        "grid": 490,
+        "node": 189.296875,
+        "title": 189.2890625,
+        "body": 189.296875
+      },
+      {
+        "item": 489.9921875,
+        "grid": 490,
+        "node": 489.984375,
+        "title": 489.9921875,
+        "body": 489.984375
+      },
+      {
+        "item": 790.6875,
+        "grid": 490,
+        "node": 790.6875,
+        "title": 790.6875,
+        "body": 790.6796875
+      }
+    ],
+    "map_placement": {
+      "button": {
+        "x": 712.65625,
+        "y": 555.546875,
+        "width": 186,
+        "height": 50
+      },
+      "panel": {
+        "x": 50.953125,
+        "width": 878.09375
+      },
+      "layoutY": 687.6875,
+      "serviceBottom": 1022.203125,
+      "radius": "999px"
+    },
+    "preview_height": 348,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "ru",
+    "width": 980,
+    "centering": [
+      {
+        "item": 189.296875,
+        "grid": 490,
+        "node": 189.296875,
+        "title": 189.296875,
+        "body": 189.2890625
+      },
+      {
+        "item": 489.9921875,
+        "grid": 490,
+        "node": 489.984375,
+        "title": 489.984375,
+        "body": 489.984375
+      },
+      {
+        "item": 790.6875,
+        "grid": 490,
+        "node": 790.6875,
+        "title": 790.6796875,
+        "body": 790.6796875
+      }
+    ],
+    "map_placement": {
+      "button": {
+        "x": 712.65625,
+        "y": 555.546875,
+        "width": 186,
+        "height": 50
+      },
+      "panel": {
+        "x": 50.953125,
+        "width": 878.09375
+      },
+      "layoutY": 687.6875,
+      "serviceBottom": 1022.203125,
+      "radius": "999px"
+    },
+    "preview_height": 348,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "centering": [
+      {
+        "item": 270.71875,
+        "grid": 720,
+        "node": 270.71875,
+        "title": 270.71875,
+        "body": 270.7109375
+      },
+      {
+        "item": 720,
+        "grid": 720,
+        "node": 720,
+        "title": 719.9921875,
+        "body": 720
+      },
+      {
+        "item": 1169.28125,
+        "grid": 720,
+        "node": 1169.28125,
+        "title": 1169.28125,
+        "body": 1169.2734375
+      }
+    ],
+    "map_placement": {
+      "button": {
+        "x": 1134.9375,
+        "y": 619.578125,
+        "width": 186,
+        "height": 50
+      },
+      "panel": {
+        "x": 74.875,
+        "width": 1290.25
+      },
+      "layoutY": 760.515625,
+      "serviceBottom": 1095.03125,
+      "radius": "999px"
+    },
+    "preview_height": 348,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "centering": [
+      {
+        "item": 270.71875,
+        "grid": 720,
+        "node": 270.71875,
+        "title": 270.7109375,
+        "body": 270.7109375
+      },
+      {
+        "item": 720,
+        "grid": 720,
+        "node": 720,
+        "title": 719.9921875,
+        "body": 719.9921875
+      },
+      {
+        "item": 1169.28125,
+        "grid": 720,
+        "node": 1169.28125,
+        "title": 1169.2734375,
+        "body": 1169.2734375
+      }
+    ],
+    "map_placement": {
+      "button": {
+        "x": 1134.9375,
+        "y": 619.578125,
+        "width": 186,
+        "height": 50
+      },
+      "panel": {
+        "x": 74.875,
+        "width": 1290.25
+      },
+      "layoutY": 760.515625,
+      "serviceBottom": 1095.03125,
+      "radius": "999px"
+    },
+    "preview_height": 348,
+    "pass": true,
+    "page_errors": []
+  },
+  {
+    "language": "uk",
+    "width": 1920,
+    "centering": [
+      {
+        "item": 480,
+        "grid": 960,
+        "node": 480,
+        "title": 480,
+        "body": 479.9921875
+      },
+      {
+        "item": 960,
+        "grid": 960,
+        "node": 960,
+        "title": 959.9921875,
+        "body": 960
+      },
+      {
+        "item": 1440,
+        "grid": 960,
+        "node": 1440,
+        "title": 1440,
+        "body": 1439.9921875
+      }
+    ],
+    "map_placement": {
+      "button": {
+        "x": 1417,
+        "y": 620.390625,
+        "width": 186,
+        "height": 50
+      },
+      "panel": {
+        "x": 272,
+        "width": 1376
+      },
+      "layoutY": 761.984375,
+      "serviceBottom": 1096.5,
+      "radius": "999px"
+    },
+    "preview_height": 348,
+    "pass": true,
+    "page_errors": []
+  }
+]

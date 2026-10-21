@@ -1,0 +1,18 @@
+.kit-game-box {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 9px 7px #0008);
+  animation: kit-material-light 16s ease-in-out infinite;
+  animation-delay: -3s;
+  animation-play-state: paused;
+}
+
+@keyframes kit-material-light {
+  0%, 30%, 100% { filter: brightness(1) drop-shadow(0 9px 7px #0008); }
+  55% { filter: brightness(1.055) drop-shadow(0 9px 7px #0008); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kit-game-box { animation: none; }
+}

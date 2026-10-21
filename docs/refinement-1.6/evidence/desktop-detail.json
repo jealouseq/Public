@@ -1,0 +1,64 @@
+{
+  "assets": [
+    {
+      "role": "beforeMaster",
+      "file": "ps5-commercial-desktop-close.png",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1438661,
+      "sha256": "a6d68ef8ec694cd2bd49f949a8e99c65cecb2681f5b7f4f8fcbf155ff83c906f"
+    },
+    {
+      "role": "beforeWebp",
+      "file": "ps5-commercial-desktop-close.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 83212,
+      "sha256": "187bd725dceba21328d1400373b7939f72f49cbcb22f314e06454a2b49ba997c"
+    },
+    {
+      "role": "afterMaster",
+      "file": "ps5-commercial-desktop-detail.png",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 1577781,
+      "sha256": "8e991bc845d04105df5f063810380160473c72cb3147635469b965a76ea17737"
+    },
+    {
+      "role": "afterWebp",
+      "file": "ps5-commercial-desktop-detail.webp",
+      "width": 1448,
+      "height": 1086,
+      "bytes": 157622,
+      "sha256": "7f00ed9a0f6cbdabe9002748f95a65e9c021a0492d34942487868fd156f77f54"
+    }
+  ],
+  "exactGeneratedSourceCopy": true,
+  "encoding": {
+    "quality92": {
+      "bytes": 106988,
+      "mse": 2.8464843445288945,
+      "psnrDb": 43.58771561304011
+    },
+    "quality96": {
+      "bytes": 157622,
+      "mse": 2.3691578146780214,
+      "psnrDb": 44.384863698956536
+    }
+  },
+  "cropRects": {
+    "controller": {
+      "left": 852,
+      "top": 732,
+      "width": 370,
+      "height": 257
+    },
+    "ports": {
+      "left": 525,
+      "top": 437,
+      "width": 148,
+      "height": 180
+    }
+  },
+  "note": "Identical native crop coordinates, no enlargement, compositing or sharpening; quality96 retains new source detail more faithfully. Both masters are 1448x1086; no claimed DPR3 pixel coverage gain."
+}

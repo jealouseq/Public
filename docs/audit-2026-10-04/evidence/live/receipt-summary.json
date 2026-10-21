@@ -1,0 +1,1042 @@
+{
+  "target": "https://flowers-luxury.shop/",
+  "capture_route": "installed DesktopCommander connector to srv1999219, isolated Playwright Chromium headless-shell; no user desktop browser",
+  "fresh_run_started": "2026-10-04T12:10:07.436189+00:00",
+  "served_assets": [
+    "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-CAUCxMPb.css",
+    "https://flowers-luxury.shop/wp-includes/js/wp-emoji-release.min.js?ver=7.1.2",
+    "https://cdn-reach.hostinger.com/js/embed.js",
+    "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/dist/assets/main-2YiB-VTt.js"
+  ],
+  "scope": "UA full1440+390, RU1440hero/contact/legal/FAQ, UA/RU320hero/games, RU390hero, RU768hero; no full native Safari/real submission",
+  "request_safety": "context.route blocks all methods except GET/HEAD before transmission; no submit tapped",
+  "shots": [
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/01-ua-1440-hero.png",
+      "utc": "2026-10-04T12:10:14.856991+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "fonts": "loaded",
+      "sha256": "3746f38bd7ab413eeda509a7202a5215c006420a2e519af8856af705aa3d2dab",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/02-ua-1440-rates.png",
+      "utc": "2026-10-04T12:11:31.747206+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 690
+      },
+      "fonts": "loaded",
+      "sha256": "eaa9587b1e1bc83dd000eac9107a7291261de6804272958727f517341638f2fe",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/03-ua-1440-games.png",
+      "utc": "2026-10-04T12:12:12.809245+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 1280
+      },
+      "fonts": "loaded",
+      "sha256": "e779ddffff8075e3d8653faf87706239e24787341b6862ddb3d8d0b510c63a49",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/03a-ua-1440-game-detail.png",
+      "utc": "2026-10-04T12:12:36.999523+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 1280
+      },
+      "fonts": "loaded",
+      "sha256": "196a4147ccbf1124a6097d65040875ba548958eab6d64c5715489edfe21dd3fa",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/04-ua-1440-kit.png",
+      "utc": "2026-10-04T12:13:01.611717+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 2000
+      },
+      "fonts": "loaded",
+      "sha256": "e79c2d7c833378a56f6dfec49f45b522ea3aea3431024148854d176b53fcfb74",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/05-ua-1440-process-delivery.png",
+      "utc": "2026-10-04T12:13:20.410340+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 2640
+      },
+      "fonts": "loaded",
+      "sha256": "83e1372a944d7a08222684c356fd65bd8a487b2625a076eec8d043d7b05eacfe",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/05a-ua-1440-delivery-map.png",
+      "utc": "2026-10-04T12:13:44.417020+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 2640
+      },
+      "fonts": "loaded",
+      "sha256": "155fdeadc70c4144807851b6b0825892e45e21b350e334a98ccfd5dc0a5e7044",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "rejected: initial tiles loading; replaced by05b"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/05b-ua-1440-delivery-map-settled.png",
+      "utc": "2026-10-04T12:14:10.042847+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 2640
+      },
+      "fonts": "loaded",
+      "sha256": "62cf16e13422a2f04d79630c62d342f3ec4d1a8585e46817c8e2a738311f032d",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/06-ua-1440-calculator.png",
+      "utc": "2026-10-04T12:14:51.753303+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 3840
+      },
+      "fonts": "loaded",
+      "sha256": "c441843381ed80933bd50eeba69daced45f596bb32ab68c6418e0d0c80013470",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/07-ua-1440-game-picker.png",
+      "utc": "2026-10-04T12:15:14.566075+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 3840
+      },
+      "fonts": "loaded",
+      "sha256": "9bbea209630d8472296211bb89c0c10a182b800f9accfacdc93b7cb31f17b95e",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/07a-ua-1440-game-no-results.png",
+      "utc": "2026-10-04T12:15:35.858614+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 3840
+      },
+      "fonts": "loaded",
+      "sha256": "9b2ddfc3fd1c362b7f4d852b8ce7e1e30acd560e8eac332e752dda772906389b",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/07b-ua-1440-missing-game.png",
+      "utc": "2026-10-04T12:15:56.472966+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 3840
+      },
+      "fonts": "loaded",
+      "sha256": "b485824f3535064a196078516f3490294c5d00b5f8b3bfc95eb74be2edf98bb4",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/08-ua-1440-contact.png",
+      "utc": "2026-10-04T12:16:18.863578+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 4769
+      },
+      "fonts": "loaded",
+      "sha256": "d80f7d463cddcdd215608d4b0fcce1fdc62d21bccd9b9e637974e9d366e0b939",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/08a-ua-1440-address-suggestions.png",
+      "utc": "2026-10-04T12:16:46.705127+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 4769
+      },
+      "fonts": "loaded",
+      "sha256": "d7c0254d4b324a1112b77c60e07355e9b60f97e75d257ed4d3a29627ae0aed07",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/08b-ua-1440-address-list.png",
+      "utc": "2026-10-04T12:18:32.000105+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 4769
+      },
+      "fonts": "loaded",
+      "sha256": "deaa9b755d09f81eb44426a3fdb5577d52cbf5e1a99b7ff89845d9a80fb2d6b6",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/08c-ru-1440-contact-preserved.png",
+      "utc": "2026-10-04T12:19:49.941747+00:00",
+      "url": "https://flowers-luxury.shop/?lang=ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "fonts": "loaded",
+      "sha256": "d107b220e3ddc042d24b638a82d5fedae7f8a9a4f48bcdcf328a431587d90301",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted",
+      "visual_label": "RU1440hero, no contact-preservation screenshot claim"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/08d-ru-1440-contact-preserved.png",
+      "utc": "2026-10-04T12:20:16.566117+00:00",
+      "url": "https://flowers-luxury.shop/?lang=ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 4684
+      },
+      "fonts": "loaded",
+      "sha256": "9a8d50f9f18b86d69d1ecbddebf44865478add1f6b0f1b07756b677f33373755",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/09-ru-1440-terms.png",
+      "utc": "2026-10-04T12:20:18.326719+00:00",
+      "url": "https://flowers-luxury.shop/?lang=ru",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 4790
+      },
+      "fonts": "loaded",
+      "sha256": "aa68c1d32314a8d02616cf346ed08e05206497782d8f29f9dd317b53d068aec4",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/09a-ru-1440-native-terms.png",
+      "utc": "2026-10-04T12:20:45.472179+00:00",
+      "url": "https://flowers-luxury.shop/usloviya-arendy/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "fonts": "loaded",
+      "sha256": "982b43735520b90db9aad94953c468a705913f4483cd4a5b2f7bfa3e875d5473",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/10-ru-1440-native-faq.png",
+      "utc": "2026-10-04T12:21:10.444777+00:00",
+      "url": "https://flowers-luxury.shop/faq-ru/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "fonts": "loaded",
+      "sha256": "9aba7e897a65b7335e74198df9cda9a5decf7ee77f7b0b47cdcdff1a3efce107",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/10a-ru-1440-native-faq-open.png",
+      "utc": "2026-10-04T12:21:54.277237+00:00",
+      "url": "https://flowers-luxury.shop/faq-ru/",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "fonts": "loaded",
+      "sha256": "c13d0c1af32d1b9a257a7579f4492b14090fd5aad45e9e21fa065ef32d3c1ba1",
+      "inspected": true,
+      "dimensions": [
+        1440,
+        1000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/11-ua-390-hero.png",
+      "utc": "2026-10-04T12:22:24.577108+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "fonts": "loaded",
+      "sha256": "d0ef2c9895c7c9a4f14da5152ef419092afe95689f4c71ebc28dc022fdf9a7a1",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/12-ua-390-rates.png",
+      "utc": "2026-10-04T12:22:53.206899+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 820
+      },
+      "fonts": "loaded",
+      "sha256": "9131274ef452d91ae700cdd9400a0f57172ba10eff4a4821d73447470721ec55",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/13-ua-390-games.png",
+      "utc": "2026-10-04T12:23:24.504905+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 1585
+      },
+      "fonts": "loaded",
+      "sha256": "11b7b520dcda13f17ebbbc860f3c9833ed7ef7072c631dead498d93e4bb0e76e",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/13a-ua-390-game-detail.png",
+      "utc": "2026-10-04T12:23:48.787687+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 1585
+      },
+      "fonts": "loaded",
+      "sha256": "c0ed22ab01a56626559bbd763e76b15d0e4c9d5bbed5780d92337135053a2e7f",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/14-ua-390-kit.png",
+      "utc": "2026-10-04T12:24:30.421586+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 2280
+      },
+      "fonts": "loaded",
+      "sha256": "2a70cd6b52a68c08dfe8b9a30df92cc099cf2428a9ecced0012f24dfb003f734",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/15-ua-390-process.png",
+      "utc": "2026-10-04T12:24:31.694768+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 2900
+      },
+      "fonts": "loaded",
+      "sha256": "4283c2f17a82037f77cca9c6eb0d1a97fdfdc95170b786af02aabd8e3b55ac3c",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/16-ua-390-delivery.png",
+      "utc": "2026-10-04T12:25:01.279824+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 3540
+      },
+      "fonts": "loaded",
+      "sha256": "c2a31687f4580a63e5d986389cf5ffcd173a2bd687b0828968566799bb1ceb25",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/16a-ua-390-delivery-map.png",
+      "utc": "2026-10-04T12:25:03.657848+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 3947
+      },
+      "fonts": "loaded",
+      "sha256": "949d3e6e36d494f3bf5e9dd5cf9bbf2d6857d7a5c7758bef84bf1edabd238aab",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/17-ua-390-calculator.png",
+      "utc": "2026-10-04T12:25:27.731936+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 4480
+      },
+      "fonts": "loaded",
+      "sha256": "4aea815105f9105874aa834abc8c3e8faa05cbca1d15b66ef1117e2b82de6655",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/18-ua-390-game-picker.png",
+      "utc": "2026-10-04T12:25:29.449751+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 4989
+      },
+      "fonts": "loaded",
+      "sha256": "02b75a4c5d51e12b7345e7e7dba36eb8142f30d92fe727e45038c473d1013894",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/18a-ua-390-game-no-results.png",
+      "utc": "2026-10-04T12:25:55.967995+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 4989
+      },
+      "fonts": "loaded",
+      "sha256": "89c3e6f21a8817117e0b6df15cf779e0433c0cd77bacdffb56e76cda271ff4fd",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/18b-ua-390-missing-game.png",
+      "utc": "2026-10-04T12:25:57.528296+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 4989
+      },
+      "fonts": "loaded",
+      "sha256": "0a68755f46f95147ab3c691d76206168b27b7e9ec63c6d5adace9c485a56a1ea",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/19-ua-390-contact.png",
+      "utc": "2026-10-04T12:26:22.503425+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 4841
+      },
+      "fonts": "loaded",
+      "sha256": "4b9e3be29adb348d50d5c8eb689d12117d390808d26728fd5e1c6a874d042aff",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/19a-ua-390-address-list.png",
+      "utc": "2026-10-04T12:26:23.707282+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 4841
+      },
+      "fonts": "loaded",
+      "sha256": "c650dcc0c7a4a3da3a0563edffb8da7ffa79328a2d1f06cded4888647a94fafc",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/20-ua-390-footer.png",
+      "utc": "2026-10-04T12:27:28.996073+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 5452
+      },
+      "fonts": "loaded",
+      "sha256": "7ce0711d00b02305e3b8ed768684fa3f06ce0bbcb79c6e17e4d34cc80b6b457e",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted",
+      "visual_label": "UA390privacy dialog after street tap; footer replaced by20b"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/19b-ua-390-address-before-tap.png",
+      "utc": "2026-10-04T12:28:46.443075+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 5157
+      },
+      "fonts": "loaded",
+      "sha256": "1c7bc45f7de64e3fac1d032e1f98f0be016f0042d5d0e59e154c3e52ac42aaa1",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/19c-ua-390-address-after-tap.png",
+      "utc": "2026-10-04T12:29:10.194005+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 5157
+      },
+      "fonts": "loaded",
+      "sha256": "0e4077d255a0d529dd7fe3852180008a8ffd16a27715aeafaa3b95d069780544",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/20b-ua-390-footer.png",
+      "utc": "2026-10-04T12:30:19.922881+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 5452
+      },
+      "fonts": "loaded",
+      "sha256": "5360377b7622bfcd64145471ffde6bf33667a7efeb8a4d94788ae3e417e49ce1",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/21-ru-320-hero.png",
+      "utc": "2026-10-04T12:31:24.655311+00:00",
+      "url": "https://flowers-luxury.shop/?lang=ru",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "fonts": "loaded",
+      "sha256": "603798d91195cf5b79b438b04553ca5a9788ea83318c8d5c47d11f44ebb82428",
+      "inspected": true,
+      "dimensions": [
+        640,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/22-ru-320-games.png",
+      "utc": "2026-10-04T12:31:26.504544+00:00",
+      "url": "https://flowers-luxury.shop/?lang=ru",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 1534
+      },
+      "fonts": "loaded",
+      "sha256": "93f9039b6c7e4f8c848150df42d61b8598cbb786984b884e831e7fb808c7a11e",
+      "inspected": true,
+      "dimensions": [
+        640,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/23-ua-320-games.png",
+      "utc": "2026-10-04T12:32:10.316218+00:00",
+      "url": "https://flowers-luxury.shop/",
+      "viewport": {
+        "width": 320,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 1510
+      },
+      "fonts": "loaded",
+      "sha256": "bfcde8c67b56b25872df2087b1c71dbc24067227ca20dd8e725c4ef48659ead8",
+      "inspected": true,
+      "dimensions": [
+        640,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/24-ru-390-hero.png",
+      "utc": "2026-10-04T12:32:12.464504+00:00",
+      "url": "https://flowers-luxury.shop/?lang=ru",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "fonts": "loaded",
+      "sha256": "a9291f51bddca919cb1910c41fd7a8c83494bbba74f759b4b92263194857202d",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/25-ru-768-hero.png",
+      "utc": "2026-10-04T12:33:43.206116+00:00",
+      "url": "https://flowers-luxury.shop/?lang=ru",
+      "viewport": {
+        "width": 768,
+        "height": 1000
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "fonts": "loaded",
+      "sha256": "f65d6a2ab3d676a325c3d96557bb333f4db3656822c7f15856d64d4731c31aa7",
+      "inspected": true,
+      "dimensions": [
+        1536,
+        2000
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    },
+    {
+      "file": "/workspace/work/audit-2026-10-04/live/26-ua-390-native-faq.png",
+      "utc": "2026-10-04T12:34:10.448883+00:00",
+      "url": "https://flowers-luxury.shop/faq/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scroll": {
+        "x": 0,
+        "y": 0
+      },
+      "fonts": "loaded",
+      "sha256": "d7cac7679701fb162a0654c88c013e64583e6e6fa315114aca2555ceeaf934eb",
+      "inspected": true,
+      "dimensions": [
+        780,
+        1688
+      ],
+      "sha256_matches": true,
+      "acceptance": "accepted"
+    }
+  ],
+  "network": {
+    "blocked": [],
+    "console": [
+      {
+        "type": "log",
+        "text": "JQMIGRATE: Migrate is installed, version 3.4.1"
+      },
+      {
+        "type": "log",
+        "text": "JQMIGRATE: Migrate is installed, version 3.4.1"
+      },
+      {
+        "type": "log",
+        "text": "JQMIGRATE: Migrate is installed, version 3.4.1"
+      }
+    ],
+    "errors": [],
+    "failed": [],
+    "responses": []
+  },
+  "evidence": [
+    "receipt.json",
+    "receipt-mobile.json",
+    "touch-clickthrough.json",
+    "motion.json",
+    "cold-context-1440.json"
+  ],
+  "limitations": [
+    "Physical Safari and VoiceOver not tested",
+    "No booking or outbound email created; no live POST attempted",
+    "200% zoom not tested",
+    "768 only hero/geometry; not a full tablet interaction audit",
+    "Synthetic Safari-like blur test was not completed: option absent because preceding actualtouch click openedprivacy; actualChromiumtouch reproduced3times instead",
+    "Motion sampled3times per surface, 200ms apart; not a long-run jerk/frame-rate assessment"
+  ]
+}

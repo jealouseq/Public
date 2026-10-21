@@ -1,0 +1,68 @@
+{
+  "captured_date_utc": "2026-10-03",
+  "capture_route": "Remote Desktop Commander start_process; authorized device cfd15436-963a-4eb5-a875-7030017c8a20; Python3 urllib.request over HTTPS with default certificate validation; public assets only, no state mutation. Raw response bytes hashed in memory, no image-tool transcoding.",
+  "local_head": "ed3145f",
+  "all_four_byte_identical": true,
+  "assets": [
+    {
+      "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close-768.webp",
+      "file": "ps5-commercial-desktop-close-768.webp",
+      "http_status": 200,
+      "content_type": "image/webp",
+      "etag": "\"5afe-6ac06ccf-a46da3652fd007be;;;\"",
+      "last_modified": "Sat, 03 Oct 2026 02:47:43 GMT",
+      "bytes": 23294,
+      "sha256": "c729dac325b3bf04cfb9971984da7248a057462138a7a1e9517c5cc3e2e3a46a",
+      "webp_codec": "VP8 ",
+      "width": 768,
+      "height": 576,
+      "local_sha256": "c729dac325b3bf04cfb9971984da7248a057462138a7a1e9517c5cc3e2e3a46a",
+      "exact_local_match": true
+    },
+    {
+      "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-desktop-close.webp",
+      "file": "ps5-commercial-desktop-close.webp",
+      "http_status": 200,
+      "content_type": "image/webp",
+      "etag": "\"1450c-6ac06ccf-a5948ad996394ab3;;;\"",
+      "last_modified": "Sat, 03 Oct 2026 02:47:43 GMT",
+      "bytes": 83212,
+      "sha256": "187bd725dceba21328d1400373b7939f72f49cbcb22f314e06454a2b49ba997c",
+      "webp_codec": "VP8 ",
+      "width": 1448,
+      "height": 1086,
+      "local_sha256": "187bd725dceba21328d1400373b7939f72f49cbcb22f314e06454a2b49ba997c",
+      "exact_local_match": true
+    },
+    {
+      "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile-560.webp",
+      "file": "ps5-commercial-mobile-560.webp",
+      "http_status": 200,
+      "content_type": "image/webp",
+      "etag": "\"2cc6-6ac06ccf-1f3d80e4d96ad390;;;\"",
+      "last_modified": "Sat, 03 Oct 2026 02:47:43 GMT",
+      "bytes": 11462,
+      "sha256": "ea9b32bd167cdeddc444c8c60f8d82906f758f47e82a436bfe08ef646ace605f",
+      "webp_codec": "VP8 ",
+      "width": 560,
+      "height": 420,
+      "local_sha256": "ea9b32bd167cdeddc444c8c60f8d82906f758f47e82a436bfe08ef646ace605f",
+      "exact_local_match": true
+    },
+    {
+      "url": "https://flowers-luxury.shop/wp-content/themes/joyrent/assets/images/ps5-commercial-mobile.webp",
+      "file": "ps5-commercial-mobile.webp",
+      "http_status": 200,
+      "content_type": "image/webp",
+      "etag": "\"bc76-6ac06ccf-19c4b29524da2fb5;;;\"",
+      "last_modified": "Sat, 03 Oct 2026 02:47:43 GMT",
+      "bytes": 48246,
+      "sha256": "9bf292408685518bcf487ad5f76d8d9bda0a96fb7d0d7f0259c9b123154d6806",
+      "webp_codec": "VP8 ",
+      "width": 1120,
+      "height": 840,
+      "local_sha256": "9bf292408685518bcf487ad5f76d8d9bda0a96fb7d0d7f0259c9b123154d6806",
+      "exact_local_match": true
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "language": "uk",
+    "width": 320,
+    "motion": "reduce",
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 320,
+    "motion": "no-preference",
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "motion": "reduce",
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 390,
+    "motion": "no-preference",
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 768,
+    "motion": "reduce",
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 768,
+    "motion": "no-preference",
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 1024,
+    "motion": "reduce",
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 1024,
+    "motion": "no-preference",
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "motion": "reduce",
+    "pass": true
+  },
+  {
+    "language": "uk",
+    "width": 1440,
+    "motion": "no-preference",
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 320,
+    "motion": "reduce",
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 320,
+    "motion": "no-preference",
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "motion": "reduce",
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 390,
+    "motion": "no-preference",
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 768,
+    "motion": "reduce",
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 768,
+    "motion": "no-preference",
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 1024,
+    "motion": "reduce",
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 1024,
+    "motion": "no-preference",
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "motion": "reduce",
+    "pass": true
+  },
+  {
+    "language": "ru",
+    "width": 1440,
+    "motion": "no-preference",
+    "pass": true
+  }
+]

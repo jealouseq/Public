@@ -1,0 +1,2002 @@
+{
+  "cases": [
+    {
+      "language": "uk",
+      "width": 320,
+      "status": "PASS",
+      "realOrders": 0,
+      "realEmails": 0,
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css"
+        ]
+      },
+      "fixturePosts": [
+        {
+          "interceptedBeforeTransmit": true,
+          "realOrders": 0,
+          "realEmails": 0,
+          "checks": {
+            "mode": true,
+            "wish": true,
+            "address": true,
+            "gameIds": true,
+            "name": true,
+            "phone": true,
+            "language": true,
+            "noCity": true,
+            "consent": true,
+            "console": true,
+            "days": true
+          }
+        }
+      ],
+      "unintendedPosts": [],
+      "pageErrors": [],
+      "HTTPFailures": [],
+      "externalRequests": [
+        {
+          "url": "https://tile.openstreetmap.org/10/598/362.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/599/362.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/598/361.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/599/361.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/598/363.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/599/363.png",
+          "method": "GET"
+        }
+      ],
+      "metrics": {
+        "hero": {
+          "lines": [
+            {
+              "text": "Твій вечір.",
+              "tops": [
+                146
+              ],
+              "left": 78.25,
+              "right": 241.75,
+              "h1left": 20,
+              "h1right": 300,
+              "top": 146.09375
+            },
+            {
+              "text": "Твоя PlayStation.",
+              "tops": [
+                179
+              ],
+              "left": 21.828125,
+              "right": 298.171875,
+              "h1left": 20,
+              "h1right": 300,
+              "top": 178.5
+            }
+          ],
+          "actions": [
+            {
+              "x": 36,
+              "y": 332.40625,
+              "w": 248,
+              "h": 54,
+              "right": 284,
+              "bottom": 386.40625,
+              "cx": 160,
+              "cy": 359.40625
+            },
+            {
+              "x": 103.09375,
+              "y": 396.40625,
+              "w": 113.796875,
+              "h": 44,
+              "right": 216.890625,
+              "bottom": 440.40625,
+              "cx": 159.9921875,
+              "cy": 418.40625
+            }
+          ]
+        },
+        "mobileHero": {
+          "primary": {
+            "x": 36,
+            "y": 332.40625,
+            "w": 248,
+            "h": 54,
+            "right": 284,
+            "bottom": 386.40625,
+            "cx": 160,
+            "cy": 359.40625
+          },
+          "tariffLink": {
+            "x": 103.09375,
+            "y": 396.40625,
+            "w": 113.796875,
+            "h": 44,
+            "right": 216.890625,
+            "bottom": 440.40625,
+            "cx": 159.9921875,
+            "cy": 418.40625
+          },
+          "price": {
+            "x": 20,
+            "y": 458.40625,
+            "w": 280,
+            "h": 36,
+            "right": 300,
+            "bottom": 494.40625,
+            "cx": 160,
+            "cy": 476.40625
+          },
+          "brand": {
+            "x": 20,
+            "y": 26,
+            "w": 127,
+            "h": 22,
+            "right": 147,
+            "bottom": 48,
+            "cx": 83.5,
+            "cy": 37
+          },
+          "headerActions": {
+            "x": 160,
+            "y": 15,
+            "w": 140,
+            "h": 44,
+            "right": 300,
+            "bottom": 59,
+            "cx": 230,
+            "cy": 37
+          },
+          "copyAlignment": "center",
+          "primaryTextSize": "15px"
+        },
+        "structure": {
+          "sections": [
+            "top",
+            "rates",
+            "games",
+            "kit",
+            "how-it-works",
+            "booking"
+          ],
+          "fonts": [
+            {
+              "text": "Твій вечір.\nТвоя PlayStation.",
+              "size": "26.56px",
+              "family": "\"Unbounded Variable\", sans-serif"
+            },
+            {
+              "text": "PS5 або PS4 на день, вихідні чи довше.\nОбери консоль і дати — решту узгодимо з тобою.",
+              "size": "14px",
+              "family": "\"Manrope Variable\", sans-serif"
+            },
+            {
+              "text": "Розрахуй вартість.",
+              "size": "29px",
+              "family": "\"Unbounded Variable\", sans-serif"
+            }
+          ],
+          "anchorTargets": "present",
+          "menuEscape": "PASS"
+        },
+        "bookingCard": {
+          "empty": {
+            "x": 20,
+            "y": 24.984375,
+            "w": 280,
+            "h": 176.671875,
+            "right": 300,
+            "bottom": 201.65625,
+            "cx": 160,
+            "cy": 113.3203125
+          },
+          "button": {
+            "x": 37,
+            "y": 134.65625,
+            "w": 246,
+            "h": 48,
+            "right": 283,
+            "bottom": 182.65625,
+            "cx": 160,
+            "cy": 158.65625
+          }
+        },
+        "searchContrast": {
+          "foreground": "rgb(183, 185, 188)",
+          "background": [
+            19.38,
+            21.36,
+            23.34
+          ],
+          "ratio": 9.278
+        },
+        "requestContrast": {
+          "foreground": "rgb(183, 185, 188)",
+          "background": [
+            24.7854,
+            25.3992,
+            25.4784
+          ],
+          "ratio": 8.916
+        },
+        "contactContrast": [
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          },
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          },
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          }
+        ]
+      }
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "status": "PASS",
+      "realOrders": 0,
+      "realEmails": 0,
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css"
+        ]
+      },
+      "fixturePosts": [
+        {
+          "interceptedBeforeTransmit": true,
+          "realOrders": 0,
+          "realEmails": 0,
+          "checks": {
+            "mode": true,
+            "wish": true,
+            "address": true,
+            "gameIds": true,
+            "name": true,
+            "phone": true,
+            "language": true,
+            "noCity": true,
+            "consent": true,
+            "console": true,
+            "days": true
+          }
+        }
+      ],
+      "unintendedPosts": [],
+      "pageErrors": [],
+      "HTTPFailures": [],
+      "externalRequests": [
+        {
+          "url": "https://tile.openstreetmap.org/10/599/362.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/599/361.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/598/362.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/600/362.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/599/363.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/598/361.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/600/361.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/598/363.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/600/363.png",
+          "method": "GET"
+        }
+      ],
+      "metrics": {
+        "hero": {
+          "lines": [
+            {
+              "text": "Твій вечір.",
+              "tops": [
+                146
+              ],
+              "left": 95.359375,
+              "right": 294.640625,
+              "h1left": 24,
+              "h1right": 366,
+              "top": 146.09375
+            },
+            {
+              "text": "Твоя PlayStation.",
+              "tops": [
+                186
+              ],
+              "left": 26.546875,
+              "right": 363.4375,
+              "h1left": 24,
+              "h1right": 366,
+              "top": 185.578125
+            }
+          ],
+          "actions": [
+            {
+              "x": 71,
+              "y": 322.0625,
+              "w": 248,
+              "h": 54,
+              "right": 319,
+              "bottom": 376.0625,
+              "cx": 195,
+              "cy": 349.0625
+            },
+            {
+              "x": 138.09375,
+              "y": 386.0625,
+              "w": 113.796875,
+              "h": 44,
+              "right": 251.890625,
+              "bottom": 430.0625,
+              "cx": 194.9921875,
+              "cy": 408.0625
+            }
+          ]
+        },
+        "mobileHero": {
+          "primary": {
+            "x": 71,
+            "y": 322.0625,
+            "w": 248,
+            "h": 54,
+            "right": 319,
+            "bottom": 376.0625,
+            "cx": 195,
+            "cy": 349.0625
+          },
+          "tariffLink": {
+            "x": 138.09375,
+            "y": 386.0625,
+            "w": 113.796875,
+            "h": 44,
+            "right": 251.890625,
+            "bottom": 430.0625,
+            "cx": 194.9921875,
+            "cy": 408.0625
+          },
+          "price": {
+            "x": 24,
+            "y": 448.0625,
+            "w": 342,
+            "h": 36,
+            "right": 366,
+            "bottom": 484.0625,
+            "cx": 195,
+            "cy": 466.0625
+          },
+          "brand": {
+            "x": 24,
+            "y": 26,
+            "w": 127,
+            "h": 22,
+            "right": 151,
+            "bottom": 48,
+            "cx": 87.5,
+            "cy": 37
+          },
+          "headerActions": {
+            "x": 226,
+            "y": 15,
+            "w": 140,
+            "h": 44,
+            "right": 366,
+            "bottom": 59,
+            "cx": 296,
+            "cy": 37
+          },
+          "copyAlignment": "center",
+          "primaryTextSize": "15px"
+        },
+        "structure": {
+          "sections": [
+            "top",
+            "rates",
+            "games",
+            "kit",
+            "how-it-works",
+            "booking"
+          ],
+          "fonts": [
+            {
+              "text": "Твій вечір.\nТвоя PlayStation.",
+              "size": "32.37px",
+              "family": "\"Unbounded Variable\", sans-serif"
+            },
+            {
+              "text": "PS5 або PS4 на день, вихідні чи довше.\nОбери консоль і дати — решту узгодимо з тобою.",
+              "size": "14px",
+              "family": "\"Manrope Variable\", sans-serif"
+            },
+            {
+              "text": "Розрахуй вартість.",
+              "size": "29px",
+              "family": "\"Unbounded Variable\", sans-serif"
+            }
+          ],
+          "anchorTargets": "present",
+          "menuEscape": "PASS"
+        },
+        "bookingCard": {
+          "empty": {
+            "x": 24,
+            "y": 24.671875,
+            "w": 342,
+            "h": 176.671875,
+            "right": 366,
+            "bottom": 201.34375,
+            "cx": 195,
+            "cy": 113.0078125
+          },
+          "button": {
+            "x": 41,
+            "y": 134.34375,
+            "w": 308,
+            "h": 48,
+            "right": 349,
+            "bottom": 182.34375,
+            "cx": 195,
+            "cy": 158.34375
+          }
+        },
+        "searchContrast": {
+          "foreground": "rgb(183, 185, 188)",
+          "background": [
+            19.38,
+            21.36,
+            23.34
+          ],
+          "ratio": 9.278
+        },
+        "requestContrast": {
+          "foreground": "rgb(183, 185, 188)",
+          "background": [
+            24.7854,
+            25.3992,
+            25.4784
+          ],
+          "ratio": 8.916
+        },
+        "contactContrast": [
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          },
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          },
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          }
+        ]
+      }
+    },
+    {
+      "language": "uk",
+      "width": 1440,
+      "status": "PASS",
+      "realOrders": 0,
+      "realEmails": 0,
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css"
+        ]
+      },
+      "fixturePosts": [
+        {
+          "interceptedBeforeTransmit": true,
+          "realOrders": 0,
+          "realEmails": 0,
+          "checks": {
+            "mode": true,
+            "wish": true,
+            "address": true,
+            "gameIds": true,
+            "name": true,
+            "phone": true,
+            "language": true,
+            "noCity": true,
+            "consent": true,
+            "console": true,
+            "days": true
+          }
+        }
+      ],
+      "unintendedPosts": [],
+      "pageErrors": [],
+      "HTTPFailures": [],
+      "externalRequests": [],
+      "metrics": {
+        "hero": {
+          "lines": [
+            {
+              "text": "Твій вечір.",
+              "tops": [
+                259
+              ],
+              "left": 74.875,
+              "right": 439.453125,
+              "h1left": 74.875,
+              "h1right": 723.34375,
+              "top": 258.9375
+            },
+            {
+              "text": "Твоя PlayStation.",
+              "tops": [
+                330
+              ],
+              "left": 74.875,
+              "right": 691.703125,
+              "h1left": 74.875,
+              "h1right": 723.34375,
+              "top": 330.046875
+            }
+          ],
+          "actions": [
+            {
+              "x": 74.875,
+              "y": 518.34375,
+              "w": 172.859375,
+              "h": 54,
+              "right": 247.734375,
+              "bottom": 572.34375,
+              "cx": 161.3046875,
+              "cy": 545.34375
+            },
+            {
+              "x": 274.734375,
+              "y": 523.34375,
+              "w": 121.921875,
+              "h": 44,
+              "right": 396.65625,
+              "bottom": 567.34375,
+              "cx": 335.6953125,
+              "cy": 545.34375
+            }
+          ]
+        },
+        "structure": {
+          "sections": [
+            "top",
+            "rates",
+            "games",
+            "kit",
+            "how-it-works",
+            "booking"
+          ],
+          "fonts": [
+            {
+              "text": "Твій вечір.\nТвоя PlayStation.",
+              "size": "59.76px",
+              "family": "\"Unbounded Variable\", sans-serif"
+            },
+            {
+              "text": "PS5 або PS4 на день, вихідні чи довше. Обери консоль і дати — решту узгодимо з тобою.",
+              "size": "16px",
+              "family": "\"Manrope Variable\", sans-serif"
+            },
+            {
+              "text": "Розрахуй вартість.",
+              "size": "56px",
+              "family": "\"Unbounded Variable\", sans-serif"
+            }
+          ],
+          "anchorTargets": "present",
+          "menuEscape": "desktop navigation"
+        },
+        "bookingCard": {
+          "empty": {
+            "x": 74.875,
+            "y": 354.640625,
+            "w": 753.03125,
+            "h": 98.625,
+            "right": 827.90625,
+            "bottom": 453.265625,
+            "cx": 451.390625,
+            "cy": 403.953125
+          },
+          "button": {
+            "x": 652.71875,
+            "y": 379.953125,
+            "w": 152.1875,
+            "h": 48,
+            "right": 804.90625,
+            "bottom": 427.953125,
+            "cx": 728.8125,
+            "cy": 403.953125
+          }
+        },
+        "searchContrast": {
+          "foreground": "rgb(183, 185, 188)",
+          "background": [
+            19.38,
+            21.36,
+            23.34
+          ],
+          "ratio": 9.278
+        },
+        "requestContrast": {
+          "foreground": "rgb(183, 185, 188)",
+          "background": [
+            24.7854,
+            25.3992,
+            25.4784
+          ],
+          "ratio": 8.916
+        },
+        "contactContrast": [
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          },
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          },
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          }
+        ]
+      }
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "status": "PASS",
+      "realOrders": 0,
+      "realEmails": 0,
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css"
+        ]
+      },
+      "fixturePosts": [
+        {
+          "interceptedBeforeTransmit": true,
+          "realOrders": 0,
+          "realEmails": 0,
+          "checks": {
+            "mode": true,
+            "wish": true,
+            "address": true,
+            "gameIds": true,
+            "name": true,
+            "phone": true,
+            "language": true,
+            "noCity": true,
+            "consent": true,
+            "console": true,
+            "days": true
+          }
+        }
+      ],
+      "unintendedPosts": [],
+      "pageErrors": [],
+      "HTTPFailures": [],
+      "externalRequests": [
+        {
+          "url": "https://tile.openstreetmap.org/10/598/362.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/599/362.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/598/361.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/599/361.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/598/363.png",
+          "method": "GET"
+        },
+        {
+          "url": "https://tile.openstreetmap.org/10/599/363.png",
+          "method": "GET"
+        }
+      ],
+      "metrics": {
+        "hero": {
+          "lines": [
+            {
+              "text": "Твой вечер.",
+              "tops": [
+                146
+              ],
+              "left": 66.203125,
+              "right": 253.78125,
+              "h1left": 20,
+              "h1right": 300,
+              "top": 146.09375
+            },
+            {
+              "text": "Твоя PlayStation.",
+              "tops": [
+                179
+              ],
+              "left": 21.828125,
+              "right": 298.171875,
+              "h1left": 20,
+              "h1right": 300,
+              "top": 178.5
+            }
+          ],
+          "actions": [
+            {
+              "x": 36,
+              "y": 356.90625,
+              "w": 248,
+              "h": 54,
+              "right": 284,
+              "bottom": 410.90625,
+              "cx": 160,
+              "cy": 383.90625
+            },
+            {
+              "x": 102.390625,
+              "y": 420.90625,
+              "w": 115.203125,
+              "h": 44,
+              "right": 217.59375,
+              "bottom": 464.90625,
+              "cx": 159.9921875,
+              "cy": 442.90625
+            }
+          ]
+        },
+        "mobileHero": {
+          "primary": {
+            "x": 36,
+            "y": 356.90625,
+            "w": 248,
+            "h": 54,
+            "right": 284,
+            "bottom": 410.90625,
+            "cx": 160,
+            "cy": 383.90625
+          },
+          "tariffLink": {
+            "x": 102.390625,
+            "y": 420.90625,
+            "w": 115.203125,
+            "h": 44,
+            "right": 217.59375,
+            "bottom": 464.90625,
+            "cx": 159.9921875,
+            "cy": 442.90625
+          },
+          "price": {
+            "x": 20,
+            "y": 482.90625,
+            "w": 280,
+            "h": 36,
+            "right": 300,
+            "bottom": 518.90625,
+            "cx": 160,
+            "cy": 500.90625
+          },
+          "brand": {
+            "x": 20,
+            "y": 26,
+            "w": 127,
+            "h": 22,
+            "right": 147,
+            "bottom": 48,
+            "cx": 83.5,
+            "cy": 37
+          },
+          "headerActions": {
+            "x": 160,
+            "y": 15,
+            "w": 140,
+            "h": 44,
+            "right": 300,
+            "bottom": 59,
+            "cx": 230,
+            "cy": 37
+          },
+          "copyAlignment": "center",
+          "primaryTextSize": "15px"
+        },
+        "structure": {
+          "sections": [
+            "top",
+            "rates",
+            "games",
+            "kit",
+            "how-it-works",
+            "booking"
+          ],
+          "fonts": [
+            {
+              "text": "Твой вечер.\nТвоя PlayStation.",
+              "size": "26.56px",
+              "family": "\"Unbounded Variable\", sans-serif"
+            },
+            {
+              "text": "PS5 или PS4 на день, выходные или дольше.\nВыбери консоль и даты — остальное согласуем с тобой.",
+              "size": "14px",
+              "family": "\"Manrope Variable\", sans-serif"
+            },
+            {
+              "text": "Рассчитай стоимость.",
+              "size": "29px",
+              "family": "\"Unbounded Variable\", sans-serif"
+            }
+          ],
+          "anchorTargets": "present",
+          "menuEscape": "PASS"
+        },
+        "bookingCard": {
+          "empty": {
+            "x": 20,
+            "y": 24.796875,
+            "w": 280,
+            "h": 176.671875,
+            "right": 300,
+            "bottom": 201.46875,
+            "cx": 160,
+            "cy": 113.1328125
+          },
+          "button": {
+            "x": 37,
+            "y": 134.46875,
+            "w": 246,
+            "h": 48,
+            "right": 283,
+            "bottom": 182.46875,
+            "cx": 160,
+            "cy": 158.46875
+          }
+        },
+        "searchContrast": {
+          "foreground": "rgb(183, 185, 188)",
+          "background": [
+            19.38,
+            21.36,
+            23.34
+          ],
+          "ratio": 9.278
+        },
+        "requestContrast": {
+          "foreground": "rgb(183, 185, 188)",
+          "background": [
+            24.7854,
+            25.3992,
+            25.4784
+          ],
+          "ratio": 8.916
+        },
+        "contactContrast": [
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          },
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          },
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          }
+        ]
+      }
+    },
+    {
+      "language": "ru",
+      "width": 390,
+      "status": "PASS",
+      "realOrders": 0,
+      "realEmails": 0,
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css"
+        ]
+      },
+      "fixturePosts": [
+        {
+          "interceptedBeforeTransmit": true,
+          "realOrders": 0,
+          "realEmails": 0,
+          "checks": {
+            "mode": true,
+            "wish": true,
+            "address": true,
+            "gameIds": true,
+            "name": true,
+            "phone": true,
+            "language": true,
+            "noCity": true,
+            "consent": true,
+            "console": true,
+            "days": true
+          }
+        }
+      ],
+      "unintendedPosts": [],
+      "pageErrors": [],
+      "HTTPFailures": [],
+      "externalRequests": [],
+      "metrics": {
+        "hero": {
+          "lines": [
+            {
+              "text": "Твой вечер.",
+              "tops": [
+                146
+              ],
+              "left": 80.671875,
+              "right": 309.328125,
+              "h1left": 24,
+              "h1right": 366,
+              "top": 146.09375
+            },
+            {
+              "text": "Твоя PlayStation.",
+              "tops": [
+                186
+              ],
+              "left": 26.546875,
+              "right": 363.4375,
+              "h1left": 24,
+              "h1right": 366,
+              "top": 185.578125
+            }
+          ],
+          "actions": [
+            {
+              "x": 71,
+              "y": 346.5625,
+              "w": 248,
+              "h": 54,
+              "right": 319,
+              "bottom": 400.5625,
+              "cx": 195,
+              "cy": 373.5625
+            },
+            {
+              "x": 137.390625,
+              "y": 410.5625,
+              "w": 115.203125,
+              "h": 44,
+              "right": 252.59375,
+              "bottom": 454.5625,
+              "cx": 194.9921875,
+              "cy": 432.5625
+            }
+          ]
+        },
+        "mobileHero": {
+          "primary": {
+            "x": 71,
+            "y": 346.5625,
+            "w": 248,
+            "h": 54,
+            "right": 319,
+            "bottom": 400.5625,
+            "cx": 195,
+            "cy": 373.5625
+          },
+          "tariffLink": {
+            "x": 137.390625,
+            "y": 410.5625,
+            "w": 115.203125,
+            "h": 44,
+            "right": 252.59375,
+            "bottom": 454.5625,
+            "cx": 194.9921875,
+            "cy": 432.5625
+          },
+          "price": {
+            "x": 24,
+            "y": 472.5625,
+            "w": 342,
+            "h": 36,
+            "right": 366,
+            "bottom": 508.5625,
+            "cx": 195,
+            "cy": 490.5625
+          },
+          "brand": {
+            "x": 24,
+            "y": 26,
+            "w": 127,
+            "h": 22,
+            "right": 151,
+            "bottom": 48,
+            "cx": 87.5,
+            "cy": 37
+          },
+          "headerActions": {
+            "x": 226,
+            "y": 15,
+            "w": 140,
+            "h": 44,
+            "right": 366,
+            "bottom": 59,
+            "cx": 296,
+            "cy": 37
+          },
+          "copyAlignment": "center",
+          "primaryTextSize": "15px"
+        },
+        "structure": {
+          "sections": [
+            "top",
+            "rates",
+            "games",
+            "kit",
+            "how-it-works",
+            "booking"
+          ],
+          "fonts": [
+            {
+              "text": "Твой вечер.\nТвоя PlayStation.",
+              "size": "32.37px",
+              "family": "\"Unbounded Variable\", sans-serif"
+            },
+            {
+              "text": "PS5 или PS4 на день, выходные или дольше.\nВыбери консоль и даты — остальное согласуем с тобой.",
+              "size": "14px",
+              "family": "\"Manrope Variable\", sans-serif"
+            },
+            {
+              "text": "Рассчитай стоимость.",
+              "size": "29px",
+              "family": "\"Unbounded Variable\", sans-serif"
+            }
+          ],
+          "anchorTargets": "present",
+          "menuEscape": "PASS"
+        },
+        "bookingCard": {
+          "empty": {
+            "x": 24,
+            "y": 25.25,
+            "w": 342,
+            "h": 176.671875,
+            "right": 366,
+            "bottom": 201.921875,
+            "cx": 195,
+            "cy": 113.5859375
+          },
+          "button": {
+            "x": 41,
+            "y": 134.921875,
+            "w": 308,
+            "h": 48,
+            "right": 349,
+            "bottom": 182.921875,
+            "cx": 195,
+            "cy": 158.921875
+          }
+        },
+        "searchContrast": {
+          "foreground": "rgb(183, 185, 188)",
+          "background": [
+            19.38,
+            21.36,
+            23.34
+          ],
+          "ratio": 9.278
+        },
+        "requestContrast": {
+          "foreground": "rgb(183, 185, 188)",
+          "background": [
+            24.7854,
+            25.3992,
+            25.4784
+          ],
+          "ratio": 8.916
+        },
+        "contactContrast": [
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          },
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          },
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          }
+        ]
+      }
+    },
+    {
+      "language": "ru",
+      "width": 1440,
+      "status": "PASS",
+      "realOrders": 0,
+      "realEmails": 0,
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css"
+        ]
+      },
+      "fixturePosts": [
+        {
+          "interceptedBeforeTransmit": true,
+          "realOrders": 0,
+          "realEmails": 0,
+          "checks": {
+            "mode": true,
+            "wish": true,
+            "address": true,
+            "gameIds": true,
+            "name": true,
+            "phone": true,
+            "language": true,
+            "noCity": true,
+            "consent": true,
+            "console": true,
+            "days": true
+          }
+        }
+      ],
+      "unintendedPosts": [],
+      "pageErrors": [],
+      "HTTPFailures": [],
+      "externalRequests": [],
+      "metrics": {
+        "hero": {
+          "lines": [
+            {
+              "text": "Твой вечер.",
+              "tops": [
+                259
+              ],
+              "left": 74.875,
+              "right": 493.703125,
+              "h1left": 74.875,
+              "h1right": 723.34375,
+              "top": 258.9375
+            },
+            {
+              "text": "Твоя PlayStation.",
+              "tops": [
+                330
+              ],
+              "left": 74.875,
+              "right": 691.703125,
+              "h1left": 74.875,
+              "h1right": 723.34375,
+              "top": 330.046875
+            }
+          ],
+          "actions": [
+            {
+              "x": 74.875,
+              "y": 518.34375,
+              "w": 181.4375,
+              "h": 54,
+              "right": 256.3125,
+              "bottom": 572.34375,
+              "cx": 165.59375,
+              "cy": 545.34375
+            },
+            {
+              "x": 283.3125,
+              "y": 523.34375,
+              "w": 123.4375,
+              "h": 44,
+              "right": 406.75,
+              "bottom": 567.34375,
+              "cx": 345.03125,
+              "cy": 545.34375
+            }
+          ]
+        },
+        "structure": {
+          "sections": [
+            "top",
+            "rates",
+            "games",
+            "kit",
+            "how-it-works",
+            "booking"
+          ],
+          "fonts": [
+            {
+              "text": "Твой вечер.\nТвоя PlayStation.",
+              "size": "59.76px",
+              "family": "\"Unbounded Variable\", sans-serif"
+            },
+            {
+              "text": "PS5 или PS4 на день, выходные или дольше. Выбери консоль и даты — остальное согласуем с тобой.",
+              "size": "16px",
+              "family": "\"Manrope Variable\", sans-serif"
+            },
+            {
+              "text": "Рассчитай стоимость.",
+              "size": "56px",
+              "family": "\"Unbounded Variable\", sans-serif"
+            }
+          ],
+          "anchorTargets": "present",
+          "menuEscape": "desktop navigation"
+        },
+        "bookingCard": {
+          "empty": {
+            "x": 74.875,
+            "y": 332.640625,
+            "w": 753.03125,
+            "h": 120.0625,
+            "right": 827.90625,
+            "bottom": 452.703125,
+            "cx": 451.390625,
+            "cy": 392.671875
+          },
+          "button": {
+            "x": 638.71875,
+            "y": 368.671875,
+            "w": 166.1875,
+            "h": 48,
+            "right": 804.90625,
+            "bottom": 416.671875,
+            "cx": 721.8125,
+            "cy": 392.671875
+          }
+        },
+        "searchContrast": {
+          "foreground": "rgb(183, 185, 188)",
+          "background": [
+            19.38,
+            21.36,
+            23.34
+          ],
+          "ratio": 9.278
+        },
+        "requestContrast": {
+          "foreground": "rgb(183, 185, 188)",
+          "background": [
+            24.7854,
+            25.3992,
+            25.4784
+          ],
+          "ratio": 8.916
+        },
+        "contactContrast": [
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          },
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          },
+          {
+            "foreground": "rgb(155, 157, 162)",
+            "background": [
+              20.0,
+              22.0,
+              24.0
+            ],
+            "ratio": 6.684
+          }
+        ]
+      }
+    }
+  ],
+  "shortViewportCases": [
+    {
+      "width": 844,
+      "height": 220,
+      "status": "PASS",
+      "kind": "supplementary viewport accessibility check",
+      "realOrders": 0,
+      "realEmails": 0,
+      "requestBox": {
+        "x": 66,
+        "y": 49.6875,
+        "w": 712,
+        "h": 48,
+        "right": 778,
+        "bottom": 97.6875,
+        "cx": 422,
+        "cy": 73.6875
+      },
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css"
+        ]
+      },
+      "unintendedPosts": [],
+      "pageErrors": []
+    },
+    {
+      "width": 320,
+      "height": 280,
+      "status": "PASS",
+      "kind": "supplementary viewport accessibility check",
+      "realOrders": 0,
+      "realEmails": 0,
+      "requestBox": {
+        "x": 50,
+        "y": 79.640625,
+        "w": 220,
+        "h": 48,
+        "right": 270,
+        "bottom": 127.640625,
+        "cx": 160,
+        "cy": 103.640625
+      },
+      "entry": {
+        "scripts": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js"
+        ],
+        "styles": [
+          "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css"
+        ]
+      },
+      "unintendedPosts": [],
+      "pageErrors": []
+    }
+  ],
+  "screens": [
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-320-hero.png",
+      "phase": "hero",
+      "language": "uk",
+      "width": 320,
+      "height": 844,
+      "sha256": "cf0b655dda01c93f7eee8706c091047bc405c4db7a791006f253e0a13c3f8a90",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-390-hero.png",
+      "phase": "hero",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "a5a07483fabf9dab5bc92b3b782cc42934e6996593581e86ea5b33812861983d",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-390-tariffs.png",
+      "phase": "tariffs",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "fa19d483b1db40e70d36e691d62a3762a7dea28c798e7d6e4fef65c98ba2ead7",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-390-booking-games-empty.png",
+      "phase": "booking-games-empty",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "996628259758660d9cec6e1ffa3bcab5eb0ab7e478573d585faacf3157fefb88",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-390-game-picker-catalog.png",
+      "phase": "game-picker-catalog",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "99b6a5011b0fd793866c59b76c386d09d88e9723f7aa4e4d4f806793bdce28f4",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-390-game-picker-no-results.png",
+      "phase": "game-picker-no-results",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "6d07a61176265d7c8eca0b2d3f70f9434cae21d616550c01b58c62b859e14b35",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-390-game-picker-request.png",
+      "phase": "game-picker-request",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "09534dd555caab24190c52ea3e5786c78e5e179e4b2ff0041652be353cc7df42",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-390-booking-games-selected.png",
+      "phase": "booking-games-selected",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "4ee17e8602f7fe12370352735fa367e563bff802a19a4c2e130608143715726c",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-390-contact-address-selected.png",
+      "phase": "contact-address-selected",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "0ced86c824828d6388b8525da7879ce0f0ac9befb7c91606488990aea1324410",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-390-contact.png",
+      "phase": "contact",
+      "language": "uk",
+      "width": 390,
+      "height": 844,
+      "sha256": "e489d10565091cb3b95d24c112070f3aed16b930d3fbf5651068daeccf3c9ac1",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-1440-tariffs.png",
+      "phase": "tariffs",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "c667791256b90687afe75a88a1a79d6a55f7e8ab11374d0982bd8808d8f1ebf4",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-1440-booking-games-empty.png",
+      "phase": "booking-games-empty",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "4ca5af5a42724e38ecc26675d8d7507400c96fc69982490123fc43e20fdf80fc",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-1440-game-picker-catalog.png",
+      "phase": "game-picker-catalog",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "b9737be454f2b132c3ffce2fdcea4bfcd70f2eb8fd0c4d86a2cb256f44ab3839",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-1440-game-picker-no-results.png",
+      "phase": "game-picker-no-results",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "3dae58a527f1816b4ec0d6151b6491db12223c880249dd18b2c68c4e285078a4",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-1440-game-picker-request.png",
+      "phase": "game-picker-request",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "dea864dcc56b30d0f041884f7768146b80ff10087f4b6c8fe61adfed14d94948",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-1440-booking-games-selected.png",
+      "phase": "booking-games-selected",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "a6132381cab30d8285f4471884e6397a61d8f481d871012d5a1625e165e8cf66",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-1440-contact-address-selected.png",
+      "phase": "contact-address-selected",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "9d8063d790e892c09d2cfd33dd7e01e1695d12ef78b571eb46e47207b16d33d1",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-1440-contact.png",
+      "phase": "contact",
+      "language": "uk",
+      "width": 1440,
+      "height": 1000,
+      "sha256": "9507938b8ca2c3aac362e0509d1ff2a418ec0f53cbaaaa069f57320c8a242efb",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/ru-320-hero.png",
+      "phase": "hero",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "8316094bc9b16faedb33ba4c60d41dcb2807872878ddaed073ef9f709ba22e2f",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/ru-320-tariffs.png",
+      "phase": "tariffs",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "b3ea581d85130d2ca576f1c15a1e62c93b48b47ca3d4fb56c92dc17e341dda44",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/ru-320-booking-games-empty.png",
+      "phase": "booking-games-empty",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "a5d217a9b916ad571f40d376daf73b02dd6adfebfa9b5cbc79018fb46fa2b806",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/ru-320-game-picker-catalog.png",
+      "phase": "game-picker-catalog",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "2afeb46718da8afd4f4c41d2372051b48321341b464ec52283761b6b21cdeb35",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/ru-320-game-picker-no-results.png",
+      "phase": "game-picker-no-results",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "506848d2ba9cacc9236c1ad14cbcb7e25e542b91e1e82455bdf168fc77769af9",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/ru-320-game-picker-request.png",
+      "phase": "game-picker-request",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "7a583277f4b32a8f302d0dc382574cd05a9cf3e39775fad6e0a5d7cde01cbfd4",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/ru-320-booking-games-selected.png",
+      "phase": "booking-games-selected",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "278dbf631fb33cca4c1b4f4e697860e0f5573c6e923648f4b2044958fdba9ec8",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/ru-320-contact-address-selected.png",
+      "phase": "contact-address-selected",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "5b39fcaa52aca3639d6f294ae7014782d3167a2a35cfba53e672ba8dbcb7b3d9",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/ru-320-contact.png",
+      "phase": "contact",
+      "language": "ru",
+      "width": 320,
+      "height": 844,
+      "sha256": "a428bd67005a1a500776b0d57790cfca815dc2f7183e3d68c194c1d46c981d1a",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/ru-390-hero.png",
+      "phase": "hero",
+      "language": "ru",
+      "width": 390,
+      "height": 844,
+      "sha256": "85be830392ada37cf645264f021641e5d784cef9ba070900154b59074fc4d70f",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-844x220-request.png",
+      "phase": "short-viewport-request",
+      "language": "uk",
+      "width": 844,
+      "height": 220,
+      "sha256": "193a76b0a444a5003636da2092d83495c21d407b939239c95ea4ffd3aa079c32",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    },
+    {
+      "file": "work/refinement-1.9.1/final-screens/uk-320x280-request.png",
+      "phase": "short-viewport-request",
+      "language": "uk",
+      "width": 320,
+      "height": 280,
+      "sha256": "e8ebba27a5296345531aaf22bb7a952a678a4e036c084b0b5d8802dd1703a0a2",
+      "accepted": true,
+      "acceptance": "Final rebuilt native capture visually inspected; no blocking layout, readability, clipping, or focus obstruction found."
+    }
+  ],
+  "build": {
+    "themeVersion": "1.9.1",
+    "pluginVersion": "1.8.0",
+    "assets": [
+      {
+        "file": "wordpress/joyrent/assets/dist/assets/main-RbwlY1GP.js",
+        "packageFile": "work/package/joyrent/assets/dist/assets/main-RbwlY1GP.js",
+        "servedURL": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-RbwlY1GP.js",
+        "sha256": "f53152a44349c38cd1fad9d2110633d3ad4ccd7dca265019ce16c77730aa3ac1",
+        "sourcePackageServedBytesMatch": true
+      },
+      {
+        "file": "wordpress/joyrent/assets/dist/assets/main-CHr9P0rc.css",
+        "packageFile": "work/package/joyrent/assets/dist/assets/main-CHr9P0rc.css",
+        "servedURL": "http://localhost:8080/wp-content/themes/joyrent/assets/dist/assets/main-CHr9P0rc.css",
+        "sha256": "39c8e74a009ff52d4fb7caed276049077f3179845b1a6b33e6f3c3ccd5c26080",
+        "sourcePackageServedBytesMatch": true
+      }
+    ],
+    "manifestSHA256": "b3291317e3c08d678f9cc295af5d7c6802077925b581d0fb57e256e943a26c5b",
+    "sourceFiles": [
+      {
+        "file": "src/App.tsx",
+        "sha256": "3ea64923704874c9aaf53d340b9d3f23013595df6f27d81b4afc70fbadf3f504"
+      },
+      {
+        "file": "src/address-input.css",
+        "sha256": "58ad9a9f05179b9a60bdb8320193b3a35d29a7a58294d215053386b2e398983e"
+      },
+      {
+        "file": "src/booking.css",
+        "sha256": "59479d3193ce58310e5805a8b131f26b075243e25aa7c89173f3a8a0e7a279fd"
+      },
+      {
+        "file": "src/components/BookingGames.tsx",
+        "sha256": "1a28d1194716ef093a944c738f52a3ac7ff65427489f63e92a6067f48c8f860a"
+      },
+      {
+        "file": "src/components/GamePicker.tsx",
+        "sha256": "0638800ec0d308d8d118874e82ddbbc81676ac8d9b9c14d975258cd6ec3a4dc2"
+      },
+      {
+        "file": "src/components/GamePresentation.tsx",
+        "sha256": "44de587c19595aa97996b63292a6d89ade8d7e1a7ba85ccbef268cab2f36a9d5"
+      },
+      {
+        "file": "src/components/OdesaAddressInput.tsx",
+        "sha256": "e32db30e3dec3672a51044d585e16edab8f68bf4acccfc5ed7d0b9b838728910"
+      },
+      {
+        "file": "src/components/SecurityChoice.tsx",
+        "sha256": "64e2813c45352934f3224c80ab403bca1c647cbcc467105e1664433b7457373e"
+      },
+      {
+        "file": "src/components/booking-games.css",
+        "sha256": "d8d71caeefaf9d960c18f7b75633f94f1ebaa5bfaabe9a6c32273dd9d1a886eb"
+      },
+      {
+        "file": "src/contact-refinement.css",
+        "sha256": "6f13c30c06ff0310498e4044f97ebae12476781f2f223ef47f4489fea6b8db8b"
+      },
+      {
+        "file": "src/delivery-map.css",
+        "sha256": "102eb8774e7fc60d5a317d5de3ea85a7a39f33262f143482c6f49eb65ab4cc08"
+      },
+      {
+        "file": "src/delivery.css",
+        "sha256": "08e71e7d73158b9deac03abf64c38439131244d01cb1bea3016d3c34d9a596bb"
+      },
+      {
+        "file": "src/game-picker.css",
+        "sha256": "89e7a1f30f9186a27305572ce467baea3a40492dcb13f7552565ef7f6c7fd5c4"
+      },
+      {
+        "file": "src/hero-mobile-refinement.css",
+        "sha256": "1b31b58aa3bb987b7521672175d27fbca96bd5ad490f41c0d57f72d495261069"
+      },
+      {
+        "file": "src/lib/api.ts",
+        "sha256": "2d46037e072e3f6322e50afe1e288827c06da9041c459d9902a12f0b2102f106"
+      },
+      {
+        "file": "src/lib/copy.test.ts",
+        "sha256": "312ee12c2cdf3d5304096880af04faba02d556f27574ea1ef0674e372b4631f9"
+      },
+      {
+        "file": "src/lib/copy.ts",
+        "sha256": "40a6b465f9e1f238260910273e8099696585be83927f33ba7969fcd3f674ba4d"
+      },
+      {
+        "file": "src/lib/delivery-map-css.d.ts",
+        "sha256": "53bfd2201f1a4e750a6a2fcc010c1bff4cf5ff382dca3ef18e1cd13f79a18d9e"
+      },
+      {
+        "file": "src/lib/delivery-map.test.ts",
+        "sha256": "5d99de9e6eff74f92d807a3282bb44383195bd719b6ec7520303f2abec7aa7ee"
+      },
+      {
+        "file": "src/lib/delivery-map.ts",
+        "sha256": "114f9d6f452969cdf5df6afa3947dde23af6888f0da4b011e05b9804915fe4a5"
+      },
+      {
+        "file": "src/lib/draft.test.ts",
+        "sha256": "189df39a98867772aef91a07e7022ef6b08e97c7aadc205c097474e1449dba51"
+      },
+      {
+        "file": "src/lib/draft.ts",
+        "sha256": "7bd033fa22f13defe807bb5983e8124bf2d604215c6ccd54a8d26d9645bdc6bb"
+      },
+      {
+        "file": "src/lib/game-search.test.ts",
+        "sha256": "3641eafcf179cb90d7d6d0b9b124ae245ef39ffaee4dde9d6c4492c8a0854df7"
+      },
+      {
+        "file": "src/lib/game-search.ts",
+        "sha256": "614de86b67b59b7760675505d4de47e2a1e66d2e6cf6c1c660dfccad04f7b513"
+      },
+      {
+        "file": "src/lib/i18n.tsx",
+        "sha256": "d7d5a17182e5697fddd366c87e67b238f6bad1ea5caa20baa96a5a46a6e21005"
+      },
+      {
+        "file": "src/lib/motion.ts",
+        "sha256": "1079852b0cd7e2685048e53d5de45d896fbe906dcc0875c9040268aabd3e3065"
+      },
+      {
+        "file": "src/lib/odesa-streets.test.ts",
+        "sha256": "0663f4990028382633ecce1a87046c98b0e8e549954005e7e417fe0fdf5ed6e5"
+      },
+      {
+        "file": "src/lib/odesa-streets.ts",
+        "sha256": "a890bf298eb5172ca3f8b3a00c1bc3f38ddd70b60b20de4181c2a246a4fd3900"
+      },
+      {
+        "file": "src/lib/rental.test.ts",
+        "sha256": "c6e08a1b08a0eabdc28a307d18f149a5c09c8b08fb3c5a104f5f6d7318caf3fc"
+      },
+      {
+        "file": "src/lib/rental.ts",
+        "sha256": "369bb5993dbdd717afb526ddf937a3ec5e538216af34f4a68c4033304546ddec"
+      },
+      {
+        "file": "src/main.tsx",
+        "sha256": "694f16d29da43ed3a5781bb1b13fe239905ca917ffd343fd0ab91d76716a5c29"
+      },
+      {
+        "file": "src/sections/Booking.tsx",
+        "sha256": "b04a3aee31dd89f2693b2b7dc974fc7cb84c7fb66d84315c1080a1ad9e1efd04"
+      },
+      {
+        "file": "src/sections/Footer.tsx",
+        "sha256": "1862e3353268d6e3eb981e234c145350538338760eedabfb7c6bee50ad8c2367"
+      },
+      {
+        "file": "src/sections/Games.tsx",
+        "sha256": "1d87833235e640e35b110f36a76752fb9a712162ff8f619ca650aedd81952140"
+      },
+      {
+        "file": "src/sections/Header.tsx",
+        "sha256": "fbe6b34449541b0c5a16fa11ee718e90710c960702f4829b7024342833f57fe1"
+      },
+      {
+        "file": "src/sections/Hero.tsx",
+        "sha256": "244340937c7a11a4ee84ea75e7d9bf776ee11776988d6d2646ec0877eac44590"
+      },
+      {
+        "file": "src/sections/Story.tsx",
+        "sha256": "df8d60bdb05d2a10022f2b49394a336909455b609ec8053aa13ba606ffe2d6db"
+      },
+      {
+        "file": "src/sections/Tariffs.tsx",
+        "sha256": "289ce75d0fbc5a3d3f6c3f798a05a9d7ba66c447c30d06eb129266c0b66c682a"
+      },
+      {
+        "file": "src/story-refinement.css",
+        "sha256": "486293e541de00e12120b5a228232408246f1e80464b521bf556c0afea7dee55"
+      },
+      {
+        "file": "src/styles.css",
+        "sha256": "a62de8aca61b8d43049ce5a5eaa396efdb45fefcab5f5bafe8cfc7f1cb02d5b4"
+      }
+    ],
+    "acceptanceScriptSHA256": "af53cd81eeaceebedcc6965618ecbc7c8888bd3f0f2b1cbdc2161822bfbb79ee",
+    "capturedAtUTC": "2026-10-03T17:02:59.786829+00:00",
+    "sourceChangesSincePreviousReceipt": [
+      "src/hero-mobile-refinement.css"
+    ],
+    "previousReceipt": "work/refinement-1.9.1/history-size204/browser-check-final.json"
+  },
+  "verificationSummary": {
+    "primaryCases": 6,
+    "passedPrimaryCases": 6,
+    "shortViewportCases": 2,
+    "passedShortViewportCases": 2,
+    "visuallyInspectedAcceptedScreens": 30,
+    "fixturePosts": 6,
+    "unintendedPosts": 0,
+    "realOrders": 0,
+    "realEmails": 0,
+    "pageErrors": 0,
+    "HTTPFailures": 0,
+    "contactPlaceholderContrastRatio": 6.684,
+    "searchPlaceholderContrastRatio": 9.278,
+    "requestPlaceholderContrastRatio": 8.916,
+    "mobilePrimaryCTASize": "248×54px",
+    "mobilePrimaryCTAText": "15px",
+    "mobilePrimaryCTASizeVerifiedCases": 4
+  },
+  "evidenceLimits": [
+    "Verified frozen packaged WordPress build locally with Chromium, including real pointer tap/click and keyboard selection. Physical iPhone Safari has not been verified.",
+    "Six submission cases intercepted before transmit and fulfilled with narrow fake200 fixtures; no real order or email was sent.",
+    "The fresh initial full-page typography/legal/FAQ audit preceded these changes. Final targeted release verification captures and inspects changed interfaces and critical flows; it does not claim all unrelated pages were recaptured."
+  ]
+}

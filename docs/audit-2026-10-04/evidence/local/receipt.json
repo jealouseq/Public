@@ -1,0 +1,2747 @@
+{
+  "runUTC": "2026-10-04T12:13:30.875653+00:00",
+  "source": "current packaged local WordPress1.9.2/plugin1.8.1",
+  "cases": [
+    {
+      "language": "uk",
+      "width": 320,
+      "status": "PASS",
+      "HTTPStatus": 200,
+      "metrics": {
+        "title": "JOYRENT — оренда PlayStation 5 та PlayStation 4",
+        "lang": "uk",
+        "height": 7093,
+        "overflow": false,
+        "headings": [
+          {
+            "tag": "H1",
+            "text": "Твій вечір.Твоя PlayStation."
+          },
+          {
+            "tag": "H2",
+            "text": "Обери час для гри."
+          },
+          {
+            "tag": "H3",
+            "text": "На день"
+          },
+          {
+            "tag": "H3",
+            "text": "На вихідні"
+          },
+          {
+            "tag": "H3",
+            "text": "На тиждень"
+          },
+          {
+            "tag": "H3",
+            "text": "На місяць"
+          },
+          {
+            "tag": "H2",
+            "text": "У що зіграємо?"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS FC 27"
+          },
+          {
+            "tag": "H3",
+            "text": "Grand Theft Auto V"
+          },
+          {
+            "tag": "H3",
+            "text": "Mortal Kombat 1"
+          },
+          {
+            "tag": "H3",
+            "text": "S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS UFC 6"
+          },
+          {
+            "tag": "H3",
+            "text": "Tekken 8"
+          },
+          {
+            "tag": "H3",
+            "text": "Split Fiction"
+          },
+          {
+            "tag": "H3",
+            "text": "It Takes Two"
+          },
+          {
+            "tag": "H3",
+            "text": "Call of Duty: Black Ops 7"
+          },
+          {
+            "tag": "H3",
+            "text": "Gran Turismo 7"
+          },
+          {
+            "tag": "H3",
+            "text": "God of War Ragnarök"
+          },
+          {
+            "tag": "H3",
+            "text": "Red Dead Redemption 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Marvel’s Spider-Man 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Hogwarts Legacy"
+          },
+          {
+            "tag": "H3",
+            "text": "ELDEN RING"
+          },
+          {
+            "tag": "H3",
+            "text": "Resident Evil Requiem"
+          },
+          {
+            "tag": "H3",
+            "text": "ASTRO BOT"
+          },
+          {
+            "tag": "H3",
+            "text": "Sackboy: A Big Adventure"
+          },
+          {
+            "tag": "H3",
+            "text": "Horizon Forbidden West"
+          },
+          {
+            "tag": "H2",
+            "text": "Усе готово до гри."
+          },
+          {
+            "tag": "H2",
+            "text": "Від вибору до гри."
+          },
+          {
+            "tag": "H3",
+            "text": "Обери комплект"
+          },
+          {
+            "tag": "H3",
+            "text": "Отримай консоль"
+          },
+          {
+            "tag": "H3",
+            "text": "Грай"
+          },
+          {
+            "tag": "H3",
+            "text": "Привеземо до тебе."
+          },
+          {
+            "tag": "H2",
+            "text": "Зони доставки"
+          },
+          {
+            "tag": "H2",
+            "text": "Розрахуй вартість."
+          },
+          {
+            "tag": "H3",
+            "text": "Ігри за бажанням"
+          },
+          {
+            "tag": "H3",
+            "text": "PlayStation 5"
+          }
+        ],
+        "sections": [
+          {
+            "id": "top",
+            "height": 664.40625,
+            "heading": "Твій вечір.Твоя PlayStation."
+          },
+          {
+            "id": "rates",
+            "height": 871.265625,
+            "heading": "Обери час для гри."
+          },
+          {
+            "id": "games",
+            "height": 669.546875,
+            "heading": "У що зіграємо?"
+          },
+          {
+            "id": "kit",
+            "height": 643.703125,
+            "heading": "Усе готово до гри."
+          },
+          {
+            "id": "how-it-works",
+            "height": 1682.015625,
+            "heading": "Від вибору до гри."
+          },
+          {
+            "id": "booking",
+            "height": 2097.3125,
+            "heading": "Розрахуй вартість."
+          }
+        ],
+        "fonts": [
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          }
+        ],
+        "cta": {
+          "width": 172.859375,
+          "height": 54,
+          "font": "15px",
+          "text": "Обрати PS5 "
+        },
+        "anchorTargets": [
+          {
+            "text": "Перейти до вмісту",
+            "href": "#main-content",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          },
+          {
+            "text": "Консолі",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Ігри",
+            "href": "#games",
+            "targetExists": true
+          },
+          {
+            "text": "Як орендувати",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Контакти",
+            "href": "#contact",
+            "targetExists": true
+          },
+          {
+            "text": "Обрати дати ",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "Обрати PS5 ",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Тарифи PS5 / PS4",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Як отримати консоль ",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Обрати дати",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          }
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "type": "date",
+            "font": "16px",
+            "required": true
+          },
+          {
+            "name": "",
+            "type": "date",
+            "font": "16px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          }
+        ],
+        "menu": {
+          "focus": "<a href=\"#rates\">Консолі<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z\"></path></svg></a>",
+          "expanded": "true",
+          "escapeReturnsFocus": true
+        },
+        "heroRoute": "http://localhost:8080/#rates",
+        "tariffToBooking": {
+          "url": "http://localhost:8080/#rates",
+          "daysButtonPressed": "7 днів",
+          "delivery": "Доставка\nу зеленій / жовтій зоні\nВключено\nЗастава\n25 000 грн\n/ повертається"
+        },
+        "picker": {
+          "count": 19,
+          "role": null,
+          "overflow": false,
+          "focusReturned": true
+        },
+        "contact": {
+          "heading": "Як з тобою зв’язатися?",
+          "startValue": "2026-10-04",
+          "nameFont": "16px",
+          "consentName": "Погоджуюся з умовами оренди та обробкою персональних даних."
+        }
+      },
+      "errors": [],
+      "blockedWrites": [],
+      "blockedExternal": []
+    },
+    {
+      "language": "uk",
+      "width": 390,
+      "status": "PASS",
+      "HTTPStatus": 200,
+      "metrics": {
+        "title": "JOYRENT — оренда PlayStation 5 та PlayStation 4",
+        "lang": "uk",
+        "height": 6654,
+        "overflow": false,
+        "headings": [
+          {
+            "tag": "H1",
+            "text": "Твій вечір.Твоя PlayStation."
+          },
+          {
+            "tag": "H2",
+            "text": "Обери час для гри."
+          },
+          {
+            "tag": "H3",
+            "text": "На день"
+          },
+          {
+            "tag": "H3",
+            "text": "На вихідні"
+          },
+          {
+            "tag": "H3",
+            "text": "На тиждень"
+          },
+          {
+            "tag": "H3",
+            "text": "На місяць"
+          },
+          {
+            "tag": "H2",
+            "text": "У що зіграємо?"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS FC 27"
+          },
+          {
+            "tag": "H3",
+            "text": "Grand Theft Auto V"
+          },
+          {
+            "tag": "H3",
+            "text": "Mortal Kombat 1"
+          },
+          {
+            "tag": "H3",
+            "text": "S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS UFC 6"
+          },
+          {
+            "tag": "H3",
+            "text": "Tekken 8"
+          },
+          {
+            "tag": "H3",
+            "text": "Split Fiction"
+          },
+          {
+            "tag": "H3",
+            "text": "It Takes Two"
+          },
+          {
+            "tag": "H3",
+            "text": "Call of Duty: Black Ops 7"
+          },
+          {
+            "tag": "H3",
+            "text": "Gran Turismo 7"
+          },
+          {
+            "tag": "H3",
+            "text": "God of War Ragnarök"
+          },
+          {
+            "tag": "H3",
+            "text": "Red Dead Redemption 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Marvel’s Spider-Man 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Hogwarts Legacy"
+          },
+          {
+            "tag": "H3",
+            "text": "ELDEN RING"
+          },
+          {
+            "tag": "H3",
+            "text": "Resident Evil Requiem"
+          },
+          {
+            "tag": "H3",
+            "text": "ASTRO BOT"
+          },
+          {
+            "tag": "H3",
+            "text": "Sackboy: A Big Adventure"
+          },
+          {
+            "tag": "H3",
+            "text": "Horizon Forbidden West"
+          },
+          {
+            "tag": "H2",
+            "text": "Усе готово до гри."
+          },
+          {
+            "tag": "H2",
+            "text": "Від вибору до гри."
+          },
+          {
+            "tag": "H3",
+            "text": "Обери комплект"
+          },
+          {
+            "tag": "H3",
+            "text": "Отримай консоль"
+          },
+          {
+            "tag": "H3",
+            "text": "Грай"
+          },
+          {
+            "tag": "H3",
+            "text": "Привеземо до тебе."
+          },
+          {
+            "tag": "H2",
+            "text": "Зони доставки"
+          },
+          {
+            "tag": "H2",
+            "text": "Розрахуй вартість."
+          },
+          {
+            "tag": "H3",
+            "text": "Ігри за бажанням"
+          },
+          {
+            "tag": "H3",
+            "text": "PlayStation 5"
+          }
+        ],
+        "sections": [
+          {
+            "id": "top",
+            "height": 700.5625,
+            "heading": "Твій вечір.Твоя PlayStation."
+          },
+          {
+            "id": "rates",
+            "height": 842.5625,
+            "heading": "Обери час для гри."
+          },
+          {
+            "id": "games",
+            "height": 675.5,
+            "heading": "У що зіграємо?"
+          },
+          {
+            "id": "kit",
+            "height": 626.5625,
+            "heading": "Усе готово до гри."
+          },
+          {
+            "id": "how-it-works",
+            "height": 1577.671875,
+            "heading": "Від вибору до гри."
+          },
+          {
+            "id": "booking",
+            "height": 1832.421875,
+            "heading": "Розрахуй вартість."
+          }
+        ],
+        "fonts": [
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          }
+        ],
+        "cta": {
+          "width": 172.859375,
+          "height": 54,
+          "font": "15px",
+          "text": "Обрати PS5 "
+        },
+        "anchorTargets": [
+          {
+            "text": "Перейти до вмісту",
+            "href": "#main-content",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          },
+          {
+            "text": "Консолі",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Ігри",
+            "href": "#games",
+            "targetExists": true
+          },
+          {
+            "text": "Як орендувати",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Контакти",
+            "href": "#contact",
+            "targetExists": true
+          },
+          {
+            "text": "Обрати дати ",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "Обрати PS5 ",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Тарифи PS5 / PS4",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Як отримати консоль ",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Обрати дати",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          }
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "type": "date",
+            "font": "16px",
+            "required": true
+          },
+          {
+            "name": "",
+            "type": "date",
+            "font": "16px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          }
+        ],
+        "menu": {
+          "focus": "<a href=\"#rates\">Консолі<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z\"></path></svg></a>",
+          "expanded": "true",
+          "escapeReturnsFocus": true
+        },
+        "heroRoute": "http://localhost:8080/#rates",
+        "tariffToBooking": {
+          "url": "http://localhost:8080/#rates",
+          "daysButtonPressed": "7 днів",
+          "delivery": "Доставка\nу зеленій / жовтій зоні\nВключено\nЗастава\n25 000 грн\n/ повертається"
+        },
+        "picker": {
+          "count": 19,
+          "role": null,
+          "overflow": false,
+          "focusReturned": true
+        },
+        "contact": {
+          "heading": "Як з тобою зв’язатися?",
+          "startValue": "2026-10-04",
+          "nameFont": "16px",
+          "consentName": "Погоджуюся з умовами оренди та обробкою персональних даних."
+        }
+      },
+      "errors": [],
+      "blockedWrites": [],
+      "blockedExternal": []
+    },
+    {
+      "language": "uk",
+      "width": 768,
+      "status": "PASS",
+      "HTTPStatus": 200,
+      "metrics": {
+        "title": "JOYRENT — оренда PlayStation 5 та PlayStation 4",
+        "lang": "uk",
+        "height": 5828,
+        "overflow": false,
+        "headings": [
+          {
+            "tag": "H1",
+            "text": "Твій вечір.Твоя PlayStation."
+          },
+          {
+            "tag": "H2",
+            "text": "Обери час для гри."
+          },
+          {
+            "tag": "H3",
+            "text": "На день"
+          },
+          {
+            "tag": "H3",
+            "text": "На вихідні"
+          },
+          {
+            "tag": "H3",
+            "text": "На тиждень"
+          },
+          {
+            "tag": "H3",
+            "text": "На місяць"
+          },
+          {
+            "tag": "H2",
+            "text": "У що зіграємо?"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS FC 27"
+          },
+          {
+            "tag": "H3",
+            "text": "Grand Theft Auto V"
+          },
+          {
+            "tag": "H3",
+            "text": "Mortal Kombat 1"
+          },
+          {
+            "tag": "H3",
+            "text": "S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS UFC 6"
+          },
+          {
+            "tag": "H3",
+            "text": "Tekken 8"
+          },
+          {
+            "tag": "H3",
+            "text": "Split Fiction"
+          },
+          {
+            "tag": "H3",
+            "text": "It Takes Two"
+          },
+          {
+            "tag": "H3",
+            "text": "Call of Duty: Black Ops 7"
+          },
+          {
+            "tag": "H3",
+            "text": "Gran Turismo 7"
+          },
+          {
+            "tag": "H3",
+            "text": "God of War Ragnarök"
+          },
+          {
+            "tag": "H3",
+            "text": "Red Dead Redemption 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Marvel’s Spider-Man 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Hogwarts Legacy"
+          },
+          {
+            "tag": "H3",
+            "text": "ELDEN RING"
+          },
+          {
+            "tag": "H3",
+            "text": "Resident Evil Requiem"
+          },
+          {
+            "tag": "H3",
+            "text": "ASTRO BOT"
+          },
+          {
+            "tag": "H3",
+            "text": "Sackboy: A Big Adventure"
+          },
+          {
+            "tag": "H3",
+            "text": "Horizon Forbidden West"
+          },
+          {
+            "tag": "H2",
+            "text": "Усе готово до гри."
+          },
+          {
+            "tag": "H2",
+            "text": "Від вибору до гри."
+          },
+          {
+            "tag": "H3",
+            "text": "Обери комплект"
+          },
+          {
+            "tag": "H3",
+            "text": "Отримай консоль"
+          },
+          {
+            "tag": "H3",
+            "text": "Грай"
+          },
+          {
+            "tag": "H3",
+            "text": "Привеземо до тебе."
+          },
+          {
+            "tag": "H2",
+            "text": "Зони доставки"
+          },
+          {
+            "tag": "H2",
+            "text": "Розрахуй вартість."
+          },
+          {
+            "tag": "H3",
+            "text": "Ігри за бажанням"
+          },
+          {
+            "tag": "H3",
+            "text": "PlayStation 5"
+          }
+        ],
+        "sections": [
+          {
+            "id": "top",
+            "height": 774.984375,
+            "heading": "Твій вечір.Твоя PlayStation."
+          },
+          {
+            "id": "rates",
+            "height": 820.5,
+            "heading": "Обери час для гри."
+          },
+          {
+            "id": "games",
+            "height": 679.078125,
+            "heading": "У що зіграємо?"
+          },
+          {
+            "id": "kit",
+            "height": 497.09375,
+            "heading": "Усе готово до гри."
+          },
+          {
+            "id": "how-it-works",
+            "height": 1428.65625,
+            "heading": "Від вибору до гри."
+          },
+          {
+            "id": "booking",
+            "height": 1327.078125,
+            "heading": "Розрахуй вартість."
+          }
+        ],
+        "fonts": [
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          }
+        ],
+        "cta": {
+          "width": 159.140625,
+          "height": 50,
+          "font": "14px",
+          "text": "Обрати PS5 "
+        },
+        "anchorTargets": [
+          {
+            "text": "Перейти до вмісту",
+            "href": "#main-content",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          },
+          {
+            "text": "Консолі",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Ігри",
+            "href": "#games",
+            "targetExists": true
+          },
+          {
+            "text": "Як орендувати",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Контакти",
+            "href": "#contact",
+            "targetExists": true
+          },
+          {
+            "text": "Обрати дати ",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "Обрати PS5 ",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Тарифи PS5 / PS4",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Як отримати консоль ",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Обрати дати",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          }
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "type": "date",
+            "font": "15px",
+            "required": true
+          },
+          {
+            "name": "",
+            "type": "date",
+            "font": "15px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          }
+        ],
+        "menu": {
+          "focus": "<a href=\"#rates\">Консолі<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z\"></path></svg></a>",
+          "expanded": "true",
+          "escapeReturnsFocus": true
+        },
+        "heroRoute": "http://localhost:8080/#rates",
+        "tariffToBooking": {
+          "url": "http://localhost:8080/#rates",
+          "daysButtonPressed": "7 днів",
+          "delivery": "Доставка\nу зеленій / жовтій зоні\nВключено\nЗастава\n25 000 грн\n/ повертається"
+        },
+        "picker": {
+          "count": 19,
+          "role": null,
+          "overflow": false,
+          "focusReturned": true
+        },
+        "contact": {
+          "heading": "Як з тобою зв’язатися?",
+          "startValue": "2026-10-04",
+          "nameFont": "16px",
+          "consentName": "Погоджуюся з умовами оренди та обробкою персональних даних."
+        }
+      },
+      "errors": [],
+      "blockedWrites": [],
+      "blockedExternal": []
+    },
+    {
+      "language": "uk",
+      "width": 1440,
+      "status": "PASS",
+      "HTTPStatus": 200,
+      "metrics": {
+        "title": "JOYRENT — оренда PlayStation 5 та PlayStation 4",
+        "lang": "uk",
+        "height": 5305,
+        "overflow": false,
+        "headings": [
+          {
+            "tag": "H1",
+            "text": "Твій вечір.Твоя PlayStation."
+          },
+          {
+            "tag": "H2",
+            "text": "Обери час для гри."
+          },
+          {
+            "tag": "H3",
+            "text": "На день"
+          },
+          {
+            "tag": "H3",
+            "text": "На вихідні"
+          },
+          {
+            "tag": "H3",
+            "text": "На тиждень"
+          },
+          {
+            "tag": "H3",
+            "text": "На місяць"
+          },
+          {
+            "tag": "H2",
+            "text": "У що зіграємо?"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS FC 27"
+          },
+          {
+            "tag": "H3",
+            "text": "Grand Theft Auto V"
+          },
+          {
+            "tag": "H3",
+            "text": "Mortal Kombat 1"
+          },
+          {
+            "tag": "H3",
+            "text": "S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS UFC 6"
+          },
+          {
+            "tag": "H3",
+            "text": "Tekken 8"
+          },
+          {
+            "tag": "H3",
+            "text": "Split Fiction"
+          },
+          {
+            "tag": "H3",
+            "text": "It Takes Two"
+          },
+          {
+            "tag": "H3",
+            "text": "Call of Duty: Black Ops 7"
+          },
+          {
+            "tag": "H3",
+            "text": "Gran Turismo 7"
+          },
+          {
+            "tag": "H3",
+            "text": "God of War Ragnarök"
+          },
+          {
+            "tag": "H3",
+            "text": "Red Dead Redemption 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Marvel’s Spider-Man 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Hogwarts Legacy"
+          },
+          {
+            "tag": "H3",
+            "text": "ELDEN RING"
+          },
+          {
+            "tag": "H3",
+            "text": "Resident Evil Requiem"
+          },
+          {
+            "tag": "H3",
+            "text": "ASTRO BOT"
+          },
+          {
+            "tag": "H3",
+            "text": "Sackboy: A Big Adventure"
+          },
+          {
+            "tag": "H3",
+            "text": "Horizon Forbidden West"
+          },
+          {
+            "tag": "H2",
+            "text": "Усе готово до гри."
+          },
+          {
+            "tag": "H2",
+            "text": "Від вибору до гри."
+          },
+          {
+            "tag": "H3",
+            "text": "Обери комплект"
+          },
+          {
+            "tag": "H3",
+            "text": "Отримай консоль"
+          },
+          {
+            "tag": "H3",
+            "text": "Грай"
+          },
+          {
+            "tag": "H3",
+            "text": "Привеземо до тебе."
+          },
+          {
+            "tag": "H2",
+            "text": "Зони доставки"
+          },
+          {
+            "tag": "H2",
+            "text": "Розрахуй вартість."
+          },
+          {
+            "tag": "H3",
+            "text": "Ігри за бажанням"
+          },
+          {
+            "tag": "H3",
+            "text": "PlayStation 5"
+          }
+        ],
+        "sections": [
+          {
+            "id": "top",
+            "height": 680,
+            "heading": "Твій вечір.Твоя PlayStation."
+          },
+          {
+            "id": "rates",
+            "height": 556.5,
+            "heading": "Обери час для гри."
+          },
+          {
+            "id": "games",
+            "height": 734.84375,
+            "heading": "У що зіграємо?"
+          },
+          {
+            "id": "kit",
+            "height": 644.515625,
+            "heading": "Усе готово до гри."
+          },
+          {
+            "id": "how-it-works",
+            "height": 1217.796875,
+            "heading": "Від вибору до гри."
+          },
+          {
+            "id": "booking",
+            "height": 1158.5,
+            "heading": "Розрахуй вартість."
+          }
+        ],
+        "fonts": [
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          }
+        ],
+        "cta": {
+          "width": 172.859375,
+          "height": 54,
+          "font": "15px",
+          "text": "Обрати PS5 "
+        },
+        "anchorTargets": [
+          {
+            "text": "Перейти до вмісту",
+            "href": "#main-content",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          },
+          {
+            "text": "Консолі",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Ігри",
+            "href": "#games",
+            "targetExists": true
+          },
+          {
+            "text": "Як орендувати",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Контакти",
+            "href": "#contact",
+            "targetExists": true
+          },
+          {
+            "text": "Обрати дати ",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "Обрати PS5 ",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Тарифи PS5 / PS4",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Як отримати консоль ",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Обрати дати",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          }
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "type": "date",
+            "font": "15px",
+            "required": true
+          },
+          {
+            "name": "",
+            "type": "date",
+            "font": "15px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          }
+        ],
+        "heroRoute": "http://localhost:8080/#rates",
+        "tariffToBooking": {
+          "url": "http://localhost:8080/#rates",
+          "daysButtonPressed": "7 днів",
+          "delivery": "Доставка\nу зеленій / жовтій зоні\nВключено\nЗастава\n25 000 грн\n/ повертається"
+        },
+        "picker": {
+          "count": 19,
+          "role": null,
+          "overflow": false,
+          "focusReturned": true
+        },
+        "contact": {
+          "heading": "Як з тобою зв’язатися?",
+          "startValue": "2026-10-04",
+          "nameFont": "16px",
+          "consentName": "Погоджуюся з умовами оренди та обробкою персональних даних."
+        }
+      },
+      "errors": [],
+      "blockedWrites": [],
+      "blockedExternal": []
+    },
+    {
+      "language": "ru",
+      "width": 320,
+      "status": "PASS",
+      "HTTPStatus": 200,
+      "metrics": {
+        "title": "JOYRENT — аренда PlayStation 5 и PlayStation 4",
+        "lang": "ru",
+        "height": 7010,
+        "overflow": false,
+        "headings": [
+          {
+            "tag": "H1",
+            "text": "Твой вечер.Твоя PlayStation."
+          },
+          {
+            "tag": "H2",
+            "text": "Выбери время для игры."
+          },
+          {
+            "tag": "H3",
+            "text": "На день"
+          },
+          {
+            "tag": "H3",
+            "text": "На выходные"
+          },
+          {
+            "tag": "H3",
+            "text": "На неделю"
+          },
+          {
+            "tag": "H3",
+            "text": "На месяц"
+          },
+          {
+            "tag": "H2",
+            "text": "Во что сыграем?"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS FC 27"
+          },
+          {
+            "tag": "H3",
+            "text": "Grand Theft Auto V"
+          },
+          {
+            "tag": "H3",
+            "text": "Mortal Kombat 1"
+          },
+          {
+            "tag": "H3",
+            "text": "S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS UFC 6"
+          },
+          {
+            "tag": "H3",
+            "text": "Tekken 8"
+          },
+          {
+            "tag": "H3",
+            "text": "Split Fiction"
+          },
+          {
+            "tag": "H3",
+            "text": "It Takes Two"
+          },
+          {
+            "tag": "H3",
+            "text": "Call of Duty: Black Ops 7"
+          },
+          {
+            "tag": "H3",
+            "text": "Gran Turismo 7"
+          },
+          {
+            "tag": "H3",
+            "text": "God of War Ragnarök"
+          },
+          {
+            "tag": "H3",
+            "text": "Red Dead Redemption 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Marvel’s Spider-Man 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Hogwarts Legacy"
+          },
+          {
+            "tag": "H3",
+            "text": "ELDEN RING"
+          },
+          {
+            "tag": "H3",
+            "text": "Resident Evil Requiem"
+          },
+          {
+            "tag": "H3",
+            "text": "ASTRO BOT"
+          },
+          {
+            "tag": "H3",
+            "text": "Sackboy: A Big Adventure"
+          },
+          {
+            "tag": "H3",
+            "text": "Horizon Forbidden West"
+          },
+          {
+            "tag": "H2",
+            "text": "Всё готово к игре."
+          },
+          {
+            "tag": "H2",
+            "text": "От выбора до игры."
+          },
+          {
+            "tag": "H3",
+            "text": "Выбери комплект"
+          },
+          {
+            "tag": "H3",
+            "text": "Получи консоль"
+          },
+          {
+            "tag": "H3",
+            "text": "Играй"
+          },
+          {
+            "tag": "H3",
+            "text": "Привезём к тебе."
+          },
+          {
+            "tag": "H2",
+            "text": "Зоны доставки"
+          },
+          {
+            "tag": "H2",
+            "text": "Рассчитай стоимость."
+          },
+          {
+            "tag": "H3",
+            "text": "Игры по желанию"
+          },
+          {
+            "tag": "H3",
+            "text": "PlayStation 5"
+          }
+        ],
+        "sections": [
+          {
+            "id": "top",
+            "height": 688.90625,
+            "heading": "Твой вечер.Твоя PlayStation."
+          },
+          {
+            "id": "rates",
+            "height": 871.265625,
+            "heading": "Выбери время для игры."
+          },
+          {
+            "id": "games",
+            "height": 669.546875,
+            "heading": "Во что сыграем?"
+          },
+          {
+            "id": "kit",
+            "height": 622.90625,
+            "heading": "Всё готово к игре."
+          },
+          {
+            "id": "how-it-works",
+            "height": 1595.125,
+            "heading": "От выбора до игры."
+          },
+          {
+            "id": "booking",
+            "height": 2097.3125,
+            "heading": "Рассчитай стоимость."
+          }
+        ],
+        "fonts": [
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          }
+        ],
+        "cta": {
+          "width": 181.4375,
+          "height": 54,
+          "font": "15px",
+          "text": "Выбрать PS5 "
+        },
+        "anchorTargets": [
+          {
+            "text": "Перейти к содержимому",
+            "href": "#main-content",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          },
+          {
+            "text": "Консоли",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Игры",
+            "href": "#games",
+            "targetExists": true
+          },
+          {
+            "text": "Как арендовать",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Контакты",
+            "href": "#contact",
+            "targetExists": true
+          },
+          {
+            "text": "Выбрать даты ",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "Выбрать PS5 ",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Тарифы PS5 / PS4",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Как получить консоль ",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Выбрать даты",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          }
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "type": "date",
+            "font": "16px",
+            "required": true
+          },
+          {
+            "name": "",
+            "type": "date",
+            "font": "16px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          }
+        ],
+        "menu": {
+          "focus": "<a href=\"#rates\">Консоли<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z\"></path></svg></a>",
+          "expanded": "true",
+          "escapeReturnsFocus": true
+        },
+        "heroRoute": "http://localhost:8080/?lang=ru#rates",
+        "tariffToBooking": {
+          "url": "http://localhost:8080/?lang=ru#rates",
+          "daysButtonPressed": "7 дней",
+          "delivery": "Доставка\nв зелёной / жёлтой зоне\nВключено\nЗалог\n25 000 грн\n/ возвращается"
+        },
+        "picker": {
+          "count": 19,
+          "role": null,
+          "overflow": false,
+          "focusReturned": true
+        },
+        "contact": {
+          "heading": "Как с тобой связаться?",
+          "startValue": "2026-10-04",
+          "nameFont": "16px",
+          "consentName": "Соглашаюсь с условиями аренды и обработкой персональных данных."
+        }
+      },
+      "errors": [],
+      "blockedWrites": [],
+      "blockedExternal": []
+    },
+    {
+      "language": "ru",
+      "width": 390,
+      "status": "PASS",
+      "HTTPStatus": 200,
+      "metrics": {
+        "title": "JOYRENT — аренда PlayStation 5 и PlayStation 4",
+        "lang": "ru",
+        "height": 6776,
+        "overflow": false,
+        "headings": [
+          {
+            "tag": "H1",
+            "text": "Твой вечер.Твоя PlayStation."
+          },
+          {
+            "tag": "H2",
+            "text": "Выбери время для игры."
+          },
+          {
+            "tag": "H3",
+            "text": "На день"
+          },
+          {
+            "tag": "H3",
+            "text": "На выходные"
+          },
+          {
+            "tag": "H3",
+            "text": "На неделю"
+          },
+          {
+            "tag": "H3",
+            "text": "На месяц"
+          },
+          {
+            "tag": "H2",
+            "text": "Во что сыграем?"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS FC 27"
+          },
+          {
+            "tag": "H3",
+            "text": "Grand Theft Auto V"
+          },
+          {
+            "tag": "H3",
+            "text": "Mortal Kombat 1"
+          },
+          {
+            "tag": "H3",
+            "text": "S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS UFC 6"
+          },
+          {
+            "tag": "H3",
+            "text": "Tekken 8"
+          },
+          {
+            "tag": "H3",
+            "text": "Split Fiction"
+          },
+          {
+            "tag": "H3",
+            "text": "It Takes Two"
+          },
+          {
+            "tag": "H3",
+            "text": "Call of Duty: Black Ops 7"
+          },
+          {
+            "tag": "H3",
+            "text": "Gran Turismo 7"
+          },
+          {
+            "tag": "H3",
+            "text": "God of War Ragnarök"
+          },
+          {
+            "tag": "H3",
+            "text": "Red Dead Redemption 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Marvel’s Spider-Man 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Hogwarts Legacy"
+          },
+          {
+            "tag": "H3",
+            "text": "ELDEN RING"
+          },
+          {
+            "tag": "H3",
+            "text": "Resident Evil Requiem"
+          },
+          {
+            "tag": "H3",
+            "text": "ASTRO BOT"
+          },
+          {
+            "tag": "H3",
+            "text": "Sackboy: A Big Adventure"
+          },
+          {
+            "tag": "H3",
+            "text": "Horizon Forbidden West"
+          },
+          {
+            "tag": "H2",
+            "text": "Всё готово к игре."
+          },
+          {
+            "tag": "H2",
+            "text": "От выбора до игры."
+          },
+          {
+            "tag": "H3",
+            "text": "Выбери комплект"
+          },
+          {
+            "tag": "H3",
+            "text": "Получи консоль"
+          },
+          {
+            "tag": "H3",
+            "text": "Играй"
+          },
+          {
+            "tag": "H3",
+            "text": "Привезём к тебе."
+          },
+          {
+            "tag": "H2",
+            "text": "Зоны доставки"
+          },
+          {
+            "tag": "H2",
+            "text": "Рассчитай стоимость."
+          },
+          {
+            "tag": "H3",
+            "text": "Игры по желанию"
+          },
+          {
+            "tag": "H3",
+            "text": "PlayStation 5"
+          }
+        ],
+        "sections": [
+          {
+            "id": "top",
+            "height": 725.0625,
+            "heading": "Твой вечер.Твоя PlayStation."
+          },
+          {
+            "id": "rates",
+            "height": 878.953125,
+            "heading": "Выбери время для игры."
+          },
+          {
+            "id": "games",
+            "height": 675.5,
+            "heading": "Во что сыграем?"
+          },
+          {
+            "id": "kit",
+            "height": 626.5625,
+            "heading": "Всё готово к игре."
+          },
+          {
+            "id": "how-it-works",
+            "height": 1577.671875,
+            "heading": "От выбора до игры."
+          },
+          {
+            "id": "booking",
+            "height": 1893.265625,
+            "heading": "Рассчитай стоимость."
+          }
+        ],
+        "fonts": [
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          }
+        ],
+        "cta": {
+          "width": 181.4375,
+          "height": 54,
+          "font": "15px",
+          "text": "Выбрать PS5 "
+        },
+        "anchorTargets": [
+          {
+            "text": "Перейти к содержимому",
+            "href": "#main-content",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          },
+          {
+            "text": "Консоли",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Игры",
+            "href": "#games",
+            "targetExists": true
+          },
+          {
+            "text": "Как арендовать",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Контакты",
+            "href": "#contact",
+            "targetExists": true
+          },
+          {
+            "text": "Выбрать даты ",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "Выбрать PS5 ",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Тарифы PS5 / PS4",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Как получить консоль ",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Выбрать даты",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          }
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "type": "date",
+            "font": "16px",
+            "required": true
+          },
+          {
+            "name": "",
+            "type": "date",
+            "font": "16px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          }
+        ],
+        "menu": {
+          "focus": "<a href=\"#rates\">Консоли<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z\"></path></svg></a>",
+          "expanded": "true",
+          "escapeReturnsFocus": true
+        },
+        "heroRoute": "http://localhost:8080/?lang=ru#rates",
+        "tariffToBooking": {
+          "url": "http://localhost:8080/?lang=ru#rates",
+          "daysButtonPressed": "7 дней",
+          "delivery": "Доставка\nв зелёной / жёлтой зоне\nВключено\nЗалог\n25 000 грн\n/ возвращается"
+        },
+        "picker": {
+          "count": 19,
+          "role": null,
+          "overflow": false,
+          "focusReturned": true
+        },
+        "contact": {
+          "heading": "Как с тобой связаться?",
+          "startValue": "2026-10-04",
+          "nameFont": "16px",
+          "consentName": "Соглашаюсь с условиями аренды и обработкой персональных данных."
+        }
+      },
+      "errors": [],
+      "blockedWrites": [],
+      "blockedExternal": []
+    },
+    {
+      "language": "ru",
+      "width": 768,
+      "status": "PASS",
+      "HTTPStatus": 200,
+      "metrics": {
+        "title": "JOYRENT — аренда PlayStation 5 и PlayStation 4",
+        "lang": "ru",
+        "height": 5807,
+        "overflow": false,
+        "headings": [
+          {
+            "tag": "H1",
+            "text": "Твой вечер.Твоя PlayStation."
+          },
+          {
+            "tag": "H2",
+            "text": "Выбери время для игры."
+          },
+          {
+            "tag": "H3",
+            "text": "На день"
+          },
+          {
+            "tag": "H3",
+            "text": "На выходные"
+          },
+          {
+            "tag": "H3",
+            "text": "На неделю"
+          },
+          {
+            "tag": "H3",
+            "text": "На месяц"
+          },
+          {
+            "tag": "H2",
+            "text": "Во что сыграем?"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS FC 27"
+          },
+          {
+            "tag": "H3",
+            "text": "Grand Theft Auto V"
+          },
+          {
+            "tag": "H3",
+            "text": "Mortal Kombat 1"
+          },
+          {
+            "tag": "H3",
+            "text": "S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS UFC 6"
+          },
+          {
+            "tag": "H3",
+            "text": "Tekken 8"
+          },
+          {
+            "tag": "H3",
+            "text": "Split Fiction"
+          },
+          {
+            "tag": "H3",
+            "text": "It Takes Two"
+          },
+          {
+            "tag": "H3",
+            "text": "Call of Duty: Black Ops 7"
+          },
+          {
+            "tag": "H3",
+            "text": "Gran Turismo 7"
+          },
+          {
+            "tag": "H3",
+            "text": "God of War Ragnarök"
+          },
+          {
+            "tag": "H3",
+            "text": "Red Dead Redemption 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Marvel’s Spider-Man 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Hogwarts Legacy"
+          },
+          {
+            "tag": "H3",
+            "text": "ELDEN RING"
+          },
+          {
+            "tag": "H3",
+            "text": "Resident Evil Requiem"
+          },
+          {
+            "tag": "H3",
+            "text": "ASTRO BOT"
+          },
+          {
+            "tag": "H3",
+            "text": "Sackboy: A Big Adventure"
+          },
+          {
+            "tag": "H3",
+            "text": "Horizon Forbidden West"
+          },
+          {
+            "tag": "H2",
+            "text": "Всё готово к игре."
+          },
+          {
+            "tag": "H2",
+            "text": "От выбора до игры."
+          },
+          {
+            "tag": "H3",
+            "text": "Выбери комплект"
+          },
+          {
+            "tag": "H3",
+            "text": "Получи консоль"
+          },
+          {
+            "tag": "H3",
+            "text": "Играй"
+          },
+          {
+            "tag": "H3",
+            "text": "Привезём к тебе."
+          },
+          {
+            "tag": "H2",
+            "text": "Зоны доставки"
+          },
+          {
+            "tag": "H2",
+            "text": "Рассчитай стоимость."
+          },
+          {
+            "tag": "H3",
+            "text": "Игры по желанию"
+          },
+          {
+            "tag": "H3",
+            "text": "PlayStation 5"
+          }
+        ],
+        "sections": [
+          {
+            "id": "top",
+            "height": 774.984375,
+            "heading": "Твой вечер.Твоя PlayStation."
+          },
+          {
+            "id": "rates",
+            "height": 820.5,
+            "heading": "Выбери время для игры."
+          },
+          {
+            "id": "games",
+            "height": 679.078125,
+            "heading": "Во что сыграем?"
+          },
+          {
+            "id": "kit",
+            "height": 476.296875,
+            "heading": "Всё готово к игре."
+          },
+          {
+            "id": "how-it-works",
+            "height": 1428.65625,
+            "heading": "От выбора до игры."
+          },
+          {
+            "id": "booking",
+            "height": 1326.421875,
+            "heading": "Рассчитай стоимость."
+          }
+        ],
+        "fonts": [
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          }
+        ],
+        "cta": {
+          "width": 167.140625,
+          "height": 50,
+          "font": "14px",
+          "text": "Выбрать PS5 "
+        },
+        "anchorTargets": [
+          {
+            "text": "Перейти к содержимому",
+            "href": "#main-content",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          },
+          {
+            "text": "Консоли",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Игры",
+            "href": "#games",
+            "targetExists": true
+          },
+          {
+            "text": "Как арендовать",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Контакты",
+            "href": "#contact",
+            "targetExists": true
+          },
+          {
+            "text": "Выбрать даты ",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "Выбрать PS5 ",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Тарифы PS5 / PS4",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Как получить консоль ",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Выбрать даты",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          }
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "type": "date",
+            "font": "15px",
+            "required": true
+          },
+          {
+            "name": "",
+            "type": "date",
+            "font": "15px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          }
+        ],
+        "menu": {
+          "focus": "<a href=\"#rates\">Консоли<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" viewBox=\"0 0 256 256\"><path d=\"M200,64V168a8,8,0,0,1-16,0V83.31L69.66,197.66a8,8,0,0,1-11.32-11.32L172.69,72H88a8,8,0,0,1,0-16H192A8,8,0,0,1,200,64Z\"></path></svg></a>",
+          "expanded": "true",
+          "escapeReturnsFocus": true
+        },
+        "heroRoute": "http://localhost:8080/?lang=ru#rates",
+        "tariffToBooking": {
+          "url": "http://localhost:8080/?lang=ru#rates",
+          "daysButtonPressed": "7 дней",
+          "delivery": "Доставка\nв зелёной / жёлтой зоне\nВключено\nЗалог\n25 000 грн\n/ возвращается"
+        },
+        "picker": {
+          "count": 19,
+          "role": null,
+          "overflow": false,
+          "focusReturned": true
+        },
+        "contact": {
+          "heading": "Как с тобой связаться?",
+          "startValue": "2026-10-04",
+          "nameFont": "16px",
+          "consentName": "Соглашаюсь с условиями аренды и обработкой персональных данных."
+        }
+      },
+      "errors": [],
+      "blockedWrites": [],
+      "blockedExternal": []
+    },
+    {
+      "language": "ru",
+      "width": 1440,
+      "status": "PASS",
+      "HTTPStatus": 200,
+      "metrics": {
+        "title": "JOYRENT — аренда PlayStation 5 и PlayStation 4",
+        "lang": "ru",
+        "height": 5327,
+        "overflow": false,
+        "headings": [
+          {
+            "tag": "H1",
+            "text": "Твой вечер.Твоя PlayStation."
+          },
+          {
+            "tag": "H2",
+            "text": "Выбери время для игры."
+          },
+          {
+            "tag": "H3",
+            "text": "На день"
+          },
+          {
+            "tag": "H3",
+            "text": "На выходные"
+          },
+          {
+            "tag": "H3",
+            "text": "На неделю"
+          },
+          {
+            "tag": "H3",
+            "text": "На месяц"
+          },
+          {
+            "tag": "H2",
+            "text": "Во что сыграем?"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS FC 27"
+          },
+          {
+            "tag": "H3",
+            "text": "Grand Theft Auto V"
+          },
+          {
+            "tag": "H3",
+            "text": "Mortal Kombat 1"
+          },
+          {
+            "tag": "H3",
+            "text": "S.T.A.L.K.E.R. 2: Heart of Chornobyl"
+          },
+          {
+            "tag": "H3",
+            "text": "EA SPORTS UFC 6"
+          },
+          {
+            "tag": "H3",
+            "text": "Tekken 8"
+          },
+          {
+            "tag": "H3",
+            "text": "Split Fiction"
+          },
+          {
+            "tag": "H3",
+            "text": "It Takes Two"
+          },
+          {
+            "tag": "H3",
+            "text": "Call of Duty: Black Ops 7"
+          },
+          {
+            "tag": "H3",
+            "text": "Gran Turismo 7"
+          },
+          {
+            "tag": "H3",
+            "text": "God of War Ragnarök"
+          },
+          {
+            "tag": "H3",
+            "text": "Red Dead Redemption 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Marvel’s Spider-Man 2"
+          },
+          {
+            "tag": "H3",
+            "text": "Hogwarts Legacy"
+          },
+          {
+            "tag": "H3",
+            "text": "ELDEN RING"
+          },
+          {
+            "tag": "H3",
+            "text": "Resident Evil Requiem"
+          },
+          {
+            "tag": "H3",
+            "text": "ASTRO BOT"
+          },
+          {
+            "tag": "H3",
+            "text": "Sackboy: A Big Adventure"
+          },
+          {
+            "tag": "H3",
+            "text": "Horizon Forbidden West"
+          },
+          {
+            "tag": "H2",
+            "text": "Всё готово к игре."
+          },
+          {
+            "tag": "H2",
+            "text": "От выбора до игры."
+          },
+          {
+            "tag": "H3",
+            "text": "Выбери комплект"
+          },
+          {
+            "tag": "H3",
+            "text": "Получи консоль"
+          },
+          {
+            "tag": "H3",
+            "text": "Играй"
+          },
+          {
+            "tag": "H3",
+            "text": "Привезём к тебе."
+          },
+          {
+            "tag": "H2",
+            "text": "Зоны доставки"
+          },
+          {
+            "tag": "H2",
+            "text": "Рассчитай стоимость."
+          },
+          {
+            "tag": "H3",
+            "text": "Игры по желанию"
+          },
+          {
+            "tag": "H3",
+            "text": "PlayStation 5"
+          }
+        ],
+        "sections": [
+          {
+            "id": "top",
+            "height": 680,
+            "heading": "Твой вечер.Твоя PlayStation."
+          },
+          {
+            "id": "rates",
+            "height": 556.5,
+            "heading": "Выбери время для игры."
+          },
+          {
+            "id": "games",
+            "height": 734.84375,
+            "heading": "Во что сыграем?"
+          },
+          {
+            "id": "kit",
+            "height": 644.515625,
+            "heading": "Всё готово к игре."
+          },
+          {
+            "id": "how-it-works",
+            "height": 1217.796875,
+            "heading": "От выбора до игры."
+          },
+          {
+            "id": "booking",
+            "height": 1179.9375,
+            "heading": "Рассчитай стоимость."
+          }
+        ],
+        "fonts": [
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Unbounded Variable",
+            "weight": "200 900"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Manrope Variable",
+            "weight": "200 800"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          },
+          {
+            "family": "Onest Variable",
+            "weight": "100 900"
+          }
+        ],
+        "cta": {
+          "width": 181.4375,
+          "height": 54,
+          "font": "15px",
+          "text": "Выбрать PS5 "
+        },
+        "anchorTargets": [
+          {
+            "text": "Перейти к содержимому",
+            "href": "#main-content",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          },
+          {
+            "text": "Консоли",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Игры",
+            "href": "#games",
+            "targetExists": true
+          },
+          {
+            "text": "Как арендовать",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Контакты",
+            "href": "#contact",
+            "targetExists": true
+          },
+          {
+            "text": "Выбрать даты ",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "Выбрать PS5 ",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Тарифы PS5 / PS4",
+            "href": "#rates",
+            "targetExists": true
+          },
+          {
+            "text": "Как получить консоль ",
+            "href": "#how-it-works",
+            "targetExists": true
+          },
+          {
+            "text": "Выбрать даты",
+            "href": "#booking",
+            "targetExists": true
+          },
+          {
+            "text": "JOYRENT.",
+            "href": "#top",
+            "targetExists": true
+          }
+        ],
+        "inputs": [
+          {
+            "name": "",
+            "type": "date",
+            "font": "15px",
+            "required": true
+          },
+          {
+            "name": "",
+            "type": "date",
+            "font": "15px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          },
+          {
+            "name": "_r_5_-security",
+            "type": "radio",
+            "font": "16px",
+            "required": false
+          }
+        ],
+        "heroRoute": "http://localhost:8080/?lang=ru#rates",
+        "tariffToBooking": {
+          "url": "http://localhost:8080/?lang=ru#rates",
+          "daysButtonPressed": "7 дней",
+          "delivery": "Доставка\nв зелёной / жёлтой зоне\nВключено\nЗалог\n25 000 грн\n/ возвращается"
+        },
+        "picker": {
+          "count": 19,
+          "role": null,
+          "overflow": false,
+          "focusReturned": true
+        },
+        "contact": {
+          "heading": "Как с тобой связаться?",
+          "startValue": "2026-10-04",
+          "nameFont": "16px",
+          "consentName": "Соглашаюсь с условиями аренды и обработкой персональных данных."
+        }
+      },
+      "errors": [],
+      "blockedWrites": [],
+      "blockedExternal": []
+    }
+  ],
+  "screens": [
+    {
+      "file": "/workspace/Public/work/audit-2026-10-04/local/uk-390-01-hero.png",
+      "sha256": "92b26ec98582c0e055f8a363329f7a6bcc83d17c028ac43638d6b156982aac28",
+      "accepted": false
+    },
+    {
+      "file": "/workspace/Public/work/audit-2026-10-04/local/uk-390-02-rates.png",
+      "sha256": "0f0c89e2e62797dab7e6e8f62cbb491a72fba4ab02f1401f98a95e768a486198",
+      "accepted": false
+    },
+    {
+      "file": "/workspace/Public/work/audit-2026-10-04/local/uk-390-03-games.png",
+      "sha256": "578d470fd895782b9df88bfe7ab4c7ec7e65108ecf4ab76d6f879986e2625557",
+      "accepted": false
+    },
+    {
+      "file": "/workspace/Public/work/audit-2026-10-04/local/uk-390-04-kit.png",
+      "sha256": "a97ce540a63c3c5ee209bba5bffadc2567837bd62141a0bac76eaa482a0b9879",
+      "accepted": false
+    },
+    {
+      "file": "/workspace/Public/work/audit-2026-10-04/local/uk-390-05-how-it-works.png",
+      "sha256": "02c422fc4922b8f122f2515ffc8662cacc2f8730d185375e8190720d439198f7",
+      "accepted": false
+    },
+    {
+      "file": "/workspace/Public/work/audit-2026-10-04/local/uk-390-06-delivery.png",
+      "sha256": "aa3cbd544dd074726f75346b1aa02418df1b76c06e64c1cfdb29fa3ae437a9cb",
+      "accepted": false
+    },
+    {
+      "file": "/workspace/Public/work/audit-2026-10-04/local/uk-390-07-booking.png",
+      "sha256": "32a333f7973aede2c4b45afdc5a19236ff27f453f23e49ba8646c53ff35685ea",
+      "accepted": false
+    },
+    {
+      "file": "/workspace/Public/work/audit-2026-10-04/local/uk-390-08-contact.png",
+      "sha256": "ab3014f88434388a39237573e5f49620f5e3025ab63a1b899d72da8b7de88eff",
+      "accepted": false
+    },
+    {
+      "file": "/workspace/Public/work/audit-2026-10-04/local/uk-1440-01-hero.png",
+      "sha256": "785fe7a3edda8367d74cbe82b409757c533a54ba428bce0c00ea7e6a07f9ded8",
+      "accepted": false
+    },
+    {
+      "file": "/workspace/Public/work/audit-2026-10-04/local/ru-390-01-hero.png",
+      "sha256": "d75a4dd95905ab12c27c9d5da4cf4ba04f4861bd402de7e2978b15088f7c2a81",
+      "accepted": false
+    },
+    {
+      "file": "/workspace/Public/work/audit-2026-10-04/local/ru-390-08-contact.png",
+      "sha256": "80426be6b8152182aba2411fbf18b23ffa325d80b3a2f3d4916af00675a5f146",
+      "accepted": false
+    },
+    {
+      "file": "/workspace/Public/work/audit-2026-10-04/local/ru-1440-01-hero.png",
+      "sha256": "0f12e22940e5ad2d8e3e3b4beb89a8ce19586ddabb70511af6261547d11f3507",
+      "accepted": false
+    }
+  ],
+  "physicalSafari": false
+}
