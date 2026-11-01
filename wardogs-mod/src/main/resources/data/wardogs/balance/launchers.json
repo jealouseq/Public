@@ -1,0 +1,34 @@
+{
+ "_comment": "Launchers share the weapon system (weapons.json: price, unlock, magazine, reload). Here: projectile behaviour. Damage/price of rpg7, maaws, mgl40 from sources; speed, gravity, blast radius, vehicle multiplier, homing and the Verba price are ESTIMATES.",
+ "launchers": {
+  "rpg7": {
+   "kind": "at",
+   "speed": 3.0,
+   "gravity": 0.012,
+   "blast": 3.0,
+   "vehicle_mult": 9.0
+  },
+  "maaws": {
+   "kind": "at",
+   "speed": 3.4,
+   "gravity": 0.008,
+   "blast": 3.5,
+   "vehicle_mult": 13.0
+  },
+  "mgl40": {
+   "kind": "grenade",
+   "speed": 1.8,
+   "gravity": 0.045,
+   "blast": 3.5,
+   "vehicle_mult": 1.0
+  },
+  "verba": {
+   "kind": "aa",
+   "speed": 2.6,
+   "gravity": 0.0,
+   "blast": 4.0,
+   "vehicle_mult": 12.0,
+   "homing": true
+  }
+ }
+}

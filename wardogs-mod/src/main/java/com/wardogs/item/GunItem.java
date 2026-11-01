@@ -4,6 +4,7 @@ import com.wardogs.balance.AmmoType;
 import com.wardogs.balance.Balance;
 import com.wardogs.balance.WeaponDef;
 import com.wardogs.combat.Ballistics;
+import com.wardogs.explosive.Launchers;
 import com.wardogs.combat.ShooterState;
 import com.wardogs.medic.Downed;
 import net.minecraft.network.chat.Component;
@@ -130,7 +131,11 @@ public class GunItem extends Item {
         stack.set(ModComponents.AMMO.get(), ammo - 1);
         // Schedule from the previous due time to keep the average rate exact (e.g. 786 rpm = 1.53 ticks/shot).
         st.nextShotTime = Math.max(st.nextShotTime, now - 1) + def.shotIntervalTicks();
-        Ballistics.fire(level, sp, def, ammoType(stack));
+        if (Launchers.isLauncher(def)) {
+            Launchers.fire(level, sp, def);
+        } else {
+            Ballistics.fire(level, sp, def, ammoType(stack));
+        }
         level.playSound(null, sp.blockPosition(), SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.PLAYERS, 1.2f, 1.1f);
         sp.displayClientMessage(ammoLine(stack, def), true);
         return true;

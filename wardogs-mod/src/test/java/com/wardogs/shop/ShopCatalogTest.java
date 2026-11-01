@@ -21,7 +21,7 @@ class ShopCatalogTest {
             assertTrue(ids.add(e.id()), "duplicate id " + e.id());
             assertTrue(e.price() >= 0, e.id());
         }
-        assertEquals(34, cat.stream().filter(e -> e.category() == Shop.Category.WEAPON).count());
+        assertEquals(38, cat.stream().filter(e -> e.category() == Shop.Category.WEAPON).count());
         assertEquals(8, cat.stream().filter(e -> e.category() == Shop.Category.ARMOR).count());
         assertEquals(7, cat.stream().filter(e -> e.category() == Shop.Category.MEDICAL).count());
         assertEquals(15, cat.stream().filter(e -> e.category() == Shop.Category.EXPLOSIVE).count());
@@ -41,6 +41,17 @@ class ShopCatalogTest {
         assertEquals(Role.WARDOG, Shop.find("helmet_l4").role());
         assertEquals(100, Shop.find("helmet_l4").level());
         assertNotNull(Shop.find("ggx17"));
+    }
+
+    @Test
+    void launchersAreSupportItemsWithTheSourcedUnlocks() {
+        assertEquals(com.wardogs.progress.Role.SUPPORT, Shop.find("rpg7").role());
+        assertEquals(5, Shop.find("rpg7").level());
+        assertEquals(20, Shop.find("maaws").level());
+        assertEquals(35, Shop.find("mgl40").level());
+        assertEquals(16, Shop.find("verba").level());
+        assertEquals(2000, Shop.find("rpg7").price());
+        assertEquals(6000, Shop.find("mgl40").price());
     }
 
     @Test

@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BalanceTest {
     @Test
     void loadsAllWeapons() {
-        assertEquals(34, Balance.get().weapons().size());
+        assertEquals(38, Balance.get().weapons().size());
     }
 
     @Test

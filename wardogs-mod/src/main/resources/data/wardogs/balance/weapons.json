@@ -763,6 +763,90 @@
     "reload_ticks",
     "spread"
    ]
+  },
+  "rpg7": {
+   "name": "RPG-7",
+   "category": "launcher",
+   "caliber": "93mm",
+   "role": "support",
+   "mode": "semi",
+   "chest": 110.02,
+   "head": 110.02,
+   "rpm": 30,
+   "magazine": 1,
+   "range": 400,
+   "reload_ticks": 80,
+   "spread": 0.3,
+   "price": 2000,
+   "unlock_level": 5,
+   "unlock_cost": 0,
+   "estimated": [
+    "reload_ticks",
+    "spread"
+   ]
+  },
+  "maaws": {
+   "name": "MAAWS",
+   "category": "launcher",
+   "caliber": "84mm",
+   "role": "support",
+   "mode": "semi",
+   "chest": 101.01,
+   "head": 101.01,
+   "rpm": 30,
+   "magazine": 1,
+   "range": 400,
+   "reload_ticks": 80,
+   "spread": 0.3,
+   "price": 2600,
+   "unlock_level": 20,
+   "unlock_cost": 0,
+   "estimated": [
+    "reload_ticks",
+    "spread"
+   ]
+  },
+  "mgl40": {
+   "name": "MGL-40",
+   "category": "launcher",
+   "caliber": "40mm",
+   "role": "support",
+   "mode": "semi",
+   "chest": 100.02,
+   "head": 100.02,
+   "rpm": 120,
+   "magazine": 6,
+   "range": 250,
+   "reload_ticks": 80,
+   "spread": 0.3,
+   "price": 6000,
+   "unlock_level": 35,
+   "unlock_cost": 0,
+   "estimated": [
+    "reload_ticks",
+    "spread"
+   ]
+  },
+  "verba": {
+   "name": "9K333 Verba",
+   "category": "launcher",
+   "caliber": "missile",
+   "role": "support",
+   "mode": "semi",
+   "chest": 300.0,
+   "head": 300.0,
+   "rpm": 20,
+   "magazine": 1,
+   "range": 350,
+   "reload_ticks": 80,
+   "spread": 0.3,
+   "price": 3000,
+   "unlock_level": 16,
+   "unlock_cost": 0,
+   "estimated": [
+    "reload_ticks",
+    "spread"
+   ]
   }
  }
 }

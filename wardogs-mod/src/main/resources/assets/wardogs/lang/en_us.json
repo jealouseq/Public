@@ -39,6 +39,10 @@
   "item.wardogs.ggx18": "GGX 18",
   "item.wardogs.deagle": "Deagle",
   "item.wardogs.judge": "Judge",
+  "item.wardogs.rpg7": "RPG-7",
+  "item.wardogs.maaws": "MAAWS",
+  "item.wardogs.mgl40": "MGL-40",
+  "item.wardogs.verba": "9K333 Verba",
   "item.wardogs.helmet_l1": "Helmet Level 1",
   "item.wardogs.vest_l1": "Body Armor Level 1",
   "item.wardogs.helmet_l2": "Helmet Level 2",
@@ -108,5 +112,6 @@
   "item.wardogs.vehicle_z20_lakota": "Z20 Lakota",
   "item.wardogs.vehicle_z20_lakota_miniguns": "Z20 Lakota Miniguns",
   "item.wardogs.vehicle_havoc": "Havoc",
+  "entity.wardogs.rocket": "Rocket",
   "entity.wardogs.vehicle": "Vehicle"
 }

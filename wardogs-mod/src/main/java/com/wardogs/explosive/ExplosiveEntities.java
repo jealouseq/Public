@@ -24,5 +24,9 @@ public final class ExplosiveEntities {
             EntityType.Builder.<PlacedCharge>of(PlacedCharge::new, MobCategory.MISC)
                     .sized(0.4f, 0.2f).clientTrackingRange(8).updateInterval(20).fireImmune().build("charge"));
 
+    public static final DeferredHolder<EntityType<?>, EntityType<RocketEntity>> ROCKET = ENTITIES.register("rocket", () ->
+            EntityType.Builder.<RocketEntity>of(RocketEntity::new, MobCategory.MISC)
+                    .sized(0.3f, 0.3f).clientTrackingRange(10).updateInterval(1).noSave().build("rocket"));
+
     private ExplosiveEntities() {}
 }

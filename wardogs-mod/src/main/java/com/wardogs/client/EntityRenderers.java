@@ -19,6 +19,7 @@ public final class EntityRenderers {
         e.registerEntityRenderer(ExplosiveEntities.GRENADE.get(), ctx -> new ThrownItemRenderer<>(ctx, 0.8f, false));
         e.registerEntityRenderer(BuildEntities.BUILDABLE.get(), BuildableRenderer::new);
         e.registerEntityRenderer(VehicleEntities.VEHICLE.get(), VehicleRenderer::new);
+        e.registerEntityRenderer(ExplosiveEntities.ROCKET.get(), ctx -> new ThrownItemRenderer<>(ctx, 0.8f, true));
         e.registerEntityRenderer(ExplosiveEntities.CHARGE.get(), ctx -> new ThrownItemRenderer<>(ctx, 1.0f, true));
     }
 }

@@ -173,6 +173,48 @@
     "at_mine": 50
    },
    "block": "minecraft:green_concrete"
+  },
+  "l81_mortar": {
+   "tier": "large",
+   "hp": 1500,
+   "w": 1.5,
+   "h": 1.3,
+   "d": 1.5,
+   "cost": 40,
+   "hits": {
+    "c4": 2,
+    "ied": 1,
+    "at_mine": 6
+   },
+   "block": "minecraft:blast_furnace"
+  },
+  "refuel_station": {
+   "tier": "large",
+   "hp": 1500,
+   "w": 2.0,
+   "h": 2.0,
+   "d": 2.0,
+   "cost": 30,
+   "hits": {
+    "c4": 2,
+    "ied": 1,
+    "at_mine": 6
+   },
+   "block": "minecraft:red_concrete"
+  },
+  "repair_station": {
+   "tier": "large",
+   "hp": 1500,
+   "w": 2.0,
+   "h": 2.0,
+   "d": 2.0,
+   "cost": 30,
+   "hits": {
+    "c4": 2,
+    "ied": 1,
+    "at_mine": 6
+   },
+   "block": "minecraft:yellow_concrete"
   }
  },
  "items": {
@@ -243,5 +285,22 @@
    "cost": 0,
    "wrench": true
   }
- }
+ },
+ "mortar": {
+  "min_range": 25.0,
+  "max_range": 400.0,
+  "blast": 6.0,
+  "damage": 140.0,
+  "cooldown_ticks": 100,
+  "flight_base_ticks": 40,
+  "flight_blocks_per_tick": 6.0,
+  "ammo_per_shot": 1
+ },
+ "stations": {
+  "radius": 8.0,
+  "interval_ticks": 20,
+  "refuel_supply_per_tick": 1,
+  "repair_supply_per_tick": 1
+ },
+ "_comment2": "mortar and stations: estimates (sources give none); structure sizes/costs for the three new entries are estimates too."
 }

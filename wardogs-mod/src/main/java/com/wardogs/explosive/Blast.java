@@ -34,8 +34,20 @@ public final class Blast {
     }
 
     public static void explode(ServerLevel level, Vec3 pos, double radius, double maxDamage, @Nullable Entity owner, String weaponId) {
+        explode(level, pos, radius, maxDamage, owner, weaponId, null);
+    }
+
+    /**
+     * As above, but {@code directHit} (an entity struck head-on, e.g. by a rocket) takes the full damage
+     * instead of the distance-reduced splash.
+     */
+    public static void explode(ServerLevel level, Vec3 pos, double radius, double maxDamage, @Nullable Entity owner, String weaponId, @Nullable Entity directHit) {
         AABB box = new AABB(pos, pos).inflate(radius);
         for (LivingEntity e : level.getEntitiesOfClass(LivingEntity.class, box, LivingEntity::isAlive)) {
+            if (e == directHit) {
+                damage(level, e, owner, weaponId, maxDamage, owner == null ? 0 : owner.position().distanceTo(e.position()));
+                continue;
+            }
             Vec3 center = e.getBoundingBox().getCenter();
             double dist = center.distanceTo(pos);
             double wd = falloff(maxDamage, radius, dist);
@@ -62,8 +74,11 @@ public final class Blast {
     /** Applies WARDOGS-unit damage so kills pay like bullet kills. */
     public static void damage(ServerLevel level, LivingEntity target, @Nullable Entity owner, String weaponId, double wardogsDamage, double distance) {
         if (target instanceof Vehicle v) {
-            boolean antiTank = weaponId.equals("at_mine") || weaponId.equals("veh_shell");
-            v.applyWardogsDamage(wardogsDamage, antiTank ? Vehicle.DamageKind.ANTI_TANK : Vehicle.DamageKind.EXPLOSIVE, owner);
+            var launcher = Balance.get().launcher(weaponId);
+            boolean antiTank = weaponId.equals("at_mine") || weaponId.equals("veh_shell")
+                    || (launcher != null && launcher.kind() != com.wardogs.balance.LauncherDef.Kind.GRENADE);
+            double dmg = launcher == null ? wardogsDamage : wardogsDamage * launcher.vehicleMult();
+            v.applyWardogsDamage(dmg, antiTank ? Vehicle.DamageKind.ANTI_TANK : Vehicle.DamageKind.EXPLOSIVE, owner);
             return;
         }
         DamageSource src = new DamageSource(

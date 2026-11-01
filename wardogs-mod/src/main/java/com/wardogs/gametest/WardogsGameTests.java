@@ -18,6 +18,8 @@ import com.wardogs.item.ExplosiveItem;
 import com.wardogs.build.Building;
 import com.wardogs.build.Buildable;
 import com.wardogs.item.HammerItem;
+import com.wardogs.build.Artillery;
+import com.wardogs.explosive.RocketEntity;
 import com.wardogs.vehicle.Vehicle;
 import com.wardogs.vehicle.VehicleGuns;
 import com.wardogs.item.GunItem;
@@ -996,5 +998,119 @@ public final class WardogsGameTests {
         d2.startRiding(plain);
         check(!VehicleGuns.fire(d2, plain), "an unarmed vehicle does not fire");
         h.succeed();
+    }
+
+    // --- launchers, mortar, stations ---------------------------------------------------------
+
+    @GameTest(template = "empty")
+    public static void aRocketFliesAndKillsInfantryItHits(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Zombie z = zombieAt(h, 5.5, 1.5 + RANGE);
+        ItemStack rpg = ModItems.stack("rpg7");
+        a.shooter.setItemInHand(InteractionHand.MAIN_HAND, rpg);
+        a.shooter.setGameMode(net.minecraft.world.level.GameType.SURVIVAL);
+        aimAt(a.shooter, z, z.getY() + 1.0);
+        ((GunItem) rpg.getItem()).use(a.level, a.shooter, InteractionHand.MAIN_HAND);
+        check(GunItem.ammo(rpg) == 0, "the RPG holds one rocket, " + GunItem.ammo(rpg) + " left");
+        check(!a.level.getEntitiesOfClass(RocketEntity.class, a.shooter.getBoundingBox().inflate(20)).isEmpty(), "a rocket is in flight");
+        later(h, 40, () -> {
+            check(!z.isAlive(), "a direct RPG hit kills a husk, health " + z.getHealth());
+            check(a.level.getEntitiesOfClass(RocketEntity.class, a.shooter.getBoundingBox().inflate(40)).isEmpty(), "the rocket is gone after impact");
+            h.succeed();
+        });
+    }
+
+    @GameTest(template = "empty")
+    public static void antiTankRocketsHurtTanksFarMoreThanRifles(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Vehicle tank = vehicleAt(h, "l2a6", Faction.VALKYRA, 6.5, 6.5);
+        var w = Balance.get().weapon("rpg7");
+        Blast.explode(h.getLevel(), tank.position().add(0, tank.getBbHeight() / 2, 0), Balance.get().launcher("rpg7").blast(), w.chest(), a.shooter, "rpg7");
+        float lost = tank.getMaxHealth() - tank.getHealth();
+        check(lost > 500f, "an RPG hit should take a serious bite out of a tank, took " + lost);
+        float rifle = (float) (Balance.get().weapon("m4").chest() * tank.def().smallArms());
+        check(lost > rifle * 100, "an RPG is far stronger than rifle fire against armor: " + lost + " vs " + rifle);
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void grenadeLaunchersHoldSixRounds(GameTestHelper h) {
+        ItemStack mgl = ModItems.stack("mgl40");
+        check(GunItem.ammo(mgl) == 6, "an MGL-40 starts with 6 grenades, has " + GunItem.ammo(mgl));
+        check(Balance.get().launcher("mgl40").kind() == com.wardogs.balance.LauncherDef.Kind.GRENADE, "and lobs grenades");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void verbaLocksOnFlyingVehiclesNotGroundOnes(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Vehicle heli = vehicleAt(h, "mh6", Faction.VALKYRA, 6.5, 10.5);
+        Vehicle truck = vehicleAt(h, "ural", Faction.VALKYRA, 4.5, 10.5);
+        Vec3 eye = a.shooter.getEyePosition();
+        Vec3 dir = heli.getBoundingBox().getCenter().subtract(eye).normalize().add(0.03, 0.0, 0.0).normalize();
+        var id = RocketEntity.nearestFlyingTarget(a.level, a.shooter, dir);
+        check(heli.getUUID().equals(id), "Verba must lock the helicopter in front of it");
+        Vec3 away = dir.scale(-1);
+        check(RocketEntity.nearestFlyingTarget(a.level, a.shooter, away) == null, "nothing to lock when looking away");
+        truck.discard();
+        h.succeed();
+    }
+
+    @GameTest(template = "empty", batch = "fobC")
+    public static void repairAndRefuelStationsServiceFriendlyVehiclesFromTheFob(GameTestHelper h) {
+        ServerPlayer p = builder(h, Faction.LONESTAR);
+        check(Building.deployFob(p, h.getLevel(), ground(h, 2.5, 9.5)).ok(), "FOB deploys");
+        var fob = h.getLevel().getEntitiesOfClass(Buildable.class, new net.minecraft.world.phys.AABB(ground(h, 2.5, 9.5), ground(h, 2.5, 9.5)).inflate(3)).get(0);
+        fob.addSupply("mechanical", 5);
+        fob.addSupply("fuel", 5);
+        Buildable.create(h.getLevel(), Balance.get().structure("repair_station"), ground(h, 8.5, 8.5), 0f, Faction.LONESTAR.ordinal(), p.getUUID());
+        Buildable.create(h.getLevel(), Balance.get().structure("refuel_station"), ground(h, 8.5, 4.5), 0f, Faction.LONESTAR.ordinal(), p.getUUID());
+        Vehicle v = vehicleAt(h, "humvee", Faction.LONESTAR, 8.5, 6.5);
+        v.hurt(h.getLevel().damageSources().generic(), 300f);
+        v.setFuel(5f);
+        float hp0 = v.getHealth();
+        later(h, 60, () -> {
+            check(v.getHealth() > hp0, "the repair station should have healed the vehicle: " + hp0 + " -> " + v.getHealth());
+            check(v.fuel() > 5f, "the refuel station should have refilled it: fuel " + v.fuel());
+            check(fob.supply("mechanical") < 5 && fob.supply("fuel") < 5, "both services draw from the FOB's stores");
+            h.succeed();
+        });
+    }
+
+    @GameTest(template = "empty", batch = "fobD")
+    public static void mortarsNeedAmmoRangeAndLandAfterADelay(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Factions.set(a.shooter, Faction.MANTICORE);
+        int mine = Faction.MANTICORE.ordinal();
+        // The battery sits well behind the arena so the aim point is beyond the minimum range.
+        Buildable fob = Buildable.create(h.getLevel(), Balance.get().structure("fob"), ground(h, 2.5, -30.5), 0f, mine, a.shooter.getUUID());
+        Buildable mortar = Buildable.create(h.getLevel(), Balance.get().structure("l81_mortar"), ground(h, 5.5, -30.5), 0f, mine, a.shooter.getUUID());
+        check(!fob.isRemoved() && !mortar.isRemoved(), "the battery was placed in a loaded chunk");
+        Zombie enemy = zombieAt(h, 5.5, 5.5);
+
+        // Aim at the floor about 4 blocks ahead of the shooter.
+        a.shooter.moveTo(a.shooter.getX(), a.shooter.getY(), a.shooter.getZ(), 0f, 22f);
+
+        String dry = Artillery.fire(a.shooter, mortar).getString();
+        check(dry.contains("No ammo"), "an empty FOB gives no shell: " + dry);
+        check(Artillery.inFlight() == 0, "nothing was fired");
+
+        fob.addSupply("ammo", 2);
+        String shot = Artillery.fire(a.shooter, mortar).getString();
+        check(shot.contains("Shell away"), "with ammo the mortar fires: " + shot);
+        check(fob.supply("ammo") == 2 - Artillery.ammoPerShot(), "one shot used " + Artillery.ammoPerShot() + " ammo, FOB has " + fob.supply("ammo"));
+        check(Artillery.inFlight() == 1, "a shell is in flight");
+        check(enemy.getHealth() == 20f, "shells do not land instantly");
+        check(Artillery.fire(a.shooter, mortar).getString().contains("Reloading"), "the mortar has a cooldown between shots");
+
+        later(h, Artillery.flightTicks(40) + 10L, () -> {
+            check(Artillery.inFlight() == 0, "the shell has landed");
+            check(enemy.getHealth() < 20f || !enemy.isAlive(), "the husk near the impact point was hurt, health " + enemy.getHealth());
+            h.succeed();
+        });
     }
 }
