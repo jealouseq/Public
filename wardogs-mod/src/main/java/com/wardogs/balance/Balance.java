@@ -37,10 +37,12 @@ public final class Balance {
     private final int bleedoutTicks;
     private final double reviveRange;
     private final double downedHp;
+    private final Map<String, ExplosiveDef> explosives;
 
     private Balance(Map<String, WeaponDef> weapons, RewardsDef rewards, double playerHealth,
                     List<ArmorDef> armor, double[][] ammoMult,
-                    Map<String, MedicalDef> medical, int bleedoutTicks, double reviveRange, double downedHp) {
+                    Map<String, MedicalDef> medical, int bleedoutTicks, double reviveRange, double downedHp,
+                    Map<String, ExplosiveDef> explosives) {
         this.weapons = weapons;
         this.rewards = rewards;
         this.playerHealth = playerHealth;
@@ -50,6 +52,7 @@ public final class Balance {
         this.bleedoutTicks = bleedoutTicks;
         this.reviveRange = reviveRange;
         this.downedHp = downedHp;
+        this.explosives = explosives;
     }
 
     public MedicalDef medical(String id) {
@@ -63,6 +66,14 @@ public final class Balance {
     /** Ticks a downed player lasts before bleeding out (estimate). */
     public int bleedoutTicks() {
         return bleedoutTicks;
+    }
+
+    public ExplosiveDef explosive(String id) {
+        return explosives.get(id);
+    }
+
+    public java.util.Collection<ExplosiveDef> explosiveItems() {
+        return explosives.values();
     }
 
     /** Health a player has while downed (estimate). */
@@ -130,7 +141,7 @@ public final class Balance {
             return current;
         }
         Map<String, JsonObject> files = new LinkedHashMap<>();
-        for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical"}) {
+        for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives"}) {
             files.put(name, readClasspath("/data/wardogs/balance/" + name + ".json"));
         }
         current = build(files);
@@ -176,8 +187,12 @@ public final class Balance {
         for (Map.Entry<String, JsonElement> e : med.getAsJsonObject("items").entrySet()) {
             medical.put(e.getKey(), MedicalDef.parse(e.getKey(), e.getValue().getAsJsonObject()));
         }
+        Map<String, ExplosiveDef> explosives = new LinkedHashMap<>();
+        for (Map.Entry<String, JsonElement> e : files.get("explosives").getAsJsonObject("explosives").entrySet()) {
+            explosives.put(e.getKey(), ExplosiveDef.parse(e.getKey(), e.getValue().getAsJsonObject()));
+        }
         return new Balance(Map.copyOf(weapons), rewards, hp, List.copyOf(armor), ammo, Map.copyOf(medical),
-                med.get("bleedout_ticks").getAsInt(), med.get("revive_range").getAsDouble(), med.get("downed_hp").getAsDouble());
+                med.get("bleedout_ticks").getAsInt(), med.get("revive_range").getAsDouble(), med.get("downed_hp").getAsDouble(), Map.copyOf(explosives));
     }
 
     /** Datapack reload listener: replaces the snapshot when the balance files in the datapack change. */
@@ -190,7 +205,7 @@ public final class Balance {
         protected void apply(Map<ResourceLocation, JsonElement> in, ResourceManager rm, ProfilerFiller profiler) {
             Map<String, JsonObject> files = new LinkedHashMap<>();
             // Start from the jar defaults, then overlay anything a datapack provides.
-            for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical"}) {
+            for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives"}) {
                 JsonElement over = in.get(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, name));
                 files.put(name, over != null ? over.getAsJsonObject() : readClasspath("/data/wardogs/balance/" + name + ".json"));
             }

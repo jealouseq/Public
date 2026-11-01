@@ -12,6 +12,9 @@ import com.wardogs.match.Faction;
 import com.wardogs.match.Factions;
 import com.wardogs.match.MatchData;
 import com.wardogs.match.MatchManager;
+import com.wardogs.explosive.Blast;
+import com.wardogs.explosive.PlacedCharge;
+import com.wardogs.item.ExplosiveItem;
 import com.wardogs.item.GunItem;
 import com.wardogs.item.MedicalItem;
 import com.wardogs.medic.Downed;
@@ -168,7 +171,7 @@ public final class WardogsGameTests {
         gun.use(a.level, a.shooter, InteractionHand.MAIN_HAND);
         check(st.reloading(), "an empty gun must start reloading");
 
-        h.runAfterDelay(def.reloadTicks() + 2L, () -> {
+        later(h, def.reloadTicks() + 2L, () -> {
             gun.inventoryTick(stack, a.level, a.shooter, a.shooter.getInventory().selected, true);
             check(GunItem.ammo(stack) == def.magazine(), "reload should refill to " + def.magazine() + " but has " + GunItem.ammo(stack));
             check(!st.reloading(), "reload state must clear");
@@ -471,5 +474,128 @@ public final class WardogsGameTests {
         check(!enemy.isAlive(), "a downed player nobody revives must bleed out");
         check(!Downed.is(enemy), "bleed-out clears the downed state");
         h.succeed();
+    }
+
+    // --- explosives --------------------------------------------------------------------------
+
+    /** A husk: a zombie that does not burn in daylight, so delayed tests see only our damage. */
+    private static Zombie zombieAt(GameTestHelper h, double x, double z) {
+        return h.spawnWithNoFreeWill(EntityType.HUSK, new Vec3(x, 1.0, z));
+    }
+
+    /** Runs delayed test code; an assertion becomes a test failure instead of crashing the server. */
+    private static void later(GameTestHelper h, long delay, Runnable r) {
+        h.runAfterDelay(delay, () -> {
+            try {
+                r.run();
+            } catch (AssertionError e) {
+                h.fail(String.valueOf(e.getMessage()));
+            }
+        });
+    }
+
+    @GameTest(template = "empty")
+    public static void blastDamageFallsOffWithDistance(GameTestHelper h) {
+        arena(h).target.discard();
+        Zombie near = zombieAt(h, 3.5, 5.5);
+        Zombie far = zombieAt(h, 8.5, 5.5);
+        var frag = Balance.get().explosive("m67_frag");
+        Vec3 c = h.absoluteVec(new Vec3(5.5, 1.5, 5.5));
+        Blast.explode(h.getLevel(), c, frag.radius(), frag.damage(), null, frag.id());
+        float nearLost = 20f - near.getHealth();
+        float farLost = 20f - far.getHealth();
+        double nearDist = near.getBoundingBox().getCenter().distanceTo(c);
+        float expected = Balance.get().damageTo(near, Blast.falloff(frag.damage(), frag.radius(), nearDist));
+        check(Math.abs(nearLost - Math.min(20f, expected)) < 0.05f, "near zombie should lose " + expected + " but lost " + nearLost);
+        check(farLost < nearLost, "damage must fall with distance: near " + nearLost + " far " + farLost);
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void wallsBlockExplosions(GameTestHelper h) {
+        arena(h).target.discard();
+        Zombie behindWall = zombieAt(h, 8.5, 5.5);
+        for (int y = 1; y <= 3; y++) {
+            for (int z = 3; z <= 8; z++) {
+                h.setBlock(new BlockPos(7, y, z), Blocks.STONE);
+            }
+        }
+        var frag = Balance.get().explosive("m67_frag");
+        Blast.explode(h.getLevel(), h.absoluteVec(new Vec3(5.5, 1.5, 5.5)), frag.radius(), frag.damage(), null, frag.id());
+        check(behindWall.getHealth() == 20f, "a zombie behind a wall must be shielded, health " + behindWall.getHealth());
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void thrownGrenadeExplodesAfterItsFuse(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Zombie z = zombieAt(h, 5.5, 3.0);
+        ItemStack stack = ModItems.stack("m67_frag");
+        a.shooter.setItemInHand(InteractionHand.MAIN_HAND, stack);
+        a.shooter.moveTo(a.shooter.getX(), a.shooter.getY(), a.shooter.getZ(), 0f, 80f); // drop it almost at the thrower's feet
+        var item = (ExplosiveItem) stack.getItem();
+        a.shooter.setGameMode(net.minecraft.world.level.GameType.SURVIVAL);
+        item.use(a.level, a.shooter, InteractionHand.MAIN_HAND);
+        check(stack.isEmpty(), "a thrown grenade is consumed");
+        check(z.getHealth() == 20f, "nothing happens before the fuse runs out");
+        long delay = Balance.get().explosive("m67_frag").fuse() + 30L;
+        later(h, delay, () -> {
+            check(z.getHealth() < 20f || !z.isAlive(), "the grenade should have hurt the zombie standing near the landing spot, health " + z.getHealth());
+            h.succeed();
+        });
+    }
+
+    @GameTest(template = "empty")
+    public static void c4NeedsTheDetonator(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Zombie z = zombieAt(h, 5.5, 4.0);
+        var c4 = Balance.get().explosive("c4");
+        Vec3 spot = h.absoluteVec(new Vec3(5.5, 1.0, 5.0));
+        PlacedCharge.place(h.getLevel(), c4, spot, 0f, a.shooter.getUUID());
+        later(h, PlacedCharge.ARM_TICKS + 10L, () -> {
+            check(z.getHealth() == 20f, "C4 must not go off on its own");
+            int n = ExplosiveItem.detonateAll(h.getLevel(), a.shooter.getUUID());
+            check(n == 1, "the detonator should set off the one placed charge, set off " + n);
+            check(z.getHealth() < 20f || !z.isAlive(), "the zombie one block away must be hurt, health " + z.getHealth());
+            check(ExplosiveItem.detonateAll(h.getLevel(), a.shooter.getUUID()) == 0, "a used charge is gone");
+            h.succeed();
+        });
+    }
+
+    @GameTest(template = "empty")
+    public static void claymoreHitsInFrontButNotBehind(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Zombie front = zombieAt(h, 5.5, 8.0);
+        Zombie back = zombieAt(h, 5.5, 2.0);
+        var clay = Balance.get().explosive("claymore");
+        PlacedCharge.place(h.getLevel(), clay, h.absoluteVec(new Vec3(5.5, 1.0, 5.0)), 0f, a.shooter.getUUID()); // faces +Z
+        later(h, PlacedCharge.ARM_TICKS + 20L, () -> {
+            check(front.getHealth() < 20f || !front.isAlive(), "the zombie in front should trigger and be hit, health " + front.getHealth());
+            check(back.getHealth() == 20f, "the zombie behind the claymore must be safe, health " + back.getHealth());
+            h.succeed();
+        });
+    }
+
+    @GameTest(template = "empty")
+    public static void antiTankMineIgnoresInfantryButHitsVehicles(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Zombie walker = zombieAt(h, 5.5, 5.5);
+        var mine = Balance.get().explosive("at_mine");
+        PlacedCharge m = PlacedCharge.place(h.getLevel(), mine, h.absoluteVec(new Vec3(5.5, 1.0, 5.5)), 0f, a.shooter.getUUID());
+        later(h, PlacedCharge.ARM_TICKS + 20L, () -> {
+            check(!m.isRemoved(), "an anti-tank mine must not trigger on a soldier");
+            check(walker.getHealth() == 20f, "infantry standing on the mine is unharmed");
+            h.getLevel().addFreshEntity(new net.minecraft.world.entity.vehicle.Minecart(EntityType.MINECART, h.getLevel()) {{
+                setPos(m.getX(), m.getY(), m.getZ());
+            }});
+            later(h, 10L, () -> {
+                check(m.isRemoved(), "a vehicle rolling over the mine must set it off");
+                h.succeed();
+            });
+        });
     }
 }

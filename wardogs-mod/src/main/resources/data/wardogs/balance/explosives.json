@@ -1,0 +1,157 @@
+{
+ "_comment": "Prices/unlocks from community sources (RESEARCH.md section 7). fuse/radius/damage/duration/cone/dps are ESTIMATES: sources publish none. Damage is in WARDOGS units (a soldier has 100).",
+ "explosives": {
+  "m67_frag": {
+   "price": 200,
+   "kind": "frag",
+   "fuse": 60,
+   "radius": 6.0,
+   "damage": 150,
+   "role": "any",
+   "level": 0,
+   "cost": 0
+  },
+  "molotov": {
+   "price": 340,
+   "kind": "fire",
+   "radius": 3.0,
+   "duration": 160,
+   "dps": 18,
+   "role": "assault",
+   "level": 13,
+   "cost": 25000
+  },
+  "c4": {
+   "price": 250,
+   "kind": "c4",
+   "radius": 5.0,
+   "damage": 220,
+   "role": "assault",
+   "level": 4,
+   "cost": 0
+  },
+  "ied": {
+   "price": 300,
+   "kind": "ied",
+   "radius": 6.0,
+   "damage": 200,
+   "role": "any",
+   "level": 0,
+   "cost": 0
+  },
+  "remote_detonator": {
+   "price": 550,
+   "kind": "detonator",
+   "role": "support",
+   "level": 2,
+   "cost": 15000
+  },
+  "at_mine": {
+   "price": 650,
+   "kind": "at_mine",
+   "radius": 4.0,
+   "damage": 400,
+   "role": "support",
+   "level": 25,
+   "cost": 75000
+  },
+  "claymore": {
+   "price": 900,
+   "kind": "claymore",
+   "range": 12.0,
+   "cone": 60.0,
+   "damage": 120,
+   "role": "recon",
+   "level": 22,
+   "cost": 50000
+  },
+  "smoke_white": {
+   "price": 100,
+   "kind": "smoke",
+   "color": "white",
+   "fuse": 20,
+   "duration": 400,
+   "radius": 5.0,
+   "role": "medic",
+   "level": 5,
+   "cost": 7500
+  },
+  "smoke_black": {
+   "price": 100,
+   "kind": "smoke",
+   "color": "black",
+   "fuse": 20,
+   "duration": 400,
+   "radius": 5.0,
+   "role": "medic",
+   "level": 21,
+   "cost": 15000
+  },
+  "signal_alert": {
+   "price": 50,
+   "kind": "smoke",
+   "color": "yellow",
+   "fuse": 20,
+   "duration": 300,
+   "radius": 2.0,
+   "role": "any",
+   "level": 0,
+   "cost": 0
+  },
+  "signal_damaged_vehicle": {
+   "price": 50,
+   "kind": "smoke",
+   "color": "orange",
+   "fuse": 20,
+   "duration": 300,
+   "radius": 2.0,
+   "role": "any",
+   "level": 0,
+   "cost": 0
+  },
+  "signal_friendly": {
+   "price": 50,
+   "kind": "smoke",
+   "color": "blue",
+   "fuse": 20,
+   "duration": 300,
+   "radius": 2.0,
+   "role": "any",
+   "level": 0,
+   "cost": 0
+  },
+  "signal_hostile": {
+   "price": 50,
+   "kind": "smoke",
+   "color": "red",
+   "fuse": 20,
+   "duration": 300,
+   "radius": 2.0,
+   "role": "any",
+   "level": 0,
+   "cost": 0
+  },
+  "signal_landing_zone": {
+   "price": 50,
+   "kind": "smoke",
+   "color": "purple",
+   "fuse": 20,
+   "duration": 300,
+   "radius": 2.0,
+   "role": "any",
+   "level": 0,
+   "cost": 0
+  },
+  "signal_supply_request": {
+   "price": 50,
+   "kind": "smoke",
+   "color": "green",
+   "fuse": 20,
+   "duration": 300,
+   "radius": 2.0,
+   "role": "any",
+   "level": 0,
+   "cost": 0
+  }
+ }
+}

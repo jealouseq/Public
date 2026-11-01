@@ -3,6 +3,7 @@ package com.wardogs.item;
 import com.wardogs.WardogsMod;
 import com.wardogs.balance.ArmorDef;
 import com.wardogs.balance.Balance;
+import com.wardogs.balance.ExplosiveDef;
 import com.wardogs.balance.MedicalDef;
 import com.wardogs.balance.WeaponDef;
 import net.minecraft.core.registries.Registries;
@@ -59,6 +60,17 @@ public final class ModItems {
         }
     }
 
+    /** explosive id -> registered item. */
+    public static final Map<String, DeferredItem<ExplosiveItem>> EXPLOSIVES = new LinkedHashMap<>();
+
+    static {
+        for (ExplosiveDef def : Balance.get().explosiveItems()) {
+            String id = def.id();
+            EXPLOSIVES.put(id, ITEMS.register(id, () -> new ExplosiveItem(new Item.Properties()
+                    .stacksTo(def.kind() == ExplosiveDef.Kind.DETONATOR ? 1 : 8), id)));
+        }
+    }
+
     /** A fresh stack for any buyable id (weapon or armor), or {@code null}. */
     public static net.minecraft.world.item.ItemStack stack(String id) {
         if (GUNS.containsKey(id)) {
@@ -69,6 +81,9 @@ public final class ModItems {
         }
         if (MEDICAL.containsKey(id)) {
             return new net.minecraft.world.item.ItemStack(MEDICAL.get(id).get());
+        }
+        if (EXPLOSIVES.containsKey(id)) {
+            return new net.minecraft.world.item.ItemStack(EXPLOSIVES.get(id).get());
         }
         return null;
     }
@@ -84,6 +99,9 @@ public final class ModItems {
         if (MEDICAL.containsKey(id)) {
             return Balance.get().medical(id).price();
         }
+        if (EXPLOSIVES.containsKey(id)) {
+            return Balance.get().explosive(id).price();
+        }
         return -1;
     }
 
@@ -91,6 +109,7 @@ public final class ModItems {
         java.util.List<String> ids = new java.util.ArrayList<>(GUNS.keySet());
         ids.addAll(ARMOR.keySet());
         ids.addAll(MEDICAL.keySet());
+        ids.addAll(EXPLOSIVES.keySet());
         return ids;
     }
 
@@ -102,6 +121,7 @@ public final class ModItems {
                         GUNS.values().forEach(g -> out.accept(g.get().newStack()));
                         ARMOR.values().forEach(a -> out.accept(a.get()));
                         MEDICAL.values().forEach(m -> out.accept(new net.minecraft.world.item.ItemStack(m.get())));
+                        EXPLOSIVES.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
                     })
                     .build());
 

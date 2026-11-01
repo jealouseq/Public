@@ -65,7 +65,7 @@ public final class PlayerHealth {
 
     @SubscribeEvent
     public static void onIncomingDamage(LivingIncomingDamageEvent e) {
-        if (!(e.getEntity() instanceof Player p) || e.getSource().is(Ballistics.BULLET)) {
+        if (!(e.getEntity() instanceof Player p) || Ballistics.isWardogsDamage(e.getSource())) {
             return;
         }
         e.setAmount(e.getAmount() * vanillaScale(p));

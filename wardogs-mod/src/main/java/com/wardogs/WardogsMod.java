@@ -3,6 +3,7 @@ package com.wardogs;
 import com.mojang.logging.LogUtils;
 import com.wardogs.balance.Balance;
 import com.wardogs.economy.KillRewardHandler;
+import com.wardogs.explosive.ExplosiveEntities;
 import com.wardogs.economy.Wallet;
 import com.wardogs.match.Factions;
 import com.wardogs.match.MatchManager;
@@ -23,6 +24,7 @@ public final class WardogsMod {
         ModComponents.COMPONENTS.register(modBus);
         ModItems.ITEMS.register(modBus);
         ModItems.TABS.register(modBus);
+        ExplosiveEntities.ENTITIES.register(modBus);
         Wallet.ATTACHMENTS.register(modBus);
         Factions.ATTACHMENTS.register(modBus);
         KillRewardHandler.ZONES = MatchManager::multiplierAt;

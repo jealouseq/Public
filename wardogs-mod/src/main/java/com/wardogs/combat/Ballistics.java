@@ -28,6 +28,24 @@ public final class Ballistics {
     public static final ResourceKey<DamageType> BULLET =
             ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "bullet"));
 
+    public static final ResourceKey<DamageType> EXPLOSION =
+            ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "explosion"));
+
+    /** True for damage dealt by this mod's weapons (already in WARDOGS units). */
+    public static boolean isWardogsDamage(DamageSource s) {
+        return s.is(BULLET) || s.is(EXPLOSION);
+    }
+
+    /** Runs {@code action} with {@code hit} visible to the kill-reward handler (death events fire inside hurt()). */
+    public static void runAs(Hit hit, Runnable action) {
+        CURRENT.set(hit);
+        try {
+            action.run();
+        } finally {
+            CURRENT.remove();
+        }
+    }
+
     /** Hard cap on trace length; chunk loading/render distance make longer traces meaningless. */
     public static final double MAX_TRACE = 256.0;
 
