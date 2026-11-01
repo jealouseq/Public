@@ -3,6 +3,8 @@ package com.wardogs.economy;
 import com.wardogs.WardogsMod;
 import com.wardogs.balance.Balance;
 import com.wardogs.combat.Ballistics;
+import com.wardogs.match.Factions;
+import com.wardogs.net.HudPayload;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -41,6 +43,18 @@ public final class KillRewardHandler {
         UUID victimId = victim.getUUID();
         UUID killerId = killer.getUUID();
 
+        if (victim instanceof Player vp && Factions.sameTeam(killer, vp)) {
+            // Teamkill: the shooter pays a multiple of what the kill would have been worth.
+            double zone = ZONES.at(killer.level(), victim.position());
+            long worth = KillReward.compute(Balance.get().rewards(),
+                    new KillReward.Context(hit.headshot(), hit.distance(), zone, 1, 0, false));
+            long cost = Math.round(worth * Balance.get().rewards().teamkillCostMult());
+            Wallet.add(killer, -cost);
+            killer.displayClientMessage(Component.literal("-$" + cost + "  teamkill").withStyle(ChatFormatting.RED), false);
+            HudPayload.sendTo(killer);
+            return;
+        }
+
         int streak = STREAK.merge(killerId, 1, Integer::sum);
         boolean revenge = victim instanceof Player && killerId.equals(LAST_KILLED_BY.get(victimId));
         String pair = killerId + ">" + victimId;
@@ -57,6 +71,7 @@ public final class KillRewardHandler {
         Wallet.add(killer, reward);
         killer.displayClientMessage(Component.literal("+$" + reward + (hit.headshot() ? "  HEADSHOT" : "") + String.format("  %.0fm", hit.distance()))
                 .withStyle(ChatFormatting.GOLD), false);
+        HudPayload.sendTo(killer);
     }
 
     /** Clears per-round state (call when a round ends). */

@@ -7,6 +7,10 @@ import com.wardogs.balance.WeaponDef;
 import com.wardogs.combat.Ballistics;
 import com.wardogs.combat.ShooterState;
 import com.wardogs.economy.Wallet;
+import com.wardogs.match.Faction;
+import com.wardogs.match.Factions;
+import com.wardogs.match.MatchData;
+import com.wardogs.match.MatchManager;
 import com.wardogs.item.GunItem;
 import com.wardogs.item.ModComponents;
 import com.wardogs.item.ModItems;
@@ -194,6 +198,132 @@ public final class WardogsGameTests {
         float before = a.target.getHealth();
         Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
         check(a.target.getHealth() == before, "a wall between shooter and target must block the bullet");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void helmetAbsorbsPartOfHeadshotDamage(GameTestHelper h) {
+        Arena a = arena(h);
+        WeaponDef m4 = Balance.get().weapon("m4");
+        a.target.setItemSlot(net.minecraft.world.entity.EquipmentSlot.HEAD, ModItems.stack("helmet_l2"));
+        double reduction = Balance.get().armor("helmet_l2").reduction();
+        aimAt(a.shooter, a.target, a.target.getEyeY() + 0.05);
+        float before = a.target.getHealth();
+        Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
+        float lost = before - a.target.getHealth();
+        float expected = Balance.get().toMinecraftDamage(m4.head() * (1.0 - reduction));
+        check(Math.abs(lost - expected) < 0.01f, "helmet L2 headshot should cost " + expected + " hp but cost " + lost);
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void vestDoesNotProtectTheHead(GameTestHelper h) {
+        Arena a = arena(h);
+        WeaponDef m4 = Balance.get().weapon("m4");
+        a.target.setItemSlot(net.minecraft.world.entity.EquipmentSlot.CHEST, ModItems.stack("vest_l4"));
+        aimAt(a.shooter, a.target, a.target.getEyeY() + 0.05);
+        float before = a.target.getHealth();
+        Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
+        float lost = before - a.target.getHealth();
+        float expected = Balance.get().toMinecraftDamage(m4.head());
+        check(Math.abs(lost - expected) < 0.01f, "a vest must not reduce headshot damage: expected " + expected + " got " + lost);
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void killInsideControlZonePaysFiveTimes(GameTestHelper h) {
+        Arena a = arena(h);
+        MatchData d = MatchData.get(h.getLevel().getServer().overworld());
+        boolean wasActive = d.active;
+        double zx = d.zoneX, zz = d.zoneZ, zr = d.zoneRadius, hx = d.hotX, hz = d.hotZ, hr = d.hotRadius;
+        try {
+            d.active = true;
+            d.zoneX = a.target.getX();
+            d.zoneZ = a.target.getZ();
+            d.zoneRadius = 30;
+            d.hotX = a.target.getX() + 1000; // Hot Zone far away
+            d.hotZ = a.target.getZ() + 1000;
+            d.hotRadius = 5;
+            WeaponDef m4 = Balance.get().weapon("m4");
+            long start = Wallet.get(a.shooter);
+            for (int i = 0; i < 6 && a.target.isAlive(); i++) {
+                aimAt(a.shooter, a.target, a.target.getEyeY() + 0.05);
+                Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
+            }
+            long paid = Wallet.get(a.shooter) - start;
+            check(paid == 350 * 5, "headshot kill in the Control Zone should pay $1750 but paid $" + paid);
+        } finally {
+            d.active = wasActive;
+            d.zoneX = zx; d.zoneZ = zz; d.zoneRadius = zr; d.hotX = hx; d.hotZ = hz; d.hotRadius = hr;
+        }
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void buyCommandChargesMoneyAndGivesItem(GameTestHelper h) {
+        Arena a = arena(h);
+        long start = Wallet.get(a.shooter);
+        int price = Balance.get().weapon("m4").price();
+        var cmds = h.getLevel().getServer().getCommands();
+        cmds.performPrefixedCommand(a.shooter.createCommandSourceStack(), "wd buy m4");
+        check(Wallet.get(a.shooter) == start - price, "buying an M4 should cost $" + price + " but wallet went " + start + " -> " + Wallet.get(a.shooter));
+        boolean has = false;
+        for (ItemStack s : a.shooter.getInventory().items) {
+            has |= s.getItem() == ModItems.GUNS.get("m4").get();
+        }
+        check(has, "bought M4 should be in the inventory");
+        Wallet.set(a.shooter, 10);
+        cmds.performPrefixedCommand(a.shooter.createCommandSourceStack(), "wd buy m4");
+        check(Wallet.get(a.shooter) == 10, "a purchase the player cannot afford must not charge anything");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void teamCommandSetsFaction(GameTestHelper h) {
+        Arena a = arena(h);
+        h.getLevel().getServer().getCommands().performPrefixedCommand(a.shooter.createCommandSourceStack(), "wd team valkyra");
+        check(Factions.of(a.shooter) == Faction.VALKYRA, "faction should be Valkyra, is " + Factions.of(a.shooter));
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void zoneLeaderScoresAndTieDoesNot(GameTestHelper h) {
+        ServerLevel ow = h.getLevel().getServer().overworld();
+        MatchData d = MatchData.get(ow);
+        boolean wasActive = d.active;
+        double zx = d.zoneX, zz = d.zoneZ, zr = d.zoneRadius, hx = d.hotX, hz = d.hotZ, hr = d.hotRadius;
+        int[] saved = d.scores.clone();
+        try {
+            Vec3 c = h.absoluteVec(new Vec3(5.5, 1.0, 5.5));
+            d.active = true;
+            d.zoneX = c.x; d.zoneZ = c.z; d.zoneRadius = 20;
+            d.hotX = c.x + 1000; d.hotZ = c.z; d.hotRadius = 5;
+            java.util.Arrays.fill(d.scores, 0);
+
+            ServerPlayer a1 = h.makeMockServerPlayerInLevel();
+            ServerPlayer a2 = h.makeMockServerPlayerInLevel();
+            ServerPlayer b1 = h.makeMockServerPlayerInLevel();
+            for (ServerPlayer p : new ServerPlayer[]{a1, a2, b1}) {
+                p.moveTo(c.x, c.y, c.z, 0f, 0f);
+            }
+            Factions.set(a1, Faction.LONESTAR);
+            Factions.set(a2, Faction.LONESTAR);
+            Factions.set(b1, Faction.VALKYRA);
+
+            check(ow.players().contains(a1) && ow.players().contains(b1), "mock players must be tracked by the level for this test to mean anything");
+            {
+                MatchManager.scoreTick(ow, d);
+                check(d.scores[Faction.LONESTAR.ordinal()] == 1, "2 vs 1 in the zone: Lonestar should score 1, scores=" + java.util.Arrays.toString(d.scores));
+                check(d.scores[Faction.VALKYRA.ordinal()] == 0, "the minority must not score");
+                Factions.set(a2, Faction.VALKYRA); // now 1 v 1: tie
+                MatchManager.scoreTick(ow, d);
+                check(d.scores[Faction.LONESTAR.ordinal()] == 1, "a tie must not score");
+            }
+        } finally {
+            d.active = wasActive;
+            d.zoneX = zx; d.zoneZ = zz; d.zoneRadius = zr; d.hotX = hx; d.hotZ = hz; d.hotRadius = hr;
+            System.arraycopy(saved, 0, d.scores, 0, saved.length);
+        }
         h.succeed();
     }
 }

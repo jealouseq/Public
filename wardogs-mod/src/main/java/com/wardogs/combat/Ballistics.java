@@ -2,6 +2,8 @@ package com.wardogs.combat;
 
 import com.wardogs.WardogsMod;
 import com.wardogs.balance.AmmoType;
+import com.wardogs.balance.ArmorDef;
+import com.wardogs.item.ArmorPieceItem;
 import com.wardogs.balance.Balance;
 import com.wardogs.balance.WeaponDef;
 import net.minecraft.core.registries.Registries;
@@ -40,15 +42,17 @@ public final class Ballistics {
         return CURRENT.get();
     }
 
-    /** Pure damage calculation in WARDOGS units (flesh only; armor is a later milestone). */
-    public static double damage(WeaponDef w, boolean headshot, AmmoType ammo) {
+    /**
+     * Damage in WARDOGS units. Unarmored: base x ammo flesh multiplier (measured).
+     * Armored: base x ammo armor multiplier x (1 - armor reduction); both armor factors are estimates.
+     */
+    public static double damage(WeaponDef w, boolean headshot, AmmoType ammo, ArmorDef armor) {
         double base = headshot ? w.head() : w.chest();
-        double flesh = switch (ammo) {
-            case FMJ -> 1.0;
-            case HP -> 2.0;
-            case AP -> 0.8;
-        };
-        return base * flesh;
+        Balance b = Balance.get();
+        if (armor == null) {
+            return base * b.ammoMult(ammo, false);
+        }
+        return base * b.ammoMult(ammo, true) * (1.0 - armor.reduction());
     }
 
     /** Fires one trigger pull (all pellets) from the shooter's eyes. */
@@ -81,7 +85,7 @@ public final class Ballistics {
         Vec3 hitPos = ehr.getLocation();
         boolean head = isHeadshot(target, hitPos);
         double distance = start.distanceTo(hitPos);
-        double wd = damage(w, head, ammo) / pellets;
+        double wd = damage(w, head, ammo, ArmorPieceItem.worn(target, head)) / pellets;
         float mc = Balance.get().toMinecraftDamage(wd);
 
         DamageSource src = new DamageSource(

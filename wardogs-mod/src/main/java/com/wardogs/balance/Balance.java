@@ -14,6 +14,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -29,11 +31,29 @@ public final class Balance {
     private final Map<String, WeaponDef> weapons;
     private final RewardsDef rewards;
     private final double playerHealth;
+    private final List<ArmorDef> armor;
+    private final double[][] ammoMult; // [ammo ordinal] -> {flesh, armored}
 
-    private Balance(Map<String, WeaponDef> weapons, RewardsDef rewards, double playerHealth) {
+    private Balance(Map<String, WeaponDef> weapons, RewardsDef rewards, double playerHealth,
+                    List<ArmorDef> armor, double[][] ammoMult) {
         this.weapons = weapons;
         this.rewards = rewards;
         this.playerHealth = playerHealth;
+        this.armor = armor;
+        this.ammoMult = ammoMult;
+    }
+
+    public List<ArmorDef> armor() {
+        return armor;
+    }
+
+    public ArmorDef armor(String id) {
+        return armor.stream().filter(a -> a.id().equals(id)).findFirst().orElse(null);
+    }
+
+    /** Damage multiplier of an ammo type against flesh or against armored hit zones. */
+    public double ammoMult(AmmoType type, boolean armored) {
+        return ammoMult[type.ordinal()][armored ? 1 : 0];
     }
 
     public static Balance get() {
@@ -71,7 +91,7 @@ public final class Balance {
             return current;
         }
         Map<String, JsonObject> files = new LinkedHashMap<>();
-        for (String name : new String[]{"weapons", "rewards", "armor"}) {
+        for (String name : new String[]{"weapons", "rewards", "armor", "ammo"}) {
             files.put(name, readClasspath("/data/wardogs/balance/" + name + ".json"));
         }
         current = build(files);
@@ -96,8 +116,23 @@ public final class Balance {
             weapons.put(e.getKey(), WeaponDef.parse(e.getKey(), e.getValue().getAsJsonObject()));
         }
         RewardsDef rewards = RewardsDef.parse(files.get("rewards"));
-        double hp = files.get("armor").get("player_health").getAsDouble();
-        return new Balance(Map.copyOf(weapons), rewards, hp);
+        JsonObject armorJson = files.get("armor");
+        double hp = armorJson.get("player_health").getAsDouble();
+        List<ArmorDef> armor = new ArrayList<>();
+        for (var e : armorJson.getAsJsonObject("helmets").entrySet()) {
+            armor.add(ArmorDef.parse(ArmorDef.Slot.HELMET, e.getKey(), e.getValue().getAsJsonObject()));
+        }
+        for (var e : armorJson.getAsJsonObject("vests").entrySet()) {
+            armor.add(ArmorDef.parse(ArmorDef.Slot.VEST, e.getKey(), e.getValue().getAsJsonObject()));
+        }
+        double[][] ammo = new double[AmmoType.values().length][2];
+        JsonObject ammoJson = files.get("ammo").getAsJsonObject("ammo");
+        for (AmmoType t : AmmoType.values()) {
+            JsonObject a = ammoJson.getAsJsonObject(t.name().toLowerCase());
+            ammo[t.ordinal()][0] = a.get("flesh").getAsDouble();
+            ammo[t.ordinal()][1] = a.get("armor").getAsDouble();
+        }
+        return new Balance(Map.copyOf(weapons), rewards, hp, List.copyOf(armor), ammo);
     }
 
     /** Datapack reload listener: replaces the snapshot when the balance files in the datapack change. */
@@ -110,7 +145,7 @@ public final class Balance {
         protected void apply(Map<ResourceLocation, JsonElement> in, ResourceManager rm, ProfilerFiller profiler) {
             Map<String, JsonObject> files = new LinkedHashMap<>();
             // Start from the jar defaults, then overlay anything a datapack provides.
-            for (String name : new String[]{"weapons", "rewards", "armor"}) {
+            for (String name : new String[]{"weapons", "rewards", "armor", "ammo"}) {
                 JsonElement over = in.get(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, name));
                 files.put(name, over != null ? over.getAsJsonObject() : readClasspath("/data/wardogs/balance/" + name + ".json"));
             }

@@ -2,7 +2,10 @@ package com.wardogs;
 
 import com.mojang.logging.LogUtils;
 import com.wardogs.balance.Balance;
+import com.wardogs.economy.KillRewardHandler;
 import com.wardogs.economy.Wallet;
+import com.wardogs.match.Factions;
+import com.wardogs.match.MatchManager;
 import com.wardogs.item.ModComponents;
 import com.wardogs.item.ModItems;
 import net.neoforged.bus.api.IEventBus;
@@ -21,5 +24,7 @@ public final class WardogsMod {
         ModItems.ITEMS.register(modBus);
         ModItems.TABS.register(modBus);
         Wallet.ATTACHMENTS.register(modBus);
+        Factions.ATTACHMENTS.register(modBus);
+        KillRewardHandler.ZONES = MatchManager::multiplierAt;
     }
 }

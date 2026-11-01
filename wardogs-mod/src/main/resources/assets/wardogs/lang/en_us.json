@@ -37,5 +37,13 @@
   "item.wardogs.m1911": "M1911",
   "item.wardogs.ggx18": "GGX 18",
   "item.wardogs.deagle": "Deagle",
-  "item.wardogs.judge": "Judge"
+  "item.wardogs.judge": "Judge",
+  "item.wardogs.helmet_l1": "Helmet Level 1",
+  "item.wardogs.vest_l1": "Body Armor Level 1",
+  "item.wardogs.helmet_l2": "Helmet Level 2",
+  "item.wardogs.vest_l2": "Body Armor Level 2",
+  "item.wardogs.helmet_l3": "Helmet Level 3",
+  "item.wardogs.vest_l3": "Body Armor Level 3",
+  "item.wardogs.helmet_l4": "Helmet Level 4",
+  "item.wardogs.vest_l4": "Body Armor Level 4"
 }
