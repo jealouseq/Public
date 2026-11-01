@@ -86,7 +86,7 @@ public final class Ballistics {
         boolean head = isHeadshot(target, hitPos);
         double distance = start.distanceTo(hitPos);
         double wd = damage(w, head, ammo, ArmorPieceItem.worn(target, head)) / pellets;
-        float mc = Balance.get().toMinecraftDamage(wd);
+        float mc = Balance.get().damageTo(target, wd);
 
         DamageSource src = new DamageSource(
                 level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(BULLET), shooter, shooter);

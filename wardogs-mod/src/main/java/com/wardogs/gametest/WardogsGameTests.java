@@ -5,6 +5,7 @@ import com.wardogs.balance.AmmoType;
 import com.wardogs.balance.Balance;
 import com.wardogs.balance.WeaponDef;
 import com.wardogs.combat.Ballistics;
+import com.wardogs.combat.PlayerHealth;
 import com.wardogs.combat.ShooterState;
 import com.wardogs.economy.Wallet;
 import com.wardogs.match.Faction;
@@ -76,6 +77,12 @@ public final class WardogsGameTests {
         float yaw = (float) (Math.toDegrees(Math.atan2(-dx, dz)));
         float pitch = (float) (-Math.toDegrees(Math.atan2(dy, Math.sqrt(dx * dx + dz * dz))));
         p.moveTo(p.getX(), p.getY(), p.getZ(), yaw, pitch);
+    }
+
+    /** Fresh server players have 3 s of spawn protection; tests that damage them must clear it. */
+    private static void makeVulnerable(ServerPlayer p) {
+        p.setGameMode(net.minecraft.world.level.GameType.SURVIVAL); // mock players start in creative
+        net.neoforged.fml.util.ObfuscationReflectionHelper.setPrivateValue(ServerPlayer.class, p, 0, "spawnInvulnerableTime");
     }
 
     private static void check(boolean cond, String msg) {
@@ -324,6 +331,43 @@ public final class WardogsGameTests {
             d.zoneX = zx; d.zoneZ = zz; d.zoneRadius = zr; d.hotX = hx; d.hotZ = hz; d.hotRadius = hr;
             System.arraycopy(saved, 0, d.scores, 0, saved.length);
         }
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void playersHave100HealthAndTakeRawBulletDamage(GameTestHelper h) {
+        Arena a = arena(h);
+        ServerPlayer victim = h.makeMockServerPlayerInLevel();
+        Vec3 vp = h.absoluteVec(new Vec3(5.5, 1.0, 1.5 + RANGE));
+        victim.moveTo(vp.x, vp.y, vp.z, 0f, 0f);
+        h.getLevel().getServer().setPvpAllowed(true); // a match enables this itself
+        makeVulnerable(victim);
+        a.target.discard(); // keep the zombie out of the line of fire
+        PlayerHealth.apply(victim);
+        victim.setHealth(victim.getMaxHealth());
+        check(victim.getMaxHealth() == 100f, "max health should be 100, is " + victim.getMaxHealth());
+
+        WeaponDef m4 = Balance.get().weapon("m4");
+        Vec3 eye = a.shooter.getEyePosition();
+        double dx = victim.getX() - eye.x, dz = victim.getZ() - eye.z, dy = (victim.getY() + 1.0) - eye.y;
+        a.shooter.moveTo(a.shooter.getX(), a.shooter.getY(), a.shooter.getZ(), (float) Math.toDegrees(Math.atan2(-dx, dz)),
+                (float) -Math.toDegrees(Math.atan2(dy, Math.sqrt(dx * dx + dz * dz))));
+        Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
+        float lost = 100f - victim.getHealth();
+        check(Math.abs(lost - (float) m4.chest()) < 0.01f, "an M4 chest hit should cost a 100-HP player exactly " + m4.chest() + " but cost " + lost);
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void vanillaDamageIsScaledForPlayers(GameTestHelper h) {
+        ServerPlayer p = h.makeMockServerPlayerInLevel();
+        makeVulnerable(p);
+        PlayerHealth.apply(p);
+        p.setHealth(p.getMaxHealth());
+        p.hurt(p.level().damageSources().generic(), 2.0f); // 2 vanilla HP = 10% of vanilla health
+        float lost = 100f - p.getHealth();
+        check(Math.abs(lost - 10f) < 0.01f, "2 vanilla damage should cost 10 of 100 HP, cost " + lost
+);
         h.succeed();
     }
 }

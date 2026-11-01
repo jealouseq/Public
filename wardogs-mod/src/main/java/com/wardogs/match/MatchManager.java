@@ -55,6 +55,8 @@ public final class MatchManager {
 
     public static void start(ServerLevel overworld) {
         MatchData d = MatchData.get(overworld);
+        // Without PvP vanilla ignores all player-vs-player damage, which would make a match meaningless.
+        overworld.getServer().setPvpAllowed(true);
         d.active = true;
         java.util.Arrays.fill(d.scores, 0);
         RewardsDef r = Balance.get().rewards();

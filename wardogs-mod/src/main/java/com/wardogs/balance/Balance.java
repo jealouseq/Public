@@ -81,6 +81,14 @@ public final class Balance {
         return playerHealth;
     }
 
+    /**
+     * Damage to apply to a living target. Health is expressed relative to a soldier's 100 HP:
+     * a 100-HP player takes the WARDOGS figure 1:1, a 20-HP zombie takes a fifth of it.
+     */
+    public float damageTo(net.minecraft.world.entity.LivingEntity target, double wardogsDamage) {
+        return (float) (wardogsDamage * target.getMaxHealth() / playerHealth);
+    }
+
     /** Converts WARDOGS damage units to Minecraft health points (player has 20). */
     public float toMinecraftDamage(double wardogsDamage) {
         return (float) (wardogsDamage * 20.0 / playerHealth);
