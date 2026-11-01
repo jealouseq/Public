@@ -4,6 +4,7 @@ import com.wardogs.balance.AmmoType;
 import com.wardogs.balance.Balance;
 import com.wardogs.build.Buildable;
 import com.wardogs.combat.Ballistics;
+import com.wardogs.vehicle.Vehicle;
 import com.wardogs.match.Factions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
@@ -60,6 +61,11 @@ public final class Blast {
 
     /** Applies WARDOGS-unit damage so kills pay like bullet kills. */
     public static void damage(ServerLevel level, LivingEntity target, @Nullable Entity owner, String weaponId, double wardogsDamage, double distance) {
+        if (target instanceof Vehicle v) {
+            boolean antiTank = weaponId.equals("at_mine") || weaponId.equals("veh_shell");
+            v.applyWardogsDamage(wardogsDamage, antiTank ? Vehicle.DamageKind.ANTI_TANK : Vehicle.DamageKind.EXPLOSIVE, owner);
+            return;
+        }
         DamageSource src = new DamageSource(
                 level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(Ballistics.EXPLOSION), owner, owner);
         float mc = Balance.get().damageTo(target, wardogsDamage);

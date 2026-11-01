@@ -6,6 +6,7 @@ import com.wardogs.balance.Balance;
 import com.wardogs.balance.BuildingItemDef;
 import com.wardogs.balance.ExplosiveDef;
 import com.wardogs.balance.MedicalDef;
+import com.wardogs.balance.VehicleDef;
 import com.wardogs.balance.WeaponDef;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -86,8 +87,21 @@ public final class ModItems {
                 if (def.supply() != null) {
                     return new SupplyItem(p.stacksTo(64), def.supply());
                 }
+                if (def.wrench()) {
+                    return new WrenchItem(p);
+                }
                 return new FobKitItem(p);
             }));
+        }
+    }
+
+    /** vehicle id -> spawn ticket item. */
+    public static final Map<String, DeferredItem<VehicleItem>> VEHICLES = new LinkedHashMap<>();
+
+    static {
+        for (VehicleDef def : Balance.get().vehicles()) {
+            String id = def.id();
+            VEHICLES.put(id, ITEMS.register("vehicle_" + id, () -> new VehicleItem(new Item.Properties(), id)));
         }
     }
 
@@ -107,6 +121,9 @@ public final class ModItems {
         }
         if (BUILDING.containsKey(id)) {
             return new net.minecraft.world.item.ItemStack(BUILDING.get(id).get(), Balance.get().buildingItem(id).stack());
+        }
+        if (VEHICLES.containsKey(id)) {
+            return new net.minecraft.world.item.ItemStack(VEHICLES.get(id).get());
         }
         return null;
     }
@@ -128,6 +145,9 @@ public final class ModItems {
         if (BUILDING.containsKey(id)) {
             return Balance.get().buildingItem(id).price();
         }
+        if (VEHICLES.containsKey(id)) {
+            return Balance.get().vehicle(id).price();
+        }
         return -1;
     }
 
@@ -137,6 +157,7 @@ public final class ModItems {
         ids.addAll(MEDICAL.keySet());
         ids.addAll(EXPLOSIVES.keySet());
         ids.addAll(BUILDING.keySet());
+        ids.addAll(VEHICLES.keySet());
         return ids;
     }
 
@@ -150,6 +171,7 @@ public final class ModItems {
                         MEDICAL.values().forEach(m -> out.accept(new net.minecraft.world.item.ItemStack(m.get())));
                         EXPLOSIVES.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
                         BUILDING.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
+                        VEHICLES.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
                     })
                     .build());
 

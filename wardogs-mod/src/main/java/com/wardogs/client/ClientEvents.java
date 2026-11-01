@@ -4,6 +4,8 @@ import com.mojang.blaze3d.platform.InputConstants;
 import com.wardogs.WardogsMod;
 import com.wardogs.item.GunItem;
 import com.wardogs.net.ReloadPayload;
+import com.wardogs.net.VehicleFirePayload;
+import com.wardogs.vehicle.Vehicle;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
@@ -43,6 +45,11 @@ public final class ClientEvents {
             Minecraft mc = Minecraft.getInstance();
             if (mc.player == null) {
                 return;
+            }
+            // Holding the use button in an armed vehicle fires its mounted weapon.
+            if (mc.screen == null && mc.options.keyUse.isDown() && mc.player.getVehicle() instanceof Vehicle v
+                    && v.def() != null && v.def().gun() != null && v.getControllingPassenger() == mc.player) {
+                PacketDistributor.sendToServer(new VehicleFirePayload());
             }
             while (SHOP.consumeClick()) {
                 mc.setScreen(new ShopScreen());

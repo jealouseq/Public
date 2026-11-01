@@ -3,6 +3,7 @@ package com.wardogs.client;
 import com.wardogs.WardogsMod;
 import com.wardogs.match.Faction;
 import com.wardogs.net.HudPayload;
+import com.wardogs.vehicle.Vehicle;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -72,6 +73,15 @@ public final class HudLayer {
             return;
         }
         renderHealth(g, mc);
+        if (mc.player.getVehicle() instanceof Vehicle veh && veh.def() != null) {
+            var d = veh.def();
+            int y = g.guiHeight() - 70;
+            int x = g.guiWidth() - 6;
+            String l1 = d.name() + (d.gun() != null && veh.getControllingPassenger() == mc.player ? "  [hold fire]" : "");
+            String l2 = "HP " + (int) Math.ceil(veh.getHealth()) + "/" + (int) veh.getMaxHealth() + "   Fuel " + (int) veh.fuel() + "/" + (int) d.fuel();
+            g.drawString(mc.font, l1, x - mc.font.width(l1), y, 0xFFFFFFFF, true);
+            g.drawString(mc.font, l2, x - mc.font.width(l2), y + 11, veh.fuel() < d.fuel() * 0.15 ? 0xFFFF5555 : 0xFFDDDDDD, true);
+        }
         if (h == null) {
             return;
         }

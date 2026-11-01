@@ -4,6 +4,7 @@ import com.wardogs.WardogsMod;
 import com.wardogs.balance.AmmoType;
 import com.wardogs.balance.ArmorDef;
 import com.wardogs.item.ArmorPieceItem;
+import com.wardogs.vehicle.Vehicle;
 import com.wardogs.balance.Balance;
 import com.wardogs.balance.WeaponDef;
 import net.minecraft.core.registries.Registries;
@@ -92,7 +93,8 @@ public final class Ballistics {
 
         AABB box = shooter.getBoundingBox().expandTowards(dir.scale(range)).inflate(1.0);
         EntityHitResult ehr = ProjectileUtil.getEntityHitResult(shooter, start, blockEnd, box,
-                e -> !e.isSpectator() && e.isPickable() && e != shooter, range * range);
+                e -> !e.isSpectator() && e.isPickable() && e != shooter
+                        && e != shooter.getVehicle() && !(shooter.getVehicle() != null && e.getVehicle() == shooter.getVehicle()), range * range);
         if (ehr == null || !(ehr.getEntity() instanceof LivingEntity target)) {
             if (block.getType() != HitResult.Type.MISS) {
                 level.sendParticles(ParticleTypes.SMOKE, block.getLocation().x, block.getLocation().y, block.getLocation().z, 2, 0.02, 0.02, 0.02, 0.0);
@@ -100,6 +102,13 @@ public final class Ballistics {
             return;
         }
 
+        if (target instanceof Vehicle veh) {
+            // Vehicles have no head; armor-piercing rounds do extra damage to them.
+            double dmg = w.chest() * Balance.get().ammoMult(ammo, true) / pellets;
+            Ballistics.runAs(new Hit(w.id(), false, start.distanceTo(ehr.getLocation()), ammo),
+                    () -> veh.applyWardogsDamage(dmg, Vehicle.DamageKind.BULLET, shooter));
+            return;
+        }
         Vec3 hitPos = ehr.getLocation();
         boolean head = isHeadshot(target, hitPos);
         double distance = start.distanceTo(hitPos);
@@ -125,7 +134,7 @@ public final class Ballistics {
     }
 
     /** Random direction inside a cone; {@code spreadValue} is the sources' "accuracy" figure (lower is better). */
-    static Vec3 withSpread(Vec3 dir, double spreadValue, net.minecraft.util.RandomSource rnd) {
+    public static Vec3 withSpread(Vec3 dir, double spreadValue, net.minecraft.util.RandomSource rnd) {
         double maxAngle = Math.toRadians(spreadValue * 0.3);
         if (maxAngle <= 0) {
             return dir;

@@ -1,4 +1,4 @@
 {
   "replace": false,
-  "values": ["minecraft:minecart", "minecraft:chest_minecart", "minecraft:boat"]
+  "values": ["wardogs:vehicle", "minecraft:minecart", "minecraft:chest_minecart", "minecraft:boat"]
 }

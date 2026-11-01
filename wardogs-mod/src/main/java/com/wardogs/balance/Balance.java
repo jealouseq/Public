@@ -41,13 +41,16 @@ public final class Balance {
     private final ProgressionDef progression;
     private final Map<String, StructureDef> structures;
     private final Map<String, BuildingItemDef> buildingItems;
+    private final Map<String, VehicleDef> vehicles;
+    private final double[] vehicleTuning; // fuelPerBlock, fuelPerSupply, repairFraction, groundPay, airPay
     private final double[] buildTuning; // fobRadius, claymoreVsStructure, fragVsStructure, barbedWireDps
 
     private Balance(Map<String, WeaponDef> weapons, RewardsDef rewards, double playerHealth,
                     List<ArmorDef> armor, double[][] ammoMult,
                     Map<String, MedicalDef> medical, int bleedoutTicks, double reviveRange, double downedHp,
                     Map<String, ExplosiveDef> explosives, ProgressionDef progression,
-                    Map<String, StructureDef> structures, Map<String, BuildingItemDef> buildingItems, double[] buildTuning) {
+                    Map<String, StructureDef> structures, Map<String, BuildingItemDef> buildingItems, double[] buildTuning,
+                    Map<String, VehicleDef> vehicles, double[] vehicleTuning) {
         this.weapons = weapons;
         this.rewards = rewards;
         this.playerHealth = playerHealth;
@@ -62,6 +65,8 @@ public final class Balance {
         this.structures = structures;
         this.buildingItems = buildingItems;
         this.buildTuning = buildTuning;
+        this.vehicles = vehicles;
+        this.vehicleTuning = vehicleTuning;
     }
 
     public MedicalDef medical(String id) {
@@ -75,6 +80,30 @@ public final class Balance {
     /** Ticks a downed player lasts before bleeding out (estimate). */
     public int bleedoutTicks() {
         return bleedoutTicks;
+    }
+
+    public VehicleDef vehicle(String id) {
+        return vehicles.get(id);
+    }
+
+    public java.util.Collection<VehicleDef> vehicles() {
+        return vehicles.values();
+    }
+
+    public double fuelPerBlock() {
+        return vehicleTuning[0];
+    }
+
+    public double fuelPerSupply() {
+        return vehicleTuning[1];
+    }
+
+    public double repairFraction() {
+        return vehicleTuning[2];
+    }
+
+    public long transportPay(boolean air) {
+        return (long) vehicleTuning[air ? 4 : 3];
     }
 
     public StructureDef structure(String id) {
@@ -187,7 +216,7 @@ public final class Balance {
             return current;
         }
         Map<String, JsonObject> files = new LinkedHashMap<>();
-        for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression", "structures"}) {
+        for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression", "structures", "vehicles"}) {
             files.put(name, readClasspath("/data/wardogs/balance/" + name + ".json"));
         }
         current = build(files);
@@ -241,7 +270,20 @@ public final class Balance {
                 med.get("bleedout_ticks").getAsInt(), med.get("revive_range").getAsDouble(), med.get("downed_hp").getAsDouble(), Map.copyOf(explosives),
                 ProgressionDef.parse(files.get("progression")), structures(files.get("structures")), buildingItems(files.get("structures")),
                 new double[]{files.get("structures").get("fob_radius").getAsDouble(), files.get("structures").get("claymore_vs_structure").getAsDouble(),
-                        files.get("structures").get("frag_vs_structure").getAsDouble(), files.get("structures").get("barbed_wire_dps").getAsDouble()});
+                        files.get("structures").get("frag_vs_structure").getAsDouble(), files.get("structures").get("barbed_wire_dps").getAsDouble()},
+                vehicles(files.get("vehicles")),
+                new double[]{files.get("vehicles").get("fuel_per_block").getAsDouble(), files.get("vehicles").get("fuel_per_supply").getAsDouble(),
+                        files.get("vehicles").get("repair_fraction").getAsDouble(),
+                        files.get("vehicles").getAsJsonObject("transport").get("ground_per_passenger").getAsDouble(),
+                        files.get("vehicles").getAsJsonObject("transport").get("air_per_passenger").getAsDouble()});
+    }
+
+    private static Map<String, VehicleDef> vehicles(JsonObject o) {
+        Map<String, VehicleDef> m = new LinkedHashMap<>();
+        for (Map.Entry<String, JsonElement> e : o.getAsJsonObject("vehicles").entrySet()) {
+            m.put(e.getKey(), VehicleDef.parse(e.getKey(), e.getValue().getAsJsonObject()));
+        }
+        return java.util.Collections.unmodifiableMap(m);
     }
 
     private static Map<String, StructureDef> structures(JsonObject o) {
@@ -270,7 +312,7 @@ public final class Balance {
         protected void apply(Map<ResourceLocation, JsonElement> in, ResourceManager rm, ProfilerFiller profiler) {
             Map<String, JsonObject> files = new LinkedHashMap<>();
             // Start from the jar defaults, then overlay anything a datapack provides.
-            for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression", "structures"}) {
+            for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression", "structures", "vehicles"}) {
                 JsonElement over = in.get(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, name));
                 files.put(name, over != null ? over.getAsJsonObject() : readClasspath("/data/wardogs/balance/" + name + ".json"));
             }

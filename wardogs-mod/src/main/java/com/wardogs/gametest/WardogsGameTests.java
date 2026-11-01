@@ -18,6 +18,8 @@ import com.wardogs.item.ExplosiveItem;
 import com.wardogs.build.Building;
 import com.wardogs.build.Buildable;
 import com.wardogs.item.HammerItem;
+import com.wardogs.vehicle.Vehicle;
+import com.wardogs.vehicle.VehicleGuns;
 import com.wardogs.item.GunItem;
 import com.wardogs.progress.Progression;
 import com.wardogs.progress.Role;
@@ -779,6 +781,220 @@ public final class WardogsGameTests {
         Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
         check(a.target.getHealth() == before, "a HESCO wall between shooter and target must absorb the bullet");
         check(wall.health() == 4600f, "bullets do not damage structures");
+        h.succeed();
+    }
+
+    // --- vehicles ----------------------------------------------------------------------------
+
+    private static Vehicle vehicleAt(GameTestHelper h, String id, Faction f, double x, double z) {
+        return Vehicle.spawn(h.getLevel(), Balance.get().vehicle(id), ground(h, x, z), 0f, f == null ? -1 : f.ordinal());
+    }
+
+    @GameTest(template = "empty")
+    public static void vehiclesSpawnWithTheirConfiguredStats(GameTestHelper h) {
+        arena(h).target.discard();
+        var def = Balance.get().vehicle("humvee");
+        Vehicle v = vehicleAt(h, "humvee", Faction.LONESTAR, 6.5, 6.5);
+        check(Math.abs(v.getMaxHealth() - (float) def.hp()) < 0.01f, "max health should be " + def.hp() + " but is " + v.getMaxHealth());
+        check(Math.abs(v.getHealth() - (float) def.hp()) < 0.01f, "spawns undamaged");
+        check(v.fuel() == (float) def.fuel(), "spawns with a full tank of " + def.fuel() + ", has " + v.fuel());
+        check(v.faction() == Faction.LONESTAR.ordinal(), "belongs to the spawner's faction");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void smallArmsBarelyScratchATankButHurtACar(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        WeaponDef m4 = Balance.get().weapon("m4");
+        Vehicle tank = vehicleAt(h, "l2a6", Faction.VALKYRA, 5.5, 1.5 + RANGE);
+        Vehicle car = vehicleAt(h, "bobcat", Faction.VALKYRA, 9.5, 1.5 + RANGE);
+        Vec3 eye = a.shooter.getEyePosition();
+        for (Vehicle v : new Vehicle[]{tank, car}) {
+            double dx = v.getX() - eye.x, dz = v.getZ() - eye.z, dy = (v.getY() + v.getBbHeight() / 2) - eye.y;
+            a.shooter.moveTo(a.shooter.getX(), a.shooter.getY(), a.shooter.getZ(), (float) Math.toDegrees(Math.atan2(-dx, dz)),
+                    (float) -Math.toDegrees(Math.atan2(dy, Math.sqrt(dx * dx + dz * dz))));
+            Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
+        }
+        float tankLost = tank.getMaxHealth() - tank.getHealth();
+        float carLost = car.getMaxHealth() - car.getHealth();
+        float tankExpected = (float) (m4.chest() * Balance.get().ammoMult(AmmoType.FMJ, true) * tank.def().smallArms());
+        float carExpected = (float) (m4.chest() * Balance.get().ammoMult(AmmoType.FMJ, true) * car.def().smallArms());
+        check(Math.abs(tankLost - tankExpected) < 0.05f, "tank should lose " + tankExpected + " but lost " + tankLost);
+        check(Math.abs(carLost - carExpected) < 0.05f, "bobcat should lose " + carExpected + " but lost " + carLost);
+        check(carLost > tankLost * 5, "a car takes far more from rifle fire than a tank");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void destroyingAnEnemyVehiclePaysItsRewardOnce(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Factions.set(a.shooter, Faction.LONESTAR);
+        Vehicle car = vehicleAt(h, "dune_buggy", Faction.VALKYRA, 6.5, 6.5);
+        long before = Wallet.get(a.shooter);
+        var mine = Balance.get().explosive("at_mine");
+        Blast.explode(h.getLevel(), car.position().add(0, 0.5, 0), mine.radius(), mine.damage(), a.shooter, "at_mine");
+        check(!car.isAlive(), "an anti-tank mine blast must destroy a dune buggy, health " + car.getHealth());
+        check(Wallet.get(a.shooter) - before == 300, "destroying a dune buggy pays $300, paid " + (Wallet.get(a.shooter) - before));
+        check(Progression.get(a.shooter).xpOf(Role.WARDOG) > 0, "and awards general XP");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void ownFactionVehicleDestructionPaysNothing(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Factions.set(a.shooter, Faction.MANTICORE);
+        Vehicle car = vehicleAt(h, "bobcat", Faction.MANTICORE, 6.5, 6.5);
+        long before = Wallet.get(a.shooter);
+        var mine = Balance.get().explosive("at_mine");
+        Blast.explode(h.getLevel(), car.position().add(0, 0.5, 0), mine.radius(), mine.damage(), a.shooter, "at_mine");
+        check(!car.isAlive(), "the blast still destroys it");
+        check(Wallet.get(a.shooter) == before, "wrecking your own side's vehicle pays nothing");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void realMineTriggersOnAVehicleEntity(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Factions.set(a.shooter, Faction.LONESTAR);
+        Vehicle truck = vehicleAt(h, "kodiak", Faction.VALKYRA, 6.5, 6.5);
+        var mine = Balance.get().explosive("at_mine");
+        PlacedCharge m = PlacedCharge.place(h.getLevel(), mine, ground(h, 6.5, 6.5), 0f, a.shooter.getUUID());
+        later(h, PlacedCharge.ARM_TICKS + 15L, () -> {
+            check(m.isRemoved(), "the mine must detonate under a real vehicle");
+            check(truck.getHealth() < truck.getMaxHealth() || !truck.isAlive(), "and damage it");
+            h.succeed();
+        });
+    }
+
+    @GameTest(template = "empty")
+    public static void fuelSuppliesRefillAndWrenchesRepair(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Factions.set(a.shooter, Faction.LONESTAR);
+        var def = Balance.get().vehicle("humvee");
+        Vehicle v = vehicleAt(h, "humvee", Faction.LONESTAR, 6.5, 6.5);
+        v.setFuel(10f);
+        a.shooter.setItemInHand(InteractionHand.MAIN_HAND, ModItems.stack("fuel_supplies"));
+        v.interact(a.shooter, InteractionHand.MAIN_HAND);
+        double per = Balance.get().fuelPerSupply();
+        check(v.fuel() > 10f + per - 0.01f, "fuel supplies should add " + per + " per unit, fuel is " + v.fuel());
+        check(v.fuel() <= (float) def.fuel(), "never above capacity");
+        check(a.shooter.getMainHandItem().getCount() < 50, "supplies were spent");
+
+        v.hurt(h.getLevel().damageSources().generic(), 100f);
+        float damaged = v.getHealth();
+        a.shooter.setItemInHand(InteractionHand.MAIN_HAND, ModItems.stack("wrench"));
+        v.interact(a.shooter, InteractionHand.MAIN_HAND);
+        float expected = (float) (damaged + def.hp() * Balance.get().repairFraction());
+        check(Math.abs(v.getHealth() - expected) < 0.05f, "a wrench repairs " + Balance.get().repairFraction() * 100 + "% of max health: expected " + expected + " got " + v.getHealth());
+        float afterOne = v.getHealth();
+        v.interact(a.shooter, InteractionHand.MAIN_HAND);
+        check(v.getHealth() == afterOne, "repairs have a short cooldown");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void enemiesCannotBoardButFriendsCan(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Vehicle v = vehicleAt(h, "humvee", Faction.LONESTAR, 6.5, 3.5);
+        ServerPlayer friend = soldier(h, Faction.LONESTAR, 6.5, 2.5);
+        ServerPlayer foe = soldier(h, Faction.VALKYRA, 4.5, 2.5);
+        foe.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
+        v.interact(foe, InteractionHand.MAIN_HAND);
+        check(foe.getVehicle() != v, "an enemy must not be able to board");
+        v.interact(friend, InteractionHand.MAIN_HAND);
+        check(friend.getVehicle() == v, "a friendly soldier boards");
+        check(v.getControllingPassenger() == friend, "the first one in is the driver");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void seatCountIsEnforced(GameTestHelper h) {
+        arena(h).target.discard();
+        var def = Balance.get().vehicle("bobcat"); // 2 seats
+        Vehicle v = vehicleAt(h, "bobcat", Faction.LONESTAR, 6.5, 3.5);
+        ServerPlayer[] p = new ServerPlayer[def.seats() + 1];
+        int seated = 0;
+        for (int i = 0; i < p.length; i++) {
+            p[i] = soldier(h, Faction.LONESTAR, 6.5, 2.5);
+            if (p[i].startRiding(v)) {
+                seated++;
+            }
+        }
+        check(seated == def.seats(), "a bobcat seats " + def.seats() + " but seated " + seated);
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void drivingBurnsFuelAndDeliveriesPayTheDriver(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        ServerLevel ow = h.getLevel().getServer().overworld();
+        MatchData d = MatchData.get(ow);
+        boolean wasActive = d.active;
+        double zx = d.zoneX, zz = d.zoneZ, zr = d.zoneRadius, hx = d.hotX, hz = d.hotZ, hr = d.hotRadius;
+        try {
+            Vec3 spot = ground(h, 6.5, 6.5);
+            Vehicle v = vehicleAt(h, "humvee", Faction.LONESTAR, 6.5, 6.5);
+            ServerPlayer driver = soldier(h, Faction.LONESTAR, 6.5, 2.5);
+            ServerPlayer rider = soldier(h, Faction.LONESTAR, 6.5, 2.5);
+            check(driver.startRiding(v) && rider.startRiding(v), "both board");
+
+            // Boarded in the open: no zone is active yet.
+            check(MatchManager.zoneLevel(ow, spot) == 0, "no zone while idle");
+            float before = v.fuel();
+            v.moveTo(spot.x + 10, spot.y, spot.z, 0f, 0f); // simulate 10 blocks driven
+            v.tick();
+            float burned = before - v.fuel();
+            check(burned > 0.9f * (float) (10 * Balance.get().fuelPerBlock()), "10 blocks should burn about " + 10 * Balance.get().fuelPerBlock() + " fuel, burned " + burned);
+
+            // Now drive into a Control Zone and let the passenger out.
+            d.active = true;
+            d.zoneX = v.getX(); d.zoneZ = v.getZ(); d.zoneRadius = 4;
+            d.hotX = v.getX() + 1000; d.hotZ = v.getZ(); d.hotRadius = 2;
+            long start = Wallet.get(driver);
+            rider.stopRiding();
+            long pay = Wallet.get(driver) - start;
+            check(pay == Balance.get().transportPay(false), "delivering a passenger into the zone pays the driver $" + Balance.get().transportPay(false) + ", paid " + pay);
+            check(Progression.get(driver).xpOf(Role.DRIVER) > 0, "and trains the Driver role");
+
+            // Someone who boarded inside the zone is not a delivery.
+            ServerPlayer local = soldier(h, Faction.LONESTAR, 6.5, 2.5);
+            check(local.startRiding(v), "boards inside the zone");
+            long mid = Wallet.get(driver);
+            local.stopRiding();
+            check(Wallet.get(driver) == mid, "boarding inside the zone is not a delivery");
+        } finally {
+            d.active = wasActive;
+            d.zoneX = zx; d.zoneZ = zz; d.zoneRadius = zr; d.hotX = hx; d.hotZ = hz; d.hotRadius = hr;
+        }
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void mountedGunsShootAtTheDriversAim(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Zombie z = zombieAt(h, 5.5, 1.5 + RANGE);
+        Vehicle v = vehicleAt(h, "humvee_m249", Faction.LONESTAR, 5.5, 1.5);
+        ServerPlayer driver = soldier(h, Faction.LONESTAR, 5.5, 1.5);
+        check(driver.startRiding(v), "driver boards");
+        Vec3 eye = driver.getEyePosition();
+        double dx = z.getX() - eye.x, dz = z.getZ() - eye.z, dy = (z.getY() + 1.0) - eye.y;
+        driver.moveTo(driver.getX(), driver.getY(), driver.getZ(), (float) Math.toDegrees(Math.atan2(-dx, dz)),
+                (float) -Math.toDegrees(Math.atan2(dy, Math.sqrt(dx * dx + dz * dz))));
+        check(VehicleGuns.fire(driver, v), "the first trigger pull fires");
+        check(z.getHealth() < 20f, "the target is hit, health " + z.getHealth());
+        check(!VehicleGuns.fire(driver, v), "the gun obeys its fire rate within the same tick");
+        Vehicle plain = vehicleAt(h, "humvee", Faction.LONESTAR, 8.5, 1.5);
+        ServerPlayer d2 = soldier(h, Faction.LONESTAR, 8.5, 1.5);
+        d2.startRiding(plain);
+        check(!VehicleGuns.fire(d2, plain), "an unarmed vehicle does not fire");
         h.succeed();
     }
 }

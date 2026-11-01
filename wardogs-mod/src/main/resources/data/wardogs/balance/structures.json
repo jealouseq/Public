@@ -235,6 +235,13 @@
    "level": 0,
    "cost": 0,
    "kit": true
+  },
+  "wrench": {
+   "price": 180,
+   "role": "any",
+   "level": 0,
+   "cost": 0,
+   "wrench": true
   }
  }
 }

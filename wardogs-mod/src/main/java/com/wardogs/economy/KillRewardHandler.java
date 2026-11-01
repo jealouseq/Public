@@ -45,6 +45,9 @@ public final class KillRewardHandler {
             return;
         }
         var victim = e.getEntity();
+        if (victim instanceof com.wardogs.vehicle.Vehicle) {
+            return; // vehicles pay their own destruction reward
+        }
         if (victim instanceof Player downedVictim && Downed.is(downedVictim)) {
             return; // finishing off a downed player was already paid when they went down
         }

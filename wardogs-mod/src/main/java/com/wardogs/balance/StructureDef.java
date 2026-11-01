@@ -18,6 +18,7 @@ public record StructureDef(String id, Tier tier, double hp, double w, double h, 
             case "at_mine" -> hp / hitsMine;
             case "claymore" -> b.claymoreVsStructure();
             case "m67_frag" -> b.fragVsStructure();
+            case "veh_shell" -> hp / (hitsC4 * 2.0); // a shell is estimated at half a C4 charge
             default -> 0.0;
         };
     }
