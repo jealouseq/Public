@@ -1,0 +1,65 @@
+{
+ "_comment": "price/weight/unlock from metabot.gg. 'reduction' (fraction of damage absorbed) is an ESTIMATE, sources give none.",
+ "player_health": 100.0,
+ "player_health_estimated": true,
+ "helmets": {
+  "1": {
+   "price": 200,
+   "weight": 1.0,
+   "unlock_level": 3,
+   "reduction": 0.1,
+   "neck": false
+  },
+  "2": {
+   "price": 500,
+   "weight": 1.6,
+   "unlock_level": 30,
+   "reduction": 0.2,
+   "neck": false
+  },
+  "3": {
+   "price": 1500,
+   "weight": 3.0,
+   "unlock_level": 60,
+   "reduction": 0.35,
+   "neck": true
+  },
+  "4": {
+   "price": 3000,
+   "weight": 4.5,
+   "unlock_level": 100,
+   "reduction": 0.5,
+   "neck": true
+  }
+ },
+ "vests": {
+  "1": {
+   "price": 400,
+   "weight": 3.0,
+   "unlock_level": 3,
+   "reduction": 0.1,
+   "arms": false
+  },
+  "2": {
+   "price": 1000,
+   "weight": 4.5,
+   "unlock_level": 30,
+   "reduction": 0.2,
+   "arms": false
+  },
+  "3": {
+   "price": 2000,
+   "weight": 10.5,
+   "unlock_level": 60,
+   "reduction": 0.35,
+   "arms": false
+  },
+  "4": {
+   "price": 4000,
+   "weight": 18.0,
+   "unlock_level": 100,
+   "reduction": 0.5,
+   "arms": true
+  }
+ }
+}

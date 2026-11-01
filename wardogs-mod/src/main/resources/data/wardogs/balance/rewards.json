@@ -1,0 +1,92 @@
+{
+ "_comment": "Money rewards (xgamingserver/allthings, community; real game tunes dynamically).",
+ "starting_cash": 10000,
+ "kill": {
+  "base": 300,
+  "headshot": 350,
+  "control_zone_mult": 5,
+  "hot_zone_mult": 10,
+  "distance_mult": [
+   [
+    300,
+    1.5
+   ],
+   [
+    400,
+    2.0
+   ],
+   [
+    500,
+    2.5
+   ],
+   [
+    600,
+    3.0
+   ],
+   [
+    900,
+    4.0
+   ]
+  ],
+  "streak_bonus": 50,
+  "streak_cap": 250,
+  "revenge_mult": 2.0,
+  "end_streak_mult": 1.5,
+  "repeat_victim_penalty": 0.25,
+  "repeat_victim_steps": 4,
+  "teamkill_cost_mult": 3.0
+ },
+ "zone": {
+  "enter": 250,
+  "tick_seconds": 22,
+  "control_tick": 160,
+  "hot_tick": 320,
+  "hot_consecutive_bonus": 50,
+  "hot_consecutive_cap": 500
+ },
+ "revive": {
+  "open": 400,
+  "control": 800,
+  "hot": 1600,
+  "defib_open": 600,
+  "defib_control": 1200,
+  "defib_hot": 2400,
+  "repeat_penalty": 0.25
+ },
+ "mark": {
+  "mark": 100,
+  "kill_marked_open": 400,
+  "kill_marked_hot": 1600
+ },
+ "transport": {
+  "air_per_passenger": 150,
+  "ground_per_passenger": 500
+ },
+ "vehicle_kill": {
+  "artillery": 14000,
+  "attack_heli": 9000,
+  "tank": 7000,
+  "spawn_vehicle": 5000,
+  "dune_buggy": 300
+ },
+ "round_end": {
+  "loadout_refund": 0.9,
+  "min_ticks": 20,
+  "place": [
+   [
+    1000,
+    0.3
+   ],
+   [
+    500,
+    0.25
+   ],
+   [
+    250,
+    0.2
+   ]
+  ]
+ },
+ "win_score": 100,
+ "zone_tick_score_seconds": 30
+}
