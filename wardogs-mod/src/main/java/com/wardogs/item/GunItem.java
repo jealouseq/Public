@@ -5,6 +5,7 @@ import com.wardogs.balance.Balance;
 import com.wardogs.balance.WeaponDef;
 import com.wardogs.combat.Ballistics;
 import com.wardogs.combat.ShooterState;
+import com.wardogs.medic.Downed;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -116,7 +117,7 @@ public class GunItem extends Item {
     /** @return true if a shot was fired. */
     private boolean tryShoot(ServerPlayer sp, ServerLevel level, ItemStack stack, WeaponDef def, ShooterState st) {
         long now = level.getGameTime();
-        if (st.reloading() || now < st.nextShotTime) {
+        if (Downed.is(sp) || st.reloading() || now < st.nextShotTime) {
             return false;
         }
         int ammo = ammo(stack);

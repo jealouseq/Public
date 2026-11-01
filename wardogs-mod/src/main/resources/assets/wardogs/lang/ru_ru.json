@@ -45,5 +45,12 @@
   "item.wardogs.helmet_l3": "Шлем уровень 3",
   "item.wardogs.vest_l3": "Бронежилет уровень 3",
   "item.wardogs.helmet_l4": "Шлем уровень 4",
-  "item.wardogs.vest_l4": "Бронежилет уровень 4"
+  "item.wardogs.vest_l4": "Бронежилет уровень 4",
+  "item.wardogs.bandage": "Бинт",
+  "item.wardogs.ifak": "Индивидуальная аптечка",
+  "item.wardogs.medical_bag": "Медицинская сумка",
+  "item.wardogs.field_resuscitator": "Полевой реаниматор",
+  "item.wardogs.stim_pen": "Стимулятор",
+  "item.wardogs.defibrillator": "Дефибриллятор",
+  "item.wardogs.battery": "Батарея"
 }

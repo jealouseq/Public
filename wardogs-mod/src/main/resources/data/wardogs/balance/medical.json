@@ -1,0 +1,71 @@
+{
+ "_comment": "Prices/unlocks from community sources (RESEARCH.md section 8). ticks/hp/charges/bleedout are ESTIMATES (sources publish none).",
+ "bleedout_ticks": 1200,
+ "downed_hp": 25,
+ "revive_range": 3.0,
+ "items": {
+  "bandage": {
+   "price": 200,
+   "kind": "heal",
+   "ticks": 40,
+   "hp": 20,
+   "unlock_role": "medic",
+   "unlock_level": 0,
+   "unlock_cost": 0
+  },
+  "ifak": {
+   "price": 800,
+   "kind": "heal",
+   "ticks": 60,
+   "hp": 100,
+   "unlock_role": "medic",
+   "unlock_level": 9,
+   "unlock_cost": 25000
+  },
+  "medical_bag": {
+   "price": 1800,
+   "kind": "heal",
+   "ticks": 100,
+   "hp": 60,
+   "unlock_role": "medic",
+   "unlock_level": 24,
+   "unlock_cost": 75000
+  },
+  "field_resuscitator": {
+   "price": 425,
+   "kind": "revive",
+   "ticks": 100,
+   "hp": 25,
+   "unlock_role": "medic",
+   "unlock_level": 2,
+   "unlock_cost": 10000
+  },
+  "stim_pen": {
+   "price": 250,
+   "kind": "revive",
+   "ticks": 30,
+   "hp": 30,
+   "unlock_role": "medic",
+   "unlock_level": 14,
+   "unlock_cost": 25000
+  },
+  "defibrillator": {
+   "price": 1600,
+   "kind": "revive",
+   "ticks": 20,
+   "hp": 50,
+   "charges": 4,
+   "unlock_role": "medic",
+   "unlock_level": 11,
+   "unlock_cost": 50000
+  },
+  "battery": {
+   "price": 150,
+   "kind": "battery",
+   "charges": 4,
+   "unlock_role": "any",
+   "unlock_level": 0,
+   "unlock_cost": 0
+  }
+ }
+}

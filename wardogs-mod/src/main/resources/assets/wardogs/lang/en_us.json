@@ -45,5 +45,12 @@
   "item.wardogs.helmet_l3": "Helmet Level 3",
   "item.wardogs.vest_l3": "Body Armor Level 3",
   "item.wardogs.helmet_l4": "Helmet Level 4",
-  "item.wardogs.vest_l4": "Body Armor Level 4"
+  "item.wardogs.vest_l4": "Body Armor Level 4",
+  "item.wardogs.bandage": "Bandage",
+  "item.wardogs.ifak": "Individual First Aid Kit",
+  "item.wardogs.medical_bag": "Medical Bag",
+  "item.wardogs.field_resuscitator": "Field Resuscitator",
+  "item.wardogs.stim_pen": "Stim Pen",
+  "item.wardogs.defibrillator": "Defibrillator",
+  "item.wardogs.battery": "Battery"
 }

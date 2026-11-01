@@ -24,5 +24,11 @@ public final class ModComponents {
                     .persistent(ExtraCodecs.NON_NEGATIVE_INT)
                     .networkSynchronized(ByteBufCodecs.VAR_INT));
 
+    /** Remaining defibrillator charges. */
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> CHARGES =
+            COMPONENTS.registerComponentType("charges", b -> b
+                    .persistent(ExtraCodecs.NON_NEGATIVE_INT)
+                    .networkSynchronized(ByteBufCodecs.VAR_INT));
+
     private ModComponents() {}
 }

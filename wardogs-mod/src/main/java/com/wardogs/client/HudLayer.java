@@ -75,6 +75,11 @@ public final class HudLayer {
         if (h == null) {
             return;
         }
+        if (h.downed() > 0) {
+            String t = "YOU ARE DOWN  " + (int) Math.ceil(h.downed() / 20.0) + "s";
+            g.drawCenteredString(mc.font, t, g.guiWidth() / 2, g.guiHeight() / 2 + 20, 0xFFFF4040);
+            g.drawCenteredString(mc.font, "Wait for a teammate to revive you", g.guiWidth() / 2, g.guiHeight() / 2 + 32, 0xFFCCCCCC);
+        }
         int w = g.guiWidth();
         g.drawString(mc.font, "$" + h.money(), 6, 6, 0xFFD54A, true);
         Faction f = Faction.byIndex(h.faction());

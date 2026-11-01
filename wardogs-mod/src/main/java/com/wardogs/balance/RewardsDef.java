@@ -25,7 +25,10 @@ public record RewardsDef(
         long zoneHotTick,
         long hotBonusStep,
         long hotBonusCap,
-        long[] placeBonus) {
+        long[] placeBonus,
+        long[] reviveBy,
+        long[] defibBy,
+        double reviveRepeatPenalty) {
 
     public static RewardsDef parse(JsonObject o) {
         JsonObject k = o.getAsJsonObject("kill");
@@ -42,6 +45,9 @@ public record RewardsDef(
         for (int i = 0; i < p.size(); i++) {
             place[i] = p.get(i).getAsJsonArray().get(0).getAsLong();
         }
+        JsonObject rv = o.getAsJsonObject("revive");
+        long[] revive = {rv.get("open").getAsLong(), rv.get("control").getAsLong(), rv.get("hot").getAsLong()};
+        long[] defib = {rv.get("defib_open").getAsLong(), rv.get("defib_control").getAsLong(), rv.get("defib_hot").getAsLong()};
         return new RewardsDef(
                 o.get("starting_cash").getAsLong(),
                 k.get("base").getAsDouble(),
@@ -63,6 +69,6 @@ public record RewardsDef(
                 z.get("hot_tick").getAsLong(),
                 z.get("hot_consecutive_bonus").getAsLong(),
                 z.get("hot_consecutive_cap").getAsLong(),
-                place);
+                place, revive, defib, rv.get("repeat_penalty").getAsDouble());
     }
 }

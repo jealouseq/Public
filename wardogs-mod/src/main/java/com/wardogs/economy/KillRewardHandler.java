@@ -9,6 +9,8 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
+import com.wardogs.medic.Downed;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
@@ -33,13 +35,17 @@ public final class KillRewardHandler {
 
     private KillRewardHandler() {}
 
-    @SubscribeEvent
+    /** Runs before the downed system cancels the death, so the kill is paid when the victim goes down. */
+    @SubscribeEvent(priority = EventPriority.HIGH)
     public static void onDeath(LivingDeathEvent e) {
         Ballistics.Hit hit = Ballistics.current();
         if (hit == null || !(e.getSource().getEntity() instanceof ServerPlayer killer)) {
             return;
         }
         var victim = e.getEntity();
+        if (victim instanceof Player downedVictim && Downed.is(downedVictim)) {
+            return; // finishing off a downed player was already paid when they went down
+        }
         UUID victimId = victim.getUUID();
         UUID killerId = killer.getUUID();
 

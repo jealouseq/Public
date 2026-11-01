@@ -19,7 +19,7 @@ import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 
 /** Server -> owner only: money, faction and match scores for the HUD. */
-public record HudPayload(long money, int faction, boolean active, int s0, int s1, int s2, int winScore) implements CustomPacketPayload {
+public record HudPayload(long money, int faction, boolean active, int s0, int s1, int s2, int winScore, int downed) implements CustomPacketPayload {
     public static final Type<HudPayload> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "hud"));
     public static final StreamCodec<RegistryFriendlyByteBuf, HudPayload> CODEC = StreamCodec.of(
             (buf, p) -> {
@@ -30,9 +30,10 @@ public record HudPayload(long money, int faction, boolean active, int s0, int s1
                 buf.writeVarInt(p.s1);
                 buf.writeVarInt(p.s2);
                 buf.writeVarInt(p.winScore);
+                buf.writeVarInt(p.downed);
             },
             buf -> new HudPayload(buf.readVarLong(), buf.readVarInt() - 1, buf.readBoolean(),
-                    buf.readVarInt(), buf.readVarInt(), buf.readVarInt(), buf.readVarInt()));
+                    buf.readVarInt(), buf.readVarInt(), buf.readVarInt(), buf.readVarInt(), buf.readVarInt()));
 
     @Override
     public Type<? extends CustomPacketPayload> type() {
@@ -47,7 +48,7 @@ public record HudPayload(long money, int faction, boolean active, int s0, int s1
         ServerLevel ow = p.server.overworld();
         MatchData d = MatchData.get(ow);
         PacketDistributor.sendToPlayer(p, new HudPayload(Wallet.get(p), Factions.index(p), d.active,
-                d.scores[0], d.scores[1], d.scores[2], com.wardogs.balance.Balance.get().rewards().winScore()));
+                d.scores[0], d.scores[1], d.scores[2], com.wardogs.balance.Balance.get().rewards().winScore(), com.wardogs.medic.Downed.ticksLeft(p)));
     }
 
     @EventBusSubscriber(modid = WardogsMod.MOD_ID)

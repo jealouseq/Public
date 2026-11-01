@@ -5,6 +5,7 @@ import com.wardogs.balance.Balance;
 import com.wardogs.balance.RewardsDef;
 import com.wardogs.economy.KillRewardHandler;
 import com.wardogs.economy.Wallet;
+import com.wardogs.medic.Downed;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -51,6 +52,18 @@ public final class MatchManager {
         return d.inControl(pos.x, pos.z) ? r.controlZoneMult() : 1.0;
     }
 
+    /** 0 = open ground, 1 = Control Zone, 2 = Hot Zone (open ground when no match is running). */
+    public static int zoneLevel(Level level, Vec3 pos) {
+        if (!(level instanceof ServerLevel sl) || sl.dimension() != Level.OVERWORLD) {
+            return 0;
+        }
+        MatchData d = MatchData.get(sl);
+        if (!d.active) {
+            return 0;
+        }
+        return d.inHot(pos.x, pos.z) ? 2 : d.inControl(pos.x, pos.z) ? 1 : 0;
+    }
+
     // --- control -----------------------------------------------------------------------------
 
     public static void start(ServerLevel overworld) {
@@ -65,6 +78,7 @@ public final class MatchManager {
         relocateHot(overworld, d);
         resetPresence();
         KillRewardHandler.reset();
+        Downed.reset();
         d.setDirty();
         broadcast(overworld, Component.literal("Match started. First faction to " + r.winScore() + " points wins.").withStyle(ChatFormatting.GOLD));
     }
@@ -139,7 +153,7 @@ public final class MatchManager {
     }
 
     private static boolean eligible(ServerPlayer p) {
-        return p.isAlive() && !p.isSpectator() && Factions.index(p) >= 0;
+        return p.isAlive() && !p.isSpectator() && Factions.index(p) >= 0 && !Downed.is(p);
     }
 
     private static void trackEntries(ServerLevel ow, MatchData d, long now) {

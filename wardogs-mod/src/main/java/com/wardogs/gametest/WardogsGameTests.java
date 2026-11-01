@@ -13,6 +13,8 @@ import com.wardogs.match.Factions;
 import com.wardogs.match.MatchData;
 import com.wardogs.match.MatchManager;
 import com.wardogs.item.GunItem;
+import com.wardogs.item.MedicalItem;
+import com.wardogs.medic.Downed;
 import com.wardogs.item.ModComponents;
 import com.wardogs.item.ModItems;
 import net.minecraft.core.BlockPos;
@@ -368,6 +370,106 @@ public final class WardogsGameTests {
         float lost = 100f - p.getHealth();
         check(Math.abs(lost - 10f) < 0.01f, "2 vanilla damage should cost 10 of 100 HP, cost " + lost
 );
+        h.succeed();
+    }
+
+    // --- downed / revive ---------------------------------------------------------------------
+
+    private static ServerPlayer soldier(GameTestHelper h, Faction f, double x, double z) {
+        ServerPlayer p = h.makeMockServerPlayerInLevel();
+        makeVulnerable(p);
+        PlayerHealth.apply(p);
+        p.setHealth(p.getMaxHealth());
+        Vec3 pos = h.absoluteVec(new Vec3(x, 1.0, z));
+        p.moveTo(pos.x, pos.y, pos.z, 0f, 0f);
+        Factions.set(p, f);
+        return p;
+    }
+
+    @GameTest(template = "empty")
+    public static void fatalHitDownsACombatantAndPaysTheKillOnce(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        h.getLevel().getServer().setPvpAllowed(true);
+        Factions.set(a.shooter, Faction.LONESTAR);
+        ServerPlayer victim = soldier(h, Faction.VALKYRA, 5.5, 1.5 + RANGE);
+        victim.setHealth(5f);
+        WeaponDef m4 = Balance.get().weapon("m4");
+        long before = Wallet.get(a.shooter);
+
+        Vec3 eye = a.shooter.getEyePosition();
+        double dx = victim.getX() - eye.x, dz = victim.getZ() - eye.z, dy = (victim.getY() + 1.0) - eye.y;
+        a.shooter.moveTo(a.shooter.getX(), a.shooter.getY(), a.shooter.getZ(), (float) Math.toDegrees(Math.atan2(-dx, dz)),
+                (float) -Math.toDegrees(Math.atan2(dy, Math.sqrt(dx * dx + dz * dz))));
+        Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
+
+        check(victim.isAlive() && Downed.is(victim), "a fatal hit on a combatant must down them, not kill them");
+        check(Math.abs(victim.getHealth() - (float) Balance.get().downedHp()) < 0.01f, "downed health should be " + Balance.get().downedHp() + " but is " + victim.getHealth());
+        check(Wallet.get(a.shooter) - before == 300, "the kill should pay $300 when the victim goes down, paid " + (Wallet.get(a.shooter) - before));
+
+        // Finishing the downed player is a real death and pays nothing more.
+        long afterDown = Wallet.get(a.shooter);
+        for (int i = 0; i < 4 && victim.isAlive(); i++) {
+            Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
+        }
+        check(!victim.isAlive(), "enough damage while downed must kill for real");
+        check(Wallet.get(a.shooter) == afterDown, "finishing a downed player must not pay again");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void handReviveStandsUpAndPaysWithRepeatPenalty(GameTestHelper h) {
+        ServerPlayer medic = soldier(h, Faction.LONESTAR, 5.5, 1.5);
+        ServerPlayer mate = soldier(h, Faction.LONESTAR, 5.5, 3.0);
+        var def = Balance.get().medical("field_resuscitator");
+        ItemStack kit = ModItems.stack("field_resuscitator");
+        kit.setCount(3);
+        long start = Wallet.get(medic);
+
+        Downed.down(mate);
+        check(Downed.is(mate), "mate should be down");
+        check(Downed.findTarget(medic) == mate, "the medic looking at the downed mate must find them");
+        MedicalItem.completeRevive(medic, mate, kit, def);
+        check(!Downed.is(mate), "revived mate must be upright");
+        check(Math.abs(mate.getHealth() - (float) def.hp()) < 0.01f, "revived with " + def.hp() + " HP, has " + mate.getHealth());
+        check(Wallet.get(medic) - start == 400, "first open-ground revive pays $400, paid " + (Wallet.get(medic) - start));
+        check(kit.getCount() == 2, "a field resuscitator is single use");
+
+        Downed.down(mate);
+        long mid = Wallet.get(medic);
+        MedicalItem.completeRevive(medic, mate, kit, def);
+        check(Wallet.get(medic) - mid == 300, "reviving the same mate again pays a quarter less ($300), paid " + (Wallet.get(medic) - mid));
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void defibrillatorUsesChargesAndPaysMore(GameTestHelper h) {
+        ServerPlayer medic = soldier(h, Faction.VALKYRA, 5.5, 1.5);
+        ServerPlayer mate = soldier(h, Faction.VALKYRA, 5.5, 3.0);
+        var def = Balance.get().medical("defibrillator");
+        ItemStack defib = ModItems.stack("defibrillator");
+        check(MedicalItem.charges(defib) == def.charges(), "a new defibrillator starts fully charged");
+        long start = Wallet.get(medic);
+        Downed.down(mate);
+        MedicalItem.completeRevive(medic, mate, defib, def);
+        check(MedicalItem.charges(defib) == def.charges() - 1, "a revive spends one charge");
+        check(Wallet.get(medic) - start == 600, "defibrillator revive pays $600 on open ground, paid " + (Wallet.get(medic) - start));
+        check(Math.abs(mate.getHealth() - (float) def.hp()) < 0.01f, "defibrillator revives with " + def.hp() + " HP");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void enemiesCannotBeRevivedAndBleedOutKills(GameTestHelper h) {
+        ServerPlayer medic = soldier(h, Faction.LONESTAR, 5.5, 1.5);
+        ServerPlayer enemy = soldier(h, Faction.MANTICORE, 5.5, 3.0);
+        Downed.down(enemy);
+        check(Downed.findTarget(medic) == null, "an enemy must not be revivable");
+
+        for (int i = 0; i < Balance.get().bleedoutTicks() + 2 && enemy.isAlive(); i++) {
+            Downed.tick(enemy);
+        }
+        check(!enemy.isAlive(), "a downed player nobody revives must bleed out");
+        check(!Downed.is(enemy), "bleed-out clears the downed state");
         h.succeed();
     }
 }
