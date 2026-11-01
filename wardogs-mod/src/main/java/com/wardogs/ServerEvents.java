@@ -8,6 +8,8 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import com.wardogs.net.HudPayload;
+import com.wardogs.net.ProgressPayload;
+import com.wardogs.progress.Progression;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
@@ -30,6 +32,7 @@ public final class ServerEvents {
     public static void onLogin(PlayerEvent.PlayerLoggedInEvent e) {
         if (e.getEntity() instanceof ServerPlayer sp) {
             HudPayload.sendTo(sp);
+            ProgressPayload.sendTo(sp);
         }
     }
 
@@ -41,6 +44,9 @@ public final class ServerEvents {
         }
         for (ServerPlayer p : e.getServer().getPlayerList().getPlayers()) {
             HudPayload.sendTo(p);
+            if (Progression.consumeDirty(p)) {
+                ProgressPayload.sendTo(p);
+            }
         }
     }
 

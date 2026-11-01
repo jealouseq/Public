@@ -13,6 +13,9 @@ import com.wardogs.match.Faction;
 import com.wardogs.match.Factions;
 import com.wardogs.match.MatchManager;
 import com.wardogs.net.HudPayload;
+import com.wardogs.progress.Progression;
+import com.wardogs.progress.Role;
+import com.wardogs.shop.Shop;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
@@ -41,6 +44,10 @@ public final class WdCommand {
                 .then(Commands.literal("buy")
                         .then(Commands.argument("item", StringArgumentType.word()).suggests(ITEMS)
                                 .executes(c -> buy(c.getSource(), StringArgumentType.getString(c, "item")))))
+                .then(Commands.literal("unlock")
+                        .then(Commands.argument("item", StringArgumentType.word()).suggests(ITEMS)
+                                .executes(c -> unlock(c.getSource(), StringArgumentType.getString(c, "item")))))
+                .then(Commands.literal("progress").executes(c -> progress(c.getSource())))
                 .then(Commands.literal("team")
                         .then(Commands.argument("faction", StringArgumentType.word()).suggests(FACTIONS)
                                 .executes(c -> team(c.getSource(), StringArgumentType.getString(c, "faction")))))
@@ -99,22 +106,33 @@ public final class WdCommand {
     }
 
     private static int buy(CommandSourceStack src, String id) throws CommandSyntaxException {
+        Shop.Result r = Shop.buy(src.getPlayerOrException(), id);
+        if (r.ok()) {
+            src.sendSuccess(r::message, false);
+        } else {
+            src.sendFailure(r.message());
+        }
+        return r.ok() ? 1 : 0;
+    }
+
+    private static int unlock(CommandSourceStack src, String id) throws CommandSyntaxException {
+        Shop.Result r = Shop.unlock(src.getPlayerOrException(), id);
+        if (r.ok()) {
+            src.sendSuccess(r::message, false);
+        } else {
+            src.sendFailure(r.message());
+        }
+        return r.ok() ? 1 : 0;
+    }
+
+    private static int progress(CommandSourceStack src) throws CommandSyntaxException {
         ServerPlayer p = src.getPlayerOrException();
-        int price = ModItems.price(id);
-        if (price < 0) {
-            src.sendFailure(Component.literal("Unknown item: " + id));
-            return 0;
+        var data = Progression.get(p);
+        StringBuilder sb = new StringBuilder();
+        for (Role r : Role.values()) {
+            sb.append(r.key()).append(" L").append(Progression.level(data, r)).append(" (").append(data.xpOf(r)).append(" xp)  ");
         }
-        if (!Wallet.tryPay(p, price)) {
-            src.sendFailure(Component.literal("Not enough money: need $" + price + ", you have $" + Wallet.get(p)));
-            return 0;
-        }
-        ItemStack stack = ModItems.stack(id);
-        if (!p.getInventory().add(stack)) {
-            p.drop(stack, false);
-        }
-        HudPayload.sendTo(p);
-        src.sendSuccess(() -> Component.literal("Bought " + id + " for $" + price + "  (left $" + Wallet.get(p) + ")").withStyle(ChatFormatting.GOLD), false);
+        src.sendSuccess(() -> Component.literal(sb.toString().trim()), false);
         return 1;
     }
 

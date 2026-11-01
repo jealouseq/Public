@@ -18,6 +18,9 @@ public final class ClientEvents {
     public static final KeyMapping RELOAD = new KeyMapping("key.wardogs.reload", InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_R, "key.categories.wardogs");
 
+    public static final KeyMapping SHOP = new KeyMapping("key.wardogs.shop", InputConstants.Type.KEYSYM,
+            GLFW.GLFW_KEY_B, "key.categories.wardogs");
+
     private ClientEvents() {}
 
     @EventBusSubscriber(modid = WardogsMod.MOD_ID, value = Dist.CLIENT)
@@ -27,6 +30,7 @@ public final class ClientEvents {
         @SubscribeEvent
         public static void keys(RegisterKeyMappingsEvent e) {
             e.register(RELOAD);
+            e.register(SHOP);
         }
     }
 
@@ -39,6 +43,9 @@ public final class ClientEvents {
             Minecraft mc = Minecraft.getInstance();
             if (mc.player == null) {
                 return;
+            }
+            while (SHOP.consumeClick()) {
+                mc.setScreen(new ShopScreen());
             }
             while (RELOAD.consumeClick()) {
                 if (mc.player.getMainHandItem().getItem() instanceof GunItem) {

@@ -4,6 +4,8 @@ import com.wardogs.WardogsMod;
 import com.wardogs.balance.Balance;
 import com.wardogs.combat.Ballistics;
 import com.wardogs.match.Factions;
+import com.wardogs.progress.Progression;
+import com.wardogs.progress.Role;
 import com.wardogs.net.HudPayload;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -75,9 +77,20 @@ public final class KillRewardHandler {
         long reward = KillReward.compute(Balance.get().rewards(),
                 new KillReward.Context(hit.headshot(), hit.distance(), zone, streak, repeats, revenge));
         Wallet.add(killer, reward);
+        Progression.award(killer, roleOf(hit.weaponId()), reward);
         killer.displayClientMessage(Component.literal("+$" + reward + (hit.headshot() ? "  HEADSHOT" : "") + String.format("  %.0fm", hit.distance()))
                 .withStyle(ChatFormatting.GOLD), false);
         HudPayload.sendTo(killer);
+    }
+
+    /** The progression branch a weapon trains: its role (assault, medic ...), or none for open items. */
+    private static Role roleOf(String itemId) {
+        var w = Balance.get().weapon(itemId);
+        if (w != null) {
+            return Role.byKey(w.role());
+        }
+        var x = Balance.get().explosive(itemId);
+        return x == null ? null : Role.byKey(x.unlockRole());
     }
 
     /** Clears per-round state (call when a round ends). */

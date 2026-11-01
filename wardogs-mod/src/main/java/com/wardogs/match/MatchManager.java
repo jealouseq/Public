@@ -6,6 +6,8 @@ import com.wardogs.balance.RewardsDef;
 import com.wardogs.economy.KillRewardHandler;
 import com.wardogs.economy.Wallet;
 import com.wardogs.medic.Downed;
+import com.wardogs.progress.Progression;
+import com.wardogs.progress.Role;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -171,6 +173,7 @@ public final class MatchManager {
                 if (now - last >= ENTER_COOLDOWN) {
                     ENTER_PAID_AT.put(p.getUUID(), now);
                     Wallet.add(p, enterPay);
+                    Progression.award(p, Role.WARDOG, enterPay);
                     p.displayClientMessage(Component.literal("+$" + enterPay + "  Control Zone").withStyle(ChatFormatting.GOLD), true);
                 }
             }
@@ -193,6 +196,7 @@ public final class MatchManager {
                 pay = r.zoneControlTick();
             }
             Wallet.add(p, pay);
+            Progression.award(p, Role.WARDOG, pay);
             p.displayClientMessage(Component.literal("+$" + pay + "  zone").withStyle(ChatFormatting.GOLD), true);
         }
     }

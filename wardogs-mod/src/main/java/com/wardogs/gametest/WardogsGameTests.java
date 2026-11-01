@@ -16,6 +16,9 @@ import com.wardogs.explosive.Blast;
 import com.wardogs.explosive.PlacedCharge;
 import com.wardogs.item.ExplosiveItem;
 import com.wardogs.item.GunItem;
+import com.wardogs.progress.Progression;
+import com.wardogs.progress.Role;
+import com.wardogs.shop.Shop;
 import com.wardogs.item.MedicalItem;
 import com.wardogs.medic.Downed;
 import com.wardogs.item.ModComponents;
@@ -275,18 +278,60 @@ public final class WardogsGameTests {
     public static void buyCommandChargesMoneyAndGivesItem(GameTestHelper h) {
         Arena a = arena(h);
         long start = Wallet.get(a.shooter);
-        int price = Balance.get().weapon("m4").price();
+        int price = Balance.get().weapon("ggx17").price();
         var cmds = h.getLevel().getServer().getCommands();
-        cmds.performPrefixedCommand(a.shooter.createCommandSourceStack(), "wd buy m4");
-        check(Wallet.get(a.shooter) == start - price, "buying an M4 should cost $" + price + " but wallet went " + start + " -> " + Wallet.get(a.shooter));
+        cmds.performPrefixedCommand(a.shooter.createCommandSourceStack(), "wd buy ggx17");
+        check(Wallet.get(a.shooter) == start - price, "buying a GGX 17 should cost $" + price + " but wallet went " + start + " -> " + Wallet.get(a.shooter));
         boolean has = false;
         for (ItemStack s : a.shooter.getInventory().items) {
-            has |= s.getItem() == ModItems.GUNS.get("m4").get();
+            has |= s.getItem() == ModItems.GUNS.get("ggx17").get();
         }
-        check(has, "bought M4 should be in the inventory");
+        check(has, "bought pistol should be in the inventory");
         Wallet.set(a.shooter, 10);
-        cmds.performPrefixedCommand(a.shooter.createCommandSourceStack(), "wd buy m4");
+        cmds.performPrefixedCommand(a.shooter.createCommandSourceStack(), "wd buy ggx17");
         check(Wallet.get(a.shooter) == 10, "a purchase the player cannot afford must not charge anything");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void lockedItemsNeedLevelThenPaymentThenPurchase(GameTestHelper h) {
+        Arena a = arena(h);
+        ServerPlayer p = a.shooter;
+        Wallet.set(p, 1_000_000);
+
+        // M4 needs Assault 28 and $150 000 to unlock.
+        check(!Shop.buy(p, "m4").ok(), "a fresh player cannot buy a locked M4");
+        check(!Shop.unlock(p, "m4").ok(), "unlocking below the required level must fail");
+        check(Wallet.get(p) == 1_000_000, "failed attempts must not charge");
+
+        Progression.award(p, Role.ASSAULT, 700_000); // 0.4 XP per dollar = 280 000 XP, above the level-28 threshold
+        check(Progression.level(p, Role.ASSAULT) >= 28, "assault level should be at least 28 but is " + Progression.level(p, Role.ASSAULT));
+        check(!Shop.buy(p, "m4").ok(), "reaching the level is not enough: the unlock payment is also required");
+        check(Shop.unlock(p, "m4").ok(), "unlocking at the right level with enough money should work");
+        check(Wallet.get(p) == 1_000_000 - 150_000, "unlock costs $150 000, wallet is " + Wallet.get(p));
+        check(!Shop.unlock(p, "m4").ok(), "a second unlock is refused");
+
+        long before = Wallet.get(p);
+        check(Shop.buy(p, "m4").ok(), "once unlocked the M4 can be bought");
+        check(before - Wallet.get(p) == Balance.get().weapon("m4").price(), "the M4 costs its shop price");
+        check(Shop.buy(p, "m4").ok(), "an unlock is permanent: buying again works");
+        check(!Shop.buy(p, "no_such_item").ok(), "unknown items are refused");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void killsTrainTheWeaponsRoleAndTheGeneralBranch(GameTestHelper h) {
+        Arena a = arena(h);
+        WeaponDef m4 = Balance.get().weapon("m4");
+        check(Progression.get(a.shooter).xpOf(Role.ASSAULT) == 0, "fresh player has no assault XP");
+        for (int i = 0; i < 6 && a.target.isAlive(); i++) {
+            aimAt(a.shooter, a.target, a.target.getEyeY() + 0.05);
+            Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
+        }
+        long expected = Math.round(350 * Balance.get().progression().xpPerDollar());
+        check(Progression.get(a.shooter).xpOf(Role.ASSAULT) == expected, "an M4 kill worth $350 should give " + expected + " assault XP, gave " + Progression.get(a.shooter).xpOf(Role.ASSAULT));
+        check(Progression.get(a.shooter).xpOf(Role.WARDOG) == expected, "and the same amount of general WARDOG XP");
+        check(Progression.get(a.shooter).xpOf(Role.MEDIC) == 0, "other branches are untouched");
         h.succeed();
     }
 
@@ -308,7 +353,7 @@ public final class WardogsGameTests {
         try {
             Vec3 c = h.absoluteVec(new Vec3(5.5, 1.0, 5.5));
             d.active = true;
-            d.zoneX = c.x; d.zoneZ = c.z; d.zoneRadius = 20;
+            d.zoneX = c.x; d.zoneZ = c.z; d.zoneRadius = 4; // small: neighbouring test arenas can be only ~18 blocks away
             d.hotX = c.x + 1000; d.hotZ = c.z; d.hotRadius = 5;
             java.util.Arrays.fill(d.scores, 0);
 

@@ -4,7 +4,7 @@ Tactical 3-faction combat inspired by WARDOGS, for **Minecraft Java 1.21.1 / Neo
 Research and source numbers: [RESEARCH.md](RESEARCH.md).
 
 ## Status (milestone 2: match loop)
-Done and covered by tests (unit + 25 server GameTests):
+Done and covered by tests (unit + 27 server GameTests):
 - Data-driven balance (`src/main/resources/data/wardogs/balance/*.json`, overridable by a datapack, reloads with `/reload`).
 - 34 firearms: measured chest/head damage, RPM, price; ammo FMJ/HP/AP; hitscan, headshots, wall blocking, spread, magazines, reload (R).
 - Armor: helmets and body armor L1-L4 (equip by right-click); headshots hit the helmet, body hits hit the vest.
@@ -17,6 +17,9 @@ Done and covered by tests (unit + 25 server GameTests):
 - Explosives: M67 frag, Molotov, C4 + remote detonator, IED, AT mine (vehicles only), Claymore (frontal cone), smoke and six
   signal smokes. Thrown grenades bounce and have a fuse; charges are placed on blocks; explosions fall off with distance, are
   blocked by walls and never break blocks. Kills pay like bullet kills.
+- Role progression: XP per role (Assault, Medic, Recon, Support, Driver, Pilot) plus the general WARDOG branch, levels from the
+  Season 2 XP curve. Items need a role level and sometimes a one-time unlock payment (`/wd unlock <item>`, `/wd progress`).
+- Vendor screen (key B): category tabs, click a row to buy or unlock. The server re-checks every purchase.
 - Teamkill costs 3x the kill reward. Wallet ($10 000 start). `/wd buy <item>` shop command.
 - Players have 100 HP (not 20 hearts). Bullets deal WARDOGS damage 1:1, vanilla damage is scaled x5. Vanilla hearts are hidden;
   the HUD shows the number and a heart that fills in proportion to health.
@@ -25,7 +28,7 @@ Done and covered by tests (unit + 25 server GameTests):
 Admin commands (op): `/wd zone here <radius>`, `/wd match start|stop|status`, `/wd give <item>`, `/wd money set|add <n>`, `/wd weapons`.
 Quick start: `/wd zone here 60`, `/wd team lonestar`, `/wd match start`, stand in the zone, `/wd buy m4`.
 
-Not yet built: vendor GUI, role progression/unlocks, FOB building, vehicles,
+Not yet built: FOB building, vehicles,
 the Bakurani map, real models/sounds. The HUD and key binding compile but were never seen on a screen.
 
 Fields flagged `estimated` in the balance JSON (reload time, spread, some magazines/ranges, armor absorption, HP/AP vs armor)

@@ -1,6 +1,7 @@
 {
   "itemGroup.wardogs": "WARDOGS",
   "key.wardogs.reload": "Перезарядка",
+  "key.wardogs.shop": "Открыть торговца",
   "key.categories.wardogs": "WARDOGS",
   "death.attack.wardogs.bullet": "%1$s застрелен",
   "death.attack.wardogs.bullet.player": "%1$s застрелен игроком %2$s",

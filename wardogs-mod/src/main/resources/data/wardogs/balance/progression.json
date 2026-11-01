@@ -1,0 +1,50 @@
+{
+ "_comment": "Role XP curve: checkpoints (level, total XP) from the Season 2 summary for levels 10-50 (RESEARCH.md section 3). Levels 0-10 and 50-100 are ESTIMATES. xp_per_dollar is an ESTIMATE (the real XP formula is unpublished; supply crates pay about 0.5 XP per dollar).",
+ "xp_per_dollar": 0.4,
+ "checkpoints": [
+  [
+   0,
+   0
+  ],
+  [
+   10,
+   25000
+  ],
+  [
+   15,
+   54750
+  ],
+  [
+   20,
+   111500
+  ],
+  [
+   25,
+   206600
+  ],
+  [
+   30,
+   318200
+  ],
+  [
+   35,
+   525000
+  ],
+  [
+   40,
+   712500
+  ],
+  [
+   45,
+   920850
+  ],
+  [
+   50,
+   1150000
+  ],
+  [
+   100,
+   3000000
+  ]
+ ]
+}

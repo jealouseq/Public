@@ -7,6 +7,8 @@ import com.wardogs.match.MatchManager;
 import com.wardogs.medic.Downed;
 import com.wardogs.medic.ReviveReward;
 import com.wardogs.net.HudPayload;
+import com.wardogs.progress.Progression;
+import com.wardogs.progress.Role;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -135,6 +137,7 @@ public class MedicalItem extends Item {
         long pay = ReviveReward.compute(Balance.get().rewards(), zone, defib, Downed.repeatCount(reviver.getUUID(), target.getUUID()));
         Downed.recordRevive(reviver.getUUID(), target.getUUID());
         Wallet.add(reviver, pay);
+        Progression.award(reviver, Role.MEDIC, pay);
         if (defib) {
             stack.set(ModComponents.CHARGES.get(), Math.max(0, charges(stack) - 1));
         } else {
