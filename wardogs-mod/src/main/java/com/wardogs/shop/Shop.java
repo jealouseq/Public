@@ -1,6 +1,7 @@
 package com.wardogs.shop;
 
 import com.wardogs.balance.ArmorDef;
+import com.wardogs.balance.BuildingItemDef;
 import com.wardogs.balance.Balance;
 import com.wardogs.balance.ExplosiveDef;
 import com.wardogs.balance.MedicalDef;
@@ -23,7 +24,7 @@ import java.util.List;
 
 /** The vendor: lists everything buyable, enforces role-level unlocks and charges money. */
 public final class Shop {
-    public enum Category { WEAPON, ARMOR, MEDICAL, EXPLOSIVE }
+    public enum Category { WEAPON, ARMOR, MEDICAL, EXPLOSIVE, BUILDING }
 
     /** One shop line. {@code role == null} means open to everyone. */
     public record Entry(String id, Category category, String name, int price, Role role, int level, long cost) {}
@@ -47,6 +48,10 @@ public final class Shop {
         }
         for (ExplosiveDef x : b.explosiveItems()) {
             out.add(new Entry(x.id(), Category.EXPLOSIVE, pretty(x.id()), x.price(), Role.byKey(x.unlockRole()), x.unlockLevel(), x.unlockCost()));
+        }
+        for (BuildingItemDef x : b.buildingItems()) {
+            String name = pretty(x.id()) + (x.stack() > 1 ? " x" + x.stack() : "");
+            out.add(new Entry(x.id(), Category.BUILDING, name, x.price(), Role.byKey(x.unlockRole()), x.unlockLevel(), x.unlockCost()));
         }
         return out;
     }

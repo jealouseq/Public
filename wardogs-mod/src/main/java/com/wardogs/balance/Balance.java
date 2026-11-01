@@ -39,11 +39,15 @@ public final class Balance {
     private final double downedHp;
     private final Map<String, ExplosiveDef> explosives;
     private final ProgressionDef progression;
+    private final Map<String, StructureDef> structures;
+    private final Map<String, BuildingItemDef> buildingItems;
+    private final double[] buildTuning; // fobRadius, claymoreVsStructure, fragVsStructure, barbedWireDps
 
     private Balance(Map<String, WeaponDef> weapons, RewardsDef rewards, double playerHealth,
                     List<ArmorDef> armor, double[][] ammoMult,
                     Map<String, MedicalDef> medical, int bleedoutTicks, double reviveRange, double downedHp,
-                    Map<String, ExplosiveDef> explosives, ProgressionDef progression) {
+                    Map<String, ExplosiveDef> explosives, ProgressionDef progression,
+                    Map<String, StructureDef> structures, Map<String, BuildingItemDef> buildingItems, double[] buildTuning) {
         this.weapons = weapons;
         this.rewards = rewards;
         this.playerHealth = playerHealth;
@@ -55,6 +59,9 @@ public final class Balance {
         this.downedHp = downedHp;
         this.explosives = explosives;
         this.progression = progression;
+        this.structures = structures;
+        this.buildingItems = buildingItems;
+        this.buildTuning = buildTuning;
     }
 
     public MedicalDef medical(String id) {
@@ -68,6 +75,39 @@ public final class Balance {
     /** Ticks a downed player lasts before bleeding out (estimate). */
     public int bleedoutTicks() {
         return bleedoutTicks;
+    }
+
+    public StructureDef structure(String id) {
+        return structures.get(id);
+    }
+
+    public java.util.Collection<StructureDef> structures() {
+        return structures.values();
+    }
+
+    public BuildingItemDef buildingItem(String id) {
+        return buildingItems.get(id);
+    }
+
+    public java.util.Collection<BuildingItemDef> buildingItems() {
+        return buildingItems.values();
+    }
+
+    /** Build radius of a Forward Operating Base, in blocks (estimate). */
+    public double fobRadius() {
+        return buildTuning[0];
+    }
+
+    public double claymoreVsStructure() {
+        return buildTuning[1];
+    }
+
+    public double fragVsStructure() {
+        return buildTuning[2];
+    }
+
+    public double barbedWireDps() {
+        return buildTuning[3];
     }
 
     public ProgressionDef progression() {
@@ -147,7 +187,7 @@ public final class Balance {
             return current;
         }
         Map<String, JsonObject> files = new LinkedHashMap<>();
-        for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression"}) {
+        for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression", "structures"}) {
             files.put(name, readClasspath("/data/wardogs/balance/" + name + ".json"));
         }
         current = build(files);
@@ -199,7 +239,25 @@ public final class Balance {
         }
         return new Balance(Map.copyOf(weapons), rewards, hp, List.copyOf(armor), ammo, Map.copyOf(medical),
                 med.get("bleedout_ticks").getAsInt(), med.get("revive_range").getAsDouble(), med.get("downed_hp").getAsDouble(), Map.copyOf(explosives),
-                ProgressionDef.parse(files.get("progression")));
+                ProgressionDef.parse(files.get("progression")), structures(files.get("structures")), buildingItems(files.get("structures")),
+                new double[]{files.get("structures").get("fob_radius").getAsDouble(), files.get("structures").get("claymore_vs_structure").getAsDouble(),
+                        files.get("structures").get("frag_vs_structure").getAsDouble(), files.get("structures").get("barbed_wire_dps").getAsDouble()});
+    }
+
+    private static Map<String, StructureDef> structures(JsonObject o) {
+        Map<String, StructureDef> m = new LinkedHashMap<>();
+        for (Map.Entry<String, JsonElement> e : o.getAsJsonObject("structures").entrySet()) {
+            m.put(e.getKey(), StructureDef.parse(e.getKey(), e.getValue().getAsJsonObject()));
+        }
+        return java.util.Collections.unmodifiableMap(m);
+    }
+
+    private static Map<String, BuildingItemDef> buildingItems(JsonObject o) {
+        Map<String, BuildingItemDef> m = new LinkedHashMap<>();
+        for (Map.Entry<String, JsonElement> e : o.getAsJsonObject("items").entrySet()) {
+            m.put(e.getKey(), BuildingItemDef.parse(e.getKey(), e.getValue().getAsJsonObject()));
+        }
+        return java.util.Collections.unmodifiableMap(m);
     }
 
     /** Datapack reload listener: replaces the snapshot when the balance files in the datapack change. */
@@ -212,7 +270,7 @@ public final class Balance {
         protected void apply(Map<ResourceLocation, JsonElement> in, ResourceManager rm, ProfilerFiller profiler) {
             Map<String, JsonObject> files = new LinkedHashMap<>();
             // Start from the jar defaults, then overlay anything a datapack provides.
-            for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression"}) {
+            for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression", "structures"}) {
                 JsonElement over = in.get(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, name));
                 files.put(name, over != null ? over.getAsJsonObject() : readClasspath("/data/wardogs/balance/" + name + ".json"));
             }

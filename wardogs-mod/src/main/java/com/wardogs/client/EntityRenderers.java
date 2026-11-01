@@ -1,6 +1,7 @@
 package com.wardogs.client;
 
 import com.wardogs.WardogsMod;
+import com.wardogs.build.BuildEntities;
 import com.wardogs.explosive.ExplosiveEntities;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.neoforged.api.distmarker.Dist;
@@ -15,6 +16,7 @@ public final class EntityRenderers {
     @SubscribeEvent
     public static void register(EntityRenderersEvent.RegisterRenderers e) {
         e.registerEntityRenderer(ExplosiveEntities.GRENADE.get(), ctx -> new ThrownItemRenderer<>(ctx, 0.8f, false));
+        e.registerEntityRenderer(BuildEntities.BUILDABLE.get(), BuildableRenderer::new);
         e.registerEntityRenderer(ExplosiveEntities.CHARGE.get(), ctx -> new ThrownItemRenderer<>(ctx, 1.0f, true));
     }
 }

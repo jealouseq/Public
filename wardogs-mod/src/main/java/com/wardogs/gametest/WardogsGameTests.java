@@ -15,6 +15,9 @@ import com.wardogs.match.MatchManager;
 import com.wardogs.explosive.Blast;
 import com.wardogs.explosive.PlacedCharge;
 import com.wardogs.item.ExplosiveItem;
+import com.wardogs.build.Building;
+import com.wardogs.build.Buildable;
+import com.wardogs.item.HammerItem;
 import com.wardogs.item.GunItem;
 import com.wardogs.progress.Progression;
 import com.wardogs.progress.Role;
@@ -642,5 +645,140 @@ public final class WardogsGameTests {
                 h.succeed();
             });
         });
+    }
+
+    // --- building ----------------------------------------------------------------------------
+
+    private static Vec3 ground(GameTestHelper h, double x, double z) {
+        return h.absoluteVec(new Vec3(x, 1.0, z));
+    }
+
+    private static ServerPlayer builder(GameTestHelper h, Faction f) {
+        Arena a = arena(h);
+        a.target.discard();
+        Factions.set(a.shooter, f);
+        return a.shooter;
+    }
+
+    @GameTest(template = "empty")
+    public static void hammerTiersUnlockProgressivelyLargerStructures(GameTestHelper h) {
+        var small = (HammerItem) ModItems.BUILDING.get("hammer_small").get();
+        var medium = (HammerItem) ModItems.BUILDING.get("hammer_medium").get();
+        var large = (HammerItem) ModItems.BUILDING.get("hammer_large").get();
+        check(small.allowed().stream().anyMatch(d -> d.id().equals("sandbag_wall")), "a small hammer builds sandbags");
+        check(small.allowed().stream().noneMatch(d -> d.id().equals("hesco_wall")), "a small hammer cannot build HESCO walls");
+        check(medium.allowed().stream().anyMatch(d -> d.id().equals("hesco_wall")), "a medium hammer builds HESCO walls");
+        check(medium.allowed().stream().noneMatch(d -> d.id().equals("bunker")), "a medium hammer cannot build bunkers");
+        check(large.allowed().stream().anyMatch(d -> d.id().equals("bunker")), "a large hammer builds bunkers");
+        check(large.allowed().stream().noneMatch(d -> d.id().equals("fob")), "the FOB is deployed from a kit, not built");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void smallStructuresUseInventorySuppliesWithoutAFob(GameTestHelper h) {
+        ServerPlayer p = builder(h, Faction.LONESTAR);
+        var def = Balance.get().structure("sandbag_wall");
+        check(!Building.place(p, h.getLevel(), def, ground(h, 5.5, 6.5), 0f).ok(), "building without supplies must fail");
+        p.getInventory().add(ModItems.stack("build_supplies"));
+        check(Building.inventorySupplies(p) == 50, "a stack is 50 supplies");
+        var r = Building.place(p, h.getLevel(), def, ground(h, 5.5, 6.5), 0f);
+        check(r.ok(), "a sandbag wall should be buildable: " + r.message().getString());
+        check(Building.inventorySupplies(p) == 50 - def.cost(), "building spends " + def.cost() + " supplies, left " + Building.inventorySupplies(p));
+        var walls = h.getLevel().getEntitiesOfClass(Buildable.class, new net.minecraft.world.phys.AABB(ground(h, 5.5, 6.5), ground(h, 5.5, 6.5)).inflate(2));
+        check(walls.size() == 1 && walls.get(0).health() == (float) def.hp(), "one wall with full health " + def.hp());
+        check(!Building.place(p, h.getLevel(), def, ground(h, 5.5, 6.5), 0f).ok(), "two structures cannot overlap");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty", batch = "fobA")
+    public static void mediumStructuresNeedAFobAndDrawFromIt(GameTestHelper h) {
+        ServerPlayer p = builder(h, Faction.VALKYRA);
+        var hesco = Balance.get().structure("hesco_wall");
+        p.getInventory().add(ModItems.stack("build_supplies"));
+        check(!Building.place(p, h.getLevel(), hesco, ground(h, 5.5, 6.5), 0f).ok(), "a HESCO wall cannot be built without a FOB, even with supplies in the bag");
+
+        var dep = Building.deployFob(p, h.getLevel(), ground(h, 2.5, 9.5));
+        check(dep.ok(), "FOB should deploy: " + dep.message().getString());
+        check(!Building.deployFob(p, h.getLevel(), ground(h, 9.5, 9.5)).ok(), "a second FOB inside the first one's radius is refused");
+        check(!Building.place(p, h.getLevel(), hesco, ground(h, 5.5, 6.5), 0f).ok(), "an empty FOB cannot pay for a wall");
+
+        var fob = h.getLevel().getEntitiesOfClass(Buildable.class, new net.minecraft.world.phys.AABB(ground(h, 2.5, 9.5), ground(h, 2.5, 9.5)).inflate(3)).get(0);
+        check(fob.isFob() && fob.health() == 15000f, "the FOB has 15000 HP");
+        fob.addSupply("build", 40);
+        var r = Building.place(p, h.getLevel(), hesco, ground(h, 5.5, 6.5), 0f);
+        check(r.ok(), "with supplies in the FOB the wall can be built: " + r.message().getString());
+        check(fob.supply("build") == 40 - hesco.cost(), "the FOB paid " + hesco.cost() + ", has " + fob.supply("build"));
+        check(Building.inventorySupplies(p) == 50, "the player's own supplies were not touched");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty", batch = "fobB")
+    public static void supplyStacksAreStoredInTheFobAndRepairsUseThem(GameTestHelper h) {
+        ServerPlayer p = builder(h, Faction.MANTICORE);
+        check(Building.deployFob(p, h.getLevel(), ground(h, 3.5, 8.5)).ok(), "FOB deploys");
+        var fob = h.getLevel().getEntitiesOfClass(Buildable.class, new net.minecraft.world.phys.AABB(ground(h, 3.5, 8.5), ground(h, 3.5, 8.5)).inflate(3)).get(0);
+
+        p.setItemInHand(InteractionHand.MAIN_HAND, ModItems.stack("build_supplies"));
+        fob.interact(p, InteractionHand.MAIN_HAND);
+        check(fob.supply("build") == 50, "right-clicking the FOB with a stack stores all 50, has " + fob.supply("build"));
+        check(p.getMainHandItem().isEmpty(), "the stack left the hand");
+        p.setItemInHand(InteractionHand.MAIN_HAND, ModItems.stack("fuel_supplies"));
+        fob.interact(p, InteractionHand.MAIN_HAND);
+        check(fob.supply("fuel") == 50 && fob.supply("build") == 50, "fuel is stored separately from build supplies");
+
+        var wall = Buildable.create(h.getLevel(), Balance.get().structure("hesco_wall"), ground(h, 7.5, 3.5), 0f, Faction.MANTICORE.ordinal(), p.getUUID());
+        wall.damageStructure(1000, Faction.VALKYRA.ordinal());
+        check(Math.abs(wall.health() - 3600f) < 0.01f, "wall at 3600 HP, is " + wall.health());
+        p.setItemInHand(InteractionHand.MAIN_HAND, ModItems.stack("hammer_small"));
+        wall.interact(p, InteractionHand.MAIN_HAND);
+        check(wall.health() == 4600f, "ten supplies repair 1000 HP, wall is " + wall.health());
+        check(fob.supply("build") == 40, "repair drew 10 supplies from the FOB, has " + fob.supply("build"));
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void explosiveHitCountsFollowTheTable(GameTestHelper h) {
+        var lvl = h.getLevel();
+        var hesco = Balance.get().structure("hesco_wall");
+        var wall = Buildable.create(lvl, hesco, ground(h, 3.5, 3.5), 0f, Faction.LONESTAR.ordinal(), null);
+        int enemy = Faction.VALKYRA.ordinal();
+        for (int i = 1; i < hesco.hitsC4(); i++) {
+            check(!wall.damageStructure(hesco.hitDamage("c4", Balance.get()), enemy), "C4 hit " + i + " must not destroy a HESCO wall yet");
+        }
+        check(wall.damageStructure(hesco.hitDamage("c4", Balance.get()), enemy), "the 8th C4 destroys a HESCO wall");
+        check(wall.isRemoved(), "destroyed structures disappear");
+
+        var sandbag = Buildable.create(lvl, Balance.get().structure("sandbag_wall"), ground(h, 8.5, 3.5), 0f, Faction.LONESTAR.ordinal(), null);
+        check(sandbag.damageStructure(sandbag.def().hitDamage("c4", Balance.get()), enemy), "one C4 destroys a sandbag wall");
+
+        var mine = Buildable.create(lvl, hesco, ground(h, 3.5, 8.5), 0f, Faction.LONESTAR.ordinal(), null);
+        check(!mine.damageStructure(mine.def().hitDamage("c4", Balance.get()), Faction.LONESTAR.ordinal()), "friendly explosives do not damage your own structures");
+        check(mine.health() == 4600f, "no damage taken from the same faction");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void aRealC4BlastDestroysAnAdjacentSandbagWall(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Factions.set(a.shooter, Faction.LONESTAR);
+        var sandbag = Buildable.create(h.getLevel(), Balance.get().structure("sandbag_wall"), ground(h, 5.5, 6.5), 0f, Faction.VALKYRA.ordinal(), null);
+        var c4 = Balance.get().explosive("c4");
+        Blast.explode(h.getLevel(), ground(h, 5.5, 5.0).add(0, 0.2, 0), c4.radius(), c4.damage(), a.shooter, "c4");
+        check(sandbag.isRemoved(), "an enemy C4 next to a sandbag wall destroys it");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void wallsStopBullets(GameTestHelper h) {
+        Arena a = arena(h);
+        var wall = Buildable.create(h.getLevel(), Balance.get().structure("hesco_wall"), ground(h, 5.5, 1.5 + RANGE / 2), 0f, Faction.VALKYRA.ordinal(), null);
+        WeaponDef m4 = Balance.get().weapon("m4");
+        aimAt(a.shooter, a.target, a.target.getY() + 1.0);
+        float before = a.target.getHealth();
+        Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
+        check(a.target.getHealth() == before, "a HESCO wall between shooter and target must absorb the bullet");
+        check(wall.health() == 4600f, "bullets do not damage structures");
+        h.succeed();
     }
 }

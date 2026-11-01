@@ -2,6 +2,8 @@ package com.wardogs.explosive;
 
 import com.wardogs.balance.Balance;
 import com.wardogs.balance.ExplosiveDef;
+import com.wardogs.build.Buildable;
+import com.wardogs.match.Factions;
 import com.wardogs.item.ExplosiveItem;
 import com.wardogs.item.ModItems;
 import net.minecraft.core.BlockPos;
@@ -152,6 +154,14 @@ public class PlacedCharge extends Entity implements ItemSupplier {
                 }
                 Blast.damage(sl, e, ownerEntity, d.id(), Blast.falloff(d.damage(), d.range() * 1.5, dist),
                         ownerEntity == null ? dist : ownerEntity.position().distanceTo(e.position()));
+            }
+            int attackerFaction = ownerEntity instanceof net.minecraft.world.entity.player.Player op ? Factions.index(op) : -1;
+            for (Buildable b : sl.getEntitiesOfClass(Buildable.class, getBoundingBox().inflate(d.range()))) {
+                Vec3 to = b.getBoundingBox().getCenter().subtract(origin);
+                if (to.length() <= d.range() && to.length() > 0.01
+                        && Math.acos(Math.max(-1, Math.min(1, to.normalize().dot(fwd)))) <= half && b.def() != null) {
+                    b.damageStructure(b.def().hitDamage(d.id(), Balance.get()), attackerFaction);
+                }
             }
             sl.sendParticles(ParticleTypes.EXPLOSION, getX(), getY() + 0.3, getZ(), 1, 0, 0, 0, 0);
         } else {

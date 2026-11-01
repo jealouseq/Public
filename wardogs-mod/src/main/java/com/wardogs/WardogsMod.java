@@ -2,6 +2,7 @@ package com.wardogs;
 
 import com.mojang.logging.LogUtils;
 import com.wardogs.balance.Balance;
+import com.wardogs.build.BuildEntities;
 import com.wardogs.economy.KillRewardHandler;
 import com.wardogs.explosive.ExplosiveEntities;
 import com.wardogs.economy.Wallet;
@@ -26,6 +27,7 @@ public final class WardogsMod {
         ModItems.ITEMS.register(modBus);
         ModItems.TABS.register(modBus);
         ExplosiveEntities.ENTITIES.register(modBus);
+        BuildEntities.ENTITIES.register(modBus);
         Wallet.ATTACHMENTS.register(modBus);
         Factions.ATTACHMENTS.register(modBus);
         Progression.ATTACHMENTS.register(modBus);

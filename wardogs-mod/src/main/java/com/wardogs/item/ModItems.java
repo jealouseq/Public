@@ -3,6 +3,7 @@ package com.wardogs.item;
 import com.wardogs.WardogsMod;
 import com.wardogs.balance.ArmorDef;
 import com.wardogs.balance.Balance;
+import com.wardogs.balance.BuildingItemDef;
 import com.wardogs.balance.ExplosiveDef;
 import com.wardogs.balance.MedicalDef;
 import com.wardogs.balance.WeaponDef;
@@ -71,6 +72,25 @@ public final class ModItems {
         }
     }
 
+    /** hammers, supplies and the FOB kit. */
+    public static final Map<String, DeferredItem<Item>> BUILDING = new LinkedHashMap<>();
+
+    static {
+        for (BuildingItemDef def : Balance.get().buildingItems()) {
+            String id = def.id();
+            BUILDING.put(id, ITEMS.register(id, () -> {
+                Item.Properties p = new Item.Properties();
+                if (def.hammerTier() != null) {
+                    return new HammerItem(p.component(ModComponents.SELECTED.get(), 0), def.hammerTier());
+                }
+                if (def.supply() != null) {
+                    return new SupplyItem(p.stacksTo(64), def.supply());
+                }
+                return new FobKitItem(p);
+            }));
+        }
+    }
+
     /** A fresh stack for any buyable id (weapon or armor), or {@code null}. */
     public static net.minecraft.world.item.ItemStack stack(String id) {
         if (GUNS.containsKey(id)) {
@@ -84,6 +104,9 @@ public final class ModItems {
         }
         if (EXPLOSIVES.containsKey(id)) {
             return new net.minecraft.world.item.ItemStack(EXPLOSIVES.get(id).get());
+        }
+        if (BUILDING.containsKey(id)) {
+            return new net.minecraft.world.item.ItemStack(BUILDING.get(id).get(), Balance.get().buildingItem(id).stack());
         }
         return null;
     }
@@ -102,6 +125,9 @@ public final class ModItems {
         if (EXPLOSIVES.containsKey(id)) {
             return Balance.get().explosive(id).price();
         }
+        if (BUILDING.containsKey(id)) {
+            return Balance.get().buildingItem(id).price();
+        }
         return -1;
     }
 
@@ -110,6 +136,7 @@ public final class ModItems {
         ids.addAll(ARMOR.keySet());
         ids.addAll(MEDICAL.keySet());
         ids.addAll(EXPLOSIVES.keySet());
+        ids.addAll(BUILDING.keySet());
         return ids;
     }
 
@@ -122,6 +149,7 @@ public final class ModItems {
                         ARMOR.values().forEach(a -> out.accept(a.get()));
                         MEDICAL.values().forEach(m -> out.accept(new net.minecraft.world.item.ItemStack(m.get())));
                         EXPLOSIVES.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
+                        BUILDING.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
                     })
                     .build());
 

@@ -2,7 +2,9 @@ package com.wardogs.explosive;
 
 import com.wardogs.balance.AmmoType;
 import com.wardogs.balance.Balance;
+import com.wardogs.build.Buildable;
 import com.wardogs.combat.Ballistics;
+import com.wardogs.match.Factions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
@@ -40,6 +42,17 @@ public final class Blast {
                 continue;
             }
             damage(level, e, owner, weaponId, wd, owner == null ? dist : owner.position().distanceTo(e.position()));
+        }
+        int attackerFaction = owner instanceof net.minecraft.world.entity.player.Player op ? Factions.index(op) : -1;
+        for (Buildable b : level.getEntitiesOfClass(Buildable.class, box)) {
+            var def = b.def();
+            AABB bb = b.getBoundingBox();
+            double dx = Math.max(Math.max(bb.minX - pos.x, 0), pos.x - bb.maxX);
+            double dy = Math.max(Math.max(bb.minY - pos.y, 0), pos.y - bb.maxY);
+            double dz = Math.max(Math.max(bb.minZ - pos.z, 0), pos.z - bb.maxZ);
+            if (def != null && Math.sqrt(dx * dx + dy * dy + dz * dz) <= radius) {
+                b.damageStructure(def.hitDamage(weaponId, Balance.get()), attackerFaction);
+            }
         }
         level.sendParticles(ParticleTypes.EXPLOSION, pos.x, pos.y, pos.z, 1, 0, 0, 0, 0);
         level.playSound(null, net.minecraft.core.BlockPos.containing(pos), SoundEvents.GENERIC_EXPLODE.value(), SoundSource.PLAYERS, 3.0f, 1.0f);

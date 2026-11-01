@@ -72,5 +72,14 @@
   "entity.wardogs.grenade": "Grenade",
   "entity.wardogs.charge": "Charge",
   "death.attack.wardogs.explosion": "%1$s was blown up",
-  "death.attack.wardogs.explosion.player": "%1$s was blown up by %2$s"
+  "death.attack.wardogs.explosion.player": "%1$s was blown up by %2$s",
+  "item.wardogs.hammer_small": "Small Hammer",
+  "item.wardogs.hammer_medium": "Medium Hammer",
+  "item.wardogs.hammer_large": "Large Hammer",
+  "item.wardogs.build_supplies": "Build Supplies",
+  "item.wardogs.ammo_supplies": "Ammo Supplies",
+  "item.wardogs.fuel_supplies": "Fuel Supplies",
+  "item.wardogs.mechanical_supplies": "Mechanical Supplies",
+  "item.wardogs.fob_kit": "Forward Operating Base",
+  "entity.wardogs.buildable": "Structure"
 }

@@ -72,5 +72,14 @@
   "entity.wardogs.grenade": "Граната",
   "entity.wardogs.charge": "Заряд",
   "death.attack.wardogs.explosion": "%1$s подорван",
-  "death.attack.wardogs.explosion.player": "%1$s подорван игроком %2$s"
+  "death.attack.wardogs.explosion.player": "%1$s подорван игроком %2$s",
+  "item.wardogs.hammer_small": "Малый молоток",
+  "item.wardogs.hammer_medium": "Средний молоток",
+  "item.wardogs.hammer_large": "Большой молоток",
+  "item.wardogs.build_supplies": "Строительные материалы",
+  "item.wardogs.ammo_supplies": "Боеприпасы (снабжение)",
+  "item.wardogs.fuel_supplies": "Топливо (снабжение)",
+  "item.wardogs.mechanical_supplies": "Запчасти (снабжение)",
+  "item.wardogs.fob_kit": "Передовая оперативная база",
+  "entity.wardogs.buildable": "Постройка"
 }

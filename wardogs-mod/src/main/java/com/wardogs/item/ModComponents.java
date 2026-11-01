@@ -30,5 +30,11 @@ public final class ModComponents {
                     .persistent(ExtraCodecs.NON_NEGATIVE_INT)
                     .networkSynchronized(ByteBufCodecs.VAR_INT));
 
+    /** Index of the structure selected on a hammer. */
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> SELECTED =
+            COMPONENTS.registerComponentType("selected", b -> b
+                    .persistent(ExtraCodecs.NON_NEGATIVE_INT)
+                    .networkSynchronized(ByteBufCodecs.VAR_INT));
+
     private ModComponents() {}
 }
