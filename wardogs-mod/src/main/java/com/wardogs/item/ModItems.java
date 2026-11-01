@@ -1,7 +1,9 @@
 package com.wardogs.item;
 
 import com.wardogs.WardogsMod;
+import com.wardogs.balance.AmmoItemDef;
 import com.wardogs.balance.ArmorDef;
+import com.wardogs.balance.AttachmentDef;
 import com.wardogs.balance.Balance;
 import com.wardogs.balance.BuildingItemDef;
 import com.wardogs.balance.ExplosiveDef;
@@ -105,6 +107,20 @@ public final class ModItems {
         }
     }
 
+    public static final Map<String, DeferredItem<AttachmentItem>> ATTACHMENTS = new LinkedHashMap<>();
+    public static final Map<String, DeferredItem<AmmoBoxItem>> AMMO_BOXES = new LinkedHashMap<>();
+
+    static {
+        for (AttachmentDef def : Balance.get().attachments()) {
+            String id = def.id();
+            ATTACHMENTS.put(id, ITEMS.register(id, () -> new AttachmentItem(new Item.Properties().stacksTo(8), id)));
+        }
+        for (AmmoItemDef def : Balance.get().ammoItems()) {
+            String id = def.id();
+            AMMO_BOXES.put(id, ITEMS.register(id, () -> new AmmoBoxItem(new Item.Properties().stacksTo(16), id)));
+        }
+    }
+
     /** A fresh stack for any buyable id (weapon or armor), or {@code null}. */
     public static net.minecraft.world.item.ItemStack stack(String id) {
         if (GUNS.containsKey(id)) {
@@ -124,6 +140,12 @@ public final class ModItems {
         }
         if (VEHICLES.containsKey(id)) {
             return new net.minecraft.world.item.ItemStack(VEHICLES.get(id).get());
+        }
+        if (ATTACHMENTS.containsKey(id)) {
+            return new net.minecraft.world.item.ItemStack(ATTACHMENTS.get(id).get());
+        }
+        if (AMMO_BOXES.containsKey(id)) {
+            return new net.minecraft.world.item.ItemStack(AMMO_BOXES.get(id).get());
         }
         return null;
     }
@@ -148,6 +170,12 @@ public final class ModItems {
         if (VEHICLES.containsKey(id)) {
             return Balance.get().vehicle(id).price();
         }
+        if (ATTACHMENTS.containsKey(id)) {
+            return Balance.get().attachment(id).price();
+        }
+        if (AMMO_BOXES.containsKey(id)) {
+            return Balance.get().ammoItem(id).price();
+        }
         return -1;
     }
 
@@ -158,6 +186,8 @@ public final class ModItems {
         ids.addAll(EXPLOSIVES.keySet());
         ids.addAll(BUILDING.keySet());
         ids.addAll(VEHICLES.keySet());
+        ids.addAll(ATTACHMENTS.keySet());
+        ids.addAll(AMMO_BOXES.keySet());
         return ids;
     }
 
@@ -172,6 +202,8 @@ public final class ModItems {
                         EXPLOSIVES.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
                         BUILDING.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
                         VEHICLES.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
+                        ATTACHMENTS.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
+                        AMMO_BOXES.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
                     })
                     .build());
 

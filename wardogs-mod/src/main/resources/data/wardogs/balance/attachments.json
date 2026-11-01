@@ -1,0 +1,218 @@
+{
+ "_comment": "Unlock levels and the two 6-10x scope unlock costs are from community sources (RESEARCH.md). Shop prices, spread/bipod multipliers and magazine multipliers are ESTIMATES (unpublished). zoom is the field-of-view divisor while aiming (sneak).",
+ "attachments": {
+  "mag_ext_ar": {
+   "name": "Extended Magazine (60)",
+   "slot": "magazine",
+   "price": 150,
+   "role": "assault",
+   "level": 30,
+   "cost": 0,
+   "categories": [
+    "assault_rifle"
+   ],
+   "mag_mult": 1.5
+  },
+  "mag_ext_smg": {
+   "name": "Drum Magazine (50)",
+   "slot": "magazine",
+   "price": 150,
+   "role": "medic",
+   "level": 20,
+   "cost": 0,
+   "categories": [
+    "smg"
+   ],
+   "mag_mult": 1.5
+  },
+  "hexagon_brake": {
+   "name": "Hexagon Brake",
+   "slot": "muzzle",
+   "price": 80,
+   "role": "assault",
+   "level": 2,
+   "cost": 0,
+   "categories": [
+    "assault_rifle",
+    "marksman_rifle"
+   ],
+   "spread_mult": 0.85
+  },
+  "dual_port_brake": {
+   "name": "Dual Port Brake",
+   "slot": "muzzle",
+   "price": 80,
+   "role": "medic",
+   "level": 1,
+   "cost": 0,
+   "categories": [
+    "smg"
+   ],
+   "spread_mult": 0.88
+  },
+  "afg_grip": {
+   "name": "AFG Angled Foregrip",
+   "slot": "grip",
+   "price": 120,
+   "role": "assault",
+   "level": 14,
+   "cost": 0,
+   "categories": [
+    "assault_rifle",
+    "smg"
+   ],
+   "spread_mult": 0.9
+  },
+  "svd_bipod": {
+   "name": "SVD Bipod",
+   "slot": "grip",
+   "price": 200,
+   "role": "recon",
+   "level": 14,
+   "cost": 0,
+   "categories": [
+    "marksman_rifle",
+    "sniper_rifle"
+   ],
+   "bipod_mult": 0.55
+  },
+  "m249_bipod": {
+   "name": "M249 Bipod",
+   "slot": "grip",
+   "price": 200,
+   "role": "support",
+   "level": 18,
+   "cost": 0,
+   "categories": [
+    "lmg"
+   ],
+   "bipod_mult": 0.5
+  },
+  "pkm_bipod": {
+   "name": "PKM Bipod",
+   "slot": "grip",
+   "price": 200,
+   "role": "support",
+   "level": 33,
+   "cost": 0,
+   "categories": [
+    "lmg"
+   ],
+   "bipod_mult": 0.5
+  },
+  "holo_sight": {
+   "name": "Holographic Sight",
+   "slot": "sight",
+   "price": 250,
+   "role": "assault",
+   "level": 22,
+   "cost": 0,
+   "categories": [
+    "assault_rifle",
+    "smg",
+    "lmg"
+   ],
+   "zoom": 1.0,
+   "spread_mult": 0.95
+  },
+  "reflex_sight": {
+   "name": "Four Reticle Reflex",
+   "slot": "sight",
+   "price": 200,
+   "role": "medic",
+   "level": 6,
+   "cost": 0,
+   "categories": [
+    "smg",
+    "assault_rifle"
+   ],
+   "zoom": 1.0,
+   "spread_mult": 0.96
+  },
+  "cq_2x": {
+   "name": "CQ-2x Prism",
+   "slot": "sight",
+   "price": 300,
+   "role": "assault",
+   "level": 17,
+   "cost": 0,
+   "categories": [
+    "assault_rifle",
+    "smg"
+   ],
+   "zoom": 2.0
+  },
+  "prism_4x": {
+   "name": "4x Combat Prism with Reflex",
+   "slot": "sight",
+   "price": 450,
+   "role": "assault",
+   "level": 43,
+   "cost": 0,
+   "categories": [
+    "assault_rifle",
+    "marksman_rifle",
+    "lmg"
+   ],
+   "zoom": 4.0
+  },
+  "spectr_4x": {
+   "name": "Spectr 4x",
+   "slot": "sight",
+   "price": 450,
+   "role": "support",
+   "level": 21,
+   "cost": 0,
+   "categories": [
+    "assault_rifle",
+    "lmg",
+    "marksman_rifle"
+   ],
+   "zoom": 4.0
+  },
+  "scope_mrad": {
+   "name": "6-10x Scope MRAD",
+   "slot": "sight",
+   "price": 600,
+   "role": "recon",
+   "level": 18,
+   "cost": 40000,
+   "categories": [
+    "marksman_rifle",
+    "sniper_rifle"
+   ],
+   "zoom": 8.0
+  },
+  "scope_moa": {
+   "name": "6-10x Scope MOA",
+   "slot": "sight",
+   "price": 650,
+   "role": "recon",
+   "level": 18,
+   "cost": 45000,
+   "categories": [
+    "marksman_rifle",
+    "sniper_rifle"
+   ],
+   "zoom": 8.0
+  }
+ },
+ "ammo": {
+  "ammo_hp": {
+   "name": "Hollow Point Ammo",
+   "ammo_type": 1,
+   "price": 150,
+   "role": "wardog",
+   "level": 6,
+   "cost": 0
+  },
+  "ammo_ap": {
+   "name": "Armor Piercing Ammo",
+   "ammo_type": 2,
+   "price": 200,
+   "role": "wardog",
+   "level": 12,
+   "cost": 0
+  }
+ }
+}

@@ -1,0 +1,216 @@
+WARDOGS Cash & XP Calculator: What Every Action Pays · Wardogs Zone
+Skip to content
+Search everything
+Ctrl K
+Report a problem
+Report a problem
+Close
+What is wrong?
+Wrong information
+Translation error
+Something is broken
+Something else
+Tell us what you saw
+What should it say? (optional)
+Tip: select the words first, then press the flag, and the report points at them.
+Send report
+English
+EN
+Loading…
+Comms check
+Visits are counted anonymously, without cookies. Your loadouts stay in this browser. Signing in sets one cookie so the hub knows you.
+A few pages carry ads from Google, which sets cookies of its own. In the EU and UK you are asked before it does.
+The full rundown
+.
+Roger
+Calculator
+End of match
+Every payout
+Copy link
+Event
+Player kill
+The base pays where the fight happened, split half on you and half on them.
+$300
+250 XP
+Kill assist
+up to $300
+up to 250 XP
+Situation
+You
+Outside
+$300
+Control Zone
+$900
+Hot Zone
+$1,650
+Victim
+Outside
+$300
+Control Zone
+$900
+Hot Zone
+$1,650
+Kill with
+Small arms
+$300
+Assault weapon
+$400
+Sniper rifle
+$600
+Explosive
+$300
+Artillery
+$250
+Aircraft
+$300
+Tank
+$300
+Modifiers
+Drill rig running
+Headshot
++$50
+Revenge kill
++$300
+Shutdown
++$150
+Team kill
+−$1,200
+Victim revived
+−$297
+Crewed vehicle
+−$60
+Same target, times before
+0
+How often this has already paid on the same player or vehicle.
+Kill streak
+1
+Kills since you last died, counting this one.
+Server
+Players on the server
+60
+×
+1
+Every payout scales with the head count. Under ten players nothing pays, and the full rate needs 60.
+Drag along the curve to set players on the server.
+Kill
+Player kill
+PlayerKill
+Reset
+Cash
+$300
+Role XP
+250 XP
+The weapon you hold
+Each weapon class feeds one role.
+Assault
+Assault Rifle, Pistol
+Medic
+SMG
+Recon
+Bow, Marksman Rifle, Sniper
+Support
+LMG, Launcher, Shotgun
+Outside
+$300
+250 XP
+Control Zone
+$1,500
+250 XP
+Hot Zone
+$3,000
+250 XP
+Receipt
+Cash
+$300
+(1 - 0 × 0.24) × ((300 + 0 × 50) × 1 × 0.5 + (300 + 0 × 50) × 1 × 0.5) × 1 × 1 × 1 × 1 × 1
+=
+$300
+Repeats
+Same target, times before
+0
+Repeat cap
+4
+Cut per repeat
+0.24
+Base
+300
+Your zone
+1
+Your share
+0.5
+Target zone
+1
+Target share
+0.5
+Distance
+1
+Revenge
+1
+Friendly fire
+1
+Shutdown
+1
+Kill streak
+Kill streak
+1
+Streak cap
+5
+Per streak kill
+50
+Crew penalty
+0.8
+Crew aboard
+0
+Crew cap
+5
+Role XP
+250 XP
+(1 - 0 × 0.24) × 250
+=
+250 XP
+Base
+250
+Repeats
+Same target, times before
+0
+Repeat cap
+4
+Cut per repeat
+0.24
+Gold lines are the picks your situation made. Grey ones are the table's constants.
+Reference
+WARDOGS Cash & XP Calculator
+Every action in WARDOGS pays through the same machine: a base amount for the event, a multiplier for where it happened, and a stack of situational factors on top. A kill in the open pays a few hundred. The same kill inside the Hot Zone pays ten times that, and a long shot into it pays more again.
+Pick the event, set the situation, and the board shows the cash and the role XP, plus a receipt of every factor that moved the number. The zone strip shows what the same action is worth in each ring, so the question of where to fight answers itself.
+How a payout is built
+Cash starts from a base for the event and splits into two halves: one scored on where you stand, one on where the target is. A kill weighs them evenly, so a shooter inside the circle who drops someone outside it still earns half the zone bonus. Heals and revives put the whole weight on the patient, which is why a medic's own position never matters. Sniper, artillery and explosive kills weigh the target alone.
+Then the situation multiplies through: revenge, a shutdown, a kill streak, a team kill, distance for a long shot, a victim who gets revived. The receipt prints each one and the condition that switched it on.
+Repeats, streaks and crews
+Doing the same thing to the same player pays less each time. Kills and revives lose about a quarter per repeat, four deep, so the fifth kill on one opponent keeps four percent of its value. Refuel and repair ticks slide far more gently over forty repeats.
+Streaks go the other way. Each kill after the first adds a flat bonus up to a cap, a tank or helicopter kill streak adds much more, and every consecutive tick inside the Hot Zone adds to the presence rent. A kill from a crewed vehicle is shared, and each extra crew member takes a fifth off the shooter's cut.
+Server size and the end of the match
+Every payout scales with the number of players on the server. Under ten nothing pays at all, a server in the forties pays most of the rate, and the full rate needs sixty. That is why the same revive can read $800 one evening and $640 the next.
+When the match ends each faction places, and placing pays twice: a flat amount for the position, and a bonus cut of what you earned during the match, counted up to a cap. XP gets its own bonus on the same ladder. The end of match tab runs the numbers for your earnings.
+Role XP
+XP follows the same tables with its own amounts, mostly flat figures that change with the situation rather than multiply through it. It lands in the track of the item or vehicle behind the event, and the board names that track beside the number. A rifle or pistol kill feeds Assault, an SMG kill feeds Medic, an LMG, shotgun or launcher kill feeds Support, a marksman or sniper kill feeds Recon. Medical items feed Medic, tools, explosives and supplies feed Support, spotting feeds Recon, a delivery feeds Driver from a truck or Pilot from a helicopter, and the things you do with your hands, such as capturing a tower or hacking a FOB, feed Assault. The
+progression board
+shows what those levels unlock.
+Questions people ask
+How much does a kill pay in WARDOGS?
+A kill starts at $300, or $350 for a headshot, and 250 role XP. Inside the Control Zone the cash multiplies by five and inside the Hot Zone by ten, split half on where you stand and half on where the victim falls. A revenge kill doubles it, ending someone's streak adds half again, and a sniper kill scales with distance up to four times.
+Why did my kill pay almost nothing?
+Three things cut a kill to nearly zero: the victim's team revived them, which keeps one percent of the value; you had already killed the same player several times in a row; or the server had too few players. A team kill goes further and costs you three times the kill's value.
+Do heals and revives pay by where the medic stands?
+No. Medical rewards weigh the patient's position alone, so a revive on someone lying inside the Hot Zone pays four times the open-field rate wherever you ran in from. The same patient picked up again pays about a quarter less each time.
+Why are payouts smaller on some servers?
+Every reward scales with how many players are on the server. Under ten players nothing pays, a server of forty-five pays eighty percent of the rate, and the full rate needs sixty. Set the player count in the calculator to see the exact figure for your server.
+What do you get at the end of a match?
+A flat amount for your faction's place, $1,000 for first, $500 for second and $250 for third, plus a bonus cut of the cash you earned during the match, counted up to $100,000: thirty percent for first, twenty-five for second and twenty for third. Match XP up to 2,500 gets its own multiplier of two, one and three quarters or one and a half.
+Does the Hot Zone Magnet pay more than the Hot Zone?
+No. A running drill rig pays the Hot Zone rate for everything inside it, and firing the drill itself pays $2,500. Standing in the Hot Zone still pays double the outer circle per tick, with a growing bonus for every consecutive tick.
+Keep going
+Cash and the economy
+The fastest ways to make money
+Gold exchange
+Progression and unlocks
+The Control Zone

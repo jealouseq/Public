@@ -29,6 +29,15 @@
    "blast": 4.0,
    "vehicle_mult": 12.0,
    "homing": true
+  },
+  "talon": {
+   "kind": "aa",
+   "speed": 3.0,
+   "gravity": 0.0,
+   "blast": 5.0,
+   "vehicle_mult": 2.0,
+   "homing": true,
+   "damage": 400.0
   }
  }
 }

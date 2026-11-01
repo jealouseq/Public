@@ -1,0 +1,653 @@
+{
+ "map": "bakurani",
+ "source": "clutchbase.app/data/wardogs/bakurani-markers.json (community extraction)",
+ "coordinates": "x east, y north, metres, origin = map centre; EXCEPT category 'settlement' whose y is south-positive. Elevation z in metres-like units (see DATA_SOURCES.md).",
+ "markers": [
+  {
+   "id": "eab9dfea56a94510",
+   "x": 3683,
+   "y": 1099,
+   "category": "settlement",
+   "title": "Valkyra"
+  },
+  {
+   "id": "acf5294a9d05129d",
+   "x": -4183,
+   "y": 440,
+   "category": "settlement",
+   "title": "Manticore"
+  },
+  {
+   "id": "0e1f87e11a3b9dd0",
+   "x": 554,
+   "y": 4942,
+   "category": "settlement",
+   "title": "Lonestar"
+  },
+  {
+   "id": "235d635f74d8d3d6",
+   "x": 1857.16,
+   "y": -385.01,
+   "category": "abandoned-tower",
+   "title": "Tower 1",
+   "z": -607.98,
+   "description": "Abandoned tower - spawn 50%, respawns. Items: FOB (w0.5), SV98 (w0.8), M249 (w1), MedKit.Standard (w0.8), M500 (w1), RepairTool.Drill.Heavy (w0.5)"
+  },
+  {
+   "id": "521de593843e7190",
+   "x": 176.63,
+   "y": -906.58,
+   "category": "tower",
+   "title": "Tower 3",
+   "z": -901.17,
+   "description": "Tower - spawn 50%, respawns. Items: FOB (w0.5), SV98 (w0.8), M249 (w1), MedKit.Standard (w0.8), M500 (w1), RepairTool.Drill.Heavy (w0.5)"
+  },
+  {
+   "id": "5477168fa7b99103",
+   "x": -2500.68,
+   "y": -1732.59,
+   "category": "abandoned-tower",
+   "title": "Tower 8",
+   "z": -832.43,
+   "description": "Abandoned tower - spawn 50%, respawns. Items: FOB (w0.5), SV98 (w0.8), M249 (w1), MedKit.Standard (w0.8), M500 (w1), RepairTool.Drill.Heavy (w0.5)"
+  },
+  {
+   "id": "0f2c88c52d8bef8b",
+   "x": -2383.85,
+   "y": -3938.65,
+   "category": "abandoned-tower",
+   "title": "Tower 10",
+   "z": -691.27,
+   "description": "Abandoned tower - spawn 50%, respawns. Items: FOB (w0.5), SV98 (w0.8), M249 (w1), MedKit.Standard (w0.8), M500 (w1), RepairTool.Drill.Heavy (w0.5)"
+  },
+  {
+   "id": "6f981c80e54672f1",
+   "x": -2848.7,
+   "y": -1000.13,
+   "category": "abandoned-tower",
+   "title": "Tower 4",
+   "z": -669.58,
+   "description": "Abandoned tower - spawn 50%, respawns. Items: FOB (w0.5), SV98 (w0.8), M249 (w1), MedKit.Standard (w0.8), M500 (w1), RepairTool.Drill.Heavy (w0.5)"
+  },
+  {
+   "id": "2ba6efce24251dec",
+   "x": -477.75,
+   "y": -848.04,
+   "category": "tower",
+   "title": "Tower 2",
+   "z": -911.5,
+   "description": "Tower - spawn 50%, respawns. Items: FOB (w0.5), SV98 (w0.8), M249 (w1), MedKit.Standard (w0.8), M500 (w1), RepairTool.Drill.Heavy (w0.5)"
+  },
+  {
+   "id": "f1126852eda356ec",
+   "x": -1850.62,
+   "y": -2877.44,
+   "category": "abandoned-tower",
+   "title": "Tower 9",
+   "z": -872.1,
+   "description": "Abandoned tower - spawn 50%, respawns. Items: FOB (w0.5), SV98 (w0.8), M249 (w1), MedKit.Standard (w0.8), M500 (w1), RepairTool.Drill.Heavy (w0.5)"
+  },
+  {
+   "id": "1b42c2bc844617cf",
+   "x": 629.54,
+   "y": -4098.53,
+   "category": "abandoned-tower",
+   "title": "Tower 11",
+   "z": -703.48,
+   "description": "Abandoned tower - spawn 50%, respawns. Items: FOB (w0.5), SV98 (w0.8), M249 (w1), MedKit.Standard (w0.8), M500 (w1), RepairTool.Drill.Heavy (w0.5)"
+  },
+  {
+   "id": "904195b55a928188",
+   "x": -664.88,
+   "y": -4366.52,
+   "category": "abandoned-tower",
+   "title": "Tower 12",
+   "z": -859.65,
+   "description": "Abandoned tower - spawn 50%, respawns. Items: FOB (w0.5), SV98 (w0.8), M249 (w1), MedKit.Standard (w0.8), M500 (w1), RepairTool.Drill.Heavy (w0.5)"
+  },
+  {
+   "id": "36e6e3d3b14aa8f5",
+   "x": -472.5,
+   "y": -1187.61,
+   "category": "tower",
+   "title": "Tower 5",
+   "z": -912.81,
+   "description": "Tower - spawn 50%, respawns. Items: FOB (w0.5), SV98 (w0.8), M249 (w1), MedKit.Standard (w0.8), M500 (w1), RepairTool.Drill.Heavy (w0.5)"
+  },
+  {
+   "id": "8febe313b2775c55",
+   "x": 31.93,
+   "y": -1345.48,
+   "category": "tower",
+   "title": "Tower 7",
+   "z": -909.99,
+   "description": "Tower - spawn 50%, respawns. Items: FOB (w0.5), SV98 (w0.8), M249 (w1), MedKit.Standard (w0.8), M500 (w1), RepairTool.Drill.Heavy (w0.5)"
+  },
+  {
+   "id": "0c139ba837026dc7",
+   "x": -144.93,
+   "y": -1206.99,
+   "category": "tower",
+   "title": "Tower 6",
+   "z": -895.8,
+   "description": "Tower - spawn 50%, respawns. Items: FOB (w0.5), SV98 (w0.8), M249 (w1), MedKit.Standard (w0.8), M500 (w1), RepairTool.Drill.Heavy (w0.5)"
+  },
+  {
+   "id": "15ae22dbe3760d14",
+   "x": 383.58,
+   "y": -4765.33,
+   "category": "loot-medical",
+   "title": "Bandages #1",
+   "z": -844.67,
+   "description": "Bandage - spawn 100%, no respawn. Items: Bandage (w1)"
+  },
+  {
+   "id": "cd9538212158461f",
+   "x": -431.6,
+   "y": -3229.57,
+   "category": "loot-weapon",
+   "title": "Sniper rifle loot #1",
+   "z": -879.2,
+   "description": "Sniper - spawn 100%, no respawn. Items: Mosin (w1)"
+  },
+  {
+   "id": "db94f45776baedd8",
+   "x": -433.54,
+   "y": -3241.55,
+   "category": "loot-weapon",
+   "title": "Weapon loot #2",
+   "z": -894.43,
+   "description": "Weapon - spawn 100%, no respawn. Items: AK74M (w1)"
+  },
+  {
+   "id": "dbd95a223a1b4e72",
+   "x": -397.2,
+   "y": -3226.21,
+   "category": "loot-medical",
+   "title": "Bandages #6",
+   "z": -894.43,
+   "description": "Bandage - spawn 100%, no respawn. Items: Bandage (w1)"
+  },
+  {
+   "id": "9707642201754b28",
+   "x": -396.8,
+   "y": -3226.92,
+   "category": "loot-medical",
+   "title": "Bandages #7",
+   "z": -894.43,
+   "description": "Bandage - spawn 100%, no respawn. Items: Bandage (w1)"
+  },
+  {
+   "id": "3fee3398dda962ee",
+   "x": -396.49,
+   "y": -3227.66,
+   "category": "loot-medical",
+   "title": "Defibrillator #4",
+   "z": -894.43,
+   "description": "Defib.Cheap - spawn 100%, no respawn. Items: Defibrillator.Cheap (w1)"
+  },
+  {
+   "id": "4da94e7863975980",
+   "x": -446.42,
+   "y": -3205.35,
+   "category": "loot-medical",
+   "title": "Defibrillator #5",
+   "z": -894.43,
+   "description": "Defib.Cheap - spawn 100%, no respawn. Items: Defibrillator.Cheap (w1)"
+  },
+  {
+   "id": "d0182af2395d01d3",
+   "x": -445.25,
+   "y": -3205.25,
+   "category": "loot-medical",
+   "title": "Bandages #3",
+   "z": -894.43,
+   "description": "Bandage - spawn 100%, no respawn. Items: Bandage (w1)"
+  },
+  {
+   "id": "5203dd231d18d9d9",
+   "x": -445.25,
+   "y": -3205.25,
+   "category": "loot-medical",
+   "title": "Bandages #2",
+   "z": -894.43,
+   "description": "Bandage - spawn 100%, no respawn. Items: Bandage (w1)"
+  },
+  {
+   "id": "a25328c027b2fc57",
+   "x": 122.44,
+   "y": -4549.13,
+   "category": "loot-medical",
+   "title": "Bandages #9",
+   "z": -861.6,
+   "description": "Bandage - spawn 100%, no respawn. Items: Bandage (w1)"
+  },
+  {
+   "id": "8de2056f5c1b27a9",
+   "x": 117.5,
+   "y": -4541.86,
+   "category": "loot-medical",
+   "title": "Bandages #10",
+   "z": -857.6,
+   "description": "Bandage - spawn 100%, no respawn. Items: Bandage (w1)"
+  },
+  {
+   "id": "4276235f5025bd0c",
+   "x": 115.38,
+   "y": -4550.48,
+   "category": "loot-medical",
+   "title": "Bandages #8",
+   "z": -861.42,
+   "description": "Bandage - spawn 100%, no respawn. Items: Bandage (w1)"
+  },
+  {
+   "id": "f719b7c5ffcf5cde",
+   "x": 115.38,
+   "y": -4550.48,
+   "category": "loot-armor",
+   "title": "Armor loot #1",
+   "z": -861.42,
+   "description": "Armor - spawn 100%, no respawn. Items: LightArmor (w1)"
+  },
+  {
+   "id": "964689bbfe81e76e",
+   "x": 13.68,
+   "y": -2647.11,
+   "category": "loot-medical",
+   "title": "Bandages #12",
+   "z": -960.1,
+   "description": "Bandage - spawn 100%, no respawn. Items: Bandage (w1)"
+  },
+  {
+   "id": "161d1cac0fb78864",
+   "x": 13.68,
+   "y": -2647.11,
+   "category": "loot-medical",
+   "title": "Bandages #11",
+   "z": -960.1,
+   "description": "Bandage - spawn 100%, no respawn. Items: Bandage (w1)"
+  },
+  {
+   "id": "e4199ffeb78ede2e",
+   "x": 53.69,
+   "y": -4292.81,
+   "category": "loot-weapon",
+   "title": "Weapon loot #3",
+   "z": -893.78,
+   "description": "Weapon - spawn 100%, no respawn. Items: AK74M (w1)"
+  },
+  {
+   "id": "50153ee6b0d3a654",
+   "x": 59.49,
+   "y": -4268.62,
+   "category": "loot-medical",
+   "title": "Bandages #13",
+   "z": -896.83,
+   "description": "Bandage - spawn 100%, no respawn. Items: Bandage (w1)"
+  },
+  {
+   "id": "063e4a1ff490f787",
+   "x": 59.31,
+   "y": -4268.83,
+   "category": "loot-medical",
+   "title": "Bandages #14",
+   "z": -896.83,
+   "description": "Bandage - spawn 100%, no respawn. Items: Bandage (w1)"
+  },
+  {
+   "id": "45d4d265bbe1f775",
+   "x": 29.4,
+   "y": -4259.58,
+   "category": "loot-weapon",
+   "title": "Weapon loot #4",
+   "z": -897.71,
+   "description": "Weapon - spawn 100%, no respawn. Items: AK74M (w1)"
+  },
+  {
+   "id": "541179bd30041a22",
+   "x": 38.46,
+   "y": -4297.38,
+   "category": "loot-medical",
+   "title": "Defibrillator #15",
+   "z": -897.67,
+   "description": "Defib.Cheap - spawn 100%, no respawn. Items: Defibrillator.Cheap (w1)"
+  },
+  {
+   "id": "a1a633983e72b038",
+   "x": 58.09,
+   "y": -4268.67,
+   "category": "loot-armor",
+   "title": "Helmet loot #2",
+   "z": -898.03,
+   "description": "Helmet - spawn 100%, no respawn. Items: LightHelmet (w1)"
+  },
+  {
+   "id": "c5ef9867e7ccd988",
+   "x": 499.49,
+   "y": -4927.2,
+   "category": "vendor",
+   "title": "GarageVendor (Alpha)",
+   "z": -843.93
+  },
+  {
+   "id": "5b62b1824adbad34",
+   "x": -2859.54,
+   "y": -1647.69,
+   "category": "vendor",
+   "title": "EquipmentVendor (Charlie)",
+   "z": -876.18
+  },
+  {
+   "id": "e0cf70eca4739586",
+   "x": -2763.08,
+   "y": -1648.52,
+   "category": "vendor",
+   "title": "GarageVendor (Bravo)",
+   "z": -851.66
+  },
+  {
+   "id": "5b5534b7d8da82c9",
+   "x": -2840.78,
+   "y": -1666.61,
+   "category": "vendor",
+   "title": "VehicleVendor (Charlie)",
+   "z": -877.91
+  },
+  {
+   "id": "024326b49901099b",
+   "x": -4213.64,
+   "y": -427.42,
+   "category": "vendor",
+   "title": "EquipmentVendor (Charlie)",
+   "z": -733.31
+  },
+  {
+   "id": "d2f83e86c46e267d",
+   "x": -4179.64,
+   "y": -461.27,
+   "category": "vendor",
+   "title": "VehicleVendor (Charlie)",
+   "z": -737.68
+  },
+  {
+   "id": "b44c80d741984861",
+   "x": 530.4,
+   "y": -4924.28,
+   "category": "vendor",
+   "title": "EquipmentVendor (Alpha)",
+   "z": -843.61
+  },
+  {
+   "id": "dc061151b5e39f38",
+   "x": 494.05,
+   "y": -4928.27,
+   "category": "vendor",
+   "title": "VehicleVendor (Alpha)",
+   "z": -843.66
+  },
+  {
+   "id": "ccd73b24708d4a3b",
+   "x": -4181.34,
+   "y": -461.8,
+   "category": "vendor",
+   "title": "GarageVendor (Charlie)",
+   "z": -737.99
+  },
+  {
+   "id": "c816bce4fc1e43c7",
+   "x": 3639.92,
+   "y": -1118.95,
+   "category": "vendor",
+   "title": "EquipmentVendor (Bravo)",
+   "z": -854.12
+  },
+  {
+   "id": "c9a750057d99c773",
+   "x": 3648.41,
+   "y": -1153.57,
+   "category": "vendor",
+   "title": "GarageVendor (Bravo)",
+   "z": -854.28
+  },
+  {
+   "id": "0b07566f0f437a92",
+   "x": 3623.98,
+   "y": -1149.96,
+   "category": "vendor",
+   "title": "VehicleVendor (Bravo)",
+   "z": -855.79
+  },
+  {
+   "id": "3001ac7cb8a16813",
+   "x": -727.5,
+   "y": -886.24,
+   "category": "vendor",
+   "title": "EquipmentVendor",
+   "z": -929.13
+  },
+  {
+   "id": "b70e5b0327aca807",
+   "x": -4232.7,
+   "y": -2497.48,
+   "category": "vendor",
+   "title": "EquipmentVendor (Charlie)",
+   "z": -942.81
+  },
+  {
+   "id": "b4f8c4d8d33899cf",
+   "x": -4234.21,
+   "y": -2494.9,
+   "category": "vendor",
+   "title": "VehicleVendor (Charlie)",
+   "z": -943.06
+  },
+  {
+   "id": "aeb7eb23844b513d",
+   "x": 383.15,
+   "y": -4763.59,
+   "category": "vendor",
+   "title": "EquipmentVendor (Bravo)",
+   "z": -844.35
+  },
+  {
+   "id": "079c55fa9c0628e9",
+   "x": 1688.9,
+   "y": 2801.59,
+   "category": "vendor",
+   "title": "Range _EquipmentVendor",
+   "z": -855.78
+  },
+  {
+   "id": "2129507ed2d637b4",
+   "x": 1675.18,
+   "y": 2804.84,
+   "category": "vendor",
+   "title": "Range _EquipmentVendor",
+   "z": -861.87
+  },
+  {
+   "id": "04d905a3654ddf19",
+   "x": 1666.63,
+   "y": 2836.68,
+   "category": "vendor",
+   "title": "Range _EquipmentVendor",
+   "z": -861.97
+  },
+  {
+   "id": "968b9e1d20cc8e4c",
+   "x": 1736.73,
+   "y": 2766.51,
+   "category": "vendor",
+   "title": "Range _EquipmentVendor",
+   "z": -864.53
+  },
+  {
+   "id": "543aa70050c98ed6",
+   "x": 1603.63,
+   "y": 2751.42,
+   "category": "vendor",
+   "title": "Range _GarageVendor_01 (Alpha)",
+   "z": -859.94
+  },
+  {
+   "id": "3cac59f184eaa0c4",
+   "x": 1624.12,
+   "y": 2771.96,
+   "category": "vendor",
+   "title": "Range _VehicleVendor",
+   "z": -862.62
+  },
+  {
+   "id": "91391e98d92e5d8f",
+   "x": 1653.64,
+   "y": 2759.12,
+   "category": "vendor",
+   "title": "Range Tutorial EquipmentVendor",
+   "z": -860.06
+  },
+  {
+   "id": "6f4d268f3b7caec2",
+   "x": 1641.48,
+   "y": 2739.95,
+   "category": "vendor",
+   "title": "Range Tutorial EquipmentVendor",
+   "z": -860.06
+  },
+  {
+   "id": "79d2786bdc0907e7",
+   "x": 1645.06,
+   "y": 2722.38,
+   "category": "vendor",
+   "title": "Range Tutorial EquipmentVendor",
+   "z": -860.06
+  },
+  {
+   "id": "54c17ac4f6322246",
+   "x": 1659.35,
+   "y": 2738.65,
+   "category": "vendor",
+   "title": "Range Tutorial EquipmentVendor",
+   "z": -860.06
+  },
+  {
+   "id": "711af6b0ff01a021",
+   "x": -219.32,
+   "y": -1025.44,
+   "category": "objective",
+   "title": "ControlZone",
+   "z": -946.54
+  },
+  {
+   "id": "d3211da7f7d28e76",
+   "x": 1438.74,
+   "y": -1073.22,
+   "category": "objective",
+   "title": "ControlZone",
+   "z": -951.6
+  },
+  {
+   "id": "133468482340f628",
+   "x": -1878.31,
+   "y": -1820.23,
+   "category": "objective",
+   "title": "StrikeDisarm_LaptopObjective",
+   "z": -941.26
+  },
+  {
+   "id": "d3894fe84d0d6289",
+   "x": 1652.83,
+   "y": 2766.14,
+   "category": "objective",
+   "title": "ShootingRangeTutorialontrolZone",
+   "z": -860
+  },
+  {
+   "id": "26238a0ad2cec866",
+   "x": 543.73,
+   "y": -4937.78,
+   "category": "spawn",
+   "title": "Spawn - Alpha #1",
+   "z": -841.3
+  },
+  {
+   "id": "f72f5f5e7a7c93b3",
+   "x": -4241.84,
+   "y": -423.5,
+   "category": "spawn",
+   "title": "Spawn - Charlie #2",
+   "z": -733.56
+  },
+  {
+   "id": "d36c7451e624857b",
+   "x": 3680.19,
+   "y": -1101.35,
+   "category": "spawn",
+   "title": "Spawn - Bravo #3",
+   "z": -850.87
+  },
+  {
+   "id": "a5cf746699dbb7a7",
+   "x": -2880.56,
+   "y": -1664.55,
+   "category": "spawn",
+   "title": "Spawn - Charlie #4",
+   "z": -875.39
+  },
+  {
+   "id": "467456b236886edc",
+   "x": -732.62,
+   "y": -888.54,
+   "category": "spawn",
+   "title": "Spawn #5",
+   "z": -929.69
+  },
+  {
+   "id": "e4459074d648736b",
+   "x": -4266.79,
+   "y": -2514.25,
+   "category": "spawn",
+   "title": "Spawn #6",
+   "z": -940.26
+  },
+  {
+   "id": "cff00d6477992432",
+   "x": 407.41,
+   "y": -4808.98,
+   "category": "spawn",
+   "title": "Spawn #7",
+   "z": -843.65
+  },
+  {
+   "id": "7663ee66f64b9bbe",
+   "x": 515.83,
+   "y": -4919.91,
+   "category": "deploy-board",
+   "title": "Deployment board 1",
+   "z": -843.87
+  },
+  {
+   "id": "ac4a14cc08ca44c8",
+   "x": -4222.19,
+   "y": -444.19,
+   "category": "deploy-board",
+   "title": "Deployment board 2",
+   "z": -733.58
+  },
+  {
+   "id": "da1488f659eae4d0",
+   "x": 3648.94,
+   "y": -1135.29,
+   "category": "deploy-board",
+   "title": "Deployment board 3",
+   "z": -854.37
+  },
+  {
+   "id": "d97db04a2f92f0ed",
+   "x": -2848.38,
+   "y": -1652.15,
+   "category": "deploy-board",
+   "title": "Deployment board 4",
+   "z": -877.05
+  }
+ ]
+}

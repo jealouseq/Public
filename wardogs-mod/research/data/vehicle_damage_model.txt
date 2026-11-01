@@ -1,0 +1,123 @@
+WARDOGS Vehicle Damage Calculator · Wardogs Zone
+Skip to content
+Search everything
+Ctrl K
+Report a problem
+Report a problem
+Close
+What is wrong?
+Wrong information
+Translation error
+Something is broken
+Something else
+Tell us what you saw
+What should it say? (optional)
+Tip: select the words first, then press the flag, and the report points at them.
+Send report
+English
+EN
+Loading…
+Comms check
+Visits are counted anonymously, without cookies. Your loadouts stay in this browser. Signing in sets one cookie so the hub knows you.
+A few pages carry ads from Google, which sets cookies of its own. In the EU and UK you are asked before it does.
+The full rundown
+.
+Roger
+Early build · use with caution
+The vehicle damage model is still being tuned. Shot counts and section damage here are estimates, and some may differ from what happens in the game. Expect the numbers to move. A result that disagrees with the game is worth a report on the
+Discord
+.
+Target Vehicle
+Vehicle
+Ural
+$5,000 · 1 Driver + 2 Passengers
+Hit Zones
+Hull
+700
+Flatbed
+1
+Engine
+400
+Fuel Tank
+400
+Wheels
+75 × 6
+Hover a row to pick its zone out on the model. Zones without a box are the hull itself.
+Firing Solution
+Weapon
+RPG-7
+93mm rocket
+The next shot fires this. Mix weapons across a sequence.
+RPG-7
+· 93mm rocket
+110
+Damage
+12 m
+Blast
+2.5 m
+Full Effect
+Loading surfaces…
+Operational
+0 shots placed
+Vehicle Condition
+Zone
+Condition
+HP Left
+Hull
+700
+/
+700
+Flatbed
+1
+/
+1
+Engine
+400
+/
+400
+Fuel Tank
+400
+/
+400
+Wheels
+450
+/
+450
+Shots resolve in order against what the last one left · the blast reaches every zone in its radius it has a line to · a hit on a part routes onward into the hull
+Ural in the armory
+Reference
+WARDOGS Vehicle Damage Calculator
+Pick the target vehicle and the weapon firing at it, then click the model where the shot lands. The weapon list runs from the launchers a soldier carries through small arms, the guns the vehicles mount, artillery and the charges planted by hand, and a rifle round also takes its type, standard, AP or hollow point, before it is fired. Every impact resolves from the point you clicked, so the blast reaches the sections around it, a damaged part bleeds into the hull, and the next shot lands on whatever the last one left. On a wheeled vehicle you can click the ground as well, which is how a charge under the chassis or a rocket into the dirt beside the wheels gets tested. The board reads what remains of the hull, the engine, the fuel tank, the wheels or tracks, and the rotors.
+This is an early build. The model behind the board is still being tuned, so read every count as an estimate and expect it to move between updates.
+Sections, and why they matter
+A vehicle is a set of sections with their own health. Most carry a hull, an engine, a fuel tank and their wheels or tracks, and the L2A6 adds armor plating. Helicopters carry a main rotor and a tail rotor, and on the board losing either one downs the aircraft whatever the hull has left.
+On a wheeled vehicle the engine icon the game shows you is the hull itself, because the engine bay belongs to the hull and a repair at the engine mends it. The fuel tank and each wheel are sections of their own, and on the Humvee the tank sits under the rear seats, where a blast can only reach it from below.
+Where a shot lands decides which sections it reaches. A rocket into a door or the grille catches the hull and the wheels beside it at once, and every wheel it wrecks passes part of that damage on into the hull. The same rocket into the tailgate mostly finds the hull.
+Low hits, high hits and the ground underneath
+Height matters more than you might expect on a wheeled vehicle. A blast low on the body or on the ground under it reaches the wheels and the fuel tank as well as the hull, while one on top of the hood, on the windshield or high on the back meets the hull at a distance and does a fraction of the damage.
+A charge under the middle of the chassis is the strongest of the ground blasts, because from there it can see the fuel tank and all four wheels. The same charge under the front bumper only reaches the hull and the two front wheels, so it takes noticeably less.
+Once the hull falls to its critical line, which on most vehicles is a tenth of its health, the vehicle catches fire, repairs stop working and it blows up after fifteen seconds. The board counts that moment as the kill and tells you the timer.
+Small arms against vehicles
+Rifle fire into a hull achieves little. Into a fuel tank it lands at several times what the hull lets through, which makes the tank the place to put a magazine when nothing heavier is to hand. Standard, AP and hollow point rounds can change the answer, so set the ammo before you read the table.
+Reading the count honestly
+The count assumes each shot lands where you clicked. A rocket that clips a wheel and one that goes into the engine bay are different events, and the board treats them that way. Run the sequence from a few angles before you trust a number, and treat the result as a plan rather than a promise while the model is being tuned.
+Questions people ask
+How many RPGs does it take to destroy a tank in WARDOGS?
+Place RPG-7 shots on the L2A6 and count them off. The answer depends on where each rocket lands, since the blast reaches the tracks, the engine and the armor plating as well as the hull. The model is still being tuned, so read the count as a starting point and test it on the range.
+Where should I shoot a vehicle in WARDOGS?
+Wherever the board kills it fastest with the munition you carry. Engines and fuel tanks are softer than the hull against small arms, wheels and tracks stop it moving, and on the board a helicopter goes down the moment a rotor is destroyed.
+Does C4 destroy vehicles in WARDOGS?
+C4, the IED, the AT mine and the claymore are all on the board. Pick one as the weapon, place it on the vehicle or on the ground under it, and read what the blast takes off each section. A charge low on a Humvee does several times the damage of one on the hood, and an IED within a couple of metres destroys it outright.
+Why does a rocket to the windshield do less than one to the door?
+A blast high on a wheeled vehicle meets the hull from a distance, so it misses the extra damage a close explosion carries and cannot reach the wheels or the fuel tank either. A rocket into a door or the grille gets both, which on a Humvee takes several times as much off the hull.
+What happens when a vehicle goes critical in WARDOGS?
+When the hull drops to its critical line, a tenth of its health on most vehicles, the vehicle starts burning, it can no longer be repaired and it explodes after fifteen seconds. The calculator marks the shot that tips it over as the kill and shows the burn timer.
+Do bullets damage vehicles in WARDOGS?
+Yes, and the section matters more than the caliber. A hull shrugs off most of a magazine. A fuel tank takes it far worse. Pick the round under Small Arms, where every rifle that chambers it is listed, choose standard, AP or hollow point, and place the shots.
+How accurate is the vehicle damage calculator?
+It is an early build. The board applies the vehicle damage rules as the site models them today, and parts of that model are still being checked shot for shot against the game. Treat every number as an estimate, and expect counts to change between updates.
+Keep going
+Vehicles database
+Damage calculator for infantry
+Vehicle buying guide
+Vehicle cargo planner

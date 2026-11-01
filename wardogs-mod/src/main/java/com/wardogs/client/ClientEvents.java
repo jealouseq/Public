@@ -51,6 +51,16 @@ public final class ClientEvents {
                     && v.def() != null && v.def().gun() != null && v.getControllingPassenger() == mc.player) {
                 PacketDistributor.sendToServer(new VehicleFirePayload());
             }
+            // Holding use with empty hands next to a friendly MG nest fires it.
+            if (mc.screen == null && mc.options.keyUse.isDown() && mc.player.getVehicle() == null && mc.player.getMainHandItem().isEmpty()) {
+                double r = com.wardogs.build.Emplacements.mgUseRadius() + 3;
+                for (var b : mc.level.getEntitiesOfClass(com.wardogs.build.Buildable.class, mc.player.getBoundingBox().inflate(r))) {
+                    if (b.def() != null && b.def().id().equals("mg_nest")) {
+                        PacketDistributor.sendToServer(new VehicleFirePayload());
+                        break;
+                    }
+                }
+            }
             while (SHOP.consumeClick()) {
                 mc.setScreen(new ShopScreen());
             }

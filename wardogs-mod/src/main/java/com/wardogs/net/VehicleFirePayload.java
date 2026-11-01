@@ -13,7 +13,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 
-/** Client -> server while the driver holds the fire button: shoot the vehicle's mounted weapon. */
+/** Client -> server while the fire button is held: shoot the vehicle's mounted weapon, or the MG nest you stand at. */
 public record VehicleFirePayload() implements CustomPacketPayload {
     public static final Type<VehicleFirePayload> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "vehicle_fire"));
     public static final StreamCodec<RegistryFriendlyByteBuf, VehicleFirePayload> CODEC = StreamCodec.unit(new VehicleFirePayload());
@@ -25,8 +25,16 @@ public record VehicleFirePayload() implements CustomPacketPayload {
 
     static void handle(VehicleFirePayload p, IPayloadContext ctx) {
         ctx.enqueueWork(() -> {
-            if (ctx.player() instanceof ServerPlayer sp && sp.getVehicle() instanceof Vehicle v) {
+            if (!(ctx.player() instanceof ServerPlayer sp)) {
+                return;
+            }
+            if (sp.getVehicle() instanceof Vehicle v) {
                 VehicleGuns.fire(sp, v);
+            } else if (sp.getMainHandItem().isEmpty()) {
+                var nest = com.wardogs.build.Emplacements.nestFor(sp);
+                if (nest != null) {
+                    com.wardogs.build.Emplacements.fireMg(sp, nest);
+                }
             }
         });
     }

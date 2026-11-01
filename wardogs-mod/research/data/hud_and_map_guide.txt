@@ -1,0 +1,92 @@
+Reading the HUD & Map — WARDOGS Guide | The Kennel
+This page is also available in English.
+Dismiss
+Download
+Account
+Join Discord
+Language
+English
+Deutsch
+Français
+Español
+Italiano
+Português (Brasil)
+Polski
+Türkçe
+Русский
+Українська
+日本語
+한국어
+简体中文
+繁體中文
+Start Here
+What Is WARDOGS?
+The Three Factions
+Your First Match: A Walkthrough
+The Economy, Explained
+Reading the HUD & Map
+Settings & Controls
+Progression, Explained
+Modes: Standard vs. Hardcore
+Glossary
+WARDOGS gives you a lot of information at once. Here's what to actually look at.
+The map
+Control Zone outline
+— a large marked area (2×2 km) showing where the current fight is. This moves match to match; there's no fixed "main objective" location.
+Hot Zone marker
+— a smaller, roaming highlight inside the Control Zone. Standing in it doubles your cash and point value. It moves during the match, so don't treat it as a fixed spot.
+Faction positions
+— with three factions active, watch for where the
+other two
+teams are relative to each other, not just relative to you. The team not currently fighting anyone often has the easiest path to points.
+FOB markers
+— your team's (and spotted enemy) Forward Operating Bases, useful for routing resupply runs or planning an attack.
+Vehicle spawn/vendor icons
+— where you can buy and pull vehicles.
+The bank / economy readout
+On-screen bank
+— your current cash total, visible at all times so you always know what you can afford to rebuy.
+Currency pickups
+— cash and
+gold bar
+pickups that appear on the ground; gold bars relate to the endgame Gold Exchange system, separate from your spendable match cash.
+Squad and voice indicators
+Proximity voice range indicator
+— shows who can hear you speak in-world (anyone nearby, friend or foe).
+Squad channel indicator
+— separate from proximity chat; this is your private squad-only comms, always available regardless of distance.
+Squad member markers
+— position and status (alive/downed/dead) of your squadmates specifically, distinct from the wider team.
+Combat & vehicle HUD
+Ballistics info
+— WARDOGS uses real-world-style ballistics with bullet drop and travel time, so expect a drop indicator or reticle adjustment prompt at range, especially on marksman and sniper weapons.
+Vehicle status
+— fuel level, ammo count (for armed vehicles), and health/damage state. Vehicles can be resupplied and repaired mid-match — see
+Repairing a Vehicle
+.
+Construction radius indicator
+— shown near a deployed FOB, marking where you're allowed to build attached structures.
+Hardcore mode differences
+If you're playing
+Hardcore
+instead of Standard, expect the HUD to be deliberately reduced:
+No killcam
+Fewer HUD elements overall
+Kill feed locked to your squad only (you won't see the whole server's kill feed)
+Vehicles can only be driven from a
+first-person
+view
+See
+Modes: Standard vs. Hardcore
+for the full comparison.
+Sources:
+wardogswiki.com — Gameplay Explained
+,
+wardogs.wiki — Proximity Voice Chat
+,
+gamewatcher.com — Wardogs Release Date
+.
+← Previous
+The Economy, Explained
+Next →
+Settings & Controls

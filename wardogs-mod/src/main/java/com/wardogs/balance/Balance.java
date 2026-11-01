@@ -41,6 +41,9 @@ public final class Balance {
     private final ProgressionDef progression;
     private final Map<String, StructureDef> structures;
     private final Map<String, BuildingItemDef> buildingItems;
+    private final double[] emplacementTuning;
+    private final Map<String, AttachmentDef> attachments;
+    private final Map<String, AmmoItemDef> ammoItems;
     private final Map<String, LauncherDef> launchers;
     private final double[] artilleryTuning; // minRange, maxRange, blast, damage, cooldown, flightBase, flightSpeed, ammoPerShot, stationRadius, stationInterval
     private final Map<String, VehicleDef> vehicles;
@@ -53,7 +56,9 @@ public final class Balance {
                     Map<String, ExplosiveDef> explosives, ProgressionDef progression,
                     Map<String, StructureDef> structures, Map<String, BuildingItemDef> buildingItems, double[] buildTuning,
                     Map<String, VehicleDef> vehicles, double[] vehicleTuning,
-                    Map<String, LauncherDef> launchers, double[] artilleryTuning) {
+                    Map<String, LauncherDef> launchers, double[] artilleryTuning,
+                    Map<String, AttachmentDef> attachments, Map<String, AmmoItemDef> ammoItems,
+                    double[] emplacementTuning) {
         this.weapons = weapons;
         this.rewards = rewards;
         this.playerHealth = playerHealth;
@@ -70,6 +75,9 @@ public final class Balance {
         this.buildTuning = buildTuning;
         this.vehicles = vehicles;
         this.launchers = launchers;
+        this.attachments = attachments;
+        this.emplacementTuning = emplacementTuning;
+        this.ammoItems = ammoItems;
         this.artilleryTuning = artilleryTuning;
         this.vehicleTuning = vehicleTuning;
     }
@@ -85,6 +93,30 @@ public final class Balance {
     /** Ticks a downed player lasts before bleeding out (estimate). */
     public int bleedoutTicks() {
         return bleedoutTicks;
+    }
+
+    /**
+     * Emplacement tuning: {mgDamage, mgRpm, mgRange, mgSpread, mgShotsPerSupply, mgUseRadius,
+     * talonRange, talonCooldown, talonAmmoPerShot, ciwsRange, ciwsDamage, ciwsInterval, ciwsShotsPerSupply}.
+     */
+    public double[] emplacements() {
+        return emplacementTuning;
+    }
+
+    public AttachmentDef attachment(String id) {
+        return attachments.get(id);
+    }
+
+    public java.util.Collection<AttachmentDef> attachments() {
+        return attachments.values();
+    }
+
+    public AmmoItemDef ammoItem(String id) {
+        return ammoItems.get(id);
+    }
+
+    public java.util.Collection<AmmoItemDef> ammoItems() {
+        return ammoItems.values();
     }
 
     public LauncherDef launcher(String id) {
@@ -230,7 +262,7 @@ public final class Balance {
             return current;
         }
         Map<String, JsonObject> files = new LinkedHashMap<>();
-        for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression", "structures", "vehicles", "launchers"}) {
+        for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression", "structures", "vehicles", "launchers", "attachments"}) {
             files.put(name, readClasspath("/data/wardogs/balance/" + name + ".json"));
         }
         current = build(files);
@@ -290,7 +322,35 @@ public final class Balance {
                         files.get("vehicles").get("repair_fraction").getAsDouble(),
                         files.get("vehicles").getAsJsonObject("transport").get("ground_per_passenger").getAsDouble(),
                         files.get("vehicles").getAsJsonObject("transport").get("air_per_passenger").getAsDouble()},
-                launchers(files.get("launchers")), artillery(files.get("structures")));
+                launchers(files.get("launchers")), artillery(files.get("structures")),
+                attachmentMap(files.get("attachments")), ammoMap(files.get("attachments")),
+                emplacements(files.get("structures")));
+    }
+
+    private static double[] emplacements(JsonObject o) {
+        JsonObject e = o.getAsJsonObject("emplacements");
+        JsonObject mg = e.getAsJsonObject("mg"), talon = e.getAsJsonObject("talon"), ciws = e.getAsJsonObject("ciws");
+        return new double[]{mg.get("damage").getAsDouble(), mg.get("rpm").getAsDouble(), mg.get("range").getAsDouble(),
+                mg.get("spread").getAsDouble(), mg.get("shots_per_supply").getAsDouble(), mg.get("use_radius").getAsDouble(),
+                talon.get("range").getAsDouble(), talon.get("cooldown_ticks").getAsDouble(), talon.get("ammo_per_shot").getAsDouble(),
+                ciws.get("range").getAsDouble(), ciws.get("damage").getAsDouble(), ciws.get("interval_ticks").getAsDouble(),
+                ciws.get("shots_per_supply").getAsDouble()};
+    }
+
+    private static Map<String, AttachmentDef> attachmentMap(JsonObject o) {
+        Map<String, AttachmentDef> m = new LinkedHashMap<>();
+        for (Map.Entry<String, JsonElement> e : o.getAsJsonObject("attachments").entrySet()) {
+            m.put(e.getKey(), AttachmentDef.parse(e.getKey(), e.getValue().getAsJsonObject()));
+        }
+        return java.util.Collections.unmodifiableMap(m);
+    }
+
+    private static Map<String, AmmoItemDef> ammoMap(JsonObject o) {
+        Map<String, AmmoItemDef> m = new LinkedHashMap<>();
+        for (Map.Entry<String, JsonElement> e : o.getAsJsonObject("ammo").entrySet()) {
+            m.put(e.getKey(), AmmoItemDef.parse(e.getKey(), e.getValue().getAsJsonObject()));
+        }
+        return java.util.Collections.unmodifiableMap(m);
     }
 
     private static Map<String, LauncherDef> launchers(JsonObject o) {
@@ -344,7 +404,7 @@ public final class Balance {
         protected void apply(Map<ResourceLocation, JsonElement> in, ResourceManager rm, ProfilerFiller profiler) {
             Map<String, JsonObject> files = new LinkedHashMap<>();
             // Start from the jar defaults, then overlay anything a datapack provides.
-            for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression", "structures", "vehicles", "launchers"}) {
+            for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression", "structures", "vehicles", "launchers", "attachments"}) {
                 JsonElement over = in.get(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, name));
                 files.put(name, over != null ? over.getAsJsonObject() : readClasspath("/data/wardogs/balance/" + name + ".json"));
             }

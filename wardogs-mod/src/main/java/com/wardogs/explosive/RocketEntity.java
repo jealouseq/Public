@@ -35,6 +35,20 @@ public class RocketEntity extends Projectile implements ItemSupplier {
         super(type, level);
     }
 
+    /** Launches from an arbitrary point (turrets). */
+    public static RocketEntity launchFrom(ServerLevel level, @Nullable Entity owner, LauncherDef def, Vec3 from, Vec3 dir, @Nullable UUID target) {
+        RocketEntity r = new RocketEntity(ExplosiveEntities.ROCKET.get(), level);
+        r.entityData.set(KIND, def.id());
+        if (owner != null) {
+            r.setOwner(owner);
+        }
+        r.setPos(from);
+        r.setDeltaMovement(dir.scale(def.speed()));
+        r.target = target;
+        level.addFreshEntity(r);
+        return r;
+    }
+
     public static RocketEntity launch(ServerLevel level, net.minecraft.world.entity.player.Player shooter, LauncherDef def, Vec3 dir) {
         RocketEntity r = new RocketEntity(ExplosiveEntities.ROCKET.get(), level);
         r.entityData.set(KIND, def.id());
@@ -80,7 +94,7 @@ public class RocketEntity extends Projectile implements ItemSupplier {
     @Override
     public ItemStack getItem() {
         var holder = ModItems.GUNS.get(entityData.get(KIND));
-        return holder == null ? ItemStack.EMPTY : new ItemStack(holder.get());
+        return holder == null ? new ItemStack(net.minecraft.world.item.Items.FIREWORK_ROCKET) : new ItemStack(holder.get());
     }
 
     @Override
@@ -120,8 +134,8 @@ public class RocketEntity extends Projectile implements ItemSupplier {
 
     private void explode(ServerLevel sl, Vec3 at, @Nullable Entity directHit) {
         LauncherDef d = def();
-        var w = Balance.get().weapon(d.id());
-        Blast.explode(sl, at, d.blast(), w.chest(), getOwner(), d.id(), directHit);
+        double damage = d.damage() > 0 ? d.damage() : Balance.get().weapon(d.id()).chest();
+        Blast.explode(sl, at, d.blast(), damage, getOwner(), d.id(), directHit);
         discard();
     }
 

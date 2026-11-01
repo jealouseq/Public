@@ -1,0 +1,335 @@
+WARDOGS Progression: Every Unlock, Level & Cost · Wardogs Zone
+Skip to content
+Search everything
+Ctrl K
+Report a problem
+Report a problem
+Close
+What is wrong?
+Wrong information
+Translation error
+Something is broken
+Something else
+Tell us what you saw
+What should it say? (optional)
+Tip: select the words first, then press the flag, and the report points at them.
+Send report
+English
+EN
+Loading…
+Comms check
+Visits are counted anonymously, without cookies. Your loadouts stay in this browser. Signing in sets one cookie so the hub knows you.
+A few pages carry ads from Google, which sets cookies of its own. In the EU and UK you are asked before it does.
+The full rundown
+.
+Roger
+// Wardog Level
+Level
+0
+The sum of all six class levels
+0
+Infantry
+0
+100
+0
+Medic
+0
+100
+0
+Recon
+0
+100
+0
+Support
+0
+100
+0
+Driver
+0
+100
+0
+Pilot
+0
+100
+Unlock ladder
+Career (Wardog)
+Reached
+0
+/ 57 levels
+Unlock fees at these levels
+$0
+/
+$2,645,000
+Next at
+Wardog 1
+1
+Next
+Judge
+$5,000
+3
+Level
+Level 1 Armor
+Level 1 Helmet
+$17,500
+4
+Level
+Kobra Reflex
+$7,500
+5
+Level
+Mechanical Supply Pallet
+$10,000
+6
+Level
+5.45mm Flesh Damage (HP) (T)
+$5,000
+9
+Level
+Ammo Supply Pallet
+$25,000
+10
+Level
+9mm Flesh Damage (HP) (T)
+$5,000
+11
+Level
+7.62mm Flesh Damage (HP) (T)
+$5,000
+12
+Level
+Field Backpack
+$20,000
+13
+Level
+5.56mm Flesh Damage (HP) (T)
+$5,000
+14
+Level
+Medium Tac Vest
+$10,000
+15
+Level
+RK6 Tactical Foregrip
+$7,500
+16
+Level
+Fuel Supply Pallet
+$50,000
+17
+Level
+Compact T-2 Red Dot
+$5,000
+18
+Level
+GGX 17
+GGX 17 RND Magazine
+$15,000
+20
+Level
+Operator Backpack
+$25,000
+21
+Level
+Compact P-1 Red Dot
+$12,500
+23
+Level
+GGX 33 RND Magazine
+$10,000
+25
+Level
+.45 Colt Flesh Damage (HP) (T)
+$5,000
+26
+Level
+Tricon 1.5x Compact Prism Scope
+$10,000
+28
+Level
+7.62x54mm Flesh Damage (HP) (T)
+$5,000
+29
+Level
+Blue (Da Ba Dee) - Eiffel 65
+$25,000
+30
+Level
+Level 2 Armor
+Level 2 Helmet
+$87,500
+31
+Level
+Spitfire 3X
+$25,000
+32
+Level
+Assault Backpack
+$50,000
+33
+Level
+45° Angled Foregrip
+$15,000
+34
+Level
+Sport Parachute
+$25,000
+35
+Level
+Gold Market
+$150,000
+36
+Level
+12g Rifled Slug
+$5,000
+38
+Level
+Mini Angled Foregrip
+$12,500
+40
+Level
+M1911
+$25,000
+41
+Level
+M1911 7 RND Magazine
+$0
+43
+Level
+.45 ACP Pistol Compensator
+$15,000
+46
+Level
+High Capacity Battery
+$50,000
+48
+Level
+.45 ACP Flesh Damage (HP) (T)
+$5,000
+50
+Level
+Large Tac Vest
+$25,000
+53
+Level
+M1911 10 RND Magazine
+$10,000
+55
+Level
+Ruck Backpack
+$100,000
+58
+Level
+TDG Vertical Foregrip
+$25,000
+60
+Level
+7.62mm Armor Piercing (AP) (T)
+$50,000
+63
+Level
+.308 Win Flesh Damage (HP) (T)
+$5,000
+65
+Level
+Deagle 7 RND Magazine
+Deagle
+$75,000
+70
+Level
+Level 3 Armor
+Level 3 Helmet
+$175,000
+73
+Level
+Gunner Backpack + Sling
+$125,000
+75
+Level
+9mm Armor Piercing (AP) (T)
+$75,000
+80
+Level
+GGX 50 RND Drum Magazine
+$50,000
+82
+Level
+7.62x54mm Armor Piercing (AP) (T)
+$75,000
+84
+Level
+5.56mm Armor Piercing (AP) (T)
+$75,000
+85
+Level
+GGX 18
+$125,000
+90
+Level
+5.45mm Armor Piercing (AP) (T)
+$75,000
+95
+Level
+50AE Flesh Damage (HP) (T)
+$5,000
+100
+Level
+Level 4 Armor
+Level 4 Helmet
+$350,000
+110
+Level
+.45 Colt Armor Piercing (AP) (T)
+$75,000
+120
+Level
+.45 ACP Armor Piercing (AP) (T)
+$75,000
+130
+Level
+50AE Armor Piercing (AP) (T)
+$75,000
+140
+Level
+.308 Win Armor Piercing (AP) (T)
+$75,000
+150
+Level
+Arsenal Backpack + 2 Slings
+$175,000
+Reference
+WARDOGS Progression
+WARDOGS gates gear behind two kinds of level. The Wardog level (the career) is the sum of all six class levels and drives account-wide unlocks: armor tiers, backpacks, sidearms and ammunition types. Each class ladder (Infantry, Medic, Recon, Support, Driver, Pilot) unlocks the gear of its trade. Reaching a level is not the whole gate: every unlock also asks a one-time cash payment before the vendor sells it.
+Paying every gate on every ladder costs $12,736,500 on top of the levels themselves. Every item links to its database entry, and the same level and price sit on the entry itself.
+Reading the board
+Set each class card to your in-game level and the board does the rest: the career banner sums them, open levels light up, and the next gate on each ladder is marked. Levels are remembered on this device only.
+A price covers its whole level row, so two items on one row share a single payment.
+Where the money goes
+$2,645,000
+Career (Wardog), 63 unlocks to level 150
+$1,270,000
+Infantry, 40 unlocks to level 50
+$1,220,000
+Medic, 38 unlocks to level 50
+$2,445,000
+Recon, 58 unlocks to level 50
+$1,630,000
+Support, 33 unlocks to level 50
+$2,308,250
+Driver, 21 unlocks to level 35
+$1,218,250
+Pilot, 11 unlocks to level 35
+Questions people ask
+How does progression work in WARDOGS?
+Two ladders run at once. The Wardog career level is the sum of your six class levels and unlocks account-wide gear such as armor, backpacks and sidearms. Each class (Infantry, Medic, Recon, Support, Driver, Pilot) levels separately through play and unlocks its own weapons and tools. Every unlock then asks a one-time cash payment.
+What is the Wardog level?
+The career level: the sum of all six class levels. Class XP comes from playing the class, so the Wardog level rises with everything you do.
+What unlocks at Wardog level 150?
+Arsenal Backpack + 2 Slings, for $175,000. It is the last gate on the career ladder.
+How much does it cost to unlock everything in WARDOGS?
+$12,736,500 across 264 unlocks, paid one gate at a time. The class ladders carry most of the weapons; the career ladder carries armor, backpacks and ammunition types.
+Keep going
+Armory database
+Loadout planner
+Classes chapter
+Cash & The Economy
+How to make money

@@ -76,15 +76,20 @@ public final class Ballistics {
 
     /** Fires one trigger pull (all pellets) from the shooter's eyes. */
     public static void fire(ServerLevel level, Player shooter, WeaponDef w, AmmoType ammo) {
+        fire(level, shooter, w, ammo, 1.0);
+    }
+
+    /** As {@link #fire(ServerLevel, Player, WeaponDef, AmmoType)} with the weapon's spread scaled (attachments). */
+    public static void fire(ServerLevel level, Player shooter, WeaponDef w, AmmoType ammo, double spreadMult) {
         int pellets = Math.max(1, w.pellets());
         for (int i = 0; i < pellets; i++) {
-            shootRay(level, shooter, w, ammo, pellets);
+            shootRay(level, shooter, w, ammo, pellets, spreadMult);
         }
     }
 
-    private static void shootRay(ServerLevel level, Player shooter, WeaponDef w, AmmoType ammo, int pellets) {
+    private static void shootRay(ServerLevel level, Player shooter, WeaponDef w, AmmoType ammo, int pellets, double spreadMult) {
         Vec3 start = shooter.getEyePosition();
-        Vec3 dir = withSpread(shooter.getLookAngle(), w.spread(), shooter.getRandom());
+        Vec3 dir = withSpread(shooter.getLookAngle(), w.spread() * spreadMult, shooter.getRandom());
         double range = Math.min(w.range(), MAX_TRACE);
         Vec3 end = start.add(dir.scale(range));
 

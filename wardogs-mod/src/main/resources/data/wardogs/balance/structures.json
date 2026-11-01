@@ -215,6 +215,48 @@
     "at_mine": 6
    },
    "block": "minecraft:yellow_concrete"
+  },
+  "mg_nest": {
+   "tier": "large",
+   "hp": 800,
+   "w": 2.0,
+   "h": 1.1,
+   "d": 2.0,
+   "cost": 25,
+   "hits": {
+    "c4": 1,
+    "ied": 1,
+    "at_mine": 3
+   },
+   "block": "minecraft:smooth_sandstone"
+  },
+  "talon_sam": {
+   "tier": "large",
+   "hp": 1200,
+   "w": 2.0,
+   "h": 1.6,
+   "d": 2.0,
+   "cost": 45,
+   "hits": {
+    "c4": 2,
+    "ied": 1,
+    "at_mine": 5
+   },
+   "block": "minecraft:green_terracotta"
+  },
+  "vanguard_ciws": {
+   "tier": "large",
+   "hp": 1200,
+   "w": 2.0,
+   "h": 1.8,
+   "d": 2.0,
+   "cost": 45,
+   "hits": {
+    "c4": 2,
+    "ied": 1,
+    "at_mine": 5
+   },
+   "block": "minecraft:light_gray_terracotta"
   }
  },
  "items": {
@@ -302,5 +344,27 @@
   "refuel_supply_per_tick": 1,
   "repair_supply_per_tick": 1
  },
- "_comment2": "mortar and stations: estimates (sources give none); structure sizes/costs for the three new entries are estimates too."
+ "_comment2": "mortar and stations: estimates (sources give none); structure sizes/costs for the three new entries are estimates too.",
+ "emplacements": {
+  "mg": {
+   "damage": 63.54,
+   "rpm": 800,
+   "range": 300,
+   "spread": 1.2,
+   "shots_per_supply": 50,
+   "use_radius": 3.0
+  },
+  "talon": {
+   "range": 150,
+   "cooldown_ticks": 80,
+   "ammo_per_shot": 1
+  },
+  "ciws": {
+   "range": 60,
+   "damage": 40,
+   "interval_ticks": 2,
+   "shots_per_supply": 60
+  }
+ },
+ "_comment3": "emplacements: all numbers are estimates except the MG damage (PKM-class)"
 }

@@ -1,0 +1,295 @@
+{
+ "maps": {
+  "bakurani": {
+   "rawMax": 65535,
+   "url": "/data/wardogs/dem/bakurani.280ee3f7.bin",
+   "hash": "280ee3f7",
+   "size": 2048,
+   "encoding": "wdem1",
+   "world": "Kavkazi",
+   "rawMin": 65,
+   "source": "wardogs-extract/exports/bakurani-heightmap.png (studio composite: terrain + structures + strokes)",
+   "metersPerTexel": 7.96875,
+   "elevation": {
+    "calibrated": true,
+    "model": "studio-composite",
+    "offset": -1008.2656,
+    "scale": 0.017009756618600748
+   },
+   "alignment": {
+    "calibrated": true,
+    "points": [
+     {
+      "image": {
+       "y": 0,
+       "x": 0
+      },
+      "dem": {
+       "y": 0,
+       "x": 0
+      }
+     },
+     {
+      "image": {
+       "y": 16384,
+       "x": 16384
+      },
+      "dem": {
+       "y": 2048,
+       "x": 2048
+      }
+     }
+    ]
+   },
+   "composite": {
+    "hash": "10304e57b0950095f5bb152e1c5a52c9",
+    "strokes": 0,
+    "generated": "2026-09-02T19:22:04.830Z"
+   },
+   "hd": {
+    "bytes": 10892706,
+    "key": 686252236,
+    "cols": 16,
+    "tiled": true,
+    "encoding": "wdemt1",
+    "url": "/data/wardogs/dem/bakurani-hd.10a71d52/",
+    "hash": "10a71d52",
+    "size": 8192,
+    "tileSize": 512,
+    "rows": 16,
+    "stepM": 0.25,
+    "metersPerTexel": 1.9921875,
+    "elevation": {
+     "calibrated": true,
+     "model": "studio-composite",
+     "offset": -1008.2656,
+     "scale": 0.017009756618600748
+    },
+    "alignment": {
+     "calibrated": true,
+     "points": [
+      {
+       "image": {
+        "y": 0,
+        "x": 0
+       },
+       "dem": {
+        "y": 0,
+        "x": 0
+       }
+      },
+      {
+       "image": {
+        "y": 16384,
+        "x": 16384
+       },
+       "dem": {
+        "y": 8192,
+        "x": 8192
+       }
+      }
+     ]
+    },
+    "composite": {
+     "hash": "10304e57b0950095f5bb152e1c5a52c9",
+     "strokes": 0,
+     "generated": "2026-09-08T00:29:55.509Z"
+    }
+   }
+  },
+  "zestafona": {
+   "rawMax": 37734,
+   "url": "/data/wardogs/dem/zestafona.a819561c.bin",
+   "hash": "a819561c",
+   "size": 2048,
+   "encoding": "wdem1",
+   "world": "NorthAmerica",
+   "rawMin": 0,
+   "source": "wardogs-extract/exports/zestafona-heightmap.png (studio composite: terrain + structures + strokes)",
+   "metersPerTexel": 8,
+   "elevation": {
+    "calibrated": true,
+    "model": "studio-composite",
+    "offset": -0.011981027,
+    "scale": 0.018692484168764782
+   },
+   "alignment": {
+    "calibrated": true,
+    "points": [
+     {
+      "image": {
+       "y": 0,
+       "x": 0
+      },
+      "dem": {
+       "y": 0,
+       "x": 0
+      }
+     },
+     {
+      "image": {
+       "y": 32768,
+       "x": 32768
+      },
+      "dem": {
+       "y": 2048,
+       "x": 2048
+      }
+     }
+    ]
+   },
+   "composite": {
+    "hash": "c80ba1d559983b9b9f33f29d5d51c7bf",
+    "strokes": 11,
+    "generated": "2026-09-09T21:06:36.228Z"
+   },
+   "hd": {
+    "bytes": 13758648,
+    "key": 360737375,
+    "cols": 16,
+    "tiled": true,
+    "encoding": "wdemt1",
+    "url": "/data/wardogs/dem/zestafona-hd.1bbd70c1/",
+    "hash": "1bbd70c1",
+    "size": 8192,
+    "tileSize": 512,
+    "rows": 16,
+    "stepM": 0.25,
+    "metersPerTexel": 2,
+    "elevation": {
+     "calibrated": true,
+     "model": "studio-composite",
+     "offset": -0.011981027,
+     "scale": 0.018692484168764782
+    },
+    "alignment": {
+     "calibrated": true,
+     "points": [
+      {
+       "image": {
+        "y": 0,
+        "x": 0
+       },
+       "dem": {
+        "y": 0,
+        "x": 0
+       }
+      },
+      {
+       "image": {
+        "y": 32768,
+        "x": 32768
+       },
+       "dem": {
+        "y": 8192,
+        "x": 8192
+       }
+      }
+     ]
+    },
+    "composite": {
+     "hash": "c80ba1d559983b9b9f33f29d5d51c7bf",
+     "strokes": 11,
+     "generated": "2026-09-09T21:06:56.854Z"
+    }
+   }
+  },
+  "ozeti": {
+   "rawMax": 47272,
+   "url": "/data/wardogs/dem/ozeti.4108dad2.bin",
+   "hash": "4108dad2",
+   "size": 2048,
+   "encoding": "wdem1",
+   "world": "Europe (Spain assets)",
+   "rawMin": 0,
+   "source": "wardogs-extract/exports/ozeti-heightmap.png (studio composite: terrain + structures + strokes)",
+   "metersPerTexel": 7.96875,
+   "elevation": {
+    "calibrated": true,
+    "model": "studio-composite",
+    "offset": -1122.57625,
+    "scale": 0.017913138017853058
+   },
+   "alignment": {
+    "calibrated": true,
+    "points": [
+     {
+      "image": {
+       "y": 0,
+       "x": 0
+      },
+      "dem": {
+       "y": 0,
+       "x": 0
+      }
+     },
+     {
+      "image": {
+       "y": 32768,
+       "x": 32768
+      },
+      "dem": {
+       "y": 2048,
+       "x": 2048
+      }
+     }
+    ]
+   },
+   "composite": {
+    "hash": "5c2bf74807589f38cb19e781a804abaf",
+    "strokes": 16,
+    "generated": "2026-09-08T00:46:08.728Z"
+   },
+   "hd": {
+    "bytes": 4144057,
+    "key": 1845970700,
+    "cols": 16,
+    "tiled": true,
+    "encoding": "wdemt1",
+    "url": "/data/wardogs/dem/ozeti-hd.d3ac1c63/",
+    "hash": "d3ac1c63",
+    "size": 8192,
+    "tileSize": 512,
+    "rows": 16,
+    "stepM": 0.25,
+    "metersPerTexel": 1.9921875,
+    "elevation": {
+     "calibrated": true,
+     "model": "studio-composite",
+     "offset": -1122.57625,
+     "scale": 0.017913138017853058
+    },
+    "alignment": {
+     "calibrated": true,
+     "points": [
+      {
+       "image": {
+        "y": 0,
+        "x": 0
+       },
+       "dem": {
+        "y": 0,
+        "x": 0
+       }
+      },
+      {
+       "image": {
+        "y": 32768,
+        "x": 32768
+       },
+       "dem": {
+        "y": 8192,
+        "x": 8192
+       }
+      }
+     ]
+    },
+    "composite": {
+     "hash": "5c2bf74807589f38cb19e781a804abaf",
+     "strokes": 16,
+     "generated": "2026-09-08T00:46:30.680Z"
+    }
+   }
+  }
+ }
+}

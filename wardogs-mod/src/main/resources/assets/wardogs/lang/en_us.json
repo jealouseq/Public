@@ -113,5 +113,22 @@
   "item.wardogs.vehicle_z20_lakota_miniguns": "Z20 Lakota Miniguns",
   "item.wardogs.vehicle_havoc": "Havoc",
   "entity.wardogs.rocket": "Rocket",
-  "entity.wardogs.vehicle": "Vehicle"
+  "entity.wardogs.vehicle": "Vehicle",
+  "item.wardogs.mag_ext_ar": "Extended Magazine (60)",
+  "item.wardogs.mag_ext_smg": "Drum Magazine (50)",
+  "item.wardogs.hexagon_brake": "Hexagon Brake",
+  "item.wardogs.dual_port_brake": "Dual Port Brake",
+  "item.wardogs.afg_grip": "AFG Angled Foregrip",
+  "item.wardogs.svd_bipod": "SVD Bipod",
+  "item.wardogs.m249_bipod": "M249 Bipod",
+  "item.wardogs.pkm_bipod": "PKM Bipod",
+  "item.wardogs.holo_sight": "Holographic Sight",
+  "item.wardogs.reflex_sight": "Four Reticle Reflex",
+  "item.wardogs.cq_2x": "CQ-2x Prism",
+  "item.wardogs.prism_4x": "4x Combat Prism with Reflex",
+  "item.wardogs.spectr_4x": "Spectr 4x",
+  "item.wardogs.scope_mrad": "6-10x Scope MRAD",
+  "item.wardogs.scope_moa": "6-10x Scope MOA",
+  "item.wardogs.ammo_hp": "Hollow Point Ammo",
+  "item.wardogs.ammo_ap": "Armor Piercing Ammo"
 }

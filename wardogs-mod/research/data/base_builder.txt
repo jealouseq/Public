@@ -1,0 +1,372 @@
+WARDOGS Base Builder & FOB Planner · Wardogs Zone
+Skip to content
+Search everything
+Ctrl K
+Report a problem
+Report a problem
+Close
+What is wrong?
+Wrong information
+Translation error
+Something is broken
+Something else
+Tell us what you saw
+What should it say? (optional)
+Tip: select the words first, then press the flag, and the report points at them.
+Send report
+English
+EN
+Loading…
+Comms check
+Visits are counted anonymously, without cookies. Your loadouts stay in this browser. Signing in sets one cookie so the hub knows you.
+A few pages carry ads from Google, which sets cookies of its own. In the EU and UK you are asked before it does.
+The full rundown
+.
+Roger
+,
+Base
+Untitled base
+Save
+Stages
+1
+Squad
+Settings
+K
+.
+Pieces
+59
+Prefabs
+0
+Command
+1
+Forward Operating Base
+15,000 hp
+· 5 C4
+· ground only
+30
+Hesco
+5
+Hesco Block (Small)
+1,600 hp
+· 2 C4
+· stacks 6
+15
+Hesco Block (Large)
+2,250 hp
+· 4 C4
+· stacks 3
+22
+Hesco Wall
+4,600 hp
+· 8 C4
+· stacks 3
+75
+Gate
+5,320 hp
+· 2 C4
+· stacks 2
+200
+Door
+500 hp
+· 1 C4
+· stacks 3
+80
+Bunkers
+6
+Bunker
+5,000 hp
+· 14 C4
+· stacks 3
+200
+Bunker Floor
+2,250 hp
+· 6 C4
+· stacks 3
+10
+Bunker Roof
+2,250 hp
+· 6 C4
+· stacks 3
+10
+Indirect Fire Shelter
+5,000 hp
+· 14 C4
+· stacks 2
+200
+Large Shelter
+2,250 hp
+· 4 C4
+· stacks 2
+250
+Wooden Step
+735 hp
+· 1 C4
+· stacks 5
+15
+Barriers
+4
+Sandbag Wall
+735 hp
+· 1 C4
+· no stacking
+15
+Bremer Wall
+6,500 hp
+· 7 C4
+· stacks 2
+32
+Barbed Wire
+250 hp
+· 1 C4
+7
+Hedgehog
+4,500 hp
+· 3 C4
+· no stacking
+22
+Recon
+2
+Recon Tent
+300 hp
+· 1 C4
+· no stacking
+7
+Recon Tower
+5,000 hp
+· 14 C4
+· no stacking
+200
+Defences
+5
+L81 Mortar
+3,000 hp
+· no stacking
+600
+MG Nest
+3,000 hp
+· stacks 6
+650
+Stingray
+3,000 hp
+· no stacking
+650
+Talon 9K-SAM
+3,000 hp
+· no stacking
+650
+Vanguard CIWS
+5,000 hp
+· no stacking
+1200
+Support
+5
+Builder's Radio
+1,000 hp
+· 1 C4
+· no stacking
+20
+Loudspeaker
+1,000 hp
+· no stacking
+200
+Refuel Station
+1,600 hp
+· 1 C4
+· no stacking
+200
+Repair Station
+1,600 hp
+· 1 C4
+· no stacking
+200
+Drill Rig
+2,500 hp
+· 2 C4
+· no stacking
+2750
+Vehicles
+26
+M113 APC SV Lonestar
+1,000 hp
+· 10 seats
+M113 APC SV Manticore
+1,000 hp
+· 10 seats
+M113 APC SV Valkyra
+1,000 hp
+· 10 seats
+Bobcat
+200 hp
+· 2 seats
+$500
+Dune Buggy
+400 hp
+· 3 seats
+$1,500
+Wolf-110
+500 hp
+· 4 seats
+$2,200
+Kodiak
+400 hp
+· 4 seats
+$2,500
+Humvee
+500 hp
+· 4 seats
+$3,000
+Kodiak [Pickup]
+400 hp
+· 6 seats
+$3,000
+Ural
+700 hp
+· 3 seats
+$5,000
+MH-6
+400 hp
+· 6 seats
+$6,250
+Kodiak [M249]
+400 hp
+· 5 seats
+$6,750
+Ural Defender
+700 hp
+· 3 seats
+$7,200
+Z20 Lakota
+600 hp
+· 13 seats
+$7,400
+Wolf-110 [M2 Browning]
+500 hp
+· 5 seats
+$7,800
+SPH-2
+650 hp
+· 3 seats
+$8,000
+Humvee [M249]
+500 hp
+· 5 seats
+$8,500
+Ural Defender [M249]
+700 hp
+· 5 seats
+$9,500
+Humvee [Minigun]
+500 hp
+· 5 seats
+$10,000
+AH-6M [Miniguns]
+400 hp
+· 2 seats
+$12,000
+Flakpanzer Gepard
+800 hp
+· 2 seats
+$14,000
+Z20 Lakota [Miniguns]
+600 hp
+· 13 seats
+$15,000
+T-72B3
+750 hp
+· 3 seats
+$16,000
+AH-6R [Rockets]
+400 hp
+· 2 seats
+$18,800
+L2A6
+800 hp
+· 3 seats
+$22,000
+Havoc
+800 hp
+· 2 seats
+$28,000
+World structures
+5
+Church
+51 x 43 m · 120 parts
+Diving Tower
+22 x 22 m · 35 parts
+Drill Tower
+30 x 36 m · 240 parts
+Military Hangar
+52 x 43 m · 120 parts
+Warehouse
+37 x 30 m · 120 parts
+Loading the build site
+Build
+1
+Select
+2
+Look
+3
+Multi
+4
+Snap
+Tab
+Grid
+Tab
+Free
+Tab
+Overview
+V
+On foot
+V
+Frame
+F
+Fullscreen
+Z
+Base
+Supplies
+0
+Vehicles
+$0
+Pieces
+0
+FOBs
+0
+Site
+Open pad
+Bakurani
+Ozeti
+Zestafona
+Kept in this browser until it is saved to the board.
+In hand
+Forward Operating Base
+30 supplies · 13.1 m tall
+Manifest
+0
+Nothing placed yet.
+Reference
+Reference
+WARDOGS Base Builder & FOB Planner
+The WARDOGS Base Builder lets you plan a FOB before spending supplies in a match. Place walls, bunkers, towers and support structures from
+59
+buildable pieces, then inspect the layout from above or walk through it on foot.
+The manifest counts the pieces in your plan and totals their supply cost. Use it to compare layouts, check access through a gate, and work out what your squad needs to bring for the next stage of construction.
+Lay out the position
+Choose an open pad or a mapped site, place your FOB and build outward. The editor shows the
+60
+m FOB build range. Socket snapping joins compatible pieces, while grid and free placement give you control over the rest of the layout. Inspect the terrain and placement warnings before treating a plan as ready to build.
+Budget each build stage
+Start with the pieces your squad can afford to place first. Add stages for later fortifications, check the manifest as the plan changes, and compare the supply total before adding another tower or wall. Costs follow the buildable data shipped with the site; a rebalance can change an older plan's total.
+Reuse and share a layout
+Community bases open directly in the editor so you can study a layout and adapt it. Prefabs keep a group of pieces together for repeated placement. Sign in to save a plan to the hub, keep it private with a share link, or publish it for other players. The squad controls let you work on a live plan together.
+Questions people ask
+Do I need an account to start building?
+No. You can use the editor without signing in. Sign in when you want to save a base to the hub and manage its sharing.
+Can I inspect a base from ground level?
+Yes. Switch from the overview to the on-foot view to check routes, entrances and sightlines inside the layout.
+Does opening a community base change the original?
+No. Opening another player's plan gives you a starting point in the builder. Saving your version creates your own base.
+Keep going
+Explore community bases
+Browse prefabs
+Plan vehicle supplies
+Open the field manual

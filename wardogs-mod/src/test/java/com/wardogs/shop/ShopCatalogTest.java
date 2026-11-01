@@ -27,6 +27,7 @@ class ShopCatalogTest {
         assertEquals(15, cat.stream().filter(e -> e.category() == Shop.Category.EXPLOSIVE).count());
         assertEquals(9, cat.stream().filter(e -> e.category() == Shop.Category.BUILDING).count());
         assertEquals(25, cat.stream().filter(e -> e.category() == Shop.Category.VEHICLE).count());
+        assertEquals(17, cat.stream().filter(e -> e.category() == Shop.Category.ATTACHMENT).count());
     }
 
     @Test

@@ -1,0 +1,1458 @@
+{
+ "tracks": [
+  {
+   "track": "Assault",
+   "ranks": [
+    {
+     "rank": 2,
+     "toll": 5000,
+     "uids": [
+      "Id.Item.MUZL_024"
+     ]
+    },
+    {
+     "rank": 3,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.AK74M",
+      "Id.Item.AK74MMagazine"
+     ]
+    },
+    {
+     "rank": 5,
+     "toll": 7500,
+     "uids": [
+      "Id.Item.MUZL_014"
+     ]
+    },
+    {
+     "rank": 6,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.STANAGMagazine"
+     ]
+    },
+    {
+     "rank": 8,
+     "toll": 12500,
+     "uids": [
+      "ID.Item.PWSCQB74Muzzle"
+     ]
+    },
+    {
+     "rank": 10,
+     "toll": 35000,
+     "uids": [
+      "Id.Item.MAGZ_005",
+      "Id.Item.WEPN_029"
+     ]
+    },
+    {
+     "rank": 11,
+     "toll": 7500,
+     "uids": [
+      "Id.Item.FGRP_015"
+     ]
+    },
+    {
+     "rank": 12,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.SGHT_026"
+     ]
+    },
+    {
+     "rank": 14,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.FGP_03"
+     ]
+    },
+    {
+     "rank": 15,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.MAGZ_060"
+     ]
+    },
+    {
+     "rank": 16,
+     "toll": 15000,
+     "uids": [
+      "Id.Item.MUZL_039"
+     ]
+    },
+    {
+     "rank": 17,
+     "toll": 15000,
+     "uids": [
+      "Id.Item.SGHT_028"
+     ]
+    },
+    {
+     "rank": 19,
+     "toll": 17500,
+     "uids": [
+      "Id.Item.MZL_10"
+     ]
+    },
+    {
+     "rank": 20,
+     "toll": 100000,
+     "uids": [
+      "Id.Item.M4"
+     ]
+    },
+    {
+     "rank": 21,
+     "toll": 20000,
+     "uids": [
+      "Id.Item.MZL_07"
+     ]
+    },
+    {
+     "rank": 22,
+     "toll": 20000,
+     "uids": [
+      "Id.Item.EotechHoloSight"
+     ]
+    },
+    {
+     "rank": 24,
+     "toll": 20000,
+     "uids": [
+      "Id.Item.MUZL_013"
+     ]
+    },
+    {
+     "rank": 25,
+     "toll": 30000,
+     "uids": [
+      "Id.Item.AK74MExtendedMagazine"
+     ]
+    },
+    {
+     "rank": 26,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.3xScope"
+     ]
+    },
+    {
+     "rank": 27,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.MZL_09"
+     ]
+    },
+    {
+     "rank": 29,
+     "toll": 30000,
+     "uids": [
+      "Id.Item.MUZL_032"
+     ]
+    },
+    {
+     "rank": 30,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.STANAGExtendedMagazine"
+     ]
+    },
+    {
+     "rank": 33,
+     "toll": 30000,
+     "uids": [
+      "Id.Item.SGHT_023"
+     ]
+    },
+    {
+     "rank": 35,
+     "toll": 200000,
+     "uids": [
+      "Id.Item.MAGZ_006",
+      "Id.Item.WEPN_030"
+     ]
+    },
+    {
+     "rank": 38,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.FGRP_014"
+     ]
+    },
+    {
+     "rank": 40,
+     "toll": 75000,
+     "uids": [
+      "Id.Item.AK74MMagazine75rnd"
+     ]
+    },
+    {
+     "rank": 43,
+     "toll": 35000,
+     "uids": [
+      "Id.Item.SGHT_030"
+     ]
+    },
+    {
+     "rank": 45,
+     "toll": 45000,
+     "uids": [
+      "Id.Item.MUZL_027"
+     ]
+    },
+    {
+     "rank": 48,
+     "toll": 30000,
+     "uids": [
+      "Id.Item.FGRP_007"
+     ]
+    },
+    {
+     "rank": 50,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.MAGZ_024"
+     ]
+    }
+   ]
+  },
+  {
+   "track": "Driver",
+   "ranks": [
+    {
+     "rank": 2,
+     "toll": 15000,
+     "uids": [
+      "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup"
+     ]
+    },
+    {
+     "rank": 4,
+     "toll": 50000,
+     "uids": [
+      "Vehicle.Variant.Land.Wheeled.Ural.Default"
+     ]
+    },
+    {
+     "rank": 8,
+     "toll": 50000,
+     "uids": [
+      "Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun"
+     ]
+    },
+    {
+     "rank": 10,
+     "toll": 35000,
+     "uids": [
+      "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default"
+     ]
+    },
+    {
+     "rank": 15,
+     "toll": 25000,
+     "uids": [
+      "Vehicle.Variant.Land.Wheeled.Humvee.Default"
+     ]
+    },
+    {
+     "rank": 20,
+     "toll": 20000,
+     "uids": [
+      "ID.Item.VehicleSupplyCrate.Large"
+     ]
+    },
+    {
+     "rank": 25,
+     "toll": 125000,
+     "uids": [
+      "Vehicle.Variant.Land.Wheeled.Humvee.MachineGun"
+     ]
+    },
+    {
+     "rank": 30,
+     "toll": 75000,
+     "uids": [
+      "Vehicle.Variant.Land.Wheeled.Ural.Battle"
+     ]
+    },
+    {
+     "rank": 35,
+     "toll": 150000,
+     "uids": [
+      "Vehicle.Variant.Land.Wheeled.Humvee.Minigun"
+     ]
+    },
+    {
+     "rank": 40,
+     "toll": 125000,
+     "uids": [
+      "Vehicle.Variant.Land.Wheeled.Ural.Attack"
+     ]
+    }
+   ]
+  },
+  {
+   "track": "Medic",
+   "ranks": [
+    {
+     "rank": 1,
+     "toll": 7500,
+     "uids": [
+      "Id.Item.MUZL_019"
+     ]
+    },
+    {
+     "rank": 2,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.Resuscitator.Standard"
+     ]
+    },
+    {
+     "rank": 3,
+     "toll": 7500,
+     "uids": [
+      "Id.Item.MAGZ_061"
+     ]
+    },
+    {
+     "rank": 4,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.SMG_03",
+      "Id.Item.SMG_03Magazine"
+     ]
+    },
+    {
+     "rank": 5,
+     "toll": 7500,
+     "uids": [
+      "ID.Item.SmokeGrenade.White"
+     ]
+    },
+    {
+     "rank": 6,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.SGHT_016"
+     ]
+    },
+    {
+     "rank": 7,
+     "toll": 7500,
+     "uids": [
+      "Id.Item.MAGZ_059"
+     ]
+    },
+    {
+     "rank": 9,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.SuperBandage"
+     ]
+    },
+    {
+     "rank": 10,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.MP9Magazine"
+     ]
+    },
+    {
+     "rank": 11,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.Defibrillator.Standard"
+     ]
+    },
+    {
+     "rank": 12,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.MUZL_052"
+     ]
+    },
+    {
+     "rank": 13,
+     "toll": 15000,
+     "uids": [
+      "Id.Item.MUZL_020"
+     ]
+    },
+    {
+     "rank": 14,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.StimPen"
+     ]
+    },
+    {
+     "rank": 15,
+     "toll": 75000,
+     "uids": [
+      "Id.Item.MAGZ_064",
+      "Id.Item.WEPN_028"
+     ]
+    },
+    {
+     "rank": 16,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.FGRP_006"
+     ]
+    },
+    {
+     "rank": 18,
+     "toll": 17500,
+     "uids": [
+      "Id.Item.MUZL_058"
+     ]
+    },
+    {
+     "rank": 20,
+     "toll": 15000,
+     "uids": [
+      "Id.Item.MAGZ_066"
+     ]
+    },
+    {
+     "rank": 21,
+     "toll": 15000,
+     "uids": [
+      "ID.Item.SmokeGrenade.Black"
+     ]
+    },
+    {
+     "rank": 22,
+     "toll": 20000,
+     "uids": [
+      "Id.Item.MUZL_054"
+     ]
+    },
+    {
+     "rank": 24,
+     "toll": 75000,
+     "uids": [
+      "ID.Item.MedKit.Standard"
+     ]
+    },
+    {
+     "rank": 25,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.MAGZ_004"
+     ]
+    },
+    {
+     "rank": 26,
+     "toll": 22500,
+     "uids": [
+      "Id.Item.MUZL_037"
+     ]
+    },
+    {
+     "rank": 28,
+     "toll": 15000,
+     "uids": [
+      "Id.Item.SGHT_027"
+     ]
+    },
+    {
+     "rank": 30,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.MUZL_051"
+     ]
+    },
+    {
+     "rank": 33,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.MAGZ_046"
+     ]
+    },
+    {
+     "rank": 35,
+     "toll": 150000,
+     "uids": [
+      "Id.Item.MAGZ_057",
+      "Id.Item.Vector"
+     ]
+    },
+    {
+     "rank": 36,
+     "toll": 30000,
+     "uids": [
+      "Id.Item.MUZL_047"
+     ]
+    },
+    {
+     "rank": 38,
+     "toll": 25000,
+     "uids": [
+      "ID.Item.VectorMagazine"
+     ]
+    },
+    {
+     "rank": 40,
+     "toll": 40000,
+     "uids": [
+      "Id.Item.MUZL_046"
+     ]
+    },
+    {
+     "rank": 43,
+     "toll": 45000,
+     "uids": [
+      "Id.Item.MUZL_053"
+     ]
+    },
+    {
+     "rank": 45,
+     "toll": 75000,
+     "uids": [
+      "Id.Item.MAGZ_056"
+     ]
+    },
+    {
+     "rank": 48,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.MZL_05"
+     ]
+    },
+    {
+     "rank": 50,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.MAGZ_055"
+     ]
+    }
+   ]
+  },
+  {
+   "track": "Pilot",
+   "ranks": [
+    {
+     "rank": 2,
+     "toll": 5000,
+     "uids": [
+      "ID.Item.VehicleSupplyCrate.Small.Armoured"
+     ]
+    },
+    {
+     "rank": 4,
+     "toll": 25000,
+     "uids": [
+      "Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns"
+     ]
+    },
+    {
+     "rank": 10,
+     "toll": 50000,
+     "uids": [
+      "Vehicle.Variant.Air.Rotary.ROT_04.Default"
+     ]
+    },
+    {
+     "rank": 15,
+     "toll": 25000,
+     "uids": [
+      "ID.Item.VehicleSupplyCrate.Large.Armoured"
+     ]
+    },
+    {
+     "rank": 20,
+     "toll": 200000,
+     "uids": [
+      "Vehicle.Variant.Air.Rotary.Littlebird.RocketPods"
+     ]
+    },
+    {
+     "rank": 25,
+     "toll": 75000,
+     "uids": [
+      "Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns"
+     ]
+    },
+    {
+     "rank": 35,
+     "toll": 500000,
+     "uids": [
+      "Vehicle.Variant.Air.Rotary.Havoc.Default"
+     ]
+    }
+   ]
+  },
+  {
+   "track": "Recon",
+   "ranks": [
+    {
+     "rank": 2,
+     "toll": 7500,
+     "uids": [
+      "ID.Item.Monocular"
+     ]
+    },
+    {
+     "rank": 3,
+     "toll": 7500,
+     "uids": [
+      "Id.Item.MUZL_062"
+     ]
+    },
+    {
+     "rank": 5,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.SKS"
+     ]
+    },
+    {
+     "rank": 6,
+     "toll": 7500,
+     "uids": [
+      "Id.Item.MUZL_028"
+     ]
+    },
+    {
+     "rank": 7,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.FGRP_010"
+     ]
+    },
+    {
+     "rank": 8,
+     "toll": 15000,
+     "uids": [
+      "ID.Item.RangeFinder"
+     ]
+    },
+    {
+     "rank": 9,
+     "toll": 12500,
+     "uids": [
+      "Id.Item.MUZL_042"
+     ]
+    },
+    {
+     "rank": 10,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.Mosin"
+     ]
+    },
+    {
+     "rank": 11,
+     "toll": 15000,
+     "uids": [
+      "Id.Item.SGHT_011"
+     ]
+    },
+    {
+     "rank": 12,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.MAGZ_065",
+      "Id.Item.SVDM"
+     ]
+    },
+    {
+     "rank": 13,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.MUZL_040"
+     ]
+    },
+    {
+     "rank": 14,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.FGRP_011"
+     ]
+    },
+    {
+     "rank": 15,
+     "toll": 15000,
+     "uids": [
+      "Id.Item.MZL_08"
+     ]
+    },
+    {
+     "rank": 16,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.SVDMMagazine"
+     ]
+    },
+    {
+     "rank": 17,
+     "toll": 75000,
+     "uids": [
+      "Id.Item.Arrow",
+      "Id.Item.CombatBow"
+     ]
+    },
+    {
+     "rank": 18,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.SniperScope10x"
+     ]
+    },
+    {
+     "rank": 19,
+     "toll": 100000,
+     "uids": [
+      "Id.Item.SV98",
+      "Id.Item.SV98Magazine"
+     ]
+    },
+    {
+     "rank": 20,
+     "toll": 17500,
+     "uids": [
+      "Id.Item.MUZL_041"
+     ]
+    },
+    {
+     "rank": 21,
+     "toll": 30000,
+     "uids": [
+      "Id.Item.FGRP_009"
+     ]
+    },
+    {
+     "rank": 22,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.Claymore"
+     ]
+    },
+    {
+     "rank": 23,
+     "toll": 20000,
+     "uids": [
+      "Id.Item.MUZL_022"
+     ]
+    },
+    {
+     "rank": 24,
+     "toll": 140000,
+     "uids": [
+      "Id.Item.GhillieArmor",
+      "Id.Item.GhillieHelmet"
+     ]
+    },
+    {
+     "rank": 25,
+     "toll": 150000,
+     "uids": [
+      "Id.Item.MAGZ_034",
+      "Id.Item.MK22"
+     ]
+    },
+    {
+     "rank": 26,
+     "toll": 30000,
+     "uids": [
+      "Id.Item.10xScopeMoa"
+     ]
+    },
+    {
+     "rank": 27,
+     "toll": 180000,
+     "uids": [
+      "Id.Item.GhillieArmor.Dead",
+      "Id.Item.GhillieHelmet.Dead"
+     ]
+    },
+    {
+     "rank": 28,
+     "toll": 22500,
+     "uids": [
+      "Id.Item.MUZL_025"
+     ]
+    },
+    {
+     "rank": 30,
+     "toll": 125000,
+     "uids": [
+      "Id.Item.RFB",
+      "Id.Item.RFBMagazine"
+     ]
+    },
+    {
+     "rank": 31,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.MUZL_055"
+     ]
+    },
+    {
+     "rank": 32,
+     "toll": 50000,
+     "uids": [
+      "ID.Item.InfraredRangeFinder"
+     ]
+    },
+    {
+     "rank": 33,
+     "toll": 27500,
+     "uids": [
+      "Id.Item.MUZL_056"
+     ]
+    },
+    {
+     "rank": 34,
+     "toll": 35000,
+     "uids": [
+      "Id.Item.SGHT_036"
+     ]
+    },
+    {
+     "rank": 35,
+     "toll": 200000,
+     "uids": [
+      "Id.Item.SR_04",
+      "Id.Item.SR_04Magazine"
+     ]
+    },
+    {
+     "rank": 36,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.MUZL_030"
+     ]
+    },
+    {
+     "rank": 37,
+     "toll": 27500,
+     "uids": [
+      "Id.Item.MUZL_049"
+     ]
+    },
+    {
+     "rank": 39,
+     "toll": 35000,
+     "uids": [
+      "Id.Item.MK22Mag"
+     ]
+    },
+    {
+     "rank": 40,
+     "toll": 30000,
+     "uids": [
+      "Id.Item.MUZL_057"
+     ]
+    },
+    {
+     "rank": 43,
+     "toll": 95000,
+     "uids": [
+      "Id.Item.SGHT_032"
+     ]
+    },
+    {
+     "rank": 45,
+     "toll": 32500,
+     "uids": [
+      "Id.Item.MZL_04"
+     ]
+    },
+    {
+     "rank": 46,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.FGRP_013"
+     ]
+    },
+    {
+     "rank": 48,
+     "toll": 35000,
+     "uids": [
+      "Id.Item.MUZL_048"
+     ]
+    },
+    {
+     "rank": 50,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.MAGZ_026"
+     ]
+    }
+   ]
+  },
+  {
+   "track": "Support",
+   "ranks": [
+    {
+     "rank": 1,
+     "toll": 10000,
+     "uids": [
+      "ID.Item.RepairTool.Drill.Light"
+     ]
+    },
+    {
+     "rank": 2,
+     "toll": 15000,
+     "uids": [
+      "Id.Item.C4Explosive",
+      "Id.Item.C4Trigger"
+     ]
+    },
+    {
+     "rank": 3,
+     "toll": 10000,
+     "uids": [
+      "ID.Item.BuildTool.Hammer.Medium"
+     ]
+    },
+    {
+     "rank": 5,
+     "toll": 30000,
+     "uids": [
+      "Id.Item.93mm",
+      "Id.Item.RPG7"
+     ]
+    },
+    {
+     "rank": 7,
+     "toll": 25000,
+     "uids": [
+      "ID.Item.BuildTool.Hammer.Large"
+     ]
+    },
+    {
+     "rank": 10,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.M500"
+     ]
+    },
+    {
+     "rank": 11,
+     "toll": 17500,
+     "uids": [
+      "Id.Item.MUZL_031"
+     ]
+    },
+    {
+     "rank": 12,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.SGHT_034"
+     ]
+    },
+    {
+     "rank": 14,
+     "toll": 7500,
+     "uids": [
+      "Id.Item.MUZL_044"
+     ]
+    },
+    {
+     "rank": 15,
+     "toll": 100000,
+     "uids": [
+      "Id.Item.M249",
+      "Id.Item.MAGZ_062"
+     ]
+    },
+    {
+     "rank": 16,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.Launcher_04"
+     ]
+    },
+    {
+     "rank": 17,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.MUZL_023"
+     ]
+    },
+    {
+     "rank": 18,
+     "toll": 15000,
+     "uids": [
+      "Id.Item.FGRP_012"
+     ]
+    },
+    {
+     "rank": 19,
+     "toll": 30000,
+     "uids": [
+      "Id.Item.MUZL_045"
+     ]
+    },
+    {
+     "rank": 20,
+     "toll": 125000,
+     "uids": [
+      "Id.Item.CGM4"
+     ]
+    },
+    {
+     "rank": 21,
+     "toll": 15000,
+     "uids": [
+      "Id.Item.4xElcanSpectr"
+     ]
+    },
+    {
+     "rank": 23,
+     "toll": 35000,
+     "uids": [
+      "Id.Item.M249Magazine"
+     ]
+    },
+    {
+     "rank": 25,
+     "toll": 75000,
+     "uids": [
+      "ID.Item.ATMine"
+     ]
+    },
+    {
+     "rank": 26,
+     "toll": 20000,
+     "uids": [
+      "Id.Item.MUZL_038"
+     ]
+    },
+    {
+     "rank": 28,
+     "toll": 25000,
+     "uids": [
+      "ID.Item.RepairTool.Drill.Heavy"
+     ]
+    },
+    {
+     "rank": 30,
+     "toll": 150000,
+     "uids": [
+      "Id.Item.LMG_02",
+      "Id.Item.LMG_02Magazine"
+     ]
+    },
+    {
+     "rank": 33,
+     "toll": 35000,
+     "uids": [
+      "Id.Item.FGRP_008"
+     ]
+    },
+    {
+     "rank": 35,
+     "toll": 200000,
+     "uids": [
+      "Id.Item.40mm",
+      "Id.Item.MMGL"
+     ]
+    },
+    {
+     "rank": 40,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.MZL_06"
+     ]
+    },
+    {
+     "rank": 45,
+     "toll": 40000,
+     "uids": [
+      "Id.Item.MUZL_029"
+     ]
+    },
+    {
+     "rank": 50,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.FGP_04"
+     ]
+    }
+   ]
+  },
+  {
+   "track": "Wardog Level",
+   "ranks": [
+    {
+     "rank": 1,
+     "toll": 5000,
+     "uids": [
+      "Id.Item.Glock17",
+      "Id.Item.Glock17Magazine"
+     ]
+    },
+    {
+     "rank": 3,
+     "toll": 17500,
+     "uids": [
+      "Id.Item.LightArmor",
+      "Id.Item.LightHelmet"
+     ]
+    },
+    {
+     "rank": 4,
+     "toll": 5000,
+     "uids": [
+      "Id.Item.BasicRedDot"
+     ]
+    },
+    {
+     "rank": 6,
+     "toll": 5000,
+     "uids": [
+      "Id.Item.9mm.HollowPoint"
+     ]
+    },
+    {
+     "rank": 10,
+     "toll": 5000,
+     "uids": [
+      "Id.Item.556mm.HollowPoint"
+     ]
+    },
+    {
+     "rank": 11,
+     "toll": 5000,
+     "uids": [
+      "Id.Item.762mm.HollowPoint"
+     ]
+    },
+    {
+     "rank": 12,
+     "toll": 20000,
+     "uids": [
+      "Id.Item.BPAK_005"
+     ]
+    },
+    {
+     "rank": 14,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.MediumTacVest"
+     ]
+    },
+    {
+     "rank": 15,
+     "toll": 7500,
+     "uids": [
+      "Id.Item.RK6ForeGrip"
+     ]
+    },
+    {
+     "rank": 16,
+     "toll": 5000,
+     "uids": [
+      "Id.Item.545mm.HollowPoint"
+     ]
+    },
+    {
+     "rank": 18,
+     "toll": 15000,
+     "uids": [
+      "Id.Item.Judge"
+     ]
+    },
+    {
+     "rank": 20,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.MediumBackpack"
+     ]
+    },
+    {
+     "rank": 21,
+     "toll": 7500,
+     "uids": [
+      "Id.Item.SGHT_009"
+     ]
+    },
+    {
+     "rank": 23,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.MAGZ_012"
+     ]
+    },
+    {
+     "rank": 25,
+     "toll": 5000,
+     "uids": [
+      "Id.Item.45Colt.HollowPoint"
+     ]
+    },
+    {
+     "rank": 26,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.OPT_08"
+     ]
+    },
+    {
+     "rank": 28,
+     "toll": 5000,
+     "uids": [
+      "Id.Item.762x54mm.HollowPoint"
+     ]
+    },
+    {
+     "rank": 30,
+     "toll": 87500,
+     "uids": [
+      "Id.Item.MediumArmor",
+      "Id.Item.MediumHelmet"
+     ]
+    },
+    {
+     "rank": 31,
+     "toll": 15000,
+     "uids": [
+      "Id.Item.SGHT_029"
+     ]
+    },
+    {
+     "rank": 32,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.BPAK_006"
+     ]
+    },
+    {
+     "rank": 33,
+     "toll": 15000,
+     "uids": [
+      "Id.Item.FGRP_016"
+     ]
+    },
+    {
+     "rank": 35,
+     "toll": 500000,
+     "uids": [
+      "Vehicle.Variant.Land.Tracked.TNK_01.Heavy"
+     ]
+    },
+    {
+     "rank": 36,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.Parachute.Sport"
+     ]
+    },
+    {
+     "rank": 38,
+     "toll": 12500,
+     "uids": [
+      "Id.Item.FGRP_018"
+     ]
+    },
+    {
+     "rank": 40,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.MAGZ_002",
+      "Id.Item.WEPN_026"
+     ]
+    },
+    {
+     "rank": 41,
+     "toll": 5000,
+     "uids": [
+      "Id.Item.12g.RifledSlug"
+     ]
+    },
+    {
+     "rank": 43,
+     "toll": 15000,
+     "uids": [
+      "Id.Item.MUZL_050"
+     ]
+    },
+    {
+     "rank": 45,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.LargeBattery"
+     ]
+    },
+    {
+     "rank": 48,
+     "toll": 5000,
+     "uids": [
+      "Id.Item.45ACP.HollowPoint"
+     ]
+    },
+    {
+     "rank": 50,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.LargeTacVest"
+     ]
+    },
+    {
+     "rank": 53,
+     "toll": 10000,
+     "uids": [
+      "Id.Item.MAGZ_063"
+     ]
+    },
+    {
+     "rank": 55,
+     "toll": 400000,
+     "uids": [
+      "Vehicle.Variant.Land.Tracked.TNK_01.Artillery"
+     ]
+    },
+    {
+     "rank": 56,
+     "toll": 100000,
+     "uids": [
+      "Id.Item.LargeBackpack"
+     ]
+    },
+    {
+     "rank": 58,
+     "toll": 25000,
+     "uids": [
+      "Id.Item.FGP_02"
+     ]
+    },
+    {
+     "rank": 60,
+     "toll": 175000,
+     "uids": [
+      "Id.Item.HeavyArmor",
+      "Id.Item.HeavyHelmet"
+     ]
+    },
+    {
+     "rank": 63,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.762mm.ArmorPiercing"
+     ]
+    },
+    {
+     "rank": 65,
+     "toll": 5000,
+     "uids": [
+      "Id.Item.308Win.HollowPoint"
+     ]
+    },
+    {
+     "rank": 70,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.WEPN_032"
+     ]
+    },
+    {
+     "rank": 73,
+     "toll": 125000,
+     "uids": [
+      "Id.Item.LargeSlingBackpack"
+     ]
+    },
+    {
+     "rank": 75,
+     "toll": 75000,
+     "uids": [
+      "Id.Item.9mm.ArmorPiercing"
+     ]
+    },
+    {
+     "rank": 80,
+     "toll": 50000,
+     "uids": [
+      "Id.Item.MAGZ_011"
+     ]
+    },
+    {
+     "rank": 83,
+     "toll": 75000,
+     "uids": [
+      "Id.Item.762x54mm.ArmorPiercing"
+     ]
+    },
+    {
+     "rank": 85,
+     "toll": 75000,
+     "uids": [
+      "Id.Item.556mm.ArmorPiercing"
+     ]
+    },
+    {
+     "rank": 90,
+     "toll": 75000,
+     "uids": [
+      "ID.Item.MAGZ_003",
+      "Id.Item.WEPN_027"
+     ]
+    },
+    {
+     "rank": 93,
+     "toll": 75000,
+     "uids": [
+      "Id.Item.545mm.ArmorPiercing"
+     ]
+    },
+    {
+     "rank": 95,
+     "toll": 5000,
+     "uids": [
+      "Id.Item.50AE.HollowPoint"
+     ]
+    },
+    {
+     "rank": 100,
+     "toll": 350000,
+     "uids": [
+      "Id.Item.SuperHeavyArmor",
+      "Id.Item.SuperHeavyHelmet"
+     ]
+    },
+    {
+     "rank": 110,
+     "toll": 75000,
+     "uids": [
+      "Id.Item.45Colt.ArmorPiercing"
+     ]
+    },
+    {
+     "rank": 120,
+     "toll": 75000,
+     "uids": [
+      "Id.Item.45ACP.ArmorPiercing"
+     ]
+    },
+    {
+     "rank": 130,
+     "toll": 75000,
+     "uids": [
+      "Id.Item.50AE.ArmorPiercing"
+     ]
+    },
+    {
+     "rank": 140,
+     "toll": 75000,
+     "uids": [
+      "Id.Item.308Win.ArmorPiercing"
+     ]
+    },
+    {
+     "rank": 150,
+     "toll": 175000,
+     "uids": [
+      "Id.Item.ExtraLargeSlingBackpack"
+     ]
+    }
+   ]
+  }
+ ]
+}

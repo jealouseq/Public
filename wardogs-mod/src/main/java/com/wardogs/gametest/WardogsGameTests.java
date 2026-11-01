@@ -19,6 +19,10 @@ import com.wardogs.build.Building;
 import com.wardogs.build.Buildable;
 import com.wardogs.item.HammerItem;
 import com.wardogs.build.Artillery;
+import com.wardogs.build.Emplacements;
+import com.wardogs.item.GunStats;
+import com.wardogs.item.AttachmentItem;
+import com.wardogs.item.AmmoBoxItem;
 import com.wardogs.explosive.RocketEntity;
 import com.wardogs.vehicle.Vehicle;
 import com.wardogs.vehicle.VehicleGuns;
@@ -1110,6 +1114,144 @@ public final class WardogsGameTests {
         later(h, Artillery.flightTicks(40) + 10L, () -> {
             check(Artillery.inFlight() == 0, "the shell has landed");
             check(enemy.getHealth() < 20f || !enemy.isAlive(), "the husk near the impact point was hurt, health " + enemy.getHealth());
+            h.succeed();
+        });
+    }
+
+    // --- attachments, special ammo, emplacements --------------------------------------------
+
+    @GameTest(template = "empty")
+    public static void attachmentsChangeTheGunAndReplaceTheirSlot(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        GunItem gun = ModItems.GUNS.get("m4").get();
+        WeaponDef def = gun.def();
+        ItemStack m4 = gun.newStack();
+        check(GunStats.magazine(def, m4) == def.magazine(), "a bare gun has the base magazine");
+
+        check(GunStats.attach(m4, def, Balance.get().attachment("mag_ext_ar")) == GunStats.AttachResult.OK, "extended magazine fits an assault rifle");
+        check(GunStats.magazine(def, m4) > def.magazine(), "and enlarges the magazine");
+        check(GunStats.attach(m4, def, Balance.get().attachment("holo_sight")) == GunStats.AttachResult.OK, "a sight fits");
+        check(GunStats.attach(m4, def, Balance.get().attachment("prism_4x")) == GunStats.AttachResult.OK, "a second sight replaces the first");
+        var ids = GunStats.attachments(m4);
+        check(ids.contains("prism_4x") && !ids.contains("holo_sight") && ids.contains("mag_ext_ar"), "one item per slot: " + ids);
+        check(GunStats.zoom(ids) == 4.0, "the prism magnifies 4x");
+
+        ItemStack pistol = ModItems.GUNS.get("ggx17").get().newStack();
+        check(GunStats.attach(pistol, ModItems.GUNS.get("ggx17").get().def(), Balance.get().attachment("scope_mrad")) == GunStats.AttachResult.WRONG_WEAPON,
+                "a sniper scope does not fit a pistol");
+        check(GunStats.attachments(pistol).isEmpty(), "and nothing is fitted");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void attachmentItemFitsToTheGunInTheOtherHand(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        a.shooter.setGameMode(net.minecraft.world.level.GameType.SURVIVAL);
+        ItemStack gun = ModItems.stack("m4");
+        ItemStack kit = ModItems.stack("hexagon_brake");
+        a.shooter.setItemInHand(InteractionHand.OFF_HAND, gun);
+        a.shooter.setItemInHand(InteractionHand.MAIN_HAND, kit);
+        ((AttachmentItem) kit.getItem()).use(a.level, a.shooter, InteractionHand.MAIN_HAND);
+        check(GunStats.attachments(gun).contains("hexagon_brake"), "the brake is now on the rifle");
+        check(kit.isEmpty(), "the attachment was consumed");
+
+        ItemStack scope = ModItems.stack("scope_mrad");
+        a.shooter.setItemInHand(InteractionHand.OFF_HAND, ModItems.stack("ggx17"));
+        a.shooter.setItemInHand(InteractionHand.MAIN_HAND, scope);
+        ((AttachmentItem) scope.getItem()).use(a.level, a.shooter, InteractionHand.MAIN_HAND);
+        check(scope.getCount() == 1, "an attachment that does not fit is not consumed");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void hollowPointBoxSwitchesTheLoadedAmmo(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        a.shooter.setGameMode(net.minecraft.world.level.GameType.SURVIVAL);
+        Zombie z = zombieAt(h, 5.5, 1.5 + RANGE);
+        ItemStack gun = ModItems.stack("ggx17");
+        ItemStack box = ModItems.stack("ammo_hp");
+        a.shooter.setItemInHand(InteractionHand.OFF_HAND, gun);
+        a.shooter.setItemInHand(InteractionHand.MAIN_HAND, box);
+        ((AmmoBoxItem) box.getItem()).use(a.level, a.shooter, InteractionHand.MAIN_HAND);
+        check(GunItem.ammoType(gun) == AmmoType.HP, "the pistol now fires hollow points");
+
+        a.shooter.setItemInHand(InteractionHand.MAIN_HAND, gun);
+        a.shooter.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
+        aimAt(a.shooter, z, z.getY() + 1.0);
+        ((GunItem) gun.getItem()).use(a.level, a.shooter, InteractionHand.MAIN_HAND);
+        float lost = 20f - z.getHealth();
+        float expected = Balance.get().damageTo(z, Balance.get().weapon("ggx17").chest() * 2);
+        check(Math.abs(lost - expected) < 0.05f, "a hollow-point 9mm hit should cost " + expected + " but cost " + lost);
+        h.succeed();
+    }
+
+    @GameTest(template = "empty", batch = "fobE")
+    public static void mgNestDrawsAmmoFromTheFobAndObeysItsRate(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Factions.set(a.shooter, Faction.LONESTAR);
+        int mine = Faction.LONESTAR.ordinal();
+        Buildable fob = Buildable.create(h.getLevel(), Balance.get().structure("fob"), ground(h, 2.5, 9.5), 0f, mine, a.shooter.getUUID());
+        Buildable nest = Buildable.create(h.getLevel(), Balance.get().structure("mg_nest"), ground(h, 5.5, 2.5), 0f, mine, a.shooter.getUUID());
+        Zombie z = zombieAt(h, 5.5, 1.5 + RANGE);
+        aimAt(a.shooter, z, z.getY() + 1.0);
+
+        check(Emplacements.nestFor(a.shooter) == nest, "the nest is within reach of the soldier");
+        check(!Emplacements.fireMg(a.shooter, nest), "no ammo in the FOB, no fire");
+        fob.addSupply("ammo", 1);
+        check(Emplacements.fireMg(a.shooter, nest), "with ammo the nest fires");
+        check(z.getHealth() < 20f, "and hits the target, health " + z.getHealth());
+        check(fob.supply("ammo") == 0 && nest.shotsLeft == (int) Balance.get().emplacements()[4] - 1, "one supply loads " + (int) Balance.get().emplacements()[4] + " rounds, one is spent");
+        check(!Emplacements.fireMg(a.shooter, nest), "the rate of fire limits shots within a tick");
+
+        Factions.set(a.shooter, Faction.VALKYRA);
+        check(Emplacements.nestFor(a.shooter) == null, "enemies cannot use your nest");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty", batch = "fobF", timeoutTicks = 300)
+    public static void talonShootsDownAnEnemyHelicopterWithAPilot(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        int mine = Faction.LONESTAR.ordinal();
+        Buildable fob = Buildable.create(h.getLevel(), Balance.get().structure("fob"), ground(h, 2.5, 9.5), 0f, mine, a.shooter.getUUID());
+        fob.addSupply("ammo", 3);
+        Buildable.create(h.getLevel(), Balance.get().structure("talon_sam"), ground(h, 5.5, 5.5), 0f, mine, a.shooter.getUUID());
+
+        Vehicle empty = Vehicle.spawn(h.getLevel(), Balance.get().vehicle("mh6"), ground(h, 9.5, 5.5), 0f, Faction.VALKYRA.ordinal()); // on the ground: an unmanned helicopter has gravity
+        later(h, 60, () -> {
+            check(empty.getHealth() == empty.getMaxHealth(), "an unmanned helicopter is ignored");
+            check(fob.supply("ammo") == 3, "and no missile was spent on it");
+            ServerPlayer pilot = soldier(h, Faction.VALKYRA, 9.5, 5.5);
+            check(pilot.startRiding(empty), "a pilot climbs in");
+            later(h, 120, () -> {
+                check(empty.getHealth() < empty.getMaxHealth() || !empty.isAlive(), "the SAM should have hit the manned helicopter, health " + empty.getHealth());
+                check(fob.supply("ammo") < 3, "and drawn a missile from the FOB");
+                h.succeed();
+            });
+        });
+    }
+
+    @GameTest(template = "empty", batch = "fobG", timeoutTicks = 200)
+    public static void ciwsShredsEnemyAircraftButNotFriends(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        int mine = Faction.MANTICORE.ordinal();
+        Buildable fob = Buildable.create(h.getLevel(), Balance.get().structure("fob"), ground(h, 2.5, 9.5), 0f, mine, a.shooter.getUUID());
+        fob.addSupply("ammo", 2);
+        Buildable.create(h.getLevel(), Balance.get().structure("vanguard_ciws"), ground(h, 5.5, 5.5), 0f, mine, a.shooter.getUUID());
+
+        Vehicle friend = Vehicle.spawn(h.getLevel(), Balance.get().vehicle("mh6"), ground(h, 8.5, 5.5).add(0, 8, 0), 0f, mine);
+        Vehicle foe = Vehicle.spawn(h.getLevel(), Balance.get().vehicle("mh6"), ground(h, 9.5, 8.5).add(0, 8, 0), 0f, Faction.VALKYRA.ordinal());
+        ServerPlayer friendPilot = soldier(h, Faction.MANTICORE, 8.5, 5.5);
+        ServerPlayer foePilot = soldier(h, Faction.VALKYRA, 9.5, 8.5);
+        check(friendPilot.startRiding(friend) && foePilot.startRiding(foe), "both helicopters are manned");
+        later(h, 80, () -> {
+            check(foe.getHealth() < foe.getMaxHealth(), "the CIWS must have damaged the enemy helicopter, health " + foe.getHealth());
+            check(friend.getHealth() == friend.getMaxHealth(), "and left its own side alone");
             h.succeed();
         });
     }

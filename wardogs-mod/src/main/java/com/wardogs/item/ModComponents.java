@@ -3,6 +3,7 @@ package com.wardogs.item;
 import com.wardogs.WardogsMod;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
+import com.mojang.serialization.Codec;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.util.ExtraCodecs;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -35,6 +36,12 @@ public final class ModComponents {
             COMPONENTS.registerComponentType("selected", b -> b
                     .persistent(ExtraCodecs.NON_NEGATIVE_INT)
                     .networkSynchronized(ByteBufCodecs.VAR_INT));
+
+    /** Ids of the attachments fitted to a weapon. */
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<java.util.List<String>>> ATTACHMENTS =
+            COMPONENTS.registerComponentType("attachments", b -> b
+                    .persistent(Codec.STRING.listOf())
+                    .networkSynchronized(ByteBufCodecs.STRING_UTF8.apply(ByteBufCodecs.list())));
 
     private ModComponents() {}
 }

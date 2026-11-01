@@ -134,7 +134,7 @@ public class GunItem extends Item {
         if (Launchers.isLauncher(def)) {
             Launchers.fire(level, sp, def);
         } else {
-            Ballistics.fire(level, sp, def, ammoType(stack));
+            Ballistics.fire(level, sp, def, ammoType(stack), GunStats.spreadMult(GunStats.attachments(stack), sp.isShiftKeyDown()));
         }
         level.playSound(null, sp.blockPosition(), SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.PLAYERS, 1.2f, 1.1f);
         sp.displayClientMessage(ammoLine(stack, def), true);
@@ -143,7 +143,7 @@ public class GunItem extends Item {
 
     /** Starts a reload if the magazine is not full and the gun is not already reloading. */
     public void startReload(ServerPlayer sp, ServerLevel level, ItemStack stack, WeaponDef def, ShooterState st) {
-        if (st.reloading() || ammo(stack) >= def.magazine()) {
+        if (st.reloading() || ammo(stack) >= GunStats.magazine(def, stack)) {
             return;
         }
         st.reloadEndsAt = level.getGameTime() + def.reloadTicks();
@@ -166,7 +166,7 @@ public class GunItem extends Item {
             return;
         }
         if (level.getGameTime() >= st.reloadEndsAt) {
-            stack.set(ModComponents.AMMO.get(), def().magazine());
+            stack.set(ModComponents.AMMO.get(), GunStats.magazine(def(), stack));
             st.cancelReload();
             level.playSound(null, sp.blockPosition(), SoundEvents.CROSSBOW_LOADING_END.value(), SoundSource.PLAYERS, 0.8f, 1.0f);
             sp.displayClientMessage(ammoLine(stack, def()), true);
@@ -174,7 +174,7 @@ public class GunItem extends Item {
     }
 
     private static Component ammoLine(ItemStack stack, WeaponDef def) {
-        return Component.literal(def.name() + "  " + ammo(stack) + " / " + def.magazine() + "  [" + ammoType(stack).name() + "]");
+        return Component.literal(def.name() + "  " + ammo(stack) + " / " + GunStats.magazine(def, stack) + "  [" + ammoType(stack).name() + "]");
     }
 
     @Override
@@ -185,6 +185,10 @@ public class GunItem extends Item {
         }
         tip.add(Component.literal(d.category().replace('_', ' ') + " · " + d.caliber()).withStyle(net.minecraft.ChatFormatting.GRAY));
         tip.add(Component.literal(String.format("Damage %.1f / head %.1f · %.0f RPM", d.chest(), d.head(), d.rpm())).withStyle(net.minecraft.ChatFormatting.GRAY));
-        tip.add(Component.literal("Ammo " + ammo(stack) + "/" + d.magazine() + "  ·  $" + d.price()).withStyle(net.minecraft.ChatFormatting.DARK_GRAY));
+        tip.add(Component.literal("Ammo " + ammo(stack) + "/" + GunStats.magazine(d, stack) + "  ·  $" + d.price()).withStyle(net.minecraft.ChatFormatting.DARK_GRAY));
+        var atts = GunStats.attachments(stack);
+        if (!atts.isEmpty()) {
+            tip.add(Component.literal("Fitted: " + String.join(", ", atts)).withStyle(net.minecraft.ChatFormatting.DARK_AQUA));
+        }
     }
 }

@@ -1,0 +1,5297 @@
+{
+ "cards": {
+  "Entity.WorldObject.Door": {
+   "name": "Door",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_killfeed_falldamage.webp",
+   "price": null,
+   "sub": "other",
+   "stats": {},
+   "href": "/wardogs/database/other/door"
+  },
+  "ID.Item.120x570mm": {
+   "name": "120mm HEAT-MP Shell",
+   "icon": "/images/wardogs/database/icons/t_ui_ammo_120mm.webp",
+   "price": 210,
+   "sub": "Vehicle & Heavy",
+   "stats": {
+    "weight": 24
+   },
+   "href": "/wardogs/database/ammunition/120mm-heat-mp-shell"
+  },
+  "ID.Item.155mm": {
+   "name": "155mm HE Shell",
+   "icon": "/images/wardogs/database/icons/t_ui_ammo_155mm.webp",
+   "price": 200,
+   "sub": "Vehicle & Heavy",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/155mm-he-shell-2"
+  },
+  "ID.Item.155mm.Expensive": {
+   "name": "155mm HE Shell",
+   "icon": "/images/wardogs/database/icons/t_ui_ammo_155mm.webp",
+   "price": 120,
+   "sub": "Vehicle & Heavy",
+   "stats": {
+    "weight": 42
+   },
+   "href": "/wardogs/database/ammunition/155mm-he-shell"
+  },
+  "ID.Item.155mm.Expensive.Sandbox": {
+   "name": "155mm Expensive (SB)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_84heat_round_textured_512x512.webp",
+   "price": 600,
+   "sub": "155mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/155mm-expensive-sb"
+  },
+  "ID.Item.155mm.Standard": {
+   "name": "155mm HE Shell",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_84heat_round_textured_512x512.webp",
+   "price": 120,
+   "sub": "Vehicle & Heavy",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/155mm-he-shell-3"
+  },
+  "ID.Item.155mm.Standard.Sandbox": {
+   "name": "155mm Standard (SB)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_84heat_round_textured_512x512.webp",
+   "price": 600,
+   "sub": "155mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/155mm-standard-sb"
+  },
+  "ID.Item.35x228mm": {
+   "name": "35x228mm Anti-Air Cannon",
+   "icon": "/images/wardogs/database/icons/t_ui_ammo_228mm.webp",
+   "price": 200,
+   "sub": "Vehicle & Heavy",
+   "stats": {
+    "weight": 1.56
+   },
+   "href": "/wardogs/database/ammunition/35x228mm-anti-air-cannon"
+  },
+  "ID.Item.70mm": {
+   "name": "70mm",
+   "icon": null,
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/70mm"
+  },
+  "ID.Item.A91Barrel": {
+   "name": "A91 Barrel",
+   "icon": "/images/wardogs/database/icons/t_ui_barrel_placeholder.webp",
+   "price": null,
+   "sub": "Barrels",
+   "stats": {},
+   "href": "/wardogs/database/attachments/a91-barrel"
+  },
+  "ID.Item.A91Mag": {
+   "name": "STANAG 30 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_stanag.webp",
+   "price": 10,
+   "sub": "Magazines",
+   "stats": {
+    "capacity": 30
+   },
+   "href": "/wardogs/database/attachments/stanag-30-rnd-magazine-2"
+  },
+  "ID.Item.AK74MIMIEGGrip": {
+   "name": "AK74 Grip",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_rk_grip_textured_512x512.webp",
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak74-grip-2"
+  },
+  "ID.Item.AR_02_BRL_01": {
+   "name": "MMGL Barrel",
+   "icon": "/images/wardogs/database/icons/t_ui_barrel_placeholder.webp",
+   "price": null,
+   "sub": "Barrels",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mmgl-barrel"
+  },
+  "ID.Item.AR_02_HGD_04": {
+   "name": "LVOA Handguard",
+   "icon": null,
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ar_02_hgd_04"
+  },
+  "ID.Item.ATMine": {
+   "name": "AT Mine",
+   "icon": "/images/wardogs/database/icons/t_ui_item_mine_bc.webp",
+   "price": 650,
+   "sub": "deployables",
+   "stats": {
+    "weight": 8.6
+   },
+   "href": "/wardogs/database/deployables/at-mine"
+  },
+  "ID.Item.BARL_003": {
+   "name": "M1911 Barrel",
+   "icon": null,
+   "price": null,
+   "sub": "Barrels",
+   "stats": {},
+   "href": "/wardogs/database/attachments/barl_003"
+  },
+  "ID.Item.BARL_005": {
+   "name": "MP5 Barrel",
+   "icon": null,
+   "price": null,
+   "sub": "Barrels",
+   "stats": {},
+   "href": "/wardogs/database/attachments/barl_005"
+  },
+  "ID.Item.BARL_010": {
+   "name": "AKS74u Barrel + Gas Block",
+   "icon": "/images/wardogs/database/icons/t_ui_barrel_placeholder.webp",
+   "price": null,
+   "sub": "Barrels",
+   "stats": {},
+   "href": "/wardogs/database/attachments/aks74u-barrel-gas-block"
+  },
+  "ID.Item.BARL_011": {
+   "name": "RPK74 Barrel + Gas Block",
+   "icon": "/images/wardogs/database/icons/t_ui_barrel_placeholder.webp",
+   "price": null,
+   "sub": "Barrels",
+   "stats": {},
+   "href": "/wardogs/database/attachments/rpk74-barrel-gas-block"
+  },
+  "ID.Item.Binoculars": {
+   "name": "Binoculars",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_rangefinder_textured_512x512.webp",
+   "price": 75,
+   "sub": "Recon",
+   "stats": {
+    "weight": 0.3
+   },
+   "href": "/wardogs/database/equipment/binoculars"
+  },
+  "ID.Item.BuildTool.Hammer.Large": {
+   "name": "Large Hammer",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_build3.webp",
+   "price": 1600,
+   "sub": "deployables",
+   "stats": {
+    "weight": 3.18
+   },
+   "href": "/wardogs/database/deployables/large-hammer"
+  },
+  "ID.Item.BuildTool.Hammer.Medium": {
+   "name": "Medium Hammer",
+   "icon": "/images/wardogs/database/icons/t_ui_item_hammer_2_bc.webp",
+   "price": 800,
+   "sub": "deployables",
+   "stats": {
+    "weight": 1.23
+   },
+   "href": "/wardogs/database/deployables/medium-hammer"
+  },
+  "ID.Item.BuildTool.Hammer.Small": {
+   "name": "Small Hammer",
+   "icon": "/images/wardogs/database/icons/t_ui_item_hammer_1_bc.webp",
+   "price": 100,
+   "sub": "deployables",
+   "stats": {
+    "weight": 0.32
+   },
+   "href": "/wardogs/database/deployables/small-hammer"
+  },
+  "ID.Item.CONS_001": {
+   "name": "Energy Drink",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Equipment",
+   "stats": {},
+   "href": "/wardogs/database/equipment/energy-drink"
+  },
+  "ID.Item.CONS_002": {
+   "name": "Painkillers",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Equipment",
+   "stats": {},
+   "href": "/wardogs/database/equipment/painkillers"
+  },
+  "ID.Item.CONS_003": {
+   "name": "Amphetamine",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Equipment",
+   "stats": {},
+   "href": "/wardogs/database/equipment/amphetamine"
+  },
+  "ID.Item.DPLY_001": {
+   "name": "Drill Rig",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_hotzonemagnet_512x512_bc.webp",
+   "price": null,
+   "sub": "Equipment",
+   "stats": {},
+   "href": "/wardogs/database/equipment/drill-rig"
+  },
+  "ID.Item.DPLY_002": {
+   "name": "Mortars",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_mortor.webp",
+   "price": null,
+   "sub": "Equipment",
+   "stats": {},
+   "href": "/wardogs/database/equipment/mortars"
+  },
+  "ID.Item.DPLY_003": {
+   "name": "Repair Station",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_repair.webp",
+   "price": null,
+   "sub": "Equipment",
+   "stats": {},
+   "href": "/wardogs/database/equipment/repair-station-2"
+  },
+  "ID.Item.Enox.Standard": {
+   "name": "Enox",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_enox_512x512.webp",
+   "price": 450,
+   "sub": "medical",
+   "stats": {},
+   "href": "/wardogs/database/medical/enox"
+  },
+  "ID.Item.G60": {
+   "name": "G60",
+   "icon": null,
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/weapons/g60"
+  },
+  "ID.Item.InfraredRangeFinder": {
+   "name": "Infrared Range Finder",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_rangefinderir.webp",
+   "price": 1200,
+   "sub": "Recon",
+   "stats": {
+    "weight": 0.43
+   },
+   "href": "/wardogs/database/equipment/infrared-range-finder"
+  },
+  "ID.Item.KH2002Barrel": {
+   "name": "KH2002 Barrel",
+   "icon": "/images/wardogs/database/icons/t_ui_barrel_placeholder.webp",
+   "price": null,
+   "sub": "Barrels",
+   "stats": {},
+   "href": "/wardogs/database/attachments/kh2002-barrel"
+  },
+  "ID.Item.KH2002Mag": {
+   "name": "STANAG 30 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_stanag.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {
+    "capacity": 30
+   },
+   "href": "/wardogs/database/attachments/stanag-30-rnd-magazine-3"
+  },
+  "ID.Item.MAGZ_003": {
+   "name": "Deagle 7 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_003.webp",
+   "price": 50,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.43,
+    "capacity": 7
+   },
+   "href": "/wardogs/database/attachments/deagle-7-rnd-magazine"
+  },
+  "ID.Item.MedKit.Standard": {
+   "name": "Medical Bag",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_medkit_128x128.webp",
+   "price": 2000,
+   "sub": "medical",
+   "stats": {
+    "weight": 3.45
+   },
+   "href": "/wardogs/database/medical/medical-bag"
+  },
+  "ID.Item.Monocular": {
+   "name": "Monocular",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_monocle_temp.webp",
+   "price": 150,
+   "sub": "Recon",
+   "stats": {},
+   "href": "/wardogs/database/equipment/monocular"
+  },
+  "ID.Item.PWSCQB74Muzzle": {
+   "name": "CQB 74 Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_015.webp",
+   "price": 680,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.22
+   },
+   "href": "/wardogs/database/attachments/cqb-74-brake"
+  },
+  "ID.Item.RangeFinder": {
+   "name": "Range Finder",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_rangefinder_1.webp",
+   "price": 400,
+   "sub": "Recon",
+   "stats": {
+    "weight": 0.23
+   },
+   "href": "/wardogs/database/equipment/range-finder"
+  },
+  "ID.Item.RepairTool.Drill.Heavy": {
+   "name": "Heavy Drill",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_drill_heavy.webp",
+   "price": 1300,
+   "sub": "Repair Tool",
+   "stats": {
+    "weight": 6.9
+   },
+   "href": "/wardogs/database/equipment/heavy-drill"
+  },
+  "ID.Item.RepairTool.Drill.Light": {
+   "name": "Light Drill",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_drill_medium.webp",
+   "price": 600,
+   "sub": "Repair Tool",
+   "stats": {
+    "weight": 1.5
+   },
+   "href": "/wardogs/database/equipment/light-drill"
+  },
+  "ID.Item.RepairTool.Wrench.Standard": {
+   "name": "Wrench",
+   "icon": "/images/wardogs/database/icons/t_ui_item_repair_1_bc.webp",
+   "price": 150,
+   "sub": "Repair Tool",
+   "stats": {},
+   "href": "/wardogs/database/equipment/wrench"
+  },
+  "ID.Item.SMG_01_STK_05": {
+   "name": "RS2 Slim",
+   "icon": null,
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/smg_01_stk_05"
+  },
+  "ID.Item.SmokeGrenade.Black": {
+   "name": "M18 Smoke Grenade: Black",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_smoke_textured_black_512x512.webp",
+   "price": 100,
+   "sub": "throwables",
+   "stats": {
+    "weight": 0.54
+   },
+   "href": "/wardogs/database/throwables/m18-smoke-grenade-black"
+  },
+  "ID.Item.SmokeGrenade.Blue": {
+   "name": "M18  Signal Grenade: Friendly",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_smoke_textured_blue_512x512.webp",
+   "price": 50,
+   "sub": "throwables",
+   "stats": {
+    "weight": 0.54
+   },
+   "href": "/wardogs/database/throwables/m18-signal-grenade-friendly"
+  },
+  "ID.Item.SmokeGrenade.Green": {
+   "name": "M18  Signal Grenade: Supply Request",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_smoke_textured_green_512x512.webp",
+   "price": 50,
+   "sub": "throwables",
+   "stats": {
+    "weight": 0.54
+   },
+   "href": "/wardogs/database/throwables/m18-signal-grenade-supply-request"
+  },
+  "ID.Item.SmokeGrenade.Orange": {
+   "name": "M18  Signal Grenade: Damaged Vehicle",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_smoke_textured_orange_512x512.webp",
+   "price": 50,
+   "sub": "throwables",
+   "stats": {
+    "weight": 0.54
+   },
+   "href": "/wardogs/database/throwables/m18-signal-grenade-damaged-vehicle"
+  },
+  "ID.Item.SmokeGrenade.Purple": {
+   "name": "M18  Signal Grenade: Landing Zone",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_smoke_textured_pourple_512x512.webp",
+   "price": 50,
+   "sub": "throwables",
+   "stats": {
+    "weight": 0.54
+   },
+   "href": "/wardogs/database/throwables/m18-signal-grenade-landing-zone"
+  },
+  "ID.Item.SmokeGrenade.Red": {
+   "name": "M18  Signal Grenade: Hostile",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_smoke_textured_red_512x512.webp",
+   "price": 50,
+   "sub": "throwables",
+   "stats": {
+    "weight": 0.54
+   },
+   "href": "/wardogs/database/throwables/m18-signal-grenade-hostile"
+  },
+  "ID.Item.SmokeGrenade.White": {
+   "name": "M18 Smoke Grenade: White",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_smoke_textured_512x512_temp.webp",
+   "price": 100,
+   "sub": "throwables",
+   "stats": {
+    "weight": 0.54
+   },
+   "href": "/wardogs/database/throwables/m18-smoke-grenade-white"
+  },
+  "ID.Item.SmokeGrenade.Yellow": {
+   "name": "M18  Signal Grenade: Alert",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_smoke_textured_yellow_512x512.webp",
+   "price": 50,
+   "sub": "throwables",
+   "stats": {
+    "weight": 0.54
+   },
+   "href": "/wardogs/database/throwables/m18-signal-grenade-alert"
+  },
+  "ID.Item.Spanner": {
+   "name": "Spanner",
+   "icon": "/images/wardogs/database/icons/t_ui_item_repair_1_bc.webp",
+   "price": null,
+   "sub": "deployables",
+   "stats": {},
+   "href": "/wardogs/database/deployables/spanner"
+  },
+  "ID.Item.TAR21Mag": {
+   "name": "STANAG 30 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_stanag.webp",
+   "price": 10,
+   "sub": "Magazines",
+   "stats": {
+    "capacity": 30
+   },
+   "href": "/wardogs/database/attachments/stanag-30-rnd-magazine-5"
+  },
+  "ID.Item.TOOL_001": {
+   "name": "IR Goggles",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Equipment",
+   "stats": {},
+   "href": "/wardogs/database/equipment/ir-goggles"
+  },
+  "ID.Item.TOOL_002": {
+   "name": "Spotted Scope",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Equipment",
+   "stats": {},
+   "href": "/wardogs/database/equipment/spotted-scope"
+  },
+  "ID.Item.TOOL_003": {
+   "name": "Field Medical Kit",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Equipment",
+   "stats": {},
+   "href": "/wardogs/database/equipment/field-medical-kit"
+  },
+  "ID.Item.TOOL_004": {
+   "name": "Manual Resuscitator",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Equipment",
+   "stats": {},
+   "href": "/wardogs/database/equipment/manual-resuscitator"
+  },
+  "ID.Item.VectorMagazine": {
+   "name": "Super-45 30 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_vector.webp",
+   "price": 80,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.89,
+    "capacity": 30
+   },
+   "href": "/wardogs/database/attachments/super-45-30-rnd-magazine"
+  },
+  "ID.Item.VehicleStorageIntermediate": {
+   "name": "Intermediate Vehicle Storage",
+   "icon": null,
+   "price": null,
+   "sub": "Vehicle Storage",
+   "stats": {},
+   "href": "/wardogs/database/storage/vehiclestorageintermediate"
+  },
+  "ID.Item.VehicleStorageLarge": {
+   "name": "Large Vehicle Storage",
+   "icon": null,
+   "price": null,
+   "sub": "Vehicle Storage",
+   "stats": {},
+   "href": "/wardogs/database/storage/vehiclestoragelarge"
+  },
+  "ID.Item.VehicleStorageMedium": {
+   "name": "Medium Vehicle Storage",
+   "icon": null,
+   "price": null,
+   "sub": "Vehicle Storage",
+   "stats": {},
+   "href": "/wardogs/database/storage/vehiclestoragemedium"
+  },
+  "ID.Item.VehicleStorageSmall": {
+   "name": "Small Vehicle Storage",
+   "icon": null,
+   "price": null,
+   "sub": "Vehicle Storage",
+   "stats": {},
+   "href": "/wardogs/database/storage/vehiclestoragesmall"
+  },
+  "ID.Item.VehicleSupplyCrate.Free": {
+   "name": "Free Supply Crate",
+   "icon": null,
+   "price": null,
+   "sub": "Vehicle Storage",
+   "stats": {},
+   "href": "/wardogs/database/storage/vehiclesupplycrate-free"
+  },
+  "ID.Item.VehicleSupplyCrate.Large": {
+   "name": "Large Crate",
+   "icon": "/images/wardogs/database/icons/id_item_vehiclesupplycrate_large.webp",
+   "price": 300,
+   "sub": "storage",
+   "stats": {},
+   "href": "/wardogs/database/storage/large-crate"
+  },
+  "ID.Item.VehicleSupplyCrate.Large.Armoured": {
+   "name": "Large Armored Crate",
+   "icon": "/images/wardogs/database/icons/id_item_vehiclesupplycrate_large_armoured.webp",
+   "price": 800,
+   "sub": "storage",
+   "stats": {},
+   "href": "/wardogs/database/storage/large-armored-crate"
+  },
+  "ID.Item.VehicleSupplyCrate.Pallet.BuildSupply": {
+   "name": "Build Supply Pallet",
+   "icon": "/images/wardogs/database/icons/t_ui_supply_build_palette.webp",
+   "price": 400,
+   "sub": "storage",
+   "stats": {},
+   "href": "/wardogs/database/storage/build-supply-pallet"
+  },
+  "ID.Item.VehicleSupplyCrate.Pallet.FuelSupply": {
+   "name": "Fuel Supply Pallet",
+   "icon": "/images/wardogs/database/icons/t_ui_supply_fuel_palette.webp",
+   "price": 400,
+   "sub": "storage",
+   "stats": {},
+   "href": "/wardogs/database/storage/fuel-supply-pallet"
+  },
+  "ID.Item.VehicleSupplyCrate.Pallet.MunitionsSupply": {
+   "name": "Ammo Supply Pallet",
+   "icon": "/images/wardogs/database/icons/t_ui_supply_ammo_palette.webp",
+   "price": 400,
+   "sub": "storage",
+   "stats": {},
+   "href": "/wardogs/database/storage/ammo-supply-pallet"
+  },
+  "ID.Item.VehicleSupplyCrate.Pallet.SparePartsSupply": {
+   "name": "Mechanical Supply Pallet",
+   "icon": "/images/wardogs/database/icons/t_ui_supply_mech_palette.webp",
+   "price": 400,
+   "sub": "storage",
+   "stats": {},
+   "href": "/wardogs/database/storage/mechanical-supply-pallet"
+  },
+  "ID.Item.VehicleSupplyCrate.Small": {
+   "name": "Small Crate",
+   "icon": "/images/wardogs/database/icons/id_item_vehiclesupplycrate_small.webp",
+   "price": 150,
+   "sub": "storage",
+   "stats": {},
+   "href": "/wardogs/database/storage/small-crate"
+  },
+  "ID.Item.VehicleSupplyCrate.Small.Armoured": {
+   "name": "Small Armored Crate",
+   "icon": "/images/wardogs/database/icons/id_item_vehiclesupplycrate_small_armoured.webp",
+   "price": 500,
+   "sub": "storage",
+   "stats": {},
+   "href": "/wardogs/database/storage/small-armored-crate"
+  },
+  "Id.Bobblehead": {
+   "name": "Bobblehead",
+   "icon": null,
+   "price": null,
+   "sub": "other",
+   "stats": {},
+   "href": "/wardogs/database/other/bobblehead"
+  },
+  "Id.Buildable.AirRaidShelter": {
+   "name": "Indirect Fire Shelter",
+   "icon": "/images/wardogs/database/icons/t_ui_buildable_airraidshelter_bc.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/indirect-fire-shelter"
+  },
+  "Id.Buildable.AirRaidShelter.Ceiling": {
+   "name": "Indirect Fire Shelter",
+   "icon": "/images/wardogs/database/icons/t_ui_buildable_airraidshelter_bc.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/indirect-fire-shelter-2"
+  },
+  "Id.Buildable.AirRaidShelter.Floor": {
+   "name": "Indirect Fire Shelter",
+   "icon": "/images/wardogs/database/icons/t_ui_buildable_airraidshelter_bc.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/indirect-fire-shelter-3"
+  },
+  "Id.Buildable.BarbedWire": {
+   "name": "Barbed Wire",
+   "icon": "/images/wardogs/database/icons/t_ui_buildable_barbedwire.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/barbed-wire"
+  },
+  "Id.Buildable.BremmerWall": {
+   "name": "Bremmer Wall",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_bremerwall.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/bremmer-wall"
+  },
+  "Id.Buildable.Bunker": {
+   "name": "Bunker",
+   "icon": "/images/wardogs/database/icons/t_ui_buildable_sandbagwall.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/bunker"
+  },
+  "Id.Buildable.Bunker.Floor": {
+   "name": "Bunker",
+   "icon": "/images/wardogs/database/icons/t_ui_buildable_sandbagwall.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/bunker-2"
+  },
+  "Id.Buildable.Bunker.Roof": {
+   "name": "Bunker",
+   "icon": "/images/wardogs/database/icons/t_ui_buildable_sandbagwall.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/bunker-3"
+  },
+  "Id.Buildable.CamoNetTent": {
+   "name": "Recon Tent",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_camonettent_512x512_bc.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/recon-tent"
+  },
+  "Id.Buildable.CrowsNest": {
+   "name": "Recon Tower",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_crowsnest_bc.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/recon-tower"
+  },
+  "Id.Buildable.Door": {
+   "name": "Door",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_door_512x512.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/door-2"
+  },
+  "Id.Buildable.FOB": {
+   "name": "Forward Operating Base",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_fob_textured_512x512_temp.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/forward-operating-base-2"
+  },
+  "Id.Buildable.Gate": {
+   "name": "Gate",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_hesco_gate.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/gate"
+  },
+  "Id.Buildable.HBlock": {
+   "name": "HBlock",
+   "icon": "/images/wardogs/database/icons/t_ui_buildable_hblock.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/hblock"
+  },
+  "Id.Buildable.HBlockQuadWall": {
+   "name": "HBlock",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_hesco_quad.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/hblock-2"
+  },
+  "Id.Buildable.LoudSpeaker": {
+   "name": "Loudspeaker",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_speaker.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/loudspeaker"
+  },
+  "Id.Buildable.MistralAA": {
+   "name": "Talon 9K-SAM",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_mistral.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/talon-9k-sam"
+  },
+  "Id.Buildable.Mortar": {
+   "name": "L81 Mortar",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_mortor.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/l81-mortar"
+  },
+  "Id.Buildable.Phalanx": {
+   "name": "Vanguard CIWS",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_phalanx.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/vanguard-ciws"
+  },
+  "Id.Buildable.Radio": {
+   "name": "Builder's Radio",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_radio.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/builder-s-radio"
+  },
+  "Id.Buildable.RefuelStation": {
+   "name": "Refuel Station",
+   "icon": "/images/wardogs/database/icons/t_ui_tacmap_refuel.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/refuel-station"
+  },
+  "Id.Buildable.RepairStation": {
+   "name": "Repair Station",
+   "icon": "/images/wardogs/database/icons/t_ui_tacmap_repair.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/repair-station"
+  },
+  "Id.Buildable.SandbagWall": {
+   "name": "Sandbag Wall",
+   "icon": "/images/wardogs/database/icons/t_ui_buildable_sandbagwall.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/sandbag-wall"
+  },
+  "Id.Buildable.TallHBlock": {
+   "name": "HBlock",
+   "icon": "/images/wardogs/database/icons/t_ui_buildable_tallhblock.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/hblock-3"
+  },
+  "Id.Buildable.TankTrap": {
+   "name": "Hedgehog",
+   "icon": "/images/wardogs/database/icons/t_ui_buildable_tanktrap.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/hedgehog"
+  },
+  "Id.Emote.Middle_Finger": {
+   "name": "Middle Finger",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_pingwheel_middlefinger.webp",
+   "price": null,
+   "sub": "other",
+   "stats": {},
+   "href": "/wardogs/database/other/middle-finger"
+  },
+  "Id.Emote.Paper": {
+   "name": "Paper",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "other",
+   "stats": {},
+   "href": "/wardogs/database/other/paper"
+  },
+  "Id.Emote.Rock": {
+   "name": "Rock",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "other",
+   "stats": {},
+   "href": "/wardogs/database/other/rock"
+  },
+  "Id.Emote.RockPaperScissors": {
+   "name": "Rock Paper Scissors",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "other",
+   "stats": {},
+   "href": "/wardogs/database/other/rock-paper-scissors"
+  },
+  "Id.Emote.Scissors": {
+   "name": "Scissors",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "other",
+   "stats": {},
+   "href": "/wardogs/database/other/scissors"
+  },
+  "Id.Emote.Shh": {
+   "name": "Shh",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_pingwheel_shh.webp",
+   "price": null,
+   "sub": "other",
+   "stats": {},
+   "href": "/wardogs/database/other/shh"
+  },
+  "Id.Item.10xScopeMoa": {
+   "name": "6-10x Scope MOA",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_10x_optic_textured_512x512.webp",
+   "price": 1050,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.98
+   },
+   "href": "/wardogs/database/attachments/6-10x-scope-moa"
+  },
+  "Id.Item.120x800mm": {
+   "name": "81mm",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_84heat_round_textured_512x512.webp",
+   "price": 600,
+   "sub": "81mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/81mm"
+  },
+  "Id.Item.120x800mm.Expensive": {
+   "name": "81mm",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_84heat_round_textured_512x512.webp",
+   "price": 600,
+   "sub": "81mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/81mm-2"
+  },
+  "Id.Item.120x800mm.Standard": {
+   "name": "81mm",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_84heat_round_textured_512x512.webp",
+   "price": 600,
+   "sub": "81mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/81mm-3"
+  },
+  "Id.Item.122mm": {
+   "name": "122mm HE Rocket",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_84heat_round_textured_512x512.webp",
+   "price": 450,
+   "sub": "Vehicle & Heavy",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/122mm-he-rocket"
+  },
+  "Id.Item.12g": {
+   "name": "12g",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_12g_buck_fmj.webp",
+   "price": null,
+   "sub": "12g",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/12g"
+  },
+  "Id.Item.12g.7mmBuck": {
+   "name": "12g 7mm Buckshot",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_12g_slug_fmj.webp",
+   "price": 60,
+   "sub": "12g",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/12g-7mm-buckshot"
+  },
+  "Id.Item.12g.RifledSlug": {
+   "name": "12g Rifled Slug",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_12g_buck_fmj.webp",
+   "price": 200,
+   "sub": "12g",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/12g-rifled-slug"
+  },
+  "Id.Item.20x102mm": {
+   "name": "20x102mm",
+   "icon": "/images/wardogs/database/icons/t_ui_chamberedround_bullet.webp",
+   "price": 600,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/20x102mm"
+  },
+  "Id.Item.308Win": {
+   "name": ".308 Win Standard (FMJ)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox__308_fmj.webp",
+   "price": 40,
+   "sub": ".308 Win",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/308-win-standard-fmj"
+  },
+  "Id.Item.308Win.ArmorPiercing": {
+   "name": ".308 Win Armor Piercing (AP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox__308_ap.webp",
+   "price": 180,
+   "sub": ".308 Win",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/308-win-armor-piercing-ap"
+  },
+  "Id.Item.308Win.ArmorPiercing.Tracer": {
+   "name": ".308 Win Armor Piercing (AP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox__308_ap.webp",
+   "price": 180,
+   "sub": ".308 Win",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/308-win-armor-piercing-ap-t"
+  },
+  "Id.Item.308Win.HollowPoint": {
+   "name": ".308 Win Flesh Damage (HP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox__308_hp.webp",
+   "price": 70,
+   "sub": ".308 Win",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/308-win-flesh-damage-hp"
+  },
+  "Id.Item.308Win.HollowPoint.Tracer": {
+   "name": ".308 Win Flesh Damage (HP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox__308_hp.webp",
+   "price": 70,
+   "sub": ".308 Win",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/308-win-flesh-damage-hp-t"
+  },
+  "Id.Item.308Win.Tracer": {
+   "name": ".308 Win Standard (FMJ) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox__308_fmj.webp",
+   "price": 40,
+   "sub": ".308 Win",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/308-win-standard-fmj-t"
+  },
+  "Id.Item.30mm": {
+   "name": "30mm HE Cannon",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_cheap_magazine_judge_textured_512x512.webp",
+   "price": 500,
+   "sub": "Vehicle & Heavy",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/30mm-he-cannon"
+  },
+  "Id.Item.338Nor": {
+   "name": ".338",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox__338_fmj.webp",
+   "price": null,
+   "sub": ".338",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/338"
+  },
+  "Id.Item.338Nor.ArmourPiercing": {
+   "name": ".338 AP",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox__338_ap.webp",
+   "price": null,
+   "sub": ".338",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/338-ap"
+  },
+  "Id.Item.338Nor.ArmourPiercing.Tracer": {
+   "name": ".338 AP (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox__338_ap.webp",
+   "price": null,
+   "sub": ".338",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/338-ap-t"
+  },
+  "Id.Item.338Nor.HollowPoint": {
+   "name": ".338 HP",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox__338_hp.webp",
+   "price": null,
+   "sub": ".338",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/338-hp"
+  },
+  "Id.Item.338Nor.HollowPoint.Tracer": {
+   "name": ".338 HP (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox__338_hp.webp",
+   "price": null,
+   "sub": ".338",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/338-hp-t"
+  },
+  "Id.Item.338Nor.Tracer": {
+   "name": ".338 (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox__338_fmj.webp",
+   "price": null,
+   "sub": ".338",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/338-t"
+  },
+  "Id.Item.3xScope": {
+   "name": "Spitfire 3X",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_024.webp",
+   "price": 790,
+   "sub": "Other",
+   "stats": {
+    "weight": 0.26
+   },
+   "href": "/wardogs/database/attachments/spitfire-3x"
+  },
+  "Id.Item.40mm": {
+   "name": "40mm",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_40mm_round_textured_512x512.webp",
+   "price": 100,
+   "sub": "Other",
+   "stats": {
+    "weight": 0.28
+   },
+   "href": "/wardogs/database/ammunition/40mm"
+  },
+  "Id.Item.45ACP": {
+   "name": ".45 ACP Standard (FMJ)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_45-acp_fmj.webp",
+   "price": 10,
+   "sub": ".45 ACP",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/45-acp-standard-fmj"
+  },
+  "Id.Item.45ACP.ArmorPiercing": {
+   "name": ".45 ACP Armor Piercing (AP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_45-acp_ap.webp",
+   "price": 20,
+   "sub": ".45 ACP",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/45-acp-armor-piercing-ap"
+  },
+  "Id.Item.45ACP.ArmorPiercing.Tracer": {
+   "name": ".45 ACP Armor Piercing (AP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_45acp_ap.webp",
+   "price": 20,
+   "sub": ".45 ACP",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/45-acp-armor-piercing-ap-t"
+  },
+  "Id.Item.45ACP.HollowPoint": {
+   "name": ".45 ACP Flesh Damage (HP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_45-acp_hp.webp",
+   "price": 15,
+   "sub": ".45 ACP",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/45-acp-flesh-damage-hp"
+  },
+  "Id.Item.45ACP.HollowPoint.Tracer": {
+   "name": ".45 ACP Flesh Damage (HP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_45acp_hp.webp",
+   "price": 15,
+   "sub": ".45 ACP",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/45-acp-flesh-damage-hp-t"
+  },
+  "Id.Item.45ACP.Tracer": {
+   "name": ".45 ACP Standard (FMJ) (T)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_45-acp_fmj.webp",
+   "price": 10,
+   "sub": ".45 ACP",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/45-acp-standard-fmj-t"
+  },
+  "Id.Item.45Colt": {
+   "name": ".45 Colt Standard (FMJ)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_45-colt_fmj.webp",
+   "price": 33,
+   "sub": ".45 Colt",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/45-colt-standard-fmj"
+  },
+  "Id.Item.45Colt.ArmorPiercing": {
+   "name": ".45 Colt Armor Piercing (AP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_45-colt_ap.webp",
+   "price": 66,
+   "sub": ".45 Colt",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/45-colt-armor-piercing-ap"
+  },
+  "Id.Item.45Colt.ArmorPiercing.Tracer": {
+   "name": ".45 Colt Armor Piercing (AP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_45colt_ap.webp",
+   "price": 66,
+   "sub": ".45 Colt",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/45-colt-armor-piercing-ap-t"
+  },
+  "Id.Item.45Colt.HollowPoint": {
+   "name": ".45 Colt Flesh Damage (HP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_45-colt_hp.webp",
+   "price": 50,
+   "sub": ".45 Colt",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/45-colt-flesh-damage-hp"
+  },
+  "Id.Item.45Colt.HollowPoint.Tracer": {
+   "name": ".45 Colt Flesh Damage (HP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_45colt_hp.webp",
+   "price": 50,
+   "sub": ".45 Colt",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/45-colt-flesh-damage-hp-t"
+  },
+  "Id.Item.45Colt.Tracer": {
+   "name": ".45 Colt Standard (FMJ) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_45colt_fmj.webp",
+   "price": 33,
+   "sub": ".45 Colt",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/45-colt-standard-fmj-t"
+  },
+  "Id.Item.4xElcanSpectr": {
+   "name": "Spectr 4x",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_001.webp",
+   "price": 800,
+   "sub": "Other",
+   "stats": {
+    "weight": 0.66
+   },
+   "href": "/wardogs/database/attachments/spectr-4x"
+  },
+  "Id.Item.50AE": {
+   "name": "50AE Standard (FMJ)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox__50-ae_fmj.webp",
+   "price": 20,
+   "sub": "50AE",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/50ae-standard-fmj"
+  },
+  "Id.Item.50AE.ArmorPiercing": {
+   "name": "50AE Armor Piercing (AP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox__50-ae_ap.webp",
+   "price": 90,
+   "sub": "50AE",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/50ae-armor-piercing-ap"
+  },
+  "Id.Item.50AE.ArmorPiercing.Tracer": {
+   "name": "50AE Armor Piercing (AP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox__50ae_ap.webp",
+   "price": 90,
+   "sub": "50AE",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/50ae-armor-piercing-ap-t"
+  },
+  "Id.Item.50AE.HollowPoint": {
+   "name": "50AE Flesh Damage (HP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox__50-ae_hp.webp",
+   "price": 35,
+   "sub": "50AE",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/50ae-flesh-damage-hp"
+  },
+  "Id.Item.50AE.HollowPoint.Tracer": {
+   "name": "50AE Flesh Damage (HP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox__50ae_hp.webp",
+   "price": 35,
+   "sub": "50AE",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/50ae-flesh-damage-hp-t"
+  },
+  "Id.Item.50AE.Tracer": {
+   "name": "50AE Standard (FMJ) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox__50ae_fmj.webp",
+   "price": 20,
+   "sub": "50AE",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/50ae-standard-fmj-t"
+  },
+  "Id.Item.50Cal": {
+   "name": ".50Cal Standard (FMJ)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox__50-ae_fmj.webp",
+   "price": 250,
+   "sub": ".50Cal",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/50cal-standard-fmj"
+  },
+  "Id.Item.50Cal.ArmorPiercing": {
+   "name": ".50 Cal AP",
+   "icon": null,
+   "price": 500,
+   "sub": ".50Cal",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/50cal-armorpiercing"
+  },
+  "Id.Item.50Cal.ArmorPiercing.Tracer": {
+   "name": ".50 Cal AP (T)",
+   "icon": null,
+   "price": 500,
+   "sub": ".50Cal",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/50cal-armorpiercing-tracer"
+  },
+  "Id.Item.50Cal.HollowPoint": {
+   "name": ".50 Cal HP",
+   "icon": null,
+   "price": 375,
+   "sub": ".50Cal",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/50cal-hollowpoint"
+  },
+  "Id.Item.50Cal.HollowPoint.Tracer": {
+   "name": ".50 Cal HP (T)",
+   "icon": null,
+   "price": 375,
+   "sub": ".50Cal",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/50cal-hollowpoint-tracer"
+  },
+  "Id.Item.50Cal.Tracer": {
+   "name": ".50Cal Standard (FMJ) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_50cal_fmj.webp",
+   "price": 250,
+   "sub": ".50Cal",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/50cal-standard-fmj-t"
+  },
+  "Id.Item.545mm": {
+   "name": "5.45mm Standard (FMJ)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_5_45x39_fmj.webp",
+   "price": 15,
+   "sub": "5.45mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/5-45mm-standard-fmj"
+  },
+  "Id.Item.545mm.ArmorPiercing": {
+   "name": "5.45mm Armor Piercing (AP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_5_45x39_ap.webp",
+   "price": 40,
+   "sub": "5.45mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/5-45mm-armor-piercing-ap"
+  },
+  "Id.Item.545mm.ArmorPiercing.Tracer": {
+   "name": "5.45mm Armor Piercing (AP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_5_45x39_ap.webp",
+   "price": 40,
+   "sub": "5.45mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/5-45mm-armor-piercing-ap-t"
+  },
+  "Id.Item.545mm.HollowPoint": {
+   "name": "5.45mm Flesh Damage (HP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_5_45x39_hp.webp",
+   "price": 25,
+   "sub": "5.45mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/5-45mm-flesh-damage-hp"
+  },
+  "Id.Item.545mm.HollowPoint.Tracer": {
+   "name": "5.45mm Flesh Damage (HP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_5_45x39_hp.webp",
+   "price": 25,
+   "sub": "5.45mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/5-45mm-flesh-damage-hp-t"
+  },
+  "Id.Item.545mm.Tracer": {
+   "name": "5.45mm Standard (FMJ) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_5_45x39_fmj.webp",
+   "price": 15,
+   "sub": "5.45mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/5-45mm-standard-fmj-t"
+  },
+  "Id.Item.556mm": {
+   "name": "5.56mm Standard (FMJ)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_5_56x45mm_fmj.webp",
+   "price": 15,
+   "sub": "5.56mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/5-56mm-standard-fmj"
+  },
+  "Id.Item.556mm.ArmorPiercing": {
+   "name": "5.56mm Armor Piercing (AP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_5_56x45mm_ap.webp",
+   "price": 40,
+   "sub": "5.56mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/5-56mm-armor-piercing-ap"
+  },
+  "Id.Item.556mm.ArmorPiercing.Tracer": {
+   "name": "5.56mm Armor Piercing (AP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_5_56x45mm_ap.webp",
+   "price": 40,
+   "sub": "5.56mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/5-56mm-armor-piercing-ap-t"
+  },
+  "Id.Item.556mm.HollowPoint": {
+   "name": "5.56mm Flesh Damage (HP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_5_56x45mm_hp.webp",
+   "price": 25,
+   "sub": "5.56mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/5-56mm-flesh-damage-hp"
+  },
+  "Id.Item.556mm.HollowPoint.Tracer": {
+   "name": "5.56mm Flesh Damage (HP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_5_56x45mm_hp.webp",
+   "price": 25,
+   "sub": "5.56mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/5-56mm-flesh-damage-hp-t"
+  },
+  "Id.Item.556mm.Tracer": {
+   "name": "5.56mm Standard (FMJ) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_5_56x45mm_fmj.webp",
+   "price": 15,
+   "sub": "5.56mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/5-56mm-standard-fmj-t"
+  },
+  "Id.Item.6xScope": {
+   "name": "3-6x Scope",
+   "icon": null,
+   "price": null,
+   "sub": "Optics",
+   "stats": {},
+   "href": "/wardogs/database/attachments/6xscope"
+  },
+  "Id.Item.72mm": {
+   "name": "72mm",
+   "icon": "/images/wardogs/database/icons/t_ui_chamberedround_finnedshell.webp",
+   "price": 600,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/72mm"
+  },
+  "Id.Item.762mm": {
+   "name": "7.62mm Standard (FMJ)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_7_62x39mm_fmj.webp",
+   "price": 40,
+   "sub": "7.62mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62mm-standard-fmj"
+  },
+  "Id.Item.762mm.ArmorPiercing": {
+   "name": "7.62mm Armor Piercing (AP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_7_62x39mm_ap.webp",
+   "price": 150,
+   "sub": "7.62mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62mm-armor-piercing-ap"
+  },
+  "Id.Item.762mm.ArmorPiercing.Tracer": {
+   "name": "7.62mm Armor Piercing (AP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_7_62x39mm_ap.webp",
+   "price": 150,
+   "sub": "7.62mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62mm-armor-piercing-ap-t"
+  },
+  "Id.Item.762mm.HollowPoint": {
+   "name": "7.62mm Flesh Damage (HP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_7_62x39mm_hp.webp",
+   "price": 90,
+   "sub": "7.62mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62mm-flesh-damage-hp"
+  },
+  "Id.Item.762mm.HollowPoint.Tracer": {
+   "name": "7.62mm Flesh Damage (HP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_7_62x39mm_hp.webp",
+   "price": 90,
+   "sub": "7.62mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62mm-flesh-damage-hp-t"
+  },
+  "Id.Item.762mm.Tracer": {
+   "name": "7.62mm Standard (FMJ) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_7_62x39mm_fmj.webp",
+   "price": 40,
+   "sub": "7.62mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62mm-standard-fmj-t"
+  },
+  "Id.Item.762x51mm": {
+   "name": "7.62x51mm Standard (FMJ)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_cheap_magazine_judge_textured_512x512.webp",
+   "price": 300,
+   "sub": "7.62x51mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62x51mm-standard-fmj"
+  },
+  "Id.Item.762x51mm.ArmorPiercing": {
+   "name": "7.62x51mm Armor Piercing (AP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_cheap_magazine_judge_textured_512x512.webp",
+   "price": null,
+   "sub": "7.62x51mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62x51mm-armor-piercing-ap"
+  },
+  "Id.Item.762x51mm.ArmorPiercing.Tracer": {
+   "name": "7.62x51mm Armor Piercing (AP) (T)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_cheap_magazine_judge_textured_512x512.webp",
+   "price": 250,
+   "sub": "7.62x51mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62x51mm-armor-piercing-ap-t"
+  },
+  "Id.Item.762x51mm.HollowPoint": {
+   "name": "762x51mm Flesh Damage (HP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_cheap_magazine_judge_textured_512x512.webp",
+   "price": null,
+   "sub": "7.62x51mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/762x51mm-flesh-damage-hp"
+  },
+  "Id.Item.762x51mm.HollowPoint.Tracer": {
+   "name": "762x51mm Flesh Damage (HP) (T)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_cheap_magazine_judge_textured_512x512.webp",
+   "price": null,
+   "sub": "7.62x51mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/762x51mm-flesh-damage-hp-t"
+  },
+  "Id.Item.762x51mm.Tracer": {
+   "name": "7.62x51mm Standard (FMJ) (T)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_cheap_magazine_judge_textured_512x512.webp",
+   "price": 200,
+   "sub": "7.62x51mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62x51mm-standard-fmj-t"
+  },
+  "Id.Item.762x54mm": {
+   "name": "7.62x54mm Standard (FMJ)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_7_62x54r_fmj.webp",
+   "price": 30,
+   "sub": "7.62x54mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62x54mm-standard-fmj"
+  },
+  "Id.Item.762x54mm.ArmorPiercing": {
+   "name": "7.62x54mm Armor Piercing (AP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_7_62x54r_ap.webp",
+   "price": 90,
+   "sub": "7.62x54mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62x54mm-armor-piercing-ap"
+  },
+  "Id.Item.762x54mm.ArmorPiercing.Tracer": {
+   "name": "7.62x54mm Armor Piercing (AP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_7_62x54r_ap.webp",
+   "price": 90,
+   "sub": "7.62x54mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62x54mm-armor-piercing-ap-t"
+  },
+  "Id.Item.762x54mm.HollowPoint": {
+   "name": "7.62x54mm Flesh Damage (HP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_7_62x54r_hp.webp",
+   "price": 55,
+   "sub": "7.62x54mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62x54mm-flesh-damage-hp"
+  },
+  "Id.Item.762x54mm.HollowPoint.Tracer": {
+   "name": "7.62x54mm Flesh Damage (HP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_7_62x54r_hp.webp",
+   "price": 55,
+   "sub": "7.62x54mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62x54mm-flesh-damage-hp-t"
+  },
+  "Id.Item.762x54mm.Tracer": {
+   "name": "7.62x54mm Standard (FMJ) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_7_62x54r_fmj.webp",
+   "price": 30,
+   "sub": "7.62x54mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/7-62x54mm-standard-fmj-t"
+  },
+  "Id.Item.84mm": {
+   "name": "84mm",
+   "icon": "/images/wardogs/database/icons/t_ui_item_84mm_bc.webp",
+   "price": 200,
+   "sub": "Other",
+   "stats": {
+    "weight": 3.5
+   },
+   "href": "/wardogs/database/ammunition/84mm"
+  },
+  "Id.Item.93mm": {
+   "name": "93mm",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_93mm_round_textured_512x512.webp",
+   "price": 200,
+   "sub": "Other",
+   "stats": {
+    "weight": 2.6
+   },
+   "href": "/wardogs/database/ammunition/93mm"
+  },
+  "Id.Item.9mm": {
+   "name": "9mm Standard (FMJ)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_9x19mm_fmj.webp",
+   "price": 10,
+   "sub": "9mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/9mm-standard-fmj"
+  },
+  "Id.Item.9mm.ArmorPiercing": {
+   "name": "9mm Armor Piercing (AP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_9x19mm_ap.webp",
+   "price": 20,
+   "sub": "9mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/9mm-armor-piercing-ap"
+  },
+  "Id.Item.9mm.ArmorPiercing.Tracer": {
+   "name": "9mm Armor Piercing (AP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_9x19mm_ap.webp",
+   "price": 20,
+   "sub": "9mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/9mm-armor-piercing-ap-t"
+  },
+  "Id.Item.9mm.HollowPoint": {
+   "name": "9mm Flesh Damage (HP)",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_9x19mm_hp.webp",
+   "price": 15,
+   "sub": "9mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/9mm-flesh-damage-hp"
+  },
+  "Id.Item.9mm.HollowPoint.Tracer": {
+   "name": "9mm Flesh Damage (HP) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_9x19mm_hp.webp",
+   "price": 15,
+   "sub": "9mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/9mm-flesh-damage-hp-t"
+  },
+  "Id.Item.9mm.Tracer": {
+   "name": "9mm Standard (FMJ) (T)",
+   "icon": "/images/wardogs/database/icons/tracer_t_ui_icon_ammobox_9x19mm_fmj.webp",
+   "price": 10,
+   "sub": "9mm",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/9mm-standard-fmj-t"
+  },
+  "Id.Item.A91": {
+   "name": "A-91",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_004.webp",
+   "price": 0,
+   "sub": "Assault Rifle",
+   "stats": {
+    "weight": 3.17,
+    "damage": 28
+   },
+   "href": "/wardogs/database/weapons/a-91"
+  },
+  "Id.Item.AK74M": {
+   "name": "AK74",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_001v2.webp",
+   "price": 1600,
+   "sub": "Assault Rifle",
+   "stats": {
+    "weight": 3,
+    "damage": 26
+   },
+   "href": "/wardogs/database/weapons/ak74"
+  },
+  "Id.Item.AK74MBarrel": {
+   "name": "AK74 Barrel",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_com_ak_barrel_01_textured_512x512.webp",
+   "price": null,
+   "sub": "Barrels",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak74-barrel"
+  },
+  "Id.Item.AK74MExtendedMagazine": {
+   "name": "AK74 60 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_016.webp",
+   "price": 150,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.93,
+    "capacity": 60
+   },
+   "href": "/wardogs/database/attachments/ak74-60-rnd-magazine"
+  },
+  "Id.Item.AK74MGrip": {
+   "name": "AK74 Grip",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_com_ak_pistol_grip_01_textured_512x512.webp",
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak74-grip"
+  },
+  "Id.Item.AK74MHandguard": {
+   "name": "AK74 Handguard",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_com_ak_handguard_01_textured_512x512.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak74-handguard"
+  },
+  "Id.Item.AK74MMagazine": {
+   "name": "AK74 30 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_001.webp",
+   "price": 35,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.55,
+    "capacity": 30
+   },
+   "href": "/wardogs/database/attachments/ak74-30-rnd-magazine"
+  },
+  "Id.Item.AK74MMagazine75rnd": {
+   "name": "AK74 75 RND Drum Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_015.webp",
+   "price": 200,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 2.08,
+    "capacity": 75
+   },
+   "href": "/wardogs/database/attachments/ak74-75-rnd-drum-magazine"
+  },
+  "Id.Item.AK74MMagazinePlum130rnd": {
+   "name": "AK74-M Extended Mag",
+   "icon": null,
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak74mmagazineplum130rnd"
+  },
+  "Id.Item.AK74MReceiver": {
+   "name": "AK74 Receiver",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_com_ak_receiver_01_textured_512x512.webp",
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak74-receiver"
+  },
+  "Id.Item.AK74MStock": {
+   "name": "AK74 Stock",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_com_ak_stock_01_textured_512x512.webp",
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak74-stock"
+  },
+  "Id.Item.AMMO_01": {
+   "name": "Smoke Shell",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/attachments/smoke-shell"
+  },
+  "Id.Item.ARExtendedMagazine545mm": {
+   "name": "AR Extended Mag",
+   "icon": null,
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/arextendedmagazine545mm"
+  },
+  "Id.Item.ARMR_005": {
+   "name": "Flak Jacket",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Body Armour",
+   "stats": {},
+   "href": "/wardogs/database/armor/flak-jacket"
+  },
+  "Id.Item.AT4": {
+   "name": "AT4",
+   "icon": null,
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/weapons/at4"
+  },
+  "Id.Item.AT4Rocket": {
+   "name": "AT4 Mag",
+   "icon": "/images/wardogs/database/icons/t_ui_item_84mm_bc.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/at4-mag"
+  },
+  "Id.Item.AdrenalinePen": {
+   "name": "Adrenaline Pen",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_adrenaline_512x512.webp",
+   "price": null,
+   "sub": "medical",
+   "stats": {},
+   "href": "/wardogs/database/medical/adrenaline-pen-2"
+  },
+  "Id.Item.AmmoCrate": {
+   "name": "Ammo Crate",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_ammocrate_1_textured_512x512.webp",
+   "price": null,
+   "sub": "deployables",
+   "stats": {},
+   "href": "/wardogs/database/deployables/ammo-crate"
+  },
+  "Id.Item.Arrow": {
+   "name": "Broadhead Arrow",
+   "icon": "/images/wardogs/database/icons/t_ui_magazine_bow_bc.webp",
+   "price": 75,
+   "sub": "Arrows",
+   "stats": {
+    "weight": 0.01
+   },
+   "href": "/wardogs/database/ammunition/broadhead-arrow"
+  },
+  "Id.Item.Arrow.Explosive": {
+   "name": "Rambo Explosive Arrow",
+   "icon": "/images/wardogs/database/icons/t_ui_magazine_bow_bc.webp",
+   "price": 150,
+   "sub": "Arrows",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/rambo-explosive-arrow"
+  },
+  "Id.Item.BARL_004": {
+   "name": "Deagle Barrel",
+   "icon": null,
+   "price": null,
+   "sub": "Barrels",
+   "stats": {},
+   "href": "/wardogs/database/attachments/barl_004"
+  },
+  "Id.Item.BARL_006": {
+   "name": "Galil Barrel",
+   "icon": null,
+   "price": null,
+   "sub": "Barrels",
+   "stats": {},
+   "href": "/wardogs/database/attachments/barl_006"
+  },
+  "Id.Item.BARL_045": {
+   "name": "Scout Rifle Standard Barrel",
+   "icon": null,
+   "price": null,
+   "sub": "Barrels",
+   "stats": {},
+   "href": "/wardogs/database/attachments/barl_045"
+  },
+  "Id.Item.BPAK_005": {
+   "name": "Field Backpack",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_backpack_005.webp",
+   "price": 650,
+   "sub": "storage",
+   "stats": {
+    "weight": 0.88
+   },
+   "href": "/wardogs/database/storage/field-backpack"
+  },
+  "Id.Item.BPAK_006": {
+   "name": "Assault Backpack",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_backpack_008.webp",
+   "price": 1200,
+   "sub": "storage",
+   "stats": {
+    "weight": 1.3
+   },
+   "href": "/wardogs/database/storage/assault-backpack"
+  },
+  "Id.Item.BPAK_007": {
+   "name": "Halftrack Backpack",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_largebackpack_textured_512x512.webp",
+   "price": 15000,
+   "sub": "storage",
+   "stats": {
+    "weight": 2.78
+   },
+   "href": "/wardogs/database/storage/halftrack-backpack"
+  },
+  "Id.Item.Bandage": {
+   "name": "Bandage",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_bandage.webp",
+   "price": 200,
+   "sub": "medical",
+   "stats": {
+    "weight": 0.08
+   },
+   "href": "/wardogs/database/medical/bandage"
+  },
+  "Id.Item.BasicMuzzle": {
+   "name": "Basic Muzzle",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_assaultrifle2_muzzle_textured_512x512.webp",
+   "price": null,
+   "sub": "Muzzles",
+   "stats": {},
+   "href": "/wardogs/database/attachments/basic-muzzle"
+  },
+  "Id.Item.BasicRedDot": {
+   "name": "Compact T-2 Red Dot",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_013.webp",
+   "price": 340,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.13
+   },
+   "href": "/wardogs/database/attachments/compact-t-2-red-dot"
+  },
+  "Id.Item.Battery": {
+   "name": "Battery",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_drill_battery.webp",
+   "price": 150,
+   "sub": "Supplies",
+   "stats": {
+    "weight": 0.63
+   },
+   "href": "/wardogs/database/ammunition/battery"
+  },
+  "Id.Item.BatteryCharge": {
+   "name": "Battery Charge",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_drill_battery.webp",
+   "price": null,
+   "sub": "ammunition",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/battery-charge"
+  },
+  "Id.Item.BrowningMG": {
+   "name": "Browning MG",
+   "icon": null,
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/weapons/browning-mg"
+  },
+  "Id.Item.BuildToolSupply": {
+   "name": "Build Supplies",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_buildtool_supplies_textured_512x512.webp",
+   "price": 10,
+   "sub": "Supplies",
+   "stats": {
+    "weight": 0.02
+   },
+   "href": "/wardogs/database/ammunition/build-supplies"
+  },
+  "Id.Item.C4Explosive": {
+   "name": "C4 Charge",
+   "icon": "/images/wardogs/database/icons/t_ui_item_c4_bc.webp",
+   "price": 250,
+   "sub": "throwables",
+   "stats": {
+    "weight": 0.57
+   },
+   "href": "/wardogs/database/throwables/c4-charge"
+  },
+  "Id.Item.C4Trigger": {
+   "name": "Remote Detonator",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_c4_trigger.webp",
+   "price": 550,
+   "sub": "throwables",
+   "stats": {
+    "weight": 0.02
+   },
+   "href": "/wardogs/database/throwables/remote-detonator"
+  },
+  "Id.Item.CGM4": {
+   "name": "MAAWS",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_013.webp",
+   "price": 2600,
+   "sub": "Launcher",
+   "stats": {
+    "weight": 7,
+    "damage": 100
+   },
+   "href": "/wardogs/database/weapons/maaws"
+  },
+  "Id.Item.CGM4Mag": {
+   "name": "AT4 Mag",
+   "icon": "/images/wardogs/database/icons/t_ui_item_84mm_bc.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/at4-mag-2"
+  },
+  "Id.Item.CantedIrons": {
+   "name": "Canted Irons",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_reddot_textured_512x512.webp",
+   "price": null,
+   "sub": "attachments",
+   "stats": {},
+   "href": "/wardogs/database/attachments/canted-irons"
+  },
+  "Id.Item.Claymore": {
+   "name": "Claymore",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_claymore_512x512.webp",
+   "price": 900,
+   "sub": "deployables",
+   "stats": {
+    "weight": 1.6
+   },
+   "href": "/wardogs/database/deployables/claymore"
+  },
+  "Id.Item.CombatBow": {
+   "name": "Compound Bow",
+   "icon": "/images/wardogs/database/icons/t_ui_weapon_bow_bc.webp",
+   "price": 800,
+   "sub": "Equipment",
+   "stats": {
+    "weight": 1.3,
+    "damage": 77
+   },
+   "href": "/wardogs/database/weapons/compound-bow"
+  },
+  "Id.Item.CombatBowMagazine": {
+   "name": "Combat Bow Standard Mag",
+   "icon": null,
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/combatbowmagazine"
+  },
+  "Id.Item.Crowbar": {
+   "name": "Halligan Bar",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_crowbar.webp",
+   "price": 1100,
+   "sub": "deployables",
+   "stats": {
+    "weight": 2.8
+   },
+   "href": "/wardogs/database/deployables/halligan-bar"
+  },
+  "Id.Item.DCVR_001": {
+   "name": "AK74u Dust Cover",
+   "icon": "/images/wardogs/database/icons/t_ui_dustcover_placeholder.webp",
+   "price": null,
+   "sub": "Dust Covers",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak74u-dust-cover"
+  },
+  "Id.Item.DCVR_002": {
+   "name": "Railed Dust Cover",
+   "icon": "/images/wardogs/database/icons/t_ui_dustcover_placeholder.webp",
+   "price": null,
+   "sub": "Dust Covers",
+   "stats": {},
+   "href": "/wardogs/database/attachments/railed-dust-cover"
+  },
+  "Id.Item.DCVR_003": {
+   "name": "RPK74 Dust Cover",
+   "icon": "/images/wardogs/database/icons/t_ui_dustcover_placeholder.webp",
+   "price": null,
+   "sub": "Dust Covers",
+   "stats": {},
+   "href": "/wardogs/database/attachments/rpk74-dust-cover"
+  },
+  "Id.Item.Defibrillator.Standard": {
+   "name": "Defibrillator",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_defib_512x512.webp",
+   "price": 1600,
+   "sub": "medical",
+   "stats": {
+    "weight": 2.6
+   },
+   "href": "/wardogs/database/medical/defibrillator"
+  },
+  "Id.Item.DroneProjectile": {
+   "name": "Stringray",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_84heat_round_textured_512x512.webp",
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/ammunition/stringray"
+  },
+  "Id.Item.EotechHoloSight": {
+   "name": "Holographic Sight",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_005.webp",
+   "price": 620,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.25
+   },
+   "href": "/wardogs/database/attachments/holographic-sight"
+  },
+  "Id.Item.ExtraLargeSlingBackpack": {
+   "name": "Arsenal Backpack + 2 Slings",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_backpack_007.webp",
+   "price": 5000,
+   "sub": "storage",
+   "stats": {
+    "weight": 1.5
+   },
+   "href": "/wardogs/database/storage/arsenal-backpack-2-slings"
+  },
+  "Id.Item.FGP_02": {
+   "name": "TDG Vertical Foregrip",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_002.webp",
+   "price": 1000,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.13
+   },
+   "href": "/wardogs/database/attachments/tdg-vertical-foregrip"
+  },
+  "Id.Item.FGP_03": {
+   "name": "AFG Angled Foregrip",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_003.webp",
+   "price": 820,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.08
+   },
+   "href": "/wardogs/database/attachments/afg-angled-foregrip"
+  },
+  "Id.Item.FGP_04": {
+   "name": "Hybrid Grip Pod",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_004.webp",
+   "price": 1500,
+   "sub": "Other",
+   "stats": {
+    "weight": 0.26
+   },
+   "href": "/wardogs/database/attachments/hybrid-grip-pod"
+  },
+  "Id.Item.FGRP_006": {
+   "name": "RVG Vertical Foregrip",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_006.webp",
+   "price": 770,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.12
+   },
+   "href": "/wardogs/database/attachments/rvg-vertical-foregrip"
+  },
+  "Id.Item.FGRP_007": {
+   "name": "Shift Foregrip",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_007.webp",
+   "price": 1150,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.12
+   },
+   "href": "/wardogs/database/attachments/shift-foregrip"
+  },
+  "Id.Item.FGRP_008": {
+   "name": "PKM Bipod",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_008.webp",
+   "price": 1350,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.7
+   },
+   "href": "/wardogs/database/attachments/pkm-bipod"
+  },
+  "Id.Item.FGRP_009": {
+   "name": "SV98 Bipod",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_009.webp",
+   "price": 1250,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.47
+   },
+   "href": "/wardogs/database/attachments/sv98-bipod"
+  },
+  "Id.Item.FGRP_010": {
+   "name": "SKS Bipod",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_008.webp",
+   "price": 800,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.47
+   },
+   "href": "/wardogs/database/attachments/sks-bipod"
+  },
+  "Id.Item.FGRP_011": {
+   "name": "SVD Bipod",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_008.webp",
+   "price": 1120,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.5
+   },
+   "href": "/wardogs/database/attachments/svd-bipod"
+  },
+  "Id.Item.FGRP_012": {
+   "name": "M249 Bipod",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_008.webp",
+   "price": 1050,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.7
+   },
+   "href": "/wardogs/database/attachments/m249-bipod"
+  },
+  "Id.Item.FGRP_013": {
+   "name": "Pro Tilt Bipod",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_009.webp",
+   "price": 1400,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.55
+   },
+   "href": "/wardogs/database/attachments/pro-tilt-bipod"
+  },
+  "Id.Item.FGRP_014": {
+   "name": "CQR Tactical Front Rail Grip",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_014.webp",
+   "price": 1100,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.15
+   },
+   "href": "/wardogs/database/attachments/cqr-tactical-front-rail-grip"
+  },
+  "Id.Item.FGRP_015": {
+   "name": "Rubberized Ergonomic Foregrip",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_015.webp",
+   "price": 540,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.11
+   },
+   "href": "/wardogs/database/attachments/rubberized-ergonomic-foregrip"
+  },
+  "Id.Item.FGRP_016": {
+   "name": "45\u00b0 Angled Foregrip",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_016.webp",
+   "price": 680,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.09
+   },
+   "href": "/wardogs/database/attachments/45-angled-foregrip"
+  },
+  "Id.Item.FGRP_017": {
+   "name": "Angled Tactical Foregrip",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_006.webp",
+   "price": 650,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.11
+   },
+   "href": "/wardogs/database/attachments/angled-tactical-foregrip"
+  },
+  "Id.Item.FGRP_018": {
+   "name": "Mini Angled Foregrip",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_018.webp",
+   "price": 720,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 0.08
+   },
+   "href": "/wardogs/database/attachments/mini-angled-foregrip"
+  },
+  "Id.Item.FOB": {
+   "name": "Forward Operating Base",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_fob_textured_512x512_temp.webp",
+   "price": 2500,
+   "sub": "deployables",
+   "stats": {
+    "weight": 6.5
+   },
+   "href": "/wardogs/database/deployables/forward-operating-base"
+  },
+  "Id.Item.Fists": {
+   "name": "Fists",
+   "icon": "/images/wardogs/database/icons/wz-fists.webp",
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/weapons/fists"
+  },
+  "Id.Item.Flares": {
+   "name": "Flares",
+   "icon": null,
+   "price": 750,
+   "sub": "Countermeasures",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/flares"
+  },
+  "Id.Item.FuelCan": {
+   "name": "Fuel Can",
+   "icon": "/images/wardogs/database/icons/t_ui_item_fuelcan_bc.webp",
+   "price": 150,
+   "sub": "Logistics",
+   "stats": {
+    "weight": 5
+   },
+   "href": "/wardogs/database/equipment/fuel-can"
+  },
+  "Id.Item.FuelSupplies": {
+   "name": "Fuel Supplies",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_fuel_supplies_textured_512x512.webp",
+   "price": 10,
+   "sub": "Supplies",
+   "stats": {
+    "weight": 0.03
+   },
+   "href": "/wardogs/database/ammunition/fuel-supplies"
+  },
+  "Id.Item.G60ExtendedMagazine": {
+   "name": "G60 Extended Magazine",
+   "icon": "/images/wardogs/database/icons/t_icon_pistolmag.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/g60-extended-magazine"
+  },
+  "Id.Item.G60Magazine": {
+   "name": "G60 Magazine",
+   "icon": "/images/wardogs/database/icons/t_icon_pistolmag.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/g60-magazine"
+  },
+  "Id.Item.GhillieArmor": {
+   "name": "Ghillie Body Suit",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ghillie_body_bc.webp",
+   "price": 3000,
+   "sub": "Body Armour",
+   "stats": {
+    "weight": 1.5
+   },
+   "href": "/wardogs/database/armor/ghillie-body-suit"
+  },
+  "Id.Item.GhillieArmor.Dead": {
+   "name": "Ghillie Body Suit (Dead)",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_ghilliebody__dead.webp",
+   "price": 3500,
+   "sub": "Body Armour",
+   "stats": {
+    "weight": 1.5
+   },
+   "href": "/wardogs/database/armor/ghillie-body-suit-dead"
+  },
+  "Id.Item.GhillieHelmet": {
+   "name": "Ghillie Headwear",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ghillie_helmet_bc.webp",
+   "price": 2500,
+   "sub": "Helmets",
+   "stats": {},
+   "href": "/wardogs/database/armor/ghillie-headwear"
+  },
+  "Id.Item.GhillieHelmet.Dead": {
+   "name": "Ghillie Headwear (Dead)",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_ghillie_dead.webp",
+   "price": 2800,
+   "sub": "Helmets",
+   "stats": {},
+   "href": "/wardogs/database/armor/ghillie-headwear-dead"
+  },
+  "Id.Item.Glock17": {
+   "name": "GGX 17",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_010.webp",
+   "price": 200,
+   "sub": "Pistol",
+   "stats": {
+    "weight": 0.63,
+    "damage": 22
+   },
+   "href": "/wardogs/database/weapons/ggx-17"
+  },
+  "Id.Item.Glock17ExtendedMagazine": {
+   "name": "Glock 17 Extended Magazine",
+   "icon": "/images/wardogs/database/icons/t_icon_pistolmag.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/glock-17-extended-magazine"
+  },
+  "Id.Item.Glock17Magazine": {
+   "name": "GGX 17 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_cheap_magazine_9mm_textured_512x512.webp",
+   "price": 30,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.28,
+    "capacity": 17
+   },
+   "href": "/wardogs/database/attachments/ggx-17-rnd-magazine"
+  },
+  "Id.Item.GoldM67Grenade": {
+   "name": "Gold Frag Grenade",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_gold_grenade.webp",
+   "price": null,
+   "sub": "throwables",
+   "stats": {},
+   "href": "/wardogs/database/throwables/gold-frag-grenade"
+  },
+  "Id.Item.HELM_005": {
+   "name": "Level 4 Helmet",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Helmets",
+   "stats": {},
+   "href": "/wardogs/database/armor/level-4-helmet-2"
+  },
+  "Id.Item.HNDG_003": {
+   "name": "MP5 Handguard",
+   "icon": null,
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/hndg_003"
+  },
+  "Id.Item.HNDG_005": {
+   "name": "Polymer Handguard",
+   "icon": "/images/wardogs/database/icons/t_ui_handguard_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/polymer-handguard"
+  },
+  "Id.Item.HNDG_006": {
+   "name": "Wooden Dong Grip",
+   "icon": "/images/wardogs/database/icons/t_ui_handguard_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/wooden-dong-grip"
+  },
+  "Id.Item.HNDG_007": {
+   "name": "Sharkfin Dong Grip",
+   "icon": "/images/wardogs/database/icons/t_ui_handguard_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/sharkfin-dong-grip"
+  },
+  "Id.Item.HNDG_008": {
+   "name": "AK74u Wooden Handguard",
+   "icon": "/images/wardogs/database/icons/t_ui_stock_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak74u-wooden-handguard"
+  },
+  "Id.Item.HNDG_009": {
+   "name": "AK74u Polymer Handguard",
+   "icon": "/images/wardogs/database/icons/t_ui_handguard_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak74u-polymer-handguard"
+  },
+  "Id.Item.HNDG_010": {
+   "name": "Archangel OPFOR Forend",
+   "icon": "/images/wardogs/database/icons/t_ui_handguard_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/archangel-opfor-forend"
+  },
+  "Id.Item.HNDG_011": {
+   "name": "RPK74 Wooden Handguard",
+   "icon": "/images/wardogs/database/icons/t_ui_handguard_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/rpk74-wooden-handguard"
+  },
+  "Id.Item.HNDG_012": {
+   "name": "RPK74 Polymer Handguard",
+   "icon": "/images/wardogs/database/icons/t_ui_handguard_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/rpk74-polymer-handguard"
+  },
+  "Id.Item.HNDG_013": {
+   "name": "M-LOK Dong Grip",
+   "icon": "/images/wardogs/database/icons/t_ui_handguard_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/m-lok-dong-grip"
+  },
+  "Id.Item.HNDG_014": {
+   "name": "MI Universal Handguard",
+   "icon": "/images/wardogs/database/icons/t_ui_handguard_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mi-universal-handguard"
+  },
+  "Id.Item.HNDG_015": {
+   "name": "TI Battlerail",
+   "icon": "/images/wardogs/database/icons/t_ui_handguard_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ti-battlerail"
+  },
+  "Id.Item.HNDG_016": {
+   "name": "ZenitCo B-13 Side Mount",
+   "icon": "/images/wardogs/database/icons/t_ui_handguard_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/zenitco-b-13-side-mount"
+  },
+  "Id.Item.HeavyArmor": {
+   "name": "Level 3 Armor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_armor_003a.webp",
+   "price": 2000,
+   "sub": "Body Armour",
+   "stats": {
+    "weight": 10.5
+   },
+   "href": "/wardogs/database/armor/level-3-armor"
+  },
+  "Id.Item.HeavyHelmet": {
+   "name": "Level 3 Helmet",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_helmet_003a.webp",
+   "price": 1500,
+   "sub": "Helmets",
+   "stats": {
+    "weight": 3
+   },
+   "href": "/wardogs/database/armor/level-3-helmet"
+  },
+  "Id.Item.HybridScope4x": {
+   "name": "4X Hybrid",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_4x_optic_textured_512x512.webp",
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/attachments/4x-hybrid"
+  },
+  "Id.Item.IED.Explosive": {
+   "name": "Improvised Explosive Device",
+   "icon": "/images/wardogs/database/icons/t_ui_item_c4_bc.webp",
+   "price": null,
+   "sub": "throwables",
+   "stats": {
+    "weight": 1.5
+   },
+   "href": "/wardogs/database/throwables/improvised-explosive-device-2"
+  },
+  "Id.Item.IED.Trigger": {
+   "name": "Improvised Explosive Device",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_ied2.webp",
+   "price": 300,
+   "sub": "throwables",
+   "stats": {
+    "weight": 1.5
+   },
+   "href": "/wardogs/database/throwables/improvised-explosive-device"
+  },
+  "Id.Item.Judge": {
+   "name": "Judge",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_020.webp",
+   "price": 250,
+   "sub": "Pistol",
+   "stats": {
+    "weight": 0.82,
+    "damage": 45
+   },
+   "href": "/wardogs/database/weapons/judge"
+  },
+  "Id.Item.JudgeMagazine": {
+   "name": "Judge Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_ammobox_45-colt_fmj.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/judge-magazine"
+  },
+  "Id.Item.KH2002": {
+   "name": "KH-2002",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_003.webp",
+   "price": 0,
+   "sub": "Assault Rifle",
+   "stats": {
+    "weight": 3.17,
+    "damage": 28
+   },
+   "href": "/wardogs/database/weapons/kh-2002"
+  },
+  "Id.Item.KH2002ExtendedMagazine": {
+   "name": "STANAG Extended Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_cheap_magazine_556_textured_512x512.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/stanag-extended-magazine"
+  },
+  "Id.Item.KeyCard.Alpha.1": {
+   "name": "Alpha Card #1",
+   "icon": "/images/wardogs/database/icons/wz-keycard-alpha-1.webp",
+   "price": null,
+   "sub": "Keycards",
+   "stats": {},
+   "href": "/wardogs/database/keycards/keycard-alpha-1"
+  },
+  "Id.Item.KeyCard.Alpha.2": {
+   "name": "Alpha Card #2",
+   "icon": "/images/wardogs/database/icons/wz-keycard-alpha-2.webp",
+   "price": null,
+   "sub": "Keycards",
+   "stats": {},
+   "href": "/wardogs/database/keycards/keycard-alpha-2"
+  },
+  "Id.Item.KeyCard.Bravo.1": {
+   "name": "Bravo Card #1",
+   "icon": "/images/wardogs/database/icons/wz-keycard-bravo-1.webp",
+   "price": null,
+   "sub": "Keycards",
+   "stats": {},
+   "href": "/wardogs/database/keycards/keycard-bravo-1"
+  },
+  "Id.Item.KeyCard.Bravo.2": {
+   "name": "Bravo Card #2",
+   "icon": "/images/wardogs/database/icons/wz-keycard-bravo-2.webp",
+   "price": null,
+   "sub": "Keycards",
+   "stats": {},
+   "href": "/wardogs/database/keycards/keycard-bravo-2"
+  },
+  "Id.Item.KeyCard.Charlie.1": {
+   "name": "Charlie Card #1",
+   "icon": "/images/wardogs/database/icons/wz-keycard-charlie-1.webp",
+   "price": null,
+   "sub": "Keycards",
+   "stats": {},
+   "href": "/wardogs/database/keycards/keycard-charlie-1"
+  },
+  "Id.Item.KeyCard.Charlie.2": {
+   "name": "Charlie Card #2",
+   "icon": "/images/wardogs/database/icons/wz-keycard-charlie-2.webp",
+   "price": null,
+   "sub": "Keycards",
+   "stats": {},
+   "href": "/wardogs/database/keycards/keycard-charlie-2"
+  },
+  "Id.Item.LMG_02": {
+   "name": "PKM",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_019.webp",
+   "price": 4500,
+   "sub": "Light Machine Gun",
+   "stats": {
+    "weight": 7.5,
+    "damage": 55
+   },
+   "href": "/wardogs/database/weapons/pkm"
+  },
+  "Id.Item.LMG_02Magazine": {
+   "name": "PKM 100 RND Box",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_lmg.webp",
+   "price": 100,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 3.9,
+    "capacity": 100
+   },
+   "href": "/wardogs/database/attachments/pkm-100-rnd-box"
+  },
+  "Id.Item.LargeBackpack": {
+   "name": "Ruck Backpack",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_largebackpack.webp",
+   "price": 2400,
+   "sub": "storage",
+   "stats": {
+    "weight": 1.5
+   },
+   "href": "/wardogs/database/storage/ruck-backpack"
+  },
+  "Id.Item.LargeBattery": {
+   "name": "High Capacity Battery",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_drill_batterylarge.webp",
+   "price": 300,
+   "sub": "Supplies",
+   "stats": {
+    "weight": 2
+   },
+   "href": "/wardogs/database/ammunition/high-capacity-battery"
+  },
+  "Id.Item.LargeSlingBackpack": {
+   "name": "Gunner Backpack + Sling",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_backpack_006.webp",
+   "price": 3500,
+   "sub": "storage",
+   "stats": {
+    "weight": 1.5
+   },
+   "href": "/wardogs/database/storage/gunner-backpack-sling"
+  },
+  "Id.Item.LargeTacVest": {
+   "name": "Large Tac Vest",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_largewebbing_textured_512x512.webp",
+   "price": 400,
+   "sub": "storage",
+   "stats": {
+    "weight": 3.6
+   },
+   "href": "/wardogs/database/storage/large-tac-vest"
+  },
+  "Id.Item.Launcher_04": {
+   "name": "9K333 Verba",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_025.webp",
+   "price": 800,
+   "sub": "Launcher",
+   "stats": {
+    "weight": 17.25,
+    "damage": 200
+   },
+   "href": "/wardogs/database/weapons/9k333-verba"
+  },
+  "Id.Item.Launcher_04Magazine": {
+   "name": "Launcher_04 Standard Mag",
+   "icon": null,
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/launcher_04magazine"
+  },
+  "Id.Item.LeapordBarrel": {
+   "name": "Leapord Barrel Test",
+   "icon": "/images/wardogs/database/icons/t_ui_weapon_cgm4_bc.webp",
+   "price": 0,
+   "sub": "Other",
+   "stats": {
+    "weight": 50,
+    "damage": 150
+   },
+   "href": "/wardogs/database/weapons/leapord-barrel-test"
+  },
+  "Id.Item.LightArmor": {
+   "name": "Level 1 Armor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_armor_001a.webp",
+   "price": 400,
+   "sub": "Body Armour",
+   "stats": {
+    "weight": 3
+   },
+   "href": "/wardogs/database/armor/level-1-armor"
+  },
+  "Id.Item.LightHelmet": {
+   "name": "Level 1 Helmet",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_helmet_001a.webp",
+   "price": 200,
+   "sub": "Helmets",
+   "stats": {},
+   "href": "/wardogs/database/armor/level-1-helmet"
+  },
+  "Id.Item.M12G": {
+   "name": "M12G",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_weapon_m12g_textured_512x256.webp",
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/weapons/m12g"
+  },
+  "Id.Item.M12GMagazine": {
+   "name": "M12G Internal Magazine",
+   "icon": null,
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/m12g-internal-magazine"
+  },
+  "Id.Item.M249": {
+   "name": "M249 SAW",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_009.webp",
+   "price": 3200,
+   "sub": "Light Machine Gun",
+   "stats": {
+    "weight": 7.5,
+    "damage": 28
+   },
+   "href": "/wardogs/database/weapons/m249-saw"
+  },
+  "Id.Item.M249Magazine": {
+   "name": "M249 200 RND Box",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_038.webp",
+   "price": 250,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 3.14,
+    "capacity": 200
+   },
+   "href": "/wardogs/database/attachments/m249-200-rnd-box"
+  },
+  "Id.Item.M4": {
+   "name": "M4",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_002.webp",
+   "price": 2800,
+   "sub": "Assault Rifle",
+   "stats": {
+    "weight": 2.92,
+    "damage": 28
+   },
+   "href": "/wardogs/database/weapons/m4"
+  },
+  "Id.Item.M4Barrel": {
+   "name": "M4 Barrel",
+   "icon": "/images/wardogs/database/icons/t_ui_barrel_placeholder.webp",
+   "price": null,
+   "sub": "Barrels",
+   "stats": {},
+   "href": "/wardogs/database/attachments/m4-barrel"
+  },
+  "Id.Item.M4ExtendedMagazine": {
+   "name": "M4 Extended Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_ak_magazine_bullets_textured_512x512.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/m4-extended-magazine"
+  },
+  "Id.Item.M4Handguard": {
+   "name": "M4 Handguard",
+   "icon": "/images/wardogs/database/icons/t_ui_handguard_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/m4-handguard"
+  },
+  "Id.Item.M4Magazine": {
+   "name": "STANAG 30 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_stanag.webp",
+   "price": 10,
+   "sub": "Magazines",
+   "stats": {
+    "capacity": 30
+   },
+   "href": "/wardogs/database/attachments/stanag-30-rnd-magazine-4"
+  },
+  "Id.Item.M4PistolGrip": {
+   "name": "M4 Pistol Grip",
+   "icon": "/images/wardogs/database/icons/t_ui_grip_placeholder.webp",
+   "price": null,
+   "sub": "Pistol Grips",
+   "stats": {},
+   "href": "/wardogs/database/attachments/m4-pistol-grip"
+  },
+  "Id.Item.M4Stock": {
+   "name": "M4 Stock",
+   "icon": "/images/wardogs/database/icons/t_ui_stock_placeholder.webp",
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/m4-stock"
+  },
+  "Id.Item.M500": {
+   "name": "M500",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_011.webp",
+   "price": 1200,
+   "sub": "Shotgun",
+   "stats": {
+    "weight": 3.52,
+    "damage": 25
+   },
+   "href": "/wardogs/database/weapons/m500"
+  },
+  "Id.Item.M500Magazine": {
+   "name": "M500 Internal Mag",
+   "icon": null,
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/m500magazine"
+  },
+  "Id.Item.M67Grenade": {
+   "name": "M67 Frag Grenade",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_grenade2.webp",
+   "price": 200,
+   "sub": "throwables",
+   "stats": {
+    "weight": 0.4
+   },
+   "href": "/wardogs/database/throwables/m67-frag-grenade"
+  },
+  "Id.Item.MAGZ_002": {
+   "name": "M1911 7 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_002.webp",
+   "price": 20,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.22,
+    "capacity": 7
+   },
+   "href": "/wardogs/database/attachments/m1911-7-rnd-magazine"
+  },
+  "Id.Item.MAGZ_004": {
+   "name": "MP5 30 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_004.webp",
+   "price": 100,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.51,
+    "capacity": 30
+   },
+   "href": "/wardogs/database/attachments/mp5-30-rnd-magazine"
+  },
+  "Id.Item.MAGZ_005": {
+   "name": "Galil 35 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_005.webp",
+   "price": 60,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.71,
+    "capacity": 35
+   },
+   "href": "/wardogs/database/attachments/galil-35-rnd-magazine"
+  },
+  "Id.Item.MAGZ_006": {
+   "name": "FAL 20 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_006.webp",
+   "price": 150,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.76,
+    "capacity": 20
+   },
+   "href": "/wardogs/database/attachments/fal-20-rnd-magazine"
+  },
+  "Id.Item.MAGZ_011": {
+   "name": "GGX 50 RND Drum Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_011.webp",
+   "price": 110,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 1.46,
+    "capacity": 50
+   },
+   "href": "/wardogs/database/attachments/ggx-50-rnd-drum-magazine"
+  },
+  "Id.Item.MAGZ_012": {
+   "name": "GGX 33 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_magz_012.webp",
+   "price": 70,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.52,
+    "capacity": 33
+   },
+   "href": "/wardogs/database/attachments/ggx-33-rnd-magazine"
+  },
+  "Id.Item.MAGZ_013": {
+   "name": "Glock Extended 27RD",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/glock-extended-27rd"
+  },
+  "Id.Item.MAGZ_014": {
+   "name": "AK74N EXTENDED MAG 120RD",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak74n-extended-mag-120rd"
+  },
+  "Id.Item.MAGZ_016": {
+   "name": "AK74N EXTENDED MAG 60RD",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak74n-extended-mag-60rd"
+  },
+  "Id.Item.MAGZ_017": {
+   "name": "AK47N EXTENDED MAG 45RD",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak47n-extended-mag-45rd"
+  },
+  "Id.Item.MAGZ_018": {
+   "name": "HOMEMADE 50RD DRUM MAG",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/homemade-50rd-drum-mag"
+  },
+  "Id.Item.MAGZ_019": {
+   "name": "MP9 Extended Mag 30RD",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mp9-extended-mag-30rd"
+  },
+  "Id.Item.MAGZ_020": {
+   "name": "MAGPUL D60",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/magpul-d60"
+  },
+  "Id.Item.MAGZ_021": {
+   "name": "SKS EXTENDED MAG 40RD",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/sks-extended-mag-40rd"
+  },
+  "Id.Item.MAGZ_022": {
+   "name": "SKS EXTENDED MAG 30RD",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/sks-extended-mag-30rd"
+  },
+  "Id.Item.MAGZ_023": {
+   "name": "SKS EXT MAG 20RD",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/sks-ext-mag-20rd"
+  },
+  "Id.Item.MAGZ_024": {
+   "name": "FAL 30 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_024.webp",
+   "price": 250,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 1.09,
+    "capacity": 30
+   },
+   "href": "/wardogs/database/attachments/fal-30-rnd-magazine"
+  },
+  "Id.Item.MAGZ_025": {
+   "name": "SVD MAG 20RD",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/svd-mag-20rd"
+  },
+  "Id.Item.MAGZ_026": {
+   "name": "AMR 50 10 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_026.webp",
+   "price": 30,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 2.2,
+    "capacity": 10
+   },
+   "href": "/wardogs/database/attachments/amr-50-10-rnd-magazine"
+  },
+  "Id.Item.MAGZ_027": {
+   "name": "MOSIN 20RD Extended",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mosin-20rd-extended"
+  },
+  "Id.Item.MAGZ_028": {
+   "name": "MOSIN 10RD Extended",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mosin-10rd-extended"
+  },
+  "Id.Item.MAGZ_029": {
+   "name": "MOSIN Stripper Clip",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mosin-stripper-clip"
+  },
+  "Id.Item.MAGZ_030": {
+   "name": "SV98 20RD MAG",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/sv98-20rd-mag"
+  },
+  "Id.Item.MAGZ_031": {
+   "name": "SAW-MAG 150 RD TWIN DRUM",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/saw-mag-150-rd-twin-drum"
+  },
+  "Id.Item.MAGZ_032": {
+   "name": "RFB 20RD MAGPUL",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/rfb-20rd-magpul"
+  },
+  "Id.Item.MAGZ_033": {
+   "name": "MK22 10RD",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mk22-10rd"
+  },
+  "Id.Item.MAGZ_034": {
+   "name": "MK22 5 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_034.webp",
+   "price": 30,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.38,
+    "capacity": 5
+   },
+   "href": "/wardogs/database/attachments/mk22-5-rnd-magazine"
+  },
+  "Id.Item.MAGZ_035": {
+   "name": "MOSS EXT MAG",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/moss-ext-mag"
+  },
+  "Id.Item.MAGZ_036": {
+   "name": "9RD SHELL",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/9rd-shell"
+  },
+  "Id.Item.MAGZ_037": {
+   "name": "SUREFIRE 60 RD",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/surefire-60-rd"
+  },
+  "Id.Item.MAGZ_046": {
+   "name": "PP-19 50 RND Vityaz Drum Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_046.webp",
+   "price": 200,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 1.3,
+    "capacity": 50
+   },
+   "href": "/wardogs/database/attachments/pp-19-50-rnd-vityaz-drum-magazine"
+  },
+  "Id.Item.MAGZ_052": {
+   "name": "AMP-9 20 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_052.webp",
+   "price": 70,
+   "sub": "Magazines",
+   "stats": {
+    "capacity": 20
+   },
+   "href": "/wardogs/database/attachments/amp-9-20-rnd-magazine"
+  },
+  "Id.Item.MAGZ_055": {
+   "name": "Super-45 40 RND Drum Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_055.webp",
+   "price": 280,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 1.59,
+    "capacity": 40
+   },
+   "href": "/wardogs/database/attachments/super-45-40-rnd-drum-magazine"
+  },
+  "Id.Item.MAGZ_056": {
+   "name": "MP5 50 RND Drum Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_056.webp",
+   "price": 230,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 1.49,
+    "capacity": 50
+   },
+   "href": "/wardogs/database/attachments/mp5-50-rnd-drum-magazine"
+  },
+  "Id.Item.MAGZ_057": {
+   "name": "Super-45 13 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_057.webp",
+   "price": 30,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.23,
+    "capacity": 13
+   },
+   "href": "/wardogs/database/attachments/super-45-13-rnd-magazine"
+  },
+  "Id.Item.MAGZ_059": {
+   "name": "PP-19 Vityaz 10 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_059.webp",
+   "price": 25,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.2,
+    "capacity": 10
+   },
+   "href": "/wardogs/database/attachments/pp-19-vityaz-10-rnd-magazine"
+  },
+  "Id.Item.MAGZ_060": {
+   "name": "Galil 50 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_060.webp",
+   "price": 110,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 1.16,
+    "capacity": 50
+   },
+   "href": "/wardogs/database/attachments/galil-50-rnd-magazine"
+  },
+  "Id.Item.MAGZ_061": {
+   "name": "AMP-9 15 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_061.webp",
+   "price": 30,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.25,
+    "capacity": 15
+   },
+   "href": "/wardogs/database/attachments/amp-9-15-rnd-magazine"
+  },
+  "Id.Item.MAGZ_062": {
+   "name": "M249 100 RND Fabric Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_062.webp",
+   "price": 200,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 1.62,
+    "capacity": 100
+   },
+   "href": "/wardogs/database/attachments/m249-100-rnd-fabric-magazine"
+  },
+  "Id.Item.MAGZ_063": {
+   "name": "M1911 10 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_063.webp",
+   "price": 35,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.38,
+    "capacity": 10
+   },
+   "href": "/wardogs/database/attachments/m1911-10-rnd-magazine"
+  },
+  "Id.Item.MAGZ_064": {
+   "name": "MP5 20 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_064.webp",
+   "price": 70,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.35,
+    "capacity": 20
+   },
+   "href": "/wardogs/database/attachments/mp5-20-rnd-magazine"
+  },
+  "Id.Item.MAGZ_065": {
+   "name": "SVD 5 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_svdm.webp",
+   "price": 20,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.23,
+    "capacity": 5
+   },
+   "href": "/wardogs/database/attachments/svd-5-rnd-magazine"
+  },
+  "Id.Item.MAGZ_066": {
+   "name": "AMP-9 50 RND Drum Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_066.webp",
+   "price": 180,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 1.46,
+    "capacity": 50
+   },
+   "href": "/wardogs/database/attachments/amp-9-50-rnd-drum-magazine"
+  },
+  "Id.Item.MK22": {
+   "name": "MK22",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_018.webp",
+   "price": 6400,
+   "sub": "Sniper Rifle",
+   "stats": {
+    "weight": 6.3,
+    "damage": 60
+   },
+   "href": "/wardogs/database/weapons/mk22"
+  },
+  "Id.Item.MK22Mag": {
+   "name": "MK22 10 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_mk22.webp",
+   "price": 60,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.45,
+    "capacity": 10
+   },
+   "href": "/wardogs/database/attachments/mk22-10-rnd-magazine"
+  },
+  "Id.Item.MMGL": {
+   "name": "MGL-40",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_012.webp",
+   "price": 6000,
+   "sub": "Launcher",
+   "stats": {
+    "weight": 5.3,
+    "damage": 100
+   },
+   "href": "/wardogs/database/weapons/mgl-40"
+  },
+  "Id.Item.MMGLBarrel": {
+   "name": "MMGL Barrel",
+   "icon": "/images/wardogs/database/icons/t_ui_barrel_placeholder.webp",
+   "price": null,
+   "sub": "Barrels",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mmgl-barrel-2"
+  },
+  "Id.Item.MMGLHandguard": {
+   "name": "MMGL Handguard",
+   "icon": "/images/wardogs/database/icons/t_ui_handguard_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mmgl-handguard"
+  },
+  "Id.Item.MMGLMagazine": {
+   "name": "MMGL Internal Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_sks_magazine_bullet_textured_512x512.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mmgl-internal-magazine"
+  },
+  "Id.Item.MMGLPistolGrip": {
+   "name": "MMGL Pistol Grip",
+   "icon": "/images/wardogs/database/icons/t_ui_grip_placeholder.webp",
+   "price": null,
+   "sub": "Pistol Grips",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mmgl-pistol-grip"
+  },
+  "Id.Item.MMGLStock": {
+   "name": "MMGL Stock",
+   "icon": "/images/wardogs/database/icons/t_ui_stock_placeholder.webp",
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mmgl-stock"
+  },
+  "Id.Item.MP43": {
+   "name": "MP43",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_021.webp",
+   "price": 400,
+   "sub": "Shotgun",
+   "stats": {
+    "weight": 3.2,
+    "damage": 25
+   },
+   "href": "/wardogs/database/weapons/mp43"
+  },
+  "Id.Item.MP43Magazine": {
+   "name": "MP43 Internal Mag",
+   "icon": null,
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mp43magazine"
+  },
+  "Id.Item.MP9": {
+   "name": "AMP-9",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_014.webp",
+   "price": 900,
+   "sub": "Submachine Gun",
+   "stats": {
+    "weight": 1.4,
+    "damage": 22
+   },
+   "href": "/wardogs/database/weapons/amp-9"
+  },
+  "Id.Item.MP9ExtendedMagazine": {
+   "name": "MP9 Extended Magazine",
+   "icon": "/images/wardogs/database/icons/t_icon_smgmag.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mp9-extended-magazine"
+  },
+  "Id.Item.MP9Magazine": {
+   "name": "AMP-9 30 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_043.webp",
+   "price": 100,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.48,
+    "capacity": 30
+   },
+   "href": "/wardogs/database/attachments/amp-9-30-rnd-magazine"
+  },
+  "Id.Item.MUZL_013": {
+   "name": "3 Prong Flash Hider",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_mzl_013.webp",
+   "price": 1000,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.09
+   },
+   "href": "/wardogs/database/attachments/3-prong-flash-hider"
+  },
+  "Id.Item.MUZL_014": {
+   "name": "TopComp Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_014.webp",
+   "price": 770,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.1
+   },
+   "href": "/wardogs/database/attachments/topcomp-brake"
+  },
+  "Id.Item.MUZL_019": {
+   "name": "Dual Port Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_019.webp",
+   "price": 720,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.1
+   },
+   "href": "/wardogs/database/attachments/dual-port-brake"
+  },
+  "Id.Item.MUZL_020": {
+   "name": "Ballista Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_020.webp",
+   "price": 380,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.09
+   },
+   "href": "/wardogs/database/attachments/ballista-brake"
+  },
+  "Id.Item.MUZL_022": {
+   "name": "Constrictor Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_022.webp",
+   "price": 760,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.14
+   },
+   "href": "/wardogs/database/attachments/constrictor-brake"
+  },
+  "Id.Item.MUZL_023": {
+   "name": "Tread Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_023.webp",
+   "price": 620,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.1
+   },
+   "href": "/wardogs/database/attachments/tread-brake"
+  },
+  "Id.Item.MUZL_024": {
+   "name": "Hexagon Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_024.webp",
+   "price": 350,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.15
+   },
+   "href": "/wardogs/database/attachments/hexagon-brake"
+  },
+  "Id.Item.MUZL_025": {
+   "name": "Slicktap Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_025.webp",
+   "price": 940,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.14
+   },
+   "href": "/wardogs/database/attachments/slicktap-brake"
+  },
+  "Id.Item.MUZL_027": {
+   "name": "3-Chamber Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_027.webp",
+   "price": 1080,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.12
+   },
+   "href": "/wardogs/database/attachments/3-chamber-brake"
+  },
+  "Id.Item.MUZL_028": {
+   "name": "DTK-1 Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_028.webp",
+   "price": 820,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.18
+   },
+   "href": "/wardogs/database/attachments/dtk-1-brake"
+  },
+  "Id.Item.MUZL_029": {
+   "name": "Orpheus Max Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_029.webp",
+   "price": 1020,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.16
+   },
+   "href": "/wardogs/database/attachments/orpheus-max-brake"
+  },
+  "Id.Item.MUZL_030": {
+   "name": "Three Port Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_030.webp",
+   "price": 1180,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.12
+   },
+   "href": "/wardogs/database/attachments/three-port-brake"
+  },
+  "Id.Item.MUZL_031": {
+   "name": "M500 Sabre Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_031.webp",
+   "price": 740,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.14
+   },
+   "href": "/wardogs/database/attachments/m500-sabre-brake"
+  },
+  "Id.Item.MUZL_032": {
+   "name": "RC-556 Suppressor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_032.webp",
+   "price": 1550,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.5
+   },
+   "href": "/wardogs/database/attachments/rc-556-suppressor"
+  },
+  "Id.Item.MUZL_037": {
+   "name": "Eclipse Flash Hider",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_037.webp",
+   "price": 700,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.12
+   },
+   "href": "/wardogs/database/attachments/eclipse-flash-hider"
+  },
+  "Id.Item.MUZL_038": {
+   "name": "Slotted Flash Hider",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_038.webp",
+   "price": 960,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.1
+   },
+   "href": "/wardogs/database/attachments/slotted-flash-hider"
+  },
+  "Id.Item.MUZL_039": {
+   "name": "Birdcage Flash Hider",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_039.webp",
+   "price": 900,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.09
+   },
+   "href": "/wardogs/database/attachments/birdcage-flash-hider"
+  },
+  "Id.Item.MUZL_040": {
+   "name": "SVD 7.62x54R Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_040.webp",
+   "price": 650,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.2
+   },
+   "href": "/wardogs/database/attachments/svd-7-62x54r-brake"
+  },
+  "Id.Item.MUZL_041": {
+   "name": "SRVV Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_041.webp",
+   "price": 1470,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.49
+   },
+   "href": "/wardogs/database/attachments/srvv-brake"
+  },
+  "Id.Item.MUZL_042": {
+   "name": "Deadeye Flash Hider",
+   "icon": "/images/wardogs/database/icons/t_ui_muzl_037.webp",
+   "price": 400,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.12
+   },
+   "href": "/wardogs/database/attachments/deadeye-flash-hider"
+  },
+  "Id.Item.MUZL_044": {
+   "name": "Improved Cylinder Choke",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_044.webp",
+   "price": 540,
+   "sub": "Muzzles",
+   "stats": {},
+   "href": "/wardogs/database/attachments/improved-cylinder-choke"
+  },
+  "Id.Item.MUZL_045": {
+   "name": "Full Choke",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_045.webp",
+   "price": 1400,
+   "sub": "Muzzles",
+   "stats": {},
+   "href": "/wardogs/database/attachments/full-choke"
+  },
+  "Id.Item.MUZL_046": {
+   "name": "Super-45 Flash Hider",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_046.webp",
+   "price": 1050,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.06
+   },
+   "href": "/wardogs/database/attachments/super-45-flash-hider"
+  },
+  "Id.Item.MUZL_047": {
+   "name": "Ghost LITE Muzzle Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_047.webp",
+   "price": 970,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.12
+   },
+   "href": "/wardogs/database/attachments/ghost-lite-muzzle-brake"
+  },
+  "Id.Item.MUZL_048": {
+   "name": "AX50 .50 Cal Muzzle Brake",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_048.webp",
+   "price": 1600,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.45
+   },
+   "href": "/wardogs/database/attachments/ax50-50-cal-muzzle-brake"
+  },
+  "Id.Item.MUZL_049": {
+   "name": ".50 Cal Heavy Suppressor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_049.webp",
+   "price": 1420,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 1.2
+   },
+   "href": "/wardogs/database/attachments/50-cal-heavy-suppressor"
+  },
+  "Id.Item.MUZL_050": {
+   "name": ".45 ACP Pistol Compensator",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_050.webp",
+   "price": 1030,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.1
+   },
+   "href": "/wardogs/database/attachments/45-acp-pistol-compensator"
+  },
+  "Id.Item.MUZL_051": {
+   "name": "AMP-9 9x19 Suppressor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_051.webp",
+   "price": 1130,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.4
+   },
+   "href": "/wardogs/database/attachments/amp-9-9x19-suppressor"
+  },
+  "Id.Item.MUZL_052": {
+   "name": "AMP-9 Tactical Flash Hider",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_052.webp",
+   "price": 550,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.1
+   },
+   "href": "/wardogs/database/attachments/amp-9-tactical-flash-hider"
+  },
+  "Id.Item.MUZL_053": {
+   "name": "PP-19-01 Vityaz 9x19 Suppressor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_053.webp",
+   "price": 1450,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.5
+   },
+   "href": "/wardogs/database/attachments/pp-19-01-vityaz-9x19-suppressor"
+  },
+  "Id.Item.MUZL_054": {
+   "name": "PP-19 Vityaz Flash Hider",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_054.webp",
+   "price": 800,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.08
+   },
+   "href": "/wardogs/database/attachments/pp-19-vityaz-flash-hider"
+  },
+  "Id.Item.MUZL_055": {
+   "name": "BMR-308 Flash Hider",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_055.webp",
+   "price": 1280,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.12
+   },
+   "href": "/wardogs/database/attachments/bmr-308-flash-hider"
+  },
+  "Id.Item.MUZL_056": {
+   "name": "BMR-308 Suppressor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_056.webp",
+   "price": 1200,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.65
+   },
+   "href": "/wardogs/database/attachments/bmr-308-suppressor"
+  },
+  "Id.Item.MUZL_057": {
+   "name": "Flow-Through .308 Suppressor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_057.webp",
+   "price": 1120,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.34
+   },
+   "href": "/wardogs/database/attachments/flow-through-308-suppressor"
+  },
+  "Id.Item.MUZL_058": {
+   "name": "QD-5 Suppressor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_058.webp",
+   "price": 1170,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.38
+   },
+   "href": "/wardogs/database/attachments/qd-5-suppressor"
+  },
+  "Id.Item.MUZL_059": {
+   "name": "MP5 Flash Hider",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_037.webp",
+   "price": 1150,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.19
+   },
+   "href": "/wardogs/database/attachments/mp5-flash-hider"
+  },
+  "Id.Item.MUZL_060": {
+   "name": "Suppressor\u00a0T8L1 Scout",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_mzl_04_textured_512x512.webp",
+   "price": 1000,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.64
+   },
+   "href": "/wardogs/database/attachments/suppressor-t8l1-scout"
+  },
+  "Id.Item.MUZL_061": {
+   "name": "FAL Flash Hider",
+   "icon": "/images/wardogs/database/icons/t_ui_muzl_037.webp",
+   "price": 1250,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.2
+   },
+   "href": "/wardogs/database/attachments/fal-flash-hider"
+  },
+  "Id.Item.MUZL_062": {
+   "name": "STRELIX Suppressor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_062.webp",
+   "price": 1000,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.59
+   },
+   "href": "/wardogs/database/attachments/strelix-suppressor"
+  },
+  "Id.Item.MZL_04": {
+   "name": "GOL Multi-Caliber Suppressor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_004.webp",
+   "price": 1800,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.75
+   },
+   "href": "/wardogs/database/attachments/gol-multi-caliber-suppressor"
+  },
+  "Id.Item.MZL_05": {
+   "name": "SG Multi-Caliber Suppressor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_005.webp",
+   "price": 1220,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.6
+   },
+   "href": "/wardogs/database/attachments/sg-multi-caliber-suppressor"
+  },
+  "Id.Item.MZL_06": {
+   "name": "12 Gauge Suppressor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_006.webp",
+   "price": 1040,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.8
+   },
+   "href": "/wardogs/database/attachments/12-gauge-suppressor"
+  },
+  "Id.Item.MZL_07": {
+   "name": "AR Multi-Caliber Suppressor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_007.webp",
+   "price": 400,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.72
+   },
+   "href": "/wardogs/database/attachments/ar-multi-caliber-suppressor"
+  },
+  "Id.Item.MZL_08": {
+   "name": "Hexagon 762 Suppressor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_008.webp",
+   "price": 1210,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.55
+   },
+   "href": "/wardogs/database/attachments/hexagon-762-suppressor"
+  },
+  "Id.Item.MZL_09": {
+   "name": "PBS-4 Suppressor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_009.webp",
+   "price": 1300,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.8
+   },
+   "href": "/wardogs/database/attachments/pbs-4-suppressor"
+  },
+  "Id.Item.MZL_10": {
+   "name": "TGP-A Suppressor 5.45",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_muzl_010.webp",
+   "price": 1190,
+   "sub": "Muzzles",
+   "stats": {
+    "weight": 0.7
+   },
+   "href": "/wardogs/database/attachments/tgp-a-suppressor-5-45"
+  },
+  "Id.Item.MediumArmor": {
+   "name": "Level 2 Armor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_armor_002a.webp",
+   "price": 1000,
+   "sub": "Body Armour",
+   "stats": {
+    "weight": 4.5
+   },
+   "href": "/wardogs/database/armor/level-2-armor"
+  },
+  "Id.Item.MediumBackpack": {
+   "name": "Operator Backpack",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_mediumbackpack.webp",
+   "price": 800,
+   "sub": "storage",
+   "stats": {
+    "weight": 0.8
+   },
+   "href": "/wardogs/database/storage/operator-backpack"
+  },
+  "Id.Item.MediumHelmet": {
+   "name": "Level 2 Helmet",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_helmet_002a.webp",
+   "price": 500,
+   "sub": "Helmets",
+   "stats": {
+    "weight": 1.6
+   },
+   "href": "/wardogs/database/armor/level-2-helmet"
+  },
+  "Id.Item.MediumSlingBackpack": {
+   "name": "Medium Backpack + Sling",
+   "icon": "/images/wardogs/database/icons/t_temp_mediumslingbackpack_icon.webp",
+   "price": 1400,
+   "sub": "storage",
+   "stats": {
+    "weight": 4
+   },
+   "href": "/wardogs/database/storage/medium-backpack-sling"
+  },
+  "Id.Item.MediumTacVest": {
+   "name": "Medium Tac Vest",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_mediumwebbing_textured_512x512.webp",
+   "price": 250,
+   "sub": "storage",
+   "stats": {
+    "weight": 1.65
+   },
+   "href": "/wardogs/database/storage/medium-tac-vest"
+  },
+  "Id.Item.Mosin": {
+   "name": "Mosin Nagant",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_017.webp",
+   "price": 4500,
+   "sub": "Sniper Rifle",
+   "stats": {
+    "weight": 4.1,
+    "damage": 55
+   },
+   "href": "/wardogs/database/weapons/mosin-nagant"
+  },
+  "Id.Item.MosinMagazine": {
+   "name": "Mosin Internal Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_cheap_magazine_sv98_textured_512x512.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mosin-internal-magazine"
+  },
+  "Id.Item.MosinMagazineExtended10rd": {
+   "name": "SV98 Extended Mag",
+   "icon": null,
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mosinmagazineextended10rd"
+  },
+  "Id.Item.MosinMagazineExtended20rd": {
+   "name": "SV98 Extended Mag",
+   "icon": null,
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mosinmagazineextended20rd"
+  },
+  "Id.Item.MunitionsSupplies": {
+   "name": "Ammo Supplies",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_munition_supplies_textured_512x512.webp",
+   "price": 10,
+   "sub": "Supplies",
+   "stats": {
+    "weight": 0.03
+   },
+   "href": "/wardogs/database/ammunition/ammo-supplies"
+  },
+  "Id.Item.MusicTape.01": {
+   "name": "H4ZARD - Gigilow",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_casette.webp",
+   "price": 100,
+   "sub": "Music Tapes",
+   "stats": {
+    "weight": 0.01
+   },
+   "href": "/wardogs/database/other/musictape-01"
+  },
+  "Id.Item.MusicTape.02": {
+   "name": "You Are Not Invited - MokuMoku",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_casette.webp",
+   "price": 100,
+   "sub": "Music Tapes",
+   "stats": {
+    "weight": 0.01
+   },
+   "href": "/wardogs/database/other/musictape-02"
+  },
+  "Id.Item.MusicTape.03": {
+   "name": "Giants (Remix) - The Quemists",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_casette.webp",
+   "price": 100,
+   "sub": "Music Tapes",
+   "stats": {
+    "weight": 0.01
+   },
+   "href": "/wardogs/database/other/musictape-03"
+  },
+  "Id.Item.MusicTape.04": {
+   "name": "Ride of the Valkyries - Richard Wagner",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_casette.webp",
+   "price": 100,
+   "sub": "Music Tapes",
+   "stats": {
+    "weight": 0.01
+   },
+   "href": "/wardogs/database/other/musictape-04"
+  },
+  "Id.Item.MusicTape.05": {
+   "name": "Ride of the Valkyries - Richard Wagner",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_casette.webp",
+   "price": 100,
+   "sub": "Music Tapes",
+   "stats": {
+    "weight": 0.01
+   },
+   "href": "/wardogs/database/other/musictape-05"
+  },
+  "Id.Item.MusicTape.06": {
+   "name": "Tianqi Xu - Vodka Bomb",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_casette.webp",
+   "price": 100,
+   "sub": "Music Tapes",
+   "stats": {
+    "weight": 0.01
+   },
+   "href": "/wardogs/database/other/musictape-06"
+  },
+  "Id.Item.MusicTape.07": {
+   "name": "Luili-Luili - Masha Kondratenko",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_casette.webp",
+   "price": 100,
+   "sub": "Music Tapes",
+   "stats": {
+    "weight": 0.01
+   },
+   "href": "/wardogs/database/other/musictape-07"
+  },
+  "Id.Item.MusicTape.08": {
+   "name": "HORA - Irina Rimes & Jerry Heil",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_casette.webp",
+   "price": 100,
+   "sub": "Music Tapes",
+   "stats": {
+    "weight": 0.01
+   },
+   "href": "/wardogs/database/other/musictape-08"
+  },
+  "Id.Item.MusicTape.09": {
+   "name": "Helikopter - Fazlija",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_casette.webp",
+   "price": 100,
+   "sub": "Music Tapes",
+   "stats": {
+    "weight": 0.01
+   },
+   "href": "/wardogs/database/other/musictape-09"
+  },
+  "Id.Item.MusicTape.10": {
+   "name": "Kai Wachi ft. TheBurntPeanut - BUNGULATOR BASS",
+   "icon": "/images/wardogs/database/icons/t_ui_buidable_casette.webp",
+   "price": 100,
+   "sub": "Music Tapes",
+   "stats": {
+    "weight": 0.01
+   },
+   "href": "/wardogs/database/other/musictape-10"
+  },
+  "Id.Item.OPT_08": {
+   "name": "2.5x Combat Optic",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_008.webp",
+   "price": 690,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.4
+   },
+   "href": "/wardogs/database/attachments/2-5x-combat-optic"
+  },
+  "Id.Item.PGRP_003": {
+   "name": "FAL Pistol Grip",
+   "icon": null,
+   "price": null,
+   "sub": "Pistol Grips",
+   "stats": {},
+   "href": "/wardogs/database/attachments/pgrp_003"
+  },
+  "Id.Item.PGRP_004": {
+   "name": "Wooden Pistol Grip",
+   "icon": "/images/wardogs/database/icons/t_ui_grip_placeholder.webp",
+   "price": null,
+   "sub": "Pistol Grips",
+   "stats": {},
+   "href": "/wardogs/database/attachments/wooden-pistol-grip"
+  },
+  "Id.Item.PGRP_005": {
+   "name": "Polymer Pistol Grip",
+   "icon": "/images/wardogs/database/icons/t_ui_grip_placeholder.webp",
+   "price": null,
+   "sub": "Pistol Grips",
+   "stats": {},
+   "href": "/wardogs/database/attachments/polymer-pistol-grip"
+  },
+  "Id.Item.PGRP_006": {
+   "name": "AK-12 Pistol Grip",
+   "icon": "/images/wardogs/database/icons/t_ui_grip_placeholder.webp",
+   "price": null,
+   "sub": "Pistol Grips",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak-12-pistol-grip"
+  },
+  "Id.Item.PGRP_007": {
+   "name": "Archangel OPFOR Pistol Grip",
+   "icon": "/images/wardogs/database/icons/t_ui_grip_placeholder.webp",
+   "price": null,
+   "sub": "Pistol Grips",
+   "stats": {},
+   "href": "/wardogs/database/attachments/archangel-opfor-pistol-grip"
+  },
+  "Id.Item.PGRP_008": {
+   "name": "KGB MG47 Grip",
+   "icon": "/images/wardogs/database/icons/t_ui_grip_placeholder.webp",
+   "price": null,
+   "sub": "Pistol Grips",
+   "stats": {},
+   "href": "/wardogs/database/attachments/kgb-mg47-grip"
+  },
+  "Id.Item.PGRP_009": {
+   "name": "AGS-74 PRO Sniper Pistol Grip",
+   "icon": "/images/wardogs/database/icons/t_ui_grip_placeholder.webp",
+   "price": null,
+   "sub": "Pistol Grips",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ags-74-pro-sniper-pistol-grip"
+  },
+  "Id.Item.PGRP_010": {
+   "name": "Galil Pistol Grip",
+   "icon": null,
+   "price": null,
+   "sub": "Pistol Grips",
+   "stats": {},
+   "href": "/wardogs/database/attachments/pgrp_010"
+  },
+  "Id.Item.Parachute.Basic": {
+   "name": "Basic Parachute",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_parachute_basic.webp",
+   "price": 100,
+   "sub": "Traversal",
+   "stats": {
+    "weight": 2.5
+   },
+   "href": "/wardogs/database/equipment/basic-parachute"
+  },
+  "Id.Item.Parachute.Sport": {
+   "name": "Sport Parachute",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_parachute_sport.webp",
+   "price": 1000,
+   "sub": "Traversal",
+   "stats": {
+    "weight": 9
+   },
+   "href": "/wardogs/database/equipment/sport-parachute"
+  },
+  "Id.Item.Pouch": {
+   "name": "Pouch",
+   "icon": "/images/wardogs/database/icons/t_ui_item_backpack_pouch_bc.webp",
+   "price": 0,
+   "sub": "storage",
+   "stats": {
+    "weight": 0.3
+   },
+   "href": "/wardogs/database/storage/pouch"
+  },
+  "Id.Item.RFB": {
+   "name": "BMR-308",
+   "icon": "/images/wardogs/database/icons/t_ui_weapon_rfb_bc.webp",
+   "price": 6000,
+   "sub": "Marksman Rifle",
+   "stats": {
+    "weight": 3.9,
+    "damage": 60
+   },
+   "href": "/wardogs/database/weapons/bmr-308"
+  },
+  "Id.Item.RFBMagazine": {
+   "name": "FAL 10 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_rfb.webp",
+   "price": 60,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.53,
+    "capacity": 10
+   },
+   "href": "/wardogs/database/attachments/fal-10-rnd-magazine"
+  },
+  "Id.Item.RK6ForeGrip": {
+   "name": "RK6 Tactical Foregrip",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_fgrp_001.webp",
+   "price": 380,
+   "sub": "Foregrips",
+   "stats": {
+    "weight": 1.05
+   },
+   "href": "/wardogs/database/attachments/rk6-tactical-foregrip"
+  },
+  "Id.Item.RPG7": {
+   "name": "RPG-7",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_022.webp",
+   "price": 2000,
+   "sub": "Launcher",
+   "stats": {
+    "weight": 6.3,
+    "damage": 110
+   },
+   "href": "/wardogs/database/weapons/rpg-7"
+  },
+  "Id.Item.Resuscitator.Cheap": {
+   "name": "Emergency Resuscitator",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_enox_512x512.webp",
+   "price": 0,
+   "sub": "medical",
+   "stats": {
+    "weight": 0.39
+   },
+   "href": "/wardogs/database/medical/emergency-resuscitator"
+  },
+  "Id.Item.Resuscitator.Standard": {
+   "name": "Field Resuscitator",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_enox_512x512.webp",
+   "price": 500,
+   "sub": "medical",
+   "stats": {
+    "weight": 0.39
+   },
+   "href": "/wardogs/database/medical/field-resuscitator"
+  },
+  "Id.Item.SGHT_009": {
+   "name": "Kobra Reflex",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_009.webp",
+   "price": 520,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.41
+   },
+   "href": "/wardogs/database/attachments/kobra-reflex"
+  },
+  "Id.Item.SGHT_010": {
+   "name": "Magpul MBUS Iron Sights",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Optics",
+   "stats": {},
+   "href": "/wardogs/database/attachments/magpul-mbus-iron-sights"
+  },
+  "Id.Item.SGHT_011": {
+   "name": "3x-6x LPVO Short Dot",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_011.webp",
+   "price": 860,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.63
+   },
+   "href": "/wardogs/database/attachments/3x-6x-lpvo-short-dot"
+  },
+  "Id.Item.SGHT_012": {
+   "name": "10x Thermal Scope",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Optics",
+   "stats": {},
+   "href": "/wardogs/database/attachments/10x-thermal-scope"
+  },
+  "Id.Item.SGHT_016": {
+   "name": "Four Reticle Reflex",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_016.webp",
+   "price": 580,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.12
+   },
+   "href": "/wardogs/database/attachments/four-reticle-reflex"
+  },
+  "Id.Item.SGHT_023": {
+   "name": "OKP 7 Reflex",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_023.webp",
+   "price": 840,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.48
+   },
+   "href": "/wardogs/database/attachments/okp-7-reflex"
+  },
+  "Id.Item.SGHT_025": {
+   "name": "Mini Reflex Sight",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_025.webp",
+   "price": 200,
+   "sub": "Optics",
+   "stats": {},
+   "href": "/wardogs/database/attachments/mini-reflex-sight"
+  },
+  "Id.Item.SGHT_026": {
+   "name": "Tricon 1.5x Compact Prism Scope",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_026.webp",
+   "price": 650,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.2
+   },
+   "href": "/wardogs/database/attachments/tricon-1-5x-compact-prism-scope"
+  },
+  "Id.Item.SGHT_027": {
+   "name": "Vektor Frenix-X Micro Reflex Sight",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_027.webp",
+   "price": 820,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.03
+   },
+   "href": "/wardogs/database/attachments/vektor-frenix-x-micro-reflex-sight"
+  },
+  "Id.Item.SGHT_028": {
+   "name": "CQ-2x Prism Combat Scope",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_028.webp",
+   "price": 640,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.31
+   },
+   "href": "/wardogs/database/attachments/cq-2x-prism-combat-scope"
+  },
+  "Id.Item.SGHT_029": {
+   "name": "3x Tactical Prism Scope",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_029.webp",
+   "price": 740,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.43
+   },
+   "href": "/wardogs/database/attachments/3x-tactical-prism-scope"
+  },
+  "Id.Item.SGHT_030": {
+   "name": "4x Combat Prism Scope with Reflex",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_030.webp",
+   "price": 880,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.42
+   },
+   "href": "/wardogs/database/attachments/4x-combat-prism-scope-with-reflex"
+  },
+  "Id.Item.SGHT_031": {
+   "name": "6x Precision Rifle Scope",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_031.webp",
+   "price": 680,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.7
+   },
+   "href": "/wardogs/database/attachments/6x-precision-rifle-scope"
+  },
+  "Id.Item.SGHT_032": {
+   "name": "Frontier 2.5x-10x Precision Scope",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_032.webp",
+   "price": 1800,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.66
+   },
+   "href": "/wardogs/database/attachments/frontier-2-5x-10x-precision-scope"
+  },
+  "Id.Item.SGHT_033": {
+   "name": "CGM4 Scope",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_033.webp",
+   "price": null,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.06
+   },
+   "href": "/wardogs/database/attachments/cgm4-scope"
+  },
+  "Id.Item.SGHT_034": {
+   "name": "PGO-7",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_034.webp",
+   "price": 850,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.62
+   },
+   "href": "/wardogs/database/attachments/pgo-7"
+  },
+  "Id.Item.SGHT_036": {
+   "name": "6x Marksman Scope + Reflex",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_036.webp",
+   "price": 1650,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.73
+   },
+   "href": "/wardogs/database/attachments/6x-marksman-scope-reflex"
+  },
+  "Id.Item.SGHT_037": {
+   "name": "MMGL Sight",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_sght_037.webp",
+   "price": null,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.13
+   },
+   "href": "/wardogs/database/attachments/mmgl-sight"
+  },
+  "Id.Item.SKS": {
+   "name": "SKS",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_007.webp",
+   "price": 2400,
+   "sub": "Marksman Rifle",
+   "stats": {
+    "weight": 3.85,
+    "damage": 42
+   },
+   "href": "/wardogs/database/weapons/sks"
+  },
+  "Id.Item.SKSExtendedMag": {
+   "name": "SKS Extended Mag",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_sks_mag_extended_textured_512x512.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/sks-extended-mag"
+  },
+  "Id.Item.SKSMagazine": {
+   "name": "SKS Internal Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_sks_magazine_bullet_textured_512x512.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/sks-internal-magazine"
+  },
+  "Id.Item.SMG_03": {
+   "name": "PP-19 Vityaz",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_023.webp",
+   "price": 1200,
+   "sub": "Submachine Gun",
+   "stats": {
+    "weight": 2.9,
+    "damage": 22
+   },
+   "href": "/wardogs/database/weapons/pp-19-vityaz"
+  },
+  "Id.Item.SMG_03Magazine": {
+   "name": "PP-19 Vityaz 30 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_pp19.webp",
+   "price": 100,
+   "sub": "Magazines",
+   "stats": {
+    "capacity": 30
+   },
+   "href": "/wardogs/database/attachments/pp-19-vityaz-30-rnd-magazine"
+  },
+  "Id.Item.SR_04": {
+   "name": "AMR 50",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_024.webp",
+   "price": 8800,
+   "sub": "Sniper Rifle",
+   "stats": {
+    "weight": 12.5,
+    "damage": 107
+   },
+   "href": "/wardogs/database/weapons/amr-50"
+  },
+  "Id.Item.SR_04Magazine": {
+   "name": "AMR 50 5 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_sr04.webp",
+   "price": 15,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 1.27,
+    "capacity": 5
+   },
+   "href": "/wardogs/database/attachments/amr-50-5-rnd-magazine"
+  },
+  "Id.Item.STANAGDrumMagazine90rd": {
+   "name": "M4 Extended Mag",
+   "icon": null,
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/stanagdrummagazine90rd"
+  },
+  "Id.Item.STANAGExtendedMagazine": {
+   "name": "STANAG 60 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_054.webp",
+   "price": 180,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 1.01,
+    "capacity": 60
+   },
+   "href": "/wardogs/database/attachments/stanag-60-rnd-magazine"
+  },
+  "Id.Item.STANAGMagazine": {
+   "name": "STANAG 30 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_stanag.webp",
+   "price": 55,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.53,
+    "capacity": 30
+   },
+   "href": "/wardogs/database/attachments/stanag-30-rnd-magazine"
+  },
+  "Id.Item.STANAGMagazine20rd": {
+   "name": "STANAG 20 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_053.webp",
+   "price": 10,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.31,
+    "capacity": 20
+   },
+   "href": "/wardogs/database/attachments/stanag-20-rnd-magazine"
+  },
+  "Id.Item.STOK_003": {
+   "name": "MP5 Stock",
+   "icon": null,
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/stok_003"
+  },
+  "Id.Item.STOK_005": {
+   "name": "FAL Stock",
+   "icon": null,
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/stok_005"
+  },
+  "Id.Item.STOK_006": {
+   "name": "Polymer Stock",
+   "icon": "/images/wardogs/database/icons/t_ui_stock_placeholder.webp",
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/polymer-stock"
+  },
+  "Id.Item.STOK_007": {
+   "name": "AK74u Steel Folding Stock",
+   "icon": "/images/wardogs/database/icons/t_ui_stock_placeholder.webp",
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak74u-steel-folding-stock"
+  },
+  "Id.Item.STOK_008": {
+   "name": "RPK74 Wooden Stock",
+   "icon": "/images/wardogs/database/icons/t_ui_stock_placeholder.webp",
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/rpk74-wooden-stock"
+  },
+  "Id.Item.STOK_009": {
+   "name": "Alpha Folding Stock",
+   "icon": "/images/wardogs/database/icons/t_ui_stock_placeholder.webp",
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/alpha-folding-stock"
+  },
+  "Id.Item.STOK_010": {
+   "name": "Buffertube Stock",
+   "icon": "/images/wardogs/database/icons/t_ui_stock_placeholder.webp",
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/buffertube-stock"
+  },
+  "Id.Item.STOK_011": {
+   "name": "Archangel OPFOR Stock",
+   "icon": "/images/wardogs/database/icons/t_ui_stock_placeholder.webp",
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/archangel-opfor-stock"
+  },
+  "Id.Item.STOK_012": {
+   "name": "AK-47 HERA CQR Stock",
+   "icon": "/images/wardogs/database/icons/t_ui_stock_placeholder.webp",
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ak-47-hera-cqr-stock"
+  },
+  "Id.Item.STOK_013": {
+   "name": "Galil Stock",
+   "icon": null,
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/stok_013"
+  },
+  "Id.Item.STOK_057": {
+   "name": "Scout Rifle Stock",
+   "icon": null,
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/stok_057"
+  },
+  "Id.Item.SV98": {
+   "name": "SV98",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_008.webp",
+   "price": 5200,
+   "sub": "Sniper Rifle",
+   "stats": {
+    "weight": 5.8,
+    "damage": 55
+   },
+   "href": "/wardogs/database/weapons/sv98"
+  },
+  "Id.Item.SV98ExtendedMagazine": {
+   "name": "SV98 Extended Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_sks_mag_extended_textured_512x512.webp",
+   "price": null,
+   "sub": "Magazines",
+   "stats": {},
+   "href": "/wardogs/database/attachments/sv98-extended-magazine"
+  },
+  "Id.Item.SV98Magazine": {
+   "name": "SV98 10 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_010.webp",
+   "price": 40,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.34,
+    "capacity": 10
+   },
+   "href": "/wardogs/database/attachments/sv98-10-rnd-magazine"
+  },
+  "Id.Item.SV98Stock": {
+   "name": "SV98 Stock",
+   "icon": "/images/wardogs/database/icons/t_ui_stock_placeholder.webp",
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/sv98-stock"
+  },
+  "Id.Item.SVDM": {
+   "name": "SVD",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_015.webp",
+   "price": 4800,
+   "sub": "Marksman Rifle",
+   "stats": {
+    "weight": 5.3,
+    "damage": 55
+   },
+   "href": "/wardogs/database/weapons/svd"
+  },
+  "Id.Item.SVDMBarrel": {
+   "name": "SVDM Barrel",
+   "icon": "/images/wardogs/database/icons/t_ui_barrel_placeholder.webp",
+   "price": null,
+   "sub": "Barrels",
+   "stats": {},
+   "href": "/wardogs/database/attachments/svdm-barrel"
+  },
+  "Id.Item.SVDMHandguard": {
+   "name": "SVDM Handguard",
+   "icon": "/images/wardogs/database/icons/t_ui_handguard_placeholder.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/svdm-handguard"
+  },
+  "Id.Item.SVDMMagazine": {
+   "name": "SVD 10 RND Magazine",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_magz_svdm.webp",
+   "price": 40,
+   "sub": "Magazines",
+   "stats": {
+    "weight": 0.34,
+    "capacity": 10
+   },
+   "href": "/wardogs/database/attachments/svd-10-rnd-magazine"
+  },
+  "Id.Item.SVDMStock": {
+   "name": "SVDM Stock",
+   "icon": "/images/wardogs/database/icons/t_ui_stock_placeholder.webp",
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/svdm-stock"
+  },
+  "Id.Item.SmallBackpack": {
+   "name": "Scout Backpack",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_smallbackpack.webp",
+   "price": 350,
+   "sub": "storage",
+   "stats": {
+    "weight": 2
+   },
+   "href": "/wardogs/database/storage/scout-backpack"
+  },
+  "Id.Item.SmallTacVest": {
+   "name": "Small Tac Vest",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_smallwebbing_textured_512x512.webp",
+   "price": 100,
+   "sub": "storage",
+   "stats": {
+    "weight": 0.82
+   },
+   "href": "/wardogs/database/storage/small-tac-vest"
+  },
+  "Id.Item.SniperMuzzle": {
+   "name": "Sniper Muzzle",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_snipermuzzledevice_textured_512x512.webp",
+   "price": null,
+   "sub": "Muzzles",
+   "stats": {},
+   "href": "/wardogs/database/attachments/sniper-muzzle"
+  },
+  "Id.Item.SniperScope10x": {
+   "name": "6-10x Scope MRAD",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_10x_optic_textured_512x512.webp",
+   "price": 1200,
+   "sub": "Optics",
+   "stats": {
+    "weight": 0.98
+   },
+   "href": "/wardogs/database/attachments/6-10x-scope-mrad"
+  },
+  "Id.Item.SniperScopeRender": {
+   "name": "10x",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_attachment_10x_optic_textured_512x512.webp",
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/attachments/10x"
+  },
+  "Id.Item.SparePartsSupplies": {
+   "name": "Mechanical Supplies",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_spareparts_supplies_textured_512x512.webp",
+   "price": 10,
+   "sub": "Supplies",
+   "stats": {
+    "weight": 0.03
+   },
+   "href": "/wardogs/database/ammunition/mechanical-supplies"
+  },
+  "Id.Item.StimPen": {
+   "name": "Adrenaline Pen",
+   "icon": "/images/wardogs/database/icons/t_ui_item_stim_bc.webp",
+   "price": 250,
+   "sub": "medical",
+   "stats": {},
+   "href": "/wardogs/database/medical/adrenaline-pen"
+  },
+  "Id.Item.SuperBandage": {
+   "name": "Individual First Aid Kit",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_superbandage_textured_128x128.webp",
+   "price": 800,
+   "sub": "medical",
+   "stats": {
+    "weight": 0.16
+   },
+   "href": "/wardogs/database/medical/individual-first-aid-kit"
+  },
+  "Id.Item.SuperHeavyArmor": {
+   "name": "Level 4 Armor",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_armor_004a.webp",
+   "price": 4000,
+   "sub": "Body Armour",
+   "stats": {
+    "weight": 18
+   },
+   "href": "/wardogs/database/armor/level-4-armor"
+  },
+  "Id.Item.SuperHeavyHelmet": {
+   "name": "Level 4 Helmet",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_helmet_004a.webp",
+   "price": 3000,
+   "sub": "Helmets",
+   "stats": {
+    "weight": 4.5
+   },
+   "href": "/wardogs/database/armor/level-4-helmet"
+  },
+  "Id.Item.TACT_001": {
+   "name": "NcSTAR Blue Laser",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/attachments/ncstar-blue-laser"
+  },
+  "Id.Item.TAR21": {
+   "name": "T-21",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_005.webp",
+   "price": 600,
+   "sub": "Assault Rifle",
+   "stats": {
+    "weight": 3.27,
+    "damage": 28
+   },
+   "href": "/wardogs/database/weapons/t-21"
+  },
+  "Id.Item.THRW_001": {
+   "name": "HE Grenade",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "throwables",
+   "stats": {},
+   "href": "/wardogs/database/throwables/he-grenade"
+  },
+  "Id.Item.THRW_002": {
+   "name": "Flash Grenade",
+   "icon": "/images/wardogs/database/icons/t_ui_workinprogress.webp",
+   "price": null,
+   "sub": "throwables",
+   "stats": {},
+   "href": "/wardogs/database/throwables/flash-grenade"
+  },
+  "Id.Item.TRGR_001": {
+   "name": "RAK-1 Enhanced Trigger",
+   "icon": "/images/wardogs/database/icons/t_ui_trigger_placeholder.webp",
+   "price": null,
+   "sub": "Triggers",
+   "stats": {},
+   "href": "/wardogs/database/attachments/rak-1-enhanced-trigger"
+  },
+  "Id.Item.TRGR_002": {
+   "name": "Timney Drop-in Trigger",
+   "icon": "/images/wardogs/database/icons/t_ui_trigger_placeholder.webp",
+   "price": null,
+   "sub": "Triggers",
+   "stats": {},
+   "href": "/wardogs/database/attachments/timney-drop-in-trigger"
+  },
+  "Id.Item.TRGR_003": {
+   "name": "CMC Flat Trigger",
+   "icon": "/images/wardogs/database/icons/t_ui_trigger_placeholder.webp",
+   "price": null,
+   "sub": "Triggers",
+   "stats": {},
+   "href": "/wardogs/database/attachments/cmc-flat-trigger"
+  },
+  "Id.Item.TestGrenadeLauncher": {
+   "name": "TEST Grenade Launcher",
+   "icon": null,
+   "price": null,
+   "sub": "Other",
+   "stats": {},
+   "href": "/wardogs/database/weapons/test-grenade-launcher"
+  },
+  "Id.Item.UniversalTool": {
+   "name": "Universal Tool",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_utility_buildtool_textured_512x512.webp",
+   "price": null,
+   "sub": "other",
+   "stats": {},
+   "href": "/wardogs/database/other/universal-tool"
+  },
+  "Id.Item.Vector": {
+   "name": "Super-45",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_006.webp",
+   "price": 2600,
+   "sub": "Submachine Gun",
+   "stats": {
+    "weight": 3,
+    "damage": 30
+   },
+   "href": "/wardogs/database/weapons/super-45"
+  },
+  "Id.Item.VehicleAmmo.1": {
+   "name": "Ammo: 1",
+   "icon": "/images/wardogs/database/icons/wz-vehicleammo-1.webp",
+   "price": null,
+   "sub": "Vehicle Ammo",
+   "stats": {},
+   "href": "/wardogs/database/other/vehicleammo-1"
+  },
+  "Id.Item.VehicleAmmo.10": {
+   "name": "Ammo: 10",
+   "icon": "/images/wardogs/database/icons/wz-vehicleammo-10.webp",
+   "price": null,
+   "sub": "Vehicle Ammo",
+   "stats": {},
+   "href": "/wardogs/database/other/vehicleammo-10"
+  },
+  "Id.Item.VehicleAmmo.100": {
+   "name": "Ammo: 100",
+   "icon": "/images/wardogs/database/icons/wz-vehicleammo-100.webp",
+   "price": null,
+   "sub": "Vehicle Ammo",
+   "stats": {},
+   "href": "/wardogs/database/other/vehicleammo-100"
+  },
+  "Id.Item.VehicleAmmo.25": {
+   "name": "Ammo: 25",
+   "icon": "/images/wardogs/database/icons/wz-vehicleammo-25.webp",
+   "price": null,
+   "sub": "Vehicle Ammo",
+   "stats": {},
+   "href": "/wardogs/database/other/vehicleammo-25"
+  },
+  "Id.Item.VehicleAmmo.50": {
+   "name": "Ammo: 50",
+   "icon": "/images/wardogs/database/icons/wz-vehicleammo-50.webp",
+   "price": null,
+   "sub": "Vehicle Ammo",
+   "stats": {},
+   "href": "/wardogs/database/other/vehicleammo-50"
+  },
+  "Id.Item.WEPN_026": {
+   "name": "M1911",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_026.webp",
+   "price": 300,
+   "sub": "Pistol",
+   "stats": {
+    "weight": 1.1,
+    "damage": 30
+   },
+   "href": "/wardogs/database/weapons/m1911"
+  },
+  "Id.Item.WEPN_027": {
+   "name": "Deagle",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_027.webp",
+   "price": 900,
+   "sub": "Pistol",
+   "stats": {
+    "weight": 2,
+    "damage": 63
+   },
+   "href": "/wardogs/database/weapons/deagle"
+  },
+  "Id.Item.WEPN_028": {
+   "name": "MP5",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_028.webp",
+   "price": 1500,
+   "sub": "Submachine Gun",
+   "stats": {
+    "weight": 2.54,
+    "damage": 22
+   },
+   "href": "/wardogs/database/weapons/mp5"
+  },
+  "Id.Item.WEPN_029": {
+   "name": "Galil",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_029.webp",
+   "price": 2200,
+   "sub": "Assault Rifle",
+   "stats": {
+    "weight": 3.95,
+    "damage": 28
+   },
+   "href": "/wardogs/database/weapons/galil"
+  },
+  "Id.Item.WEPN_030": {
+   "name": "FAL",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_030.webp",
+   "price": 6500,
+   "sub": "Assault Rifle",
+   "stats": {
+    "weight": 4.25,
+    "damage": 60
+   },
+   "href": "/wardogs/database/weapons/fal"
+  },
+  "Id.Item.WEPN_032": {
+   "name": "GGX 18",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_032.webp",
+   "price": 800,
+   "sub": "Pistol",
+   "stats": {
+    "weight": 0.63,
+    "damage": 22
+   },
+   "href": "/wardogs/database/weapons/ggx-18"
+  },
+  "Id.Item.WEPN_033": {
+   "name": "Bushmaster M17S",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_wepn_033.webp",
+   "price": 0,
+   "sub": "Assault Rifle",
+   "stats": {
+    "weight": 3.17,
+    "damage": 28
+   },
+   "href": "/wardogs/database/weapons/bushmaster-m17s"
+  },
+  "Id.Item.WEPN_035": {
+   "name": "Scout Rifle TD",
+   "icon": "/images/wardogs/database/icons/t_ui_wepn_035.webp",
+   "price": 1100,
+   "sub": "Sniper Rifle",
+   "stats": {
+    "weight": 2.95,
+    "damage": 28
+   },
+   "href": "/wardogs/database/weapons/scout-rifle-td"
+  },
+  "Id.Item.ZenitHandguard": {
+   "name": "Zenit Handguard",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_com_ak_handguard_02_textured_512x512.webp",
+   "price": null,
+   "sub": "Handguards",
+   "stats": {},
+   "href": "/wardogs/database/attachments/zenit-handguard"
+  },
+  "Id.Item.ZenitStock": {
+   "name": "Zenit Stock",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_com_ak_stock_02_textured_512x512.webp",
+   "price": null,
+   "sub": "Stocks",
+   "stats": {},
+   "href": "/wardogs/database/attachments/zenit-stock"
+  },
+  "Id.Vehicle.WeaponExtension.ROT_01.MountedMachineGun": {
+   "name": "M134D Minigun",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_wpn_minigun.webp",
+   "price": null,
+   "sub": "Guns",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/m134d-minigun"
+  },
+  "Id.Vehicle.WeaponExtension.ROT_02.122mm": {
+   "name": "B-13 Rocket Pods",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_wpn_rocketpod.webp",
+   "price": null,
+   "sub": "Rockets",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/b-13-rocket-pods"
+  },
+  "Id.Vehicle.WeaponExtension.ROT_02.30mmCannon": {
+   "name": "2A42 Autocannon",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_wpn_autocannon.webp",
+   "price": null,
+   "sub": "Cannons",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/2a42-autocannon"
+  },
+  "Id.Vehicle.WeaponExtension.ROT_03.MountedMachineGun": {
+   "name": "M134D Minigun",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_wpn_minigun.webp",
+   "price": null,
+   "sub": "Guns",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/m134d-minigun-2"
+  },
+  "Id.Vehicle.WeaponExtension.ROT_03.RocketPods": {
+   "name": "B-13 Rocket Pods",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_wpn_rocketpod.webp",
+   "price": null,
+   "sub": "Rockets",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/b-13-rocket-pods-2"
+  },
+  "Id.Vehicle.WeaponExtension.TNK_01.AntiAir": {
+   "name": "Duel 35mm Oerlikon GDF Cannons",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_wpn_tankturret.webp",
+   "price": null,
+   "sub": "Cannons",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/duel-35mm-oerlikon-gdf-cannons"
+  },
+  "Id.Vehicle.WeaponExtension.TNK_01.Artillery": {
+   "name": "L52 Cannon",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_wpn_artturret.webp",
+   "price": null,
+   "sub": "Cannons",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/l52-cannon"
+  },
+  "Id.Vehicle.WeaponExtension.TNK_01.Heavy": {
+   "name": "L55A1 Cannon",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_wpn_tankturret.webp",
+   "price": null,
+   "sub": "Cannons",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/l55a1-cannon"
+  },
+  "Id.Vehicle.WeaponExtension.TNK_01.MachineGun": {
+   "name": "MG3A1 Coaxial Gun",
+   "icon": "/images/wardogs/database/icons/t_ui_maingun_inactive.webp",
+   "price": null,
+   "sub": "Guns",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/mg3a1-coaxial-gun"
+  },
+  "Id.Vehicle.WeaponExtension.TNK_01.MountedMachineGun": {
+   "name": "M249 Machine Gun",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_wpn_machinegun.webp",
+   "price": null,
+   "sub": "Guns",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/m249-machine-gun"
+  },
+  "Id.Vehicle.WeaponExtension.WHL_02.SUV.RingTurret": {
+   "name": "M249 Machine Gun",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_wpn_machinegun.webp",
+   "price": null,
+   "sub": "Guns",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/m249-machine-gun-2"
+  },
+  "Id.Vehicle.WeaponExtension.WHL_05.RingMinigun": {
+   "name": "M134D Minigun",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_wpn_minigun.webp",
+   "price": null,
+   "sub": "Guns",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/m134d-minigun-3"
+  },
+  "Id.Vehicle.WeaponExtension.WHL_05.RingTurret": {
+   "name": "M249 Machine Gun",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_wpn_machinegun.webp",
+   "price": null,
+   "sub": "Guns",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/m249-machine-gun-3"
+  },
+  "Id.Vehicle.WeaponExtension.WHL_07.MachineGun": {
+   "name": "M249 Machine Gun",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_wpn_machinegun.webp",
+   "price": null,
+   "sub": "Guns",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/m249-machine-gun-4"
+  },
+  "Vehicle.Variant.Air.Rotary.Havoc.Default": {
+   "name": "Havoc",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_havoc.webp",
+   "price": 18000,
+   "sub": "Air",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/havoc"
+  },
+  "Vehicle.Variant.Air.Rotary.Littlebird.Default": {
+   "name": "MH-6",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_rot_03_temp_512x512.webp",
+   "price": 6250,
+   "sub": "Air",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/mh-6"
+  },
+  "Vehicle.Variant.Air.Rotary.Littlebird.MountedMachineGuns": {
+   "name": "AH-6M [Miniguns]",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_littlebird_guns_bc.webp",
+   "price": 7000,
+   "sub": "Air",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/ah-6m-miniguns"
+  },
+  "Vehicle.Variant.Air.Rotary.Littlebird.RocketPods": {
+   "name": "AH-6R [Rockets]",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_littlebird_3.webp",
+   "price": 12500,
+   "sub": "Air",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/ah-6r-rockets"
+  },
+  "Vehicle.Variant.Air.Rotary.ROT_04.Default": {
+   "name": "Z20 Lakota",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_huey_1.webp",
+   "price": 7400,
+   "sub": "Air",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/z20-lakota"
+  },
+  "Vehicle.Variant.Air.Rotary.ROT_04.MountedMachineGuns": {
+   "name": "Z20 Lakota [Miniguns]",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_huey_2.webp",
+   "price": 8000,
+   "sub": "Air",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/z20-lakota-miniguns"
+  },
+  "Vehicle.Variant.Land.Tracked.SpawnVehicle.Lonestar": {
+   "name": "M113 APC SV",
+   "icon": "/images/wardogs/database/icons/t_ui_maptracker_spawnvehicle.webp",
+   "price": null,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/m113-apc-sv"
+  },
+  "Vehicle.Variant.Land.Tracked.SpawnVehicle.Manticore": {
+   "name": "M113 APC SV",
+   "icon": "/images/wardogs/database/icons/t_ui_maptracker_spawnvehicle.webp",
+   "price": null,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/m113-apc-sv-2"
+  },
+  "Vehicle.Variant.Land.Tracked.SpawnVehicle.Valkyra": {
+   "name": "M113 APC SV",
+   "icon": "/images/wardogs/database/icons/t_ui_maptracker_spawnvehicle.webp",
+   "price": null,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/m113-apc-sv-3"
+  },
+  "Vehicle.Variant.Land.Tracked.TNK_01.AntiAir": {
+   "name": "Flakpanzer Gepard",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_gepard.webp",
+   "price": 10000,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/flakpanzer-gepard"
+  },
+  "Vehicle.Variant.Land.Tracked.TNK_01.Artillery": {
+   "name": "SPH-2",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_pvtank_temp_512x512.webp",
+   "price": 8000,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/sph-2"
+  },
+  "Vehicle.Variant.Land.Tracked.TNK_01.Heavy": {
+   "name": "L2A6",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_vehicle_hvy_tank_textured.webp",
+   "price": 14000,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/l2a6"
+  },
+  "Vehicle.Variant.Land.Wheeled.Bobcat.Default": {
+   "name": "Bobcat",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_vehicle_whl_01_bobcat_textured_512x512.webp",
+   "price": 500,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/bobcat"
+  },
+  "Vehicle.Variant.Land.Wheeled.DuneBuggy.Default": {
+   "name": "Dune Buggy",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_vehicle_dunebuggy_512x512.webp",
+   "price": 1500,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/dune-buggy"
+  },
+  "Vehicle.Variant.Land.Wheeled.Humvee.Default": {
+   "name": "Humvee",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_transport_humvee_temp_512x512.webp",
+   "price": 3000,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/humvee"
+  },
+  "Vehicle.Variant.Land.Wheeled.Humvee.MachineGun": {
+   "name": "Humvee [M249]",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_vehicle_humvee_gun.webp",
+   "price": 3750,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/humvee-m249"
+  },
+  "Vehicle.Variant.Land.Wheeled.Humvee.Minigun": {
+   "name": "Humvee [Minigun]",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_vehicle_humvee_gun.webp",
+   "price": 4500,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/humvee-minigun"
+  },
+  "Vehicle.Variant.Land.Wheeled.Kodiak.Default": {
+   "name": "Kodiak",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_kodiak_default.webp",
+   "price": 2500,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/kodiak"
+  },
+  "Vehicle.Variant.Land.Wheeled.Kodiak.MachineGun": {
+   "name": "Kodiak [M249]",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_kodiak_machinegun.webp",
+   "price": 3750,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/kodiak-m249"
+  },
+  "Vehicle.Variant.Land.Wheeled.Kodiak.Pickup": {
+   "name": "Kodiak [Pickup]",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_kodiak_pickup.webp",
+   "price": 3000,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/kodiak-pickup"
+  },
+  "Vehicle.Variant.Land.Wheeled.Ural.Attack": {
+   "name": "Ural Defender [M249]",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_ural_3.webp",
+   "price": 6750,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/ural-defender-m249"
+  },
+  "Vehicle.Variant.Land.Wheeled.Ural.Battle": {
+   "name": "Ural Defender",
+   "icon": "/images/wardogs/database/icons/t_ui_vendor_ural_2.webp",
+   "price": 6000,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/ural-defender"
+  },
+  "Vehicle.Variant.Land.Wheeled.Ural.Default": {
+   "name": "Ural",
+   "icon": "/images/wardogs/database/icons/t_ui_vehicle_ural.webp",
+   "price": 5000,
+   "sub": "Ground",
+   "stats": {},
+   "href": "/wardogs/database/vehicles/ural"
+  },
+  "Vehicle.Variant.Stationary.Loudspeaker": {
+   "name": "Loudspeaker",
+   "icon": "/images/wardogs/database/icons/t_ui_icon_vehicle_havoc_temp.webp",
+   "price": null,
+   "sub": "buildables",
+   "stats": {},
+   "href": "/wardogs/database/buildables/loudspeaker-2"
+  },
+  "Vehicle.Variant.Stationary.MistralAA": {
+   "name": "Talon 9K-SAM",
+   "icon": "/images/wardogs/database/icons/t_ui_talon_map_icon.webp",
+   "price": null,
+   "sub": "Emplacements",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/talon-9k-sam-2"
+  },
+  "Vehicle.Variant.Stationary.Mortar": {
+   "name": "L81 Mortar",
+   "icon": "/images/wardogs/database/icons/t_ui_mortar_map_icon.webp",
+   "price": null,
+   "sub": "Emplacements",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/l81-mortar-2"
+  },
+  "Vehicle.Variant.Stationary.Phalanx": {
+   "name": "Vanguard CIWS",
+   "icon": "/images/wardogs/database/icons/t_ui_phalanx_map_icon.webp",
+   "price": null,
+   "sub": "Emplacements",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/vanguard-ciws-2"
+  },
+  "Vehicle.Variant.Stationary.STN_05": {
+   "name": "Stingray",
+   "icon": "/images/wardogs/database/icons/t_ui_mortar_map_icon.webp",
+   "price": null,
+   "sub": "Emplacements",
+   "stats": {},
+   "href": "/wardogs/database/mounted-weapons/stingray"
+  }
+ }
+}

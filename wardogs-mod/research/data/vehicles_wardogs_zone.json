@@ -1,0 +1,780 @@
+{
+ "air-rotary-havoc-default": {
+  "name": "Havoc",
+  "cost": 28000.0,
+  "unlock": 650000.0,
+  "req": [
+   "Pilot",
+   35
+  ],
+  "cls": "Air Rotary",
+  "speed_kmh": 400.0,
+  "seats": 2.0,
+  "crew": "2 Crew members",
+  "fuel_l": 130.0,
+  "range": "~30 km",
+  "small_arms": "-95% damage",
+  "ap": null,
+  "armament": "2A42 Autocannon, B-13 Rocket Pods",
+  "hull": {
+   "Hull": 800.0,
+   "Fuel Tank": 200.0,
+   "Engine": 200.0,
+   "Rotor Tail": 300.0,
+   "Rotor Main": 400.0,
+   "Wheel Left Front": 100.0,
+   "Wheel Right Front": 100.0
+  }
+ },
+ "air-rotary-littlebird-default": {
+  "name": "MH-6",
+  "cost": 6250.0,
+  "unlock": null,
+  "req": null,
+  "cls": "Air Rotary",
+  "speed_kmh": 350.0,
+  "seats": 6.0,
+  "crew": "2 Crew + 4 Passengers",
+  "fuel_l": 105.0,
+  "range": "~24 km",
+  "small_arms": "-80% damage",
+  "ap": null,
+  "armament": null,
+  "hull": {
+   "Hull": 400.0,
+   "Fuel Tank": 200.0,
+   "Engine": 200.0,
+   "Rotor Tail": 300.0,
+   "Rotor Main": 400.0
+  }
+ },
+ "air-rotary-littlebird-mountedmachineguns": {
+  "name": "AH-6M [Miniguns]",
+  "cost": 12000.0,
+  "unlock": 125000.0,
+  "req": [
+   "Pilot",
+   8
+  ],
+  "cls": "Air Rotary",
+  "speed_kmh": 350.0,
+  "seats": 2.0,
+  "crew": "2 Crew Members",
+  "fuel_l": 105.0,
+  "range": "~24 km",
+  "small_arms": "-80% damage",
+  "ap": null,
+  "armament": "Two M134D Miniguns",
+  "hull": {
+   "Hull": 400.0,
+   "Fuel Tank": 200.0,
+   "Engine": 200.0,
+   "Rotor Tail": 300.0,
+   "Rotor Main": 400.0
+  }
+ },
+ "air-rotary-littlebird-rocketpods": {
+  "name": "AH-6R [Rockets]",
+  "cost": 18800.0,
+  "unlock": 250000.0,
+  "req": [
+   "Pilot",
+   20
+  ],
+  "cls": "Air Rotary",
+  "speed_kmh": 350.0,
+  "seats": 2.0,
+  "crew": "2 Crew Members",
+  "fuel_l": 105.0,
+  "range": "~24 km",
+  "small_arms": "-80% damage",
+  "ap": null,
+  "armament": "B-13 Rocket Pods",
+  "hull": {
+   "Hull": 400.0,
+   "Fuel Tank": 200.0,
+   "Engine": 200.0,
+   "Rotor Tail": 300.0,
+   "Rotor Main": 400.0
+  }
+ },
+ "air-rotary-rot_04-default": {
+  "name": "Z20 Lakota",
+  "cost": 7400.0,
+  "unlock": 35000.0,
+  "req": [
+   "Pilot",
+   10
+  ],
+  "cls": "Air Rotary",
+  "speed_kmh": 445.0,
+  "seats": 13.0,
+  "crew": "2 Crew + 11 Passengers",
+  "fuel_l": 120.0,
+  "range": "~27 km",
+  "small_arms": "-95% damage",
+  "ap": null,
+  "armament": null,
+  "hull": {
+   "Hull": 600.0,
+   "Fuel Tank": 200.0,
+   "Rotor Tail": 300.0,
+   "Engine": 200.0,
+   "Rotor Main": 400.0
+  }
+ },
+ "air-rotary-rot_04-mountedmachineguns": {
+  "name": "Z20 Lakota [Miniguns]",
+  "cost": 15000.0,
+  "unlock": 85000.0,
+  "req": [
+   "Pilot",
+   25
+  ],
+  "cls": "Air Rotary",
+  "speed_kmh": 445.0,
+  "seats": 13.0,
+  "crew": "4 Crew + 9 Passengers",
+  "fuel_l": 120.0,
+  "range": "~27 km",
+  "small_arms": "-95% damage",
+  "ap": null,
+  "armament": "Two M134D Miniguns",
+  "hull": {
+   "Hull": 600.0,
+   "Fuel Tank": 200.0,
+   "Rotor Tail": 300.0,
+   "Engine": 200.0,
+   "Rotor Main": 400.0
+  }
+ },
+ "land-tracked-spawnvehicle-lonestar": {
+  "name": "M113 APC SV",
+  "cost": null,
+  "unlock": null,
+  "req": null,
+  "cls": "Land Tracked",
+  "speed_kmh": 71.0,
+  "seats": 10.0,
+  "crew": null,
+  "fuel_l": 100.0,
+  "range": "~18 km",
+  "small_arms": "Immune",
+  "ap": null,
+  "armament": null,
+  "hull": {
+   "Hull": 1000.0,
+   "Fuel Tank": 100.0,
+   "Tracks Left": 125.0,
+   "Tracks Right": 125.0,
+   "Radar": 100.0
+  }
+ },
+ "land-tracked-spawnvehicle-manticore": {
+  "name": "M113 APC SV",
+  "cost": null,
+  "unlock": null,
+  "req": null,
+  "cls": "Land Tracked",
+  "speed_kmh": 71.0,
+  "seats": 10.0,
+  "crew": null,
+  "fuel_l": 100.0,
+  "range": "~18 km",
+  "small_arms": "Immune",
+  "ap": null,
+  "armament": null,
+  "hull": {
+   "Hull": 1000.0,
+   "Fuel Tank": 100.0,
+   "Tracks Left": 125.0,
+   "Tracks Right": 125.0,
+   "Radar": 100.0
+  }
+ },
+ "land-tracked-spawnvehicle-valkyra": {
+  "name": "M113 APC SV",
+  "cost": null,
+  "unlock": null,
+  "req": null,
+  "cls": "Land Tracked",
+  "speed_kmh": 71.0,
+  "seats": 10.0,
+  "crew": null,
+  "fuel_l": 100.0,
+  "range": "~18 km",
+  "small_arms": "Immune",
+  "ap": null,
+  "armament": null,
+  "hull": {
+   "Hull": 1000.0,
+   "Fuel Tank": 100.0,
+   "Tracks Left": 125.0,
+   "Tracks Right": 125.0,
+   "Radar": 100.0
+  }
+ },
+ "land-tracked-tnk_01-antiair": {
+  "name": "Flakpanzer Gepard",
+  "cost": 14000.0,
+  "unlock": 300000.0,
+  "req": [
+   "Driver",
+   25
+  ],
+  "cls": "Land Tracked",
+  "speed_kmh": 65.0,
+  "seats": 2.0,
+  "crew": "2 Crew Members",
+  "fuel_l": 110.0,
+  "range": "~11 km",
+  "small_arms": "Immune",
+  "ap": null,
+  "armament": "Duel 35mm Oerlikon GDF Cannons",
+  "hull": {
+   "Hull": 800.0,
+   "Fuel Tank": 150.0,
+   "Engine": 150.0,
+   "Tracks Left": 125.0,
+   "Tracks Right": 125.0
+  }
+ },
+ "land-tracked-tnk_01-artillery": {
+  "name": "SPH-2",
+  "cost": 8000.0,
+  "unlock": 350000.0,
+  "req": [
+   "Driver",
+   31
+  ],
+  "cls": "Land Tracked",
+  "speed_kmh": 65.0,
+  "seats": 3.0,
+  "crew": "3 Crew Members",
+  "fuel_l": 105.0,
+  "range": "~13 km",
+  "small_arms": "Immune",
+  "ap": null,
+  "armament": "L52 Cannon, M249 Machine Gun",
+  "hull": {
+   "Hull": 650.0,
+   "Fuel Tank": 100.0,
+   "Engine": 150.0,
+   "Tracks Left": 125.0,
+   "Tracks Right": 125.0
+  }
+ },
+ "land-tracked-tnk_01-heavy": {
+  "name": "L2A6",
+  "cost": 22000.0,
+  "unlock": 500000.0,
+  "req": [
+   "Driver",
+   35
+  ],
+  "cls": "Land Tracked",
+  "speed_kmh": 65.0,
+  "seats": 3.0,
+  "crew": "3 Crew Members",
+  "fuel_l": 110.0,
+  "range": "~14 km",
+  "small_arms": "Immune",
+  "ap": null,
+  "armament": "M249 Machine Gun, L55A1 Cannon, MG3A1 Coaxial Gun",
+  "hull": {
+   "Hull": 800.0,
+   "Fuel Tank": 150.0,
+   "Engine": 150.0,
+   "Tracks Left": 125.0,
+   "Tracks Right": 125.0,
+   "Body Strong Area": 350.0
+  }
+ },
+ "land-tracked-tnk_04-default": {
+  "name": "T-72B3",
+  "cost": 16000.0,
+  "unlock": 250000.0,
+  "req": [
+   "Driver",
+   20
+  ],
+  "cls": "Land Tracked",
+  "speed_kmh": 60.0,
+  "seats": 3.0,
+  "crew": "3 Crew Members",
+  "fuel_l": 110.0,
+  "range": "~13 km",
+  "small_arms": "Immune",
+  "ap": null,
+  "armament": "2A46M-5 Cannon, PKTM Coaxial Gun, M2 Browning Machine Gun",
+  "hull": {
+   "Hull": 750.0,
+   "Fuel Tank": 150.0,
+   "Engine": 150.0,
+   "Tracks Left": 125.0,
+   "Tracks Right": 125.0
+  }
+ },
+ "land-wheeled-bobcat-default": {
+  "name": "Bobcat",
+  "cost": 500.0,
+  "unlock": null,
+  "req": null,
+  "cls": "Land Wheeled",
+  "speed_kmh": 75.0,
+  "seats": 2.0,
+  "crew": "1 Driver + 1 Passenger",
+  "fuel_l": 18.0,
+  "range": "~8 km",
+  "small_arms": "-92.5% damage",
+  "ap": "+20% damage",
+  "armament": null,
+  "hull": {
+   "Hull": 200.0,
+   "Engine": 200.0,
+   "Fuel Tank": 100.0,
+   "Wheel Left Front": 75.0,
+   "Wheel Left Rear": 75.0,
+   "Wheel Right Front": 75.0,
+   "Wheel Right Rear": 75.0
+  }
+ },
+ "land-wheeled-dunebuggy-default": {
+  "name": "Dune Buggy",
+  "cost": 1500.0,
+  "unlock": 25000.0,
+  "req": [
+   "Driver",
+   9
+  ],
+  "cls": "Land Wheeled",
+  "speed_kmh": 130.0,
+  "seats": 3.0,
+  "crew": "1 Driver + 2 Passenger",
+  "fuel_l": 68.0,
+  "range": "~14 km",
+  "small_arms": "-90% damage",
+  "ap": "+20% damage",
+  "armament": null,
+  "hull": {
+   "Hull": 400.0,
+   "Engine": 400.0,
+   "Fuel Tank": 300.0,
+   "Wheel Left Front": 75.0,
+   "Wheel Left Rear": 75.0,
+   "Wheel Right Front": 75.0,
+   "Wheel Right Rear": 75.0
+  }
+ },
+ "land-wheeled-humvee-default": {
+  "name": "Humvee",
+  "cost": 3000.0,
+  "unlock": 75000.0,
+  "req": [
+   "Driver",
+   14
+  ],
+  "cls": "Land Wheeled",
+  "speed_kmh": 113.0,
+  "seats": 4.0,
+  "crew": "1 Driver + 3 Passengers",
+  "fuel_l": 65.0,
+  "range": "~20 km",
+  "small_arms": "-95% damage",
+  "ap": "+17.5% damage",
+  "armament": null,
+  "hull": {
+   "Hull": 500.0,
+   "Engine": 400.0,
+   "Fuel Tank": 400.0,
+   "Wheel Left Front": 75.0,
+   "Wheel Left Rear": 75.0,
+   "Wheel Right Front": 75.0,
+   "Wheel Right Rear": 75.0
+  }
+ },
+ "land-wheeled-humvee-machinegun": {
+  "name": "Humvee [M249]",
+  "cost": 8500.0,
+  "unlock": 125000.0,
+  "req": [
+   "Driver",
+   24
+  ],
+  "cls": "Land Wheeled",
+  "speed_kmh": 113.0,
+  "seats": 5.0,
+  "crew": "2 Crew + 3 Passengers",
+  "fuel_l": 65.0,
+  "range": "~20 km",
+  "small_arms": "-96% damage",
+  "ap": "+17.5% damage",
+  "armament": "M249 Machine Gun",
+  "hull": {
+   "Hull": 500.0,
+   "Engine": 400.0,
+   "Fuel Tank": 400.0,
+   "Wheel Left Front": 75.0,
+   "Wheel Left Rear": 75.0,
+   "Wheel Right Front": 75.0,
+   "Wheel Right Rear": 75.0
+  }
+ },
+ "land-wheeled-humvee-minigun": {
+  "name": "Humvee [Minigun]",
+  "cost": 10000.0,
+  "unlock": 150000.0,
+  "req": [
+   "Driver",
+   30
+  ],
+  "cls": "Land Wheeled",
+  "speed_kmh": 113.0,
+  "seats": 5.0,
+  "crew": "2 Crew + 3 Passengers",
+  "fuel_l": 65.0,
+  "range": "~20 km",
+  "small_arms": "-97.5% damage",
+  "ap": "+17.5% damage",
+  "armament": "M134D Minigun",
+  "hull": {
+   "Hull": 500.0,
+   "Engine": 400.0,
+   "Fuel Tank": 400.0,
+   "Wheel Left Front": 75.0,
+   "Wheel Left Rear": 75.0,
+   "Wheel Right Front": 75.0,
+   "Wheel Right Rear": 75.0
+  }
+ },
+ "land-wheeled-kodiak-default": {
+  "name": "Kodiak",
+  "cost": 2500.0,
+  "unlock": null,
+  "req": null,
+  "cls": "Land Wheeled",
+  "speed_kmh": 154.0,
+  "seats": 4.0,
+  "crew": "1 Driver + 3 Passenger",
+  "fuel_l": 50.0,
+  "range": "~17 km",
+  "small_arms": "-95% damage",
+  "ap": "+20% damage",
+  "armament": null,
+  "hull": {
+   "Hull": 400.0,
+   "Engine": 400.0,
+   "Fuel Tank": 400.0,
+   "Wheel Left Front": 75.0,
+   "Wheel Left Rear": 75.0,
+   "Wheel Right Front": 75.0,
+   "Wheel Right Rear": 75.0
+  }
+ },
+ "land-wheeled-kodiak-machinegun": {
+  "name": "Kodiak [M249]",
+  "cost": 6750.0,
+  "unlock": 50000.0,
+  "req": [
+   "Driver",
+   6
+  ],
+  "cls": "Land Wheeled",
+  "speed_kmh": 154.0,
+  "seats": 5.0,
+  "crew": "2 Crew + 3 Passengers",
+  "fuel_l": 50.0,
+  "range": "~17 km",
+  "small_arms": "-95% damage",
+  "ap": "+20% damage",
+  "armament": "M249 Machine Gun",
+  "hull": {
+   "Hull": 400.0,
+   "Engine": 400.0,
+   "Fuel Tank": 400.0,
+   "Wheel Left Front": 75.0,
+   "Wheel Left Rear": 75.0,
+   "Wheel Right Front": 75.0,
+   "Wheel Right Rear": 75.0
+  }
+ },
+ "land-wheeled-kodiak-pickup": {
+  "name": "Kodiak [Pickup]",
+  "cost": 3000.0,
+  "unlock": 35000.0,
+  "req": [
+   "Driver",
+   10
+  ],
+  "cls": "Land Wheeled",
+  "speed_kmh": 154.0,
+  "seats": 6.0,
+  "crew": "1 Driver + 5 Passengers",
+  "fuel_l": 50.0,
+  "range": "~17 km",
+  "small_arms": "-95% damage",
+  "ap": "+20% damage",
+  "armament": null,
+  "hull": {
+   "Hull": 400.0,
+   "Engine": 400.0,
+   "Fuel Tank": 400.0,
+   "Wheel Left Front": 75.0,
+   "Wheel Left Rear": 75.0,
+   "Wheel Right Front": 75.0,
+   "Wheel Right Rear": 75.0
+  }
+ },
+ "land-wheeled-ural-attack": {
+  "name": "Ural Defender [M249]",
+  "cost": 9500.0,
+  "unlock": 100000.0,
+  "req": [
+   "Driver",
+   22
+  ],
+  "cls": "Land Wheeled",
+  "speed_kmh": 79.0,
+  "seats": 5.0,
+  "crew": "3 Crew + 2 Passengers",
+  "fuel_l": 85.0,
+  "range": "~21 km",
+  "small_arms": "-95% damage",
+  "ap": "+17.5% damage",
+  "armament": "M249 Machine Gun",
+  "hull": {
+   "Hull": 700.0,
+   "Engine": 400.0,
+   "Fuel Tank": 400.0,
+   "Body Moderate Area": 1.0,
+   "Wheel Left Front": 75.0,
+   "Wheel Left Middle": 75.0,
+   "Wheel Left Rear": 75.0,
+   "Wheel Right Front": 75.0,
+   "Wheel Right Middle": 75.0,
+   "Wheel Right Rear": 75.0
+  }
+ },
+ "land-wheeled-ural-battle": {
+  "name": "Ural Defender",
+  "cost": 7200.0,
+  "unlock": 75000.0,
+  "req": [
+   "Driver",
+   15
+  ],
+  "cls": "Land Wheeled",
+  "speed_kmh": 79.0,
+  "seats": 3.0,
+  "crew": "1 Driver + 2 Passengers",
+  "fuel_l": 85.0,
+  "range": "~21 km",
+  "small_arms": "-95% damage",
+  "ap": "+17.5% damage",
+  "armament": null,
+  "hull": {
+   "Hull": 700.0,
+   "Engine": 400.0,
+   "Fuel Tank": 400.0,
+   "Body Moderate Area": 1.0,
+   "Wheel Left Front": 75.0,
+   "Wheel Left Middle": 75.0,
+   "Wheel Left Rear": 75.0,
+   "Wheel Right Front": 75.0,
+   "Wheel Right Middle": 75.0,
+   "Wheel Right Rear": 75.0
+  }
+ },
+ "land-wheeled-ural-default": {
+  "name": "Ural",
+  "cost": 5000.0,
+  "unlock": 35000.0,
+  "req": [
+   "Driver",
+   3
+  ],
+  "cls": "Land Wheeled",
+  "speed_kmh": 79.0,
+  "seats": 3.0,
+  "crew": "1 Driver + 2 Passengers",
+  "fuel_l": 85.0,
+  "range": "~21 km",
+  "small_arms": "-95% damage",
+  "ap": "+17.5% damage",
+  "armament": null,
+  "hull": {
+   "Hull": 700.0,
+   "Engine": 400.0,
+   "Fuel Tank": 400.0,
+   "Body Moderate Area": 1.0,
+   "Wheel Left Front": 75.0,
+   "Wheel Left Middle": 75.0,
+   "Wheel Left Rear": 75.0,
+   "Wheel Right Front": 75.0,
+   "Wheel Right Middle": 75.0,
+   "Wheel Right Rear": 75.0
+  }
+ },
+ "land-wheeled-whl_08-default": {
+  "name": "Wolf-110",
+  "cost": 2200.0,
+  "unlock": 50000.0,
+  "req": [
+   "Driver",
+   8
+  ],
+  "cls": "Land Wheeled",
+  "speed_kmh": 129.0,
+  "seats": 4.0,
+  "crew": "1 Driver + 3 Passenger",
+  "fuel_l": 60.0,
+  "range": "~15 km",
+  "small_arms": "-95% damage",
+  "ap": "+19% damage",
+  "armament": null,
+  "hull": {
+   "Hull": 500.0,
+   "Engine": 400.0,
+   "Fuel Tank": 400.0,
+   "Wheel Left Front": 75.0,
+   "Wheel Left Rear": 75.0,
+   "Wheel Right Front": 75.0,
+   "Wheel Right Rear": 75.0
+  }
+ },
+ "land-wheeled-whl_08-machinegun": {
+  "name": "Wolf-110 [M2 Browning]",
+  "cost": 7800.0,
+  "unlock": 125000.0,
+  "req": [
+   "Driver",
+   16
+  ],
+  "cls": "Land Wheeled",
+  "speed_kmh": 129.0,
+  "seats": 5.0,
+  "crew": "2 Crew + 3 Passengers",
+  "fuel_l": 60.0,
+  "range": "~15 km",
+  "small_arms": "-95% damage",
+  "ap": "+19% damage",
+  "armament": "M2 Browning Machine Gun",
+  "hull": {
+   "Hull": 500.0,
+   "Engine": 400.0,
+   "Fuel Tank": 400.0,
+   "Wheel Left Front": 75.0,
+   "Wheel Left Rear": 75.0,
+   "Wheel Right Front": 75.0,
+   "Wheel Right Rear": 75.0
+  }
+ },
+ "stationary-loudspeaker": {
+  "name": "Loudspeaker",
+  "cost": null,
+  "unlock": null,
+  "req": null,
+  "cls": "Stationary Loudspeaker",
+  "speed_kmh": null,
+  "seats": null,
+  "crew": null,
+  "fuel_l": null,
+  "range": null,
+  "small_arms": "-95% damage",
+  "ap": "+17.5% damage",
+  "armament": null,
+  "hull": {
+   "Hull": 1000.0
+  }
+ },
+ "stationary-mgnest": {
+  "name": "MG Nest",
+  "cost": null,
+  "unlock": null,
+  "req": null,
+  "cls": "Stationary MG Nest",
+  "speed_kmh": null,
+  "seats": null,
+  "crew": null,
+  "fuel_l": null,
+  "range": null,
+  "small_arms": null,
+  "ap": null,
+  "armament": null,
+  "hull": {
+   "Hull": 1800.0
+  }
+ },
+ "stationary-mistralaa": {
+  "name": "Talon 9K-SAM",
+  "cost": null,
+  "unlock": null,
+  "req": null,
+  "cls": "Stationary Mistral AA",
+  "speed_kmh": null,
+  "seats": null,
+  "crew": null,
+  "fuel_l": null,
+  "range": null,
+  "small_arms": null,
+  "ap": null,
+  "armament": null,
+  "hull": {
+   "Hull": 3000.0
+  }
+ },
+ "stationary-mortar": {
+  "name": "L81 Mortar",
+  "cost": null,
+  "unlock": null,
+  "req": null,
+  "cls": "Stationary Mortar",
+  "speed_kmh": null,
+  "seats": null,
+  "crew": null,
+  "fuel_l": null,
+  "range": null,
+  "small_arms": null,
+  "ap": null,
+  "armament": null,
+  "hull": {
+   "Hull": 3000.0
+  }
+ },
+ "stationary-phalanx": {
+  "name": "Vanguard CIWS",
+  "cost": null,
+  "unlock": null,
+  "req": null,
+  "cls": "Stationary Phalanx",
+  "speed_kmh": null,
+  "seats": null,
+  "crew": null,
+  "fuel_l": null,
+  "range": null,
+  "small_arms": null,
+  "ap": null,
+  "armament": null,
+  "hull": {
+   "Hull": 5000.0
+  }
+ },
+ "stationary-stn_05": {
+  "name": "Stingray",
+  "cost": null,
+  "unlock": null,
+  "req": null,
+  "cls": "Stationary STN_05",
+  "speed_kmh": null,
+  "seats": null,
+  "crew": null,
+  "fuel_l": null,
+  "range": null,
+  "small_arms": null,
+  "ap": null,
+  "armament": null,
+  "hull": {
+   "Hull": 3000.0
+  }
+ }
+}

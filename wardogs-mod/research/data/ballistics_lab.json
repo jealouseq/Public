@@ -1,0 +1,2394 @@
+{
+ "game": "wardogs",
+ "source": "metaforge.app",
+ "generatedAt": "2026-08-28",
+ "assumedHealth": 100,
+ "hitLocations": [
+  {
+   "key": "head",
+   "label": "Head"
+  },
+  {
+   "key": "neck",
+   "label": "Neck"
+  },
+  {
+   "key": "torso_upper",
+   "label": "Upper torso"
+  },
+  {
+   "key": "torso_middle",
+   "label": "Middle torso"
+  },
+  {
+   "key": "torso_lower",
+   "label": "Lower torso"
+  },
+  {
+   "key": "pelvis",
+   "label": "Pelvis"
+  },
+  {
+   "key": "arm_upper",
+   "label": "Upper arm"
+  },
+  {
+   "key": "arm_lower",
+   "label": "Lower arm"
+  },
+  {
+   "key": "arm_hand",
+   "label": "Hand"
+  },
+  {
+   "key": "leg_thigh",
+   "label": "Upper leg"
+  },
+  {
+   "key": "leg_calf",
+   "label": "Lower leg"
+  },
+  {
+   "key": "leg_foot",
+   "label": "Foot"
+  }
+ ],
+ "hitboxes": {
+  "Assault Rifle": {
+   "head": 2.35,
+   "neck": 1.7625,
+   "torso_upper": 1.1,
+   "torso_middle": 1,
+   "torso_lower": 0.95,
+   "pelvis": 0.9,
+   "arm_upper": 0.54,
+   "arm_lower": 0.45,
+   "arm_hand": 0.27,
+   "leg_thigh": 0.54,
+   "leg_calf": 0.45,
+   "leg_foot": 0.27
+  },
+  "Submachine Gun": {
+   "head": 2.1,
+   "neck": 1.575,
+   "torso_upper": 1.155,
+   "torso_middle": 1.05,
+   "torso_lower": 0.9975,
+   "pelvis": 0.945,
+   "arm_upper": 0.78,
+   "arm_lower": 0.65,
+   "arm_hand": 0.39,
+   "leg_thigh": 0.78,
+   "leg_calf": 0.65,
+   "leg_foot": 0.39
+  },
+  "Light Machine Gun": {
+   "head": 2.3,
+   "neck": 1.725,
+   "torso_upper": 1.155,
+   "torso_middle": 1.05,
+   "torso_lower": 0.9975,
+   "pelvis": 0.9,
+   "arm_upper": 0.54,
+   "arm_lower": 0.45,
+   "arm_hand": 0.27,
+   "leg_thigh": 0.54,
+   "leg_calf": 0.45,
+   "leg_foot": 0.27
+  },
+  "Shotgun": {
+   "head": 1.5,
+   "neck": 1.125,
+   "torso_upper": 0.99,
+   "torso_middle": 0.9,
+   "torso_lower": 0.855,
+   "pelvis": 0.81,
+   "arm_upper": 0.63,
+   "arm_lower": 0.525,
+   "arm_hand": 0.315,
+   "leg_thigh": 0.63,
+   "leg_calf": 0.525,
+   "leg_foot": 0.315
+  },
+  "Marksman Rifle": {
+   "head": 2.5,
+   "neck": 1.875,
+   "torso_upper": 1.43,
+   "torso_middle": 1.3,
+   "torso_lower": 1.235,
+   "pelvis": 0.9,
+   "arm_upper": 0.6,
+   "arm_lower": 0.5,
+   "arm_hand": 0.3,
+   "leg_thigh": 0.6,
+   "leg_calf": 0.5,
+   "leg_foot": 0.3
+  },
+  "Sniper Rifle": {
+   "head": 3.2,
+   "neck": 2.4,
+   "torso_upper": 1.98,
+   "torso_middle": 1.45,
+   "torso_lower": 1.3775,
+   "pelvis": 1.17,
+   "arm_upper": 0.72,
+   "arm_lower": 0.6,
+   "arm_hand": 0.36,
+   "leg_thigh": 0.72,
+   "leg_calf": 0.6,
+   "leg_foot": 0.36
+  },
+  "Pistol": {
+   "head": 2.1,
+   "neck": 1.575,
+   "torso_upper": 1.155,
+   "torso_middle": 1.05,
+   "torso_lower": 0.9975,
+   "pelvis": 0.945,
+   "arm_upper": 0.78,
+   "arm_lower": 0.65,
+   "arm_hand": 0.39,
+   "leg_thigh": 0.78,
+   "leg_calf": 0.65,
+   "leg_foot": 0.39
+  },
+  "Combat Bow": {
+   "head": 2.3,
+   "neck": 1.725,
+   "torso_upper": 2.09,
+   "torso_middle": 1.9,
+   "torso_lower": 1.425,
+   "pelvis": 0.9,
+   "arm_upper": 0.48,
+   "arm_lower": 0.4,
+   "arm_hand": 0.24,
+   "leg_thigh": 0.48,
+   "leg_calf": 0.4,
+   "leg_foot": 0.24
+  }
+ },
+ "rounds": [
+  {
+   "key": "FMJ",
+   "label": "Standard (FMJ)",
+   "penetration": 1,
+   "vsUnarmoured": 0,
+   "vsArmour": 0,
+   "vsHelmet": 0
+  },
+  {
+   "key": "HollowPoint",
+   "label": "Flesh Damage (HP)",
+   "penetration": 1.5,
+   "vsUnarmoured": 100,
+   "vsArmour": -30,
+   "vsHelmet": -30
+  },
+  {
+   "key": "ArmorPiercing",
+   "label": "Armor Piercing (AP)",
+   "penetration": 0.3,
+   "vsUnarmoured": -20,
+   "vsArmour": 30,
+   "vsHelmet": 30
+  }
+ ],
+ "armour": [
+  {
+   "id": "Id.Item.LightArmor",
+   "name": "Level 1 Armor",
+   "slug": "level-1-armor",
+   "icon": "t_ui_vendor_armor_001a",
+   "slot": "armor",
+   "tier": "Armor.Light",
+   "reduction": 30,
+   "durability": 200,
+   "covers": [
+    "torso_lower",
+    "torso_middle",
+    "torso_upper"
+   ]
+  },
+  {
+   "id": "Id.Item.MediumArmor",
+   "name": "Level 2 Armor",
+   "slug": "level-2-armor",
+   "icon": "t_ui_vendor_armor_002a",
+   "slot": "armor",
+   "tier": "Armor.Medium",
+   "reduction": 40,
+   "durability": 220,
+   "covers": [
+    "torso_lower",
+    "torso_middle",
+    "torso_upper"
+   ]
+  },
+  {
+   "id": "Id.Item.HeavyArmor",
+   "name": "Level 3 Armor",
+   "slug": "level-3-armor",
+   "icon": "t_ui_vendor_armor_003a",
+   "slot": "armor",
+   "tier": "Armor.Heavy",
+   "reduction": 55,
+   "durability": 250,
+   "covers": [
+    "torso_lower",
+    "torso_middle",
+    "torso_upper"
+   ]
+  },
+  {
+   "id": "Id.Item.SuperHeavyArmor",
+   "name": "Level 4 Armor",
+   "slug": "level-4-armor",
+   "icon": "t_ui_vendor_armor_004a",
+   "slot": "armor",
+   "tier": "Armor.SuperHeavy",
+   "reduction": 65,
+   "durability": 300,
+   "covers": [
+    "torso_lower",
+    "torso_middle",
+    "torso_upper",
+    "pelvis",
+    "arm_upper"
+   ]
+  },
+  {
+   "id": "Id.Item.LightHelmet",
+   "name": "Level 1 Helmet",
+   "slug": "level-1-helmet",
+   "icon": "t_ui_vendor_helmet_001a",
+   "slot": "helmet",
+   "tier": "Helmet.Light",
+   "reduction": 30,
+   "durability": 80,
+   "covers": [
+    "head"
+   ]
+  },
+  {
+   "id": "Id.Item.MediumHelmet",
+   "name": "Level 2 Helmet",
+   "slug": "level-2-helmet",
+   "icon": "t_ui_vendor_helmet_002a",
+   "slot": "helmet",
+   "tier": "Helmet.Medium",
+   "reduction": 40,
+   "durability": 100,
+   "covers": [
+    "head"
+   ]
+  },
+  {
+   "id": "Id.Item.HeavyHelmet",
+   "name": "Level 3 Helmet",
+   "slug": "level-3-helmet",
+   "icon": "t_ui_vendor_helmet_003a",
+   "slot": "helmet",
+   "tier": "Helmet.Heavy",
+   "reduction": 55,
+   "durability": 180,
+   "covers": [
+    "head",
+    "neck"
+   ]
+  },
+  {
+   "id": "Id.Item.SuperHeavyHelmet",
+   "name": "Level 4 Helmet",
+   "slug": "level-4-helmet",
+   "icon": "t_ui_vendor_helmet_004a",
+   "slot": "helmet",
+   "tier": "Helmet.SuperHeavy",
+   "reduction": 65,
+   "durability": 200,
+   "covers": [
+    "head",
+    "neck"
+   ]
+  }
+ ],
+ "calibres": {
+  "120x570mm": {
+   "key": "120x570mm",
+   "baseDamage": 150,
+   "mass": 20,
+   "diameter": 12,
+   "dragModel": "GC (Cylinder)",
+   "dragCoefficient": 10,
+   "ricochetAngle": 91,
+   "href": "/wardogs/database/ammunition/page/1?sub=vehicle-heavy",
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_ammo_120mm"
+   },
+   "label": "120mm"
+  },
+  "120x800mm.Standard": {
+   "key": "120x800mm.Standard",
+   "baseDamage": 120,
+   "mass": 15,
+   "diameter": 12,
+   "dragModel": "GC (Cylinder)",
+   "dragCoefficient": 11.5,
+   "ricochetAngle": 91,
+   "label": "81mm"
+  },
+  "122mm": {
+   "key": "122mm",
+   "baseDamage": 100,
+   "mass": 57,
+   "diameter": 12.2,
+   "dragModel": "GC (Cylinder)",
+   "ricochetAngle": 91,
+   "href": "/wardogs/database/ammunition/page/1?sub=vehicle-heavy",
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_attachment_84heat_round_textured_512x512"
+   },
+   "label": "122mm"
+  },
+  "122mm.Havoc": {
+   "key": "122mm.Havoc",
+   "baseDamage": 300,
+   "mass": 57,
+   "diameter": 12.2,
+   "dragModel": "GC (Cylinder)",
+   "ricochetAngle": 91,
+   "label": "122mm"
+  },
+  "155mm.Expensive": {
+   "key": "155mm.Expensive",
+   "baseDamage": 450,
+   "mass": 19,
+   "diameter": 10.5,
+   "dragModel": "GC (Cylinder)",
+   "dragCoefficient": 2.5,
+   "ricochetAngle": 91,
+   "href": "/wardogs/database/ammunition/page/1?sub=155mm",
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_attachment_84heat_round_textured_512x512"
+   },
+   "label": "155mm"
+  },
+  "155mm.Expensive.Sandbox": {
+   "key": "155mm.Expensive.Sandbox",
+   "baseDamage": 450,
+   "mass": 70,
+   "diameter": 8.4,
+   "dragModel": "GC (Cylinder)",
+   "dragCoefficient": 80,
+   "ricochetAngle": 91,
+   "label": "155mm"
+  },
+  "155mm.Standard": {
+   "key": "155mm.Standard",
+   "baseDamage": 450,
+   "mass": 70,
+   "diameter": 8.4,
+   "dragModel": "GC (Cylinder)",
+   "dragCoefficient": 80,
+   "ricochetAngle": 91,
+   "href": "/wardogs/database/ammunition/page/1?sub=vehicle-heavy",
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_attachment_84heat_round_textured_512x512"
+   },
+   "label": "155mm"
+  },
+  "155mm.Standard.Sandbox": {
+   "key": "155mm.Standard.Sandbox",
+   "baseDamage": 450,
+   "mass": 70,
+   "diameter": 8.4,
+   "dragModel": "GC (Cylinder)",
+   "dragCoefficient": 80,
+   "ricochetAngle": 91,
+   "label": "155mm"
+  },
+  "20x102mm": {
+   "key": "20x102mm",
+   "baseDamage": 60,
+   "mass": 0.04,
+   "diameter": 1,
+   "dragModel": "G7 (Boat Tail)",
+   "ricochetAngle": 91,
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_chamberedround_bullet"
+   },
+   "label": "20x102mm"
+  },
+  "308Win": {
+   "key": "308Win",
+   "baseDamage": 60,
+   "mass": 0.012,
+   "diameter": 0.782,
+   "dragModel": "G7 (Boat Tail)",
+   "dragCoefficient": 0.9,
+   "armourClass": "Arms.High",
+   "href": "/wardogs/database/ammunition/page/1?sub=308-win",
+   "loads": [
+    "FMJ",
+    "HollowPoint",
+    "ArmorPiercing"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_ammobox__308_fmj",
+    "HollowPoint": "t_ui_icon_ammobox__308_hp",
+    "ArmorPiercing": "t_ui_icon_ammobox__308_ap"
+   },
+   "label": ".308 Win"
+  },
+  "30mm": {
+   "key": "30mm",
+   "baseDamage": 100,
+   "mass": 0.22,
+   "diameter": 3,
+   "dragModel": "GC (Cylinder)",
+   "dragCoefficient": 2,
+   "ricochetAngle": 85,
+   "armourClass": "Arms.High",
+   "href": "/wardogs/database/ammunition/page/1?sub=vehicle-heavy",
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_attachment_cheap_magazine_judge_textured_512x512"
+   },
+   "label": "30mm"
+  },
+  "338Nor": {
+   "key": "338Nor",
+   "baseDamage": 105,
+   "mass": 0.01944,
+   "diameter": 0.86106,
+   "dragModel": "G7 (Boat Tail)",
+   "dragCoefficient": 0.72,
+   "armourClass": "Arms.High",
+   "href": "/wardogs/database/ammunition/page/1?sub=338",
+   "loads": [
+    "FMJ",
+    "HollowPoint",
+    "ArmorPiercing"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_ammobox__338_fmj",
+    "HollowPoint": "t_ui_icon_ammobox__338_hp",
+    "ArmorPiercing": "t_ui_icon_ammobox__338_ap"
+   },
+   "label": ".338"
+  },
+  "35x228mm": {
+   "key": "35x228mm",
+   "baseDamage": 60,
+   "mass": 0.15,
+   "diameter": 3.5,
+   "dragModel": "G7 (Boat Tail)",
+   "dragCoefficient": 2.5,
+   "ricochetAngle": 91,
+   "href": "/wardogs/database/ammunition/page/1?sub=vehicle-heavy",
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_ammo_228mm"
+   },
+   "label": "35x228mm"
+  },
+  "40mm": {
+   "key": "40mm",
+   "baseDamage": 100,
+   "mass": 0.23,
+   "diameter": 4,
+   "dragModel": "GC (Cylinder)",
+   "dragCoefficient": 0.8,
+   "ricochetAngle": 91,
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_attachment_40mm_round_textured_512x512"
+   },
+   "label": "40mm"
+  },
+  "45ACP": {
+   "key": "45ACP",
+   "baseDamage": 30,
+   "mass": 0.015,
+   "diameter": 1.15,
+   "dragModel": "G1 (Flat Bottom)",
+   "dragCoefficient": 1.27,
+   "armourClass": "Arms.Small",
+   "href": "/wardogs/database/ammunition/page/1?sub=45-acp",
+   "loads": [
+    "FMJ",
+    "HollowPoint",
+    "ArmorPiercing"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_ammobox_45-acp_fmj",
+    "HollowPoint": "t_ui_icon_ammobox_45-acp_hp",
+    "ArmorPiercing": "t_ui_icon_ammobox_45-acp_ap"
+   },
+   "label": ".45 ACP"
+  },
+  "45Colt": {
+   "key": "45Colt",
+   "baseDamage": 45,
+   "mass": 0.01,
+   "diameter": 1.14,
+   "dragModel": "G1 (Flat Bottom)",
+   "armourClass": "Arms.Small",
+   "href": "/wardogs/database/ammunition/page/1?sub=45-colt",
+   "loads": [
+    "FMJ",
+    "HollowPoint",
+    "ArmorPiercing"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_ammobox_45-colt_fmj",
+    "HollowPoint": "t_ui_icon_ammobox_45-colt_hp",
+    "ArmorPiercing": "t_ui_icon_ammobox_45-colt_ap"
+   },
+   "label": ".45 Colt"
+  },
+  "50AE": {
+   "key": "50AE",
+   "baseDamage": 63,
+   "mass": 0.019,
+   "diameter": 1.27,
+   "dragModel": "G7 (Boat Tail)",
+   "armourClass": "Arms.High",
+   "href": "/wardogs/database/ammunition/page/1?sub=50ae",
+   "loads": [
+    "FMJ",
+    "HollowPoint",
+    "ArmorPiercing"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_ammobox__50-ae_fmj",
+    "HollowPoint": "t_ui_icon_ammobox__50-ae_hp",
+    "ArmorPiercing": "t_ui_icon_ammobox__50-ae_ap"
+   },
+   "label": "50AE"
+  },
+  "50Cal": {
+   "key": "50Cal",
+   "baseDamage": 107,
+   "mass": 0.051,
+   "diameter": 1.2954,
+   "dragModel": "G7 (Boat Tail)",
+   "armourClass": "Arms.Special",
+   "href": "/wardogs/database/ammunition/page/1?sub=50cal",
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_ammobox__50-ae_fmj"
+   },
+   "label": ".50Cal"
+  },
+  "545mm": {
+   "key": "545mm",
+   "baseDamage": 26,
+   "mass": 0.0034,
+   "diameter": 0.56,
+   "dragModel": "G7 (Boat Tail)",
+   "dragCoefficient": 1.4,
+   "armourClass": "Arms.Medium",
+   "href": "/wardogs/database/ammunition/page/1?sub=5-45mm",
+   "loads": [
+    "FMJ",
+    "HollowPoint",
+    "ArmorPiercing"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_ammobox_5_45x39_fmj",
+    "HollowPoint": "t_ui_icon_ammobox_5_45x39_hp",
+    "ArmorPiercing": "t_ui_icon_ammobox_5_45x39_ap"
+   },
+   "label": "5.45mm"
+  },
+  "556mm": {
+   "key": "556mm",
+   "baseDamage": 28,
+   "mass": 0.0041,
+   "diameter": 0.57,
+   "dragModel": "G7 (Boat Tail)",
+   "dragCoefficient": 1.26,
+   "armourClass": "Arms.Medium",
+   "href": "/wardogs/database/ammunition/page/1?sub=5-56mm",
+   "loads": [
+    "FMJ",
+    "HollowPoint",
+    "ArmorPiercing"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_ammobox_5_56x45mm_fmj",
+    "HollowPoint": "t_ui_icon_ammobox_5_56x45mm_hp",
+    "ArmorPiercing": "t_ui_icon_ammobox_5_56x45mm_ap"
+   },
+   "label": "5.56mm"
+  },
+  "70mm": {
+   "key": "70mm",
+   "baseDamage": 100,
+   "mass": 10.1,
+   "diameter": 12,
+   "dragModel": "GC (Cylinder)",
+   "ricochetAngle": 100
+  },
+  "762x51mm": {
+   "key": "762x51mm",
+   "baseDamage": 60,
+   "mass": 0.01,
+   "diameter": 0.782,
+   "dragModel": "G7 (Boat Tail)",
+   "dragCoefficient": 0.89,
+   "armourClass": "Arms.High",
+   "href": "/wardogs/database/ammunition/page/1?sub=7-62x51mm",
+   "loads": [
+    "FMJ",
+    "HollowPoint",
+    "ArmorPiercing"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_attachment_cheap_magazine_judge_textured_512x512",
+    "HollowPoint": "t_ui_icon_attachment_cheap_magazine_judge_textured_512x512",
+    "ArmorPiercing": "t_ui_icon_attachment_cheap_magazine_judge_textured_512x512"
+   },
+   "label": "7.62x51mm"
+  },
+  "72mm": {
+   "key": "72mm",
+   "baseDamage": 200,
+   "mass": 9.2,
+   "diameter": 7.2,
+   "dragModel": "G7 (Boat Tail)",
+   "ricochetAngle": 91,
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_chamberedround_finnedshell"
+   },
+   "label": "72mm"
+  },
+  "762mm": {
+   "key": "762mm",
+   "baseDamage": 42,
+   "mass": 0.008,
+   "diameter": 0.792,
+   "dragModel": "G7 (Boat Tail)",
+   "dragCoefficient": 1.2,
+   "armourClass": "Arms.High",
+   "href": "/wardogs/database/ammunition/page/1?sub=7-62mm",
+   "loads": [
+    "FMJ",
+    "HollowPoint",
+    "ArmorPiercing"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_ammobox_7_62x39mm_fmj",
+    "HollowPoint": "t_ui_icon_ammobox_7_62x39mm_hp",
+    "ArmorPiercing": "t_ui_icon_ammobox_7_62x39mm_ap"
+   },
+   "label": "7.62mm"
+  },
+  "762x54mm": {
+   "key": "762x54mm",
+   "baseDamage": 55,
+   "mass": 0.011729,
+   "diameter": 0.79248,
+   "dragModel": "G7 (Boat Tail)",
+   "dragCoefficient": 0.9,
+   "armourClass": "Arms.High",
+   "href": "/wardogs/database/ammunition/page/1?sub=7-62x54mm",
+   "loads": [
+    "FMJ",
+    "HollowPoint",
+    "ArmorPiercing"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_ammobox_7_62x54r_fmj",
+    "HollowPoint": "t_ui_icon_ammobox_7_62x54r_hp",
+    "ArmorPiercing": "t_ui_icon_ammobox_7_62x54r_ap"
+   },
+   "label": "7.62x54mm"
+  },
+  "12g.RifledSlug": {
+   "key": "12g.RifledSlug",
+   "baseDamage": 105,
+   "mass": 0.028,
+   "diameter": 1.85,
+   "dragModel": "GL (Blunt Nose)",
+   "armourClass": "Arms.Small",
+   "label": "12g Slug",
+   "href": "/wardogs/database/ammunition/12g-rifled-slug",
+   "roundIcons": {
+    "FMJ": "t_ui_icon_ammobox_12g_buck_fmj"
+   }
+  },
+  "7mmBuck": {
+   "key": "7mmBuck",
+   "baseDamage": 25,
+   "mass": 0.004,
+   "diameter": 0.83282,
+   "dragModel": "GA (Pellet)",
+   "dragCoefficient": 1.3,
+   "pellets": 8,
+   "armourClass": "Arms.Small",
+   "label": "12g Buckshot",
+   "href": "/wardogs/database/ammunition/12g-7mm-buckshot",
+   "roundIcons": {
+    "FMJ": "t_ui_icon_ammobox_12g_slug_fmj"
+   },
+   "loads": [
+    "FMJ"
+   ]
+  },
+  "84mm": {
+   "key": "84mm",
+   "baseDamage": 100,
+   "mass": 2.3,
+   "diameter": 8.4,
+   "dragModel": "GC (Cylinder)",
+   "ricochetAngle": 91,
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_item_84mm_bc"
+   },
+   "label": "84mm"
+  },
+  "93mm": {
+   "key": "93mm",
+   "baseDamage": 110,
+   "mass": 2,
+   "diameter": 9.3,
+   "dragModel": "GC (Cylinder)",
+   "dragCoefficient": 1.4,
+   "ricochetAngle": 91,
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_attachment_93mm_round_textured_512x512"
+   },
+   "label": "93mm"
+  },
+  "9mm": {
+   "key": "9mm",
+   "baseDamage": 22,
+   "mass": 0.007,
+   "diameter": 0.9017,
+   "dragModel": "G1 (Flat Bottom)",
+   "dragCoefficient": 1.27,
+   "armourClass": "Arms.Small",
+   "href": "/wardogs/database/ammunition/page/1?sub=9mm",
+   "loads": [
+    "FMJ",
+    "HollowPoint",
+    "ArmorPiercing"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_ammobox_9x19mm_fmj",
+    "HollowPoint": "t_ui_icon_ammobox_9x19mm_hp",
+    "ArmorPiercing": "t_ui_icon_ammobox_9x19mm_ap"
+   },
+   "label": "9mm"
+  },
+  "84mm.TVGuided": {
+   "key": "84mm.TVGuided",
+   "baseDamage": 100,
+   "mass": 2.3,
+   "diameter": 8.4,
+   "dragModel": "GC (Cylinder)",
+   "ricochetAngle": 85,
+   "label": "84mm"
+  },
+  "BatteryCharge": {
+   "key": "BatteryCharge",
+   "baseDamage": 40,
+   "mass": 0.0041,
+   "diameter": 0.57,
+   "dragModel": "G7 (Boat Tail)",
+   "dragCoefficient": 1.26,
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_drill_battery"
+   },
+   "label": "Battery Charge"
+  },
+  "Arrow": {
+   "key": "Arrow",
+   "baseDamage": 77,
+   "mass": 0.025,
+   "diameter": 0.4,
+   "dragModel": "G7 (Boat Tail)",
+   "dragCoefficient": 1.8,
+   "ricochetAngle": 30,
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_magazine_bow_bc"
+   },
+   "label": "Broadhead Arrow"
+  },
+  "Arrow.Explosive": {
+   "key": "Arrow.Explosive",
+   "baseDamage": 150,
+   "mass": 0.045,
+   "diameter": 0.85,
+   "dragModel": "GC (Cylinder)",
+   "dragCoefficient": 10,
+   "ricochetAngle": 50,
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_magazine_bow_bc"
+   },
+   "label": "Broadhead Arrow"
+  },
+  "DroneProjectile": {
+   "key": "DroneProjectile",
+   "baseDamage": 120,
+   "mass": 10,
+   "diameter": 10,
+   "dragModel": "GC (Cylinder)",
+   "ricochetAngle": 91,
+   "loads": [
+    "FMJ"
+   ],
+   "roundIcons": {
+    "FMJ": "t_ui_icon_attachment_84heat_round_textured_512x512"
+   },
+   "label": "Stringray"
+  }
+ },
+ "dragCurves": {
+  "G7 (Boat Tail)": [
+   [
+    0,
+    0.12
+   ],
+   [
+    274,
+    0.12
+   ],
+   [
+    300,
+    0.15
+   ],
+   [
+    335,
+    0.33
+   ],
+   [
+    366,
+    0.4
+   ],
+   [
+    396,
+    0.39
+   ],
+   [
+    427,
+    0.38
+   ],
+   [
+    450,
+    0.37
+   ],
+   [
+    488,
+    0.36
+   ],
+   [
+    518,
+    0.35
+   ],
+   [
+    549,
+    0.34
+   ],
+   [
+    579,
+    0.33
+   ],
+   [
+    600,
+    0.32
+   ]
+  ],
+  "GL (Blunt Nose)": [
+   [
+    0,
+    0.33
+   ],
+   [
+    30,
+    0.3
+   ],
+   [
+    61,
+    0.26
+   ],
+   [
+    91,
+    0.24
+   ],
+   [
+    122,
+    0.22
+   ],
+   [
+    150,
+    0.21
+   ],
+   [
+    183,
+    0.2
+   ],
+   [
+    213,
+    0.21
+   ],
+   [
+    244,
+    0.22
+   ],
+   [
+    274,
+    0.25
+   ],
+   [
+    300,
+    0.32
+   ],
+   [
+    335,
+    0.45
+   ],
+   [
+    366,
+    0.58
+   ],
+   [
+    396,
+    0.62
+   ],
+   [
+    427,
+    0.65
+   ],
+   [
+    450,
+    0.67
+   ],
+   [
+    488,
+    0.68
+   ],
+   [
+    518,
+    0.7
+   ],
+   [
+    549,
+    0.71
+   ],
+   [
+    579,
+    0.72
+   ],
+   [
+    600,
+    0.73
+   ]
+  ],
+  "G1 (Flat Bottom)": [
+   [
+    0,
+    0.25
+   ],
+   [
+    30,
+    0.24
+   ],
+   [
+    61,
+    0.23
+   ],
+   [
+    91,
+    0.22
+   ],
+   [
+    122,
+    0.22
+   ],
+   [
+    150,
+    0.21
+   ],
+   [
+    183,
+    0.2
+   ],
+   [
+    213,
+    0.21
+   ],
+   [
+    244,
+    0.22
+   ],
+   [
+    274,
+    0.25
+   ],
+   [
+    300,
+    0.32
+   ],
+   [
+    335,
+    0.45
+   ],
+   [
+    366,
+    0.58
+   ],
+   [
+    396,
+    0.64
+   ],
+   [
+    427,
+    0.66
+   ],
+   [
+    450,
+    0.67
+   ],
+   [
+    488,
+    0.66
+   ],
+   [
+    518,
+    0.65
+   ],
+   [
+    549,
+    0.65
+   ],
+   [
+    579,
+    0.64
+   ],
+   [
+    600,
+    0.63
+   ]
+  ],
+  "GA (Pellet)": [
+   [
+    0,
+    0.24
+   ],
+   [
+    30,
+    0.24
+   ],
+   [
+    61,
+    0.23
+   ],
+   [
+    91,
+    0.21
+   ],
+   [
+    122,
+    0.2
+   ],
+   [
+    150,
+    0.19
+   ],
+   [
+    183,
+    0.18
+   ],
+   [
+    213,
+    0.19
+   ],
+   [
+    244,
+    0.21
+   ],
+   [
+    274,
+    0.25
+   ],
+   [
+    300,
+    0.31
+   ],
+   [
+    335,
+    0.47
+   ],
+   [
+    366,
+    0.57
+   ],
+   [
+    396,
+    0.63
+   ],
+   [
+    427,
+    0.65
+   ],
+   [
+    450,
+    0.67
+   ],
+   [
+    488,
+    0.675
+   ],
+   [
+    518,
+    0.67
+   ],
+   [
+    549,
+    0.66
+   ],
+   [
+    579,
+    0.65
+   ],
+   [
+    600,
+    0.63
+   ]
+  ],
+  "GC (Cylinder)": [
+   [
+    0,
+    0.71
+   ],
+   [
+    30,
+    0.69
+   ],
+   [
+    61,
+    0.66
+   ],
+   [
+    91,
+    0.64
+   ],
+   [
+    122,
+    0.65
+   ],
+   [
+    150,
+    0.66
+   ],
+   [
+    183,
+    0.68
+   ],
+   [
+    213,
+    0.72
+   ],
+   [
+    244,
+    0.8
+   ],
+   [
+    274,
+    0.92
+   ],
+   [
+    300,
+    1.1
+   ],
+   [
+    335,
+    1.25
+   ],
+   [
+    366,
+    1.33
+   ],
+   [
+    396,
+    1.39
+   ],
+   [
+    427,
+    1.44
+   ],
+   [
+    450,
+    1.48
+   ],
+   [
+    488,
+    1.5
+   ],
+   [
+    518,
+    1.54
+   ],
+   [
+    549,
+    1.57
+   ],
+   [
+    579,
+    1.58
+   ],
+   [
+    600,
+    1.6
+   ]
+  ]
+ },
+ "weapons": [
+  {
+   "id": "Id.Item.Launcher_04",
+   "slug": "9k333-verba",
+   "name": "9K333 Verba",
+   "subcategory": "Launcher",
+   "calibre": "72mm",
+   "supportedCalibres": [
+    "72mm"
+   ],
+   "roundsPerMinute": 100,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 20,
+   "effectiveRange": 1000,
+   "falloff": []
+  },
+  {
+   "id": "Id.Item.A91",
+   "slug": "a-91",
+   "name": "A-91",
+   "subcategory": "Assault Rifle",
+   "weaponClass": "Assault Rifle",
+   "calibre": "556mm",
+   "supportedCalibres": [
+    "556mm"
+   ],
+   "roundsPerMinute": 700,
+   "fireModes": [
+    "SemiAutomatic",
+    "Burst"
+   ],
+   "muzzleVelocity": 715,
+   "effectiveRange": 300,
+   "accuracyMoa": 1.5,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     300,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 30
+  },
+  {
+   "id": "Id.Item.AK74M",
+   "slug": "ak74",
+   "name": "AK74",
+   "subcategory": "Assault Rifle",
+   "weaponClass": "Assault Rifle",
+   "calibre": "545mm",
+   "supportedCalibres": [
+    "545mm"
+   ],
+   "roundsPerMinute": 650,
+   "fireModes": [
+    "Automatic",
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 880,
+   "effectiveRange": 500,
+   "accuracyMoa": 0.825,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     500,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 30
+  },
+  {
+   "id": "Id.Item.MP9",
+   "slug": "amp-9",
+   "name": "AMP-9",
+   "subcategory": "Submachine Gun",
+   "weaponClass": "Submachine Gun",
+   "calibre": "9mm",
+   "supportedCalibres": [
+    "9mm"
+   ],
+   "roundsPerMinute": 900,
+   "fireModes": [
+    "Automatic",
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 400,
+   "accuracyMoa": 2.1,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     100,
+     1
+    ],
+    [
+     200,
+     0.6
+    ],
+    [
+     1200,
+     0.1
+    ]
+   ],
+   "recoilPatternLength": 30
+  },
+  {
+   "id": "Id.Item.SR_04",
+   "slug": "amr-50",
+   "name": "AMR 50",
+   "subcategory": "Sniper Rifle",
+   "weaponClass": "Sniper Rifle",
+   "calibre": "50Cal",
+   "supportedCalibres": [
+    "50Cal"
+   ],
+   "roundsPerMinute": 41.5,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 900,
+   "effectiveRange": 2000,
+   "accuracyMoa": 0.11,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     500,
+     1
+    ],
+    [
+     2000,
+     1
+    ],
+    [
+     2500,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "Id.Item.RFB",
+   "slug": "bmr-308",
+   "name": "BMR-308",
+   "subcategory": "Marksman Rifle",
+   "weaponClass": "Marksman Rifle",
+   "calibre": "308Win",
+   "supportedCalibres": [
+    "308Win"
+   ],
+   "roundsPerMinute": 450,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "roundsPerBurst": 1,
+   "muzzleVelocity": 880,
+   "effectiveRange": 500,
+   "accuracyMoa": 0.69,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     500,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 20
+  },
+  {
+   "id": "Id.Item.WEPN_033",
+   "slug": "bushmaster-m17s",
+   "name": "Bushmaster M17S",
+   "subcategory": "Assault Rifle",
+   "weaponClass": "Assault Rifle",
+   "calibre": "556mm",
+   "supportedCalibres": [
+    "556mm"
+   ],
+   "roundsPerMinute": 700,
+   "fireModes": [
+    "SemiAutomatic",
+    "Burst"
+   ],
+   "muzzleVelocity": 715,
+   "effectiveRange": 300,
+   "accuracyMoa": 1.5,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     300,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 30
+  },
+  {
+   "id": "Id.Item.CombatBow",
+   "slug": "compound-bow",
+   "name": "Compound Bow",
+   "subcategory": "Equipment",
+   "weaponClass": "Combat Bow",
+   "calibre": "Arrow",
+   "supportedCalibres": [
+    "Arrow"
+   ],
+   "roundsPerMinute": 90,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "roundsPerBurst": 1,
+   "muzzleVelocity": 650,
+   "accuracyMoa": 0,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     100,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ]
+  },
+  {
+   "id": "Id.Item.WEPN_027",
+   "slug": "deagle",
+   "name": "Deagle",
+   "subcategory": "Pistol",
+   "weaponClass": "Pistol",
+   "calibre": "50AE",
+   "supportedCalibres": [
+    "50AE"
+   ],
+   "roundsPerMinute": 267,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 470,
+   "accuracyMoa": 0.84,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     100,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 15
+  },
+  {
+   "id": "Id.Item.WEPN_030",
+   "slug": "fal",
+   "name": "FAL",
+   "subcategory": "Assault Rifle",
+   "weaponClass": "Assault Rifle",
+   "calibre": "308Win",
+   "supportedCalibres": [
+    "308Win"
+   ],
+   "roundsPerMinute": 650,
+   "fireModes": [
+    "Automatic",
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 840,
+   "effectiveRange": 800,
+   "accuracyMoa": 0.58,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     800,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 20
+  },
+  {
+   "id": "Id.Item.WEPN_029",
+   "slug": "galil",
+   "name": "Galil",
+   "subcategory": "Assault Rifle",
+   "weaponClass": "Assault Rifle",
+   "calibre": "556mm",
+   "supportedCalibres": [
+    "556mm"
+   ],
+   "roundsPerMinute": 650,
+   "fireModes": [
+    "Automatic",
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 950,
+   "effectiveRange": 400,
+   "accuracyMoa": 0.73,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     400,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 30
+  },
+  {
+   "id": "Id.Item.Glock17",
+   "slug": "ggx-17",
+   "name": "GGX 17",
+   "subcategory": "Pistol",
+   "weaponClass": "Pistol",
+   "calibre": "9mm",
+   "supportedCalibres": [
+    "9mm"
+   ],
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 375,
+   "effectiveRange": 50,
+   "accuracyMoa": 3.49,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     50,
+     1
+    ],
+    [
+     1200,
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "Id.Item.WEPN_032",
+   "slug": "ggx-18",
+   "name": "GGX 18",
+   "subcategory": "Pistol",
+   "weaponClass": "Pistol",
+   "calibre": "9mm",
+   "supportedCalibres": [
+    "9mm"
+   ],
+   "roundsPerMinute": 1200,
+   "fireModes": [
+    "Automatic",
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 375,
+   "effectiveRange": 50,
+   "accuracyMoa": 2,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     50,
+     1
+    ],
+    [
+     1200,
+     0.3
+    ]
+   ],
+   "recoilPatternLength": 50
+  },
+  {
+   "id": "Id.Item.Judge",
+   "slug": "judge",
+   "name": "Judge",
+   "subcategory": "Pistol",
+   "weaponClass": "Pistol",
+   "calibre": "45Colt",
+   "supportedCalibres": [
+    "45Colt"
+   ],
+   "roundsPerMinute": 200,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 335,
+   "effectiveRange": 50,
+   "accuracyMoa": 3.49,
+   "falloff": [],
+   "recoilPatternLength": 1
+  },
+  {
+   "id": "Id.Item.KH2002",
+   "slug": "kh-2002",
+   "name": "KH-2002",
+   "subcategory": "Assault Rifle",
+   "weaponClass": "Assault Rifle",
+   "calibre": "556mm",
+   "supportedCalibres": [
+    "556mm"
+   ],
+   "roundsPerMinute": 700,
+   "fireModes": [
+    "SemiAutomatic",
+    "Burst"
+   ],
+   "muzzleVelocity": 715,
+   "effectiveRange": 300,
+   "accuracyMoa": 1.5,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     300,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 30
+  },
+  {
+   "id": "Id.Item.LeapordBarrel",
+   "slug": "leapord-barrel-test",
+   "name": "Leapord Barrel Test",
+   "subcategory": "Other",
+   "calibre": "120x570mm",
+   "supportedCalibres": [
+    "120x570mm"
+   ],
+   "roundsPerMinute": 100,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 550,
+   "effectiveRange": 3500,
+   "accuracyMoa": 70,
+   "falloff": []
+  },
+  {
+   "id": "Id.Item.WEPN_026",
+   "slug": "m1911",
+   "name": "M1911",
+   "subcategory": "Pistol",
+   "weaponClass": "Pistol",
+   "calibre": "45ACP",
+   "supportedCalibres": [
+    "45ACP"
+   ],
+   "roundsPerMinute": 430,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 253,
+   "effectiveRange": 50,
+   "accuracyMoa": 2,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     50,
+     1
+    ],
+    [
+     1200,
+     0.3
+    ]
+   ]
+  },
+  {
+   "id": "Id.Item.M249",
+   "slug": "m249-saw",
+   "name": "M249 SAW",
+   "subcategory": "Light Machine Gun",
+   "weaponClass": "Light Machine Gun",
+   "calibre": "556mm",
+   "supportedCalibres": [
+    "556mm"
+   ],
+   "roundsPerMinute": 850,
+   "fireModes": [
+    "Automatic",
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 915,
+   "effectiveRange": 700,
+   "accuracyMoa": 4.3,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     700,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 7
+  },
+  {
+   "id": "Id.Item.M4",
+   "slug": "m4",
+   "name": "M4",
+   "subcategory": "Assault Rifle",
+   "weaponClass": "Assault Rifle",
+   "calibre": "556mm",
+   "supportedCalibres": [
+    "556mm"
+   ],
+   "roundsPerMinute": 800,
+   "fireModes": [
+    "Automatic",
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 910,
+   "effectiveRange": 500,
+   "accuracyMoa": 0.84,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     500,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 30
+  },
+  {
+   "id": "Id.Item.M500",
+   "slug": "m500",
+   "name": "M500",
+   "subcategory": "Shotgun",
+   "weaponClass": "Shotgun",
+   "calibre": "7mmBuck",
+   "supportedCalibres": [
+    "12g",
+    "7mmBuck"
+   ],
+   "roundsPerMinute": 120,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 480,
+   "effectiveRange": 70,
+   "accuracyMoa": 1.5,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     70,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 7,
+   "shells": [
+    "12g.RifledSlug",
+    "7mmBuck"
+   ]
+  },
+  {
+   "id": "Id.Item.CGM4",
+   "slug": "maaws",
+   "name": "MAAWS",
+   "subcategory": "Launcher",
+   "calibre": "84mm",
+   "supportedCalibres": [
+    "84mm"
+   ],
+   "roundsPerMinute": 100,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 230,
+   "effectiveRange": 400,
+   "accuracyMoa": 2.5,
+   "falloff": []
+  },
+  {
+   "id": "Id.Item.MMGL",
+   "slug": "mgl-40",
+   "name": "MGL-40",
+   "subcategory": "Launcher",
+   "calibre": "40mm",
+   "supportedCalibres": [
+    "40mm"
+   ],
+   "roundsPerMinute": 75,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 100,
+   "effectiveRange": 400,
+   "accuracyMoa": 20,
+   "falloff": []
+  },
+  {
+   "id": "Id.Item.MK22",
+   "slug": "mk22",
+   "name": "MK22",
+   "subcategory": "Sniper Rifle",
+   "weaponClass": "Sniper Rifle",
+   "calibre": "308Win",
+   "supportedCalibres": [
+    "308Win"
+   ],
+   "roundsPerMinute": 46,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 894,
+   "effectiveRange": 1000,
+   "accuracyMoa": 0.16,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     500,
+     1
+    ],
+    [
+     1000,
+     1
+    ],
+    [
+     1600,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "Id.Item.Mosin",
+   "slug": "mosin-nagant",
+   "name": "Mosin Nagant",
+   "subcategory": "Sniper Rifle",
+   "weaponClass": "Sniper Rifle",
+   "calibre": "762x54mm",
+   "supportedCalibres": [
+    "762x54mm"
+   ],
+   "roundsPerMinute": 46,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 865,
+   "effectiveRange": 500,
+   "accuracyMoa": 0.78,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     500,
+     1
+    ],
+    [
+     1200,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "Id.Item.MP43",
+   "slug": "mp43",
+   "name": "MP43",
+   "subcategory": "Shotgun",
+   "weaponClass": "Shotgun",
+   "calibre": "7mmBuck",
+   "supportedCalibres": [
+    "7mmBuck",
+    "12g"
+   ],
+   "roundsPerMinute": 900,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 391,
+   "accuracyMoa": 3.08,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     70,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 2,
+   "shells": [
+    "12g.RifledSlug",
+    "7mmBuck"
+   ]
+  },
+  {
+   "id": "Id.Item.WEPN_028",
+   "slug": "mp5",
+   "name": "MP5",
+   "subcategory": "Submachine Gun",
+   "weaponClass": "Submachine Gun",
+   "calibre": "9mm",
+   "supportedCalibres": [
+    "9mm"
+   ],
+   "roundsPerMinute": 800,
+   "fireModes": [
+    "Automatic",
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 400,
+   "effectiveRange": 200,
+   "accuracyMoa": 1.16,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     200,
+     1
+    ],
+    [
+     300,
+     0.6
+    ],
+    [
+     1200,
+     0.1
+    ]
+   ],
+   "recoilPatternLength": 30
+  },
+  {
+   "id": "Id.Item.LMG_02",
+   "slug": "pkm",
+   "name": "PKM",
+   "subcategory": "Light Machine Gun",
+   "weaponClass": "Light Machine Gun",
+   "calibre": "762x54mm",
+   "supportedCalibres": [
+    "762x54mm"
+   ],
+   "fireModes": [
+    "Automatic",
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 825,
+   "effectiveRange": 1000,
+   "accuracyMoa": 2.5,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     1000,
+     1
+    ],
+    [
+     1500,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 30
+  },
+  {
+   "id": "Id.Item.SMG_03",
+   "slug": "pp-19-vityaz",
+   "name": "PP-19 Vityaz",
+   "subcategory": "Submachine Gun",
+   "weaponClass": "Submachine Gun",
+   "calibre": "9mm",
+   "supportedCalibres": [
+    "9mm"
+   ],
+   "roundsPerMinute": 800,
+   "fireModes": [
+    "Automatic",
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 380,
+   "effectiveRange": 200,
+   "accuracyMoa": 1.3,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     200,
+     1
+    ],
+    [
+     300,
+     0.6
+    ],
+    [
+     1200,
+     0.1
+    ]
+   ],
+   "recoilPatternLength": 30
+  },
+  {
+   "id": "Id.Item.RPG7",
+   "slug": "rpg-7",
+   "name": "RPG-7",
+   "subcategory": "Launcher",
+   "calibre": "93mm",
+   "supportedCalibres": [
+    "93mm"
+   ],
+   "roundsPerMinute": 100,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 100,
+   "effectiveRange": 300,
+   "accuracyMoa": 3,
+   "falloff": []
+  },
+  {
+   "id": "Id.Item.WEPN_035",
+   "slug": "scout-rifle-td",
+   "name": "Scout Rifle TD",
+   "subcategory": "Sniper Rifle",
+   "weaponClass": "Sniper Rifle",
+   "calibre": "556mm",
+   "supportedCalibres": [
+    "556mm"
+   ],
+   "roundsPerMinute": 46,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 975,
+   "effectiveRange": 300,
+   "accuracyMoa": 1.5,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     300,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ]
+  },
+  {
+   "id": "Id.Item.SKS",
+   "slug": "sks",
+   "name": "SKS",
+   "subcategory": "Marksman Rifle",
+   "weaponClass": "Marksman Rifle",
+   "calibre": "762mm",
+   "supportedCalibres": [
+    "762mm"
+   ],
+   "roundsPerMinute": 420,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 735,
+   "effectiveRange": 400,
+   "accuracyMoa": 0.73,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     400,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 20
+  },
+  {
+   "id": "Id.Item.Vector",
+   "slug": "super-45",
+   "name": "Super-45",
+   "subcategory": "Submachine Gun",
+   "weaponClass": "Submachine Gun",
+   "calibre": "45ACP",
+   "supportedCalibres": [
+    "45ACP"
+   ],
+   "roundsPerMinute": 1200,
+   "fireModes": [
+    "Automatic",
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 375,
+   "effectiveRange": 50,
+   "accuracyMoa": 2,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     50,
+     1
+    ],
+    [
+     70,
+     0.6
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 55
+  },
+  {
+   "id": "Id.Item.SV98",
+   "slug": "sv98",
+   "name": "SV98",
+   "subcategory": "Sniper Rifle",
+   "weaponClass": "Sniper Rifle",
+   "calibre": "762x54mm",
+   "supportedCalibres": [
+    "762x54mm"
+   ],
+   "roundsPerMinute": 46,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 830,
+   "effectiveRange": 1000,
+   "accuracyMoa": 0.56,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     1000,
+     1
+    ],
+    [
+     1500,
+     0.4
+    ]
+   ]
+  },
+  {
+   "id": "Id.Item.SVDM",
+   "slug": "svd",
+   "name": "SVD",
+   "subcategory": "Marksman Rifle",
+   "weaponClass": "Marksman Rifle",
+   "calibre": "762x54mm",
+   "supportedCalibres": [
+    "762x54mm"
+   ],
+   "roundsPerMinute": 480,
+   "fireModes": [
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 800,
+   "effectiveRange": 800,
+   "accuracyMoa": 0.45,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     800,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 9
+  },
+  {
+   "id": "Id.Item.TAR21",
+   "slug": "t-21",
+   "name": "T-21",
+   "subcategory": "Assault Rifle",
+   "weaponClass": "Assault Rifle",
+   "calibre": "556mm",
+   "supportedCalibres": [
+    "556mm"
+   ],
+   "roundsPerMinute": 750,
+   "fireModes": [
+    "Automatic",
+    "SemiAutomatic"
+   ],
+   "muzzleVelocity": 910,
+   "effectiveRange": 550,
+   "accuracyMoa": 0.87,
+   "falloff": [
+    [
+     0,
+     1
+    ],
+    [
+     300,
+     1
+    ],
+    [
+     1200,
+     0.2
+    ]
+   ],
+   "recoilPatternLength": 30
+  }
+ ]
+}
