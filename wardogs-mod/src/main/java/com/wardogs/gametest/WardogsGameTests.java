@@ -1819,7 +1819,7 @@ public final class WardogsGameTests {
     /** Houses, hipped or gabled, with eaves, and garage rows are each one connected piece: no roof block floats and no wall is cut off. */
     @GameTest(template = "empty")
     public static void everyBuildingKindIsOneConnectedPiece(GameTestHelper h) {
-        int[][] sizes = {{9, 9}, {11, 9}, {10, 12}, {13, 10}, {8, 8}, {12, 12}, {7, 11}, {16, 12}};
+        int[][] sizes = {{9, 9}, {11, 9}, {10, 12}, {13, 10}, {8, 8}, {12, 12}, {7, 11}, {16, 12}, {32, 18}, {24, 16}, {20, 22}};
         int shapes = 0;
         for (int kind : new int[]{0, 1, 2, 3}) {
             for (int[] sz : sizes) {

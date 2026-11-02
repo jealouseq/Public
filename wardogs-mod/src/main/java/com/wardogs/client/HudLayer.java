@@ -117,6 +117,7 @@ public final class HudLayer {
         if (h == null || !h.hardcore()) {
             renderMinimap(g, mc, h);
         }
+        renderNearby(g, mc, h);
         renderSelf(g, mc);
         renderPrompt(g, mc);
         renderVehicle(g, mc);
@@ -434,6 +435,41 @@ public final class HudLayer {
             g.disableScissor();
         }
         small(g, mc, s3, hx + hs + 2, h - 20, TEXT, 0.9f);
+    }
+
+    /** "NEARBY": teammates in view range with their distance in a green chip, nearest first, above the bottom-right stats. */
+    private static void renderNearby(GuiGraphics g, Minecraft mc, HudPayload h) {
+        var sb = ClientScoreboard.get();
+        if (sb == null || h == null || !h.active() || h.hardcore() || h.faction() < 0 || mc.player.isSpectator()) {
+            return;
+        }
+        java.util.Map<String, Integer> factionOf = new java.util.HashMap<>();
+        for (var row : sb.rows()) {
+            factionOf.put(row.name(), row.faction());
+        }
+        List<net.minecraft.client.player.AbstractClientPlayer> mates = new java.util.ArrayList<>();
+        for (var p : mc.level.players()) {
+            if (p != mc.player && factionOf.getOrDefault(p.getGameProfile().getName(), -2) == h.faction() && p.distanceTo(mc.player) <= 200) {
+                mates.add(p);
+            }
+        }
+        mates.sort(java.util.Comparator.comparingDouble(p -> p.distanceTo(mc.player)));
+        int n = Math.min(5, mates.size());
+        if (n == 0) {
+            return;
+        }
+        int right = g.guiWidth() - 8, rowH = 11, top = g.guiHeight() - 84 - n * rowH;
+        for (int i = 0; i < n; i++) {
+            var p = mates.get(i);
+            int y = top + i * rowH;
+            String dist = (int) p.distanceTo(mc.player) + " m";
+            int chipW = (int) smallWidth(mc, dist, 0.75f) + 8;
+            g.fill(right - chipW, y, right, y + 9, 0xAA0F3D1F);
+            small(g, mc, dist, right - chipW + 4, y + 2, 0xFF4ADE80, 0.75f);
+            String name = p.getGameProfile().getName();
+            small(g, mc, name, right - chipW - 5 - smallWidth(mc, name, 0.75f), y + 2, 0xFFE8EAEE, 0.75f);
+        }
+        small(g, mc, "NEARBY \u25B2", right - smallWidth(mc, "NEARBY \u25B2", 0.65f), top + n * rowH + 1, DIM, 0.65f);
     }
 
     private static int armourPercent(Minecraft mc) {

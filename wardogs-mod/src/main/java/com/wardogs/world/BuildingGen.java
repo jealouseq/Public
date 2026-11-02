@@ -213,6 +213,12 @@ public final class BuildingGen {
             if (b.kind() == 2) {
                 return kk == 2 && j == 0 && i == w / 2 ? Blocks.GLASS_PANE.defaultBlockState() : wallAt(b, i, j, k);
             }
+            if (panel(b)) {
+                BlockState p = panelWall(b, i, j, k, kk);
+                if (p != null) {
+                    return p;
+                }
+            }
             if (kk >= 2) { // windows two blocks high, every third block
                 boolean alongX = j == 0 || j == d - 1;
                 int pos = alongX ? i : j, len = alongX ? w : d;
@@ -223,6 +229,47 @@ public final class BuildingGen {
             return wallAt(b, i, j, k);
         }
         return roofAt(b, i, j, k, top);
+    }
+
+    /** Big flat-roofed buildings are blocks of flats built from concrete panels. */
+    private static boolean panel(BakuraniTerrain.Building b) {
+        return b.kind() < 2 && Math.min(b.w(), b.d()) > 15;
+    }
+
+    /** Pastel accent of the panel bands and loggia surrounds, one per building. */
+    private static final BlockState[] PANEL_ACCENT = {Blocks.CYAN_TERRACOTTA.defaultBlockState(), Blocks.ORANGE_TERRACOTTA.defaultBlockState(),
+            Blocks.GREEN_TERRACOTTA.defaultBlockState(), Blocks.LIGHT_BLUE_TERRACOTTA.defaultBlockState(), Blocks.YELLOW_TERRACOTTA.defaultBlockState()};
+
+    /**
+     * The facade of a block of flats at a wall cell: window pairs, recessed loggias with a rail on the upper floors, a full-height
+     * stairwell window every 16 blocks and an accent band at every storey. {@code null} leaves the ordinary wall.
+     */
+    private static BlockState panelWall(BakuraniTerrain.Building b, int i, int j, int k, int kk) {
+        int w = b.w(), d = b.d();
+        boolean corner = (i == 0 || i == w - 1) && (j == 0 || j == d - 1);
+        boolean alongX = j == 0 || j == d - 1;
+        int pos = alongX ? i : j, len = alongX ? w : d;
+        BlockState accent = PANEL_ACCENT[style(b) % PANEL_ACCENT.length];
+        if (corner || pos < 2 || pos > len - 3) {
+            return null;
+        }
+        if (kk == 0 && k > 0) {
+            return accent; // the storey band
+        }
+        if (pos % 16 == 8 && kk >= 1) {
+            return Blocks.GLASS.defaultBlockState(); // stairwell
+        }
+        int m = pos % 8;
+        if (k >= 4 && m >= 3 && m <= 5) { // a loggia: open above a rail, framed in the accent colour
+            return kk == 1 ? Blocks.IRON_BARS.defaultBlockState() : kk == 2 ? AIR : accent;
+        }
+        if (k >= 4 && (m == 2 || m == 6) && kk >= 1) {
+            return accent; // the loggia frame
+        }
+        if (kk >= 2 && (m == 0 || m == 1 || m == 7)) {
+            return Blocks.GLASS.defaultBlockState();
+        }
+        return null;
     }
 
     /**

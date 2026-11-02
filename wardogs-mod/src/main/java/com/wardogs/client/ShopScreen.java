@@ -66,7 +66,15 @@ public class ShopScreen extends Screen {
             if (!allowed.contains(c)) {
                 continue;
             }
-            String label = c == Shop.Category.ATTACHMENT ? "Attach." : c.name().charAt(0) + c.name().substring(1).toLowerCase();
+            String label = switch (c) {
+                case WEAPON -> "Guns";
+                case ARMOR -> "Armor";
+                case MEDICAL -> "Med";
+                case EXPLOSIVE -> "Expl";
+                case BUILDING -> "Build";
+                case VEHICLE -> "Veh";
+                case ATTACHMENT -> "Mods";
+            };
             addRenderableWidget(Button.builder(Component.literal(label), b -> select(c)).bounds(x + i * bw, 24, bw - 2, 18).build());
             i++;
         }
@@ -277,15 +285,19 @@ public class ShopScreen extends Screen {
         buyButton.visible = true;
         UnlockRule.State st = Shop.state(e, data);
         ItemStack ic = icon(e);
-        if (!ic.isEmpty()) {
+        boolean big = e.category() == Shop.Category.VEHICLE && vehiclePreview(g, e.id(), dx + DETAIL_W / 2f, 86);
+        if (big) {
+            // the rotating mesh above is the picture
+        } else if (!ic.isEmpty()) {
             g.pose().pushPose();
             g.pose().translate(dx + DETAIL_W / 2f - 24, 34, 0);
             g.pose().scale(3f, 3f, 1f);
             g.renderItem(ic, 0, 0);
             g.pose().popPose();
         }
-        g.drawCenteredString(font, e.name().toUpperCase(), dx + DETAIL_W / 2, 90, 0xFFFFFFFF);
-        int y = 106;
+        int off = big ? 62 : 0; // the vehicle mesh is a taller picture than an icon
+        g.drawCenteredString(font, e.name().toUpperCase(), dx + DETAIL_W / 2, 90 + off, 0xFFFFFFFF);
+        int y = 106 + off;
         for (String[] s : stats(e)) {
             g.drawString(font, s[0], dx + 10, y, 0xFF9AA0AA, false);
             g.drawString(font, s[1], dx + DETAIL_W - 10 - font.width(s[1]), y, 0xFFE8EAEE, false);
@@ -300,6 +312,38 @@ public class ShopScreen extends Screen {
         buyButton.setMessage(Component.literal(st == UnlockRule.State.OWNED ? "BUY  $" + e.price() : st == UnlockRule.State.PAYABLE ? "UNLOCK  $" + e.cost() : "LOCKED"));
         buyButton.active = st != UnlockRule.State.LEVEL_TOO_LOW;
         super.render(g, mouseX, mouseY, partial);
+    }
+
+    private static final ItemStack MODEL_CARRIER = new ItemStack(net.minecraft.world.item.Items.STICK);
+
+    /**
+     * Draws the vehicle's own mesh turning slowly, lit like an item, centred on (cx, cy) and fitted to the panel. Returns false when the
+     * vehicle has no model (the caller then shows its icon).
+     */
+    private boolean vehiclePreview(GuiGraphics g, String id, float cx, float cy) {
+        var def = Balance.get().vehicle(id);
+        var mm = net.minecraft.client.Minecraft.getInstance().getModelManager();
+        var model = mm.getModel(VehicleRenderer.modelLocation(id));
+        if (def == null || model == mm.getMissingModel() || !VehicleRenderer.isMesh(id)) {
+            return false;
+        }
+        double length = Math.max(def.d(), def.w());
+        float scale = (float) Math.min((DETAIL_W - 24) / Math.max(1.0, length), 104.0 / Math.max(1.0, def.h() + length * 0.35));
+        float spin = (System.currentTimeMillis() % 14000) / 14000f * 360f;
+        g.pose().pushPose();
+        g.pose().translate(cx, cy, 150);
+        g.pose().scale(scale, -scale, scale);
+        g.pose().mulPose(com.mojang.math.Axis.XP.rotationDegrees(-18));
+        g.pose().mulPose(com.mojang.math.Axis.YP.rotationDegrees(spin));
+        g.pose().translate(0, -def.h() / 2.0, 0);
+        g.pose().translate(0.5, 0.5, 0.5); // the item renderer centres a model on (0.5, 0.5, 0.5); the mesh origin is the vehicle's ground centre
+        com.mojang.blaze3d.platform.Lighting.setupFor3DItems();
+        net.minecraft.client.Minecraft.getInstance().getItemRenderer().render(MODEL_CARRIER, net.minecraft.world.item.ItemDisplayContext.NONE, false,
+                g.pose(), g.bufferSource(), 0xF000F0, net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY, model);
+        g.flush();
+        com.mojang.blaze3d.platform.Lighting.setupForFlatItems();
+        g.pose().popPose();
+        return true;
     }
 
     @Override
