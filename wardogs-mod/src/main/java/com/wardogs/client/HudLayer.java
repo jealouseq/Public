@@ -101,6 +101,8 @@ public final class HudLayer {
             ScoreTable.draw(g, mc, ClientScoreboard.get(), 36, g.guiWidth());
         }
         renderCompass(g, mc, h);
+        renderKillFeed(g, mc);
+        renderHitMarker(g);
         if (h != null) {
             renderMoney(g, mc, h);
         }
@@ -153,6 +155,50 @@ public final class HudLayer {
                 String dist = (int) Math.hypot(h.hx() - mc.player.getX(), h.hz() - mc.player.getZ()) + " m";
                 small(g, mc, dist, x - smallWidth(mc, dist, 0.6f) / 2, y + 25, TEXT, 0.6f);
             }
+        }
+    }
+
+    /** Kill feed, top left: "KILLER [weapon] VICTIM" in faction colours, newest at the bottom. */
+    private static void renderKillFeed(GuiGraphics g, Minecraft mc) {
+        int y = 8;
+        long now = System.currentTimeMillis();
+        for (ClientFeedback.Line l : ClientFeedback.lines()) {
+            var k = l.kill();
+            int alpha = (int) (255 * Math.min(1.0, (ClientFeedback.FEED_MS - (now - l.time())) / 1000.0));
+            if (alpha < 12) {
+                continue;
+            }
+            String weapon = (k.headshot() ? "\u2316 " : "") + k.weapon();
+            int x = 8;
+            int w = mc.font.width(k.killer()) + mc.font.width(weapon) + mc.font.width(k.victim()) + 20;
+            g.fill(x - 3, y - 2, x + w, y + 10, (Math.min(alpha, 150) << 24) | 0x101418);
+            g.drawString(mc.font, k.killer(), x, y, (alpha << 24) | (k.killerFaction() >= 0 ? FACTION_COLOR[Math.min(2, k.killerFaction())] : 0xE8EAEE), false);
+            x += mc.font.width(k.killer()) + 6;
+            g.drawString(mc.font, weapon, x, y, (alpha << 24) | (k.headshot() ? 0xFFD54A : 0x9AA0AA), false);
+            x += mc.font.width(weapon) + 6;
+            g.drawString(mc.font, k.victim(), x, y, (alpha << 24) | (k.victimFaction() >= 0 ? FACTION_COLOR[Math.min(2, k.victimFaction())] : 0xE8EAEE), false);
+            y += 13;
+        }
+    }
+
+    /** An X around the crosshair when a shot lands: white for a hit, gold for a headshot, red for a kill. */
+    private static void renderHitMarker(GuiGraphics g) {
+        int kind = ClientFeedback.markerKind();
+        if (kind < 0) {
+            return;
+        }
+        int cx = g.guiWidth() / 2, cy = g.guiHeight() / 2;
+        float age = ClientFeedback.markerAge();
+        int alpha = (int) (255 * (1 - age));
+        int rgb = kind >= 2 ? 0xFF3030 : (kind == 1 ? 0xFFD54A : 0xFFFFFF);
+        int color = (alpha << 24) | rgb;
+        int gap = 3 + (int) (age * 3), len = kind >= 2 ? 6 : 4;
+        for (int i = 0; i < len; i++) {
+            int o = gap + i;
+            g.fill(cx - o - 1, cy - o - 1, cx - o, cy - o, color);
+            g.fill(cx + o, cy - o - 1, cx + o + 1, cy - o, color);
+            g.fill(cx - o - 1, cy + o, cx - o, cy + o + 1, color);
+            g.fill(cx + o, cy + o, cx + o + 1, cy + o + 1, color);
         }
     }
 

@@ -1627,4 +1627,16 @@ public final class WardogsGameTests {
         check(!Float.isNaN(p.getHealth()) && p.getHealth() > 0, "the player has real health again");
         h.succeed();
     }
+
+    @GameTest(template = "empty")
+    public static void killFeedAndHitMarkerPacketsSurviveEncoding(GameTestHelper h) {
+        var buf = new net.minecraft.network.RegistryFriendlyByteBuf(io.netty.buffer.Unpooled.buffer(), h.getLevel().registryAccess(),
+                net.neoforged.neoforge.network.connection.ConnectionType.NEOFORGE);
+        var feed = new com.wardogs.net.KillFeedPayload("Dev", 0, "Zombie", -1, "AK-74", true);
+        com.wardogs.net.KillFeedPayload.CODEC.encode(buf, feed);
+        check(com.wardogs.net.KillFeedPayload.CODEC.decode(buf).equals(feed), "a kill feed line survives encoding");
+        com.wardogs.net.HitMarkerPayload.CODEC.encode(buf, new com.wardogs.net.HitMarkerPayload(3));
+        check(com.wardogs.net.HitMarkerPayload.CODEC.decode(buf).kind() == 3, "a hit marker survives encoding");
+        h.succeed();
+    }
 }

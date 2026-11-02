@@ -125,6 +125,9 @@ public final class Ballistics {
                     * (ammo == AmmoType.AP ? Balance.get().apVsVehicle() : Balance.get().ammoMult(ammo, true)) / pellets;
             Ballistics.runAs(new Hit(w.id(), false, start.distanceTo(ehr.getLocation()), ammo),
                     () -> veh.applyWardogsDamage(dmg, Vehicle.DamageKind.BULLET, shooter));
+            if (shooter instanceof net.minecraft.server.level.ServerPlayer sp) {
+                com.wardogs.net.HitMarkerPayload.send(sp, false, !veh.isAlive());
+            }
             return;
         }
         Vec3 hitPos = ehr.getLocation();
@@ -151,6 +154,10 @@ public final class Ballistics {
         }
         level.sendParticles(head ? ParticleTypes.CRIT : ParticleTypes.DAMAGE_INDICATOR,
                 hitPos.x, hitPos.y, hitPos.z, head ? 6 : 2, 0.05, 0.05, 0.05, 0.1);
+        if (shooter instanceof net.minecraft.server.level.ServerPlayer sp) {
+            boolean down = !target.isAlive() || (target instanceof Player tp && com.wardogs.medic.Downed.is(tp));
+            com.wardogs.net.HitMarkerPayload.send(sp, head, down);
+        }
     }
 
     /** Head = upper part of the hitbox around the eye line. */
