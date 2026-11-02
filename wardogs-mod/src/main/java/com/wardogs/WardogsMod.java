@@ -30,6 +30,8 @@ public final class WardogsMod {
         com.wardogs.sound.ModSounds.SOUNDS.register(modBus);
         com.wardogs.decor.DecorBlocks.BLOCKS.register(modBus);
         com.wardogs.decor.DecorBlocks.ITEMS.register(modBus);
+        com.wardogs.nature.NatureBlocks.BLOCKS.register(modBus);
+        com.wardogs.nature.NatureBlocks.ITEMS.register(modBus);
         ModItems.ITEMS.register(modBus);
         ModItems.TABS.register(modBus);
         ExplosiveEntities.ENTITIES.register(modBus);

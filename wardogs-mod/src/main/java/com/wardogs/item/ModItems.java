@@ -205,6 +205,7 @@ public final class ModItems {
                         ATTACHMENTS.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
                         AMMO_BOXES.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
                         com.wardogs.decor.DecorBlocks.ITEM_OF.values().forEach(x -> out.accept(x.get()));
+                        com.wardogs.nature.NatureBlocks.ITEM_OF.values().forEach(x -> out.accept(x.get()));
                     })
                     .build());
 

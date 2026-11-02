@@ -1,0 +1,11 @@
+{
+ "replace": false,
+ "values": [
+  "wardogs:fir_foliage",
+  "wardogs:pine_foliage",
+  "wardogs:birch_foliage",
+  "wardogs:aspen_foliage",
+  "wardogs:oak_foliage",
+  "wardogs:beech_foliage"
+ ]
+}

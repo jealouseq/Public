@@ -204,5 +204,17 @@
   "block.wardogs.decor_fire_barrel": "Fire Barrel",
   "block.wardogs.decor_crate_stack": "Crate Stack",
   "block.wardogs.decor_sack_pile": "Sack Pile",
-  "block.wardogs.decor_vending_stand": "Vending Stand"
+  "block.wardogs.decor_vending_stand": "Vending Stand",
+  "block.wardogs.fir_foliage": "Fir Needles",
+  "block.wardogs.fir_bark": "Fir Bark",
+  "block.wardogs.pine_foliage": "Pine Needles",
+  "block.wardogs.pine_bark": "Pine Bark",
+  "block.wardogs.birch_foliage": "Birch Leaves",
+  "block.wardogs.birch_bark": "Birch Bark",
+  "block.wardogs.aspen_foliage": "Aspen Leaves",
+  "block.wardogs.aspen_bark": "Aspen Bark",
+  "block.wardogs.oak_foliage": "Oak Leaves",
+  "block.wardogs.oak_bark": "Oak Bark",
+  "block.wardogs.beech_foliage": "Beech Leaves",
+  "block.wardogs.beech_bark": "Beech Bark"
 }

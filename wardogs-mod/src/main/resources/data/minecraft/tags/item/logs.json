@@ -1,0 +1,11 @@
+{
+ "replace": false,
+ "values": [
+  "wardogs:fir_bark",
+  "wardogs:pine_bark",
+  "wardogs:birch_bark",
+  "wardogs:aspen_bark",
+  "wardogs:oak_bark",
+  "wardogs:beech_bark"
+ ]
+}

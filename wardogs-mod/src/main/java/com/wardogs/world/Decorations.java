@@ -424,10 +424,36 @@ public final class Decorations {
 
     // --- wilderness -------------------------------------------------------------------------------
 
+    private static final BlockState[] FLOWERS = {Blocks.DANDELION.defaultBlockState(), Blocks.CORNFLOWER.defaultBlockState(),
+            Blocks.OXEYE_DAISY.defaultBlockState(), Blocks.POPPY.defaultBlockState(), Blocks.AZURE_BLUET.defaultBlockState(),
+            Blocks.ALLIUM.defaultBlockState(), Blocks.BLUE_ORCHID.defaultBlockState()};
+
+    private static boolean soil(BlockState s) {
+        return s.is(Blocks.GRASS_BLOCK) || s.is(Blocks.PODZOL) || s.is(Blocks.MOSS_BLOCK) || s.is(Blocks.DIRT) || s.is(Blocks.COARSE_DIRT);
+    }
+
+    /** A plant on free soil at the column; a double plant also fills the block above. */
+    private static boolean plant(Ctx c, int x, int z, BlockState s, boolean tall) {
+        int y = c.freeY(x, z);
+        if (y == Integer.MIN_VALUE || !c.get(x, y, z).isAir() || !soil(c.get(x, y - 1, z)) || c.t.nearBuilding(x, z, 1)) {
+            return false;
+        }
+        if (tall) {
+            if (!c.get(x, y + 1, z).isAir()) {
+                return false;
+            }
+            c.set(x, y, z, s.setValue(net.minecraft.world.level.block.DoublePlantBlock.HALF, net.minecraft.world.level.block.state.properties.DoubleBlockHalf.LOWER));
+            c.set(x, y + 1, z, s.setValue(net.minecraft.world.level.block.DoublePlantBlock.HALF, net.minecraft.world.level.block.state.properties.DoubleBlockHalf.UPPER));
+        } else {
+            c.set(x, y, z, s);
+        }
+        return true;
+    }
+
     private static void wilderness(Ctx c) {
         BakuraniTerrain t = c.t;
         BlockState[] rocks = {Blocks.COBBLESTONE.defaultBlockState(), Blocks.MOSSY_COBBLESTONE.defaultBlockState(), Blocks.ANDESITE.defaultBlockState(),
-                Blocks.STONE.defaultBlockState(), Blocks.COBBLESTONE.defaultBlockState()};
+                Blocks.STONE.defaultBlockState(), Blocks.TUFF.defaultBlockState(), Blocks.STONE.defaultBlockState(), Blocks.MOSSY_COBBLESTONE.defaultBlockState()};
         for (int dx = 0; dx < 16; dx++) {
             for (int dz = 0; dz < 16; dz++) {
                 int x = c.baseX + dx, z = c.baseZ + dz;
@@ -436,36 +462,98 @@ public final class Decorations {
                 }
                 int mat = t.material(x + 0.5, z + 0.5), cov = t.cover(x + 0.5, z + 0.5);
                 double r = rnd(x, z, 21);
-                // undergrowth under the trees
-                if (cov == BakuraniTerrain.COVER_FOREST && mat != BakuraniTerrain.SNOW && r < 0.10 && !t.nearBuilding(x, z, 9)) {
-                    BlockState s = r < 0.012 ? Blocks.SWEET_BERRY_BUSH.defaultBlockState().setValue(net.minecraft.world.level.block.SweetBerryBushBlock.AGE, 3)
-                            : r < 0.06 ? Blocks.FERN.defaultBlockState() : Blocks.SHORT_GRASS.defaultBlockState();
+                boolean grassy = (mat == BakuraniTerrain.GRASS || mat == BakuraniTerrain.FOREST) && cov != BakuraniTerrain.COVER_URBAN
+                        && cov != BakuraniTerrain.COVER_FIELD && cov != BakuraniTerrain.COVER_WATER;
+                // forest floor: moss in damp patches, ferns, large ferns, berries and the odd mushroom
+                if (cov == BakuraniTerrain.COVER_FOREST && mat != BakuraniTerrain.SNOW && !t.nearBuilding(x, z, 9)) {
+                    double damp = com.wardogs.nature.Trees.stand(x, z, 11, 17);
                     int y = c.freeY(x, z);
-                    if (y != Integer.MIN_VALUE && c.get(x, y, z).isAir() && !t.nearBuilding(x, z, 1)) {
-                        c.set(x, y, z, s);
+                    if (damp > 0.7 && y != Integer.MIN_VALUE && soil(c.get(x, y - 1, z)) && r < 0.8) {
+                        c.set(x, y - 1, z, Blocks.MOSS_BLOCK.defaultBlockState());
+                        if (r < 0.3 && c.get(x, y, z).isAir()) {
+                            c.set(x, y, z, Blocks.MOSS_CARPET.defaultBlockState());
+                        }
+                    }
+                    if (r < 0.14) {
+                        BlockState s;
+                        boolean tall = false;
+                        if (r < 0.010) {
+                            s = Blocks.SWEET_BERRY_BUSH.defaultBlockState().setValue(net.minecraft.world.level.block.SweetBerryBushBlock.AGE, 3);
+                        } else if (r < 0.016) {
+                            s = (rnd(x, z, 31) < 0.5 ? Blocks.BROWN_MUSHROOM : Blocks.RED_MUSHROOM).defaultBlockState();
+                        } else if (r < 0.05) {
+                            s = Blocks.LARGE_FERN.defaultBlockState();
+                            tall = true;
+                        } else if (r < 0.095) {
+                            s = Blocks.FERN.defaultBlockState();
+                        } else {
+                            s = Blocks.SHORT_GRASS.defaultBlockState();
+                        }
+                        if (s.is(Blocks.BROWN_MUSHROOM) || s.is(Blocks.RED_MUSHROOM)) {
+                            int my = c.freeY(x, z);
+                            if (my != Integer.MIN_VALUE && c.get(x, my, z).isAir() && soil(c.get(x, my - 1, z)) && !t.nearBuilding(x, z, 1)) {
+                                c.set(x, my, z, s);
+                            }
+                        } else {
+                            plant(c, x, z, s, tall);
+                        }
                     }
                 }
-                // fallen logs in the forest
-                if (cov == BakuraniTerrain.COVER_FOREST && rnd(x, z, 22) < 0.0015 && dx > 3 && dx < 12 && dz > 3 && dz < 12) {
+                // meadows: drifts of tall grass and of one kind of wild flower at a time
+                if (grassy && cov != BakuraniTerrain.COVER_FOREST && mat == BakuraniTerrain.GRASS && !t.nearBuilding(x, z, 3)) {
+                    double flowers = com.wardogs.nature.Trees.stand(x, z, 13, 9);
+                    double grass = com.wardogs.nature.Trees.stand(x, z, 19, 13);
+                    double r2 = rnd(x, z, 33);
+                    if (flowers > 0.64 && r2 < 0.24) {
+                        int kind = (int) (rnd(Math.floorDiv(x, 13), Math.floorDiv(z, 13), 35) * FLOWERS.length);
+                        plant(c, x, z, FLOWERS[kind], false);
+                    } else if (grass > 0.42 && r2 < 0.5) {
+                        if (rnd(x, z, 34) < 0.3) {
+                            plant(c, x, z, Blocks.TALL_GRASS.defaultBlockState(), true);
+                        } else {
+                            plant(c, x, z, Blocks.SHORT_GRASS.defaultBlockState(), false);
+                        }
+                    } else if (r2 < 0.04) {
+                        plant(c, x, z, Blocks.SHORT_GRASS.defaultBlockState(), false);
+                    }
+                }
+                // fallen logs and stumps in the forest
+                if (cov == BakuraniTerrain.COVER_FOREST && rnd(x, z, 22) < 0.0018 && dx > 4 && dx < 11 && dz > 4 && dz < 11) {
                     boolean alongX = rnd(x, z, 23) < 0.5;
-                    BlockState log = Blocks.OAK_LOG.defaultBlockState().setValue(net.minecraft.world.level.block.RotatedPillarBlock.AXIS, alongX ? Direction.Axis.X : Direction.Axis.Z);
-                    for (int k = 0; k < 4; k++) {
+                    var sp = rnd(x, z, 28) < 0.5 ? com.wardogs.nature.NatureBlocks.Species.FIR : rnd(x, z, 29) < 0.5 ? com.wardogs.nature.NatureBlocks.Species.OAK
+                            : com.wardogs.nature.NatureBlocks.Species.BIRCH;
+                    BlockState log = com.wardogs.nature.NatureBlocks.bark(sp, alongX ? Direction.Axis.X : Direction.Axis.Z);
+                    int len = 3 + (int) (rnd(x, z, 30) * 4);
+                    for (int k = 0; k < len; k++) {
                         c.onGround(alongX ? x + k : x, alongX ? z : z + k, log, 0);
                     }
+                } else if (cov == BakuraniTerrain.COVER_FOREST && rnd(x, z, 36) < 0.0012 && !t.nearBuilding(x, z, 9)) {
+                    int h = 1 + (int) (rnd(x, z, 37) * 2.5);
+                    for (int k = 0; k < h; k++) {
+                        c.onGround(x, z, com.wardogs.nature.NatureBlocks.bark(com.wardogs.nature.NatureBlocks.Species.OAK, Direction.Axis.Y), k);
+                    }
                 }
-                // boulders on rock and gravel, a few on the meadows
-                double boulder = mat == BakuraniTerrain.ROCK ? 0.006 : mat == BakuraniTerrain.GRAVEL ? 0.004 : mat == BakuraniTerrain.GRASS ? 0.0004 : 0;
-                if (boulder > 0 && rnd(x, z, 24) < boulder && dx > 2 && dx < 13 && dz > 2 && dz < 13 && cov != BakuraniTerrain.COVER_WATER && !t.nearBuilding(x, z, 4)) {
-                    int radius = 1 + (int) (rnd(x, z, 25) * 2.2);
-                    for (int ox = -radius; ox <= radius; ox++) {
-                        for (int oz = -radius; oz <= radius; oz++) {
-                            for (int oy = 0; oy < radius; oy++) {
-                                if (ox * ox + oz * oz + oy * oy * 2 <= radius * radius + 1 && rnd(x + ox, z + oz, 26 + oy) < 0.92) {
-                                    int y = c.freeY(x + ox, z + oz);
-                                    if (y != Integer.MIN_VALUE) {
-                                        c.set(x + ox, y + oy, z + oz, rocks[(int) (rnd(x + ox, z + oz, 27) * rocks.length)]);
-                                    }
+                // boulders on rock and gravel, a few on the meadows: lumpy ellipsoids, mossy where it is damp
+                double boulder = mat == BakuraniTerrain.ROCK ? 0.006 : mat == BakuraniTerrain.GRAVEL ? 0.004 : mat == BakuraniTerrain.GRASS ? 0.0007 : 0;
+                if (boulder > 0 && rnd(x, z, 24) < boulder && dx > 3 && dx < 12 && dz > 3 && dz < 12 && cov != BakuraniTerrain.COVER_WATER && !t.nearBuilding(x, z, 4)) {
+                    double rx = 1.3 + rnd(x, z, 25) * 2.0, rz = 1.3 + rnd(x, z, 38) * 2.0, ry = 0.9 + rnd(x, z, 39) * 1.5;
+                    boolean mossy = cov == BakuraniTerrain.COVER_FOREST || rnd(x, z, 40) < 0.4;
+                    for (int ox = -3; ox <= 3; ox++) {
+                        for (int oz = -3; oz <= 3; oz++) {
+                            int y = c.freeY(x + ox, z + oz);
+                            if (y == Integer.MIN_VALUE) {
+                                continue;
+                            }
+                            int top = -1;
+                            for (int oy = -1; oy <= 3; oy++) {
+                                double d = (ox / rx) * (ox / rx) + (oy / ry) * (oy / ry) + (oz / rz) * (oz / rz);
+                                if (d <= 1.0 + 0.5 * (rnd(x + ox * 7 + oy, z + oz * 5 - oy, 26) - 0.5)) {
+                                    c.set(x + ox, y + oy, z + oz, rocks[(int) (rnd(x + ox, z + oz + oy * 31, 27) * rocks.length)]);
+                                    top = oy;
                                 }
+                            }
+                            if (mossy && top >= 0 && rnd(x + ox, z + oz, 41) < 0.6) {
+                                c.set(x + ox, y + top + 1, z + oz, Blocks.MOSS_CARPET.defaultBlockState());
                             }
                         }
                     }

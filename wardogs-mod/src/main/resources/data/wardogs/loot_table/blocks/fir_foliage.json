@@ -1,0 +1,67 @@
+{
+ "type": "minecraft:block",
+ "pools": [
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "wardogs:fir_foliage"
+    }
+   ],
+   "conditions": [
+    {
+     "condition": "minecraft:any_of",
+     "terms": [
+      {
+       "condition": "minecraft:match_tool",
+       "predicate": {
+        "items": "minecraft:shears"
+       }
+      },
+      {
+       "condition": "minecraft:match_tool",
+       "predicate": {
+        "predicates": {
+         "minecraft:enchantments": [
+          {
+           "enchantments": "minecraft:silk_touch",
+           "levels": {
+            "min": 1
+           }
+          }
+         ]
+        }
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "rolls": 1,
+   "entries": [
+    {
+     "type": "minecraft:item",
+     "name": "minecraft:stick",
+     "functions": [
+      {
+       "function": "minecraft:set_count",
+       "count": {
+        "type": "minecraft:uniform",
+        "min": 1,
+        "max": 2
+       }
+      }
+     ]
+    }
+   ],
+   "conditions": [
+    {
+     "condition": "minecraft:random_chance",
+     "chance": 0.05
+    }
+   ]
+  }
+ ]
+}

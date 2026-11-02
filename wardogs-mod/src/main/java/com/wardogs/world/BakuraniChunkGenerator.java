@@ -53,6 +53,32 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
         };
     }
 
+    /** Forest floor: podzol with lawn, coarse dirt and damp moss in patches, so it is not one flat brown. */
+    static BlockState forestFloor(int x, int z) {
+        double v = hash(x * 5 + 1, z * 3 + 7);
+        double damp = com.wardogs.nature.Trees.stand(x, z, 9, 21);
+        if (damp > 0.75 && v < 0.55) {
+            return Blocks.MOSS_BLOCK.defaultBlockState();
+        }
+        return v < 0.60 ? Blocks.PODZOL.defaultBlockState() : v < 0.76 ? Blocks.COARSE_DIRT.defaultBlockState() : Blocks.GRASS_BLOCK.defaultBlockState();
+    }
+
+    /** Bare rock in bands of stone, andesite, tuff and cobble at slightly tilted heights, so a cliff shows strata instead of one grey. */
+    static BlockState rockTop(int x, int y, int z) {
+        double n = hash(x * 7 + 3, z * 11 + 5);
+        if (n < 0.03) {
+            return Blocks.MOSSY_COBBLESTONE.defaultBlockState();
+        }
+        int band = Math.floorMod((int) Math.floor((y + 6 * com.wardogs.nature.Trees.stand(x, z, 28, 3)) / 2.4), 7);
+        return switch (band) {
+            case 1, 5 -> Blocks.ANDESITE.defaultBlockState();
+            case 2 -> n < 0.6 ? Blocks.TUFF.defaultBlockState() : Blocks.STONE.defaultBlockState();
+            case 3 -> n < 0.3 ? Blocks.COBBLESTONE.defaultBlockState() : Blocks.STONE.defaultBlockState();
+            case 6 -> n < 0.5 ? Blocks.STONE.defaultBlockState() : Blocks.ANDESITE.defaultBlockState();
+            default -> Blocks.STONE.defaultBlockState();
+        };
+    }
+
     static BlockState filler(int material) {
         return switch (material) {
             case BakuraniTerrain.ROCK, BakuraniTerrain.SNOW -> Blocks.STONE.defaultBlockState();
@@ -70,7 +96,7 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
         int baseX = chunk.getPos().getMinBlockX(), baseZ = chunk.getPos().getMinBlockZ();
         BlockState stone = Blocks.STONE.defaultBlockState();
         BlockState bedrock = Blocks.BEDROCK.defaultBlockState();
-        double[] slopes = new double[256]; // per column, filled on first use and shared with the tree planting below
+        double[] slopes = new double[256]; // per column, filled on first use
         java.util.Arrays.fill(slopes, -1);
         for (int dx = 0; dx < 16; dx++) {
             for (int dz = 0; dz < 16; dz++) {
@@ -86,10 +112,13 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                 }
                 BlockState top = road ? (t.roadClass(wx, wz) >= 2 ? Blocks.GRAY_CONCRETE.defaultBlockState() : Blocks.DIRT_PATH.defaultBlockState())
                         : top(mat);
+                if (inside && !road && mat == BakuraniTerrain.ROCK) {
+                    top = rockTop(baseX + dx, sy, baseZ + dz);
+                }
                 BlockState fill = filler(mat);
                 if (inside && !road && (mat == BakuraniTerrain.GRASS || mat == BakuraniTerrain.FOREST || mat == BakuraniTerrain.GRAVEL)
                         && slopeOf(slopes, dx, dz, t, wx, wz, sy) >= ROCK_SLOPE) {
-                    top = hash(baseX + dx, baseZ + dz) < 0.35 ? Blocks.ANDESITE.defaultBlockState() : Blocks.STONE.defaultBlockState();
+                    top = rockTop(baseX + dx, sy, baseZ + dz);
                     fill = Blocks.STONE.defaultBlockState();
                 }
                 int water = -1;
@@ -106,8 +135,12 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                         }
                         case BakuraniTerrain.COVER_FOREST -> {
                             if (mat == BakuraniTerrain.GRASS || mat == BakuraniTerrain.FOREST) {
-                                // a clearing of lawn around every house, podzol under the trees
-                                top = t.nearBuilding(baseX + dx, baseZ + dz, 9) ? Blocks.GRASS_BLOCK.defaultBlockState() : Blocks.PODZOL.defaultBlockState();
+                                // a clearing of lawn around every house, a mossy forest floor under the trees
+                                top = t.nearBuilding(baseX + dx, baseZ + dz, 9) ? Blocks.GRASS_BLOCK.defaultBlockState() : forestFloor(baseX + dx, baseZ + dz);
+                            } else if ((mat == BakuraniTerrain.ROCK || isDirtClass(mat)) && slopeOf(slopes, dx, dz, t, wx, wz, sy) < ROCK_SLOPE) {
+                                // the material map reads shaded forest as rock: on gentle ground it is forest floor, bare rock stays on the steep
+                                top = t.nearBuilding(baseX + dx, baseZ + dz, 9) ? Blocks.GRASS_BLOCK.defaultBlockState() : forestFloor(baseX + dx, baseZ + dz);
+                                fill = Blocks.DIRT.defaultBlockState();
                             }
                         }
                         case BakuraniTerrain.COVER_URBAN -> {
@@ -171,7 +204,7 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
             placeBuildings(chunk, t, oceanFloor, surface);
         }
         if (t != null) {
-            plantTrees(chunk, t, surface, slopes);
+            plantTrees(chunk, t, surface);
             Decorations.place(chunk, t, surface);
         }
         return CompletableFuture.completedFuture(chunk);
@@ -341,90 +374,43 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
         return y;
     }
 
-    /** Spruces on forest-floor ground (dense) and sparsely on meadows. Trees stay inside their chunk so no leaf is cut at an edge. */
-    private void plantTrees(ChunkAccess chunk, BakuraniTerrain t, Heightmap surface, double[] slopes) {
+    /**
+     * Plants the trees and bushes of {@link Forest}. Every tree whose crown can reach this chunk is planned (the plan depends only on its
+     * position) and just the blocks inside the chunk are written, so trees across chunk borders are whole.
+     */
+    private void plantTrees(ChunkAccess chunk, BakuraniTerrain t, Heightmap surface) {
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
-        BlockState log = Blocks.SPRUCE_LOG.defaultBlockState();
-        BlockState leaves = Blocks.SPRUCE_LEAVES.defaultBlockState().setValue(net.minecraft.world.level.block.LeavesBlock.PERSISTENT, true);
         int baseX = chunk.getPos().getMinBlockX(), baseZ = chunk.getPos().getMinBlockZ();
-        for (int dx = 3; dx <= 12; dx++) {
-            for (int dz = 3; dz <= 12; dz++) {
-                int wx = baseX + dx, wz = baseZ + dz;
-                if (!BakuraniTerrain.inside(wx + 0.5, wz + 0.5) || t.isRoad(wx + 0.5, wz + 0.5)) {
+        BlockState[] states = new BlockState[com.wardogs.nature.NatureBlocks.Species.values().length * 4];
+        for (int wx = baseX - Forest.REACH; wx < baseX + 16 + Forest.REACH; wx++) {
+            for (int wz = baseZ - Forest.REACH; wz < baseZ + 16 + Forest.REACH; wz++) {
+                Forest.Pick pick = Forest.pick(t, wx, wz);
+                if (pick == null || pick.groundY() + 40 >= HEIGHT) {
                     continue;
                 }
-                int mat = t.material(wx + 0.5, wz + 0.5);
-                int cov = t.cover(wx + 0.5, wz + 0.5);
-                double density;
-                if (mat == BakuraniTerrain.SNOW || cov == BakuraniTerrain.COVER_WATER || cov == BakuraniTerrain.COVER_FIELD
-                        || cov == BakuraniTerrain.COVER_URBAN) {
-                    density = 0;
-                } else if (cov == BakuraniTerrain.COVER_FOREST) {
-                    density = mat == BakuraniTerrain.ROCK ? 1.0 / 45 : 1.0 / 20;
-                } else {
-                    density = mat == BakuraniTerrain.FOREST ? 1.0 / 24 : mat == BakuraniTerrain.GRASS ? 1.0 / 900 : 0;
-                }
-                if (density > 0 && (t.nearBuilding(wx, wz, 9) || slopeOf(slopes, dx, dz, t, wx + 0.5, wz + 0.5, t.surfaceY(wx + 0.5, wz + 0.5)) >= ROCK_SLOPE)) {
-                    density = 0;
-                }
-                double hv = hash(wx, wz);
-                if (hv >= density) {
-                    continue;
-                }
-                int sy = t.surfaceY(wx + 0.5, wz + 0.5);
-                int trunk = 5 + (int) (hash(wz, wx) * 5);
-                if (sy + trunk + 4 >= HEIGHT) {
-                    continue;
-                }
-                if (hash(wx * 3 + 1, wz * 5 + 2) < (cov == BakuraniTerrain.COVER_FOREST ? 0.28 : 0.55)) { // a birch: a shorter trunk and a round crown
-                    int bt = 5 + (int) (hash(wz + 7, wx + 3) * 3);
-                    BlockState blog = Blocks.BIRCH_LOG.defaultBlockState();
-                    BlockState bleaves = Blocks.BIRCH_LEAVES.defaultBlockState().setValue(net.minecraft.world.level.block.LeavesBlock.PERSISTENT, true);
-                    for (int y = 1; y <= bt; y++) {
-                        pos.set(wx, sy + y, wz);
-                        chunk.setBlockState(pos, blog, false);
-                        surface.update(dx, sy + y, dz, blog);
+                var plan = com.wardogs.nature.Trees.plan(pick.kind(), wx, pick.groundY(), wz, pick.size());
+                for (var e : plan.blocks.long2ByteEntrySet()) {
+                    long k = e.getLongKey();
+                    int x = BlockPos.getX(k), y = BlockPos.getY(k), z = BlockPos.getZ(k);
+                    if (x < baseX || x >= baseX + 16 || z < baseZ || z >= baseZ + 16 || y <= 1 || y >= HEIGHT) {
+                        continue;
                     }
-                    for (int layer = 0; layer < 5; layer++) {
-                        int y = sy + bt - 2 + layer;
-                        int radius = layer == 0 || layer == 3 ? 2 : layer == 4 ? 1 : 2;
-                        for (int ox = -radius; ox <= radius; ox++) {
-                            for (int oz = -radius; oz <= radius; oz++) {
-                                if (Math.abs(ox) == radius && Math.abs(oz) == radius && (layer == 4 || hash(wx + ox, wz + oz) < 0.5)) {
-                                    continue;
-                                }
-                                if (ox == 0 && oz == 0 && y <= sy + bt) {
-                                    continue;
-                                }
-                                pos.set(wx + ox, y, wz + oz);
-                                if (chunk.getBlockState(pos).isAir()) {
-                                    chunk.setBlockState(pos, bleaves, false);
-                                    surface.update(dx + ox, y, dz + oz, bleaves);
-                                }
-                            }
-                        }
+                    int code = e.getByteValue();
+                    BlockState s = states[code];
+                    if (s == null) {
+                        var sp = com.wardogs.nature.Trees.speciesOf(code);
+                        int form = com.wardogs.nature.Trees.formOf(code);
+                        s = form == com.wardogs.nature.Trees.LEAF ? com.wardogs.nature.NatureBlocks.foliage(sp)
+                                : com.wardogs.nature.NatureBlocks.bark(sp, form == com.wardogs.nature.Trees.LOG_Y ? net.minecraft.core.Direction.Axis.Y
+                                : form == com.wardogs.nature.Trees.LOG_X ? net.minecraft.core.Direction.Axis.X : net.minecraft.core.Direction.Axis.Z);
+                        states[code] = s;
                     }
-                    continue;
-                }
-                for (int y = 1; y <= trunk; y++) {
-                    pos.set(wx, sy + y, wz);
-                    chunk.setBlockState(pos, log, false);
-                    surface.update(dx, sy + y, dz, log);
-                }
-                for (int layer = 0; layer < 6; layer++) {
-                    int y = sy + trunk - 4 + layer + 1;
-                    int radius = layer >= 5 ? 0 : layer >= 3 ? 1 : 2;
-                    for (int ox = -radius; ox <= radius; ox++) {
-                        for (int oz = -radius; oz <= radius; oz++) {
-                            if (Math.abs(ox) + Math.abs(oz) > radius + 1 || (ox == 0 && oz == 0 && layer < 5 && y <= sy + trunk)) {
-                                continue;
-                            }
-                            pos.set(wx + ox, y, wz + oz);
-                            if (chunk.getBlockState(pos).isAir()) {
-                                chunk.setBlockState(pos, leaves, false);
-                                surface.update(dx + ox, y, dz + oz, leaves);
-                            }
-                        }
+                    pos.set(x, y, z);
+                    BlockState old = chunk.getBlockState(pos);
+                    boolean log = com.wardogs.nature.Trees.formOf(code) != com.wardogs.nature.Trees.LEAF;
+                    if (old.isAir() || (log && old.getBlock() instanceof net.minecraft.world.level.block.LeavesBlock)) {
+                        chunk.setBlockState(pos, s, false);
+                        surface.update(x - baseX, y, z - baseZ, s);
                     }
                 }
             }

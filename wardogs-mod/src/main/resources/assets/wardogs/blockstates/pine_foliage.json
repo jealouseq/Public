@@ -1,0 +1,38 @@
+{
+ "variants": {
+  "": [
+   {
+    "model": "wardogs:block/pine_foliage",
+    "y": 0
+   },
+   {
+    "model": "wardogs:block/pine_foliage",
+    "y": 90
+   },
+   {
+    "model": "wardogs:block/pine_foliage",
+    "y": 180
+   },
+   {
+    "model": "wardogs:block/pine_foliage",
+    "y": 270
+   },
+   {
+    "model": "wardogs:block/pine_foliage_b",
+    "y": 0
+   },
+   {
+    "model": "wardogs:block/pine_foliage_b",
+    "y": 90
+   },
+   {
+    "model": "wardogs:block/pine_foliage_b",
+    "y": 180
+   },
+   {
+    "model": "wardogs:block/pine_foliage_b",
+    "y": 270
+   }
+  ]
+ }
+}

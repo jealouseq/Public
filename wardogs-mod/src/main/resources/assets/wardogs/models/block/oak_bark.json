@@ -1,0 +1,7 @@
+{
+ "parent": "minecraft:block/cube_column",
+ "textures": {
+  "end": "wardogs:block/oak_bark_top",
+  "side": "wardogs:block/oak_bark"
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "variants": {
+  "axis=y": {
+   "model": "wardogs:block/pine_bark"
+  },
+  "axis=z": {
+   "model": "wardogs:block/pine_bark_horizontal",
+   "x": 90
+  },
+  "axis=x": {
+   "model": "wardogs:block/pine_bark_horizontal",
+   "x": 90,
+   "y": 90
+  }
+ }
+}
