@@ -102,6 +102,7 @@ public final class HudLayer {
         }
         renderCompass(g, mc, h);
         renderKillFeed(g, mc);
+        renderSquad(g, mc);
         renderHitMarker(g);
         if (h != null) {
             renderMoney(g, mc, h);
@@ -181,6 +182,24 @@ public final class HudLayer {
         }
     }
 
+    /** Squad list on the left edge: name, a health bar, a star for the leader. */
+    private static void renderSquad(GuiGraphics g, Minecraft mc) {
+        var members = ClientSquad.members();
+        if (members.isEmpty()) {
+            return;
+        }
+        int x = 8, y = g.guiHeight() / 2 - members.size() * 11;
+        g.drawString(mc.font, "SQUAD", x, y - 11, 0xFFFFD54A, true);
+        for (var m : members) {
+            g.fill(x - 3, y - 2, x + 78, y + 17, 0x99101418);
+            g.drawString(mc.font, (m.leader() ? "\u2605 " : "") + m.name(), x, y, 0xFFE8EAEE, false);
+            float f = m.maxHealth() <= 0 ? 0 : Math.max(0f, Math.min(1f, m.health() / m.maxHealth()));
+            g.fill(x, y + 11, x + 72, y + 14, 0xFF2A2F36);
+            g.fill(x, y + 11, x + (int) (72 * f), y + 14, f > 0.5f ? 0xFF4ADE80 : f > 0.25f ? 0xFFFACC15 : 0xFFEF4444);
+            y += 21;
+        }
+    }
+
     /** An X around the crosshair when a shot lands: white for a hit, gold for a headshot, red for a kill. */
     private static void renderHitMarker(GuiGraphics g) {
         int kind = ClientFeedback.markerKind();
@@ -245,6 +264,11 @@ public final class HudLayer {
         if (h != null && h.active()) {
             circle(g, mc, h.zx(), h.zz(), h.zr(), px, pz, scale, x, y, S, 0xCCFFFFFF);
             circle(g, mc, h.hx(), h.hz(), h.hr(), px, pz, scale, x, y, S, 0xFFFFD54A);
+        }
+        for (var m : ClientSquad.members()) {
+            int sx = (int) Math.round(x + S / 2.0 + (m.x() - px) * scale), sy = (int) Math.round(y + S / 2.0 + (m.z() - pz) * scale);
+            g.fill(sx - 2, sy - 2, sx + 3, sy + 3, 0xFF000000);
+            g.fill(sx - 1, sy - 1, sx + 2, sy + 2, m.leader() ? 0xFFFFD54A : 0xFFFFFFFF);
         }
         // viewer arrow
         g.pose().pushPose();

@@ -11,13 +11,16 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /** The radial menu messages: requests go to the whole team nearby, local callouts and emotes only to those close by. */
 public final class Requests {
-    public enum Group { REQUESTS, LOCAL, EMOTES }
+    public enum Group { SQUAD, REQUESTS, LOCAL, EMOTES }
 
     public record Entry(String id, Group group, String label, String text, double range) {}
 
     public static final Map<String, Entry> ENTRIES = new LinkedHashMap<>();
 
     static {
+        add("squad_create", Group.SQUAD, "Create squad", "", 0);
+        add("squad_invite", Group.SQUAD, "Invite nearest", "", 0);
+        add("squad_leave", Group.SQUAD, "Leave squad", "", 0);
         add("heal", Group.REQUESTS, "Healing", "needs a medic!", 250);
         add("ammo", Group.REQUESTS, "Ammo", "needs ammo!", 250);
         add("supplies", Group.REQUESTS, "Supplies", "needs supplies!", 250);
@@ -50,6 +53,21 @@ public final class Requests {
     /** Same as {@link #send(ServerPlayer, String)} with an explicit list of candidate receivers (the online players in production). */
     public static int send(ServerPlayer from, String id, java.util.Collection<ServerPlayer> everyone) {
         Entry e = ENTRIES.get(id);
+        if (e != null && e.group() == Group.SQUAD) {
+            String err = switch (id) {
+                case "squad_create" -> Squads.create(from);
+                case "squad_leave" -> Squads.leave(from);
+                default -> {
+                    ServerPlayer t = Squads.nearestInvitable(from, everyone);
+                    yield t == null ? "No teammate nearby to invite" : Squads.invite(from, t);
+                }
+            };
+            if (err != null) {
+                from.sendSystemMessage(Component.literal("[SQUAD] " + err).withStyle(ChatFormatting.RED));
+                return -1;
+            }
+            return 1;
+        }
         Faction f = Factions.of(from);
         if (e == null || f == null) {
             return -1;

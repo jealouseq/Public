@@ -1719,4 +1719,30 @@ public final class WardogsGameTests {
                 "blocks inside one 4x4 patch share their material");
         h.succeed();
     }
+
+    @GameTest(template = "empty", batch = "squads")
+    public static void squadsAreCreatedByInvitationAndHaveAFourMemberLimit(GameTestHelper h) {
+        com.wardogs.match.Squads.reset();
+        ServerPlayer lead = soldier(h, Faction.LONESTAR, 2.5, 2.5);
+        ServerPlayer mate = soldier(h, Faction.LONESTAR, 4.5, 2.5);
+        ServerPlayer enemy = soldier(h, Faction.VALKYRA, 6.5, 2.5);
+        check(com.wardogs.match.Squads.invite(lead, mate) != null, "no squad yet, so no invitation");
+        check(com.wardogs.match.Squads.create(lead) == null, "a faction soldier can create a squad");
+        check(com.wardogs.match.Squads.create(lead) != null, "but not a second one");
+        check(com.wardogs.match.Squads.invite(lead, enemy) != null, "enemies cannot be invited");
+        check(com.wardogs.match.Squads.invite(mate, lead) != null, "only the leader invites");
+        check(com.wardogs.match.Squads.invite(lead, mate) == null, "a teammate can be invited");
+        check(com.wardogs.match.Squads.accept(mate) == null, "and accepts");
+        check(com.wardogs.match.Squads.of(mate) == com.wardogs.match.Squads.of(lead), "they share the squad");
+        check(com.wardogs.match.Squads.of(lead).members.size() == 2, "two members");
+        check(com.wardogs.match.Squads.leave(lead) == null && com.wardogs.match.Squads.of(mate).leader.equals(mate.getUUID()),
+                "when the leader leaves, the next member leads");
+        var payload = new com.wardogs.net.SquadPayload(java.util.List.of(new com.wardogs.net.SquadPayload.Member("Dev", true, 1.5, -2.5, 80f, 100f)));
+        var buf = new net.minecraft.network.RegistryFriendlyByteBuf(io.netty.buffer.Unpooled.buffer(), h.getLevel().registryAccess(),
+                net.neoforged.neoforge.network.connection.ConnectionType.NEOFORGE);
+        com.wardogs.net.SquadPayload.CODEC.encode(buf, payload);
+        check(com.wardogs.net.SquadPayload.CODEC.decode(buf).equals(payload), "the squad packet survives encoding");
+        com.wardogs.match.Squads.reset();
+        h.succeed();
+    }
 }

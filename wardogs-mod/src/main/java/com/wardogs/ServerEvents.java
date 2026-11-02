@@ -70,6 +70,9 @@ public final class ServerEvents {
 
     @SubscribeEvent
     public static void onLogout(PlayerEvent.PlayerLoggedOutEvent e) {
+        if (e.getEntity() instanceof net.minecraft.server.level.ServerPlayer sp) {
+            com.wardogs.match.Squads.forget(sp);
+        }
         ShooterState.remove(e.getEntity().getUUID());
     }
 }

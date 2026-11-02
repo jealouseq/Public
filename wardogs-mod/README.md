@@ -61,7 +61,8 @@ and the assumed 100 player health are placeholders: the sources do not publish t
 | R | Reload the held gun |
 | B | Open the shop (only next to a vendor during a Bakurani match) |
 | M | Full-screen map (scroll to zoom, drag to pan; needs the map data folder on the client) |
-| Middle mouse | Radial menu: requests (healing, ammo, supplies, repairs), local callouts, emotes |
+| Middle mouse | Radial menu: squad (create, invite the nearest teammate, leave), requests (healing, ammo, supplies, repairs), local callouts, emotes |
+| `/wd squad create / invite <name> / accept / leave` | Squads of up to four; members appear on the minimap and in a list on the left |
 | Hold TAB | Match scoreboard: three faction columns with kills, deaths, money earned |
 | Right-click a lectern at a deployment board | Choose where to deploy: your base or a friendly FOB |
 
@@ -77,7 +78,7 @@ that were considered and their licences.
 
 ## Not done yet
 
-Stingray and M113 forward spawn, squad system, armour and grenade 3D models,
+Stingray and M113 forward spawn, armour and grenade 3D models,
 real sounds, procedural houses that follow the street direction, hand-built landmarks.
 
 ## Build & test

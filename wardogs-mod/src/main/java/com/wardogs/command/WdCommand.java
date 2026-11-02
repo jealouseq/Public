@@ -16,6 +16,7 @@ import com.wardogs.net.HudPayload;
 import com.wardogs.progress.Progression;
 import com.wardogs.progress.Role;
 import com.wardogs.shop.Shop;
+import com.wardogs.match.Squads;
 import com.wardogs.world.BakuraniWorld;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
@@ -51,6 +52,13 @@ public final class WdCommand {
                 .then(Commands.literal("progress").executes(c -> progress(c.getSource())))
                 .then(Commands.literal("bakurani").executes(c -> travel(c.getSource()))
                         .then(Commands.literal("setup").requires(s -> s.hasPermission(2)).executes(c -> setupBakurani(c.getSource()))))
+                .then(Commands.literal("squad")
+                        .then(Commands.literal("create").executes(c -> squadResult(c.getSource(), Squads.create(c.getSource().getPlayerOrException()))))
+                        .then(Commands.literal("accept").executes(c -> squadResult(c.getSource(), Squads.accept(c.getSource().getPlayerOrException()))))
+                        .then(Commands.literal("leave").executes(c -> squadResult(c.getSource(), Squads.leave(c.getSource().getPlayerOrException()))))
+                        .then(Commands.literal("invite").then(Commands.argument("player", net.minecraft.commands.arguments.EntityArgument.player())
+                                .executes(c -> squadResult(c.getSource(), Squads.invite(c.getSource().getPlayerOrException(),
+                                        net.minecraft.commands.arguments.EntityArgument.getPlayer(c, "player")))))))
                 .then(Commands.literal("team")
                         .then(Commands.argument("faction", StringArgumentType.word()).suggests(FACTIONS)
                                 .executes(c -> team(c.getSource(), StringArgumentType.getString(c, "faction")))))
@@ -109,6 +117,14 @@ public final class WdCommand {
         int y = BakuraniWorld.surfaceY(site.x(), site.z()) + 2;
         p.teleportTo(level, site.x(), y, site.z(), 0f, 0f);
         src.sendSuccess(() -> Component.literal("Welcome to Bakurani" + (f == null ? " (pick a faction with /wd team)" : "")), false);
+        return 1;
+    }
+
+    private static int squadResult(CommandSourceStack src, String error) {
+        if (error != null) {
+            src.sendFailure(Component.literal(error));
+            return 0;
+        }
         return 1;
     }
 

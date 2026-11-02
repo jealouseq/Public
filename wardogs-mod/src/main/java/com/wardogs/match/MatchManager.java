@@ -159,6 +159,11 @@ public final class MatchManager {
         if (now % 40 == 0) {
             sendScoreboard(ow, d, false, -1);
         }
+        if (now % 20 == 0) {
+            for (ServerPlayer sp : ow.getServer().getPlayerList().getPlayers()) {
+                com.wardogs.net.SquadPayload.sendTo(sp);
+            }
+        }
         if (now % 600 == 0 && ow.dimension().equals(com.wardogs.world.BakuraniWorld.DIMENSION)) {
             com.wardogs.world.BakuraniSetup.tickTowers(ow);
             com.wardogs.world.BakuraniSetup.tickCaches(ow);
