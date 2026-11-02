@@ -1603,4 +1603,19 @@ public final class WardogsGameTests {
         check(com.wardogs.match.MatchStats.rows().isEmpty(), "reset clears the table");
         h.succeed();
     }
+
+    @GameTest(template = "empty", batch = "requests")
+    public static void radialRequestsReachOnlyNearbyTeammatesAndHaveACooldown(GameTestHelper h) {
+        ServerPlayer a = soldier(h, Faction.LONESTAR, 2.5, 2.5);
+        ServerPlayer mate = soldier(h, Faction.LONESTAR, 4.5, 2.5);
+        ServerPlayer enemy = soldier(h, Faction.VALKYRA, 6.5, 2.5);
+        var everyone = java.util.List.of(a, mate, enemy);
+        check(com.wardogs.match.Requests.send(a, "heal", everyone) == 2, "a request reaches the sender and the teammate, not the enemy");
+        check(com.wardogs.match.Requests.send(a, "ammo", everyone) == -1, "a second message within two seconds is refused");
+        check(com.wardogs.match.Requests.send(mate, "nonsense", everyone) == -1, "an unknown id is refused");
+        ServerPlayer loner = h.makeMockServerPlayerInLevel();
+        check(com.wardogs.match.Requests.send(loner, "heal", everyone) == -1, "a player without a faction cannot send");
+        check(com.wardogs.match.Requests.ENTRIES.keySet().containsAll(java.util.List.of("heal", "ammo", "supplies", "enemy", "salute")), "the menu entries exist");
+        h.succeed();
+    }
 }

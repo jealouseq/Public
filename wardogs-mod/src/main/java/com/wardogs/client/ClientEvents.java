@@ -45,6 +45,16 @@ public final class ClientEvents {
         private Game() {}
 
         @SubscribeEvent
+        public static void mouse(net.neoforged.neoforge.client.event.InputEvent.MouseButton.Pre e) {
+            Minecraft mc = Minecraft.getInstance();
+            if (e.getButton() == GLFW.GLFW_MOUSE_BUTTON_MIDDLE && e.getAction() == GLFW.GLFW_PRESS && mc.screen == null && mc.player != null
+                    && ClientHud.get() != null && ClientHud.get().active() && ClientHud.get().faction() >= 0) {
+                mc.setScreen(new RadialScreen());
+                e.setCanceled(true);
+            }
+        }
+
+        @SubscribeEvent
         public static void tick(ClientTickEvent.Post e) {
             Minecraft mc = Minecraft.getInstance();
             if (mc.player == null) {
