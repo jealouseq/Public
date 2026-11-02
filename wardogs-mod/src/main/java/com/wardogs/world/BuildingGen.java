@@ -92,9 +92,28 @@ public final class BuildingGen {
         if (b.kind() == 2 && k == 0 && !edge && j < d) {
             return Blocks.DARK_OAK_PLANKS.defaultBlockState();
         }
-        if (j == d) { // a three-wide doorstep in front of the door, level with the floor
-            return k == 0 && Math.abs(i - w / 2) <= 1 ? Blocks.STONE_BRICK_SLAB.defaultBlockState().setValue(
-                    net.minecraft.world.level.block.SlabBlock.TYPE, net.minecraft.world.level.block.state.properties.SlabType.TOP) : null;
+        if (j == d) { // a three-wide doorstep in front of the door, level with the floor, with a little porch roof on two posts and a lantern
+            if (Math.abs(i - w / 2) > 1) {
+                return null;
+            }
+            if (k == 0) {
+                return Blocks.STONE_BRICK_SLAB.defaultBlockState().setValue(
+                        net.minecraft.world.level.block.SlabBlock.TYPE, net.minecraft.world.level.block.state.properties.SlabType.TOP);
+            }
+            if (b.kind() == 2) {
+                return null;
+            }
+            if ((k == 1 || k == 2) && Math.abs(i - w / 2) == 1) {
+                return Blocks.SPRUCE_FENCE.defaultBlockState();
+            }
+            if (k == 3) {
+                return Blocks.SPRUCE_SLAB.defaultBlockState().setValue(net.minecraft.world.level.block.SlabBlock.TYPE,
+                        net.minecraft.world.level.block.state.properties.SlabType.BOTTOM);
+            }
+            if (k == 2 && i == w / 2) {
+                return Blocks.LANTERN.defaultBlockState().setValue(net.minecraft.world.level.block.LanternBlock.HANGING, true);
+            }
+            return null;
         }
         if (i < 0 || i >= w || j < 0 || j > d) {
             return null;

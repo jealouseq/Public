@@ -1,0 +1,42 @@
+{
+ "carvers": {},
+ "downfall": 0.6,
+ "has_precipitation": true,
+ "temperature": 0.45,
+ "effects": {
+  "fog_color": 12638463,
+  "sky_color": 8103167,
+  "water_color": 4159204,
+  "water_fog_color": 329011,
+  "grass_color": 9420373,
+  "foliage_color": 7969345
+ },
+ "features": [
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [
+   "minecraft:patch_grass_plain",
+   "minecraft:flower_meadow",
+   "minecraft:patch_tall_grass_2"
+  ],
+  []
+ ],
+ "spawn_costs": {},
+ "spawners": {
+  "ambient": [],
+  "axolotls": [],
+  "creature": [],
+  "misc": [],
+  "monster": [],
+  "underground_water_creature": [],
+  "water_ambient": [],
+  "water_creature": []
+ }
+}

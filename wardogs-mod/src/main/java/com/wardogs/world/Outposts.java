@@ -442,15 +442,62 @@ public final class Outposts {
         b.set(x, gy + 6, z, decor("floodlight", toward));
     }
 
+    private static final String[] CAR_TYPES = {"kodiak", "humvee", "ural", "wolf_110", "bobcat", "kodiak_pickup", "dune_buggy", "ural_defender"};
+
+    /** Parks cars in front of some houses and a few trucks at every outpost: empty tanks and worn hulls, so they are scenery with a purpose (refuel one with Fuel Supplies). */
+    public static int parkVehicles(ServerLevel level, BakuraniSetup.Ground g) {
+        BakuraniTerrain t = BakuraniWorld.terrain();
+        if (t == null) {
+            return 0;
+        }
+        int n = 0;
+        B b = new B(level, g);
+        for (BakuraniTerrain.Building h : t.buildingsIn(-9000, -9000, 9000, 9000)) {
+            if (h.kind() == 2 || h.floors() >= 3 || h.w() >= 16 || Decorations.rnd(Math.round(h.x() * 8), Math.round(h.z() * 8), 91) >= 0.1) {
+                continue;
+            }
+            double[] w = Decorations.toWorld(h, h.w() / 2.0 + 4.5, h.d() / 2.0 + 6);
+            if (t.roadClass(w[0], w[1]) > 0 || t.cover(w[0], w[1]) == BakuraniTerrain.COVER_WATER || t.nearBuilding((int) Math.floor(w[0]), (int) Math.floor(w[1]), 2)) {
+                continue;
+            }
+            n += park(b, level, w[0], w[1], h.angle() + (Decorations.rnd(Math.round(h.x()), Math.round(h.z()), 92) < 0.5 ? 90 : -90), (int) (Decorations.rnd(Math.round(h.x()), Math.round(h.z()), 93) * CAR_TYPES.length), -1);
+        }
+        for (Cluster c : clusters()) {
+            for (int i = 0; i < 3; i++) {
+                double x = c.cx() - 18 + i * 14, z = c.cz() + 24;
+                n += park(b, level, x, z, 0, 2 + (i % 2) * 5, c.faction());
+            }
+        }
+        return n;
+    }
+
+    private static int park(B b, ServerLevel level, double x, double z, double yaw, int typeIndex, int faction) {
+        b.load((int) Math.floor(x), (int) Math.floor(z));
+        var def = com.wardogs.balance.Balance.get().vehicle(CAR_TYPES[Math.floorMod(typeIndex, CAR_TYPES.length)]);
+        var box = new net.minecraft.world.phys.AABB(x - 3, b.ground((int) Math.floor(x), (int) Math.floor(z)) - 2, z - 3, x + 3, b.ground((int) Math.floor(x), (int) Math.floor(z)) + 8, z + 3);
+        if (def == null || !level.getEntitiesOfClass(com.wardogs.vehicle.Vehicle.class, box).isEmpty()) {
+            return 0;
+        }
+        var v = com.wardogs.vehicle.Vehicle.spawn(level, def, new net.minecraft.world.phys.Vec3(x, b.ground((int) Math.floor(x), (int) Math.floor(z)) + 1.0, z), (float) yaw, faction);
+        v.setFuel(0f);
+        v.setHealth((float) (def.hp() * 0.6));
+        return 1;
+    }
+
     // --- the whole outpost ---------------------------------------------------------------------------
 
     /** Builds every outpost cluster that is not built yet. @return how many were built. */
     public static int buildAll(ServerLevel level, BakuraniSetup.Ground g) {
         int n = 0;
+        boolean fresh = false;
         for (Cluster c : clusters()) {
             if (build(level, g, c)) {
                 n++;
+                fresh = true;
             }
+        }
+        if (fresh) {
+            parkVehicles(level, g); // only once, together with the first build, so a second setup does not add more cars
         }
         return n;
     }

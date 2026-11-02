@@ -111,7 +111,12 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                         }
                         case BakuraniTerrain.COVER_URBAN -> {
                             if (isDirtClass(mat)) {
-                                top = pavement(baseX + dx, baseZ + dz);
+                                // paving only around buildings and roads (yards, pavements); lawns and worn grass elsewhere
+                                if (t.nearBuilding(baseX + dx, baseZ + dz, 4) || roadNeighbourWide(t, wx, wz)) {
+                                    top = pavement(baseX + dx, baseZ + dz);
+                                } else {
+                                    top = hash(baseX + dx * 3, baseZ + dz * 5) < 0.18 ? Blocks.COARSE_DIRT.defaultBlockState() : Blocks.GRASS_BLOCK.defaultBlockState();
+                                }
                             }
                         }
                         case BakuraniTerrain.COVER_FIELD -> {
@@ -183,13 +188,13 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
     /** Paving in patches of 4 x 4 blocks: mostly andesite, some stone, gravel and cobblestone, so a plaza is not one flat colour. */
     public static BlockState pavement(int x, int z) {
         double v = hash(Math.floorDiv(x, 4), Math.floorDiv(z, 4));
-        if (v < 0.62) {
+        if (v < 0.70) {
             return Blocks.ANDESITE.defaultBlockState();
         }
-        if (v < 0.80) {
+        if (v < 0.88) {
             return Blocks.STONE.defaultBlockState();
         }
-        if (v < 0.92) {
+        if (v < 0.96) {
             return Blocks.GRAVEL.defaultBlockState();
         }
         return Blocks.COBBLESTONE.defaultBlockState();
@@ -213,6 +218,11 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
             worst = Math.max(worst, Math.abs(t.surfaceY(x + o[0], z + o[1]) - sy));
         }
         return worst / 3.0;
+    }
+
+    /** True if a road lies within three blocks (a pavement strip beside it). */
+    private static boolean roadNeighbourWide(BakuraniTerrain t, double x, double z) {
+        return t.roadClass(x + 3, z) > 0 || t.roadClass(x - 3, z) > 0 || t.roadClass(x, z + 3) > 0 || t.roadClass(x, z - 3) > 0;
     }
 
     /** Highest road class (1 track, 2 surfaced) within one block of a column, or 0. */

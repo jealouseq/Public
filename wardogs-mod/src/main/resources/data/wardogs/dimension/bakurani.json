@@ -4,7 +4,7 @@
     "type": "wardogs:bakurani",
     "biome_source": {
       "type": "minecraft:fixed",
-      "biome": "minecraft:meadow"
+      "biome": "wardogs:bakurani"
     }
   }
 }
