@@ -29,6 +29,8 @@ public final class BakuraniWorld {
 
     public record Site(String name, double x, double z) {}
 
+    public record Landmark(String name, String type, double x, double z) {}
+
     public record Zone(String name, double x, double z, double radius, int weight) {}
 
     private static volatile BakuraniTerrain terrain;
@@ -36,7 +38,7 @@ public final class BakuraniWorld {
     private static volatile Sites sites;
 
     public record Sites(Map<String, Site> bases, List<Site> spawns, List<Site> vendors, List<Site> boards, List<Site> towers,
-                        List<Zone> zones, List<Site> loot, double verticalScale, int yOffset) {}
+                        List<Zone> zones, List<Site> loot, List<Landmark> landmarks, double verticalScale, int yOffset) {}
 
     private BakuraniWorld() {}
 
@@ -55,12 +57,23 @@ public final class BakuraniWorld {
                 });
                 JsonObject w = o.getAsJsonObject("world");
                 sites = new Sites(Map.copyOf(bases), list(o, "spawns"), list(o, "vendors"), list(o, "boards"), list(o, "towers"),
-                        List.copyOf(zones), list(o, "loot"), w.get("vertical_scale").getAsDouble(), w.get("y_offset").getAsInt());
+                        List.copyOf(zones), list(o, "loot"), landmarks(o), w.get("vertical_scale").getAsDouble(), w.get("y_offset").getAsInt());
             } catch (IOException e) {
                 throw new IllegalStateException("Cannot read the Bakurani site list", e);
             }
         }
         return sites;
+    }
+
+    private static List<Landmark> landmarks(JsonObject o) {
+        List<Landmark> out = new ArrayList<>();
+        if (o.has("landmarks")) {
+            o.getAsJsonArray("landmarks").forEach(e -> {
+                JsonObject l = e.getAsJsonObject();
+                out.add(new Landmark(l.get("name").getAsString(), l.get("type").getAsString(), l.get("x").getAsDouble(), l.get("z").getAsDouble()));
+            });
+        }
+        return List.copyOf(out);
     }
 
     private static List<Site> list(JsonObject o, String key) {

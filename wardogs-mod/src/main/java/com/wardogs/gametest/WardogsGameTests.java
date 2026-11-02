@@ -1799,4 +1799,20 @@ public final class WardogsGameTests {
         com.wardogs.match.Squads.reset();
         h.succeed();
     }
+
+    @GameTest(template = "empty", batch = "landmarks", timeoutTicks = 200)
+    public static void landmarksAreBuiltOnce(GameTestHelper h) {
+        var abs = h.absolutePos(new BlockPos(6, 2, 6));
+        int groundY = h.absolutePos(new BlockPos(0, 1, 0)).getY();
+        com.wardogs.world.BakuraniSetup.Ground flat = (x, z) -> groundY;
+        check(com.wardogs.world.Landmarks.buildFlag(h.getLevel(), abs.getX(), abs.getZ(), flat), "a flag is built");
+        check(!com.wardogs.world.Landmarks.buildFlag(h.getLevel(), abs.getX(), abs.getZ(), flat), "not twice");
+        check(h.getLevel().getBlockState(new BlockPos(abs.getX(), groundY + 8, abs.getZ())).is(Blocks.IRON_BARS), "the pole stands");
+        check(h.getLevel().getBlockState(new BlockPos(abs.getX() + 2, groundY + 12, abs.getZ())).is(Blocks.WHITE_WOOL), "with a flag hanging from it");
+        check(com.wardogs.world.Landmarks.buildRange(h.getLevel(), abs.getX(), abs.getZ() + 120, flat), "a range is built");
+        check(!com.wardogs.world.Landmarks.buildRange(h.getLevel(), abs.getX(), abs.getZ() + 120, flat), "not twice");
+        int x0 = abs.getX() + 0 - (com.wardogs.world.Landmarks.LANES * 3 + 1) / 2 + 2;
+        check(h.getLevel().getBlockState(new BlockPos(x0, groundY + 3, abs.getZ() + 120 - 50)).is(Blocks.TARGET), "a target stands at 50 m");
+        h.succeed();
+    }
 }

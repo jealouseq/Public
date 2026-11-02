@@ -59,6 +59,7 @@ public final class BakuraniSetup {
         for (BakuraniWorld.Site b : BakuraniWorld.sites().boards()) {
             placeBoard(level, b, TERRAIN);
         }
+        Landmarks.buildAll(level, TERRAIN);
         return new Result(towers, vendors);
     }
 

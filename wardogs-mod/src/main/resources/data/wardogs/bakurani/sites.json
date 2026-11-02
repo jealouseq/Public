@@ -354,5 +354,25 @@
    "x": 58.1,
    "z": 4268.7
   }
+ ],
+ "landmarks": [
+  {
+   "name": "Shooting range",
+   "type": "range",
+   "x": 1652.8,
+   "z": 2766.1
+  },
+  {
+   "name": "Control Zone flag",
+   "type": "flag",
+   "x": -219.3,
+   "z": 1025.4
+  },
+  {
+   "name": "Control Zone flag",
+   "type": "flag",
+   "x": 1438.7,
+   "z": 1073.2
+  }
  ]
 }
