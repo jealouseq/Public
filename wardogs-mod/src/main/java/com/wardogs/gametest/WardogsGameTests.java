@@ -1639,4 +1639,33 @@ public final class WardogsGameTests {
         check(com.wardogs.net.HitMarkerPayload.CODEC.decode(buf).kind() == 3, "a hit marker survives encoding");
         h.succeed();
     }
+
+    @GameTest(template = "empty", batch = "slowBullet", timeoutTicks = 100)
+    public static void bulletsWithMuzzleVelocityTakeTimeToArrive(GameTestHelper h) {
+        Arena a = arena(h);
+        WeaponDef m4 = Balance.get().weapon("m4");
+        WeaponDef slow = new WeaponDef(m4.id(), m4.name(), m4.category(), m4.caliber(), m4.role(), m4.mode(), m4.chest(), m4.head(), m4.rpm(),
+                m4.magazine(), m4.range(), m4.reloadTicks(), m4.spread(), m4.pellets(), m4.price(), m4.unlockLevel(), m4.unlockCost(),
+                m4.estimated(), m4.falloff(), 40.0); // 2 blocks per tick: the target is 7 blocks away
+        Ballistics.clearBullets();
+        aimAt(a.shooter, a.target, chestY(a.target));
+        float before = a.target.getHealth();
+        Ballistics.fire(a.level, a.shooter, slow, AmmoType.FMJ);
+        check(a.target.getHealth() == before, "the bullet has not arrived on the tick it was fired");
+        check(Ballistics.bulletsInFlight() == 1, "it is still in flight");
+        later(h, 12, () -> {
+            check(a.target.getHealth() < before, "the bullet arrived and hurt the target");
+            check(Ballistics.bulletsInFlight() == 0, "and is gone");
+            h.succeed();
+        });
+    }
+
+    @GameTest(template = "empty")
+    public static void bulletDropGrowsWithTheSquareOfFlightTime(GameTestHelper h) {
+        check(Math.abs(Ballistics.drop(20) - 4.9) < 0.4, "about 4.9 m after one second: " + Ballistics.drop(20));
+        check(Ballistics.drop(40) > 3.5 * Ballistics.drop(20), "four times as far after twice the time");
+        check(Balance.get().weapon("svd").velocity() == 800.0, "the SVD carries its researched muzzle velocity");
+        check(Balance.get().weapon("m4").velocity() > 0, "rifles have a muzzle velocity");
+        h.succeed();
+    }
 }

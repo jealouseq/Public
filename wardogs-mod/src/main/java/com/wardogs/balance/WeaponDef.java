@@ -26,14 +26,15 @@ public record WeaponDef(
         int unlockLevel,
         long unlockCost,
         Set<String> estimated,
-        double[][] falloff) {
+        double[][] falloff,
+        double velocity) {
 
     /** Constructor for synthetic weapons (vehicle guns, emplacements) with no falloff. */
     public WeaponDef(String id, String name, String category, String caliber, String role, FireMode mode, double chest, double head,
                      double rpm, int magazine, double range, int reloadTicks, double spread, int pellets, int price, int unlockLevel,
                      long unlockCost, Set<String> estimated) {
         this(id, name, category, caliber, role, mode, chest, head, rpm, magazine, range, reloadTicks, spread, pellets, price,
-                unlockLevel, unlockCost, estimated, new double[][]{{0, 1}});
+                unlockLevel, unlockCost, estimated, new double[][]{{0, 1}}, 0);
     }
 
     /** Damage multiplier at {@code distance} metres (linear between the curve's points, flat beyond the last). */
@@ -101,6 +102,7 @@ public record WeaponDef(
                 o.get("unlock_level").getAsInt(),
                 o.get("unlock_cost").getAsLong(),
                 Set.copyOf(est),
-                parseFalloff(o));
+                parseFalloff(o),
+                o.has("velocity") ? o.get("velocity").getAsDouble() : 0.0);
     }
 }

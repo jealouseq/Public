@@ -26,7 +26,8 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.resources.ResourceLocation;
 
-/** Hitscan bullet simulation: raycast, headshot detection, damage in WARDOGS units. */
+/** Bullet simulation: hitscan for weapons without a muzzle velocity, otherwise a bullet that travels and drops; headshots; damage in WARDOGS units. */
+@net.neoforged.fml.common.EventBusSubscriber(modid = WardogsMod.MOD_ID)
 public final class Ballistics {
     public static final ResourceKey<DamageType> BULLET =
             ResourceKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "bullet"));
@@ -99,41 +100,135 @@ public final class Ballistics {
         }
     }
 
+    /** Acceleration of gravity on a bullet, in m/s^2. */
+    public static final double GRAVITY = 9.81;
+    /** A bullet in flight is dropped after this many ticks (10 s). */
+    private static final int MAX_AGE = 200;
+
+    /** A round travelling at its muzzle velocity: advanced one tick at a time so it takes time to arrive and drops. */
+    private static final class Bullet {
+        final ServerLevel level;
+        final Player shooter;
+        final WeaponDef w;
+        final AmmoType ammo;
+        final int pellets;
+        final Vec3 origin;
+        Vec3 pos, vel; // vel in blocks per tick
+        int age;
+
+        Bullet(ServerLevel level, Player shooter, WeaponDef w, AmmoType ammo, int pellets, Vec3 origin, Vec3 vel) {
+            this.level = level;
+            this.shooter = shooter;
+            this.w = w;
+            this.ammo = ammo;
+            this.pellets = pellets;
+            this.origin = origin;
+            this.pos = origin;
+            this.vel = vel;
+        }
+    }
+
+    private static final java.util.List<Bullet> FLYING = new java.util.concurrent.CopyOnWriteArrayList<>();
+
+    /** How far a bullet has fallen (in blocks) after {@code ticks} ticks of flight with the per-tick gravity step used by {@link #advance}. */
+    public static double drop(int ticks) {
+        return GRAVITY / 400.0 * ticks * (ticks + 1) / 2.0;
+    }
+
+    /** Bullets currently in flight (for tests and tooling). */
+    public static int bulletsInFlight() {
+        return FLYING.size();
+    }
+
+    public static void clearBullets() {
+        FLYING.clear();
+    }
+
+    /** Moves every flying bullet one tick; called from the server tick. */
+    public static void tickBullets() {
+        for (Bullet b : FLYING) {
+            if (!advance(b)) {
+                FLYING.remove(b);
+            }
+        }
+    }
+
+    /** One tick of flight. @return true while the bullet is still flying. */
+    private static boolean advance(Bullet b) {
+        double perTick = GRAVITY / 400.0;
+        b.vel = b.vel.add(0, -perTick, 0);
+        Vec3 next = b.pos.add(b.vel);
+        boolean consumed = resolve(b.level, b.shooter, b.w, b.ammo, b.pellets, b.origin, b.pos, next);
+        b.pos = next;
+        b.age++;
+        double range = Math.min(b.w.range(), MAX_TRACE);
+        return !consumed && b.age < MAX_AGE && b.origin.distanceTo(b.pos) <= range && !b.shooter.level().isClientSide
+                && b.pos.y > b.level.getMinBuildHeight() - 8 && b.pos.y < b.level.getMaxBuildHeight() + 64;
+    }
+
+    @net.neoforged.bus.api.SubscribeEvent
+    public static void onServerTick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post e) {
+        tickBullets();
+    }
+
     private static void shootRay(ServerLevel level, Player shooter, WeaponDef w, AmmoType ammo, int pellets, double spreadMult) {
         Vec3 start = shooter.getEyePosition();
         Vec3 dir = withSpread(shooter.getLookAngle(), w.spread() * spreadMult, shooter.getRandom());
         double range = Math.min(w.range(), MAX_TRACE);
-        Vec3 end = start.add(dir.scale(range));
+        if (w.velocity() > 0) {
+            Bullet b = new Bullet(level, shooter, w, ammo, pellets, start, dir.scale(w.velocity() / 20.0));
+            if (advance(b)) { // the first tick resolves immediately, so close targets are hit at once
+                FLYING.add(b);
+            }
+            return;
+        }
+        resolve(level, shooter, w, ammo, pellets, start, start, start.add(dir.scale(range)));
+    }
+
+    /**
+     * Checks the segment {@code from}-{@code to} for a block or an entity and applies damage if it hits something.
+     * Distance (for falloff) is measured from {@code origin}, where the shot left the barrel.
+     * @return true if the round was used up (hit a block or an entity)
+     */
+    private static boolean resolve(ServerLevel level, Player shooter, WeaponDef w, AmmoType ammo, int pellets,
+                                   Vec3 origin, Vec3 from, Vec3 to) {
+        Vec3 start = from, end = to;
+        Vec3 dir = end.subtract(start);
+        double range = dir.length();
+        if (range < 1.0E-6) {
+            return false;
+        }
 
         HitResult block = level.clip(new ClipContext(start, end, ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, shooter));
         Vec3 blockEnd = block.getType() == HitResult.Type.MISS ? end : block.getLocation();
 
-        AABB box = shooter.getBoundingBox().expandTowards(dir.scale(range)).inflate(1.0);
+        AABB box = new AABB(start, end).inflate(1.0); // candidates near this segment, not near the shooter
         EntityHitResult ehr = ProjectileUtil.getEntityHitResult(shooter, start, blockEnd, box,
                 e -> !e.isSpectator() && e.isPickable() && e != shooter
-                        && e != shooter.getVehicle() && !(shooter.getVehicle() != null && e.getVehicle() == shooter.getVehicle()), range * range);
+                        && e != shooter.getVehicle() && !(shooter.getVehicle() != null && e.getVehicle() == shooter.getVehicle()), range * range + 4);
         if (ehr == null || !(ehr.getEntity() instanceof LivingEntity target)) {
             if (block.getType() != HitResult.Type.MISS) {
                 level.sendParticles(ParticleTypes.SMOKE, block.getLocation().x, block.getLocation().y, block.getLocation().z, 2, 0.02, 0.02, 0.02, 0.0);
+                return true;
             }
-            return;
+            return false;
         }
 
         if (target instanceof Vehicle veh) {
             // Vehicles have no head; armor-piercing rounds do extra damage to them.
-            double dmg = w.chest() * w.falloffMult(start.distanceTo(ehr.getLocation()))
+            double dmg = w.chest() * w.falloffMult(origin.distanceTo(ehr.getLocation()))
                     * (ammo == AmmoType.AP ? Balance.get().apVsVehicle() : Balance.get().ammoMult(ammo, true)) / pellets;
-            Ballistics.runAs(new Hit(w.id(), false, start.distanceTo(ehr.getLocation()), ammo),
+            Ballistics.runAs(new Hit(w.id(), false, origin.distanceTo(ehr.getLocation()), ammo),
                     () -> veh.applyWardogsDamage(dmg, Vehicle.DamageKind.BULLET, shooter));
             if (shooter instanceof net.minecraft.server.level.ServerPlayer sp) {
                 com.wardogs.net.HitMarkerPayload.send(sp, false, !veh.isAlive());
             }
-            return;
+            return true;
         }
         Vec3 hitPos = ehr.getLocation();
         HitZone zone = HitZone.at(target, hitPos);
         boolean head = zone == HitZone.HEAD;
-        double distance = start.distanceTo(hitPos);
+        double distance = origin.distanceTo(hitPos);
         ItemStack armorStack = ArmorPieceItem.protecting(target, zone);
         ArmorDef armor = armorStack.isEmpty() ? null : ((ArmorPieceItem) armorStack.getItem()).def();
         double wd = damage(w, zone, ammo, armor, distance) / pellets;
@@ -158,6 +253,7 @@ public final class Ballistics {
             boolean down = !target.isAlive() || (target instanceof Player tp && com.wardogs.medic.Downed.is(tp));
             com.wardogs.net.HitMarkerPayload.send(sp, head, down);
         }
+        return true;
     }
 
     /** Head = upper part of the hitbox around the eye line. */
