@@ -429,6 +429,16 @@ public final class Decorations {
                     lamp(c, x, z, towardRoad(t, x, z, 2));
                     continue;
                 }
+                // road signs on a pole beside surfaced roads and fire hydrants in town (imported blocks, where present)
+                if (DecorBlocks.has("imp_mcw_roadsign_rod") && rnd(x, z, 18) < 0.0035 && candidate(t, x, z, 2, 2) && spaced(t, x, z, 18, 0.0035, 22, 2, 2)) {
+                    roadSign(c, x, z, towardRoad(t, x, z, 2));
+                    continue;
+                }
+                if (DecorBlocks.has("imp_sa_fire_hydrant") && t.cover(x + 0.5, z + 0.5) == BakuraniTerrain.COVER_URBAN && rnd(x, z, 19) < 0.004
+                        && candidate(t, x, z, 2, 3) && spaced(t, x, z, 19, 0.004, 24, 2, 3)) {
+                    c.onGround(x, z, DecorBlocks.state("imp_sa_fire_hydrant", towardRoad(t, x, z, 2)), 0);
+                    continue;
+                }
                 // benches and bins in town
                 if (t.cover(x + 0.5, z + 0.5) == BakuraniTerrain.COVER_URBAN && rnd(x, z, 12) < 0.03 && candidate(t, x, z, 2, 3) && spaced(t, x, z, 12, 0.03, 12, 2, 3)) {
                     Direction toward = towardRoad(t, x, z, 2);
@@ -537,6 +547,22 @@ public final class Decorations {
                 .setValue(net.minecraft.world.level.block.DoorBlock.HALF, net.minecraft.world.level.block.state.properties.DoubleBlockHalf.LOWER));
         c.set(door[0], y + 1, door[1], Blocks.OAK_DOOR.defaultBlockState().setValue(net.minecraft.world.level.block.DoorBlock.FACING, toward.getOpposite())
                 .setValue(net.minecraft.world.level.block.DoorBlock.HALF, net.minecraft.world.level.block.state.properties.DoubleBlockHalf.UPPER));
+    }
+
+    private static final String[] SIGNS = {"imp_mcw_no_entry", "imp_mcw_no_heavy_goods_vehicles", "imp_mcw_cattle", "imp_mcw_ahead_only"};
+
+    /** A sign: the pole block with the sign block on top, turned to face the road. */
+    private static void roadSign(Ctx c, int x, int z, Direction toward) {
+        int y = c.freeY(x, z);
+        if (y == Integer.MIN_VALUE || !c.get(x, y + 1, z).isAir()) {
+            return;
+        }
+        String id = SIGNS[(int) (rnd(x, z, 20) * SIGNS.length)];
+        if (!DecorBlocks.has(id)) {
+            return;
+        }
+        c.set(x, y, z, DecorBlocks.state("imp_mcw_roadsign_rod", toward));
+        c.set(x, y + 1, z, DecorBlocks.state(id, toward));
     }
 
     private static void powerPole(Ctx c, int x, int z, Direction toward) {

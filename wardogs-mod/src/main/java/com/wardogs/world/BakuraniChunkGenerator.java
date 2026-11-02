@@ -53,6 +53,39 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
         };
     }
 
+    /**
+     * Surface of a surfaced road: with the imported road blocks, asphalt with a dashed centre line down the middle of every road at least five
+     * blocks wide (found by measuring the road's width in the four directions; plazas, where both runs are long, stay plain); otherwise
+     * grey concrete.
+     */
+    static BlockState asphalt(BakuraniTerrain t, int x, int z) {
+        if (!com.wardogs.decor.DecorBlocks.has("imp_mcw_asphalt")) {
+            return Blocks.GRAY_CONCRETE.defaultBlockState();
+        }
+        int left = run(t, x, z, -1, 0), right = run(t, x, z, 1, 0), up = run(t, x, z, 0, -1), down = run(t, x, z, 0, 1);
+        int runX = left + right + 1, runZ = up + down + 1;
+        String id = "imp_mcw_asphalt";
+        net.minecraft.core.Direction facing = net.minecraft.core.Direction.NORTH;
+        if (Math.min(runX, runZ) >= 5 && Math.min(runX, runZ) <= 12 && Math.max(runX, runZ) >= Math.min(runX, runZ) + 4) {
+            boolean alongZ = runX < runZ;
+            int width = alongZ ? runX : runZ, a = alongZ ? left : up;
+            if (a == (width - 1) / 2 && com.wardogs.decor.DecorBlocks.has("imp_mcw_asphalt_broken_center_line")) {
+                id = "imp_mcw_asphalt_broken_center_line";
+                facing = alongZ ? net.minecraft.core.Direction.NORTH : net.minecraft.core.Direction.EAST;
+            }
+        }
+        return com.wardogs.decor.DecorBlocks.state(id, facing);
+    }
+
+    /** How many road blocks lie beyond this one in a direction (at most 14). */
+    private static int run(BakuraniTerrain t, int x, int z, int dx, int dz) {
+        int n = 0;
+        while (n < 14 && t.roadClass(x + 0.5 + dx * (n + 1), z + 0.5 + dz * (n + 1)) >= 2) {
+            n++;
+        }
+        return n;
+    }
+
     /** Forest floor: podzol with lawn, coarse dirt and damp moss in patches, so it is not one flat brown. */
     static BlockState forestFloor(int x, int z) {
         double v = hash(x * 5 + 1, z * 3 + 7);
@@ -127,7 +160,7 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                 if (bridge) {
                     road = false;
                 }
-                BlockState top = road ? (t.roadClass(wx, wz) >= 2 ? Blocks.GRAY_CONCRETE.defaultBlockState() : Blocks.DIRT_PATH.defaultBlockState())
+                BlockState top = road ? (t.roadClass(wx, wz) >= 2 ? asphalt(t, baseX + dx, baseZ + dz) : Blocks.DIRT_PATH.defaultBlockState())
                         : top(mat);
                 if (inside && !road && mat == BakuraniTerrain.ROCK) {
                     top = slopeOf(slopes, dx, dz, t, wx, wz, sy) < ALPINE_SLOPE ? alpineTop(baseX + dx, sy, baseZ + dz) : rockTop(baseX + dx, sy, baseZ + dz);

@@ -32,7 +32,20 @@ public final class DecorBlocks {
     public static final Map<String, DeferredItem<BlockItem>> ITEM_OF = new LinkedHashMap<>();
 
     static {
-        try (var in = DecorBlocks.class.getResourceAsStream("/data/wardogs/decor/blocks.json")) {
+        // blocks.json is part of the mod; blocks_imported.json (collision boxes of community-mod models, see research/IMPORTS.md) exists only in
+        // developer builds that imported them
+        load("/data/wardogs/decor/blocks.json", true);
+        load("/data/wardogs/decor/blocks_imported.json", false);
+    }
+
+    private static void load(String path, boolean required) {
+        try (var in = DecorBlocks.class.getResourceAsStream(path)) {
+            if (in == null) {
+                if (required) {
+                    throw new IllegalStateException("Cannot read the decor block list " + path);
+                }
+                return;
+            }
             JsonObject root = new Gson().fromJson(new InputStreamReader(in), JsonObject.class);
             for (var e : root.entrySet()) {
                 String id = e.getKey();
@@ -50,17 +63,38 @@ public final class DecorBlocks {
                 ALL.put(id, block);
                 ITEM_OF.put(id, ITEMS.registerSimpleBlockItem(id, block));
             }
-        } catch (java.io.IOException | NullPointerException ex) {
-            throw new IllegalStateException("Cannot read the decor block list", ex);
+        } catch (java.io.IOException ex) {
+            throw new IllegalStateException("Cannot read the decor block list " + path, ex);
         }
     }
 
     private DecorBlocks() {}
 
+    /**
+     * Outdoor props that have a better model among the imported blocks: where the import exists, the generators place it instead of the
+     * built-in one (the same facing, a similar size).
+     */
+    private static final Map<String, String> UPGRADE = Map.ofEntries(
+            Map.entry("decor_ammo_crate", "imp_sa_ammo_box"), Map.entry("decor_supply_crate", "imp_sa_military_crate"),
+            Map.entry("decor_crate_stack", "imp_sa_wooden_supply_crate"), Map.entry("decor_hesco_barrier", "imp_sa_hesco_barrier"),
+            Map.entry("decor_oil_drum", "imp_sa_oil_barrel"), Map.entry("decor_trash_bin", "imp_sa_trash_bin"),
+            Map.entry("decor_road_barrier", "imp_sa_concrete_barrier"), Map.entry("decor_traffic_cone", "imp_sa_traffic_cone"),
+            Map.entry("decor_bench_park", "imp_sa_park_bench"), Map.entry("decor_tire_stack", "imp_sa_tire_block"),
+            Map.entry("decor_sandbags", "imp_sa_sand_bag"), Map.entry("decor_vending_stand", "imp_sa_vending_machine"));
+
     /** The block for an id like {@code decor_chair}, or null. */
     public static Block get(String id) {
+        var up = ALL.get(UPGRADE.get(id));
+        if (up != null) {
+            return up.get();
+        }
         var b = ALL.get(id);
         return b == null ? null : b.get();
+    }
+
+    /** True if an imported block of this id exists in this build. */
+    public static boolean has(String id) {
+        return ALL.containsKey(id);
     }
 
     /** A default-state block facing {@code dir}. */
