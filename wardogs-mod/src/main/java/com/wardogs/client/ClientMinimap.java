@@ -11,15 +11,26 @@ import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.core.BlockPos;
 
-/** A north-up top-down map of the blocks around the player, redrawn a few times a second from the loaded chunks. */
+/** A top-down map of the blocks around the player (north up; the HUD turns it to the heading), redrawn twice a second from the loaded chunks. */
 public final class ClientMinimap {
-    public static final int PIXELS = 64;
+    /** 96 pixels of 3 blocks: the texture covers 288 blocks, enough to fill a 192-block window turned to any heading. */
+    public static final int PIXELS = 96;
     /** Blocks per map pixel: 3 gives a 192 m wide view. */
     public static final int BLOCKS_PER_PIXEL = 3;
     public static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "minimap");
 
     private static DynamicTexture texture;
     private static long lastUpdate = -100;
+    private static int centerX, centerZ;
+
+    /** World block at the middle of the texture as last drawn. */
+    public static int centerX() {
+        return centerX;
+    }
+
+    public static int centerZ() {
+        return centerZ;
+    }
 
     private ClientMinimap() {}
 
@@ -45,6 +56,8 @@ public final class ClientMinimap {
         NativeImage img = tex.getPixels();
         Level level = mc.level;
         int cx = (int) Math.floor(mc.player.getX()), cz = (int) Math.floor(mc.player.getZ());
+        centerX = cx;
+        centerZ = cz;
         int[][] heights = new int[PIXELS + 1][PIXELS + 1];
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         for (int pz = 0; pz <= PIXELS; pz++) {

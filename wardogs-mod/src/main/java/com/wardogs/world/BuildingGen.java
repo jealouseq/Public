@@ -24,12 +24,12 @@ public final class BuildingGen {
     private record Look(BlockState wall, BlockState plinth, BlockState quoin, BlockState belt) {}
 
     private static final Look[] LOOKS = {
-            new Look(Blocks.WHITE_TERRACOTTA.defaultBlockState(), Blocks.STONE_BRICKS.defaultBlockState(), Blocks.LIGHT_GRAY_TERRACOTTA.defaultBlockState(), Blocks.SMOOTH_STONE.defaultBlockState()),
-            new Look(Blocks.SMOOTH_SANDSTONE.defaultBlockState(), Blocks.COBBLESTONE.defaultBlockState(), Blocks.CUT_SANDSTONE.defaultBlockState(), Blocks.STONE_BRICKS.defaultBlockState()),
+            new Look(Blocks.CALCITE.defaultBlockState(), Blocks.STONE_BRICKS.defaultBlockState(), Blocks.LIGHT_GRAY_CONCRETE.defaultBlockState(), Blocks.SMOOTH_STONE.defaultBlockState()),
+            new Look(Blocks.SMOOTH_SANDSTONE.defaultBlockState(), Blocks.COBBLESTONE.defaultBlockState(), Blocks.CALCITE.defaultBlockState(), Blocks.CUT_SANDSTONE.defaultBlockState()),
             new Look(Blocks.LIGHT_GRAY_CONCRETE.defaultBlockState(), Blocks.STONE_BRICKS.defaultBlockState(), Blocks.GRAY_CONCRETE.defaultBlockState(), Blocks.SMOOTH_STONE.defaultBlockState()),
             new Look(Blocks.BRICKS.defaultBlockState(), Blocks.STONE_BRICKS.defaultBlockState(), Blocks.STONE_BRICKS.defaultBlockState(), Blocks.SMOOTH_STONE.defaultBlockState()),
-            new Look(Blocks.LIGHT_BLUE_TERRACOTTA.defaultBlockState(), Blocks.STONE_BRICKS.defaultBlockState(), Blocks.WHITE_TERRACOTTA.defaultBlockState(), Blocks.SMOOTH_STONE.defaultBlockState()),
-            new Look(Blocks.SMOOTH_SANDSTONE.defaultBlockState(), Blocks.STONE_BRICKS.defaultBlockState(), Blocks.WHITE_TERRACOTTA.defaultBlockState(), Blocks.CUT_SANDSTONE.defaultBlockState()),
+            new Look(Blocks.POLISHED_ANDESITE.defaultBlockState(), Blocks.COBBLESTONE.defaultBlockState(), Blocks.CALCITE.defaultBlockState(), Blocks.SMOOTH_STONE.defaultBlockState()),
+            new Look(Blocks.CALCITE.defaultBlockState(), Blocks.COBBLESTONE.defaultBlockState(), Blocks.SMOOTH_SANDSTONE.defaultBlockState(), Blocks.CUT_SANDSTONE.defaultBlockState()),
     };
 
     /** Roof tiles: stairs and the full block for the ridge. */
@@ -243,7 +243,20 @@ public final class BuildingGen {
             if (k == top) {
                 return Blocks.SMOOTH_STONE.defaultBlockState();
             }
-            return k == top + 1 && (i == 0 || j == 0 || i == w - 1 || j == d - 1) ? wall(b) : null;
+            boolean rim = i == 0 || j == 0 || i == w - 1 || j == d - 1;
+            if (k == top + 1 && rim) {
+                return wall(b);
+            }
+            if (!rim && i >= 2 && j >= 2 && i < w - 2 && j < d - 2 && k <= top + 2) { // roof clutter: ventilation stacks and aerials
+                double r = Decorations.rnd(i * 7L + style(b), j * 5L, 61);
+                if (r < 0.010) {
+                    return Blocks.BRICKS.defaultBlockState();
+                }
+                if (r < 0.014 && k == top + 1) {
+                    return Blocks.LIGHTNING_ROD.defaultBlockState();
+                }
+            }
+            return null;
         }
         Roof tiles = roof(b);
         BlockState stair = b.kind() == 2 ? Blocks.SPRUCE_STAIRS.defaultBlockState() : tiles.stair();

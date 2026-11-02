@@ -67,28 +67,39 @@ and the assumed 100 player health are placeholders: the sources do not publish t
 | Middle mouse | Radial menu: squad (create, invite the nearest teammate, leave), requests (healing, ammo, supplies, repairs), local callouts, emotes |
 | `/wd mode standard / hardcore` (op) | Hardcore trims the HUD (no minimap, no Hot Zone marker) and limits the kill feed to your squad |
 | `/wd squad create / invite <name> / accept / leave` | Squads of up to four; members appear on the minimap and in a list on the left |
+| F / G (while downed) | Give up (die at once) / call for a medic |
 | Hold TAB | Match scoreboard: three faction columns with kills, deaths, money earned |
 | Right-click a lectern at a deployment board | Choose where to deploy: your base or a friendly FOB |
 
 The HUD follows the real game: compass strip with the Hot Zone marker (top centre), money and level boxes with a reward log (top
-right), kill feed (top left), minimap with faction scores and the "CONTROL" label (bottom left), ammo and stamina / armour / heart
-(bottom right), hit markers at the crosshair, context prompts and a vehicle read-out.
+right), kill feed (top left), minimap that turns with your heading with faction scores and the "CONTROL" label (bottom left), ammo and
+stamina / armour / heart (bottom right), hit markers at the crosshair, context prompts, a vehicle read-out, world markers (Hot Zone ring
+and squad mates with their distance) and a downed screen with the bleed-out ring, GIVE UP and CALL FOR HELP.
 
 ## Assets
 
-Gun item models are voxelised from the CC0 Quaternius "Ultimate Gun Pack" (`research/tools/obj_to_item_model.py`); vehicle models are
-generated box shapes (`research/tools/gen_vehicle_models.py`); weapon sounds are synthesised (`research/tools/gen_sounds.py`, no
-recordings); grenade, mine, charge, flare, armour and launcher models come from `research/tools/gen_item_models.py`, and the 59 decor
-blocks (furniture, street furniture, camp gear) from `research/tools/gen_decor.py`. See `research/MODS_AND_ASSETS.md` for the ready-made
-mods and assets that were considered and their licences.
+Weapons and vehicles are real triangle meshes (`neoforge:obj` models), not boxes: the 33 gun models are the CC0 Quaternius "Ultimate Gun
+Pack" re-posed for the hand and tinted per weapon; the Wolf-110 is the CC0 "Soviet military off-road vehicle" from OpenGameArt; the other
+22 vehicles (tanks, APC, SPH, AA gun, trucks, SUVs, buggies, ATV, helicopters) are generated procedurally with smooth shading
+(`research/tools/vehicles_proc.py`, `build_models.py`, `meshkit.py`, `meshlib.py`). Trees are painted here too: six species with their own
+generated foliage and bark textures (`research/tools/gen_nature.py`) and procedural shapes (`nature/Trees.java`). Weapon sounds are
+synthesised (`research/tools/gen_sounds.py`, no recordings); grenade, mine, charge, flare, armour and launcher models come from
+`research/tools/gen_item_models.py`, and the 59 decor blocks (furniture, street furniture, camp gear) from `research/tools/gen_decor.py`.
+No asset of the real WARDOGS or of STALCRAFT is used (they are proprietary); see `research/MODS_AND_ASSETS.md` for what was considered and
+the licences.
 
 ## The Bakurani map
 
 Terrain, rivers, forest, fields, roads and about 4 000 houses come from the researched map data (kept in the git-ignored
 `local-data/bakurani`, built by `research/tools/map_convert.py` and `bake_cover.py`). Generated at chunk time: houses along the roads
-facing them (rotated in 45-degree steps) with a porch, lantern, windows, partition walls, furniture and ceiling lamps, sheds, yards with
-benches, mailboxes, bins, firewood, gardens and fences, a lawn clearing around every house, surfaced roads with gravel shoulders,
-street lamps, power poles along tracks, bridges over rivers, spruce and birch forest, ferns, berry bushes, fallen logs and boulders.
+facing them (rotated in 45-degree steps) with overhanging eaves, hip or gable roofs in brick, mud-brick, slate, copper or stone tiles, a
+stone plinth, quoins, a belt course at every storey, tall windows, attic windows, a porch, lantern, partition walls, furniture and ceiling
+lamps; sheds; rows of lock-up garages behind the big blocks; flat-roofed blocks with parapets and rooftop vents; yards with benches,
+mailboxes, bins, firewood, gardens and fences; a lawn clearing around every house; surfaced roads with gravel shoulders; street lamps,
+bus shelters, kiosks, power poles along tracks; bridges over rivers. Nature: stands of fir and pine, birch and aspen groves, oaks and
+copper-leaved beeches with forked limbs and lobed crowns, bushes, stumps and fallen logs, a mossy forest floor with ferns, mushrooms and
+berries, alpine turf on gentle rock-class ground, banded cliffs (stone, andesite, tuff, cobble), boulders with moss, and meadows with
+drifts of wild flowers and tall grass.
 Placed by `/wd bakurani setup` (a queue of small steps that runs for about a minute; watch the chat): faction outposts with a hangar for
 the garage vendor, a market stall for the equipment vendor, tent camps at the spawns, a depot, a concrete wall with barbed wire and
 floodlights, corner watchtowers and a faction flag; loot towers, loot caches, deployment boards, the shooting range, zone flags and

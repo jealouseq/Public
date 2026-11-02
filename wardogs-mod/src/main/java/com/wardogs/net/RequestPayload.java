@@ -31,7 +31,11 @@ public record RequestPayload(String id) implements CustomPacketPayload {
         public static void register(RegisterPayloadHandlersEvent e) {
             e.registrar("1").playToServer(TYPE, CODEC, (p, ctx) -> ctx.enqueueWork(() -> {
                 if (ctx.player() instanceof ServerPlayer sp) {
-                    Requests.send(sp, p.id());
+                    if ("giveup".equals(p.id())) {
+                        com.wardogs.medic.Downed.giveUp(sp);
+                    } else {
+                        Requests.send(sp, p.id());
+                    }
                 }
             }));
         }

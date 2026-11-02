@@ -81,6 +81,15 @@ public final class Downed {
         HudPayload.sendTo(p);
     }
 
+    /** A downed player gives up: a real death at once instead of bleeding out. */
+    public static boolean giveUp(ServerPlayer p) {
+        if (!is(p)) {
+            return false;
+        }
+        p.kill();
+        return true;
+    }
+
     /** Stands the player up with the given health. */
     public static void revive(ServerPlayer p, double hp) {
         cleanup(p);

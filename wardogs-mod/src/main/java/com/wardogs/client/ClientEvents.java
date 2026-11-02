@@ -26,6 +26,13 @@ public final class ClientEvents {
     public static final KeyMapping MAP = new KeyMapping("key.wardogs.map", InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_M, "key.categories.wardogs");
 
+    /** While downed: give up (die at once) and call for a medic. */
+    public static final KeyMapping GIVE_UP = new KeyMapping("key.wardogs.give_up", InputConstants.Type.KEYSYM,
+            GLFW.GLFW_KEY_F, "key.categories.wardogs");
+
+    public static final KeyMapping CALL_HELP = new KeyMapping("key.wardogs.call_help", InputConstants.Type.KEYSYM,
+            GLFW.GLFW_KEY_G, "key.categories.wardogs");
+
     private ClientEvents() {}
 
     @EventBusSubscriber(modid = WardogsMod.MOD_ID, value = Dist.CLIENT)
@@ -37,6 +44,8 @@ public final class ClientEvents {
             e.register(RELOAD);
             e.register(SHOP);
             e.register(MAP);
+            e.register(GIVE_UP);
+            e.register(CALL_HELP);
         }
     }
 
@@ -73,6 +82,17 @@ public final class ClientEvents {
                         PacketDistributor.sendToServer(new VehicleFirePayload());
                         break;
                     }
+                }
+            }
+            boolean downed = ClientHud.get() != null && ClientHud.get().downed() > 0;
+            while (GIVE_UP.consumeClick()) {
+                if (downed && mc.screen == null) {
+                    PacketDistributor.sendToServer(new com.wardogs.net.RequestPayload("giveup"));
+                }
+            }
+            while (CALL_HELP.consumeClick()) {
+                if (downed && mc.screen == null) {
+                    PacketDistributor.sendToServer(new com.wardogs.net.RequestPayload("heal"));
                 }
             }
             while (MAP.consumeClick()) {
