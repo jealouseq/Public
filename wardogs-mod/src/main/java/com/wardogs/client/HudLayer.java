@@ -55,6 +55,11 @@ public final class HudLayer {
             e.setCanceled(true); // the match scoreboard replaces the vanilla player list
             return;
         }
+        if (ClientHud.get() != null && ClientHud.get().downed() > 0 && (e.getName().equals(VanillaGuiLayers.HOTBAR)
+                || e.getName().equals(VanillaGuiLayers.EXPERIENCE_BAR) || e.getName().equals(VanillaGuiLayers.SELECTED_ITEM_NAME))) {
+            e.setCanceled(true); // a downed player has no hands for items
+            return;
+        }
         if (e.getName().equals(VanillaGuiLayers.PLAYER_HEALTH) || e.getName().equals(VanillaGuiLayers.ARMOR_LEVEL)
                 || e.getName().equals(VanillaGuiLayers.FOOD_LEVEL)) {
             e.setCanceled(true);
@@ -144,7 +149,7 @@ public final class HudLayer {
             g.fill(i, 0, i + 1, ht, (a << 24) | 0x300000);
             g.fill(w - 1 - i, 0, w - i, ht, (a << 24) | 0x300000);
         }
-        int cx = w / 2, cy = (int) (ht * 0.9);
+        int cx = w / 2, cy = (int) (ht * 0.88);
         double total = Math.max(1, Balance.get().bleedoutTicks());
         ring(g, cx, cy, 17, Math.min(1.0, h.downed() / total), 0xFFFFFFFF, 0xFFD13B3B);
         g.fill(cx - 12, cy - 12, cx + 12, cy + 12, 0x55000000);

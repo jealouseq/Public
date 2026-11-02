@@ -129,9 +129,9 @@ def rings(name, size, light, dark, seed):
 
 
 SPECIES = {
-    "fir": dict(size=64, palette=["#243f26", "#1b3320", "#2f5230", "#3f6a3a", "#567e48"], strokes=520, L=6, droop=28, hole=0.22, seed=11, leafy=False,
+    "fir": dict(size=64, palette=["#2e5232", "#27442a", "#3a6a3d", "#4d8247", "#659a58"], strokes=520, L=6, droop=28, hole=0.22, seed=11, leafy=False,
                 bark=("vertical", ["#2c2019", "#4a3626", "#6a5038"], "#7a5a3a", "#3a2a1a"), label="Fir Needles", log="Fir Bark"),
-    "pine": dict(size=64, palette=["#2d4a24", "#223a1c", "#3d6030", "#587c3c", "#7a9a52"], strokes=420, L=9, droop=18, hole=0.30, seed=21, leafy=False,
+    "pine": dict(size=64, palette=["#37592b", "#2c4a23", "#4a7338", "#648c45", "#86a85e"], strokes=420, L=9, droop=18, hole=0.30, seed=21, leafy=False,
                  bark=("vertical", ["#5a3a26", "#9a5a35", "#c47a44"], "#c98a55", "#6a4126"), label="Pine Needles", log="Pine Bark"),
     "birch": dict(size=32, palette=["#5d7d27", "#76973a", "#8fb04a", "#a3c05a", "#bccf72"], strokes=170, L=0, droop=0, hole=0.20, seed=31, leafy=True,
                   bark=("birch", ["#d8d5cc", "#ece9e1", "#c2beb3"], "#e8e3d6", "#a49a86"), label="Birch Leaves", log="Birch Bark"),

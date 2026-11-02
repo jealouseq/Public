@@ -28,7 +28,7 @@ public final class ClientEvents {
 
     /** While downed: give up (die at once) and call for a medic. */
     public static final KeyMapping GIVE_UP = new KeyMapping("key.wardogs.give_up", InputConstants.Type.KEYSYM,
-            GLFW.GLFW_KEY_F, "key.categories.wardogs");
+            GLFW.GLFW_KEY_X, "key.categories.wardogs");
 
     public static final KeyMapping CALL_HELP = new KeyMapping("key.wardogs.call_help", InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_G, "key.categories.wardogs");

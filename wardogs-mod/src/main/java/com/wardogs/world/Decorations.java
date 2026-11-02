@@ -136,7 +136,7 @@ public final class Decorations {
             BakuraniTerrain.Building shed = new BakuraniTerrain.Building((float) w[0], (float) w[1], 5, 4, 1, 2, b.angle());
             boolean clash = t.roadClass(w[0], w[1]) > 0 || t.cover(w[0], w[1]) == BakuraniTerrain.COVER_WATER || !BakuraniTerrain.inside(w[0], w[1]);
             for (BakuraniTerrain.Building o : t.buildingsIn((int) w[0] - 12, (int) w[1] - 12, (int) w[0] + 12, (int) w[1] + 12)) {
-                if (Math.hypot(o.x() - w[0], o.z() - w[1]) < Math.hypot(o.w(), o.d() + 1) / 2.0 + 6) {
+                if (o != b && Math.hypot(o.x() - w[0], o.z() - w[1]) < Math.hypot(o.w(), o.d() + 1) / 2.0 + 5) {
                     clash = true;
                     break;
                 }

@@ -56,6 +56,15 @@ public final class WdCommand {
                         .then(Commands.literal("break").then(Commands.argument("section", StringArgumentType.greedyString())
                                 .executes(c -> vehicleSection(c.getSource(), StringArgumentType.getString(c, "section"), true))))
                         .then(Commands.literal("repair").executes(c -> vehicleSection(c.getSource(), null, false))))
+                .then(Commands.literal("down").requires(src -> src.hasPermission(2)).executes(c -> { // put yourself on the ground (for trying the downed screen)
+                    ServerPlayer p = c.getSource().getPlayerOrException();
+                    if (com.wardogs.match.Factions.index(p) < 0) {
+                        c.getSource().sendFailure(Component.literal("Join a faction first: /wd team <lonestar|valkyra|manticore>"));
+                        return 0;
+                    }
+                    com.wardogs.medic.Downed.down(p);
+                    return 1;
+                }))
                 .then(Commands.literal("mode").requires(src -> src.hasPermission(2))
                         .then(Commands.literal("standard").executes(c -> setMode(c.getSource(), false)))
                         .then(Commands.literal("hardcore").executes(c -> setMode(c.getSource(), true))))
