@@ -57,7 +57,7 @@ def finish_vehicle(vid, m, front="-z"):
     lo, hi = m.bbox()
     os.makedirs(os.path.join(OUT, "models/vehicle"), exist_ok=True)
     obj = os.path.join(OUT, "models/vehicle", vid + ".obj")
-    ml.write_obj(m, obj, vid + ".mtl", "#base")
+    ml.write_obj(m, obj, vid + ".mtl", "#base", uv_fit=True)
     json.dump({"loader": "neoforge:obj", "model": f"wardogs:models/vehicle/{vid}.obj", "flip_v": True, "automatic_culling": False,
                "shade_quads": True, "textures": {"base": "wardogs:item/mesh_white", "particle": "wardogs:item/mesh_white"}},
               open(os.path.join(OUT, "models/vehicle", vid + ".json"), "w"))
@@ -208,11 +208,32 @@ def build_guns():
             cache[src] = ml.Mesh(v, m.tris, m.mat, m.names, m.colors)
         m = cache[src]
         os.makedirs(os.path.join(OUT, "models/item"), exist_ok=True)
-        ml.write_obj(m, os.path.join(OUT, "models/item", wid + ".obj"), wid + ".mtl", "#base", smooth=True, angle=50)
+        ml.write_obj(m, os.path.join(OUT, "models/item", wid + ".obj"), wid + ".mtl", "#base", smooth=True, angle=50, uv_fit=True)
         json.dump({"loader": "neoforge:obj", "model": f"wardogs:models/item/{wid}.obj", "flip_v": True, "automatic_culling": False,
                    "shade_quads": True, "gui_light": "front", "textures": {"base": "wardogs:item/mesh_white", "particle": "wardogs:item/mesh_white"},
                    "display": GUN_DISPLAY}, open(os.path.join(OUT, "models/item", wid + ".json"), "w"))
     print("guns:", len(GUN_MAP))
+
+
+def grunge_texture(size=128):
+    """The one texture every mesh material tints with its Kd colour: near white with soft dirt blotches, fine grain and a few scratches, so flat-coloured hulls and guns get some surface.
+    It is stretched once over each model (box-projected UVs), because textures in the atlas cannot tile."""
+    r = np.random.default_rng(5)
+
+    def noise(cells):
+        g = (r.random((cells, cells)) * 255).astype(np.uint8)
+        return np.asarray(Image.fromarray(g).resize((size, size), Image.BICUBIC), float) / 255
+
+    base = 1.0 - 0.18 * noise(5) - 0.09 * noise(11) + 0.025 * (r.random((size, size)) - 0.5)
+    img = base.copy()
+    for _ in range(40):  # scratches: short bright or dark streaks
+        x, y = int(r.integers(0, size)), int(r.integers(0, size))
+        dx, dy = (1, 0) if r.random() < 0.5 else (0, 1)
+        val = 0.06 if r.random() < 0.5 else -0.07
+        for i in range(int(r.integers(6, 30))):
+            img[(y + dy * i) % size, (x + dx * i) % size] += val
+    g = (np.clip(img, 0.55, 1.0) * 255).astype(np.uint8)
+    return Image.fromarray(np.stack([g, g, g, np.full_like(g, 255)], -1), "RGBA")
 
 
 if __name__ == "__main__":
@@ -228,6 +249,5 @@ if __name__ == "__main__":
             V["vehicles"][vid]["w"], V["vehicles"][vid]["h"], V["vehicles"][vid]["d"] = w, h, d
     json.dump(V, open(vp_path, "w"), indent=1)
     os.makedirs(os.path.join(OUT, "textures/item"), exist_ok=True)
-    img = Image.new("RGBA", (16, 16), (255, 255, 255, 255))
-    img.save(os.path.join(OUT, "textures/item/mesh_white.png"))
+    grunge_texture().save(os.path.join(OUT, "textures/item/mesh_white.png"))
     json.dump(DIMS, open(os.path.join(CACHE, "vehicle_dims.json"), "w"), indent=1)

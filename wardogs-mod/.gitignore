@@ -7,3 +7,4 @@ run/
 # Third-party map rasters extracted from the game: kept local, never committed.
 local-data/
 run-gametest/
+__pycache__/

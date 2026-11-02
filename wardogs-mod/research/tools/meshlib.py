@@ -161,8 +161,10 @@ def corner_normals(m, angle=40.0):
     return out
 
 
-def write_obj(m, obj_path, mtl_name, texture_ref, smooth=True, angle=40.0):
-    """Writes OBJ + MTL for NeoForge's neoforge:obj loader: one material per colour with Kd = colour and a shared white texture."""
+def write_obj(m, obj_path, mtl_name, texture_ref, smooth=True, angle=40.0, uv_fit=False):
+    """Writes OBJ + MTL for NeoForge's neoforge:obj loader: one material per colour with Kd = colour and a shared texture.
+    With uv_fit every corner gets a box-projected UV normalised to the model's bounding box (kept inside 0.03..0.97 because the texture
+    lives in an atlas and cannot tile), so one grime texture is stretched over the whole model."""
     import os
     cn = corner_normals(m, angle) if smooth else None
     fn, _ = m.face_normals()
@@ -178,12 +180,24 @@ def write_obj(m, obj_path, mtl_name, texture_ref, smooth=True, angle=40.0):
             nlist.append(k)
         return nid[k]
     face_lines = {}
+    uvs = []
+    lo_b, hi_b = m.bbox()
+    ext = np.maximum(hi_b - lo_b, 1e-6)
     for f in range(len(m.tris)):
         idx = []
+        ax = int(np.argmax(np.abs(fn[f])))  # the dominant axis of the flat face normal picks the projection plane
         for k in range(3):
             n = cn[f, k] if smooth else fn[f]
-            idx.append("%d//%d" % (m.tris[f, k] + 1, norm_index(n)))
+            if uv_fit:
+                q = (m.verts[m.tris[f, k]] - lo_b) / ext
+                u, vv = {0: (q[2], q[1]), 1: (q[0], q[2]), 2: (q[0], q[1])}[ax]
+                uvs.append((0.03 + 0.94 * u, 0.03 + 0.94 * vv))
+                idx.append("%d/%d/%d" % (m.tris[f, k] + 1, len(uvs), norm_index(n)))
+            else:
+                idx.append("%d//%d" % (m.tris[f, k] + 1, norm_index(n)))
         face_lines.setdefault(m.mat[f], []).append("f " + " ".join(idx))
+    for t in uvs:
+        lines.append("vt %.4f %.4f" % t)
     for n in nlist:
         lines.append("vn %.3f %.3f %.3f" % n)
     for mi, fl in face_lines.items():
