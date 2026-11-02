@@ -218,5 +218,6 @@
   "block.wardogs.beech_foliage": "Beech Leaves",
   "block.wardogs.beech_bark": "Beech Bark",
   "key.wardogs.give_up": "Give up (when downed)",
-  "key.wardogs.call_help": "Call for help (when downed)"
+  "key.wardogs.call_help": "Call for help (when downed)",
+  "key.wardogs.damage_log": "View damage log (when downed)"
 }

@@ -33,6 +33,9 @@ public final class ClientEvents {
     public static final KeyMapping CALL_HELP = new KeyMapping("key.wardogs.call_help", InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_G, "key.categories.wardogs");
 
+    public static final KeyMapping DAMAGE_LOG = new KeyMapping("key.wardogs.damage_log", InputConstants.Type.KEYSYM,
+            GLFW.GLFW_KEY_V, "key.categories.wardogs");
+
     private ClientEvents() {}
 
     @EventBusSubscriber(modid = WardogsMod.MOD_ID, value = Dist.CLIENT)
@@ -46,11 +49,15 @@ public final class ClientEvents {
             e.register(MAP);
             e.register(GIVE_UP);
             e.register(CALL_HELP);
+            e.register(DAMAGE_LOG);
         }
     }
 
     @EventBusSubscriber(modid = WardogsMod.MOD_ID, value = Dist.CLIENT)
     public static final class Game {
+        private static boolean wasRiding;
+        private static net.minecraft.client.CameraType cameraBefore;
+
         private Game() {}
 
         @SubscribeEvent
@@ -59,6 +66,14 @@ public final class ClientEvents {
             if (e.getButton() == GLFW.GLFW_MOUSE_BUTTON_MIDDLE && e.getAction() == GLFW.GLFW_PRESS && mc.screen == null && mc.player != null
                     && ClientHud.get() != null && ClientHud.get().active() && ClientHud.get().faction() >= 0) {
                 mc.setScreen(new RadialScreen());
+                e.setCanceled(true);
+            }
+        }
+
+        /** The crew of a closed vehicle is inside it: their models are not drawn over the body. */
+        @SubscribeEvent
+        public static void hideCrew(net.neoforged.neoforge.client.event.RenderPlayerEvent.Pre e) {
+            if (e.getEntity().getVehicle() instanceof Vehicle v && Vehicle.enclosed(v.def())) {
                 e.setCanceled(true);
             }
         }
@@ -84,11 +99,29 @@ public final class ClientEvents {
                     }
                 }
             }
+            // Driving is seen from behind the vehicle, like the real game; the camera returns to what it was on exit.
+            boolean riding = mc.player.getVehicle() instanceof Vehicle;
+            if (riding && !wasRiding) {
+                cameraBefore = mc.options.getCameraType();
+                mc.options.setCameraType(net.minecraft.client.CameraType.THIRD_PERSON_BACK);
+            } else if (!riding && wasRiding && cameraBefore != null) {
+                mc.options.setCameraType(cameraBefore);
+                cameraBefore = null;
+            }
+            wasRiding = riding;
             boolean downed = ClientHud.get() != null && ClientHud.get().downed() > 0;
             while (GIVE_UP.consumeClick()) {
                 if (downed && mc.screen == null) {
                     PacketDistributor.sendToServer(new com.wardogs.net.RequestPayload("giveup"));
                 }
+            }
+            while (DAMAGE_LOG.consumeClick()) {
+                if (downed) {
+                    ClientDamageLog.toggle();
+                }
+            }
+            if (!downed && !ClientDamageLog.lines().isEmpty()) {
+                ClientDamageLog.clear();
             }
             while (CALL_HELP.consumeClick()) {
                 if (downed && mc.screen == null) {

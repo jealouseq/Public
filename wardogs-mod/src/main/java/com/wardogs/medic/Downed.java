@@ -79,6 +79,7 @@ public final class Downed {
             }
         }
         HudPayload.sendTo(p);
+        com.wardogs.net.DamageLogPayload.sendTo(p);
     }
 
     /** A downed player gives up: a real death at once instead of bleeding out. */
@@ -101,6 +102,7 @@ public final class Downed {
 
     private static void cleanup(Player p) {
         TICKS.remove(p.getUUID());
+        com.wardogs.combat.DamageLog.clear(p.getUUID());
         p.setForcedPose(null);
         modify(p, false);
     }

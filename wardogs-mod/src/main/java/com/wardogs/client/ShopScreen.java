@@ -285,7 +285,12 @@ public class ShopScreen extends Screen {
         buyButton.visible = true;
         UnlockRule.State st = Shop.state(e, data);
         ItemStack ic = icon(e);
-        boolean big = e.category() == Shop.Category.VEHICLE && vehiclePreview(g, e.id(), dx + DETAIL_W / 2f, 86);
+        if (e.category() == Shop.Category.VEHICLE || e.category() == Shop.Category.WEAPON) { // a lit stage for the model
+            g.fillGradient(dx + 8, 30, dx + DETAIL_W - 8, 148, 0x884A5E74, 0x88222C3A);
+            g.renderOutline(dx + 8, 30, DETAIL_W - 16, 118, 0x33FFFFFF);
+        }
+        boolean big = (e.category() == Shop.Category.VEHICLE && vehiclePreview(g, e.id(), dx + DETAIL_W / 2f, 86))
+                || (e.category() == Shop.Category.WEAPON && !ic.isEmpty() && gunPreview(g, ic, dx + DETAIL_W / 2f, 84));
         if (big) {
             // the rotating mesh above is the picture
         } else if (!ic.isEmpty()) {
@@ -340,6 +345,28 @@ public class ShopScreen extends Screen {
         com.mojang.blaze3d.platform.Lighting.setupFor3DItems();
         net.minecraft.client.Minecraft.getInstance().getItemRenderer().render(MODEL_CARRIER, net.minecraft.world.item.ItemDisplayContext.NONE, false,
                 g.pose(), g.bufferSource(), 0xF000F0, net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY, model);
+        g.flush();
+        com.mojang.blaze3d.platform.Lighting.setupForFlatItems();
+        g.pose().popPose();
+        return true;
+    }
+
+    /** A gun swinging slowly left and right on its own mesh, lit like an item, centred on (cx, cy). */
+    private boolean gunPreview(GuiGraphics g, ItemStack stack, float cx, float cy) {
+        var mc = net.minecraft.client.Minecraft.getInstance();
+        var model = mc.getItemRenderer().getModel(stack, mc.level, mc.player, 0);
+        if (model == mc.getModelManager().getMissingModel()) {
+            return false;
+        }
+        double t = System.currentTimeMillis() / 1800.0;
+        g.pose().pushPose();
+        g.pose().translate(cx, cy, 150);
+        g.pose().scale(120f, -120f, 120f);
+        g.pose().mulPose(com.mojang.math.Axis.XP.rotationDegrees(-12));
+        g.pose().mulPose(com.mojang.math.Axis.YP.rotationDegrees((float) (Math.sin(t) * 40.0)));
+        com.mojang.blaze3d.platform.Lighting.setupFor3DItems();
+        mc.getItemRenderer().render(stack, net.minecraft.world.item.ItemDisplayContext.GUI, false, g.pose(), g.bufferSource(), 0xF000F0,
+                net.minecraft.client.renderer.texture.OverlayTexture.NO_OVERLAY, model);
         g.flush();
         com.mojang.blaze3d.platform.Lighting.setupForFlatItems();
         g.pose().popPose();

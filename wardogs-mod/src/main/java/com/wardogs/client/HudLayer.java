@@ -137,6 +137,42 @@ public final class HudLayer {
         }
     }
 
+    /** Right side while downed: a "VIEW DAMAGE LOG" key hint with the last hit, or the whole log when opened. */
+    private static void renderDamageLog(GuiGraphics g, Minecraft mc) {
+        var lines = ClientDamageLog.lines();
+        if (lines.isEmpty()) {
+            return;
+        }
+        int right = g.guiWidth() - 10, y = g.guiHeight() / 2 + 40;
+        String key = ClientEvents.DAMAGE_LOG.getTranslatedKeyMessage().getString().toUpperCase();
+        int kw = mc.font.width(key) + 6;
+        String label = "VIEW DAMAGE LOG";
+        float lw = smallWidth(mc, label, 0.8f);
+        int kx = (int) (right - lw - 4 - kw);
+        g.fill(kx, y - 2, kx + kw, y + 10, 0xCC0B0E12);
+        g.renderOutline(kx, y - 2, kw, 12, 0xAAFFFFFF);
+        g.drawString(mc.font, key, kx + 3, y, TEXT, false);
+        small(g, mc, label, right - lw, y + 1, TEXT, 0.8f);
+        y += 15;
+        int shown = ClientDamageLog.open() ? lines.size() : 1;
+        for (int i = 0; i < shown; i++) {
+            var l = lines.get(i);
+            String dmg = String.valueOf(l.damage());
+            int dw = mc.font.width(dmg) + 6;
+            var def = Balance.get().weapon(l.weapon());
+            String weapon = def == null ? l.weapon() : def.name();
+            String who = l.attacker();
+            float ww = smallWidth(mc, who, 0.8f);
+            small(g, mc, who, right - ww, y + 1, 0xFFFFFFFF, 0.8f);
+            float wl = smallWidth(mc, weapon, 0.7f);
+            small(g, mc, weapon + (l.head() ? " \u2316" : ""), right - ww - 8 - wl - (l.head() ? 8 : 0), y + 1, DIM, 0.7f);
+            int bx = (int) (right - ww - 8 - wl - (l.head() ? 8 : 0)) - 6 - dw;
+            g.fill(bx, y - 1, bx + dw, y + 10, 0xFFD13B3B);
+            g.drawString(mc.font, dmg, bx + 3, y + 1, 0xFFFFFFFF, false);
+            y += 13;
+        }
+    }
+
     /** Downed screen like the real game: dark red vignette, a bleed-out ring with a medic star, GIVE UP and CALL FOR HELP keys. */
     private static void renderDowned(GuiGraphics g, Minecraft mc, HudPayload h) {
         int w = g.guiWidth(), ht = g.guiHeight();
@@ -163,6 +199,7 @@ public final class HudLayer {
         }
         String secs = (int) Math.ceil(h.downed() / 20.0) + "s";
         small(g, mc, secs, cx - smallWidth(mc, secs, 0.8f) / 2, cy + 22, 0xFFFFC9C9, 0.8f);
+        renderDamageLog(g, mc);
         String giveKey = ClientEvents.GIVE_UP.getTranslatedKeyMessage().getString().toUpperCase();
         String helpKey = ClientEvents.CALL_HELP.getTranslatedKeyMessage().getString().toUpperCase();
         int kw1 = mc.font.width(giveKey) + 6, kw2 = mc.font.width(helpKey) + 6;

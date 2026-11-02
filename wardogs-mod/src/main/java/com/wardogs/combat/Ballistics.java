@@ -245,6 +245,9 @@ public final class Ballistics {
         DamageSource src = new DamageSource(
                 level.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(BULLET), shooter, shooter);
         CURRENT.set(new Hit(w.id(), head, distance, ammo));
+        if (target instanceof net.minecraft.server.level.ServerPlayer victim && shooter != null) {
+            DamageLog.record(victim.getUUID(), shooter.getName().getString(), w.id(), mc, head, level.getGameTime());
+        }
         try {
             target.invulnerableTime = 0; // bullets must not be swallowed by vanilla hit-immunity frames
             target.hurt(src, mc);

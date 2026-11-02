@@ -162,6 +162,16 @@ public class Vehicle extends Mob {
         return new Vec3(side, 0, len * rows[Math.min(idx / 2, rows.length - 1)]);
     }
 
+    /** True for vehicles whose crew sits inside a closed body (they are not drawn, and sit low enough for the eye to be in the cab). */
+    public static boolean enclosed(VehicleDef d) {
+        return d != null && !d.category().equals("atv");
+    }
+
+    /** Height of a rider's feet above the vehicle origin: on an open vehicle sitting on top, inside a cab with the eye at 72% of its height. */
+    static double seatHeight(VehicleDef d) {
+        return enclosed(d) ? Math.max(-0.5, d.h() * 0.72 - 1.62) : d.h() * 0.4;
+    }
+
     @Override
     protected void positionRider(Entity passenger, MoveFunction cb) {
         if (!hasPassenger(passenger)) {
@@ -173,7 +183,7 @@ public class Vehicle extends Mob {
         Vec3 fwd = new Vec3(-Mth.sin(yaw), 0, Mth.cos(yaw));
         Vec3 right = new Vec3(-Mth.cos(yaw), 0, -Mth.sin(yaw));
         VehicleDef d = def();
-        double y = getY() + (d == null ? 0.5 : d.h() * 0.4);
+        double y = getY() + (d == null ? 0.5 : seatHeight(d));
         cb.accept(passenger, getX() + fwd.x * off.z + right.x * off.x, y, getZ() + fwd.z * off.z + right.z * off.x);
     }
 
