@@ -238,7 +238,7 @@ public final class Decorations {
         if (inOtherBuilding(c, b, x, z)) {
             return;
         }
-        c.onGround(x, z, DecorBlocks.state("decor_" + id, face), 0);
+        c.onGround(x, z, DecorBlocks.state("decor_" + id, BuildingGen.rot(b, face)), 0);
     }
 
     private static boolean inOtherBuilding(Ctx c, BakuraniTerrain.Building self, int x, int z) {

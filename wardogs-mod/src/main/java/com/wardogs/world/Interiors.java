@@ -23,8 +23,8 @@ public final class Interiors {
         return (int) (x & 0xFFFF);
     }
 
-    private static BlockState decor(String id, Direction face) {
-        return DecorBlocks.state("decor_" + id, face);
+    private static BlockState decor(BakuraniTerrain.Building b, String id, Direction face) {
+        return DecorBlocks.state("decor_" + id, BuildingGen.rot(b, face));
     }
 
     private static final BlockState AIR = Blocks.AIR.defaultBlockState();
@@ -93,7 +93,7 @@ public final class Interiors {
         }
         if (kk == 3) {
             int cx = (r.x0 + r.x1) / 2, cy = (r.y0 + r.y1) / 2;
-            return i == cx && j == cy ? decor("ceiling_lamp", Direction.NORTH) : AIR;
+            return i == cx && j == cy ? decor(b, "ceiling_lamp", Direction.NORTH) : AIR;
         }
         if (kk != 1) {
             return AIR;
@@ -127,16 +127,16 @@ public final class Interiors {
         }
         int v = h(b, i, j, 1) % 8;
         if (j == 1 && i == 1) {
-            return decor("workbench", Direction.SOUTH);
+            return decor(b, "workbench", Direction.SOUTH);
         }
         if (j == 1 && i == b.w() - 2) {
-            return decor(v < 4 ? "crate_stack" : "supply_crate", Direction.SOUTH);
+            return decor(b, v < 4 ? "crate_stack" : "supply_crate", Direction.SOUTH);
         }
         if (i == b.w() - 2 && j == 2 && v < 4) {
-            return decor("jerrycan", Direction.WEST);
+            return decor(b, "jerrycan", Direction.WEST);
         }
         if (i == 1 && j == 2 && v >= 4) {
-            return decor("tire_stack", Direction.SOUTH);
+            return decor(b, "tire_stack", Direction.SOUTH);
         }
         return AIR;
     }
@@ -161,41 +161,41 @@ public final class Interiors {
                 Direction face = kitchenEast ? Direction.WEST : Direction.EAST;
                 if (i == wallI) {
                     int n = j - r.y0;
-                    if (n == 0) return decor("fridge", face);
-                    if (n == 1) return decor("kitchen_counter", face);
-                    if (n == 2) return decor("stove", face);
-                    if (n == 3) return decor("sink", face);
-                    if (n == 4 && d >= 7) return decor("kitchen_counter", face);
+                    if (n == 0) return decor(b, "fridge", face);
+                    if (n == 1) return decor(b, "kitchen_counter", face);
+                    if (n == 2) return decor(b, "stove", face);
+                    if (n == 3) return decor(b, "sink", face);
+                    if (n == 4 && d >= 7) return decor(b, "kitchen_counter", face);
                 }
             }
-            if (i == cx && j == cy && w >= 5 && d >= 5) return decor("table", Direction.NORTH);
+            if (i == cx && j == cy && w >= 5 && d >= 5) return decor(b, "table", Direction.NORTH);
             if (w >= 5 && d >= 5) {
-                if (i == cx - 1 && j == cy) return decor("chair", Direction.EAST);
-                if (i == cx + 1 && j == cy) return decor("chair", Direction.WEST);
-                if (i == cx && j == cy - 1) return decor("chair_cushion", Direction.SOUTH);
-                if (i == cx && j == cy + 1) return decor("chair_cushion", Direction.NORTH);
-                if (Math.abs(i - cx) == 1 && Math.abs(j - cy) == 1) return decor("rug", Direction.NORTH);
+                if (i == cx - 1 && j == cy) return decor(b, "chair", Direction.EAST);
+                if (i == cx + 1 && j == cy) return decor(b, "chair", Direction.WEST);
+                if (i == cx && j == cy - 1) return decor(b, "chair_cushion", Direction.SOUTH);
+                if (i == cx && j == cy + 1) return decor(b, "chair_cushion", Direction.NORTH);
+                if (Math.abs(i - cx) == 1 && Math.abs(j - cy) == 1) return decor(b, "rug", Direction.NORTH);
             }
-            if (atN && (i == cx || i == cx + 1) && !(kitchenRoom && style % 2 == 1 && i == r.x0)) return decor(style % 2 == 0 ? "sofa_red" : "sofa_blue", Direction.SOUTH);
-            if (atW && j == cy && !(kitchenRoom && style % 2 == 1) && w > 5) return decor("tv_set", Direction.EAST);
-            if (atN && i == r.x1 - (style % 2 == 0 ? 0 : 1) && w >= 5) return decor("bookshelf_tall", Direction.SOUTH);
-            if (atS && i == r.x0 && (r.y1 != b.d() - 2 || i > b.w() / 2 + 1 || true)) return decor("lamp_floor", Direction.NORTH);
-            if (atN && atW) return decor("potted_plant", Direction.SOUTH);
-            if (atS && atE && v < 55) return decor("potted_plant", Direction.NORTH);
-            if (atE && !kitchenRoom && j == cy) return decor("armchair", Direction.WEST);
+            if (atN && (i == cx || i == cx + 1) && !(kitchenRoom && style % 2 == 1 && i == r.x0)) return decor(b, style % 2 == 0 ? "sofa_red" : "sofa_blue", Direction.SOUTH);
+            if (atW && j == cy && !(kitchenRoom && style % 2 == 1) && w > 5) return decor(b, "tv_set", Direction.EAST);
+            if (atN && i == r.x1 - (style % 2 == 0 ? 0 : 1) && w >= 5) return decor(b, "bookshelf_tall", Direction.SOUTH);
+            if (atS && i == r.x0 && (r.y1 != b.d() - 2 || i > b.w() / 2 + 1 || true)) return decor(b, "lamp_floor", Direction.NORTH);
+            if (atN && atW) return decor(b, "potted_plant", Direction.SOUTH);
+            if (atS && atE && v < 55) return decor(b, "potted_plant", Direction.NORTH);
+            if (atE && !kitchenRoom && j == cy) return decor(b, "armchair", Direction.WEST);
             return null;
         }
         // bedrooms (and every room above the ground floor)
         if (atN && (i == r.x0 + 1 || (w >= 6 && i == r.x1 - 1))) {
-            return decor(storey > 0 && v < 40 ? "bed_bunk" : "cot", Direction.NORTH);
+            return decor(b, storey > 0 && v < 40 ? "bed_bunk" : "cot", Direction.NORTH);
         }
-        if (atW && j == cy) return decor("wardrobe", Direction.EAST);
-        if (atE && j == cy && v < 70) return decor("dresser", Direction.WEST);
-        if (atE && j == cy + 1 && v < 45) return decor("lamp_table", Direction.WEST);
-        if (atW && j == r.y1 && v < 60) return decor("bookshelf_tall", Direction.EAST);
-        if (i == cx && j == cy && w >= 5 && d >= 5) return decor("rug", Direction.NORTH);
-        if (atS && atE && v < 50) return decor("potted_plant", Direction.NORTH);
-        if (atS && i == cx && w >= 5 && v < 30 && !(storey == 0 && Math.abs(i - b.w() / 2) <= 1)) return decor("coffee_table", Direction.NORTH);
+        if (atW && j == cy) return decor(b, "wardrobe", Direction.EAST);
+        if (atE && j == cy && v < 70) return decor(b, "dresser", Direction.WEST);
+        if (atE && j == cy + 1 && v < 45) return decor(b, "lamp_table", Direction.WEST);
+        if (atW && j == r.y1 && v < 60) return decor(b, "bookshelf_tall", Direction.EAST);
+        if (i == cx && j == cy && w >= 5 && d >= 5) return decor(b, "rug", Direction.NORTH);
+        if (atS && atE && v < 50) return decor(b, "potted_plant", Direction.NORTH);
+        if (atS && i == cx && w >= 5 && v < 30 && !(storey == 0 && Math.abs(i - b.w() / 2) <= 1)) return decor(b, "coffee_table", Direction.NORTH);
         return null;
     }
 }

@@ -119,8 +119,22 @@ public final class BakuraniWorld {
         all.addAll(sites().boards());
         all.addAll(sites().towers());
         List<BakuraniTerrain.Building> kept = new ArrayList<>();
+        List<double[]> yards = new ArrayList<>(); // outpost areas (min x, min z, max x, max z) with a margin for the wall and a verge
+        for (Outposts.Cluster c : Outposts.clusters()) {
+            double x0 = Double.MAX_VALUE, z0 = Double.MAX_VALUE, x1 = -Double.MAX_VALUE, z1 = -Double.MAX_VALUE;
+            for (Outposts.Point p : c.points()) {
+                x0 = Math.min(x0, p.x()); x1 = Math.max(x1, p.x()); z0 = Math.min(z0, p.z()); z1 = Math.max(z1, p.z());
+            }
+            yards.add(new double[]{x0 - 36, z0 - 34, x1 + 36, z1 + 34});
+        }
         for (BakuraniTerrain.Building b : t.buildingsIn(-9000, -9000, 9000, 9000)) {
             boolean clash = false;
+            for (double[] y : yards) {
+                if (b.x() > y[0] - b.radius() && b.x() < y[2] + b.radius() && b.z() > y[1] - b.radius() && b.z() < y[3] + b.radius()) {
+                    clash = true;
+                    break;
+                }
+            }
             for (Site s : all) {
                 if (Math.abs(s.x() - b.x()) < 30 + b.w() / 2.0 && Math.abs(s.z() - b.z()) < 30 + b.d() / 2.0) {
                     clash = true;

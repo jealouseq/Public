@@ -93,11 +93,11 @@ public final class BakuraniTerrain {
         if (Files.isRegularFile(b)) {
             ByteBuffer bb = ByteBuffer.wrap(Files.readAllBytes(b)).order(ByteOrder.LITTLE_ENDIAN);
             int n = bb.getInt();
-            boolean v2 = n < 0; // version 2 records carry a rotation angle
-            n = Math.abs(n);
+            int version = n < -1_000_000 ? 3 : n < 0 ? 2 : 1; // v2: a signed byte angle, v3: a signed 16-bit angle
+            n = version == 3 ? -(n + 1_000_000) : Math.abs(n);
             for (int i = 0; i < n; i++) {
                 buildings.add(new Building(bb.getFloat(), bb.getFloat(), bb.get() & 0xFF, bb.get() & 0xFF, bb.get() & 0xFF, bb.get() & 0xFF,
-                        v2 ? bb.get() : 0));
+                        version == 3 ? bb.getShort() : version == 2 ? bb.get() : 0));
             }
         }
         return t.withCover(cover, buildings);

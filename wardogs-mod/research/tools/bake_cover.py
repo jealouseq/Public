@@ -3,8 +3,8 @@
 
 Outputs in local-data/bakurani/:
   cover_4096_u8.bin   one byte per 4 m cell: 0 none, 1 water, 2 forest canopy, 3 paved/urban, 4 field
-  buildings.bin       int32 -count (version 2), then records '<ffBBBBb': centre x, centre z (Minecraft coordinates, metres), width, depth (m),
-                      floors (1..4), kind (0 grey/concrete, 1 red roof), rotation in degrees (-45..44, along the street)
+  buildings.bin       int32 -(1000000 + count) (version 3), then records '<ffBBBBh': centre x, centre z (Minecraft coordinates, metres), width,
+                      depth (m), floors (1..4), kind (0 grey/concrete, 1 red roof), rotation in degrees (-180..180, door side toward the road)
 
 Classification rules were checked by eye against the map (see research/DATA_SOURCES.md): water is very dark, forest canopy is a
 saturated brown-olive of medium brightness, built-up ground is low-saturation grey, roofs are red/orange.
@@ -103,33 +103,80 @@ for i, sl in enumerate(ndimage.find_objects(lab), start=1):
     z = (my_ + 0.5) * M_PER_PX * 0.99983 - 8191.0
     floors = 1 if area_m2 < 90 else 2 if area_m2 < 300 else 3 if area_m2 < 1200 else 4
     out.append((x, z, int(round(w_m)), int(round(d_m)), floors, 1 if red else 0, int(round(ang))))
-# --- town fabric: where built-up ground is dense, lay out a grid of houses (the map does not resolve single roofs) ---
-town = (urban & ~roads & near_roads & ~water & ~roof)
-CELL = 5                                   # 5 px = 16 m
-nc = N // CELL
-frac = town[:nc * CELL, :nc * CELL].reshape(nc, CELL, nc, CELL).mean(axis=(1, 3))
-explicit = [(o[0], o[1], max(o[2], o[3]) / 2.0 + 3, max(o[2], o[3]) / 2.0 + 3) for o in out]
+# --- villages: houses along the road network, facing the road ------------------------------------------------------------
+# The map does not resolve single roofs, but where the road net is dense people live: houses stand 14-36 m from a road, door toward it,
+# with a jitter and a minimum spacing; remote highways get none, farm tracks a few.
+cell = 4.0                                   # metres per cell of the road grid
+road_any = clean
+dist, (iy, ix) = ndimage.distance_transform_edt(~road_any, return_indices=True)
+dens = ndimage.gaussian_filter(road_any.astype(np.float32), 22)       # share of road cells within ~90 m
+water_cov = np.array(Image.fromarray((water.astype(np.uint8) * 255)).resize((4096, 4096), Image.NEAREST)) > 0
+near_water = ndimage.binary_dilation(water_cov, iterations=4)
+# keep only houses of the detection that are not in a river bed (dark rocks beside water read as roofs)
+def near_water_world(x, z):
+    px = int((x + 8187.0) / 0.99902 / 4.0); py = int((z + 8191.0) / 0.99983 / 4.0)
+    return 0 <= px < 4096 and 0 <= py < 4096 and near_water[py, px]
+out = [o for o in out if not near_water_world(o[0], o[1])]
+# slope from the elevation grid (2048 px = 8 m)
+H = np.fromfile(os.path.join(D, "height_2048_u16.bin"), np.uint16).reshape(2048, 2048).astype(np.float32)
+elev = 0.25993 * H - 1008.34
+gyh, gxh = np.gradient(ndimage.gaussian_filter(elev, 1.0), 8.0)
+slope = np.hypot(gxh, gyh)                                            # metres per metre
+mat = np.fromfile(os.path.join(D, "material_2048_u8.bin"), np.uint8).reshape(2048, 2048)
 def hashf(i, j, salt):
     h = (i * 73856093) ^ (j * 19349663) ^ (salt * 83492791)
     h = (h ^ (h >> 13)) * 1274126177 & 0xFFFFFFFF
     return ((h ^ (h >> 16)) & 0xFFFF) / 65536.0
-grid = []
-for j in range(nc):
-    for i in range(nc):
-        if frac[j, i] < 0.55:
+placed = {}                                   # spatial hash of centres for the spacing test (metres)
+def free(x, z, r):
+    gx, gz = int(x // 24), int(z // 24)
+    for a in (-1, 0, 1):
+        for b in (-1, 0, 1):
+            for (px, pz, pr) in placed.get((gx + a, gz + b), ()):
+                if (px - x) ** 2 + (pz - z) ** 2 < (pr + r) ** 2:
+                    return False
+    return True
+def claim(x, z, r):
+    placed.setdefault((int(x // 24), int(z // 24)), []).append((x, z, r))
+for o in out:
+    claim(o[0], o[1], max(o[2], o[3]) / 2.0 + 4)
+villagers = []
+STEP = 5                                      # candidate grid: every 5 cells = 20 m
+for j in range(0, 4096 - STEP, STEP):
+    for i in range(0, 4096 - STEP, STEP):
+        ci = i + int(hashf(i, j, 1) * STEP); cj = j + int(hashf(i, j, 2) * STEP)
+        d = dist[cj, ci]
+        if d < 3.2 or d > 9.0:
             continue
-        cx16 = (i + 0.5) * CELL * M_PER_PX; cz16 = (j + 0.5) * CELL * M_PER_PX
-        x = cx16 * 0.99902 - 8187.0 + (hashf(i, j, 1) - 0.5) * 3
-        z = cz16 * 0.99983 - 8191.0 + (hashf(i, j, 2) - 0.5) * 3
-        if any(abs(x - ex) < hw and abs(z - ez) < hd for ex, ez, hw, hd in explicit):
+        density = dens[cj, ci]
+        if density < 0.07 or hashf(i, j, 3) > min(0.85, density * 4.5):
             continue
-        w = int(8 + hashf(i, j, 3) * 5); dd = int(8 + hashf(i, j, 4) * 5)
-        floors = 1 + int(hashf(i, j, 5) * 3)
-        grid.append((x, z, w, dd, floors, 0, int(round(street_angle((i + 0.5) * CELL, (j + 0.5) * CELL)))))
-print("town fabric houses:", len(grid))
-out.extend(grid)
+        if near_water[cj, ci] or cover[cj, ci] == 1:
+            continue
+        # world position (metres) and checks on the finer grids
+        wx = (ci + 0.5) * cell * 0.99902 - 8187.0
+        wz = (cj + 0.5) * cell * 0.99983 - 8191.0
+        hx = min(2047, int((ci + 0.5) * 4.0 / 8.0)); hz = min(2047, int((cj + 0.5) * 4.0 / 8.0))
+        if slope[hz, hx] > 0.32 or mat[hz, hx] == 9:
+            continue
+        # direction toward the nearest road cell
+        ny, nx = iy[cj, ci] - cj, ix[cj, ci] - ci
+        nl = float(np.hypot(nx, ny))
+        if nl < 1e-6:
+            continue
+        nxw, nzw = nx / nl, ny / nl           # unit vector from the house to the road (east, south)
+        theta = int(round(np.degrees(np.arctan2(-nxw, nzw)) / 45.0)) * 45   # the door side (-sin, cos) points at the road; snapped to 45 degrees so walls step cleanly
+        r = hashf(i, j, 4)
+        w = 8 + int(hashf(i, j, 5) * 6); dd = 7 + int(hashf(i, j, 6) * 5)
+        if not free(wx, wz, max(w, dd) / 2.0 + 4):
+            continue
+        claim(wx, wz, max(w, dd) / 2.0 + 4)
+        floors = 1 + (hashf(i, j, 7) < 0.45) + (hashf(i, j, 8) < 0.06)
+        villagers.append((wx, wz, w, dd, floors, 1 if hashf(i, j, 9) < 0.55 else 0, theta))
+print("village houses:", len(villagers))
+out.extend(villagers)
 with open(os.path.join(D, "buildings.bin"), "wb") as f:
-    f.write(struct.pack("<i", -len(out)))        # negative count = version 2 records (with a rotation angle in degrees)
+    f.write(struct.pack("<i", -(1000000 + len(out))))   # below -1000000 = version 3 records (rotation as a signed 16-bit angle in degrees)
     for rec in out:
-        f.write(struct.pack("<ffBBBBb", *rec))
+        f.write(struct.pack("<ffBBBBh", *rec))
 print("buildings:", len(out), "red roofs:", sum(1 for o in out if o[5]), "rotated:", sum(1 for o in out if abs(o[6]) >= 5))

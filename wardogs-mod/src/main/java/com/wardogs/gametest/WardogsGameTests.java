@@ -1818,7 +1818,7 @@ public final class WardogsGameTests {
 
     @GameTest(template = "empty")
     public static void rotatedHousesAreWatertight(GameTestHelper h) {
-        for (int angle : new int[]{0, 15, 30, 45, -20, -45}) {
+        for (int angle : new int[]{0, 15, 30, 45, -20, -45, 90, 135, 180, -135}) {
             var b = new com.wardogs.world.BakuraniTerrain.Building(0.3f, -0.4f, 11, 9, 2, 1, angle);
             int r = b.radius() + 3;
             int n = 2 * r + 1;
@@ -1954,6 +1954,19 @@ public final class WardogsGameTests {
             }
         }
         check(any, "a shed holds a workbench or crates");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void housesTurnTheirDirectionsAndDoorWithTheirAngle(GameTestHelper h) {
+        var south = new com.wardogs.world.BakuraniTerrain.Building(0, 0, 11, 9, 1, 1, 0);
+        var north = new com.wardogs.world.BakuraniTerrain.Building(0, 0, 11, 9, 1, 1, 180);
+        var west = new com.wardogs.world.BakuraniTerrain.Building(0, 0, 11, 9, 1, 1, 90);
+        check(com.wardogs.world.BuildingGen.rot(south, net.minecraft.core.Direction.SOUTH) == net.minecraft.core.Direction.SOUTH, "no turn at 0");
+        check(com.wardogs.world.BuildingGen.rot(north, net.minecraft.core.Direction.SOUTH) == net.minecraft.core.Direction.NORTH, "the door faces north at 180");
+        check(com.wardogs.world.BuildingGen.rot(west, net.minecraft.core.Direction.SOUTH) == net.minecraft.core.Direction.WEST, "the door faces west at 90");
+        var door = com.wardogs.world.BuildingGen.at(north, 5, 8, 1);
+        check(door.is(Blocks.OAK_DOOR) && door.getValue(net.minecraft.world.level.block.DoorBlock.FACING) == net.minecraft.core.Direction.NORTH, "the door block turns with the house");
         h.succeed();
     }
 }

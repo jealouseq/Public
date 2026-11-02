@@ -133,14 +133,14 @@ public final class BuildingGen {
                 if (edge) {
                     return wallAt(b, i, j, k);
                 }
-                return ladderCell ? ladder() : Blocks.SPRUCE_PLANKS.defaultBlockState();
+                return ladderCell ? ladder(b) : Blocks.SPRUCE_PLANKS.defaultBlockState();
             }
             if (!edge) {
-                return ladderCell ? ladder() : Interiors.at(b, i, j, k % 4, k / 4);
+                return ladderCell ? ladder(b) : Interiors.at(b, i, j, k % 4, k / 4);
             }
             int kk = k % 4;
             if (k < 4 && j == d - 1 && i == w / 2 && kk <= 2) {
-                return Blocks.OAK_DOOR.defaultBlockState().setValue(DoorBlock.FACING, Direction.SOUTH)
+                return Blocks.OAK_DOOR.defaultBlockState().setValue(DoorBlock.FACING, rot(b, Direction.SOUTH))
                         .setValue(DoorBlock.HALF, kk == 1 ? DoubleBlockHalf.LOWER : DoubleBlockHalf.UPPER);
             }
             if (b.kind() == 2) {
@@ -187,7 +187,13 @@ public final class BuildingGen {
         }
         boolean risingToPositive = c < len - 1 - c;
         Direction face = ridgeAlongX ? (risingToPositive ? Direction.SOUTH : Direction.NORTH) : (risingToPositive ? Direction.EAST : Direction.WEST);
-        return stair.setValue(StairBlock.FACING, face);
+        return stair.setValue(StairBlock.FACING, rot(b, face));
+    }
+
+    /** A direction given in the building's own frame (door side south), turned to the world: whole quarter turns of the building's angle. */
+    public static Direction rot(BakuraniTerrain.Building b, Direction local) {
+        int k = Math.floorMod((int) Math.round(b.angle() / 90.0), 4);
+        return Direction.from2DDataValue((local.get2DDataValue() + k) % 4);
     }
 
     /** An inner wall between rooms. */
@@ -195,7 +201,7 @@ public final class BuildingGen {
         return (b.kind() == 1 ? Blocks.WHITE_TERRACOTTA : Blocks.SMOOTH_QUARTZ).defaultBlockState();
     }
 
-    private static BlockState ladder() {
-        return Blocks.LADDER.defaultBlockState().setValue(LadderBlock.FACING, Direction.SOUTH);
+    private static BlockState ladder(BakuraniTerrain.Building b) {
+        return Blocks.LADDER.defaultBlockState().setValue(LadderBlock.FACING, rot(b, Direction.SOUTH));
     }
 }
