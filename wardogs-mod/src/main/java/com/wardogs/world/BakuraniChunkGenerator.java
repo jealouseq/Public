@@ -75,9 +75,47 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                 double wx = baseX + dx + 0.5, wz = baseZ + dz + 0.5;
                 int sy = t == null ? 64 : (BakuraniTerrain.inside(wx, wz) ? t.surfaceY(wx, wz) : 24);
                 int mat = t == null ? BakuraniTerrain.GRASS : t.material(wx, wz);
+                int cov = t == null ? BakuraniTerrain.COVER_NONE : t.cover(wx, wz);
                 boolean road = t != null && t.isRoad(wx, wz) && mat != BakuraniTerrain.SNOW;
-                BlockState top = road ? Blocks.DIRT_PATH.defaultBlockState() : top(mat);
+                boolean inside = t != null && BakuraniTerrain.inside(wx, wz);
+                BlockState top = road ? (cov == BakuraniTerrain.COVER_URBAN ? Blocks.GRAY_CONCRETE.defaultBlockState() : Blocks.DIRT_PATH.defaultBlockState())
+                        : top(mat);
                 BlockState fill = filler(mat);
+                int water = -1;
+                boolean crop = false;
+                if (inside && !road) {
+                    switch (cov) {
+                        case BakuraniTerrain.COVER_WATER -> {
+                            if (mat != BakuraniTerrain.SNOW) {
+                                water = waterLevel(t, wx, wz, sy);
+                                sy = water - 2;
+                                top = Blocks.GRAVEL.defaultBlockState();
+                                fill = Blocks.GRAVEL.defaultBlockState();
+                            }
+                        }
+                        case BakuraniTerrain.COVER_FOREST -> {
+                            if (mat == BakuraniTerrain.GRASS || mat == BakuraniTerrain.FOREST) {
+                                top = Blocks.PODZOL.defaultBlockState();
+                            }
+                        }
+                        case BakuraniTerrain.COVER_URBAN -> {
+                            if (isDirtClass(mat)) {
+                                top = hash(baseX + dx, baseZ + dz) < 0.3 ? Blocks.STONE.defaultBlockState() : Blocks.ANDESITE.defaultBlockState();
+                            }
+                        }
+                        case BakuraniTerrain.COVER_FIELD -> {
+                            if (mat == BakuraniTerrain.GRASS) {
+                                if (((baseZ + dz) & 3) == 0) {
+                                    top = Blocks.COARSE_DIRT.defaultBlockState();
+                                } else {
+                                    top = Blocks.FARMLAND.defaultBlockState();
+                                    crop = true;
+                                }
+                            }
+                        }
+                        default -> { }
+                    }
+                }
                 for (int y = MIN_Y; y <= sy; y++) {
                     BlockState s = y < BEDROCK_BELOW ? bedrock : y == sy ? top : y >= sy - 3 ? fill : stone;
                     pos.set(baseX + dx, y, baseZ + dz);
@@ -85,7 +123,24 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                     oceanFloor.update(dx, y, dz, s);
                     surface.update(dx, y, dz, s);
                 }
+                BlockState water0 = Blocks.WATER.defaultBlockState();
+                for (int y = sy + 1; y <= water; y++) {
+                    pos.set(baseX + dx, y, baseZ + dz);
+                    chunk.setBlockState(pos, water0, false);
+                    surface.update(dx, y, dz, water0);
+                }
+                if (crop) {
+                    double hv = hash(baseX + dx * 7, baseZ + dz * 13);
+                    BlockState above = hv < 0.004 ? Blocks.HAY_BLOCK.defaultBlockState()
+                            : Blocks.WHEAT.defaultBlockState().setValue(net.minecraft.world.level.block.CropBlock.AGE, 3 + (int) (hv * 40) % 5);
+                    pos.set(baseX + dx, sy + 1, baseZ + dz);
+                    chunk.setBlockState(pos, above, false);
+                    surface.update(dx, sy + 1, dz, above);
+                }
             }
+        }
+        if (t != null) {
+            placeBuildings(chunk, t, oceanFloor, surface);
         }
         if (t != null) {
             plantTrees(chunk, t, surface);
@@ -102,6 +157,72 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
         return (h & 0xFFFFFFL) / (double) 0x1000000;
     }
 
+    private static boolean isDirtClass(int mat) {
+        return mat == 1 || mat == 2 || mat == 3 || mat == 6 || mat == 8 || mat == 11;
+    }
+
+    /** Water stands at the lowest ground level within 12 m, so a river never hangs above its banks. */
+    private static int waterLevel(BakuraniTerrain t, double x, double z, int sy) {
+        int level = sy;
+        for (int ox = -12; ox <= 12; ox += 6) {
+            for (int oz = -12; oz <= 12; oz += 6) {
+                level = Math.min(level, t.surfaceY(x + ox, z + oz));
+            }
+        }
+        return Math.max(level, 4);
+    }
+
+    /** Levels the ground under every house that overlaps this chunk and builds the slice that falls inside it. */
+    private void placeBuildings(ChunkAccess chunk, BakuraniTerrain t, Heightmap oceanFloor, Heightmap surface) {
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
+        int baseX = chunk.getPos().getMinBlockX(), baseZ = chunk.getPos().getMinBlockZ();
+        for (BakuraniTerrain.Building b : t.buildingsIn(baseX, baseZ, baseX + 15, baseZ + 15)) {
+            int x0 = b.minX(), z0 = b.minZ();
+            int gy = groundFloor(t, b);
+            int height = BuildingGen.height(b);
+            for (int dx = 0; dx < 16; dx++) {
+                for (int dz = 0; dz < 16; dz++) {
+                    int i = baseX + dx - x0, j = baseZ + dz - z0;
+                    if (i < 0 || j < 0 || i >= b.w() || j >= b.d()) {
+                        continue;
+                    }
+                    for (int k = -BuildingGen.FOUNDATION; k <= height; k++) {
+                        BlockState s = BuildingGen.at(b, i, j, k);
+                        if (s == null) {
+                            continue;
+                        }
+                        int y = gy + k;
+                        if (y <= 1 || y >= HEIGHT) {
+                            continue;
+                        }
+                        pos.set(baseX + dx, y, baseZ + dz);
+                        chunk.setBlockState(pos, s, false);
+                        oceanFloor.update(dx, y, dz, s);
+                        surface.update(dx, y, dz, s);
+                    }
+                    // clear anything left of the old terrain above the roof line (hills on the footprint)
+                    for (int y = gy + height + 1; y <= gy + height + 6; y++) {
+                        pos.set(baseX + dx, y, baseZ + dz);
+                        if (!chunk.getBlockState(pos).isAir()) {
+                            chunk.setBlockState(pos, Blocks.AIR.defaultBlockState(), false);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /** Ground-floor level of a house: the highest ground under its corners and centre, so no corner hangs in the air. */
+    static int groundFloor(BakuraniTerrain t, BakuraniTerrain.Building b) {
+        int x0 = b.minX(), z0 = b.minZ();
+        int y = t.surfaceY(b.x(), b.z());
+        y = Math.max(y, t.surfaceY(x0, z0));
+        y = Math.max(y, t.surfaceY(x0 + b.w(), z0));
+        y = Math.max(y, t.surfaceY(x0, z0 + b.d()));
+        y = Math.max(y, t.surfaceY(x0 + b.w(), z0 + b.d()));
+        return y;
+    }
+
     /** Spruces on forest-floor ground (dense) and sparsely on meadows. Trees stay inside their chunk so no leaf is cut at an edge. */
     private void plantTrees(ChunkAccess chunk, BakuraniTerrain t, Heightmap surface) {
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
@@ -115,7 +236,19 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                     continue;
                 }
                 int mat = t.material(wx + 0.5, wz + 0.5);
-                double density = mat == BakuraniTerrain.FOREST ? 1.0 / 24 : mat == BakuraniTerrain.GRASS ? 1.0 / 900 : 0;
+                int cov = t.cover(wx + 0.5, wz + 0.5);
+                double density;
+                if (mat == BakuraniTerrain.SNOW || cov == BakuraniTerrain.COVER_WATER || cov == BakuraniTerrain.COVER_FIELD
+                        || cov == BakuraniTerrain.COVER_URBAN) {
+                    density = 0;
+                } else if (cov == BakuraniTerrain.COVER_FOREST) {
+                    density = mat == BakuraniTerrain.ROCK ? 1.0 / 45 : 1.0 / 20;
+                } else {
+                    density = mat == BakuraniTerrain.FOREST ? 1.0 / 24 : mat == BakuraniTerrain.GRASS ? 1.0 / 900 : 0;
+                }
+                if (density > 0 && t.nearBuilding(wx, wz, 3)) {
+                    density = 0;
+                }
                 double hv = hash(wx, wz);
                 if (hv >= density) {
                     continue;

@@ -83,6 +83,9 @@ public final class BakuraniWorld {
             loaded = true;
             try {
                 terrain = BakuraniTerrain.load(dataDir(), sites().verticalScale(), sites().yOffset());
+                if (terrain != null) {
+                    keepSitesClear(terrain);
+                }
                 if (terrain == null) {
                     WardogsMod.LOGGER.warn("Bakurani elevation data not found in {} - generating a flat world. See research/tools/map_convert.py.", dataDir());
                 } else {
@@ -93,6 +96,31 @@ public final class BakuraniWorld {
             }
         }
         return terrain;
+    }
+
+    /** Removes procedural houses within 30 m of any base, spawn, vendor, board or tower so the hand-placed sites stay clear. */
+    private static void keepSitesClear(BakuraniTerrain t) {
+        List<Site> all = new ArrayList<>(sites().bases().values());
+        all.addAll(sites().spawns());
+        all.addAll(sites().vendors());
+        all.addAll(sites().boards());
+        all.addAll(sites().towers());
+        List<BakuraniTerrain.Building> kept = new ArrayList<>();
+        for (BakuraniTerrain.Building b : t.buildingsIn(-9000, -9000, 9000, 9000)) {
+            boolean clash = false;
+            for (Site s : all) {
+                if (Math.abs(s.x() - b.x()) < 30 + b.w() / 2.0 && Math.abs(s.z() - b.z()) < 30 + b.d() / 2.0) {
+                    clash = true;
+                    break;
+                }
+            }
+            if (!clash) {
+                kept.add(b);
+            }
+        }
+        int before = t.buildingCount();
+        t.rebuildBuildings(kept);
+        WardogsMod.LOGGER.info("Bakurani: {} procedural buildings ({} removed near sites)", kept.size(), before - kept.size());
     }
 
     /** y of the walkable surface at a position (a flat plain at y=64 without data). */

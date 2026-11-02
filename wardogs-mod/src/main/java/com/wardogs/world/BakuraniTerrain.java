@@ -5,6 +5,10 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Terrain of the Bakurani map as pure data: elevation, surface material and roads sampled in Minecraft coordinates
@@ -30,6 +34,19 @@ public final class BakuraniTerrain {
     private final byte[] roads;
     private final double verticalScale;
     private final int yOffset;
+    private int coverSize;
+    private byte[] cover = new byte[0];
+    private final Map<Long, List<Building>> buildingIndex = new HashMap<>();
+    private static final int INDEX_CELL = 64;
+
+    /** Land cover classes of the baked cover grid. */
+    public static final int COVER_NONE = 0, COVER_WATER = 1, COVER_FOREST = 2, COVER_URBAN = 3, COVER_FIELD = 4;
+
+    /** A procedural building: centre and footprint in metres, storeys, kind 0 = grey/concrete, 1 = red roof. */
+    public record Building(float x, float z, int w, int d, int floors, int kind) {
+        public int minX() { return (int) Math.floor(x - w / 2.0); }
+        public int minZ() { return (int) Math.floor(z - d / 2.0); }
+    }
 
     public BakuraniTerrain(int heightSize, short[] height, int matSize, byte[] material, int roadSize, byte[] roads,
                            double verticalScale, int yOffset) {
@@ -55,10 +72,90 @@ public final class BakuraniTerrain {
         hb.asShortBuffer().get(height);
         Path m = dir.resolve("material_2048_u8.bin");
         byte[] mat = Files.isRegularFile(m) ? Files.readAllBytes(m) : new byte[0];
-        Path r = dir.resolve("roads_4096_u8.bin");
+        Path r = Files.isRegularFile(dir.resolve("roads_clean_4096_u8.bin")) ? dir.resolve("roads_clean_4096_u8.bin") : dir.resolve("roads_4096_u8.bin");
         byte[] roads = Files.isRegularFile(r) ? Files.readAllBytes(r) : new byte[0];
-        return new BakuraniTerrain(hs, height, (int) Math.round(Math.sqrt(mat.length)), mat,
+        BakuraniTerrain t = new BakuraniTerrain(hs, height, (int) Math.round(Math.sqrt(mat.length)), mat,
                 (int) Math.round(Math.sqrt(roads.length)), roads, verticalScale, yOffset);
+        Path c = dir.resolve("cover_4096_u8.bin");
+        Path b = dir.resolve("buildings.bin");
+        byte[] cover = Files.isRegularFile(c) ? Files.readAllBytes(c) : new byte[0];
+        List<Building> buildings = new ArrayList<>();
+        if (Files.isRegularFile(b)) {
+            ByteBuffer bb = ByteBuffer.wrap(Files.readAllBytes(b)).order(ByteOrder.LITTLE_ENDIAN);
+            int n = bb.getInt();
+            for (int i = 0; i < n; i++) {
+                buildings.add(new Building(bb.getFloat(), bb.getFloat(), bb.get() & 0xFF, bb.get() & 0xFF, bb.get() & 0xFF, bb.get() & 0xFF));
+            }
+        }
+        return t.withCover(cover, buildings);
+    }
+
+    /** Adds the land-cover grid and building list (both optional); returns this. */
+    public BakuraniTerrain withCover(byte[] cover, List<Building> buildings) {
+        this.cover = cover;
+        this.coverSize = (int) Math.round(Math.sqrt(cover.length));
+        buildingIndex.clear();
+        for (Building b : buildings) {
+            int x0 = Math.floorDiv(b.minX(), INDEX_CELL), x1 = Math.floorDiv(b.minX() + b.w(), INDEX_CELL);
+            int z0 = Math.floorDiv(b.minZ(), INDEX_CELL), z1 = Math.floorDiv(b.minZ() + b.d(), INDEX_CELL);
+            for (int cx = x0; cx <= x1; cx++) {
+                for (int cz = z0; cz <= z1; cz++) {
+                    buildingIndex.computeIfAbsent(key(cx, cz), k -> new ArrayList<>()).add(b);
+                }
+            }
+        }
+        return this;
+    }
+
+    private static long key(int cx, int cz) {
+        return ((long) cx << 32) ^ (cz & 0xFFFFFFFFL);
+    }
+
+    /** Land cover class at a block position ({@link #COVER_NONE} without a cover grid). */
+    public int cover(double x, double z) {
+        if (cover.length == 0) {
+            return COVER_NONE;
+        }
+        int ix = (int) Math.floor(pixelX(x) / IMAGE * coverSize);
+        int iz = (int) Math.floor(pixelY(z) / IMAGE * coverSize);
+        if (ix < 0 || iz < 0 || ix >= coverSize || iz >= coverSize) {
+            return COVER_NONE;
+        }
+        return cover[iz * coverSize + ix] & 0xFF;
+    }
+
+    /** Buildings whose indexed cells overlap the block rectangle (may include a few that merely touch the cells). */
+    public List<Building> buildingsIn(int minX, int minZ, int maxX, int maxZ) {
+        List<Building> out = new ArrayList<>();
+        for (int cx = Math.floorDiv(minX, INDEX_CELL); cx <= Math.floorDiv(maxX, INDEX_CELL); cx++) {
+            for (int cz = Math.floorDiv(minZ, INDEX_CELL); cz <= Math.floorDiv(maxZ, INDEX_CELL); cz++) {
+                for (Building b : buildingIndex.getOrDefault(key(cx, cz), List.of())) {
+                    if (!out.contains(b)) {
+                        out.add(b);
+                    }
+                }
+            }
+        }
+        return out;
+    }
+
+    /** True if a block column lies within {@code margin} blocks of a building footprint. */
+    public boolean nearBuilding(int x, int z, int margin) {
+        for (Building b : buildingsIn(x - margin, z - margin, x + margin, z + margin)) {
+            if (x >= b.minX() - margin && x < b.minX() + b.w() + margin && z >= b.minZ() - margin && z < b.minZ() + b.d() + margin) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** Replaces the building list, keeping the cover grid. */
+    public void rebuildBuildings(List<Building> buildings) {
+        withCover(cover, buildings);
+    }
+
+    public int buildingCount() {
+        return (int) buildingIndex.values().stream().flatMap(List::stream).distinct().count();
     }
 
     // --- coordinate transform ----------------------------------------------------------------
