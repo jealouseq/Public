@@ -54,6 +54,32 @@ the Bakurani map, real models/sounds. The HUD and key binding compile but were n
 Fields flagged `estimated` in the balance JSON (reload time, spread, some magazines/ranges, armor absorption, HP/AP vs armor)
 and the assumed 100 player health are placeholders: the sources do not publish them.
 
+## Controls and interface
+
+| Key | What it does |
+|---|---|
+| R | Reload the held gun |
+| B | Open the shop (only next to a vendor during a Bakurani match) |
+| M | Full-screen map (scroll to zoom, drag to pan; needs the map data folder on the client) |
+| Middle mouse | Radial menu: requests (healing, ammo, supplies, repairs), local callouts, emotes |
+| Hold TAB | Match scoreboard: three faction columns with kills, deaths, money earned |
+| Right-click a lectern at a deployment board | Choose where to deploy: your base or a friendly FOB |
+
+The HUD follows the real game: compass strip with the Hot Zone marker (top centre), money and level boxes with a reward log (top
+right), kill feed (top left), minimap with faction scores and the "CONTROL" label (bottom left), ammo and stamina / armour / heart
+(bottom right), hit markers at the crosshair, context prompts and a vehicle read-out.
+
+## Assets
+
+Gun item models are voxelised from the CC0 Quaternius "Ultimate Gun Pack" (`research/tools/obj_to_item_model.py`); vehicle models are
+generated box shapes (`research/tools/gen_vehicle_models.py`). See `research/MODS_AND_ASSETS.md` for the ready-made mods and assets
+that were considered and their licences.
+
+## Not done yet
+
+Per-section vehicle damage, bullet drop and travel time, Stingray and M113 forward spawn, squad system, armour and grenade 3D models,
+real sounds, procedural houses that follow the street direction, hand-built landmarks.
+
 ## Build & test
 ```
 ./gradlew build            # compiles, unit tests, jar in build/libs
