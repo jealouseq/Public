@@ -16,6 +16,7 @@ import com.wardogs.net.HudPayload;
 import com.wardogs.progress.Progression;
 import com.wardogs.progress.Role;
 import com.wardogs.shop.Shop;
+import com.wardogs.world.BakuraniWorld;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
@@ -48,6 +49,7 @@ public final class WdCommand {
                         .then(Commands.argument("item", StringArgumentType.word()).suggests(ITEMS)
                                 .executes(c -> unlock(c.getSource(), StringArgumentType.getString(c, "item")))))
                 .then(Commands.literal("progress").executes(c -> progress(c.getSource())))
+                .then(Commands.literal("bakurani").executes(c -> travel(c.getSource())))
                 .then(Commands.literal("team")
                         .then(Commands.argument("faction", StringArgumentType.word()).suggests(FACTIONS)
                                 .executes(c -> team(c.getSource(), StringArgumentType.getString(c, "faction")))))
@@ -72,16 +74,17 @@ public final class WdCommand {
                         .then(Commands.literal("here").then(Commands.argument("radius", DoubleArgumentType.doubleArg(5, 2000))
                                 .executes(c -> {
                                     CommandSourceStack s = c.getSource();
-                                    MatchManager.setZone(s.getServer().overworld(), s.getPosition().x, s.getPosition().z,
+                                    MatchManager.setZone(s.getLevel(), s.getPosition().x, s.getPosition().z,
                                             DoubleArgumentType.getDouble(c, "radius"));
-                                    s.sendSuccess(() -> Component.literal("Zone set. " + MatchManager.status(s.getServer().overworld())), true);
+                                    s.sendSuccess(() -> Component.literal("Zone set. " + MatchManager.status(s.getLevel())), true);
                                     return 1;
                                 }))))
                 .then(Commands.literal("match").requires(s -> s.hasPermission(2))
                         .then(Commands.literal("start").executes(c -> {
-                            MatchManager.start(c.getSource().getServer().overworld());
+                            MatchManager.start(c.getSource().getLevel());
                             return 1;
                         }))
+                        .then(Commands.literal("bakurani").executes(c -> startBakurani(c.getSource())))
                         .then(Commands.literal("stop").executes(c -> {
                             MatchManager.stop(c.getSource().getServer().overworld());
                             return 1;
@@ -90,6 +93,47 @@ public final class WdCommand {
                             c.getSource().sendSuccess(() -> Component.literal(MatchManager.status(c.getSource().getServer().overworld())), false);
                             return 1;
                         }))));
+    }
+
+    /** Teleports the player to their faction's spawn on Bakurani. */
+    private static int travel(CommandSourceStack src) throws CommandSyntaxException {
+        ServerPlayer p = src.getPlayerOrException();
+        net.minecraft.server.level.ServerLevel level = src.getServer().getLevel(BakuraniWorld.DIMENSION);
+        if (level == null) {
+            src.sendFailure(Component.literal("The wardogs:bakurani dimension is not loaded"));
+            return 0;
+        }
+        Faction f = Factions.of(p);
+        BakuraniWorld.Site site = BakuraniWorld.spawnOf(f == null ? "lonestar" : f.name().toLowerCase());
+        int y = BakuraniWorld.surfaceY(site.x(), site.z()) + 2;
+        p.teleportTo(level, site.x(), y, site.z(), 0f, 0f);
+        src.sendSuccess(() -> Component.literal("Welcome to Bakurani" + (f == null ? " (pick a faction with /wd team)" : "")), false);
+        return 1;
+    }
+
+    /** Starts a match on Bakurani with one of the real Control Zone variants (picked by weight). */
+    private static int startBakurani(CommandSourceStack src) {
+        net.minecraft.server.level.ServerLevel level = src.getServer().getLevel(BakuraniWorld.DIMENSION);
+        if (level == null) {
+            src.sendFailure(Component.literal("The wardogs:bakurani dimension is not loaded"));
+            return 0;
+        }
+        var zones = BakuraniWorld.sites().zones();
+        int total = zones.stream().mapToInt(BakuraniWorld.Zone::weight).sum();
+        int roll = level.random.nextInt(Math.max(1, total));
+        BakuraniWorld.Zone pick = zones.get(0);
+        for (BakuraniWorld.Zone z : zones) {
+            roll -= z.weight();
+            if (roll < 0) {
+                pick = z;
+                break;
+            }
+        }
+        MatchManager.setZone(level, pick.x(), pick.z(), pick.radius());
+        MatchManager.start(level);
+        BakuraniWorld.Zone chosen = pick;
+        src.sendSuccess(() -> Component.literal("Bakurani match started: " + chosen.name() + " zone at (" + (int) chosen.x() + ", " + (int) chosen.z() + ")"), true);
+        return 1;
     }
 
     private static int team(CommandSourceStack src, String name) throws CommandSyntaxException {

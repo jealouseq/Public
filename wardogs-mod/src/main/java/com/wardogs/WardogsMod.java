@@ -9,6 +9,7 @@ import com.wardogs.economy.Wallet;
 import com.wardogs.match.Factions;
 import com.wardogs.progress.Progression;
 import com.wardogs.vehicle.VehicleEntities;
+import com.wardogs.world.WorldRegistry;
 import com.wardogs.match.MatchManager;
 import com.wardogs.item.ModComponents;
 import com.wardogs.item.ModItems;
@@ -30,6 +31,7 @@ public final class WardogsMod {
         ExplosiveEntities.ENTITIES.register(modBus);
         BuildEntities.ENTITIES.register(modBus);
         VehicleEntities.ENTITIES.register(modBus);
+        WorldRegistry.GENERATORS.register(modBus);
         Wallet.ATTACHMENTS.register(modBus);
         Factions.ATTACHMENTS.register(modBus);
         Progression.ATTACHMENTS.register(modBus);

@@ -9,6 +9,8 @@ import net.minecraft.world.level.saveddata.SavedData;
 public final class MatchData extends SavedData {
     private static final String NAME = "wardogs_match";
 
+    /** Dimension the match runs in (the overworld unless started elsewhere, e.g. wardogs:bakurani). */
+    public String dim = "minecraft:overworld";
     public boolean active;
     public double zoneX, zoneZ, zoneRadius = 50;
     public double hotX, hotZ, hotRadius = 15;
@@ -17,12 +19,14 @@ public final class MatchData extends SavedData {
     public int scoreTimer, payTimer, hotTimer;
 
     public static MatchData get(ServerLevel overworld) {
-        return overworld.getDataStorage().computeIfAbsent(new SavedData.Factory<>(MatchData::new, MatchData::load), NAME);
+        // One match per server, always stored with the overworld no matter which level asks.
+        return overworld.getServer().overworld().getDataStorage().computeIfAbsent(new SavedData.Factory<>(MatchData::new, MatchData::load), NAME);
     }
 
     private static MatchData load(CompoundTag t, HolderLookup.Provider provider) {
         MatchData d = new MatchData();
         d.active = t.getBoolean("active");
+        d.dim = t.contains("dim") ? t.getString("dim") : "minecraft:overworld";
         d.zoneX = t.getDouble("zx");
         d.zoneZ = t.getDouble("zz");
         d.zoneRadius = t.getDouble("zr");
@@ -40,6 +44,7 @@ public final class MatchData extends SavedData {
     @Override
     public CompoundTag save(CompoundTag t, HolderLookup.Provider provider) {
         t.putBoolean("active", active);
+        t.putString("dim", dim);
         t.putDouble("zx", zoneX);
         t.putDouble("zz", zoneZ);
         t.putDouble("zr", zoneRadius);
@@ -51,6 +56,11 @@ public final class MatchData extends SavedData {
         t.putInt("pt", payTimer);
         t.putInt("ht", hotTimer);
         return t;
+    }
+
+    /** True if this level is the one the match runs in. */
+    public boolean isHere(ServerLevel level) {
+        return dim.equals(level.dimension().location().toString());
     }
 
     public boolean inControl(double x, double z) {

@@ -40,11 +40,11 @@ public final class MatchManager {
 
     /** Kill-reward multiplier at a position: Hot Zone x10, Control Zone x5, elsewhere x1. */
     public static double multiplierAt(Level level, Vec3 pos) {
-        if (!(level instanceof ServerLevel sl) || sl.dimension() != Level.OVERWORLD) {
+        if (!(level instanceof ServerLevel sl)) {
             return 1.0;
         }
         MatchData d = MatchData.get(sl);
-        if (!d.active) {
+        if (!d.active || !d.isHere(sl)) {
             return 1.0;
         }
         RewardsDef r = Balance.get().rewards();
@@ -56,11 +56,11 @@ public final class MatchManager {
 
     /** 0 = open ground, 1 = Control Zone, 2 = Hot Zone (open ground when no match is running). */
     public static int zoneLevel(Level level, Vec3 pos) {
-        if (!(level instanceof ServerLevel sl) || sl.dimension() != Level.OVERWORLD) {
+        if (!(level instanceof ServerLevel sl)) {
             return 0;
         }
         MatchData d = MatchData.get(sl);
-        if (!d.active) {
+        if (!d.active || !d.isHere(sl)) {
             return 0;
         }
         return d.inHot(pos.x, pos.z) ? 2 : d.inControl(pos.x, pos.z) ? 1 : 0;
@@ -70,6 +70,7 @@ public final class MatchManager {
 
     public static void start(ServerLevel overworld) {
         MatchData d = MatchData.get(overworld);
+        d.dim = overworld.dimension().location().toString();
         // Without PvP vanilla ignores all player-vs-player damage, which would make a match meaningless.
         overworld.getServer().setPvpAllowed(true);
         d.active = true;
@@ -122,11 +123,11 @@ public final class MatchManager {
 
     @SubscribeEvent
     public static void onLevelTick(LevelTickEvent.Post e) {
-        if (!(e.getLevel() instanceof ServerLevel ow) || ow.dimension() != Level.OVERWORLD) {
+        if (!(e.getLevel() instanceof ServerLevel ow)) {
             return;
         }
         MatchData d = MatchData.get(ow);
-        if (!d.active) {
+        if (!d.active || !d.isHere(ow)) {
             return;
         }
         long now = ow.getGameTime();

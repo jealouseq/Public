@@ -1,0 +1,261 @@
+{
+ "_comment": "Bakurani sites in Minecraft coordinates (x east, z south, 1 block = 1 m, origin = map centre), from community marker data (see research/DATA_SOURCES.md). Spawns are pre-Season 2.",
+ "bases": {
+  "valkyra": {
+   "x": 3683,
+   "z": 1099
+  },
+  "manticore": {
+   "x": -4183,
+   "z": 440
+  },
+  "lonestar": {
+   "x": 554,
+   "z": 4942
+  }
+ },
+ "spawns": [
+  {
+   "name": "Spawn - Alpha #1",
+   "x": 543.7,
+   "z": 4937.8
+  },
+  {
+   "name": "Spawn - Charlie #2",
+   "x": -4241.8,
+   "z": 423.5
+  },
+  {
+   "name": "Spawn - Bravo #3",
+   "x": 3680.2,
+   "z": 1101.3
+  },
+  {
+   "name": "Spawn - Charlie #4",
+   "x": -2880.6,
+   "z": 1664.5
+  },
+  {
+   "name": "Spawn #5",
+   "x": -732.6,
+   "z": 888.5
+  },
+  {
+   "name": "Spawn #6",
+   "x": -4266.8,
+   "z": 2514.2
+  },
+  {
+   "name": "Spawn #7",
+   "x": 407.4,
+   "z": 4809.0
+  }
+ ],
+ "vendors": [
+  {
+   "name": "GarageVendor (Alpha)",
+   "x": 499.5,
+   "z": 4927.2
+  },
+  {
+   "name": "EquipmentVendor (Charlie)",
+   "x": -2859.5,
+   "z": 1647.7
+  },
+  {
+   "name": "GarageVendor (Bravo)",
+   "x": -2763.1,
+   "z": 1648.5
+  },
+  {
+   "name": "VehicleVendor (Charlie)",
+   "x": -2840.8,
+   "z": 1666.6
+  },
+  {
+   "name": "EquipmentVendor (Charlie)",
+   "x": -4213.6,
+   "z": 427.4
+  },
+  {
+   "name": "VehicleVendor (Charlie)",
+   "x": -4179.6,
+   "z": 461.3
+  },
+  {
+   "name": "EquipmentVendor (Alpha)",
+   "x": 530.4,
+   "z": 4924.3
+  },
+  {
+   "name": "VehicleVendor (Alpha)",
+   "x": 494.1,
+   "z": 4928.3
+  },
+  {
+   "name": "GarageVendor (Charlie)",
+   "x": -4181.3,
+   "z": 461.8
+  },
+  {
+   "name": "EquipmentVendor (Bravo)",
+   "x": 3639.9,
+   "z": 1119.0
+  },
+  {
+   "name": "GarageVendor (Bravo)",
+   "x": 3648.4,
+   "z": 1153.6
+  },
+  {
+   "name": "VehicleVendor (Bravo)",
+   "x": 3624.0,
+   "z": 1150.0
+  },
+  {
+   "name": "EquipmentVendor",
+   "x": -727.5,
+   "z": 886.2
+  },
+  {
+   "name": "EquipmentVendor (Charlie)",
+   "x": -4232.7,
+   "z": 2497.5
+  },
+  {
+   "name": "VehicleVendor (Charlie)",
+   "x": -4234.2,
+   "z": 2494.9
+  },
+  {
+   "name": "EquipmentVendor (Bravo)",
+   "x": 383.1,
+   "z": 4763.6
+  }
+ ],
+ "boards": [
+  {
+   "name": "Deployment board 1",
+   "x": 515.8,
+   "z": 4919.9
+  },
+  {
+   "name": "Deployment board 2",
+   "x": -4222.2,
+   "z": 444.2
+  },
+  {
+   "name": "Deployment board 3",
+   "x": 3648.9,
+   "z": 1135.3
+  },
+  {
+   "name": "Deployment board 4",
+   "x": -2848.4,
+   "z": 1652.2
+  }
+ ],
+ "towers": [
+  {
+   "name": "Tower 1",
+   "x": 1857.2,
+   "z": 385.0,
+   "abandoned": true
+  },
+  {
+   "name": "Tower 3",
+   "x": 176.6,
+   "z": 906.6,
+   "abandoned": false
+  },
+  {
+   "name": "Tower 8",
+   "x": -2500.7,
+   "z": 1732.6,
+   "abandoned": true
+  },
+  {
+   "name": "Tower 10",
+   "x": -2383.8,
+   "z": 3938.7,
+   "abandoned": true
+  },
+  {
+   "name": "Tower 4",
+   "x": -2848.7,
+   "z": 1000.1,
+   "abandoned": true
+  },
+  {
+   "name": "Tower 2",
+   "x": -477.8,
+   "z": 848.0,
+   "abandoned": false
+  },
+  {
+   "name": "Tower 9",
+   "x": -1850.6,
+   "z": 2877.4,
+   "abandoned": true
+  },
+  {
+   "name": "Tower 11",
+   "x": 629.5,
+   "z": 4098.5,
+   "abandoned": true
+  },
+  {
+   "name": "Tower 12",
+   "x": -664.9,
+   "z": 4366.5,
+   "abandoned": true
+  },
+  {
+   "name": "Tower 5",
+   "x": -472.5,
+   "z": 1187.6,
+   "abandoned": false
+  },
+  {
+   "name": "Tower 7",
+   "x": 31.9,
+   "z": 1345.5,
+   "abandoned": false
+  },
+  {
+   "name": "Tower 6",
+   "x": -144.9,
+   "z": 1207.0,
+   "abandoned": false
+  }
+ ],
+ "zones": [
+  {
+   "name": "default",
+   "x": -228,
+   "z": 1040.8,
+   "radius": 500,
+   "weight": 2
+  },
+  {
+   "name": "farmland",
+   "x": -82,
+   "z": 1284.8,
+   "radius": 500,
+   "weight": 1
+  },
+  {
+   "name": "lumberyard",
+   "x": 31,
+   "z": 1040.8,
+   "radius": 500,
+   "weight": 1
+  }
+ ],
+ "world": {
+  "size": 16320,
+  "vertical_scale": 0.5,
+  "y_offset": 16,
+  "min_elevation": -1008.34
+ }
+}

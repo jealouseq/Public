@@ -21,3 +21,13 @@ with open(dst, "wb") as f:
     for y in range(h):
         f.write(struct.pack("<%dH" % w, *[(px[x, y][0] << 8) | px[x, y][1] for x in range(w)]))
 print("wrote", dst, w, "x", h)
+
+
+# --- material classes (2048x2048, one byte: 0..11) and road mask (4096x4096, 0/1) -----------------------
+import os
+d = os.path.dirname(dst)
+surf = Image.open(os.path.join(d, "surface_2048.webp")).convert("L")
+open(os.path.join(d, "material_2048_u8.bin"), "wb").write(surf.tobytes())
+roads = Image.open(os.path.join(d, "roads_4096_rgba.webp")).convert("RGBA").getchannel("A")
+open(os.path.join(d, "roads_4096_u8.bin"), "wb").write(roads.point(lambda v: 1 if v > 40 else 0).tobytes())
+print("wrote material_2048_u8.bin and roads_4096_u8.bin")

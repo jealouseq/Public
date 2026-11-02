@@ -19,15 +19,18 @@ neoForge {
         client {
             client()
             systemProperty 'neoforge.enabledGameTestNamespaces', mod_id
+            systemProperty 'wardogs.mapdir', file('local-data/bakurani').absolutePath
         }
         server {
             server()
             programArgument '--nogui'
             systemProperty 'neoforge.enabledGameTestNamespaces', mod_id
+            systemProperty 'wardogs.mapdir', file('local-data/bakurani').absolutePath
         }
         gameTestServer {
             type = "gameTestServer"
             systemProperty 'neoforge.enabledGameTestNamespaces', mod_id
+            systemProperty 'wardogs.mapdir', file('local-data/bakurani').absolutePath
         }
         data {
             data()

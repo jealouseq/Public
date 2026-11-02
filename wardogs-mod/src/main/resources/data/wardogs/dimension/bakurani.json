@@ -1,0 +1,10 @@
+{
+  "type": "wardogs:bakurani",
+  "generator": {
+    "type": "wardogs:bakurani",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "minecraft:meadow"
+    }
+  }
+}

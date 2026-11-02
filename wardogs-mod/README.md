@@ -63,3 +63,17 @@ and the assumed 100 player health are placeholders: the sources do not publish t
 
 ## Research
 `research/DATA_SOURCES.md` summarises the precise data found online (map coordinates and elevation, hit zones, armour, rewards formula, vehicle specs, HUD). Raw/decoded datasets are in `research/data/`.
+
+## Bakurani world
+The mod adds the `wardogs:bakurani` dimension: a 1:1 (1 block = 1 m) copy of the Bakurani valley, vertical relief halved (y 16..632,
+dimension height 704), built from elevation, surface-material and road data. Surface blocks: grass, rock, gravel, snow, forest floor, roads as dirt path.
+
+Data is not shipped (it is extracted game material, see research/DATA_SOURCES.md). To install it:
+1. put the downloaded rasters in `local-data/bakurani/` (names as in `research/tools/map_convert.py`) and run `python3 research/tools/map_convert.py`;
+2. copy `height_2048_u16.bin`, `material_2048_u8.bin`, `roads_4096_u8.bin` to `config/wardogs/bakurani/` of the game or server
+   (`./gradlew runClient/runServer` already read them from `local-data/bakurani` via `-Dwardogs.mapdir`).
+Without the data the dimension is a flat plain.
+
+Commands: `/wd bakurani` teleports you to your faction's spawn; `/wd match bakurani` (op) starts a match with one of the real
+Control Zone variants (default / farmland / lumberyard, radius 500 m). Players who walk off the map are put back.
+`local-data/bakurani/minecraft_preview.png` shows the result (bases, zone variants, towers).

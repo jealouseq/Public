@@ -43,10 +43,28 @@ public final class ServerEvents {
             return;
         }
         for (ServerPlayer p : e.getServer().getPlayerList().getPlayers()) {
+            keepOnTheMap(p);
             HudPayload.sendTo(p);
             if (Progression.consumeDirty(p)) {
                 ProgressPayload.sendTo(p);
             }
+        }
+    }
+
+    /**
+     * Bakurani is a 16.3 km square. Vanilla keeps every dimension's border in sync with the overworld's, so the edge is enforced
+     * here instead: a player who walks off the map is put back on it.
+     */
+    private static void keepOnTheMap(ServerPlayer p) {
+        if (!p.level().dimension().equals(com.wardogs.world.BakuraniWorld.DIMENSION)) {
+            return;
+        }
+        double half = com.wardogs.world.BakuraniWorld.WORLD_SIZE / 2.0 - 8;
+        double x = Math.max(-half, Math.min(half, p.getX()));
+        double z = Math.max(-half, Math.min(half, p.getZ()));
+        if (x != p.getX() || z != p.getZ()) {
+            p.teleportTo(x, p.getY(), z);
+            p.displayClientMessage(net.minecraft.network.chat.Component.literal("Edge of the map"), true);
         }
     }
 
