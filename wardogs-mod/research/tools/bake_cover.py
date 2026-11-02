@@ -39,10 +39,10 @@ open(os.path.join(D, "cover_4096_u8.bin"), "wb").write(np.array(Image.open(os.pa
 os.remove(os.path.join(D, "_cover.png"))
 print("cover: water %.2f%% forest %.1f%% paved %.1f%% field %.1f%%" % tuple(100 * (cover == k).mean() for k in (1, 2, 3, 4)))
 
-# --- roads: drop the interiors of broad filled blobs (plazas, quarries), keep carriageways up to ~24 m wide ---
+# --- roads: drop the interiors of broad filled blobs (plazas, quarries), keep carriageways up to ~20 m wide ---
 raw_roads = np.frombuffer(open(os.path.join(D, "roads_4096_u8.bin"), "rb").read(), np.uint8).reshape(4096, 4096) > 0
 dist = ndimage.distance_transform_edt(raw_roads)
-clean = raw_roads & (dist <= 4)
+clean = raw_roads & (dist <= 2.5)
 open(os.path.join(D, "roads_clean_4096_u8.bin"), "wb").write(clean.astype(np.uint8).tobytes())
 print("roads: raw %.2f%% -> clean %.2f%%" % (100 * raw_roads.mean(), 100 * clean.mean()))
 
