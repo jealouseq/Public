@@ -1,0 +1,69 @@
+newmtl m0
+Kd 0.2737 0.2592 0.1492
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m1
+Kd 0.1292 0.1292 0.1409
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m2
+Kd 0.5250 0.5250 0.4943
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m3
+Kd 0.1596 0.1596 0.1596
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m4
+Kd 0.1666 0.1561 0.1388
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m5
+Kd 0.9035 0.9035 0.9035
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m6
+Kd 0.3066 0.2664 0.2411
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m7
+Kd 0.9035 0.9035 0.9035
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m8
+Kd 0.5250 0.5250 0.4943
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m9
+Kd 0.5558 0.2053 0.2160
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base

@@ -26,6 +26,18 @@ import net.minecraft.world.level.block.state.BlockState;
 public class VehicleRenderer extends EntityRenderer<Vehicle> {
     private static final ItemStack ICON = new ItemStack(Items.STICK);
 
+    private static final java.util.Map<String, Boolean> MESH = new java.util.concurrent.ConcurrentHashMap<>();
+
+    /** True if the vehicle has a real mesh (models/vehicle/&lt;id&gt;.obj) instead of the old box model stretched to its size. */
+    public static boolean isMesh(String id) {
+        return MESH.computeIfAbsent(id, k -> Minecraft.getInstance().getResourceManager()
+                .getResource(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "models/vehicle/" + k + ".obj")).isPresent());
+    }
+
+    public static void clearMeshCache() {
+        MESH.clear();
+    }
+
     public static ModelResourceLocation modelLocation(String id) {
         return ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "vehicle/" + id));
     }
@@ -45,8 +57,13 @@ public class VehicleRenderer extends EntityRenderer<Vehicle> {
         if (model != mm.getMissingModel()) {
             pose.pushPose();
             pose.mulPose(Axis.YP.rotationDegrees(180.0f - Mth.rotLerp(partial, v.yRotO, v.getYRot())));
-            pose.translate(0, def.h() / 2.0, 0);
-            pose.scale((float) def.w(), (float) def.h(), (float) def.d());
+            if (isMesh(def.id())) {
+                // a real mesh in blocks, origin on the ground at the vehicle's centre; ItemRenderer centres the model on (0.5, 0.5, 0.5)
+                pose.translate(0.5, 0.5, 0.5);
+            } else {
+                pose.translate(0, def.h() / 2.0, 0);
+                pose.scale((float) def.w(), (float) def.h(), (float) def.d());
+            }
             Minecraft.getInstance().getItemRenderer().render(ICON, ItemDisplayContext.NONE, false, pose, buffers, light,
                     OverlayTexture.NO_OVERLAY, model);
             pose.popPose();
