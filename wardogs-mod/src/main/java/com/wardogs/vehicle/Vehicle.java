@@ -228,11 +228,12 @@ public class Vehicle extends Mob {
         }
         if (held.getItem() instanceof WrenchItem) {
             long now = level().getGameTime();
-            if (getHealth() >= getMaxHealth()) {
+            if (getHealth() >= getMaxHealth() && !sectionsDamaged()) {
                 player.displayClientMessage(Component.literal("Undamaged"), true);
             } else if (now - lastRepair >= 20) {
                 lastRepair = now;
                 heal((float) (getMaxHealth() * Balance.get().repairFraction()));
+                repairSections();
                 level().playSound(null, blockPosition(), SoundEvents.ANVIL_USE, SoundSource.NEUTRAL, 0.5f, 1.4f);
                 player.displayClientMessage(Component.literal("HP " + (int) getHealth() + "/" + (int) getMaxHealth()), true);
             }
@@ -249,8 +250,125 @@ public class Vehicle extends Mob {
 
     // --- damage ------------------------------------------------------------------------------
 
+    /** Hit points left in each damageable section (Engine, Fuel Tank, wheels...); filled from the definition on first use. */
+    private final java.util.Map<String, Float> sectionHp = new java.util.LinkedHashMap<>();
+
+    private java.util.Map<String, Float> sections() {
+        VehicleDef d = def();
+        if (sectionHp.isEmpty() && d != null) {
+            d.sections().forEach((k, v) -> sectionHp.put(k, v.floatValue()));
+        }
+        return sectionHp;
+    }
+
+    /** True while the named section still has hit points (or the vehicle has no such section). */
+    public boolean sectionWorks(String name) {
+        Float hp = sections().get(name);
+        return hp == null || hp > 0;
+    }
+
+    public float sectionHealth(String name) {
+        Float hp = sections().get(name);
+        return hp == null ? -1f : hp;
+    }
+
+    /** Which section a hit at {@code hit} lands on: wheels/tracks low at the sides, engine up front (rear on tracked vehicles), fuel tank at the back. */
+    public String sectionAt(Vec3 hit) {
+        VehicleDef d = def();
+        if (d == null) {
+            return "Hull";
+        }
+        Vec3 f = Vec3.directionFromRotation(0, getYRot());         // forward
+        Vec3 local = hit.subtract(position());
+        double lf = (local.x * f.x + local.z * f.z) / Math.max(0.1, d.d());   // -0.5 (rear) .. +0.5 (front)
+        double lat = (local.x * f.z - local.z * f.x) / Math.max(0.1, d.w());  // left positive
+        double ry = (hit.y - getY()) / Math.max(0.1, d.h());
+        var secs = d.sections();
+        boolean tracked = secs.containsKey("Tracks Left");
+        String name = "Hull";
+        if (d.flying()) {
+            if (ry > 0.7 && secs.containsKey("Rotor Main")) {
+                name = "Rotor Main";
+            } else if (lf < -0.3 && secs.containsKey("Rotor Tail")) {
+                name = "Rotor Tail";
+            } else if (lf > 0.1 && ry < 0.7) {
+                name = "Engine";
+            } else if (lf < -0.1) {
+                name = "Fuel Tank";
+            }
+        } else if (ry < 0.38 && Math.abs(lat) > 0.22) {
+            String side = lat > 0 ? "Left" : "Right";
+            if (tracked) {
+                name = "Tracks " + side;
+            } else {
+                String pos = lf > 0.2 ? "Front" : lf < -0.2 ? "Rear" : "Middle";
+                name = "Wheel " + side + " " + pos;
+                if (!secs.containsKey(name)) {
+                    name = "Wheel " + side + (lf > 0 ? " Front" : " Rear");
+                }
+            }
+        } else if (tracked ? lf < -0.2 : lf > 0.15 && ry < 0.8) {
+            name = "Engine";
+        } else if (tracked ? lf > 0.2 : lf < -0.2) {
+            name = "Fuel Tank";
+        }
+        return secs.containsKey(name) ? name : "Hull";
+    }
+
+    private void damageSection(String name, double amount) {
+        var secs = sections();
+        Float hp = secs.get(name);
+        if (hp == null || hp <= 0 || amount <= 0) {
+            return;
+        }
+        float left = (float) Math.max(0, hp - amount);
+        secs.put(name, left);
+        if (left <= 0) {
+            for (Entity e : getPassengers()) {
+                if (e instanceof ServerPlayer sp) {
+                    sp.displayClientMessage(Component.literal(name.toUpperCase() + " DESTROYED").withStyle(ChatFormatting.RED), true);
+                }
+            }
+            if (level() instanceof ServerLevel sl) {
+                sl.sendParticles(ParticleTypes.LARGE_SMOKE, getX(), getY() + getBbHeight() * 0.6, getZ(), 12, 0.3, 0.2, 0.3, 0.02);
+                sl.playSound(null, blockPosition(), SoundEvents.ITEM_BREAK, SoundSource.NEUTRAL, 1.2f, 0.6f);
+            }
+        }
+    }
+
+    /** Fraction of full speed left after broken wheels or tracks (never below 30%). */
+    public double mobility() {
+        double m = 1.0;
+        for (var e : sections().entrySet()) {
+            if (e.getValue() <= 0) {
+                if (e.getKey().startsWith("Wheel")) {
+                    m -= 0.2;
+                } else if (e.getKey().startsWith("Tracks")) {
+                    m -= 0.45;
+                }
+            }
+        }
+        return Math.max(0.3, m);
+    }
+
+    /** True if any section has been shot to pieces. */
+    public boolean sectionsDamaged() {
+        return sections().values().stream().anyMatch(v -> v <= 0);
+    }
+
+    /** Puts every section back to full hit points (a repair). */
+    public void repairSections() {
+        sectionHp.clear();
+        sections();
+    }
+
     /** Applies damage given in WARDOGS units, scaled by the vehicle's armor against that kind of attack. */
     public void applyWardogsDamage(double wardogsDamage, DamageKind kind, @Nullable Entity attacker) {
+        applyWardogsDamage(wardogsDamage, kind, attacker, null);
+    }
+
+    /** As above, and when {@code hit} is known the section under it loses hit points too (engine, fuel tank, wheels, rotors...). */
+    public void applyWardogsDamage(double wardogsDamage, DamageKind kind, @Nullable Entity attacker, @Nullable Vec3 hit) {
         VehicleDef d = def();
         if (d == null || !(level() instanceof ServerLevel sl)) {
             return;
@@ -266,6 +384,9 @@ public class Vehicle extends Mob {
         var type = kind == DamageKind.BULLET ? Ballistics.BULLET : Ballistics.EXPLOSION;
         DamageSource src = new DamageSource(sl.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(type), attacker, attacker);
         invulnerableTime = 0;
+        if (hit != null) {
+            damageSection(sectionAt(hit), wardogsDamage * mult);
+        }
         hurt(src, (float) (wardogsDamage * mult));
     }
 
@@ -298,8 +419,12 @@ public class Vehicle extends Mob {
         if (d == null) {
             return;
         }
-        boolean piloted = getControllingPassenger() instanceof Player && fuel() > 0;
+        boolean piloted = getControllingPassenger() instanceof Player && fuel() > 0 && sectionWorks("Engine")
+                && !(d.flying() && !sectionWorks("Rotor Main"));
         setNoGravity(d.flying() && piloted);
+        if (!level().isClientSide && !sectionWorks("Fuel Tank") && fuel() > 0) {
+            setFuel(fuel() - (float) (d.fuel() / 1200.0)); // a punctured tank empties in about a minute
+        }
         if (!level().isClientSide) {
             double moved = Math.hypot(getX() - lastX, getZ() - lastZ);
             lastX = getX();
@@ -316,7 +441,8 @@ public class Vehicle extends Mob {
     @Override
     public void travel(Vec3 input) {
         VehicleDef d = def();
-        if (d != null && isAlive() && getControllingPassenger() instanceof Player p && fuel() > 0) {
+        if (d != null && isAlive() && getControllingPassenger() instanceof Player p && fuel() > 0 && sectionWorks("Engine")
+                && !(d.flying() && !sectionWorks("Rotor Main"))) {
             if (d.flying()) {
                 flyWith(p, d);
             } else {
@@ -329,7 +455,7 @@ public class Vehicle extends Mob {
     }
 
     private void driveWith(Player p, VehicleDef d) {
-        double max = d.speed();
+        double max = d.speed() * mobility();
         float throttle = p.zza;
         speedNow += throttle * 0.035;
         if (throttle == 0) {
@@ -351,7 +477,7 @@ public class Vehicle extends Mob {
     }
 
     private void flyWith(Player p, VehicleDef d) {
-        double max = d.speed() * Balance.get().airSpeedScale();
+        double max = d.speed() * Balance.get().airSpeedScale() * (sectionWorks("Rotor Tail") ? 1.0 : 0.5);
         float throttle = p.zza;
         speedNow += throttle * 0.03;
         if (throttle == 0) {
@@ -360,7 +486,7 @@ public class Vehicle extends Mob {
         speedNow = Mth.clamp(speedNow, -max * 0.3, max);
         float target = p.getYRot();
         float diff = Mth.wrapDegrees(target - getYRot());
-        setYRot(getYRot() + Mth.clamp(diff, -4f, 4f));
+        setYRot(getYRot() + (sectionWorks("Rotor Tail") ? Mth.clamp(diff, -4f, 4f) : 6f)); // without a tail rotor it spins
         yRotO = getYRot();
         setXRot(0);
         // Look up/down beyond a dead zone to climb/descend; hover otherwise.
@@ -396,6 +522,9 @@ public class Vehicle extends Mob {
         t.putString("kind", entityData.get(KIND));
         t.putFloat("fuel", fuel());
         t.putInt("faction", faction());
+        CompoundTag secs = new CompoundTag();
+        sectionHp.forEach(secs::putFloat);
+        t.put("sections", secs);
     }
 
     @Override
@@ -404,6 +533,11 @@ public class Vehicle extends Mob {
         entityData.set(KIND, t.getString("kind"));
         entityData.set(FUEL, t.getFloat("fuel"));
         entityData.set(FACTION, t.getInt("faction"));
+        sectionHp.clear();
+        CompoundTag secs = t.getCompound("sections");
+        for (String k : secs.getAllKeys()) {
+            sectionHp.put(k, secs.getFloat(k));
+        }
         VehicleDef d = def();
         if (d != null) {
             getAttribute(Attributes.MAX_HEALTH).setBaseValue(d.hp());

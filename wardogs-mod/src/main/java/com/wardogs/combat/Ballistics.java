@@ -222,7 +222,7 @@ public final class Ballistics {
             double dmg = w.chest() * w.falloffMult(origin.distanceTo(ehr.getLocation()))
                     * (ammo == AmmoType.AP ? Balance.get().apVsVehicle() : Balance.get().ammoMult(ammo, true)) / pellets;
             Ballistics.runAs(new Hit(w.id(), false, origin.distanceTo(ehr.getLocation()), ammo),
-                    () -> veh.applyWardogsDamage(dmg, Vehicle.DamageKind.BULLET, shooter));
+                    () -> veh.applyWardogsDamage(dmg, Vehicle.DamageKind.BULLET, shooter, ehr.getLocation()));
             if (shooter instanceof net.minecraft.server.level.ServerPlayer sp) {
                 com.wardogs.net.HitMarkerPayload.send(sp, false, !veh.isAlive());
             }

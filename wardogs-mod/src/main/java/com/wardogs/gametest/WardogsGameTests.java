@@ -1671,4 +1671,36 @@ public final class WardogsGameTests {
         check(Balance.get().weapon("m4").velocity() > 0, "rifles have a muzzle velocity");
         h.succeed();
     }
+
+    @GameTest(template = "empty", batch = "vehSections")
+    public static void vehicleSectionsBreakAndSlowOrDisableTheVehicle(GameTestHelper h) {
+        arena(h).target.discard();
+        var def = Balance.get().vehicle("humvee");
+        Vehicle v = vehicleAt(h, "humvee", Faction.LONESTAR, 6.5, 6.5);
+        Vec3 fwd = Vec3.directionFromRotation(0, v.getYRot());
+        Vec3 front = v.position().add(fwd.scale(def.d() * 0.35)).add(0, def.h() * 0.5, 0);
+        Vec3 rear = v.position().add(fwd.scale(-def.d() * 0.35)).add(0, def.h() * 0.5, 0);
+        Vec3 leftFrontWheel = v.position().add(fwd.scale(def.d() * 0.35)).add(def.w() * 0.45 * fwd.z, def.h() * 0.1, -def.w() * 0.45 * fwd.x);
+        check(v.sectionAt(front).equals("Engine"), "a hit at the front lands on the engine, not " + v.sectionAt(front));
+        check(v.sectionAt(rear).equals("Fuel Tank"), "a hit at the back lands on the fuel tank, not " + v.sectionAt(rear));
+        check(v.sectionAt(leftFrontWheel).startsWith("Wheel"), "a low hit at the side lands on a wheel, not " + v.sectionAt(leftFrontWheel));
+        check(v.sectionAt(v.position().add(0, def.h() * 0.6, 0)).equals("Hull"), "the middle is the hull");
+        check(v.sectionWorks("Engine") && v.mobility() == 1.0, "a new vehicle is fully working");
+
+        for (int i = 0; i < 40 && v.sectionWorks("Engine"); i++) {
+            v.setHealth(v.getMaxHealth());
+            v.applyWardogsDamage(100, Vehicle.DamageKind.ANTI_TANK, null, front);
+        }
+        check(!v.sectionWorks("Engine"), "enough hits destroy the engine");
+        check(v.sectionsDamaged(), "and the vehicle reports damage");
+        v.repairSections();
+        check(v.sectionWorks("Engine") && !v.sectionsDamaged(), "a repair restores the sections");
+
+        for (int i = 0; i < 60 && v.mobility() > 0.85; i++) {
+            v.setHealth(v.getMaxHealth());
+            v.applyWardogsDamage(100, Vehicle.DamageKind.ANTI_TANK, null, leftFrontWheel);
+        }
+        check(v.mobility() < 0.85 && v.mobility() >= 0.3, "a destroyed wheel slows the vehicle: " + v.mobility());
+        h.succeed();
+    }
 }

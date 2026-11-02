@@ -77,7 +77,7 @@ that were considered and their licences.
 
 ## Not done yet
 
-Per-section vehicle damage, Stingray and M113 forward spawn, squad system, armour and grenade 3D models,
+Stingray and M113 forward spawn, squad system, armour and grenade 3D models,
 real sounds, procedural houses that follow the street direction, hand-built landmarks.
 
 ## Build & test
