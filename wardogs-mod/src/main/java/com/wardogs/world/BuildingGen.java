@@ -168,9 +168,9 @@ public final class BuildingGen {
         int r = Math.min(c, len - 1 - c);
         int rel = k - top;
         BlockState stair = b.kind() == 1 ? Blocks.BRICK_STAIRS.defaultBlockState()
-                : b.kind() == 2 ? Blocks.SPRUCE_STAIRS.defaultBlockState() : Blocks.DEEPSLATE_TILE_STAIRS.defaultBlockState();
+                : b.kind() == 2 ? Blocks.SPRUCE_STAIRS.defaultBlockState() : Blocks.COBBLESTONE_STAIRS.defaultBlockState();
         BlockState full = b.kind() == 1 ? Blocks.BRICKS.defaultBlockState()
-                : b.kind() == 2 ? Blocks.SPRUCE_PLANKS.defaultBlockState() : Blocks.DEEPSLATE_TILES.defaultBlockState();
+                : b.kind() == 2 ? Blocks.SPRUCE_PLANKS.defaultBlockState() : Blocks.COBBLESTONE.defaultBlockState();
         int along = ridgeAlongX ? i : j;
         int alongLen = ridgeAlongX ? w : d;
         if (b.kind() != 2 && along == 2 && c == (len - 1) / 2 && alongLen > 6 && rel > r && rel <= r + 2) {

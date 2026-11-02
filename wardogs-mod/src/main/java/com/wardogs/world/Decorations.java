@@ -437,7 +437,7 @@ public final class Decorations {
                 int mat = t.material(x + 0.5, z + 0.5), cov = t.cover(x + 0.5, z + 0.5);
                 double r = rnd(x, z, 21);
                 // undergrowth under the trees
-                if (cov == BakuraniTerrain.COVER_FOREST && mat != BakuraniTerrain.SNOW && r < 0.10) {
+                if (cov == BakuraniTerrain.COVER_FOREST && mat != BakuraniTerrain.SNOW && r < 0.10 && !t.nearBuilding(x, z, 9)) {
                     BlockState s = r < 0.012 ? Blocks.SWEET_BERRY_BUSH.defaultBlockState().setValue(net.minecraft.world.level.block.SweetBerryBushBlock.AGE, 3)
                             : r < 0.06 ? Blocks.FERN.defaultBlockState() : Blocks.SHORT_GRASS.defaultBlockState();
                     int y = c.freeY(x, z);

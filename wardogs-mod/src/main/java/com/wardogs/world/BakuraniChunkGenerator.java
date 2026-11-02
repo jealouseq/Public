@@ -106,7 +106,8 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                         }
                         case BakuraniTerrain.COVER_FOREST -> {
                             if (mat == BakuraniTerrain.GRASS || mat == BakuraniTerrain.FOREST) {
-                                top = Blocks.PODZOL.defaultBlockState();
+                                // a clearing of lawn around every house, podzol under the trees
+                                top = t.nearBuilding(baseX + dx, baseZ + dz, 9) ? Blocks.GRASS_BLOCK.defaultBlockState() : Blocks.PODZOL.defaultBlockState();
                             }
                         }
                         case BakuraniTerrain.COVER_URBAN -> {
@@ -115,7 +116,7 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                                 if (t.nearBuilding(baseX + dx, baseZ + dz, 4) || roadNeighbourWide(t, wx, wz)) {
                                     top = pavement(baseX + dx, baseZ + dz);
                                 } else {
-                                    top = hash(baseX + dx * 3, baseZ + dz * 5) < 0.18 ? Blocks.COARSE_DIRT.defaultBlockState() : Blocks.GRASS_BLOCK.defaultBlockState();
+                                    top = hash(baseX + dx * 3, baseZ + dz * 5) < 0.07 ? Blocks.COARSE_DIRT.defaultBlockState() : Blocks.GRASS_BLOCK.defaultBlockState();
                                 }
                             }
                         }
@@ -363,7 +364,7 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                 } else {
                     density = mat == BakuraniTerrain.FOREST ? 1.0 / 24 : mat == BakuraniTerrain.GRASS ? 1.0 / 900 : 0;
                 }
-                if (density > 0 && (t.nearBuilding(wx, wz, 3) || slopeOf(slopes, dx, dz, t, wx + 0.5, wz + 0.5, t.surfaceY(wx + 0.5, wz + 0.5)) >= ROCK_SLOPE)) {
+                if (density > 0 && (t.nearBuilding(wx, wz, 9) || slopeOf(slopes, dx, dz, t, wx + 0.5, wz + 0.5, t.surfaceY(wx + 0.5, wz + 0.5)) >= ROCK_SLOPE)) {
                     density = 0;
                 }
                 double hv = hash(wx, wz);

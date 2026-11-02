@@ -50,7 +50,7 @@ public final class BakuraniTerrain {
         }
 
         /** Radius of the circle around the centre that holds the whole footprint plus its doorstep. */
-        public int radius() { return (int) Math.ceil(Math.hypot(w, d + 1) / 2.0) + 4; }
+        public int radius() { return (int) Math.ceil(Math.hypot(w, d + 1) / 2.0) + 10; }
 
         public int minX() { return (int) Math.floor(x - radius()); }
         public int minZ() { return (int) Math.floor(z - radius()); }
