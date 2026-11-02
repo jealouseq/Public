@@ -81,7 +81,7 @@ that were considered and their licences.
 ## Not done yet
 
 Launcher 3D models, real recorded sounds (shots currently use vanilla sounds by weapon class), houses that follow the street direction
-(they are axis-aligned), hand-built landmarks, the Stingray station (the sources give no data for it).
+(they are axis-aligned), more hand-built landmarks (only the shooting range and the Control Zone flags so far), the Stingray station (the sources give no data for it).
 
 ## Build & test
 ```
