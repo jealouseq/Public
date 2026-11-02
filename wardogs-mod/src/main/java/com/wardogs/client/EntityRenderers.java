@@ -20,6 +20,9 @@ public final class EntityRenderers {
     public static void models(net.neoforged.neoforge.client.event.ModelEvent.RegisterAdditional e) {
         for (var def : com.wardogs.balance.Balance.get().vehicles()) {
             e.register(VehicleRenderer.modelLocation(def.id()));
+            if (VehicleRenderer.rotorHub(def.id()) != null) {
+                e.register(VehicleRenderer.rotorLocation(def.id()));
+            }
         }
     }
 

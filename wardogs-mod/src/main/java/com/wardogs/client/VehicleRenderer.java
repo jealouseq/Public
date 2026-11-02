@@ -36,6 +36,33 @@ public class VehicleRenderer extends EntityRenderer<Vehicle> {
 
     public static void clearMeshCache() {
         MESH.clear();
+        ROTORS = null;
+    }
+
+    private static java.util.Map<String, double[]> ROTORS;
+
+    /** Hub position (x, y, z in blocks) of the separate main-rotor model of a helicopter, or null for other vehicles. */
+    public static double[] rotorHub(String id) {
+        if (ROTORS == null) {
+            java.util.Map<String, double[]> m = new java.util.HashMap<>();
+            var res = Minecraft.getInstance().getResourceManager().getResource(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "models/vehicle/rotors.json"));
+            if (res.isPresent()) {
+                try (var in = new java.io.InputStreamReader(res.get().open())) {
+                    for (var e : com.google.gson.JsonParser.parseReader(in).getAsJsonObject().entrySet()) {
+                        var a = e.getValue().getAsJsonArray();
+                        m.put(e.getKey(), new double[]{a.get(0).getAsDouble(), a.get(1).getAsDouble(), a.get(2).getAsDouble()});
+                    }
+                } catch (java.io.IOException | RuntimeException ex) {
+                    WardogsMod.LOGGER.warn("Cannot read the rotor list", ex);
+                }
+            }
+            ROTORS = m;
+        }
+        return ROTORS.get(id);
+    }
+
+    public static ModelResourceLocation rotorLocation(String id) {
+        return ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "vehicle/" + id + "_rotor"));
     }
 
     public static ModelResourceLocation modelLocation(String id) {
@@ -66,6 +93,19 @@ public class VehicleRenderer extends EntityRenderer<Vehicle> {
             }
             Minecraft.getInstance().getItemRenderer().render(ICON, ItemDisplayContext.NONE, false, pose, buffers, light,
                     OverlayTexture.NO_OVERLAY, model);
+            double[] hub = rotorHub(def.id());
+            BakedModel rotor = hub == null ? null : mm.getModel(rotorLocation(def.id()));
+            if (rotor != null && rotor != mm.getMissingModel()) {
+                // the main rotor turns while anyone is aboard (engine running), and coasts still otherwise
+                float angle = v.getPassengers().isEmpty() ? 0f : (v.tickCount + partial) * 70f;
+                pose.pushPose();
+                pose.translate(hub[0], hub[1], hub[2]);
+                pose.mulPose(Axis.YP.rotationDegrees(angle));
+                pose.translate(0.5, 0.5, 0.5);
+                Minecraft.getInstance().getItemRenderer().render(ICON, ItemDisplayContext.NONE, false, pose, buffers, light,
+                        OverlayTexture.NO_OVERLAY, rotor);
+                pose.popPose();
+            }
             pose.popPose();
             super.render(v, entityYaw, partial, pose, buffers, light);
             return;

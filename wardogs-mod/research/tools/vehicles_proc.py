@@ -356,13 +356,20 @@ def ural(cover=False, gun=False):
 # helicopters
 # ---------------------------------------------------------------------------------------------------------------------------------
 
+SPIN = []      # parts of the main rotor: kept out of the body so the game can turn them (see build_models.veh)
+SPIN_HUB = []  # (x, y, z) of the rotor hub
+
+
 def rotor(y, radius, blades, color, z=0.0, thick=0.05):
+    """The main rotor. Its parts go to SPIN (hub at (0, y, z)) instead of the body; nothing is returned for the body."""
     parts = [mk.cylinder((0, y - 0.18, z), 0.09, 0.4, "y", 8, C["dark"]), mk.cylinder((0, y, z), 0.18, 0.12, "y", 10, C["dark"])]
     for k in range(blades):
         a = k * 360 / blades
         b = mk.box(0, y + 0.03, z - radius / 2 + 0.2, 0.28, thick, radius, color)
-        parts.append(mk.rotate_y(mk.translate(b, 0, 0, -z), a) if False else _rot_about(b, 0, z, a))
-    return parts
+        parts.append(_rot_about(b, 0, z, a))
+    SPIN.extend(parts)
+    SPIN_HUB[:] = [(0.0, y, z)]
+    return []
 
 
 def _rot_about(m, cx, cz, deg):

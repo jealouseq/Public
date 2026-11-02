@@ -102,14 +102,21 @@ def vehicle(vid):
 import vehicles_proc as vp
 
 HITBOX = {}   # vehicle id -> (width, height, length) written into vehicles.json
+ROTORS = {}   # helicopter id -> hub position of its separate rotor model
 
 
 def veh(vid, hitbox, mesh_fn):
     if ONLY and vid not in ONLY and "vehicles" not in ONLY:
         return
+    vp.SPIN.clear()
+    vp.SPIN_HUB.clear()
     m = mesh_fn()
     finish_vehicle(vid, m)
     HITBOX[vid] = hitbox
+    if vp.SPIN:  # a helicopter: the main rotor is its own model, centred on the hub, turned by the renderer
+        hx, hy, hz = vp.SPIN_HUB[0]
+        finish_vehicle(vid + "_rotor", mk.union([mk.translate(p, -hx, -hy, -hz) for p in vp.SPIN]))
+        ROTORS[vid] = [round(hx, 3), round(hy, 3), round(hz, 3)]
 
 
 def uaz_mesh(gun=False):
@@ -212,6 +219,7 @@ if __name__ == "__main__":
     if not ONLY or "guns" in ONLY or set(GUN_MAP) & ONLY:
         build_guns()
     build_vehicles()
+    json.dump(ROTORS, open(os.path.join(OUT, "models/vehicle/rotors.json"), "w"))
     # sizes: the hitbox of every mesh vehicle follows the mesh (rotors and long barrels excluded by hand in HITBOX)
     vp_path = os.path.join(ROOT, "src/main/resources/data/wardogs/balance/vehicles.json")
     V = json.load(open(vp_path))
