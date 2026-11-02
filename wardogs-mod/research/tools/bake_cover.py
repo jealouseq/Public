@@ -66,7 +66,8 @@ jxx = ndimage.gaussian_filter(gx_ * gx_, sig); jyy = ndimage.gaussian_filter(gy_
 coh = np.sqrt((jxx - jyy) ** 2 + 4 * jxy ** 2) / np.maximum(jxx + jyy, 1e-9)
 field = np.degrees(0.5 * np.arctan2(2 * jxy, jxx - jyy))
 def norm45(a):
-    return ((a + 45.0) % 90.0) - 45.0
+    a = ((a + 45.0) % 90.0) - 45.0
+    return 0.0 if abs(a) < 10.0 else a   # a slight tilt only makes ragged steps, so near-aligned houses are left square
 def street_angle(px, py):
     ix = int(min(N - 1, max(0, px))); iy = int(min(N - 1, max(0, py)))
     return norm45(field[iy, ix]) if coh[iy, ix] > 0.35 else 0.0
