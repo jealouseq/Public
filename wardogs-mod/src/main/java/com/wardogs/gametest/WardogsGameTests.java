@@ -1515,4 +1515,31 @@ public final class WardogsGameTests {
         check(!com.wardogs.match.Respawns.sendToBase(h.makeMockServerPlayerInLevel()), "and a player without a faction is never moved");
         h.succeed();
     }
+
+    @GameTest(template = "empty")
+    public static void generatedHousesHaveDoorsWindowsFloorsAndRoofs(GameTestHelper h) {
+        for (int kind = 0; kind <= 1; kind++) {
+            var b = new com.wardogs.world.BakuraniTerrain.Building(0, 0, 11, 9, 3, kind);
+            int w = b.w(), d = b.d();
+            check(com.wardogs.world.BuildingGen.at(b, w / 2, d - 1, 1).is(Blocks.OAK_DOOR), "the south wall has a door (kind " + kind + ")");
+            check(com.wardogs.world.BuildingGen.at(b, 3, 3, 0).is(Blocks.SPRUCE_PLANKS), "the ground floor is planks");
+            check(com.wardogs.world.BuildingGen.at(b, 3, 3, 1).isAir(), "rooms are empty");
+            check(com.wardogs.world.BuildingGen.at(b, 3, 3, 4).is(Blocks.SPRUCE_PLANKS), "storeys are separated by a floor slab");
+            check(com.wardogs.world.BuildingGen.at(b, 1, 1, 6).is(Blocks.LADDER), "a ladder climbs through the storeys");
+            check(com.wardogs.world.BuildingGen.at(b, 0, 4, 2) != null, "walls have blocks");
+            boolean glass = false, roof = false;
+            for (int i = 0; i < w; i++) {
+                for (int k = 1; k < 12; k++) {
+                    glass |= com.wardogs.world.BuildingGen.at(b, i, 0, k) != null && com.wardogs.world.BuildingGen.at(b, i, 0, k).is(Blocks.GLASS);
+                }
+            }
+            for (int k = 12; k < com.wardogs.world.BuildingGen.height(b); k++) {
+                roof |= com.wardogs.world.BuildingGen.at(b, w / 2, d / 2, k) != null;
+            }
+            check(glass, "the walls have windows");
+            check(roof, "there is a roof above the top floor");
+            check(com.wardogs.world.BuildingGen.at(b, 5, 4, -3) != null && com.wardogs.world.BuildingGen.at(b, 5, 4, -3).is(Blocks.DIRT), "the footprint is filled below the floor");
+        }
+        h.succeed();
+    }
 }

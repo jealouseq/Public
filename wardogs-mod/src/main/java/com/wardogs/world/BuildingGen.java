@@ -2,6 +2,8 @@ package com.wardogs.world;
 
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.block.LadderBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -26,12 +28,32 @@ public final class BuildingGen {
     public static int height(BakuraniTerrain.Building b) {
         int top = 4 * b.floors();
         int shortSide = Math.min(b.w(), b.d());
-        return top + (shortSide > 15 ? 1 : (Math.max(1, (Math.min(b.w(), b.d()) - 1) / 2)) + 1);
+        return top + (shortSide > 15 ? 1 : (Math.max(1, (Math.min(b.w(), b.d()) - 1) / 2)) + 3);
+    }
+
+    private static int style(BakuraniTerrain.Building b) {
+        return Math.abs((int) (b.x() * 31 + b.z() * 17));
+    }
+
+    /** Red-roofed houses of up to two storeys that hash into the chalet style are timber-framed on a stone base. */
+    private static boolean chalet(BakuraniTerrain.Building b) {
+        return b.kind() == 1 && b.floors() <= 2 && style(b) % 2 == 0;
     }
 
     private static BlockState wall(BakuraniTerrain.Building b) {
-        int h = Math.abs((int) (b.x() * 31 + b.z() * 17));
-        return (b.kind() == 1 ? PLASTER_RED : PLASTER_GREY)[h % 3];
+        return (b.kind() == 1 ? PLASTER_RED : PLASTER_GREY)[style(b) % 3];
+    }
+
+    /** Wall block at a given height: chalets use a stone base, spruce planks above and log corner posts. */
+    private static BlockState wallAt(BakuraniTerrain.Building b, int i, int j, int k) {
+        if (!chalet(b)) {
+            return wall(b);
+        }
+        boolean corner = (i == 0 || i == b.w() - 1) && (j == 0 || j == b.d() - 1);
+        if (corner) {
+            return Blocks.STRIPPED_SPRUCE_LOG.defaultBlockState();
+        }
+        return k <= 1 ? Blocks.COBBLESTONE.defaultBlockState() : Blocks.SPRUCE_PLANKS.defaultBlockState();
     }
 
     /** The block at cell (i, j) of the footprint and height k above the ground floor; {@code null} leaves the existing block. */
@@ -51,7 +73,7 @@ public final class BuildingGen {
         if (k < top) {
             if (k % 4 == 0) { // intermediate floor slab
                 if (edge) {
-                    return wall(b);
+                    return wallAt(b, i, j, k);
                 }
                 return ladderCell ? ladder() : Blocks.SPRUCE_PLANKS.defaultBlockState();
             }
@@ -60,7 +82,8 @@ public final class BuildingGen {
             }
             int kk = k % 4;
             if (k < 4 && j == d - 1 && i == w / 2 && kk <= 2) {
-                return Blocks.AIR.defaultBlockState(); // doorway
+                return Blocks.OAK_DOOR.defaultBlockState().setValue(DoorBlock.FACING, Direction.SOUTH)
+                        .setValue(DoorBlock.HALF, kk == 1 ? DoubleBlockHalf.LOWER : DoubleBlockHalf.UPPER);
             }
             if (kk == 2) {
                 boolean alongX = j == 0 || j == d - 1;
@@ -69,7 +92,7 @@ public final class BuildingGen {
                     return Blocks.GLASS.defaultBlockState();
                 }
             }
-            return wall(b);
+            return wallAt(b, i, j, k);
         }
         // roof
         int shortSide = Math.min(w, d);
@@ -85,6 +108,11 @@ public final class BuildingGen {
         int rel = k - top;
         BlockState stair = b.kind() == 1 ? Blocks.BRICK_STAIRS.defaultBlockState() : Blocks.DEEPSLATE_TILE_STAIRS.defaultBlockState();
         BlockState full = b.kind() == 1 ? Blocks.BRICKS.defaultBlockState() : Blocks.DEEPSLATE_TILES.defaultBlockState();
+        int along = ridgeAlongX ? i : j;
+        int alongLen = ridgeAlongX ? w : d;
+        if (along == 2 && c == (len - 1) / 2 && alongLen > 6 && rel > r && rel <= r + 2) {
+            return Blocks.BRICKS.defaultBlockState(); // chimney
+        }
         if (rel < r) {
             return wall(b); // attic fill below the roof surface
         }
