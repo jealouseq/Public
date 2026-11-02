@@ -1816,6 +1816,54 @@ public final class WardogsGameTests {
         h.succeed();
     }
 
+    /** Houses, hipped or gabled, with eaves, and garage rows are each one connected piece: no roof block floats and no wall is cut off. */
+    @GameTest(template = "empty")
+    public static void everyBuildingKindIsOneConnectedPiece(GameTestHelper h) {
+        int[][] sizes = {{9, 9}, {11, 9}, {10, 12}, {13, 10}, {8, 8}, {12, 12}, {7, 11}, {16, 12}};
+        int shapes = 0;
+        for (int kind : new int[]{0, 1, 2, 3}) {
+            for (int[] sz : sizes) {
+                for (int floors = 1; floors <= (kind >= 2 ? 1 : 3); floors++) {
+                    for (int sx = 0; sx < 6; sx++) { // positions change the style hash: palettes, hip or gable
+                        var b = new com.wardogs.world.BakuraniTerrain.Building(sx * 37.0f + 3, sx * 11.0f - 5, kind == 3 ? 12 : sz[0], kind == 3 ? 7 : sz[1], floors, kind, 0);
+                        int w = b.w(), d = b.d(), hgt = com.wardogs.world.BuildingGen.height(b);
+                        java.util.Map<Long, net.minecraft.world.level.block.state.BlockState> blocks = new java.util.HashMap<>();
+                        for (int i = -1; i <= w; i++) {
+                            for (int j = -1; j <= d; j++) {
+                                for (int k = -com.wardogs.world.BuildingGen.FOUNDATION; k <= hgt; k++) {
+                                    var st = com.wardogs.world.BuildingGen.at(b, i, j, k);
+                                    if (st != null && !st.isAir()) {
+                                        blocks.put(BlockPos.asLong(i, k, j), st);
+                                    }
+                                }
+                            }
+                        }
+                        java.util.Set<Long> seen = new java.util.HashSet<>();
+                        java.util.ArrayDeque<Long> todo = new java.util.ArrayDeque<>();
+                        long start = BlockPos.asLong(w / 2, 0, d / 2);
+                        todo.add(start);
+                        seen.add(start);
+                        while (!todo.isEmpty()) {
+                            BlockPos p = BlockPos.of(todo.poll());
+                            for (var dir : net.minecraft.core.Direction.values()) {
+                                long n = p.relative(dir).asLong();
+                                if (blocks.containsKey(n) && seen.add(n)) {
+                                    todo.add(n);
+                                }
+                            }
+                        }
+                        for (var e : blocks.entrySet()) {
+                            check(seen.contains(e.getKey()), "kind " + kind + " " + w + "x" + d + " f" + floors + " style " + sx + ": " + e.getValue() + " floats at " + BlockPos.of(e.getKey()));
+                        }
+                        shapes++;
+                    }
+                }
+            }
+        }
+        check(shapes > 100, "many shapes were checked");
+        h.succeed();
+    }
+
     @GameTest(template = "empty")
     public static void rotatedHousesAreWatertight(GameTestHelper h) {
         for (int angle : new int[]{0, 15, 30, 45, -20, -45, 90, 135, 180, -135}) {
@@ -1849,7 +1897,7 @@ public final class WardogsGameTests {
             for (int x = -r; x <= r; x++) {
                 for (int z = -r; z <= r; z++) {
                     var c = com.wardogs.world.BuildingGen.cell(b, x + 0.5, z + 0.5);
-                    check(c == null || c.j() >= b.d() || !seen[x + r][z + r], "angle " + angle + ": the outside reaches the interior at " + x + "," + z + " (cell " + c + ")");
+                    check(c == null || c.j() >= b.d() || c.i() < 0 || c.j() < 0 || c.i() >= b.w() || !seen[x + r][z + r], "angle " + angle + ": the outside reaches the interior at " + x + "," + z + " (cell " + c + ")");
                 }
             }
             check(com.wardogs.world.BuildingGen.cell(b, b.x(), b.z()) != null, "the centre is inside the footprint at angle " + angle);

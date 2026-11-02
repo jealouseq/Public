@@ -466,7 +466,7 @@ public final class Outposts {
             if (villageCars >= 120) {
                 break;
             }
-            if (h.kind() == 2 || h.floors() >= 3 || h.w() >= 16 || Decorations.rnd(Math.round(h.x() * 8), Math.round(h.z() * 8), 91) >= 0.1) {
+            if (h.kind() >= 2 || h.floors() >= 3 || h.w() >= 16 || Decorations.rnd(Math.round(h.x() * 8), Math.round(h.z() * 8), 91) >= 0.1) {
                 continue;
             }
             boolean near = false;

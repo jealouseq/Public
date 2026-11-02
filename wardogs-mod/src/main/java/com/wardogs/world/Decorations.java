@@ -108,7 +108,7 @@ public final class Decorations {
     public static void place(ChunkAccess chunk, BakuraniTerrain t, Heightmap surface) {
         Ctx c = new Ctx(chunk, t, surface);
         for (BakuraniTerrain.Building b : t.buildingsIn(c.baseX - 16, c.baseZ - 16, c.baseX + 31, c.baseZ + 31)) {
-            if (b.kind() == 2) {
+            if (b.kind() >= 2) {
                 continue;
             }
             if (b.w() >= 16 || b.floors() >= 3) {
@@ -149,6 +149,48 @@ public final class Decorations {
             }
             if (!clash) {
                 out.add(shed);
+            }
+        }
+        return out;
+    }
+
+    /**
+     * A row of lock-up garages (kind 3) in the back yard of every second apartment block or large building, doors facing the block: the
+     * courtyard of a post-Soviet estate. Dropped where it would touch another building, a road or water.
+     */
+    public static List<BakuraniTerrain.Building> garages(BakuraniTerrain t, List<BakuraniTerrain.Building> houses) {
+        List<BakuraniTerrain.Building> out = new ArrayList<>();
+        for (BakuraniTerrain.Building b : houses) {
+            if (b.kind() >= 2 || (b.floors() < 3 && b.w() < 16 && b.d() < 16) || rndB(b, 51) >= 0.6) {
+                continue;
+            }
+            int units = 3 + (int) (rndB(b, 52) * 4);
+            int gw = units * 4;
+            double side = rndB(b, 53) < 0.5 ? -1 : 1;
+            double[] w = toWorld(b, side * Math.max(0, b.w() / 2.0 - gw / 2.0) * 0.5, -(b.d() / 2.0 + 8 + 3.5));
+            BakuraniTerrain.Building g = new BakuraniTerrain.Building((float) w[0], (float) w[1], gw, 7, 1, 3, b.angle());
+            boolean clash = !BakuraniTerrain.inside(w[0], w[1]);
+            for (int du = -gw / 2; du <= gw / 2 && !clash; du += 4) {
+                for (int dv = -4; dv <= 4 && !clash; dv += 4) {
+                    double[] q = toWorld(g, du, dv);
+                    clash = t.roadClass(q[0], q[1]) > 0 || t.cover(q[0], q[1]) == BakuraniTerrain.COVER_WATER || !BakuraniTerrain.inside(q[0], q[1])
+                            || Math.abs(t.surfaceY(q[0], q[1]) - t.surfaceY(w[0], w[1])) > 2;
+                }
+            }
+            for (BakuraniTerrain.Building o : t.buildingsIn((int) w[0] - 30, (int) w[1] - 30, (int) w[0] + 30, (int) w[1] + 30)) {
+                if (o != b && Math.hypot(o.x() - w[0], o.z() - w[1]) < o.radius() * 0.6 + gw / 2.0 + 3) {
+                    clash = true;
+                    break;
+                }
+            }
+            for (BakuraniTerrain.Building o : out) {
+                if (Math.hypot(o.x() - w[0], o.z() - w[1]) < gw / 2.0 + o.w() / 2.0 + 3) {
+                    clash = true;
+                    break;
+                }
+            }
+            if (!clash) {
+                out.add(g);
             }
         }
         return out;
@@ -394,12 +436,107 @@ public final class Decorations {
                     // the bench faces away from the road toward the buildings
                     continue;
                 }
+                // bus shelters and kiosks on the pavements of town roads
+                if (dx >= 3 && dx <= 12 && dz >= 3 && dz <= 12 && t.cover(x + 0.5, z + 0.5) == BakuraniTerrain.COVER_URBAN) {
+                    if (rnd(x, z, 14) < 0.004 && candidate(t, x, z, 2, 3) && spaced(t, x, z, 14, 0.004, 30, 2, 3)) {
+                        busStop(c, x, z, towardRoad(t, x, z, 2));
+                        continue;
+                    }
+                    if (rnd(x, z, 15) < 0.003 && candidate(t, x, z, 2, 3) && spaced(t, x, z, 15, 0.003, 28, 2, 3)) {
+                        kiosk(c, x, z, towardRoad(t, x, z, 2));
+                        continue;
+                    }
+                }
                 // wooden power poles along dirt tracks, about every 40 blocks
                 if (rnd(x, z, 13) < 0.02 && candidate(t, x, z, 1, 2) && !candidate(t, x, z, 2, 4) && spaced(t, x, z, 13, 0.02, 18, 1, 2)) {
                     powerPole(c, x, z, towardRoad(t, x, z, 1));
                 }
             }
         }
+    }
+
+    /** World column of the point u along the road and v back from it, for a prop whose front faces {@code toward} (the road). */
+    private static int[] spot(int x, int z, Direction toward, int u, int v) {
+        Direction side = toward.getClockWise(), away = toward.getOpposite();
+        return new int[]{x + side.getStepX() * u + away.getStepX() * v, z + side.getStepZ() * u + away.getStepZ() * v};
+    }
+
+    /** True when every column of a u by v footprint is free ground at about the same level. */
+    private static boolean flatFree(Ctx c, int x, int z, Direction toward, int u0, int u1, int v0, int v1, int y) {
+        for (int u = u0; u <= u1; u++) {
+            for (int v = v0; v <= v1; v++) {
+                int[] q = spot(x, z, toward, u, v);
+                int fy = c.freeY(q[0], q[1]);
+                if (fy == Integer.MIN_VALUE || Math.abs(fy - y) > 1 || c.t.nearBuilding(q[0], q[1], 1) || !c.get(q[0], fy, q[1]).isAir()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    /** A bus shelter: a glass back wall, a flat roof on posts, a bench and a stop sign. */
+    private static void busStop(Ctx c, int x, int z, Direction toward) {
+        int y = c.freeY(x, z);
+        if (y == Integer.MIN_VALUE || !flatFree(c, x, z, toward, -3, 3, 0, 1, y)) {
+            return;
+        }
+        BlockState glass = Blocks.LIGHT_BLUE_STAINED_GLASS.defaultBlockState(), post = Blocks.IRON_BARS.defaultBlockState();
+        BlockState roof = Blocks.SMOOTH_STONE_SLAB.defaultBlockState();
+        for (int u = -2; u <= 2; u++) {
+            int[] back = spot(x, z, toward, u, 1), front = spot(x, z, toward, u, 0);
+            c.set(back[0], y, back[1], Blocks.STONE_BRICKS.defaultBlockState());
+            c.set(back[0], y + 1, back[1], glass);
+            c.set(back[0], y + 2, back[1], glass);
+            c.set(back[0], y + 3, back[1], roof);
+            c.set(front[0], y + 3, front[1], roof);
+        }
+        for (int u : new int[]{-2, 2}) {
+            for (int v = 0; v <= 1; v++) {
+                int[] q = spot(x, z, toward, u, v);
+                if (v == 0) {
+                    c.set(q[0], y, q[1], post);
+                    c.set(q[0], y + 1, q[1], post);
+                    c.set(q[0], y + 2, q[1], post);
+                }
+            }
+        }
+        int[] bench = spot(x, z, toward, 0, 0);
+        c.set(bench[0], y, bench[1], DecorBlocks.state("decor_bench_park", toward));
+        int[] sign = spot(x, z, toward, 4, 0);
+        if (c.freeY(sign[0], sign[1]) == y) {
+            c.set(sign[0], y, sign[1], DecorBlocks.state("decor_road_sign", toward));
+        }
+    }
+
+    /** A street kiosk: a small painted box with a serving window and counter on the road side. */
+    private static void kiosk(Ctx c, int x, int z, Direction toward) {
+        int y = c.freeY(x, z);
+        if (y == Integer.MIN_VALUE || !flatFree(c, x, z, toward, -2, 2, 0, 3, y)) {
+            return;
+        }
+        BlockState wall = new BlockState[]{Blocks.LIGHT_BLUE_TERRACOTTA.defaultBlockState(), Blocks.GREEN_TERRACOTTA.defaultBlockState(),
+                Blocks.ORANGE_TERRACOTTA.defaultBlockState(), Blocks.WHITE_TERRACOTTA.defaultBlockState()}[(int) (rnd(x, z, 16) * 4)];
+        for (int u = -1; u <= 1; u++) {
+            for (int v = 1; v <= 3; v++) {
+                int[] q = spot(x, z, toward, u, v);
+                boolean edge = u == -1 || u == 1 || v == 1 || v == 3;
+                for (int k = 0; k <= 2; k++) {
+                    c.set(q[0], y + k, q[1], edge ? wall : Blocks.AIR.defaultBlockState());
+                }
+                c.set(q[0], y + 3, q[1], Blocks.SMOOTH_STONE_SLAB.defaultBlockState());
+            }
+        }
+        int[] window = spot(x, z, toward, 0, 1);
+        c.set(window[0], y + 1, window[1], DecorBlocks.state("decor_kiosk_counter", toward));
+        c.set(window[0], y + 2, window[1], Blocks.GLASS.defaultBlockState());
+        int[] stock = spot(x, z, toward, 0, 2);
+        c.set(stock[0], y, stock[1], DecorBlocks.state("decor_crate_stack", toward));
+        int[] door = spot(x, z, toward, 1, 3);
+        c.set(door[0], y, door[1], Blocks.OAK_DOOR.defaultBlockState().setValue(net.minecraft.world.level.block.DoorBlock.FACING, toward.getOpposite())
+                .setValue(net.minecraft.world.level.block.DoorBlock.HALF, net.minecraft.world.level.block.state.properties.DoubleBlockHalf.LOWER));
+        c.set(door[0], y + 1, door[1], Blocks.OAK_DOOR.defaultBlockState().setValue(net.minecraft.world.level.block.DoorBlock.FACING, toward.getOpposite())
+                .setValue(net.minecraft.world.level.block.DoorBlock.HALF, net.minecraft.world.level.block.state.properties.DoubleBlockHalf.UPPER));
     }
 
     private static void powerPole(Ctx c, int x, int z, Direction toward) {
@@ -462,7 +599,7 @@ public final class Decorations {
                 }
                 int mat = t.material(x + 0.5, z + 0.5), cov = t.cover(x + 0.5, z + 0.5);
                 double r = rnd(x, z, 21);
-                boolean grassy = (mat == BakuraniTerrain.GRASS || mat == BakuraniTerrain.FOREST) && cov != BakuraniTerrain.COVER_URBAN
+                boolean grassy = (mat == BakuraniTerrain.GRASS || mat == BakuraniTerrain.FOREST || mat == BakuraniTerrain.ROCK) && cov != BakuraniTerrain.COVER_URBAN
                         && cov != BakuraniTerrain.COVER_FIELD && cov != BakuraniTerrain.COVER_WATER;
                 // forest floor: moss in damp patches, ferns, large ferns, berries and the odd mushroom
                 if (cov == BakuraniTerrain.COVER_FOREST && mat != BakuraniTerrain.SNOW && !t.nearBuilding(x, z, 9)) {
@@ -500,7 +637,7 @@ public final class Decorations {
                     }
                 }
                 // meadows: drifts of tall grass and of one kind of wild flower at a time
-                if (grassy && cov != BakuraniTerrain.COVER_FOREST && mat == BakuraniTerrain.GRASS && !t.nearBuilding(x, z, 3)) {
+                if (grassy && cov != BakuraniTerrain.COVER_FOREST && (mat == BakuraniTerrain.GRASS || mat == BakuraniTerrain.ROCK) && !t.nearBuilding(x, z, 3)) {
                     double flowers = com.wardogs.nature.Trees.stand(x, z, 13, 9);
                     double grass = com.wardogs.nature.Trees.stand(x, z, 19, 13);
                     double r2 = rnd(x, z, 33);

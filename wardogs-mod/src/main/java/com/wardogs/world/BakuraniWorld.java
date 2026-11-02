@@ -148,8 +148,9 @@ public final class BakuraniWorld {
         int before = t.buildingCount();
         List<BakuraniTerrain.Building> withSheds = new ArrayList<>(kept);
         withSheds.addAll(Decorations.sheds(t, kept));
+        withSheds.addAll(Decorations.garages(t, kept));
         t.rebuildBuildings(withSheds);
-        WardogsMod.LOGGER.info("Bakurani: {} procedural buildings ({} removed near sites)", kept.size(), before - kept.size());
+        WardogsMod.LOGGER.info("Bakurani: {} procedural buildings ({} removed near sites), {} with sheds and garages", kept.size(), before - kept.size(), withSheds.size());
     }
 
     /** y of the walkable surface at a position (a flat plain at y=64 without data). */

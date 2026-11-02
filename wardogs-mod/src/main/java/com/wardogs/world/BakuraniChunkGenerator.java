@@ -63,6 +63,23 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
         return v < 0.60 ? Blocks.PODZOL.defaultBlockState() : v < 0.76 ? Blocks.COARSE_DIRT.defaultBlockState() : Blocks.GRASS_BLOCK.defaultBlockState();
     }
 
+    /** Ground that is rock on the map but gentle enough for turf: alpine meadow in drifts with scree and bare rock between. */
+    static BlockState alpineTop(int x, int y, int z) {
+        double g = com.wardogs.nature.Trees.stand(x, z, 22, 23);
+        double v = hash(x * 13 + 5, z * 7 + 9);
+        if (g > 0.5) {
+            return v < 0.8 ? Blocks.GRASS_BLOCK.defaultBlockState() : v < 0.9 ? Blocks.COARSE_DIRT.defaultBlockState() : rockTop(x, y, z);
+        }
+        if (g > 0.35) {
+            return v < 0.4 ? Blocks.GRASS_BLOCK.defaultBlockState() : v < 0.55 ? Blocks.COARSE_DIRT.defaultBlockState()
+                    : v < 0.65 ? Blocks.GRAVEL.defaultBlockState() : rockTop(x, y, z);
+        }
+        return v < 0.08 ? Blocks.GRAVEL.defaultBlockState() : rockTop(x, y, z);
+    }
+
+    /** Slope below which rock-class ground may carry alpine turf. */
+    static final double ALPINE_SLOPE = 0.34;
+
     /** Bare rock in bands of stone, andesite, tuff and cobble at slightly tilted heights, so a cliff shows strata instead of one grey. */
     static BlockState rockTop(int x, int y, int z) {
         double n = hash(x * 7 + 3, z * 11 + 5);
@@ -113,7 +130,7 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                 BlockState top = road ? (t.roadClass(wx, wz) >= 2 ? Blocks.GRAY_CONCRETE.defaultBlockState() : Blocks.DIRT_PATH.defaultBlockState())
                         : top(mat);
                 if (inside && !road && mat == BakuraniTerrain.ROCK) {
-                    top = rockTop(baseX + dx, sy, baseZ + dz);
+                    top = slopeOf(slopes, dx, dz, t, wx, wz, sy) < ALPINE_SLOPE ? alpineTop(baseX + dx, sy, baseZ + dz) : rockTop(baseX + dx, sy, baseZ + dz);
                 }
                 BlockState fill = filler(mat);
                 if (inside && !road && (mat == BakuraniTerrain.GRASS || mat == BakuraniTerrain.FOREST || mat == BakuraniTerrain.GRAVEL)
