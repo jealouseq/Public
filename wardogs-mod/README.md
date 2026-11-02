@@ -73,12 +73,13 @@ right), kill feed (top left), minimap with faction scores and the "CONTROL" labe
 ## Assets
 
 Gun item models are voxelised from the CC0 Quaternius "Ultimate Gun Pack" (`research/tools/obj_to_item_model.py`); vehicle models are
-generated box shapes (`research/tools/gen_vehicle_models.py`). See `research/MODS_AND_ASSETS.md` for the ready-made mods and assets
+generated box shapes (`research/tools/gen_vehicle_models.py`), as are the grenade, mine, charge, flare and armour models
+(`research/tools/gen_item_models.py`). See `research/MODS_AND_ASSETS.md` for the ready-made mods and assets
 that were considered and their licences.
 
 ## Not done yet
 
-Stingray and M113 forward spawn, armour and grenade 3D models,
+Stingray and M113 forward spawn, launcher 3D models,
 real sounds, procedural houses that follow the street direction, hand-built landmarks.
 
 ## Build & test
