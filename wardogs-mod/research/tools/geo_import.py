@@ -57,7 +57,7 @@ def face_uvs(cube, tw, th):
     }
 
 
-def convert(geo_path, tex_size, skip=SKIP_DEFAULT, only=None):
+def convert(geo_path, tex_size, skip=SKIP_DEFAULT, only=None, raw=False, under=None):
     d = json.load(open(geo_path))
     g = d["minecraft:geometry"][0]
     tw = g["description"].get("texture_width", tex_size[0])
@@ -73,6 +73,8 @@ def convert(geo_path, tex_size, skip=SKIP_DEFAULT, only=None):
 
     def skipped(name):
         n = name.lower()
+        if under:   # keep only the bones that sit below (or are) a bone whose name contains one of these
+            return False
         if only:
             return not any(o in n for o in only)
         return any(n == k or n.startswith(k) for k in skip)
@@ -80,6 +82,8 @@ def convert(geo_path, tex_size, skip=SKIP_DEFAULT, only=None):
     V, T, UV = [], [], []
     for name, b in bones.items():
         if not b.get("cubes") or any(skipped(x["name"]) for x in chain(name)):
+            continue
+        if under and not any(any(u in x["name"].lower() for u in under) for x in chain(name)):
             continue
         for cube in b["cubes"]:
             o, s = cube["origin"], cube["size"]
@@ -118,9 +122,13 @@ def convert(geo_path, tex_size, skip=SKIP_DEFAULT, only=None):
     V = np.array(V, float)
     if len(V) == 0:
         raise SystemExit("no geometry left after filtering")
-    # geometry (forward -z, x mirrored by the renderer) -> game gun item (muzzle +x): x' = -z, z' = -x, y' = y keeps handedness
+    if raw:  # the geometry as authored: y up, the front toward -z
+        return V, np.array(T), np.array(UV), (tw, th)
+    # geometry (forward -z, x mirrored by the renderer) -> game gun item (muzzle +x): x' = -z, z' = -x, y' = y. That mapping is a mirror, so
+    # the winding of every triangle is reversed to keep the faces (and the normals computed from them) pointing out.
     out = np.stack([-V[:, 2], V[:, 1], -V[:, 0]], 1)
-    return out, np.array(T), np.array(UV), (tw, th)
+    T = np.array(T)[:, ::-1]
+    return out, T, np.array(UV), (tw, th)
 
 
 def normalise(V, length=1.625):

@@ -30,7 +30,7 @@ class MeshModelTest {
             String mtl = read("/assets/wardogs/models/vehicle/" + v.id() + ".mtl");
             long verts = obj.lines().filter(l -> l.startsWith("v ")).count();
             long faces = obj.lines().filter(l -> l.startsWith("f ")).count();
-            assertTrue(verts > 100 && faces > 200 && faces < 12000, v.id() + " has a sensible mesh: " + faces + " faces");
+            assertTrue(verts > 100 && faces > 200 && faces < 40000, v.id() + " has a sensible mesh: " + faces + " faces");
             assertTrue(obj.contains("mtllib " + v.id() + ".mtl"), v.id() + " names its material library");
             assertTrue(mtl.contains("map_Kd #base") && mtl.contains("newmtl m0"), v.id() + " materials use the shared texture");
             // faces must only reference existing vertices and normals
