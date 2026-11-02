@@ -8,7 +8,7 @@ rm -rf ../../local-data/generated   # rebuilt from scratch: later importers over
 [ -d $I/gcaa-0.2.8-1.20.1 ] && python3 import_gcaa.py $I/gcaa-0.2.8-1.20.1
 [ -d $I/LAV-1.16.5-V1 ] && python3 import_lav.py $I/LAV-1.16.5-V1
 [ -d $I/Modern-Warfare-Content-Pack-1.12.2-5.8.2 ] && python3 import_flan.py $I/Modern-Warfare-Content-Pack-1.12.2-5.8.2
-[ -d $I/big1201 ] && python3 import_sbw.py $I/big1201
+[ -d $I/big1201 ] && python3 import_sbw.py $I/big1201 && python3 import_sounds.py $I/big1201
 [ -d $I/TacCraft_0.9_1.12.2 ] && python3 armor_import.py $I/TacCraft_0.9_1.12.2
 [ -d $I/sa-decor ] && [ -d $I/mcw-roads ] && python3 import_blocks.py
 echo "done: local-data/generated"
