@@ -52,6 +52,10 @@ public final class WdCommand {
                 .then(Commands.literal("progress").executes(c -> progress(c.getSource())))
                 .then(Commands.literal("bakurani").executes(c -> travel(c.getSource()))
                         .then(Commands.literal("setup").requires(s -> s.hasPermission(2)).executes(c -> setupBakurani(c.getSource()))))
+                .then(Commands.literal("vehicle").requires(src -> src.hasPermission(2))
+                        .then(Commands.literal("break").then(Commands.argument("section", StringArgumentType.greedyString())
+                                .executes(c -> vehicleSection(c.getSource(), StringArgumentType.getString(c, "section"), true))))
+                        .then(Commands.literal("repair").executes(c -> vehicleSection(c.getSource(), null, false))))
                 .then(Commands.literal("mode").requires(src -> src.hasPermission(2))
                         .then(Commands.literal("standard").executes(c -> setMode(c.getSource(), false)))
                         .then(Commands.literal("hardcore").executes(c -> setMode(c.getSource(), true))))
@@ -120,6 +124,29 @@ public final class WdCommand {
         int y = BakuraniWorld.surfaceY(site.x(), site.z()) + 2;
         p.teleportTo(level, site.x(), y, site.z(), 0f, 0f);
         src.sendSuccess(() -> Component.literal("Welcome to Bakurani" + (f == null ? " (pick a faction with /wd team)" : "")), false);
+        return 1;
+    }
+
+    /** Breaks a named section of (or fully repairs) the vehicle the player rides, or else the nearest one within 8 blocks. */
+    private static int vehicleSection(CommandSourceStack src, String section, boolean breakIt) throws CommandSyntaxException {
+        ServerPlayer p = src.getPlayerOrException();
+        com.wardogs.vehicle.Vehicle v = p.getVehicle() instanceof com.wardogs.vehicle.Vehicle rv ? rv : p.level()
+                .getEntitiesOfClass(com.wardogs.vehicle.Vehicle.class, p.getBoundingBox().inflate(8)).stream()
+                .min(java.util.Comparator.comparingDouble(e -> e.distanceToSqr(p))).orElse(null);
+        if (v == null) {
+            src.sendFailure(Component.literal("No vehicle within 8 blocks"));
+            return 0;
+        }
+        if (breakIt) {
+            if (!v.destroySection(section)) {
+                src.sendFailure(Component.literal("This vehicle has no section '" + section + "': " + v.def().sections().keySet()));
+                return 0;
+            }
+            src.sendSuccess(() -> Component.literal(section + " destroyed"), true);
+        } else {
+            v.repairSections();
+            src.sendSuccess(() -> Component.literal("Sections repaired"), true);
+        }
         return 1;
     }
 

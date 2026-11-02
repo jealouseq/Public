@@ -366,6 +366,15 @@ public class Vehicle extends Mob {
         }
     }
 
+    /** Destroys a section outright (admin and test use). @return false if the vehicle has no section of that name. */
+    public boolean destroySection(String name) {
+        if (!sections().containsKey(name)) {
+            return false;
+        }
+        damageSection(name, Double.MAX_VALUE / 2);
+        return true;
+    }
+
     /** Fraction of full speed left after broken wheels or tracks (never below 30%). */
     public double mobility() {
         double m = 1.0;
