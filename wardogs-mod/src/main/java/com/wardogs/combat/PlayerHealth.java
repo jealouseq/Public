@@ -47,6 +47,22 @@ public final class PlayerHealth {
         return (float) (Balance.get().playerHealth() / VANILLA_HEALTH);
     }
 
+    /** A health of NaN (seen after odd damage values) never heals or dies; put such a player back to full health. */
+    public static boolean repair(Player p) {
+        if (Float.isNaN(p.getHealth()) || Float.isInfinite(p.getHealth())) {
+            p.setHealth(p.getMaxHealth());
+            return true;
+        }
+        return false;
+    }
+
+    @SubscribeEvent
+    public static void onPlayerTick(net.neoforged.neoforge.event.tick.PlayerTickEvent.Post e) {
+        if (e.getEntity() instanceof ServerPlayer sp && sp.tickCount % 20 == 0) {
+            repair(sp);
+        }
+    }
+
     @SubscribeEvent
     public static void onLogin(PlayerEvent.PlayerLoggedInEvent e) {
         if (e.getEntity() instanceof ServerPlayer sp && apply(sp)) {
@@ -68,6 +84,7 @@ public final class PlayerHealth {
         if (!(e.getEntity() instanceof Player p) || Ballistics.isWardogsDamage(e.getSource())) {
             return;
         }
-        e.setAmount(e.getAmount() * vanillaScale(p));
+        float scaled = e.getAmount() * vanillaScale(p);
+        e.setAmount(Float.isNaN(scaled) ? 0f : Math.min(scaled, 100000f));
     }
 }

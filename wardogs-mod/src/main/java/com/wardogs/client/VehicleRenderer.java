@@ -2,7 +2,14 @@ package com.wardogs.client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import com.wardogs.WardogsMod;
 import com.wardogs.vehicle.Vehicle;
+import net.minecraft.client.renderer.block.model.ItemTransforms;
+import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
@@ -15,8 +22,14 @@ import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 
-/** Draws a vehicle as one block stretched to its length, width and height (placeholder until real models exist). */
+/** Draws a vehicle from its box-built model (models/vehicle/&lt;id&gt;.json) stretched to its size; falls back to one stretched block. */
 public class VehicleRenderer extends EntityRenderer<Vehicle> {
+    private static final ItemStack ICON = new ItemStack(Items.STICK);
+
+    public static ModelResourceLocation modelLocation(String id) {
+        return ModelResourceLocation.standalone(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "vehicle/" + id));
+    }
+
     public VehicleRenderer(EntityRendererProvider.Context ctx) {
         super(ctx);
     }
@@ -25,6 +38,19 @@ public class VehicleRenderer extends EntityRenderer<Vehicle> {
     public void render(Vehicle v, float entityYaw, float partial, PoseStack pose, MultiBufferSource buffers, int light) {
         var def = v.def();
         if (def == null) {
+            return;
+        }
+        var mm = Minecraft.getInstance().getModelManager();
+        BakedModel model = mm.getModel(modelLocation(def.id()));
+        if (model != mm.getMissingModel()) {
+            pose.pushPose();
+            pose.mulPose(Axis.YP.rotationDegrees(180.0f - Mth.rotLerp(partial, v.yRotO, v.getYRot())));
+            pose.translate(0, def.h() / 2.0, 0);
+            pose.scale((float) def.w(), (float) def.h(), (float) def.d());
+            Minecraft.getInstance().getItemRenderer().render(ICON, ItemDisplayContext.NONE, false, pose, buffers, light,
+                    OverlayTexture.NO_OVERLAY, model);
+            pose.popPose();
+            super.render(v, entityYaw, partial, pose, buffers, light);
             return;
         }
         BlockState state = BuiltInRegistries.BLOCK.get(ResourceLocation.parse(def.block())).defaultBlockState();

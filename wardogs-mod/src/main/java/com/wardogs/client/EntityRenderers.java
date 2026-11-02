@@ -15,6 +15,14 @@ import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 public final class EntityRenderers {
     private EntityRenderers() {}
 
+    /** Loads the vehicle models, which no item or block refers to, so the renderer can fetch them. */
+    @SubscribeEvent
+    public static void models(net.neoforged.neoforge.client.event.ModelEvent.RegisterAdditional e) {
+        for (var def : com.wardogs.balance.Balance.get().vehicles()) {
+            e.register(VehicleRenderer.modelLocation(def.id()));
+        }
+    }
+
     @SubscribeEvent
     public static void register(EntityRenderersEvent.RegisterRenderers e) {
         e.registerEntityRenderer(ExplosiveEntities.GRENADE.get(), ctx -> new ThrownItemRenderer<>(ctx, 0.8f, false));

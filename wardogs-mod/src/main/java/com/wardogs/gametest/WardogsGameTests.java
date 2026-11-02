@@ -1618,4 +1618,13 @@ public final class WardogsGameTests {
         check(com.wardogs.match.Requests.ENTRIES.keySet().containsAll(java.util.List.of("heal", "ammo", "supplies", "enemy", "salute")), "the menu entries exist");
         h.succeed();
     }
+
+    @GameTest(template = "empty")
+    public static void aPlayerWithNaNHealthIsRepaired(GameTestHelper h) {
+        ServerPlayer p = soldier(h, Faction.LONESTAR, 2.5, 2.5);
+        p.setHealth(Float.NaN);
+        com.wardogs.combat.PlayerHealth.repair(p);
+        check(!Float.isNaN(p.getHealth()) && p.getHealth() > 0, "the player has real health again");
+        h.succeed();
+    }
 }
