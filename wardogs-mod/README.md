@@ -83,7 +83,7 @@ that were considered and their licences.
 
 ## Not done yet
 
-Recorded sounds (shots, reloads, dry fire and explosions are synthesised; bullet impacts and footsteps are vanilla), smoother diagonal walls on rotated houses (they follow the street direction but look pleated), more hand-built landmarks (only the shooting range and the Control Zone flags so far), the Stingray station (the sources give no data for it).
+Recorded sounds (shots, reloads, dry fire and explosions are synthesised; bullet impacts and footsteps are vanilla), smoother roofs and walls on rotated houses (they follow the street direction; diagonal walls are stair-stepped, as diagonals are in blocks), more hand-built landmarks (only the shooting range and the Control Zone flags so far), the Stingray station (the sources give no data for it).
 
 ## Build & test
 ```
