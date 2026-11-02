@@ -41,6 +41,9 @@ public final class BuildingGen {
     }
 
     private static BlockState wall(BakuraniTerrain.Building b) {
+        if (b.kind() == 2) {
+            return (style(b) % 2 == 0 ? Blocks.SPRUCE_PLANKS : Blocks.DARK_OAK_PLANKS).defaultBlockState();
+        }
         return (b.kind() == 1 ? PLASTER_RED : PLASTER_GREY)[style(b) % 3];
     }
 
@@ -86,6 +89,9 @@ public final class BuildingGen {
     /** As {@link #at(BakuraniTerrain.Building, int, int, int)} with the wall band decided by the caller (thicker on rotated houses). */
     public static BlockState at(BakuraniTerrain.Building b, int i, int j, int k, boolean edge) {
         int w = b.w(), d = b.d(), floors = b.floors(), top = 4 * floors;
+        if (b.kind() == 2 && k == 0 && !edge && j < d) {
+            return Blocks.DARK_OAK_PLANKS.defaultBlockState();
+        }
         if (j == d) { // a three-wide doorstep in front of the door, level with the floor
             return k == 0 && Math.abs(i - w / 2) <= 1 ? Blocks.STONE_BRICK_SLAB.defaultBlockState().setValue(
                     net.minecraft.world.level.block.SlabBlock.TYPE, net.minecraft.world.level.block.state.properties.SlabType.TOP) : null;
@@ -111,12 +117,15 @@ public final class BuildingGen {
                 return ladderCell ? ladder() : Blocks.SPRUCE_PLANKS.defaultBlockState();
             }
             if (!edge) {
-                return ladderCell ? ladder() : Blocks.AIR.defaultBlockState();
+                return ladderCell ? ladder() : Interiors.at(b, i, j, k % 4, k / 4);
             }
             int kk = k % 4;
             if (k < 4 && j == d - 1 && i == w / 2 && kk <= 2) {
                 return Blocks.OAK_DOOR.defaultBlockState().setValue(DoorBlock.FACING, Direction.SOUTH)
                         .setValue(DoorBlock.HALF, kk == 1 ? DoubleBlockHalf.LOWER : DoubleBlockHalf.UPPER);
+            }
+            if (b.kind() == 2) {
+                return kk == 2 && j == 0 && i == w / 2 ? Blocks.GLASS_PANE.defaultBlockState() : wallAt(b, i, j, k);
             }
             if (kk == 2) {
                 boolean alongX = j == 0 || j == d - 1;
@@ -139,11 +148,13 @@ public final class BuildingGen {
         int c = ridgeAlongX ? j : i, len = ridgeAlongX ? d : w;
         int r = Math.min(c, len - 1 - c);
         int rel = k - top;
-        BlockState stair = b.kind() == 1 ? Blocks.BRICK_STAIRS.defaultBlockState() : Blocks.DEEPSLATE_TILE_STAIRS.defaultBlockState();
-        BlockState full = b.kind() == 1 ? Blocks.BRICKS.defaultBlockState() : Blocks.DEEPSLATE_TILES.defaultBlockState();
+        BlockState stair = b.kind() == 1 ? Blocks.BRICK_STAIRS.defaultBlockState()
+                : b.kind() == 2 ? Blocks.SPRUCE_STAIRS.defaultBlockState() : Blocks.DEEPSLATE_TILE_STAIRS.defaultBlockState();
+        BlockState full = b.kind() == 1 ? Blocks.BRICKS.defaultBlockState()
+                : b.kind() == 2 ? Blocks.SPRUCE_PLANKS.defaultBlockState() : Blocks.DEEPSLATE_TILES.defaultBlockState();
         int along = ridgeAlongX ? i : j;
         int alongLen = ridgeAlongX ? w : d;
-        if (along == 2 && c == (len - 1) / 2 && alongLen > 6 && rel > r && rel <= r + 2) {
+        if (b.kind() != 2 && along == 2 && c == (len - 1) / 2 && alongLen > 6 && rel > r && rel <= r + 2) {
             return Blocks.BRICKS.defaultBlockState(); // chimney
         }
         if (rel < r) {
@@ -158,6 +169,11 @@ public final class BuildingGen {
         boolean risingToPositive = c < len - 1 - c;
         Direction face = ridgeAlongX ? (risingToPositive ? Direction.SOUTH : Direction.NORTH) : (risingToPositive ? Direction.EAST : Direction.WEST);
         return stair.setValue(StairBlock.FACING, face);
+    }
+
+    /** An inner wall between rooms. */
+    public static BlockState partitionWall(BakuraniTerrain.Building b) {
+        return (b.kind() == 1 ? Blocks.WHITE_TERRACOTTA : Blocks.SMOOTH_QUARTZ).defaultBlockState();
     }
 
     private static BlockState ladder() {

@@ -132,7 +132,9 @@ public final class BakuraniWorld {
             }
         }
         int before = t.buildingCount();
-        t.rebuildBuildings(kept);
+        List<BakuraniTerrain.Building> withSheds = new ArrayList<>(kept);
+        withSheds.addAll(Decorations.sheds(t, kept));
+        t.rebuildBuildings(withSheds);
         WardogsMod.LOGGER.info("Bakurani: {} procedural buildings ({} removed near sites)", kept.size(), before - kept.size());
     }
 

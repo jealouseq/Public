@@ -1874,4 +1874,86 @@ public final class WardogsGameTests {
         check(com.wardogs.decor.DecorBlocks.state("decor_street_lamp", net.minecraft.core.Direction.NORTH).getLightEmission() == 15, "a street lamp shines");
         h.succeed();
     }
+
+    @GameTest(template = "empty", batch = "outposts", timeoutTicks = 400)
+    public static void outpostModulesAreBuiltOnceOnFlatGround(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        for (int x = -12; x < 40; x++) {
+            for (int z = -6; z < 40; z++) {
+                h.setBlock(new BlockPos(Math.max(0, x), 0, Math.max(0, z)), Blocks.STONE);
+            }
+        }
+        Vec3 at = h.absoluteVec(new Vec3(14.5, 1.0, 14.5));
+        int gy = (int) Math.round(at.y) - 1;
+        com.wardogs.world.BakuraniSetup.Ground flat = (x, z) -> gy;
+        int ax = (int) Math.floor(at.x), az = (int) Math.floor(at.z);
+        check(com.wardogs.world.Outposts.buildHangar(h.getLevel(), flat, ax, az, 0), "a hangar is built");
+        check(!com.wardogs.world.Outposts.buildHangar(h.getLevel(), flat, ax, az, 0), "a second request changes nothing");
+        check(h.getLevel().getBlockState(new BlockPos(ax, gy + 8, az)).isSolid(), "the hangar has a roof over the vendor");
+        check(h.getLevel().getBlockState(new BlockPos(ax, gy + 1, az)).isAir() && h.getLevel().getBlockState(new BlockPos(ax, gy + 2, az)).isAir(),
+                "the vendor's own spot is free");
+        check(com.wardogs.world.Outposts.buildStall(h.getLevel(), flat, ax + 30, az, 1), "a stall is built");
+        check(h.getLevel().getBlockState(new BlockPos(ax + 30, gy + 1, az + 2)).is(com.wardogs.decor.DecorBlocks.get("decor_kiosk_counter")), "the stall has its counter in front of the vendor");
+        check(h.getLevel().getBlockState(new BlockPos(ax + 30, gy + 1, az)).isAir(), "and the vendor's spot behind it is free");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void outpostClustersFollowTheRealMarkers(GameTestHelper h) {
+        var clusters = com.wardogs.world.Outposts.clusters();
+        check(clusters.size() >= 6 && clusters.size() <= 12, "about seven outposts: " + clusters.size());
+        long bases = clusters.stream().filter(c -> c.points().stream().anyMatch(p -> p.name().startsWith("Base"))).count();
+        check(bases == 3, "three clusters hold a faction base: " + bases);
+        for (var c : clusters) {
+            if (c.points().stream().anyMatch(p -> p.name().startsWith("Base"))) {
+                check(c.faction() >= 0, "a base cluster belongs to a faction");
+            }
+        }
+        var lone = clusters.stream().filter(c -> c.points().stream().anyMatch(p -> p.name().startsWith("Base (Alpha)"))).findFirst().orElseThrow();
+        check(lone.faction() == 0 && lone.points().stream().anyMatch(p -> p.name().contains("Garage")), "Lonestar's cluster has its garage");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void houseInteriorsHavePartitionsFurnitureAndLamps(GameTestHelper h) {
+        var big = new com.wardogs.world.BakuraniTerrain.Building(1.5f, 2.5f, 13, 11, 2, 1, 0);
+        int doors = 0, furniture = 0, lamps = 0, walls = 0;
+        for (int storey = 0; storey < 2; storey++) {
+            for (int i = 1; i < big.w() - 1; i++) {
+                for (int j = 1; j < big.d() - 1; j++) {
+                    for (int kk = 1; kk <= 3; kk++) {
+                        var st = com.wardogs.world.Interiors.at(big, i, j, kk, storey);
+                        check(st != null, "an interior cell is never null");
+                        if (st.getBlock() instanceof com.wardogs.decor.DecorBlock) {
+                            if (st.is(com.wardogs.decor.DecorBlocks.get("decor_ceiling_lamp"))) {
+                                lamps++;
+                            } else {
+                                furniture++;
+                            }
+                        } else if (!st.isAir()) {
+                            walls++;
+                        }
+                    }
+                }
+            }
+        }
+        check(walls > 6, "a partition wall splits the house: " + walls);
+        check(furniture >= 10, "rooms are furnished: " + furniture);
+        check(lamps >= 3, "rooms are lit: " + lamps);
+        // the doorway and the stairs stay free
+        for (int kk = 1; kk <= 2; kk++) {
+            check(com.wardogs.world.Interiors.at(big, big.w() / 2, big.d() - 2, kk, 0).isAir(), "the cells behind the front door are free");
+            check(com.wardogs.world.Interiors.at(big, big.w() / 3, big.d() / 2, kk, 0).isAir(), "the doorway in the partition is open");
+        }
+        var shed = new com.wardogs.world.BakuraniTerrain.Building(0, 0, 5, 4, 1, 2, 0);
+        boolean any = false;
+        for (int i = 1; i < 4; i++) {
+            for (int j = 1; j < 3; j++) {
+                any |= com.wardogs.world.Interiors.at(shed, i, j, 1, 0).getBlock() instanceof com.wardogs.decor.DecorBlock;
+            }
+        }
+        check(any, "a shed holds a workbench or crates");
+        h.succeed();
+    }
 }

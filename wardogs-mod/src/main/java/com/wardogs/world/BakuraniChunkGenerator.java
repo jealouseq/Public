@@ -78,8 +78,12 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                 int sy = t == null ? 64 : (BakuraniTerrain.inside(wx, wz) ? t.surfaceY(wx, wz) : 24);
                 int mat = t == null ? BakuraniTerrain.GRASS : t.material(wx, wz);
                 int cov = t == null ? BakuraniTerrain.COVER_NONE : t.cover(wx, wz);
-                boolean road = t != null && t.isRoad(wx, wz) && mat != BakuraniTerrain.SNOW;
                 boolean inside = t != null && BakuraniTerrain.inside(wx, wz);
+                boolean road = t != null && t.isRoad(wx, wz) && mat != BakuraniTerrain.SNOW;
+                boolean bridge = inside && road && cov == BakuraniTerrain.COVER_WATER; // a road over a river is carried on a deck
+                if (bridge) {
+                    road = false;
+                }
                 BlockState top = road ? (t.roadClass(wx, wz) >= 2 ? Blocks.GRAY_CONCRETE.defaultBlockState() : Blocks.DIRT_PATH.defaultBlockState())
                         : top(mat);
                 BlockState fill = filler(mat);
@@ -123,6 +127,14 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                         default -> { }
                     }
                 }
+                if (inside && !road && !bridge && water < 0 && mat != BakuraniTerrain.SNOW && cov != BakuraniTerrain.COVER_FIELD) {
+                    int near = roadNeighbour(t, wx, wz);
+                    if (near >= 2) {
+                        top = hash(baseX + dx, baseZ + dz) < 0.6 ? Blocks.GRAVEL.defaultBlockState() : Blocks.COARSE_DIRT.defaultBlockState();
+                    } else if (near == 1) {
+                        top = Blocks.COARSE_DIRT.defaultBlockState();
+                    }
+                }
                 for (int y = MIN_Y; y <= sy; y++) {
                     BlockState s = y < BEDROCK_BELOW ? bedrock : y == sy ? top : y >= sy - 3 ? fill : stone;
                     pos.set(baseX + dx, y, baseZ + dz);
@@ -135,6 +147,9 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                     pos.set(baseX + dx, y, baseZ + dz);
                     chunk.setBlockState(pos, water0, false);
                     surface.update(dx, y, dz, water0);
+                }
+                if (bridge && water >= 0) {
+                    buildBridgeColumn(chunk, t, surface, pos, baseX + dx, baseZ + dz, dx, dz, sy, water);
                 }
                 if (crop) {
                     double hv = hash(baseX + dx * 7, baseZ + dz * 13);
@@ -151,6 +166,7 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
         }
         if (t != null) {
             plantTrees(chunk, t, surface, slopes);
+            Decorations.place(chunk, t, surface);
         }
         return CompletableFuture.completedFuture(chunk);
     }
@@ -197,6 +213,54 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
             worst = Math.max(worst, Math.abs(t.surfaceY(x + o[0], z + o[1]) - sy));
         }
         return worst / 3.0;
+    }
+
+    /** Highest road class (1 track, 2 surfaced) within one block of a column, or 0. */
+    private static int roadNeighbour(BakuraniTerrain t, double x, double z) {
+        int best = 0;
+        for (int[] o : new int[][]{{1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {-1, -1}, {1, -1}, {-1, 1}}) {
+            best = Math.max(best, t.roadClass(x + o[0], z + o[1]));
+        }
+        return best;
+    }
+
+    /** A bridge deck over the river at this column: a concrete deck level with the banks, stone walls at its edges, piers every few blocks. */
+    private void buildBridgeColumn(ChunkAccess chunk, BakuraniTerrain t, Heightmap surface, BlockPos.MutableBlockPos pos, int wx, int wz,
+                                   int dx, int dz, int bedY, int water) {
+        int bank = Integer.MIN_VALUE;
+        for (int ox = -12; ox <= 12; ox += 6) {
+            for (int oz = -12; oz <= 12; oz += 6) {
+                if (t.cover(wx + ox + 0.5, wz + oz + 0.5) != BakuraniTerrain.COVER_WATER) {
+                    bank = Math.max(bank, t.surfaceY(wx + ox + 0.5, wz + oz + 0.5));
+                }
+            }
+        }
+        int deck = Math.max(water + 1, Math.min(bank == Integer.MIN_VALUE ? water + 1 : bank, water + 6));
+        boolean edge = t.roadClass(wx + 1.5, wz + 0.5) == 0 || t.roadClass(wx - 0.5, wz + 0.5) == 0
+                || t.roadClass(wx + 0.5, wz + 1.5) == 0 || t.roadClass(wx + 0.5, wz - 0.5) == 0;
+        BlockState deckBlock = Blocks.GRAY_CONCRETE.defaultBlockState();
+        pos.set(wx, deck, wz);
+        chunk.setBlockState(pos, deckBlock, false);
+        surface.update(dx, deck, dz, deckBlock);
+        if (edge) {
+            BlockState wall = Blocks.STONE_BRICK_WALL.defaultBlockState();
+            pos.set(wx, deck + 1, wz);
+            chunk.setBlockState(pos, wall, false);
+            surface.update(dx, deck + 1, dz, wall);
+            if (Math.floorMod(wx + wz, 8) == 0) { // a pier under the edge every eight blocks
+                for (int y = bedY + 1; y < deck; y++) {
+                    pos.set(wx, y, wz);
+                    chunk.setBlockState(pos, Blocks.STONE_BRICKS.defaultBlockState(), false);
+                }
+            }
+        }
+        // water under the deck above the surface level is cleared where the deck stands higher than the water
+        for (int y = water + 1; y < deck; y++) {
+            pos.set(wx, y, wz);
+            if (chunk.getBlockState(pos).is(Blocks.WATER)) {
+                chunk.setBlockState(pos, Blocks.AIR.defaultBlockState(), false);
+            }
+        }
     }
 
     private static boolean isDirtClass(int mat) {
@@ -298,7 +362,37 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                 }
                 int sy = t.surfaceY(wx + 0.5, wz + 0.5);
                 int trunk = 5 + (int) (hash(wz, wx) * 5);
-                if (sy + trunk + 3 >= HEIGHT) {
+                if (sy + trunk + 4 >= HEIGHT) {
+                    continue;
+                }
+                if (hash(wx * 3 + 1, wz * 5 + 2) < (cov == BakuraniTerrain.COVER_FOREST ? 0.28 : 0.55)) { // a birch: a shorter trunk and a round crown
+                    int bt = 5 + (int) (hash(wz + 7, wx + 3) * 3);
+                    BlockState blog = Blocks.BIRCH_LOG.defaultBlockState();
+                    BlockState bleaves = Blocks.BIRCH_LEAVES.defaultBlockState().setValue(net.minecraft.world.level.block.LeavesBlock.PERSISTENT, true);
+                    for (int y = 1; y <= bt; y++) {
+                        pos.set(wx, sy + y, wz);
+                        chunk.setBlockState(pos, blog, false);
+                        surface.update(dx, sy + y, dz, blog);
+                    }
+                    for (int layer = 0; layer < 5; layer++) {
+                        int y = sy + bt - 2 + layer;
+                        int radius = layer == 0 || layer == 3 ? 2 : layer == 4 ? 1 : 2;
+                        for (int ox = -radius; ox <= radius; ox++) {
+                            for (int oz = -radius; oz <= radius; oz++) {
+                                if (Math.abs(ox) == radius && Math.abs(oz) == radius && (layer == 4 || hash(wx + ox, wz + oz) < 0.5)) {
+                                    continue;
+                                }
+                                if (ox == 0 && oz == 0 && y <= sy + bt) {
+                                    continue;
+                                }
+                                pos.set(wx + ox, y, wz + oz);
+                                if (chunk.getBlockState(pos).isAir()) {
+                                    chunk.setBlockState(pos, bleaves, false);
+                                    surface.update(dx + ox, y, dz + oz, bleaves);
+                                }
+                            }
+                        }
+                    }
                     continue;
                 }
                 for (int y = 1; y <= trunk; y++) {

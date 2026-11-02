@@ -110,6 +110,15 @@ public final class Shop {
         return out;
     }
 
+    /** The y of the first block with a collision shape at or below {@code from}, so a vehicle bought under a hangar roof stands on the floor. */
+    static int groundBelow(net.minecraft.server.level.ServerLevel level, int x, int z, int from) {
+        var pos = new net.minecraft.core.BlockPos.MutableBlockPos(x, from, z);
+        while (pos.getY() > level.getMinBuildHeight() + 1 && level.getBlockState(pos).getCollisionShape(level, pos).isEmpty()) {
+            pos.move(0, -1, 0);
+        }
+        return pos.getY() + 1;
+    }
+
     public static Entry find(String id) {
         for (Entry e : catalog()) {
             if (e.id().equals(id)) {
@@ -177,7 +186,7 @@ public final class Shop {
             var v = vendorNear(p);
             net.minecraft.world.phys.Vec3 dir = net.minecraft.world.phys.Vec3.directionFromRotation(0, p.getYRot());
             double x = v.getX() + dir.x * 7, z = v.getZ() + dir.z * 7;
-            double y = p.serverLevel().getHeight(net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING, (int) Math.floor(x), (int) Math.floor(z)) + 0.5;
+            double y = groundBelow(p.serverLevel(), (int) Math.floor(x), (int) Math.floor(z), (int) v.getY() + 4) + 0.5;
             com.wardogs.vehicle.Vehicle.spawn(p.serverLevel(), Balance.get().vehicle(id), new net.minecraft.world.phys.Vec3(x, y, z),
                     p.getYRot(), com.wardogs.match.Factions.index(p));
             HudPayload.sendTo(p);

@@ -191,6 +191,36 @@ b.box(0, 0, 0, 16, 16, 16, "red"); b.box(0, 0, 0, 1, 16, 1, "dgrey", collide=Fal
 for x in (3, 6, 9, 12):
     b.box(x, 1, -0.2, x + 1, 15, 0, "rust", collide=False)
 
+
+# ---- interior and base additions --------------------------------------------------------------------
+b = blk("ceiling_lamp", light=14, solid=False)
+b.box(7.4, 12, 7.4, 8.6, 16, 8.6, "dgrey"); b.box(5, 11, 5, 11, 12.4, 11, "dgrey"); b.box(4, 6, 4, 12, 11, 12, "glow", emit=True); b.box(5, 5, 5, 11, 6, 11, "glow", emit=True)
+b = blk("barbed_wire", solid=False)
+for y in (3, 8, 13):
+    b.box(0, y, 7.4, 16, y + 0.9, 8.6, "steel")
+for x in (1, 5, 9, 13):
+    b.box(x, 1, 7.6, x + 0.8, 15, 8.4, "grey"); b.box(x - 0.8, 6.4, 7.1, x + 1.6, 7, 8.9, "steel"); b.box(x - 0.8, 11.4, 7.1, x + 1.6, 12, 8.9, "steel")
+b = blk("tire_stack")
+for i, y in enumerate((0, 5, 10)):
+    b.box(1 + i * 0.4, y, 1, 15 - i * 0.4, y + 5, 15, "black"); b.box(5, y + 0.2, 5, 11, y + 5.2 if i == 2 else y + 5, 11, "dgrey", collide=False)
+b = blk("workbench")
+b.box(0, 11, 2, 16, 14, 14, "lightwood"); b.box(1, 0, 3, 3, 11, 5, "darkwood"); b.box(13, 0, 3, 15, 11, 5, "darkwood"); b.box(1, 0, 11, 3, 11, 13, "darkwood"); b.box(13, 0, 11, 15, 11, 13, "darkwood")
+b.box(2, 2, 3, 14, 3.6, 13, "wood", collide=False); b.box(11, 14, 3, 14, 17 if False else 16, 6, "dgrey", collide=False); b.box(3, 14, 8, 8, 15, 10, "steel", collide=False); b.box(9, 14, 9, 10, 17 if False else 16, 10, "red", collide=False)
+b = blk("jerrycan")
+b.box(4, 0, 5, 12, 11, 11, "olive"); b.box(5.6, 11, 6.5, 10.4, 12.6, 9.5, "olive"); b.box(7, 12.6, 6.5, 9, 14, 9.5, "dgrey", collide=False); b.box(4, 5, 4.6, 12, 6, 5, "dgrey", collide=False)
+b = blk("kiosk_counter")
+b.box(0, 0, 3, 16, 11, 15, "darkwood"); b.box(0, 11, 2, 16, 12.5, 16, "lightwood"); b.box(1, 12.5, 11, 15, 14, 15, "olive", collide=False)
+b.box(2, 12.5, 4, 5, 13.5, 8, "red", collide=False); b.box(7, 12.5, 4, 10, 15, 7, "white", collide=False); b.box(11.5, 12.5, 5, 14.5, 14, 9, "khaki", collide=False)
+b = blk("fire_barrel", light=13)
+b.box(3, 0, 3, 13, 12, 13, "rust"); b.box(2.6, 3, 2.6, 13.4, 4.4, 13.4, "dgrey", collide=False); b.box(2.6, 8, 2.6, 13.4, 9.4, 13.4, "dgrey", collide=False)
+b.box(4, 12, 4, 12, 13, 12, "black"); b.box(5, 13, 5, 11, 15, 11, "orange", emit=True); b.box(6.5, 15, 6.5, 9.5, 16, 9.5, "yellow", emit=True)
+b = blk("crate_stack")
+b.box(0.5, 0, 0.5, 15.5, 8, 15.5, "wood"); b.box(1.5, 8, 1.5, 14.5, 16, 14.5, "khaki"); b.box(0, 6.5, 0, 16, 8, 16, "darkwood", collide=False); b.box(1, 14.5, 1, 15, 16, 15, "olive", collide=False)
+b = blk("sack_pile")
+b.box(0, 0, 1, 7.6, 5, 7.4, "sand"); b.box(8.4, 0, 1, 16, 5, 7.4, "tan"); b.box(0, 0, 8.6, 7.6, 5, 15, "tan"); b.box(8.4, 0, 8.6, 16, 5, 15, "sand"); b.box(3, 5, 3, 11, 9, 11, "sand"); b.box(6, 9, 6, 13, 11, 13, "tan")
+b = blk("vending_stand")
+b.box(1, 0, 3, 15, 12, 13, "grey"); b.box(0, 12, 2, 16, 14, 14, "blue"); b.box(2, 4, 2.4, 14, 11, 3, "glass", collide=False); b.box(3, 5, 3, 13, 7, 4, "yellow", collide=False)
+
 def write():
     for sub in ("models/block/decor", "blockstates", "models/item", "textures/block"):
         os.makedirs(os.path.join(ASSETS, sub), exist_ok=True)

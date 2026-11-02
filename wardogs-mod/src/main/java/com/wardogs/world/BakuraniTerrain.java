@@ -226,28 +226,32 @@ public final class BakuraniTerrain {
     }
 
     public boolean isRoad(double x, double z) {
-        if (roads.length == 0) {
-            return false;
-        }
-        int ix = (int) Math.floor(pixelX(x) / IMAGE * roadSize);
-        int iz = (int) Math.floor(pixelY(z) / IMAGE * roadSize);
-        if (ix < 0 || iz < 0 || ix >= roadSize || iz >= roadSize) {
-            return false;
-        }
-        return roads[iz * roadSize + ix] != 0;
+        return roadClass(x, z) > 0;
     }
 
-    /** 0 = no road, 1 = track, 2 = surfaced road (older data files only have 0 and 1). */
-    public int roadClass(double x, double z) {
-        if (roads.length == 0) {
-            return 0;
-        }
-        int ix = (int) Math.floor(pixelX(x) / IMAGE * roadSize);
-        int iz = (int) Math.floor(pixelY(z) / IMAGE * roadSize);
+    private int roadCell(int ix, int iz) {
         if (ix < 0 || iz < 0 || ix >= roadSize || iz >= roadSize) {
             return 0;
         }
         return roads[iz * roadSize + ix] & 0xFF;
+    }
+
+    /**
+     * 0 = no road, 1 = track, 2 = surfaced road (older data files only have 0 and 1). The 4 m raster is sampled bilinearly and
+     * thresholded at one half, which rounds the stair-stepped outlines into smooth curves.
+     */
+    public int roadClass(double x, double z) {
+        if (roads.length == 0) {
+            return 0;
+        }
+        double fx = pixelX(x) / IMAGE * roadSize - 0.5, fz = pixelY(z) / IMAGE * roadSize - 0.5;
+        int x0 = (int) Math.floor(fx), z0 = (int) Math.floor(fz);
+        double tx = fx - x0, tz = fz - z0;
+        int a = roadCell(x0, z0), b = roadCell(x0 + 1, z0), c = roadCell(x0, z0 + 1), d = roadCell(x0 + 1, z0 + 1);
+        double w00 = (1 - tx) * (1 - tz), w10 = tx * (1 - tz), w01 = (1 - tx) * tz, w11 = tx * tz;
+        double any = (a >= 1 ? w00 : 0) + (b >= 1 ? w10 : 0) + (c >= 1 ? w01 : 0) + (d >= 1 ? w11 : 0);
+        double major = (a >= 2 ? w00 : 0) + (b >= 2 ? w10 : 0) + (c >= 2 ? w01 : 0) + (d >= 2 ? w11 : 0);
+        return major >= 0.5 ? 2 : any >= 0.5 ? 1 : 0;
     }
 
     public int maxSurfaceY() {

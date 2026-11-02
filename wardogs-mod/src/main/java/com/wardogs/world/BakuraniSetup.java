@@ -60,6 +60,7 @@ public final class BakuraniSetup {
             placeBoard(level, b, TERRAIN);
         }
         Landmarks.buildAll(level, TERRAIN);
+        Outposts.buildAll(level, TERRAIN);
         return new Result(towers, vendors);
     }
 
@@ -154,49 +155,78 @@ public final class BakuraniSetup {
         if (level.getBlockState(chest).is(Blocks.CHEST)) {
             return false;
         }
-        int base = baseY(t.x(), t.z(), g);
-        BlockState log = Blocks.SPRUCE_LOG.defaultBlockState(), planks = Blocks.SPRUCE_PLANKS.defaultBlockState();
-        BlockState fence = Blocks.SPRUCE_FENCE.defaultBlockState(), rock = Blocks.COBBLESTONE.defaultBlockState();
+        buildTowerShell(level, bx, bz, g);
+        level.setBlock(chest, Blocks.CHEST.defaultBlockState().setValue(ChestBlock.FACING, Direction.SOUTH), 2);
+        refill(level, t, g);
+        return true;
+    }
+
+    /**
+     * A concrete watchtower: four legs braced with iron bars, a ladder up the south side through a hatch, a closed cab with windows,
+     * a roof with a floodlight and an antenna. The cab holds a radio table and a lamp; the loot tower adds its chest at (-1, -1).
+     */
+    public static void buildTowerShell(ServerLevel level, int bx, int bz, Ground g) {
+        int base = baseY(bx, bz, g);
+        BlockState concrete = Blocks.LIGHT_GRAY_CONCRETE.defaultBlockState(), dark = Blocks.GRAY_CONCRETE.defaultBlockState();
+        BlockState glass = Blocks.LIGHT_BLUE_STAINED_GLASS.defaultBlockState(), air = Blocks.AIR.defaultBlockState();
+        int top = base + TOWER_HEIGHT;
         for (int dx = -2; dx <= 2; dx++) {
             for (int dz = -2; dz <= 2; dz++) {
                 int ground = g.surfaceY(bx + dx + 0.5, bz + dz + 0.5);
                 for (int y = ground; y <= base; y++) {
-                    level.setBlock(new BlockPos(bx + dx, y, bz + dz), rock, 2); // foundation up to the common base level
+                    level.setBlock(new BlockPos(bx + dx, y, bz + dz), Blocks.STONE_BRICKS.defaultBlockState(), 2); // footing up to the common level
                 }
-                for (int y = base + 1; y <= base + TOWER_HEIGHT + 5; y++) {
-                    level.setBlock(new BlockPos(bx + dx, y, bz + dz), Blocks.AIR.defaultBlockState(), 2); // clear the volume
+                for (int y = base + 1; y <= top + 8; y++) {
+                    level.setBlock(new BlockPos(bx + dx, y, bz + dz), air, 2); // clear the volume
                 }
             }
         }
         for (int sx : new int[]{-2, 2}) {
             for (int sz : new int[]{-2, 2}) {
-                for (int y = base + 1; y <= base + TOWER_HEIGHT + 4; y++) {
-                    level.setBlock(new BlockPos(bx + sx, y, bz + sz), log, 2);
+                for (int y = base + 1; y <= top + 3; y++) {
+                    level.setBlock(new BlockPos(bx + sx, y, bz + sz), concrete, 2);
                 }
+            }
+        }
+        for (int y : new int[]{base + 3, base + 7}) { // bracing between the legs
+            for (int d = -1; d <= 1; d++) {
+                level.setBlock(new BlockPos(bx + d, y, bz - 2), Blocks.IRON_BARS.defaultBlockState(), 2);
+                level.setBlock(new BlockPos(bx - 2, y, bz + d), Blocks.IRON_BARS.defaultBlockState(), 2);
+                level.setBlock(new BlockPos(bx + 2, y, bz + d), Blocks.IRON_BARS.defaultBlockState(), 2);
             }
         }
         for (int dx = -2; dx <= 2; dx++) {
             for (int dz = -2; dz <= 2; dz++) {
                 boolean hatch = dx == 0 && dz == 1; // opening above the ladder
                 if (!hatch) {
-                    level.setBlock(new BlockPos(bx + dx, base + TOWER_HEIGHT, bz + dz), planks, 2);
+                    level.setBlock(new BlockPos(bx + dx, top, bz + dz), dark, 2);
                 }
                 boolean edge = Math.abs(dx) == 2 || Math.abs(dz) == 2;
                 boolean corner = Math.abs(dx) == 2 && Math.abs(dz) == 2;
                 if (edge && !corner) {
-                    level.setBlock(new BlockPos(bx + dx, base + TOWER_HEIGHT + 1, bz + dz), fence, 2);
+                    level.setBlock(new BlockPos(bx + dx, top + 1, bz + dz), concrete, 2);
+                    level.setBlock(new BlockPos(bx + dx, top + 2, bz + dz), (dx + dz) % 2 == 0 ? glass : glass, 2);
+                    level.setBlock(new BlockPos(bx + dx, top + 3, bz + dz), concrete, 2);
                 }
-                level.setBlock(new BlockPos(bx + dx, base + TOWER_HEIGHT + 5, bz + dz), Blocks.SPRUCE_SLAB.defaultBlockState(), 2);
             }
         }
+        for (int dx = -3; dx <= 3; dx++) { // roof with an overhang
+            for (int dz = -3; dz <= 3; dz++) {
+                level.setBlock(new BlockPos(bx + dx, top + 4, bz + dz), Math.abs(dx) == 3 || Math.abs(dz) == 3 ? dark : Blocks.SMOOTH_STONE.defaultBlockState(), 2);
+            }
+        }
+        level.setBlock(new BlockPos(bx + 2, top + 5, bz + 2), com.wardogs.decor.DecorBlocks.state("decor_floodlight", Direction.SOUTH), 2);
+        level.setBlock(new BlockPos(bx - 2, top + 5, bz - 2), com.wardogs.decor.DecorBlocks.state("decor_floodlight", Direction.EAST), 2);
+        for (int k = 5; k <= 9; k++) {
+            level.setBlock(new BlockPos(bx - 2, top + k, bz + 2), Blocks.IRON_BARS.defaultBlockState(), 2); // antenna
+        }
+        level.setBlock(new BlockPos(bx + 1, top + 1, bz - 1), com.wardogs.decor.DecorBlocks.state("decor_radio_table", Direction.SOUTH), 2);
+        level.setBlock(new BlockPos(bx, top + 3, bz), com.wardogs.decor.DecorBlocks.state("decor_ceiling_lamp", Direction.NORTH), 2);
         // ladder up the south side: a wall column at z+2 with the ladder on its inner face
-        for (int y = base + 1; y <= base + TOWER_HEIGHT; y++) {
-            level.setBlock(new BlockPos(bx, y, bz + 2), planks, 2);
+        for (int y = base + 1; y <= top; y++) {
+            level.setBlock(new BlockPos(bx, y, bz + 2), concrete, 2);
             level.setBlock(new BlockPos(bx, y, bz + 1), Blocks.LADDER.defaultBlockState().setValue(LadderBlock.FACING, Direction.NORTH), 2);
         }
-        level.setBlock(chest, Blocks.CHEST.defaultBlockState().setValue(ChestBlock.FACING, Direction.SOUTH), 2);
-        refill(level, t, g);
-        return true;
     }
 
     /** Puts a fresh roll of loot into an empty tower chest. */
