@@ -1542,4 +1542,26 @@ public final class WardogsGameTests {
         }
         h.succeed();
     }
+
+    @GameTest(template = "empty")
+    public static void lootCachesHoldTheItemTheirMarkerNames(GameTestHelper h) {
+        var rnd = h.getLevel().random;
+        check("bandage".equals(com.wardogs.world.LootCaches.itemFor("Bandages #3", rnd)), "bandage marker");
+        check("defibrillator".equals(com.wardogs.world.LootCaches.itemFor("Defibrillator #4", rnd)), "defibrillator marker");
+        check("sv98".equals(com.wardogs.world.LootCaches.itemFor("Sniper rifle loot #1", rnd)), "sniper marker");
+        check(com.wardogs.world.LootCaches.itemFor("Weapon loot #2", rnd) != null, "weapon marker rolls a weapon");
+        check("vest_l2".equals(com.wardogs.world.LootCaches.itemFor("Armor loot #1", rnd)), "armor marker");
+        for (var c : com.wardogs.world.BakuraniWorld.sites().loot()) {
+            String id = com.wardogs.world.LootCaches.itemFor(c.name(), rnd);
+            check(id != null && ModItems.stack(id) != null, "loot marker " + c.name() + " maps to a real item");
+        }
+        var site = new com.wardogs.world.BakuraniWorld.Site("Weapon loot #9", h.absolutePos(new BlockPos(2, 2, 2)).getX() + 0.5,
+                h.absolutePos(new BlockPos(2, 2, 2)).getZ() + 0.5);
+        com.wardogs.world.BakuraniSetup.Ground flat = (x, z) -> h.absolutePos(new BlockPos(2, 1, 2)).getY();
+        check(com.wardogs.world.BakuraniSetup.placeCache(h.getLevel(), site, flat), "a cache is placed");
+        check(!com.wardogs.world.BakuraniSetup.placeCache(h.getLevel(), site, flat), "placing again changes nothing");
+        var barrel = (net.minecraft.world.level.block.entity.BarrelBlockEntity) h.getLevel().getBlockEntity(com.wardogs.world.BakuraniSetup.cachePos(site, flat));
+        check(barrel != null && !barrel.isEmpty(), "the barrel holds a weapon");
+        h.succeed();
+    }
 }

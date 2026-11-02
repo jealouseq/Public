@@ -53,7 +53,42 @@ public final class BakuraniSetup {
                 vendors++;
             }
         }
+        for (BakuraniWorld.Site c : BakuraniWorld.sites().loot()) {
+            placeCache(level, c, TERRAIN);
+        }
         return new Result(towers, vendors);
+    }
+
+    /** Position of a loot cache chest: one block above the ground at the marker. */
+    public static BlockPos cachePos(BakuraniWorld.Site c, Ground g) {
+        int bx = (int) Math.floor(c.x()), bz = (int) Math.floor(c.z());
+        return new BlockPos(bx, g.surfaceY(bx + 0.5, bz + 0.5) + 1, bz);
+    }
+
+    /** Puts a loot crate (a barrel) at a loot marker and fills it. @return true if one was placed. */
+    public static boolean placeCache(ServerLevel level, BakuraniWorld.Site c, Ground g) {
+        load(level, c.x(), c.z());
+        BlockPos pos = cachePos(c, g);
+        if (level.getBlockState(pos).is(Blocks.BARREL)) {
+            return false;
+        }
+        level.setBlock(pos, Blocks.BARREL.defaultBlockState(), 2);
+        refillCache(level, c, g);
+        return true;
+    }
+
+    /** Fills an empty cache with what its marker says (bandages, a defibrillator, a weapon, a vest or a helmet). */
+    public static void refillCache(ServerLevel level, BakuraniWorld.Site c, Ground g) {
+        if (!(level.getBlockEntity(cachePos(c, g)) instanceof net.minecraft.world.level.block.entity.BarrelBlockEntity barrel) || !barrel.isEmpty()) {
+            return;
+        }
+        String id = LootCaches.itemFor(c.name(), level.random);
+        var stack = id == null ? null : ModItems.stack(id);
+        if (stack != null) {
+            stack.setCount(LootCaches.countFor(id));
+            barrel.setItem(0, stack);
+        }
+        LAST_ROLL.put("cache:" + c.name() + c.x(), level.getGameTime());
     }
 
     /** Ground level the tower stands on: the highest terrain point under its 5x5 footprint. */
@@ -163,6 +198,18 @@ public final class BakuraniSetup {
             }
             if (now - LAST_ROLL.getOrDefault(t.name(), Long.MIN_VALUE / 2) >= 20 * 60 * 5) {
                 refill(level, t, TERRAIN);
+            }
+        }
+    }
+
+    /** Loot caches respawn like tower chests, every five minutes when empty. */
+    public static void tickCaches(ServerLevel level) {
+        long now = level.getGameTime();
+        for (BakuraniWorld.Site c : BakuraniWorld.sites().loot()) {
+            BlockPos cp = cachePos(c, TERRAIN);
+            if (level.isLoaded(cp) && level.getBlockState(cp).is(Blocks.BARREL)
+                    && now - LAST_ROLL.getOrDefault("cache:" + c.name() + c.x(), Long.MIN_VALUE / 2) >= 20 * 60 * 5) {
+                refillCache(level, c, TERRAIN);
             }
         }
     }

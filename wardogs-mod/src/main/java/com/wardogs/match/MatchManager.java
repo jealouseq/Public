@@ -157,6 +157,7 @@ public final class MatchManager {
         }
         if (now % 600 == 0 && ow.dimension().equals(com.wardogs.world.BakuraniWorld.DIMENSION)) {
             com.wardogs.world.BakuraniSetup.tickTowers(ow);
+            com.wardogs.world.BakuraniSetup.tickCaches(ow);
         }
         if (d.payTimer <= 0) {
             d.payTimer = Balance.get().rewards().zoneTickSeconds() * 20;

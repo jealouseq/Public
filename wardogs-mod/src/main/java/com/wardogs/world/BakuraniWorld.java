@@ -36,7 +36,7 @@ public final class BakuraniWorld {
     private static volatile Sites sites;
 
     public record Sites(Map<String, Site> bases, List<Site> spawns, List<Site> vendors, List<Site> boards, List<Site> towers,
-                        List<Zone> zones, double verticalScale, int yOffset) {}
+                        List<Zone> zones, List<Site> loot, double verticalScale, int yOffset) {}
 
     private BakuraniWorld() {}
 
@@ -55,7 +55,7 @@ public final class BakuraniWorld {
                 });
                 JsonObject w = o.getAsJsonObject("world");
                 sites = new Sites(Map.copyOf(bases), list(o, "spawns"), list(o, "vendors"), list(o, "boards"), list(o, "towers"),
-                        List.copyOf(zones), w.get("vertical_scale").getAsDouble(), w.get("y_offset").getAsInt());
+                        List.copyOf(zones), list(o, "loot"), w.get("vertical_scale").getAsDouble(), w.get("y_offset").getAsInt());
             } catch (IOException e) {
                 throw new IllegalStateException("Cannot read the Bakurani site list", e);
             }

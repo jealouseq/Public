@@ -257,5 +257,102 @@
   "vertical_scale": 0.5,
   "y_offset": 16,
   "min_elevation": -1008.34
- }
+ },
+ "loot": [
+  {
+   "name": "Bandages #1",
+   "x": 383.6,
+   "z": 4765.3
+  },
+  {
+   "name": "Sniper rifle loot #1",
+   "x": -431.6,
+   "z": 3229.6
+  },
+  {
+   "name": "Weapon loot #2",
+   "x": -433.5,
+   "z": 3241.6
+  },
+  {
+   "name": "Bandages #6",
+   "x": -397.2,
+   "z": 3226.2
+  },
+  {
+   "name": "Bandages #7",
+   "x": -396.8,
+   "z": 3226.9
+  },
+  {
+   "name": "Defibrillator #4",
+   "x": -396.5,
+   "z": 3227.7
+  },
+  {
+   "name": "Defibrillator #5",
+   "x": -446.4,
+   "z": 3205.3
+  },
+  {
+   "name": "Bandages #3",
+   "x": -445.2,
+   "z": 3205.2
+  },
+  {
+   "name": "Bandages #9",
+   "x": 122.4,
+   "z": 4549.1
+  },
+  {
+   "name": "Bandages #10",
+   "x": 117.5,
+   "z": 4541.9
+  },
+  {
+   "name": "Bandages #8",
+   "x": 115.4,
+   "z": 4550.5
+  },
+  {
+   "name": "Armor loot #1",
+   "x": 115.4,
+   "z": 4550.5
+  },
+  {
+   "name": "Bandages #12",
+   "x": 13.7,
+   "z": 2647.1
+  },
+  {
+   "name": "Weapon loot #3",
+   "x": 53.7,
+   "z": 4292.8
+  },
+  {
+   "name": "Bandages #13",
+   "x": 59.5,
+   "z": 4268.6
+  },
+  {
+   "name": "Bandages #14",
+   "x": 59.3,
+   "z": 4268.8
+  },
+  {
+   "name": "Weapon loot #4",
+   "x": 29.4,
+   "z": 4259.6
+  },
+  {
+   "name": "Defibrillator #15",
+   "x": 38.5,
+   "z": 4297.4
+  },
+  {
+   "name": "Helmet loot #2",
+   "x": 58.1,
+   "z": 4268.7
+  }
+ ]
 }
