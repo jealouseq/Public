@@ -1580,4 +1580,27 @@ public final class WardogsGameTests {
         check(com.wardogs.match.Deployment.deploy(p, 0) != null, "deploying outside Bakurani is refused");
         h.succeed();
     }
+
+    @GameTest(template = "empty", batch = "matchStats")
+    public static void scoreboardCountsKillsDeathsAndSurvivesTheNetwork(GameTestHelper h) {
+        com.wardogs.match.MatchStats.reset();
+        ServerPlayer a = soldier(h, Faction.LONESTAR, 2.5, 2.5);
+        ServerPlayer b = soldier(h, Faction.VALKYRA, 4.5, 2.5);
+        com.wardogs.match.MatchStats.kill(a, 400);
+        com.wardogs.match.MatchStats.kill(a, 600);
+        com.wardogs.match.MatchStats.death(b);
+        var rows = com.wardogs.match.MatchStats.rows();
+        check(rows.size() == 2, "two players are listed");
+        check(rows.get(0).faction() == Faction.LONESTAR.ordinal() && rows.get(0).kills() == 2 && rows.get(0).earned() == 1000, "the Lonestar player has 2 kills and $1000");
+        check(rows.get(1).deaths() == 1, "the Valkyra player has one death");
+        var payload = new com.wardogs.net.ScoreboardPayload(true, 0, new int[]{100, 40, 7}, rows);
+        var buf = new net.minecraft.network.RegistryFriendlyByteBuf(io.netty.buffer.Unpooled.buffer(), h.getLevel().registryAccess(),
+                net.minecraft.network.ConnectionProtocol.PLAY == null ? null : net.neoforged.neoforge.network.connection.ConnectionType.NEOFORGE);
+        com.wardogs.net.ScoreboardPayload.CODEC.encode(buf, payload);
+        var back = com.wardogs.net.ScoreboardPayload.CODEC.decode(buf);
+        check(back.fin() && back.winner() == 0 && back.scores()[0] == 100 && back.rows().equals(rows), "the scoreboard survives encoding");
+        com.wardogs.match.MatchStats.reset();
+        check(com.wardogs.match.MatchStats.rows().isEmpty(), "reset clears the table");
+        h.succeed();
+    }
 }

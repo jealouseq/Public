@@ -95,6 +95,10 @@ public final class KillRewardHandler {
         long reward = KillReward.compute(rd, new KillReward.Context(base, hit.headshot(), targetOnly, sniperDistance, hit.distance(),
                 shooterZone, targetZone, streak, repeats, revenge, shutdown));
         Wallet.add(killer, reward);
+        com.wardogs.match.MatchStats.kill(killer, reward);
+        if (victim instanceof ServerPlayer deadPlayer) {
+            com.wardogs.match.MatchStats.death(deadPlayer);
+        }
         Progression.awardXp(killer, roleOf(hit.weaponId()), rd.roleXp());
         if (victim instanceof Player) {
             PAID.put(victimId, new Paid(killerId, reward));

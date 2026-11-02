@@ -98,6 +98,7 @@ public final class MatchManager {
         relocateHot(overworld, d);
         resetPresence();
         KillRewardHandler.reset();
+        MatchStats.reset();
         Downed.reset();
         d.setDirty();
         broadcast(overworld, Component.literal("Match started. First faction to " + r.winScore() + " points wins.").withStyle(ChatFormatting.GOLD));
@@ -154,6 +155,9 @@ public final class MatchManager {
 
         if (now % 20 == 0) {
             trackEntries(ow, d, now);
+        }
+        if (now % 40 == 0) {
+            sendScoreboard(ow, d, false, -1);
         }
         if (now % 600 == 0 && ow.dimension().equals(com.wardogs.world.BakuraniWorld.DIMENSION)) {
             com.wardogs.world.BakuraniSetup.tickTowers(ow);
@@ -266,10 +270,20 @@ public final class MatchManager {
                 }
             }
         }
+        sendScoreboard(ow, d, true, rank[0]);
         d.active = false;
         resetPresence();
         KillRewardHandler.reset();
         d.setDirty();
+    }
+
+    private static void sendScoreboard(ServerLevel ow, MatchData d, boolean fin, int winner) {
+        var payload = new com.wardogs.net.ScoreboardPayload(fin, winner, new int[]{d.scores[0], d.scores[1], d.scores[2]}, MatchStats.rows());
+        for (ServerPlayer p : ow.getServer().getPlayerList().getPlayers()) {
+            if (p.connection != null && p.connection.hasChannel(com.wardogs.net.ScoreboardPayload.TYPE)) {
+                net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(p, payload);
+            }
+        }
     }
 
     private static void broadcast(ServerLevel ow, Component c) {

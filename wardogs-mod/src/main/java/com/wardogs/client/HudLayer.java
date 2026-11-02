@@ -51,6 +51,10 @@ public final class HudLayer {
     /** The vanilla health, armour and food bars are replaced by this HUD. */
     @SubscribeEvent
     public static void hideVanilla(RenderGuiLayerEvent.Pre e) {
+        if (e.getName().equals(VanillaGuiLayers.TAB_LIST) && ClientHud.get() != null && ClientHud.get().active()) {
+            e.setCanceled(true); // the match scoreboard replaces the vanilla player list
+            return;
+        }
         if (e.getName().equals(VanillaGuiLayers.PLAYER_HEALTH) || e.getName().equals(VanillaGuiLayers.ARMOR_LEVEL)
                 || e.getName().equals(VanillaGuiLayers.FOOD_LEVEL)) {
             e.setCanceled(true);
@@ -93,6 +97,9 @@ public final class HudLayer {
         }
         HudPayload h = ClientHud.get();
         ClientMinimap.tick(mc);
+        if (h != null && h.active() && mc.options.keyPlayerList.isDown() && ClientScoreboard.get() != null) {
+            ScoreTable.draw(g, mc, ClientScoreboard.get(), 36, g.guiWidth());
+        }
         renderCompass(g, mc, h);
         if (h != null) {
             renderMoney(g, mc, h);
