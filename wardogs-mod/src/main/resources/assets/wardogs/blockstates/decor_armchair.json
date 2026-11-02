@@ -1,0 +1,1 @@
+{"variants": {"facing=north": {"model": "wardogs:block/decor/armchair", "y": 0}, "facing=east": {"model": "wardogs:block/decor/armchair", "y": 90}, "facing=south": {"model": "wardogs:block/decor/armchair", "y": 180}, "facing=west": {"model": "wardogs:block/decor/armchair", "y": 270}}}

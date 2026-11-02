@@ -1,0 +1,1 @@
+{"variants": {"facing=north": {"model": "wardogs:block/decor/potted_plant", "y": 0}, "facing=east": {"model": "wardogs:block/decor/potted_plant", "y": 90}, "facing=south": {"model": "wardogs:block/decor/potted_plant", "y": 180}, "facing=west": {"model": "wardogs:block/decor/potted_plant", "y": 270}}}

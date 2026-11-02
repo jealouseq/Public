@@ -1857,4 +1857,21 @@ public final class WardogsGameTests {
         }
         h.succeed();
     }
+
+    @GameTest(template = "empty")
+    public static void decorBlocksAreRegisteredAndTurnWithTheirFacing(GameTestHelper h) {
+        check(com.wardogs.decor.DecorBlocks.ALL.size() >= 40, "the decor set is registered");
+        for (var id : com.wardogs.decor.DecorBlocks.ALL.keySet()) {
+            check(com.wardogs.decor.DecorBlocks.get(id) != null && com.wardogs.decor.DecorBlocks.ITEM_OF.containsKey(id), id + " has a block and an item");
+        }
+        var chair = com.wardogs.decor.DecorBlocks.state("decor_chair", net.minecraft.core.Direction.NORTH);
+        var shapeN = chair.getShape(h.getLevel(), BlockPos.ZERO);
+        var shapeE = com.wardogs.decor.DecorBlocks.state("decor_chair", net.minecraft.core.Direction.EAST).getShape(h.getLevel(), BlockPos.ZERO);
+        check(!shapeN.isEmpty() && !shapeE.isEmpty(), "shapes exist");
+        // the chair back is on the south side facing north, on the west side facing east
+        check(shapeN.bounds().maxZ == 13.0 / 16 && shapeE.bounds().minX == 3.0 / 16, "the chair shape turns with its facing: " + shapeN.bounds() + " vs " + shapeE.bounds());
+        check(com.wardogs.decor.DecorBlocks.state("decor_rug", net.minecraft.core.Direction.NORTH).getCollisionShape(h.getLevel(), BlockPos.ZERO).isEmpty(), "a rug can be walked over");
+        check(com.wardogs.decor.DecorBlocks.state("decor_street_lamp", net.minecraft.core.Direction.NORTH).getLightEmission() == 15, "a street lamp shines");
+        h.succeed();
+    }
 }

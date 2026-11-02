@@ -28,6 +28,8 @@ public final class WardogsMod {
         LOGGER.info("WARDOGS: Bakurani loading with {} weapons", Balance.get().weapons().size());
         ModComponents.COMPONENTS.register(modBus);
         com.wardogs.sound.ModSounds.SOUNDS.register(modBus);
+        com.wardogs.decor.DecorBlocks.BLOCKS.register(modBus);
+        com.wardogs.decor.DecorBlocks.ITEMS.register(modBus);
         ModItems.ITEMS.register(modBus);
         ModItems.TABS.register(modBus);
         ExplosiveEntities.ENTITIES.register(modBus);

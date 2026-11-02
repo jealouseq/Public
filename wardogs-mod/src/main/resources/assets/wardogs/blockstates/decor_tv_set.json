@@ -1,0 +1,1 @@
+{"variants": {"facing=north": {"model": "wardogs:block/decor/tv_set", "y": 0}, "facing=east": {"model": "wardogs:block/decor/tv_set", "y": 90}, "facing=south": {"model": "wardogs:block/decor/tv_set", "y": 180}, "facing=west": {"model": "wardogs:block/decor/tv_set", "y": 270}}}

@@ -1,0 +1,1 @@
+{"variants": {"facing=north": {"model": "wardogs:block/decor/bookshelf_tall", "y": 0}, "facing=east": {"model": "wardogs:block/decor/bookshelf_tall", "y": 90}, "facing=south": {"model": "wardogs:block/decor/bookshelf_tall", "y": 180}, "facing=west": {"model": "wardogs:block/decor/bookshelf_tall", "y": 270}}}

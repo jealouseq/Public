@@ -204,6 +204,7 @@ public final class ModItems {
                         VEHICLES.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
                         ATTACHMENTS.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
                         AMMO_BOXES.values().forEach(x -> out.accept(new net.minecraft.world.item.ItemStack(x.get())));
+                        com.wardogs.decor.DecorBlocks.ITEM_OF.values().forEach(x -> out.accept(x.get()));
                     })
                     .build());
 
