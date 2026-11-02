@@ -161,6 +161,9 @@ public final class Ballistics {
         boolean consumed = resolve(b.level, b.shooter, b.w, b.ammo, b.pellets, b.origin, b.pos, next);
         b.pos = next;
         b.age++;
+        if (!consumed && b.age % 2 == 0 && b.w.velocity() >= 150) {
+            b.level.sendParticles(ParticleTypes.END_ROD, next.x, next.y, next.z, 1, 0, 0, 0, 0); // faint tracer
+        }
         double range = Math.min(b.w.range(), MAX_TRACE);
         return !consumed && b.age < MAX_AGE && b.origin.distanceTo(b.pos) <= range && !b.shooter.level().isClientSide
                 && b.pos.y > b.level.getMinBuildHeight() - 8 && b.pos.y < b.level.getMaxBuildHeight() + 64;
