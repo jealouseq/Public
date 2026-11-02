@@ -19,7 +19,8 @@ import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 
 /** Server -> owner only: money, faction and match scores for the HUD. */
-public record HudPayload(long money, int faction, boolean active, int s0, int s1, int s2, int winScore, int downed) implements CustomPacketPayload {
+public record HudPayload(long money, int faction, boolean active, int s0, int s1, int s2, int winScore, int downed,
+                         int c0, int c1, int c2, int controller, int zx, int zz, int zr, int hx, int hz, int hr) implements CustomPacketPayload {
     public static final Type<HudPayload> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "hud"));
     public static final StreamCodec<RegistryFriendlyByteBuf, HudPayload> CODEC = StreamCodec.of(
             (buf, p) -> {
@@ -31,9 +32,15 @@ public record HudPayload(long money, int faction, boolean active, int s0, int s1
                 buf.writeVarInt(p.s2);
                 buf.writeVarInt(p.winScore);
                 buf.writeVarInt(p.downed);
+                buf.writeVarInt(p.c0); buf.writeVarInt(p.c1); buf.writeVarInt(p.c2);
+                buf.writeVarInt(p.controller + 1);
+                buf.writeInt(p.zx); buf.writeInt(p.zz); buf.writeVarInt(p.zr);
+                buf.writeInt(p.hx); buf.writeInt(p.hz); buf.writeVarInt(p.hr);
             },
             buf -> new HudPayload(buf.readVarLong(), buf.readVarInt() - 1, buf.readBoolean(),
-                    buf.readVarInt(), buf.readVarInt(), buf.readVarInt(), buf.readVarInt(), buf.readVarInt()));
+                    buf.readVarInt(), buf.readVarInt(), buf.readVarInt(), buf.readVarInt(), buf.readVarInt(),
+                    buf.readVarInt(), buf.readVarInt(), buf.readVarInt(), buf.readVarInt() - 1,
+                    buf.readInt(), buf.readInt(), buf.readVarInt(), buf.readInt(), buf.readInt(), buf.readVarInt()));
 
     @Override
     public Type<? extends CustomPacketPayload> type() {
@@ -47,8 +54,18 @@ public record HudPayload(long money, int faction, boolean active, int s0, int s1
         }
         ServerLevel ow = p.server.overworld();
         MatchData d = MatchData.get(ow);
+        int[] counts = new int[3];
+        for (ServerPlayer o : p.server.getPlayerList().getPlayers()) {
+            int f = Factions.index(o);
+            if (f >= 0 && f < 3) {
+                counts[f]++;
+            }
+        }
         PacketDistributor.sendToPlayer(p, new HudPayload(Wallet.get(p), Factions.index(p), d.active,
-                d.scores[0], d.scores[1], d.scores[2], com.wardogs.balance.Balance.get().rewards().winScore(), com.wardogs.medic.Downed.ticksLeft(p)));
+                d.scores[0], d.scores[1], d.scores[2], com.wardogs.balance.Balance.get().rewards().winScore(),
+                com.wardogs.medic.Downed.ticksLeft(p), counts[0], counts[1], counts[2],
+                d.active ? com.wardogs.match.MatchManager.controller(ow, d) : -1,
+                (int) d.zoneX, (int) d.zoneZ, (int) d.zoneRadius, (int) d.hotX, (int) d.hotZ, (int) d.hotRadius));
     }
 
     @EventBusSubscriber(modid = WardogsMod.MOD_ID)

@@ -143,7 +143,7 @@ public class MedicalItem extends Item {
         } else {
             stack.shrink(1);
         }
-        reviver.displayClientMessage(Component.literal("+$" + pay + "  revive").withStyle(ChatFormatting.GOLD), true);
+        com.wardogs.net.RewardPayload.send(reviver, "REVIVE", pay);
         target.sendSystemMessage(Component.literal("You were revived by " + reviver.getGameProfile().getName()).withStyle(ChatFormatting.GREEN));
         HudPayload.sendTo(reviver);
     }

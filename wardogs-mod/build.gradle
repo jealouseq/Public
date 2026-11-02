@@ -18,6 +18,10 @@ neoForge {
     runs {
         client {
             client()
+            // ./gradlew runClient -Pquickplay=localhost:25565 joins a server straight away (used for screenshots)
+            if (project.hasProperty('quickplay')) {
+                programArguments.addAll '--quickPlayMultiplayer', project.property('quickplay').toString(), '--username', 'Dev', '--width', '1280', '--height', '720'
+            }
             systemProperty 'neoforge.enabledGameTestNamespaces', mod_id
             systemProperty 'wardogs.mapdir', file('local-data/bakurani').absolutePath
         }

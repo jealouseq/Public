@@ -54,6 +54,23 @@ public final class MatchManager {
         return d.inControl(pos.x, pos.z) ? r.controlZoneMult() : 1.0;
     }
 
+    /** Index of the faction currently leading the Control Zone, or -1 (nobody inside or a tie). */
+    public static int controller(ServerLevel any, MatchData d) {
+        ServerLevel level = any.getServer().getLevel(net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.DIMENSION,
+                net.minecraft.resources.ResourceLocation.parse(d.dim)));
+        if (level == null) {
+            return -1;
+        }
+        int[] counts = new int[Faction.values().length];
+        for (ServerPlayer p : level.players()) {
+            int f = Factions.index(p);
+            if (f >= 0 && eligible(p) && d.inControl(p.getX(), p.getZ())) {
+                counts[f]++;
+            }
+        }
+        return ZoneLogic.leader(counts);
+    }
+
     /** 0 = open ground, 1 = Control Zone, 2 = Hot Zone (open ground when no match is running). */
     public static int zoneLevel(Level level, Vec3 pos) {
         if (!(level instanceof ServerLevel sl)) {
@@ -178,7 +195,7 @@ public final class MatchManager {
                     ENTER_PAID_AT.put(p.getUUID(), now);
                     Wallet.add(p, enterPay);
                     Progression.award(p, Role.WARDOG, enterPay);
-                    p.displayClientMessage(Component.literal("+$" + enterPay + "  Control Zone").withStyle(ChatFormatting.GOLD), true);
+                    com.wardogs.net.RewardPayload.send(p, "ENTERED CONTROL ZONE", enterPay);
                 }
             }
         }
@@ -201,7 +218,7 @@ public final class MatchManager {
             }
             Wallet.add(p, pay);
             Progression.award(p, Role.WARDOG, pay);
-            p.displayClientMessage(Component.literal("+$" + pay + "  zone").withStyle(ChatFormatting.GOLD), true);
+            com.wardogs.net.RewardPayload.send(p, d.inHot(p.getX(), p.getZ()) ? "HOT ZONE PRESENCE" : "ZONE PRESENCE", pay);
         }
     }
 

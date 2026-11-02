@@ -195,7 +195,7 @@ public class Vehicle extends Mob {
             long pay = Balance.get().transportPay(d != null && d.flying());
             Wallet.add(driver, pay);
             Progression.award(driver, d != null && d.flying() ? Role.PILOT : Role.DRIVER, pay);
-            driver.displayClientMessage(Component.literal("+$" + pay + "  delivery").withStyle(ChatFormatting.GOLD), true);
+            com.wardogs.net.RewardPayload.send(driver, "PASSENGER DELIVERED", pay);
         }
     }
 
@@ -280,7 +280,7 @@ public class Vehicle extends Mob {
             if (d != null && killer instanceof ServerPlayer sp && (faction() < 0 || Factions.index(sp) != faction())) {
                 Wallet.add(sp, d.killReward());
                 Progression.award(sp, Role.WARDOG, d.killReward());
-                sp.displayClientMessage(Component.literal("+$" + d.killReward() + "  vehicle destroyed").withStyle(ChatFormatting.GOLD), true);
+                com.wardogs.net.RewardPayload.send(sp, "VEHICLE DESTROYED", d.killReward());
             }
             ejectPassengers();
             sl.sendParticles(ParticleTypes.EXPLOSION_EMITTER, getX(), getY() + getBbHeight() / 2, getZ(), 1, 0, 0, 0, 0);

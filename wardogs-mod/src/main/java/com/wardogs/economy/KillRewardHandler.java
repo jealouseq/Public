@@ -76,7 +76,7 @@ public final class KillRewardHandler {
                     shooterZone, targetZone, 1, 0, false, false));
             long cost = Math.round(worth * rd.teamkillCostMult());
             Wallet.add(killer, -cost);
-            killer.displayClientMessage(Component.literal("-$" + cost + "  teamkill").withStyle(ChatFormatting.RED), false);
+            com.wardogs.net.RewardPayload.send(killer, "TEAM KILL", -cost);
             HudPayload.sendTo(killer);
             return;
         }
@@ -99,8 +99,7 @@ public final class KillRewardHandler {
         if (victim instanceof Player) {
             PAID.put(victimId, new Paid(killerId, reward));
         }
-        killer.displayClientMessage(Component.literal("+$" + reward + (hit.headshot() ? "  HEADSHOT" : "") + String.format("  %.0fm", hit.distance()))
-                .withStyle(ChatFormatting.GOLD), false);
+        com.wardogs.net.RewardPayload.send(killer, hit.headshot() ? "HEADSHOT KILL  " + String.format("%.0f m", hit.distance()) : "KILL  " + String.format("%.0f m", hit.distance()), reward);
         HudPayload.sendTo(killer);
     }
 
@@ -114,7 +113,7 @@ public final class KillRewardHandler {
         ServerPlayer killer = server.getPlayerList().getPlayer(p.killer());
         if (killer != null && back > 0) {
             Wallet.add(killer, -back);
-            killer.displayClientMessage(Component.literal("-$" + back + "  victim revived").withStyle(ChatFormatting.RED), false);
+            com.wardogs.net.RewardPayload.send(killer, "VICTIM REVIVED", -back);
             HudPayload.sendTo(killer);
         }
     }
