@@ -1,0 +1,1 @@
+{"loader": "neoforge:obj", "model": "wardogs:models/vehicle/humvee.obj", "flip_v": true, "automatic_culling": false, "shade_quads": true, "textures": {"base": "wardogs:item/mesh_white", "particle": "wardogs:item/mesh_white"}}

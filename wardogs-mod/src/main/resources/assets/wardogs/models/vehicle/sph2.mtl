@@ -1,0 +1,48 @@
+newmtl m0
+Kd 0.1330 0.1370 0.1490
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m1
+Kd 0.2310 0.2430 0.2590
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m2
+Kd 0.4900 0.5140 0.5330
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m3
+Kd 0.5760 0.5180 0.3610
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m4
+Kd 0.6590 0.5920 0.4160
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m5
+Kd 0.1100 0.1140 0.1250
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base
+
+newmtl m6
+Kd 0.2940 0.3290 0.2120
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd #base

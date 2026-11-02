@@ -98,21 +98,63 @@ def vehicle(vid):
     return deco
 
 
-# ---- real meshes ---------------------------------------------------------------------------------------------------
+# ---- vehicles: real meshes where a good CC0 one exists, procedural (vehicles_proc.py) otherwise ------------------------------------
+import vehicles_proc as vp
 
-def gaz67_mesh():
-    z = unzip(oga("gaz-67_lowpoly_1.zip"), "gaz67")
-    m = ml.read_obj(convert_fbx(os.path.join(z, "GAZ 67.fbx"), "gaz67"))
-    m = ml.compact(m)
+HITBOX = {}   # vehicle id -> (width, height, length) written into vehicles.json
+
+
+def veh(vid, hitbox, mesh_fn):
+    if ONLY and vid not in ONLY and "vehicles" not in ONLY:
+        return
+    m = mesh_fn()
+    finish_vehicle(vid, m)
+    HITBOX[vid] = hitbox
+
+
+def uaz_mesh(gun=False):
+    z = unzip(oga("soviet_military_off-road_vehicle_0.zip"), "uaz")
+    m = ml.compact(ml.read_obj(convert_fbx(os.path.join(z, "soviet military off-road vehicle.fbx"), "uaz")))
+    m = ml.decimate(m, 3600)
+    m = ml.reorient(m, "-x,y,-z")          # the source faces +z; the mod wants -z
+    m = ml.place(m, "z", 4.2)
+    # recolour: olive-drab paint, black rubber, bluish glass
+    m = paint(m, [("paint", hexc("#5a6444")), ("glass", hexc("#6c8da0")), ("rubber", BLACK), ("tire", BLACK), ("wheel", BLACK), ("glow red", hexc("#b3342b")),
+                  ("mirror", hexc("#8a9096"))])
+    if gun:
+        lo, hi = m.bbox()
+        top = hi[1]
+        extra = [mk.cylinder((0, top + 0.08, 0.25), 0.34, 0.12, "y", 12, vp.C["dark"]), mk.box(0, top + 0.32, 0.25, 0.32, 0.45, 0.32, vp.C["dark"])]
+        extra += vp.barrel(0.1, top + 0.55, 1.1, 0.045, vp.C["black"])
+        m = mk.union([m] + extra)
     return m
 
 
-@vehicle("gaz67")
-def _gaz67():
-    m = gaz67_mesh()
-    m = ml.decimate(m, 5200)
-    m = ml.place(m, "z", 4.0)
-    return m
+def build_vehicles():
+    veh("bobcat", (1.2, 1.1, 2.0), vp.atv)
+    veh("dune_buggy", (2.0, 1.5, 2.8), vp.buggy)
+    veh("kodiak", (1.9, 1.7, 4.0), lambda: vp.suv("kodiak"))
+    veh("kodiak_m249", (1.9, 1.7, 4.0), lambda: vp.suv("kodiak", gun=True))
+    veh("kodiak_pickup", (1.9, 1.7, 4.6), lambda: vp.suv("pickup"))
+    veh("wolf_110", (1.9, 1.9, 4.2), lambda: uaz_mesh(False))
+    veh("wolf_110_m2", (1.9, 1.9, 4.2), lambda: uaz_mesh(True))
+    veh("humvee", (2.2, 1.9, 4.6), lambda: vp.humvee(None))
+    veh("humvee_m249", (2.2, 1.9, 4.6), lambda: vp.humvee("m249"))
+    veh("humvee_minigun", (2.2, 1.9, 4.6), lambda: vp.humvee("minigun"))
+    veh("ural", (2.5, 2.9, 7.6), lambda: vp.ural(cover=True))
+    veh("ural_defender", (2.5, 2.9, 7.6), lambda: vp.ural(cover=False))
+    veh("ural_defender_m249", (2.5, 3.0, 7.6), lambda: vp.ural(cover=False, gun=True))
+    veh("l2a6", (3.5, 2.6, 7.4), lambda: vp.mbt("l2a6"))
+    veh("t72b3", (3.5, 2.5, 7.4), lambda: vp.mbt("t72b3"))
+    veh("flakpanzer_gepard", (3.4, 3.2, 7.2), vp.gepard)
+    veh("sph2", (3.4, 3.0, 7.8), vp.sph2)
+    veh("m113", (2.7, 2.3, 5.2), vp.m113)
+    veh("mh6", (2.0, 2.3, 7.5), lambda: vp.littlebird("mh6"))
+    veh("ah6m", (2.0, 2.3, 7.5), lambda: vp.littlebird("ah6m"))
+    veh("ah6r", (2.0, 2.3, 7.5), lambda: vp.littlebird("ah6r"))
+    veh("z20_lakota", (3.0, 3.0, 9.0), lambda: vp.utility_heli("z20"))
+    veh("z20_lakota_miniguns", (3.0, 3.0, 9.0), lambda: vp.utility_heli("z20_miniguns"))
+    veh("havoc", (3.0, 3.0, 9.0), lambda: vp.utility_heli("havoc"))
 
 
 # ---- guns: Quaternius "Ultimate Gun Pack" (CC0), real meshes in the hand position of the old voxel models -----------------------
@@ -169,6 +211,14 @@ def build_guns():
 if __name__ == "__main__":
     if not ONLY or "guns" in ONLY or set(GUN_MAP) & ONLY:
         build_guns()
+    build_vehicles()
+    # sizes: the hitbox of every mesh vehicle follows the mesh (rotors and long barrels excluded by hand in HITBOX)
+    vp_path = os.path.join(ROOT, "src/main/resources/data/wardogs/balance/vehicles.json")
+    V = json.load(open(vp_path))
+    for vid, (w, h, d) in HITBOX.items():
+        if vid in V["vehicles"]:
+            V["vehicles"][vid]["w"], V["vehicles"][vid]["h"], V["vehicles"][vid]["d"] = w, h, d
+    json.dump(V, open(vp_path, "w"), indent=1)
     os.makedirs(os.path.join(OUT, "textures/item"), exist_ok=True)
     img = Image.new("RGBA", (16, 16), (255, 255, 255, 255))
     img.save(os.path.join(OUT, "textures/item/mesh_white.png"))
