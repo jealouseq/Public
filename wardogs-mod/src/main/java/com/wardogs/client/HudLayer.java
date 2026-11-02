@@ -192,7 +192,10 @@ public final class HudLayer {
         g.drawString(mc.font, "SQUAD", x, y - 11, 0xFFFFD54A, true);
         for (var m : members) {
             g.fill(x - 3, y - 2, x + 78, y + 17, 0x99101418);
-            g.drawString(mc.font, (m.leader() ? "\u2605 " : "") + m.name(), x, y, 0xFFE8EAEE, false);
+            g.drawString(mc.font, (m.leader() ? "\u2605 " : "") + m.name(), x, y, m.downed() ? 0xFFEF4444 : 0xFFE8EAEE, false);
+            if (m.downed()) {
+                g.drawString(mc.font, "DOWN", x + 72 - mc.font.width("DOWN"), y, 0xFFEF4444, false);
+            }
             float f = m.maxHealth() <= 0 ? 0 : Math.max(0f, Math.min(1f, m.health() / m.maxHealth()));
             g.fill(x, y + 11, x + 72, y + 14, 0xFF2A2F36);
             g.fill(x, y + 11, x + (int) (72 * f), y + 14, f > 0.5f ? 0xFF4ADE80 : f > 0.25f ? 0xFFFACC15 : 0xFFEF4444);

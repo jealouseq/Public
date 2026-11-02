@@ -137,7 +137,7 @@ RPG-7 on vehicles: 110 damage, 12 m blast, 2.5 m full-effect radius (vehicle dam
 
 ## 8. Where this contradicted the mod (status)
 
-DONE (wave 1): armour, hit zones, HP/AP vs armour, falloff, kill reward, XP, vehicle stats, FOB range. STILL OPEN: Control Zone variants and bases/vendors at real coordinates (need the map), per-section vehicle damage, bullet drop/travel time.
+DONE (wave 1): armour, hit zones, HP/AP vs armour, falloff, kill reward, XP, vehicle stats, FOB range. Since then also done: Control Zone variants, bases/vendors/towers/boards/loot at real coordinates, per-section vehicle damage, bullet drop/travel time. NOTE: the Kennel guide says the Control Zone outline is "2x2 km" while the marker data gives radius 500 m; the mod uses 500 m (change `radius` in sites.json if the real zone proves larger).
 
 | Area | Mod now | Evidence |
 |---|---|---|

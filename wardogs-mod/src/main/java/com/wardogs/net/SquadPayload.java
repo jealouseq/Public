@@ -18,7 +18,7 @@ import java.util.List;
 
 /** Server -> squad members: who is in the squad, where they are and how healthy (an empty list clears the HUD). */
 public record SquadPayload(List<Member> members) implements CustomPacketPayload {
-    public record Member(String name, boolean leader, double x, double z, float health, float maxHealth) {}
+    public record Member(String name, boolean leader, double x, double z, float health, float maxHealth, boolean downed) {}
 
     public static final Type<SquadPayload> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "squad"));
     public static final StreamCodec<RegistryFriendlyByteBuf, SquadPayload> CODEC = StreamCodec.of(
@@ -31,13 +31,14 @@ public record SquadPayload(List<Member> members) implements CustomPacketPayload 
                     buf.writeDouble(m.z);
                     buf.writeFloat(m.health);
                     buf.writeFloat(m.maxHealth);
+                    buf.writeBoolean(m.downed);
                 }
             },
             buf -> {
                 int n = Math.min(8, buf.readVarInt());
                 List<Member> out = new ArrayList<>();
                 for (int i = 0; i < n; i++) {
-                    out.add(new Member(buf.readUtf(32), buf.readBoolean(), buf.readDouble(), buf.readDouble(), buf.readFloat(), buf.readFloat()));
+                    out.add(new Member(buf.readUtf(32), buf.readBoolean(), buf.readDouble(), buf.readDouble(), buf.readFloat(), buf.readFloat(), buf.readBoolean()));
                 }
                 return new SquadPayload(out);
             });
@@ -49,7 +50,7 @@ public record SquadPayload(List<Member> members) implements CustomPacketPayload 
         if (s != null) {
             for (ServerPlayer m : p.server.getPlayerList().getPlayers()) {
                 if (s.members.contains(m.getUUID())) {
-                    out.add(new Member(m.getGameProfile().getName(), s.leader.equals(m.getUUID()), m.getX(), m.getZ(), m.getHealth(), m.getMaxHealth()));
+                    out.add(new Member(m.getGameProfile().getName(), s.leader.equals(m.getUUID()), m.getX(), m.getZ(), m.getHealth(), m.getMaxHealth(), com.wardogs.medic.Downed.is(m)));
                 }
             }
         }

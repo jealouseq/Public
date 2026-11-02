@@ -1737,7 +1737,7 @@ public final class WardogsGameTests {
         check(com.wardogs.match.Squads.of(lead).members.size() == 2, "two members");
         check(com.wardogs.match.Squads.leave(lead) == null && com.wardogs.match.Squads.of(mate).leader.equals(mate.getUUID()),
                 "when the leader leaves, the next member leads");
-        var payload = new com.wardogs.net.SquadPayload(java.util.List.of(new com.wardogs.net.SquadPayload.Member("Dev", true, 1.5, -2.5, 80f, 100f)));
+        var payload = new com.wardogs.net.SquadPayload(java.util.List.of(new com.wardogs.net.SquadPayload.Member("Dev", true, 1.5, -2.5, 80f, 100f, true)));
         var buf = new net.minecraft.network.RegistryFriendlyByteBuf(io.netty.buffer.Unpooled.buffer(), h.getLevel().registryAccess(),
                 net.neoforged.neoforge.network.connection.ConnectionType.NEOFORGE);
         com.wardogs.net.SquadPayload.CODEC.encode(buf, payload);
