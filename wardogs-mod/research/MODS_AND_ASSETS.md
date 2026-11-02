@@ -47,6 +47,9 @@ datapack, licence not checked). Conclusion: keep generating buildings from the g
   licence is not done, its post-Soviet street style was recreated by the generator instead), STALCRAFT and WARDOGS game files
   (proprietary: weapons, buildings and items in that style were drawn from scratch or from CC0 sources).
 
+- **Community mods the owner supplied** (gcaa, LAV, Flan's Modern Warfare pack, TacCraft): local-only imports, see `research/IMPORTS.md`. Their
+  licences do not allow redistribution, so none of their files is in the repository.
+
 ## Decor (furniture, street furniture, camp gear)
 The mcpehub.org "furniture" category (https://mcpehub.org/mods/furniture/) lists Minecraft Bedrock (Pocket Edition) add-ons such as
 MrCrayFish Furniture, Rustic Furniture, Modern Furniture and Gooblideco. They are Bedrock files (no Java or NeoForge build), their

@@ -351,6 +351,34 @@ public class ShopScreen extends Screen {
         return true;
     }
 
+    private static final java.util.Map<net.minecraft.client.resources.model.BakedModel, float[]> BOUNDS = new java.util.WeakHashMap<>();
+
+    /** Bounding box (min xyz, max xyz) of a baked model's quads, in blocks. */
+    private static float[] bounds(net.minecraft.client.resources.model.BakedModel model) {
+        return BOUNDS.computeIfAbsent(model, m -> {
+            float[] b = {1e9f, 1e9f, 1e9f, -1e9f, -1e9f, -1e9f};
+            var rnd = net.minecraft.util.RandomSource.create(1);
+            java.util.List<net.minecraft.core.Direction> sides = new java.util.ArrayList<>(java.util.Arrays.asList(net.minecraft.core.Direction.values()));
+            sides.add(null);
+            for (var side : sides) {
+                for (var q : m.getQuads(null, side, rnd)) {
+                    int[] v = q.getVertices();
+                    for (int i = 0; i < 4; i++) {
+                        for (int a = 0; a < 3; a++) {
+                            float c = Float.intBitsToFloat(v[i * 8 + a]);
+                            b[a] = Math.min(b[a], c);
+                            b[a + 3] = Math.max(b[a + 3], c);
+                        }
+                    }
+                }
+            }
+            if (b[0] > b[3]) {
+                return new float[]{0, 0, 0, 1, 1, 1};
+            }
+            return b;
+        });
+    }
+
     /** A gun swinging slowly left and right on its own mesh, lit like an item, centred on (cx, cy). */
     private boolean gunPreview(GuiGraphics g, ItemStack stack, float cx, float cy) {
         var mc = net.minecraft.client.Minecraft.getInstance();
@@ -359,9 +387,13 @@ public class ShopScreen extends Screen {
             return false;
         }
         double t = System.currentTimeMillis() / 1800.0;
+        float[] box = bounds(model);
+        float length = Math.max(0.3f, box[3] - box[0]);
+        float scale = Math.min(150f / (length * 0.58f), 90f / (Math.max(0.1f, box[4] - box[1]) * 0.58f * 1.5f)); // fits the stage, whatever the gun's size
         g.pose().pushPose();
         g.pose().translate(cx, cy, 150);
-        g.pose().scale(120f, -120f, 120f);
+        g.pose().scale(scale, -scale, scale);
+        g.pose().translate(-(box[0] + box[3]) / 2 + 0.5, -(box[1] + box[4]) / 2 + 0.5, -(box[2] + box[5]) / 2 + 0.5); // the item renderer centres on (0.5, 0.5, 0.5)
         g.pose().mulPose(com.mojang.math.Axis.XP.rotationDegrees(-12));
         g.pose().mulPose(com.mojang.math.Axis.YP.rotationDegrees((float) (Math.sin(t) * 40.0)));
         com.mojang.blaze3d.platform.Lighting.setupFor3DItems();

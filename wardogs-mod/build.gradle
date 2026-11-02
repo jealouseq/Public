@@ -59,6 +59,16 @@ neoForge {
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
+// Third-party models you imported yourself (research/tools/import_*.py) live in the git-ignored local-data/generated and, when present,
+// replace the bundled ones at build time. Nothing in that folder is ever committed.
+// Pass -PnoImports to build without them (do that for anything you hand to other people: those assets are not ours to redistribute).
+if (file('local-data/generated').exists() && !project.hasProperty('noImports')) {
+    tasks.named('processResources') {
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
+        from('local-data/generated')
+    }
+}
+
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.10.2'
