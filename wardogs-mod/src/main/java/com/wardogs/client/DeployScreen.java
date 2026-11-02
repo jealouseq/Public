@@ -31,8 +31,12 @@ public final class DeployScreen extends Screen {
     }
 
     @Override
+    public void renderBackground(GuiGraphics g, int mx, int my, float pt) {
+    }
+
+    @Override
     public void render(GuiGraphics g, int mx, int my, float pt) {
-        renderBackground(g, mx, my, pt);
+        g.fill(0, 0, width, height, 0xC00B0E12);
         g.drawCenteredString(font, "DEPLOYMENT BOARD", width / 2, height / 2 - names.size() * 12 - 22, 0xFFFFD54A);
         super.render(g, mx, my, pt);
     }
