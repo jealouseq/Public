@@ -8,7 +8,7 @@ import java.util.List;
 public final class ClientDeploy {
     private ClientDeploy() {}
 
-    public static void open(List<String> names) {
-        Minecraft.getInstance().setScreen(new DeployScreen(names));
+    public static void open(List<String> names, List<String> keys) {
+        Minecraft.getInstance().setScreen(new DeployScreen(names, keys));
     }
 }

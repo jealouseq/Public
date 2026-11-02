@@ -312,7 +312,7 @@ public final class MatchManager {
         var payload = new com.wardogs.net.ScoreboardPayload(fin, winner, new int[]{d.scores[0], d.scores[1], d.scores[2]},
                 MatchStats.rows(ow.getServer().getPlayerList().getPlayers()));
         for (ServerPlayer p : ow.getServer().getPlayerList().getPlayers()) {
-            if (p.connection != null && p.connection.hasChannel(com.wardogs.net.ScoreboardPayload.TYPE)) {
+            if (Factions.index(p) >= 0 && p.connection != null && p.connection.hasChannel(com.wardogs.net.ScoreboardPayload.TYPE)) {
                 net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(p, payload);
             }
         }

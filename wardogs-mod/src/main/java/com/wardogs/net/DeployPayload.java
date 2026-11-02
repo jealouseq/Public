@@ -14,10 +14,11 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 
 /** Client -> server: deploy to the point with this index in the list the board showed. */
-public record DeployPayload(int index) implements CustomPacketPayload {
+public record DeployPayload(int index, String key) implements CustomPacketPayload {
     public static final Type<DeployPayload> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "deploy"));
     public static final StreamCodec<RegistryFriendlyByteBuf, DeployPayload> CODEC =
-            StreamCodec.composite(ByteBufCodecs.VAR_INT, DeployPayload::index, DeployPayload::new);
+            StreamCodec.composite(ByteBufCodecs.VAR_INT, DeployPayload::index,
+                    ByteBufCodecs.STRING_UTF8, DeployPayload::key, DeployPayload::new);
 
     @Override
     public Type<? extends CustomPacketPayload> type() {
@@ -32,7 +33,7 @@ public record DeployPayload(int index) implements CustomPacketPayload {
         public static void register(RegisterPayloadHandlersEvent e) {
             e.registrar("1").playToServer(TYPE, CODEC, (p, ctx) -> ctx.enqueueWork(() -> {
                 if (ctx.player() instanceof ServerPlayer sp) {
-                    String err = Deployment.deploy(sp, p.index());
+                    String err = Deployment.deploy(sp, p.index(), p.key());
                     if (err != null) {
                         sp.displayClientMessage(Component.literal(err), true);
                     }

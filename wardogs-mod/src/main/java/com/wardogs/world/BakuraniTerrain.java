@@ -50,7 +50,7 @@ public final class BakuraniTerrain {
         }
 
         /** Radius of the circle around the centre that holds the whole footprint plus its doorstep. */
-        public int radius() { return (int) Math.ceil(Math.hypot(w, d + 1) / 2.0) + 1; }
+        public int radius() { return (int) Math.ceil(Math.hypot(w, d + 1) / 2.0) + 4; }
 
         public int minX() { return (int) Math.floor(x - radius()); }
         public int minZ() { return (int) Math.floor(z - radius()); }
@@ -139,22 +139,22 @@ public final class BakuraniTerrain {
 
     /** Buildings whose indexed cells overlap the block rectangle (may include a few that merely touch the cells). */
     public List<Building> buildingsIn(int minX, int minZ, int maxX, int maxZ) {
-        List<Building> out = new ArrayList<>();
+        java.util.Set<Building> out = new java.util.LinkedHashSet<>(); // a building spans several index cells: list it once
         for (int cx = Math.floorDiv(minX, INDEX_CELL); cx <= Math.floorDiv(maxX, INDEX_CELL); cx++) {
             for (int cz = Math.floorDiv(minZ, INDEX_CELL); cz <= Math.floorDiv(maxZ, INDEX_CELL); cz++) {
-                for (Building b : buildingIndex.getOrDefault(key(cx, cz), List.of())) {
-                    if (!out.contains(b)) {
-                        out.add(b);
-                    }
-                }
+                out.addAll(buildingIndex.getOrDefault(key(cx, cz), List.of()));
             }
         }
-        return out;
+        return new ArrayList<>(out);
     }
 
     /** True if a block column lies within {@code margin} blocks of a building footprint. */
     public boolean nearBuilding(int x, int z, int margin) {
-        for (Building b : buildingsIn(x - margin, z - margin, x + margin, z + margin)) {
+        if (buildingIndex.isEmpty()) {
+            return false;
+        }
+        // all buildings near a column are indexed in its own cell (their index range covers their whole footprint)
+        for (Building b : buildingIndex.getOrDefault(key(Math.floorDiv(x, INDEX_CELL), Math.floorDiv(z, INDEX_CELL)), List.of())) {
             double dx = x + 0.5 - b.x(), dz = z + 0.5 - b.z();
             if (Math.hypot(dx, dz) <= Math.hypot(b.w(), b.d()) / 2.0 + margin) {
                 return true;

@@ -345,7 +345,7 @@ public final class HudLayer {
         }
         float hp = mc.player.getHealth(), max = Math.max(1f, mc.player.getMaxHealth());
         int armour = armourPercent(mc);
-        int stamina = Math.min(100, mc.player.getFoodData().getFoodLevel() * 5);
+        int stamina = Math.min(100, mc.player.getFoodData().getFoodLevel() * 100 / com.wardogs.combat.Stamina.FOOD_MAX);
         String s1 = stamina + "%", s2 = armour + "%", s3 = String.valueOf((int) Math.ceil(hp));
         small(g, mc, s1, lx + 2, h - 20, TEXT, 0.9f);
         // armour shield glyph then percentage

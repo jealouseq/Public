@@ -12,11 +12,14 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Stamina 0-100 shown on the HUD. Sprinting drains it, standing or walking refills it. The value is mirrored into the vanilla food
- * bar (food = stamina / 5), which already refuses to let a player sprint at 6 food or less - that is, below 30% stamina.
+ * bar (food = stamina * 17 / 100), which already refuses to let a player sprint at 6 food or less - that is, below about 35% stamina.
+ * It stays below 18 food so vanilla natural regeneration never kicks in.
  */
 @EventBusSubscriber(modid = WardogsMod.MOD_ID)
 public final class Stamina {
     public static final float MAX = 100f;
+    /** The food bar is kept at 17 or less: from 18 vanilla starts healing the player on its own, which this mod leaves to medics. */
+    public static final int FOOD_MAX = 17;
     /** Lost per tick while sprinting: about 6.4 seconds from full down to the 30% cut-off. */
     public static final float DRAIN = 0.55f;
     /** Regained per tick while not sprinting. */
@@ -44,6 +47,15 @@ public final class Stamina {
         VALUE.clear();
     }
 
+    public static void forget(UUID id) {
+        VALUE.remove(id);
+    }
+
+    @SubscribeEvent
+    public static void onRespawn(net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerRespawnEvent e) {
+        VALUE.remove(e.getEntity().getUUID());
+    }
+
     @SubscribeEvent
     public static void onTick(PlayerTickEvent.Post e) {
         if (!(e.getEntity() instanceof ServerPlayer sp) || sp.isCreative() || sp.isSpectator()) {
@@ -51,7 +63,7 @@ public final class Stamina {
         }
         float v = tick(sp.getUUID(), sp.isSprinting());
         var food = sp.getFoodData();
-        food.setFoodLevel(Math.max(1, Math.round(v / 5f)));
+        food.setFoodLevel(Math.max(1, Math.min(FOOD_MAX, Math.round(v * FOOD_MAX / MAX))));
         food.setSaturation(0f);
         food.setExhaustion(0f);
     }

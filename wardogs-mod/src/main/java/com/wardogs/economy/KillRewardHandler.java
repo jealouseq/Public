@@ -50,6 +50,10 @@ public final class KillRewardHandler {
     public static void onDeath(LivingDeathEvent e) {
         Ballistics.Hit hit = Ballistics.current();
         if (hit == null || !(e.getSource().getEntity() instanceof ServerPlayer killer)) {
+            // not a player's bullet or blast (a fall, a vehicle, a mob...): the scoreboard still counts the death
+            if (e.getEntity() instanceof ServerPlayer dead && !Downed.is(dead)) {
+                com.wardogs.match.MatchStats.death(dead);
+            }
             return;
         }
         var victim = e.getEntity();

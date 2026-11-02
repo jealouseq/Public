@@ -11,11 +11,12 @@ import java.util.List;
 
 /** The deployment board: one button per place the soldier may deploy to. */
 public final class DeployScreen extends Screen {
-    private final List<String> names;
+    private final List<String> names, keys;
 
-    public DeployScreen(List<String> names) {
+    public DeployScreen(List<String> names, List<String> keys) {
         super(Component.literal("Deployment board"));
         this.names = names;
+        this.keys = keys;
     }
 
     @Override
@@ -24,7 +25,7 @@ public final class DeployScreen extends Screen {
         for (int i = 0; i < names.size(); i++) {
             int index = i;
             addRenderableWidget(Button.builder(Component.literal("DEPLOY  ▸  " + names.get(i).toUpperCase()), b -> {
-                PacketDistributor.sendToServer(new DeployPayload(index));
+                PacketDistributor.sendToServer(new DeployPayload(index, keys.get(index)));
                 onClose();
             }).bounds(x, y + i * 24, w, 20).build());
         }

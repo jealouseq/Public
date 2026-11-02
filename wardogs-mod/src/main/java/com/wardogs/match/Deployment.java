@@ -29,7 +29,12 @@ public final class Deployment {
 
     private Deployment() {}
 
-    public record Target(String name, double x, double z) {}
+    public record Target(String name, double x, double z) {
+        /** Identifies a target across list changes: name and rounded position. */
+        public String key() {
+            return name + "@" + (int) x + "," + (int) z;
+        }
+    }
 
     /** Where a player of this faction may deploy: their base first, then every friendly FOB. */
     public static List<Target> targets(ServerLevel level, Faction f) {
@@ -61,10 +66,13 @@ public final class Deployment {
     }
 
     /** Sends the player to target {@code index}. @return the message to show, or null if it worked. */
-    public static String deploy(ServerPlayer p, int index) {
+    public static String deploy(ServerPlayer p, int index, String key) {
         Faction f = Factions.of(p);
         if (f == null) {
             return "Pick a faction first";
+        }
+        if (!p.isAlive() || p.isSpectator() || com.wardogs.medic.Downed.is(p)) {
+            return "You cannot deploy right now";
         }
         ServerLevel bk = p.server.getLevel(BakuraniWorld.DIMENSION);
         MatchData d = MatchData.get(p.server.overworld());
@@ -79,6 +87,9 @@ public final class Deployment {
             return "That deployment point is gone";
         }
         Target to = t.get(index);
+        if (key != null && !to.key().equals(key)) {
+            return "The deployment points changed - open the board again";
+        }
         double ang = p.getRandom().nextDouble() * Math.PI * 2, r = 3 + p.getRandom().nextDouble() * 3;
         double x = to.x() + Math.cos(ang) * r, z = to.z() + Math.sin(ang) * r;
         bk.getChunk((int) Math.floor(x) >> 4, (int) Math.floor(z) >> 4);
@@ -103,12 +114,13 @@ public final class Deployment {
             sp.displayClientMessage(Component.literal("Pick a faction first (/wd team)"), true);
             return;
         }
-        List<String> names = new ArrayList<>();
+        List<String> names = new ArrayList<>(), keys = new ArrayList<>();
         for (Target t : targets((ServerLevel) e.getLevel(), f)) {
             names.add(t.name());
+            keys.add(t.key());
         }
         if (sp.connection != null && sp.connection.hasChannel(OpenDeployPayload.TYPE)) {
-            PacketDistributor.sendToPlayer(sp, new OpenDeployPayload(names));
+            PacketDistributor.sendToPlayer(sp, new OpenDeployPayload(names, keys));
         }
     }
 }

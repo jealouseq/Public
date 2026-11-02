@@ -52,6 +52,8 @@ import java.util.UUID;
 public class Vehicle extends Mob {
     private static final EntityDataAccessor<String> KIND = SynchedEntityData.defineId(Vehicle.class, EntityDataSerializers.STRING);
     private static final EntityDataAccessor<Float> FUEL = SynchedEntityData.defineId(Vehicle.class, EntityDataSerializers.FLOAT);
+    /** Bit i set = the i-th section of the definition is destroyed. Synced so the driver's client (which steers) sees it too. */
+    private static final EntityDataAccessor<Integer> BROKEN = SynchedEntityData.defineId(Vehicle.class, EntityDataSerializers.INT);
     private static final EntityDataAccessor<Integer> FACTION = SynchedEntityData.defineId(Vehicle.class, EntityDataSerializers.INT);
 
     public enum DamageKind { BULLET, EXPLOSIVE, ANTI_TANK }
@@ -99,6 +101,7 @@ public class Vehicle extends Mob {
         b.define(KIND, "bobcat");
         b.define(FUEL, 0f);
         b.define(FACTION, -1);
+        b.define(BROKEN, 0);
     }
 
     @Nullable
@@ -263,8 +266,34 @@ public class Vehicle extends Mob {
 
     /** True while the named section still has hit points (or the vehicle has no such section). */
     public boolean sectionWorks(String name) {
-        Float hp = sections().get(name);
-        return hp == null || hp > 0;
+        VehicleDef d = def();
+        if (d == null) {
+            return true;
+        }
+        int i = 0;
+        for (String k : d.sections().keySet()) {
+            if (k.equals(name)) {
+                return (entityData.get(BROKEN) & (1 << i)) == 0;
+            }
+            i++;
+        }
+        return true;
+    }
+
+    /** Recomputes the synced bitmask from the server-side hit points. */
+    private void syncBroken() {
+        VehicleDef d = def();
+        int mask = 0, i = 0;
+        if (d != null) {
+            for (String k : d.sections().keySet()) {
+                Float hp = sections().get(k);
+                if (hp != null && hp <= 0) {
+                    mask |= 1 << i;
+                }
+                i++;
+            }
+        }
+        entityData.set(BROKEN, mask);
     }
 
     public float sectionHealth(String name) {
@@ -324,6 +353,7 @@ public class Vehicle extends Mob {
         float left = (float) Math.max(0, hp - amount);
         secs.put(name, left);
         if (left <= 0) {
+            syncBroken();
             for (Entity e : getPassengers()) {
                 if (e instanceof ServerPlayer sp) {
                     sp.displayClientMessage(Component.literal(name.toUpperCase() + " DESTROYED").withStyle(ChatFormatting.RED), true);
@@ -339,12 +369,15 @@ public class Vehicle extends Mob {
     /** Fraction of full speed left after broken wheels or tracks (never below 30%). */
     public double mobility() {
         double m = 1.0;
-        for (var e : sections().entrySet()) {
-            if (e.getValue() <= 0) {
-                if (e.getKey().startsWith("Wheel")) {
-                    m -= 0.2;
-                } else if (e.getKey().startsWith("Tracks")) {
-                    m -= 0.45;
+        VehicleDef d = def();
+        if (d != null) {
+            for (String k : d.sections().keySet()) {
+                if (!sectionWorks(k)) {
+                    if (k.startsWith("Wheel")) {
+                        m -= 0.2;
+                    } else if (k.startsWith("Tracks")) {
+                        m -= 0.45;
+                    }
                 }
             }
         }
@@ -353,13 +386,14 @@ public class Vehicle extends Mob {
 
     /** True if any section has been shot to pieces. */
     public boolean sectionsDamaged() {
-        return sections().values().stream().anyMatch(v -> v <= 0);
+        return entityData.get(BROKEN) != 0;
     }
 
     /** Puts every section back to full hit points (a repair). */
     public void repairSections() {
         sectionHp.clear();
         sections();
+        entityData.set(BROKEN, 0);
     }
 
     /** Applies damage given in WARDOGS units, scaled by the vehicle's armor against that kind of attack. */
@@ -538,6 +572,7 @@ public class Vehicle extends Mob {
         for (String k : secs.getAllKeys()) {
             sectionHp.put(k, secs.getFloat(k));
         }
+        syncBroken();
         VehicleDef d = def();
         if (d != null) {
             getAttribute(Attributes.MAX_HEALTH).setBaseValue(d.hp());

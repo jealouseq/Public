@@ -74,5 +74,15 @@ public final class ServerEvents {
             com.wardogs.match.Squads.forget(sp);
         }
         ShooterState.remove(e.getEntity().getUUID());
+        com.wardogs.combat.Stamina.forget(e.getEntity().getUUID());
+    }
+
+    /** Static per-server state must not survive into the next world of the same JVM (singleplayer). */
+    @SubscribeEvent
+    public static void onServerStopped(net.neoforged.neoforge.event.server.ServerStoppedEvent e) {
+        com.wardogs.combat.Ballistics.clearBullets();
+        com.wardogs.combat.Stamina.reset();
+        com.wardogs.match.Squads.reset();
+        com.wardogs.match.MatchStats.reset();
     }
 }

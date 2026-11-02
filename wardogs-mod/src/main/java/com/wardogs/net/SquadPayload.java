@@ -57,10 +57,21 @@ public record SquadPayload(List<Member> members) implements CustomPacketPayload 
         return new SquadPayload(out);
     }
 
+    /** Players that were last sent a non-empty squad, so one empty packet clears their HUD when they leave. */
+    private static final java.util.Set<java.util.UUID> HAD_SQUAD = java.util.concurrent.ConcurrentHashMap.newKeySet();
+
+    /** Sends the squad to a squad member, or one empty packet to someone who just left; nobody else gets traffic. */
     public static void sendTo(ServerPlayer p) {
-        if (p.connection != null && p.connection.hasChannel(TYPE)) {
-            PacketDistributor.sendToPlayer(p, forPlayer(p));
+        if (p.connection == null || !p.connection.hasChannel(TYPE)) {
+            return;
         }
+        SquadPayload payload = forPlayer(p);
+        if (!payload.members.isEmpty()) {
+            HAD_SQUAD.add(p.getUUID());
+        } else if (!HAD_SQUAD.remove(p.getUUID())) {
+            return;
+        }
+        PacketDistributor.sendToPlayer(p, payload);
     }
 
     @Override

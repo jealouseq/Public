@@ -132,7 +132,7 @@ public final class Ballistics {
 
     /** How far a bullet has fallen (in blocks) after {@code ticks} ticks of flight with the per-tick gravity step used by {@link #advance}. */
     public static double drop(int ticks) {
-        return GRAVITY / 400.0 * ticks * (ticks + 1) / 2.0;
+        return GRAVITY / 400.0 * ticks * (ticks - 1) / 2.0;
     }
 
     /** Bullets currently in flight (for tests and tooling). */
@@ -155,17 +155,16 @@ public final class Ballistics {
 
     /** One tick of flight. @return true while the bullet is still flying. */
     private static boolean advance(Bullet b) {
-        double perTick = GRAVITY / 400.0;
-        b.vel = b.vel.add(0, -perTick, 0);
         Vec3 next = b.pos.add(b.vel);
         boolean consumed = resolve(b.level, b.shooter, b.w, b.ammo, b.pellets, b.origin, b.pos, next);
         b.pos = next;
+        b.vel = b.vel.add(0, -GRAVITY / 400.0, 0); // gravity acts after the step, so the first segment follows the crosshair line
         b.age++;
         if (!consumed && b.age % 2 == 0 && b.w.velocity() >= 150) {
             b.level.sendParticles(ParticleTypes.END_ROD, next.x, next.y, next.z, 1, 0, 0, 0, 0); // faint tracer
         }
         double range = Math.min(b.w.range(), MAX_TRACE);
-        return !consumed && b.age < MAX_AGE && b.origin.distanceTo(b.pos) <= range && !b.shooter.level().isClientSide
+        return !consumed && b.age < MAX_AGE && b.origin.distanceTo(b.pos) <= range
                 && b.pos.y > b.level.getMinBuildHeight() - 8 && b.pos.y < b.level.getMaxBuildHeight() + 64;
     }
 

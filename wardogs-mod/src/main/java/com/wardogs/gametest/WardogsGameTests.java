@@ -1579,7 +1579,7 @@ public final class WardogsGameTests {
         var targets = com.wardogs.match.Deployment.targets(h.getLevel(), Faction.LONESTAR);
         check(!targets.isEmpty() && targets.get(0).name().equals("Lonestar base"), "the base is the first deployment point");
         ServerPlayer p = soldier(h, Faction.LONESTAR, 5.5, 5.5);
-        check(com.wardogs.match.Deployment.deploy(p, 0) != null, "deploying outside Bakurani is refused");
+        check(com.wardogs.match.Deployment.deploy(p, 0, null) != null, "deploying outside Bakurani is refused");
         h.succeed();
     }
 
@@ -1769,7 +1769,7 @@ public final class WardogsGameTests {
             com.wardogs.combat.Stamina.tick(id, true);
             ticks++;
         }
-        check(ticks >= 120 && ticks <= 140, "about 6.4 s of sprinting to the 30% cut-off: " + ticks + " ticks");
+        check(ticks >= 120 && ticks <= 140, "about 6.4 s of sprinting down to 30: " + ticks + " ticks");
         for (int i = 0; i < 2000; i++) {
             com.wardogs.combat.Stamina.tick(id, true);
         }
