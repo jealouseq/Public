@@ -78,7 +78,7 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                 int cov = t == null ? BakuraniTerrain.COVER_NONE : t.cover(wx, wz);
                 boolean road = t != null && t.isRoad(wx, wz) && mat != BakuraniTerrain.SNOW;
                 boolean inside = t != null && BakuraniTerrain.inside(wx, wz);
-                BlockState top = road ? (cov == BakuraniTerrain.COVER_URBAN ? Blocks.GRAY_CONCRETE.defaultBlockState() : Blocks.DIRT_PATH.defaultBlockState())
+                BlockState top = road ? (t.roadClass(wx, wz) >= 2 ? Blocks.GRAY_CONCRETE.defaultBlockState() : Blocks.DIRT_PATH.defaultBlockState())
                         : top(mat);
                 BlockState fill = filler(mat);
                 if (inside && !road && (mat == BakuraniTerrain.GRASS || mat == BakuraniTerrain.FOREST || mat == BakuraniTerrain.GRAVEL)

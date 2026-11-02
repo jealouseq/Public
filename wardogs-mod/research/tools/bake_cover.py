@@ -43,8 +43,10 @@ print("cover: water %.2f%% forest %.1f%% paved %.1f%% field %.1f%%" % tuple(100 
 raw_roads = np.frombuffer(open(os.path.join(D, "roads_4096_u8.bin"), "rb").read(), np.uint8).reshape(4096, 4096) > 0
 dist = ndimage.distance_transform_edt(raw_roads)
 clean = raw_roads & (dist <= 2.5)
-open(os.path.join(D, "roads_clean_4096_u8.bin"), "wb").write(clean.astype(np.uint8).tobytes())
-print("roads: raw %.2f%% -> clean %.2f%%" % (100 * raw_roads.mean(), 100 * clean.mean()))
+major = clean & (dist >= 1.2)     # carriageways about 10 m or wider are surfaced (class 2), the rest are tracks (class 1)
+cls = clean.astype(np.uint8) + major.astype(np.uint8)
+open(os.path.join(D, "roads_clean_4096_u8.bin"), "wb").write(cls.tobytes())
+print("roads: raw %.2f%% -> clean %.2f%% (surfaced %.2f%%)" % (100 * raw_roads.mean(), 100 * clean.mean(), 100 * major.mean()))
 
 # --- buildings ---------------------------------------------------------------------------------
 roads = np.frombuffer(open(os.path.join(D, "roads_4096_u8.bin"), "rb").read(), np.uint8).reshape(4096, 4096)

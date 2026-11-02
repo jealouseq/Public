@@ -223,6 +223,19 @@ public final class BakuraniTerrain {
         return roads[iz * roadSize + ix] != 0;
     }
 
+    /** 0 = no road, 1 = track, 2 = surfaced road (older data files only have 0 and 1). */
+    public int roadClass(double x, double z) {
+        if (roads.length == 0) {
+            return 0;
+        }
+        int ix = (int) Math.floor(pixelX(x) / IMAGE * roadSize);
+        int iz = (int) Math.floor(pixelY(z) / IMAGE * roadSize);
+        if (ix < 0 || iz < 0 || ix >= roadSize || iz >= roadSize) {
+            return 0;
+        }
+        return roads[iz * roadSize + ix] & 0xFF;
+    }
+
     public int maxSurfaceY() {
         int max = Short.MIN_VALUE;
         for (short s : height) {
