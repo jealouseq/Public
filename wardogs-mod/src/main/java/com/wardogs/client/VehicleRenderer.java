@@ -91,8 +91,12 @@ public class VehicleRenderer extends EntityRenderer<Vehicle> {
                 pose.translate(0, def.h() / 2.0, 0);
                 pose.scale((float) def.w(), (float) def.h(), (float) def.d());
             }
-            Minecraft.getInstance().getItemRenderer().render(ICON, ItemDisplayContext.NONE, false, pose, buffers, light,
-                    OverlayTexture.NO_OVERLAY, model);
+            // the pilot's own helicopter is seen from inside: the cockpit overlay is the interior, so the hull is not drawn over it
+            boolean ownCockpit = CockpitOverlay.active(Minecraft.getInstance()) && Minecraft.getInstance().player.getVehicle() == v;
+            if (!ownCockpit) {
+                Minecraft.getInstance().getItemRenderer().render(ICON, ItemDisplayContext.NONE, false, pose, buffers, light,
+                        OverlayTexture.NO_OVERLAY, model);
+            }
             double[] hub = rotorHub(def.id());
             BakedModel rotor = hub == null ? null : mm.getModel(rotorLocation(def.id()));
             if (rotor != null && rotor != mm.getMissingModel()) {

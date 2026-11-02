@@ -1,0 +1,5 @@
+{
+  "providers": [
+    {"type": "ttf", "file": "wardogs:rajdhani_medium.ttf", "size": 12.0, "oversample": 6.0, "shift": [0, 1], "skip": ""}
+  ]
+}

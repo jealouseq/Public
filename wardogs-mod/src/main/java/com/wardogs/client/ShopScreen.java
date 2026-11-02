@@ -33,6 +33,7 @@ public class ShopScreen extends Screen {
     private int scroll;
     private String selected;
     private Button buyButton;
+    private final java.util.Map<Shop.Category, FlatButton> tabs = new java.util.EnumMap<>(Shop.Category.class);
 
     private final java.util.Set<Shop.Category> allowed;
 
@@ -75,10 +76,11 @@ public class ShopScreen extends Screen {
                 case VEHICLE -> "Veh";
                 case ATTACHMENT -> "Mods";
             };
-            addRenderableWidget(Button.builder(Component.literal(label), b -> select(c)).bounds(x + i * bw, 24, bw - 2, 18).build());
+            FlatButton tab = addRenderableWidget(new FlatButton(x + i * bw, 24, bw - 2, 18, label, false, b -> select(c)));
+            tabs.put(c, tab);
             i++;
         }
-        buyButton = addRenderableWidget(Button.builder(Component.literal("BUY"), b -> buy()).bounds(x + LIST_W + GAP + 8, height - 40, DETAIL_W - 16, 20).build());
+        buyButton = addRenderableWidget(new FlatButton(x + LIST_W + GAP + 8, height - 40, DETAIL_W - 16, 20, "BUY", true, b -> buy()));
         select(category);
     }
 
@@ -92,6 +94,7 @@ public class ShopScreen extends Screen {
 
     private void select(Shop.Category c) {
         category = c;
+        tabs.forEach((k, b) -> b.selected = k == c);
         scroll = 0;
         ProgressData data = ClientProgress.get();
         rows = Shop.catalog().stream().filter(e -> e.category() == c)
@@ -241,9 +244,9 @@ public class ShopScreen extends Screen {
         g.fill(0, 0, width, height, 0xC00B0E12);
         int x = left();
         HudPayload hud = ClientHud.get();
-        g.drawString(font, "VENDOR", x, 8, 0xFFFFD54A, true);
+        Ui.text(g, font, "VENDOR", x, 8, 0xFFFFD54A, true);
         String money = "$" + (hud == null ? 0 : hud.money());
-        g.drawString(font, money, x + LIST_W + GAP + DETAIL_W - font.width(money), 8, 0xFFFFFFFF, true);
+        Ui.text(g, font, money, x + LIST_W + GAP + DETAIL_W - Ui.width(font, money), 8, 0xFFFFFFFF, true);
 
         ProgressData data = ClientProgress.get();
         // list
@@ -267,11 +270,11 @@ public class ShopScreen extends Screen {
             if (!ic.isEmpty()) {
                 g.renderItem(ic, x + 4, y + 2);
             }
-            g.drawString(font, font.plainSubstrByWidth(e.name(), LIST_W - 28 - font.width(right) - 8), x + 26, y + 7, colour, false);
-            g.drawString(font, right, x + LIST_W - 4 - font.width(right), y + 7, colour, false);
+            Ui.text(g, font, Ui.clip(font, e.name(), LIST_W - 28 - Ui.width(font, right) - 8), x + 26, y + 7, colour, false);
+            Ui.text(g, font, right, x + LIST_W - 4 - Ui.width(font, right), y + 7, colour, false);
         }
         if (rows.size() > visibleRows()) {
-            g.drawString(font, "scroll for more (" + rows.size() + ")", x, height - 14, 0xFF888888, false);
+            Ui.text(g, font, "scroll for more (" + rows.size() + ")", x, height - 14, 0xFF888888, false);
         }
         // detail panel
         int dx = x + LIST_W + GAP;
@@ -301,11 +304,11 @@ public class ShopScreen extends Screen {
             g.pose().popPose();
         }
         int off = big ? 62 : 0; // the vehicle mesh is a taller picture than an icon
-        g.drawCenteredString(font, e.name().toUpperCase(), dx + DETAIL_W / 2, 90 + off, 0xFFFFFFFF);
+        Ui.center(g, font, e.name().toUpperCase(), dx + DETAIL_W / 2, 90 + off, 0xFFFFFFFF);
         int y = 106 + off;
         for (String[] s : stats(e)) {
-            g.drawString(font, s[0], dx + 10, y, 0xFF9AA0AA, false);
-            g.drawString(font, s[1], dx + DETAIL_W - 10 - font.width(s[1]), y, 0xFFE8EAEE, false);
+            Ui.text(g, font, s[0], dx + 10, y, 0xFF9AA0AA, false);
+            Ui.text(g, font, s[1], dx + DETAIL_W - 10 - Ui.width(font, s[1]), y, 0xFFE8EAEE, false);
             y += 12;
         }
         String status = switch (st) {
@@ -313,7 +316,7 @@ public class ShopScreen extends Screen {
             case PAYABLE -> "Unlock once for $" + e.cost();
             default -> "Requires " + (e.role() == null ? "" : e.role().key()) + " level " + e.level();
         };
-        g.drawCenteredString(font, status, dx + DETAIL_W / 2, height - 58, st == UnlockRule.State.LEVEL_TOO_LOW ? 0xFFEF4444 : 0xFFFFD54A);
+        Ui.center(g, font, status, dx + DETAIL_W / 2, height - 58, st == UnlockRule.State.LEVEL_TOO_LOW ? 0xFFEF4444 : 0xFFFFD54A);
         buyButton.setMessage(Component.literal(st == UnlockRule.State.OWNED ? "BUY  $" + e.price() : st == UnlockRule.State.PAYABLE ? "UNLOCK  $" + e.cost() : "LOCKED"));
         buyButton.active = st != UnlockRule.State.LEVEL_TOO_LOW;
         super.render(g, mouseX, mouseY, partial);

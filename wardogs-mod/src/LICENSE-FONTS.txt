@@ -1,0 +1,6 @@
+Rajdhani (Rajdhani-Medium.ttf, Rajdhani-SemiBold.ttf)
+Copyright 2014 The Rajdhani Project Authors (https://github.com/itfoundry/rajdhani)
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org
+The fonts may be used, studied, modified and redistributed freely, including bundled with software, as long as they are not sold by themselves
+and this notice stays with them.

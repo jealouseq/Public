@@ -9,7 +9,7 @@ import net.minecraft.network.chat.Component;
 /** End-of-round screen: who won and the final scoreboard. Closes with ESC or after 25 seconds. */
 public final class ResultScreen extends Screen {
     private static final String[] NAME = {"LONESTAR", "VALKYRA", "MANTICORE"};
-    private static final int[] COLOR = {0xFF3B82F6, 0xFFEF4444, 0xFF22C55E};
+    private static final int[] COLOR = {0xFF000000 | Ui.BLUE, 0xFF000000 | Ui.RED, 0xFF000000 | Ui.GREEN};
     private final ScoreboardPayload sb;
     private long opened;
 
@@ -39,9 +39,9 @@ public final class ResultScreen extends Screen {
         g.pose().pushPose();
         g.pose().translate(width / 2f, 24, 0);
         g.pose().scale(2.2f, 2.2f, 1f);
-        g.drawCenteredString(font, title, 0, 0, color);
+        Ui.center(g, font, title, 0, 0, color);
         g.pose().popPose();
         ScoreTable.draw(g, mc, sb, 60, width);
-        g.drawCenteredString(font, "Press ESC to continue", width / 2, height - 16, 0xFF9AA0AA);
+        Ui.center(g, font, "Press ESC to continue", width / 2, height - 16, 0xFF9AA0AA);
     }
 }

@@ -64,7 +64,7 @@ public final class WorldMarkers {
         g.pose().pushPose();
         g.pose().translate(x, y, 0);
         g.pose().scale(scale, scale, 1f);
-        g.drawString(mc.font, s, -mc.font.width(s) / 2, 0, color, true);
+        Ui.text(g, mc.font, s, -Ui.width(mc.font, s) / 2, 0, color, true);
         g.pose().popPose();
     }
 

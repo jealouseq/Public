@@ -11,7 +11,7 @@ import net.minecraft.network.chat.Component;
 
 /** Full-screen tactical map: terrain overview, kilometre grid, zones, bases, spawns, vendors, FOBs and the player. */
 public final class MapScreen extends Screen {
-    private static final int[] FACTION_COLOR = {0x3B82F6, 0xEF4444, 0x22C55E};
+    private static final int[] FACTION_COLOR = Ui.TEAM;
     private double cx, cz;          // world position at the centre of the screen
     private double scale;           // screen pixels per metre
     private double minScale, maxScale = 1.5;
@@ -77,7 +77,7 @@ public final class MapScreen extends Screen {
 
     @Override
     public void renderBackground(GuiGraphics g, int mx, int my, float pt) {
-        g.fill(0, 0, width, height, 0xFF0B0E12);
+        g.fill(0, 0, width, height, 0xFF121212);
     }
 
     @Override
@@ -93,7 +93,7 @@ public final class MapScreen extends Screen {
             g.blit(ClientMapImage.TEXTURE, x0, y0, w, h, 0, 0, ClientMapImage.SIZE, ClientMapImage.SIZE, ClientMapImage.SIZE, ClientMapImage.SIZE);
         } else {
             g.fill(x0, y0, x0 + w, y0 + h, 0xFF26303A);
-            g.drawCenteredString(font, "Map data not installed on this client - showing markers only", width / 2, height / 2, 0xFF9AA0AA);
+            Ui.center(g, font, "Map data not installed on this client - showing markers only", width / 2, height / 2, 0xFF9AA0AA);
         }
         grid(g, x0, y0, half);
         HudPayload hud = ClientHud.get();
@@ -133,15 +133,15 @@ public final class MapScreen extends Screen {
         g.disableScissor();
         // legend
         g.fill(0, height - 14, width, height, 0xFF10151B);
-        g.drawString(font, "[M] close   Scroll: zoom   Drag: pan   Grid: 1 km", 6, height - 11, 0xFF9AA0AA, false);
+        Ui.text(g, font, "[M] close   Scroll: zoom   Drag: pan   Grid: 1 km", 6, height - 11, 0xFF9AA0AA, false);
         if (mc.player != null) {
             String pos = "X " + (int) mc.player.getX() + "  Z " + (int) mc.player.getZ();
-            g.drawString(font, pos, width - 6 - font.width(pos), height - 11, 0xFFE8EAEE, false);
+            Ui.text(g, font, pos, width - 6 - Ui.width(font, pos), height - 11, 0xFFE8EAEE, false);
         }
         // cursor coordinates
         double wx = cx + (mx - width / 2.0) / scale, wz = cz + (my - height / 2.0) / scale;
         String cur = gridName(wx, wz);
-        g.drawString(font, cur, width / 2 - font.width(cur) / 2, height - 11, 0xFFFFD54A, false);
+        Ui.text(g, font, cur, width / 2 - Ui.width(font, cur) / 2, height - 11, 0xFFFFD54A, false);
     }
 
     private static String gridName(double x, double z) {
@@ -158,10 +158,10 @@ public final class MapScreen extends Screen {
             if (k < 16) {
                 int lx = (int) Math.round(sx(w + 500)), ly = (int) Math.round(sy(w + 500));
                 if (lx > 0 && lx < width) {
-                    g.drawString(font, String.valueOf((char) ('A' + k)), lx - 2, 3, 0xAAFFFFFF, false);
+                    Ui.text(g, font, String.valueOf((char) ('A' + k)), lx - 2, 3, 0xAAFFFFFF, false);
                 }
                 if (ly > 0 && ly < height - 14) {
-                    g.drawString(font, String.valueOf(k + 1), 3, ly - 3, 0xAAFFFFFF, false);
+                    Ui.text(g, font, String.valueOf(k + 1), 3, ly - 3, 0xAAFFFFFF, false);
                 }
             }
         }
@@ -175,7 +175,7 @@ public final class MapScreen extends Screen {
 
     private void label(GuiGraphics g, double x, double z, String s, int color) {
         int px = (int) sx(x), py = (int) sy(z);
-        g.drawString(font, s, px - font.width(s) / 2, py, color, true);
+        Ui.text(g, font, s, px - Ui.width(font, s) / 2, py, color, true);
     }
 
     private void circle(GuiGraphics g, double x, double z, double r, int color) {

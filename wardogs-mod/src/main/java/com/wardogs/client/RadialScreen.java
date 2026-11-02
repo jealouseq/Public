@@ -85,17 +85,17 @@ public final class RadialScreen extends Screen {
         int cx = width / 2, cy = height / 2, radius = 62;
         int hover = hovered(mx, my);
         g.fill(cx - 3, cy - 3, cx + 4, cy + 4, 0xAAFFFFFF);
-        g.drawCenteredString(font, open == null ? "MENU" : open.name(), cx, cy - radius - 26, 0xFFFFD54A);
+        Ui.center(g, font, open == null ? "MENU" : open.name(), cx, cy - radius - 26, 0xFFFFD54A);
         double seg = Math.PI * 2 / Math.max(1, slots.size());
         for (int i = 0; i < slots.size(); i++) {
             double a = i * seg;
             int sx = cx + (int) Math.round(Math.sin(a) * radius), sy = cy - (int) Math.round(Math.cos(a) * radius);
-            int w = Math.max(54, font.width(slots.get(i).label()) + 12);
+            int w = Math.max(54, Ui.width(font, slots.get(i).label()) + 12);
             boolean on = i == hover;
             g.fill(sx - w / 2, sy - 9, sx + w / 2, sy + 9, on ? 0xFFE7B93B : 0xCC10151B);
             g.renderOutline(sx - w / 2, sy - 9, w, 18, on ? 0xFFFFFFFF : 0x88FFFFFF);
-            g.drawCenteredString(font, slots.get(i).label(), sx, sy - 4, on ? 0xFF1A1405 : 0xFFE8EAEE);
+            Ui.center(g, font, slots.get(i).label(), sx, sy - 4, on ? 0xFF1A1405 : 0xFFE8EAEE);
         }
-        g.drawCenteredString(font, open == null ? "Click to choose  -  ESC to close" : "Click empty space to go back", cx, cy + radius + 26, 0xFF9AA0AA);
+        Ui.center(g, font, open == null ? "Click to choose  -  ESC to close" : "Click empty space to go back", cx, cy + radius + 26, 0xFF9AA0AA);
     }
 }

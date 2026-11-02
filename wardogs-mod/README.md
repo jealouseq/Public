@@ -74,7 +74,7 @@ and the assumed 100 player health are placeholders: the sources do not publish t
 The HUD follows the real game: compass strip with the Hot Zone marker (top centre), money and level boxes with a reward log (top
 right), kill feed (top left), minimap that turns with your heading with faction scores and the "CONTROL" label (bottom left), ammo and
 stamina / armour / heart (bottom right), hit markers at the crosshair, context prompts, a vehicle read-out, world markers (Hot Zone ring
-and squad mates with their distance) a NEARBY teammate list, a downed screen with the bleed-out ring, GIVE UP, CALL FOR HELP and the damage log (who hit you, with what, for how much). Driving uses a chase camera; crews of closed vehicles sit inside them. The vendor shows guns and vehicles as turning 3D models.
+and squad mates with their distance) a team panel, balance box, weapon panel and compass redrawn from the official WARDOGS screenshots (palette sampled from their pixels, Rajdhani font under the SIL OFL in `assets/wardogs/font`), a helicopter cockpit view with instruments, a NEARBY teammate list, a downed screen with the bleed-out ring, GIVE UP, CALL FOR HELP and the damage log (who hit you, with what, for how much). Driving uses a chase camera; crews of closed vehicles sit inside them. The vendor shows guns and vehicles as turning 3D models.
 
 ## Assets
 

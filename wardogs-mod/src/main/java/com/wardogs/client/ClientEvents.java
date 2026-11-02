@@ -108,11 +108,12 @@ public final class ClientEvents {
                     }
                 }
             }
-            // Driving is seen from behind the vehicle, like the real game; the camera returns to what it was on exit.
+            // Ground vehicles are seen from behind and helicopters from the cockpit (F5 switches), like the official footage; the camera returns to what it was on exit.
             boolean riding = mc.player.getVehicle() instanceof Vehicle;
             if (riding && !wasRiding) {
                 cameraBefore = mc.options.getCameraType();
-                mc.options.setCameraType(net.minecraft.client.CameraType.THIRD_PERSON_BACK);
+                var flying = mc.player.getVehicle() instanceof Vehicle fv && fv.def() != null && fv.def().flying();
+                mc.options.setCameraType(flying ? net.minecraft.client.CameraType.FIRST_PERSON : net.minecraft.client.CameraType.THIRD_PERSON_BACK);
             } else if (!riding && wasRiding && cameraBefore != null) {
                 mc.options.setCameraType(cameraBefore);
                 cameraBefore = null;

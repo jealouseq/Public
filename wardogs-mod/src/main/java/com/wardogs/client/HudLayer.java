@@ -32,11 +32,11 @@ import java.util.List;
  */
 @EventBusSubscriber(modid = WardogsMod.MOD_ID, value = Dist.CLIENT)
 public final class HudLayer {
-    private static final int[] FACTION_COLOR = {0x3B82F6, 0xEF4444, 0x22C55E}; // Lonestar blue, Valkyra red, Manticore green
-    private static final int BOX = 0xB0101418;
-    private static final int TEXT = 0xFFE8EAEE;
-    private static final int DIM = 0xFF9AA0AA;
-    private static final int GOLD = 0xFFFFD54A;
+    private static final int[] FACTION_COLOR = Ui.TEAM; // Lonestar blue, Valkyra red, Manticore green
+    private static final int BOX = Ui.PANEL;
+    private static final int TEXT = Ui.TEXT;
+    private static final int DIM = Ui.DIM;
+    private static final int GOLD = Ui.YELLOW;
 
     private static final ResourceLocation HEART_EMPTY = ResourceLocation.withDefaultNamespace("hud/heart/container");
     private static final ResourceLocation HEART_FULL = ResourceLocation.withDefaultNamespace("hud/heart/full");
@@ -81,12 +81,12 @@ public final class HudLayer {
         g.pose().pushPose();
         g.pose().translate(x, y, 0);
         g.pose().scale(scale, scale, 1f);
-        g.drawString(mc.font, s, 0, 0, color, false);
+        Ui.text(g, mc.font, s, 0, 0, color, false);
         g.pose().popPose();
     }
 
     private static float smallWidth(Minecraft mc, String s, float scale) {
-        return mc.font.width(s) * scale;
+        return Ui.width(mc.font, s) * scale;
     }
 
     private static String money(long v) {
@@ -109,6 +109,7 @@ public final class HudLayer {
         if (h != null && h.active() && mc.options.keyPlayerList.isDown() && ClientScoreboard.get() != null) {
             ScoreTable.draw(g, mc, ClientScoreboard.get(), 36, g.guiWidth());
         }
+        CockpitOverlay.render(g, mc);
         renderCompass(g, mc, h);
         WorldMarkers.render(g, mc, h);
         renderKillFeed(g, mc);
@@ -149,20 +150,20 @@ public final class HudLayer {
         }
         int right = g.guiWidth() - 10, y = g.guiHeight() / 2 + 40;
         String key = ClientEvents.DAMAGE_LOG.getTranslatedKeyMessage().getString().toUpperCase();
-        int kw = mc.font.width(key) + 6;
+        int kw = Ui.width(mc.font, key) + 6;
         String label = "VIEW DAMAGE LOG";
         float lw = smallWidth(mc, label, 0.8f);
         int kx = (int) (right - lw - 4 - kw);
         g.fill(kx, y - 2, kx + kw, y + 10, 0xCC0B0E12);
         g.renderOutline(kx, y - 2, kw, 12, 0xAAFFFFFF);
-        g.drawString(mc.font, key, kx + 3, y, TEXT, false);
+        Ui.text(g, mc.font, key, kx + 3, y, TEXT, false);
         small(g, mc, label, right - lw, y + 1, TEXT, 0.8f);
         y += 15;
         int shown = ClientDamageLog.open() ? lines.size() : 1;
         for (int i = 0; i < shown; i++) {
             var l = lines.get(i);
             String dmg = String.valueOf(l.damage());
-            int dw = mc.font.width(dmg) + 6;
+            int dw = Ui.width(mc.font, dmg) + 6;
             var def = Balance.get().weapon(l.weapon());
             String weapon = def == null ? l.weapon() : def.name();
             String who = l.attacker();
@@ -172,7 +173,7 @@ public final class HudLayer {
             small(g, mc, weapon + (l.head() ? " \u2316" : ""), right - ww - 8 - wl - (l.head() ? 8 : 0), y + 1, DIM, 0.7f);
             int bx = (int) (right - ww - 8 - wl - (l.head() ? 8 : 0)) - 6 - dw;
             g.fill(bx, y - 1, bx + dw, y + 10, 0xFFD13B3B);
-            g.drawString(mc.font, dmg, bx + 3, y + 1, 0xFFFFFFFF, false);
+            Ui.text(g, mc.font, dmg, bx + 3, y + 1, 0xFFFFFFFF, false);
             y += 13;
         }
     }
@@ -206,7 +207,7 @@ public final class HudLayer {
         renderDamageLog(g, mc);
         String giveKey = ClientEvents.GIVE_UP.getTranslatedKeyMessage().getString().toUpperCase();
         String helpKey = ClientEvents.CALL_HELP.getTranslatedKeyMessage().getString().toUpperCase();
-        int kw1 = mc.font.width(giveKey) + 6, kw2 = mc.font.width(helpKey) + 6;
+        int kw1 = Ui.width(mc.font, giveKey) + 6, kw2 = Ui.width(mc.font, helpKey) + 6;
         String l1 = "GIVE UP", l2 = "CALL FOR HELP";
         float lw1 = smallWidth(mc, l1, 0.8f);
         int x1 = cx - 34 - kw1 - 4 - (int) lw1;
@@ -214,50 +215,60 @@ public final class HudLayer {
         int kx1 = x1 + (int) lw1 + 4;
         g.fill(kx1, cy - 6, kx1 + kw1, cy + 6, 0xCC0B0E12);
         g.renderOutline(kx1, cy - 6, kw1, 12, 0xAAFFFFFF);
-        g.drawString(mc.font, giveKey, kx1 + 3, cy - 4, TEXT, false);
+        Ui.text(g, mc.font, giveKey, kx1 + 3, cy - 4, TEXT, false);
         int kx2 = cx + 34;
         g.fill(kx2, cy - 6, kx2 + kw2, cy + 6, 0xCC0B0E12);
         g.renderOutline(kx2, cy - 6, kw2, 12, 0xAAFFFFFF);
-        g.drawString(mc.font, helpKey, kx2 + 3, cy - 4, TEXT, false);
+        Ui.text(g, mc.font, helpKey, kx2 + 3, cy - 4, TEXT, false);
         small(g, mc, l2, kx2 + kw2 + 4, cy - 3, 0xFFE8EAEE, 0.8f);
     }
 
     /** Heading strip: a tick label every 15 degrees, the current heading in a box, the Hot Zone as a marker with its distance. */
     private static void renderCompass(GuiGraphics g, Minecraft mc, HudPayload h) {
         int w = g.guiWidth();
-        int cx = w / 2, y = 4, half = 110;
+        int cx = w / 2, y = 6, half = 110;
         double heading = (mc.player.getYRot() + 180.0) % 360.0;
         if (heading < 0) {
             heading += 360;
         }
-        g.fill(cx - half, y + 1, cx + half, y + 11, 0x66101418);
         double pxPerDeg = half / 55.0;
-        for (int a = -60; a <= 60; a += 15) {
-            double deg = Math.floor(heading / 15.0) * 15.0 + a;
-            double off = deg - heading;
-            double x = cx + off * pxPerDeg;
-            if (Math.abs(x - cx) > half - 4 || Math.abs(x - cx) < 14) {
+        // like the real strip: no backing, a number every 15 degrees with small ticks between, fading at the ends, a boxed heading in the
+        // middle and a dashed line underneath
+        for (int a = -60; a <= 60; a += 5) {
+            double deg = Math.floor(heading / 5.0) * 5.0 + a;
+            double x = cx + (deg - heading) * pxPerDeg;
+            double edge = Math.abs(x - cx);
+            if (edge > half - 3 || edge < 15) {
                 continue;
             }
-            int d = (int) ((deg % 360 + 360) % 360);
-            String label = d % 90 == 0 ? new String[]{"N", "E", "S", "W"}[d / 90] : String.valueOf(d);
-            small(g, mc, label, (float) (x - smallWidth(mc, label, 0.75f) / 2), y + 3, d % 90 == 0 ? TEXT : DIM, 0.75f);
+            int d = (int) (((deg % 360) + 360) % 360);
+            int al = (int) (255 * Math.min(1.0, (half - edge) / 30.0));
+            if (d % 15 == 0) {
+                String label = d % 90 == 0 ? new String[]{"N", "E", "S", "W"}[d / 90] : String.valueOf(d);
+                small(g, mc, label, (float) (x - smallWidth(mc, label, 0.85f) / 2), y + 1, (al << 24) | 0xE8EAEE, 0.85f);
+            } else {
+                int tx = (int) Math.round(x);
+                g.fill(tx, y + 4, tx + 1, y + 7, ((al / 2) << 24) | 0xFFFFFF);
+            }
+        }
+        for (int dx = -half; dx < half; dx += 6) {
+            int al = (int) (160 * Math.min(1.0, (half - Math.abs(dx)) / 30.0));
+            g.fill(cx + dx, y + 13, cx + dx + 3, y + 14, (al << 24) | 0xFFFFFF);
         }
         String[] dirs = {"N", "NE", "E", "SE", "S", "SW", "W", "NW"};
-        String centre = (int) heading + " " + dirs[(int) Math.round(heading / 45.0) % 8];
-        g.fill(cx - 20, y, cx + 20, y + 12, 0xCC0B0E12);
-        g.renderOutline(cx - 20, y, 40, 12, 0xAAFFFFFF);
-        small(g, mc, centre, cx - smallWidth(mc, centre, 0.8f) / 2, y + 3, TEXT, 0.8f);
+        String centre = String.format("%03d", (int) heading) + " " + dirs[(int) Math.round(heading / 45.0) % 8];
+        g.renderOutline(cx - 22, y - 2, 44, 12, 0x99FFFFFF);
+        small(g, mc, centre, cx - smallWidth(mc, centre, 0.8f) / 2, y + 1, TEXT, 0.8f);
         if (h != null && h.active() && h.hr() > 0 && !h.hardcore()) {
             double bearing = Math.toDegrees(Math.atan2(h.hx() - mc.player.getX(), -(h.hz() - mc.player.getZ())));
             double off = ((bearing - heading + 540) % 360) - 180;
             if (Math.abs(off) < 55) {
                 int x = (int) (cx + off * pxPerDeg);
-                g.fill(x - 5, y + 14, x + 5, y + 24, 0xCC000000);
-                g.renderOutline(x - 5, y + 14, 10, 10, GOLD);
-                small(g, mc, "HZ", x - 4, y + 16, GOLD, 0.6f);
+                g.fill(x - 5, y + 17, x + 5, y + 27, 0xCC000000);
+                g.renderOutline(x - 5, y + 17, 10, 10, GOLD);
+                small(g, mc, "HZ", x - 4, y + 19, GOLD, 0.6f);
                 String dist = (int) Math.hypot(h.hx() - mc.player.getX(), h.hz() - mc.player.getZ()) + " m";
-                small(g, mc, dist, x - smallWidth(mc, dist, 0.6f) / 2, y + 25, TEXT, 0.6f);
+                small(g, mc, dist, x - smallWidth(mc, dist, 0.6f) / 2, y + 28, TEXT, 0.6f);
             }
         }
     }
@@ -274,13 +285,13 @@ public final class HudLayer {
             }
             String weapon = (k.headshot() ? "\u2316 " : "") + k.weapon();
             int x = 8;
-            int w = mc.font.width(k.killer()) + mc.font.width(weapon) + mc.font.width(k.victim()) + 20;
-            g.fill(x - 3, y - 2, x + w, y + 10, (Math.min(alpha, 150) << 24) | 0x101418);
-            g.drawString(mc.font, k.killer(), x, y, (alpha << 24) | (k.killerFaction() >= 0 ? FACTION_COLOR[Math.min(2, k.killerFaction())] : 0xE8EAEE), false);
-            x += mc.font.width(k.killer()) + 6;
-            g.drawString(mc.font, weapon, x, y, (alpha << 24) | (k.headshot() ? 0xFFD54A : 0x9AA0AA), false);
-            x += mc.font.width(weapon) + 6;
-            g.drawString(mc.font, k.victim(), x, y, (alpha << 24) | (k.victimFaction() >= 0 ? FACTION_COLOR[Math.min(2, k.victimFaction())] : 0xE8EAEE), false);
+            int w = Ui.width(mc.font, k.killer()) + Ui.width(mc.font, weapon) + Ui.width(mc.font, k.victim()) + 20;
+            g.fill(x - 3, y - 2, x + w, y + 10, (Math.min(alpha, 150) << 24) | 0x181818);
+            Ui.text(g, mc.font, k.killer(), x, y, (alpha << 24) | (k.killerFaction() >= 0 ? FACTION_COLOR[Math.min(2, k.killerFaction())] : 0xE8EAEE), false);
+            x += Ui.width(mc.font, k.killer()) + 6;
+            Ui.text(g, mc.font, weapon, x, y, (alpha << 24) | (k.headshot() ? 0xFFD54A : 0x9AA0AA), false);
+            x += Ui.width(mc.font, weapon) + 6;
+            Ui.text(g, mc.font, k.victim(), x, y, (alpha << 24) | (k.victimFaction() >= 0 ? FACTION_COLOR[Math.min(2, k.victimFaction())] : 0xE8EAEE), false);
             y += 13;
         }
     }
@@ -292,16 +303,16 @@ public final class HudLayer {
             return;
         }
         int x = 8, y = g.guiHeight() / 2 - members.size() * 11;
-        g.drawString(mc.font, "SQUAD", x, y - 11, 0xFFFFD54A, true);
+        Ui.text(g, mc.font, "SQUAD", x, y - 11, 0xFFFFD54A, true);
         for (var m : members) {
             g.fill(x - 3, y - 2, x + 78, y + 17, 0x99101418);
-            g.drawString(mc.font, (m.leader() ? "\u2605 " : "") + m.name(), x, y, m.downed() ? 0xFFEF4444 : 0xFFE8EAEE, false);
+            Ui.text(g, mc.font, (m.leader() ? "\u2605 " : "") + m.name(), x, y, m.downed() ? 0xFFFC3C2C : 0xFFE8EAEE, false);
             if (m.downed()) {
-                g.drawString(mc.font, "DOWN", x + 72 - mc.font.width("DOWN"), y, 0xFFEF4444, false);
+                Ui.text(g, mc.font, "DOWN", x + 72 - Ui.width(mc.font, "DOWN"), y, 0xFFFC3C2C, false);
             }
             float f = m.maxHealth() <= 0 ? 0 : Math.max(0f, Math.min(1f, m.health() / m.maxHealth()));
             g.fill(x, y + 11, x + 72, y + 14, 0xFF2A2F36);
-            g.fill(x, y + 11, x + (int) (72 * f), y + 14, f > 0.5f ? 0xFF4ADE80 : f > 0.25f ? 0xFFFACC15 : 0xFFEF4444);
+            g.fill(x, y + 11, x + (int) (72 * f), y + 14, f > 0.5f ? 0xFF4ADE80 : f > 0.25f ? 0xFFFACC15 : 0xFFFC3C2C);
             y += 21;
         }
     }
@@ -327,21 +338,38 @@ public final class HudLayer {
         }
     }
 
+    /** Top right like the real game: the last change in red or green chevrons, then the balance in a translucent grey box. */
     private static void renderMoney(GuiGraphics g, Minecraft mc, HudPayload h) {
         int w = g.guiWidth();
         String cash = money(h.money());
-        long xp = Progression.get(mc.player).xpOf(Role.WARDOG);
-        String level = "LV " + Balance.get().progression().levelFor(xp);
-        int bw = 62, bh = 12, gap = 3, x2 = w - 6 - bw, x1 = x2 - gap - bw;
-        box(g, x1, 5, bw, bh);
-        box(g, x2, 5, bw, bh);
-        g.drawString(mc.font, cash, x1 + bw - 4 - mc.font.width(cash), 7, h.money() > 0 ? TEXT : 0xFFFF6666, false);
-        g.drawString(mc.font, level, x2 + bw - 4 - mc.font.width(level), 7, GOLD, false);
+        int bw = Ui.width(mc.font, cash) + 10, bh = 13, right = w - 6;
+        g.fill(right - bw, 5, right, 5 + bh, 0x66848C96);
+        Ui.text(g, mc.font, cash, right - bw + 5, 8, h.money() > 0 ? 0xFFFFFFFF : 0xFFFF8A8A, false);
+        var lines = ClientRewards.visible();
+        if (!lines.isEmpty()) {
+            var l = lines.get(0);
+            long age = System.currentTimeMillis() - l.time();
+            if (age < 5000) {
+                int al = (int) (255 * Math.min(1.0, (5000 - age) / 1200.0));
+                boolean plus = l.amount() >= 0;
+                String d = (plus ? "+" : "-") + money(Math.abs(l.amount()));
+                int cx0 = right - bw - 4 - 9;
+                g.fill(cx0, 5, cx0 + 9, 5 + bh, ((al * 3 / 4) << 24) | (plus ? 0x1F5A2F : 0x6E1616));
+                for (int k = 0; k < 2; k++) { // two small chevrons, pointing up for income and down for spending
+                    int cy0 = 8 + k * 4;
+                    for (int r = 0; r < 3; r++) {
+                        int half = plus ? r : 2 - r;
+                        g.fill(cx0 + 4 - half, cy0 + r, cx0 + 5 + half, cy0 + r + 1, ((k == 0 ? al : al / 2) << 24) | (plus ? 0x6BE08A : 0xFF5A5A));
+                    }
+                }
+                Ui.text(g, mc.font, d, cx0 - 4 - Ui.width(mc.font, d), 8, (al << 24) | 0xFFFFFF, false);
+            }
+        }
     }
 
     private static void renderRewardLog(GuiGraphics g, Minecraft mc) {
         int w = g.guiWidth();
-        int y = 20;
+        int y = 24;
         long now = System.currentTimeMillis();
         for (ClientRewards.Line l : ClientRewards.visible()) {
             long age = now - l.time();
@@ -352,7 +380,7 @@ public final class HudLayer {
             String amount = (l.amount() >= 0 ? "+" : "-") + money(Math.abs(l.amount()));
             int color = (alpha << 24) | (l.amount() >= 0 ? 0xFFFFFF : 0xFF6666);
             float aw = smallWidth(mc, amount, 0.85f);
-            g.fill((int) (w - 8 - aw - 3), y - 1, w - 5, y + 8, ((alpha * 2 / 3) << 24) | 0x101418);
+            g.fill((int) (w - 8 - aw - 3), y - 1, w - 5, y + 8, ((alpha * 2 / 3) << 24) | 0x181818);
             small(g, mc, amount, w - 8 - aw, y, color, 0.85f);
             small(g, mc, l.label().toUpperCase(), w - 8 - aw - 8 - smallWidth(mc, l.label().toUpperCase(), 0.65f), y + 1, (alpha / 2 << 24) | 0xB8BEC8, 0.65f);
             y += 9;
@@ -361,15 +389,15 @@ public final class HudLayer {
 
     /** Square minimap turned to the heading (forward is up, like the real game), faction score strip and the "CONTROL" label. */
     private static void renderMinimap(GuiGraphics g, Minecraft mc, HudPayload h) {
-        int S = 84, x = 8, labelH = 9, stripH = 11;
-        int y = g.guiHeight() - S - stripH - labelH - 8;
-        g.fill(x - 1, y - 1, x + S + 1, y + S + 1, 0xFF0B0E12);
+        int S = 96, x = 8, labelH = 8, stripH = 23;
+        int y = g.guiHeight() - S - stripH - labelH - 10;
+        g.fill(x - 1, y - 1, x + S + 1, y + S + 1, 0xFF121212);
         double scale = S / 192.0; // gui px per block: the window shows 192 blocks
         double px = mc.player.getX(), pz = mc.player.getZ();
         double alpha = Math.toRadians(-(mc.player.getYRot() + 180.0));
         double ca = Math.cos(alpha), sa = Math.sin(alpha);
         g.enableScissor(x, y, x + S, y + S);
-        g.fill(x, y, x + S, y + S, 0xFF1D2229);
+        g.fill(x, y, x + S, y + S, 0xFF202020);
         g.pose().pushPose();
         g.pose().translate(x + S / 2f, y + S / 2f, 0);
         g.pose().mulPose(com.mojang.math.Axis.ZP.rotation((float) alpha));
@@ -394,33 +422,77 @@ public final class HudLayer {
         int vx = x + S / 2, vy = y + S / 2;
         g.fill(vx - 1, vy - 5, vx + 1, vy - 3, 0xFFFFFFFF);
         g.fill(vx - 2, vy - 3, vx + 2, vy - 1, 0xFFFFFFFF);
-        g.fill(vx - 3, vy - 1, vx + 3, vy + 1, 0xFF3B82F6);
-        g.fill(vx - 1, vy + 1, vx + 1, vy + 3, 0xFF3B82F6);
+        g.fill(vx - 3, vy - 1, vx + 3, vy + 1, 0xFF4C97D3);
+        g.fill(vx - 1, vy + 1, vx + 1, vy + 3, 0xFF4C97D3);
         g.disableScissor();
         // north rides the rim as the map turns
         double nx = sa * 1.0, ny = -ca; // the north direction (0, -1) turned by alpha
         double edge = S / 2.0 - 6, k = edge / Math.max(Math.abs(nx), Math.abs(ny));
-        g.drawString(mc.font, "N", (int) Math.round(x + S / 2.0 + nx * k) - 2, (int) Math.round(y + S / 2.0 + ny * k) - 4, 0xFFFFFFFF, true);
+        Ui.text(g, mc.font, "N", (int) Math.round(x + S / 2.0 + nx * k) - 2, (int) Math.round(y + S / 2.0 + ny * k) - 4, 0xFFFFFFFF, true);
 
-        int sy = y + S + 2;
-        box(g, x, sy, S, stripH);
-        int seg = S / 3;
+        renderScorePanel(g, mc, h, x, y + S + 2, 108);
+    }
+
+    private static int shade(int rgb, double k) {
+        return ((int) (((rgb >> 16) & 0xFF) * k) << 16) | ((int) (((rgb >> 8) & 0xFF) * k) << 8) | (int) ((rgb & 0xFF) * k);
+    }
+
+    /** One team's marker: a square (Lonestar), a downward triangle (Valkyra) or a circle (Manticore), 5 px. */
+    private static void teamIcon(GuiGraphics g, int team, int x, int y, int color) {
+        switch (team) {
+            case 0 -> g.fill(x, y, x + 4, y + 4, color);
+            case 1 -> {
+                g.fill(x, y, x + 5, y + 1, color);
+                g.fill(x + 1, y + 1, x + 4, y + 2, color);
+                g.fill(x + 2, y + 2, x + 3, y + 3, color);
+            }
+            default -> {
+                g.fill(x + 1, y, x + 3, y + 4, color);
+                g.fill(x, y + 1, x + 4, y + 3, color);
+            }
+        }
+    }
+
+    /**
+     * The team panel of the real game, bottom left: for each team an icon header (the controlling team's is filled with its colour), the
+     * score as three digits with the leading zeros dimmed, a person icon with the head count, and a CONTROL bar under all three.
+     */
+    private static void renderScorePanel(GuiGraphics g, Minecraft mc, HudPayload h, int x, int y, int width) {
+        int seg = width / 3, headH = 6, rowH = 17, barH = 8;
+        int controller = h == null ? -1 : h.controller();
         for (int i = 0; i < 3; i++) {
-            int sx = x + i * seg;
+            int sx = x + i * seg, ex = sx + seg - 1;
+            int rgb = FACTION_COLOR[i];
+            boolean lead = controller == i;
+            g.fill(sx, y, ex, y + headH, lead ? (0xFF000000 | rgb) : Ui.PANEL_LIGHT);
+            teamIcon(g, i, sx + 3, y + 1, lead ? (0xFF000000 | shade(rgb, 0.45)) : (0xFF000000 | rgb));
+            g.fill(sx, y + headH, ex, y + headH + rowH, lead ? 0xCC281818 : 0xCC181818);
             int score = h == null ? 0 : new int[]{h.s0(), h.s1(), h.s2()}[i];
             int count = h == null ? 0 : new int[]{h.c0(), h.c1(), h.c2()}[i];
-            int win = h == null ? 100 : Math.max(1, h.winScore());
-            g.fill(sx + 1, sy + 1, sx + seg - 1, sy + 3, 0x55000000);
-            g.fill(sx + 1, sy + 1, sx + 1 + (int) ((seg - 2) * Math.min(1.0, score / (double) win)), sy + 3, faction(i));
-            String sc = String.format("%03d", score);
-            small(g, mc, sc, sx + 2, sy + 4, faction(i), 0.7f);
-            small(g, mc, String.valueOf(count), sx + 2 + smallWidth(mc, sc, 0.7f) + 2, sy + 4.5f, DIM, 0.6f);
+            String digits = String.format("%03d", Math.min(999, score));
+            float dxf = sx + 3;
+            boolean started = false;
+            for (int k = 0; k < 3; k++) {
+                char c = digits.charAt(k);
+                started |= c != '0' || k == 2;
+                small(g, mc, String.valueOf(c), dxf, y + headH + 1.5f, started ? (0xFF000000 | rgb) : Ui.DIM_DIGIT, 1.45f);
+                dxf += 8.6f;
+            }
+            int ix = sx + seg - 9, iy = y + headH + 2; // a person: head and shoulders
+            int pc = 0xFF000000 | rgb;
+            g.fill(ix + 1, iy, ix + 4, iy + 3, pc);
+            g.fill(ix, iy + 3, ix + 5, iy + 6, pc);
+            String cs = String.valueOf(Math.min(99, count));
+            small(g, mc, cs, ix + 2.5f - smallWidth(mc, cs, 0.6f) / 2, y + headH + 9, DIM, 0.6f);
         }
-        int ly = sy + stripH;
-        int controller = h == null ? -1 : h.controller();
-        g.fill(x, ly, x + S, ly + labelH, controller >= 0 ? (0xCC000000 | FACTION_COLOR[controller]) : 0xCC3A3F48);
+        int by = y + headH + rowH;
+        boolean held = controller >= 0;
+        g.fill(x, by, x + width - 1, by + barH, held ? 0xAA342424 : 0xAA2A2A2A);
+        if (held) {
+            g.fill(x, by, x + width - 1, by + barH, 0xFF000000 | shade(FACTION_COLOR[controller], 0.62));
+        }
         String label = "CONTROL: " + (controller >= 0 ? Faction.byIndex(controller).display.toUpperCase() : "NONE");
-        small(g, mc, label, x + 3, ly + 2, 0xFFFFFFFF, 0.7f);
+        small(g, mc, label, x + 3, by + 2, 0xFFFFFFFF, 0.65f);
     }
 
     private static void circle(GuiGraphics g, java.util.function.BiFunction<Double, Double, int[]> at, double cx, double cz, double r, double scale,
@@ -438,22 +510,70 @@ public final class HudLayer {
         }
     }
 
-    /** Bottom right: ammo line, then stamina / armour / health like the real HUD. */
+    private static void dashedRect(GuiGraphics g, int x, int y, int w, int h, int color) {
+        for (int i = 0; i < w; i += 3) {
+            g.fill(x + i, y, x + Math.min(w, i + 2), y + 1, color);
+            g.fill(x + i, y + h - 1, x + Math.min(w, i + 2), y + h, color);
+        }
+        for (int i = 0; i < h; i += 3) {
+            g.fill(x, y + i, x + 1, y + Math.min(h, i + 2), color);
+            g.fill(x + w - 1, y + i, x + w, y + Math.min(h, i + 2), color);
+        }
+    }
+
+    /** Pistol bullet glyph, 4 wide and 11 tall. */
+    private static void bulletGlyph(GuiGraphics g, int x, int y, int color) {
+        g.fill(x + 1, y, x + 3, y + 1, color);
+        g.fill(x, y + 1, x + 4, y + 7, color);
+        g.fill(x, y + 8, x + 4, y + 11, color);
+    }
+
+    /** Bottom right like the real game: "NAME // CALIBRE" over a panel of ammo type, magazine and spare magazine cells. */
     private static void renderSelf(GuiGraphics g, Minecraft mc) {
         if (mc.player.isSpectator()) {
             return;
         }
         int w = g.guiWidth(), h = g.guiHeight();
-        int right = w - 8;
+        int right = w - 8, bottom = h - 8;
+        int statsEnd = right;
         ItemStack held = mc.player.getMainHandItem();
         if (held.getItem() instanceof GunItem gun && gun.def() != null) {
-            String ammo = GunItem.ammo(held) + " / " + GunStats.magazine(gun.def(), held);
-            String sub = gun.def().name().toUpperCase() + "  " + GunItem.ammoType(held).name();
-            g.drawString(mc.font, ammo, right - mc.font.width(ammo), h - 44, TEXT, true);
-            small(g, mc, sub, right - smallWidth(mc, sub, 0.7f), h - 33, DIM, 0.7f);
+            var def = gun.def();
+            int ammo = GunItem.ammo(held), mag = Math.max(1, GunStats.magazine(def, held));
+            double frac = Math.max(0, Math.min(1, ammo / (double) mag));
+            int pw = 96, ph = 28, px = right - pw - 5, py = bottom - ph;
+            String cal = def.caliber() == null ? "" : def.caliber().contains("x") ? def.caliber().substring(0, def.caliber().indexOf('x')) + "MM" : def.caliber().toUpperCase();
+            String title = def.name().toUpperCase() + (cal.isEmpty() ? "" : " // " + cal);
+            small(g, mc, title, right - 5 - smallWidth(mc, title, 0.7f), py - 9, 0xFFC4C9D2, 0.7f);
+            // the thin ammo gauge to the right of the panel
+            g.fill(right - 2, py, right, py + ph, 0x44FFFFFF);
+            int gh = (int) Math.round(ph * frac);
+            g.fill(right - 2, py + ph - gh, right, py + ph, 0xFFFFFFFF);
+            // cell 1: the loaded ammo type
+            int c1 = 17, c2 = 41;
+            g.fill(px, py, px + c1, py + ph, 0xFF423B31);
+            bulletGlyph(g, px + 6, py + 4, 0xFFFFFFFF);
+            String type = GunItem.ammoType(held).name();
+            g.fill(px + 2, py + ph - 9, px + c1 - 2, py + ph - 2, 0xFF2C2C2F);
+            small(g, mc, type, px + c1 / 2f - smallWidth(mc, type, 0.55f) / 2, py + ph - 8, 0xFFE8EAEE, 0.55f);
+            // cell 2: the magazine, filled to what is left, with the number under it
+            g.fill(px + c1, py, px + c1 + c2, py + ph, 0xCC1A1A18);
+            int mx = px + c1 + 7, my = py + 3, mw = 13, mh = 17;
+            g.renderOutline(mx, my, mw, mh, 0xFFE8EAEE);
+            int fh = (int) Math.round((mh - 2) * frac);
+            g.fill(mx + 1, my + mh - 1 - fh, mx + mw - 1, my + mh - 1, 0xFFB8BBC0);
+            String an = String.valueOf(ammo);
+            Ui.text(g, mc.font, an, px + c1 + c2 - 5 - Ui.width(mc.font, an), py + ph / 2 - 4, ammo == 0 ? 0xFFFF6A6A : 0xFFFFFFFF, true);
+            // cell 3: a spare magazine slot above, the reserve below (reloading is free here)
+            int c3x = px + c1 + c2;
+            g.fill(c3x, py, px + pw, py + ph, 0xCC1A1A18);
+            g.fill(c3x, py + ph / 2, px + pw, py + ph / 2 + 1, 0x55FFFFFF);
+            dashedRect(g, c3x + 12, py + 3, 11, ph / 2 - 6, 0xAAFFFFFF);
+            g.drawString(mc.font, "\u221E", c3x + (px + pw - c3x) / 2 - mc.font.width("\u221E") / 2, py + ph / 2 + 5, 0xFF8D9199, false);
+            statsEnd = px - 8;
         }
-        // thin segmented line
-        int lineW = 104, lx = right - lineW, ly = h - 24;
+        // stamina, armour and health in one thin line, left of the weapon panel (or in the corner)
+        int lineW = 104, lx = statsEnd - lineW, ly = bottom - 12;
         for (int i = 0; i < 3; i++) {
             g.fill(lx + i * 36, ly, lx + i * 36 + 32, ly + 1, 0xCCFFFFFF);
         }
@@ -461,13 +581,11 @@ public final class HudLayer {
         int armour = armourPercent(mc);
         int stamina = Math.min(100, mc.player.getFoodData().getFoodLevel() * 100 / com.wardogs.combat.Stamina.FOOD_MAX);
         String s1 = stamina + "%", s2 = armour + "%", s3 = String.valueOf((int) Math.ceil(hp));
-        small(g, mc, s1, lx + 2, h - 20, TEXT, 0.9f);
-        // armour shield glyph then percentage
-        g.fill(lx + 38, h - 20, lx + 44, h - 12, 0xFF8892A0);
-        g.fill(lx + 39, h - 19, lx + 43, h - 13, armour > 0 ? 0xFF4A90E2 : 0xFF3A3F48);
-        small(g, mc, s2, lx + 47, h - 20, TEXT, 0.9f);
-        // heart that fills with health, then the number
-        int hx = lx + 76, hy = h - 22, hs = 12;
+        small(g, mc, s1, lx + 2, ly + 3, TEXT, 0.9f);
+        g.fill(lx + 38, ly + 3, lx + 44, ly + 11, 0xFF8892A0);
+        g.fill(lx + 39, ly + 4, lx + 43, ly + 10, armour > 0 ? 0xFF4A90E2 : 0xFF3A3F48);
+        small(g, mc, s2, lx + 47, ly + 3, TEXT, 0.9f);
+        int hx = lx + 76, hy = ly + 1, hs = 12;
         g.blitSprite(HEART_EMPTY, hx, hy, hs, hs);
         int filled = Math.round(hs * Math.max(0f, Math.min(1f, hp / max)));
         if (filled > 0) {
@@ -475,7 +593,7 @@ public final class HudLayer {
             g.blitSprite(HEART_FULL, hx, hy, hs, hs);
             g.disableScissor();
         }
-        small(g, mc, s3, hx + hs + 2, h - 20, TEXT, 0.9f);
+        small(g, mc, s3, hx + hs + 2, ly + 3, TEXT, 0.9f);
     }
 
     /** "NEARBY": teammates in view range with their distance in a green chip, nearest first, above the bottom-right stats. */
@@ -529,16 +647,16 @@ public final class HudLayer {
         }
         int cx = g.guiWidth() / 2, y = g.guiHeight() / 2 + 18;
         String key = p.key();
-        int kw = mc.font.width(key) + 6, aw = mc.font.width(p.action()) + 8;
-        int total = kw + 2 + aw + (p.target().isEmpty() ? 0 : 10 + mc.font.width(p.target()));
+        int kw = Ui.width(mc.font, key) + 6, aw = Ui.width(mc.font, p.action()) + 8;
+        int total = kw + 2 + aw + (p.target().isEmpty() ? 0 : 10 + Ui.width(mc.font, p.target()));
         int x = cx - total / 2;
         g.fill(x, y, x + kw, y + 12, 0xCC0B0E12);
         g.renderOutline(x, y, kw, 12, 0xAAFFFFFF);
-        g.drawString(mc.font, key, x + 3, y + 2, TEXT, false);
+        Ui.text(g, mc.font, key, x + 3, y + 2, TEXT, false);
         g.fill(x + kw + 2, y, x + kw + 2 + aw, y + 12, 0xFFE7B93B);
-        g.drawString(mc.font, p.action(), x + kw + 6, y + 2, 0xFF1A1405, false);
+        Ui.text(g, mc.font, p.action(), x + kw + 6, y + 2, 0xFF1A1405, false);
         if (!p.target().isEmpty()) {
-            g.drawString(mc.font, "▸ " + p.target(), x + kw + aw + 6, y + 2, TEXT, true);
+            Ui.text(g, mc.font, "▸ " + p.target(), x + kw + aw + 6, y + 2, TEXT, true);
         }
     }
 
@@ -563,16 +681,16 @@ public final class HudLayer {
         }
         int y = h / 2 - 12;
         for (String[] k : keys) {
-            small(g, mc, k[0], w - 8 - smallWidth(mc, k[0], 0.7f) - 6 - mc.font.width(k[1]) * 0.7f, y, DIM, 0.7f);
+            small(g, mc, k[0], w - 8 - smallWidth(mc, k[0], 0.7f) - 6 - Ui.width(mc.font, k[1]) * 0.7f, y, DIM, 0.7f);
             small(g, mc, k[1], w - 8 - smallWidth(mc, k[1], 0.7f), y, TEXT, 0.7f);
             y += 9;
         }
-        g.drawString(mc.font, d.name().toUpperCase(), w - 8 - mc.font.width(d.name().toUpperCase()), h - 60, TEXT, true);
+        Ui.text(g, mc.font, d.name().toUpperCase(), w - 8 - Ui.width(mc.font, d.name().toUpperCase()), h - 60, TEXT, true);
         double speed = v.getDeltaMovement().horizontalDistance() * 20.0 * 3.6;
         String spd = "SPD " + (int) Math.round(speed) + " KM/H";
         int cx = w / 2;
         box(g, cx - 38, h - 28, 76, 11);
-        g.drawCenteredString(mc.font, spd, cx, h - 26, TEXT);
+        Ui.center(g, mc.font, spd, cx, h - 26, TEXT);
         double fuel = d.fuel() <= 0 ? 0 : Math.max(0, Math.min(1, v.fuel() / d.fuel()));
         g.fill(cx - 30, h - 15, cx + 30, h - 12, 0x88000000);
         g.fill(cx - 30, h - 15, cx - 30 + (int) (60 * fuel), h - 12, fuel < 0.15 ? 0xFFFF5555 : 0xFFE7B93B);
