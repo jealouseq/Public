@@ -80,8 +80,8 @@ and squad mates with their distance) a NEARBY teammate list, a downed screen wit
 
 Weapons and vehicles are real triangle meshes (`neoforge:obj` models), not boxes: the 33 gun models are the CC0 Quaternius "Ultimate Gun
 Pack" re-posed for the hand and tinted per weapon; the Wolf-110 is the CC0 "Soviet military off-road vehicle" from OpenGameArt; the other
-22 vehicles (tanks, APC, SPH, AA gun, trucks, SUVs, buggies, ATV, helicopters) are generated procedurally with smooth shading
-(`research/tools/vehicles_proc.py`, `build_models.py`, `meshkit.py`, `meshlib.py`). Trees are painted here too: six species with their own
+22 vehicles (tanks, APC, SPH, AA gun, trucks, SUVs, buggies, ATV, helicopters) are generated procedurally with smooth shading and
+box-projected UVs over one shared grime texture (`research/tools/vehicles_proc.py`, `build_models.py`, `meshkit.py`, `meshlib.py`). Trees are painted here too: six species with their own
 generated foliage and bark textures (`research/tools/gen_nature.py`) and procedural shapes (`nature/Trees.java`). Weapon sounds are
 synthesised (`research/tools/gen_sounds.py`, no recordings); grenade, mine, charge, flare, armour and launcher models come from
 `research/tools/gen_item_models.py`, and the 59 decor blocks (furniture, street furniture, camp gear) from `research/tools/gen_decor.py`.
