@@ -56,8 +56,35 @@ public final class BuildingGen {
         return k <= 1 ? Blocks.COBBLESTONE.defaultBlockState() : Blocks.SPRUCE_PLANKS.defaultBlockState();
     }
 
+    /** Where a world position falls in a building's footprint: cell (i, j) and whether it lies in the wall band. */
+    public record Cell(int i, int j, boolean edge) {}
+
+    /** Wall thickness in blocks: 1 for an axis-aligned house, up to about 1.4 on a diagonal so no gaps open between diagonal blocks. */
+    public static double wallThickness(BakuraniTerrain.Building b) {
+        return 1.0 + 0.42 * Math.abs(Math.sin(Math.toRadians(2.0 * b.angle())));
+    }
+
+    /** The footprint cell under the block centre (px, pz), or {@code null} outside the rotated rectangle (the doorstep row counts as inside). */
+    public static Cell cell(BakuraniTerrain.Building b, double px, double pz) {
+        double th = Math.toRadians(b.angle()), c = Math.cos(th), s = Math.sin(th);
+        double rx = px - b.x(), rz = pz - b.z();
+        double fu = rx * c + rz * s + b.w() / 2.0, fv = -rx * s + rz * c + b.d() / 2.0;
+        int i = (int) Math.floor(fu), j = (int) Math.floor(fv);
+        if (i < 0 || i >= b.w() || j < 0 || j > b.d()) {
+            return null;
+        }
+        double t = wallThickness(b);
+        boolean edge = fu < t || fu > b.w() - t || fv < t || (j < b.d() && fv > b.d() - t);
+        return new Cell(i, j, edge);
+    }
+
     /** The block at cell (i, j) of the footprint and height k above the ground floor; {@code null} leaves the existing block. */
     public static BlockState at(BakuraniTerrain.Building b, int i, int j, int k) {
+        return at(b, i, j, k, i == 0 || j == 0 || i == b.w() - 1 || j == b.d() - 1);
+    }
+
+    /** As {@link #at(BakuraniTerrain.Building, int, int, int)} with the wall band decided by the caller (thicker on rotated houses). */
+    public static BlockState at(BakuraniTerrain.Building b, int i, int j, int k, boolean edge) {
         int w = b.w(), d = b.d(), floors = b.floors(), top = 4 * floors;
         if (j == d) { // a three-wide doorstep in front of the door, level with the floor
             return k == 0 && Math.abs(i - w / 2) <= 1 ? Blocks.STONE_BRICK_SLAB.defaultBlockState().setValue(
@@ -66,7 +93,6 @@ public final class BuildingGen {
         if (i < 0 || i >= w || j < 0 || j > d) {
             return null;
         }
-        boolean edge = i == 0 || j == 0 || i == w - 1 || j == d - 1;
         if (k < -FOUNDATION) {
             return null;
         }

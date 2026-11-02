@@ -3,8 +3,8 @@
 
 Outputs in local-data/bakurani/:
   cover_4096_u8.bin   one byte per 4 m cell: 0 none, 1 water, 2 forest canopy, 3 paved/urban, 4 field
-  buildings.bin       int32 count, then records '<ffBBBB': centre x, centre z (Minecraft coordinates, metres), width, depth (m),
-                      floors (1..4), kind (0 grey/concrete, 1 red roof)
+  buildings.bin       int32 -count (version 2), then records '<ffBBBBb': centre x, centre z (Minecraft coordinates, metres), width, depth (m),
+                      floors (1..4), kind (0 grey/concrete, 1 red roof), rotation in degrees (-45..44, along the street)
 
 Classification rules were checked by eye against the map (see research/DATA_SOURCES.md): water is very dark, forest canopy is a
 saturated brown-olive of medium brightness, built-up ground is low-saturation grey, roofs are red/orange.
@@ -57,6 +57,19 @@ mask = (roof | (urban & ~roads)) & near_roads
 mask = ndimage.binary_opening(mask, structure=np.ones((3, 3)))
 lab, n = ndimage.label(mask, structure=np.ones((3, 3)))
 M_PER_PX = 16384.0 / N  # metres per base pixel
+# --- street direction field: dominant orientation of the road mask (structure tensor, ~40 m smoothing), in degrees within [-45, 45) ---
+road_n = np.array(Image.fromarray(clean.astype(np.uint8) * 255).resize((N, N), Image.NEAREST)).astype(np.float32) / 255.0
+rs = ndimage.gaussian_filter(road_n, 4)
+gy_, gx_ = np.gradient(rs)
+sig = 12
+jxx = ndimage.gaussian_filter(gx_ * gx_, sig); jyy = ndimage.gaussian_filter(gy_ * gy_, sig); jxy = ndimage.gaussian_filter(gx_ * gy_, sig)
+coh = np.sqrt((jxx - jyy) ** 2 + 4 * jxy ** 2) / np.maximum(jxx + jyy, 1e-9)
+field = np.degrees(0.5 * np.arctan2(2 * jxy, jxx - jyy))
+def norm45(a):
+    return ((a + 45.0) % 90.0) - 45.0
+def street_angle(px, py):
+    ix = int(min(N - 1, max(0, px))); iy = int(min(N - 1, max(0, py)))
+    return norm45(field[iy, ix]) if coh[iy, ix] > 0.35 else 0.0
 out = []
 for i, sl in enumerate(ndimage.find_objects(lab), start=1):
     h = sl[0].stop - sl[0].start; w = sl[1].stop - sl[1].start
@@ -70,18 +83,31 @@ for i, sl in enumerate(ndimage.find_objects(lab), start=1):
     if water[sl][comp].mean() > 0.10:
         continue
     red = roof[sl][comp].mean() > 0.30
-    cx16 = (sl[1].start + sl[1].stop) / 2.0 * M_PER_PX
-    cz16 = (sl[0].start + sl[0].stop) / 2.0 * M_PER_PX
-    x = cx16 * 0.99902 - 8187.0
-    z = cz16 * 0.99983 - 8191.0
+    ys, xs = np.nonzero(comp)
+    ys = ys + sl[0].start; xs = xs + sl[1].start
+    mx_, my_ = xs.mean(), ys.mean()
+    cov = np.cov(np.vstack([xs - mx_, ys - my_]))
+    ev = np.linalg.eigvalsh(cov)
+    elong = np.sqrt(max(ev[1], 1e-9) / max(ev[0], 1e-9))
+    if elong >= 1.25:
+        ang = norm45(np.degrees(0.5 * np.arctan2(2 * cov[0, 1], cov[0, 0] - cov[1, 1])))
+    else:
+        ang = street_angle(mx_, my_)
+    th = np.radians(ang)
+    uu = (xs - mx_) * np.cos(th) + (ys - my_) * np.sin(th)
+    vv = -(xs - mx_) * np.sin(th) + (ys - my_) * np.cos(th)
+    w_m = (uu.max() - uu.min() + 1) * M_PER_PX; d_m = (vv.max() - vv.min() + 1) * M_PER_PX
+    w_m = min(60, max(6, w_m)); d_m = min(60, max(6, d_m))
+    x = (mx_ + 0.5) * M_PER_PX * 0.99902 - 8187.0
+    z = (my_ + 0.5) * M_PER_PX * 0.99983 - 8191.0
     floors = 1 if area_m2 < 90 else 2 if area_m2 < 300 else 3 if area_m2 < 1200 else 4
-    out.append((x, z, min(255, int(round(w * M_PER_PX))), min(255, int(round(h * M_PER_PX))), floors, 1 if red else 0))
+    out.append((x, z, int(round(w_m)), int(round(d_m)), floors, 1 if red else 0, int(round(ang))))
 # --- town fabric: where built-up ground is dense, lay out a grid of houses (the map does not resolve single roofs) ---
 town = (urban & ~roads & near_roads & ~water & ~roof)
 CELL = 5                                   # 5 px = 16 m
 nc = N // CELL
 frac = town[:nc * CELL, :nc * CELL].reshape(nc, CELL, nc, CELL).mean(axis=(1, 3))
-explicit = [(o[0], o[1], o[2] / 2.0 + 3, o[3] / 2.0 + 3) for o in out]
+explicit = [(o[0], o[1], max(o[2], o[3]) / 2.0 + 3, max(o[2], o[3]) / 2.0 + 3) for o in out]
 def hashf(i, j, salt):
     h = (i * 73856093) ^ (j * 19349663) ^ (salt * 83492791)
     h = (h ^ (h >> 13)) * 1274126177 & 0xFFFFFFFF
@@ -98,11 +124,11 @@ for j in range(nc):
             continue
         w = int(8 + hashf(i, j, 3) * 5); dd = int(8 + hashf(i, j, 4) * 5)
         floors = 1 + int(hashf(i, j, 5) * 3)
-        grid.append((x, z, w, dd, floors, 0))
+        grid.append((x, z, w, dd, floors, 0, int(round(street_angle((i + 0.5) * CELL, (j + 0.5) * CELL)))))
 print("town fabric houses:", len(grid))
 out.extend(grid)
 with open(os.path.join(D, "buildings.bin"), "wb") as f:
-    f.write(struct.pack("<i", len(out)))
+    f.write(struct.pack("<i", -len(out)))        # negative count = version 2 records (with a rotation angle in degrees)
     for rec in out:
-        f.write(struct.pack("<ffBBBB", *rec))
-print("buildings:", len(out), "red roofs:", sum(1 for o in out if o[5]))
+        f.write(struct.pack("<ffBBBBb", *rec))
+print("buildings:", len(out), "red roofs:", sum(1 for o in out if o[5]), "rotated:", sum(1 for o in out if abs(o[6]) >= 5))

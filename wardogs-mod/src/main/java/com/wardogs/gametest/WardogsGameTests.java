@@ -1815,4 +1815,46 @@ public final class WardogsGameTests {
         check(h.getLevel().getBlockState(new BlockPos(x0, groundY + 3, abs.getZ() + 120 - 50)).is(Blocks.TARGET), "a target stands at 50 m");
         h.succeed();
     }
+
+    @GameTest(template = "empty")
+    public static void rotatedHousesAreWatertight(GameTestHelper h) {
+        for (int angle : new int[]{0, 15, 30, 45, -20, -45}) {
+            var b = new com.wardogs.world.BakuraniTerrain.Building(0.3f, -0.4f, 11, 9, 2, 1, angle);
+            int r = b.radius() + 3;
+            int n = 2 * r + 1;
+            boolean[][] wall = new boolean[n][n];
+            for (int x = -r; x <= r; x++) {
+                for (int z = -r; z <= r; z++) {
+                    var c = com.wardogs.world.BuildingGen.cell(b, x + 0.5, z + 0.5);
+                    if (c != null) {
+                        var st = com.wardogs.world.BuildingGen.at(b, c.i(), c.j(), 3, c.edge());
+                        wall[x + r][z + r] = st != null && !st.isAir();
+                    }
+                }
+            }
+            boolean[][] seen = new boolean[n][n];
+            java.util.ArrayDeque<int[]> queue = new java.util.ArrayDeque<>();
+            queue.add(new int[]{0, 0});
+            seen[0][0] = true;
+            while (!queue.isEmpty()) {
+                int[] p = queue.poll();
+                for (int[] d : new int[][]{{1, 0}, {-1, 0}, {0, 1}, {0, -1}}) {
+                    int nx = p[0] + d[0], nz = p[1] + d[1];
+                    if (nx >= 0 && nz >= 0 && nx < n && nz < n && !seen[nx][nz] && !wall[nx][nz]) {
+                        seen[nx][nz] = true;
+                        queue.add(new int[]{nx, nz});
+                    }
+                }
+            }
+            for (int x = -r; x <= r; x++) {
+                for (int z = -r; z <= r; z++) {
+                    var c = com.wardogs.world.BuildingGen.cell(b, x + 0.5, z + 0.5);
+                    check(c == null || c.j() >= b.d() || !seen[x + r][z + r], "angle " + angle + ": the outside reaches the interior at " + x + "," + z + " (cell " + c + ")");
+                }
+            }
+            check(com.wardogs.world.BuildingGen.cell(b, b.x(), b.z()) != null, "the centre is inside the footprint at angle " + angle);
+            check(com.wardogs.world.BuildingGen.cell(b, b.x() + r, b.z()) == null, "far away is outside at angle " + angle);
+        }
+        h.succeed();
+    }
 }

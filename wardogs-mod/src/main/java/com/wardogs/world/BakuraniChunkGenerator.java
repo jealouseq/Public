@@ -209,17 +209,16 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
         BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
         int baseX = chunk.getPos().getMinBlockX(), baseZ = chunk.getPos().getMinBlockZ();
         for (BakuraniTerrain.Building b : t.buildingsIn(baseX, baseZ, baseX + 15, baseZ + 15)) {
-            int x0 = b.minX(), z0 = b.minZ();
             int gy = groundFloor(t, b);
             int height = BuildingGen.height(b);
             for (int dx = 0; dx < 16; dx++) {
                 for (int dz = 0; dz < 16; dz++) {
-                    int i = baseX + dx - x0, j = baseZ + dz - z0;
-                    if (i < 0 || j < 0 || i >= b.w() || j > b.d()) {
+                    BuildingGen.Cell cell = BuildingGen.cell(b, baseX + dx + 0.5, baseZ + dz + 0.5);
+                    if (cell == null) {
                         continue;
                     }
                     for (int k = -BuildingGen.FOUNDATION; k <= height; k++) {
-                        BlockState s = BuildingGen.at(b, i, j, k);
+                        BlockState s = BuildingGen.at(b, cell.i(), cell.j(), k, cell.edge());
                         if (s == null) {
                             continue;
                         }
@@ -246,12 +245,14 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
 
     /** Ground-floor level of a house: the highest ground under its corners and centre, so no corner hangs in the air. */
     static int groundFloor(BakuraniTerrain t, BakuraniTerrain.Building b) {
-        int x0 = b.minX(), z0 = b.minZ();
+        double th = Math.toRadians(b.angle()), c = Math.cos(th), sn = Math.sin(th);
         int y = t.surfaceY(b.x(), b.z());
-        y = Math.max(y, t.surfaceY(x0, z0));
-        y = Math.max(y, t.surfaceY(x0 + b.w(), z0));
-        y = Math.max(y, t.surfaceY(x0, z0 + b.d()));
-        y = Math.max(y, t.surfaceY(x0 + b.w(), z0 + b.d()));
+        for (int sx = -1; sx <= 1; sx += 2) {
+            for (int sz = -1; sz <= 1; sz += 2) {
+                double u = sx * b.w() / 2.0, v = sz * b.d() / 2.0;
+                y = Math.max(y, t.surfaceY(b.x() + u * c - v * sn, b.z() + u * sn + v * c));
+            }
+        }
         return y;
     }
 

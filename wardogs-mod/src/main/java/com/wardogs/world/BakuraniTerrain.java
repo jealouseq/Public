@@ -43,9 +43,19 @@ public final class BakuraniTerrain {
     public static final int COVER_NONE = 0, COVER_WATER = 1, COVER_FOREST = 2, COVER_URBAN = 3, COVER_FIELD = 4;
 
     /** A procedural building: centre and footprint in metres, storeys, kind 0 = grey/concrete, 1 = red roof. */
-    public record Building(float x, float z, int w, int d, int floors, int kind) {
-        public int minX() { return (int) Math.floor(x - w / 2.0); }
-        public int minZ() { return (int) Math.floor(z - d / 2.0); }
+    public record Building(float x, float z, int w, int d, int floors, int kind, int angle) {
+        /** An axis-aligned building (angle 0). */
+        public Building(float x, float z, int w, int d, int floors, int kind) {
+            this(x, z, w, d, floors, kind, 0);
+        }
+
+        /** Radius of the circle around the centre that holds the whole footprint plus its doorstep. */
+        public int radius() { return (int) Math.ceil(Math.hypot(w, d + 1) / 2.0) + 1; }
+
+        public int minX() { return (int) Math.floor(x - radius()); }
+        public int minZ() { return (int) Math.floor(z - radius()); }
+        public int sizeX() { return 2 * radius(); }
+        public int sizeZ() { return 2 * radius(); }
     }
 
     public BakuraniTerrain(int heightSize, short[] height, int matSize, byte[] material, int roadSize, byte[] roads,
@@ -83,8 +93,11 @@ public final class BakuraniTerrain {
         if (Files.isRegularFile(b)) {
             ByteBuffer bb = ByteBuffer.wrap(Files.readAllBytes(b)).order(ByteOrder.LITTLE_ENDIAN);
             int n = bb.getInt();
+            boolean v2 = n < 0; // version 2 records carry a rotation angle
+            n = Math.abs(n);
             for (int i = 0; i < n; i++) {
-                buildings.add(new Building(bb.getFloat(), bb.getFloat(), bb.get() & 0xFF, bb.get() & 0xFF, bb.get() & 0xFF, bb.get() & 0xFF));
+                buildings.add(new Building(bb.getFloat(), bb.getFloat(), bb.get() & 0xFF, bb.get() & 0xFF, bb.get() & 0xFF, bb.get() & 0xFF,
+                        v2 ? bb.get() : 0));
             }
         }
         return t.withCover(cover, buildings);
@@ -96,8 +109,8 @@ public final class BakuraniTerrain {
         this.coverSize = (int) Math.round(Math.sqrt(cover.length));
         buildingIndex.clear();
         for (Building b : buildings) {
-            int x0 = Math.floorDiv(b.minX(), INDEX_CELL), x1 = Math.floorDiv(b.minX() + b.w(), INDEX_CELL);
-            int z0 = Math.floorDiv(b.minZ(), INDEX_CELL), z1 = Math.floorDiv(b.minZ() + b.d(), INDEX_CELL);
+            int x0 = Math.floorDiv(b.minX(), INDEX_CELL), x1 = Math.floorDiv(b.minX() + b.sizeX(), INDEX_CELL);
+            int z0 = Math.floorDiv(b.minZ(), INDEX_CELL), z1 = Math.floorDiv(b.minZ() + b.sizeZ(), INDEX_CELL);
             for (int cx = x0; cx <= x1; cx++) {
                 for (int cz = z0; cz <= z1; cz++) {
                     buildingIndex.computeIfAbsent(key(cx, cz), k -> new ArrayList<>()).add(b);
@@ -142,7 +155,8 @@ public final class BakuraniTerrain {
     /** True if a block column lies within {@code margin} blocks of a building footprint. */
     public boolean nearBuilding(int x, int z, int margin) {
         for (Building b : buildingsIn(x - margin, z - margin, x + margin, z + margin)) {
-            if (x >= b.minX() - margin && x < b.minX() + b.w() + margin && z >= b.minZ() - margin && z < b.minZ() + b.d() + margin) {
+            double dx = x + 0.5 - b.x(), dz = z + 0.5 - b.z();
+            if (Math.hypot(dx, dz) <= Math.hypot(b.w(), b.d()) / 2.0 + margin) {
                 return true;
             }
         }
