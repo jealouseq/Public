@@ -67,7 +67,32 @@ def vest(c, plates):
     m.box(4, 3, 4.2, 6, 5.5, 5, "dark"); m.box(10, 3, 4.2, 12, 5.5, 5, "dark")
     return m
 
+# --- shoulder launchers: drawn like the guns, barrel along +x, held with the same display transforms ---
+GUN_DISPLAY = {
+    "thirdperson_righthand": {"rotation": [0, -90, 0], "translation": [0, 3, 1], "scale": [0.7, 0.7, 0.7]},
+    "firstperson_righthand": {"rotation": [0, 90, 0], "translation": [-3, 3, -2], "scale": [0.5, 0.5, 0.5]},
+    "firstperson_lefthand": {"rotation": [0, 90, 0], "translation": [3, 3, -2], "scale": [0.5, 0.5, 0.5]},
+    "gui": {"rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [0.58, 0.58, 0.58]},
+    "ground": {"rotation": [0, 0, 0], "translation": [0, 2, 0], "scale": [0.5, 0.5, 0.5]},
+    "fixed": {"rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [0.58, 0.58, 0.58]},
+}
+def rpg7():
+    m = M(); m.box(-5, 7, 7, 15, 9, 9, "olive"); m.box(15, 6, 6, 18, 10, 10, "olive"); m.box(18, 6.6, 6.6, 22, 9.4, 9.4, "dark")   # tube + flare + warhead
+    m.box(26 - 8, 8, 7.4, 22, 8.6, 8.6, "dark"); m.box(2, 3, 7.4, 4, 7, 8.6, "dark"); m.box(7, 4, 7.4, 8.5, 7, 8.6, "dark"); m.box(0, 9, 7.2, 2, 10.5, 8.8, "steel")
+    m.box(-5, 6.5, 6.5, -3, 9.5, 9.5, "dark"); return m
+def maaws():
+    m = M(); m.box(-6, 6.5, 6.5, 20, 9.5, 9.5, "olive"); m.box(20, 6, 6, 22, 10, 10, "dark"); m.box(-8, 6, 6, -6, 10, 10, "dark")
+    m.box(4, 9.5, 7, 9, 11.5, 9, "black"); m.box(2, 3, 7.4, 4, 6.5, 8.6, "dark"); m.box(10, 4, 7.4, 11.5, 6.5, 8.6, "dark"); return m
+def mgl40():
+    m = M(); m.box(0, 6, 6.2, 8, 10.2, 9.8, "dark"); m.box(8, 7.5, 7.2, 20, 9, 8.8, "steel"); m.box(-5, 6.5, 7.3, 0, 9, 8.7, "brown")
+    m.box(2, 3, 7.4, 4, 6, 8.6, "dark"); m.box(10, 4.5, 7.4, 11.5, 7.5, 8.6, "dark"); m.box(14, 9, 7.4, 15, 10.5, 8.6, "steel"); return m
+def verba():
+    m = M(); m.box(-6, 6.5, 6.5, 18, 9.5, 9.5, "tan"); m.box(18, 6, 6, 21, 10, 10, "dark"); m.box(-8, 6, 6, -6, 10, 10, "dark")
+    m.box(2, 9.5, 7.4, 8, 11.5, 8.6, "gray"); m.box(4, 3, 7.4, 6, 6.5, 8.6, "dark"); m.box(11, 4, 7.4, 12.5, 6.5, 8.6, "dark"); m.box(14, 9.5, 7.2, 16, 10.5, 8.8, "red"); return m
+
 os.makedirs(os.path.join(OUT, "models/item"), exist_ok=True)
+for name, mk in {"rpg7": rpg7, "maaws": maaws, "mgl40": mgl40, "verba": verba}.items():
+    mk().save(name, GUN_DISPLAY)
 D = disp()
 items = {"m67_frag": frag(), "molotov": molotov(), "c4": c4(), "ied": ied(), "remote_detonator": detonator(), "at_mine": mine(), "claymore": claymore(),
          "smoke_white": canister("white"), "smoke_black": canister("black"),

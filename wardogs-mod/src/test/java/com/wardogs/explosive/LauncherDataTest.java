@@ -23,6 +23,20 @@ class LauncherDataTest {
     }
 
     @Test
+    void everyLauncherAndGunHasAnItemModel() throws Exception {
+        for (WeaponDef w : b.weapons()) {
+            if (w.id().equals("compound_bow")) {
+                continue; // the bow keeps its flat icon
+            }
+            try (var in = getClass().getResourceAsStream("/assets/wardogs/models/item/" + w.id() + ".json")) {
+                assertTrue(in != null, "missing item model for " + w.id());
+                String json = new String(in.readAllBytes());
+                assertTrue(json.contains("\"parent\"") || json.contains("\"elements\""), w.id() + " has neither a parent nor elements");
+            }
+        }
+    }
+
+    @Test
     void sourcedFiguresAreKept() {
         assertEquals(110.02, b.weapon("rpg7").chest(), 1e-9);
         assertEquals(101.01, b.weapon("maaws").chest(), 1e-9);
