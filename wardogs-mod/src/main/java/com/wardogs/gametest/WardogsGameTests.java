@@ -1759,4 +1759,25 @@ public final class WardogsGameTests {
                 "but not an enemy one");
         h.succeed();
     }
+
+    @GameTest(template = "empty")
+    public static void staminaDrainsWhileSprintingAndRefillsAtRest(GameTestHelper h) {
+        java.util.UUID id = java.util.UUID.randomUUID();
+        check(com.wardogs.combat.Stamina.get(id) == 100f, "a new soldier is fully rested");
+        int ticks = 0;
+        while (com.wardogs.combat.Stamina.get(id) > 30f && ticks < 1000) {
+            com.wardogs.combat.Stamina.tick(id, true);
+            ticks++;
+        }
+        check(ticks >= 120 && ticks <= 140, "about 6.4 s of sprinting to the 30% cut-off: " + ticks + " ticks");
+        for (int i = 0; i < 2000; i++) {
+            com.wardogs.combat.Stamina.tick(id, true);
+        }
+        check(com.wardogs.combat.Stamina.get(id) == com.wardogs.combat.Stamina.MIN, "it never reaches zero");
+        for (int i = 0; i < 400; i++) {
+            com.wardogs.combat.Stamina.tick(id, false);
+        }
+        check(com.wardogs.combat.Stamina.get(id) == 100f, "and refills at rest");
+        h.succeed();
+    }
 }

@@ -79,8 +79,8 @@ that were considered and their licences.
 
 ## Not done yet
 
-launcher 3D models,
-real sounds, procedural houses that follow the street direction, hand-built landmarks.
+Launcher 3D models, real recorded sounds (shots currently use vanilla sounds by weapon class), houses that follow the street direction
+(they are axis-aligned), hand-built landmarks, the Stingray station (the sources give no data for it).
 
 ## Build & test
 ```
