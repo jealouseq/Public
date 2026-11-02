@@ -137,15 +137,16 @@ def encode_rows(Y, T):
 # Moxel run_script helper, saved once on the map (save_as "dd") and then loaded with use:["dd"]
 HELPER = r'''
 const TOP=['grass_block','podzol','coarse_dirt','gravel','gray_concrete','dirt_path','water','stone','andesite','moss_block'];
-function unrleH(b){ let o=[],i=0; while(i<b.length){ const c=b[i]; if(c==='['){ const j=b.indexOf(']',i); o.push(b.slice(i,j+1)); i=j+1; continue; } i++; let n=''; while(i<b.length && b[i]>='0' && b[i]<='9'){ n+=b[i]; i++; } const k=n?parseInt(n,10):1; for(let q=0;q<k;q++) o.push(c); } return o; }
+function unrleH(b){ let o=[],i=0; while(i<b.length){ const c=b[i]; if(c==='['){ const j=b.indexOf(']',i); if(j<0) break; o.push(b.slice(i,j+1)); i=j+1; continue; } i++; let n=''; while(i<b.length && b[i]>='0' && b[i]<='9'){ n+=b[i]; i++; } const k=n?parseInt(n,10):1; for(let q=0;q<k;q++) o.push(c); } return o; }
 function unrleT(s){ let o=[],i=0; while(i<s.length){ const t=s.charCodeAt(i)-48; i++; let k=1; if(i<s.length && s[i]>='a'){ k=s.charCodeAt(i)-95; i++; } for(let q=0;q<k;q++) o.push(t); } return o; }
 function strip(X0,Z0,ROWS){
   for (let r=0;r<ROWS.length;r++){
     const [hs,ts]=ROWS[r].split('|'); const ci=hs.indexOf(':'); let prev=parseInt(hs.slice(0,ci),10);
     const hb=unrleH(hs.slice(ci+1)), tt=unrleT(ts), z=Z0+r;
     for (let k=0;k<tt.length;k++){
-      if(k>0){ const c=hb[k-1]; if(c[0]==='[') prev=parseInt(c.slice(1,-1),10); else prev+='abcde'.indexOf(c)-2; }
-      const yy=prev, t=tt[k], xx=X0+k;
+      if(k>0){ const c=hb[k-1]||'c'; if(c[0]==='[') prev=parseInt(c.slice(1,-1),10); else { const d='abcde'.indexOf(c); prev+= d<0?0:d-2; } }
+      if(prev<44) prev=44; if(prev>66) prev=66;
+      const yy=prev, t=Math.min(9,Math.max(0,tt[k]||0)), xx=X0+k;
       if(t===6){ set(xx,yy-3,z,'gravel'); fill(xx,yy-2,z,xx,yy,z,'water'); }
       else if(t===7){ fill(xx,yy-3,z,xx,yy-1,z,'stone'); set(xx,yy,z,'stone'); }
       else { fill(xx,yy-3,z,xx,yy-1,z, t===4?'stone':'dirt'); set(xx,yy,z,TOP[t]); }
