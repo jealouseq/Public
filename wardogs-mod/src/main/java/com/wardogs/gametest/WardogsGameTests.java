@@ -829,7 +829,7 @@ public final class WardogsGameTests {
         a.target.discard();
         WeaponDef m4 = Balance.get().weapon("m4");
         Vehicle tank = vehicleAt(h, "l2a6", Faction.VALKYRA, 5.5, 1.5 + RANGE);
-        Vehicle car = vehicleAt(h, "bobcat", Faction.VALKYRA, 9.5, 1.5 + RANGE);
+        Vehicle car = vehicleAt(h, "bobcat", Faction.VALKYRA, 0.9, 1.5 + RANGE);
         Vec3 eye = a.shooter.getEyePosition();
         for (Vehicle v : new Vehicle[]{tank, car}) {
             double dx = v.getX() - eye.x, dz = v.getZ() - eye.z, dy = (v.getY() + v.getBbHeight() / 2) - eye.y;

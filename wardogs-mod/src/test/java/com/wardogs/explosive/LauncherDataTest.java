@@ -31,7 +31,7 @@ class LauncherDataTest {
             try (var in = getClass().getResourceAsStream("/assets/wardogs/models/item/" + w.id() + ".json")) {
                 assertTrue(in != null, "missing item model for " + w.id());
                 String json = new String(in.readAllBytes());
-                assertTrue(json.contains("\"parent\"") || json.contains("\"elements\""), w.id() + " has neither a parent nor elements");
+                assertTrue(json.contains("\"parent\"") || json.contains("\"elements\"") || json.contains("neoforge:obj"), w.id() + " has neither a parent, elements nor an OBJ mesh");
             }
         }
     }
