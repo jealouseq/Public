@@ -34,3 +34,9 @@ version before bundling anything. "Depend on" (the player installs it separately
 No ready-made building pack matches the real Bakurani layout. Generic schematic sites (MineSchematic, Spaleforce, McBuild,
 PhantomMarket) give free files but no licence per build. kogtyv "Towny and Village" has a USSR panel-housing city type (1.21.x
 datapack, licence not checked). Conclusion: keep generating buildings from the game's own map and hand-model the landmarks.
+
+## In use
+- **Gun models:** `research/tools/obj_to_item_model.py` voxelises the CC0 "Ultimate Gun Pack" by Quaternius
+  (https://opengameart.org/content/low-poly-guns-pack, CC0) into box-only item models with a shared 16x16 palette
+  (`textures/item/gun_palette.png`) for 32 guns (rifles, SMGs, snipers, shotguns, pistols, a revolver). Several weapons share a silhouette.
+  The OBJ files themselves are kept in the git-ignored `local-data/assets/`. Credit is not required for CC0 but is given here.
