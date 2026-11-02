@@ -59,6 +59,13 @@ public final class BuildingGen {
     /** The block at cell (i, j) of the footprint and height k above the ground floor; {@code null} leaves the existing block. */
     public static BlockState at(BakuraniTerrain.Building b, int i, int j, int k) {
         int w = b.w(), d = b.d(), floors = b.floors(), top = 4 * floors;
+        if (j == d) { // a three-wide doorstep in front of the door, level with the floor
+            return k == 0 && Math.abs(i - w / 2) <= 1 ? Blocks.STONE_BRICK_SLAB.defaultBlockState().setValue(
+                    net.minecraft.world.level.block.SlabBlock.TYPE, net.minecraft.world.level.block.state.properties.SlabType.TOP) : null;
+        }
+        if (i < 0 || i >= w || j < 0 || j > d) {
+            return null;
+        }
         boolean edge = i == 0 || j == 0 || i == w - 1 || j == d - 1;
         if (k < -FOUNDATION) {
             return null;

@@ -1538,6 +1538,8 @@ public final class WardogsGameTests {
             }
             check(glass, "the walls have windows");
             check(roof, "there is a roof above the top floor");
+            check(com.wardogs.world.BuildingGen.at(b, w / 2, d, 0) != null, "a doorstep lies in front of the door");
+            check(com.wardogs.world.BuildingGen.at(b, 0, d, 0) == null && com.wardogs.world.BuildingGen.at(b, w + 2, 3, 0) == null, "nothing is built outside the footprint");
             check(com.wardogs.world.BuildingGen.at(b, 5, 4, -3) != null && com.wardogs.world.BuildingGen.at(b, 5, 4, -3).is(Blocks.DIRT), "the footprint is filled below the floor");
         }
         h.succeed();

@@ -81,6 +81,11 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                 BlockState top = road ? (cov == BakuraniTerrain.COVER_URBAN ? Blocks.GRAY_CONCRETE.defaultBlockState() : Blocks.DIRT_PATH.defaultBlockState())
                         : top(mat);
                 BlockState fill = filler(mat);
+                if (inside && !road && (mat == BakuraniTerrain.GRASS || mat == BakuraniTerrain.FOREST || mat == BakuraniTerrain.GRAVEL)
+                        && slopeAt(t, wx, wz, sy) >= ROCK_SLOPE) {
+                    top = hash(baseX + dx, baseZ + dz) < 0.35 ? Blocks.ANDESITE.defaultBlockState() : Blocks.STONE.defaultBlockState();
+                    fill = Blocks.STONE.defaultBlockState();
+                }
                 int water = -1;
                 boolean crop = false;
                 if (inside && !road) {
@@ -157,6 +162,18 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
         return (h & 0xFFFFFFL) / (double) 0x1000000;
     }
 
+    /** Steepness (blocks of height change per block) at which grass gives way to bare rock. */
+    static final double ROCK_SLOPE = 0.5;
+
+    /** Largest height difference to the neighbours three blocks away, per block. */
+    static double slopeAt(BakuraniTerrain t, double x, double z, int sy) {
+        int worst = 0;
+        for (int[] o : new int[][]{{3, 0}, {-3, 0}, {0, 3}, {0, -3}}) {
+            worst = Math.max(worst, Math.abs(t.surfaceY(x + o[0], z + o[1]) - sy));
+        }
+        return worst / 3.0;
+    }
+
     private static boolean isDirtClass(int mat) {
         return mat == 1 || mat == 2 || mat == 3 || mat == 6 || mat == 8 || mat == 11;
     }
@@ -183,7 +200,7 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
             for (int dx = 0; dx < 16; dx++) {
                 for (int dz = 0; dz < 16; dz++) {
                     int i = baseX + dx - x0, j = baseZ + dz - z0;
-                    if (i < 0 || j < 0 || i >= b.w() || j >= b.d()) {
+                    if (i < 0 || j < 0 || i >= b.w() || j > b.d()) {
                         continue;
                     }
                     for (int k = -BuildingGen.FOUNDATION; k <= height; k++) {
@@ -246,7 +263,7 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                 } else {
                     density = mat == BakuraniTerrain.FOREST ? 1.0 / 24 : mat == BakuraniTerrain.GRASS ? 1.0 / 900 : 0;
                 }
-                if (density > 0 && t.nearBuilding(wx, wz, 3)) {
+                if (density > 0 && (t.nearBuilding(wx, wz, 3) || slopeAt(t, wx + 0.5, wz + 0.5, t.surfaceY(wx + 0.5, wz + 0.5)) >= ROCK_SLOPE)) {
                     density = 0;
                 }
                 double hv = hash(wx, wz);
