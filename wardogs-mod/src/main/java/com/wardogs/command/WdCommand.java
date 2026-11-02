@@ -49,7 +49,8 @@ public final class WdCommand {
                         .then(Commands.argument("item", StringArgumentType.word()).suggests(ITEMS)
                                 .executes(c -> unlock(c.getSource(), StringArgumentType.getString(c, "item")))))
                 .then(Commands.literal("progress").executes(c -> progress(c.getSource())))
-                .then(Commands.literal("bakurani").executes(c -> travel(c.getSource())))
+                .then(Commands.literal("bakurani").executes(c -> travel(c.getSource()))
+                        .then(Commands.literal("setup").requires(s -> s.hasPermission(2)).executes(c -> setupBakurani(c.getSource()))))
                 .then(Commands.literal("team")
                         .then(Commands.argument("faction", StringArgumentType.word()).suggests(FACTIONS)
                                 .executes(c -> team(c.getSource(), StringArgumentType.getString(c, "faction")))))
@@ -111,6 +112,17 @@ public final class WdCommand {
         return 1;
     }
 
+    private static int setupBakurani(CommandSourceStack src) {
+        net.minecraft.server.level.ServerLevel level = src.getServer().getLevel(BakuraniWorld.DIMENSION);
+        if (level == null) {
+            src.sendFailure(Component.literal("The wardogs:bakurani dimension is not loaded"));
+            return 0;
+        }
+        var r = com.wardogs.world.BakuraniSetup.buildAll(level);
+        src.sendSuccess(() -> Component.literal("Bakurani set up: " + r.towers() + " towers and " + r.vendors() + " vendors placed"), true);
+        return 1;
+    }
+
     /** Starts a match on Bakurani with one of the real Control Zone variants (picked by weight). */
     private static int startBakurani(CommandSourceStack src) {
         net.minecraft.server.level.ServerLevel level = src.getServer().getLevel(BakuraniWorld.DIMENSION);
@@ -129,8 +141,12 @@ public final class WdCommand {
                 break;
             }
         }
+        var built = com.wardogs.world.BakuraniSetup.buildAll(level);
         MatchManager.setZone(level, pick.x(), pick.z(), pick.radius());
         MatchManager.start(level);
+        for (ServerPlayer sp : src.getServer().getPlayerList().getPlayers()) {
+            com.wardogs.match.Respawns.sendToBase(sp);
+        }
         BakuraniWorld.Zone chosen = pick;
         src.sendSuccess(() -> Component.literal("Bakurani match started: " + chosen.name() + " zone at (" + (int) chosen.x() + ", " + (int) chosen.z() + ")"), true);
         return 1;

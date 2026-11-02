@@ -87,7 +87,67 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                 }
             }
         }
+        if (t != null) {
+            plantTrees(chunk, t, surface);
+        }
         return CompletableFuture.completedFuture(chunk);
+    }
+
+    /** Cheap deterministic hash of a column, uniform in [0,1). */
+    static double hash(int x, int z) {
+        long h = x * 73856093L ^ z * 19349663L ^ 0x9E3779B97F4A7C15L;
+        h ^= h >>> 33;
+        h *= 0xFF51AFD7ED558CCDL;
+        h ^= h >>> 33;
+        return (h & 0xFFFFFFL) / (double) 0x1000000;
+    }
+
+    /** Spruces on forest-floor ground (dense) and sparsely on meadows. Trees stay inside their chunk so no leaf is cut at an edge. */
+    private void plantTrees(ChunkAccess chunk, BakuraniTerrain t, Heightmap surface) {
+        BlockPos.MutableBlockPos pos = new BlockPos.MutableBlockPos();
+        BlockState log = Blocks.SPRUCE_LOG.defaultBlockState();
+        BlockState leaves = Blocks.SPRUCE_LEAVES.defaultBlockState().setValue(net.minecraft.world.level.block.LeavesBlock.PERSISTENT, true);
+        int baseX = chunk.getPos().getMinBlockX(), baseZ = chunk.getPos().getMinBlockZ();
+        for (int dx = 3; dx <= 12; dx++) {
+            for (int dz = 3; dz <= 12; dz++) {
+                int wx = baseX + dx, wz = baseZ + dz;
+                if (!BakuraniTerrain.inside(wx + 0.5, wz + 0.5) || t.isRoad(wx + 0.5, wz + 0.5)) {
+                    continue;
+                }
+                int mat = t.material(wx + 0.5, wz + 0.5);
+                double density = mat == BakuraniTerrain.FOREST ? 1.0 / 24 : mat == BakuraniTerrain.GRASS ? 1.0 / 900 : 0;
+                double hv = hash(wx, wz);
+                if (hv >= density) {
+                    continue;
+                }
+                int sy = t.surfaceY(wx + 0.5, wz + 0.5);
+                int trunk = 5 + (int) (hash(wz, wx) * 5);
+                if (sy + trunk + 3 >= HEIGHT) {
+                    continue;
+                }
+                for (int y = 1; y <= trunk; y++) {
+                    pos.set(wx, sy + y, wz);
+                    chunk.setBlockState(pos, log, false);
+                    surface.update(dx, sy + y, dz, log);
+                }
+                for (int layer = 0; layer < 6; layer++) {
+                    int y = sy + trunk - 4 + layer + 1;
+                    int radius = layer >= 5 ? 0 : layer >= 3 ? 1 : 2;
+                    for (int ox = -radius; ox <= radius; ox++) {
+                        for (int oz = -radius; oz <= radius; oz++) {
+                            if (Math.abs(ox) + Math.abs(oz) > radius + 1 || (ox == 0 && oz == 0 && layer < 5 && y <= sy + trunk)) {
+                                continue;
+                            }
+                            pos.set(wx + ox, y, wz + oz);
+                            if (chunk.getBlockState(pos).isAir()) {
+                                chunk.setBlockState(pos, leaves, false);
+                                surface.update(dx + ox, y, dz + oz, leaves);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     @Override

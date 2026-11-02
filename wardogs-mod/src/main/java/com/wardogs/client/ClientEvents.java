@@ -62,7 +62,16 @@ public final class ClientEvents {
                 }
             }
             while (SHOP.consumeClick()) {
-                mc.setScreen(new ShopScreen());
+                if (mc.level.dimension().equals(com.wardogs.world.BakuraniWorld.DIMENSION)) {
+                    var near = mc.level.getEntitiesOfClass(com.wardogs.vendor.VendorEntity.class, mc.player.getBoundingBox().inflate(8));
+                    if (near.isEmpty()) {
+                        mc.player.displayClientMessage(net.minecraft.network.chat.Component.literal("Go to a vendor in your base"), true);
+                    } else {
+                        mc.setScreen(new ShopScreen(near.get(0).kind().categories));
+                    }
+                } else {
+                    mc.setScreen(new ShopScreen());
+                }
             }
             while (RELOAD.consumeClick()) {
                 if (mc.player.getMainHandItem().getItem() instanceof GunItem) {

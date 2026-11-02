@@ -19,6 +19,10 @@ import com.wardogs.build.Building;
 import com.wardogs.build.Buildable;
 import com.wardogs.item.HammerItem;
 import com.wardogs.build.Artillery;
+import com.wardogs.vendor.VendorEntities;
+import com.wardogs.vendor.VendorEntity;
+import com.wardogs.world.BakuraniSetup;
+import com.wardogs.world.BakuraniWorld;
 import com.wardogs.build.Emplacements;
 import com.wardogs.item.GunStats;
 import com.wardogs.item.AttachmentItem;
@@ -261,11 +265,13 @@ public final class WardogsGameTests {
         h.succeed();
     }
 
-    @GameTest(template = "empty")
+    @GameTest(template = "empty", batch = "matchA")
     public static void killInsideControlZonePaysFiveTimes(GameTestHelper h) {
         Arena a = arena(h);
         MatchData d = MatchData.get(h.getLevel().getServer().overworld());
         boolean wasActive = d.active;
+        String wasDim = d.dim;
+        d.dim = "minecraft:overworld";
         double zx = d.zoneX, zz = d.zoneZ, zr = d.zoneRadius, hx = d.hotX, hz = d.hotZ, hr = d.hotRadius;
         try {
             d.active = true;
@@ -285,6 +291,7 @@ public final class WardogsGameTests {
             check(paid == 450 * 5, "headshot kill with both soldiers inside the Control Zone should pay $2250 but paid $" + paid);
         } finally {
             d.active = wasActive;
+            d.dim = wasDim;
             d.zoneX = zx; d.zoneZ = zz; d.zoneRadius = zr; d.hotX = hx; d.hotZ = hz; d.hotRadius = hr;
         }
         h.succeed();
@@ -359,11 +366,13 @@ public final class WardogsGameTests {
         h.succeed();
     }
 
-    @GameTest(template = "empty")
+    @GameTest(template = "empty", batch = "matchB")
     public static void zoneLeaderScoresAndTieDoesNot(GameTestHelper h) {
         ServerLevel ow = h.getLevel().getServer().overworld();
         MatchData d = MatchData.get(ow);
         boolean wasActive = d.active;
+        String wasDim = d.dim;
+        d.dim = "minecraft:overworld";
         double zx = d.zoneX, zz = d.zoneZ, zr = d.zoneRadius, hx = d.hotX, hz = d.hotZ, hr = d.hotRadius;
         int[] saved = d.scores.clone();
         try {
@@ -394,6 +403,7 @@ public final class WardogsGameTests {
             }
         } finally {
             d.active = wasActive;
+            d.dim = wasDim;
             d.zoneX = zx; d.zoneZ = zz; d.zoneRadius = zr; d.hotX = hx; d.hotZ = hz; d.hotRadius = hr;
             System.arraycopy(saved, 0, d.scores, 0, saved.length);
         }
@@ -941,13 +951,15 @@ public final class WardogsGameTests {
         h.succeed();
     }
 
-    @GameTest(template = "empty")
+    @GameTest(template = "empty", batch = "matchC")
     public static void drivingBurnsFuelAndDeliveriesPayTheDriver(GameTestHelper h) {
         Arena a = arena(h);
         a.target.discard();
         ServerLevel ow = h.getLevel().getServer().overworld();
         MatchData d = MatchData.get(ow);
         boolean wasActive = d.active;
+        String wasDim = d.dim;
+        d.dim = "minecraft:overworld";
         double zx = d.zoneX, zz = d.zoneZ, zr = d.zoneRadius, hx = d.hotX, hz = d.hotZ, hr = d.hotRadius;
         try {
             Vec3 spot = ground(h, 6.5, 6.5);
@@ -983,6 +995,7 @@ public final class WardogsGameTests {
             check(Wallet.get(driver) == mid, "boarding inside the zone is not a delivery");
         } finally {
             d.active = wasActive;
+            d.dim = wasDim;
             d.zoneX = zx; d.zoneZ = zz; d.zoneRadius = zr; d.hotX = hx; d.hotZ = hz; d.hotRadius = hr;
         }
         h.succeed();
@@ -1390,6 +1403,116 @@ public final class WardogsGameTests {
         long kept = Wallet.get(a.shooter) - before;
         long expectedKept = Math.round(400 * Balance.get().rewards().revivedKeep());
         check(kept == expectedKept, "reviving the victim leaves the killer " + expectedKept + " of the $400, he has " + kept);
+        h.succeed();
+    }
+
+    // --- vendors, towers, bases --------------------------------------------------------------
+
+    private static VendorEntity vendorAt(GameTestHelper h, VendorEntity.Kind kind, double x, double z) {
+        VendorEntity v = VendorEntities.VENDOR.get().create(h.getLevel());
+        Vec3 pos = h.absoluteVec(new Vec3(x, 1.0, z));
+        v.moveTo(pos.x, pos.y, pos.z, 0f, 0f);
+        v.setKind(kind);
+        h.getLevel().addFreshEntity(v);
+        return v;
+    }
+
+    @GameTest(template = "empty")
+    public static void shopsNeedTheRightVendorWithinRange(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        ServerPlayer p = a.shooter;
+        var rule = com.wardogs.shop.Shop.VENDOR_REQUIRED;
+        com.wardogs.shop.Shop.VENDOR_REQUIRED = pl -> true;
+        try {
+            Wallet.set(p, 100_000);
+            check(!com.wardogs.shop.Shop.buy(p, "ggx17").ok(), "with no vendor nearby nothing can be bought");
+
+            VendorEntity gear = vendorAt(h, VendorEntity.Kind.EQUIPMENT, 5.5, 3.5);
+            check(com.wardogs.shop.Shop.buy(p, "ggx17").ok(), "next to an equipment vendor a pistol can be bought");
+            check(!com.wardogs.shop.Shop.buy(p, "bobcat").ok(), "an equipment vendor does not sell vehicles");
+            gear.discard();
+
+            VendorEntity garage = vendorAt(h, VendorEntity.Kind.GARAGE, 5.5, 3.5);
+            check(!com.wardogs.shop.Shop.buy(p, "ggx17").ok(), "a garage vendor does not sell weapons");
+            long before = Wallet.get(p);
+            var res = com.wardogs.shop.Shop.buy(p, "bobcat");
+            check(res.ok(), "a garage vendor sells vehicles: " + res.message().getString());
+            check(before - Wallet.get(p) == Balance.get().vehicle("bobcat").price(), "the vehicle's price was charged");
+            var cars = h.getLevel().getEntitiesOfClass(Vehicle.class, garage.getBoundingBox().inflate(12));
+            check(cars.size() == 1 && cars.get(0).faction() == Factions.index(p), "the bought vehicle waits beside the garage, " + cars.size() + " found");
+            garage.discard();
+
+            // out of range
+            vendorAt(h, VendorEntity.Kind.EQUIPMENT, 5.5, 3.5).moveTo(p.getX() + 30, p.getY(), p.getZ(), 0f, 0f);
+            check(!com.wardogs.shop.Shop.buy(p, "ggx17").ok(), "a vendor 30 blocks away is out of range");
+        } finally {
+            com.wardogs.shop.Shop.VENDOR_REQUIRED = rule;
+        }
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void vendorsPlaceOnceAndTalkingToOneIsSafe(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        check(VendorEntity.Kind.fromSiteName("GarageVendor (Bravo)") == VendorEntity.Kind.GARAGE, "garage vendors");
+        check(VendorEntity.Kind.fromSiteName("VehicleVendor (Alpha)") == VendorEntity.Kind.GARAGE, "vehicle vendors count as garages");
+        check(VendorEntity.Kind.fromSiteName("EquipmentVendor (Charlie)") == VendorEntity.Kind.EQUIPMENT, "equipment vendors");
+
+        Vec3 at = h.absoluteVec(new Vec3(8.5, 1.0, 8.5));
+        var site = new BakuraniWorld.Site("EquipmentVendor (Alpha)", at.x, at.z);
+        BakuraniSetup.Ground flat = (x, z) -> (int) Math.round(at.y);
+        check(BakuraniSetup.placeVendor(h.getLevel(), site, flat), "the first placement creates a vendor");
+        check(!BakuraniSetup.placeVendor(h.getLevel(), site, flat), "placing again must not duplicate it");
+        var found = h.getLevel().getEntitiesOfClass(VendorEntity.class, new net.minecraft.world.phys.AABB(at, at).inflate(4, 6, 4));
+        check(found.size() == 1, "exactly one vendor, found " + found.size());
+        check(found.get(0).isInvulnerable() && found.get(0).isNoAi(), "an invulnerable, motionless vendor (invulnerable=" + found.get(0).isInvulnerable() + ", noAi=" + found.get(0).isNoAi() + ")");
+        var res = found.get(0).interact(a.shooter, InteractionHand.MAIN_HAND);
+        check(res.consumesAction(), "talking to the vendor is handled (the shop opens on a real client)");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty", timeoutTicks = 200)
+    public static void towersAreBuiltOnceWithAClimbableChestPlatform(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Vec3 at = h.absoluteVec(new Vec3(6.5, 1.0, 6.5));
+        var site = new BakuraniWorld.Site("Tower Test", at.x, at.z);
+        BakuraniSetup.Ground flat = (x, z) -> (int) Math.round(at.y);
+        check(BakuraniSetup.buildTower(h.getLevel(), site, flat), "a tower is built");
+        check(!BakuraniSetup.buildTower(h.getLevel(), site, flat), "a second request leaves the existing tower alone");
+        BlockPos chest = BakuraniSetup.chestPos(site, flat);
+        check(h.getLevel().getBlockState(chest).is(Blocks.CHEST), "there is a chest on the platform");
+        int base = chest.getY() - BakuraniSetup.TOWER_HEIGHT - 1;
+        BlockPos ladder = new BlockPos((int) Math.floor(at.x), base + 5, (int) Math.floor(at.z) + 1);
+        check(h.getLevel().getBlockState(ladder).is(Blocks.LADDER), "a ladder leads up the side");
+        check(!h.getLevel().getBlockState(new BlockPos((int) Math.floor(at.x), base + BakuraniSetup.TOWER_HEIGHT, (int) Math.floor(at.z) + 1)).is(Blocks.SPRUCE_PLANKS), "with an opening (not a plank) in the platform where the ladder arrives");
+
+        // The chest refills: an empty one rolls again until it holds an item from the table.
+        var be = (net.minecraft.world.level.block.entity.ChestBlockEntity) h.getLevel().getBlockEntity(chest);
+        boolean got = false;
+        for (int i = 0; i < 200 && !got; i++) {
+            be.clearContent();
+            BakuraniSetup.refill(h.getLevel(), site, flat);
+            got = !be.isEmpty();
+        }
+        check(got, "an empty tower chest eventually rolls a loot item");
+        String id = null;
+        for (var e : com.wardogs.world.TowerLoot.TABLE) {
+            if (ModItems.stack(e.itemId()) != null && be.getItem(0).getItem() == ModItems.stack(e.itemId()).getItem()) {
+                id = e.itemId();
+            }
+        }
+        check(id != null, "and the item comes from the tower loot table");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void playersAreNotSentToABaseWithoutABakuraniMatch(GameTestHelper h) {
+        ServerPlayer p = soldier(h, Faction.LONESTAR, 5.5, 5.5);
+        check(!com.wardogs.match.Respawns.sendToBase(p), "no Bakurani match is running, so nobody is moved");
+        check(!com.wardogs.match.Respawns.sendToBase(h.makeMockServerPlayerInLevel()), "and a player without a faction is never moved");
         h.succeed();
     }
 }

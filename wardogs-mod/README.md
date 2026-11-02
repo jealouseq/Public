@@ -4,7 +4,7 @@ Tactical 3-faction combat inspired by WARDOGS, for **Minecraft Java 1.21.1 / Neo
 Research and source numbers: [RESEARCH.md](RESEARCH.md).
 
 ## Status (milestone 2: match loop)
-Done and covered by tests (unit + 61 server GameTests):
+Done and covered by tests (unit + 65 server GameTests):
 - Data-driven balance (`src/main/resources/data/wardogs/balance/*.json`, overridable by a datapack, reloads with `/reload`).
 - 34 firearms: measured chest/head damage, RPM, price; ammo FMJ/HP/AP; hitscan, headshots, wall blocking, spread, magazines, reload (R).
 - Armor: helmets and body armor L1-L4 (equip by right-click); headshots hit the helmet, body hits hit the vest.
@@ -77,3 +77,9 @@ Without the data the dimension is a flat plain.
 Commands: `/wd bakurani` teleports you to your faction's spawn; `/wd match bakurani` (op) starts a match with one of the real
 Control Zone variants (default / farmland / lumberyard, radius 500 m). Players who walk off the map are put back.
 `local-data/bakurani/minecraft_preview.png` shows the result (bases, zone variants, towers).
+
+Match flow on Bakurani: `/wd match bakurani` builds the vendors and the 12 loot towers (idempotent, also `/wd bakurani setup`),
+starts a match on a real Control Zone variant and sends every soldier to their faction's base; dead soldiers respawn at the base.
+Buying on Bakurani needs a vendor within 8 blocks: equipment vendors sell kit, garage vendors sell vehicles (a bought vehicle
+appears beside the garage). Towers hold the loot from the marker data (50% chance, weights FOB kit 0.5, SV98 0.8, M249 1, medkit 0.8,
+M500 1) and refill every five minutes. Forests get spruces. Not built yet: buildings, the river, deployment boards.

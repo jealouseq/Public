@@ -27,16 +27,34 @@ public class ShopScreen extends Screen {
     private List<Shop.Entry> rows = new ArrayList<>();
     private int scroll;
 
+    private final java.util.Set<Shop.Category> allowed;
+
+    /** All categories (development use outside Bakurani). */
     public ShopScreen() {
+        this(java.util.EnumSet.allOf(Shop.Category.class));
+    }
+
+    public ShopScreen(java.util.Set<Shop.Category> allowed) {
         super(Component.literal("Vendor"));
+        this.allowed = allowed;
+        this.category = Shop.Category.values()[0];
+        for (Shop.Category c : Shop.Category.values()) {
+            if (allowed.contains(c)) {
+                this.category = c;
+                break;
+            }
+        }
     }
 
     @Override
     protected void init() {
         int x = width / 2 - LIST_W / 2;
-        int bw = LIST_W / Shop.Category.values().length;
+        int bw = LIST_W / Math.max(1, allowed.size());
         int i = 0;
         for (Shop.Category c : Shop.Category.values()) {
+            if (!allowed.contains(c)) {
+                continue;
+            }
             String label = c.name().charAt(0) + c.name().substring(1).toLowerCase();
             addRenderableWidget(Button.builder(Component.literal(label), b -> select(c))
                     .bounds(x + i * bw, 24, bw - 2, 18).build());

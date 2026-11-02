@@ -34,6 +34,45 @@ public final class Shop {
 
     public record Result(boolean ok, Component message) {}
 
+    /**
+     * Decides whether purchases need a vendor next to the player. On Bakurani they do (the real game buys at vendors in the
+     * faction bases); elsewhere (development) the shop works anywhere. Tests replace this rule.
+     */
+    public static volatile java.util.function.Predicate<ServerPlayer> VENDOR_REQUIRED =
+            p -> p.level().dimension().equals(com.wardogs.world.BakuraniWorld.DIMENSION);
+
+    /** Interaction range to a vendor, in blocks. */
+    public static final double VENDOR_RANGE = 8.0;
+
+    /** The nearest vendor within range, or null. */
+    public static com.wardogs.vendor.VendorEntity vendorNear(ServerPlayer p) {
+        com.wardogs.vendor.VendorEntity best = null;
+        double bestD = VENDOR_RANGE;
+        for (var v : p.serverLevel().getEntitiesOfClass(com.wardogs.vendor.VendorEntity.class, p.getBoundingBox().inflate(VENDOR_RANGE))) {
+            double d = v.distanceTo(p);
+            if (d <= bestD) {
+                best = v;
+                bestD = d;
+            }
+        }
+        return best;
+    }
+
+    /** Null if the player may buy this entry here, otherwise the reason. */
+    private static Result vendorGate(ServerPlayer p, Entry e) {
+        if (!VENDOR_REQUIRED.test(p)) {
+            return null;
+        }
+        var v = vendorNear(p);
+        if (v == null) {
+            return new Result(false, Component.literal("Go to a vendor in your base to buy").withStyle(ChatFormatting.RED));
+        }
+        if (!v.kind().categories.contains(e.category())) {
+            return new Result(false, Component.literal(v.kind().title + " does not sell this").withStyle(ChatFormatting.RED));
+        }
+        return null;
+    }
+
     private Shop() {}
 
     public static List<Entry> catalog() {
@@ -88,6 +127,10 @@ public final class Shop {
         if (e == null) {
             return new Result(false, Component.literal("Unknown item: " + id));
         }
+        Result gate = vendorGate(p, e);
+        if (gate != null) {
+            return gate;
+        }
         return switch (state(e, Progression.get(p))) {
             case OWNED -> new Result(false, Component.literal(e.name() + " is already unlocked"));
             case LEVEL_TOO_LOW -> new Result(false, Component.literal("Requires " + e.role().key() + " level " + e.level()
@@ -109,6 +152,10 @@ public final class Shop {
         if (e == null) {
             return new Result(false, Component.literal("Unknown item: " + id));
         }
+        Result gate = vendorGate(p, e);
+        if (gate != null) {
+            return gate;
+        }
         switch (state(e, Progression.get(p))) {
             case LEVEL_TOO_LOW -> {
                 return new Result(false, Component.literal("Locked: requires " + e.role().key() + " level " + e.level()
@@ -121,6 +168,17 @@ public final class Shop {
         }
         if (!Wallet.tryPay(p, e.price())) {
             return new Result(false, Component.literal("Not enough money: need $" + e.price() + ", you have $" + Wallet.get(p)).withStyle(ChatFormatting.RED));
+        }
+        if (e.category() == Category.VEHICLE && VENDOR_REQUIRED.test(p) && vendorNear(p) != null) {
+            // A vehicle bought at a garage appears next to it, ready to drive.
+            var v = vendorNear(p);
+            net.minecraft.world.phys.Vec3 dir = net.minecraft.world.phys.Vec3.directionFromRotation(0, p.getYRot());
+            double x = v.getX() + dir.x * 7, z = v.getZ() + dir.z * 7;
+            double y = p.serverLevel().getHeight(net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING, (int) Math.floor(x), (int) Math.floor(z)) + 0.5;
+            com.wardogs.vehicle.Vehicle.spawn(p.serverLevel(), Balance.get().vehicle(id), new net.minecraft.world.phys.Vec3(x, y, z),
+                    p.getYRot(), com.wardogs.match.Factions.index(p));
+            HudPayload.sendTo(p);
+            return new Result(true, Component.literal("Your " + e.name() + " is waiting outside  (left $" + Wallet.get(p) + ")").withStyle(ChatFormatting.GOLD));
         }
         ItemStack stack = ModItems.stack(id);
         if (!p.getInventory().add(stack)) {
