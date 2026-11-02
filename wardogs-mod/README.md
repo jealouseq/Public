@@ -48,7 +48,7 @@ Done and covered by tests (unit + 65 server GameTests):
 Admin commands (op): `/wd zone here <radius>`, `/wd match start|stop|status`, `/wd give <item>`, `/wd money set|add <n>`, `/wd weapons`.
 Quick start: `/wd zone here 60`, `/wd team lonestar`, `/wd match start`, stand in the zone, `/wd buy m4`.
 
-Not yet built: Stingray, M113 forward spawn, the Bakurani terrain (data found, see research/DATA_SOURCES.md),
+Not yet built: M113 forward spawn, the Bakurani terrain (data found, see research/DATA_SOURCES.md),
 the Bakurani map, real models/sounds. The HUD and key binding compile but were never seen on a screen.
 
 Fields flagged `estimated` in the balance JSON (reload time, spread, some magazines/ranges, armor absorption, HP/AP vs armor)
@@ -79,7 +79,7 @@ that were considered and their licences.
 
 ## Not done yet
 
-Stingray and M113 forward spawn, launcher 3D models,
+launcher 3D models,
 real sounds, procedural houses that follow the street direction, hand-built landmarks.
 
 ## Build & test

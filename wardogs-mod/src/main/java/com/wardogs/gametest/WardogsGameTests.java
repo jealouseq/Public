@@ -1745,4 +1745,18 @@ public final class WardogsGameTests {
         com.wardogs.match.Squads.reset();
         h.succeed();
     }
+
+    @GameTest(template = "empty", batch = "m113")
+    public static void theM113IsAForwardSpawnNotForSale(GameTestHelper h) {
+        arena(h).target.discard();
+        var def = Balance.get().vehicle("m113");
+        check(def != null && def.seats() == 10 && def.smallArms() == 0.0 && def.price() == 0, "the M113 carries ten, is immune to bullets and is not priced");
+        check(com.wardogs.shop.Shop.catalog().stream().noneMatch(e -> e.id().equals("m113")), "it is not in the shop");
+        vehicleAt(h, "m113", Faction.LONESTAR, 6.5, 6.5);
+        var targets = com.wardogs.match.Deployment.targets(h.getLevel(), Faction.LONESTAR);
+        check(targets.stream().anyMatch(t -> t.name().equals("M113 forward spawn")), "a Lonestar M113 is a Lonestar deployment point");
+        check(com.wardogs.match.Deployment.targets(h.getLevel(), Faction.VALKYRA).stream().noneMatch(t -> t.name().equals("M113 forward spawn")),
+                "but not an enemy one");
+        h.succeed();
+    }
 }

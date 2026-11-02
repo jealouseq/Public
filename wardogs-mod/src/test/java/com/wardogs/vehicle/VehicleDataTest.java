@@ -14,7 +14,7 @@ class VehicleDataTest {
 
     @Test
     void allVehiclesFromTheResearchArePresent() {
-        assertEquals(23, b.vehicles().size());
+        assertEquals(24, b.vehicles().size()); // 23 purchasable + the M113 spawn vehicle
         for (String id : new String[]{"bobcat", "kodiak", "wolf_110", "humvee", "ural", "l2a6", "t72b3", "flakpanzer_gepard", "sph2",
                 "mh6", "ah6m", "ah6r", "z20_lakota", "havoc", "dune_buggy"}) {
             assertNotNull(b.vehicle(id), id);

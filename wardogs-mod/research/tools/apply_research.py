@@ -130,6 +130,13 @@ for vid, vd in V["vehicles"].items():
         if m:
             vd["small_arms"] = round(1.0 - float(m.group(1)) / 100.0, 4)
     vd["source"] = "wardogs.zone"
+# the M113 APC "spawn vehicle": one per faction, not for sale; a forward spawn point that can drive (wardogs.zone: land-tracked-spawnvehicle-*)
+zm = Z.get("land-tracked-spawnvehicle-lonestar")
+if zm:
+    V["vehicles"]["m113"] = {"name": "M113 APC SV", "category": "apc", "flying": False, "hp": zm["hull"]["Hull"], "speed": round(zm["speed_kmh"] / 72.0, 3),
+        "seats": int(zm["seats"]), "fuel": zm["fuel_l"], "w": 2.7, "h": 2.4, "d": 5.0, "price": 0, "role": "any", "level": 0, "cost": 0,
+        "small_arms": 0.0, "explosive": 0.5, "anti_tank": 1.0, "kill_reward": 2000, "block": "minecraft:green_concrete_powder",
+        "speed_kmh": zm["speed_kmh"], "range_km": 18.0, "sections": zm["hull"], "source": "wardogs.zone"}
 V["_comment"] = ("price, unlock, level, speed, seats, fuel, hull hp and bullet resistance from wardogs.zone (Season 2). speed is blocks/tick; "
                  "explosive/anti_tank multipliers, kill rewards (except sourced ones), sizes and gun stats are still ESTIMATES. ap_vs_vehicle from the same source.")
 V["ap_vs_vehicle"] = 1.175

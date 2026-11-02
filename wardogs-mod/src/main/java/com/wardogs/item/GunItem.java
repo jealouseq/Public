@@ -136,9 +136,26 @@ public class GunItem extends Item {
         } else {
             Ballistics.fire(level, sp, def, ammoType(stack), GunStats.spreadMult(GunStats.attachments(stack), sp.isShiftKeyDown()));
         }
-        level.playSound(null, sp.blockPosition(), SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.PLAYERS, 1.2f, 1.1f);
+        playShotSound(level, sp, def);
         sp.displayClientMessage(ammoLine(stack, def), true);
         return true;
+    }
+
+    /** A shot sound per weapon class, built from vanilla sounds at different pitch and volume. */
+    private static void playShotSound(ServerLevel level, ServerPlayer sp, WeaponDef def) {
+        var pos = sp.blockPosition();
+        switch (def.category()) {
+            case "smg" -> level.playSound(null, pos, SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.PLAYERS, 1.0f, 1.55f);
+            case "pistol" -> level.playSound(null, pos, SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.PLAYERS, 0.9f, 1.8f);
+            case "lmg" -> level.playSound(null, pos, SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.PLAYERS, 1.6f, 0.85f);
+            case "sniper_rifle", "marksman_rifle" -> {
+                level.playSound(null, pos, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.PLAYERS, 1.4f, 1.9f);
+                level.playSound(null, pos, SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.PLAYERS, 1.6f, 0.75f);
+            }
+            case "shotgun" -> level.playSound(null, pos, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.PLAYERS, 1.3f, 1.5f);
+            case "bow" -> level.playSound(null, pos, SoundEvents.CROSSBOW_SHOOT, SoundSource.PLAYERS, 1.0f, 1.2f);
+            default -> level.playSound(null, pos, SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.PLAYERS, 1.2f, 1.1f);
+        }
     }
 
     /** Starts a reload if the magazine is not full and the gun is not already reloading. */

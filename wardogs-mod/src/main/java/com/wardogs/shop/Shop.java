@@ -96,6 +96,9 @@ public final class Shop {
             out.add(new Entry(x.id(), Category.BUILDING, name, x.price(), Role.byKey(x.unlockRole()), x.unlockLevel(), x.unlockCost()));
         }
         for (VehicleDef v : b.vehicles()) {
+            if (v.price() <= 0) {
+                continue; // spawn vehicles (the M113) are not for sale
+            }
             out.add(new Entry(v.id(), Category.VEHICLE, v.name(), v.price(), Role.byKey(v.unlockRole()), v.unlockLevel(), v.unlockCost()));
         }
         for (AttachmentDef a : b.attachments()) {

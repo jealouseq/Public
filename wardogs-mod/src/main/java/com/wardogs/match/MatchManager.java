@@ -97,6 +97,9 @@ public final class MatchManager {
         d.payTimer = r.zoneTickSeconds() * 20;
         relocateHot(overworld, d);
         resetPresence();
+        if (d.dim.equals(com.wardogs.world.BakuraniWorld.DIMENSION.location().toString())) {
+            ensureSpawnVehicles(overworld);
+        }
         KillRewardHandler.reset();
         MatchStats.reset();
         Downed.reset();
@@ -163,6 +166,9 @@ public final class MatchManager {
             for (ServerPlayer sp : ow.getServer().getPlayerList().getPlayers()) {
                 com.wardogs.net.SquadPayload.sendTo(sp);
             }
+        }
+        if (now % 1200 == 0 && d.active && d.dim.equals(com.wardogs.world.BakuraniWorld.DIMENSION.location().toString())) {
+            ensureSpawnVehicles(ow);
         }
         if (now % 600 == 0 && ow.dimension().equals(com.wardogs.world.BakuraniWorld.DIMENSION)) {
             com.wardogs.world.BakuraniSetup.tickTowers(ow);
@@ -280,6 +286,26 @@ public final class MatchManager {
         resetPresence();
         KillRewardHandler.reset();
         d.setDirty();
+    }
+
+    /** Keeps one M113 forward-spawn vehicle alive per faction, parked next to its base (replaced a minute after it is destroyed). */
+    public static void ensureSpawnVehicles(ServerLevel overworld) {
+        ServerLevel bk = overworld.getServer().getLevel(com.wardogs.world.BakuraniWorld.DIMENSION);
+        var def = Balance.get().vehicle("m113");
+        if (bk == null || def == null) {
+            return;
+        }
+        for (Faction f : Faction.values()) {
+            boolean exists = !bk.getEntities(net.minecraft.world.level.entity.EntityTypeTest.forClass(com.wardogs.vehicle.Vehicle.class),
+                    v -> v.isAlive() && v.faction() == f.ordinal() && v.def() != null && v.def().id().equals("m113")).isEmpty();
+            if (!exists) {
+                var base = com.wardogs.world.BakuraniWorld.spawnOf(f.name().toLowerCase());
+                double x = base.x() + 10, z = base.z() + 10;
+                bk.getChunk((int) Math.floor(x) >> 4, (int) Math.floor(z) >> 4);
+                double y = bk.getHeight(net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING, (int) Math.floor(x), (int) Math.floor(z)) + 0.5;
+                com.wardogs.vehicle.Vehicle.spawn(bk, def, new net.minecraft.world.phys.Vec3(x, y, z), 0f, f.ordinal());
+            }
+        }
     }
 
     private static void sendScoreboard(ServerLevel ow, MatchData d, boolean fin, int winner) {

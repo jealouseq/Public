@@ -158,7 +158,20 @@ def heli(c, big=False, rockets=False):
         m.box(2.2, 5.5, 2.5, 4.5, 7.5, 7.5, "gray"); m.box(11.5, 5.5, 2.5, 13.8, 7.5, 7.5, "gray")
     return m
 
+def apc(c):
+    m = M()
+    m.box(0.5, 1, 0, 3.5, 5, 16, "dark"); m.box(12.5, 1, 0, 15.5, 5, 16, "dark")
+    for z in range(1, 16, 3):
+        m.box(0.2, 0.2, z, 0.5, 2, z + 1.8, "steel"); m.box(15.5, 0.2, z, 15.8, 2, z + 1.8, "steel")
+    m.box(3.5, 2.5, 0, 12.5, 6, 16, c)                      # lower hull with the sloped nose
+    m.box(2.5, 6, 3, 13.5, 11.5, 16, c)                     # troop compartment
+    m.box(3.5, 6, 0, 12.5, 8, 3, c)
+    m.box(3, 9, 2.6, 13, 11, 3.2, "glass")
+    m.box(5.5, 11.5, 8, 10.5, 13.5, 12, "dark"); m.box(7.4, 13.2, 3, 8.6, 14.2, 8, "steel")   # cupola with a machine gun
+    return m
+
 MODELS = {
+    "m113": lambda: apc("green"),
     "bobcat": lambda: atv("green"), "dune_buggy": lambda: buggy("orange"),
     "kodiak": lambda: suv("brown"), "kodiak_m249": lambda: suv("brown", gun=True), "kodiak_pickup": lambda: suv("brown", pickup=True),
     "wolf_110": lambda: suv("olive"), "wolf_110_m2": lambda: suv("olive", gun=True),

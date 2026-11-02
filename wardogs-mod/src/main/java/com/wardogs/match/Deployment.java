@@ -40,6 +40,10 @@ public final class Deployment {
         for (Buildable b : level.getEntities(EntityType_BUILD(), e -> e.isFob() && e.faction() == f.ordinal())) {
             out.add(new Target("FOB " + n++, b.getX(), b.getZ()));
         }
+        for (var v : level.getEntities(net.minecraft.world.level.entity.EntityTypeTest.forClass(com.wardogs.vehicle.Vehicle.class),
+                e -> e.isAlive() && e.faction() == f.ordinal() && e.def() != null && e.def().id().equals("m113"))) {
+            out.add(new Target("M113 forward spawn", v.getX(), v.getZ()));
+        }
         return out;
     }
 
