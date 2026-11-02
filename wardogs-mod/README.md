@@ -3,10 +3,11 @@
 Tactical 3-faction combat inspired by WARDOGS, for **Minecraft Java 1.21.1 / NeoForge 21.1.265** (Java 21).
 Research and source numbers: [RESEARCH.md](RESEARCH.md).
 
-## Status (milestone 2: match loop)
-Done and covered by tests (unit + 65 server GameTests):
+## Status (milestone 3: playable Bakurani)
+Done and covered by tests (unit + 82 server GameTests). Newer features (Bakurani world, HUD, map, squads, deployment, vehicle
+sections, bullet travel, sounds, models) are listed in the sections further down; this list is the match-loop core:
 - Data-driven balance (`src/main/resources/data/wardogs/balance/*.json`, overridable by a datapack, reloads with `/reload`).
-- 34 firearms: measured chest/head damage, RPM, price; ammo FMJ/HP/AP; hitscan, headshots, wall blocking, spread, magazines, reload (R).
+- 34 firearms: measured chest/head damage, RPM, price; ammo FMJ/HP/AP; bullets that travel and drop (muzzle velocity from the data; close range is instant), headshots, wall blocking, spread, magazines, reload (R).
 - Armor: helmets and body armor L1-L4 (equip by right-click); headshots hit the helmet, body hits hit the vest.
 - Three factions (Lonestar, Valkyra, Manticore), `/wd team <faction>`.
 - Control Zone + moving Hot Zone: money while inside, entry bonus, score every 30 s (x2 if the leader also leads the Hot Zone),
@@ -19,15 +20,15 @@ Done and covered by tests (unit + 65 server GameTests):
   blocked by walls and never break blocks. Kills pay like bullet kills.
 - Role progression: XP per role (Assault, Medic, Recon, Support, Driver, Pilot) plus the general WARDOG branch, levels from the
   Season 2 XP curve. Items need a role level and sometimes a one-time unlock payment (`/wd unlock <item>`, `/wd progress`).
-- Vendor screen (key B): category tabs, click a row to buy or unlock. The server re-checks every purchase.
+- Vendor screen (key B, next to a vendor in Bakurani): sorted list with icons, a stats panel and a BUY / UNLOCK button. The server re-checks every purchase.
 - Building: small/medium/large hammers (sneak+click chooses a structure, click builds, click a friendly structure repairs),
   12 structures with the game's health and C4/IED/mine hit counts, FOB kit (stores build/ammo/fuel/mechanical supplies,
   build radius), supplies bought in stacks of 50. Small structures work from your own supplies; bigger ones need a friendly
   FOB with supplies stored. Structures stop bullets and players; only enemy explosives damage them.
-- Vehicles: 25 (cars, trucks, tanks, anti-air, artillery, 9 helicopters) with prices/unlocks from the sources. Seats, fuel
+- Vehicles: 23 for sale plus the M113 forward-spawn APC (cars, trucks, tanks, anti-air, artillery, 9 helicopters) with prices/unlocks from the sources. Seats, fuel
   (refill with Fuel Supplies), repair with a Wrench, per-vehicle armor against bullets/explosives/anti-tank, a destruction reward,
   a delivery bonus for passengers dropped in the zone, and mounted weapons fired by the driver (hold use). Helicopters climb and
-  descend by looking up or down. Bought vehicles are spawn tickets for now (right-click the ground).
+  descend by looking up or down. Bought vehicles are spawn tickets (right-click the ground; the garage vendor spawns them beside itself in Bakurani).
 - Launchers: RPG-7, MAAWS, MGL-40 (6 grenades), 9K333 Verba (homes on flying vehicles). They use the normal weapon system
   (magazine, reload, shop, unlocks). A direct hit deals full damage, splash falls off; anti-tank rockets hurt vehicles far more.
 - Emplacements: L81 mortar (right-click with an empty hand to fire at your crosshair; needs ammo supplies in its FOB, minimum and
@@ -43,13 +44,15 @@ Done and covered by tests (unit + 65 server GameTests):
 - Teamkill costs 3x the kill reward. Wallet ($10 000 start). `/wd buy <item>` shop command.
 - Players have 100 HP (not 20 hearts). Bullets deal WARDOGS damage 1:1, vanilla damage is scaled x5. Vanilla hearts are hidden;
   the HUD shows the number and a heart that fills in proportion to health.
-- HUD (money, faction, three score bars), sent only to the owning player. A match forces PvP on.
+- HUD laid out like the real game (see Controls and interface), sent only to the owning player. A match forces PvP on.
 
 Admin commands (op): `/wd zone here <radius>`, `/wd match start|stop|status`, `/wd give <item>`, `/wd money set|add <n>`, `/wd weapons`.
 Quick start: `/wd zone here 60`, `/wd team lonestar`, `/wd match start`, stand in the zone, `/wd buy m4`.
 
-Not yet built: M113 forward spawn, the Bakurani terrain (data found, see research/DATA_SOURCES.md),
-the Bakurani map, real models/sounds. The HUD and key binding compile but were never seen on a screen.
+The Bakurani dimension is generated from the researched elevation, material, road, land-cover and building data (kept in the
+git-ignored `local-data/bakurani`, built by `research/tools/map_convert.py` and `bake_cover.py`; they are not part of the repository).
+`/wd bakurani` teleports you there, `/wd bakurani setup` places vendors, towers, boards, loot, the shooting range and flags,
+and `/wd match bakurani` starts a match.
 
 Fields flagged `estimated` in the balance JSON (reload time, spread, some magazines/ranges, armor absorption, HP/AP vs armor)
 and the assumed 100 player health are placeholders: the sources do not publish them.
