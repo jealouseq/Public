@@ -86,7 +86,8 @@ generated foliage and bark textures (`research/tools/gen_nature.py`) and procedu
 synthesised (`research/tools/gen_sounds.py`, no recordings); grenade, mine, charge, flare, armour and launcher models come from
 `research/tools/gen_item_models.py`, and the 59 decor blocks (furniture, street furniture, camp gear) from `research/tools/gen_decor.py`.
 No asset of the real WARDOGS or of STALCRAFT is used (they are proprietary); see `research/MODS_AND_ASSETS.md` for what was considered and
-the licences. A developer can additionally import community mods' models (guns, tanks, helicopters, worn armour) into the git-ignored
+the licences. A developer can additionally import community mods' models (guns, tanks, helicopters, worn armour, props, road blocks, recorded
+weapon sounds) into the git-ignored
 `local-data/generated` folder (`research/IMPORTS.md`); they are not redistributable, so nothing of them is committed and builds meant for
 others use `-PnoImports`.
 
