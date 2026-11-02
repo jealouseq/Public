@@ -12,6 +12,8 @@ public final class MatchData extends SavedData {
     /** Dimension the match runs in (the overworld unless started elsewhere, e.g. wardogs:bakurani). */
     public String dim = "minecraft:overworld";
     public boolean active;
+    /** Hardcore mode: trimmed HUD (no minimap, no Hot Zone marker) and a kill feed limited to the squad. */
+    public boolean hardcore;
     public double zoneX, zoneZ, zoneRadius = 50;
     public double hotX, hotZ, hotRadius = 15;
     public final int[] scores = new int[Faction.values().length];
@@ -26,6 +28,7 @@ public final class MatchData extends SavedData {
     private static MatchData load(CompoundTag t, HolderLookup.Provider provider) {
         MatchData d = new MatchData();
         d.active = t.getBoolean("active");
+        d.hardcore = t.getBoolean("hardcore");
         d.dim = t.contains("dim") ? t.getString("dim") : "minecraft:overworld";
         d.zoneX = t.getDouble("zx");
         d.zoneZ = t.getDouble("zz");
@@ -44,6 +47,7 @@ public final class MatchData extends SavedData {
     @Override
     public CompoundTag save(CompoundTag t, HolderLookup.Provider provider) {
         t.putBoolean("active", active);
+        t.putBoolean("hardcore", hardcore);
         t.putString("dim", dim);
         t.putDouble("zx", zoneX);
         t.putDouble("zz", zoneZ);

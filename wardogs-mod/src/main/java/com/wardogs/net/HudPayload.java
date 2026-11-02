@@ -20,7 +20,7 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
 
 /** Server -> owner only: money, faction and match scores for the HUD. */
 public record HudPayload(long money, int faction, boolean active, int s0, int s1, int s2, int winScore, int downed,
-                         int c0, int c1, int c2, int controller, int zx, int zz, int zr, int hx, int hz, int hr) implements CustomPacketPayload {
+                         int c0, int c1, int c2, int controller, int zx, int zz, int zr, int hx, int hz, int hr, boolean hardcore) implements CustomPacketPayload {
     public static final Type<HudPayload> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, "hud"));
     public static final StreamCodec<RegistryFriendlyByteBuf, HudPayload> CODEC = StreamCodec.of(
             (buf, p) -> {
@@ -36,11 +36,12 @@ public record HudPayload(long money, int faction, boolean active, int s0, int s1
                 buf.writeVarInt(p.controller + 1);
                 buf.writeInt(p.zx); buf.writeInt(p.zz); buf.writeVarInt(p.zr);
                 buf.writeInt(p.hx); buf.writeInt(p.hz); buf.writeVarInt(p.hr);
+                buf.writeBoolean(p.hardcore);
             },
             buf -> new HudPayload(buf.readVarLong(), buf.readVarInt() - 1, buf.readBoolean(),
                     buf.readVarInt(), buf.readVarInt(), buf.readVarInt(), buf.readVarInt(), buf.readVarInt(),
                     buf.readVarInt(), buf.readVarInt(), buf.readVarInt(), buf.readVarInt() - 1,
-                    buf.readInt(), buf.readInt(), buf.readVarInt(), buf.readInt(), buf.readInt(), buf.readVarInt()));
+                    buf.readInt(), buf.readInt(), buf.readVarInt(), buf.readInt(), buf.readInt(), buf.readVarInt(), buf.readBoolean()));
 
     @Override
     public Type<? extends CustomPacketPayload> type() {
@@ -65,7 +66,7 @@ public record HudPayload(long money, int faction, boolean active, int s0, int s1
                 d.scores[0], d.scores[1], d.scores[2], com.wardogs.balance.Balance.get().rewards().winScore(),
                 com.wardogs.medic.Downed.ticksLeft(p), counts[0], counts[1], counts[2],
                 d.active ? com.wardogs.match.MatchManager.controller(ow, d) : -1,
-                (int) d.zoneX, (int) d.zoneZ, (int) d.zoneRadius, (int) d.hotX, (int) d.hotZ, (int) d.hotRadius));
+                (int) d.zoneX, (int) d.zoneZ, (int) d.zoneRadius, (int) d.hotX, (int) d.hotZ, (int) d.hotRadius, d.hardcore));
     }
 
     @EventBusSubscriber(modid = WardogsMod.MOD_ID)

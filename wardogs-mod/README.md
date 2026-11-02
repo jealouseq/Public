@@ -62,6 +62,7 @@ and the assumed 100 player health are placeholders: the sources do not publish t
 | B | Open the shop (only next to a vendor during a Bakurani match) |
 | M | Full-screen map (scroll to zoom, drag to pan; needs the map data folder on the client) |
 | Middle mouse | Radial menu: squad (create, invite the nearest teammate, leave), requests (healing, ammo, supplies, repairs), local callouts, emotes |
+| `/wd mode standard / hardcore` (op) | Hardcore trims the HUD (no minimap, no Hot Zone marker) and limits the kill feed to your squad |
 | `/wd squad create / invite <name> / accept / leave` | Squads of up to four; members appear on the minimap and in a list on the left |
 | Hold TAB | Match scoreboard: three faction columns with kills, deaths, money earned |
 | Right-click a lectern at a deployment board | Choose where to deploy: your base or a friendly FOB |

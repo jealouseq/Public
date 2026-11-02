@@ -52,6 +52,9 @@ public final class WdCommand {
                 .then(Commands.literal("progress").executes(c -> progress(c.getSource())))
                 .then(Commands.literal("bakurani").executes(c -> travel(c.getSource()))
                         .then(Commands.literal("setup").requires(s -> s.hasPermission(2)).executes(c -> setupBakurani(c.getSource()))))
+                .then(Commands.literal("mode").requires(src -> src.hasPermission(2))
+                        .then(Commands.literal("standard").executes(c -> setMode(c.getSource(), false)))
+                        .then(Commands.literal("hardcore").executes(c -> setMode(c.getSource(), true))))
                 .then(Commands.literal("squad")
                         .then(Commands.literal("create").executes(c -> squadResult(c.getSource(), Squads.create(c.getSource().getPlayerOrException()))))
                         .then(Commands.literal("accept").executes(c -> squadResult(c.getSource(), Squads.accept(c.getSource().getPlayerOrException()))))
@@ -117,6 +120,16 @@ public final class WdCommand {
         int y = BakuraniWorld.surfaceY(site.x(), site.z()) + 2;
         p.teleportTo(level, site.x(), y, site.z(), 0f, 0f);
         src.sendSuccess(() -> Component.literal("Welcome to Bakurani" + (f == null ? " (pick a faction with /wd team)" : "")), false);
+        return 1;
+    }
+
+    private static int setMode(CommandSourceStack src, boolean hardcore) {
+        var d = com.wardogs.match.MatchData.get(src.getServer().overworld());
+        d.hardcore = hardcore;
+        d.setDirty();
+        src.getServer().getPlayerList().getPlayers().forEach(HudPayload::sendTo);
+        src.sendSuccess(() -> Component.literal(hardcore ? "Hardcore mode: no minimap or Hot Zone marker, kill feed limited to your squad"
+                : "Standard mode"), true);
         return 1;
     }
 

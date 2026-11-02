@@ -28,11 +28,34 @@ public record KillFeedPayload(String killer, int killerFaction, String victim, i
             buf -> new KillFeedPayload(buf.readUtf(32), buf.readVarInt() - 1, buf.readUtf(48), buf.readVarInt() - 1, buf.readUtf(48), buf.readBoolean()));
 
     public static void broadcast(net.minecraft.server.MinecraftServer server, KillFeedPayload p) {
+        broadcast(server, p, null, null);
+    }
+
+    /** In hardcore mode only squad members of the killer or the victim see the line. */
+    public static void broadcast(net.minecraft.server.MinecraftServer server, KillFeedPayload p, ServerPlayer killer, net.minecraft.world.entity.Entity victim) {
+        boolean hardcore = com.wardogs.match.MatchData.get(server.overworld()).hardcore;
         for (ServerPlayer sp : server.getPlayerList().getPlayers()) {
+            if (hardcore && !sees(sp, killer, victim)) {
+                continue;
+            }
             if (sp.connection != null && sp.connection.hasChannel(TYPE)) {
                 PacketDistributor.sendToPlayer(sp, p);
             }
         }
+    }
+
+    /** True if {@code viewer} is the killer or victim, or shares a squad with one of them. */
+    public static boolean sees(ServerPlayer viewer, ServerPlayer killer, net.minecraft.world.entity.Entity victim) {
+        var squad = com.wardogs.match.Squads.of(viewer);
+        for (net.minecraft.world.entity.Entity e : new net.minecraft.world.entity.Entity[]{killer, victim}) {
+            if (e == null) {
+                continue;
+            }
+            if (e == viewer || (squad != null && squad.members.contains(e.getUUID()))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

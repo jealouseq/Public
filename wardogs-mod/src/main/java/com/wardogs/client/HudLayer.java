@@ -108,7 +108,9 @@ public final class HudLayer {
             renderMoney(g, mc, h);
         }
         renderRewardLog(g, mc);
-        renderMinimap(g, mc, h);
+        if (h == null || !h.hardcore()) {
+            renderMinimap(g, mc, h);
+        }
         renderSelf(g, mc);
         renderPrompt(g, mc);
         renderVehicle(g, mc);
@@ -145,7 +147,7 @@ public final class HudLayer {
         g.fill(cx - 20, y, cx + 20, y + 12, 0xCC0B0E12);
         g.renderOutline(cx - 20, y, 40, 12, 0xAAFFFFFF);
         small(g, mc, centre, cx - smallWidth(mc, centre, 0.8f) / 2, y + 3, TEXT, 0.8f);
-        if (h != null && h.active() && h.hr() > 0) {
+        if (h != null && h.active() && h.hr() > 0 && !h.hardcore()) {
             double bearing = Math.toDegrees(Math.atan2(h.hx() - mc.player.getX(), -(h.hz() - mc.player.getZ())));
             double off = ((bearing - heading + 540) % 360) - 180;
             if (Math.abs(off) < 55) {

@@ -107,7 +107,7 @@ public final class KillRewardHandler {
         var wdef = Balance.get().weapon(hit.weaponId());
         com.wardogs.net.KillFeedPayload.broadcast(killer.server, new com.wardogs.net.KillFeedPayload(killer.getGameProfile().getName(),
                 Factions.index(killer), victimName, victim instanceof Player vp3 ? Factions.index(vp3) : -1,
-                wdef == null ? hit.weaponId() : wdef.name(), hit.headshot()));
+                wdef == null ? hit.weaponId() : wdef.name(), hit.headshot()), killer, victim);
         com.wardogs.net.RewardPayload.send(killer, hit.headshot() ? "HEADSHOT KILL  " + String.format("%.0f m", hit.distance()) : "KILL  " + String.format("%.0f m", hit.distance()), reward);
         HudPayload.sendTo(killer);
     }

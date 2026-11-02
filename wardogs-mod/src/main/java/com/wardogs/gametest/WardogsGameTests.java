@@ -1780,4 +1780,23 @@ public final class WardogsGameTests {
         check(com.wardogs.combat.Stamina.get(id) == 100f, "and refills at rest");
         h.succeed();
     }
+
+    @GameTest(template = "empty", batch = "squads")
+    public static void hardcoreKillFeedShowsOnlyTheSquadsKills(GameTestHelper h) {
+        com.wardogs.match.Squads.reset();
+        ServerPlayer killer = soldier(h, Faction.LONESTAR, 2.5, 2.5);
+        ServerPlayer squadmate = soldier(h, Faction.LONESTAR, 4.5, 2.5);
+        ServerPlayer stranger = soldier(h, Faction.LONESTAR, 6.5, 2.5);
+        ServerPlayer victim = soldier(h, Faction.VALKYRA, 8.5, 2.5);
+        check(com.wardogs.net.KillFeedPayload.sees(killer, killer, victim), "the killer sees their own kill");
+        check(com.wardogs.net.KillFeedPayload.sees(victim, killer, victim), "and the victim sees their death");
+        check(!com.wardogs.net.KillFeedPayload.sees(squadmate, killer, victim), "a teammate outside any squad does not");
+        com.wardogs.match.Squads.create(killer);
+        com.wardogs.match.Squads.invite(killer, squadmate);
+        com.wardogs.match.Squads.accept(squadmate);
+        check(com.wardogs.net.KillFeedPayload.sees(squadmate, killer, victim), "a squadmate of the killer sees it");
+        check(!com.wardogs.net.KillFeedPayload.sees(stranger, killer, victim), "someone outside the squad does not");
+        com.wardogs.match.Squads.reset();
+        h.succeed();
+    }
 }
