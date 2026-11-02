@@ -33,6 +33,7 @@ neoForge {
         }
         gameTestServer {
             type = "gameTestServer"
+            gameDirectory = file('run-gametest') // separate folder so tests can run while a dev server is up
             systemProperty 'neoforge.enabledGameTestNamespaces', mod_id
             systemProperty 'wardogs.mapdir', file('local-data/bakurani').absolutePath
         }

@@ -278,7 +278,8 @@ public final class MatchManager {
     }
 
     private static void sendScoreboard(ServerLevel ow, MatchData d, boolean fin, int winner) {
-        var payload = new com.wardogs.net.ScoreboardPayload(fin, winner, new int[]{d.scores[0], d.scores[1], d.scores[2]}, MatchStats.rows());
+        var payload = new com.wardogs.net.ScoreboardPayload(fin, winner, new int[]{d.scores[0], d.scores[1], d.scores[2]},
+                MatchStats.rows(ow.getServer().getPlayerList().getPlayers()));
         for (ServerPlayer p : ow.getServer().getPlayerList().getPlayers()) {
             if (p.connection != null && p.connection.hasChannel(com.wardogs.net.ScoreboardPayload.TYPE)) {
                 net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(p, payload);

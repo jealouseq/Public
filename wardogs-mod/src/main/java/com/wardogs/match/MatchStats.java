@@ -45,6 +45,16 @@ public final class MatchStats {
         STATS.clear();
     }
 
+    /** Like {@link #rows()} but every online player with a faction is listed, even before their first kill or death. */
+    public static List<Row> rows(java.util.Collection<ServerPlayer> online) {
+        for (ServerPlayer p : online) {
+            if (Factions.index(p) >= 0) {
+                of(p);
+            }
+        }
+        return rows();
+    }
+
     /** Rows sorted by faction, then by kills (highest first), then by money earned. */
     public static List<Row> rows() {
         List<Row> out = new ArrayList<>();

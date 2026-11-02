@@ -1591,6 +1591,9 @@ public final class WardogsGameTests {
         com.wardogs.match.MatchStats.death(b);
         var rows = com.wardogs.match.MatchStats.rows();
         check(rows.size() == 2, "two players are listed");
+        ServerPlayer c = soldier(h, Faction.MANTICORE, 8.5, 2.5);
+        check(com.wardogs.match.MatchStats.rows(java.util.List.of(a, b, c)).size() == 3, "an online player without stats is listed too");
+        rows = com.wardogs.match.MatchStats.rows();
         check(rows.get(0).faction() == Faction.LONESTAR.ordinal() && rows.get(0).kills() == 2 && rows.get(0).earned() == 1000, "the Lonestar player has 2 kills and $1000");
         check(rows.get(1).deaths() == 1, "the Valkyra player has one death");
         var payload = new com.wardogs.net.ScoreboardPayload(true, 0, new int[]{100, 40, 7}, rows);
