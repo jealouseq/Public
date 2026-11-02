@@ -131,5 +131,12 @@
   "item.wardogs.scope_mrad": "6-10x Scope MRAD",
   "item.wardogs.scope_moa": "6-10x Scope MOA",
   "item.wardogs.ammo_hp": "Hollow Point Ammo",
-  "item.wardogs.ammo_ap": "Armor Piercing Ammo"
+  "item.wardogs.ammo_ap": "Armor Piercing Ammo",
+  "subtitles.wardogs.shot_pistol": "Gunshot",
+  "subtitles.wardogs.shot_smg": "Gunshot",
+  "subtitles.wardogs.shot_rifle": "Gunshot",
+  "subtitles.wardogs.shot_lmg": "Gunshot",
+  "subtitles.wardogs.shot_sniper": "Gunshot",
+  "subtitles.wardogs.shot_shotgun": "Gunshot",
+  "subtitles.wardogs.shot_launcher": "Gunshot"
 }

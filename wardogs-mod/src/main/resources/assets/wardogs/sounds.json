@@ -1,0 +1,65 @@
+{
+ "shot_pistol": {
+  "sounds": [
+   {
+    "name": "wardogs:shots/shot_pistol",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.wardogs.shot_pistol"
+ },
+ "shot_smg": {
+  "sounds": [
+   {
+    "name": "wardogs:shots/shot_smg",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.wardogs.shot_smg"
+ },
+ "shot_rifle": {
+  "sounds": [
+   {
+    "name": "wardogs:shots/shot_rifle",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.wardogs.shot_rifle"
+ },
+ "shot_lmg": {
+  "sounds": [
+   {
+    "name": "wardogs:shots/shot_lmg",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.wardogs.shot_lmg"
+ },
+ "shot_sniper": {
+  "sounds": [
+   {
+    "name": "wardogs:shots/shot_sniper",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.wardogs.shot_sniper"
+ },
+ "shot_shotgun": {
+  "sounds": [
+   {
+    "name": "wardogs:shots/shot_shotgun",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.wardogs.shot_shotgun"
+ },
+ "shot_launcher": {
+  "sounds": [
+   {
+    "name": "wardogs:shots/shot_launcher",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.wardogs.shot_launcher"
+ }
+}

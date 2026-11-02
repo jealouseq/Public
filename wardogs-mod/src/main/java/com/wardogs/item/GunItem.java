@@ -141,21 +141,20 @@ public class GunItem extends Item {
         return true;
     }
 
-    /** A shot sound per weapon class, built from vanilla sounds at different pitch and volume. */
+    /** Plays the synthesised shot sound of the weapon's class; louder (and heard further) for the big guns. */
     private static void playShotSound(ServerLevel level, ServerPlayer sp, WeaponDef def) {
         var pos = sp.blockPosition();
-        switch (def.category()) {
-            case "smg" -> level.playSound(null, pos, SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.PLAYERS, 1.0f, 1.55f);
-            case "pistol" -> level.playSound(null, pos, SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.PLAYERS, 0.9f, 1.8f);
-            case "lmg" -> level.playSound(null, pos, SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.PLAYERS, 1.6f, 0.85f);
-            case "sniper_rifle", "marksman_rifle" -> {
-                level.playSound(null, pos, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.PLAYERS, 1.4f, 1.9f);
-                level.playSound(null, pos, SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.PLAYERS, 1.6f, 0.75f);
-            }
-            case "shotgun" -> level.playSound(null, pos, SoundEvents.GENERIC_EXPLODE.value(), SoundSource.PLAYERS, 1.3f, 1.5f);
-            case "bow" -> level.playSound(null, pos, SoundEvents.CROSSBOW_SHOOT, SoundSource.PLAYERS, 1.0f, 1.2f);
-            default -> level.playSound(null, pos, SoundEvents.FIREWORK_ROCKET_BLAST, SoundSource.PLAYERS, 1.2f, 1.1f);
+        var event = com.wardogs.sound.ModSounds.forCategory(def.category());
+        if (event == null) {
+            level.playSound(null, pos, SoundEvents.CROSSBOW_SHOOT, SoundSource.PLAYERS, 1.0f, 1.2f); // the bow
+            return;
         }
+        float volume = switch (def.category()) {
+            case "pistol", "smg" -> 2.0f;
+            case "sniper_rifle", "marksman_rifle", "launcher" -> 5.0f;
+            default -> 3.5f;
+        };
+        level.playSound(null, pos, event, SoundSource.PLAYERS, volume, 1.0f + (sp.getRandom().nextFloat() - 0.5f) * 0.06f);
     }
 
     /** Starts a reload if the magazine is not full and the gun is not already reloading. */

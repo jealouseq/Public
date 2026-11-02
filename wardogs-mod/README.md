@@ -74,13 +74,13 @@ right), kill feed (top left), minimap with faction scores and the "CONTROL" labe
 ## Assets
 
 Gun item models are voxelised from the CC0 Quaternius "Ultimate Gun Pack" (`research/tools/obj_to_item_model.py`); vehicle models are
-generated box shapes (`research/tools/gen_vehicle_models.py`), as are the grenade, mine, charge, flare and armour models
+generated box shapes (`research/tools/gen_vehicle_models.py`); weapon shot sounds are synthesised (`research/tools/gen_sounds.py`, no recordings); as are the grenade, mine, charge, flare and armour models
 (`research/tools/gen_item_models.py`). See `research/MODS_AND_ASSETS.md` for the ready-made mods and assets
 that were considered and their licences.
 
 ## Not done yet
 
-Real recorded sounds (shots currently use vanilla sounds by weapon class), smoother diagonal walls on rotated houses (they follow the street direction but look pleated), more hand-built landmarks (only the shooting range and the Control Zone flags so far), the Stingray station (the sources give no data for it).
+Recorded sounds (the shots are synthesised; reloads, impacts and explosions still use vanilla sounds), smoother diagonal walls on rotated houses (they follow the street direction but look pleated), more hand-built landmarks (only the shooting range and the Control Zone flags so far), the Stingray station (the sources give no data for it).
 
 ## Build & test
 ```

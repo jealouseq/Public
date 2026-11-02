@@ -27,6 +27,7 @@ public final class WardogsMod {
         // Touch Balance first: item registration needs the weapon list.
         LOGGER.info("WARDOGS: Bakurani loading with {} weapons", Balance.get().weapons().size());
         ModComponents.COMPONENTS.register(modBus);
+        com.wardogs.sound.ModSounds.SOUNDS.register(modBus);
         ModItems.ITEMS.register(modBus);
         ModItems.TABS.register(modBus);
         ExplosiveEntities.ENTITIES.register(modBus);
