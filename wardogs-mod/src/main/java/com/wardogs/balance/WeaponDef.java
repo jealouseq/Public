@@ -25,7 +25,32 @@ public record WeaponDef(
         int price,
         int unlockLevel,
         long unlockCost,
-        Set<String> estimated) {
+        Set<String> estimated,
+        double[][] falloff) {
+
+    /** Constructor for synthetic weapons (vehicle guns, emplacements) with no falloff. */
+    public WeaponDef(String id, String name, String category, String caliber, String role, FireMode mode, double chest, double head,
+                     double rpm, int magazine, double range, int reloadTicks, double spread, int pellets, int price, int unlockLevel,
+                     long unlockCost, Set<String> estimated) {
+        this(id, name, category, caliber, role, mode, chest, head, rpm, magazine, range, reloadTicks, spread, pellets, price,
+                unlockLevel, unlockCost, estimated, new double[][]{{0, 1}});
+    }
+
+    /** Damage multiplier at {@code distance} metres (linear between the curve's points, flat beyond the last). */
+    public double falloffMult(double distance) {
+        double[][] f = falloff;
+        if (f == null || f.length == 0 || distance <= f[0][0]) {
+            return f == null || f.length == 0 ? 1.0 : f[0][1];
+        }
+        for (int i = 1; i < f.length; i++) {
+            if (distance <= f[i][0]) {
+                double t = (distance - f[i - 1][0]) / (f[i][0] - f[i - 1][0]);
+                return f[i - 1][1] + t * (f[i][1] - f[i - 1][1]);
+            }
+        }
+        return f[f.length - 1][1];
+    }
+
 
     public enum FireMode { AUTO, BURST, SEMI, BOLT, PUMP, BREAK, DRAW }
 
@@ -36,6 +61,19 @@ public record WeaponDef(
 
     public boolean holdToFire() {
         return mode == FireMode.AUTO || mode == FireMode.BURST;
+    }
+
+    private static double[][] parseFalloff(JsonObject o) {
+        if (!o.has("falloff")) {
+            return new double[][]{{0, 1}};
+        }
+        JsonArray a = o.getAsJsonArray("falloff");
+        double[][] f = new double[a.size()][2];
+        for (int i = 0; i < a.size(); i++) {
+            f[i][0] = a.get(i).getAsJsonArray().get(0).getAsDouble();
+            f[i][1] = a.get(i).getAsJsonArray().get(1).getAsDouble();
+        }
+        return f;
     }
 
     public static WeaponDef parse(String id, JsonObject o) {
@@ -62,6 +100,7 @@ public record WeaponDef(
                 o.get("price").getAsInt(),
                 o.get("unlock_level").getAsInt(),
                 o.get("unlock_cost").getAsLong(),
-                Set.copyOf(est));
+                Set.copyOf(est),
+                parseFalloff(o));
     }
 }

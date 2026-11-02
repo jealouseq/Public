@@ -89,6 +89,11 @@ public final class WardogsGameTests {
         return new Arena(shooter, z, h.getLevel());
     }
 
+    /** World height of the upper torso: the zone the weapon table's chest damage refers to. */
+    private static double chestY(net.minecraft.world.entity.LivingEntity e) {
+        return e.getY() + e.getBbHeight() * 0.75;
+    }
+
     /** Points the shooter at a world height on the target (spread is far below the 0.6 m hitbox at this range). */
     private static void aimAt(ServerPlayer p, Zombie z, double y) {
         Vec3 eye = p.getEyePosition();
@@ -116,7 +121,7 @@ public final class WardogsGameTests {
     public static void chestShotDamageMatchesBalance(GameTestHelper h) {
         Arena a = arena(h);
         WeaponDef m4 = Balance.get().weapon("m4");
-        aimAt(a.shooter, a.target, a.target.getY() + 1.0);
+        aimAt(a.shooter, a.target, chestY(a.target));
         float before = a.target.getHealth();
         Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
         float lost = before - a.target.getHealth();
@@ -142,7 +147,7 @@ public final class WardogsGameTests {
     public static void hollowPointDoublesFleshDamage(GameTestHelper h) {
         Arena a = arena(h);
         WeaponDef m4 = Balance.get().weapon("m4");
-        aimAt(a.shooter, a.target, a.target.getY() + 1.0);
+        aimAt(a.shooter, a.target, chestY(a.target));
         float before = a.target.getHealth();
         Ballistics.fire(a.level, a.shooter, m4, AmmoType.HP);
         float lost = before - a.target.getHealth();
@@ -163,7 +168,7 @@ public final class WardogsGameTests {
         }
         check(!a.target.isAlive(), "target should be dead after headshots");
         long paid = Wallet.get(a.shooter) - start;
-        check(paid == 350, "a close headshot kill should pay $350 but paid $" + paid);
+        check(paid == 450, "a close headshot kill with an assault rifle should pay $450 ($400 + $50) but paid $" + paid);
         h.succeed();
     }
 
@@ -220,7 +225,7 @@ public final class WardogsGameTests {
             }
         }
         WeaponDef m4 = Balance.get().weapon("m4");
-        aimAt(a.shooter, a.target, a.target.getY() + 1.0);
+        aimAt(a.shooter, a.target, chestY(a.target));
         float before = a.target.getHealth();
         Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
         check(a.target.getHealth() == before, "a wall between shooter and target must block the bullet");
@@ -277,7 +282,7 @@ public final class WardogsGameTests {
                 Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
             }
             long paid = Wallet.get(a.shooter) - start;
-            check(paid == 350 * 5, "headshot kill in the Control Zone should pay $1750 but paid $" + paid);
+            check(paid == 450 * 5, "headshot kill with both soldiers inside the Control Zone should pay $2250 but paid $" + paid);
         } finally {
             d.active = wasActive;
             d.zoneX = zx; d.zoneZ = zz; d.zoneRadius = zr; d.hotX = hx; d.hotZ = hz; d.hotRadius = hr;
@@ -339,8 +344,8 @@ public final class WardogsGameTests {
             aimAt(a.shooter, a.target, a.target.getEyeY() + 0.05);
             Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
         }
-        long expected = Math.round(350 * Balance.get().progression().xpPerDollar());
-        check(Progression.get(a.shooter).xpOf(Role.ASSAULT) == expected, "an M4 kill worth $350 should give " + expected + " assault XP, gave " + Progression.get(a.shooter).xpOf(Role.ASSAULT));
+        long expected = Balance.get().rewards().roleXp();
+        check(Progression.get(a.shooter).xpOf(Role.ASSAULT) == expected, "a kill gives a flat " + expected + " assault XP, gave " + Progression.get(a.shooter).xpOf(Role.ASSAULT));
         check(Progression.get(a.shooter).xpOf(Role.WARDOG) == expected, "and the same amount of general WARDOG XP");
         check(Progression.get(a.shooter).xpOf(Role.MEDIC) == 0, "other branches are untouched");
         h.succeed();
@@ -410,7 +415,7 @@ public final class WardogsGameTests {
 
         WeaponDef m4 = Balance.get().weapon("m4");
         Vec3 eye = a.shooter.getEyePosition();
-        double dx = victim.getX() - eye.x, dz = victim.getZ() - eye.z, dy = (victim.getY() + 1.0) - eye.y;
+        double dx = victim.getX() - eye.x, dz = victim.getZ() - eye.z, dy = chestY(victim) - eye.y;
         a.shooter.moveTo(a.shooter.getX(), a.shooter.getY(), a.shooter.getZ(), (float) Math.toDegrees(Math.atan2(-dx, dz)),
                 (float) -Math.toDegrees(Math.atan2(dy, Math.sqrt(dx * dx + dz * dz))));
         Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
@@ -464,7 +469,7 @@ public final class WardogsGameTests {
 
         check(victim.isAlive() && Downed.is(victim), "a fatal hit on a combatant must down them, not kill them");
         check(Math.abs(victim.getHealth() - (float) Balance.get().downedHp()) < 0.01f, "downed health should be " + Balance.get().downedHp() + " but is " + victim.getHealth());
-        check(Wallet.get(a.shooter) - before == 300, "the kill should pay $300 when the victim goes down, paid " + (Wallet.get(a.shooter) - before));
+        check(Wallet.get(a.shooter) - before == 400, "the kill should pay $400 when the victim goes down, paid " + (Wallet.get(a.shooter) - before));
 
         // Finishing the downed player is a real death and pays nothing more.
         long afterDown = Wallet.get(a.shooter);
@@ -782,7 +787,7 @@ public final class WardogsGameTests {
         Arena a = arena(h);
         var wall = Buildable.create(h.getLevel(), Balance.get().structure("hesco_wall"), ground(h, 5.5, 1.5 + RANGE / 2), 0f, Faction.VALKYRA.ordinal(), null);
         WeaponDef m4 = Balance.get().weapon("m4");
-        aimAt(a.shooter, a.target, a.target.getY() + 1.0);
+        aimAt(a.shooter, a.target, chestY(a.target));
         float before = a.target.getHealth();
         Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
         check(a.target.getHealth() == before, "a HESCO wall between shooter and target must absorb the bullet");
@@ -957,7 +962,8 @@ public final class WardogsGameTests {
             v.moveTo(spot.x + 10, spot.y, spot.z, 0f, 0f); // simulate 10 blocks driven
             v.tick();
             float burned = before - v.fuel();
-            check(burned > 0.9f * (float) (10 * Balance.get().fuelPerBlock()), "10 blocks should burn about " + 10 * Balance.get().fuelPerBlock() + " fuel, burned " + burned);
+            double perBlock = Balance.get().vehicle("humvee").fuelPerBlock(Balance.get().fuelPerBlock());
+            check(burned > 0.9f * (float) (10 * perBlock) && burned < 1.1f * (float) (10 * perBlock), "10 blocks should burn about " + 10 * perBlock + " L (tank / range), burned " + burned);
 
             // Now drive into a Control Zone and let the passenger out.
             d.active = true;
@@ -1014,7 +1020,7 @@ public final class WardogsGameTests {
         ItemStack rpg = ModItems.stack("rpg7");
         a.shooter.setItemInHand(InteractionHand.MAIN_HAND, rpg);
         a.shooter.setGameMode(net.minecraft.world.level.GameType.SURVIVAL);
-        aimAt(a.shooter, z, z.getY() + 1.0);
+        aimAt(a.shooter, z, chestY(z));
         ((GunItem) rpg.getItem()).use(a.level, a.shooter, InteractionHand.MAIN_HAND);
         check(GunItem.ammo(rpg) == 0, "the RPG holds one rocket, " + GunItem.ammo(rpg) + " left");
         check(!a.level.getEntitiesOfClass(RocketEntity.class, a.shooter.getBoundingBox().inflate(20)).isEmpty(), "a rocket is in flight");
@@ -1180,7 +1186,7 @@ public final class WardogsGameTests {
 
         a.shooter.setItemInHand(InteractionHand.MAIN_HAND, gun);
         a.shooter.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
-        aimAt(a.shooter, z, z.getY() + 1.0);
+        aimAt(a.shooter, z, chestY(z));
         ((GunItem) gun.getItem()).use(a.level, a.shooter, InteractionHand.MAIN_HAND);
         float lost = 20f - z.getHealth();
         float expected = Balance.get().damageTo(z, Balance.get().weapon("ggx17").chest() * 2);
@@ -1197,7 +1203,7 @@ public final class WardogsGameTests {
         Buildable fob = Buildable.create(h.getLevel(), Balance.get().structure("fob"), ground(h, 2.5, 9.5), 0f, mine, a.shooter.getUUID());
         Buildable nest = Buildable.create(h.getLevel(), Balance.get().structure("mg_nest"), ground(h, 5.5, 2.5), 0f, mine, a.shooter.getUUID());
         Zombie z = zombieAt(h, 5.5, 1.5 + RANGE);
-        aimAt(a.shooter, z, z.getY() + 1.0);
+        aimAt(a.shooter, z, chestY(z));
 
         check(Emplacements.nestFor(a.shooter) == nest, "the nest is within reach of the soldier");
         check(!Emplacements.fireMg(a.shooter, nest), "no ammo in the FOB, no fire");
@@ -1254,5 +1260,136 @@ public final class WardogsGameTests {
             check(friend.getHealth() == friend.getMaxHealth(), "and left its own side alone");
             h.succeed();
         });
+    }
+
+    // --- hit zones, falloff, armour wear, revive clawback --------------------------------------
+
+    private static boolean near(float actual, float expected) {
+        return Math.abs(actual - expected) <= Math.max(0.05f, expected * 0.002f);
+    }
+
+    /**
+     * Fires one shot at full health and returns the damage in WARDOGS units (a fraction of the target's health x 100):
+     * damage scales with the target's maximum health, so this is independent of what the target is.
+     */
+    private static float lostFrom(Arena a, net.minecraft.world.entity.LivingEntity z, double aimY, WeaponDef w, AmmoType ammo) {
+        z.setHealth(z.getMaxHealth());
+        a.shooter.moveTo(a.shooter.getX(), a.shooter.getY(), a.shooter.getZ(), 0f, 0f);
+        Vec3 eye = a.shooter.getEyePosition();
+        double dx = z.getX() - eye.x, dz = z.getZ() - eye.z, dy = aimY - eye.y;
+        a.shooter.moveTo(a.shooter.getX(), a.shooter.getY(), a.shooter.getZ(), (float) Math.toDegrees(Math.atan2(-dx, dz)),
+                (float) -Math.toDegrees(Math.atan2(dy, Math.sqrt(dx * dx + dz * dz))));
+        float before = z.getHealth();
+        Ballistics.fire(a.level, a.shooter, w, ammo);
+        return (before - z.getHealth()) * 100f / z.getMaxHealth();
+    }
+
+    @GameTest(template = "empty")
+    public static void limbsHurtLessThanTheTorsoAndTheHeadHurtsMost(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Zombie z = zombieAt(h, 5.5, 1.5 + RANGE);
+        WeaponDef m4 = Balance.get().weapon("m4");
+        double height = z.getBbHeight();
+        double base = m4.chest() / Balance.get().zoneMult("assault_rifle", "torso_upper");
+
+        float thigh = lostFrom(a, z, z.getY() + height * 0.30, m4, AmmoType.FMJ);
+        float upper = lostFrom(a, z, z.getY() + height * 0.75, m4, AmmoType.FMJ);
+        float head = lostFrom(a, z, z.getY() + height * 0.93, m4, AmmoType.FMJ);
+        float calf = lostFrom(a, z, z.getY() + height * 0.12, m4, AmmoType.FMJ);
+
+        check(near(thigh, (float) (base * 0.54)), "a thigh hit is x0.54, lost " + thigh);
+        check(near(upper, (float) (base * 1.10)), "an upper-torso hit is x1.10, lost " + upper);
+        check(near(head, (float) (base * 2.35)), "a headshot is x2.35, lost " + head);
+        check(near(calf, (float) (base * 0.45)), "a calf hit is x0.45, lost " + calf);
+        check(head > upper && upper > thigh && thigh > calf, "damage must rank head > torso > thigh > calf");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void damageFallsOffWithDistanceAlongTheWeaponsCurve(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        WeaponDef m4 = Balance.get().weapon("m4");
+        // Move the target far away: the M4's curve is flat to its effective range, then falls off.
+        double far = Math.min(250, m4.range() - 50);
+        check(m4.falloffMult(far) == 1.0, "inside the effective range the multiplier is 1");
+        check(m4.falloffMult(m4.range() + 300) < 1.0, "beyond the effective range damage falls");
+        check(m4.falloffMult(1200) <= 0.2 + 1e-9, "the curve ends at 20% at 1200 m");
+        double mid = m4.falloffMult(m4.range() + (1200 - m4.range()) / 2);
+        check(mid > 0.2 && mid < 1.0, "the curve is interpolated, mid = " + mid);
+        check(Ballistics.damage(m4, com.wardogs.combat.HitZone.TORSO_UPPER, AmmoType.FMJ, null, 700) < Ballistics.damage(m4, com.wardogs.combat.HitZone.TORSO_UPPER, AmmoType.FMJ, null, 10),
+                "the same shot is weaker from 700 m");
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void armourAbsorbsDamageAndWearsOutThenStopsProtecting(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Zombie z = zombieAt(h, 5.5, 1.5 + RANGE);
+        ItemStack vest = ModItems.stack("vest_l1");
+        z.setItemSlot(net.minecraft.world.entity.EquipmentSlot.CHEST, vest);
+        var def = Balance.get().armor("vest_l1");
+        WeaponDef m4 = Balance.get().weapon("m4");
+        check(vest.getMaxDamage() == def.durability(), "a level 1 vest has durability " + def.durability() + ", has " + vest.getMaxDamage());
+
+        double base = m4.chest() / Balance.get().zoneMult("assault_rifle", "torso_upper");
+        float first = lostFrom(a, z, z.getY() + z.getBbHeight() * 0.75, m4, AmmoType.FMJ);
+        float expected = (float) (m4.chest() * (1 - def.reduction()));
+        check(near(first, expected), "the vest absorbs " + (int) (def.reduction() * 100) + "%: expected " + expected + " lost " + first);
+        check(vest.getDamageValue() > 0, "the vest takes wear");
+
+        for (int i = 0; i < 20 && vest.getDamageValue() < vest.getMaxDamage(); i++) {
+            lostFrom(a, z, z.getY() + z.getBbHeight() * 0.75, m4, AmmoType.FMJ);
+        }
+        check(vest.getDamageValue() >= vest.getMaxDamage(), "enough hits wear the vest out");
+        float bare = lostFrom(a, z, z.getY() + z.getBbHeight() * 0.75, m4, AmmoType.FMJ);
+        float bareExpected = (float) m4.chest();
+        check(near(bare, bareExpected), "a worn-out vest gives no protection: expected " + bareExpected + " lost " + bare);
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void armourPiercingBeatsArmourAndHollowPointsLoseToIt(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        Zombie z = zombieAt(h, 5.5, 1.5 + RANGE);
+        z.setItemSlot(net.minecraft.world.entity.EquipmentSlot.CHEST, ModItems.stack("vest_l4"));
+        WeaponDef m4 = Balance.get().weapon("m4");
+        float fmj = lostFrom(a, z, z.getY() + z.getBbHeight() * 0.75, m4, AmmoType.FMJ);
+        float ap = lostFrom(a, z, z.getY() + z.getBbHeight() * 0.75, m4, AmmoType.AP);
+        float hp = lostFrom(a, z, z.getY() + z.getBbHeight() * 0.75, m4, AmmoType.HP);
+        check(Math.abs(ap / fmj - 1.3) < 0.02, "AP does +30% against armour, ratio " + ap / fmj);
+        check(Math.abs(hp / fmj - 0.7) < 0.02, "hollow points do -30% against armour, ratio " + hp / fmj);
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void revivingTheVictimTakesBackTheKillReward(GameTestHelper h) {
+        Arena a = arena(h);
+        a.target.discard();
+        h.getLevel().getServer().setPvpAllowed(true);
+        Factions.set(a.shooter, Faction.LONESTAR);
+        ServerPlayer victim = soldier(h, Faction.VALKYRA, 5.5, 1.5 + RANGE);
+        ServerPlayer medic = soldier(h, Faction.VALKYRA, 5.5, 1.5 + RANGE + 1.5);
+        victim.setHealth(5f);
+        WeaponDef m4 = Balance.get().weapon("m4");
+        long before = Wallet.get(a.shooter);
+        aimAt(a.shooter, a.target, 0); // keep the helper's rotation maths out of the way
+        Vec3 eye = a.shooter.getEyePosition();
+        double dx = victim.getX() - eye.x, dz = victim.getZ() - eye.z, dy = chestY(victim) - eye.y;
+        a.shooter.moveTo(a.shooter.getX(), a.shooter.getY(), a.shooter.getZ(), (float) Math.toDegrees(Math.atan2(-dx, dz)),
+                (float) -Math.toDegrees(Math.atan2(dy, Math.sqrt(dx * dx + dz * dz))));
+        Ballistics.fire(a.level, a.shooter, m4, AmmoType.FMJ);
+        long paid = Wallet.get(a.shooter) - before;
+        check(paid == 400 && Downed.is(victim), "the kill pays $400 as the victim goes down, paid " + paid);
+
+        var kit = ModItems.stack("field_resuscitator");
+        MedicalItem.completeRevive(medic, victim, kit, Balance.get().medical("field_resuscitator"));
+        long kept = Wallet.get(a.shooter) - before;
+        long expectedKept = Math.round(400 * Balance.get().rewards().revivedKeep());
+        check(kept == expectedKept, "reviving the victim leaves the killer " + expectedKept + " of the $400, he has " + kept);
+        h.succeed();
     }
 }

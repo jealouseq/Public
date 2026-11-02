@@ -1,5 +1,5 @@
 {
- "_comment": "Multipliers vs unarmored flesh (measured). Armor interaction is estimated.",
+ "_comment": "Multipliers vs unarmoured flesh and vs armour/helmet (ballistics-lab pack: HP +100% / -30%, AP -20% / +30%).",
  "ammo": {
   "fmj": {
    "flesh": 1.0,
@@ -7,12 +7,12 @@
   },
   "hp": {
    "flesh": 2.0,
-   "armor": 0.5
+   "armor": 0.7
   },
   "ap": {
    "flesh": 0.8,
-   "armor": 1.5
+   "armor": 1.3
   }
  },
- "armor_estimated": true
+ "armor_estimated": false
 }

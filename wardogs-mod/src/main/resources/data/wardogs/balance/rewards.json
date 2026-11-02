@@ -1,5 +1,5 @@
 {
- "_comment": "Money rewards (xgamingserver/allthings, community; real game tunes dynamically).",
+ "_comment": "Season 2 Cash & XP calculator (wardogs.zone): half the zone bonus from the shooter's position and half from the victim's; flat 250 role XP per kill.",
  "starting_cash": 10000,
  "kill": {
   "base": 300,
@@ -32,9 +32,24 @@
   "streak_cap": 250,
   "revenge_mult": 2.0,
   "end_streak_mult": 1.5,
-  "repeat_victim_penalty": 0.25,
+  "repeat_victim_penalty": 0.24,
   "repeat_victim_steps": 4,
-  "teamkill_cost_mult": 3.0
+  "teamkill_cost_mult": 3.0,
+  "base_by_class": {
+   "assault": 400,
+   "small": 300,
+   "sniper": 600,
+   "explosive": 300,
+   "artillery": 250,
+   "aircraft": 300,
+   "tank": 300
+  },
+  "shooter_weight": 0.5,
+  "target_weight": 0.5,
+  "shutdown_mult": 1.5,
+  "revived_victim_keep": 0.01,
+  "role_xp": 250,
+  "streak_kills_cap": 5
  },
  "zone": {
   "enter": 250,

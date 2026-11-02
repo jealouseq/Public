@@ -4,9 +4,11 @@ import com.wardogs.WardogsMod;
 import com.wardogs.balance.AmmoType;
 import com.wardogs.balance.ArmorDef;
 import com.wardogs.item.ArmorPieceItem;
+import net.minecraft.world.item.ItemStack;
 import com.wardogs.vehicle.Vehicle;
 import com.wardogs.balance.Balance;
 import com.wardogs.balance.WeaponDef;
+import javax.annotation.Nullable;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.resources.ResourceKey;
@@ -61,17 +63,27 @@ public final class Ballistics {
         return CURRENT.get();
     }
 
+    /** Damage of a round at a body zone before armour and falloff, in WARDOGS units. Weapons without a hit-zone class deal flat damage. */
+    public static double rawDamage(WeaponDef w, HitZone zone) {
+        Balance b = Balance.get();
+        if (!b.hasHitZones(w.category())) {
+            return w.chest();
+        }
+        double base = w.chest() / b.zoneMult(w.category(), HitZone.TORSO_UPPER.key);
+        return base * b.zoneMult(w.category(), zone.key);
+    }
+
     /**
-     * Damage in WARDOGS units. Unarmored: base x ammo flesh multiplier (measured).
-     * Armored: base x ammo armor multiplier x (1 - armor reduction); both armor factors are estimates.
+     * Damage in WARDOGS units: zone multiplier x distance falloff x ammo multiplier, then armour absorption.
+     * Unarmoured flesh uses the ammo's flesh multiplier; armoured zones use its armour multiplier and lose the armour's reduction.
      */
-    public static double damage(WeaponDef w, boolean headshot, AmmoType ammo, ArmorDef armor) {
-        double base = headshot ? w.head() : w.chest();
+    public static double damage(WeaponDef w, HitZone zone, AmmoType ammo, @Nullable ArmorDef armor, double distance) {
+        double d = rawDamage(w, zone) * w.falloffMult(distance);
         Balance b = Balance.get();
         if (armor == null) {
-            return base * b.ammoMult(ammo, false);
+            return d * b.ammoMult(ammo, false);
         }
-        return base * b.ammoMult(ammo, true) * (1.0 - armor.reduction());
+        return d * b.ammoMult(ammo, true) * (1.0 - armor.reduction());
     }
 
     /** Fires one trigger pull (all pellets) from the shooter's eyes. */
@@ -109,15 +121,23 @@ public final class Ballistics {
 
         if (target instanceof Vehicle veh) {
             // Vehicles have no head; armor-piercing rounds do extra damage to them.
-            double dmg = w.chest() * Balance.get().ammoMult(ammo, true) / pellets;
+            double dmg = w.chest() * w.falloffMult(start.distanceTo(ehr.getLocation()))
+                    * (ammo == AmmoType.AP ? Balance.get().apVsVehicle() : Balance.get().ammoMult(ammo, true)) / pellets;
             Ballistics.runAs(new Hit(w.id(), false, start.distanceTo(ehr.getLocation()), ammo),
                     () -> veh.applyWardogsDamage(dmg, Vehicle.DamageKind.BULLET, shooter));
             return;
         }
         Vec3 hitPos = ehr.getLocation();
-        boolean head = isHeadshot(target, hitPos);
+        HitZone zone = HitZone.at(target, hitPos);
+        boolean head = zone == HitZone.HEAD;
         double distance = start.distanceTo(hitPos);
-        double wd = damage(w, head, ammo, ArmorPieceItem.worn(target, head)) / pellets;
+        ItemStack armorStack = ArmorPieceItem.protecting(target, zone);
+        ArmorDef armor = armorStack.isEmpty() ? null : ((ArmorPieceItem) armorStack.getItem()).def();
+        double wd = damage(w, zone, ammo, armor, distance) / pellets;
+        if (armor != null) {
+            double absorbed = rawDamage(w, zone) * w.falloffMult(distance) * Balance.get().ammoMult(ammo, true) * armor.reduction() / pellets;
+            armorStack.setDamageValue(Math.min(armorStack.getMaxDamage(), armorStack.getDamageValue() + (int) Math.ceil(absorbed)));
+        }
         float mc = Balance.get().damageTo(target, wd);
 
         DamageSource src = new DamageSource(

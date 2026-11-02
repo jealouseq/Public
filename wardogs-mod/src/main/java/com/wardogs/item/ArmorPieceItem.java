@@ -2,6 +2,7 @@ package com.wardogs.item;
 
 import com.wardogs.balance.ArmorDef;
 import com.wardogs.balance.Balance;
+import com.wardogs.combat.HitZone;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -37,6 +38,27 @@ public class ArmorPieceItem extends Item implements Equipable {
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         return swapWithEquipmentSlot(this, level, player, hand);
+    }
+
+    /**
+     * The worn armor stack that covers this hit zone and still has durability left, or {@code null}.
+     * Helmets cover the head (and the neck from level 3); vests the torso (and the pelvis and upper arms at level 4).
+     */
+    public static ItemStack protecting(LivingEntity e, HitZone zone) {
+        boolean head = zone == HitZone.HEAD || zone == HitZone.NECK;
+        ItemStack s = e.getItemBySlot(head ? EquipmentSlot.HEAD : EquipmentSlot.CHEST);
+        if (!(s.getItem() instanceof ArmorPieceItem a) || a.def() == null || s.getDamageValue() >= s.getMaxDamage()) {
+            return ItemStack.EMPTY;
+        }
+        ArmorDef d = a.def();
+        boolean covers;
+        if (head) {
+            covers = d.slot() == ArmorDef.Slot.HELMET && (zone == HitZone.HEAD || d.level() >= 3);
+        } else {
+            covers = d.slot() == ArmorDef.Slot.VEST && (zone.isTorso()
+                    || ((zone == HitZone.PELVIS || zone == HitZone.ARM_UPPER) && d.level() >= 4));
+        }
+        return covers ? s : ItemStack.EMPTY;
     }
 
     /** The armor worn on the relevant hit zone (head for headshots, torso otherwise), or {@code null}. */

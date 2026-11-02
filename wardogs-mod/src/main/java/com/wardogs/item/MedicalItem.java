@@ -133,7 +133,7 @@ public class MedicalItem extends Item {
     public static void completeRevive(ServerPlayer reviver, ServerPlayer target, ItemStack stack, MedicalDef d) {
         Downed.revive(target, d.hp());
         boolean defib = d.charges() > 0;
-        int zone = MatchManager.zoneLevel(reviver.level(), reviver.position());
+        int zone = MatchManager.zoneLevel(reviver.level(), target.position());
         long pay = ReviveReward.compute(Balance.get().rewards(), zone, defib, Downed.repeatCount(reviver.getUUID(), target.getUUID()));
         Downed.recordRevive(reviver.getUUID(), target.getUUID());
         Wallet.add(reviver, pay);

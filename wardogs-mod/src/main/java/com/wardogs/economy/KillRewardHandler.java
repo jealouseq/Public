@@ -2,6 +2,7 @@ package com.wardogs.economy;
 
 import com.wardogs.WardogsMod;
 import com.wardogs.balance.Balance;
+import com.wardogs.balance.RewardsDef;
 import com.wardogs.combat.Ballistics;
 import com.wardogs.match.Factions;
 import com.wardogs.progress.Progression;
@@ -27,6 +28,8 @@ public final class KillRewardHandler {
     private static final Map<UUID, Integer> STREAK = new ConcurrentHashMap<>();
     private static final Map<UUID, UUID> LAST_KILLED_BY = new ConcurrentHashMap<>();
     private static final Map<String, Integer> REPEAT = new ConcurrentHashMap<>();
+    /** A victim on a kill streak of at least this many kills counts as a shutdown when ended (the source gives no threshold). */
+    private static final int SHUTDOWN_STREAK = 3;
 
     /** Zone multiplier provider; replaced by the Control Zone system in a later milestone. */
     public interface ZoneMultiplier {
@@ -36,6 +39,11 @@ public final class KillRewardHandler {
     public static volatile ZoneMultiplier ZONES = (level, pos) -> 1.0;
 
     private KillRewardHandler() {}
+
+    /** Remembers what a kill paid so a revive of the victim can claw it back. */
+    private record Paid(UUID killer, long amount) {}
+
+    private static final Map<UUID, Paid> PAID = new ConcurrentHashMap<>();
 
     /** Runs before the downed system cancels the death, so the kill is paid when the victim goes down. */
     @SubscribeEvent(priority = EventPriority.HIGH)
@@ -49,17 +57,24 @@ public final class KillRewardHandler {
             return; // vehicles pay their own destruction reward
         }
         if (victim instanceof Player downedVictim && Downed.is(downedVictim)) {
-            return; // finishing off a downed player was already paid when they went down
+            PAID.remove(downedVictim.getUUID()); // finishing off a downed player: the kill was already paid
+            return;
         }
+        RewardsDef rd = Balance.get().rewards();
         UUID victimId = victim.getUUID();
         UUID killerId = killer.getUUID();
+        String killClass = KillReward.classify(hit.weaponId());
+        double base = rd.killBaseByClass().getOrDefault(killClass, rd.killBase());
+        boolean targetOnly = KillReward.targetOnly(killClass);
+        boolean sniperDistance = killClass.equals("sniper");
+        double shooterZone = ZONES.at(killer.level(), killer.position());
+        double targetZone = ZONES.at(killer.level(), victim.position());
 
         if (victim instanceof Player vp && Factions.sameTeam(killer, vp)) {
             // Teamkill: the shooter pays a multiple of what the kill would have been worth.
-            double zone = ZONES.at(killer.level(), victim.position());
-            long worth = KillReward.compute(Balance.get().rewards(),
-                    new KillReward.Context(hit.headshot(), hit.distance(), zone, 1, 0, false));
-            long cost = Math.round(worth * Balance.get().rewards().teamkillCostMult());
+            long worth = KillReward.compute(rd, new KillReward.Context(base, hit.headshot(), targetOnly, sniperDistance, hit.distance(),
+                    shooterZone, targetZone, 1, 0, false, false));
+            long cost = Math.round(worth * rd.teamkillCostMult());
             Wallet.add(killer, -cost);
             killer.displayClientMessage(Component.literal("-$" + cost + "  teamkill").withStyle(ChatFormatting.RED), false);
             HudPayload.sendTo(killer);
@@ -68,6 +83,7 @@ public final class KillRewardHandler {
 
         int streak = STREAK.merge(killerId, 1, Integer::sum);
         boolean revenge = victim instanceof Player && killerId.equals(LAST_KILLED_BY.get(victimId));
+        boolean shutdown = victim instanceof Player && STREAK.getOrDefault(victimId, 0) >= SHUTDOWN_STREAK;
         String pair = killerId + ">" + victimId;
         int repeats = REPEAT.getOrDefault(pair, 0);
         REPEAT.put(pair, repeats + 1);
@@ -76,28 +92,46 @@ public final class KillRewardHandler {
             LAST_KILLED_BY.put(victimId, killerId);
         }
 
-        double zone = ZONES.at(killer.level(), victim.position());
-        long reward = KillReward.compute(Balance.get().rewards(),
-                new KillReward.Context(hit.headshot(), hit.distance(), zone, streak, repeats, revenge));
+        long reward = KillReward.compute(rd, new KillReward.Context(base, hit.headshot(), targetOnly, sniperDistance, hit.distance(),
+                shooterZone, targetZone, streak, repeats, revenge, shutdown));
         Wallet.add(killer, reward);
-        Progression.award(killer, roleOf(hit.weaponId()), reward);
+        Progression.awardXp(killer, roleOf(hit.weaponId()), rd.roleXp());
+        if (victim instanceof Player) {
+            PAID.put(victimId, new Paid(killerId, reward));
+        }
         killer.displayClientMessage(Component.literal("+$" + reward + (hit.headshot() ? "  HEADSHOT" : "") + String.format("  %.0fm", hit.distance()))
                 .withStyle(ChatFormatting.GOLD), false);
         HudPayload.sendTo(killer);
+    }
+
+    /** A downed player was revived: the killer keeps only a sliver of the kill's value. */
+    public static void onVictimRevived(net.minecraft.server.MinecraftServer server, UUID victim) {
+        Paid p = PAID.remove(victim);
+        if (p == null) {
+            return;
+        }
+        long back = Math.round(p.amount() * (1.0 - Balance.get().rewards().revivedKeep()));
+        ServerPlayer killer = server.getPlayerList().getPlayer(p.killer());
+        if (killer != null && back > 0) {
+            Wallet.add(killer, -back);
+            killer.displayClientMessage(Component.literal("-$" + back + "  victim revived").withStyle(ChatFormatting.RED), false);
+            HudPayload.sendTo(killer);
+        }
     }
 
     /** The progression branch a weapon trains: its role (assault, medic ...), or none for open items. */
     private static Role roleOf(String itemId) {
         var w = Balance.get().weapon(itemId);
         if (w != null) {
-            return Role.byKey(w.role());
+            Role r = Role.byKey(w.role());
+            return r != null ? r : (w.category().equals("pistol") ? Role.ASSAULT : null);
         }
-        var x = Balance.get().explosive(itemId);
-        return x == null ? null : Role.byKey(x.unlockRole());
+        return Balance.get().explosive(itemId) != null || itemId.equals("mortar_shell") ? Role.SUPPORT : null;
     }
 
     /** Clears per-round state (call when a round ends). */
     public static void reset() {
+        PAID.clear();
         STREAK.clear();
         LAST_KILLED_BY.clear();
         REPEAT.clear();

@@ -1,35 +1,39 @@
 {
- "_comment": "price/weight/unlock from metabot.gg. 'reduction' (fraction of damage absorbed) is an ESTIMATE, sources give none.",
+ "_comment": "price/weight/unlock from metabot.gg and the progression ladder (L3 unlocks at WARDOG 70). reduction and durability from the ballistics-lab pack (30/40/55/65%). player_health 100 is the pack's assumed health.",
  "player_health": 100.0,
- "player_health_estimated": true,
+ "player_health_estimated": false,
  "helmets": {
   "1": {
    "price": 200,
    "weight": 1.0,
    "unlock_level": 3,
-   "reduction": 0.1,
-   "neck": false
+   "reduction": 0.3,
+   "neck": false,
+   "durability": 80
   },
   "2": {
    "price": 500,
    "weight": 1.6,
    "unlock_level": 30,
-   "reduction": 0.2,
-   "neck": false
+   "reduction": 0.4,
+   "neck": false,
+   "durability": 100
   },
   "3": {
    "price": 1500,
    "weight": 3.0,
-   "unlock_level": 60,
-   "reduction": 0.35,
-   "neck": true
+   "unlock_level": 70,
+   "reduction": 0.55,
+   "neck": true,
+   "durability": 180
   },
   "4": {
    "price": 3000,
    "weight": 4.5,
    "unlock_level": 100,
-   "reduction": 0.5,
-   "neck": true
+   "reduction": 0.65,
+   "neck": true,
+   "durability": 200
   }
  },
  "vests": {
@@ -37,29 +41,33 @@
    "price": 400,
    "weight": 3.0,
    "unlock_level": 3,
-   "reduction": 0.1,
-   "arms": false
+   "reduction": 0.3,
+   "arms": false,
+   "durability": 200
   },
   "2": {
    "price": 1000,
    "weight": 4.5,
    "unlock_level": 30,
-   "reduction": 0.2,
-   "arms": false
+   "reduction": 0.4,
+   "arms": false,
+   "durability": 220
   },
   "3": {
    "price": 2000,
    "weight": 10.5,
-   "unlock_level": 60,
-   "reduction": 0.35,
-   "arms": false
+   "unlock_level": 70,
+   "reduction": 0.55,
+   "arms": false,
+   "durability": 250
   },
   "4": {
    "price": 4000,
    "weight": 18.0,
    "unlock_level": 100,
-   "reduction": 0.5,
-   "arms": true
+   "reduction": 0.65,
+   "arms": true,
+   "durability": 300
   }
  }
 }

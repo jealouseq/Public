@@ -1,6 +1,6 @@
 {
  "_comment": "hp and the C4/IED/AT-mine hits-to-destroy come from a fan extraction of the game files (RESEARCH.md section 7); a hit deals hp/hits. Sizes, supply cost, FOB radius, claymore (150/hit from sources) are ESTIMATES except where stated. Supplies cost $10 per unit ($500 per stack of 50). Hammer prices/unlocks from sources.",
- "fob_radius": 30.0,
+ "fob_radius": 60.0,
  "claymore_vs_structure": 150.0,
  "frag_vs_structure": 100.0,
  "barbed_wire_dps": 1.0,
@@ -176,7 +176,7 @@
   },
   "l81_mortar": {
    "tier": "large",
-   "hp": 1500,
+   "hp": 3000,
    "w": 1.5,
    "h": 1.3,
    "d": 1.5,
@@ -218,7 +218,7 @@
   },
   "mg_nest": {
    "tier": "large",
-   "hp": 800,
+   "hp": 1800,
    "w": 2.0,
    "h": 1.1,
    "d": 2.0,
@@ -232,7 +232,7 @@
   },
   "talon_sam": {
    "tier": "large",
-   "hp": 1200,
+   "hp": 3000,
    "w": 2.0,
    "h": 1.6,
    "d": 2.0,
@@ -246,7 +246,7 @@
   },
   "vanguard_ciws": {
    "tier": "large",
-   "hp": 1200,
+   "hp": 5000,
    "w": 2.0,
    "h": 1.8,
    "d": 2.0,
@@ -366,5 +366,6 @@
    "shots_per_supply": 60
   }
  },
- "_comment3": "emplacements: all numbers are estimates except the MG damage (PKM-class)"
+ "_comment3": "emplacements: all numbers are estimates except the MG damage (PKM-class)",
+ "_comment_fob": "FOB build range 60 m (Base Builder); emplacement hull HP from the wardogs.zone database."
 }

@@ -42,7 +42,7 @@ public final class ModItems {
     static {
         for (ArmorDef def : Balance.get().armor()) {
             String id = def.id();
-            ARMOR.put(id, ITEMS.register(id, () -> new ArmorPieceItem(new Item.Properties(), id)));
+            ARMOR.put(id, ITEMS.register(id, () -> new ArmorPieceItem(new Item.Properties().durability(def.durability()), id)));
         }
     }
 

@@ -28,7 +28,20 @@ public record RewardsDef(
         long[] placeBonus,
         long[] reviveBy,
         long[] defibBy,
-        double reviveRepeatPenalty) {
+        double reviveRepeatPenalty,
+        java.util.Map<String, Double> killBaseByClass,
+        double shooterWeight,
+        double targetWeight,
+        double shutdownMult,
+        int streakKillsCap,
+        double revivedKeep,
+        long roleXp) {
+
+    private static java.util.Map<String, Double> bases(JsonObject o) {
+        java.util.Map<String, Double> m = new java.util.HashMap<>();
+        o.entrySet().forEach(e -> m.put(e.getKey(), e.getValue().getAsDouble()));
+        return java.util.Map.copyOf(m);
+    }
 
     public static RewardsDef parse(JsonObject o) {
         JsonObject k = o.getAsJsonObject("kill");
@@ -69,6 +82,9 @@ public record RewardsDef(
                 z.get("hot_tick").getAsLong(),
                 z.get("hot_consecutive_bonus").getAsLong(),
                 z.get("hot_consecutive_cap").getAsLong(),
-                place, revive, defib, rv.get("repeat_penalty").getAsDouble());
+                place, revive, defib, rv.get("repeat_penalty").getAsDouble(),
+                bases(k.getAsJsonObject("base_by_class")),
+                k.get("shooter_weight").getAsDouble(), k.get("target_weight").getAsDouble(), k.get("shutdown_mult").getAsDouble(),
+                k.get("streak_kills_cap").getAsInt(), k.get("revived_victim_keep").getAsDouble(), k.get("role_xp").getAsLong());
     }
 }

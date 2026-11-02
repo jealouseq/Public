@@ -41,6 +41,8 @@ public final class Balance {
     private final ProgressionDef progression;
     private final Map<String, StructureDef> structures;
     private final Map<String, BuildingItemDef> buildingItems;
+    private final java.util.Map<String, java.util.Map<String, Double>> hitZones;
+    private final java.util.Map<String, String> weaponClass;
     private final double[] emplacementTuning;
     private final Map<String, AttachmentDef> attachments;
     private final Map<String, AmmoItemDef> ammoItems;
@@ -58,7 +60,8 @@ public final class Balance {
                     Map<String, VehicleDef> vehicles, double[] vehicleTuning,
                     Map<String, LauncherDef> launchers, double[] artilleryTuning,
                     Map<String, AttachmentDef> attachments, Map<String, AmmoItemDef> ammoItems,
-                    double[] emplacementTuning) {
+                    double[] emplacementTuning, java.util.Map<String, java.util.Map<String, Double>> hitZones,
+                    java.util.Map<String, String> weaponClass) {
         this.weapons = weapons;
         this.rewards = rewards;
         this.playerHealth = playerHealth;
@@ -77,6 +80,8 @@ public final class Balance {
         this.launchers = launchers;
         this.attachments = attachments;
         this.emplacementTuning = emplacementTuning;
+        this.hitZones = hitZones;
+        this.weaponClass = weaponClass;
         this.ammoItems = ammoItems;
         this.artilleryTuning = artilleryTuning;
         this.vehicleTuning = vehicleTuning;
@@ -101,6 +106,28 @@ public final class Balance {
      */
     public double[] emplacements() {
         return emplacementTuning;
+    }
+
+    /** Multiplier of a hit zone (key like "head", "torso_upper") for a weapon category, or 1.0 when the class has no table. */
+    public double zoneMult(String weaponCategory, String zoneKey) {
+        String cls = weaponClass.get(weaponCategory);
+        if (cls == null) {
+            return 1.0;
+        }
+        var zones = hitZones.get(cls);
+        return zones == null ? 1.0 : zones.getOrDefault(zoneKey, 1.0);
+    }
+
+    public boolean hasHitZones(String weaponCategory) {
+        return weaponClass.containsKey(weaponCategory);
+    }
+
+    public double apVsVehicle() {
+        return vehicleTuning[5];
+    }
+
+    public double airSpeedScale() {
+        return vehicleTuning[6];
     }
 
     public AttachmentDef attachment(String id) {
@@ -262,7 +289,7 @@ public final class Balance {
             return current;
         }
         Map<String, JsonObject> files = new LinkedHashMap<>();
-        for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression", "structures", "vehicles", "launchers", "attachments"}) {
+        for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression", "structures", "vehicles", "launchers", "attachments", "hitzones"}) {
             files.put(name, readClasspath("/data/wardogs/balance/" + name + ".json"));
         }
         current = build(files);
@@ -321,10 +348,28 @@ public final class Balance {
                 new double[]{files.get("vehicles").get("fuel_per_block").getAsDouble(), files.get("vehicles").get("fuel_per_supply").getAsDouble(),
                         files.get("vehicles").get("repair_fraction").getAsDouble(),
                         files.get("vehicles").getAsJsonObject("transport").get("ground_per_passenger").getAsDouble(),
-                        files.get("vehicles").getAsJsonObject("transport").get("air_per_passenger").getAsDouble()},
+                        files.get("vehicles").getAsJsonObject("transport").get("air_per_passenger").getAsDouble(),
+                        files.get("vehicles").has("ap_vs_vehicle") ? files.get("vehicles").get("ap_vs_vehicle").getAsDouble() : 1.0,
+                        files.get("vehicles").has("air_speed_scale") ? files.get("vehicles").get("air_speed_scale").getAsDouble() : 1.0},
                 launchers(files.get("launchers")), artillery(files.get("structures")),
                 attachmentMap(files.get("attachments")), ammoMap(files.get("attachments")),
-                emplacements(files.get("structures")));
+                emplacements(files.get("structures")), zoneTables(files.get("hitzones")), classMap(files.get("hitzones")));
+    }
+
+    private static java.util.Map<String, java.util.Map<String, Double>> zoneTables(JsonObject o) {
+        java.util.Map<String, java.util.Map<String, Double>> out = new java.util.HashMap<>();
+        for (Map.Entry<String, JsonElement> c : o.getAsJsonObject("zones").entrySet()) {
+            java.util.Map<String, Double> z = new java.util.HashMap<>();
+            c.getValue().getAsJsonObject().entrySet().forEach(e -> z.put(e.getKey(), e.getValue().getAsDouble()));
+            out.put(c.getKey(), java.util.Map.copyOf(z));
+        }
+        return java.util.Map.copyOf(out);
+    }
+
+    private static java.util.Map<String, String> classMap(JsonObject o) {
+        java.util.Map<String, String> m = new java.util.HashMap<>();
+        o.getAsJsonObject("class_of").entrySet().forEach(e -> m.put(e.getKey(), e.getValue().getAsString()));
+        return java.util.Map.copyOf(m);
     }
 
     private static double[] emplacements(JsonObject o) {
@@ -404,7 +449,7 @@ public final class Balance {
         protected void apply(Map<ResourceLocation, JsonElement> in, ResourceManager rm, ProfilerFiller profiler) {
             Map<String, JsonObject> files = new LinkedHashMap<>();
             // Start from the jar defaults, then overlay anything a datapack provides.
-            for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression", "structures", "vehicles", "launchers", "attachments"}) {
+            for (String name : new String[]{"weapons", "rewards", "armor", "ammo", "medical", "explosives", "progression", "structures", "vehicles", "launchers", "attachments", "hitzones"}) {
                 JsonElement over = in.get(ResourceLocation.fromNamespaceAndPath(WardogsMod.MOD_ID, name));
                 files.put(name, over != null ? over.getAsJsonObject() : readClasspath("/data/wardogs/balance/" + name + ".json"));
             }

@@ -305,7 +305,7 @@ public class Vehicle extends Mob {
             lastX = getX();
             lastZ = getZ();
             if (piloted) {
-                double burn = moved * Balance.get().fuelPerBlock() + (d.flying() ? 0.01 : 0.0);
+                double burn = moved * d.fuelPerBlock(Balance.get().fuelPerBlock()) + (d.flying() ? 0.01 : 0.0);
                 if (burn > 0) {
                     setFuel((float) (fuel() - burn));
                 }
@@ -351,7 +351,7 @@ public class Vehicle extends Mob {
     }
 
     private void flyWith(Player p, VehicleDef d) {
-        double max = d.speed();
+        double max = d.speed() * Balance.get().airSpeedScale();
         float throttle = p.zza;
         speedNow += throttle * 0.03;
         if (throttle == 0) {

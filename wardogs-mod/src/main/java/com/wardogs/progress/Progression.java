@@ -55,6 +55,20 @@ public final class Progression {
         DIRTY.add(p.getUUID());
     }
 
+    /** Awards a fixed amount of role XP (kills pay a flat 250). */
+    public static void awardXp(Player p, Role role, long xp) {
+        if (xp <= 0) {
+            return;
+        }
+        ProgressData d = get(p);
+        if (role != null && role != Role.WARDOG) {
+            d = d.withXp(role, xp);
+        }
+        d = d.withXp(Role.WARDOG, xp);
+        p.setData(PROGRESS, d);
+        DIRTY.add(p.getUUID());
+    }
+
     public static void unlock(Player p, String id) {
         p.setData(PROGRESS, get(p).withUnlocked(id));
         DIRTY.add(p.getUUID());

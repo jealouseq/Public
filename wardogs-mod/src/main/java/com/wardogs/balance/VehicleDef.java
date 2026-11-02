@@ -6,7 +6,12 @@ import com.google.gson.JsonObject;
 public record VehicleDef(String id, String name, String category, boolean flying, double hp, double speed, int seats,
                          double fuel, double w, double h, double d, int price, String unlockRole, int unlockLevel,
                          long unlockCost, double smallArms, double explosive, double antiTank, long killReward,
-                         String block, Gun gun) {
+                         String block, Gun gun, double rangeKm) {
+
+    /** Fuel units burned per block driven: real vehicles state tank size and range; others use the global default. */
+    public double fuelPerBlock(double fallback) {
+        return rangeKm > 0 ? fuel / (rangeKm * 1000.0) : fallback;
+    }
 
     /** A vehicle-mounted weapon; {@code blast > 0} makes it an explosive shell. */
     public record Gun(double damage, double rpm, double range, double spread, double blast) {
@@ -27,6 +32,7 @@ public record VehicleDef(String id, String name, String category, boolean flying
                 o.get("w").getAsDouble(), o.get("h").getAsDouble(), o.get("d").getAsDouble(), o.get("price").getAsInt(),
                 o.get("role").getAsString(), o.get("level").getAsInt(), o.get("cost").getAsLong(),
                 o.get("small_arms").getAsDouble(), o.get("explosive").getAsDouble(), o.get("anti_tank").getAsDouble(),
-                o.get("kill_reward").getAsLong(), o.get("block").getAsString(), gun);
+                o.get("kill_reward").getAsLong(), o.get("block").getAsString(), gun,
+                o.has("range_km") ? o.get("range_km").getAsDouble() : 0.0);
     }
 }

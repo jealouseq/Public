@@ -4,7 +4,7 @@ Tactical 3-faction combat inspired by WARDOGS, for **Minecraft Java 1.21.1 / Neo
 Research and source numbers: [RESEARCH.md](RESEARCH.md).
 
 ## Status (milestone 2: match loop)
-Done and covered by tests (unit + 56 server GameTests):
+Done and covered by tests (unit + 61 server GameTests):
 - Data-driven balance (`src/main/resources/data/wardogs/balance/*.json`, overridable by a datapack, reloads with `/reload`).
 - 34 firearms: measured chest/head damage, RPM, price; ammo FMJ/HP/AP; hitscan, headshots, wall blocking, spread, magazines, reload (R).
 - Armor: helmets and body armor L1-L4 (equip by right-click); headshots hit the helmet, body hits hit the vest.
@@ -35,6 +35,11 @@ Done and covered by tests (unit + 56 server GameTests):
 - Attachments (sights with zoom while sneaking, extended magazines, brakes, grips, bipods) and special ammo boxes (HP, AP), fitted
   by right-clicking with the item in one hand and the weapon in the other. Emplacements: MG nest (hold use next to it),
   Talon SAM and Vanguard CIWS (automatic, shoot manned enemy helicopters, use ammo supplies from the FOB).
+- Balance upgraded to the researched data (see research/DATA_SOURCES.md and research/tools/apply_research.py): 12 hit zones per
+  weapon class, per-weapon damage falloff curves, armour 30/40/55/65% with durability that wears out, hollow points -30% / armour
+  piercing +30% against armour, the Season 2 kill payout (half from the shooter's zone, half from the victim's; class bases
+  $300/$400/$600; flat 250 XP; the reward is clawed back when the victim is revived), 23 vehicles with real prices, unlocks, seats,
+  speeds, bullet resistance, fuel and range, FOB range 60 m.
 - Teamkill costs 3x the kill reward. Wallet ($10 000 start). `/wd buy <item>` shop command.
 - Players have 100 HP (not 20 hearts). Bullets deal WARDOGS damage 1:1, vanilla damage is scaled x5. Vanilla hearts are hidden;
   the HUD shows the number and a heart that fills in proportion to health.

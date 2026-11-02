@@ -14,9 +14,9 @@ class VehicleDataTest {
 
     @Test
     void allVehiclesFromTheResearchArePresent() {
-        assertEquals(25, b.vehicles().size());
+        assertEquals(23, b.vehicles().size());
         for (String id : new String[]{"bobcat", "kodiak", "wolf_110", "humvee", "ural", "l2a6", "t72b3", "flakpanzer_gepard", "sph2",
-                "mh6", "ah6m", "ah6r", "uh1y", "z20_lakota", "havoc", "dune_buggy"}) {
+                "mh6", "ah6m", "ah6r", "z20_lakota", "havoc", "dune_buggy"}) {
             assertNotNull(b.vehicle(id), id);
         }
     }
@@ -25,12 +25,14 @@ class VehicleDataTest {
     void pricesAndUnlocksFollowTheSources() {
         assertEquals(500, b.vehicle("bobcat").price());
         assertEquals(2500, b.vehicle("kodiak").price());
-        assertEquals(14000, b.vehicle("l2a6").price());
+        assertEquals(22000, b.vehicle("l2a6").price());
+        assertEquals(500_000, b.vehicle("l2a6").unlockCost());
+        assertEquals(35, b.vehicle("l2a6").unlockLevel());
         assertEquals(16000, b.vehicle("t72b3").price());
         assertEquals(250_000, b.vehicle("t72b3").unlockCost());
         assertEquals("driver", b.vehicle("t72b3").unlockRole());
         assertEquals(20, b.vehicle("t72b3").unlockLevel());
-        assertEquals(18000, b.vehicle("havoc").price());
+        assertEquals(28000, b.vehicle("havoc").price());
         assertEquals(650_000, b.vehicle("havoc").unlockCost());
         assertEquals("pilot", b.vehicle("havoc").unlockRole());
         assertEquals(350_000, b.vehicle("sph2").unlockCost());
@@ -63,6 +65,18 @@ class VehicleDataTest {
         assertTrue(tank.hp() > car.hp());
         assertTrue(car.antiTank() > car.explosive(), "anti-tank weapons beat grenades against vehicles");
         assertTrue(b.vehicle("havoc").flying() && b.vehicle("mh6").flying() && !b.vehicle("humvee").flying());
+    }
+
+    @Test
+    void realStatsFromTheDatabase() {
+        assertEquals(500.0, b.vehicle("humvee").hp());
+        assertEquals(65.0, b.vehicle("humvee").fuel());
+        assertEquals(4, b.vehicle("humvee").seats());
+        assertEquals(0.0, b.vehicle("l2a6").smallArms(), "tanks are immune to small arms");
+        assertEquals(0.05, b.vehicle("humvee").smallArms(), 1e-9, "-95% bullet damage");
+        assertTrue(b.vehicle("humvee").fuelPerBlock(1.0) < 1.0, "the real range gives a per-block burn");
+        assertEquals(65.0 / 20000.0, b.vehicle("humvee").fuelPerBlock(1.0), 1e-9, "65 L over about 20 km");
+        assertEquals(13, b.vehicle("z20_lakota").seats());
     }
 
     @Test

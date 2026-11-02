@@ -84,6 +84,7 @@ public final class Downed {
     /** Stands the player up with the given health. */
     public static void revive(ServerPlayer p, double hp) {
         cleanup(p);
+        com.wardogs.economy.KillRewardHandler.onVictimRevived(p.server, p.getUUID());
         p.setHealth((float) Math.min(hp, p.getMaxHealth()));
         p.invulnerableTime = 20;
         HudPayload.sendTo(p);

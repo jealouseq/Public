@@ -135,7 +135,9 @@ RPG-7 on vehicles: 110 damage, 12 m blast, 2.5 m full-effect radius (vehicle dam
 * Radial menu on middle mouse: SQUAD, REQUESTS (healing, ammo, supplies), EMOTES, LOCAL. Buy ammo/supplies on B. Hardcore removes the killcam, trims the HUD and limits the kill feed to your squad.
 * No pixel-accurate screenshots of the HUD or vendor screen were found; the only Steam screenshot shows gameplay without HUD.
 
-## 8. Where this contradicts what the mod does today (to fix next)
+## 8. Where this contradicted the mod (status)
+
+DONE (wave 1): armour, hit zones, HP/AP vs armour, falloff, kill reward, XP, vehicle stats, FOB range. STILL OPEN: Control Zone variants and bases/vendors at real coordinates (need the map), per-section vehicle damage, bullet drop/travel time.
 
 | Area | Mod now | Evidence |
 |---|---|---|
