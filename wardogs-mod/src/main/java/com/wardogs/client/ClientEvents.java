@@ -23,6 +23,9 @@ public final class ClientEvents {
     public static final KeyMapping SHOP = new KeyMapping("key.wardogs.shop", InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_B, "key.categories.wardogs");
 
+    public static final KeyMapping MAP = new KeyMapping("key.wardogs.map", InputConstants.Type.KEYSYM,
+            GLFW.GLFW_KEY_M, "key.categories.wardogs");
+
     private ClientEvents() {}
 
     @EventBusSubscriber(modid = WardogsMod.MOD_ID, value = Dist.CLIENT)
@@ -33,6 +36,7 @@ public final class ClientEvents {
         public static void keys(RegisterKeyMappingsEvent e) {
             e.register(RELOAD);
             e.register(SHOP);
+            e.register(MAP);
         }
     }
 
@@ -59,6 +63,11 @@ public final class ClientEvents {
                         PacketDistributor.sendToServer(new VehicleFirePayload());
                         break;
                     }
+                }
+            }
+            while (MAP.consumeClick()) {
+                if (mc.screen == null) {
+                    mc.setScreen(new MapScreen());
                 }
             }
             while (SHOP.consumeClick()) {

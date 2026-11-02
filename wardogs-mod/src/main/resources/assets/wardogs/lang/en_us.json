@@ -2,6 +2,7 @@
   "itemGroup.wardogs": "WARDOGS",
   "key.wardogs.reload": "Reload weapon",
   "key.wardogs.shop": "Open vendor",
+  "key.wardogs.map": "Open map",
   "key.categories.wardogs": "WARDOGS",
   "death.attack.wardogs.bullet": "%1$s was shot",
   "death.attack.wardogs.bullet.player": "%1$s was shot by %2$s",
