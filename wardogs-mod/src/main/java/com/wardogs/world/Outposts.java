@@ -444,31 +444,54 @@ public final class Outposts {
 
     private static final String[] CAR_TYPES = {"kodiak", "humvee", "ural", "wolf_110", "bobcat", "kodiak_pickup", "dune_buggy", "ural_defender"};
 
-    /** Parks cars in front of some houses and a few trucks at every outpost: empty tanks and worn hulls, so they are scenery with a purpose (refuel one with Fuel Supplies). */
-    public static int parkVehicles(ServerLevel level, BakuraniSetup.Ground g) {
+    /** One car to park: position, heading, index into {@link #CAR_TYPES} and the owning faction (-1 for none). */
+    private record Parking(double x, double z, double yaw, int type, int faction) {}
+
+    /** Where cars stand: three trucks at every outpost and, within 900 m of an outpost, a car in front of one house in ten (one per chunk, at most 120). */
+    static List<Parking> parkingSpots() {
+        List<Parking> out = new ArrayList<>();
         BakuraniTerrain t = BakuraniWorld.terrain();
-        if (t == null) {
-            return 0;
+        List<Cluster> clusters = clusters();
+        for (Cluster c : clusters) {
+            for (int i = 0; i < 3; i++) {
+                out.add(new Parking(c.cx() - 18 + i * 14, c.cz() + 24, 0, 2 + (i % 2) * 5, c.faction()));
+            }
         }
-        int n = 0;
-        B b = new B(level, g);
+        if (t == null) {
+            return out;
+        }
+        java.util.Set<Long> usedChunks = new java.util.HashSet<>();
+        int villageCars = 0;
         for (BakuraniTerrain.Building h : t.buildingsIn(-9000, -9000, 9000, 9000)) {
+            if (villageCars >= 120) {
+                break;
+            }
             if (h.kind() == 2 || h.floors() >= 3 || h.w() >= 16 || Decorations.rnd(Math.round(h.x() * 8), Math.round(h.z() * 8), 91) >= 0.1) {
                 continue;
             }
+            boolean near = false;
+            for (Cluster c : clusters) {
+                if (Math.hypot(c.cx() - h.x(), c.cz() - h.z()) < 900) {
+                    near = true;
+                    break;
+                }
+            }
             double[] w = Decorations.toWorld(h, h.w() / 2.0 + 4.5, h.d() / 2.0 + 6);
-            if (t.roadClass(w[0], w[1]) > 0 || t.cover(w[0], w[1]) == BakuraniTerrain.COVER_WATER || t.nearBuilding((int) Math.floor(w[0]), (int) Math.floor(w[1]), 2)) {
+            long chunk = ((long) ((int) Math.floor(w[0]) >> 4) << 32) ^ ((int) Math.floor(w[1]) >> 4) & 0xFFFFFFFFL;
+            if (!near || !usedChunks.add(chunk) || t.roadClass(w[0], w[1]) > 0 || t.cover(w[0], w[1]) == BakuraniTerrain.COVER_WATER
+                    || t.nearBuilding((int) Math.floor(w[0]), (int) Math.floor(w[1]), 2)) {
                 continue;
             }
-            n += park(b, level, w[0], w[1], h.angle() + (Decorations.rnd(Math.round(h.x()), Math.round(h.z()), 92) < 0.5 ? 90 : -90), (int) (Decorations.rnd(Math.round(h.x()), Math.round(h.z()), 93) * CAR_TYPES.length), -1);
+            out.add(new Parking(w[0], w[1], h.angle() + (Decorations.rnd(Math.round(h.x()), Math.round(h.z()), 92) < 0.5 ? 90 : -90),
+                    (int) (Decorations.rnd(Math.round(h.x()), Math.round(h.z()), 93) * CAR_TYPES.length), -1));
+            villageCars++;
         }
-        for (Cluster c : clusters()) {
-            for (int i = 0; i < 3; i++) {
-                double x = c.cx() - 18 + i * 14, z = c.cz() + 24;
-                n += park(b, level, x, z, 0, 2 + (i % 2) * 5, c.faction());
-            }
-        }
-        return n;
+        return out;
+    }
+
+    /** How many cars the setup parks (for tests). */
+    public static int parkingSpotCount() {
+        return parkingSpots().size();
     }
 
     private static int park(B b, ServerLevel level, double x, double z, double yaw, int typeIndex, int faction) {
@@ -492,11 +515,19 @@ public final class Outposts {
         for (Cluster c : clusters()) {
             plan(steps, g, c, fresh);
         }
-        steps.add(new SetupQueue.Step("parked vehicles", l -> {
-            if (fresh.get()) {
-                parkVehicles(l, g); // once, together with the first build, so a second setup does not add more cars
-            }
-        }));
+        // cars only together with the first build (a second setup must not add more), a few per step because each stands in its own chunk
+        List<Parking> spots = parkingSpots();
+        for (int i = 0; i < spots.size(); i += 4) {
+            List<Parking> batch = spots.subList(i, Math.min(spots.size(), i + 4));
+            steps.add(new SetupQueue.Step("parked vehicles " + i, l -> {
+                if (fresh.get()) {
+                    B b = new B(l, g);
+                    for (Parking p : batch) {
+                        park(b, l, p.x(), p.z(), p.yaw(), p.type(), p.faction());
+                    }
+                }
+            }));
+        }
     }
 
     private static int[] flagSpot(Cluster c) {

@@ -1999,7 +1999,8 @@ public final class WardogsGameTests {
         long chunkSteps = steps.stream().filter(s -> s.label().contains(" chunks ")).count();
         check(chunkSteps > 20, "outposts load their chunks in batches: " + chunkSteps);
         check(steps.stream().noneMatch(s -> s.label().contains(" chunks ") && false), "labels are readable");
-        check(steps.get(steps.size() - 1).label().equals("parked vehicles"), "cars are parked last");
+        check(steps.get(steps.size() - 1).label().startsWith("parked vehicles"), "cars are parked last");
+        check(com.wardogs.world.Outposts.parkingSpotCount() >= 18 && com.wardogs.world.Outposts.parkingSpotCount() <= 160, "a sensible number of parked cars: " + com.wardogs.world.Outposts.parkingSpotCount());
         h.succeed();
     }
 }
