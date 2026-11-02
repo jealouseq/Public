@@ -1705,4 +1705,18 @@ public final class WardogsGameTests {
         check(v.mobility() < 0.85 && v.mobility() >= 0.3, "a destroyed wheel slows the vehicle: " + v.mobility());
         h.succeed();
     }
+
+    @GameTest(template = "empty")
+    public static void pavementComesInPatchesOfSeveralMaterials(GameTestHelper h) {
+        java.util.Set<net.minecraft.world.level.block.Block> seen = new java.util.HashSet<>();
+        for (int x = 0; x < 400; x += 4) {
+            for (int z = 0; z < 400; z += 4) {
+                seen.add(com.wardogs.world.BakuraniChunkGenerator.pavement(x, z).getBlock());
+            }
+        }
+        check(seen.size() == 4, "andesite, stone, gravel and cobblestone all appear: " + seen);
+        check(com.wardogs.world.BakuraniChunkGenerator.pavement(8, 8) == com.wardogs.world.BakuraniChunkGenerator.pavement(11, 11),
+                "blocks inside one 4x4 patch share their material");
+        h.succeed();
+    }
 }

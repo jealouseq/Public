@@ -105,7 +105,7 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
                         }
                         case BakuraniTerrain.COVER_URBAN -> {
                             if (isDirtClass(mat)) {
-                                top = hash(baseX + dx, baseZ + dz) < 0.3 ? Blocks.STONE.defaultBlockState() : Blocks.ANDESITE.defaultBlockState();
+                                top = pavement(baseX + dx, baseZ + dz);
                             }
                         }
                         case BakuraniTerrain.COVER_FIELD -> {
@@ -160,6 +160,21 @@ public class BakuraniChunkGenerator extends ChunkGenerator {
         h *= 0xFF51AFD7ED558CCDL;
         h ^= h >>> 33;
         return (h & 0xFFFFFFL) / (double) 0x1000000;
+    }
+
+    /** Paving in patches of 4 x 4 blocks: mostly andesite, some stone, gravel and cobblestone, so a plaza is not one flat colour. */
+    public static BlockState pavement(int x, int z) {
+        double v = hash(Math.floorDiv(x, 4), Math.floorDiv(z, 4));
+        if (v < 0.62) {
+            return Blocks.ANDESITE.defaultBlockState();
+        }
+        if (v < 0.80) {
+            return Blocks.STONE.defaultBlockState();
+        }
+        if (v < 0.92) {
+            return Blocks.GRAVEL.defaultBlockState();
+        }
+        return Blocks.COBBLESTONE.defaultBlockState();
     }
 
     /** Steepness (blocks of height change per block) at which grass gives way to bare rock. */
