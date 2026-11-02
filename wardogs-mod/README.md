@@ -77,9 +77,22 @@ right), kill feed (top left), minimap with faction scores and the "CONTROL" labe
 ## Assets
 
 Gun item models are voxelised from the CC0 Quaternius "Ultimate Gun Pack" (`research/tools/obj_to_item_model.py`); vehicle models are
-generated box shapes (`research/tools/gen_vehicle_models.py`); weapon shot sounds are synthesised (`research/tools/gen_sounds.py`, no recordings); as are the grenade, mine, charge, flare and armour models
-(`research/tools/gen_item_models.py`). See `research/MODS_AND_ASSETS.md` for the ready-made mods and assets
-that were considered and their licences.
+generated box shapes (`research/tools/gen_vehicle_models.py`); weapon sounds are synthesised (`research/tools/gen_sounds.py`, no
+recordings); grenade, mine, charge, flare, armour and launcher models come from `research/tools/gen_item_models.py`, and the 59 decor
+blocks (furniture, street furniture, camp gear) from `research/tools/gen_decor.py`. See `research/MODS_AND_ASSETS.md` for the ready-made
+mods and assets that were considered and their licences.
+
+## The Bakurani map
+
+Terrain, rivers, forest, fields, roads and about 4 000 houses come from the researched map data (kept in the git-ignored
+`local-data/bakurani`, built by `research/tools/map_convert.py` and `bake_cover.py`). Generated at chunk time: houses along the roads
+facing them (rotated in 45-degree steps) with a porch, lantern, windows, partition walls, furniture and ceiling lamps, sheds, yards with
+benches, mailboxes, bins, firewood, gardens and fences, a lawn clearing around every house, surfaced roads with gravel shoulders,
+street lamps, power poles along tracks, bridges over rivers, spruce and birch forest, ferns, berry bushes, fallen logs and boulders.
+Placed by `/wd bakurani setup` (a queue of small steps that runs for about a minute; watch the chat): faction outposts with a hangar for
+the garage vendor, a market stall for the equipment vendor, tent camps at the spawns, a depot, a concrete wall with barbed wire and
+floodlights, corner watchtowers and a faction flag; loot towers, loot caches, deployment boards, the shooting range, zone flags and
+parked cars. The first run builds everything, later runs only fill gaps.
 
 ## Not done yet
 

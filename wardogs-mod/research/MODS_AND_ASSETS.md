@@ -40,3 +40,12 @@ datapack, licence not checked). Conclusion: keep generating buildings from the g
   (https://opengameart.org/content/low-poly-guns-pack, CC0) into box-only item models with a shared 16x16 palette
   (`textures/item/gun_palette.png`) for 32 guns (rifles, SMGs, snipers, shotguns, pistols, a revolver). Several weapons share a silhouette.
   The OBJ files themselves are kept in the git-ignored `local-data/assets/`. Credit is not required for CC0 but is given here.
+
+## Decor (furniture, street furniture, camp gear)
+The mcpehub.org "furniture" category (https://mcpehub.org/mods/furniture/) lists Minecraft Bedrock (Pocket Edition) add-ons such as
+MrCrayFish Furniture, Rustic Furniture, Modern Furniture and Gooblideco. They are Bedrock files (no Java or NeoForge build), their
+listing states no licence or author terms, so none of their models or textures were taken. The mod has its own set instead:
+`research/tools/gen_decor.py` draws 59 box-built blocks (chairs, tables, sofas, wardrobes, stoves, fridges, lamps, benches, mailboxes,
+street lamps, sandbags, hesco barriers, crates, cots, workbenches, floodlights, barbed wire ...) with collision shapes that turn
+with their facing, and writes the blockstates, item models and names. They are in the WARDOGS creative tab and are used by the world
+generator for house interiors, yards, streets and outposts.
