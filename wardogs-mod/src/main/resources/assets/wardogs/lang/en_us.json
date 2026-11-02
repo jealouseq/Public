@@ -142,5 +142,8 @@
   "subtitles.wardogs.dry_fire": "Click",
   "subtitles.wardogs.reload_out": "Magazine out",
   "subtitles.wardogs.reload_in": "Magazine in",
-  "subtitles.wardogs.explosion": "Explosion"
+  "subtitles.wardogs.explosion": "Explosion",
+  "subtitles.wardogs.impact_block": "Bullet impact",
+  "subtitles.wardogs.impact_flesh": "Bullet hits",
+  "subtitles.wardogs.impact_metal": "Bullet pings"
 }

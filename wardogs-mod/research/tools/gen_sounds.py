@@ -55,7 +55,20 @@ def explosion():
     y = np.tanh(1.5 * y)
     return y / np.max(np.abs(y)) * 0.9
 
+def impact(fc, tau, thump_hz=0, thump_gain=0.0, ring_hz=0, ring_gain=0.0, dur=0.3):
+    n = int(SR * dur); t = np.arange(n) / SR
+    y = lowpass(rng.standard_normal(n), fc) * env(n, tau)
+    if thump_hz:
+        y += thump_gain * np.sin(2 * np.pi * thump_hz * t) * env(n, tau * 1.5)
+    if ring_hz:
+        y += ring_gain * (np.sin(2 * np.pi * ring_hz * t) + 0.5 * np.sin(2 * np.pi * ring_hz * 2.76 * t)) * env(n, 0.06)
+    y[:int(0.0005 * SR)] *= np.linspace(0, 1, int(0.0005 * SR))
+    return np.tanh(1.4 * y) / np.max(np.abs(np.tanh(1.4 * y))) * 0.85
+
 SOUNDS = {
+    "impact_block": lambda: impact(2500, 0.018, dur=0.25),
+    "impact_flesh": lambda: impact(900, 0.035, thump_hz=110, thump_gain=0.9, dur=0.3),
+    "impact_metal": lambda: impact(5000, 0.012, ring_hz=1450, ring_gain=0.7, dur=0.45),
     "dry_fire": lambda: click(2200, 3500, 0.08, 0.3),
     "reload_out": lambda: click(900, 1700, 0.18, 0.6),
     "reload_in": lambda: np.concatenate([click(600, 1200, 0.1, 0.5), np.zeros(int(SR * 0.05)), click(1400, 2600, 0.1, 0.6)]),

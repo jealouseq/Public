@@ -21,6 +21,9 @@ public final class ModSounds {
     public static final DeferredHolder<SoundEvent, SoundEvent> SHOT_SHOTGUN = reg("shot_shotgun");
     public static final DeferredHolder<SoundEvent, SoundEvent> SHOT_LAUNCHER = reg("shot_launcher");
 
+    public static final DeferredHolder<SoundEvent, SoundEvent> IMPACT_BLOCK = reg("impact_block");
+    public static final DeferredHolder<SoundEvent, SoundEvent> IMPACT_FLESH = reg("impact_flesh");
+    public static final DeferredHolder<SoundEvent, SoundEvent> IMPACT_METAL = reg("impact_metal");
     public static final DeferredHolder<SoundEvent, SoundEvent> DRY_FIRE = reg("dry_fire");
     public static final DeferredHolder<SoundEvent, SoundEvent> RELOAD_OUT = reg("reload_out");
     public static final DeferredHolder<SoundEvent, SoundEvent> RELOAD_IN = reg("reload_in");

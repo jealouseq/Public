@@ -211,6 +211,7 @@ public final class Ballistics {
         if (ehr == null || !(ehr.getEntity() instanceof LivingEntity target)) {
             if (block.getType() != HitResult.Type.MISS) {
                 level.sendParticles(ParticleTypes.SMOKE, block.getLocation().x, block.getLocation().y, block.getLocation().z, 2, 0.02, 0.02, 0.02, 0.0);
+                impactSound(level, block.getLocation(), com.wardogs.sound.ModSounds.IMPACT_BLOCK.get());
                 return true;
             }
             return false;
@@ -225,6 +226,7 @@ public final class Ballistics {
             if (shooter instanceof net.minecraft.server.level.ServerPlayer sp) {
                 com.wardogs.net.HitMarkerPayload.send(sp, false, !veh.isAlive());
             }
+            impactSound(level, ehr.getLocation(), com.wardogs.sound.ModSounds.IMPACT_METAL.get());
             return true;
         }
         Vec3 hitPos = ehr.getLocation();
@@ -251,11 +253,16 @@ public final class Ballistics {
         }
         level.sendParticles(head ? ParticleTypes.CRIT : ParticleTypes.DAMAGE_INDICATOR,
                 hitPos.x, hitPos.y, hitPos.z, head ? 6 : 2, 0.05, 0.05, 0.05, 0.1);
+        impactSound(level, hitPos, com.wardogs.sound.ModSounds.IMPACT_FLESH.get());
         if (shooter instanceof net.minecraft.server.level.ServerPlayer sp) {
             boolean down = !target.isAlive() || (target instanceof Player tp && com.wardogs.medic.Downed.is(tp));
             com.wardogs.net.HitMarkerPayload.send(sp, head, down);
         }
         return true;
+    }
+
+    private static void impactSound(ServerLevel level, Vec3 at, net.minecraft.sounds.SoundEvent event) {
+        level.playSound(null, at.x, at.y, at.z, event, net.minecraft.sounds.SoundSource.PLAYERS, 0.9f, 0.9f + level.random.nextFloat() * 0.2f);
     }
 
     /** Head = upper part of the hitbox around the eye line. */

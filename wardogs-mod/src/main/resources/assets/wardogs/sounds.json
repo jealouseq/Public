@@ -1,4 +1,31 @@
 {
+ "impact_block": {
+  "sounds": [
+   {
+    "name": "wardogs:shots/impact_block",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.wardogs.impact_block"
+ },
+ "impact_flesh": {
+  "sounds": [
+   {
+    "name": "wardogs:shots/impact_flesh",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.wardogs.impact_flesh"
+ },
+ "impact_metal": {
+  "sounds": [
+   {
+    "name": "wardogs:shots/impact_metal",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.wardogs.impact_metal"
+ },
  "dry_fire": {
   "sounds": [
    {
