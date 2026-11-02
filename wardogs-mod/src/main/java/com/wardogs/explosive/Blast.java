@@ -68,7 +68,7 @@ public final class Blast {
             }
         }
         level.sendParticles(ParticleTypes.EXPLOSION, pos.x, pos.y, pos.z, 1, 0, 0, 0, 0);
-        level.playSound(null, net.minecraft.core.BlockPos.containing(pos), SoundEvents.GENERIC_EXPLODE.value(), SoundSource.PLAYERS, 3.0f, 1.0f);
+        level.playSound(null, net.minecraft.core.BlockPos.containing(pos), com.wardogs.sound.ModSounds.EXPLOSION.get(), SoundSource.PLAYERS, 3.0f, 1.0f);
     }
 
     /** Applies WARDOGS-unit damage so kills pay like bullet kills. */

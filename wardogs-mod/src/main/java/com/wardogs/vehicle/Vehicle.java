@@ -405,7 +405,7 @@ public class Vehicle extends Mob {
             }
             ejectPassengers();
             sl.sendParticles(ParticleTypes.EXPLOSION_EMITTER, getX(), getY() + getBbHeight() / 2, getZ(), 1, 0, 0, 0, 0);
-            sl.playSound(null, blockPosition(), SoundEvents.GENERIC_EXPLODE.value(), SoundSource.NEUTRAL, 3.0f, 0.7f);
+            sl.playSound(null, blockPosition(), com.wardogs.sound.ModSounds.EXPLOSION.get(), SoundSource.NEUTRAL, 3.0f, 0.7f);
         }
         super.die(source);
     }

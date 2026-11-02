@@ -40,6 +40,9 @@ class SoundDataTest {
             }
             assertTrue(ModSounds.BY_CATEGORY.containsKey(w.category()), "no shot sound for category " + w.category());
         }
+        for (String extra : new String[]{"dry_fire", "reload_out", "reload_in", "explosion"}) {
+            assertTrue(declared.contains(extra), extra + " is not declared in sounds.json");
+        }
         for (var h : ModSounds.BY_CATEGORY.values()) {
             assertTrue(declared.contains(h.getId().getPath()), h.getId() + " is not declared in sounds.json");
         }

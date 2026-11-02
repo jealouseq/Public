@@ -123,7 +123,7 @@ public class GunItem extends Item {
         }
         int ammo = ammo(stack);
         if (ammo <= 0) {
-            level.playSound(null, sp.blockPosition(), SoundEvents.DISPENSER_FAIL, SoundSource.PLAYERS, 0.6f, 1.6f);
+            level.playSound(null, sp.blockPosition(), com.wardogs.sound.ModSounds.DRY_FIRE.get(), SoundSource.PLAYERS, 1.0f, 1.0f);
             st.nextShotTime = now + 6;
             startReload(sp, level, stack, def, st);
             return false;
@@ -165,7 +165,7 @@ public class GunItem extends Item {
         st.reloadEndsAt = level.getGameTime() + def.reloadTicks();
         st.reloadSlot = sp.getInventory().selected;
         sp.stopUsingItem();
-        level.playSound(null, sp.blockPosition(), SoundEvents.CROSSBOW_LOADING_START.value(), SoundSource.PLAYERS, 0.8f, 1.0f);
+        level.playSound(null, sp.blockPosition(), com.wardogs.sound.ModSounds.RELOAD_OUT.get(), SoundSource.PLAYERS, 1.0f, 1.0f);
     }
 
     @Override
@@ -184,7 +184,7 @@ public class GunItem extends Item {
         if (level.getGameTime() >= st.reloadEndsAt) {
             stack.set(ModComponents.AMMO.get(), GunStats.magazine(def(), stack));
             st.cancelReload();
-            level.playSound(null, sp.blockPosition(), SoundEvents.CROSSBOW_LOADING_END.value(), SoundSource.PLAYERS, 0.8f, 1.0f);
+            level.playSound(null, sp.blockPosition(), com.wardogs.sound.ModSounds.RELOAD_IN.get(), SoundSource.PLAYERS, 1.0f, 1.0f);
             sp.displayClientMessage(ammoLine(stack, def()), true);
         }
     }

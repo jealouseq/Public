@@ -39,7 +39,27 @@ def shot(dur, crack, crack_tau, body_fc, body_tau, thump_hz, thump_tau, thump_ga
     y = np.tanh(1.6 * y)                                    # a little saturation
     return y / np.max(np.abs(y)) * 0.89
 
+def click(f1, f2, dur=0.12, noise_gain=0.5):
+    n = int(SR * dur); t = np.arange(n) / SR
+    y = noise_gain * highpass(rng.standard_normal(n), 3000) * env(n, 0.003)
+    y += np.sin(2 * np.pi * f1 * t) * env(n, 0.012) * 0.8 + np.sin(2 * np.pi * f2 * t) * env(n, 0.008) * 0.5
+    return np.tanh(1.5 * y) / 1.2 * 0.8
+
+def explosion():
+    n = int(SR * 3.0); t = np.arange(n) / SR
+    y = 1.0 * lowpass(rng.standard_normal(n), 1400) * env(n, 0.45)
+    y += 1.2 * np.sin(2 * np.pi * np.cumsum(55 * (1 + 2.5 * np.exp(-t / 0.08))) / SR) * env(n, 0.55)
+    y += 0.8 * highpass(rng.standard_normal(n), 2000) * env(n, 0.03)
+    y += 0.5 * lowpass(rng.standard_normal(n), 500) * (1 - np.exp(-t / 0.01)) * env(n, 1.2)
+    y[:int(0.001 * SR)] *= np.linspace(0, 1, int(0.001 * SR))
+    y = np.tanh(1.5 * y)
+    return y / np.max(np.abs(y)) * 0.9
+
 SOUNDS = {
+    "dry_fire": lambda: click(2200, 3500, 0.08, 0.3),
+    "reload_out": lambda: click(900, 1700, 0.18, 0.6),
+    "reload_in": lambda: np.concatenate([click(600, 1200, 0.1, 0.5), np.zeros(int(SR * 0.05)), click(1400, 2600, 0.1, 0.6)]),
+    "explosion": explosion,
     "shot_pistol": lambda: shot(0.45, 1.1, 0.010, 3200, 0.035, 150, 0.04, 0.5, 0.10, 0.18),
     "shot_smg": lambda: shot(0.35, 1.0, 0.008, 3600, 0.028, 170, 0.03, 0.4, 0.07, 0.12),
     "shot_rifle": lambda: shot(0.7, 1.2, 0.012, 2600, 0.050, 120, 0.06, 0.7, 0.20, 0.30),
@@ -49,7 +69,7 @@ SOUNDS = {
     "shot_launcher": lambda: shot(1.6, 0.5, 0.030, 900, 0.20, 60, 0.30, 1.0, 0.60, 0.90, tail_fc=500, boom=0.6),
 }
 
-dest = os.path.join(OUT, "sounds", "shots")
+dest = os.path.join(OUT, "sounds", "shots")  # (reload, dry-fire and explosion sounds live here too)
 os.makedirs(dest, exist_ok=True)
 events = {}
 for name, fn in SOUNDS.items():

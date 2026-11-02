@@ -54,7 +54,7 @@ public final class VehicleGuns {
         EntityHitResult ehr = ProjectileUtil.getEntityHitResult(p, start, stop, new AABB(start, stop).inflate(1.0),
                 e -> e.isPickable() && !e.isSpectator() && e != v && e != p && e.getVehicle() != v, Double.MAX_VALUE);
         Vec3 impact = ehr != null ? ehr.getLocation() : (block.getType() == HitResult.Type.MISS ? null : block.getLocation());
-        level.playSound(null, v.blockPosition(), SoundEvents.GENERIC_EXPLODE.value(), SoundSource.PLAYERS, 2.0f, 1.4f);
+        level.playSound(null, v.blockPosition(), com.wardogs.sound.ModSounds.EXPLOSION.get(), SoundSource.PLAYERS, 2.0f, 1.4f);
         if (impact != null) {
             Blast.explode(level, impact, g.blast(), g.damage(), p, "veh_shell");
         }

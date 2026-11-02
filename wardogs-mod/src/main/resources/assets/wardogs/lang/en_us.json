@@ -138,5 +138,9 @@
   "subtitles.wardogs.shot_lmg": "Gunshot",
   "subtitles.wardogs.shot_sniper": "Gunshot",
   "subtitles.wardogs.shot_shotgun": "Gunshot",
-  "subtitles.wardogs.shot_launcher": "Gunshot"
+  "subtitles.wardogs.shot_launcher": "Gunshot",
+  "subtitles.wardogs.dry_fire": "Click",
+  "subtitles.wardogs.reload_out": "Magazine out",
+  "subtitles.wardogs.reload_in": "Magazine in",
+  "subtitles.wardogs.explosion": "Explosion"
 }

@@ -21,6 +21,11 @@ public final class ModSounds {
     public static final DeferredHolder<SoundEvent, SoundEvent> SHOT_SHOTGUN = reg("shot_shotgun");
     public static final DeferredHolder<SoundEvent, SoundEvent> SHOT_LAUNCHER = reg("shot_launcher");
 
+    public static final DeferredHolder<SoundEvent, SoundEvent> DRY_FIRE = reg("dry_fire");
+    public static final DeferredHolder<SoundEvent, SoundEvent> RELOAD_OUT = reg("reload_out");
+    public static final DeferredHolder<SoundEvent, SoundEvent> RELOAD_IN = reg("reload_in");
+    public static final DeferredHolder<SoundEvent, SoundEvent> EXPLOSION = reg("explosion");
+
     /** Weapon category (as in the balance data) -> shot sound. Unknown categories use the rifle. */
     public static final Map<String, DeferredHolder<SoundEvent, SoundEvent>> BY_CATEGORY = Map.of(
             "pistol", SHOT_PISTOL, "smg", SHOT_SMG, "assault_rifle", SHOT_RIFLE, "lmg", SHOT_LMG,

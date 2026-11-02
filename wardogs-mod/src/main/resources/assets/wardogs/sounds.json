@@ -1,4 +1,40 @@
 {
+ "dry_fire": {
+  "sounds": [
+   {
+    "name": "wardogs:shots/dry_fire",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.wardogs.dry_fire"
+ },
+ "reload_out": {
+  "sounds": [
+   {
+    "name": "wardogs:shots/reload_out",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.wardogs.reload_out"
+ },
+ "reload_in": {
+  "sounds": [
+   {
+    "name": "wardogs:shots/reload_in",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.wardogs.reload_in"
+ },
+ "explosion": {
+  "sounds": [
+   {
+    "name": "wardogs:shots/explosion",
+    "stream": false
+   }
+  ],
+  "subtitle": "subtitles.wardogs.explosion"
+ },
  "shot_pistol": {
   "sounds": [
    {
