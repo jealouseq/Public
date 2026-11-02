@@ -1564,4 +1564,20 @@ public final class WardogsGameTests {
         check(barrel != null && !barrel.isEmpty(), "the barrel holds a weapon");
         h.succeed();
     }
+
+    @GameTest(template = "empty")
+    public static void deploymentBoardsListTheBaseAndAreBuiltOnce(GameTestHelper h) {
+        var abs = h.absolutePos(new BlockPos(4, 2, 4));
+        var site = new com.wardogs.world.BakuraniWorld.Site("Deployment board 9", abs.getX() + 0.5, abs.getZ() + 0.5);
+        int groundY = h.absolutePos(new BlockPos(0, 1, 0)).getY();
+        com.wardogs.world.BakuraniSetup.Ground flat = (x, z) -> groundY;
+        check(com.wardogs.world.BakuraniSetup.placeBoard(h.getLevel(), site, flat), "a board is built");
+        check(!com.wardogs.world.BakuraniSetup.placeBoard(h.getLevel(), site, flat), "a second request changes nothing");
+        check(h.getLevel().getBlockState(new BlockPos(abs.getX(), groundY + 1, abs.getZ() + 1)).is(Blocks.LECTERN), "the lectern stands in front of the board");
+        var targets = com.wardogs.match.Deployment.targets(h.getLevel(), Faction.LONESTAR);
+        check(!targets.isEmpty() && targets.get(0).name().equals("Lonestar base"), "the base is the first deployment point");
+        ServerPlayer p = soldier(h, Faction.LONESTAR, 5.5, 5.5);
+        check(com.wardogs.match.Deployment.deploy(p, 0) != null, "deploying outside Bakurani is refused");
+        h.succeed();
+    }
 }

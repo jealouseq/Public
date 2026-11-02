@@ -56,7 +56,33 @@ public final class BakuraniSetup {
         for (BakuraniWorld.Site c : BakuraniWorld.sites().loot()) {
             placeCache(level, c, TERRAIN);
         }
+        for (BakuraniWorld.Site b : BakuraniWorld.sites().boards()) {
+            placeBoard(level, b, TERRAIN);
+        }
         return new Result(towers, vendors);
+    }
+
+    /** Builds a deployment board: two posts carrying a plank board, a lectern in front. @return true if newly built. */
+    public static boolean placeBoard(ServerLevel level, BakuraniWorld.Site b, Ground g) {
+        load(level, b.x(), b.z());
+        int bx = (int) Math.floor(b.x()), bz = (int) Math.floor(b.z());
+        int y = g.surfaceY(bx + 0.5, bz + 0.5) + 1;
+        BlockPos lectern = new BlockPos(bx, y, bz + 1);
+        if (level.getBlockState(lectern).is(Blocks.LECTERN)) {
+            return false;
+        }
+        BlockState post = Blocks.SPRUCE_LOG.defaultBlockState(), plank = Blocks.SPRUCE_PLANKS.defaultBlockState();
+        for (int dx = -2; dx <= 2; dx++) {
+            level.setBlock(new BlockPos(bx + dx, y + 2, bz), plank, 2);
+            level.setBlock(new BlockPos(bx + dx, y + 3, bz), plank, 2);
+        }
+        for (int dy = 0; dy <= 3; dy++) {
+            level.setBlock(new BlockPos(bx - 2, y + dy, bz), post, 2);
+            level.setBlock(new BlockPos(bx + 2, y + dy, bz), post, 2);
+        }
+        level.setBlock(new BlockPos(bx, y + 1, bz), Blocks.AIR.defaultBlockState(), 2);
+        level.setBlock(lectern, Blocks.LECTERN.defaultBlockState().setValue(net.minecraft.world.level.block.LecternBlock.FACING, Direction.NORTH), 2);
+        return true;
     }
 
     /** Position of a loot cache chest: one block above the ground at the marker. */
