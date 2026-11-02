@@ -16,7 +16,9 @@ import net.minecraft.world.level.block.entity.ChestBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /** Builds the things Bakurani needs besides terrain: loot towers and vendors at their real positions. Idempotent. */
@@ -41,27 +43,26 @@ public final class BakuraniSetup {
         level.getChunkSource().getChunk((int) Math.floor(x) >> 4, (int) Math.floor(z) >> 4, ChunkStatus.FULL, true);
     }
 
+    /** Queues the whole one-time setup (see {@link SetupQueue}); steps run one per tick. @return how many towers and vendors are planned. */
     public static Result buildAll(ServerLevel level) {
-        int towers = 0, vendors = 0;
-        for (BakuraniWorld.Site t : BakuraniWorld.sites().towers()) {
-            if (buildTower(level, t)) {
-                towers++;
-            }
+        List<SetupQueue.Step> steps = new ArrayList<>();
+        var sites = BakuraniWorld.sites();
+        for (BakuraniWorld.Site t : sites.towers()) {
+            steps.add(new SetupQueue.Step("tower " + t.name(), l -> buildTower(l, t)));
         }
-        for (BakuraniWorld.Site v : BakuraniWorld.sites().vendors()) {
-            if (placeVendor(level, v)) {
-                vendors++;
-            }
+        for (BakuraniWorld.Site v : sites.vendors()) {
+            steps.add(new SetupQueue.Step("vendor " + v.name(), l -> placeVendor(l, v)));
         }
-        for (BakuraniWorld.Site c : BakuraniWorld.sites().loot()) {
-            placeCache(level, c, TERRAIN);
+        for (BakuraniWorld.Site c : sites.loot()) {
+            steps.add(new SetupQueue.Step("cache " + c.name(), l -> placeCache(l, c, TERRAIN)));
         }
-        for (BakuraniWorld.Site b : BakuraniWorld.sites().boards()) {
-            placeBoard(level, b, TERRAIN);
+        for (BakuraniWorld.Site b : sites.boards()) {
+            steps.add(new SetupQueue.Step("board " + b.name(), l -> placeBoard(l, b, TERRAIN)));
         }
-        Landmarks.buildAll(level, TERRAIN);
-        Outposts.buildAll(level, TERRAIN);
-        return new Result(towers, vendors);
+        Landmarks.plan(steps, TERRAIN);
+        Outposts.plan(steps, TERRAIN);
+        SetupQueue.start(level, steps);
+        return new Result(sites.towers().size(), sites.vendors().size());
     }
 
     /** Builds a deployment board: two posts carrying a plank board, a lectern in front. @return true if newly built. */

@@ -19,6 +19,19 @@ public final class Landmarks {
         level.getChunkSource().getChunk(x >> 4, z >> 4, ChunkStatus.FULL, true);
     }
 
+    /** Adds one step per landmark. */
+    public static void plan(java.util.List<SetupQueue.Step> steps, BakuraniSetup.Ground g) {
+        for (BakuraniWorld.Landmark l : BakuraniWorld.sites().landmarks()) {
+            steps.add(new SetupQueue.Step("landmark " + l.name(), lvl -> {
+                switch (l.type()) {
+                    case "range" -> buildRange(lvl, (int) Math.floor(l.x()), (int) Math.floor(l.z()), g);
+                    case "flag" -> buildFlag(lvl, (int) Math.floor(l.x()), (int) Math.floor(l.z()), g);
+                    default -> { }
+                }
+            }));
+        }
+    }
+
     public static int buildAll(ServerLevel level, BakuraniSetup.Ground g) {
         int n = 0;
         for (BakuraniWorld.Landmark l : BakuraniWorld.sites().landmarks()) {

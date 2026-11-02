@@ -486,45 +486,44 @@ public final class Outposts {
 
     // --- the whole outpost ---------------------------------------------------------------------------
 
-    /** Builds every outpost cluster that is not built yet. @return how many were built. */
-    public static int buildAll(ServerLevel level, BakuraniSetup.Ground g) {
-        int n = 0;
-        boolean fresh = false;
+    /** Adds the steps of every outpost cluster, then one step that parks the cars if any outpost was built in this run. */
+    public static void plan(List<SetupQueue.Step> steps, BakuraniSetup.Ground g) {
+        java.util.concurrent.atomic.AtomicBoolean fresh = new java.util.concurrent.atomic.AtomicBoolean();
         for (Cluster c : clusters()) {
-            if (build(level, g, c)) {
-                n++;
-                fresh = true;
+            plan(steps, g, c, fresh);
+        }
+        steps.add(new SetupQueue.Step("parked vehicles", l -> {
+            if (fresh.get()) {
+                parkVehicles(l, g); // once, together with the first build, so a second setup does not add more cars
             }
-        }
-        if (fresh) {
-            parkVehicles(level, g); // only once, together with the first build, so a second setup does not add more cars
-        }
-        return n;
+        }));
     }
 
-    public static boolean build(ServerLevel level, BakuraniSetup.Ground g, Cluster c) {
-        B b = new B(level, g);
-        int cx = (int) Math.round(c.cx()), cz = (int) Math.round(c.cz());
-        // the flag stands at the base marker if there is one, else at the centre
-        int fx = cx, fz = cz;
+    private static int[] flagSpot(Cluster c) {
+        int fx = (int) Math.round(c.cx()), fz = (int) Math.round(c.cz());
         for (Point p : c.points()) {
             if (p.name().startsWith("Base")) {
                 fx = (int) Math.round(p.x());
                 fz = (int) Math.round(p.z()) + 6;
             }
         }
-        if (built(level, g, fx, fz)) {
-            return false;
-        }
+        return new int[]{fx, fz};
+    }
+
+    private static void plan(List<SetupQueue.Step> steps, BakuraniSetup.Ground g, Cluster c, java.util.concurrent.atomic.AtomicBoolean fresh) {
+        int[] flag = flagSpot(c);
         double minX = Double.MAX_VALUE, maxX = -Double.MAX_VALUE, minZ = Double.MAX_VALUE, maxZ = -Double.MAX_VALUE;
         for (Point p : c.points()) {
             minX = Math.min(minX, p.x()); maxX = Math.max(maxX, p.x()); minZ = Math.min(minZ, p.z()); maxZ = Math.max(maxZ, p.z());
         }
         int wx0 = (int) minX - 26, wx1 = (int) maxX + 26, wz0 = (int) minZ - 24, wz1 = (int) maxZ + 24;
-        b.loadArea(wx0 - 4, wz0 - 4, wx1 + 4, wz1 + 4);
-        BakuraniTerrain t = BakuraniWorld.terrain();
-        // clear the natural trees and props inside the walls, then build the modules
-        b.clear(wx0, wz0, wx1, wz1, 16);
+        String name = "outpost at " + (int) c.cx() + "," + (int) c.cz();
+        // one shared flag: when a step finds the outpost already built, the rest of its steps do nothing
+        java.util.concurrent.atomic.AtomicBoolean skip = new java.util.concurrent.atomic.AtomicBoolean();
+        steps.add(new SetupQueue.Step(name + " check", l -> skip.set(built(l, g, flag[0], flag[1]))));
+        List<SetupQueue.Step> body = new ArrayList<>();
+        SetupQueue.loadSteps(body, name, wx0 - 4, wz0 - 4, wx1 + 4, wz1 + 4);
+        body.add(new SetupQueue.Step(name + " clear", l -> new B(l, g).clear(wx0, wz0, wx1, wz1, 16)));
         List<Point> garages = new ArrayList<>(), stalls = new ArrayList<>(), spawns = new ArrayList<>();
         for (Point p : c.points()) {
             String n = p.name().toLowerCase();
@@ -551,21 +550,31 @@ public final class Outposts {
             }
         }
         for (Point h : hangars) {
-            buildHangar(level, g, (int) Math.round(h.x()), (int) Math.round(h.z()), c.faction());
+            body.add(new SetupQueue.Step(name + " hangar", l -> buildHangar(l, g, (int) Math.round(h.x()), (int) Math.round(h.z()), c.faction())));
         }
         for (Point s : stalls) {
-            buildStall(level, g, (int) Math.round(s.x()), (int) Math.round(s.z()), c.faction());
+            body.add(new SetupQueue.Step(name + " stall", l -> buildStall(l, g, (int) Math.round(s.x()), (int) Math.round(s.z()), c.faction())));
         }
         for (Point s : spawns) {
-            buildCamp(level, g, (int) Math.round(s.x()), (int) Math.round(s.z()), c.faction());
+            body.add(new SetupQueue.Step(name + " camp", l -> buildCamp(l, g, (int) Math.round(s.x()), (int) Math.round(s.z()), c.faction())));
         }
-        List<Point> avoid = new ArrayList<>(c.points());
-        buildDepot(b, cx, cz, c.faction(), avoid, 30, 18);
-        buildWall(b, t, wx0, wz0, wx1, wz1, c.faction());
+        int cx = (int) Math.round(c.cx()), cz = (int) Math.round(c.cz());
+        body.add(new SetupQueue.Step(name + " depot", l -> buildDepot(new B(l, g), cx, cz, c.faction(), new ArrayList<>(c.points()), 30, 18)));
+        body.add(new SetupQueue.Step(name + " wall", l -> buildWall(new B(l, g), BakuraniWorld.terrain(), wx0, wz0, wx1, wz1, c.faction())));
         for (int[] corner : new int[][]{{wx0 + 3, wz0 + 3}, {wx1 - 3, wz0 + 3}, {wx0 + 3, wz1 - 3}, {wx1 - 3, wz1 - 3}}) {
-            BakuraniSetup.buildTowerShell(level, corner[0], corner[1], g);
+            body.add(new SetupQueue.Step(name + " tower", l -> BakuraniSetup.buildTowerShell(l, corner[0], corner[1], g)));
         }
-        buildFlag(level, g, fx, fz, c.faction());
-        return true;
+        body.add(new SetupQueue.Step(name + " flag", l -> {
+            buildFlag(l, g, flag[0], flag[1], c.faction());
+            fresh.set(true);
+        }));
+        body.add(new SetupQueue.Step(name + " release", l -> SetupQueue.force(l, wx0 - 4, wz0 - 4, wx1 + 4, wz1 + 4, false)));
+        for (SetupQueue.Step st : body) {
+            steps.add(new SetupQueue.Step(st.label(), l -> {
+                if (!skip.get()) {
+                    st.run().accept(l);
+                }
+            }));
+        }
     }
 }

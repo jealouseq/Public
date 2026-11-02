@@ -175,7 +175,8 @@ public final class WdCommand {
             return 0;
         }
         var r = com.wardogs.world.BakuraniSetup.buildAll(level);
-        src.sendSuccess(() -> Component.literal("Bakurani set up: " + r.towers() + " towers and " + r.vendors() + " vendors placed"), true);
+        src.sendSuccess(() -> Component.literal("Bakurani setup started: " + r.towers() + " towers, " + r.vendors() + " vendors, outposts and more, in "
+                + com.wardogs.world.SetupQueue.total() + " steps over the next seconds or minutes (watch the chat for \"setup finished\")"), true);
         return 1;
     }
 

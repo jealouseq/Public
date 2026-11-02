@@ -1969,4 +1969,37 @@ public final class WardogsGameTests {
         check(door.is(Blocks.OAK_DOOR) && door.getValue(net.minecraft.world.level.block.DoorBlock.FACING) == net.minecraft.core.Direction.NORTH, "the door block turns with the house");
         h.succeed();
     }
+
+    @GameTest(template = "empty", batch = "setupQueue", timeoutTicks = 100)
+    public static void setupStepsRunOnePerTickAndAFailingStepDoesNotStopTheRest(GameTestHelper h) {
+        java.util.List<Long> ticks = new java.util.ArrayList<>();
+        java.util.List<String> ran = new java.util.ArrayList<>();
+        var level = h.getLevel();
+        var steps = java.util.List.of(
+                new com.wardogs.world.SetupQueue.Step("a", l -> { ran.add("a"); ticks.add(l.getGameTime()); }),
+                new com.wardogs.world.SetupQueue.Step("boom", l -> { throw new IllegalStateException("expected failure"); }),
+                new com.wardogs.world.SetupQueue.Step("c", l -> { ran.add("c"); ticks.add(l.getGameTime()); }));
+        com.wardogs.world.SetupQueue.start(level, steps);
+        check(com.wardogs.world.SetupQueue.pending() >= 3, "three steps are waiting");
+        later(h, 20, () -> {
+            check(ran.equals(java.util.List.of("a", "c")), "the failing step did not stop the others: " + ran);
+            check(ticks.size() == 2 && ticks.get(1) - ticks.get(0) >= 2, "steps are spread over ticks (a failing step takes a tick too): " + ticks);
+            check(com.wardogs.world.SetupQueue.pending() == 0, "the queue is empty");
+            h.succeed();
+        });
+    }
+
+    @GameTest(template = "empty")
+    public static void bakuraniSetupPlanCoversEverySite(GameTestHelper h) {
+        var steps = new java.util.ArrayList<com.wardogs.world.SetupQueue.Step>();
+        var sites = BakuraniWorld.sites();
+        com.wardogs.world.Landmarks.plan(steps, BakuraniSetup.TERRAIN);
+        check(steps.size() == sites.landmarks().size(), "one step per landmark");
+        com.wardogs.world.Outposts.plan(steps, BakuraniSetup.TERRAIN);
+        long chunkSteps = steps.stream().filter(s -> s.label().contains(" chunks ")).count();
+        check(chunkSteps > 20, "outposts load their chunks in batches: " + chunkSteps);
+        check(steps.stream().noneMatch(s -> s.label().contains(" chunks ") && false), "labels are readable");
+        check(steps.get(steps.size() - 1).label().equals("parked vehicles"), "cars are parked last");
+        h.succeed();
+    }
 }
