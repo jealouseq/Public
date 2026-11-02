@@ -60,6 +60,10 @@ public final class HudLayer {
             e.setCanceled(true); // a downed player has no hands for items
             return;
         }
+        if (e.getName().equals(VanillaGuiLayers.VEHICLE_HEALTH)) {
+            e.setCanceled(true); // the vehicle's own read-out shows its hull
+            return;
+        }
         if (e.getName().equals(VanillaGuiLayers.PLAYER_HEALTH) || e.getName().equals(VanillaGuiLayers.ARMOR_LEVEL)
                 || e.getName().equals(VanillaGuiLayers.FOOD_LEVEL)) {
             e.setCanceled(true);

@@ -70,6 +70,15 @@ public final class ClientEvents {
             }
         }
 
+        /** The chase camera sits behind the vehicle's tail, farther for longer vehicles. */
+        @SubscribeEvent
+        public static void chaseCamera(net.neoforged.neoforge.client.event.CalculateDetachedCameraDistanceEvent e) {
+            Minecraft mc = Minecraft.getInstance();
+            if (mc.player != null && mc.player.getVehicle() instanceof Vehicle v && v.def() != null) {
+                e.setDistance((float) Math.max(5.5, v.def().d() * 0.5 + 4.5 + (v.def().flying() ? 3 : 0)));
+            }
+        }
+
         /** The crew of a closed vehicle is inside it: their models are not drawn over the body. */
         @SubscribeEvent
         public static void hideCrew(net.neoforged.neoforge.client.event.RenderPlayerEvent.Pre e) {

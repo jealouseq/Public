@@ -1609,6 +1609,23 @@ public final class WardogsGameTests {
         h.succeed();
     }
 
+    @GameTest(template = "empty")
+    public static void theDamageLogTravelsAndGivingUpKillsADownedPlayer(GameTestHelper h) {
+        var lines = java.util.List.of(new com.wardogs.net.DamageLogPayload.Line("Killer", "ak74", 64, true), new com.wardogs.net.DamageLogPayload.Line("Mate", "m4", 31, false));
+        var buf = new net.minecraft.network.RegistryFriendlyByteBuf(io.netty.buffer.Unpooled.buffer(), h.getLevel().registryAccess(),
+                net.neoforged.neoforge.network.connection.ConnectionType.NEOFORGE);
+        com.wardogs.net.DamageLogPayload.CODEC.encode(buf, new com.wardogs.net.DamageLogPayload(lines));
+        check(com.wardogs.net.DamageLogPayload.CODEC.decode(buf).lines().equals(lines), "the damage log survives encoding");
+        ServerPlayer p = soldier(h, Faction.LONESTAR, 2.5, 2.5);
+        check(!com.wardogs.medic.Downed.giveUp(p), "a standing player cannot give up");
+        com.wardogs.medic.Downed.down(p);
+        check(com.wardogs.medic.Downed.is(p), "the player is down");
+        check(com.wardogs.medic.Downed.giveUp(p), "a downed player can give up");
+        check(!com.wardogs.medic.Downed.is(p), "giving up ends the downed state");
+        check(!p.isAlive(), "and the player is dead");
+        h.succeed();
+    }
+
     @GameTest(template = "empty", batch = "requests")
     public static void radialRequestsReachOnlyNearbyTeammatesAndHaveACooldown(GameTestHelper h) {
         ServerPlayer a = soldier(h, Faction.LONESTAR, 2.5, 2.5);
