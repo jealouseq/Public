@@ -174,6 +174,14 @@ public final class BuildingGen {
             if (k == 2 && i == w / 2) {
                 return Blocks.LANTERN.defaultBlockState().setValue(net.minecraft.world.level.block.LanternBlock.HANGING, true);
             }
+            if (b.floors() >= 2 && !panel(b)) { // a balcony over the porch, reached by a door on the first floor above
+                if (k == 4) {
+                    return Blocks.SPRUCE_PLANKS.defaultBlockState();
+                }
+                if (k == 5) {
+                    return Blocks.SPRUCE_FENCE.defaultBlockState();
+                }
+            }
             return null;
         }
         if (i < 0 || i >= w || j < 0 || j > d) {
@@ -207,6 +215,10 @@ public final class BuildingGen {
             }
             int kk = k % 4;
             if (k < 4 && j == d - 1 && i == w / 2 && kk <= 2) {
+                return Blocks.OAK_DOOR.defaultBlockState().setValue(DoorBlock.FACING, rot(b, Direction.SOUTH))
+                        .setValue(DoorBlock.HALF, kk == 1 ? DoubleBlockHalf.LOWER : DoubleBlockHalf.UPPER);
+            }
+            if (b.floors() >= 2 && k >= 4 && k < 8 && j == d - 1 && i == w / 2 && kk <= 2 && b.kind() < 2 && !panel(b)) {
                 return Blocks.OAK_DOOR.defaultBlockState().setValue(DoorBlock.FACING, rot(b, Direction.SOUTH))
                         .setValue(DoorBlock.HALF, kk == 1 ? DoubleBlockHalf.LOWER : DoubleBlockHalf.UPPER);
             }

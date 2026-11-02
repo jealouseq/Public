@@ -67,14 +67,14 @@ and the assumed 100 player health are placeholders: the sources do not publish t
 | Middle mouse | Radial menu: squad (create, invite the nearest teammate, leave), requests (healing, ammo, supplies, repairs), local callouts, emotes |
 | `/wd mode standard / hardcore` (op) | Hardcore trims the HUD (no minimap, no Hot Zone marker) and limits the kill feed to your squad |
 | `/wd squad create / invite <name> / accept / leave` | Squads of up to four; members appear on the minimap and in a list on the left |
-| X / G (while downed) | Give up (die at once) / call for a medic |
+| X / G / V (while downed) | Give up (die at once) / call for a medic / open the damage log |
 | Hold TAB | Match scoreboard: three faction columns with kills, deaths, money earned |
 | Right-click a lectern at a deployment board | Choose where to deploy: your base or a friendly FOB |
 
 The HUD follows the real game: compass strip with the Hot Zone marker (top centre), money and level boxes with a reward log (top
 right), kill feed (top left), minimap that turns with your heading with faction scores and the "CONTROL" label (bottom left), ammo and
 stamina / armour / heart (bottom right), hit markers at the crosshair, context prompts, a vehicle read-out, world markers (Hot Zone ring
-and squad mates with their distance) and a downed screen with the bleed-out ring, GIVE UP and CALL FOR HELP.
+and squad mates with their distance) a NEARBY teammate list, a downed screen with the bleed-out ring, GIVE UP, CALL FOR HELP and the damage log (who hit you, with what, for how much). Driving uses a chase camera; crews of closed vehicles sit inside them. The vendor shows guns and vehicles as turning 3D models.
 
 ## Assets
 
@@ -93,7 +93,7 @@ the licences.
 Terrain, rivers, forest, fields, roads and about 4 000 houses come from the researched map data (kept in the git-ignored
 `local-data/bakurani`, built by `research/tools/map_convert.py` and `bake_cover.py`). Generated at chunk time: houses along the roads
 facing them (rotated in 45-degree steps) with overhanging eaves, hip or gable roofs in brick, mud-brick, slate, copper or stone tiles, a
-stone plinth, quoins, a belt course at every storey, tall windows, attic windows, a porch, lantern, partition walls, furniture and ceiling
+stone plinth, quoins, a belt course at every storey, tall windows, attic windows, a porch with a first-floor balcony over it, lantern, partition walls, furniture and ceiling
 lamps; sheds; rows of lock-up garages behind the big blocks; flat-roofed blocks with parapets and rooftop vents; yards with benches,
 mailboxes, bins, firewood, gardens and fences; a lawn clearing around every house; surfaced roads with gravel shoulders; street lamps,
 bus shelters, kiosks, power poles along tracks; bridges over rivers. Nature: stands of fir and pine, birch and aspen groves, oaks and
