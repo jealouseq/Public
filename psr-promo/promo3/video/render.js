@@ -8,7 +8,7 @@ const MIME={'.html':'text/html','.js':'text/javascript','.css':'text/css','.woff
  await new Promise(r=>s.on('listening',r));const port=s.address().port;
  const b=await chromium.launch({args:['--no-sandbox','--disable-gpu','--force-color-profile=srgb']});
  fs.mkdirSync(OUT,{recursive:true});
- const open=async()=>{const pg=await b.newPage({viewport:{width:+W,height:+H}});pg.on('pageerror',e=>console.error('[pageerror]',e.message));await pg.goto(`http://127.0.0.1:${port}/promo3/video/index.html?w=${W}&h=${H}`);await pg.waitForFunction('window.READY===true',null,{timeout:120000});return pg};
+ const open=async()=>{const pg=await b.newPage({viewport:{width:+W,height:+H}});pg.on('pageerror',e=>console.error('[pageerror]',e.message));await pg.goto(`http://127.0.0.1:${port}/promo3/video/${process.env.PAGE||'index.html'}?w=${W}&h=${H}`);await pg.waitForFunction('window.READY===true',null,{timeout:120000});return pg};
  const fps=+(FPS||30);
  let jobs=[];
  if(TIMES){jobs=TIMES.split(',').map(t=>({t:+t,name:`still_${(+t).toFixed(2)}.jpg`,f:Math.round(+t*fps)}))}
