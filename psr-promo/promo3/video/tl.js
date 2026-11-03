@@ -17,7 +17,7 @@ const END_T=S[7], T_END=END_T+4.2;
 const SHOTS=[
  {img:'p_chair_tulle',oy:78,cam:{s:[1.02,1.09],x:[-.012,.014],y:[.004,-.006],f:[.45,.55],hh:.8},g:{b:.58,c:1.08},scrim:.86},
  {img:'p_tea_window',oy:52,fin:.9,cam:{s:[1.18,1.22],x:[.02,-.008],y:[-.08,-.085],f:[.5,.5],hh:.35},g:{b:.95,c:1.04},scrim:.74},
- {img:'p_phone_glow',oy:42,fin:.9,cam:{s:[1.17,1.21],x:[0,0],y:[-.078,-.083],f:[.5,.5],hh:.25},g:{b:.98,c:1.04},scrim:.72},
+ {img:'p_phone_glow',oy:42,fin:.9,cam:{s:[1.17,3.4],x:[0,0],y:[0,0],f:[.5,.5],hh:.12,focus:{ui:[.52,.66],t0:S[2]+.8,t1:S[2]+7.3}},g:{b:.86,c:1.05},scrim:.0,ui:true,noGlow:true},
  {img:'p_hands_child',oy:44,fin:1.1,cam:{s:[1.03,1.10],x:[.01,-.012],y:[0,-.014],f:[.5,.55],hh:.6},g:{b:.92,c:1.04},scrim:.74},
  {img:'p_rotary_dark',oy:50,fin:1.2,cam:{s:[1.16,1.07],x:[-.012,.006],y:[-.05,-.07],f:[.58,.6],hh:.25},g:{b:1.75,c:1.0},scrim:.7},
  {img:'p_writing_hand',oy:50,fin:.9,cam:{s:[1.04,1.16],x:[.012,-.02],y:[-.006,.008],f:[.34,.52],hh:.7},g:{b:.72,c:1.06},scrim:.92},
@@ -34,7 +34,7 @@ const ch=compile(S[3]+.9,[['type','Дома тебя ждут.'],['wait',.9],['s
 const DRAFTS=[
  {shot:0,top:.67,hide:S[1]-.2,rows:[chair]},
  {shot:1,top:.745,hide:S[2]-.2,rows:[tea1,tea2]},
- {shot:2,top:.80,hide:S[3]-.2,rows:[ph]},
+ {shot:2,top:.80,hide:S[3]-.2,screen:true,rows:[ph]},
  {shot:3,top:.68,hide:S[4]-.1,rows:[ch]},
 ];
 // ---- set phrases (not typed: "our" voice)
@@ -45,7 +45,8 @@ const TEXTS=[
  {cls:'ub',size:96,lines:['Мы ищем','ответ.'],a:S[6]+1.6,b:END_T-.6,top:.725},
 ];
 const KEYS=[].concat(...DRAFTS.map(d=>[].concat(...d.rows.map(r=>r.keys))));
-const TL={S,END_T,T_END,SHOTS,DRAFTS,TEXTS,KEYS,turn:S[4],phoneSend:ph.sentAt,eraseStart:ph.keys.find(k=>k.k==='erase0').t,
+const LEAKS=[S[1],S[4],S[6]];
+const TL={LEAKS,S,END_T,T_END,SHOTS,DRAFTS,TEXTS,KEYS,turn:S[4],phoneSend:ph.sentAt,eraseStart:ph.keys.find(k=>k.k==='erase0').t,
   chairSend:chair.sentAt,childSend:ch.sentAt};
 if(typeof module!=='undefined')module.exports=TL;else root.TL=TL;
 })(typeof window!=='undefined'?window:globalThis);

@@ -30,8 +30,10 @@ room*=10**(-33/20)*np.minimum(1,t/1.2)*np.minimum(1,(T_END-t)/2.5)
 out=m+np.vstack([room,np.roll(room,61)])
 def peak(x):
     e=np.abs(x).max(axis=0); w=int(.01*SR); return int(np.argmax(np.convolve(e,np.ones(w)/w,mode="same")))
-def put(rel,at,gain,align="start",dur=None,fade=.08,start=None):
-    x=dec(os.path.join(SFX,rel+".mp3"),start,dur); off_=peak(x) if align=="peak" else 0
+def put(rel,at,gain,align="start",dur=None,fade=.08,start=None,rev=False):
+    x=dec(os.path.join(SFX,rel+".mp3"),start,dur)
+    if rev: x=x[:,::-1].copy(); align="end"
+    off_=peak(x) if align=="peak" else (x.shape[1] if align=="end" else 0)
     i0=int(round(at*SR))-off_; a_,b_=max(0,i0),min(N,i0+x.shape[1])
     if b_<=a_: return
     seg=x[:,a_-i0:b_-i0].copy(); k=min(seg.shape[1],int(fade*SR)); seg[:,-k:]*=np.linspace(1,0,k); seg[:,:min(32,seg.shape[1])]*=np.linspace(0,1,min(32,seg.shape[1])); out[:,a_:b_]+=seg*gain
@@ -56,6 +58,9 @@ for ky in TL["KEYS"]:
 # ---- the erased "Мне страшно": two slow heartbeats, then the room goes quiet
 e0=TL["eraseStart"]
 put("crowd/heartbeat-single",e0+.25,0.20,"peak",fade=.3); put("crowd/heartbeat-single",e0+1.0,0.14,"peak",fade=.3)
+# ---- swell into the turn (reversed light aura), lands on the cut
+put("light/light-aura",turn-.03,0.20,rev=True,fade=.02)
+put("impact/impact-deep-whoosh",turn+.05,0.05,"peak",fade=.6)
 # ---- landline: dial tone starts under the previous shot (J-cut), handset click on the cut
 tt=np.arange(int(3.2*SR))/SR; tone=(np.sin(2*np.pi*425*tt)+.12*np.sin(2*np.pi*850*tt))*0.012; tone*=np.clip(tt/.4,0,1)*np.clip((3.2-tt)/1.0,0,1)
 i0=int((turn-.55)*SR); out[:,i0:i0+len(tone)]+=np.vstack([tone,tone])
