@@ -1,0 +1,99 @@
+#!/usr/bin/env python3
+"""New storyboard (documentary photo style). python3 -I promo3/make_board.py -> promo3/src/storyboard.html"""
+import os
+ROOT=os.path.dirname(os.path.abspath(__file__))
+TICK='<svg width="34" height="25" viewBox="0 0 34 25" fill="none" stroke="#f0b54a" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13l8 8L30 4"/></svg>'
+F=[
+ dict(ph="p_window_waiting",pos="60% 40%",t="0:00–0:03",name="Окно",tc="21-Й ДЕНЬ",
+  html='<div class="tx" style="bottom:130px"><div class="pr">Ждать —<br>тоже труд.</div></div>',
+  desc="Женщина у окна, контровой свет, дыхание кадра. Тишина, фоновый шум комнаты. Кадр держится дольше остальных, чтобы зритель успел «войти».",
+  mot="Медленный наезд 100→112 %, лёгкая дрожь камеры «с рук».",txt="«Ждать — тоже труд.»",snd="тихий комнатный фон, далёкие часы, один глубокий вдох"),
+ dict(ph="p_phone_glow",pos="50% 50%",t="0:03–0:06",name="Тишина в ответ",tc="23:58",
+  html='<div class="bubble" style="top:190px;right:70px">Ты как?<div class="m">23:58 '+TICK+'</div></div><div class="tx" style="bottom:130px"><div class="ub">Тишина<br>в ответ.</div></div>',
+  desc="Холодный свет экрана в тёмной комнате. На экране поверх фото набирается сообщение «Ты как?». Одна галочка.",
+  mot="Сообщение «печатается», потом появляется галочка; фон чуть пульсирует светом экрана.",txt="«Тишина в ответ.»",snd="щелчок клавиши, мягкий «пинг» отправки, пауза"),
+ dict(ph="p_letter_hands",pos="50% 40%",t="0:06–0:09",name="Письма",tc="ПИСЬМО",
+  html='<div class="tx" style="bottom:130px"><div class="pr" style="font-size:100px">Вы перечитываете<br>каждое письмо.</div></div>',
+  desc="Руки открывают старое письмо. Лица нет, только рукописные строки и тёплый свет: человек и память без имени.",
+  mot="Медленный наезд на строки письма; бумага слегка «дышит» светом из окна.",txt="«Вы перечитываете каждое письмо.»",snd="шорох бумаги (Mixkit «Papers being moved or wrinkling»), тихий тик часов"),
+ dict(ph="p_silhouette_family",pos="50% 40%",t="0:09–0:12",name="Дома ждут",tc="ДОМА",
+  html='<div class="tx" style="bottom:130px"><div class="pr">Дома —<br>ждут.</div></div>',
+  desc="Силуэты матери и ребёнка в оранжевом закатном свете. Лиц не видно, поэтому кадр честный и никого не называет.",
+  mot="Чуть заметный наезд; оранжевый свет «теплеет» к концу кадра.",txt="«Дома — ждут.»",snd="музыка входит: одна нота фортепиано, тёплая подложка"),
+ dict(ph="p_operator",pos="50% 30%",t="0:12–0:16",name="Мы на связи",tc="ЦЕНТР ПОИСКОВЫХ РЕШЕНИЙ",
+  html='<div class="tx" style="bottom:130px"><div class="ub" style="font-size:64px">Мы —<br>на связи.</div><div class="sm">Центр поисковых решений</div></div>',
+  desc="Спокойный сотрудник в наушниках слушает и записывает. Здесь впервые появляется название центра: бережный поворот сюжета.",
+  mot="Кадр «светлеет» от холодного к нейтральному; название выезжает снизу.",txt="«Мы — на связи.» + «Центр поисковых решений»",snd="тёплый аккорд, лёгкий «щелчок» гарнитуры"),
+ dict(ph="p_desk_lamp",pos="50% 40%",t="0:16–0:19",name="Соберём сведения",tc="РАБОТА",
+  html='<div class="tx" style="bottom:130px"><div class="pr" style="font-size:94px">Выслушаем.<br>Соберём<br>сведения.</div></div>',
+  desc="Стол с лампой, бумаги, ручка: рабочее место. Показывает, что работа внимательная и серьёзная, без суеты.",
+  mot="Медленный проезд камеры по столу слева направо; пыль в луче лампы.",txt="«Выслушаем. Соберём сведения.»",snd="шорох бумаги (Mixkit «Papers being moved or wrinkling»), тихая подложка"),
+ dict(ph="p_hand_writing",pos="55% 45%",t="0:19–0:22",name="Официальный путь",tc="ЗАПРОС",
+  html='<div class="tx" style="bottom:130px"><div class="pr" style="font-size:92px">Подскажем,<br>как обратиться<br>официально.</div></div>',
+  desc="Рука с пером пишет обращение. На фоне рукописная страница. Тон: порядок, ясные шаги.",
+  mot="Наезд на кончик пера; текст проявляется по словам.",txt="«Подскажем, как обратиться официально.»",snd="перо по бумаге, тихий ритмичный «тик»"),
+ dict(ph="p_guard_sunset",pos="38% 50%",t="0:22–0:26",name="Мы ищем ответ",tc="СВЕТ",
+  html='<div class="tx" style="bottom:130px"><div class="ub" style="font-size:100px">Мы ищем<br>ответ.</div></div>',
+  desc="Силуэт военнослужащего на фоне заката. Лица нет: образ узнаваем и уважителен. Главная фраза ролика.",
+  mot="Солнце медленно поднимается в кадре; камера слегка отъезжает.",txt="«Мы ищем ответ.»",snd="кульминация музыки: тёплый аккорд на полную длину, без ударов"),
+ dict(ph="p_window_waiting",pos="60% 40%",blur=True,t="0:26–0:30",name="Финал",tc="КОНТАКТЫ",
+  html='<div class="end"><div class="mk">ЦПР</div><div class="nm">Центр поисковых решений</div><div class="tg">Профессиональный розыск пропавших бойцов в зоне СВО</div><div class="ct">Контакты — в описании канала</div></div>',
+  desc="Тёмный размытый кадр с окном из начала. Название центра, одна строка о том, что мы делаем, контакты. Круг замкнулся.",
+  mot="Фон мягко размывается, текст проявляется; последние 0,5 с статичный кадр.",txt="«Центр поисковых решений. Профессиональный розыск пропавших бойцов в зоне СВО. Контакты — в описании канала»",snd="музыка затихает на длинном тоне; тишина в последние 0,5 с"),
+]
+CSS='''
+:root{--bg:#0a0e13;--sn:#f3efe6;--am:#f0b54a;--mu:#8f9aa6;--ln:#222a33}
+*{box-sizing:border-box;margin:0;padding:0}html,body{background:#05080b}
+.board{width:1800px;padding:64px;background:var(--bg);color:var(--sn);font-family:'Onest',sans-serif}
+.hdr{display:flex;justify-content:space-between;align-items:flex-end;padding-bottom:34px;border-bottom:1px solid var(--ln)}
+.hdr h1{font:700 76px/1.02 'Unbounded';letter-spacing:-.02em}.hdr h1 em{font-style:normal;color:var(--am)}
+.hdr p{font:500 25px/1.5 'Onest';color:#c2c9d1;max-width:820px;margin-top:20px}
+.spec{font:500 20px/1.9 'Tektur';letter-spacing:.1em;text-align:right;color:var(--am)}
+.row{display:grid;grid-template-columns:1.15fr 1fr;gap:34px;margin:34px 0 40px}
+.pan{background:#10161d;border:1px solid var(--ln);border-radius:14px;padding:26px 30px}
+.pan h4{font:600 15px 'Tektur';letter-spacing:.2em;color:var(--mu);margin-bottom:16px;text-transform:uppercase}
+.fonts .a{font:700 54px/1.05 'Unbounded';margin-bottom:12px}.fonts .b{font:400 46px/1.1 'Prata';margin-bottom:12px}.fonts .c{font:500 25px/1.4 'Onest';color:#c9cfd6;margin-bottom:10px}
+.fonts .d{display:flex;gap:30px;align-items:baseline}.fonts .d span{font:500 22px 'Tektur';letter-spacing:.14em;color:var(--am)}.fonts .d i{font:400 34px 'Marck Script';font-style:normal;color:#c9cfd6}
+.fl{font:500 14px/1.4 'Onest';color:var(--mu);margin-top:10px}
+.sw{display:flex;gap:12px;margin-bottom:16px}.sw i{display:block;width:92px;height:62px;border-radius:8px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
+.th{display:grid;grid-template-columns:repeat(9,1fr);gap:8px;margin-top:6px}.th div{position:relative}.th img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:5px;display:block}.th small{display:block;font:500 11px/1.3 'Tektur';color:var(--mu);margin-top:4px;letter-spacing:.04em}
+.warn{border-color:#5b4a22;background:#17150e}.warn p{font:500 19px/1.5 'Onest';color:#e4dcc6}.warn b{color:var(--am)}
+.grid{display:grid;grid-template-columns:repeat(3,540px);gap:54px 30px}
+.cell{width:540px}.fw{position:relative;width:540px;height:675px;overflow:hidden;border-radius:6px;box-shadow:0 16px 36px rgba(0,0,0,.55)}
+.num{position:absolute;right:12px;top:12px;z-index:9;width:38px;height:38px;border-radius:50%;background:var(--am);color:#0a0e13;font:700 18px 'Tektur';display:grid;place-items:center}
+.fr{position:absolute;left:0;top:0;width:1080px;height:1350px;transform:scale(.5);transform-origin:0 0;overflow:hidden;background:#000}
+.ph{position:absolute;inset:0;background-size:cover;filter:contrast(1.06) saturate(.88) brightness(.92)}
+.ph.bl{filter:blur(26px) brightness(.5) saturate(.9);transform:scale(1.15)}
+.sh{position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,8,11,.55) 0,rgba(5,8,11,0) 22%,rgba(5,8,11,0) 46%,rgba(5,8,11,.88) 100%)}
+.gr{position:absolute;inset:0;mix-blend-mode:overlay;opacity:.22}
+.tc{position:absolute;left:56px;top:56px;font:600 26px 'Tektur';letter-spacing:.16em;color:#f3efe6;display:flex;align-items:center;gap:14px}.tc i{display:block;width:12px;height:12px;border-radius:50%;background:#f0b54a;box-shadow:0 0 14px #f0b54a}
+.br{position:absolute;inset:36px;border:0}.br:before,.br:after{content:"";position:absolute;width:44px;height:44px;border:2px solid rgba(243,239,230,.55)}.br:before{left:0;bottom:0;border-top:0;border-right:0}.br:after{right:0;bottom:0;border-top:0;border-left:0}
+.tx{position:absolute;left:64px;right:64px}
+.pr{font:400 118px/1.04 'Prata';letter-spacing:-.01em;color:#f6f2e8;text-shadow:0 4px 30px rgba(0,0,0,.5)}
+.ub{font:700 84px/1.04 'Unbounded';letter-spacing:-.02em;color:#f6f2e8;text-transform:uppercase;text-shadow:0 4px 30px rgba(0,0,0,.5)}
+.sm{margin-top:22px;font:600 28px 'Tektur';letter-spacing:.2em;color:#f0b54a;text-transform:uppercase}
+.bubble{position:absolute;padding:28px 44px 22px;border-radius:46px 46px 10px 46px;background:rgba(240,181,74,.94);color:#0a0e13;font:600 74px/1.1 'Onest';letter-spacing:-.02em;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.bubble .m{display:flex;justify-content:flex-end;gap:10px;align-items:center;margin-top:4px;font:500 26px 'Tektur';color:rgba(10,14,19,.7)}.bubble svg{stroke:#0a0e13}
+.end{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 90px}
+.end .mk{width:170px;height:170px;border-radius:50%;border:5px solid #f0b54a;color:#f0b54a;display:grid;place-items:center;font:700 54px 'Unbounded';margin-bottom:46px}
+.end .nm{font:700 78px/1.06 'Unbounded';letter-spacing:-.02em;text-transform:uppercase}
+.end .tg{margin-top:34px;font:400 52px/1.2 'Prata';color:#e8e2d3;max-width:820px}
+.end .ct{margin-top:66px;padding-top:30px;border-top:2px solid #f0b54a;font:600 34px 'Tektur';letter-spacing:.14em;color:#f0b54a;text-transform:uppercase}
+.tm{font:600 20px 'Tektur';letter-spacing:.18em;color:var(--am);margin:16px 0 4px}
+.cell h3{font:700 30px/1.1 'Unbounded';letter-spacing:-.01em;margin-bottom:10px}
+.cell p{font:400 17px/1.5 'Onest';color:#c2c9d1;margin-bottom:6px}.cell p b{font:600 13px 'Tektur';letter-spacing:.18em;color:var(--am);margin-right:8px}
+.ft{margin-top:50px;border-top:1px solid var(--ln);padding-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:44px;font:400 19px/1.6 'Onest';color:#c2c9d1}.ft h4{font:600 16px 'Tektur';letter-spacing:.2em;color:var(--am);margin-bottom:10px}
+'''
+cells="".join(f'''<div class="cell"><div class="fw"><div class="num">{i}</div><div class="fr"><div class="ph{' bl' if f.get('blur') else ''}" style="background-image:url(/promo3/assets/photos/{f['ph']}.jpg);background-position:{f['pos']}"></div><div class="sh"></div><svg class="gr" width="1080" height="1350"><filter id="n{i}"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="{i}"/><feColorMatrix values="0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 1.4 -.3"/></filter><rect width="100%" height="100%" filter="url(#n{i})"/></svg><div class="tc"><i></i>{f['tc']}</div><div class="br"></div>{f['html']}</div></div>
+<div class="tm">{i:02d} · {f['t']}</div><h3>{f['name']}</h3><p><b>КАДР</b>{f['desc']}</p><p><b>ДВИЖЕНИЕ</b>{f['mot']}</p><p><b>ТЕКСТ</b>{f['txt']}</p><p><b>ЗВУК</b>{f['snd']}</p></div>''' for i,f in enumerate(F,1))
+thumbs="".join(f'<div><img src="/promo3/assets/photos/{f["ph"]}.jpg"><small>{i} · {f["ph"][2:]}</small></div>' for i,f in enumerate({f["ph"]:f for f in F}.values(),1))
+html=f'''<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>ЦПР — сторибоард v3</title><link rel="stylesheet" href="/promo3/fonts/fonts.css"><style>{CSS}</style></head><body><div class="board" id="board">
+<div class="hdr"><div><h1>Сторибоард<br><em>«Мы ищем ответ»</em></h1><p>Документальный ролик о том, как ждут семьи и чем помогает Центр поисковых решений. Живые фотографии, тёплый свет на тёмном, крупная типографика. Никаких штампов, бумаги и рисованных элементов из прошлых работ.</p></div>
+<div class="spec">30 СЕК · 30 КАДР/С<br>1080×1350 (4:5) + 1080×1920 (9:16)<br>ТЕКСТ НА ЭКРАНЕ · БЕЗ ДИКТОРА<br>МУЗЫКА + ЗВУК КОМНАТЫ</div></div>
+<div class="row"><div class="pan fonts"><h4>Шрифты (кириллица проверена, SIL OFL)</h4><div class="a">Unbounded — заголовки</div><div class="b">Prata — эмоциональные фразы</div><div class="c">Onest — основной текст и подписи. Спокойный гротеск, хорошо читается с телефона.</div><div class="d"><span>TEKTUR 00:12:08</span><i>Marck Script — рукописные пометки</i></div><div class="fl">Unbounded и Prata держат кадр на 1–2 словах; Onest нужен для коротких подписей; Tektur — таймкоды и «документальные» метки.</div></div>
+<div class="pan"><h4>Цвет и свет</h4><div class="sw"><i style="background:#0a0e13"></i><i style="background:#f3efe6"></i><i style="background:#f0b54a"></i><i style="background:#8f9aa6"></i><i style="background:#2a6f86"></i></div><div class="fl" style="margin-top:0;font-size:17px;color:#c2c9d1">Ночной синий, тёплый белый, янтарный свет окна, холодный экран телефона. Красного нет. Фото слегка приглушены (контраст +6 %, насыщенность −12 %), добавлено зерно.</div></div></div>
+<div class="pan" style="margin-bottom:34px"><h4>Найденные кадры (Pexels, Wikimedia Commons CC0)</h4><div class="th">{thumbs}</div><div class="fl">Все кадры скачаны и лежат в проекте (promo3/assets/photos), источники и лицензии записаны в promo3/assets/SOURCES.md.</div></div>
+<div class="pan warn" style="margin-bottom:44px"><h4>Важно: люди и форма на кадрах</h4><p>На бесплатных стоках почти все «военные» кадры сняты с нашивками армии США и выглядели бы чужими для российской аудитории. Лицензия Pexels запрещает показывать узнаваемых людей в чувствительном контексте. Поэтому в ролике <b>кадры 2, 3, 4, 6, 7, 8 без лиц</b> (силуэты, руки, предметы). Кадр 1 (женщина в профиль, контровой свет) и кадр 5 (оператор на связи) показывают людей: это <b>заменители</b>, их лучше заменить вашими кадрами с письменного согласия.</p></div>
+<div class="grid">{cells}</div>
+<div class="ft"><div><h4>МУЗЫКА И ЗВУК</h4>Тихое фортепиано и струнные из библиотеки Mixkit (~68 bpm), выберем на прослушивании. Звук комнаты (часы, лёгкое дыхание), перо по бумаге и шорох бумаги из Mixkit. Музыка входит на 9-й секунде и не перебивает текст. Громкость −14 LUFS для ленты.</div><div><h4>ПРАВИЛА РОЛИКА</h4>Без крови и боевых кадров, без обещаний результата и без упоминания оплаты. Каждый кадр держится не меньше 3 секунд. Текст читается и без звука. Контакты только «в описании канала». Выпуск: основной 4:5 и вертикальный 9:16.</div></div></div></body></html>'''
+open(os.path.join(ROOT,"src","storyboard.html"),"w").write(html); print("ok")

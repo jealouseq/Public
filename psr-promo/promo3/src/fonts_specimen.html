@@ -1,0 +1,17 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Шрифты</title><link rel="stylesheet" href="/promo3/fonts/fonts.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#0d1014;color:#f2efe8;font-family:'Onest',sans-serif;padding:50px;width:1700px}
+h1{font:700 46px 'Unbounded';margin-bottom:6px}p.s{font:500 22px 'Onest';color:#9aa3ad;margin-bottom:34px}
+.g{display:grid;grid-template-columns:1fr 1fr;gap:22px 34px}
+.c{background:#161b21;border-radius:10px;padding:26px 30px 22px;border:1px solid #232a32}
+.c small{display:block;font:500 15px 'Onest';letter-spacing:.14em;text-transform:uppercase;color:#8c97a3;margin-bottom:14px}
+.c .a{font-size:62px;line-height:1.05;margin-bottom:10px}.c .b{font-size:25px;line-height:1.35;color:#c9cfd6}
+.tag{display:inline-block;margin-left:10px;padding:2px 10px;border-radius:20px;background:#e9b24a;color:#111;font:700 13px 'Onest';letter-spacing:.06em}
+</style></head><body>
+<h1>Шрифты для ролика</h1><p class="s">Кириллица проверена, лицензия SIL OFL (Google Fonts). Образец: заголовок и абзац.</p>
+<div class="g" id="g"></div>
+<script>
+const F=[["Unbounded",700,"заголовки, широкий современный, «громкий»","★ главный"],["Prata",400,"высокий контраст, драматичный, эмоциональные фразы","★ эмоция"],["Forum",400,"монументальный римский, торжественный, тише и строже",""],["Playfair Display",700,"классический «редакционный» с засечками",""],["Fira Sans Extra Condensed",800,"узкий документальный, титры-надписи, плотный",""],["Montserrat Alternates",700,"геометрический, дружелюбный, с характером",""],["Onest",700,"чистый гротеск для основного текста","★ основной"],["Golos Text",700,"спокойный гротеск (Паратайп), для длинных строк",""],["Geologica",700,"современный гротеск, широкий диапазон начертаний",""],["Tektur",700,"технический, подходит для таймкодов и цифр",""],["El Messiri",700,"декоративный, тёплый, чуть «книжный»",""],["Marck Script",400,"рукописный, для личных пометок и подписей","★ рука"]];
+const g=document.getElementById("g");
+F.forEach(([n,w,d,t])=>{g.insertAdjacentHTML("beforeend",`<div class="c"><small>${n} · ${d}${t?`<span class="tag">${t}</span>`:""}</small><div class="a" style="font-family:'${n}';font-weight:${w}">Когда нет вестей, мы ищем ответ</div><div class="b" style="font-family:'${n}';font-weight:${w>600?600:w}">Профессиональный розыск пропавших бойцов. Вежливо, бережно, на связи. 0123456789</div></div>`)});
+</script></body></html>
