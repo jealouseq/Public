@@ -1,0 +1,1 @@
+SFX=/root/.claude/plugins/synced/ef5eeff0-207f-407d-b811-d7b094f7352d_117dd908-cc09-43c7-8ee4-b609280c7504/74655670-1540-4e3d-8509-c2f446898c2c/assets/audio/sfx

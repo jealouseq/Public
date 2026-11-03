@@ -13,3 +13,7 @@ audio/mixkit/
 audio/sfx_src/
 out/frames*/
 assets/v2/
+promo3/video/frames*/
+promo3/video/*.wav
+promo3/video/audio_tmp/
+promo3/out/cpr_1080x1080.mp4

@@ -1,0 +1,126 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>ЦПР — ролик</title>
+<link rel="stylesheet" href="/promo3/fonts/fonts.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}html,body{background:#000;overflow:hidden}
+#stage{position:relative;overflow:hidden;background:#000;color:#f4efe4}
+#photos{position:absolute;inset:0;filter:url(#grade)}
+.shot{position:absolute;inset:0;overflow:hidden;opacity:0}
+.shot img{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;will-change:transform}
+.scrim{position:absolute;inset:0;pointer-events:none}
+#warm{position:absolute;inset:0;mix-blend-mode:soft-light;background:radial-gradient(120% 90% at 70% 20%,rgba(255,196,120,.32),rgba(255,160,90,.08) 60%,transparent);pointer-events:none}
+#vig{position:absolute;inset:0;background:radial-gradient(125% 105% at 50% 46%,transparent 56%,rgba(0,0,0,.46));pointer-events:none}
+#grain{position:absolute;inset:-60px;background:url(/promo3/video/grain.png);background-size:256px 256px;mix-blend-mode:overlay;opacity:.2;pointer-events:none}
+#black{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none}
+.tx{position:absolute;left:0;right:0;pointer-events:none}
+.ln{overflow:hidden;padding:.06em 0 .14em;margin-bottom:-.06em}
+.ln span{display:block;will-change:transform,opacity}
+.pr{font-family:'Prata';font-weight:400;letter-spacing:-.01em;line-height:1.06;color:#f7f2e7;text-shadow:0 3px 26px rgba(0,0,0,.45)}
+.ub{font-family:'Unbounded';font-weight:700;letter-spacing:-.02em;line-height:1.06;color:#f7f2e7;text-transform:uppercase;text-shadow:0 3px 26px rgba(0,0,0,.45)}
+.sm{font-family:'Tektur';font-weight:600;letter-spacing:.22em;color:#f0b54a;text-transform:uppercase}
+#bubble{position:absolute;opacity:0;transform-origin:100% 100%;padding:.42em .7em .34em;border-radius:.62em .62em .14em .62em;background:rgba(240,181,74,.95);color:#0a0e13;font-family:'Onest';font-weight:600;letter-spacing:-.02em;line-height:1.1;box-shadow:0 22px 60px rgba(0,0,0,.45);display:flex;align-items:center;gap:.4em}
+#bubble svg{width:.5em;height:.4em;overflow:visible;margin-top:.12em}
+#end{position:absolute;inset:0;opacity:0}
+#end .mk{position:absolute;border:4px solid #f0b54a;border-radius:50%;color:#f0b54a;display:grid;place-items:center;font-family:'Unbounded';font-weight:700}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<filter id="grade" color-interpolation-filters="sRGB"><feComponentTransfer>
+<feFuncR type="table" tableValues="0.018 0.085 0.30 0.62 0.915 0.985"/><feFuncG type="table" tableValues="0.016 0.075 0.285 0.605 0.9 0.97"/><feFuncB type="table" tableValues="0.03 0.095 0.285 0.57 0.84 0.925"/></feComponentTransfer></filter></defs></svg>
+<div id="stage"><div id="photos"></div><div id="warm"></div><div id="scrims"></div><div id="texts"></div><div id="bubble"></div><div id="end"></div><div id="vig"></div><div id="grain"></div><div id="black"></div></div>
+<script>
+'use strict';
+const Q=new URLSearchParams(location.search),W=+Q.get('w')||1080,H=+Q.get('h')||1350,U=W/1080,BOT=H*0.11;
+const stage=document.getElementById('stage');stage.style.width=W+'px';stage.style.height=H+'px';
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),sm=x=>{x=clamp(x);return x*x*(3-2*x)},eo3=x=>1-Math.pow(1-clamp(x),3),eio=x=>{x=clamp(x);return .5*x+.5*(1-Math.cos(Math.PI*x))*.5*2*.5+ .0},lerp=(a,b,t)=>a+(b-a)*t;
+const ease=x=>{x=clamp(x);return .45*x+.55*(x*x*(3-2*x))};
+// ---------- timeline (beat grid of the music: 100 bpm, beats at 0.42+0.6k)
+const B=k=>0.42+0.6*k;
+const SHOTS=[
+ {img:'p_chair_window',t0:0,t1:B(8),fin:0,cam:{s:[1.00,1.075],x:[-.012,.014],y:[.004,-.006],f:[.5,.62],hh:.9},g:{b:.94,c:1.04},scrim:.7},
+ {img:'p_phone_glow',t0:B(8),t1:B(14),fin:0,cam:{s:[1.0,1.016],x:[0,0],y:[0,0],f:[.5,.5],hh:0},g:{b:.98,c:1.04},scrim:.72},
+ {img:'p_letter_hands',t0:B(14),t1:B(19),fin:.3,cam:{s:[1.13,1.13],x:[.004,-.004],y:[.03,-.025],f:[.5,.4],hh:.25},g:{b:.8,c:1.02},scrim:.86},
+ {img:'p_hands_child',t0:B(19),t1:B(24),fin:.7,cam:{s:[1.03,1.10],x:[.01,-.012],y:[.0,-.014],f:[.5,.55],hh:.7},g:{b:.9,c:1.04},scrim:.74},
+ {img:'p_landline_hand',t0:B(24),t1:B(29),fin:0,cam:{s:[1.11,1.03],x:[-.01,.004],y:[.012,-.004],f:[.5,.55],hh:.3},g:{b:.95,c:1.05},scrim:.78},
+ {img:'p_tea_window',t0:B(29),t1:B(35),fin:.5,cam:{s:[1.05,1.05],x:[.022,-.008],y:[.004,.004],f:[.5,.5],hh:0},g:{b:.92,c:1.04},scrim:.76},
+ {img:'p_hand_writing',t0:B(35),t1:B(40),fin:0,cam:{s:[1.0,1.13],x:[.012,-.016],y:[-.006,.008],f:[.62,.56],hh:.8},g:{b:.9,c:1.04},scrim:.8},
+ {img:'p_guard_sunset',t0:B(40),t1:B(48),fin:.85,cam:{s:[1.0,1.08],x:[.01,-.01],y:[.02,-.01],f:[.38,.5],hh:.35},g:{b:.98,c:1.05},scrim:.8},
+ {img:'p_chair_window',t0:B(48),t1:B(48)+4.5,fin:0,blur:30,cam:{s:[1.18,1.22],x:[0,0],y:[0,0],f:[.5,.5],hh:0},g:{b:.42,c:1.0},scrim:.45},
+];
+const OY={p_chair_window:62,p_phone_glow:50,p_letter_hands:34,p_hands_child:44,p_landline_hand:54,p_tea_window:52,p_hand_writing:56,p_guard_sunset:50};
+const END_T=B(48),T_END=END_T+4.4;
+const TEXTS=[
+ {i:0,cls:'pr',size:104,lines:['Ждать —','тоже труд.'],a:1.7,b:B(8)-.3},
+ {i:1,cls:'pr',size:104,lines:['Тишина','в ответ.'],a:B(8)+1.9,b:B(14)-.3},
+ {i:2,cls:'pr',size:88,lines:['Вы перечитываете','каждое письмо.'],a:B(14)+.7,b:B(19)-.2},
+ {i:3,cls:'pr',size:112,lines:['Дома —','ждут.'],a:B(19)+.7,b:B(24)-.3},
+ {i:4,cls:'ub',size:62,lines:['Мы —','на связи.'],a:B(24)+.5,b:B(29)-.3,sub:'Центр поисковых решений',subA:B(24)+1.7},
+ {i:5,cls:'pr',size:108,lines:['Выслушаем.','Не торопим.'],a:B(29)+.7,b:B(35)-.2},
+ {i:6,cls:'pr',size:70,lines:['Запишем всё.','Подскажем, как','обратиться официально.'],a:B(35)+.6,b:B(40)-.3},
+ {i:7,cls:'ub',size:96,lines:['Мы ищем','ответ.'],a:B(40)+1.5,b:END_T-.7},
+];
+// ---------- build DOM
+const photos=document.getElementById('photos'),scrims=document.getElementById('scrims'),texts=document.getElementById('texts');
+SHOTS.forEach((s,i)=>{const d=document.createElement('div');d.className='shot';d.style.zIndex=i;const im=new Image();im.style.objectPosition='50% '+(OY[s.img]||50)+'%';im.src='/promo3/video/photos/'+s.img+'.jpg';d.appendChild(im);photos.appendChild(d);s.el=d;s.im=im;s.next=SHOTS[i+1];
+ const sc=document.createElement('div');sc.className='scrim';sc.style.opacity=0;sc.style.background=`linear-gradient(180deg,rgba(0,0,0,.34) 0,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 40%,rgba(0,0,0,${s.scrim}) 100%)`;scrims.appendChild(sc);s.sc=sc;});
+TEXTS.forEach(t=>{const d=document.createElement('div');d.className='tx '+t.cls;d.style.left=72*U+'px';d.style.bottom=BOT+'px';d.style.fontSize=t.size*U+'px';
+ t.lns=t.lines.map(l=>{const w=document.createElement('div');w.className='ln';const sp=document.createElement('span');sp.textContent=l;w.appendChild(sp);d.appendChild(w);return sp});
+ if(t.sub){const s=document.createElement('div');s.className='sm';s.style.fontSize=24*U+'px';s.style.marginTop=26*U+'px';s.textContent=t.sub;d.appendChild(s);t.subEl=s}
+ texts.appendChild(d);t.el=d});
+const bub=document.getElementById('bubble');bub.style.fontSize=72*U+'px';bub.style.right=70*U+'px';bub.style.top=H*0.15+'px';
+bub.innerHTML='Ты как?<svg viewBox="0 0 34 25" fill="none" stroke="#0a0e13" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path id="tk" d="M4 13l8 8L30 4" stroke-dasharray="40" stroke-dashoffset="40"/></svg>';
+const tk=()=>document.getElementById('tk');
+const end=document.getElementById('end');
+end.innerHTML=`<div class="mk" id="e1" style="left:${72*U}px;top:${H*.2}px;width:${150*U}px;height:${150*U}px;font-size:${46*U}px">ЦПР</div>
+<div class="ub" id="e2" style="position:absolute;left:${72*U}px;top:${H*.2+210*U}px;font-size:${72*U}px;line-height:1.06;width:${900*U}px">Центр<br>поисковых<br>решений</div>
+<div class="pr" id="e3" style="position:absolute;left:${72*U}px;top:${H*.2+210*U+3*76*U+40*U}px;font-size:${46*U}px;line-height:1.22;width:${880*U}px;color:#e8e2d3">Профессиональный розыск пропавших бойцов в зоне СВО</div>
+<div class="sm" id="e4" style="position:absolute;left:${72*U}px;right:${72*U}px;top:${H*.2+210*U+3*76*U+40*U+3*56*U+48*U}px;padding-top:${28*U}px;border-top:2px solid #f0b54a;font-size:${30*U}px;letter-spacing:.14em">Контакты — в описании канала</div>`;
+const E=[1,2,3,4].map(n=>document.getElementById('e'+n));
+const black=document.getElementById('black'),grain=document.getElementById('grain'),warm=document.getElementById('warm');
+// ---------- helpers
+function hh(t,seed,amp){const a=amp*U;return [a*(Math.sin(.63*t+seed)+.55*Math.sin(1.71*t+seed*2.3)+.3*Math.sin(3.1*t+seed*.7)),a*.8*(Math.sin(.51*t+seed*1.7)+.5*Math.sin(1.43*t+seed*.4)),.05*(Math.sin(.4*t+seed*3)+.4*Math.sin(1.3*t+seed))*amp/2]}
+function lineAnim(span,p){const e=eo3(p);span.style.transform=`translateY(${(1-e)*108}%)`;span.style.opacity=clamp(p*2.2)}
+// ---------- main
+window.READY=false;window.DUR=T_END;
+window.setT=(t,frame)=>{
+  // photos
+  SHOTS.forEach((s,i)=>{
+    const nf=s.next?s.next.fin:0, vis0=s.t0, vis1=s.t1+(s.next?Math.max(nf,.02):0);
+    let a=0;
+    if(t>=vis0-.0001&&t<=vis1){a=s.fin>0?sm((t-s.t0)/s.fin):1; if(i===0)a=1}
+    s.el.style.opacity=a; s.el.style.display=(t>=vis0-.0001&&t<=vis1+.05)?'block':'none';
+    s.sc.style.opacity=a;
+    if(a>0){
+      const u=ease((t-s.t0)/(vis1-s.t0)),c=s.cam;
+      const sc=lerp(c.s[0],c.s[1],u),x=lerp(c.x[0],c.x[1],u)*W,y=lerp(c.y[0],c.y[1],u)*H;
+      const h=c.hh?hh(t,i*1.9+.4,c.hh*3.2):[0,0,0];
+      s.im.style.transformOrigin=`${lerp(c.f[0],c.f[1],u)*100}% ${OY[s.img]||50}%`;
+      s.im.style.transform=`translate(${x+h[0]}px,${y+h[1]}px) rotate(${h[2]}deg) scale(${sc})`;
+      const fl=1+.012*Math.sin(t*2.1+i)+.008*Math.sin(t*5.3+i*2);
+      s.im.style.filter=`brightness(${s.g.b*fl}) contrast(${s.g.c}) saturate(.9)${s.blur?` blur(${s.blur*U}px)`:''}`;
+    }
+  });
+  // texts
+  TEXTS.forEach(tx=>{const p0=t-tx.a,out=clamp((t-tx.b)/.45);
+    tx.lns.forEach((sp,j)=>{const p=clamp((p0-j*.16)/.95);lineAnim(sp,p);if(out>0){sp.style.opacity=(1-out)*clamp(p*2.2);sp.style.transform=`translateY(${-out*6}px)`}});
+    if(tx.subEl){const p=clamp((t-tx.subA)/.8);tx.subEl.style.opacity=clamp(p*1.6)*(1-out);tx.subEl.style.transform=`translateY(${(1-eo3(p))*10}px)`}
+    tx.el.style.display=(t>tx.a-.05&&t<tx.b+.5)?'block':'none'});
+  // bubble (shot 1)
+  {const s=SHOTS[1],tp=s.t0+.95,tt=s.t0+2.15,tb=B(14)-.3,p=clamp((t-tp)/.5),o=clamp((t-tb)/.35);
+   const k=eo3(p),ov=1+.03*Math.sin(Math.PI*clamp((t-tp)/.35)); bub.style.opacity=clamp(p*2)*(1-o);bub.style.transform=`scale(${(.86+.14*k)*ov})`;
+   const d=40*(1-eo3((t-tt)/.4)); tk().setAttribute('stroke-dashoffset',String(Math.max(0,d)));bub.style.display=(t>=tp-.05&&t<=tb+.5)?'flex':'none'}
+  // end card
+  {const e=t-END_T; end.style.opacity=e>0?1:0;
+   [0,.45,.95,1.9].forEach((dl,i)=>{const p=clamp((e-.7-dl)/.9);E[i].style.opacity=p;E[i].style.transform=`translateY(${(1-eo3(p))*14*U}px)`});}
+  // dip to black / fades
+  let bl=0;
+  if(t<1.3)bl=1-sm(t/1.3);
+  const dipA=END_T-.95; if(t>dipA&&t<=END_T)bl=Math.max(bl,sm((t-dipA)/.95)); if(t>END_T&&t<END_T+.9)bl=Math.max(bl,1-sm((t-END_T-.15)/.75));
+  if(t>T_END-1.4)bl=Math.max(bl,sm((t-(T_END-1.4))/1.4));
+  black.style.opacity=bl;
+  // end background: blurred first photo
+  // film grain jitter
+  const fr=frame||0;grain.style.backgroundPosition=`${(fr*53)%256}px ${(fr*97)%256}px`;grain.style.opacity=.17+.04*Math.sin(t*1.3);
+  warm.style.opacity=.6+.15*Math.sin(t*.4);
+};
+// end card background uses the first photo, blurred: handled as shot 'end'
+(async()=>{await document.fonts.ready;await Promise.all(SHOTS.map(s=>s.im.decode().catch(()=>{})));window.READY=true})();
+</script></body></html>
