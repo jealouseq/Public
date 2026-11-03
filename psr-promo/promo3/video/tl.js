@@ -15,14 +15,14 @@ function compile(start,ops,seed){
 const S=[0,6.9,14.6,24.6,30.2,36.2,40.8,45.8];       // shot starts (chair, tea, phone, child, landline, writing, sunset, end-bg)
 const END_T=S[7], T_END=END_T+4.2;
 const SHOTS=[
- {img:'p_chair_window',oy:62,cam:{s:[1.0,1.07],x:[-.012,.014],y:[.004,-.006],f:[.5,.62],hh:.8},g:{b:.95,c:1.04},scrim:.66},
+ {img:'p_chair_tulle',oy:78,cam:{s:[1.02,1.09],x:[-.012,.014],y:[.004,-.006],f:[.45,.55],hh:.8},g:{b:.58,c:1.08},scrim:.86},
  {img:'p_tea_window',oy:52,fin:.9,cam:{s:[1.18,1.22],x:[.02,-.008],y:[-.08,-.085],f:[.5,.5],hh:.35},g:{b:.95,c:1.04},scrim:.74},
  {img:'p_phone_glow',oy:42,fin:.9,cam:{s:[1.17,1.21],x:[0,0],y:[-.078,-.083],f:[.5,.5],hh:.25},g:{b:.98,c:1.04},scrim:.72},
  {img:'p_hands_child',oy:44,fin:1.1,cam:{s:[1.03,1.10],x:[.01,-.012],y:[0,-.014],f:[.5,.55],hh:.6},g:{b:.92,c:1.04},scrim:.74},
- {img:'p_landline_hand',oy:54,fin:1.2,cam:{s:[1.11,1.03],x:[-.01,.004],y:[.012,-.004],f:[.5,.55],hh:.3},g:{b:.95,c:1.05},scrim:.78},
- {img:'p_hand_writing',oy:56,fin:.9,cam:{s:[1.0,1.12],x:[.012,-.016],y:[-.006,.008],f:[.62,.56],hh:.7},g:{b:.9,c:1.04},scrim:.8},
- {img:'p_guard_sunset',oy:50,fin:1.0,cam:{s:[1.0,1.08],x:[.01,-.01],y:[.02,-.01],f:[.38,.5],hh:.3},g:{b:.98,c:1.05},scrim:.8},
- {img:'p_chair_window',oy:62,fin:0,blur:30,cam:{s:[1.18,1.22],x:[0,0],y:[0,0],f:[.5,.5],hh:0},g:{b:.42,c:1.0},scrim:.45},
+ {img:'p_rotary_dark',oy:50,fin:1.2,cam:{s:[1.16,1.07],x:[-.012,.006],y:[-.05,-.07],f:[.58,.6],hh:.25},g:{b:1.75,c:1.0},scrim:.7},
+ {img:'p_writing_hand',oy:50,fin:.9,cam:{s:[1.04,1.16],x:[.012,-.02],y:[-.006,.008],f:[.34,.52],hh:.7},g:{b:.72,c:1.06},scrim:.92},
+ {img:'p_sunrise_window',oy:40,fin:1.0,cam:{s:[1.12,1.2],x:[.008,-.008],y:[-.06,-.075],f:[.5,.5],hh:.25},g:{b:.95,c:1.04},scrim:.82},
+ {img:'p_chair_tulle',oy:78,fin:0,blur:30,cam:{s:[1.18,1.22],x:[0,0],y:[0,0],f:[.5,.5],hh:0},g:{b:.34,c:1.0},scrim:.45},
 ];
 SHOTS.forEach((s,i)=>{s.t0=S[i];s.t1=(i<SHOTS.length-1?S[i+1]:T_END)});
 // ---- drafts: what a waiting person types (Prata, left aligned). rows: [{text/ops}], top = fraction of frame height
@@ -39,10 +39,10 @@ const DRAFTS=[
 ];
 // ---- set phrases (not typed: "our" voice)
 const TEXTS=[
- {cls:'pr',size:86,lines:['Самое трудное —','неизвестность.'],a:S[4]+.9,b:S[4]+4.0,top:.64},
- {cls:'ub',size:58,lines:['Мы —','на связи.'],a:S[4]+4.4,b:S[5]-.3,top:.66,sub:'Центр поисковых решений',subA:S[4]+5.5},
+ {cls:'pr',size:86,lines:['Самое трудное —','неизвестность.'],a:S[4]+.9,b:S[4]+4.0,top:.745},
+ {cls:'ub',size:58,lines:['Мы —','на связи.'],a:S[4]+4.4,b:S[5]-.3,top:.745,sub:'Центр поисковых решений',subA:S[4]+5.5},
  {cls:'pr',size:76,lines:['Выслушаем.','Запишем всё.','Подскажем, что дальше.'],per:.7,a:S[5]+.6,b:S[6]-.3,top:.60},
- {cls:'ub',size:96,lines:['Мы ищем','ответ.'],a:S[6]+1.6,b:END_T-.6,top:.66},
+ {cls:'ub',size:96,lines:['Мы ищем','ответ.'],a:S[6]+1.6,b:END_T-.6,top:.725},
 ];
 const KEYS=[].concat(...DRAFTS.map(d=>[].concat(...d.rows.map(r=>r.keys))));
 const TL={S,END_T,T_END,SHOTS,DRAFTS,TEXTS,KEYS,turn:S[4],phoneSend:ph.sentAt,eraseStart:ph.keys.find(k=>k.k==='erase0').t,

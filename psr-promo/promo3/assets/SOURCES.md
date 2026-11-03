@@ -1,13 +1,13 @@
-# Источники кадров (для сторибоарда)
-Все кадры без лиц, используются как иллюстративные.
-| файл | источник | лицензия |
-|---|---|---|
-| p_chair_window | Pexels #20296460 | Pexels License |
-| p_phone_glow | Pexels #25527040 | Pexels License |
-| p_letter_hands | Pexels #10660565 | Pexels License |
-| p_hands_child | Pexels #6338775 (Arina Krasnikova) | Pexels License |
-| p_landline_hand | Pexels #9714444 | Pexels License |
-| p_tea_window | Pexels #31146888 | Pexels License |
-| p_hand_writing | Pexels #16035592 (Ayşenaz Bilgin) | Pexels License |
-| p_guard_sunset | Pexels #3699920 | Pexels License |
-Pexels License разрешает коммерческое использование без подписи. Узнаваемых людей на кадрах нет.
+# Источники кадров (итоговый ролик)
+Все кадры без узнаваемых лиц и без чужих надписей. Проверены крупно (см. promo3/out/review_photos.png).
+| файл | источник | лицензия | проверка |
+|---|---|---|---|
+| p_chair_tulle | Pexels #9685250 | Pexels License | белый стул, тюль; орнамента и надписей нет |
+| p_tea_window | Pexels #31146888 | Pexels License | чай, книги; надписей нет |
+| p_phone_glow | Pexels #25527040 | Pexels License | телефон с пустым экраном; размытое лицо справа затемнено (правка в promo3/assets/photos) |
+| p_hands_child | Pexels #6338775 | Pexels License | руки; надписей нет |
+| p_rotary_dark | Pexels #8715175 | Pexels License | дисковый телефон, на диске только цифры 0-9 |
+| p_writing_hand | Pexels #5710613 | Pexels License | живая рука, кириллический почерк (размыт) |
+| p_sunrise_window | Pexels #30669567 | Pexels License | восход за заиндевевшим окном; надписей нет |
+Отклонены (promo3/assets/rejected): стул с вышитой занавеской (орнамент), гостиничный телефон с английским текстом, восковая рука, силуэт с оружием (чужая форма), письмо на английском.
+Pexels License разрешает коммерческое использование без подписи.

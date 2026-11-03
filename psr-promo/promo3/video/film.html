@@ -57,7 +57,9 @@ window.setT=(t,frame)=>{
     const nf=s.next?(s.next.fin||.02):0,vis0=s.t0,vis1=s.t1+nf;let a=0;
     if(t>=vis0-1e-4&&t<=vis1){a=(s.fin||0)>0?sm((t-s.t0)/s.fin):1;if(i===0)a=1}
     s.el.style.opacity=a;s.el.style.display=(t>=vis0-1e-4&&t<=vis1+.05)?'block':'none';s.sc.style.opacity=a;
-    if(a>0){const u=ease((t-s.t0)/(vis1-s.t0)),c=s.cam,sc=lerp(c.s[0],c.s[1],u),x=lerp(c.x[0],c.x[1],u)*W,y=lerp(c.y[0],c.y[1],u)*H,h=c.hh?hh(t,i*1.9+.4,c.hh*3.2):[0,0,0];
+    if(a>0){const u=ease((t-s.t0)/(vis1-s.t0)),c=s.cam,fx=lerp(c.f[0],c.f[1],u),fy=s.oy/100,x=lerp(c.x[0],c.x[1],u)*W,y=lerp(c.y[0],c.y[1],u)*H,h=c.hh?hh(t,i*1.9+.4,c.hh*3.2):[0,0,0];
+      const need=Math.max((Math.abs(x+h[0])+3*U)/(W*Math.min(fx,1-fx)),(Math.abs(y+h[1])+3*U)/(H*Math.min(fy,1-fy)))+1.0;
+      const sc=Math.max(lerp(c.s[0],c.s[1],u),Math.min(need,1.6));
       s.im.style.transformOrigin=`${lerp(c.f[0],c.f[1],u)*100}% ${s.oy}%`;s.im.style.transform=`translate(${x+h[0]}px,${y+h[1]}px) rotate(${h[2]}deg) scale(${sc})`;
       const fl=1+.012*Math.sin(t*2.1+i)+.008*Math.sin(t*5.3+i*2);s.im.style.filter=`brightness(${s.g.b*fl}) contrast(${s.g.c}) saturate(.9)${s.blur?` blur(${s.blur*U}px)`:''}`}
   });
