@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="/promo3/fonts/fonts.css"><style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#9fd8e0;padding:20px;display:flex;gap:30px}
+.ui{position:relative;width:390px;height:900px;background:linear-gradient(#08c5dc,#f3e3d3);font-family:'Onest';color:#fff;border:1px solid #333}
+</style></head><body><div id="a"></div><div id="b"></div><script>
+const TICK='<svg viewBox="0 0 34 25"><path d="M4 13l8 8L30 4"/></svg>';
+const css=`.hd{position:absolute;left:0;right:0;top:56px;text-align:center;font:500 18px 'Onest';color:#0b2a3b;opacity:.7}
+.chip{position:absolute;left:50%;transform:translateX(-50%);padding:5px 16px;border-radius:16px;background:rgba(10,40,60,.2);color:#0b2a3b;font:600 18px 'Onest';white-space:nowrap}
+.bb{position:absolute;right:22px;max-width:290px;padding:12px 18px 8px;border-radius:24px 24px 5px 24px;background:#0f3249;font:500 29px/1.2 'Onest';letter-spacing:-.01em}
+.bb .m{display:flex;justify-content:flex-end;align-items:center;gap:6px;margin-top:2px;font:500 15px 'Onest';opacity:.8}
+.bb svg{width:20px;height:15px;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.inp{position:absolute;left:20px;right:20px;top:790px;height:68px;border-radius:34px;border:2.5px solid #0f3249;background:rgba(255,255,255,.5)}
+.inp .tt{position:absolute;left:24px;top:0;line-height:63px;font:500 24px 'Onest';color:#0b2a3b;white-space:nowrap}
+.inp .cr{position:absolute;top:19px;width:2.5px;height:26px;background:#0b2a3b}
+.snd{position:absolute;right:7px;top:7px;width:50px;height:50px;border-radius:50%;background:#0f3249}
+.snd:after{content:"";position:absolute;left:15px;top:15px;width:18px;height:18px;border-top:4px solid #fff;border-right:4px solid #fff;transform:translateX(-3px) rotate(-45deg) scale(.8)}`;
+const st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
+const mk=(el,txt)=>{el.className='ui';el.style.position='relative';el.innerHTML=`<div class="hd">не в сети</div>
+<div class="chip" style="top:98px">3-й день</div><div class="bb" style="top:134px">Ты как?<div class="m">09:41 ${TICK}</div></div>
+<div class="chip" style="top:228px">10-й день</div><div class="bb" style="top:264px">Напиши, как сможешь<div class="m">21:15 ${TICK}</div></div>
+<div class="chip" style="top:392px">21-й день</div><div class="bb" style="top:428px">Всё хорошо. Мы ждём.<div class="m">23:58 ${TICK}</div></div>
+<div class="inp"><span class="tt">${txt}</span><span class="cr" style="left:${24+tw(txt)+3}px"></span><div class="snd"></div></div>`};
+function tw(t){const c=document.createElement('canvas').getContext('2d');c.font="500 24px Onest";return c.measureText(t).width}
+document.fonts.ready.then(()=>{mk(document.getElementById('a'),'Всё хорошо. Мы ждём.');mk(document.getElementById('b'),'Мне страшно')});
+</script></body></html>

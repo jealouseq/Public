@@ -14,13 +14,13 @@ def dec(path,start=None,dur=None):
     cmd+=["-i",path,"-ac","2","-ar",str(SR),"-f","f32le","-"]
     return np.frombuffer(subprocess.check_output(cmd),dtype="<f4").reshape(-1,2).T.astype(np.float64)
 rng=np.random.default_rng(5)
-# ---- music: starts so that its energy lift (file 14.75 s) lands on the turn (landline shot)
-turn=TL["turn"]; off=max(0.0,turn-14.75)
-mus=dec(os.path.join(ROOT,"audio/mixkit/606_Drawing_the_Sky.mp3"),0,T_END-off+1)
+# ---- music: silence-first. It enters as the last message is sent; the file's energy lift (14.75 s) lands on the landline shot
+turn=TL["turn"]; off=TL["phoneSend"]-.8; fstart=max(0.0,14.75-(turn-off))
+mus=dec(os.path.join(ROOT,"audio/mixkit/606_Drawing_the_Sky.mp3"),fstart,T_END-off+1)
 mus*=10**(-18.0/20)/(np.sqrt((mus**2).mean())+1e-9)
 m=np.zeros((2,N)); i0=int(off*SR); L=min(mus.shape[1],N-i0); m[:,i0:i0+L]=mus[:,:L]
 fi=np.clip((t-off)/3.0,0,1); fo=np.clip((T_END-t)/4.0,0,1); m*=(fi*fi*(3-2*fi))*(fo*fo*(3-2*fo))
-a,b,c=S[6]+.2,S[6]+1.4,S[6]+3.2   # make room for the last line
+a,b,c=S[4]+1.2,S[4]+2.4,S[4]+4.2   # make room for the last line
 dip=np.ones(N); dip[(t>=a)&(t<b)]=10**(-4.5/20); r=(t>=b)&(t<c); dip[r]=10**(-4.5/20)+(1-10**(-4.5/20))*np.clip((t[r]-b)/(c-b),0,1); m*=dip
 # ---- room tone (always there, never digital silence)
 def shaped(n,lo,hi):
@@ -44,7 +44,7 @@ def tap(at,freq,gain,pan=0.0):
     i0=int(at*SR); seg=np.vstack([x*(1-pan),x*(1+pan)])*gain
     out[:,i0:i0+n]+=seg[:,:max(0,min(n,N-i0))] if i0+n<=N else seg[:,:N-i0]
 # ---- waiting: a clock, stops with the first "delivered" tick of the last message
-clock_stop=TL["phoneSend"]
+clock_stop=TL["eraseStart"]-.15   # time stops when the sentence is erased
 k=0
 while True:
     tt_=.9+k*1.0+(.015 if k%2 else 0)
@@ -59,14 +59,17 @@ for ky in TL["KEYS"]:
 e0=TL["eraseStart"]
 put("crowd/heartbeat-single",e0+.25,0.20,"peak",fade=.3); put("crowd/heartbeat-single",e0+1.0,0.14,"peak",fade=.3)
 # ---- swell into the turn (reversed light aura), lands on the cut
+put("light/light-aura",S[1]-.03,0.12,rev=True,fade=.02)     # push-through into the child's hands
 put("light/light-aura",turn-.03,0.20,rev=True,fade=.02)
 put("impact/impact-deep-whoosh",turn+.05,0.05,"peak",fade=.6)
-# ---- landline: dial tone starts under the previous shot (J-cut), handset click on the cut
-tt=np.arange(int(3.2*SR))/SR; tone=(np.sin(2*np.pi*425*tt)+.12*np.sin(2*np.pi*850*tt))*0.012; tone*=np.clip(tt/.4,0,1)*np.clip((3.2-tt)/1.0,0,1)
-i0=int((turn-.55)*SR); out[:,i0:i0+len(tone)]+=np.vstack([tone,tone])
-put("ui/switch-click-quick",turn,0.30,"peak")
+# ---- landline: handset click on the cut, then a faint open-line hum (no dial tone before the handset is lifted)
+put("ui/switch-click-quick",turn-.02,0.30,"peak")
+tt=np.arange(int(2.2*SR))/SR; tone=(np.sin(2*np.pi*425*tt)+.1*np.sin(2*np.pi*850*tt))*0.007; tone*=np.clip(tt/.5,0,1)*np.clip((2.2-tt)/1.1,0,1)
+i0=int((turn+.18)*SR); out[:,i0:i0+len(tone)]+=np.vstack([tone,tone])
 # ---- writing (J-cut)
-put("text/pen-write-paper",S[5]-.3,0.26,"start",fade=.4,start=0)
+put("text/pen-write-paper",S[3]-.3,0.26,"start",fade=.4,start=0)
+# ---- sunrise: a quiet bloom as the light comes up
+put("light/light-aura",S[4]+.1,0.09,"start",fade=1.2)
 out=np.tanh(out*1.1)/1.1; pk=np.abs(out).max(); out*=min(1,.9/pk)
 with wave.open(os.path.join(ROOT,"promo3/video/mix.wav"),"wb") as w:
     w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes((out.T*32767).astype("<i2").tobytes())

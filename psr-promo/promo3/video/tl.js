@@ -1,5 +1,5 @@
 'use strict';
-/* single source of truth for the film timeline (seconds). Used by film.html (picture) and build_audio2.py (sound). */
+/* single source of truth for the film timeline (seconds). Used by film.html (picture) and build_audio.py (sound). */
 (function(root){
 function rng(seed){let s=seed>>>0;return()=>((s=(Math.imul(s,1664525)+1013904223)>>>0)/4294967296)}
 function compile(start,ops,seed){
@@ -12,41 +12,38 @@ function compile(start,ops,seed){
   }
   return {start,states,sentAt,keys,end:t};
 }
-const S=[0,6.9,14.6,24.6,30.2,36.2,40.8,45.8];       // shot starts (chair, tea, phone, child, landline, writing, sunset, end-bg)
-const END_T=S[7], T_END=END_T+4.2;
+// ---- Act 1: one shot on the phone. Messages are typed in the input field and fly up as bubbles.
+const msg1=compile(.6,[['type','Ты как?'],['wait',.6],['send']],11);
+const msg2=compile(msg1.end+1.25,[['type','Напиши, как сможешь'],['wait',.55],['send']],12);
+const msg3=compile(msg2.end+1.4,[['type','Мне страшно'],['wait',.9],['erase'],['wait',.85],['type','Всё хорошо. Мы ждём.'],['wait',.85],['send']],13);
+const MSGS=[msg1,msg2,msg3];
+const TIMES=['21:07','07:52','23:58'];
+const CHIPS=[{t:.25,text:'3-й день'},{t:msg2.start-.95,text:'10-й день'},{t:msg3.start-.95,text:'21-й день'}];
+const P=msg3.sentAt+2.1;
+// shot starts: phone, child, rotary, writing, sunrise, end-card background
+const S=[0,P,P+5.0,P+10.8,P+15.8,P+21.2];
+const END_T=S[5], T_END=END_T+7.2;
 const SHOTS=[
- {img:'p_chair_tulle',oy:78,cam:{s:[1.02,1.09],x:[-.012,.014],y:[.004,-.006],f:[.45,.55],hh:.8},g:{b:.58,c:1.08},scrim:.86},
- {img:'p_tea_window',oy:52,fin:.9,cam:{s:[1.18,1.22],x:[.02,-.008],y:[-.08,-.085],f:[.5,.5],hh:.35},g:{b:.95,c:1.04},scrim:.74},
- {img:'p_phone_glow',oy:42,fin:.9,cam:{s:[2.15,3.4],x:[0,0],y:[0,0],f:[.5,.5],hh:.12,focus:{ui:[[.5,.50],[.52,.66]],t0:S[2]+2.6,t1:S[2]+6.8}},g:{b:.86,c:1.05},scrim:.0,ui:true,noGlow:true},
- {img:'p_hands_child',oy:44,fin:1.1,cam:{s:[1.03,1.10],x:[.01,-.012],y:[0,-.014],f:[.5,.55],hh:.6},g:{b:.92,c:1.04},scrim:.74},
- {img:'p_rotary_dark',oy:50,fin:1.2,cam:{s:[1.16,1.07],x:[-.012,.006],y:[-.05,-.07],f:[.58,.6],hh:.25},g:{b:1.75,c:1.0},scrim:.7},
- {img:'p_writing_hand',oy:50,fin:.9,cam:{s:[1.04,1.16],x:[.012,-.02],y:[-.006,.008],f:[.34,.52],hh:.7},g:{b:.72,c:1.06},scrim:.92},
- {img:'p_sunrise_window',oy:40,fin:1.0,cam:{s:[1.12,1.2],x:[.008,-.008],y:[-.06,-.075],f:[.5,.5],hh:.25},g:{b:.95,c:1.04},scrim:.82},
- {img:'p_chair_tulle',oy:78,fin:0,blur:30,cam:{s:[1.18,1.22],x:[0,0],y:[0,0],f:[.5,.5],hh:0},g:{b:.34,c:1.0},scrim:.45},
+ {img:'p_phone_glow',oy:42,cam:{s:[2.5,3.5],x:[0,0],y:[0,0],f:[.5,.5],hh:.12,focus:{ui:[[.5,.52],[.52,.68]],t0:.5,t1:S[1]-3.6},roll:[-.6,.5]},g:{b:.9,c:1.05,sat:.8},scrim:0,ui:true,noGlow:true,outFx:'push',head:true},
+ {img:'p_hands_child',oy:44,fin:1.1,inFx:'push',outFx:'none',cam:{s:[1.14,1.02],x:[.012,-.012],y:[.004,-.014],f:[.5,.55],hh:.6},g:{b:.9,c:1.04,sat:.9},scrim:.92},
+ {img:'p_rotary_dark',oy:50,fin:1.3,inFx:'none',outFx:'blur',cam:{s:[1.18,1.08],x:[-.012,.006],y:[-.05,-.07],f:[.58,.6],hh:.25},g:{b:1.55,c:1.0,sat:.7},scrim:.72},
+ {img:'p_writing_hand',oy:50,fin:1.0,inFx:'rack',outFx:'none',cam:{s:[1.04,1.16],x:[.012,-.02],y:[-.006,.008],f:[.34,.52],hh:.7},g:{b:.72,c:1.06,sat:.9},scrim:.92},
+ {img:'p_sunrise_window',oy:36,fin:1.2,inFx:'none',outFx:'none',cam:{s:[1.1,1.26],x:[.008,-.008],y:[-.07,-.09],f:[.5,.5],hh:.25},g:{b:.8,c:1.0,sat:.58,hue:-22},scrim:.86,bloomUp:true},
+ {img:'p_sunrise_window',oy:36,fin:0,blur:30,cam:{s:[1.2,1.24],x:[0,0],y:[0,0],f:[.5,.5],hh:0},g:{b:.3,c:1.0,sat:.7,hue:-18},scrim:.45},
 ];
 SHOTS.forEach((s,i)=>{s.t0=S[i];s.t1=(i<SHOTS.length-1?S[i+1]:T_END)});
-// ---- drafts: what a waiting person types (Prata, left aligned). rows: [{text/ops}], top = fraction of frame height
-const chair=compile(2.3,[['type','Ты как?'],['wait',.75],['send']],1);
-const tea1=compile(S[1]+1.0,[['type','Свет на кухне не гашу.']],2);
-const tea2=compile(tea1.end+.75,[['type','Чай завариваю на двоих.']],3);
-const ph=compile(S[2]+1.2,[['type','Мне страшно'],['wait',1.0],['erase'],['wait',1.05],['type','Всё хорошо. Мы ждём.'],['wait',.8],['send']],4);
-const ch=compile(S[3]+.9,[['type','Дома тебя ждут.'],['wait',.9],['send']],5);
-const DRAFTS=[
- {shot:0,top:.67,hide:S[1]-.2,rows:[chair]},
- {shot:1,top:.745,hide:S[2]-.2,rows:[tea1,tea2]},
- {shot:2,top:.80,hide:S[3]-.2,screen:true,rows:[ph]},
- {shot:3,top:.68,hide:S[4]-.1,rows:[ch]},
-];
-// ---- set phrases (not typed: "our" voice)
+// ---- Act 2: one typed draft over the child's hands (Prata, left aligned)
+const ch=compile(S[1]+1.0,[['type','Дома тебя ждут.'],['wait',.9],['send']],5);
+const DRAFTS=[{shot:1,top:.745,hide:S[2]-.2,rows:[ch]}];
+// ---- set phrases ("our" voice), each with its own way of appearing
 const TEXTS=[
- {cls:'pr',size:86,lines:['Самое трудное —','неизвестность.'],a:S[4]+.9,b:S[4]+4.0,top:.745},
- {cls:'ub',size:58,lines:['Мы —','на связи.'],a:S[4]+4.4,b:S[5]-.3,top:.745,sub:'Центр поисковых решений',subA:S[4]+5.5},
- {cls:'pr',size:76,lines:['Выслушаем.','Запишем всё.','Подскажем, что дальше.'],per:.7,a:S[5]+.6,b:S[6]-.3,top:.60},
- {cls:'ub',size:96,lines:['Мы ищем','ответ.'],a:S[6]+1.6,b:END_T-.6,top:.725},
+ {cls:'pr',size:84,lines:['Самое трудное —','неизвестность.'],a:S[2]+.9,b:S[2]+3.5,top:.745,anim:'words'},
+ {cls:'pr',size:84,lines:['Мы —','на связи.'],a:S[2]+3.9,b:S[3]-.35,top:.70,sub:'Центр поисковых решений',subA:S[2]+4.9,anim:'rise'},
+ {cls:'pr',size:74,lines:['Выслушаем.','Запишем всё.','Подскажем, что дальше.'],per:.75,a:S[3]+.8,b:S[4]-.3,top:.60,anim:'fade'},
+ {cls:'pr',size:112,lines:['Мы ищем','ответ.'],a:S[4]+1.5,b:END_T-.7,top:.66,anim:'sweep'},
 ];
-const KEYS=[].concat(...DRAFTS.map(d=>[].concat(...d.rows.map(r=>r.keys))));
-const LEAKS=[S[1],S[4],S[6]];
-const TL={LEAKS,S,END_T,T_END,SHOTS,DRAFTS,TEXTS,KEYS,turn:S[4],phoneSend:ph.sentAt,eraseStart:ph.keys.find(k=>k.k==='erase0').t,
-  chairSend:chair.sentAt,childSend:ch.sentAt};
+const KEYS=[].concat(...MSGS.map(m=>m.keys),...DRAFTS.map(d=>[].concat(...d.rows.map(r=>r.keys))));
+const LEAKS=[{t:S[2],a:.4},{t:S[4],a:.55}];
+const TL={LEAKS,S,P,END_T,T_END,SHOTS,DRAFTS,TEXTS,KEYS,MSGS,CHIPS,TIMES,turn:S[2],phoneSend:msg3.sentAt,eraseStart:msg3.keys.find(k=>k.k==='erase0').t,childSend:ch.sentAt};
 if(typeof module!=='undefined')module.exports=TL;else root.TL=TL;
 })(typeof window!=='undefined'?window:globalThis);
