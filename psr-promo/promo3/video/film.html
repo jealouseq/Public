@@ -72,7 +72,7 @@ function layout(s){const nw=s.im.naturalWidth,nh=s.im.naturalHeight,k=Math.max(W
  if(s.ui){const kk=nw/2001,dst=QUAD.map(p=>[p[0]*kk*k,p[1]*kk*k]),h=homography([[0,0],[UW,0],[UW,UH],[0,UH]],dst);s.H=h;
   s.uiEl.style.transform=`matrix3d(${h[0]},${h[3]},0,${h[6]},${h[1]},${h[4]},0,${h[7]},0,0,1,0,${h[2]},${h[5]},0,1)`;
   const f=(ux,uy)=>{const w=h[6]*ux+h[7]*uy+1;return[(h[0]*ux+h[1]*uy+h[2])/w+cl,(h[3]*ux+h[4]*uy+h[5])/w+ct]};
-  const c=s.cam.focus;if(c){const p=f(c.ui[0]*UW,c.ui[1]*UH);s.focusP=[p[0]/W,p[1]/H]}}}
+  const c=s.cam.focus;if(c){s.focusPs=c.ui.map(u=>{const p=f(u[0]*UW,u[1]*UH);return[p[0]/W,p[1]/H]})}}}
 // ---- typed drafts (Prata overlay)
 const CK='<svg viewBox="0 0 34 25" fill="none" stroke="#f0b54a" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" style="overflow:visible;width:100%;height:100%"><path d="M4 13l8 8L30 4"/></svg>';
 const LH=84*U,FS=66*U;
@@ -99,7 +99,7 @@ window.setT=(t,frame)=>{
     s.el.style.opacity=a;s.el.style.display=(t>=vis0-1e-4&&t<=vis1+.05)?'block':'none';s.sc.style.opacity=a;
     if(a>0){const u=ease((t-s.t0)/(vis1-s.t0)),cam=s.cam,h=cam.hh?hh(t,i*1.9+.4,cam.hh*3.2):[0,0,0];
       let fx=lerp(cam.f[0],cam.f[1],u),fy=s.oy/100,x=lerp(cam.x[0],cam.x[1],u)*W,y=lerp(cam.y[0],cam.y[1],u)*H,sc;
-      if(cam.focus&&s.focusP){const uu=ei((t-cam.focus.t0)/(cam.focus.t1-cam.focus.t0));fx=s.focusP[0];fy=s.focusP[1];sc=lerp(cam.s[0],cam.s[1],uu);x=(.5-fx)*W*uu;y=(.5-fy)*H*uu}
+      if(cam.focus&&s.focusPs){const uu=ei((t-cam.focus.t0)/(cam.focus.t1-cam.focus.t0)),P0=s.focusPs[0],P1=s.focusPs[1];fx=lerp(P0[0],P1[0],uu);fy=lerp(P0[1],P1[1],uu);sc=lerp(cam.s[0],cam.s[1],uu);x=(.5-fx)*W;y=(.5-fy)*H}
       else{const need=Math.max((Math.abs(x+h[0])+3*U)/(W*Math.min(fx,1-fx)),(Math.abs(y+h[1])+3*U)/(H*Math.min(fy,1-fy)))+1.0;sc=Math.max(lerp(cam.s[0],cam.s[1],u),Math.min(need,1.6))}
       s.camEl.style.transformOrigin=`${fx*W-s.cl}px ${fy*H-s.ct}px`;s.camEl.style.transform=`translate(${x+h[0]}px,${y+h[1]}px) rotate(${h[2]}deg) scale(${sc})`;
       const fl=1+.012*Math.sin(t*2.1+i)+.008*Math.sin(t*5.3+i*2),rack=i>0&&!s.blur?7*U*(1-eo3((t-s.t0)/1.3)):0;

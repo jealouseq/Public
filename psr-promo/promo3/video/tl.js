@@ -17,7 +17,7 @@ const END_T=S[7], T_END=END_T+4.2;
 const SHOTS=[
  {img:'p_chair_tulle',oy:78,cam:{s:[1.02,1.09],x:[-.012,.014],y:[.004,-.006],f:[.45,.55],hh:.8},g:{b:.58,c:1.08},scrim:.86},
  {img:'p_tea_window',oy:52,fin:.9,cam:{s:[1.18,1.22],x:[.02,-.008],y:[-.08,-.085],f:[.5,.5],hh:.35},g:{b:.95,c:1.04},scrim:.74},
- {img:'p_phone_glow',oy:42,fin:.9,cam:{s:[1.17,3.4],x:[0,0],y:[0,0],f:[.5,.5],hh:.12,focus:{ui:[.52,.66],t0:S[2]+.8,t1:S[2]+7.3}},g:{b:.86,c:1.05},scrim:.0,ui:true,noGlow:true},
+ {img:'p_phone_glow',oy:42,fin:.9,cam:{s:[2.15,3.4],x:[0,0],y:[0,0],f:[.5,.5],hh:.12,focus:{ui:[[.5,.50],[.52,.66]],t0:S[2]+2.6,t1:S[2]+6.8}},g:{b:.86,c:1.05},scrim:.0,ui:true,noGlow:true},
  {img:'p_hands_child',oy:44,fin:1.1,cam:{s:[1.03,1.10],x:[.01,-.012],y:[0,-.014],f:[.5,.55],hh:.6},g:{b:.92,c:1.04},scrim:.74},
  {img:'p_rotary_dark',oy:50,fin:1.2,cam:{s:[1.16,1.07],x:[-.012,.006],y:[-.05,-.07],f:[.58,.6],hh:.25},g:{b:1.75,c:1.0},scrim:.7},
  {img:'p_writing_hand',oy:50,fin:.9,cam:{s:[1.04,1.16],x:[.012,-.02],y:[-.006,.008],f:[.34,.52],hh:.7},g:{b:.72,c:1.06},scrim:.92},
